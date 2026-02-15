@@ -8,19 +8,20 @@
 
         <!-- MathJax Configuration -->
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']],
-                processEscapes: true,
-                processEnvironments: true
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']],
+    processEscapes: true
+  },
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady();
+    }
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <style>
         :root {
@@ -330,7 +331,7 @@
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from typing import Callable, List, Tuple
 
 class ModuleHomomorphism:
@@ -525,7 +526,7 @@ print("The Snake Lemma guarantees an exact sequence connecting kernels and coker
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>from typing import TypeVar, Generic, Callable, Dict, Set
+                <pre><code class="language-python">from typing import TypeVar, Generic, Callable, Dict, Set
 from dataclasses import dataclass
 from functools import wraps
 
@@ -704,7 +705,7 @@ C = yoneda_lemma_demo()
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from typing import Callable, Optional
 from scipy.optimize import linprog
 
@@ -876,7 +877,7 @@ for v in test_vectors_X:
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def newtons_method(f, df, x0, tol=1e-10, max_iter=100):
@@ -1086,7 +1087,7 @@ print(f"Expected: x = y = √2 ≈ {np.sqrt(2):.10f}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.sparse import diags
 from scipy.sparse.linalg import eigsh
@@ -1300,7 +1301,7 @@ for i in range(5):
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import random
+                <pre><code class="language-python">import random
 import math
 from typing import Tuple
 
@@ -1500,7 +1501,7 @@ print(f"Decrypted: '{text_decrypted}'")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def collatz(n: int) -> int:
@@ -1636,7 +1637,7 @@ for n in [7, 15, 27]:
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def sieve_of_eratosthenes(limit: int) -> list:
@@ -1817,7 +1818,7 @@ for n in [100, 500, 1000, 5000]:
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>from fractions import Fraction
+                <pre><code class="language-python">from fractions import Fraction
 import math
 
 def prime_factors(n: int) -> dict:
@@ -2046,7 +2047,7 @@ print("This is the geometric series: (p-1)/(1-p) = -1")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def logistic_map(r: float, x0: float, n_iterations: int) -> np.ndarray:

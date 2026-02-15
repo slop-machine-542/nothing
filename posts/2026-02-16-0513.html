@@ -9,19 +9,20 @@
 
         <!-- MathJax Configuration -->
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']],
-                processEscapes: true,
-                processEnvironments: true
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']],
+    processEscapes: true
+  },
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady();
+    }
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <style>
         :root {
@@ -325,7 +326,7 @@
                 </div>
 
                 <h4>Python Implementation: Norm Computation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from scipy.optimize import linprog
 
 def hahn_banach_extension(subspace_basis, functional_values, point, norm_type='l2'):
@@ -459,7 +460,7 @@ print(f"Maximum |f(x)|/||x|| by sampling: {max(norm_samples):.4f}")</code></pre>
                 </div>
 
                 <h4>Python Implementation: Computing Homology</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from itertools import combinations
 from collections import defaultdict
 
@@ -617,7 +618,7 @@ print(f"  β_2 = {torus.homology_rank(2)}")</code></pre>
                 </div>
 
                 <h4>Python Implementation: Ramsey Number Bounds</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from itertools import combinations
 import networkx as nx
 
@@ -798,7 +799,7 @@ if counter_5:
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from scipy.optimize import fsolve
 import matplotlib.pyplot as plt
 
@@ -978,7 +979,7 @@ print("The Newton fractal shows which initial guesses converge to which root.")<
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import random
+                <pre><code class="language-python">import random
 from math import gcd
 
 def is_prime(n, k=10):
@@ -1227,7 +1228,7 @@ print(f"Verification: {test_num} == {decrypted_num}: {test_num == decrypted_num}
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
@@ -1399,7 +1400,7 @@ print("  (Converges to stable equilibrium instead of oscillating)")</code></pre>
                 </ul>
 
                 <h4>Python Implementation: Elliptic Curve Computations</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 class EllipticCurve:
@@ -1602,7 +1603,7 @@ print("  • Exact formula for leading term: Open")</code></pre>
                 <p>If true, it would mean that certain analytic invariants can be computed purely algebraically.</p>
 
                 <h4>Python: Hodge Diamond Visualization</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def hodge_diamond(hodge_numbers):
@@ -1752,7 +1753,7 @@ print("  Proved by Lefschetz in 1924.")</code></pre>
                 </ul>
 
                 <h4>Python: Lattice Gauge Theory Simulation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 class LatticeYangMills:
@@ -2012,7 +2013,7 @@ print("Above: Deconfined phase (Coulomb phase)")</code></pre>
                 </div>
 
                 <h4>Python: Visualizing 3-Manifolds</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 

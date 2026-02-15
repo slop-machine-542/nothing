@@ -8,19 +8,20 @@
 
         <!-- MathJax Configuration -->
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']],
-                processEscapes: true,
-                processEnvironments: true
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']],
+    processEscapes: true
+  },
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady();
+    }
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -108,7 +109,7 @@
             </div>
 
             <h4>Python Implementation</h4>
-            <pre><code>import numpy as np
+            <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def winding_number(points):
@@ -225,7 +226,7 @@ print(f"Winding numbers computed: {wn0}, {wn1}, {wn2}")</code></pre>
             </div>
 
             <h4>Python Implementation</h4>
-            <pre><code>def legendre_symbol(a, p):
+            <pre><code class="language-python">def legendre_symbol(a, p):
     """
     Compute the Legendre symbol (a/p) using Euler's criterion.
     
@@ -340,7 +341,7 @@ for a, x in residues:
             </div>
 
             <h4>Python Implementation</h4>
-            <pre><code>from dataclasses import dataclass
+            <pre><code class="language-python">from dataclasses import dataclass
 from typing import Set, Dict, Callable, List
 import math
 
@@ -506,7 +507,7 @@ isomorphism_theorem_verification()</code></pre>
             </div>
 
             <h4>Python Implementation</h4>
-            <pre><code>def collatz(n):
+            <pre><code class="language-python">def collatz(n):
     """
     Compute the Collatz sequence starting from n.
     
@@ -625,7 +626,7 @@ print(f"Max value reached: {max_value(max_n)}")</code></pre>
             </div>
 
             <h4>Python Implementation</h4>
-            <pre><code>import math
+            <pre><code class="language-python">import math
 
 def sieve_of_eratosthenes(limit):
     """
@@ -762,7 +763,7 @@ print(f"Count: {len(twins)} pairs")</code></pre>
             </div>
 
             <h4>Python Implementation</h4>
-            <pre><code>def sieve(limit):
+            <pre><code class="language-python">def sieve(limit):
     """Generate primes up to limit."""
     is_prime = [True] * (limit + 1)
     is_prime[0] = is_prime[1] = False
@@ -895,7 +896,7 @@ goldbach_count(1000)</code></pre>
             </div>
 
             <h4>Python Implementation</h4>
-            <pre><code>def prime_factors(n):
+            <pre><code class="language-python">def prime_factors(n):
     """Return prime factorization as dict {p: exponent}."""
     factors = {}
     d = 2

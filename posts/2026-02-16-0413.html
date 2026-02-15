@@ -7,19 +7,20 @@
     <title>Daily Math Digest - February 16, 2026</title>
         <!-- MathJax Configuration -->
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']],
-                processEscapes: true,
-                processEnvironments: true
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']],
+    processEscapes: true
+  },
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady();
+    }
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="stylesheet" href="../css/style.css">
 
@@ -231,7 +232,7 @@
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def complex_line_integral(f, gamma, dgamma, t_range, n_points=1000):
@@ -288,7 +289,7 @@ print(f"∮ (1/z) dz = {result}")  # Should be ≈ 2πi
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 # Example: Line (degree 1) and Circle (degree 2)
@@ -340,7 +341,7 @@ plt.savefig('bezout_theorem.png', dpi=150)
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 
 # Sphere (genus 0): χ = 2, K = 1/R² constant
 R = 1.0
@@ -390,7 +391,7 @@ print(f"\nTorus: χ = {chi_torus}, so ∫K dA = 0")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
@@ -444,7 +445,7 @@ plt.savefig('central_limit_theorem.png', dpi=150)
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def picard_iteration(f, y0, t0, t_end, n_iterations=10, n_points=100):
@@ -505,7 +506,7 @@ print(f"Exact y(2) = e² = {y_exact[-1]:.6f}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 # Create test matrix
@@ -561,7 +562,7 @@ print(f"Theoretical error: {theory_error:.6f}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.special import gamma
 
@@ -617,7 +618,7 @@ plt.savefig('riemann_hypothesis.png', dpi=150)
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import itertools
+                <pre><code class="language-python">import itertools
 
 def brute_force_sat(formula, n_vars):
     """
@@ -669,7 +670,7 @@ print(f"Satisfiable: {sat}, Solution: x1={sol[0]}, x2={sol[1] if sol else None}"
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 # 1D Burgers' equation (simplified model): u_t + u*u_x = ν*u_xx

@@ -9,19 +9,20 @@
 
         <!-- MathJax Configuration -->
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']],
-                processEscapes: true,
-                processEnvironments: true
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']],
+    processEscapes: true
+  },
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady();
+    }
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <style>
         :root {
@@ -296,7 +297,7 @@
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def contour_integral(func, center, radius, n=1000):
@@ -392,7 +393,7 @@ print(f"Error = {abs(computed - actual):.2e}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import networkx as nx
+                <pre><code class="language-python">import networkx as nx
 
 print("Euler's Formula Verification")
 print("=" * 60)
@@ -464,7 +465,7 @@ print(f"  Edge bound check: E = {K5.number_of_edges()}, 3V-6 = {3*5 - 6}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def monotone_convergence_demo():
@@ -531,7 +532,7 @@ monotone_convergence_demo()
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 # Create test matrix
@@ -583,7 +584,7 @@ print(f"Compression ratio: {original/compressed:.1f}x")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from scipy.integrate import odeint
 
 print("Picard-Lindelöf Theorem Demonstration")
@@ -644,7 +645,7 @@ print("Unique solution guaranteed by Picard-Lindelöf.")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 
 def gradient_descent(f, grad_f, x0, step_size, n_iterations):
     """Standard gradient descent."""
@@ -754,7 +755,7 @@ print("On day n, all dyadic rationals with denominator 2^n appear.")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def mandelbrot(c, max_iter=100):
@@ -817,7 +818,7 @@ print("\\nTheorem: The Mandelbrot set is connected.")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from scipy.integrate import odeint
 
 # Lorenz parameters
@@ -890,7 +891,7 @@ print("\\nThis is the 'butterfly effect'!")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from scipy.optimize import minimize
 
 print("Nash Equilibrium")

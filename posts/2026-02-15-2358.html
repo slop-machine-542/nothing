@@ -7,19 +7,20 @@
 
         <!-- MathJax Configuration -->
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']],
-                processEscapes: true,
-                processEnvironments: true
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']],
+    processEscapes: true
+  },
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady();
+    }
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -137,7 +138,7 @@
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import fsolve
 
@@ -276,7 +277,7 @@ plt.show()
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>def mod_exp(base, exp, mod):
+                <pre><code class="language-python">def mod_exp(base, exp, mod):
     """
     Compute (base^exp) % mod using fast exponentiation.
     Time complexity: O(log exp)
@@ -421,7 +422,7 @@ plt.show()
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>from itertools import product
+                <pre><code class="language-python">from itertools import product
 import numpy as np
 
 class Group:
@@ -635,7 +636,7 @@ plt.show()
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>def collatz(n):
+                <pre><code class="language-python">def collatz(n):
     """
     Generate the Collatz sequence starting from n.
     """
@@ -793,7 +794,7 @@ print(f"All values reach 1: {all_reach_one}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy import integrate
 
@@ -977,7 +978,7 @@ print(f"Verified for n = 2 to 500,000: {all_have_prime}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>def sieve_of_eratosthenes(n):
+                <pre><code class="language-python">def sieve_of_eratosthenes(n):
     """Generate all primes up to n."""
     is_prime = [True] * (n + 1)
     is_prime[0] = is_prime[1] = False
@@ -1256,7 +1257,7 @@ for n in [100, 1000, 10000]:
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>from fractions import Fraction
+                <pre><code class="language-python">from fractions import Fraction
 import math
 
 def p_adic_valuation(n, p):

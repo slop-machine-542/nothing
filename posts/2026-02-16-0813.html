@@ -7,19 +7,20 @@
 
         <!-- MathJax Configuration -->
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']],
-                processEscapes: true,
-                processEnvironments: true
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']],
+    processEscapes: true
+  },
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady();
+    }
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -146,7 +147,7 @@
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy import integrate
 
@@ -282,7 +283,7 @@ print(f"Actual f({a}) = {f(a):.6f}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def extract_convergent_subsequence(sequence, epsilon=1e-6):
@@ -400,7 +401,7 @@ print(f"Subsequence converges to: {limit:.6f}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import fsolve
 
@@ -546,7 +547,7 @@ g2 = lambda x, y: x**2/4 + y**2 - 1
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
@@ -641,7 +642,7 @@ for n in n_samples_list:
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
@@ -737,7 +738,7 @@ print(f"  True y(1) = {np.exp(1):.6f}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def gradient_descent(f, grad_f, x0, learning_rate, n_iterations):
@@ -826,7 +827,7 @@ print(f"   Final: f(x₅₀) = {history1['f'][-1]:.10f}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.special import gamma, zeta
 
@@ -896,7 +897,7 @@ print("\n  Known first 5 zeros:", [f"{z:.6f}" for z in known_zeros])
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.fft import fftn, ifftn, fftfreq
 
@@ -1008,7 +1009,7 @@ print(f"Time simulated: {T}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import itertools
+                <pre><code class="language-python">import itertools
 import time
 
 def brute_force_sat(formula, n_vars):
@@ -1119,7 +1120,7 @@ for n in range(4, 21, 4):
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def mandelbrot(c, max_iter=100, escape_radius=2.0):

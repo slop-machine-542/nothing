@@ -6,16 +6,21 @@
     <meta name="description" content="Daily Math Digest - Harmonic Analysis, Algebraic Topology, Ergodic Theory, Information Theory, Game Theory, Mathematical Physics, Twin Primes, Hodge Conjecture, Mandelbrot Set, Banach-Tarski Paradox">
     <title>Daily Math Digest - February 16, 2026</title>
     
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']]
-            }
-        };
-    </script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']],
+    processEscapes: true
+  },
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady();
+    }
+  }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -165,7 +170,7 @@
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from scipy.fft import fft, fftfreq
 
@@ -317,7 +322,7 @@ print(f"Rectangle: Δx={dx_r:.4f}, Δξ={dxi_r:.4f}, product={unc_r:.6f}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from scipy.sparse import csr_matrix
 from scipy.sparse.csgraph import connected_components
 
@@ -408,7 +413,7 @@ print(f"  b_0 = {compute_betti_numbers_simplified(k4)}")
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def circle_rotation(x, alpha):
@@ -532,7 +537,7 @@ for n in n_iterations:
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import heapq
 
 class HuffmanNode:
@@ -660,7 +665,7 @@ for letter in ['E', 'T', 'A', 'Q', 'Z']:
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 
 def compute_nash_equilibrium_2x2(payoff_A, payoff_B):
     """
@@ -779,7 +784,7 @@ for p, q, typ in eqs:
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
 
@@ -885,7 +890,7 @@ print(f"   Angular momentum variation: {max(angular_momentum) - min(angular_mome
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def sieve_of_eratosthenes(n):
@@ -994,7 +999,7 @@ for i, (p, q) in enumerate(twins_small[:20]):
                 </div>
 
                 <h4>Python Implementation (Illustrative)</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 print("="*60)
@@ -1120,7 +1125,7 @@ print("="*60)
                 </div>
 
                 <h4>Python Implementation</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
 def mandelbrot_iteration(c, max_iter=100, escape_radius=2.0):
@@ -1254,7 +1259,7 @@ print("="*60)
                 </ul>
 
                 <h4>Python Implementation (Illustrative)</h4>
-                <pre><code>import numpy as np
+                <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
