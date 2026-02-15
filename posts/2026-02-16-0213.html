@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily Math Digest - Complex Analysis, Graph Theory, Measure Theory, and More">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Daily Math Digest - February 16, 2026</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --bg: #f8f9fa;
+            --text: #333;
+            --code-bg: #f4f4f4;
+            --border: #ddd;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 10px 0 0; opacity: 0.9; font-size: 1.1rem; }
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        nav a:hover { color: var(--secondary); }
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .topic-card {
+            margin: 25px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 8px 8px 0;
+        }
+        .topic-card h3 { color: var(--primary); margin-top: 0; }
+        .topic-card h4 { color: var(--secondary); margin-top: 20px; }
+        .theorem {
+            background: #e8f4f8;
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .theorem-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .proof {
+            background: #fff8e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .proof-title {
+            font-weight: bold;
+            color: #d68910;
+            margin-bottom: 10px;
+        }
+        .notation-box {
+            background: #f0f7ff;
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .notation-box h4 { margin-top: 0; color: var(--secondary); }
+        pre {
+            background: var(--code-bg);
+            padding: 20px;
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        pre code { background: none; padding: 0; }
+        .links-list { list-style: none; padding: 0; }
+        .links-list li {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+        }
+        .links-list a {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .links-list a:hover { text-decoration: underline; }
+        .links-list .description {
+            color: #666;
+            margin: 5px 0 0;
+            font-size: 0.95rem;
+        }
+        .book-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .book-highlight h3 { margin-top: 0; }
+        .book-highlight a { color: #ffd700; font-weight: 600; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary);
+        }
+        .timeline-item {
+            position: relative;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        ul { padding-left: 20px; }
+        li { margin: 8px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📐 Daily Math Digest</h1>
+        <p>Complex Analysis • Graph Theory • Measure Theory • Special Topics</p>
+        <p style="font-size: 0.9rem; margin-top: 15px;">February 16, 2026</p>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="../index.html">← Daily Math Digest</a>
+            <div>
+                <a href="../index.html">Home</a> | 
+                <a href="./">All Posts</a> | 
+                <a href="https://github.com/slop-machine-542/nothing">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section">
+            <h2 class="section-title">🔗 Today's Math Links</h2>
+            <ul class="links-list">
+                <li>
+                    <a href="https://en.wikipedia.org/wiki/Riemann_surface" target="_blank">Riemann Surfaces - Wikipedia</a>
+                    <p class="description">One-dimensional complex manifolds that generalize the complex plane, fundamental to algebraic geometry and complex analysis.</p>
+                </li>
+                <li>
+                    <a href="https://www.quantamagazine.org/" target="_blank">Quanta Magazine</a>
+                    <p class="description">Award-winning coverage of cutting-edge mathematics, physics, and computer science research.</p>
+                </li>
+                <li>
+                    <a href="https://www.3blue1brown.com/" target="_blank">3Blue1Brown</a>
+                    <p class="description">Grant Sanderson's beautiful animated explanations of mathematics, from linear algebra to calculus and beyond.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📖 Free Math Book of the Day</h2>
+            <div class="book-highlight">
+                <h3>Complex Analysis by George Cain</h3>
+                <p>A comprehensive, open-source textbook covering analytic functions, complex integration, series representations, residue theory, and conformal mapping. Perfect for undergraduate and beginning graduate students.</p>
+                <p><a href="http://people.math.gatech.edu/~cain/winter99/complex.html" target="_blank">📥 Read Free at Georgia Tech</a></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🔬 Pure Math Deep Dives</h2>
+
+            <div class="topic-card">
+                <h3>1. Complex Analysis: Cauchy's Integral Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Complex analysis, the study of functions of a complex variable, is one of the most elegant and powerful branches of mathematics. Unlike real analysis, where differentiable functions can be poorly behaved, complex differentiability imposes remarkable constraints that lead to beautiful and useful theorems.</p>
+                
+                <p><strong>Cauchy's Integral Theorem</strong> is the cornerstone of complex analysis. It states that the integral of a holomorphic function around a closed contour is zero, provided the function is well-behaved inside. This seemingly simple result has profound consequences, including the ability to compute real integrals using complex methods.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\mathbb{C}\\) — the field of complex numbers \\(a + bi\\) where \\(a, b \\in \\mathbb{R}\\) and \\(i^2 = -1\\)</li>
+                        <li>\\(f: U \\to \\mathbb{C}\\) — a complex-valued function on an open set \\(U \\subseteq \\mathbb{C}\\)</li>
+                        <li>\\(f'(z)\\) — the complex derivative: \\(\\lim_{h \\to 0} \\frac{f(z+h) - f(z)}{h}\\)</li>
+                        <li><strong>Holomorphic</strong> — complex differentiable at every point in a domain</li>
+                        <li>\\(\\gamma\\) — a piecewise smooth closed curve (contour) in \\(\\mathbb{C}\\)</li>
+                        <li>\\(\\oint_\\gamma f(z)\\, dz\\) — contour integral of \\(f\\) around \\(\\gamma\\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Cauchy's Integral Theorem</div>
+                    <p>Let \\(U \\subseteq \\mathbb{C}\\) be a simply connected open set, and let \\(f: U \\to \\mathbb{C}\\) be holomorphic on \\(U\\). If \\(\\gamma\\) is any piecewise smooth closed curve in \\(U\\), then:</p>
+                    <p>\\[\\oint_\\gamma f(z)\\, dz = 0\\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof (using Green's Theorem)</div>
+                    <p><strong>Step 1:</strong> Write \\(f(z) = u(x,y) + iv(x,y)\\) where \\(z = x + iy\\), and \\(u, v\\) are real-valued functions.</p>
+                    
+                    <p><strong>Step 2:</strong> The complex derivative condition \\(f'(z)\\) existing implies the <strong>Cauchy-Riemann equations</strong>:</p>
+                    <p>\\[\\frac{\\partial u}{\\partial x} = \\frac{\\partial v}{\\partial y} \\quad \\text{and} \\quad \\frac{\\partial u}{\\partial y} = -\\frac{\\partial v}{\\partial x}\\]</p>
+                    
+                    <p><strong>Step 3:</strong> Write the contour integral as:</p>
+                    <p>\\[\\oint_\\gamma f(z)\\, dz = \\oint_\\gamma (u\\, dx - v\\, dy) + i\\oint_\\gamma (v\\, dx + u\\, dy)\\]</p>
+                    
+                    <p><strong>Step 4:</strong> Apply <strong>Green's Theorem</strong> to each real line integral.</p>
+                    
+                    <p><strong>Step 5:</strong> For the real part, using the Cauchy-Riemann equations, we get 0.</p>
+                    
+                    <p><strong>Step 6:</strong> Similarly, the imaginary part equals 0.</p>
+                    
+                    <p><strong>Therefore:</strong> Both real and imaginary parts are zero, so \\(\\oint_\\gamma f(z)\\, dz = 0\\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def contour_integral(func, center, radius, n=1000):
+    """Compute contour integral around a circle."""
+    t = np.linspace(0, 2*np.pi, n, endpoint=False)
+    z = center + radius * np.exp(1j * t)
+    dz = 1j * radius * np.exp(1j * t) * (2*np.pi / n)
+    integrand = func(z)
+    return np.sum(integrand * dz)
+
+# Test Cauchy's theorem
+print("Cauchy's Integral Theorem Verification")
+print("=" * 60)
+
+# Holomorphic functions
+f1 = lambda z: z**2  # Entire
+f2 = lambda z: np.exp(z)  # Entire
+
+# Test with unit circle
+center, radius = 0j, 1.0
+
+print(f"\\nContour: Circle centered at {center} with radius {radius}")
+print(f"∫ z² dz = {contour_integral(f1, center, radius):.2e} (should be ≈ 0)")
+print(f"∫ e^z dz = {contour_integral(f2, center, radius):.2e} (should be ≈ 0)")
+
+# Cauchy's Integral Formula
+def cauchy_integral_formula(f, z0, center, radius, n=1000):
+    """Compute f(z0) using Cauchy's Integral Formula."""
+    t = np.linspace(0, 2*np.pi, n, endpoint=False)
+    z = center + radius * np.exp(1j * t)
+    dz = 1j * radius * np.exp(1j * t) * (2*np.pi / n)
+    integrand = f(z) / (z - z0)
+    return np.sum(integrand * dz) / (2j * np.pi)
+
+# Test: f(z) = z³, compute f(0.5)
+z0 = 0.5 + 0.3j
+f = lambda z: z**3
+computed = cauchy_integral_formula(f, z0, 0j, 1.0)
+actual = f(z0)
+
+print(f"\\nCauchy's Integral Formula:")
+print(f"f(z) = z³, z₀ = {z0}")
+print(f"Actual f(z₀) = {actual}")
+print(f"Computed via Cauchy = {computed}")
+print(f"Error = {abs(computed - actual):.2e}")
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. Graph Theory: Euler's Formula for Planar Graphs</h3>
+                
+                <h4>Introduction</h4>
+                <p>Graph theory, the study of networks of vertices connected by edges, has applications ranging from social networks to computer science to chemistry. One of the most beautiful and fundamental results is <strong>Euler's Formula</strong>, which relates the number of vertices, edges, and faces in any planar graph.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(G = (V, E)\\) — a graph with vertex set \\(V\\) and edge set \\(E\\)</li>
+                        <li>\\(|V|\\) or \\(v\\) — number of vertices</li>
+                        <li>\\(|E|\\) or \\(e\\) — number of edges</li>
+                        <li>\\(F\\) or \\(f\\) — number of faces (including the outer face)</li>
+                        <li><strong>Planar graph</strong> — can be drawn on a plane without edge crossings</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Euler's Formula for Planar Graphs</div>
+                    <p>For any connected planar graph \\(G\\) drawn in the plane without edge crossings:</p>
+                    <p>\\[V - E + F = 2\\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof (by induction on edges)</div>
+                    <p><strong>Base Case:</strong> A tree has \\(F = 1\\) and \\(E = V - 1\\). Thus:</p>
+                    <p>\\[V - (V - 1) + 1 = 2\\]</p>
+                    
+                    <p><strong>Inductive Step:</strong> Assume true for graphs with fewer than \\(E\\) edges.</p>
+                    
+                    <p>If \\(G\\) contains a cycle, remove one edge \\(e\\). The resulting graph has:</p>
+                    <ul>
+                        <li>\\(V' = V\\) (same vertices)</li>
+                        <li>\\(E' = E - 1\\) (one fewer edge)</li>
+                        <li>\\(F' = F - 1\\) (removing cycle edge merges two faces)</li>
+                    </ul>
+                    
+                    <p>By induction: \\(V - (E-1) + (F-1) = V - E + F = 2\\). ∎</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Corollary: Edge Bound for Planar Graphs</div>
+                    <p>For any simple connected planar graph with \\(V \\geq 3\\):</p>
+                    <p>\\[E \\leq 3V - 6\\]</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import networkx as nx
+
+print("Euler's Formula Verification")
+print("=" * 60)
+
+# Platonic solids as planar graphs
+graphs = [
+    ("Tetrahedron (K₄)", nx.complete_graph(4)),
+    ("Cube", nx.cubical_graph()),
+    ("Octahedron", nx.octahedral_graph()),
+    ("Dodecahedron", nx.dodecahedral_graph()),
+    ("Icosahedron", nx.icosahedral_graph()),
+]
+
+for name, G in graphs:
+    V = G.number_of_nodes()
+    E = G.number_of_edges()
+    F = 2 - V + E  # From Euler's formula
+    is_planar = nx.check_planarity(G)[0]
+    
+    print(f"\\n{name}:")
+    print(f"  V = {V}, E = {E}, F = {F}")
+    print(f"  V - E + F = {V - E + F}")
+    print(f"  Planar: {is_planar}")
+    print(f"  Edge bound (3V-6={3*V-6}): {E <= 3*V - 6}")
+
+# K5 is non-planar
+K5 = nx.complete_graph(5)
+print(f"\\nK₅ (complete graph on 5 vertices):")
+print(f"  V = {K5.number_of_nodes()}, E = {K5.number_of_edges()}")
+print(f"  Planar: {nx.check_planarity(K5)[0]}")
+print(f"  Edge bound check: E = {K5.number_of_edges()}, 3V-6 = {3*5 - 6}")
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. Measure Theory: The Lebesgue Integral</h3>
+                
+                <h4>Introduction</h4>
+                <p>Measure theory provides the rigorous foundation for modern analysis, probability, and many areas of mathematics. Developed by Henri Lebesgue in the early 20th century, it overcomes limitations of the Riemann integral by allowing integration of a much broader class of functions.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(m(E)\\) or \\(\\mu(E)\\) — Lebesgue measure of set \\(E\\)</li>
+                        <li>\\(\\int_E f\\, d\\mu\\) — Lebesgue integral of \\(f\\) over \\(E\\)</li>
+                        <li>\\(\\chi_E\\) — characteristic function of set \\(E\\)</li>
+                        <li><strong>Measurable set</strong> — a set for which Lebesgue measure is defined</li>
+                        <li>\\(\\mathcal{L}^1\\) — space of Lebesgue integrable functions</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Monotone Convergence Theorem</div>
+                    <p>Let \\((f_n)_{n=1}^\\infty\\) be a sequence of non-negative measurable functions with \\(f_n \\leq f_{n+1}\\) a.e. Let \\(f = \\lim_{n \\to \\infty} f_n\\). Then:</p>
+                    <p>\\[\\lim_{n \\to \\infty} \\int f_n\\, d\\mu = \\int f\\, d\\mu\\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch</div>
+                    <p><strong>Step 1:</strong> Since \\(f_n \\leq f_{n+1}\\), we have \\(\\int f_n \\leq \\int f_{n+1}\\), so the limit exists.</p>
+                    
+                    <p><strong>Step 2:</strong> Since \\(f_n \\leq f\\), we have \\(\\lim \\int f_n \\leq \\int f\\).</p>
+                    
+                    <p><strong>Step 3:</strong> For the reverse inequality, use the definition of Lebesgue integral via simple functions.</p>
+                    
+                    <p><strong>Step 4:</strong> For any simple \\(s \\leq f\\), show \\(\\lim \\int f_n \\geq \\int s\\).</p>
+                    
+                    <p><strong>Step 5:</strong> Taking supremum over all such \\(s\\) gives \\(\\lim \\int f_n \\geq \\int f\\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def monotone_convergence_demo():
+    """
+    Demonstrate Monotone Convergence Theorem.
+    f_n(x) = floor(n*x)/n converges to f(x) = x on [0,1].
+    """
+    x = np.linspace(0, 1, 1000)
+    
+    print("Monotone Convergence Theorem Demonstration")
+    print("=" * 60)
+    print("f_n(x) = floor(n*x)/n converges to f(x) = x on [0,1]")
+    print()
+    
+    n_values = [1, 2, 5, 10, 20, 50, 100]
+    integrals = []
+    
+    for n in n_values:
+        f_n = np.floor(n * x) / n
+        integral = np.trapz(f_n, x)
+        integrals.append(integral)
+        print(f"n = {n:3d}: ∫f_n = {integral:.6f}")
+    
+    print(f"\\nLimit: ∫x dx = 0.5")
+    print(f"Final approximation: {integrals[-1]:.6f}")
+    print(f"Error: {abs(0.5 - integrals[-1]):.2e}")
+
+monotone_convergence_demo()
+</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🛠️ Applied Math Deep Dives</h2>
+
+            <div class="topic-card">
+                <h3>1. Linear Algebra: Singular Value Decomposition (SVD)</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>Singular Value Decomposition (SVD)</strong> is arguably the most important matrix factorization in applied mathematics. It reveals the fundamental structure of any matrix and provides the foundation for principal component analysis, data compression, and numerical linear algebra.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(A \\in \\mathbb{R}^{m \\times n}\\) — an \\(m \\times n\\) real matrix</li>
+                        <li>\\(U \\in \\mathbb{R}^{m \\times m}\\) — orthogonal matrix (\\(U^T U = I_m\\))</li>
+                        <li>\\(\\Sigma \\in \\mathbb{R}^{m \\times n}\\) — diagonal with \\(\\sigma_1 \\geq \\sigma_2 \\geq \\cdots \\geq 0\\)</li>
+                        <li>\\(V \\in \\mathbb{R}^{n \\times n}\\) — orthogonal matrix (\\(V^T V = I_n\\))</li>
+                        <li>\\(\\sigma_i\\) — singular values of \\(A\\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Singular Value Decomposition</div>
+                    <p>Every matrix \\(A \\in \\mathbb{R}^{m \\times n}\\) can be factored as:</p>
+                    <p>\\[A = U\\Sigma V^T\\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Eckart-Young-Mirsky Theorem</div>
+                    <p>Let \\(A = \\sum_{i=1}^r \\sigma_i u_i v_i^T\\). The best rank-\\(k\\) approximation is:</p>
+                    <p>\\[A_k = \\sum_{i=1}^k \\sigma_i u_i v_i^T\\]</p>
+                    <p>with error \\(\\|A - A_k\\|_2 = \\sigma_{k+1}\\).</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Create test matrix
+np.random.seed(42)
+A = np.random.randn(100, 50)
+
+# Compute SVD
+U, S, Vt = np.linalg.svd(A, full_matrices=False)
+
+print("Singular Value Decomposition Demo")
+print("=" * 60)
+print(f"Matrix shape: {A.shape}")
+print(f"Number of singular values: {len(S)}")
+print(f"Top 10 singular values: {S[:10].round(2)}")
+
+# Low-rank approximation
+k = 10
+A_k = U[:, :k] @ np.diag(S[:k]) @ Vt[:k, :]
+
+error = np.linalg.norm(A - A_k, 'fro') / np.linalg.norm(A, 'fro')
+print(f"\\nRank-{k} approximation error: {error:.4f}")
+
+# Compression ratio
+original = A.shape[0] * A.shape[1]
+compressed = k * (A.shape[0] + 1 + A.shape[1])
+print(f"Compression ratio: {original/compressed:.1f}x")
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. Differential Equations: Existence and Uniqueness</h3>
+                
+                <h4>Introduction</h4>
+                <p>Before attempting to solve an ODE, a fundamental question arises: <em>does a solution exist, and if so, is it unique?</em> The <strong>Picard-Lindelöf theorem</strong> provides elegant sufficient conditions.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\frac{dy}{dt} = f(t, y)\\) — first-order ODE</li>
+                        <li>\\(y(t_0) = y_0\\) — initial condition</li>
+                        <li><strong>Lipschitz condition</strong>: \\(|f(t, y_1) - f(t, y_2)| \\leq L|y_1 - y_2|\\)</li>
+                        <li>\\(L\\) — Lipschitz constant</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Picard-Lindelöf Theorem</div>
+                    <p>Consider \\(\\frac{dy}{dt} = f(t, y), \\quad y(t_0) = y_0\\). If \\(f\\) is continuous in \\(t\\) and Lipschitz in \\(y\\), then there exists a unique solution locally.</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from scipy.integrate import odeint
+
+print("Picard-Lindelöf Theorem Demonstration")
+print("=" * 60)
+
+# Example 1: Linear ODE (unique solution guaranteed)
+print("\\n1. dy/dt = -y, y(0) = 1")
+print("   Solution: y(t) = e^(-t)")
+print("   Lipschitz constant L = 1")
+
+# Example 2: Non-Lipschitz ODE (multiple solutions possible)
+print("\\n2. dy/dt = sqrt(|y|), y(0) = 0")
+print("   Multiple solutions exist!")
+print("   Reason: f(y) = sqrt(|y|) is NOT Lipschitz at y=0")
+
+def f1(y, t):
+    return -y
+
+def f2(y, t):
+    return np.sqrt(np.abs(y))
+
+t = np.linspace(0, 2, 100)
+y1 = odeint(f1, 1, t)
+
+print("\\nNumerical solution for case 1 computed successfully.")
+print("Unique solution guaranteed by Picard-Lindelöf.")
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. Optimization: Gradient Descent Convergence</h3>
+                
+                <h4>Introduction</h4>
+                <p>Gradient descent and its variants power modern machine learning. For <strong>convex functions</strong> with <strong>Lipschitz continuous gradients</strong>, gradient descent enjoys guaranteed convergence.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(f: \\mathbb{R}^n \\to \\mathbb{R}\\) — objective function</li>
+                        <li>\\(\\nabla f(x)\\) — gradient</li>
+                        <li>\\(x^*\\) — optimal solution</li>
+                        <li><strong>L-smooth</strong>: \\(\\|\\nabla f(x) - \\nabla f(y)\\| \\leq L\\|x - y\\|\\)</li>
+                        <li>\\(\\kappa = L/\\mu\\) — condition number</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Convergence for L-Smooth Convex Functions</div>
+                    <p>With step size \\(\\eta = \\frac{1}{L}\\):</p>
+                    <p>\\[f(x_k) - f^* \\leq \\frac{2L\\|x_0 - x^*\\|^2}{k}\\]</p>
+                    <p>This is \\(O(1/k)\\) convergence.</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Linear Convergence for Strongly Convex</div>
+                    <p>If \\(f\\) is \\(\\mu\\)-strongly convex and L-smooth:</p>
+                    <p>\\[f(x_k) - f^* \\leq \\left(1 - \\frac{1}{\\kappa}\\right)^k (f(x_0) - f^*)\\]</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+
+def gradient_descent(f, grad_f, x0, step_size, n_iterations):
+    """Standard gradient descent."""
+    x = x0.copy()
+    history = []
+    
+    for k in range(n_iterations):
+        history.append(f(x))
+        grad = grad_f(x)
+        x = x - step_size * grad
+    
+    return x, history
+
+# Quadratic function: f(x) = 0.5 * x^T A x - b^T x
+A = np.diag([1.0, 10.0])  # Condition number = 10
+b = np.array([1.0, 2.0])
+
+f = lambda x: 0.5 * x.T @ A @ x - b.T @ x
+grad_f = lambda x: A @ x - b
+
+x0 = np.array([5.0, 8.0])
+L = 10.0  # Lipschitz constant
+step_size = 1.0 / L
+
+x_opt, history = gradient_descent(f, grad_f, x0, step_size, 100)
+
+print("Gradient Descent Convergence")
+print("=" * 60)
+print(f"Condition number: κ = 10")
+print(f"Initial f(x): {history[0]:.6f}")
+print(f"Final f(x): {history[-1]:.6f}")
+print(f"Optimal f*: {f(np.linalg.solve(A, b)):.6f}")
+</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🎯 Special Topics</h2>
+
+            <div class="topic-card">
+                <h3>1. Surreal Numbers</h3>
+                
+                <h4>Introduction</h4>
+                <p>Conceived by John Conway and popularized by Donald Knuth, <strong>surreal numbers</strong> extend the real numbers to include infinite and infinitesimal quantities in a coherent framework.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\{L | R\\}\\) — surreal number notation</li>
+                        <li>\\(\\omega\\) — simplest infinite surreal</li>
+                        <li>\\(\\varepsilon\\) — infinitesimal</li>
+                        <li><strong>Birthday</strong> — ordinal at which a surreal is created</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Conway's Simplicity Theorem</div>
+                    <p>If \\(L\\) and \\(R\\) are sets of surreals with every element of \\(L\\) less than every element of \\(R\\), then there exists a unique simplest surreal \\(x = \\{L | R\\}\\) with \\(x^L < x < x^R\\).</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>class SurrealNumber:
+    """Simple implementation of dyadic surreal numbers."""
+    
+    def __init__(self, value=None, name=None):
+        self.value = value
+        self.name = name
+    
+    def __repr__(self):
+        return self.name if self.name else str(self.value)
+
+# Basic surreal numbers
+Zero = SurrealNumber(0, "0")
+One = SurrealNumber(1, "1")
+MinusOne = SurrealNumber(-1, "-1")
+Half = SurrealNumber(0.5, "1/2")
+
+print("Surreal Numbers")
+print("=" * 60)
+print(f"0 = {Zero}")
+print(f"1 = {One}")
+print(f"-1 = {MinusOne}")
+print(f"1/2 = {Half}")
+print("\\nKey insight: Surreals are constructed inductively by 'birthday'")
+print("On day n, all dyadic rationals with denominator 2^n appear.")
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. Fractals: The Mandelbrot Set</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>Mandelbrot set</strong>, discovered by Benoit Mandelbrot in 1980, is perhaps the most famous fractal. Its boundary exhibits infinite complexity at every scale.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(f_c(z) = z^2 + c\\) — quadratic polynomial</li>
+                        <li>\\(M = \\{c : \\sup_n |f_c^n(0)| < \\infty\\}\\) — Mandelbrot set</li>
+                        <li><strong>Escape radius</strong>: \\(|z| > 2\\) implies escape</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Escape Criterion</div>
+                    <p>If \\(|z| > \\max(2, |c|)\\), then \\(|f_c^n(z)| \\to \\infty\\). The Mandelbrot set is contained in \\(|c| \\leq 2\\).</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    """Compute Mandelbrot iterations for complex c."""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+# Compute Mandelbrot set
+width, height = 800, 600
+xmin, xmax = -2.5, 1.0
+ymin, ymax = -1.25, 1.25
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Vectorized computation
+M = np.vectorize(mandelbrot)(C)
+
+print("Mandelbrot Set")
+print("=" * 60)
+print(f"Grid: {width} x {height}")
+print(f"Region: [{xmin}, {xmax}] x [{ymin}, {ymax}]")
+print(f"Points in set (black): {np.sum(M == 100)} / {M.size}")
+
+# The set is connected (theorem by Douady and Hubbard, 1980s)
+print("\\nTheorem: The Mandelbrot set is connected.")
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. Chaos Theory: The Lorenz Attractor</h3>
+                
+                <h4>Introduction</h4>
+                <p>In 1963, Edward Lorenz discovered one of the first examples of <strong>deterministic chaos</strong>—a system governed by simple equations that exhibits unpredictable behavior. This led to the famous "butterfly effect."</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\sigma\\) — Prandtl number</li>
+                        <li>\\(\\rho\\) — Rayleigh number</li>
+                        <li>\\(\\beta\\) — geometric factor</li>
+                        <li>\\(\\lambda\\) — Lyapunov exponent</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Lorenz System</div>
+                    <p>\\[\\begin{aligned}
+    \\dot{x} &= \\sigma(y - x) \\\\[4pt]
+    \\dot{y} &= x(\\rho - z) - y \\\\[4pt]
+    \\dot{z} &= xy - \\beta z
+                    \\end{aligned}\\]</p>
+                    <p>with classic parameters \\(\\sigma = 10\\), \\(\\rho = 28\\), \\(\\beta = 8/3\\).</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from scipy.integrate import odeint
+
+# Lorenz parameters
+sigma, rho, beta = 10.0, 28.0, 8.0/3.0
+
+def lorenz(state, t):
+    """Lorenz system equations."""
+    x, y, z = state
+    dxdt = sigma * (y - x)
+    dydt = x * (rho - z) - y
+    dzdt = x * y - beta * z
+    return [dxdt, dydt, dzdt]
+
+# Initial conditions
+state0 = [1.0, 1.0, 1.0]
+t = np.linspace(0, 50, 5000)
+
+# Solve
+solution = odeint(lorenz, state0, t)
+x, y, z = solution[:, 0], solution[:, 1], solution[:, 2]
+
+print("Lorenz Attractor")
+print("=" * 60)
+print(f"Parameters: σ={sigma}, ρ={rho}, β={beta:.4f}")
+print(f"Initial state: {state0}")
+print(f"Final state: [{x[-1]:.4f}, {y[-1]:.4f}, {z[-1]:.4f}]")
+
+# Demonstrate sensitive dependence
+state0_perturbed = [1.0001, 1.0, 1.0]
+solution2 = odeint(lorenz, state0_perturbed, t)
+x2 = solution2[:, 0]
+
+print(f"\\nSensitive dependence on initial conditions:")
+print(f"Initial difference: 0.0001")
+print(f"Difference at t=50: {abs(x[-1] - x2[-1]):.4f}")
+print("\\nThis is the 'butterfly effect'!")
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>4. Game Theory: Nash Equilibrium</h3>
+                
+                <h4>Introduction</h4>
+                <p><strong>Nash Equilibrium</strong>, named after John Nash, is a fundamental concept in game theory where no player can benefit by unilaterally changing their strategy. It revolutionized economics and earned Nash the 1994 Nobel Prize in Economics.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(G = (N, (S_i), (u_i))\\) — a game with players \\(N\\), strategy sets \\(S_i\\), and utilities \\(u_i\\)</li>
+                        <li>\\(s_{-i}\\) — strategies of all players except \\(i\\)</li>
+                        <li>\\(BR_i(s_{-i})\\) — best response of player \\(i\\)</li>
+                        <li><strong>Mixed strategy</strong> — probability distribution over pure strategies</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Nash's Existence Theorem (1950)</div>
+                    <p>Every finite game has at least one Nash equilibrium in mixed strategies.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (via Brouwer Fixed-Point)</div>
+                    <p><strong>Step 1:</strong> Define the best response correspondence \\(BR\\) mapping strategy profiles to sets of best responses.</p>
+                    
+                    <p><strong>Step 2:</strong> Show \\(BR\\) is upper hemicontinuous with non-empty convex values.</p>
+                    
+                    <p><strong>Step 3:</strong> Apply Kakutani's fixed-point theorem (or Brouwer for smooth approximations).</p>
+                    
+                    <p><strong>Step 4:</strong> A fixed point of \\(BR\\) is a Nash equilibrium. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from scipy.optimize import minimize
+
+print("Nash Equilibrium")
+print("=" * 60)
+
+# Prisoner's Dilemma payoff matrix
+# (Player 1 payoff, Player 2 payoff)
+#        C       D
+# C   (3,3)   (0,5)
+# D   (5,0)   (1,1)
+
+payoff_p1 = np.array([[3, 0], [5, 1]])  # Player 1 payoff
+payoff_p2 = np.array([[3, 5], [0, 1]])  # Player 2 payoff
+
+print("\\nPrisoner's Dilemma:")
+print("Player 1 payoff matrix:")
+print(payoff_p1)
+print("\\nPlayer 2 payoff matrix:")
+print(payoff_p2)
+
+print("\\nAnalysis:")
+print("- If P2 cooperates: P1 gets 3 (C) vs 5 (D) → Defect")
+print("- If P2 defects: P1 gets 0 (C) vs 1 (D) → Defect")
+print("\\nNash Equilibrium: (Defect, Defect) with payoffs (1, 1)")
+print("This is Pareto inefficient! (Cooperate, Cooperate) gives (3,3)")
+
+# Verify Nash equilibrium
+def expected_payoff(p1_strategy, p2_strategy, payoff):
+    """Calculate expected payoff given mixed strategies."""
+    return p1_strategy @ payoff @ p2_strategy
+
+# Nash equilibrium: both defect with probability 1
+nash_p1 = np.array([0, 1])  # [P(Cooperate), P(Defect)]
+nash_p2 = np.array([0, 1])
+
+print(f"\\nAt Nash equilibrium:")
+print(f"P1 expected payoff: {expected_payoff(nash_p1, nash_p2, payoff_p1)}")
+print(f"P2 expected payoff: {expected_payoff(nash_p1, nash_p2, payoff_p2)}")
+
+# Verify neither can improve by deviating
+defect_payoff_p1 = expected_payoff(np.array([0, 1]), nash_p2, payoff_p1)
+cooperate_payoff_p1 = expected_payoff(np.array([1, 0]), nash_p2, payoff_p1)
+print(f"\\nIf P1 deviates to Cooperate: payoff = {cooperate_payoff_p1}")
+print(f"P1 cannot improve by deviating: {cooperate_payoff_p1 <= defect_payoff_p1}")
+</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📜 Today in Math History</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">1821</span>
+                    <p><strong>Cauchy's Cours d'Analyse</strong> — Augustin-Louis Cauchy publishes his "Cours d'Analyse," establishing rigorous foundations for calculus and analysis, including his famous integral theorem.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1750</span>
+                    <p><strong>Euler's Formula</strong> — Leonhard Euler presents his formula for polyhedra (\\(V - E + F = 2\\)), laying the foundation for topology and graph theory.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1902</span>
+                    <p><strong>Lebesgue Integration</strong> — Henri Lebesgue introduces his theory of integration in his doctoral dissertation, revolutionizing real analysis and measure theory.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1931</span>
+                    <p><strong>Birkhoff's Ergodic Theorem</strong> — George Birkhoff proves the ergodic theorem, fundamental to chaos theory and dynamical systems.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1950</span>
+                    <p><strong>Nash Equilibrium</strong> — John Nash publishes his proof that every finite game has an equilibrium point, founding modern game theory.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1976</span>
+                    <p><strong>Four Color Theorem</strong> — Kenneth Appel and Wolfgang Haken prove the Four Color Theorem using computer assistance, the first major theorem proved this way.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1980</span>
+                    <p><strong>Mandelbrot Set</strong> — Benoit Mandelbrot discovers and visualizes the set that now bears his name, bringing fractals to public attention.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Daily Math Digest — February 16, 2026</p>
+        <p>Exploring the beauty and depth of mathematics, one day at a time.</p>
+    </footer>
+</body>
+</html>
