@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse posts by tag - Daily Math Digest">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Tags - Daily Math Digest</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Daily Math Digest</h1>
+        <p class="site-description">
+            Browse Posts by Tag
+        </p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="./index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section">
+            <h2>🏷️ Tags</h2>
+            <p>Explore mathematical content organized by topic. Click on a tag to see related posts.</p>
+            
+            <div class="tags-cloud" id="tags-cloud">
+                <!-- Tags will be generated here -->
+            </div>
+        </section>
+
+        <section class="section" id="tag-sections">
+            <!-- Tag sections will be generated here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Daily Math Digest</strong> — Powered by curiosity and mathematics.
+        </p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> | 
+            <a href="../index.html">Home</a> |
+            <a href="../posts/index.html">All Posts</a>
+        </p>
+    </footer>
+
+    <script>
+        // Posts data with tags
+        const posts = [
+            {
+                title: "Daily Math Digest - Algebraic Geometry, Differential Geometry, Combinatorics, Functional Analysis, and Special Topics",
+                date: "February 16, 2026 (09:13)",
+                file: "posts/2026-02-16-0913.html",
+                tags: ["algebraic-geometry", "differential-geometry", "combinatorics", "functional-analysis", "pure-math", "special-topics"]
+            },
+            {
+                title: "Daily Math Digest - Complex Analysis, Real Analysis, Algebraic Geometry, Statistics, Differential Equations, Optimization",
+                date: "February 16, 2026 (08:13)",
+                file: "posts/2026-02-16-0813.html",
+                tags: ["complex-analysis", "real-analysis", "algebraic-geometry", "statistics", "differential-equations", "optimization", "pure-math", "applied-math"]
+            },
+            {
+                title: "Daily Math Digest - Functional Analysis, Algebraic Topology, Combinatorics, Numerical Analysis, Cryptography, Mathematical Biology, Millennium Prize Problems",
+                date: "February 16, 2026 (05:13)",
+                file: "posts/2026-02-16-0513.html",
+                tags: ["functional-analysis", "algebraic-topology", "combinatorics", "numerical-analysis", "cryptography", "mathematical-biology", "millennium-problems", "pure-math", "applied-math"]
+            },
+            {
+                title: "Daily Math Digest - Complex Analysis, Algebraic Geometry, Differential Geometry, and Millennium Problems",
+                date: "February 16, 2026 (04:13)",
+                file: "posts/2026-02-16-0413.html",
+                tags: ["complex-analysis", "algebraic-geometry", "differential-geometry", "millennium-problems", "riemann-hypothesis", "p-vs-np", "navier-stokes", "pure-math"]
+            },
+            {
+                title: "Daily Math Digest - Complex Analysis, Graph Theory, Measure Theory, and More",
+                date: "February 16, 2026 (02:13)",
+                file: "posts/2026-02-16-0213.html",
+                tags: ["complex-analysis", "graph-theory", "measure-theory", "linear-algebra", "differential-equations", "optimization", "fractals", "chaos-theory", "game-theory", "pure-math", "applied-math"]
+            },
+            {
+                title: "Daily Math Digest - Topology, Number Theory, Abstract Algebra, Calculus, Fourier Analysis, Information Theory, Famous Conjectures",
+                date: "February 16, 2026 (01:13)",
+                file: "posts/2026-02-16-0113.html",
+                tags: ["topology", "number-theory", "abstract-algebra", "calculus", "fourier-analysis", "information-theory", "goldbach-conjecture", "collatz-conjecture", "p-adic-numbers", "pure-math", "special-topics"]
+            },
+            {
+                title: "Daily Math Digest - Homological Algebra, Category Theory, Functional Analysis, Numerical Analysis, Mathematical Physics, Cryptography, Collatz Conjecture, Goldbach Conjecture, p-adic Numbers, Chaos Theory",
+                date: "February 16, 2026 (00:13)",
+                file: "posts/2026-02-16-0013.html",
+                tags: ["homological-algebra", "category-theory", "functional-analysis", "numerical-analysis", "mathematical-physics", "cryptography", "collatz-conjecture", "goldbach-conjecture", "p-adic-numbers", "chaos-theory", "pure-math", "applied-math", "special-topics"]
+            },
+            {
+                title: "Daily Math Digest - Topology, Number Theory, Abstract Algebra, Real Analysis",
+                date: "February 15, 2026 (23:58)",
+                file: "posts/2026-02-15-2358.html",
+                tags: ["topology", "number-theory", "abstract-algebra", "real-analysis", "brouwer-fixed-point", "fermats-little-theorem", "lagranges-theorem", "collatz-conjecture", "prime-number-theorem", "goldbach-conjecture", "p-adic-numbers", "pure-math"]
+            },
+            {
+                title: "Mathematical Explorations: Topology, Number Theory, and Analysis",
+                date: "February 15, 2026 (15:54)",
+                file: "posts/2026-02-15-1554.html",
+                tags: ["topology", "number-theory", "abstract-algebra", "fundamental-group", "quadratic-reciprocity", "first-isomorphism-theorem", "collatz-conjecture", "prime-number-theorem", "goldbach-conjecture", "p-adic-numbers", "pure-math"]
+            }
+        ];
+
+        // Tag categories for organization
+        const tagCategories = {
+            "pure-math": "Pure Mathematics",
+            "applied-math": "Applied Mathematics",
+            "special-topics": "Special Topics",
+            "millennium-problems": "Millennium Prize Problems"
+        };
+
+        // Tag display names
+        const tagDisplayNames = {
+            "pure-math": "Pure Mathematics",
+            "applied-math": "Applied Mathematics",
+            "special-topics": "Special Topics",
+            "algebraic-geometry": "Algebraic Geometry",
+            "differential-geometry": "Differential Geometry",
+            "combinatorics": "Combinatorics",
+            "functional-analysis": "Functional Analysis",
+            "complex-analysis": "Complex Analysis",
+            "real-analysis": "Real Analysis",
+            "topology": "Topology",
+            "number-theory": "Number Theory",
+            "abstract-algebra": "Abstract Algebra",
+            "algebraic-topology": "Algebraic Topology",
+            "homological-algebra": "Homological Algebra",
+            "category-theory": "Category Theory",
+            "graph-theory": "Graph Theory",
+            "measure-theory": "Measure Theory",
+            "calculus": "Calculus",
+            "linear-algebra": "Linear Algebra",
+            "statistics": "Statistics",
+            "differential-equations": "Differential Equations",
+            "numerical-analysis": "Numerical Analysis",
+            "optimization": "Optimization",
+            "fourier-analysis": "Fourier Analysis",
+            "information-theory": "Information Theory",
+            "cryptography": "Cryptography",
+            "mathematical-biology": "Mathematical Biology",
+            "mathematical-physics": "Mathematical Physics",
+            "fractals": "Fractals",
+            "chaos-theory": "Chaos Theory",
+            "game-theory": "Game Theory",
+            "millennium-problems": "Millennium Prize Problems",
+            "riemann-hypothesis": "Riemann Hypothesis",
+            "p-vs-np": "P vs NP",
+            "navier-stokes": "Navier-Stokes",
+            "goldbach-conjecture": "Goldbach Conjecture",
+            "collatz-conjecture": "Collatz Conjecture",
+            "p-adic-numbers": "p-adic Numbers",
+            "fundamental-group": "Fundamental Group",
+            "quadratic-reciprocity": "Quadratic Reciprocity",
+            "first-isomorphism-theorem": "First Isomorphism Theorem",
+            "brouwer-fixed-point": "Brouwer Fixed-Point Theorem",
+            "fermats-little-theorem": "Fermat's Little Theorem",
+            "lagranges-theorem": "Lagrange's Theorem",
+            "prime-number-theorem": "Prime Number Theorem"
+        };
+
+        function getTagDisplayName(tag) {
+            return tagDisplayNames[tag] || tag.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        }
+
+        function countPostsByTag() {
+            const counts = {};
+            posts.forEach(post => {
+                post.tags.forEach(tag => {
+                    counts[tag] = (counts[tag] || 0) + 1;
+                });
+            });
+            return counts;
+        }
+
+        function getPostsByTag(tag) {
+            return posts.filter(post => post.tags.includes(tag));
+        }
+
+        function renderTagsCloud() {
+            const counts = countPostsByTag();
+            const cloud = document.getElementById('tags-cloud');
+            
+            // Sort tags by count
+            const sortedTags = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+            
+            let html = '';
+            sortedTags.forEach(tag => {
+                const count = counts[tag];
+                let sizeClass = 'tag-small';
+                if (count >= 5) sizeClass = 'tag-large';
+                else if (count >= 3) sizeClass = 'tag-medium';
+                
+                html += `<a href="#${tag}" class="tag ${sizeClass}">${getTagDisplayName(tag)} (${count})</a>`;
+            });
+            
+            cloud.innerHTML = html;
+        }
+
+        function renderTagSections() {
+            const container = document.getElementById('tag-sections');
+            const counts = countPostsByTag();
+            const sortedTags = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
+            
+            let html = '';
+            sortedTags.forEach(tag => {
+                const tagPosts = getPostsByTag(tag);
+                html += `
+                    <div class="tag-section" id="${tag}">
+                        <h3>${getTagDisplayName(tag)}</h3>
+                        <ul class="post-list">
+                            ${tagPosts.map(post => `
+                                <li class="post-item">
+                                    <a href="${post.file}">${post.title}</a>
+                                    <span class="post-date">${post.date}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Initialize
+        renderTagsCloud();
+        renderTagSections();
+
+        // Handle hash navigation
+        if (window.location.hash) {
+            const element = document.querySelector(window.location.hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

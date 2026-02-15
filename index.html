@@ -34,7 +34,8 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="posts/">All Posts</a></li>
+            <li><a href="posts/index.html">All Posts</a></li>
+            <li><a href="tags/index.html">Tags</a></li>
             <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
         </ul>
     </nav>
@@ -42,44 +43,12 @@
     <main>
         <section class="section">
             <h2>📚 Latest Posts</h2>
-            <ul class="post-list">
-                <li class="post-item">
-                    <a href="posts/2026-02-16-0913.html">Daily Math Digest - Algebraic Geometry, Differential Geometry, Combinatorics, Functional Analysis, and Special Topics</a>
-                    <span class="post-date">February 16, 2026 (09:13)</span>
-                </li>
-                <li class="post-item">
-                    <a href="posts/2026-02-16-0013.html">Daily Math Digest - Homological Algebra, Category Theory, Functional Analysis, Numerical Analysis, Cryptography, Chaos Theory</a>
-                    <span class="post-date">February 16, 2026 (00:13)</span>
-                </li>
-                <li class="post-item">
-                    <a href="posts/2026-02-16-0513.html">Daily Math Digest - Functional Analysis, Algebraic Topology, Combinatorics, Numerical Analysis, Cryptography, Mathematical Biology, Millennium Prize Problems</a>
-                    <span class="post-date">February 16, 2026 (05:13)</span>
-                </li>
-                <li class="post-item">
-                    <a href="posts/2026-02-16-0113.html">Daily Math Digest - Topology, Number Theory, Abstract Algebra, Calculus, Fourier Analysis, Information Theory, Famous Conjectures</a>
-                    <span class="post-date">February 16, 2026 (01:13)</span>
-                </li>
-                <li class="post-item">
-                    <a href="posts/2026-02-16-0813.html">Daily Math Digest - Complex Analysis, Real Analysis, Algebraic Geometry, Statistics, Differential Equations, Optimization</a>
-                    <span class="post-date">February 16, 2026 (08:13)</span>
-                </li>
-                <li class="post-item">
-                    <a href="posts/2026-02-16-0413.html">Daily Math Digest - Complex Analysis, Algebraic Geometry, Differential Geometry, and Millennium Problems</a>
-                    <span class="post-date">February 16, 2026 (04:13)</span>
-                </li>
-                <li class="post-item">
-                    <a href="posts/2026-02-16-0213.html">Daily Math Digest - Complex Analysis, Graph Theory, Measure Theory, and More</a>
-                    <span class="post-date">February 16, 2026 (02:13)</span>
-                </li>
-                <li class="post-item">
-                    <a href="posts/2026-02-15-2358.html">Daily Math Digest - Topology, Number Theory, Abstract Algebra, Real Analysis</a>
-                    <span class="post-date">February 15, 2026 (23:58)</span>
-                </li>
-                <li class="post-item">
-                    <a href="posts/2026-02-15-1554.html">Mathematical Explorations: Topology, Number Theory, and Analysis</a>
-                    <span class="post-date">February 15, 2026 (15:54)</span>
-                </li>
+            <ul class="post-list" id="latest-posts">
+                <!-- Latest 5 posts will be loaded here -->
             </ul>
+            <p style="margin-top: 20px;">
+                <a href="posts/index.html" class="tag">View All Posts →</a>
+            </p>
         </section>
 
         <section class="section">
@@ -110,7 +79,12 @@
                 <li><strong>Number Theory</strong> - Analytic number theory, prime numbers, and L-functions</li>
                 <li><strong>Analysis</strong> - Functional analysis, measure theory, and harmonic analysis</li>
                 <li><strong>Algebra</strong> - Group theory, ring theory, and field extensions</li>
+                <li><strong>Geometry</strong> - Algebraic and differential geometry</li>
+                <li><strong>Applied Math</strong> - Numerical analysis, optimization, and cryptography</li>
             </ul>
+            <p style="margin-top: 15px;">
+                <a href="tags/index.html" class="tag">Browse All Tags →</a>
+            </p>
         </section>
     </main>
 
@@ -120,11 +94,75 @@
         </p>
         <p>
             <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> | 
-            <a href="index.html">Home</a>
+            <a href="index.html">Home</a> |
+            <a href="posts/index.html">All Posts</a>
         </p>
         <p style="margin-top: 15px; font-size: 0.85rem; color: #999;">
             Generated with ❤️ for the love of mathematics.
         </p>
     </footer>
+
+    <script>
+        // Posts data - sorted by date (newest first)
+        const posts = [
+            {
+                title: "Daily Math Digest - Algebraic Geometry, Differential Geometry, Combinatorics, Functional Analysis, and Special Topics",
+                date: "February 16, 2026 (09:13)",
+                file: "posts/2026-02-16-0913.html",
+                tags: ["algebraic-geometry", "differential-geometry", "combinatorics", "functional-analysis", "pure-math", "special-topics"]
+            },
+            {
+                title: "Daily Math Digest - Complex Analysis, Real Analysis, Algebraic Geometry, Statistics, Differential Equations, Optimization",
+                date: "February 16, 2026 (08:13)",
+                file: "posts/2026-02-16-0813.html",
+                tags: ["complex-analysis", "real-analysis", "algebraic-geometry", "statistics", "differential-equations", "optimization", "pure-math", "applied-math"]
+            },
+            {
+                title: "Daily Math Digest - Functional Analysis, Algebraic Topology, Combinatorics, Numerical Analysis, Cryptography, Mathematical Biology, Millennium Prize Problems",
+                date: "February 16, 2026 (05:13)",
+                file: "posts/2026-02-16-0513.html",
+                tags: ["functional-analysis", "algebraic-topology", "combinatorics", "numerical-analysis", "cryptography", "mathematical-biology", "millennium-problems", "pure-math", "applied-math"]
+            },
+            {
+                title: "Daily Math Digest - Complex Analysis, Algebraic Geometry, Differential Geometry, and Millennium Problems",
+                date: "February 16, 2026 (04:13)",
+                file: "posts/2026-02-16-0413.html",
+                tags: ["complex-analysis", "algebraic-geometry", "differential-geometry", "millennium-problems", "riemann-hypothesis", "p-vs-np", "navier-stokes", "pure-math"]
+            },
+            {
+                title: "Daily Math Digest - Complex Analysis, Graph Theory, Measure Theory, and More",
+                date: "February 16, 2026 (02:13)",
+                file: "posts/2026-02-16-0213.html",
+                tags: ["complex-analysis", "graph-theory", "measure-theory", "linear-algebra", "differential-equations", "optimization", "fractals", "chaos-theory", "game-theory", "pure-math", "applied-math"]
+            }
+        ];
+
+        // Render latest 5 posts
+        function renderLatestPosts() {
+            const container = document.getElementById('latest-posts');
+            
+            let html = '';
+            posts.slice(0, 5).forEach(post => {
+                const tagsHtml = post.tags.slice(0, 5).map(tag => 
+                    `<a href="tags/index.html#${tag}" class="tag">${tag.replace(/-/g, ' ')}</a>`
+                ).join(' ');
+                
+                html += `
+                    <li class="post-item">
+                        <a href="${post.file}">${post.title}</a>
+                        <span class="post-date">${post.date}</span>
+                        <div class="post-tags" style="margin-top: 10px;">
+                            ${tagsHtml}
+                        </div>
+                    </li>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Initialize
+        renderLatestPosts();
+    </script>
 </body>
 </html>
