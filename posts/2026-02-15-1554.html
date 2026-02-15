@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mathematical explorations covering topology, number theory, and analysis - Daily Math Digest">
     <title>Daily Math Digest - 2026-02-15</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -14,33 +15,17 @@
             }
         };
     </script>
-    <style>
-        body {
-            font-family: Georgia, serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        h2 { color: #34495e; margin-top: 30px; border-left: 4px solid #3498db; padding-left: 15px; }
-        h3 { color: #2980b9; margin-top: 25px; }
-        h4 { color: #16a085; }
-        .section { margin-bottom: 40px; }
-        .subsection { margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 5px; }
-        pre { background: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { font-family: 'Courier New', monospace; }
-        .theorem { background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 15px 0; }
-        .proof { background: #d1ecf1; padding: 15px; border-left: 4px solid #17a2b8; margin: 15px 0; }
-        .definition { background: #d4edda; padding: 15px; border-left: 4px solid #28a745; margin: 15px 0; }
-        a { color: #3498db; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        ul { padding-left: 25px; }
-        .date { color: #7f8c8d; font-style: italic; }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./">All Posts</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
     <h1>📐 Daily Math Digest</h1>
     <p class="date">Generated: 2026-02-15 15:54 UTC</p>
 
@@ -164,8 +149,7 @@ plt.tight_layout()
 plt.savefig('winding_numbers.png', dpi=150)
 plt.show()
 
-print(f"Winding numbers computed: {wn0}, {wn1}, {wn2}")
-</code></pre>
+print(f"Winding numbers computed: {wn0}, {wn1}, {wn2}")</code></pre>
         </div>
 
         <!-- NUMBER THEORY -->
@@ -292,8 +276,7 @@ for a in range(1, p):
 print(f"{'a':>4} {'x (where x²≡a)':>15}")
 print("-" * 25)
 for a, x in residues:
-    print(f"{a:>4} {x:>15} (since {x}² = {x*x} ≡ {(x*x)%p} mod {p})")
-</code></pre>
+    print(f"{a:>4} {x:>15} (since {x}² = {x*x} ≡ {(x*x)%p} mod {p})")</code></pre>
         </div>
 
         <!-- ABSTRACT ALGEBRA -->
@@ -452,8 +435,7 @@ def isomorphism_theorem_verification():
     # Verify Lagrange's theorem: |G| = |ker(φ)| · |im(φ)|
     print(f"\nLagrange check: |ker(φ)| × |im(φ)| = {len(ker_phi)} × {len(im_phi)} = {len(ker_phi) * len(im_phi)} = |Z_12|? {len(ker_phi) * len(im_phi) == len(Z12)}")
 
-isomorphism_theorem_verification()
-</code></pre>
+isomorphism_theorem_verification()</code></pre>
         </div>
     </div>
 
@@ -574,8 +556,7 @@ for n in range(1, 10000):
         max_n = n
 
 print(f"n = {max_n} has stopping time {max_steps}")
-print(f"Max value reached: {max_value(max_n)}")
-</code></pre>
+print(f"Max value reached: {max_value(max_n)}")</code></pre>
         </div>
 
         <!-- PRIME NUMBERS -->
@@ -724,8 +705,7 @@ verify_prime_number_theorem()
 print("\n\nTwin primes under 100:")
 twins = find_twin_primes(100)
 print(twins)
-print(f"Count: {len(twins)} pairs")
-</code></pre>
+print(f"Count: {len(twins)} pairs")</code></pre>
         </div>
 
         <!-- GOLDBACH -->
@@ -847,8 +827,7 @@ def goldbach_count(limit):
 
 # Run verification
 goldbach_verification(1000)
-goldbach_count(1000)
-</code></pre>
+goldbach_count(1000)</code></pre>
         </div>
 
         <!-- P-ADIC NUMBERS -->
@@ -871,7 +850,8 @@ goldbach_count(1000)
                 <h4>Theorem: Ostrowski's Theorem</h4>
                 <p>Every nontrivial absolute value on \(\mathbb{Q}\) is equivalent to either:</p>
                 <ol>
-                    <li>The usual absolute value \(|\cdot|_{\infty}\)</li>
+                    <li>The usual absolute value \(|
+\cdot|_{\infty}\)</li>
                     <li>The p-adic absolute value \(|\cdot|_p\) for some prime \(p\)</li>
                 </ol>
                 <p>This shows the p-adic completions are, in a sense, the only alternatives to the real numbers.</p>
@@ -1026,8 +1006,7 @@ demonstrate_p_adics()
 print("\n\nFinding √(-1) in 5-adics:")
 print("We need x such that x² ≡ -1 ≡ 4 (mod 5)")
 print("Solution: x ≡ 2 or 3 (mod 5)")
-print("This lifts to a 5-adic integer by Hensel's lemma!")
-</code></pre>
+print("This lifts to a 5-adic integer by Hensel's lemma!")</code></pre>
         </div>
     </div>
 
@@ -1061,9 +1040,10 @@ print("This lifts to a 5-adic integer by Hensel's lemma!")
         <p>The largest sporadic group, the <strong>Monster group</strong>, has approximately \(8 \times 10^{53}\) elements and connections to string theory through <strong>Monstrous Moonshine</strong>.</p>
     </div>
 
-    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; color: #7f8c8d; text-align: center;">
-        <p>Daily Math Digest | Generated 2026-02-15 15:54 UTC</p>
+    <footer>
+        <p><strong>Daily Math Digest</strong> | Generated 2026-02-15 15:54 UTC</p>
         <p>Topics: Topology, Number Theory, Abstract Algebra, Collatz Conjecture, Primes, Goldbach, p-adic Numbers</p>
+        <p><a href="../index.html">← Back to Home</a></p>
     </footer>
 </body>
 </html>
