@@ -3,167 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Daily Math Digest - A curated collection of mathematical insights, theorems, and explorations">
+    <meta name="description" content="Daily Math Digest - Mathematical insights and explorations">
     <meta name="theme-color" content="#2c3e50">
     <title>Daily Math Digest</title>
     
-    <link rel="stylesheet" href="css/style.css">
+    <!-- MathJax 2.7.9 (CSP-safe) -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['\\\\(', '\\\\)']],
+                displayMath: [['\\\\[', '\\\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            "HTML-CSS": { availableFonts: ["TeX"] }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 2rem; margin-bottom: 10px; }
+        header p { opacity: 0.9; }
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 20px 0; }
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px; }
+        h3 { color: #34495e; margin: 20px 0 10px; }
+        .theorem {
+            background: #e8f6ff;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .proof {
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        code { font-family: 'Consolas', monospace; }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a { color: #3498db; }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+            header h1 { font-size: 1.5rem; }
+            nav a { display: block; margin: 5px 0; }
+        }
+    </style>
 </head>
 <body>
-    <header class="site-header">
+    <header>
         <h1>📐 Daily Math Digest</h1>
-        <p class="site-description">
-            A curated collection of mathematical insights, theorems, and explorations. 
-            Discover beautiful mathematics from topology to number theory, updated regularly.
-        </p>
+        <p>A curated collection of mathematical insights</p>
     </header>
-
+    
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="posts/index.html">All Posts</a></li>
-            <li><a href="tags/index.html">Tags</a></li>
-            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
-        </ul>
+        <a href="./index.html">Home</a>
+        <a href="./posts/index.html">All Posts</a>
+        <a href="./tags/index.html">Tags</a>
+        <a href="https://github.com/slop-machine-542/nothing">GitHub</a>
     </nav>
-
-    <main>
-        <section class="section">
-            <h2>📚 Latest Posts</h2>
-            <ul class="post-list" id="latest-posts">
-            </ul>
-            <p style="margin-top: 20px;">
-                <a href="posts/index.html" class="tag">View All Posts →</a>
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>🔍 About This Site</h2>
-            <p>
-                Daily Math Digest brings you carefully selected mathematical content including:
-            </p>
-            <ul>
-                <li>Deep dives into pure mathematics topics</li>
-                <li>Curated links to valuable math resources</li>
-                <li>Free mathematics books and papers</li>
-                <li>Explanations of theorems with proofs</li>
-                <li>Explorations across topology, analysis, algebra, and more</li>
-            </ul>
-            <p>
-                Each post is designed to be both educational and inspiring, whether you're a student, 
-                researcher, or simply curious about the beauty of mathematics.
-            </p>
-        </section>
-
-        <section class="section">
-            <h2>📂 Browse by Topic</h2>
-            <p>
-                Posts cover a range of mathematical areas including:
-            </p>
-            <ul>
-                <li><strong>Topology</strong> - Fundamental groups, homotopy, and geometric topology</li>
-                <li><strong>Number Theory</strong> - Analytic number theory, prime numbers, and L-functions</li>
-                <li><strong>Analysis</strong> - Functional analysis, measure theory, and harmonic analysis</li>
-                <li><strong>Algebra</strong> - Group theory, ring theory, and field extensions</li>
-                <li><strong>Geometry</strong> - Algebraic and differential geometry</li>
-                <li><strong>Applied Math</strong> - Numerical analysis, optimization, and cryptography</li>
-            </ul>
-            <p style="margin-top: 15px;">
-                <a href="tags/index.html" class="tag">Browse All Tags →</a>
-            </p>
-        </section>
-    </main>
-
+    
+    <div class="container">
+        <main>
+            <section>
+                <h2>Welcome to Daily Math Digest</h2>
+                <p>Explore the beauty of mathematics through daily curated content covering pure mathematics, applied mathematics, and special topics.</p>
+            </section>
+            
+            <section>
+                <h2>Latest Posts</h2>
+                <ul>
+                    <li><a href="./posts/2026-02-16-0500.html">February 16, 2026 (05:00)</a></li>
+                    <li><a href="./posts/2026-02-16-0413.html">February 16, 2026 (04:13)</a></li>
+                    <li><a href="./posts/2026-02-16-0300.html">February 16, 2026 (03:00)</a></li>
+                    <li><a href="./posts/2026-02-16-0200.html">February 16, 2026 (02:00)</a></li>
+                    <li><a href="./posts/2026-02-16-0130.html">February 16, 2026 (01:30)</a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    
     <footer>
-        <p>
-            <strong>Daily Math Digest</strong> — Powered by curiosity and mathematics.
-        </p>
-        <p>
-            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> | 
-            <a href="index.html">Home</a> |
-            <a href="posts/index.html">All Posts</a>
-        </p>
-        <p style="margin-top: 15px; font-size: 0.85rem; color: #999;">
-            Generated with ❤️ for the love of mathematics.
-        </p>
+        <p><strong>Daily Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p><a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
     </footer>
-
-    <script>
-        const posts = [
-            {
-                title: "Daily Math Digest - Nonuniform Elliptic PDEs, Homotopy Theory, K-Theory, Random Matrix Theory, Stochastic Calculus, Fluid Dynamics, Optimization, Tropical Geometry, Derived Categories, Arithmetic Geometry, AI Mathematics",
-                date: "February 16, 2026 (05:00)",
-                file: "posts/2026-02-16-0500.html",
-                tags: ["nonuniform-elliptic-pdes", "homotopy-theory", "k-theory", "random-matrix-theory", "stochastic-calculus", "fluid-dynamics", "optimization", "tropical-geometry", "derived-categories", "arithmetic-geometry", "ai-mathematics", "pure-math", "applied-math", "special-topics"]
-            },
-            {
-                title: "Daily Math Digest - Set Theory, Lie Theory, Modular Forms, Spectral Theory, PDEs, Machine Learning, Coding Theory, Matroid Theory, Symplectic Geometry, Geometric Group Theory",
-                date: "February 16, 2026 (03:00)",
-                file: "posts/2026-02-16-0300.html",
-                tags: ["set-theory", "probability-theory", "dynamical-systems", "lie-theory", "modular-forms", "spectral-theory", "pde", "machine-learning", "coding-theory", "matroid-theory", "symplectic-geometry", "geometric-group-theory", "pure-math", "applied-math", "special-topics"]
-            },
-            {
-                title: "Daily Math Digest - Knot Theory, Representation Theory, Ergodic Theory, Elliptic Curves, Control Theory, Epidemiology, Queueing Theory, Ramsey Theory, Surreal Numbers, Hodge Conjecture",
-                date: "February 16, 2026 (02:00)",
-                file: "posts/2026-02-16-0200.html",
-                tags: ["pure-math", "knot-theory", "representation-theory", "ergodic-theory", "elliptic-curves", "applied-math", "control-theory", "epidemiology", "queueing-theory", "special-topics", "ramsey-theory", "surreal-numbers", "hodge-conjecture"]
-            },
-            {
-                title: "Daily Math Digest - Algebraic Geometry, Differential Geometry, Combinatorics, Functional Analysis, and Special Topics",
-                date: "February 16, 2026 (09:13)",
-                file: "posts/2026-02-16-0913.html",
-                tags: ["algebraic-geometry", "differential-geometry", "combinatorics", "functional-analysis", "pure-math", "special-topics"]
-            },
-            {
-                title: "Daily Math Digest - Complex Analysis, Real Analysis, Algebraic Geometry, Statistics, Differential Equations, Optimization",
-                date: "February 16, 2026 (08:13)",
-                file: "posts/2026-02-16-0813.html",
-                tags: ["complex-analysis", "real-analysis", "algebraic-geometry", "statistics", "differential-equations", "optimization", "pure-math", "applied-math"]
-            },
-            {
-                title: "Daily Math Digest - Functional Analysis, Algebraic Topology, Combinatorics, Numerical Analysis, Cryptography, Mathematical Biology, Millennium Prize Problems",
-                date: "February 16, 2026 (05:13)",
-                file: "posts/2026-02-16-0513.html",
-                tags: ["functional-analysis", "algebraic-topology", "combinatorics", "numerical-analysis", "cryptography", "mathematical-biology", "millennium-problems", "pure-math", "applied-math"]
-            },
-            {
-                title: "Daily Math Digest - Complex Analysis, Algebraic Geometry, Differential Geometry, and Millennium Problems",
-                date: "February 16, 2026 (04:13)",
-                file: "posts/2026-02-16-0413.html",
-                tags: ["complex-analysis", "algebraic-geometry", "differential-geometry", "millennium-problems", "riemann-hypothesis", "p-vs-np", "navier-stokes", "pure-math"]
-            },
-            {
-                title: "Daily Math Digest - Complex Analysis, Graph Theory, Measure Theory, and More",
-                date: "February 16, 2026 (02:13)",
-                file: "posts/2026-02-16-0213.html",
-                tags: ["complex-analysis", "graph-theory", "measure-theory", "linear-algebra", "differential-equations", "optimization", "fractals", "chaos-theory", "game-theory", "pure-math", "applied-math"]
-            }
-        ];
-
-        function renderLatestPosts() {
-            const container = document.getElementById('latest-posts');
-            
-            let html = '';
-            posts.slice(0, 5).forEach(post => {
-                const tagsHtml = post.tags.slice(0, 5).map(tag => 
-                    `<a href="tags/index.html#${tag}" class="tag">${tag.replace(/-/g, ' ')}</a>`
-                ).join(' ');
-                
-                html += `
-                    <li class="post-item">
-                        <a href="${post.file}">${post.title}</a>
-                        <span class="post-date">${post.date}</span>
-                        <div class="post-tags" style="margin-top: 10px;">
-                            ${tagsHtml}
-                        </div>
-                    </li>
-                `;
-            });
-            
-            container.innerHTML = html;
-        }
-
-        renderLatestPosts();
-    </script>
 </body>
 </html>

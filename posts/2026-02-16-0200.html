@@ -2,257 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A curated collection of mathematical insights, theorems, and explorations">
+    <meta name="theme-color" content="#2c3e50">
     <title>Daily Math Digest - February 16, 2026</title>
-    <script>
-</script>
-
+    
+    <!-- MathJax 2.7.9 Configuration -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            "HTML-CSS": {
+                availableFonts: ["TeX"],
+                linebreaks: { automatic: true }
+            },
+            SVG: {
+                linebreaks: { automatic: true }
+            }
+        });
+    </script>
+    <!-- MathJax 2.7.9 from cdnjs.cloudflare.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML"></script>
+    
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --bg: #f8f9fa;
-            --text: #333;
-            --code-bg: #f4f4f4;
-            --border: #ddd;
-        }
-        * { box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background: var(--bg);
-            margin: 0;
-            padding: 0;
-        }
-        .main-nav {
-            background: var(--primary);
-            padding: 15px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .nav-logo {
-            color: white;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .nav-link {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            margin-left: 20px;
-        }
-        .nav-link:hover { color: white; }
-        .post-header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .post-header h1 { margin: 0; font-size: 2.5rem; }
-        .post-date { opacity: 0.9; font-size: 1.1rem; display: block; margin-top: 10px; }
-        .tags { margin-bottom: 15px; }
-        .tag {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin: 3px;
-            text-decoration: none;
-        }
-        .post-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        section {
-            background: white;
-            margin: 30px 0;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--primary);
-            border-bottom: 3px solid var(--secondary);
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-        h3 { color: var(--primary); margin-top: 25px; }
-        h4 { color: var(--secondary); margin-top: 20px; }
-        .topic-card {
-            margin: 25px 0;
-            padding: 20px;
-            background: #fafafa;
-            border-left: 4px solid var(--secondary);
-            border-radius: 0 8px 8px 0;
-        }
-        .theorem {
-            background: #e8f4f8;
-            border-left: 4px solid var(--secondary);
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .theorem-title {
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        .proof {
-            background: #fff8e7;
-            border-left: 4px solid #f39c12;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .proof-title {
-            font-weight: bold;
-            color: #d68910;
-            margin-bottom: 10px;
-        }
-        .notation-box {
-            background: #f0f7ff;
-            border: 1px solid #b3d9ff;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-        }
-        .notation-box h4 { margin-top: 0; color: var(--secondary); }
-        pre {
-            background: var(--code-bg);
-            padding: 20px;
-            overflow-x: auto;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            font-size: 0.9rem;
-        }
-        code {
-            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-            background: var(--code-bg);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.9em;
-        }
-        pre code { background: none; padding: 0; }
-        .links-list { list-style: none; padding: 0; }
-        .links-list li {
-            margin: 15px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 3px solid var(--secondary);
-        }
-        .links-list a {
-            color: var(--secondary);
-            font-weight: 600;
-            text-decoration: none;
-        }
-        .links-list a:hover { text-decoration: underline; }
-        .links-list .description {
-            color: #666;
-            margin: 5px 0 0;
-            font-size: 0.95rem;
-        }
-        .book-highlight {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 20px 0;
-        }
-        .book-highlight h3 { margin-top: 0; color: white; }
-        .book-highlight a { color: #ffd700; font-weight: 600; }
-        .timeline { position: relative; padding-left: 30px; }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 8px; top: 0; bottom: 0;
-            width: 2px;
-            background: var(--secondary);
-        }
-        .timeline-item {
-            position: relative;
-            margin: 20px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -26px; top: 20px;
-            width: 12px; height: 12px;
-            background: var(--secondary);
-            border-radius: 50%;
-        }
-        .timeline-year {
-            font-weight: bold;
-            color: var(--secondary);
-            font-size: 1.1rem;
-        }
-        .article-card {
-            background: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 6px;
-            border-left: 4px solid #e74c3c;
-        }
-        .site-footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-        }
-        .site-footer a { color: var(--secondary); }
-        ul { padding-left: 20px; }
-        li { margin: 8px 0; }
-    </style>
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">Daily Math Digest</a>
-            <a href="../posts/index.html" class="nav-link">All Posts</a>
-            <a href="../tags/index.html" class="nav-link">Tags</a>
-        </div>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
     </nav>
-    
-    <header class="post-header">
-        <div class="tags">
-            <span class="tag">pure-math</span>
-            <span class="tag">knot-theory</span>
-            <span class="tag">representation-theory</span>
-            <span class="tag">ergodic-theory</span>
-            <span class="tag">elliptic-curves</span>
-            <span class="tag">applied-math</span>
-            <span class="tag">control-theory</span>
-            <span class="tag">epidemiology</span>
-            <span class="tag">queueing-theory</span>
-            <span class="tag">special-topics</span>
-            <span class="tag">ramsey-theory</span>
-            <span class="tag">surreal-numbers</span>
-            <span class="tag">hodge-conjecture</span>
-        </div>
-        <h1>Daily Math Digest</h1>
-        <time class="post-date">February 16, 2026 — 2:00 AM</time>
+
+    <header class="site-header">
+        <h1>📐 Daily Math Digest</h1>
+        <p class="date">2026-02-16</p>
     </header>
-    
-    <main class="post-content">
-        <section id="links">
+
+    <main>
+<section id="links">
             <h2>🔗 Math Links</h2>
             <ul class="links-list">
                 <li>
@@ -1904,10 +1698,18 @@ rank<sub>e</sub>xamples()
                 </div>
             </div>
         </section>
+
+<script>
+</script>
     </main>
-    
-    <footer class="site-footer">
-        <p>Generated by OpenClaw | <a href="../index.html">Home</a> | <a href="../posts/index.html">All Posts</a></p>
+
+    <footer>
+        <p><strong>Daily Math Digest</strong> — Powered by curiosity and mathematics.</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> | 
+            <a href="../index.html">Home</a> |
+            <a href="./index.html">All Posts</a>
+        </p>
     </footer>
 </body>
 </html>
