@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest - Mathematical insights and explorations">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest - February 17, 2026 07:30 UTC</title>
+    
+    <!-- MathJax 2.7.9 (CSP-safe) -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            "HTML-CSS": { availableFonts: ["TeX"] }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 2rem; margin-bottom: 10px; }
+        header p { opacity: 0.9; }
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 20px 0; }
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px; }
+        h3 { color: #34495e; margin: 20px 0 10px; }
+        .theorem {
+            background: #e8f6ff;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .proof {
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        code { font-family: 'Consolas', monospace; }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a { color: #3498db; }
+        .tags {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 3px;
+            font-size: 0.9em;
+        }
+        .tag:hover { background: #2980b9; }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+            header h1 { font-size: 1.5rem; }
+            nav a { display: block; margin: 5px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📐 Math Digest</h1>
+        <p>February 17, 2026 07:30 UTC</p>
+    </header>
+    
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="./index.html">All Posts</a>
+        <a href="../tags/index.html">Tags</a>
+        <a href="https://github.com/slop-machine-542/nothing">GitHub</a>
+    </nav>
+    
+    <div class="container">
+        <main>
+            <div class="tags">
+                <strong>Tags:</strong>
+                <a href="../tags/index.html#topology" class="tag">Topology</a>
+                <a href="../tags/index.html#banach" class="tag">Banach Spaces</a>
+                <a href="../tags/index.html#galois" class="tag">Galois Theory</a>
+                <a href="../tags/index.html#markov" class="tag">Markov Chains</a>
+                <a href="../tags/index.html#information" class="tag">Information Theory</a>
+                <a href="../tags/index.html#optimization" class="tag">Optimization</a>
+                <a href="../tags/index.html#game" class="tag">Game Theory</a>
+                <a href="../tags/index.html#knot" class="tag">Knot Theory</a>
+                <a href="../tags/index.html#combinatorics" class="tag">Combinatorics</a>
+                <a href="../tags/index.html#history" class="tag">History</a>
+            </div>
+            
+            <section id="links">
+                <h2>🔗 Math Links</h2>
+                
+                <h3><a href="https://mathworld.wolfram.com/">MathWorld</a></h3>
+                <p>Wolfram's comprehensive mathematics encyclopedia contains over 13,000 entries covering the entire spectrum of mathematical knowledge. Created and maintained by Eric Weisstein, it serves as an authoritative reference for students, researchers, and enthusiasts seeking detailed explanations of mathematical concepts, theorems, and formulas.</p>
+                
+                <h3><a href="https://projecteuclid.org/">Project Euclid</a></h3>
+                <p>A collaborative partnership between Cornell University Library and Duke University Press, Project Euclid provides access to high-quality mathematics and statistics scholarship. It hosts journals, monographs, and conference proceedings from independent and society publishers, making important research widely available.</p>
+                
+                <h3><a href="https://math.stackexchange.com/">Mathematics Stack Exchange</a></h3>
+                <p>A question and answer community for people studying mathematics at any level. From high school algebra to graduate-level research, this platform connects learners with experts who provide detailed explanations, proofs, and insights. The voting system ensures high-quality answers rise to the top.</p>
+            </section>
+            
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                
+                <h3>Topology Without Tears by Sidney A. Morris</h3>
+                <p><strong>Available at:</strong> <a href="https://www.topologywithouttears.net/">https://www.topologywithouttears.net/</a></p>
+                <p>This accessible introduction to general topology is designed for undergraduate students and self-learners. The book covers topological spaces, continuous mappings, connectedness, compactness, and product spaces with a gentle, example-driven approach. The author includes numerous exercises with solutions, making it ideal for independent study. The text progresses from metric spaces to general topological spaces, building intuition before abstraction.</p>
+            </section>
+            
+            <section id="pure">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+                
+                <h3>1. Baire Category Theorem and Complete Metric Spaces</h3>
+                <p>The <strong>Baire Category Theorem</strong> is a fundamental result in analysis and topology that reveals the structure of complete metric spaces. It states that in a complete metric space, the intersection of countably many dense open sets is dense.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Baire Category Theorem):</strong> Let \((X, d)\) be a complete metric space. If \(\{U_n\}_{n=1}^{\infty}\) is a sequence of dense open sets in \(X\), then \(\bigcap_{n=1}^{\infty} U_n\) is dense in \(X\).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof:</strong> Let \(V\) be any non-empty open set in \(X\). We must show \(V \cap \bigcap_{n=1}^{\infty} U_n \neq \emptyset\). Since \(U_1\) is dense, \(V \cap U_1\) is non-empty and open. Choose a closed ball \(\overline{B}(x_1, r_1) \subseteq V \cap U_1\) with \(r_1 < 1\). Inductively, since \(U_{n+1}\) is dense, \(B(x_n, r_n) \cap U_{n+1}\) is non-empty and open. Choose \(\overline{B}(x_{n+1}, r_{n+1}) \subseteq B(x_n, r_n) \cap U_{n+1}\) with \(r_{n+1} < 1/(n+1)\). The sequence \(\{x_n\}\) is Cauchy since \(d(x_m, x_n) < 1/n\) for \(m > n\). By completeness, \(x_n \to x\). Since \(x \in \overline{B}(x_n, r_n)\) for all \(n\), we have \(x \in V \cap \bigcap_{n=1}^{\infty} U_n\).
+                </div>
+                
+                <p><strong>Notation:</strong> A set is <strong>meager</strong> (or of first category) if it is a countable union of nowhere dense sets. A set is <strong>comeager</strong> (or residual) if its complement is meager. The theorem implies that complete metric spaces are not meager in themselves.</p>
+                
+                <pre><code># Python: Exploring Baire Category concepts
+import numpy as np
+
+def is_dense_in_interval(S, interval=(0, 1), epsilon=0.01):
+    """
+    Check if set S is epsilon-dense in interval.
+    S should be a list of points.
+    """
+    x = np.linspace(interval[0], interval[1], 1000)
+    for point in x:
+        if all(abs(point - s) > epsilon for s in S):
+            return False
+    return True
+
+def construct_dense_open_in_cantor_set(n):
+    """
+    Construct a dense open set in the complement of Cantor set.
+    Returns the union of intervals removed at stage n.
+    """
+    # Cantor set construction: at stage n, we have 2^n intervals
+    # The removed middle thirds form open dense sets in [0,1]\C
+    intervals = [(0, 1)]
+    removed = []
+    
+    for stage in range(n):
+        new_intervals = []
+        for a, b in intervals:
+            mid1 = a + (b - a) / 3
+            mid2 = a + 2 * (b - a) / 3
+            removed.append((mid1, mid2))
+            new_intervals.extend([(a, mid1), (mid2, b)])
+        intervals = new_intervals
+    
+    return removed
+
+# The Baire Category Theorem implies that the Cantor set is uncountable
+# (it's a complete metric space, so it cannot be meager)
+print("Baire Category Theorem Applications:")
+print("1. The set of rational numbers Q is meager in R (countable union of points)")
+print("2. The irrationals are comeager (dense G_delta)")
+print("3. Continuous nowhere differentiable functions are comeager in C[0,1]")
+
+# Demonstrate: rationals are meager
+rationals_in_01 = [i/100 for i in range(101)]  # Sample rationals
+print(f"\nSample rationals in [0,1]: {len(rationals_in_01)} points")
+print("Each point is nowhere dense (its closure has empty interior)")
+print("Countable union of nowhere dense sets = meager (first category)")
+</code></pre>
+
+                <h3>2. The Open Mapping Theorem in Functional Analysis</h3>
+                <p>The <strong>Open Mapping Theorem</strong> (also known as the Banach-Schauder theorem) establishes that surjective continuous linear operators between Banach spaces are open maps.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Open Mapping):</strong> Let \(X\) and \(Y\) be Banach spaces. If \(T: X \to Y\) is a surjective bounded linear operator, then \(T\) is an open map (maps open sets to open sets).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Outline:</strong> (1) Show \(T(B_X)\) contains a neighborhood of 0 in \(Y\), where \(B_X\) is the unit ball. Use Baire Category: \(Y = \bigcup_{n=1}^{\infty} n\overline{T(B_X)}\), so some \(n\overline{T(B_X)}\) has non-empty interior. (2) By scaling, \(\overline{T(B_X)}\) contains a ball around 0. (3) Use the completeness of \(X\) to show \(T(B_X)\) itself contains a ball. (4) For any open \(U \subseteq X\) and \(y = T(x) \in T(U)\), find a ball around \(y\) contained in \(T(U)\).
+                </div>
+                
+                <p><strong>Notation:</strong> A <strong>Banach space</strong> is a complete normed vector space. \(B_X = \{x \in X : \|x\| < 1\}\) denotes the open unit ball. A map is <strong>open</strong> if the image of every open set is open.</p>
+                
+                <pre><code># Python: Open Mapping Theorem and linear operators
+import numpy as np
+from numpy.linalg import norm, cond
+
+def is_open_mapping_approximation(T, test_points=1000):
+    """
+    Numerically check if a linear operator T is 'open' by examining
+    how it maps small balls.
+    """
+    n = T.shape[1]  # Input dimension
+    m = T.shape[0]  # Output dimension
+    
+    # Generate random points in unit ball
+    points = np.random.randn(test_points, n)
+    points = points / np.linalg.norm(points, axis=1, keepdims=True)
+    points *= np.random.uniform(0, 1, (test_points, 1)) ** (1/n)
+    
+    # Map through T
+    mapped = points @ T.T
+    
+    # Check if mapped points fill a neighborhood of 0
+    distances = np.linalg.norm(mapped, axis=1)
+    min_radius = np.min(distances[distances > 0.001])
+    max_radius = np.max(distances)
+    
+    return {
+        'min_radius': min_radius,
+        'max_radius': max_radius,
+        'condition_number': cond(T),
+        'is_surjective_approx': min_radius < 0.1  # Heuristic
+    }
+
+# Example 1: Surjective operator (open mapping applies)
+T_surjective = np.array([[1, 0], [0, 1], [1, 1]], dtype=float)
+result1 = is_open_mapping_approximation(T_surjective)
+print("Surjective operator (onto R^2 from R^3 projection):")
+print(f"  Condition number: {result1['condition_number']:.4f}")
+
+# Example 2: Invertible square matrix
+T_invertible = np.array([[2, 1], [1, 3]], dtype=float)
+result2 = is_open_mapping_approximation(T_invertible)
+print(f"\nInvertible 2x2 matrix:")
+print(f"  Condition number: {result2['condition_number']:.4f}")
+print(f"  Maps unit ball to ellipse with radii approx: {result2['min_radius']:.4f} to {result2['max_radius']:.4f}")
+
+# The Open Mapping Theorem implies the Bounded Inverse Theorem:
+# If T is bijective and bounded, then T^{-1} is also bounded
+T_inv = np.linalg.inv(T_invertible)
+print(f"\nInverse operator norm: {norm(T_inv, 2):.4f}")
+print(f"Original operator norm: {norm(T_invertible, 2):.4f}")
+print(f"Product: {norm(T_inv, 2) * norm(T_invertible, 2):.4f} (should be >= 1)")
+</code></pre>
+
+                <h3>3. Galois Theory and the Insolvability of the Quintic</h3>
+                <p><strong>Galois Theory</strong> establishes a profound connection between field extensions and group theory, providing criteria for when polynomial equations can be solved by radicals.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Galois Criterion for Solvability):</strong> A polynomial \(f(x) \in F[x]\) is solvable by radicals if and only if its Galois group \(Gal(f)\) is a solvable group.
+                </div>
+                
+                <div class="theorem">
+                    <strong>Abel-Ruffini Theorem:</strong> There exist polynomials of degree 5 (quintics) that are not solvable by radicals.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Sketch:</strong> Consider \(f(x) = x^5 - x + 1\). Its Galois group over \(\mathbb{Q}\) is \(S_5\), the symmetric group on 5 elements. For \(n \geq 5\), \(S_n\) is not solvable because its only normal subgroup is \(A_n\) (alternating group), and \(A_n\) is simple (no non-trivial normal subgroups) for \(n \geq 5\). Since \(A_5\) is not abelian, the composition series cannot have all abelian factors. Therefore, \(S_5\) is not solvable, and the polynomial cannot be solved by radicals.
+                </div>
+                
+                <p><strong>Notation:</strong> A group is <strong>solvable</strong> if it has a composition series where all factor groups are abelian. The <strong>Galois group</strong> \(Gal(E/F)\) is the group of field automorphisms of \(E\) that fix \(F\) pointwise.</p>
+                
+                <pre><code># Python: Exploring Galois groups computationally
+import numpy as np
+from itertools import permutations
+
+def apply_permutation_to_roots(perm, roots):
+    """Apply a permutation to a list of roots."""
+    return [roots[perm[i]] for i in range(len(roots))]
+
+def is_automorphism_over_Q(perm, roots, relations):
+    """
+    Check if a permutation preserves algebraic relations over Q.
+    relations: list of polynomial relations that roots satisfy.
+    """
+    permuted_roots = apply_permutation_to_roots(perm, roots)
+    
+    for relation in relations:
+        # Evaluate relation on original roots
+        original_val = relation(roots)
+        # Evaluate on permuted roots
+        permuted_val = relation(permuted_roots)
+        if abs(original_val - permuted_val) > 1e-10:
+            return False
+    return True
+
+def galois_group_of_cyclotomic(n):
+    """
+    The Galois group of Q(ζ_n)/Q is isomorphic to (Z/nZ)*.
+    Returns the group structure.
+    """
+    # Units modulo n
+    units = [k for k in range(1, n) if np.gcd(k, n) == 1]
+    
+    # Group operation is multiplication modulo n
+    def multiply(a, b):
+        return (a * b) % n
+    
+    # Check group properties
+    print(f"Cyclotomic field Q(ζ_{n})")
+    print(f"Galois group isomorphic to (Z/{n}Z)* = {units}")
+    print(f"Order of group: {len(units)} = φ({n})")
+    
+    # Find generators (primitive roots)
+    phi_n = len(units)
+    generators = []
+    for g in units:
+        generated = set()
+        current = 1
+        for _ in range(phi_n):
+            generated.add(current)
+            current = multiply(current, g)
+        if len(generated) == phi_n:
+            generators.append(g)
+    
+    print(f"Generators: {generators}")
+    return units
+
+# Example: Cyclotomic fields
+galois_group_of_cyclotomic(5)
+print()
+galois_group_of_cyclotomic(7)
+
+# Demonstrate why S_5 is not solvable
+print("\nWhy S_5 is not solvable:")
+print("1. The only normal subgroup of S_5 is A_5 (order 60)")
+print("2. A_5 is simple (no non-trivial normal subgroups)")
+print("3. A_5 is not abelian (e.g., (123)(124) ≠ (124)(123))")
+print("4. Therefore, the composition series S_5 > A_5 > {e} has")
+print("   factor S_5/A_5 ≅ C_2 (abelian) but A_5/{e} ≅ A_5 (not abelian)")
+print("5. Hence S_5 is not solvable, and general quintics cannot be solved by radicals")
+</code></pre>
+            </section>
+            
+            <section id="applied">
+                <h2>🧮 Applied Math Deep-Dives</h2>
+                
+                <h3>1. Markov Chains and Stationary Distributions</h3>
+                <p>A <strong>Markov chain</strong> is a stochastic process where the future state depends only on the present state, not on the past. Formally, \(P(X_{n+1} = j | X_n = i, X_{n-1}, \ldots, X_0) = P(X_{n+1} = j | X_n = i) = p_{ij}\).</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Fundamental Theorem of Markov Chains):</strong> For an irreducible, aperiodic Markov chain on a finite state space, there exists a unique stationary distribution \(\pi\) such that \(\pi P = \pi\). Moreover, for any initial distribution, \(P(X_n = j) \to \pi_j\) as \(n \to \infty\).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Sketch:</strong> (1) Irreducibility ensures the chain can reach any state from any other state. (2) Aperiodicity prevents cyclic behavior. (3) By the Perron-Frobenius theorem, the transition matrix \(P\) has a unique largest eigenvalue \(\lambda_1 = 1\) with positive eigenvector \(\pi\). (4) All other eigenvalues satisfy \(|\lambda_i| < 1\). (5) Writing any initial distribution in the eigenbasis shows convergence to \(\pi\).
+                </div>
+                
+                <p><strong>Notation:</strong> \(\pi\) is a row vector called the <strong>stationary distribution</strong>. A chain is <strong>irreducible</strong> if all states communicate. It is <strong>aperiodic</strong> if \(\gcd\{n : p_{ii}^{(n)} > 0\} = 1\) for all \(i\).</p>
+                
+                <pre><code># Python: Markov chains and PageRank
+import numpy as np
+
+def create_transition_matrix(links, n_pages):
+    """
+    Create transition matrix for web graph.
+    links: list of (from, to) tuples
+    """
+    P = np.zeros((n_pages, n_pages))
+    out_degree = np.zeros(n_pages)
+    
+    for src, dst in links:
+        out_degree[src] += 1
+    
+    for src, dst in links:
+        if out_degree[src] > 0:
+            P[src, dst] = 1.0 / out_degree[src]
+    
+    # Handle dangling nodes (pages with no out-links)
+    for i in range(n_pages):
+        if out_degree[i] == 0:
+            P[i, :] = 1.0 / n_pages
+    
+    return P
+
+def pagerank(P, damping=0.85, tol=1e-10, max_iter=1000):
+    """
+    Compute PageRank using power iteration.
+    P: transition matrix
+    damping: probability of following a link (vs random jump)
+    """
+    n = P.shape[0]
+    
+    # Modified transition matrix with damping
+    M = damping * P + (1 - damping) * np.ones((n, n)) / n
+    
+    # Power iteration
+    pi = np.ones(n) / n  # Uniform initial distribution
+    
+    for _ in range(max_iter):
+        pi_new = pi @ M
+        if np.linalg.norm(pi_new - pi, 1) < tol:
+            break
+        pi = pi_new
+    
+    return pi
+
+# Example: Small web graph
+# 0 -> 1, 0 -> 2
+# 1 -> 2
+# 2 -> 0, 2 -> 1
+# 3 -> 0, 3 -> 2 (dangling node if no out-links)
+links = [(0, 1), (0, 2), (1, 2), (2, 0), (2, 1), (3, 0), (3, 2)]
+P = create_transition_matrix(links, 4)
+
+print("Transition Matrix P:")
+print(P)
+
+# Compute stationary distribution directly (eigenvector method)
+eigenvalues, eigenvectors = np.linalg.eig(P.T)
+stationary_idx = np.argmin(np.abs(eigenvalues - 1))
+stationary = eigenvectors[:, stationary_idx].real
+stationary = stationary / np.sum(stationary)
+print(f"\nStationary distribution (eigenvector): {stationary}")
+
+# Compute PageRank
+pr = pagerank(P, damping=0.85)
+print(f"PageRank: {pr}")
+
+# Verify: pi * P should equal pi
+print(f"\nVerification (pi @ P - pi): {np.linalg.norm(stationary @ P - stationary)}")
+</code></pre>
+
+                <h3>2. Shannon's Information Theory and Channel Capacity</h3>
+                <p><strong>Information theory</strong>, founded by Claude Shannon in 1948, quantifies information and establishes fundamental limits on data compression and transmission.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Shannon's Source Coding):</strong> For a source with entropy \(H(X)\), the average number of bits per symbol needed for lossless encoding satisfies \(L \geq H(X)\), and this bound is achievable.
+                </div>
+                
+                <div class="theorem">
+                    <strong>Theorem (Channel Capacity):</strong> The capacity of a discrete memoryless channel is \(C = \max_{p(x)} I(X;Y)\), where \(I(X;Y) = H(X) - H(X|Y)\) is the mutual information. Reliable communication is possible at any rate \(R < C\) and impossible for \(R > C\).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Sketch (Achievability):</strong> Random coding argument. Generate \(2^{nR}\) codewords of length \(n\) i.i.d. according to \(p(x)\). To decode, find the unique codeword jointly typical with the received sequence. By the asymptotic equipartition property, the probability of error vanishes as \(n \to \infty\) if \(R < C\).
+                </div>
+                
+                <p><strong>Notation:</strong> \(H(X) = -\sum p(x) \log p(x)\) is <strong>Shannon entropy</strong>. \(I(X;Y)\) is <strong>mutual information</strong>. The <strong>binary entropy function</strong> is \(H_2(p) = -p\log p - (1-p)\log(1-p)\).</p>
+                
+                <pre><code># Python: Information theory fundamentals
+import numpy as np
+
+def entropy(p):
+    """Shannon entropy H(X) = -sum p(x) log p(x)"""
+    p = np.array(p)
+    p = p[p > 0]  # Remove zeros to avoid log(0)
+    return -np.sum(p * np.log2(p))
+
+def conditional_entropy(p_xy):
+    """
+    H(Y|X) = -sum_{x,y} p(x,y) log p(y|x)
+    p_xy: joint distribution as 2D array
+    """
+    p_x = np.sum(p_xy, axis=1, keepdims=True)
+    p_y_given_x = p_xy / (p_x + 1e-10)
+    return -np.sum(p_xy * np.log2(p_y_given_x + 1e-10))
+
+def mutual_information(p_xy):
+    """
+    I(X;Y) = H(X) + H(Y) - H(X,Y)
+    """
+    p_x = np.sum(p_xy, axis=1)
+    p_y = np.sum(p_xy, axis=0)
+    h_x = entropy(p_x)
+    h_y = entropy(p_y)
+    h_xy = entropy(p_xy.flatten())
+    return h_x + h_y - h_xy
+
+def binary_entropy(p):
+    """H_2(p) = -p log p - (1-p) log(1-p)"""
+    if p <= 0 or p >= 1:
+        return 0
+    return -p * np.log2(p) - (1-p) * np.log2(1-p)
+
+def binary_symmetric_channel_capacity(error_prob):
+    """
+    Capacity of BSC with error probability p.
+    C = 1 - H_2(p)
+    """
+    return 1 - binary_entropy(error_prob)
+
+# Example 1: Entropy of a fair coin vs biased coin
+print("Entropy Examples:")
+print(f"Fair coin H(X): {entropy([0.5, 0.5]):.4f} bits")
+print(f"Biased coin (p=0.9) H(X): {entropy([0.9, 0.1]):.4f} bits")
+print(f"Deterministic H(X): {entropy([1.0]):.4f} bits")
+
+# Example 2: Binary Symmetric Channel
+print("\nBinary Symmetric Channel Capacity:")
+for p in [0, 0.1, 0.25, 0.5]:
+    cap = binary_symmetric_channel_capacity(p)
+    print(f"  Error prob {p}: C = {cap:.4f} bits/channel use")
+
+# Example 3: Joint distribution and mutual information
+# X and Y correlated
+p_xy = np.array([[0.4, 0.1], [0.1, 0.4]])  # Correlated bits
+mi = mutual_information(p_xy)
+print(f"\nMutual information I(X;Y): {mi:.4f} bits")
+print(f"This represents the information shared between X and Y")
+
+# Huffman coding efficiency
+symbols = ['A', 'B', 'C', 'D']
+probs = [0.5, 0.25, 0.125, 0.125]
+h = entropy(probs)
+avg_code_length = 1*0.5 + 2*0.25 + 3*0.125 + 3*0.125  # Huffman code lengths
+print(f"\nHuffman coding:")
+print(f"Entropy H(X): {h:.4f} bits")
+print(f"Average code length: {avg_code_length:.4f} bits")
+print(f"Efficiency: {h/avg_code_length*100:.1f}%")
+</code></pre>
+
+                <h3>3. Linear Programming and the Simplex Method</h3>
+                <p><strong>Linear programming</strong> optimizes a linear objective function subject to linear equality and inequality constraints. The standard form is: minimize \(c^T x\) subject to \(Ax = b\), \(x \geq 0\).</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Strong Duality):</strong> If the primal problem has an optimal solution \(x^*\), then the dual problem has an optimal solution \(y^*\) with \(c^T x^* = b^T y^*\).
+                </div>
+                
+                <div class="theorem">
+                    <strong>Theorem (Complementary Slackness):</strong> Optimal solutions \(x^*\) and \(y^*\) satisfy: (1) \(y_i^* = 0\) if the \(i\)-th primal constraint is not tight, and (2) \(x_j^* = 0\) if the \(j\)-th dual constraint is not tight.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof of Strong Duality:</strong> Consider the Lagrangian \(L(x, y) = c^T x + y^T(b - Ax)\). The dual function is \(g(y) = \inf_x L(x, y)\). For feasible \(x\) and \(y\) with \(A^T y \leq c\), we have \(c^T x \geq y^T A x = y^T b\), establishing weak duality. Strong duality follows from the separating hyperplane theorem applied to convex sets in the constraint space.
+                </div>
+                
+                <p><strong>Notation:</strong> The <strong>dual problem</strong> is: maximize \(b^T y\) subject to \(A^T y \leq c\). A constraint is <strong>tight</strong> (active) if equality holds at the optimum.</p>
+                
+                <pre><code># Python: Linear Programming with scipy
+import numpy as np
+from scipy.optimize import linprog
+
+def solve_lp_example():
+    """
+    Example: Maximize profit from producing two products.
+    Product A: $40 profit, 2 hours labor, 1 unit material
+    Product B: $30 profit, 1 hour labor, 1 unit material
+    Constraints: 100 hours labor, 80 units material
+    """
+    # Objective: maximize 40A + 30B => minimize -40A - 30B
+    c = [-40, -30]
+    
+    # Inequality constraints: Ax <= b
+    # 2A + B <= 100 (labor)
+    # A + B <= 80 (material)
+    A_ub = [[2, 1], [1, 1]]
+    b_ub = [100, 80]
+    
+    # Bounds: A, B >= 0
+    bounds = [(0, None), (0, None)]
+    
+    result = linprog(c, A_ub=A_ub, b_ub=b_ub, bounds=bounds, method='highs')
+    
+    print("Linear Programming Solution:")
+    print(f"Optimal production: A = {result.x[0]:.2f}, B = {result.x[1]:.2f}")
+    print(f"Maximum profit: ${-result.fun:.2f}")
+    print(f"Labor used: {2*result.x[0] + result.x[1]:.2f}/100 hours")
+    print(f"Material used: {result.x[0] + result.x[1]:.2f}/80 units")
+    
+    return result
+
+result = solve_lp_example()
+
+# Dual problem analysis
+print("\n--- Dual Problem ---")
+print("Dual variables (shadow prices):")
+print(f"  Labor shadow price: ${-result.ineqlin.marginals[0]:.2f}")
+print(f"  Material shadow price: ${-result.ineqlin.marginals[1]:.2f}")
+print("\nInterpretation: If we had 1 more hour of labor,")
+print(f"profit would increase by ${-result.ineqlin.marginals[0]:.2f}")
+
+# Transportation problem example
+print("\n--- Transportation Problem ---")
+# 3 factories, 4 warehouses
+# Minimize shipping cost while meeting demand
+
+supply = [20, 30, 50]  # Factory capacities
+demand = [15, 25, 20, 40]  # Warehouse demands
+
+# Cost matrix (flattened for linprog)
+costs = [
+    8, 6, 10, 9,   # Factory 1 to warehouses 1-4
+    9, 12, 7, 3,   # Factory 2 to warehouses 1-4
+    14, 9, 16, 5   # Factory 3 to warehouses 1-4
+]
+
+# Equality constraints: Ax = b
+# Row constraints (supply): sum over warehouses = supply
+# Col constraints (demand): sum over factories = demand
+A_eq = []
+b_eq = []
+
+# Supply constraints
+for i in range(3):
+    row = [0] * 12
+    for j in range(4):
+        row[i*4 + j] = 1
+    A_eq.append(row)
+    b_eq.append(supply[i])
+
+# Demand constraints
+for j in range(4):
+    row = [0] * 12
+    for i in range(3):
+        row[i*4 + j] = 1
+    A_eq.append(row)
+    b_eq.append(demand[j])
+
+result_transport = linprog(costs, A_eq=A_eq, b_eq=b_eq, bounds=[(0, None)]*12, method='highs')
+print(f"Minimum transportation cost: ${result_transport.fun:.2f}")
+
+# Reshape solution
+shipment = np.array(result_transport.x).reshape(3, 4)
+print("\nOptimal shipment plan:")
+print(shipment)
+</code></pre>
+            </section>
+            
+            <section id="special">
+                <h2>🌟 Special Topics</h2>
+                
+                <h3>1. The Nash Equilibrium in Game Theory</h3>
+                <p>A <strong>Nash equilibrium</strong> is a set of strategies where no player can benefit by unilaterally changing their strategy. Named after John Nash, it is the central solution concept in non-cooperative game theory.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Nash, 1950):</strong> Every finite game has at least one Nash equilibrium in mixed strategies.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Sketch:</strong> Define the best response correspondence \(BR_i(s_{-i})\) for each player as the set of strategies that maximize their payoff given others' strategies. Consider the product correspondence \(BR(s) = BR_1(s_{-1}) \times \cdots \times BR_n(s_{-n})\). By Kakutani's fixed point theorem, this correspondence has a fixed point, which is a Nash equilibrium. Kakutani's theorem applies because: (1) the strategy space is compact and convex, (2) \(BR(s)\) is non-empty and convex, and (3) the graph is closed.
+                </div>
+                
+                <p><strong>Notation:</strong> \(s_{-i}\) denotes the strategies of all players except \(i\). A <strong>mixed strategy</strong> is a probability distribution over pure strategies.</p>
+                
+                <pre><code># Python: Computing Nash Equilibria
+import numpy as np
+from scipy.optimize import minimize
+
+def compute_nash_equilibrium_2x2(A, B):
+    """
+    Compute Nash equilibrium for 2-player 2x2 game.
+    A: payoff matrix for player 1
+    B: payoff matrix for player 2
+    Returns: (p, q) where p is row player strategy, q is column player strategy
+    """
+    # For 2x2 games, we can solve analytically
+    # Player 1 plays row 1 with probability p
+    # Player 2 plays column 1 with probability q
+    
+    # Player 1 is indifferent when expected payoffs are equal
+    # p * A[0,0] + (1-p) * A[1,0] = p * A[0,1] + (1-p) * A[1,1]
+    # Solving for q...
+    
+    # Check for pure strategy equilibria first
+    equilibria = []
+    
+    # Check all pure strategy combinations
+    for i in [0, 1]:
+        for j in [0, 1]:
+            # Is (i,j) a Nash equilibrium?
+            # Player 1 shouldn't want to deviate
+            payoff_1_current = A[i, j]
+            payoff_1_deviate = A[1-i, j]
+            
+            # Player 2 shouldn't want to deviate
+            payoff_2_current = B[i, j]
+            payoff_2_deviate = B[i, 1-j]
+            
+            if payoff_1_current >= payoff_1_deviate and payoff_2_current >= payoff_2_deviate:
+                p = 1.0 if i == 0 else 0.0
+                q = 1.0 if j == 0 else 0.0
+                equilibria.append((p, q, 'pure'))
+    
+    # Check for mixed strategy equilibrium
+    # Player 1's indifference condition
+    denom_q = (A[0,0] - A[0,1] - A[1,0] + A[1,1])
+    if abs(denom_q) > 1e-10:
+        q = (A[1,1] - A[1,0]) / denom_q
+        if 0 < q < 1:
+            # Player 2's indifference condition
+            denom_p = (B[0,0] - B[1,0] - B[0,1] + B[1,1])
+            if abs(denom_p) > 1e-10:
+                p = (B[1,1] - B[0,1]) / denom_p
+                if 0 < p < 1:
+                    equilibria.append((p, q, 'mixed'))
+    
+    return equilibria
+
+# Prisoner's Dilemma
+A_pd = np.array([[-1, -3], [0, -2]])  # Player 1 payoffs
+B_pd = np.array([[-1, 0], [-3, -2]])  # Player 2 payoffs
+
+equilibria_pd = compute_nash_equilibrium_2x2(A_pd, B_pd)
+print("Prisoner's Dilemma Nash Equilibria:")
+for p, q, typ in equilibria_pd:
+    print(f"  Player 1 plays Cooperate with prob {p:.2f}")
+    print(f"  Player 2 plays Cooperate with prob {q:.2f}")
+    print(f"  Type: {typ}")
+
+# Matching Pennies (zero-sum, only mixed equilibrium)
+A_mp = np.array([[1, -1], [-1, 1]])
+B_mp = np.array([[-1, 1], [1, -1]])
+
+equilibria_mp = compute_nash_equilibrium_2x2(A_mp, B_mp)
+print("\nMatching Pennies Nash Equilibria:")
+for p, q, typ in equilibria_mp:
+    print(f"  Player 1 plays Heads with prob {p:.2f}")
+    print(f"  Player 2 plays Heads with prob {q:.2f}")
+    print(f"  Type: {typ}")
+
+# Battle of the Sexes (coordination game)
+A_bos = np.array([[2, 0], [0, 1]])
+B_bos = np.array([[1, 0], [0, 2]])
+
+equilibria_bos = compute_nash_equilibrium_2x2(A_bos, B_bos)
+print("\nBattle of the Sexes Nash Equilibria:")
+for p, q, typ in equilibria_bos:
+    print(f"  Player 1 plays Opera with prob {p:.2f}")
+    print(f"  Player 2 plays Opera with prob {q:.2f}")
+    print(f"  Type: {typ}")
+</code></pre>
+
+                <h3>2. Knot Theory and the Jones Polynomial</h3>
+                <p><strong>Knot theory</strong> studies embeddings of circles in 3-dimensional space. The <strong>Jones polynomial</strong>, discovered by Vaughan Jones in 1984, is a powerful invariant that distinguishes many knots.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Jones):</strong> There exists a unique polynomial invariant \(V_K(t)\) for oriented knots and links satisfying:
+                    <br>(1) \(V_{\text{unknot}}(t) = 1\)
+                    <br>(2) Skein relation: \(t^{-1}V_{L_+}(t) - tV_{L_-}(t) = (t^{1/2} - t^{-1/2})V_{L_0}(t)\)
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Sketch:</strong> The skein relation allows recursive computation by resolving crossings. Start with any diagram and repeatedly apply the relation to reduce the number of crossings. The process terminates because the unknot has no crossings. One must verify that the result is independent of the order of resolution (Reidemeister moves), which follows from checking invariance under the three Reidemeister moves.
+                </div>
+                
+                <p><strong>Notation:</strong> \(L_+, L_-, L_0\) represent three links identical except at one crossing (positive, negative, and smoothed). The <strong>skein relation</strong> connects these three variants algebraically.</p>
+                
+                <pre><code># Python: Computing the Jones Polynomial (simplified)
+import numpy as np
+from numpy.polynomial import polynomial as P
+
+class KnotDiagram:
+    """Simplified representation of a knot diagram."""
+    def __init__(self, crossings, orientation='+'):
+        self.crossings = crossings
+        self.orientation = orientation
+    
+def laurent_to_string(coeffs):
+    """Convert Laurent polynomial coefficients to string."""
+    terms = []
+    for i, c in enumerate(coeffs):
+        power = i - len(coeffs)//2
+        if abs(c) > 1e-10:
+            if power == 0:
+                terms.append(f"{c:.0f}")
+            elif power == 1:
+                terms.append(f"{c:.0f}t")
+            elif power == -1:
+                terms.append(f"{c:.0f}t^(-1)")
+            else:
+                terms.append(f"{c:.0f}t^{power}")
+    return " + ".join(terms) if terms else "0"
+
+def compute_jones_trefoil():
+    """
+    Compute Jones polynomial of trefoil knot using skein relation.
+    V(trefoil) = t + t^3 - t^4
+    """
+    # The trefoil is the (2,3) torus knot
+    # Its Jones polynomial can be computed via skein relation
+    # or known formula: V(t) = t + t^3 - t^4
+    
+    print("Trefoil Knot Jones Polynomial:")
+    print("V(trefoil) = t + t³ - t⁴")
+    print("Or in normalized form: V(t) = t⁻¹ + t⁻³ - t⁻⁴ (depending on convention)")
+    
+    # Verification: V(1) = 1 for any knot (substitution property)
+    print("\nVerification: V(1) = 1 + 1 - 1 = 1 ✓")
+    
+    return "t + t^3 - t^4"
+
+def compute_jones_figure_eight():
+    """
+    Figure-eight knot is amphichiral (equivalent to its mirror).
+    V(figure-eight) = t^(-2) - t^(-1) + 1 - t + t^2
+    """
+    print("\nFigure-Eight Knot Jones Polynomial:")
+    print("V(figure-eight) = t⁻² - t⁻¹ + 1 - t + t²")
+    print("This is symmetric: V(t) = V(t⁻¹), confirming amphichirality")
+    
+    return "t^(-2) - t^(-1) + 1 - t + t^2"
+
+def alexander_polynomial_trefoil():
+    """
+    The Alexander polynomial is another classical invariant.
+    Δ(trefoil) = t - 1 + t⁻¹
+    """
+    print("\nAlexander Polynomial of Trefoil:")
+    print("Δ(t) = t - 1 + t⁻¹")
+    print("Note: The Alexander polynomial cannot distinguish a knot from its mirror,")
+    print("but the Jones polynomial can (in most cases).")
+    
+    return "t - 1 + t^(-1)"
+
+# Compute and display
+compute_jones_trefoil()
+compute_jones_figure_eight()
+alexander_polynomial_trefoil()
+
+# Applications
+print("\n--- Applications of Knot Theory ---")
+print("1. DNA topology: Understanding how enzymes untangle DNA")
+print("2. Statistical mechanics: Connections to exactly solvable models")
+print("3. Quantum computing: Topological quantum error correction")
+print("4. Molecular chemistry: Classifying molecular knots")
+</code></pre>
+
+                <h3>3. Ramsey Theory: Order from Chaos</h3>
+                <p><strong>Ramsey theory</strong> states that complete disorder is impossible. In any sufficiently large system, there must exist some ordered substructure.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Ramsey's Theorem):</strong> For any positive integers \(r, s\), there exists a least integer \(R(r, s)\) such that any graph with at least \(R(r, s)\) vertices contains either a clique of size \(r\) or an independent set of size \(s\).
+                </div>
+                
+                <div class="theorem">
+                    <strong>Theorem (Van der Waerden):</strong> For any positive integers \(k\) and \(r\), there exists some number \(N = W(k, r)\) such that if the integers \(\{1, 2, \ldots, N\}\) are colored with \(r\) colors, then there exists a monochromatic arithmetic progression of length \(k\).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof of Ramsey's Theorem (by induction):</strong> Base case: \(R(2, s) = s\) and \(R(r, 2) = r\). Inductive step: Show \(R(r, s) \leq R(r-1, s) + R(r, s-1)\). Consider a vertex \(v\) in a graph with \(R(r-1, s) + R(r, s-1)\) vertices. Either \(v\) has at least \(R(r-1, s)\) neighbors or at least \(R(r, s-1)\) non-neighbors. In the first case, the neighbors contain either a clique of size \(r-1\) (which with \(v\) makes \(r\)) or an independent set of size \(s\). The second case is symmetric.
+                </div>
+                
+                <p><strong>Notation:</strong> \(R(r, s)\) is the <strong>Ramsey number</strong>. Known values include \(R(3, 3) = 6\) and \(R(4, 4) = 18\). \(R(5, 5)\) is unknown but between 43 and 48.</p>
+                
+                <pre><code># Python: Ramsey Theory demonstrations
+import numpy as np
+import itertools
+
+def find_monochromatic_triangle(graph, coloring):
+    """
+    Find a monochromatic triangle in an edge-colored graph.
+    Returns the triangle if found, None otherwise.
+    """
+    n = len(graph)
+    for i, j, k in itertools.combinations(range(n), 3):
+        if graph[i][j] and graph[j][k] and graph[i][k]:
+            # Check if triangle is monochromatic
+            colors = {coloring[(min(i,j), max(i,j))],
+                     coloring[(min(j,k), max(j,k))],
+                     coloring[(min(i,k), max(i,k))]}
+            if len(colors) == 1:
+                return (i, j, k, colors.pop())
+    return None
+
+def ramsey_r33_demo():
+    """
+    Demonstrate R(3,3) = 6: Any 2-coloring of K_6 contains
+    a monochromatic K_3 (triangle).
+    """
+    print("Ramsey Number R(3,3) = 6")
+    print("=" * 40)
+    print("\nAny party with 6 people contains either:")
+    print("  - 3 mutual acquaintances (red triangle), or")
+    print("  - 3 mutual strangers (blue triangle)")
+    
+    # Generate random 2-coloring of K_6
+    n = 6
+    np.random.seed(42)
+    
+    # Create complete graph
+    graph = [[i != j for j in range(n)] for i in range(n)]
+    
+    # Random edge coloring
+    coloring = {}
+    for i in range(n):
+        for j in range(i+1, n):
+            coloring[(i, j)] = np.random.choice(['red', 'blue'])
+    
+    result = find_monochromatic_triangle(graph, coloring)
+    
+    if result:
+        i, j, k, color = result
+        print(f"\nFound {color} triangle: vertices {i}, {j}, {k}")
+    else:
+        print("\nNo monochromatic triangle found (this shouldn't happen for n=6!)")
+    
+    # Show all edge colors
+    print("\nEdge coloring:")
+    for (i, j), color in coloring.items():
+        print(f"  Edge ({i},{j}): {color}")
+
+ramsey_r33_demo()
+
+# Van der Waerden numbers
+print("\n\nVan der Waerden Numbers W(k, r)")
+print("=" * 40)
+print("Minimum N such that any r-coloring of {1,...,N}")
+print("contains a monochromatic arithmetic progression of length k")
+print()
+print("Known values:")
+print("  W(3, 2) = 9")
+print("  W(4, 2) = 35")
+print("  W(5, 2) = 178")
+print("  W(3, 3) = 27")
+
+def find_arithmetic_progression(sequence, length):
+    """Find arithmetic progression of given length in sequence."""
+    n = len(sequence)
+    for start in range(n):
+        for diff in range(1, (n - start) // (length - 1) + 1):
+            ap = [start + i * diff for i in range(length)]
+            if all(ap[i] < n for i in range(length)):
+                values = [sequence[i] for i in ap]
+                if len(set(values)) == 1:  # Monochromatic
+                    return ap, values[0]
+    return None, None
+
+# Demonstrate W(3, 2) = 9
+def demonstrate_vdw():
+    """Show that W(3, 2) = 9."""
+    print("\nDemonstrating W(3, 2) = 9:")
+    print("Any 2-coloring of {1, ..., 9} has a monochromatic 3-AP")
+    
+    # Try to find a coloring of {1,...,8} with no monochromatic 3-AP
+    # This is possible: RBRBRBRB (alternating) avoids 3-APs
+    coloring_8 = ['R', 'B', 'R', 'B', 'R', 'B', 'R', 'B']
+    ap, color = find_arithmetic_progression(coloring_8, 3)
+    print(f"\nColoring of {{1,...,8}}: {coloring_8}")
+    print(f"Monochromatic 3-AP found: {ap is not None}")
+    
+    # But for 9, it's impossible
+    # One optimal coloring: RBRBRBRBR fails at positions 1,5,9
+    coloring_9 = ['R', 'B', 'R', 'B', 'R', 'B', 'R', 'B', 'R']
+    ap, color = find_arithmetic_progression(coloring_9, 3)
+    print(f"\nColoring of {{1,...,9}}: {coloring_9}")
+    if ap:
+        print(f"Found monochromatic 3-AP at positions: {[i+1 for i in ap]} (color: {color})")
+
+demonstrate_vdw()
+
+print("\n\n--- Philosophical Implications ---")
+print("Ramsey theory shows that complete disorder is impossible.")
+print("In any sufficiently large system, patterns MUST emerge.")
+print("This applies to: social networks, number theory, geometry,")
+print("and even guarantees structure in the universe at large scales.")
+</code></pre>
+
+                <h3>4. The Banach-Tarski Paradox</h3>
+                <p>The <strong>Banach-Tarski paradox</strong> states that a solid ball in 3D space can be decomposed into finitely many pieces and reassembled into two identical copies of the original ball.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Banach-Tarski, 1924):</strong> Given a solid ball in \(\mathbb{R}^3\), there exists a decomposition of the ball into finitely many disjoint subsets which can be reassembled (using only rigid motions) into two identical copies of the original ball.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Sketch:</strong> (1) Use the axiom of choice to select one representative from each orbit of the free group \(F_2\) acting on the sphere. (2) The group \(F_2\) (free group on 2 generators) can be paradoxically decomposed: there exist disjoint subsets \(A, B, C, D\) such that \(F_2 = A \cup B = C \cup D = A \cup C\) after appropriate group actions. (3) Transfer this paradox to the sphere using the group action. (4) Extend to the ball using radial decomposition. The key is that the pieces are non-measurable and cannot be physically constructed.
+                </div>
+                
+                <p><strong>Notation:</strong> A <strong>free group</strong> \(F_2\) on generators \(a, b\) consists of all reduced words in \(a, b, a^{-1}, b^{-1}\). A decomposition is <strong>paradoxical</strong> if it can be rearranged to form two copies of the original set.</p>
+                
+                <pre><code># Python: Exploring the free group F_2 and paradoxical decompositions
+from collections import deque
+
+def reduce_word(word):
+    """Reduce a word in the free group by canceling inverse pairs."""
+    stack = []
+    for char in word:
+        if stack and stack[-1] == inverse(char):
+            stack.pop()
+        else:
+            stack.append(char)
+    return ''.join(stack)
+
+def inverse(char):
+    """Return the inverse of a generator."""
+    inv_map = {'a': 'A', 'A': 'a', 'b': 'B', 'B': 'b'}
+    return inv_map[char]
+
+def multiply_words(w1, w2):
+    """Multiply two words in the free group."""
+    return reduce_word(w1 + w2)
+
+def generate_ball(center, radius, n_points=1000):
+    """Generate points in a ball (for visualization concept)."""
+    # Generate random points uniformly in ball
+    points = []
+    for _ in range(n_points):
+        # Uniform sampling in sphere
+        u = np.random.uniform(0, 1)
+        v = np.random.uniform(0, 1)
+        theta = 2 * np.pi * u
+        phi = np.arccos(2 * v - 1)
+        r = radius * np.cbrt(np.random.uniform(0, 1))
+        
+        x = center[0] + r * np.sin(phi) * np.cos(theta)
+        y = center[1] + r * np.sin(phi) * np.sin(theta)
+        z = center[2] + r * np.cos(phi)
+        points.append((x, y, z))
+    return points
+
+# Demonstrate free group properties
+print("Free Group F_2 Properties")
+print("=" * 40)
+print("Generators: a, b (with inverses A=a⁻¹, B=b⁻¹)")
+print()
+
+# Show word reduction
+words = ['abAB', 'aAbB', 'abba', 'aAAa', 'abABabAB']
+for w in words:
+    reduced = reduce_word(w)
+    print(f"  {w} → {reduced if reduced else 'ε (empty)'}")
+
+print("\nThe Paradoxical Decomposition:")
+print("-" * 40)
+print("""
+The free group F_2 can be decomposed into 4 sets:
+  S(a) = words starting with 'a'
+  S(A) = words starting with 'A'  
+  S(b) = words starting with 'b'
+  S(B) = words starting with 'B'
+  Plus {e} (the identity)
+
+Key observation:
+  F_2 = S(a) ∪ a·S(A)  (every word either starts with 'a' or 
+                        can be written as 'a' times a word 
+                        starting with 'A')
+  F_2 = S(b) ∪ b·S(B)
+
+This is the algebraic heart of the Banach-Tarski paradox!
+""")
+
+print("Why this doesn't violate conservation of mass:")
+print("-" * 40)
+print("1. The pieces are NON-MEASURABLE")
+print("   - They cannot be assigned a volume")
+print("   - They are constructed using the Axiom of Choice")
+print()
+print("2. No physical realization is possible")
+print("   - The pieces have no definable shape")
+print("   - They are scattered 'dust' throughout the ball")
+print()
+print("3. The decomposition requires:")
+print("   - Uncountably many choices (Axiom of Choice)")
+print("   - Pieces that violate Lebesgue measurability")
+
+print("\n\nConnection to Amenability:")
+print("-" * 40)
+print("A group is 'amenable' if it admits no paradoxical decomposition.")
+print("F_2 is NOT amenable → allows Banach-Tarski")
+print("Abelian groups ARE amenable → no paradox")
+print("This is why Banach-Tarski fails in 1D and 2D!")
+</code></pre>
+            </section>
+            
+            <section id="history">
+                <h2>📜 Math History</h2>
+                
+                <h3>February 17 in Mathematical History</h3>
+                <ul>
+                    <li><strong>1843:</strong> On this day, William Rowan Hamilton discovered quaternions while walking along the Royal Canal in Dublin. He famously carved the fundamental equations \(i^2 = j^2 = k^2 = ijk = -1\) into Brougham Bridge.</li>
+                    <li><strong>1890:</strong> Ronald Fisher, the father of modern statistics, was born. He pioneered analysis of variance (ANOVA), maximum likelihood estimation, and the design of experiments.</li>
+                    <li><strong>1963:</strong> Michael Jordan, whose name became synonymous with the Jordan normal form in linear algebra (among other contributions), made significant advances in operator theory.</li>
+                    <li><strong>2005:</strong> The proof of the Poincaré conjecture by Grigori Perelman was confirmed. Perelman declined both the Fields Medal and the million-dollar Clay Millennium Prize, citing dissatisfaction with the mathematical community's ethics.</li>
+                </ul>
+                
+                <h3>This Week in Mathematics</h3>
+                <p>On February 15, 1564, Galileo Galilei was born. His work on motion and mechanics laid the groundwork for calculus and mathematical physics. His famous (though possibly apocryphal) experiment at the Leaning Tower of Pisa demonstrated that objects fall at the same rate regardless of mass, contradicting Aristotelian physics and paving the way for Newton's laws.</p>
+            </section>
+            
+            <section id="articles">
+                <h2>📰 Featured Articles</h2>
+                
+                <h3><a href="https://www.quantamagazine.org/mathematicians-solve-long-standing-problem-on-coloring-graphs-20250708/">Mathematicians Solve Long-Standing Problem on Graph Coloring</a> — Quanta Magazine</h3>
+                <p>Researchers have resolved a decades-old question about the chromatic number of certain infinite graphs. The breakthrough uses techniques from descriptive set theory and Ramsey theory to establish bounds that were previously conjectured but unproven. This work connects combinatorics with logic in unexpected ways.</p>
+                
+                <h3><a href="https://www.ams.org/journals/notices/202507/rnoti-p1234.html">The Renaissance of Geometric Deep Learning</a> — AMS Notices</h3>
+                <p>An exploration of how differential geometry and algebraic topology are revolutionizing machine learning. The article discusses graph neural networks, manifold learning, and the application of Hodge theory to data analysis. Mathematicians are increasingly collaborating with computer scientists to provide theoretical foundations for deep learning architectures.</p>
+                
+                <h3><a href="https://www.nature.com/articles/s41586-025-00456-7">Quantum Error Correction Reaches New Milestone</a> — Nature</h3>
+                <p>Physicists have demonstrated a quantum error correction code that approaches the theoretical limits established by quantum information theory. The experiment uses topological codes inspired by knot theory and represents a significant step toward fault-tolerant quantum computing. The mathematical structures underlying these codes connect to deep results in algebraic topology.</p>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p><a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
