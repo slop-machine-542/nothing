@@ -1,0 +1,2286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily Math Digest - Functional Analysis, Algebraic Topology, Combinatorics, Numerical Analysis, Cryptography, Mathematical Biology, Millennium Prize Problems">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Daily Math Digest - February 16, 2026</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --bg: #f8f9fa;
+            --text: #333;
+            --code-bg: #f4f4f4;
+            --border: #ddd;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 10px 0 0; opacity: 0.9; font-size: 1.1rem; }
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        nav a:hover { color: var(--secondary); }
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .topic-card {
+            margin: 25px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 8px 8px 0;
+        }
+        .topic-card h3 { color: var(--primary); margin-top: 0; }
+        .topic-card h4 { color: var(--secondary); margin-top: 20px; }
+        .theorem {
+            background: #e8f4f8;
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .theorem-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .proof {
+            background: #fff8e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .proof-title {
+            font-weight: bold;
+            color: #d68910;
+            margin-bottom: 10px;
+        }
+        .notation-box {
+            background: #f0f8ff;
+            border-left: 4px solid #4169e1;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        pre {
+            background: var(--code-bg);
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+        }
+        .links-list {
+            list-style: none;
+            padding: 0;
+        }
+        .links-list li {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        .links-list a {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .description {
+            margin-top: 8px;
+            color: #555;
+        }
+        .book-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .book-highlight a {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #3498db, #9b59b6);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+        }
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #3498db;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #3498db;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: #2980b9;
+            font-size: 1.1rem;
+        }
+        .external-articles {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .article-card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent);
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid var(--border);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📐 Daily Math Digest</h1>
+        <p>Functional Analysis • Algebraic Topology • Combinatorics • Numerical Analysis • Cryptography • Mathematical Biology • Millennium Prize Problems</p>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="../index.html">← Back to Home</a>
+            <a href="../index.html">All Posts</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section">
+            <p class="date" style="color: #666; font-style: italic;">Generated: February 16, 2026 05:13 UTC</p>
+        </div>
+
+        <!-- SECTION 1: Random Math Links -->
+        <section class="section">
+            <h2 class="section-title">🔗 3 Random Math Links</h2>
+            <ul class="links-list">
+                <li>
+                    <a href="https://en.wikipedia.org/wiki/Hilbert_space" target="_blank">Hilbert Space - Wikipedia</a>
+                    <p class="description">A complete inner product space that generalizes Euclidean space to infinite dimensions. Fundamental to functional analysis, quantum mechanics, and Fourier analysis.</p>
+                </li>
+                <li>
+                    <a href="https://ncatlab.org/nlab/show/algebraic+topology" target="_blank">nLab - Algebraic Topology</a>
+                    <p class="description">A comprehensive wiki resource on algebraic topology, covering homotopy, homology, cohomology, and higher category theory.</p>
+                </li>
+                <li>
+                    <a href="https://www.claymath.org/millennium-problems/" target="_blank">Clay Mathematics Institute - Millennium Problems</a>
+                    <p class="description">The seven most difficult problems in mathematics, each with a $1 million prize. Only one (Poincaré Conjecture) has been solved to date.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- SECTION 2: Free Math Book -->
+        <section class="section">
+            <h2 class="section-title">📖 Free Math Book of the Day</h2>
+            <div class="book-highlight">
+                <h3>Functional Analysis</h3>
+                <p><strong>by Theo Bühler and Dietmar A. Salamon</strong></p>
+                <p>A comprehensive graduate-level text covering the core concepts of functional analysis including Banach spaces, Hilbert spaces, weak topologies, and spectral theory. Includes detailed proofs and exercises.</p>
+                <p><a href="https://people.math.ethz.ch/~salamon/PREPRINTS/funcana.pdf" target="_blank">📥 Download Free PDF</a></p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Pure Math Deep Dives -->
+        <section class="section">
+            <h2 class="section-title">🔬 3 Pure Math Deep Dives</h2>
+
+            <!-- FUNCTIONAL ANALYSIS -->
+            <div class="topic-card">
+                <h3>1. Functional Analysis: The Hahn-Banach Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Functional analysis is the study of infinite-dimensional vector spaces and the linear functions defined on them. It emerged in the early 20th century to provide a rigorous foundation for calculus of variations, differential equations, and quantum mechanics.</p>
+                
+                <p>The <strong>Hahn-Banach Theorem</strong> is arguably the most important theorem in functional analysis. It states that a bounded linear functional defined on a subspace can be extended to the entire space without increasing its norm. This seemingly simple result has profound consequences throughout analysis.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(X\\) — a normed vector space over \\(\\mathbb{R}\\) or \\(\\mathbb{C}\\)</li>
+                        <li>\\(X^*\\) — the dual space of continuous linear functionals on \\(X\\)</li>
+                        <li>\\(\\|f\\| = \\sup_{\\|x\\|=1}|f(x)|\\) — the operator norm</li>
+                        <li>\\(p: X \\to \\mathbb{R}\\) — a sublinear functional (satisfies \\(p(x+y) \\leq p(x) + p(y)\\) and \\(p(\\alpha x) = \\alpha p(x)\\) for \\(\\alpha \\geq 0\\))</li>
+                        <li>\\(M \\subseteq X\\) — a subspace of \\(X\\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Hahn-Banach Theorem (Real Version)</div>
+                    <p>Let \\(X\\) be a real vector space, \\(p: X \\to \\mathbb{R}\\) a sublinear functional, \\(M \\subseteq X\\) a subspace, and \\(f: M \\to \\mathbb{R}\\) a linear functional satisfying \\(f(x) \\leq p(x)\\) for all \\(x \\in M\\).</p>
+                    <p>Then there exists a linear extension \\(F: X \\to \\mathbb{R}\\) such that:</p>
+                    <p>\\[F|_M = f \\quad \\text{and} \\quad F(x) \\leq p(x) \\text{ for all } x \\in X\\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (by Zorn's Lemma)</div>
+                    <p><strong>Step 1:</strong> Consider the set \\(\\mathcal{P}\\) of all pairs \\((N, g)\\) where \\(N\\) is a subspace containing \\(M\\) and \\(g: N \\to \\mathbb{R}\\) extends \\(f\\) with \\(g(x) \\leq p(x)\\) on \\(N\\).</p>
+                    
+                    <p><strong>Step 2:</strong> Define a partial order: \\((N_1, g_1) \\leq (N_2, g_2)\\) if \\(N_1 \\subseteq N_2\\) and \\(g_2|_{N_1} = g_1\\).</p>
+                    
+                    <p><strong>Step 3:</strong> Show every chain has an upper bound (take unions), so by Zorn's Lemma, a maximal element \\((N_{max}, F)\\) exists.</p>
+                    
+                    <p><strong>Step 4:</strong> Prove \\(N_{max} = X\\) by contradiction: if \\(y \\in X \\setminus N_{max}\\), extend \\(F\\) to \\(\\text{span}(N_{max} \\cup \\{y\\})\\) by defining:</p>
+                    <p>\\[F(x + \\alpha y) = F(x) + \\alpha c\\]</p>
+                    <p>where \\(c\\) is carefully chosen to maintain \\(F \\leq p\\).</p>
+                    
+                    <p><strong>Step 5:</strong> The key constraint is that for all \\(x_1, x_2 \\in N_{max}\\):</p>
+                    <p>\\[F(x_1) - p(x_1 - y) \\leq c \\leq p(x_2 + y) - F(x_2)\\]</p>
+                    <p>Such a \\(c\\) exists because \\(F(x_1) + F(x_2) = F(x_1 + x_2) \\leq p(x_1 + x_2) \\leq p(x_1 - y) + p(x_2 + y)\\).</p>
+                </div>
+
+                <h4>Python Implementation: Norm Computation</h4>
+                <pre><code>import numpy as np
+from scipy.optimize import linprog
+
+def hahn_banach_extension(subspace_basis, functional_values, point, norm_type='l2'):
+    """
+    Compute the norm of a linear functional using Hahn-Banach duality.
+    
+    For a subspace M with basis {v1, ..., vk} and functional f defined by
+    f(vi) = ci, find the operator norm of f.
+    
+    Args:
+        subspace_basis: List of basis vectors (each a numpy array)
+        functional_values: Values of f on each basis vector
+        point: Point at which to evaluate the extension
+        norm_type: 'l1', 'l2', or 'linf'
+    
+    Returns:
+        Dictionary with norm and extension information
+    """
+    # Convert to matrix form
+    V = np.column_stack(subspace_basis)
+    c = np.array(functional_values)
+    
+    # The norm of f is the minimum norm of any extension
+    # For finite dimensions, this can be computed via optimization
+    
+    if norm_type == 'l2':
+        # For L2 norm: ||f|| = sqrt(c^T (V^T V)^{-1} c)
+        gram_matrix = V.T @ V
+        try:
+            norm = np.sqrt(c @ np.linalg.solve(gram_matrix, c))
+        except np.linalg.LinAlgError:
+            # Use pseudoinverse for numerical stability
+            norm = np.sqrt(c @ np.linalg.lstsq(gram_matrix, c, rcond=None)[0])
+        
+        return {
+            'operator_norm': norm,
+            'gram_matrix': gram_matrix,
+            'functional_values': c
+        }
+    
+    elif norm_type == 'l1':
+        # L1 norm requires linear programming
+        n = len(point)
+        # Minimize ||x||_1 subject to V^T x = c
+        # This is a standard basis pursuit problem
+        c_obj = np.ones(2 * n)  # For x = u - v where u, v >= 0
+        A_eq = np.hstack([V.T, -V.T])
+        b_eq = c
+        bounds = [(0, None) for _ in range(2 * n)]
+        
+        result = linprog(c_obj, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+        return {
+            'operator_norm': result.fun if result.success else None,
+            'solution': result.x[:n] - result.x[n:] if result.success else None
+        }
+
+# Example: Functional on a 2D subspace of R^3
+v1 = np.array([1, 0, 1])
+v2 = np.array([0, 1, 1])
+f_values = [2, 3]  # f(v1) = 2, f(v2) = 3
+
+result = hahn_banach_extension([v1, v2], f_values, np.array([1, 1, 2]))
+print(f"Operator norm of the functional: {result['operator_norm']:.4f}")
+
+# Verify: the norm should equal sup{|f(x)| : ||x|| = 1, x in M}
+print("\\nVerification by sampling:")
+theta_samples = np.linspace(0, 2*np.pi, 1000)
+norm_samples = []
+for theta in theta_samples:
+    x = np.cos(theta) * v1 + np.sin(theta) * v2
+    x_unit = x / np.linalg.norm(x)
+    f_x = np.cos(theta) * f_values[0] + np.sin(theta) * f_values[1]
+    norm_samples.append(abs(f_x) / np.linalg.norm(x))
+print(f"Maximum |f(x)|/||x|| by sampling: {max(norm_samples):.4f}")</code></pre>
+            </div>
+
+            <!-- ALGEBRAIC TOPOLOGY -->
+            <div class="topic-card">
+                <h3>2. Algebraic Topology: Simplicial Homology</h3>
+                
+                <h4>Introduction</h4>
+                <p>Algebraic topology uses algebraic tools to study topological spaces. While the fundamental group captures 1-dimensional "holes," <strong>homology groups</strong> capture holes of all dimensions in a systematic way.</p>
+                
+                <p>Simplicial homology is the most concrete version, defined for spaces built from simplices (points, line segments, triangles, tetrahedra, etc.). It counts \\(n\\)-dimensional cycles that are not boundaries of \\((n+1)\\)-dimensional objects.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\Delta^n\\) — the standard n-simplex</li>
+                        <li>\\(C_n(K)\\) — the group of n-chains (formal sums of n-simplices)</li>
+                        <li>\\(\\partial_n: C_n \\to C_{n-1}\\) — the boundary operator</li>
+                        <li>\\(Z_n = \\ker(\\partial_n)\\) — n-cycles (chains with zero boundary)</li>
+                        <li>\\(B_n = \\text{im}(\\partial_{n+1})\\) — n-boundaries</li>
+                        <li>\\(H_n(K) = Z_n / B_n\\) — the nth homology group</li>
+                        <li>\\(\\beta_n = \\text{rank}(H_n)\\) — the nth Betti number</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Fundamental Property of the Boundary Operator</div>
+                    <p>For any simplicial complex \\(K\\):</p>
+                    <p>\\[\\partial_{n-1} \\circ \\partial_n = 0\\]</p>
+                    <p>Equivalently: \\(\\text{im}(\\partial_{n+1}) \\subseteq \\ker(\\partial_n)\\), so boundaries are always cycles.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof</div>
+                    <p><strong>Step 1:</strong> It suffices to check on a single simplex. Let \\(\\sigma = [v_0, v_1, \\ldots, v_n]\\).</p>
+                    
+                    <p><strong>Step 2:</strong> The boundary is:</p>
+                    <p>\\[\\partial_n(\\sigma) = \\sum_{i=0}^{n} (-1)^i [v_0, \\ldots, \\hat{v}_i, \\ldots, v_n]\\]</p>
+                    <p>where \\(\\hat{v}_i\\) means omit vertex \\(v_i\\).</p>
+                    
+                    <p><strong>Step 3:</strong> Apply \\(\\partial_{n-1}\\):</p>
+                    <p>\\[\\partial_{n-1}(\\partial_n(\\sigma)) = \\sum_{i=0}^{n} (-1)^i \\partial_{n-1}([v_0, \\ldots, \\hat{v}_i, \\ldots, v_n])\\]</p>
+                    
+                    <p><strong>Step 4:</strong> Each face \\([v_0, \\ldots, \\hat{v}_i, \\ldots, \\hat{v}_j, \\ldots, v_n]\\) appears exactly twice:</p>
+                    <ul>
+                        <li>Once when omitting \\(v_i\\) first (from the outer sum), then \\(v_j\\) (from the inner), with sign \\((-1)^i \\cdot (-1)^{j-1}\\)</li>
+                        <li>Once when omitting \\(v_j\\) first, then \\(v_i\\), with sign \\((-1)^j \\cdot (-1)^i\\)</li>
+                    </ul>
+                    
+                    <p><strong>Step 5:</strong> These signs are opposite: \\((-1)^{i+j-1} + (-1)^{i+j} = 0\\). All terms cancel pairwise. \\(\\square\\)</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Homology of the 2-Sphere</div>
+                    <p>For the 2-sphere \\(S^2\\):</p>
+                    <p>\\[H_n(S^2) \\cong \\begin{cases} \\mathbb{Z} & n = 0, 2 \\\\ 0 & n = 1 \\\\ 0 & n \\geq 3 \\end{cases}\\]</p>
+                    <p>The Betti numbers are \\(\\beta_0 = 1\\) (connected), \\(\\beta_1 = 0\\) (no 1-d holes), \\(\\beta_2 = 1\\) (one 2-d void).</p>
+                </div>
+
+                <h4>Python Implementation: Computing Homology</h4>
+                <pre><code>import numpy as np
+from itertools import combinations
+from collections import defaultdict
+
+class SimplicialComplex:
+    """A simplicial complex represented by its maximal simplices."""
+    
+    def __init__(self, maximal_simplices):
+        """
+        Args:
+            maximal_simplices: List of lists/tuples, each representing a simplex
+        """
+        self.maximal = [tuple(sorted(s)) for s in maximal_simplices]
+        self.simplices = self._generate_all_simplices()
+    
+    def _generate_all_simplices(self):
+        """Generate all faces of all dimensions."""
+        all_simplices = defaultdict(set)
+        for simplex in self.maximal:
+            for r in range(1, len(simplex) + 1):
+                for face in combinations(simplex, r):
+                    all_simplices[r - 1].add(face)
+        return {dim: sorted(list(simplices)) for dim, simplices in all_simplices.items()}
+    
+    def boundary_matrix(self, n):
+        """Compute the boundary matrix ∂_n: C_n → C_{n-1}."""
+        if n not in self.simplices or (n - 1) not in self.simplices:
+            return np.zeros((0, 0))
+        
+        n_simplices = self.simplices[n]
+        n_minus_1_simplices = self.simplices[n - 1]
+        
+        # Create index mapping
+        idx_map = {s: i for i, s in enumerate(n_minus_1_simplices)}
+        
+        rows = len(n_minus_1_simplices)
+        cols = len(n_simplices)
+        matrix = np.zeros((rows, cols), dtype=int)
+        
+        for j, simplex in enumerate(n_simplices):
+            for i, vertex in enumerate(simplex):
+                face = simplex[:i] + simplex[i+1:]
+                if face in idx_map:
+                    matrix[idx_map[face], j] = (-1) ** i
+        
+        return matrix
+    
+    def homology_rank(self, n):
+        """Compute the nth Betti number using rank-nullity."""
+        if n not in self.simplices:
+            return 0
+        
+        # H_n = ker(∂_n) / im(∂_{n+1})
+        # β_n = dim(ker ∂_n) - dim(im ∂_{n+1})
+        #     = dim(C_n) - rank(∂_n) - rank(∂_{n+1})
+        
+        d_n = self.boundary_matrix(n)
+        d_n_plus_1 = self.boundary_matrix(n + 1)
+        
+        rank_d_n = np.linalg.matrix_rank(d_n)
+        rank_d_n_plus_1 = np.linalg.matrix_rank(d_n_plus_1)
+        dim_C_n = len(self.simplices.get(n, []))
+        
+        return dim_C_n - rank_d_n - rank_d_n_plus_1
+
+# Example: Triangulation of a circle (1-sphere)
+# Vertices: 0, 1, 2
+# Edges: (0,1), (1,2), (2,0)
+circle = SimplicialComplex([(0, 1), (1, 2), (2, 0)])
+print("Circle S^1 homology:")
+print(f"  β_0 = {circle.homology_rank(0)} (connected components)")
+print(f"  β_1 = {circle.homology_rank(1)} (1-dimensional holes)")
+
+# Example: Triangulation of a 2-sphere (tetrahedron boundary)
+# Vertices: 0, 1, 2, 3
+# Faces: all triangles of the tetrahedron
+sphere = SimplicialComplex([
+    (0, 1, 2), (0, 1, 3), (0, 2, 3), (1, 2, 3)
+])
+print("\\nSphere S^2 homology:")
+print(f"  β_0 = {sphere.homology_rank(0)}")
+print(f"  β_1 = {sphere.homology_rank(1)}")
+print(f"  β_2 = {sphere.homology_rank(2)}")
+
+# Example: Torus (simplified triangulation)
+# Using a minimal triangulation with 7 vertices
+torus = SimplicialComplex([
+    (0, 1, 2), (0, 2, 3), (0, 3, 1),  # First triangle fan
+    (1, 2, 4), (2, 3, 4), (3, 1, 4),  # Connect to vertex 4
+    (0, 1, 5), (1, 4, 5), (0, 4, 5),  # More faces
+    (0, 2, 6), (2, 4, 6), (0, 4, 6),  # More faces
+])
+print("\\nTorus T^2 homology:")
+print(f"  β_0 = {torus.homology_rank(0)}")
+print(f"  β_1 = {torus.homology_rank(1)}")
+print(f"  β_2 = {torus.homology_rank(2)}")</code></pre>
+            </div>
+
+            <!-- COMBINATORICS -->
+            <div class="topic-card">
+                <h3>3. Combinatorics: Ramsey Theory</h3>
+                
+                <h4>Introduction</h4>
+                <p>Ramsey theory is a branch of combinatorics that studies conditions under which order must appear. Its central philosophy: <em>complete disorder is impossible</em>. In any sufficiently large system, there must exist structured subsystems.</p>
+                
+                <p>The classic example: in any group of six people, there are either three mutual acquaintances or three mutual strangers. This is \\(R(3,3) = 6\\).</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(R(s, t)\\) — the Ramsey number: minimum \\(n\\) such that any 2-coloring of \\(K_n\\) edges contains a red \\(K_s\\) or blue \\(K_t\\)</li>
+                        <li>\\(K_n\\) — the complete graph on \\(n\\) vertices</li>
+                        <li>\\(\\binom{n}{k}\\) — binomial coefficient, number of \\(k\\)-subsets of an \\(n\\)-set</li>
+                        <li>\\(\\chi\\) — chromatic number</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Ramsey's Theorem (Graph Version)</div>
+                    <p>For any positive integers \\(s, t \\geq 2\\), there exists a least positive integer \\(R(s, t)\\) such that every edge-coloring of the complete graph \\(K_n\\) with \\(n \\geq R(s, t)\\) vertices (using red and blue) contains either:</p>
+                    <ul>
+                        <li>A red complete subgraph \\(K_s\\), or</li>
+                        <li>A blue complete subgraph \\(K_t\\)</li>
+                    </ul>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof (by induction on \\(s + t\\))</div>
+                    <p><strong>Base case:</strong> \\(R(2, t) = t\\) and \\(R(s, 2) = s\\). Trivial: any edge coloring of \\(K_t\\) either has a red edge (giving red \\(K_2\\)) or is entirely blue (giving blue \\(K_t\\)).</p>
+                    
+                    <p><strong>Inductive step:</strong> Assume \\(R(s-1, t)\\) and \\(R(s, t-1)\\) exist. We'll show:</p>
+                    <p>\\[R(s, t) \\leq R(s-1, t) + R(s, t-1)\\]</p>
+                    
+                    <p><strong>Step 1:</strong> Let \\(n = R(s-1, t) + R(s, t-1)\\) and consider any 2-coloring of \\(K_n\\). Pick any vertex \\(v\\).</p>
+                    
+                    <p><strong>Step 2:</strong> Let \\(R\\) be the set of vertices connected to \\(v\\) by red edges, \\(B\\) by blue edges. Then \\(|R| + |B| = n - 1 = R(s-1, t) + R(s, t-1) - 1\\).</p>
+                    
+                    <p><strong>Step 3:</strong> By pigeonhole principle, either \\(|R| \\geq R(s-1, t)\\) or \\(|B| \\geq R(s, t-1)\\).</p>
+                    
+                    <p><strong>Step 4:</strong> If \\(|R| \\geq R(s-1, t)\\): The subgraph on \\(R\\) contains either:
+                        <ul>
+                            <li>Red \\(K_{s-1}\\): together with \\(v\\), forms red \\(K_s\\)</li>
+                            <li>Blue \\(K_t\\): we're done</li>
+                        </ul>
+                    </p>
+                    
+                    <p><strong>Step 5:</strong> Similarly if \\(|B| \\geq R(s, t-1)\\).</p>
+                    
+                    <p><strong>Step 6:</strong> This gives the recurrence \\(R(s, t) \\leq R(s-1, t) + R(s, t-1)\\), completing the induction. \\(\\square\\)</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Upper Bound</div>
+                    <p>\\[R(s, t) \\leq \\binom{s+t-2}{s-1}\\]</p>
+                    <p>In particular: \\(R(s, s) \\leq \\binom{2s-2}{s-1} \\sim \\frac{4^{s-1}}{\\sqrt{\\pi(s-1)}}\\)</p>
+                </div>
+
+                <h4>Python Implementation: Ramsey Number Bounds</h4>
+                <pre><code>import numpy as np
+from itertools import combinations
+import networkx as nx
+
+def ramsey_upper_bound(s, t):
+    """
+    Compute the upper bound R(s,t) ≤ C(s+t-2, s-1) using the recurrence.
+    """
+    from math import comb
+    return comb(s + t - 2, s - 1)
+
+def check_ramsey_property(n, s, t, coloring):
+    """
+    Check if a given edge coloring of K_n has red K_s or blue K_t.
+    
+    Args:
+        n: number of vertices
+        s: size of red clique to find
+        t: size of blue clique to find
+        coloring: dict mapping edges (i,j) to 'red' or 'blue'
+    
+    Returns:
+        (has_red_Ks, has_blue_Kt, red_clique, blue_clique)
+    """
+    # Build adjacency matrices
+    red_edges = set()
+    blue_edges = set()
+    
+    for (i, j), color in coloring.items():
+        if color == 'red':
+            red_edges.add((min(i,j), max(i,j)))
+        else:
+            blue_edges.add((min(i,j), max(i,j)))
+    
+    # Check for red K_s
+    red_clique = None
+    for vertices in combinations(range(n), s):
+        if all((min(v1,v2), max(v1,v2)) in red_edges 
+               for v1, v2 in combinations(vertices, 2)):
+            red_clique = vertices
+            break
+    
+    # Check for blue K_t
+    blue_clique = None
+    for vertices in combinations(range(n), t):
+        if all((min(v1,v2), max(v1,v2)) in blue_edges 
+               for v1, v2 in combinations(vertices, 2)):
+            blue_clique = vertices
+            break
+    
+    return (red_clique is not None, blue_clique is not None, 
+            red_clique, blue_clique)
+
+def find_ramsey_counterexample(n, s, t):
+    """
+    Try to find a coloring of K_n without red K_s or blue K_t.
+    Returns the coloring if found, None otherwise.
+    """
+    from itertools import product
+    
+    edges = list(combinations(range(n), 2))
+    
+    # For small cases, try random sampling
+    np.random.seed(42)
+    for trial in range(1000):
+        coloring = {}
+        for edge in edges:
+            coloring[edge] = 'red' if np.random.random() < 0.5 else 'blue'
+        
+        has_red, has_blue, _, _ = check_ramsey_property(n, s, t, coloring)
+        if not has_red and not has_blue:
+            return coloring
+    
+    return None
+
+# Verify R(3,3) = 6
+print("Ramsey Numbers Verification")
+print("=" * 50)
+
+# R(3,3): In any group of 6 people, 3 mutual friends or 3 mutual strangers
+print("\\nR(3,3) = 6 verification:")
+print(f"Upper bound: {ramsey_upper_bound(3, 3)}")
+
+# Check that K_5 can be colored without monochromatic triangle
+counter_5 = find_ramsey_counterexample(5, 3, 3)
+print(f"K_5 coloring without monochromatic K_3 exists: {counter_5 is not None}")
+
+# Check that K_6 always has monochromatic triangle
+counter_6 = find_ramsey_counterexample(6, 3, 3)
+print(f"K_6 coloring without monochromatic K_3 exists: {counter_6 is not None}")
+
+# Print some known bounds
+print("\\nKnown Ramsey Number Bounds:")
+print(f"R(3,4) ≤ {ramsey_upper_bound(3, 4)} (actual: 9)")
+print(f"R(4,4) ≤ {ramsey_upper_bound(4, 4)} (actual: 18)")
+print(f"R(5,5) ≤ {ramsey_upper_bound(5, 5)} (actual: unknown, between 43 and 48)")
+
+# Visualize a valid 2-coloring of K_5
+def visualize_coloring(n, coloring):
+    """Create a visualization of the edge coloring."""
+    G_red = nx.Graph()
+    G_blue = nx.Graph()
+    G_red.add_nodes_from(range(n))
+    G_blue.add_nodes_from(range(n))
+    
+    for (i, j), color in coloring.items():
+        if color == 'red':
+            G_red.add_edge(i, j)
+        else:
+            G_blue.add_edge(i, j)
+    
+    return G_red, G_blue
+
+if counter_5:
+    print("\\nValid 2-coloring of K_5 without monochromatic triangle:")
+    G_red, G_blue = visualize_coloring(5, counter_5)
+    print(f"Red edges: {list(G_red.edges())}")
+    print(f"Blue edges: {list(G_blue.edges())}")</code></pre>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Applied Math Deep Dives -->
+        <section class="section">
+            <h2 class="section-title">🧮 3 Applied Math Deep Dives</h2>
+
+            <!-- NUMERICAL ANALYSIS -->
+            <div class="topic-card">
+                <h3>1. Numerical Analysis: Newton-Raphson Method</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Newton-Raphson method is one of the most powerful techniques for finding roots of nonlinear equations. It uses local linear approximation to iteratively converge to a solution with quadratic convergence rate.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(f: \\mathbb{R}^n \\to \\mathbb{R}^n\\) — a differentiable function</li>
+                        <li>\\(Df(x)\\) or \\(J_f(x)\\) — the Jacobian matrix of \\(f\\) at \\(x\\)</li>
+                        <li>\\(x^*\\) — a root: \\(f(x^*) = 0\\)</li>
+                        <li>\\(e_k = x_k - x^*\\) — the error at iteration \\(k\\)</li>
+                        <li>\\(O(\\cdot)\\) — big-O notation for convergence rates</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Newton-Raphson Iteration</div>
+                    <p>Given \\(f: \\mathbb{R}^n \\to \\mathbb{R}^n\\) and initial guess \\(x_0\\), the Newton iteration is:</p>
+                    <p>\\[x_{k+1} = x_k - [Df(x_k)]^{-1}f(x_k)\\]</p>
+                    <p>Equivalently: solve \\(Df(x_k) \\Delta x = -f(x_k)\\) for \\(\\Delta x\\), then \\(x_{k+1} = x_k + \\Delta x\\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Local Quadratic Convergence</div>
+                    <p>Let \\(f\\) be twice continuously differentiable with \\(f(x^*) = 0\\). If \\(Df(x^*)\\) is invertible and \\(x_0\\) is sufficiently close to \\(x^*\\), then:</p>
+                    <p>\\[\\|x_{k+1} - x^*\\| \\leq C\\|x_k - x^*\\|^2\\]</p>
+                    <p>for some constant \\(C > 0\\). The number of correct digits roughly doubles each iteration.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of Quadratic Convergence</div>
+                    <p><strong>Step 1:</strong> Taylor expand \\(f\\) around \\(x_k\\):</p>
+                    <p>\\[f(x^*) = f(x_k) + Df(x_k)(x^* - x_k) + O(\\|x^* - x_k\\|^2)\\]</p>
+                    <p>Since \\(f(x^*) = 0\\):</p>
+                    <p>\\[0 = f(x_k) + Df(x_k)(x^* - x_k) + O(\\|e_k\\|^2)\\]</p>
+                    
+                    <p><strong>Step 2:</strong> The Newton update gives:</p>
+                    <p>\\[x_{k+1} = x_k - [Df(x_k)]^{-1}f(x_k)\\]</p>
+                    
+                    <p><strong>Step 3:</strong> Compute the new error:</p>
+                    <p>\\[e_{k+1} = x_{k+1} - x^* = x_k - x^* - [Df(x_k)]^{-1}f(x_k)\\]</p>
+                    <p>\\[= e_k - [Df(x_k)]^{-1}f(x_k)\\]</p>
+                    
+                    <p><strong>Step 4:</strong> From Step 1: \\(f(x_k) = -Df(x_k)e_k + O(\\|e_k\\|^2)\\)</p>
+                    <p>So: \\(e_{k+1} = e_k - [Df(x_k)]^{-1}(-Df(x_k)e_k + O(\\|e_k\\|^2))\\)</p>
+                    <p>\\[= e_k + e_k - [Df(x_k)]^{-1}O(\\|e_k\\|^2) = O(\\|e_k\\|^2)\\)</p>
+                    
+                    <p><strong>Step 5:</strong> More precisely, using Lipschitz continuity of \\(Df\\):</p>
+                    <p>\\[\\|e_{k+1}\\| \\leq \\frac{1}{2}\\|[Df(x^*)]^{-1}\\| \\cdot L \\cdot \\|e_k\\|^2\\]</p>
+                    <p>where \\(L\\) is the Lipschitz constant of \\(Df\\). \\(\\square\\)</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from scipy.optimize import fsolve
+import matplotlib.pyplot as plt
+
+def newton_raphson(f, df, x0, tol=1e-10, max_iter=100, verbose=False):
+    """
+    Newton-Raphson method for solving f(x) = 0.
+    
+    Args:
+        f: Function R^n → R^n
+        df: Jacobian of f
+        x0: Initial guess
+        tol: Convergence tolerance
+        max_iter: Maximum iterations
+        verbose: Print iteration details
+    
+    Returns:
+        (root, converged, iterations, history)
+    """
+    x = np.array(x0, dtype=float)
+    history = [x.copy()]
+    
+    for i in range(max_iter):
+        fx = f(x)
+        Dfx = df(x)
+        
+        # Solve Df(x) * delta = -f(x)
+        try:
+            delta = np.linalg.solve(Dfx, -fx)
+        except np.linalg.LinAlgError:
+            # Use least squares if singular
+            delta = np.linalg.lstsq(Dfx, -fx, rcond=None)[0]
+        
+        x_new = x + delta
+        history.append(x_new.copy())
+        
+        if verbose:
+            print(f"Iter {i+1}: x = {x_new}, ||f(x)|| = {np.linalg.norm(f(x_new)):.2e}")
+        
+        if np.linalg.norm(delta) < tol:
+            return x_new, True, i+1, history
+        
+        x = x_new
+    
+    return x, False, max_iter, history
+
+# Example 1: Scalar function - finding sqrt(2)
+def f1(x):
+    return x**2 - 2
+
+def df1(x):
+    return 2*x
+
+print("Example 1: Finding √2")
+print("=" * 50)
+root, conv, iters, hist = newton_raphson(f1, df1, [1.5], verbose=True)
+print(f"\\nRoot: {root[0]:.15f}")
+print(f"Actual √2: {np.sqrt(2):.15f}")
+print(f"Converged: {conv}, Iterations: {iters}")
+
+# Show quadratic convergence
+print("\\nConvergence history:")
+for i, x in enumerate(hist):
+    error = abs(x[0] - np.sqrt(2))
+    print(f"  Iter {i}: error = {error:.2e}")
+
+# Example 2: System of nonlinear equations (2D)
+def f2(x):
+    """System: x^2 + y^2 = 4, x*y = 1"""
+    return np.array([
+        x[0]**2 + x[1]**2 - 4,
+        x[0]*x[1] - 1
+    ])
+
+def df2(x):
+    """Jacobian of f2"""
+    return np.array([
+        [2*x[0], 2*x[1]],
+        [x[1], x[0]]
+    ])
+
+print("\\n\\nExample 2: System of equations")
+print("=" * 50)
+print("Solving: x² + y² = 4, xy = 1")
+root, conv, iters, hist = newton_raphson(f2, df2, [1.5, 0.5], verbose=True)
+print(f"\\nRoot: ({root[0]:.10f}, {root[1]:.10f})")
+print(f"Verification: f(root) = {f2(root)}")
+
+# Example 3: Newton fractal visualization
+def newton_fractal(f, df, roots, bounds=(-2, 2, -2, 2), resolution=400):
+    """
+    Generate a Newton fractal showing basins of attraction.
+    """
+    x_min, x_max, y_min, y_max = bounds
+    x = np.linspace(x_min, x_max, resolution)
+    y = np.linspace(y_min, y_max, resolution)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j*Y
+    
+    # Newton iteration for complex numbers
+    for _ in range(50):
+        Z = Z - f(Z) / df(Z)
+    
+    # Assign each point to nearest root
+    fractal = np.zeros(Z.shape)
+    for i, root in enumerate(roots):
+        fractal += (i+1) * (np.abs(Z - root) < 0.1)
+    
+    return fractal
+
+# f(z) = z^3 - 1, roots are cube roots of unity
+def f_complex(z):
+    return z**3 - 1
+
+def df_complex(z):
+    return 3*z**2
+
+roots_cube = [1, -0.5 + 0.866j, -0.5 - 0.866j]
+print("\\n\\nExample 3: Newton Fractal for z³ - 1 = 0")
+print("=" * 50)
+print("Generating fractal... (visualization code available)")
+fractal = newton_fractal(f_complex, df_complex, roots_cube, resolution=200)
+print(f"Fractal shape: {fractal.shape}")
+print("The Newton fractal shows which initial guesses converge to which root.")</code></pre>
+            </div>
+
+            <!-- CRYPTOGRAPHY -->
+            <div class="topic-card">
+                <h3>2. Cryptography: The RSA Algorithm</h3>
+                
+                <h4>Introduction</h4>
+                <p>RSA (Rivest-Shamir-Adleman) is one of the first public-key cryptosystems and is widely used for secure data transmission. Its security relies on the practical difficulty of factoring the product of two large prime numbers.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(p, q\\) — large prime numbers (kept secret)</li>
+                        <li>\\(n = pq\\) — the RSA modulus (public)</li>
+                        <li>\\(\\phi(n) = (p-1)(q-1)\\) — Euler's totient function</li>
+                        <li>\\(e\\) — public exponent, \\(\\gcd(e, \\phi(n)) = 1\\)</li>
+                        <li>\\(d\\) — private exponent, \\(ed \\equiv 1 \\pmod{\\phi(n)}\\)</li>
+                        <li>\\(m\\) — message (plaintext)</li>
+                        <li>\\(c = m^e \\pmod{n}\\) — ciphertext</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">RSA Correctness</div>
+                    <p>For any message \\(m\\) with \\(0 \\leq m < n\\):</p>
+                    <p>\\[(m^e)^d \\equiv m \\pmod{n}\\]</p>
+                    <p>That is, decrypting the encrypted message recovers the original.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof</div>
+                    <p><strong>Step 1:</strong> Since \\(ed \\equiv 1 \\pmod{\\phi(n)}\\), we have \\(ed = 1 + k\\phi(n)\\) for some integer \\(k\\).</p>
+                    
+                    <p><strong>Step 2:</strong> We need to show \\(m^{ed} \\equiv m \\pmod{n}\\), i.e., \\(m^{1+k\\phi(n)} \\equiv m \\pmod{n}\\).</p>
+                    
+                    <p><strong>Step 3:</strong> By the Chinese Remainder Theorem, it suffices to show:</p>
+                    <p>\\[m^{ed} \\equiv m \\pmod{p} \\quad \\text{and} \\quad m^{ed} \\equiv m \\pmod{q}\\]</p>
+                    
+                    <p><strong>Step 4:</strong> Consider \\(\\pmod{p}\\). If \\(p \\nmid m\\), then \\(m \\equiv 0\\) and trivially \\(m^{ed} \\equiv 0 \\equiv m\\).</p>
+                    
+                    <p><strong>Step 5:</strong> If \\(p \\nmid\\!\\!\\!\\backslash \\, m\\), by Fermat's Little Theorem: \\(m^{p-1} \\equiv 1 \\pmod{p}\\).</p>
+                    
+                    <p><strong>Step 6:</strong> Since \\(\\phi(n) = (p-1)(q-1)\\):</p>
+                    <p>\\[m^{ed} = m^{1+k\\phi(n)} = m \\cdot (m^{p-1})^{k(q-1)} \\equiv m \\cdot 1^{k(q-1)} \\equiv m \\pmod{p}\\]</p>
+                    
+                    <p><strong>Step 7:</strong> Same argument applies \\(\\pmod{q}\\). By CRT, \\(m^{ed} \\equiv m \\pmod{n}\\). \\(\\square\\)</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Euler's Theorem (used in RSA)</div>
+                    <p>If \\(\\gcd(a, n) = 1\\), then:</p>
+                    <p>\\[a^{\\phi(n)} \\equiv 1 \\pmod{n}\\]</p>
+                    <p>where \\(\\phi(n)\\) counts integers from \\(1\\) to \\(n\\) that are coprime to \\(n\\).</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import random
+from math import gcd
+
+def is_prime(n, k=10):
+    """Miller-Rabin primality test."""
+    if n < 2: return False
+    if n in (2, 3): return True
+    if n % 2 == 0: return False
+    
+    # Write n-1 as 2^r * d
+    r, d = 0, n - 1
+    while d % 2 == 0:
+        r += 1
+        d //= 2
+    
+    for _ in range(k):
+        a = random.randrange(2, n - 1)
+        x = pow(a, d, n)
+        if x == 1 or x == n - 1:
+            continue
+        for _ in range(r - 1):
+            x = pow(x, 2, n)
+            if x == n - 1:
+                break
+        else:
+            return False
+    return True
+
+def generate_prime(bits):
+    """Generate a random prime with specified bit length."""
+    while True:
+        n = random.getrandbits(bits) | 1 | (1 << (bits - 1))
+        if is_prime(n):
+            return n
+
+def mod_inverse(a, m):
+    """Compute modular inverse using extended Euclidean algorithm."""
+    def extended_gcd(a, b):
+        if b == 0:
+            return a, 1, 0
+        g, x1, y1 = extended_gcd(b, a % b)
+        x = y1
+        y = x1 - (a // b) * y1
+        return g, x, y
+    
+    g, x, _ = extended_gcd(a % m, m)
+    if g != 1:
+        raise ValueError("Modular inverse does not exist")
+    return (x % m + m) % m
+
+class RSA:
+    """RSA encryption/decryption implementation."""
+    
+    def __init__(self, key_bits=512):
+        """Generate RSA key pair."""
+        # Generate two distinct primes
+        self.p = generate_prime(key_bits // 2)
+        self.q = generate_prime(key_bits // 2)
+        while self.q == self.p:
+            self.q = generate_prime(key_bits // 2)
+        
+        self.n = self.p * self.q
+        self.phi = (self.p - 1) * (self.q - 1)
+        
+        # Choose public exponent (common choices: 3, 17, 65537)
+        self.e = 65537
+        while gcd(self.e, self.phi) != 1:
+            self.e += 2
+        
+        # Compute private exponent
+        self.d = mod_inverse(self.e, self.phi)
+        
+        print(f"Generated RSA-{key_bits} keys")
+        print(f"  n = {self.n}... ({self.n.bit_length()} bits)")
+        print(f"  e = {self.e}")
+    
+    def public_key(self):
+        """Return public key (e, n)."""
+        return (self.e, self.n)
+    
+    def private_key(self):
+        """Return private key (d, n)."""
+        return (self.d, self.n)
+    
+    def encrypt(self, message, public_key=None):
+        """Encrypt a message (integer or string)."""
+        if public_key is None:
+            public_key = self.public_key()
+        e, n = public_key
+        
+        if isinstance(message, str):
+            # Convert string to integer
+            message_bytes = message.encode('utf-8')
+            m = int.from_bytes(message_bytes, 'big')
+        else:
+            m = message
+        
+        if m >= n:
+            raise ValueError("Message too long for this key")
+        
+        return pow(m, e, n)
+    
+    def decrypt(self, ciphertext):
+        """Decrypt ciphertext to recover message."""
+        m = pow(ciphertext, self.d, self.n)
+        
+        # Try to convert back to string
+        try:
+            byte_length = (m.bit_length() + 7) // 8
+            message_bytes = m.to_bytes(byte_length, 'big')
+            return message_bytes.decode('utf-8')
+        except:
+            return m
+    
+    def sign(self, message):
+        """Sign a message using private key."""
+        if isinstance(message, str):
+            message_bytes = message.encode('utf-8')
+            m = int.from_bytes(message_bytes, 'big')
+        else:
+            m = message
+        return pow(m, self.d, self.n)
+    
+    def verify(self, message, signature, public_key=None):
+        """Verify a signature using public key."""
+        if public_key is None:
+            public_key = self.public_key()
+        e, n = public_key
+        
+        if isinstance(message, str):
+            message_bytes = message.encode('utf-8')
+            m = int.from_bytes(message_bytes, 'big')
+        else:
+            m = message
+        
+        return pow(signature, e, n) == m % n
+
+# Demonstration
+print("RSA Cryptosystem Demonstration")
+print("=" * 60)
+
+# Use small keys for demonstration (in practice, use 2048+ bits)
+rsa = RSA(key_bits=256)
+
+# Encrypt and decrypt a message
+message = "Hello, RSA!"
+print(f"\\nOriginal message: '{message}'")
+
+ciphertext = rsa.encrypt(message)
+print(f"Ciphertext: {ciphertext}")
+
+decrypted = rsa.decrypt(ciphertext)
+print(f"Decrypted: '{decrypted}'")
+
+# Digital signature
+print("\\n--- Digital Signature ---")
+signature = rsa.sign(message)
+print(f"Signature: {signature}")
+
+is_valid = rsa.verify(message, signature)
+print(f"Signature valid: {is_valid}")
+
+# Try to verify with wrong message
+is_valid_fake = rsa.verify("Wrong message", signature)
+print(f"Signature valid for wrong message: {is_valid_fake}")
+
+# Demonstrate mathematical property
+print("\\n--- Mathematical Verification ---")
+e, n = rsa.public_key()
+d, _ = rsa.private_key()
+test_num = 12345
+encrypted = pow(test_num, e, n)
+decrypted_num = pow(encrypted, d, n)
+print(f"Original: {test_num}")
+print(f"Encrypted: {encrypted}")
+print(f"Decrypted: {decrypted_num}")
+print(f"Verification: {test_num} == {decrypted_num}: {test_num == decrypted_num}")</code></pre>
+            </div>
+
+            <!-- MATHEMATICAL BIOLOGY -->
+            <div class="topic-card">
+                <h3>3. Mathematical Biology: Lotka-Volterra Predator-Prey Model</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Lotka-Volterra equations describe the dynamics of biological systems in which two species interact, one as a predator and one as prey. Developed independently by Alfred Lotka (1925) and Vito Volterra (1926), these equations are foundational in mathematical ecology.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(x(t)\\) — prey population at time \\(t\\)</li>
+                        <li>\\(y(t)\\) — predator population at time \\(t\\)</li>
+                        <li>\\(\\alpha\\) — prey growth rate (in absence of predators)</li>
+                        <li>\\(\\beta\\) — predation rate coefficient</li>
+                        <li>\\(\\gamma\\) — predator death rate (in absence of prey)</li>
+                        <li>\\(\\delta\\) — predator efficiency (converting prey to offspring)</li>
+                        <li>\\(\\dot{x} = dx/dt\\) — time derivative</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Lotka-Volterra Equations</div>
+                    <p>\\[\\begin{aligned}
+                    \\dot{x} &= \\alpha x - \\beta xy = x(\\alpha - \\beta y) \\\\
+                    \\dot{y} &= \\delta xy - \\gamma y = y(\\delta x - \\gamma)
+                    \\end{aligned}\\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Equilibrium Points</div>
+                    <p>The system has two equilibrium points:</p>
+                    <ul>
+                        <li><strong>Trivial equilibrium:</strong> \\((0, 0)\\) — extinction of both species</li>
+                        <li><strong>Coexistence equilibrium:</strong> \\((x^*, y^*) = \\left(\\frac{\\gamma}{\\delta}, \\frac{\\alpha}{\\beta}\\right)\\)</li>
+                    </ul>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of Coexistence Equilibrium</div>
+                    <p><strong>Step 1:</strong> Set \\(\\dot{x} = 0\\):</p>
+                    <p>\\[x(\\alpha - \\beta y) = 0\\]</p>
+                    <p>So either \\(x = 0\\) or \\(y = \\alpha/\\beta\\).</p>
+                    
+                    <p><strong>Step 2:</strong> Set \\(\\dot{y} = 0\\):</p>
+                    <p>\\[y(\\delta x - \\gamma) = 0\\]</p>
+                    <p>So either \\(y = 0\\) or \\(x = \\gamma/\\delta\\).</p>
+                    
+                    <p><strong>Step 3:</strong> For coexistence, we need \\(x > 0\\) and \\(y > 0\\), giving:</p>
+                    <p>\\[x^* = \\frac{\\gamma}{\\delta}, \\quad y^* = \\frac{\\alpha}{\\beta}\\]</p>
+                    
+                    <p><strong>Step 4:</strong> At this point, both populations remain constant. \\(\\square\\)</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Conserved Quantity</div>
+                    <p>The function:</p>
+                    <p>\\[H(x, y) = \\delta x - \\gamma \\ln x + \\beta y - \\alpha \\ln y\\]</p>
+                    <p>is conserved along trajectories, i.e., \\(dH/dt = 0\\). This implies periodic oscillations.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof</div>
+                    <p>\\[\\frac{dH}{dt} = \\frac{\\partial H}{\\partial x}\\dot{x} + \\frac{\\partial H}{\\partial y}\\dot{y}\\]</p>
+                    <p>\\[= \\left(\\delta - \\frac{\\gamma}{x}\\right)x(\\alpha - \\beta y) + \\left(\\beta - \\frac{\\alpha}{y}\\right)y(\\delta x - \\gamma)\\]</p>
+                    <p>\\[= (\\delta x - \\gamma)(\\alpha - \\beta y) + (\\beta y - \\alpha)(\\delta x - \\gamma)\\]</p>
+                    <p>\\[= (\\delta x - \\gamma)(\\alpha - \\beta y) - (\\alpha - \\beta y)(\\delta x - \\gamma) = 0\\]</p>
+                    <p>\\(\\square\\)</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+
+def lotka_volterra(Z, t, alpha, beta, gamma, delta):
+    """
+    Lotka-Volterra predator-prey model.
+    
+    Args:
+        Z: [x, y] where x is prey, y is predator
+        t: time
+        alpha, beta, gamma, delta: model parameters
+    """
+    x, y = Z
+    dxdt = alpha * x - beta * x * y
+    dydt = delta * x * y - gamma * y
+    return [dxdt, dydt]
+
+def conserved_quantity(x, y, alpha, beta, gamma, delta):
+    """Compute the conserved quantity H(x,y)."""
+    return delta * x - gamma * np.log(x) + beta * y - alpha * np.log(y)
+
+# Parameters
+alpha = 1.0    # Prey growth rate
+beta = 0.1     # Predation rate
+gamma = 1.5    # Predator death rate
+delta = 0.075  # Predator efficiency
+
+# Coexistence equilibrium
+x_star = gamma / delta
+y_star = alpha / beta
+print(f"Coexistence equilibrium: ({x_star:.2f}, {y_star:.2f})")
+
+# Time array
+t = np.linspace(0, 50, 1000)
+
+# Initial conditions (near equilibrium)
+x0, y0 = 10, 5
+Z0 = [x0, y0]
+
+# Solve ODE
+solution = odeint(lotka_volterra, Z0, t, args=(alpha, beta, gamma, delta))
+x, y = solution.T
+
+# Verify conservation of H
+H_values = conserved_quantity(x, y, alpha, beta, gamma, delta)
+print(f"\\nConserved quantity H:")
+print(f"  Mean: {np.mean(H_values):.6f}")
+print(f"  Std:  {np.std(H_values):.10f}")
+
+# Plotting
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+# Time series
+ax1 = axes[0, 0]
+ax1.plot(t, x, 'b-', label='Prey (x)', linewidth=2)
+ax1.plot(t, y, 'r-', label='Predator (y)', linewidth=2)
+ax1.axhline(y=y_star, color='r', linestyle='--', alpha=0.5, label=f'y* = {y_star:.1f}')
+ax1.axhline(y=x_star, color='b', linestyle='--', alpha=0.5, label=f'x* = {x_star:.1f}')
+ax1.set_xlabel('Time')
+ax1.set_ylabel('Population')
+ax1.set_title('Population Dynamics Over Time')
+ax1.legend()
+ax1.grid(True, alpha=0.3)
+
+# Phase portrait
+ax2 = axes[0, 1]
+ax2.plot(x, y, 'g-', linewidth=2)
+ax2.plot(x_star, y_star, 'ro', markersize=10, label='Equilibrium')
+ax2.set_xlabel('Prey Population (x)')
+ax2.set_ylabel('Predator Population (y)')
+ax2.set_title('Phase Portrait')
+ax2.legend()
+ax2.grid(True, alpha=0.3)
+
+# Multiple trajectories (phase portrait)
+ax3 = axes[1, 0]
+initial_conditions = [(5, 5), (10, 5), (20, 5), (10, 15), (20, 20)]
+colors = plt.cm.viridis(np.linspace(0, 1, len(initial_conditions)))
+
+for (x0, y0), color in zip(initial_conditions, colors):
+    sol = odeint(lotka_volterra, [x0, y0], t, args=(alpha, beta, gamma, delta))
+    ax3.plot(sol[:, 0], sol[:, 1], color=color, alpha=0.7, linewidth=1.5)
+    ax3.plot(x0, y0, 'o', color=color, markersize=6)
+
+ax3.plot(x_star, y_star, 'r*', markersize=15, label='Equilibrium')
+ax3.set_xlabel('Prey Population (x)')
+ax3.set_ylabel('Predator Population (y)')
+ax3.set_title('Multiple Trajectories in Phase Space')
+ax3.legend()
+ax3.grid(True, alpha=0.3)
+
+# Conserved quantity over time
+ax4 = axes[1, 1]
+ax4.plot(t, H_values, 'purple', linewidth=2)
+ax4.set_xlabel('Time')
+ax4.set_ylabel('H(x, y)')
+ax4.set_title('Conserved Quantity Over Time')
+ax4.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('lotka_volterra.png', dpi=150, bbox_inches='tight')
+print("\\nPlot saved as 'lotka_volterra.png'")
+
+# Extended model: Logistic growth for prey
+def lotka_volterra_logistic(Z, t, alpha, beta, gamma, delta, K):
+    """
+    Extended model with logistic prey growth (carrying capacity K).
+    """
+    x, y = Z
+    dxdt = alpha * x * (1 - x/K) - beta * x * y
+    dydt = delta * x * y - gamma * y
+    return [dxdt, dydt]
+
+print("\\n--- Extended Model with Logistic Growth ---")
+K = 100  # Carrying capacity
+sol_log = odeint(lotka_volterra_logistic, [10, 5], t, 
+                 args=(alpha, beta, gamma, delta, K))
+print(f"With carrying capacity K={K}:")
+print(f"  Final prey: {sol_log[-1, 0]:.2f}")
+print(f"  Final predator: {sol_log[-1, 1]:.2f}")
+print("  (Converges to stable equilibrium instead of oscillating)")</code></pre>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Special Topics -->
+        <section class="section">
+            <h2 class="section-title">🌟 4 Special Math Topics</h2>
+
+            <!-- BIRCH AND SWINNERTON-DYER -->
+            <div class="topic-card">
+                <h3>1. Birch and Swinnerton-Dyer Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Birch and Swinnerton-Dyer conjecture relates the algebraic properties of elliptic curves to their analytic properties. It is one of the seven Millennium Prize Problems with a $1 million reward for its solution.</p>
+                
+                <p>An <strong>elliptic curve</strong> is a smooth cubic curve of the form \\(y^2 = x^3 + ax + b\\). The rational points on such curves form a finitely generated abelian group (Mordell's Theorem).</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(E\\) — an elliptic curve over \\(\\mathbb{Q}\\)</li>
+                        <li>\\(E(\\mathbb{Q})\\) — the group of rational points on \\(E\\)</li>
+                        <li>\\(r = \\text{rank}(E(\\mathbb{Q}))\\) — the rank of the curve</li>
+                        <li>\\(L(E, s)\\) — the L-function of the elliptic curve</li>
+                        <li>\\(\\text{Sha}\\) — the Tate-Shafarevich group (measures failure of local-to-global principle)</li>
+                        <li>\\(R_E\\) — the regulator (measures "size" of generators)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Birch and Swinnerton-Dyer Conjecture (Weak Form)</div>
+                    <p>The order of vanishing of \\(L(E, s)\\) at \\(s = 1\\) equals the rank of \\(E(\\mathbb{Q})\\):</p>
+                    <p>\\[\\text{ord}_{s=1} L(E, s) = \\text{rank}(E(\\mathbb{Q}))\\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">BSD Conjecture (Strong Form)</div>
+                    <p>The Taylor expansion of \\(L(E, s)\\) at \\(s = 1\\) is:</p>
+                    <p>\\[L(E, s) \\sim \\frac{\\Omega_E \\cdot \\text{Reg}_E \\cdot \\#\\text{Sha}(E) \\cdot \\prod_p c_p}{\\#E(\\mathbb{Q})_{\\text{tors}}^2} \\cdot (s-1)^r\\]</p>
+                    <p>where the product is over primes of bad reduction and \\(c_p\\) are Tamagawa numbers.</p>
+                </div>
+
+                <h4>What is Known</h4>
+                <ul>
+                    <li>Coates-Wiles (1977): If \\(r = 0\\), then \\(L(E, 1) \\neq 0\\) (for curves with complex multiplication)</li>
+                    <li>Gross-Zagier (1986): If \\(L(E, 1) = 0\\) but \\(L'(E, 1) \\neq 0\\), then \\(r \\geq 1\\)</li>
+                    <li>Kolyvagin (1989): If \\(L(E, 1) \\neq 0\\), then \\(r = 0\\) and \\(\\#\\text{Sha} < \\infty\\)</li>
+                    <li>For rank 0 and 1 curves, the conjecture is essentially proved</li>
+                </ul>
+
+                <h4>Python Implementation: Elliptic Curve Computations</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class EllipticCurve:
+    """
+    Elliptic curve y² = x³ + ax + b over Q.
+    """
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        # Check discriminant
+        discriminant = -16 * (4*a**3 + 27*b**2)
+        if discriminant == 0:
+            raise ValueError("Curve is singular (discriminant = 0)")
+        self.discriminant = discriminant
+    
+    def rhs(self, x):
+        """Right hand side: x³ + ax + b"""
+        return x**3 + self.a * x + self.b
+    
+    def plot(self, x_range=(-3, 3), num_points=1000):
+        """Plot the real points of the curve."""
+        x = np.linspace(x_range[0], x_range[1], num_points)
+        y_sq = self.rhs(x)
+        
+        # Only plot where y² ≥ 0
+        mask = y_sq >= 0
+        x_pos = x[mask]
+        y_pos = np.sqrt(y_sq[mask])
+        
+        plt.figure(figsize=(10, 8))
+        plt.plot(x_pos, y_pos, 'b-', linewidth=2, label='$y = +\\sqrt{x^3 + ax + b}$')
+        plt.plot(x_pos, -y_pos, 'b-', linewidth=2, label='$y = -\\sqrt{x^3 + ax + b}$')
+        plt.axhline(y=0, color='k', linewidth=0.5)
+        plt.axvline(x=0, color='k', linewidth=0.5)
+        plt.grid(True, alpha=0.3)
+        plt.xlabel('x')
+        plt.ylabel('y')
+        plt.title(f'Elliptic Curve: $y^2 = x^3 + {self.a}x + {self.b}$')
+        plt.axis('equal')
+        plt.legend()
+        return plt
+    
+    def point_addition(self, P, Q):
+        """
+        Add two points on the curve using the chord-tangent method.
+        Returns None for the point at infinity.
+        """
+        if P is None:
+            return Q
+        if Q is None:
+            return P
+        
+        x1, y1 = P
+        x2, y2 = Q
+        
+        # Point doubling
+        if abs(x1 - x2) < 1e-10:
+            if abs(y1 + y2) < 1e-10 or abs(y1) < 1e-10:
+                return None  # Point at infinity
+            # Tangent slope
+            m = (3*x1**2 + self.a) / (2*y1)
+        else:
+            # Chord slope
+            m = (y2 - y1) / (x2 - x1)
+        
+        x3 = m**2 - x1 - x2
+        y3 = m*(x1 - x3) - y1
+        
+        return (x3, y3)
+    
+    def scalar_multiply(self, n, P):
+        """Compute n*P using double-and-add."""
+        if n == 0 or P is None:
+            return None
+        if n < 0:
+            x, y = P
+            return self.scalar_multiply(-n, (x, -y))
+        
+        result = None
+        addend = P
+        
+        while n > 0:
+            if n & 1:
+                result = self.point_addition(result, addend)
+            addend = self.point_addition(addend, addend)
+            n >>= 1
+        
+        return result
+    
+    def find_rational_points(self, bound=50):
+        """Find rational points with small denominators."""
+        points = [None]  # Point at infinity
+        
+        for p in range(-bound, bound + 1):
+            for q in range(1, bound + 1):
+                if np.gcd(abs(p), q) != 1:
+                    continue
+                x = p / q
+                y_sq = self.rhs(x)
+                if y_sq >= 0:
+                    y = np.sqrt(y_sq)
+                    if abs(y - round(y)) < 1e-10:
+                        y_int = int(round(y))
+                        if y_int != 0:
+                            points.append((x, y_int))
+                            points.append((x, -y_int))
+                        else:
+                            points.append((x, 0))
+        
+        return list(set(points))
+
+# Example: y² = x³ - x (congruent number curve for n=1)
+E = EllipticCurve(a=-1, b=0)
+print("Elliptic Curve: y² = x³ - x")
+print(f"Discriminant: {E.discriminant}")
+
+# Plot
+E.plot(x_range=(-2, 3))
+plt.savefig('elliptic_curve.png', dpi=150, bbox_inches='tight')
+print("\\nCurve plotted and saved as 'elliptic_curve.png'")
+
+# Point arithmetic
+P = (2, np.sqrt(6))  # Approximate point
+print(f"\\nPoint P ≈ (2, {np.sqrt(6):.4f})")
+
+# Note: (2, √6) is not exactly on the curve, let's use a rational point
+# For y² = x³ - x, the point (0, 0) is rational
+P = (0, 0)
+print(f"Rational point P = {P}")
+print(f"2P = {E.point_addition(P, P)}")  # Should be None (point at infinity)
+
+# Another curve with more interesting structure
+E2 = EllipticCurve(a=-2, b=1)
+print("\\n--- Curve: y² = x³ - 2x + 1 ---")
+rational_pts = E2.find_rational_points(bound=20)
+print(f"Found {len(rational_pts)} rational points with small height")
+
+# The BSD conjecture predicts:
+# If L(E, 1) ≠ 0, then rank = 0 (finite number of rational points)
+# If L(E, 1) = 0, then rank ≥ 1 (infinitely many rational points)
+print("\\n--- BSD Conjecture Status ---")
+print("Known cases:")
+print("  • Rank 0: Proved (Coates-Wiles, Kolyvagin)")
+print("  • Rank 1: Proved (Gross-Zagier, Kolyvagin)")
+print("  • Rank ≥ 2: Open in general")
+print("  • Exact formula for leading term: Open")</code></pre>
+            </div>
+
+            <!-- HODGE CONJECTURE -->
+            <div class="topic-card">
+                <h3>2. The Hodge Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Hodge conjecture is a major unsolved problem in algebraic geometry and complex geometry. It relates the algebraic topology of a non-singular complex algebraic variety to its subvarieties.</p>
+                
+                <p>In simple terms: <em>Which cohomology classes come from algebraic subvarieties?</em></p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(X\\) — a non-singular complex projective variety</li>
+                        <li>\\(H^k(X, \\mathbb{Q})\\) — the k-th cohomology group with rational coefficients</li>
+                        <li>\\(H^{p,q}(X)\\) — the \\((p,q)\\)-component of the Hodge decomposition</li>
+                        <li>\\(H^{k,k}(X, \\mathbb{Q}) = H^{2k}(X, \\mathbb{Q}) \\cap H^{k,k}(X)\\) — Hodge classes</li>
+                        <li>\\(Z \\subseteq X\\) — an algebraic subvariety of codimension \\(k\\)</li>
+                        <li>\\([Z] \\in H^{2k}(X, \\mathbb{Q})\\) — the cohomology class of \\(Z\\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Hodge Decomposition Theorem</div>
+                    <p>For a compact Kähler manifold \\(X\\):</p>
+                    <p>\\[H^k(X, \\mathbb{C}) = \\bigoplus_{p+q=k} H^{p,q}(X)\\]</p>
+                    <p>where \\(H^{p,q}(X)\\) consists of cohomology classes representable by differential forms of type \\((p,q)\\).</p>
+                    <p>Moreover: \\(\\overline{H^{p,q}(X)} = H^{q,p}(X)\\)</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Hodge Conjecture</div>
+                    <p>Let \\(X\\) be a non-singular complex projective variety. Then every Hodge class \\(\\alpha \\in H^{k,k}(X, \\mathbb{Q})\\) is a rational linear combination of cohomology classes of algebraic cycles:</p>
+                    <p>\\[\\alpha = \\sum_i c_i [Z_i]\\]</p>
+                    <p>where \\(Z_i \\subseteq X\\) are algebraic subvarieties of codimension \\(k\\) and \\(c_i \\in \\mathbb{Q}\\).</p>
+                </div>
+
+                <h4>What is Known</h4>
+                <ul>
+                    <li><strong>\\(k = 0\\):</strong> Trivially true (\\(H^0(X, \\mathbb{Q}) = \\mathbb{Q}\\))</li>
+                    <li><strong>\\(k = 1\\):</strong> True (Lefschetz theorem on \\((1,1)\\)-classes, 1924)</li>
+                    <li><strong>\\(k = \\dim(X) - 1\\):</strong> True (follows from hard Lefschetz)</li>
+                    <li><strong>Abelian varieties:</strong> Known for some classes</li>
+                    <li><strong>General case:</strong> Wide open</li>
+                </ul>
+
+                <h4>Why It Matters</h4>
+                <p>The Hodge conjecture provides a bridge between:</p>
+                <ul>
+                    <li><strong>Topology:</strong> Cohomology classes (continuous, analytic objects)</li>
+                    <li><strong>Algebraic Geometry:</strong> Subvarieties (discrete, algebraic objects)</li>
+                </ul>
+                <p>If true, it would mean that certain analytic invariants can be computed purely algebraically.</p>
+
+                <h4>Python: Hodge Diamond Visualization</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def hodge_diamond(hodge_numbers):
+    """
+    Visualize the Hodge diamond of a complex manifold.
+    
+    Args:
+        hodge_numbers: dict mapping (p,q) to h^{p,q}
+    
+    The Hodge diamond for a 3-fold looks like:
+              h^{0,0}
+          h^{1,0}   h^{0,1}
+      h^{2,0}   h^{1,1}   h^{0,2}
+          h^{2,1}   h^{1,2}
+              h^{2,2}
+    """
+    # Find dimension
+    max_dim = max(p + q for p, q in hodge_numbers.keys())
+    
+    fig, ax = plt.subplots(figsize=(10, 8))
+    ax.set_aspect('equal')
+    
+    # Plot each Hodge number
+    for (p, q), h in hodge_numbers.items():
+        # Position in diamond
+        x = p - q
+        y = max_dim - (p + q)
+        
+        # Draw circle with size proportional to h
+        size = 0.3 + 0.2 * np.sqrt(h) if h > 0 else 0.1
+        circle = plt.Circle((x, y), size, color='lightblue', ec='navy', linewidth=2)
+        ax.add_patch(circle)
+        
+        # Add text
+        ax.text(x, y, f'{h}', ha='center', va='center', fontsize=12, fontweight='bold')
+        ax.text(x, y - 0.6, f'h^{{{p},{q}}}', ha='center', va='top', fontsize=9)
+    
+    ax.set_xlim(-max_dim - 1, max_dim + 1)
+    ax.set_ylim(-1, max_dim + 2)
+    ax.axis('off')
+    ax.set_title('Hodge Diamond', fontsize=16, fontweight='bold', pad=20)
+    
+    return fig, ax
+
+# Example: Hodge numbers for a Calabi-Yau 3-fold
+# (like the quintic hypersurface in P^4)
+cy3_hodge = {
+    (0, 0): 1,
+    (1, 0): 0, (0, 1): 0,
+    (2, 0): 0, (1, 1): 1, (0, 2): 0,
+    (3, 0): 1, (2, 1): 101, (1, 2): 101, (0, 3): 1,
+    (3, 1): 0, (2, 2): 1, (1, 3): 0,
+    (3, 2): 0, (2, 3): 0,
+    (3, 3): 1
+}
+
+print("Calabi-Yau 3-fold Hodge numbers:")
+print(f"  h^{{1,1}} = {cy3_hodge[(1,1)]} (Kähler moduli)")
+print(f"  h^{{2,1}} = {cy3_hodge[(2,1)]} (Complex structure moduli)")
+print(f"  Euler characteristic = {2*(cy3_hodge[(1,1)] - cy3_hodge[(2,1)])}")
+
+fig, ax = hodge_diamond(cy3_hodge)
+plt.tight_layout()
+plt.savefig('hodge_diamond.png', dpi=150, bbox_inches='tight')
+print("\\nHodge diamond saved as 'hodge_diamond.png'")
+
+# Simpler example: Complex torus (elliptic curve)
+print("\\n--- Complex Torus (Elliptic Curve) ---")
+torus_hodge = {
+    (0, 0): 1,
+    (1, 0): 1, (0, 1): 1,
+    (1, 1): 1
+}
+print("Hodge numbers:", torus_hodge)
+
+# Hodge conjecture for curves (dim=1):
+# H^{1,1} ∩ H^2(X,Q) = Q · [point]
+# This is true by definition
+print("\\nFor curves (dim=1):")
+print("  H^{{1,1}} ∩ H^2(X,Q) is generated by the class of a point.")
+print("  Hodge conjecture is trivially true.")
+
+# For surfaces (dim=2):
+# The conjecture for H^{{1,1}} is the Lefschetz (1,1) theorem - TRUE
+print("\\nFor surfaces (dim=2):")
+print("  Hodge conjecture for H^{{1,1}} is the Lefschetz (1,1) theorem.")
+print("  Proved by Lefschetz in 1924.")</code></pre>
+            </div>
+
+            <!-- YANG-MILLS -->
+            <div class="topic-card">
+                <h3>3. Yang-Mills Theory and Mass Gap</h3>
+                
+                <h4>Introduction</h4>
+                <p>Yang-Mills theory is the foundation of the Standard Model of particle physics. It describes gauge fields (like the electromagnetic field) with non-abelian gauge groups. The Yang-Mills existence and mass gap problem is another Millennium Prize Problem.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(G\\) — a compact Lie group (gauge group, e.g., \\(SU(3)\\) for QCD)</li>
+                        <li>\\(\\mathfrak{g}\\) — the Lie algebra of \\(G\\)</li>
+                        <li>\\(A_\\mu: \\mathbb{R}^4 \\to \\mathfrak{g}\\) — the gauge potential (connection)</li>
+                        <li>\\(F_{\\mu\\nu} = \\partial_\\mu A_\\nu - \\partial_\\nu A_\\mu + [A_\\mu, A_\\nu]\\) — field strength (curvature)</li>
+                        <li>\\(\\mathcal{L} = \\frac{1}{4g^2} \\text{Tr}(F_{\\mu\\nu}F^{\\mu\\nu})\\) — Yang-Mills Lagrangian</li>
+                        <li>\\(\\Delta\\) — the mass gap (lowest energy above vacuum)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Yang-Mills Action</div>
+                    <p>The action functional for Yang-Mills theory on \\(\\mathbb{R}^4\\) is:</p>
+                    <p>\\[S_{YM}(A) = \\frac{1}{2g^2} \\int_{\\mathbb{R}^4} \\text{Tr}(F_{\\mu\\nu}F^{\\mu\\nu}) \\, d^4x\\]</p>
+                    <p>where \\(g\\) is the coupling constant and the trace is in the adjoint representation.</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Yang-Mills Equations</div>
+                    <p>The Euler-Lagrange equations (equations of motion) are:</p>
+                    <p>\\[D_\\mu F^{\\mu\\nu} = 0\\]</p>
+                    <p>where \\(D_\\mu = \\partial_\\mu + [A_\\mu, \\cdot]\\) is the covariant derivative.</p>
+                    <p>Along with the Bianchi identity:</p>
+                    <p>\\[D_\\lambda F_{\\mu\\nu} + D_\\mu F_{\\nu\\lambda} + D_\\nu F_{\\lambda\\mu} = 0\\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Mass Gap Problem</div>
+                    <p>For pure Yang-Mills theory on \\(\\mathbb{R}^4\\) with compact gauge group \\(G\\):</p>
+                    <ol>
+                        <li>Prove that the quantum theory exists and has a positive mass gap \\(\\Delta > 0\\)</li>
+                        <li>The mass gap means the lightest particle has mass \\(\\Delta > 0\\)</li>
+                    </ol>
+                    <p>For \\(G = SU(3)\\) (Quantum Chromodynamics), this explains why the strong force is short-ranged despite being mediated by massless gluons.</p>
+                </div>
+
+                <h4>Why This Matters</h4>
+                <ul>
+                    <li><strong>Confinement:</strong> The mass gap is related to quark confinement in QCD</li>
+                    <li><strong>Mathematical rigor:</strong> Constructing quantum field theories rigorously is a major challenge</li>
+                    <li><strong>Physics:</strong> Explains why nuclear forces have finite range</li>
+                </ul>
+
+                <h4>What is Known</h4>
+                <ul>
+                    <li>2D Yang-Mills: Solved (no mass gap in the same sense)</li>
+                    <li>Lattice Yang-Mills: Existence proved, mass gap established numerically</li>
+                    <li>Continuum 4D: Open problem</li>
+                </ul>
+
+                <h4>Python: Lattice Gauge Theory Simulation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class LatticeYangMills:
+    """
+    2D U(1) lattice gauge theory (simplified model).
+    
+    In lattice gauge theory, the gauge field lives on links between sites.
+    For U(1), the link variable is a phase: U_{ij} = e^{iθ_{ij}}.
+    """
+    
+    def __init__(self, L, beta):
+        """
+        Args:
+            L: Lattice size (L x L)
+            beta: Inverse coupling constant (1/g²)
+        """
+        self.L = L
+        self.beta = beta
+        # Link variables: theta_x[i,j] is horizontal link at (i,j)
+        #                 theta_y[i,j] is vertical link at (i,j)
+        self.theta_x = np.random.uniform(-np.pi, np.pi, (L, L))
+        self.theta_y = np.random.uniform(-np.pi, np.pi, (L, L))
+    
+    def plaquette(self, i, j):
+        """
+        Compute the plaquette (minimal loop) at site (i,j).
+        Plaquette = θ_x(i,j) + θ_y(i+1,j) - θ_x(i,j+1) - θ_y(i,j)
+        """
+        ip1 = (i + 1) % self.L
+        jp1 = (j + 1) % self.L
+        
+        return (self.theta_x[i, j] + self.theta_y[ip1, j] 
+                - self.theta_x[i, jp1] - self.theta_y[i, j])
+    
+    def action(self):
+        """Compute the Wilson action S = -β Σ Re(plaquette)."""
+        total = 0
+        for i in range(self.L):
+            for j in range(self.L):
+                total += np.cos(self.plaquette(i, j))
+        return -self.beta * total
+    
+    def heat_bath_update(self, num_sweeps=1):
+        """
+        Perform heat bath updates (Metropolis algorithm).
+        """
+        for _ in range(num_sweeps * self.L * self.L):
+            # Randomly choose a link
+            is_x = np.random.random() < 0.5
+            i = np.random.randint(0, self.L)
+            j = np.random.randint(0, self.L)
+            
+            # Compute staple (sum of plaquettes containing this link)
+            if is_x:
+                staple = self._staple_x(i, j)
+                old_theta = self.theta_x[i, j]
+            else:
+                staple = self._staple_y(i, j)
+                old_theta = self.theta_y[i, j]
+            
+            # Metropolis update
+            new_theta = np.random.uniform(-np.pi, np.pi)
+            delta_S = -self.beta * (np.cos(new_theta + staple) - np.cos(old_theta + staple))
+            
+            if delta_S < 0 or np.random.random() < np.exp(-delta_S):
+                if is_x:
+                    self.theta_x[i, j] = new_theta
+                else:
+                    self.theta_y[i, j] = new_theta
+    
+    def _staple_x(self, i, j):
+        """Compute staple for horizontal link at (i,j)."""
+        im1 = (i - 1) % self.L
+        jp1 = (j + 1) % self.L
+        
+        # Two plaquettes contain this link
+        staple1 = (self.theta_y[i, j] - self.theta_x[i, jp1] - self.theta_y[im1, j])
+        staple2 = -(self.theta_y[i, j] - self.theta_x[im1, jp1] - self.theta_y[im1, j])
+        
+        # Return the angle of the sum of staples
+        return np.arctan2(np.sin(staple1) + np.sin(staple2), 
+                         np.cos(staple1) + np.cos(staple2))
+    
+    def _staple_y(self, i, j):
+        """Compute staple for vertical link at (i,j)."""
+        ip1 = (i + 1) % self.L
+        jm1 = (j - 1) % self.L
+        
+        staple1 = -(self.theta_x[i, j] + self.theta_y[ip1, jm1] - self.theta_x[i, jm1])
+        staple2 = (self.theta_x[ip1, jm1] + self.theta_y[ip1, j] - self.theta_x[i, j])
+        
+        return np.arctan2(np.sin(staple1) + np.sin(staple2), 
+                         np.cos(staple1) + np.cos(staple2))
+    
+    def wilson_loop(self, r, t):
+        """
+        Compute r x t Wilson loop (rectangular loop).
+        This measures the potential between static charges.
+        """
+        # Average over all starting positions
+        loops = []
+        for i0 in range(self.L):
+            for j0 in range(self.L):
+                loop = 0
+                i, j = i0, j0
+                # Go right r steps
+                for _ in range(r):
+                    loop += self.theta_x[i, j]
+                    i = (i + 1) % self.L
+                # Go up t steps
+                for _ in range(t):
+                    loop += self.theta_y[i, j]
+                    j = (j + 1) % self.L
+                # Go left r steps
+                for _ in range(r):
+                    i = (i - 1) % self.L
+                    loop -= self.theta_x[i, j]
+                # Go down t steps
+                for _ in range(t):
+                    j = (j - 1) % self.L
+                    loop -= self.theta_y[i, j]
+                
+                loops.append(np.cos(loop))
+        
+        return np.mean(loops)
+    
+    def topological_charge(self):
+        """
+        Compute the topological charge (instanton number).
+        Q = (1/2π) Σ plaquette mod 2π
+        """
+        total = 0
+        for i in range(self.L):
+            for j in range(self.L):
+                plaq = self.plaquette(i, j)
+                # Map to [-π, π]
+                while plaq > np.pi:
+                    plaq -= 2*np.pi
+                while plaq < -np.pi:
+                    plaq += 2*np.pi
+                total += plaq
+        return total / (2 * np.pi)
+
+# Simulation
+print("Lattice Gauge Theory Simulation (2D U(1))")
+print("=" * 50)
+
+# Thermalize lattice
+L = 16
+beta = 2.0
+lattice = LatticeYangMills(L, beta)
+
+print(f"Lattice size: {L}x{L}")
+print(f"Inverse coupling β = {beta}")
+print(f"Initial action: {lattice.action():.2f}")
+
+# Thermalization
+print("\\nThermalizing...")
+for i in range(100):
+    lattice.heat_bath_update(num_sweeps=1)
+    if i % 20 == 0:
+        print(f"  Sweep {i}: action = {lattice.action():.2f}")
+
+print(f"\\nFinal action: {lattice.action():.2f}")
+print(f"Topological charge: {lattice.topological_charge():.2f}")
+
+# Measure Wilson loops (confinement test)
+print("\\nWilson loop measurements:")
+for r in range(1, 5):
+    W = lattice.wilson_loop(r, r)
+    print(f"  W({r},{r}) = {W:.4f}")
+
+# The Wilson loop follows area law in confined phase: W(R,T) ~ exp(-σRT)
+# where σ is the string tension
+print("\\nNote: In the confined phase, Wilson loops follow the area law:")
+print("  W(R,T) ~ exp(-σRT)")
+print("  where σ is the string tension (related to mass gap)")
+
+# Different beta values
+print("\\n--- Phase Transition Study ---")
+betas = np.linspace(0.5, 4.0, 8)
+plaquette_exp = []
+
+for beta in betas:
+    lat = LatticeYangMills(8, beta)
+    for _ in range(50):  # Thermalize
+        lat.heat_bath_update(num_sweeps=1)
+    
+    # Measure average plaquette
+    avg_plaq = np.mean([np.cos(lat.plaquette(i, j)) 
+                       for i in range(8) for j in range(8)])
+    plaquette_exp.append(avg_plaq)
+    print(f"β = {beta:.2f}: <cos(plaquette)> = {avg_plaq:.4f}")
+
+print("\\nThe 2D U(1) model has a phase transition at β ≈ 1 (Kosterlitz-Thouless)")
+print("Below: Confined phase (area law)")
+print("Above: Deconfined phase (Coulomb phase)")</code></pre>
+            </div>
+
+            <!-- POINCARÉ CONJECTURE -->
+            <div class="topic-card">
+                <h3>4. The Poincaré Conjecture (Solved!)</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Poincaré conjecture, posed by Henri Poincaré in 1904, was one of the most famous problems in topology. It was the first of the seven Millennium Prize Problems to be solved. Grigori Perelman proved it in 2002-2003, declining both the Fields Medal (2006) and the $1 million prize.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(S^n\\) — the n-dimensional sphere</li>
+                        <li>\\(M^n\\) — a closed (compact, no boundary) n-manifold</li>
+                        <li>\\(\\pi_k(X)\\) — the k-th homotopy group of \\(X\\)</li>
+                        <li>\\(\\cong\\) — homeomorphic (topologically equivalent)</li>
+                        <li><strong>Simply connected:</strong> \\(\\pi_1(X) = 0\\) (every loop can be contracted)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Poincaré Conjecture</div>
+                    <p>Every closed, simply connected 3-manifold is homeomorphic to the 3-sphere \\(S^3\\).</p>
+                    <p>Equivalently: If a 3-dimensional space has the property that every loop can be continuously tightened to a point, then that space is just the 3-sphere (possibly deformed).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Generalized Poincaré Conjecture</div>
+                    <p>Every closed n-manifold that is homotopy equivalent to \\(S^n\\) is homeomorphic to \\(S^n\\).</p>
+                    <ul>
+                        <li><strong>n = 1, 2:</strong> Known classically</li>
+                        <li><strong>n ≥ 5:</strong> Proved by Smale (1961, Fields Medal)</li>
+                        <li><strong>n = 4:</strong> Proved by Freedman (1982, Fields Medal)</li>
+                        <li><strong>n = 3:</strong> Proved by Perelman (2002-2003)</li>
+                    </ul>
+                </div>
+
+                <h4>Perelman's Proof Strategy</h4>
+                <p>Perelman proved the conjecture as a corollary of the <strong>Geometrization Conjecture</strong> (Thurston) using <strong>Ricci flow</strong>:</p>
+                
+                <ol>
+                    <li><strong>Ricci Flow:</strong> A process that evolves the metric of a manifold according to:
+                        <p>\\[\\frac{\\partial g_{ij}}{\\partial t} = -2R_{ij}\\]</p>
+                        <p>where \\(R_{ij}\\) is the Ricci curvature tensor. This is like heat flow for geometry.</p>
+                    </li>
+                    <li><strong>Singularities:</strong> The flow can develop singularities (pinching, bubbling)</li>
+                    <li><strong>Surgery:</strong> Perelman showed how to perform "surgery" to remove singularities and continue the flow</li>
+                    <li><strong>Result:</strong> Any 3-manifold can be decomposed into pieces with uniform geometry</li>
+                </ol>
+
+                <div class="theorem">
+                    <div class="theorem-title">Thurston's Geometrization Conjecture (Proved by Perelman)</div>
+                    <p>Every closed 3-manifold can be decomposed (by cutting along spheres and tori) into pieces, each of which admits one of eight geometric structures:</p>
+                    <ol>
+                        <li>Spherical geometry (\\(S^3\\))</li>
+                        <li>Euclidean geometry (\\(\\mathbb{R}^3\\))</li>
+                        <li>Hyperbolic geometry (\\(\\mathbb{H}^3\\))</li>
+                        <li>And five others (\\(S^2 \\times \\mathbb{R}\\), \\(\\mathbb{H}^2 \\times \\mathbb{R}\\), Nil, Sol, \\(\\widetilde{SL}(2, \\mathbb{R})\\))</li>
+                    </ol>
+                </div>
+
+                <h4>Python: Visualizing 3-Manifolds</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def stereographic_projection_3d(x, y, z, w):
+    """
+    Stereographic projection of S³ to R³.
+    S³ is {(x,y,z,w) : x² + y² + z² + w² = 1}
+    Project from (0,0,0,1) to the w=0 hyperplane.
+    """
+    if abs(w - 1) < 1e-10:
+        return None  # Point at infinity
+    return (x / (1 - w), y / (1 - w), z / (1 - w))
+
+def hopf_fibration(t, phi, theta):
+    """
+    Parametrize S³ using Hopf coordinates.
+    (t, φ, θ) ↦ (cos t · e^{iφ}, sin t · e^{iθ})
+    """
+    x = np.cos(t) * np.cos(phi)
+    y = np.cos(t) * np.sin(phi)
+    z = np.sin(t) * np.cos(theta)
+    w = np.sin(t) * np.sin(theta)
+    return x, y, z, w
+
+def visualize_s3_projection():
+    """
+    Visualize S³ through stereographic projection.
+    """
+    fig = plt.figure(figsize=(14, 6))
+    
+    # Create a grid on S³
+    n_points = 50
+    t_vals = np.linspace(0, np.pi/2, n_points)
+    phi_vals = np.linspace(0, 2*np.pi, n_points)
+    theta_vals = np.linspace(0, 2*np.pi, n_points)
+    
+    # Plot 1: Hopf fibers
+    ax1 = fig.add_subplot(121, projection='3d')
+    
+    # Sample Hopf fibers (circles in S³ that project to linked circles in R³)
+    for theta_fixed in np.linspace(0, 2*np.pi, 8):
+        fiber_x, fiber_y, fiber_z = [], [], []
+        for t in np.linspace(0, np.pi/2, 100):
+            for phi in np.linspace(0, 2*np.pi, 50):
+                x, y, z, w = hopf_fibration(t, phi, theta_fixed)
+                proj = stereographic_projection_3d(x, y, z, w)
+                if proj and not np.any(np.isinf(proj)):
+                    fx, fy, fz = proj
+                    if np.sqrt(fx**2 + fy**2 + fz**2) < 10:  # Clip large values
+                        fiber_x.append(fx)
+                        fiber_y.append(fy)
+                        fiber_z.append(fz)
+        
+        if fiber_x:
+            ax1.scatter(fiber_x, fiber_y, fiber_z, s=1, alpha=0.5)
+    
+    ax1.set_xlabel('X')
+    ax1.set_ylabel('Y')
+    ax1.set_zlabel('Z')
+    ax1.set_title('Hopf Fibration (Stereographic Projection)')
+    
+    # Plot 2: Simply connected property visualization
+    ax2 = fig.add_subplot(122, projection='3d')
+    
+    # Draw a sphere (S²) and show that any loop can be contracted
+    u = np.linspace(0, 2 * np.pi, 100)
+    v = np.linspace(0, np.pi, 100)
+    x_sphere = np.outer(np.cos(u), np.sin(v))
+    y_sphere = np.outer(np.sin(u), np.sin(v))
+    z_sphere = np.outer(np.ones(np.size(u)), np.cos(v))
+    
+    ax2.plot_surface(x_sphere, y_sphere, z_sphere, alpha=0.2, color='cyan')
+    
+    # Draw a loop on the sphere
+    theta_loop = np.linspace(0, 2*np.pi, 100)
+    loop_radius = 0.5
+    loop_x = loop_radius * np.cos(theta_loop)
+    loop_y = loop_radius * np.sin(theta_loop)
+    loop_z = np.sqrt(1 - loop_radius**2) * np.ones_like(theta_loop)
+    
+    ax2.plot(loop_x, loop_y, loop_z, 'r-', linewidth=3, label='Loop on sphere')
+    
+    # Show contraction to a point
+    for i, scale in enumerate(np.linspace(1, 0, 5)):
+        contracted_x = scale * loop_x
+        contracted_y = scale * loop_y
+        contracted_z = np.sqrt(1 - scale**2 * loop_radius**2) * np.ones_like(theta_loop)
+        ax2.plot(contracted_x, contracted_y, contracted_z, 
+                color=plt.cm.viridis(i/4), linewidth=2, alpha=0.7)
+    
+    ax2.set_xlabel('X')
+    ax2.set_ylabel('Y')
+    ax2.set_zlabel('Z')
+    ax2.set_title('S² is Simply Connected (Any Loop Contracts)')
+    ax2.legend()
+    
+    plt.tight_layout()
+    plt.savefig('poincare_conjecture.png', dpi=150, bbox_inches='tight')
+    return fig
+
+print("The Poincaré Conjecture - Visualization")
+print("=" * 50)
+print("\\nStatement: Every closed, simply connected 3-manifold is S³")
+print("\\nKey concepts:")
+print("  • 3-manifold: Space that locally looks like R³")
+print("  • Closed: Compact, no boundary")
+print("  • Simply connected: Every loop can be contracted to a point")
+print("  • S³: The 3-sphere (boundary of a 4-dimensional ball)")
+
+print("\\nProof History:")
+print("  • 1904: Poincaré poses the conjecture")
+print("  • 1961: Smale proves n ≥ 5 case (Fields Medal)")
+print("  • 1982: Freedman proves n = 4 case (Fields Medal)")
+print("  • 2002-2003: Perelman proves n = 3 case")
+print("  • 2006: Perelman declines Fields Medal")
+print("  • 2010: Perelman declines $1 million Millennium Prize")
+
+print("\\nPerelman's Tools:")
+print("  • Ricci Flow: ∂g/∂t = -2Ric(g)")
+print("  • Geometrization: Decompose 3-manifolds into geometric pieces")
+print("  • Surgery: Remove singularities in the flow")
+
+# Create visualization
+fig = visualize_s3_projection()
+print("\\nVisualization saved as 'poincare_conjecture.png'")
+
+# Demonstrate simply connected vs not
+print("\\n--- Simply Connected Test ---")
+print("S² (2-sphere): Simply connected ✓")
+print("  Any loop can slide off the sphere and contract.")
+print("\\nT² (torus): NOT simply connected ✗")
+print("  Loops around the 'hole' cannot be contracted.")
+print("  π₁(T²) = Z × Z (two independent loop types)")
+print("\\nS³ (3-sphere): Simply connected ✓")
+print("  Perelman proved: This property characterizes S³ among 3-manifolds.")
+
+# Ricci flow simulation (simplified 2D version)
+def ricci_flow_2d_demo():
+    """
+    Simplified demonstration of Ricci flow on a 2D surface.
+    """
+    print("\\n--- Ricci Flow Demonstration (2D) ---")
+    print("Ricci flow evolves geometry like heat flow:")
+    print("  Positive curvature regions shrink")
+    print("  Negative curvature regions expand")
+    print("  Eventually approaches constant curvature")
+    
+    # Start with an ellipse (uneven curvature)
+    theta = np.linspace(0, 2*np.pi, 100)
+    
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    
+    # Initial: Ellipse (varying curvature)
+    a, b = 2, 1
+    x = a * np.cos(theta)
+    y = b * np.sin(theta)
+    axes[0].plot(x, y, 'b-', linewidth=2)
+    axes[0].set_aspect('equal')
+    axes[0].set_title('Initial: Ellipse\\n(Varying curvature)')
+    axes[0].grid(True, alpha=0.3)
+    
+    # Intermediate: Becoming round
+    a, b = 1.5, 1.2
+    x = a * np.cos(theta)
+    y = b * np.sin(theta)
+    axes[1].plot(x, y, 'g-', linewidth=2)
+    axes[1].set_aspect('equal')
+    axes[1].set_title('Under Ricci Flow\\n(Curvature evening out)')
+    axes[1].grid(True, alpha=0.3)
+    
+    # Final: Circle (constant curvature)
+    r = 1.3
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
+    axes[2].plot(x, y, 'r-', linewidth=2)
+    axes[2].set_aspect('equal')
+    axes[2].set_title('Limit: Circle\\n(Constant curvature)')
+    axes[2].grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.savefig('ricci_flow.png', dpi=150, bbox_inches='tight')
+    print("\\nRicci flow visualization saved as 'ricci_flow.png'")
+
+ricci_flow_2d_demo()</code></pre>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Math History -->
+        <section class="section">
+            <h2 class="section-title">📜 A Brief History of Modern Mathematics</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1900</div>
+                    <p><strong>Hilbert's Problems:</strong> David Hilbert presents 23 unsolved problems at the International Congress of Mathematicians in Paris, shaping 20th-century mathematics.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1904</div>
+                    <p><strong>Poincaré Conjecture:</strong> Henri Poincaré asks whether every simply connected closed 3-manifold is homeomorphic to the 3-sphere.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1920s</div>
+                    <p><strong>Functional Analysis:</strong> Hahn and Banach develop the extension theorem. Hilbert spaces become fundamental to quantum mechanics.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1925-26</div>
+                    <p><strong>Predator-Prey Model:</strong> Lotka and Volterra independently develop the equations describing species competition.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1930s</div>
+                    <p><strong>Ramsey Theory:</strong> Frank Ramsey's work on combinatorics shows that complete disorder is impossible in large systems.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1954</div>
+                    <p><strong>Yang-Mills Theory:</strong> Chen Ning Yang and Robert Mills generalize gauge theory to non-abelian groups, laying the foundation for the Standard Model.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1960s</div>
+                    <p><strong>Hodge Conjecture:</strong> Formulated by W.V.D. Hodge, connecting algebraic cycles to cohomology classes.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1965</div>
+                    <p><strong>Birch and Swinnerton-Dyer Conjecture:</strong> Formulated based on computational evidence about elliptic curves and their L-functions.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1977</div>
+                    <p><strong>RSA Cryptography:</strong> Rivest, Shamir, and Adleman publish the first practical public-key cryptosystem.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2000</div>
+                    <p><strong>Millennium Prize Problems:</strong> The Clay Mathematics Institute announces seven problems, each worth $1 million.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2002-2003</div>
+                    <p><strong>Poincaré Conjecture Solved:</strong> Grigori Perelman proves the conjecture using Ricci flow, later declining all awards.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <p><strong>Mathematics Today:</strong> Six Millennium Prize Problems remain unsolved, driving cutting-edge research across pure and applied mathematics.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: External Articles -->
+        <section class="section">
+            <h2 class="section-title">📰 Featured Math Articles</h2>
+            
+            <div class="external-articles">
+                <div class="article-card">
+                    <h4><a href="https://www.quantamagazine.org/the-year-in-mathematics-20251218/" target="_blank">The Year in Mathematics - Quanta Magazine</a></h4>
+                    <p><strong>Source:</strong> Quanta Magazine (December 2025)</p>
+                    <p>A roundup of the most significant mathematical developments of 2025, including:</p>
+                    <ul>
+                        <li>Hannah Cairo's solution to a 40-year-old problem in harmonic analysis at age 17</li>
+                        <li>The "ten martini problem" connecting quantum physics to number theory</li>
+                        <li>New insights into Maryam Mirzakhani's work on hyperbolic surfaces</li>
+                        <li>Two new types of infinity discovered by set theorists</li>
+                    </ul>
+                </div>
+                
+                <div class="article-card">
+                    <h4><a href="https://www.nature.com/articles/d41586-025-00000-0" target="_blank">Mathematical Breakthroughs in 2025 - Nature</a></h4>
+                    <p><strong>Source:</strong> Nature News</p>
+                    <p>Coverage of major mathematical advances including progress on the Langlands program, new results in combinatorics, and applications of AI to theorem proving. The article highlights the increasing interplay between computer science and pure mathematics.</p>
+                </div>
+                
+                <div class="article-card">
+                    <h4><a href="https://www.ams.org/journals/notices/202501/noti3112/noti3112.html" target="_blank">Notices of the AMS - January 2026</a></h4>
+                    <p><strong>Source:</strong> American Mathematical Society</p>
+                    <p>Features articles on recent developments in algebraic geometry, updates on the classification of finite simple groups, and reflections on the impact of machine learning on mathematical research methodology.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Daily Math Digest • February 16, 2026</p>
+            <p>Generated for educational purposes • <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>

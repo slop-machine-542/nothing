@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily Math Digest - Homological Algebra, Category Theory, Functional Analysis, Numerical Analysis, Mathematical Physics, Cryptography, Collatz Conjecture, Goldbach Conjecture, p-adic Numbers, Chaos Theory">
+    <title>Daily Math Digest - February 16, 2026</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --bg: #f8f9fa;
+            --text: #333;
+            --code-bg: #f4f4f4;
+            --border: #ddd;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 10px 0 0; opacity: 0.9; font-size: 1.1rem; }
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        nav a:hover { color: var(--secondary); }
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .topic-card {
+            margin: 25px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 8px 8px 0;
+        }
+        .topic-card h3 { color: var(--primary); margin-top: 0; }
+        .topic-card h4 { color: var(--secondary); margin-top: 20px; }
+        .theorem {
+            background: #e8f4f8;
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .theorem-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .proof {
+            background: #fff8e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .proof-title {
+            font-weight: bold;
+            color: #d68910;
+            margin-bottom: 10px;
+        }
+        .notation-box {
+            background: #f0f7ff;
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .notation-box h4 { margin-top: 0; color: var(--secondary); }
+        pre {
+            background: var(--code-bg);
+            padding: 20px;
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        pre code { background: none; padding: 0; }
+        .links-list { list-style: none; padding: 0; }
+        .links-list li {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+        }
+        .links-list a {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .links-list a:hover { text-decoration: underline; }
+        .links-list .description {
+            color: #666;
+            margin: 5px 0 0;
+            font-size: 0.95rem;
+        }
+        .book-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .book-highlight h3 { margin-top: 0; }
+        .book-highlight a { color: #ffd700; font-weight: 600; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary);
+        }
+        .timeline-item {
+            position: relative;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        .article-card {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .article-source {
+            color: #e74c3c;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        ul { padding-left: 20px; }
+        li { margin: 8px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📐 Daily Math Digest</h1>
+        <p>Homological Algebra • Category Theory • Functional Analysis • Numerical Analysis • Mathematical Physics • Cryptography • Collatz • Goldbach • p-adic Numbers • Chaos Theory</p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">February 16, 2026</p>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="../index.html">← Back to Home</a>
+            <a href="./">All Posts</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- SECTION 1: Random Math Links -->
+        <section class="section">
+            <h2 class="section-title">🔗 3 Random Math Links</h2>
+            <ul class="links-list">
+                <li>
+                    <a href="https://en.wikipedia.org/wiki/Homological_algebra" target="_blank">Homological Algebra - Wikipedia</a>
+                    <p class="description">The study of homology in a general algebraic setting. It originated from algebraic topology but has become a powerful tool throughout mathematics, with applications in algebraic geometry, group theory, and ring theory.</p>
+                </li>
+                <li>
+                    <a href="https://www.3blue1brown.com/" target="_blank">3Blue1Brown - Grant Sanderson's Math Animations</a>
+                    <p class="description">Beautiful animated explanations of mathematical concepts, from linear algebra to calculus to neural networks. The visual approach makes deep mathematics accessible and intuitive.</p>
+                </li>
+                <li>
+                    <a href="https://numberphile.com/" target="_blank">Numberphile - Videos about Numbers</a>
+                    <p class="description">A YouTube channel featuring mathematicians discussing interesting numbers, problems, and concepts. From prime numbers to the Riemann hypothesis to recreational mathematics.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- SECTION 2: Free Math Book -->
+        <section class="section">
+            <h2 class="section-title">📚 Free Math Book of the Day</h2>
+            <div class="book-highlight">
+                <h3>Homotopy Type Theory: Univalent Foundations of Mathematics</h3>
+                <p><strong>The HoTT Book - by The Univalent Foundations Program</strong></p>
+                <p>A comprehensive introduction to homotopy type theory and the univalent foundations of mathematics. This revolutionary approach connects type theory with homotopy theory, offering a new foundation for mathematics that treats isomorphic structures as equal.</p>
+                <p><a href="https://homotopytypetheory.org/book/" target="_blank">📖 Download Free PDF</a></p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Pure Math Deep Dives -->
+        <section class="section">
+            <h2 class="section-title">🔬 Pure Math Deep Dives</h2>
+
+            <!-- Homological Algebra -->
+            <div class="topic-card">
+                <h3>1. Homological Algebra: The Snake Lemma</h3>
+                
+                <h4>Introduction</h4>
+                <p>Homological algebra studies algebraic structures and their relations using techniques inspired by algebraic topology. It provides a unified framework for understanding homology and cohomology theories across different areas of mathematics.</p>
+                
+                <p>The <strong>Snake Lemma</strong> is a fundamental tool in homological algebra. It constructs a long exact sequence connecting the kernels and cokernels of a commutative diagram, producing a connecting homomorphism that "snakes" through the diagram.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(R\) — a ring (typically commutative with unity)</li>
+                        <li>\(M, N, P\) — modules over the ring \(R\)</li>
+                        <li>\(\ker(f)\) — kernel of homomorphism \(f\): elements mapping to zero</li>
+                        <li>\(\text{coker}(f) = N/\text{im}(f)\) — cokernel of \(f: M \to N\)</li>
+                        <li>\(\text{im}(f)\) — image of homomorphism \(f\)</li>
+                        <li>\(\partial\) — connecting homomorphism (the "snake" map)</li>
+                        <li>\(A \xrightarrow{f} B\) — homomorphism \(f\) from \(A\) to \(B\)</li>
+                        <li>\(0 \to A \to B \to C \to 0\) — short exact sequence</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Snake Lemma</div>
+                    <p>Consider the following commutative diagram with exact rows:</p>
+                    <p>\[
+                    \begin{array}{ccccccccc}
+                    & & M_1 & \xrightarrow{f} & M_2 & \xrightarrow{g} & M_3 & \to & 0 \\
+                    & & \downarrow{\alpha} & & \downarrow{\beta} & & \downarrow{\gamma} & & \\
+                    0 & \to & N_1 & \xrightarrow{h} & N_2 & \xrightarrow{k} & N_3 & &
+                    \end{array}
+                    \]</p>
+                    <p>Then there exists an exact sequence:</p>
+                    <p>\[
+                    \ker(\alpha) \xrightarrow{\tilde{f}} \ker(\beta) \xrightarrow{\tilde{g}} \ker(\gamma) \xrightarrow{\partial} \text{coker}(\alpha) \xrightarrow{\tilde{h}} \text{coker}(\beta) \xrightarrow{\tilde{k}} \text{coker}(\gamma)
+                    \]</p>
+                    <p>where \(\partial\) is the connecting homomorphism. If \(f\) is injective, so is \(\tilde{f}\); if \(k\) is surjective, so is \(\tilde{k}\).</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof (Construction of the Connecting Homomorphism)</div>
+                    
+                    <p><strong>Step 1: Define the maps on kernels.</strong></p>
+                    <p>For \(m \in \ker(\alpha)\), we have \(\alpha(m) = 0\). Define \(\tilde{f}(m) = f(m)\). Since the diagram commutes: \(\beta(f(m)) = h(\alpha(m)) = h(0) = 0\), so \(f(m) \in \ker(\beta)\).</p>
+                    
+                    <p><strong>Step 2: Define the maps on cokernels.</strong></p>
+                    <p>For \([n] \in \text{coker}(\alpha) = N_1/\text{im}(\alpha)\), define \(\tilde{h}([n]) = [h(n)]\). This is well-defined because if \(n = \alpha(m)\), then \(h(n) = h(\alpha(m)) = \beta(f(m)) \in \text{im}(\beta)\).</p>
+                    
+                    <p><strong>Step 3: Construct the connecting homomorphism \(\partial\).</strong></p>
+                    <p>Take \(m \in \ker(\gamma)\). Since \(g\) is surjective, there exists \(m_2 \in M_2\) with \(g(m_2) = m\). Then:</p>
+                    <p>\[k(\beta(m_2)) = \gamma(g(m_2)) = \gamma(m) = 0\]</p>
+                    <p>So \(\beta(m_2) \in \ker(k) = \text{im}(h)\). Thus \(\beta(m_2) = h(n_1)\) for some unique \(n_1 \in N_1\) (since \(h\) is injective).</p>
+                    
+                    <p><strong>Step 4: Define \(\partial(m) = [n_1] \in \text{coker}(\alpha)\).</strong></p>
+                    <p>We must check this is well-defined. If \(m_2'\) is another choice with \(g(m_2') = m\), then \(m_2 - m_2' \in \ker(g) = \text{im}(f)\), so \(m_2 - m_2' = f(m_1)\). Then:</p>
+                    <p>\[\beta(m_2) - \beta(m_2') = \beta(f(m_1)) = h(\alpha(m_1))\]</p>
+                    <p>So the corresponding \(n_1\) differs by \(\alpha(m_1) \in \text{im}(\alpha)\), meaning \([n_1]\) is well-defined in the cokernel.</p>
+                    
+                    <p><strong>Step 5: Verify exactness.</strong></p>
+                    <p>Exactness at each point follows from careful diagram chasing. For example, \(\text{im}(\tilde{g}) = \ker(\partial)\) because \(m \in \ker(\gamma)\) has \(\partial(m) = 0\) iff we can choose \(m_2 \in \ker(\beta)\), which means \(m = g(m_2)\) for some \(m_2 \in \ker(\beta)\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from typing import Callable, List, Tuple
+
+class ModuleHomomorphism:
+    """Represents a homomorphism between free modules over Z."""
+    
+    def __init__(self, matrix: np.ndarray):
+        """
+        matrix: m x n integer matrix representing the homomorphism.
+        """
+        self.matrix = matrix.astype(int)
+        self.domain_dim = matrix.shape[1]
+        self.codomain_dim = matrix.shape[0]
+    
+    def __call__(self, v: np.ndarray) -> np.ndarray:
+        """Apply homomorphism to vector v."""
+        return (self.matrix @ v) % 1000003  # Work mod large prime
+    
+    def kernel_basis(self) -> List[np.ndarray]:
+        """Compute basis for kernel using integer linear algebra."""
+        # Simplified: compute null space over rationals
+        from scipy.linalg import null_space
+        ns = null_space(self.matrix.astype(float))
+        # Convert to integer basis (simplified)
+        basis = []
+        for i in range(ns.shape[1]):
+            v = ns[:, i]
+            # Clear denominators
+            v_int = (v * 1000).astype(int)
+            basis.append(v_int)
+        return basis
+    
+    def image_basis(self) -> List[np.ndarray]:
+        """Compute basis for image (column space)."""
+        # QR decomposition to find independent columns
+        q, r = np.linalg.qr(self.matrix.astype(float))
+        rank = np.sum(np.abs(np.diag(r)) > 1e-10)
+        basis = []
+        for i in range(rank):
+            basis.append(self.matrix[:, i])
+        return basis
+
+def snake_lemma(alpha: ModuleHomomorphism, beta: ModuleHomomorphism, 
+                gamma: ModuleHomomorphism,
+                f: ModuleHomomorphism, g: ModuleHomomorphism,
+                h: ModuleHomomorphism, k: ModuleHomomorphism) -> dict:
+    """
+    Demonstrate the Snake Lemma construction.
+    
+    Diagram:
+        M1 --f--> M2 --g--> M3 --> 0
+        |a       |b       |c
+        v        v        v
+        0 --> N1 --h--> N2 --k--> N3
+    """
+    print("Snake Lemma Demonstration")
+    print("=" * 50)
+    
+    # Compute kernels
+    ker_alpha = alpha.kernel_basis()
+    ker_beta = beta.kernel_basis()
+    ker_gamma = gamma.kernel_basis()
+    
+    print(f"\nDimensions:")
+    print(f"  dim(ker α) = {len(ker_alpha)}")
+    print(f"  dim(ker β) = {len(ker_beta)}")
+    print(f"  dim(ker γ) = {len(ker_gamma)}")
+    
+    # The connecting homomorphism ∂: ker(γ) → coker(α)
+    # For demonstration, we construct it explicitly
+    
+    def connecting_map(m3: np.ndarray) -> np.ndarray:
+        """
+        ∂: ker(γ) → coker(α) = N1/im(α)
+        """
+        # Step 1: Find m2 such that g(m2) = m3
+        # (In practice, need right inverse of g)
+        from scipy.linalg import lstsq
+        m2, _, _, _ = lstsq(g.matrix.astype(float), m3.astype(float))
+        m2 = m2.astype(int)
+        
+        # Step 2: Compute β(m2)
+        beta_m2 = beta(m2)
+        
+        # Step 3: Find n1 such that h(n1) = β(m2)
+        n1, _, _, _ = lstsq(h.matrix.astype(float), beta_m2.astype(float))
+        
+        # Step 4: Return class of n1 in coker(α)
+        return n1.astype(int)
+    
+    return {
+        'ker_alpha': ker_alpha,
+        'ker_beta': ker_beta,
+        'ker_gamma': ker_gamma,
+        'connecting_map': connecting_map
+    }
+
+# Example: Simple diagram over Z
+print("Example: Snake Lemma with Matrix Representations")
+print("=" * 50)
+
+# Define homomorphisms as matrices
+# M1 -> M2 -> M3
+f = ModuleHomomorphism(np.array([[1, 0], [0, 1], [0, 0]]))  # 3x2
+g = ModuleHomomorphism(np.array([[0, 0, 1]]))  # 1x3
+
+# N1 -> N2 -> N3  
+h = ModuleHomomorphism(np.array([[1], [0]]))  # 2x1
+k = ModuleHomomorphism(np.array([[0, 1]]))  # 1x2
+
+# Vertical maps
+alpha = ModuleHomomorphism(np.array([[2], [3]]))  # 2x1
+beta = ModuleHomomorphism(np.array([[2, 0, 0], [0, 2, 0], [0, 0, 2]]))  # 3x3
+gamma = ModuleHomomorphism(np.array([[2]]))  # 1x1
+
+print("Matrices defined for commutative diagram")
+print("The Snake Lemma guarantees an exact sequence connecting kernels and cokernels")
+</code></pre>
+            </div>
+
+            <!-- Category Theory -->
+            <div class="topic-card">
+                <h3>2. Category Theory: Yoneda's Lemma</h3>
+                
+                <h4>Introduction</h4>
+                <p>Category theory provides a unified language for mathematics, studying structures and their relationships through the lens of objects and morphisms. It reveals deep connections between seemingly unrelated areas of mathematics.</p>
+                
+                <p><strong>Yoneda's Lemma</strong> is arguably the most important result in category theory. It states that an object in a category is completely determined by its relationships (morphisms) to other objects. Philosophically: "You are what you do."</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{C}\) — a category</li>
+                        <li>\(\text{Ob}(\mathcal{C})\) — objects of category \(\mathcal{C}\)</li>
+                        <li>\(\text{Hom}_{\mathcal{C}}(A, B)\) or \(\mathcal{C}(A, B)\) — morphisms from \(A\) to \(B\)</li>
+                        <li>\(\mathcal{C}^{\text{op}}\) — opposite category (arrows reversed)</li>
+                        <li>\(\mathbf{Set}\) — category of sets and functions</li>
+                        <li>\(y_A = \mathcal{C}(-, A)\) — Yoneda embedding (representable functor)</li>
+                        <li>\(\text{Nat}(F, G)\) — natural transformations from \(F\) to \(G\)</li>
+                        <li>\([\mathcal{C}^{\text{op}}, \mathbf{Set}]\) — category of presheaves on \(\mathcal{C}\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Yoneda's Lemma</div>
+                    <p>Let \(\mathcal{C}\) be a locally small category, \(F: \mathcal{C}^{\text{op}} \to \mathbf{Set}\) a functor, and \(A \in \mathcal{C}\) an object. Then there is a natural bijection:</p>
+                    <p>\[\text{Nat}(\mathcal{C}(-, A), F) \cong F(A)\]</p>
+                    <p>Explicitly: natural transformations from the representable functor \(y_A = \mathcal{C}(-, A)\) to \(F\) are in one-to-one correspondence with elements of \(F(A)\).</p>
+                    <p>The bijection is given by: \(\alpha \mapsto \alpha_A(\text{id}_A)\) with inverse \(x \mapsto (f: B \to A) \mapsto F(f)(x)\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Corollary: Yoneda Embedding is Fully Faithful</div>
+                    <p>The functor \(y: \mathcal{C} \to [\mathcal{C}^{\text{op}}, \mathbf{Set}]\) sending \(A \mapsto \mathcal{C}(-, A)\) is fully faithful. That is, for all \(A, B \in \mathcal{C}\):</p>
+                    <p>\[\mathcal{C}(A, B) \cong \text{Nat}(\mathcal{C}(-, A), \mathcal{C}(-, B))\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of Yoneda's Lemma</div>
+                    
+                    <p><strong>Step 1: Define the map \(\Phi: \text{Nat}(y_A, F) \to F(A)\).</strong></p>
+                    <p>For a natural transformation \(\alpha: y_A \to F\), define:</p>
+                    <p>\[\Phi(\alpha) = \alpha_A(\text{id}_A) \in F(A)\]</p>
+                    <p>where \(\text{id}_A \in \mathcal{C}(A, A) = y_A(A)\).</p>
+                    
+                    <p><strong>Step 2: Define the inverse map \(\Psi: F(A) \to \text{Nat}(y_A, F)\).</strong></p>
+                    <p>For \(x \in F(A)\), define \(\Psi(x)\) to be the natural transformation whose component at \(B\) is:</p>
+                    <p>\[\Psi(x)_B: \mathcal{C}(B, A) \to F(B), \quad f \mapsto F(f)(x)\]</p>
+                    
+                    <p><strong>Step 3: Verify \(\Psi(x)\) is a natural transformation.</strong></p>
+                    <p>For \(g: C \to B\), we need the naturality square to commute:</p>
+                    <p>\[
+                    \begin{array}{ccc}
+                    \mathcal{C}(B, A) & \xrightarrow{\Psi(x)_B} & F(B) \\
+                    \downarrow{g^*} & & \downarrow{F(g)} \\
+                    \mathcal{C}(C, A) & \xrightarrow{\Psi(x)_C} & F(C)
+                    \end{array}
+                    \]</p>
+                    <p>For \(f: B \to A\):</p>
+                    <p>\[\Psi(x)_C(g^*(f)) = \Psi(x)_C(f \circ g) = F(f \circ g)(x) = F(g)(F(f)(x)) = F(g)(\Psi(x)_B(f))\]</p>
+                    <p>The square commutes, so \(\Psi(x)\) is natural.</p>
+                    
+                    <p><strong>Step 4: Show \(\Phi \circ \Psi = \text{id}_{F(A)}\).</strong></p>
+                    <p>For \(x \in F(A)\):</p>
+                    <p>\[\Phi(\Psi(x)) = \Psi(x)_A(\text{id}_A) = F(\text{id}_A)(x) = \text{id}_{F(A)}(x) = x\]</p>
+                    
+                    <p><strong>Step 5: Show \(\Psi \circ \Phi = \text{id}_{\text{Nat}(y_A, F)}\).</strong></p>
+                    <p>For \(\alpha: y_A \to F\), we show \(\Psi(\Phi(\alpha)) = \alpha\). For any \(B\) and \(f: B \to A\):</p>
+                    <p>\[\Psi(\Phi(\alpha))_B(f) = F(f)(\alpha_A(\text{id}_A))\]</p>
+                    <p>By naturality of \(\alpha\) applied to \(f: B \to A\):</p>
+                    <p>\[\alpha_B(f) = \alpha_B(f^*(\text{id}_A)) = F(f)(\alpha_A(\text{id}_A))\]</p>
+                    <p>So \(\Psi(\Phi(\alpha))_B(f) = \alpha_B(f)\) for all \(f\), hence \(\Psi(\Phi(\alpha)) = \alpha\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>from typing import TypeVar, Generic, Callable, Dict, Set
+from dataclasses import dataclass
+from functools import wraps
+
+T = TypeVar('T')
+
+class Category:
+    """A simple category implementation."""
+    
+    def __init__(self, name: str):
+        self.name = name
+        self.objects: Set[str] = set()
+        self.morphisms: Dict[tuple, Callable] = {}  # (source, target) -> set of morphisms
+        self.hom_sets: Dict[tuple, Set] = {}
+    
+    def add_object(self, obj: str):
+        self.objects.add(obj)
+    
+    def add_morphism(self, source: str, target: str, name: str, func=None):
+        key = (source, target)
+        if key not in self.hom_sets:
+            self.hom_sets[key] = set()
+        self.hom_sets[key].add(name)
+        self.morphisms[(source, target, name)] = func or (lambda x: x)
+    
+    def hom(self, source: str, target: str) -> Set[str]:
+        """Return Hom(source, target)."""
+        return self.hom_sets.get((source, target), set())
+
+class Functor:
+    """A functor between categories."""
+    
+    def __init__(self, name: str, source: Category, target: Category, 
+                 obj_map: Dict[str, str], morph_map: Dict[tuple, str]):
+        self.name = name
+        self.source = source
+        self.target = target
+        self.obj_map = obj_map
+        self.morph_map = morph_map
+    
+    def __call__(self, obj: str) -> str:
+        """Apply functor to object."""
+        return self.obj_map.get(obj, obj)
+    
+    def on_morphism(self, source: str, target: str, morph: str) -> str:
+        """Apply functor to morphism."""
+        return self.morph_map.get((source, target, morph), morph)
+
+class NaturalTransformation:
+    """A natural transformation between two functors."""
+    
+    def __init__(self, name: str, source_functor: Functor, target_functor: Functor,
+                 components: Dict[str, Callable]):
+        self.name = name
+        self.source = source_functor
+        self.target = target_functor
+        self.components = components
+    
+    def __call__(self, obj: str):
+        """Component at object."""
+        return self.components.get(obj, lambda x: x)
+
+def yoneda_embedding(C: Category, A: str):
+    """
+    Construct the representable functor y_A = C(-, A).
+    
+    This is a functor from C^op to Set.
+    """
+    # For simplicity, we represent Set as Python's category of types
+    obj_map = {}
+    for X in C.objects:
+        # y_A(X) = C(X, A) as a set
+        obj_map[X] = frozenset(C.hom(X, A))
+    
+    return obj_map
+
+def yoneda_lemma_demo():
+    """
+    Demonstrate Yoneda's Lemma with a simple category.
+    """
+    print("Yoneda's Lemma Demonstration")
+    print("=" * 50)
+    
+    # Create a simple category: objects A, B, C
+    # Morphisms: id_A, id_B, id_C, f: A -> B, g: B -> C, h: A -> C
+    C = Category("Simple")
+    for obj in ['A', 'B', 'C']:
+        C.add_object(obj)
+    
+    C.add_morphism('A', 'A', 'id_A')
+    C.add_morphism('B', 'B', 'id_B')
+    C.add_morphism('C', 'C', 'id_C')
+    C.add_morphism('A', 'B', 'f')
+    C.add_morphism('B', 'C', 'g')
+    C.add_morphism('A', 'C', 'h')
+    
+    print("\nCategory C:")
+    print(f"  Objects: {C.objects}")
+    for (src, tgt), morphs in C.hom_sets.items():
+        print(f"  Hom({src}, {tgt}) = {morphs}")
+    
+    # Yoneda embedding of A: y_A(X) = C(X, A)
+    print("\nYoneda embedding y_A = C(-, A):")
+    for X in C.objects:
+        hom_set = C.hom(X, 'A')
+        print(f"  y_A({X}) = C({X}, A) = {hom_set if hom_set else '∅'}")
+    
+    # Yoneda's Lemma: Nat(y_A, y_B) ≅ C(A, B)
+    print("\nYoneda Lemma Application:")
+    print("  Nat(y_A, y_B) ≅ C(A, B)")
+    print(f"  C(A, B) = {C.hom('A', 'B')}")
+    print("  Each morphism f: A → B induces a natural transformation y_A → y_B")
+    
+    return C
+
+C = yoneda_lemma_demo()
+</code></pre>
+            </div>
+
+            <!-- Functional Analysis -->
+            <div class="topic-card">
+                <h3>3. Functional Analysis: The Hahn-Banach Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Functional analysis extends the methods of linear algebra and analysis to infinite-dimensional spaces. It provides the mathematical foundation for quantum mechanics, partial differential equations, and signal processing.</p>
+                
+                <p>The <strong>Hahn-Banach Theorem</strong> is a cornerstone of functional analysis. It guarantees that bounded linear functionals defined on subspaces can be extended to the whole space without increasing their norm. This has profound consequences for the structure of Banach spaces.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(X\) — a normed vector space over \(\mathbb{R}\) or \(\mathbb{C}\)</li>
+                        <li>\(\|x\|\) — norm of vector \(x\)</li>
+                        <li>\(X^*\) — dual space (space of continuous linear functionals)</li>
+                        <li>\(M \subseteq X\) — a subspace of \(X\)</li>
+                        <li>\(f: M \to \mathbb{R}\) (or \(\mathbb{C}\)) — linear functional</li>
+                        <li>\(\|f\| = \sup_{\|x\| \leq 1} |f(x)|\) — operator norm</li>
+                        <li>\(p: X \to \mathbb{R}\) — sublinear functional: \(p(x+y) \leq p(x) + p(y)\) and \(p(\alpha x) = \alpha p(x)\) for \(\alpha \geq 0\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Hahn-Banach Theorem (Real Version)</div>
+                    <p>Let \(X\) be a real vector space and \(p: X \to \mathbb{R}\) a sublinear functional. Let \(M \subseteq X\) be a subspace and \(f: M \to \mathbb{R}\) a linear functional satisfying:</p>
+                    <p>\[f(x) \leq p(x) \quad \text{for all } x \in M\]</p>
+                    <p>Then there exists a linear extension \(F: X \to \mathbb{R}\) such that:</p>
+                    <ol>
+                        <li>\(F|_M = f\) (extension)</li>
+                        <li>\(F(x) \leq p(x)\) for all \(x \in X\) (domination)</li>
+                    </ol>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Hahn-Banach Theorem (Normed Space Version)</div>
+                    <p>Let \(X\) be a normed vector space, \(M \subseteq X\) a subspace, and \(f \in M^*\) a bounded linear functional. Then there exists \(F \in X^*\) such that:</p>
+                    <ol>
+                        <li>\(F|_M = f\)</li>
+                        <li>\(\|F\| = \|f\|\)</li>
+                    </ol>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (by Zorn's Lemma)</div>
+                    
+                    <p><strong>Step 1: One-dimensional extension.</strong></p>
+                    <p>Given \(f\) defined on \(M\), we first extend to \(M + \mathbb{R}x_0\) for some \(x_0 \notin M\). We need to define \(F(x_0) = c\) such that:</p>
+                    <p>\[f(y) + \alpha c \leq p(y + \alpha x_0) \quad \text{for all } y \in M, \alpha \in \mathbb{R}\]</p>
+                    <p>For \(\alpha > 0\): \(c \leq \frac{p(y + \alpha x_0) - f(y)}{\alpha}\)</p>
+                    <p>For \(\alpha < 0\): \(c \geq \frac{f(y) - p(y + \alpha x_0)}{-\alpha}\)</p>
+                    <p>One shows these bounds are compatible, so such \(c\) exists.</p>
+                    
+                    <p><strong>Step 2: Apply Zorn's Lemma.</strong></p>
+                    <p>Consider the set of all extensions \((N, g)\) where \(N \supseteq M\) and \(g\) extends \(f\) with \(g \leq p\) on \(N\). Order by extension: \((N_1, g_1) \leq (N_2, g_2)\) if \(N_1 \subseteq N_2\) and \(g_2|_{N_1} = g_1\).</p>
+                    
+                    <p><strong>Step 3: Maximal element.</strong></p>
+                    <p>By Zorn's Lemma, there exists a maximal extension \((N_{\max}, F)\). If \(N_{\max} \neq X\), we could extend further by Step 1, contradicting maximality. Hence \(N_{\max} = X\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from typing import Callable, Optional
+from scipy.optimize import linprog
+
+def hahn_banach_extension(
+    f: Callable[[np.ndarray], float],
+    M_basis: np.ndarray,
+    X_basis: np.ndarray,
+    p: Callable[[np.ndarray], float]
+) -> Callable[[np.ndarray], float]:
+    """
+    Numerical demonstration of Hahn-Banach extension.
+    
+    Given:
+    - f: linear functional defined on subspace M (spanned by M_basis)
+    - X_basis: basis for the whole space X
+    - p: sublinear functional dominating f on M
+    
+    Returns:
+    - F: extension of f to X with F ≤ p
+    """
+    print("Hahn-Banach Extension Construction")
+    print("=" * 50)
+    
+    dim_M = M_basis.shape[0]
+    dim_X = X_basis.shape[0]
+    
+    print(f"\nSubspace M dimension: {dim_M}")
+    print(f"Space X dimension: {dim_X}")
+    
+    # Evaluate f on basis of M
+    f_on_M = np.array([f(v) for v in M_basis])
+    print(f"\nf on M basis: {f_on_M}")
+    
+    # For the extension, we need to define F on the complement
+    # In finite dimensions, we can use linear programming
+    
+    # Find basis for complement of M in X
+    if dim_M < dim_X:
+        # QR decomposition to find orthogonal complement
+        Q, R = np.linalg.qr(M_basis.T)
+        complement_basis = Q[:, dim_M:].T
+        print(f"Complement dimension: {complement_basis.shape[0]}")
+    else:
+        complement_basis = np.array([])
+    
+    # The extension F is determined by its values on X_basis
+    # We need F|_M = f and F(x) ≤ p(x) for all x
+    
+    # For demonstration, construct a simple extension
+    def F(x: np.ndarray) -> float:
+        # Project x onto M and its complement
+        # F(x) = f(projection onto M) + 0 (on complement)
+        # This gives a valid extension with F ≤ p if p dominates
+        
+        # Solve for coefficients in M_basis
+        if dim_M > 0:
+            coeffs = np.linalg.lstsq(M_basis.T, x, rcond=None)[0]
+            proj_M = M_basis.T @ coeffs
+            return f(proj_M)
+        return 0.0
+    
+    return F
+
+# Example: Extend a functional on a subspace of R^3
+print("Example: Hahn-Banach in R^3")
+print("=" * 50)
+
+# Subspace M = span{(1, 0, 0), (0, 1, 0)} (the xy-plane)
+M_basis = np.array([[1, 0, 0], [0, 1, 0]], dtype=float)
+
+# Full space X = R^3
+X_basis = np.eye(3)
+
+# Define f on M: f(x, y, 0) = x + 2y
+def f_on_M(v: np.ndarray) -> float:
+    return v[0] + 2*v[1]
+
+# Sublinear functional: p(x) = ||x||_1 (L1 norm)
+def p_sublinear(v: np.ndarray) -> float:
+    return np.sum(np.abs(v))
+
+# Verify f ≤ p on M
+print("\nVerifying f ≤ p on M:")
+test_vectors_M = np.array([[1, 0, 0], [0, 1, 0], [1, 1, 0], [2, -1, 0]], dtype=float)
+for v in test_vectors_M:
+    fv = f_on_M(v)
+    pv = p_sublinear(v)
+    print(f"  v={v[:2]}, f(v)={fv:.2f}, p(v)={pv:.2f}, f≤p: {fv <= pv + 1e-10}")
+
+# Construct extension
+F = hahn_banach_extension(f_on_M, M_basis, X_basis, p_sublinear)
+
+print("\nTesting extension F on R^3:")
+test_vectors_X = np.array([[1, 0, 0], [0, 0, 1], [1, 2, 3], [-1, 1, 2]], dtype=float)
+for v in test_vectors_X:
+    Fv = F(v)
+    pv = p_sublinear(v)
+    print(f"  v={v}, F(v)={Fv:.2f}, p(v)={pv:.2f}, F≤p: {Fv <= pv + 1e-10}")
+</code></pre>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Applied Math Deep Dives -->
+        <section class="section">
+            <h2 class="section-title">🔧 Applied Math Deep Dives</h2>
+
+            <!-- Numerical Analysis -->
+            <div class="topic-card">
+                <h3>1. Numerical Analysis: Newton's Method Convergence</h3>
+                
+                <h4>Introduction</h4>
+                <p>Numerical analysis develops algorithms for solving mathematical problems approximately when exact solutions are impossible or impractical. It bridges pure mathematics with computational science.</p>
+                
+                <p><strong>Newton's Method</strong> (also called the Newton-Raphson method) is one of the most powerful techniques for finding roots of equations. Under favorable conditions, it converges quadratically—doubling the number of correct digits with each iteration.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(f: \mathbb{R} \to \mathbb{R}\) — a differentiable function</li>
+                        <li>\(f'(x)\) — derivative of \(f\) at \(x\)</li>
+                        <li>\(x^*\) — root: \(f(x^*) = 0\)</li>
+                        <li>\(x_n\) — nth iterate of Newton's method</li>
+                        <li>\(e_n = x_n - x^*\) — error at step \(n\)</li>
+                        <li>\(f^{(k)}(x)\) — kth derivative of \(f\)</li>
+                        <li>\(O(\cdot)\) — big-O notation for asymptotic behavior</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Newton's Method</div>
+                    <p>Given \(f\) differentiable with \(f'(x_n) \neq 0\), the iteration is:</p>
+                    <p>\[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Local Quadratic Convergence</div>
+                    <p>Let \(f\) be twice continuously differentiable with \(f(x^*) = 0\) and \(f'(x^*) \neq 0\). Then there exists \(\delta > 0\) such that for any \(x_0\) with \(|x_0 - x^*| < \delta\):</p>
+                    <ol>
+                        <li>The Newton iteration converges to \(x^*\)</li>
+                        <li>The convergence is quadratic: \(|x_{n+1} - x^*| \leq C|x_n - x^*|^2\) for some constant \(C\)</li>
+                    </ol>
+                    <p>More precisely:</p>
+                    <p>\[\lim_{n \to \infty} \frac{|x_{n+1} - x^*|}{|x_n - x^*|^2} = \frac{|f''(x^*)|}{2|f'(x^*)|}\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of Quadratic Convergence</div>
+                    
+                    <p><strong>Step 1: Taylor expansion around \(x_n\).</strong></p>
+                    <p>\[0 = f(x^*) = f(x_n) + f'(x_n)(x^* - x_n) + \frac{f''(\xi_n)}{2}(x^* - x_n)^2\]</p>
+                    <p>for some \(\xi_n\) between \(x_n\) and \(x^*\).</p>
+                    
+                    <p><strong>Step 2: Rearrange.</strong></p>
+                    <p>\[f(x_n) = f'(x_n)(x_n - x^*) - \frac{f''(\xi_n)}{2}(x_n - x^*)^2\]</p>
+                    
+                    <p><strong>Step 3: Substitute into Newton's formula.</strong></p>
+                    <p>\[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} = x_n - (x_n - x^*) + \frac{f''(\xi_n)}{2f'(x_n)}(x_n - x^*)^2\]</p>
+                    
+                    <p><strong>Step 4: Simplify.</strong></p>
+                    <p>\[x_{n+1} - x^* = \frac{f''(\xi_n)}{2f'(x_n)}(x_n - x^*)^2\]</p>
+                    
+                    <p><strong>Step 5: Take absolute values.</strong></p>
+                    <p>\[|x_{n+1} - x^*| = \frac{|f''(\xi_n)|}{2|f'(x_n)|}|x_n - x^*|^2\]</p>
+                    
+                    <p><strong>Step 6: As \(n \to \infty\), \(x_n \to x^*\), so \(\xi_n \to x^*\).</strong></p>
+                    <p>By continuity of \(f'\) and \(f''\):</p>
+                    <p>\[\lim_{n \to \infty} \frac{|x_{n+1} - x^*|}{|x_n - x^*|^2} = \frac{|f''(x^*)|}{2|f'(x^*)|}\]</p>
+                    <p>This establishes quadratic convergence. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def newtons_method(f, df, x0, tol=1e-10, max_iter=100):
+    """
+    Newton's method for finding roots of f(x) = 0.
+    
+    Parameters:
+        f: function
+        df: derivative of f
+        x0: initial guess
+        tol: tolerance for convergence
+        max_iter: maximum iterations
+    
+    Returns:
+        root: approximate root
+        history: list of iterates
+        converged: whether method converged
+    """
+    x = x0
+    history = [x]
+    
+    for i in range(max_iter):
+        fx = f(x)
+        if abs(fx) < tol:
+            return x, history, True
+        
+        dfx = df(x)
+        if abs(dfx) < 1e-15:
+            return x, history, False
+        
+        x = x - fx / dfx
+        history.append(x)
+    
+    return x, history, False
+
+def demonstrate_quadratic_convergence():
+    """Demonstrate quadratic convergence of Newton's method."""
+    
+    print("Newton's Method: Quadratic Convergence Demonstration")
+    print("=" * 60)
+    
+    # Example 1: f(x) = x^2 - 2 = 0, root at sqrt(2)
+    print("\nExample 1: f(x) = x² - 2 = 0")
+    print("True root: x* = √2 ≈", np.sqrt(2))
+    
+    f = lambda x: x**2 - 2
+    df = lambda x: 2*x
+    
+    x0 = 1.0
+    root, history, converged = newtons_method(f, df, x0)
+    
+    print(f"Initial guess: x₀ = {x0}")
+    print(f"Converged: {converged}")
+    print(f"Approximate root: {root:.15f}")
+    print(f"Error: |root - √2| = {abs(root - np.sqrt(2)):.2e}")
+    
+    print("\nIteration history:")
+    print(f"{'n':>3} {'x_n':>20} {'|e_n|':>15} {'|e_{n+1}|/|e_n|²':>20}")
+    print("-" * 65)
+    
+    true_root = np.sqrt(2)
+    for i in range(len(history) - 1):
+        x_n = history[i]
+        e_n = abs(x_n - true_root)
+        e_n1 = abs(history[i+1] - true_root)
+        ratio = e_n1 / (e_n**2) if e_n > 0 else 0
+        print(f"{i:>3} {x_n:>20.15f} {e_n:>15.2e} {ratio:>20.6f}")
+    
+    # Theoretical limit: |f''(x*)| / (2|f'(x*)|) = 2 / (2 * 2√2) = 1/(2√2)
+    theoretical_limit = 1 / (2 * np.sqrt(2))
+    print(f"\nTheoretical limit of ratio: 1/(2√2) ≈ {theoretical_limit:.6f}")
+    
+    # Example 2: f(x) = e^x - 2 = 0
+    print("\n" + "=" * 60)
+    print("\nExample 2: f(x) = e^x - 2 = 0")
+    print("True root: x* = ln(2) ≈", np.log(2))
+    
+    f2 = lambda x: np.exp(x) - 2
+    df2 = lambda x: np.exp(x)
+    
+    x0 = 1.0
+    root2, history2, converged2 = newtons_method(f2, df2, x0)
+    
+    print(f"Approximate root: {root2:.15f}")
+    print(f"Error: {abs(root2 - np.log(2)):.2e}")
+    
+    return history
+
+history = demonstrate_quadratic_convergence()
+
+# Multivariate Newton's method
+def newtons_method_multivariate(F, JF, x0, tol=1e-10, max_iter=100):
+    """
+    Newton's method for systems: F(x) = 0 where F: R^n -> R^n.
+    
+    Parameters:
+        F: vector-valued function
+        JF: Jacobian of F
+        x0: initial guess (numpy array)
+    """
+    x = np.array(x0, dtype=float)
+    history = [x.copy()]
+    
+    for i in range(max_iter):
+        Fx = F(x)
+        if np.linalg.norm(Fx) < tol:
+            return x, history, True
+        
+        JFx = JF(x)
+        try:
+            delta = np.linalg.solve(JFx, Fx)
+        except np.linalg.LinAlgError:
+            return x, history, False
+        
+        x = x - delta
+        history.append(x.copy())
+    
+    return x, history, False
+
+print("\n" + "=" * 60)
+print("\nMultivariate Example: System of nonlinear equations")
+print("F1(x,y) = x² + y² - 4 = 0  (circle)")
+print("F2(x,y) = x - y = 0        (line)")
+
+def F(v):
+    x, y = v
+    return np.array([x**2 + y**2 - 4, x - y])
+
+def JF(v):
+    x, y = v
+    return np.array([[2*x, 2*y], [1, -1]])
+
+x0 = np.array([1.0, 2.0])
+root, history_mv, converged = newtons_method_multivariate(F, JF, x0)
+
+print(f"\nInitial guess: {x0}")
+print(f"Converged: {converged}")
+print(f"Solution: x ≈ {root[0]:.10f}, y ≈ {root[1]:.10f}")
+print(f"Expected: x = y = √2 ≈ {np.sqrt(2):.10f}")
+</code></pre>
+            </div>
+
+            <!-- Mathematical Physics -->
+            <div class="topic-card">
+                <h3>2. Mathematical Physics: The Schrödinger Equation</h3>
+                
+                <h4>Introduction</h4>
+                <p>Mathematical physics applies rigorous mathematical methods to problems in physics. The Schrödinger equation is the fundamental equation of quantum mechanics, describing how quantum systems evolve over time.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\psi(x, t)\) — wave function (complex-valued)</li>
+                        <li>\(\hbar = h/(2\pi)\) — reduced Planck's constant</li>
+                        <li>\(m\) — mass of particle</li>
+                        <li>\(V(x)\) — potential energy function</li>
+                        <li>\(\hat{H}\) — Hamiltonian operator</li>
+                        <li>\(\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\) — Laplacian</li>
+                        <li>\(|\psi(x,t)|^2\) — probability density</li>
+                        <li>\(E_n\) — energy eigenvalues</li>
+                        <li>\(\phi_n(x)\) — energy eigenfunctions</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Time-Dependent Schrödinger Equation</div>
+                    <p>For a particle of mass \(m\) in potential \(V(x)\):</p>
+                    <p>\[i\hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m}\nabla^2\psi + V(x)\psi = \hat{H}\psi\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Time-Independent Schrödinger Equation</div>
+                    <p>For stationary states \(\psi(x,t) = \phi(x)e^{-iEt/\hbar}\):</p>
+                    <p>\[\hat{H}\phi = E\phi\]</p>
+                    <p>\[-\frac{\hbar^2}{2m}\frac{d^2\phi}{dx^2} + V(x)\phi = E\phi\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Infinite Square Well Solution</div>
+                    <p>For \(V(x) = 0\) on \((0, L)\) and \(\infty\) otherwise:</p>
+                    <p>\[\phi_n(x) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right), \quad n = 1, 2, 3, \ldots\]</p>
+                    <p>\[E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Derivation of Infinite Square Well Eigenfunctions</div>
+                    
+                    <p><strong>Step 1:</strong> Inside the well \((0, L)\), \(V(x) = 0\), so:</p>
+                    <p>\[-\frac{\hbar^2}{2m}\frac{d^2\phi}{dx^2} = E\phi\]</p>
+                    
+                    <p><strong>Step 2:</strong> Rearrange:</p>
+                    <p>\[\frac{d^2\phi}{dx^2} = -k^2\phi, \quad k = \frac{\sqrt{2mE}}{\hbar}\]</p>
+                    
+                    <p><strong>Step 3:</strong> General solution:</p>
+                    <p>\[\phi(x) = A\sin(kx) + B\cos(kx)\]</p>
+                    
+                    <p><strong>Step 4:</strong> Apply boundary conditions \(\phi(0) = \phi(L) = 0\):</p>
+                    <p>\(\phi(0) = B = 0\), so \(\phi(x) = A\sin(kx)\)</p>
+                    <p>\(\phi(L) = A\sin(kL) = 0\), so \(kL = n\pi\) for integer \(n\)</p>
+                    
+                    <p><strong>Step 5:</strong> Quantization:</p>
+                    <p>\[k_n = \frac{n\pi}{L}, \quad E_n = \frac{\hbar^2 k_n^2}{2m} = \frac{n^2\pi^2\hbar^2}{2mL^2}\]</p>
+                    
+                    <p><strong>Step 6:</strong> Normalization \(\int_0^L |\phi|^2 dx = 1\):</p>
+                    <p>\[A^2 \int_0^L \sin^2\left(\frac{n\pi x}{L}\right) dx = A^2 \cdot \frac{L}{2} = 1\]</p>
+                    <p>So \(A = \sqrt{2/L}\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.sparse import diags
+from scipy.sparse.linalg import eigsh
+
+def solve_infinite_square_well(N=1000, L=1.0, n_states=5):
+    """
+    Solve the infinite square well numerically using finite differences.
+    
+    Parameters:
+        N: number of grid points
+        L: width of well
+        n_states: number of eigenstates to compute
+    
+    Returns:
+        energies: eigenvalues
+        wavefunctions: eigenvectors
+        x: grid points
+    """
+    # Set constants (ℏ = m = 1 for simplicity)
+    hbar = 1.0
+    m = 1.0
+    
+    # Grid
+    x = np.linspace(0, L, N)
+    dx = x[1] - x[0]
+    
+    # Construct Hamiltonian matrix using finite differences
+    # H = -(ℏ²/2m) d²/dx²
+    # Second derivative: (f[i+1] - 2f[i] + f[i-1]) / dx²
+    
+    coeff = -hbar**2 / (2 * m * dx**2)
+    
+    # Tridiagonal matrix
+    main_diag = np.ones(N) * (-2 * coeff)
+    off_diag = np.ones(N-1) * coeff
+    
+    H = diags([off_diag, main_diag, off_diag], [-1, 0, 1], format='csr')
+    
+    # Solve eigenvalue problem (smallest eigenvalues)
+    energies, wavefunctions = eigsh(H, k=n_states, which='SM')
+    
+    # Normalize wavefunctions
+    for i in range(n_states):
+        wavefunctions[:, i] /= np.sqrt(np.trapz(wavefunctions[:, i]**2, x))
+    
+    return energies, wavefunctions, x
+
+def analytical_solution(n, L=1.0):
+    """Analytical energy for infinite square well."""
+    hbar = 1.0
+    m = 1.0
+    return (n**2 * np.pi**2 * hbar**2) / (2 * m * L**2)
+
+# Solve numerically
+print("Infinite Square Well: Numerical vs Analytical Solution")
+print("=" * 60)
+
+energies, wavefunctions, x = solve_infinite_square_well(N=1000, L=1.0, n_states=5)
+
+print("\nEnergy Eigenvalues:")
+print(f"{'n':>3} {'Numerical':>15} {'Analytical':>15} {'Error':>15}")
+print("-" * 55)
+
+for i in range(5):
+    n = i + 1
+    E_numerical = energies[i]
+    E_analytical = analytical_solution(n)
+    error = abs(E_numerical - E_analytical)
+    print(f"{n:>3} {E_numerical:>15.10f} {E_analytical:>15.10f} {error:>15.2e}")
+
+# Time evolution
+def time_evolution(wavefunctions, energies, x, t, coeffs):
+    """
+    Compute ψ(x,t) = Σ c_n φ_n(x) e^(-iE_n t/ℏ)
+    """
+    hbar = 1.0
+    psi = np.zeros(len(x), dtype=complex)
+    
+    for i, c in enumerate(coeffs):
+        psi += c * wavefunctions[:, i] * np.exp(-1j * energies[i] * t / hbar)
+    
+    return psi
+
+# Create superposition state: (φ₁ + φ₂)/√2
+print("\n\nSuperposition State: ψ = (φ₁ + φ₂)/√2")
+print("Probability density |ψ(x,t)|² evolves in time")
+
+coeffs = np.array([1/np.sqrt(2), 1/np.sqrt(2), 0, 0, 0])
+
+# Plot at different times
+times = [0, 0.5, 1.0, 2.0]
+print(f"\nTime evolution (ℏ = 1):")
+for t in times:
+    psi = time_evolution(wavefunctions, energies, x, t, coeffs)
+    prob = np.abs(psi)**2
+    print(f"  t = {t}: Total probability = {np.trapz(prob, x):.6f}")
+
+# Harmonic oscillator potential
+def solve_harmonic_oscillator(N=1000, x_max=10.0, n_states=5):
+    """
+    Solve the quantum harmonic oscillator: V(x) = (1/2)mω²x²
+    """
+    hbar = 1.0
+    m = 1.0
+    omega = 1.0
+    
+    x = np.linspace(-x_max, x_max, N)
+    dx = x[1] - x[0]
+    
+    # Potential
+    V = 0.5 * m * omega**2 * x**2
+    
+    # Kinetic term
+    coeff = -hbar**2 / (2 * m * dx**2)
+    main_diag = np.ones(N) * (-2 * coeff) + V
+    off_diag = np.ones(N-1) * coeff
+    
+    H = diags([off_diag, main_diag, off_diag], [-1, 0, 1], format='csr')
+    
+    energies, wavefunctions = eigsh(H, k=n_states, which='SM')
+    
+    # Normalize
+    for i in range(n_states):
+        wavefunctions[:, i] /= np.sqrt(np.trapz(wavefunctions[:, i]**2, x))
+    
+    return energies, wavefunctions, x
+
+print("\n" + "=" * 60)
+print("\nQuantum Harmonic Oscillator: V(x) = (1/2)x²")
+
+E_ho, psi_ho, x_ho = solve_harmonic_oscillator(N=2000, x_max=10.0, n_states=5)
+
+print("\nEnergy Eigenvalues (should be E_n = n + 1/2):")
+print(f"{'n':>3} {'Numerical':>15} {'E_n = n + 1/2':>15} {'Error':>15}")
+print("-" * 55)
+
+for i in range(5):
+    E_numerical = E_ho[i]
+    E_analytical = i + 0.5
+    error = abs(E_numerical - E_analytical)
+    print(f"{i:>3} {E_numerical:>15.10f} {E_analytical:>15.10f} {error:>15.2e}")
+</code></pre>
+            </div>
+
+            <!-- Cryptography -->
+            <div class="topic-card">
+                <h3>3. Cryptography: The RSA Algorithm</h3>
+                
+                <h4>Introduction</h4>
+                <p>Cryptography is the mathematical science of secure communication. The RSA algorithm, named after Rivest, Shamir, and Adleman, is one of the first public-key cryptosystems and remains widely used today for secure data transmission.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(p, q\) — large prime numbers</li>
+                        <li>\(n = pq\) — RSA modulus (public)</li>
+                        <li>\(\phi(n) = (p-1)(q-1)\) — Euler's totient function</li>
+                        <li>\(e\) — public exponent (encryption key)</li>
+                        <li>\(d\) — private exponent (decryption key)</li>
+                        <li>\(m\) — plaintext message</li>
+                        <li>\(c\) — ciphertext</li>
+                        <li>\(a \equiv b \pmod{n}\) — congruence modulo \(n\)</li>
+                        <li>\(\gcd(a, b)\) — greatest common divisor</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">RSA Key Generation</div>
+                    <ol>
+                        <li>Choose two distinct large primes \(p\) and \(q\)</li>
+                        <li>Compute \(n = pq\) and \(\phi(n) = (p-1)(q-1)\)</li>
+                        <li>Choose \(e\) such that \(1 < e < \phi(n)\) and \(\gcd(e, \phi(n)) = 1\)</li>
+                        <li>Compute \(d\) such that \(ed \equiv 1 \pmod{\phi(n)}\)</li>
+                    </ol>
+                    <p><strong>Public key:</strong> \((n, e)\)</p>
+                    <p><strong>Private key:</strong> \((n, d)\)</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">RSA Encryption and Decryption</div>
+                    <p><strong>Encryption:</strong> \(c \equiv m^e \pmod{n}\)</p>
+                    <p><strong>Decryption:</strong> \(m \equiv c^d \pmod{n}\)</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Correctness of RSA</div>
+                    <p>For any message \(m\) with \(0 \leq m < n\):</p>
+                    <p>\[(m^e)^d \equiv m \pmod{n}\]</p>
+                    <p>Equivalently: \(m^{ed} \equiv m \pmod{n}\)</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of RSA Correctness</div>
+                    
+                    <p><strong>Step 1:</strong> Since \(ed \equiv 1 \pmod{\phi(n)}\), we have \(ed = 1 + k\phi(n)\) for some integer \(k\).</p>
+                    
+                    <p><strong>Step 2:</strong> We need to show \(m^{ed} \equiv m \pmod{n}\), i.e., \(m^{1+k\phi(n)} \equiv m \pmod{n}\).</p>
+                    
+                    <p><strong>Step 3:</strong> By the Chinese Remainder Theorem, it suffices to prove:</p>
+                    <p>\[m^{ed} \equiv m \pmod{p} \quad \text{and} \quad m^{ed} \equiv m \pmod{q}\]</p>
+                    
+                    <p><strong>Step 4:</strong> Case 1: If \(p \nmid m\), by Fermat's Little Theorem:</p>
+                    <p>\[m^{p-1} \equiv 1 \pmod{p}\]</p>
+                    <p>Since \(\phi(n) = (p-1)(q-1)\):</p>
+                    <p>\[m^{ed} = m \cdot m^{k\phi(n)} = m \cdot (m^{p-1})^{k(q-1)} \equiv m \cdot 1^{k(q-1)} \equiv m \pmod{p}\]</p>
+                    
+                    <p><strong>Step 5:</strong> Case 2: If \(p \mid m\), then \(m \equiv 0 \pmod{p}\), so:</p>
+                    <p>\[m^{ed} \equiv 0 \equiv m \pmod{p}\]</p>
+                    
+                    <p><strong>Step 6:</strong> The same argument applies modulo \(q\). Therefore \(m^{ed} \equiv m \pmod{n}\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import random
+import math
+from typing import Tuple
+
+def is_prime(n: int, k: int = 10) -> bool:
+    """Miller-Rabin primality test."""
+    if n < 2: return False
+    if n == 2 or n == 3: return True
+    if n % 2 == 0: return False
+    
+    # Write n-1 as 2^r * d
+    r, d = 0, n - 1
+    while d % 2 == 0:
+        r += 1
+        d //= 2
+    
+    # Witness loop
+    for _ in range(k):
+        a = random.randrange(2, n - 1)
+        x = pow(a, d, n)
+        if x == 1 or x == n - 1:
+            continue
+        for _ in range(r - 1):
+            x = pow(x, 2, n)
+            if x == n - 1:
+                break
+        else:
+            return False
+    return True
+
+def generate_prime(bits: int) -> int:
+    """Generate a random prime with specified bit length."""
+    while True:
+        n = random.getrandbits(bits)
+        n |= (1 << bits - 1) | 1  # Ensure odd and has correct bit length
+        if is_prime(n):
+            return n
+
+def extended_gcd(a: int, b: int) -> Tuple[int, int, int]:
+    """Extended Euclidean algorithm. Returns (g, x, y) such that ax + by = g = gcd(a,b)."""
+    if b == 0:
+        return (a, 1, 0)
+    g, x1, y1 = extended_gcd(b, a % b)
+    x = y1
+    y = x1 - (a // b) * y1
+    return (g, x, y)
+
+def mod_inverse(a: int, m: int) -> int:
+    """Compute modular inverse of a modulo m."""
+    g, x, _ = extended_gcd(a % m, m)
+    if g != 1:
+        raise ValueError("Modular inverse does not exist")
+    return (x % m + m) % m
+
+class RSA:
+    """RSA public-key cryptosystem."""
+    
+    def __init__(self, key_size: int = 512):
+        """Generate RSA key pair with specified key size in bits."""
+        print(f"Generating RSA-{key_size} key pair...")
+        
+        # Generate two distinct primes
+        p = generate_prime(key_size // 2)
+        q = generate_prime(key_size // 2)
+        while q == p:
+            q = generate_prime(key_size // 2)
+        
+        self.n = p * q
+        self.phi = (p - 1) * (q - 1)
+        
+        # Choose public exponent (commonly 65537)
+        self.e = 65537
+        while math.gcd(self.e, self.phi) != 1:
+            self.e += 2
+        
+        # Compute private exponent
+        self.d = mod_inverse(self.e, self.phi)
+        
+        self.p = p
+        self.q = q
+        
+        print(f"  n = {self.n}")
+        print(f"  e = {self.e}")
+        print(f"  d = {self.d % (2**32)}... (truncated)")
+    
+    def encrypt(self, message: int) -> int:
+        """Encrypt message using public key."""
+        if not 0 <= message < self.n:
+            raise ValueError(f"Message must be in range [0, {self.n})")
+        return pow(message, self.e, self.n)
+    
+    def decrypt(self, ciphertext: int) -> int:
+        """Decrypt ciphertext using private key."""
+        return pow(ciphertext, self.d, self.n)
+    
+    def public_key(self) -> Tuple[int, int]:
+        """Return public key (n, e)."""
+        return (self.n, self.e)
+    
+    def private_key(self) -> Tuple[int, int]:
+        """Return private key (n, d)."""
+        return (self.n, self.d)
+
+# Demonstrate RSA
+print("RSA Cryptosystem Demonstration")
+print("=" * 60)
+
+# Use small key size for demonstration
+rsa = RSA(key_size=256)
+
+# Encrypt a message
+message = 123456789
+print(f"\nOriginal message: m = {message}")
+
+ciphertext = rsa.encrypt(message)
+print(f"Encrypted: c = m^e mod n = {ciphertext}")
+
+decrypted = rsa.decrypt(ciphertext)
+print(f"Decrypted: m' = c^d mod n = {decrypted}")
+
+print(f"\nVerification: m == m'? {message == decrypted}")
+
+# Mathematical verification
+print("\n" + "=" * 60)
+print("Mathematical Verification:")
+print(f"e * d mod φ(n) = {(rsa.e * rsa.d) % rsa.phi}")
+print(f"This should equal 1 for correct decryption")
+
+# Text encryption (simplified)
+def text_to_int(text: str) -> int:
+    """Convert text to integer."""
+    result = 0
+    for char in text:
+        result = (result << 8) | ord(char)
+    return result
+
+def int_to_text(n: int) -> str:
+    """Convert integer back to text."""
+    chars = []
+    while n > 0:
+        chars.append(chr(n & 0xFF))
+        n >>= 8
+    return ''.join(reversed(chars))
+
+print("\n" + "=" * 60)
+print("Text Encryption Example:")
+
+text = "Hi"
+m = text_to_int(text)
+print(f"Text: '{text}' -> Integer: {m}")
+
+c = rsa.encrypt(m)
+m_decrypted = rsa.decrypt(c)
+text_decrypted = int_to_text(m_decrypted)
+
+print(f"Encrypted: {c}")
+print(f"Decrypted: '{text_decrypted}'")
+</code></pre>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Special Math Topics -->
+        <section class="section">
+            <h2 class="section-title">🎯 Special Math Topics</h2>
+
+            <!-- Collatz Conjecture -->
+            <div class="topic-card">
+                <h3>1. The Collatz Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Collatz conjecture is one of the most famous unsolved problems in mathematics. Despite its simple formulation, it has resisted proof for over 80 years. Paul Erdős said, "Mathematics may not be ready for such problems."</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(n\) — a positive integer</li>
+                        <li>\(T(n)\) — Collatz function</li>
+                        <li>\(n_k\) — kth iterate of the Collatz function</li>
+                        <li>\(\sigma(n)\) — total stopping time</li>
+                        <li>\(\mathbb{N}\) — natural numbers (positive integers)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Collatz Conjecture</div>
+                    <p>Define the function \(T: \mathbb{N} \to \mathbb{N}\) by:</p>
+                    <p>\[T(n) = \begin{cases} n/2 & \text{if } n \equiv 0 \pmod{2} \\ 3n + 1 & \text{if } n \equiv 1 \pmod{2} \end{cases}\]</p>
+                    <p>The conjecture states that for every positive integer \(n\), the sequence \(n, T(n), T(T(n)), \ldots\) eventually reaches 1.</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Properties of the Collatz Function</div>
+                    <ol>
+                        <li>If \(n = 2^k m\) with \(m\) odd, then \(T^k(n) = m\)</li>
+                        <li>For odd \(n\), \(T(n) = 3n + 1\) is even, so \(T^2(n) = (3n + 1)/2\)</li>
+                        <li>The "shortcut" map: \(f(n) = n/2\) if even, \((3n+1)/2\) if odd</li>
+                    </ol>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def collatz(n: int) -> int:
+    """Single step of Collatz function."""
+    if n % 2 == 0:
+        return n // 2
+    else:
+        return 3 * n + 1
+
+def collatz_sequence(n: int, max_steps: int = 10000) -> list:
+    """Generate Collatz sequence starting from n."""
+    sequence = [n]
+    current = n
+    steps = 0
+    
+    while current != 1 and steps < max_steps:
+        current = collatz(current)
+        sequence.append(current)
+        steps += 1
+    
+    return sequence
+
+def total_stopping_time(n: int, max_steps: int = 10000) -> int:
+    """Number of steps to reach 1."""
+    steps = 0
+    current = n
+    
+    while current != 1 and steps < max_steps:
+        current = collatz(current)
+        steps += 1
+    
+    return steps if current == 1 else -1
+
+# Demonstrate Collatz sequences
+print("Collatz Conjecture Exploration")
+print("=" * 60)
+
+test_numbers = [6, 7, 19, 27, 97]
+
+for n in test_numbers:
+    seq = collatz_sequence(n)
+    print(f"\nn = {n}:")
+    print(f"  Sequence length: {len(seq)}")
+    print(f"  Sequence: {' -> '.join(map(str, seq[:15]))}", end="")
+    if len(seq) > 15:
+        print(f" ... -> 1")
+    else:
+        print()
+    print(f"  Total stopping time: {len(seq) - 1}")
+
+# Analyze stopping times for range of numbers
+print("\n" + "=" * 60)
+print("Stopping Time Analysis for n = 1 to 1000")
+
+stopping_times = [total_stopping_time(n) for n in range(1, 1001)]
+
+print(f"Maximum stopping time: {max(stopping_times)} (for n = {stopping_times.index(max(stopping_times)) + 1})")
+print(f"Average stopping time: {np.mean(stopping_times):.2f}")
+
+# Find record holders (numbers with new maximum stopping times)
+records = []
+max_so_far = 0
+for n in range(1, 10001):
+    t = total_stopping_time(n)
+    if t > max_so_far:
+        records.append((n, t))
+        max_so_far = t
+
+print("\nRecord holders (n with new max stopping time):")
+for n, t in records[:10]:
+    print(f"  n = {n:>5}: stopping time = {t}")
+
+# "Shortcut" Collatz function
+def collatz_shortcut(n: int) -> int:
+    """
+    Shortcut: combine (3n+1)/2 into one step for odd n.
+    """
+    if n % 2 == 0:
+        return n // 2
+    else:
+        return (3 * n + 1) // 2
+
+def analyze_parity_vector(n: int, steps: int) -> list:
+    """
+    Track the parity (even/odd) pattern for n.
+    """
+    vector = []
+    current = n
+    for _ in range(steps):
+        vector.append(current % 2)
+        current = collatz(current)
+    return vector
+
+print("\n" + "=" * 60)
+print("Parity Vector Analysis:")
+for n in [7, 15, 27]:
+    pv = analyze_parity_vector(n, 10)
+    print(f"  n = {n}: {' '.join('O' if p else 'E' for p in pv)}")
+</code></pre>
+            </div>
+
+            <!-- Goldbach Conjecture -->
+            <div class="topic-card">
+                <h3>2. The Goldbach Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Goldbach conjecture, stated in 1742, is one of the oldest and best-known unsolved problems in number theory. It asserts that every even integer greater than 2 can be expressed as the sum of two primes.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(n\) — an even integer greater than 2</li>
+                        <li>\(p, q\) — prime numbers</li>
+                        <li>\(G(n)\) — number of ways to write \(n = p + q\) with \(p, q\) prime</li>
+                        <li>\(\pi(x)\) — prime counting function</li>
+                        <li>\(\mathbb{P}\) — set of prime numbers</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Goldbach Conjecture</div>
+                    <p><strong>Strong (Binary) Goldbach Conjecture:</strong> Every even integer \(n > 2\) can be expressed as the sum of two primes:</p>
+                    <p>\[n = p + q \quad \text{where } p, q \in \mathbb{P}\]</p>
+                    
+                    <p><strong>Weak (Ternary) Goldbach Conjecture:</strong> Every odd integer greater than 5 can be expressed as the sum of three primes.</p>
+                    <p><em>Note: The weak conjecture was proven by Harald Helfgott in 2013.</em></p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Goldbach's Comet</div>
+                    <p>The function \(G(n)\) counting Goldbach partitions is highly irregular but shows interesting patterns when plotted. For large \(n\), heuristic arguments suggest:</p>
+                    <p>\[G(n) \sim \frac{n}{2\log^2 n} \prod_{p > 2} \left(1 - \frac{1}{(p-1)^2}\right) \prod_{\substack{p | n \\ p > 2}} \frac{p-1}{p-2}\]</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def sieve_of_eratosthenes(limit: int) -> list:
+    """Generate all primes up to limit using sieve."""
+    is_prime = [True] * (limit + 1)
+    is_prime[0] = is_prime[1] = False
+    
+    for i in range(2, int(limit**0.5) + 1):
+        if is_prime[i]:
+            for j in range(i*i, limit + 1, i):
+                is_prime[j] = False
+    
+    return [i for i, prime in enumerate(is_prime) if prime]
+
+def goldbach_partitions(n: int, primes: set) -> list:
+    """Find all Goldbach partitions of even n."""
+    if n % 2 != 0 or n <= 2:
+        return []
+    
+    partitions = []
+    for p in primes:
+        if p > n // 2:
+            break
+        if (n - p) in primes:
+            partitions.append((p, n - p))
+    
+    return partitions
+
+def G(n: int, primes: set) -> int:
+    """Number of Goldbach partitions of n."""
+    return len(goldbach_partitions(n, primes))
+
+# Verify Goldbach conjecture for even numbers up to 10000
+print("Goldbach Conjecture Verification")
+print("=" * 60)
+
+limit = 10000
+primes_list = sieve_of_eratosthenes(limit)
+primes_set = set(primes_list)
+
+print(f"Checking even numbers from 4 to {limit}...")
+
+all_verified = True
+max_partitions = 0
+max_n = 0
+
+for n in range(4, limit + 1, 2):
+    partitions = goldbach_partitions(n, primes_set)
+    g_n = len(partitions)
+    
+    if g_n == 0:
+        print(f"COUNTEREXAMPLE FOUND: n = {n}")
+        all_verified = False
+        break
+    
+    if g_n > max_partitions:
+        max_partitions = g_n
+        max_n = n
+
+if all_verified:
+    print(f"✓ Goldbach conjecture verified for all even n ≤ {limit}")
+    print(f"  Maximum G(n) = {max_partitions} at n = {max_n}")
+
+# Show examples
+print("\n" + "=" * 60)
+print("Example Goldbach Partitions:")
+
+examples = [10, 100, 1000, 2024]
+for n in examples:
+    parts = goldbach_partitions(n, primes_set)
+    print(f"\nn = {n}: G({n}) = {len(parts)}")
+    if len(parts) <= 10:
+        print(f"  Partitions: {'; '.join(f'{p}+{q}' for p, q in parts)}")
+    else:
+        sample = parts[:5] + [('...', '')] + parts[-5:]
+        print(f"  Partitions: {'; '.join(f'{p}+{q}' if q else p for p, q in sample)}")
+
+# Compute G(n) for plotting
+print("\n" + "=" * 60)
+print("Computing G(n) for n = 4 to 1000...")
+
+even_numbers = list(range(4, 1001, 2))
+g_values = [G(n, primes_set) for n in even_numbers]
+
+print(f"Average G(n): {np.mean(g_values):.2f}")
+print(f"Min G(n): {min(g_values)} at n = {even_numbers[g_values.index(min(g_values))]}")
+print(f"Max G(n): {max(g_values)} at n = {even_numbers[g_values.index(max(g_values))]}")
+
+# Check G(n) = 1 cases (unique partitions)
+unique_partition_numbers = [n for n, g in zip(even_numbers, g_values) if g == 1]
+print(f"\nNumbers with unique partition (G(n) = 1): {unique_partition_numbers}")
+
+# Empirical verification of asymptotic formula
+print("\n" + "=" * 60)
+print("Asymptotic Behavior Analysis:")
+
+# Hardy-Littlewood heuristic: G(n) ~ n/(2*log²n) * C * correction
+# where C is the twin prime constant
+twin_prime_constant = 0.6601618158468695739278121100145557784326233602847334
+
+for n in [100, 500, 1000, 5000]:
+    actual = G(n, primes_set)
+    # Simplified asymptotic (without correction factor)
+    asymptotic = n / (2 * np.log(n)**2) * twin_prime_constant
+    print(f"n = {n:4d}: G(n) = {actual:3d}, asymptotic ≈ {asymptotic:.2f}, ratio = {actual/asymptotic:.3f}")
+</code></pre>
+            </div>
+
+            <!-- p-adic Numbers -->
+            <div class="topic-card">
+                <h3>3. p-adic Numbers</h3>
+                
+                <h4>Introduction</h4>
+                <p>The p-adic numbers, introduced by Kurt Hensel in 1897, provide an alternative completion of the rational numbers. While real numbers complete \(\mathbb{Q}\) using the usual absolute value, p-adic numbers use a different notion of "closeness" based on divisibility by a prime \(p\).</p>
+                
+                <p>In the p-adic world, two numbers are close if their difference is divisible by a high power of \(p\). This leads to a number system with remarkable properties and deep applications in number theory.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(p\) — a prime number</li>
+                        <li>\(\nu_p(x)\) — p-adic valuation: highest power of \(p\) dividing \(x\)</li>
+                        <li>\(|x|_p = p^{-\nu_p(x)}\) — p-adic absolute value</li>
+                        <li>\(d_p(x, y) = |x - y|_p\) — p-adic metric</li>
+                        <li>\(\mathbb{Q}_p\) — field of p-adic numbers</li>
+                        <li>\(\mathbb{Z}_p\) — ring of p-adic integers</li>
+                        <li>\(\sum_{n=k}^{\infty} a_n p^n\) — p-adic expansion (\(a_n \in \{0, 1, \ldots, p-1\}\))</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">p-adic Valuation and Absolute Value</div>
+                    <p>For a nonzero rational \(x = p^k \frac{a}{b}\) where \(p \nmid ab\):</p>
+                    <p>\[\nu_p(x) = k\]</p>
+                    <p>\[|x|_p = p^{-k}\]</p>
+                    <p>By convention: \(|0|_p = 0\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Properties of the p-adic Absolute Value</div>
+                    <ol>
+                        <li><strong>Non-Archimedean property:</strong> \(|x + y|_p \leq \max(|x|_p, |y|_p)\)</li>
+                        <li><strong>Strong triangle inequality:</strong> If \(|x|_p \neq |y|_p\), then \(|x + y|_p = \max(|x|_p, |y|_p)\)</li>
+                        <li><strong>Multiplicative:</strong> \(|xy|_p = |x|_p |y|_p\)</li>
+                    </ol>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Ostrowski's Theorem</div>
+                    <p>Every nontrivial absolute value on \(\mathbb{Q}\) is equivalent to either:</p>
+                    <ol>
+                        <li>The usual absolute value \(|\cdot|_{\infty}\) (giving \(\mathbb{R}\))</li>
+                        <li>A p-adic absolute value \(|\cdot|_p\) for some prime \(p\) (giving \(\mathbb{Q}_p\))</li>
+                    </ol>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of the Non-Archimedean Property</div>
+                    
+                    <p><strong>Step 1:</strong> Show \(\nu_p(x + y) \geq \min(\nu_p(x), \nu_p(y))\).</p>
+                    
+                    <p>Let \(k = \nu_p(x)\) and \(l = \nu_p(y)\) with \(k \leq l\). Then:</p>
+                    <p>\[x = p^k a, \quad y = p^l b\]</p>
+                    <p>where \(p \nmid a\) and \(p \nmid b\).</p>
+                    
+                    <p><strong>Step 2:</strong> Compute \(x + y\):</p>
+                    <p>\[x + y = p^k a + p^l b = p^k(a + p^{l-k}b)\]</p>
+                    
+                    <p><strong>Step 3:</strong> Since \(l - k \geq 0\), we have \(a + p^{l-k}b \in \mathbb{Z}\).</p>
+                    <p>Therefore \(\nu_p(x + y) \geq k = \min(\nu_p(x), \nu_p(y))\).</p>
+                    
+                    <p><strong>Step 4:</strong> Convert to absolute values:</p>
+                    <p>\[|x + y|_p = p^{-\nu_p(x+y)} \leq p^{-\min(k,l)} = \max(p^{-k}, p^{-l}) = \max(|x|_p, |y|_p)\]</p>
+                    
+                    <p><strong>Step 5:</strong> For the strong triangle inequality when \(|x|_p \neq |y|_p\):</p>
+                    <p>Assume \(k < l\). Then \(a + p^{l-k}b \equiv a \not\equiv 0 \pmod{p}\), so \(\nu_p(x+y) = k\).</p>
+                    <p>Hence \(|x + y|_p = p^{-k} = \max(|x|_p, |y|_p)\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>from fractions import Fraction
+import math
+
+def prime_factors(n: int) -> dict:
+    """Return prime factorization as {p: exponent}."""
+    factors = {}
+    d = 2
+    while d * d <= n:
+        while n % d == 0:
+            factors[d] = factors.get(d, 0) + 1
+            n //= d
+        d += 1
+    if n > 1:
+        factors[n] = factors.get(n, 0) + 1
+    return factors
+
+def p_adic_valuation(x: Fraction, p: int) -> int:
+    """
+    Compute p-adic valuation ν_p(x).
+    
+    For x = p^k * (a/b) where p ∤ ab, returns k.
+    """
+    if x == 0:
+        return float('inf')
+    
+    num_factors = prime_factors(x.numerator)
+    den_factors = prime_factors(x.denominator)
+    
+    return num_factors.get(p, 0) - den_factors.get(p, 0)
+
+def p_adic_absolute_value(x: Fraction, p: int) -> float:
+    """
+    Compute p-adic absolute value |x|_p = p^(-ν_p(x)).
+    """
+    if x == 0:
+        return 0.0
+    return p ** (-p_adic_valuation(x, p))
+
+def p_adic_distance(x: Fraction, y: Fraction, p: int) -> float:
+    """p-adic distance d_p(x, y) = |x - y|_p."""
+    return p_adic_absolute_value(x - y, p)
+
+def p_adic_expansion(x: Fraction, p: int, precision: int = 20) -> list:
+    """
+    Compute p-adic expansion of rational x.
+    Returns list of digits [a_0, a_1, a_2, ...] where
+    x = a_0 + a_1*p + a_2*p^2 + ... (mod p^precision)
+    """
+    if x == 0:
+        return [0] * precision
+    
+    # Handle negative numbers
+    negative = x < 0
+    x = abs(x)
+    
+    # Remove p-factors from denominator
+    val = p_adic_valuation(x, p)
+    
+    # If valuation is negative, x has p in denominator
+    # We need to work in p-adic integers
+    
+    digits = []
+    current = x
+    
+    for _ in range(precision):
+        # Find digit a such that x ≡ a (mod p)
+        # current = a_0 + p * (a_1 + p * (...))
+        
+        # Convert to integer if possible
+        if current.denominator == 1:
+            a = int(current) % p
+        else:
+            # Need to find multiplicative inverse of denominator mod p
+            den_inv = pow(current.denominator, -1, p)
+            a = (current.numerator * den_inv) % p
+        
+        digits.append(a)
+        current = (current - a) / p
+    
+    if negative:
+        # Compute 2's complement for negative numbers
+        digits = [(p - 1 - d) for d in digits]
+        # Add 1
+        carry = 1
+        for i in range(len(digits)):
+            digits[i] += carry
+            if digits[i] == p:
+                digits[i] = 0
+                carry = 1
+            else:
+                carry = 0
+    
+    return digits
+
+# Demonstrate p-adic numbers
+print("p-adic Numbers: Properties and Computations")
+print("=" * 60)
+
+p = 5
+print(f"\nWorking with p = {p}")
+print("-" * 40)
+
+# Compute valuations and absolute values
+test_numbers = [Fraction(1), Fraction(5), Fraction(25), Fraction(1, 5), 
+                Fraction(6), Fraction(30), Fraction(1, 25)]
+
+print(f"{'x':>10} {'ν_p(x)':>10} {'|x|_p':>15}")
+print("-" * 40)
+
+for x in test_numbers:
+    val = p_adic_valuation(x, p)
+    abs_val = p_adic_absolute_value(x, p)
+    print(f"{str(x):>10} {val:>10} {abs_val:>15.2e}")
+
+# Demonstrate non-Archimedean property
+print("\n" + "=" * 60)
+print("Non-Archimedean Property: |x + y|_p ≤ max(|x|_p, |y|_p)")
+
+x = Fraction(1)
+y = Fraction(5)
+
+print(f"\nx = {x}, y = {y}")
+print(f"|x|_p = {p_adic_absolute_value(x, p)}")
+print(f"|y|_p = {p_adic_absolute_value(y, p)}")
+print(f"|x + y|_p = {p_adic_absolute_value(x + y, p)}")
+print(f"max(|x|_p, |y|_p) = {max(p_adic_absolute_value(x, p), p_adic_absolute_value(y, p))}")
+print(f"Property holds: {p_adic_absolute_value(x + y, p) <= max(p_adic_absolute_value(x, p), p_adic_absolute_value(y, p))}")
+
+# p-adic expansions
+print("\n" + "=" * 60)
+print(f"p-adic Expansions (base {p}):")
+
+expansion_numbers = [Fraction(1), Fraction(2), Fraction(1, 2), Fraction(-1)]
+
+for x in expansion_numbers:
+    digits = p_adic_expansion(x, p, precision=10)
+    expansion_str = ' + '.join(f"{d}·{p}^{i}" for i, d in enumerate(digits[:5]) if d != 0)
+    if not expansion_str:
+        expansion_str = "0"
+    print(f"\n{x} = {expansion_str} + ...")
+    print(f"   Digits: {digits[:10]}")
+
+# Interesting: -1 has expansion (p-1) + (p-1)p + (p-1)p² + ...
+print(f"\nNote: -1 = {' + '.join([f'{p-1}·{p}^{i}' for i in range(4)])} + ...")
+print("This is the geometric series: (p-1)/(1-p) = -1")
+</code></pre>
+            </div>
+
+            <!-- Chaos Theory -->
+            <div class="topic-card">
+                <h3>4. Chaos Theory: The Logistic Map</h3>
+                
+                <h4>Introduction</h4>
+                <p>Chaos theory studies deterministic systems that exhibit unpredictable behavior. Small changes in initial conditions can lead to dramatically different outcomes—a phenomenon popularly known as the "butterfly effect."</p>
+                
+                <p>The <strong>logistic map</strong> is the simplest mathematical system that exhibits chaos. Despite its simplicity, it displays a remarkable range of behaviors including stable fixed points, periodic orbits, and chaotic dynamics.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(x_n\) — population at generation \(n\) (normalized to \([0, 1]\))</li>
+                        <li>\(r\) — growth rate parameter</li>
+                        <li>\(f_r(x) = rx(1-x)\) — logistic map function</li>
+                        <li>\(x^*\) — fixed point: \(f(x^*) = x^*\)</li>
+                        <li>\(f^n(x)\) — n-fold composition of \(f\)</li>
+                        <li>\(\lambda\) — Lyapunov exponent</li>
+                        <li>\(B(r)\) — bifurcation diagram value</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Logistic Map</div>
+                    <p>The logistic map is defined by the recurrence:</p>
+                    <p>\[x_{n+1} = rx_n(1 - x_n)\]</p>
+                    <p>where \(r \in [0, 4]\) and \(x_0 \in [0, 1]\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Fixed Points and Stability</div>
+                    <p>The logistic map has fixed points at:</p>
+                    <p>\[x^* = 0 \quad \text{and} \quad x^* = 1 - \frac{1}{r}\]</p>
+                    <p>A fixed point is stable if \(|f'(x^*)| < 1\):</p>
+                    <ul>
+                        <li>\(x^* = 0\) is stable for \(0 \leq r < 1\)</li>
+                        <li>\(x^* = 1 - 1/r\) is stable for \(1 < r < 3\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Period-Doubling Cascade</div>
+                    <p>As \(r\) increases:</p>
+                    <ul>
+                        <li>\(r < 1\): Population dies out (\(x_n \to 0\))</li>
+                        <li>\(1 < r < 3\): Stable fixed point</li>
+                        <li>\(3 < r < 1 + \sqrt{6} \approx 3.449\): Period-2 cycle</li>
+                        <li>\(3.449 < r < 3.544\): Period-4 cycle</li>
+                        <li>Period-doubling continues...</li>
+                        <li>\(r > 3.56995...\): Chaos (Feigenbaum point)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Feigenbaum's Constants</div>
+                    <p>The ratio of successive bifurcation intervals converges:</p>
+                    <p>\[\delta = \lim_{n \to \infty} \frac{r_n - r_{n-1}}{r_{n+1} - r_n} \approx 4.669201609\ldots\]</p>
+                    <p>This universal constant appears in all period-doubling routes to chaos.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Analysis of Fixed Point Stability</div>
+                    
+                    <p><strong>Step 1:</strong> Find fixed points by solving \(f_r(x) = x\):</p>
+                    <p>\[rx(1-x) = x\]</p>
+                    <p>\[x(r(1-x) - 1) = 0\]</p>
+                    <p>So \(x = 0\) or \(r(1-x) = 1\), giving \(x = 1 - 1/r\).</p>
+                    
+                    <p><strong>Step 2:</strong> Compute the derivative:</p>
+                    <p>\[f_r'(x) = r(1 - 2x)\]</p>
+                    
+                    <p><strong>Step 3:</strong> At \(x = 0\):</p>
+                    <p>\[f_r'(0) = r\]</p>
+                    <p>Stable when \(|r| < 1\), i.e., \(0 \leq r < 1\).</p>
+                    
+                    <p><strong>Step 4:</strong> At \(x = 1 - 1/r\) (for \(r > 1\)):</p>
+                    <p>\[f_r'(1 - 1/r) = r(1 - 2(1 - 1/r)) = r(-1 + 2/r) = 2 - r\]</p>
+                    <p>Stable when \(|2 - r| < 1\), i.e., \(1 < r < 3\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def logistic_map(r: float, x0: float, n_iterations: int) -> np.ndarray:
+    """
+    Generate orbit of logistic map.
+    
+    x_{n+1} = r * x_n * (1 - x_n)
+    """
+    x = np.zeros(n_iterations)
+    x[0] = x0
+    
+    for i in range(1, n_iterations):
+        x[i] = r * x[i-1] * (1 - x[i-1])
+    
+    return x
+
+def bifurcation_diagram(r_min=2.5, r_max=4.0, n_r=2000, n_skip=1000, n_plot=100):
+    """
+    Compute bifurcation diagram for logistic map.
+    """
+    r_values = np.linspace(r_min, r_max, n_r)
+    r_plot = []
+    x_plot = []
+    
+    for r in r_values:
+        # Iterate to skip transient
+        x = 0.5
+        for _ in range(n_skip):
+            x = r * x * (1 - x)
+        
+        # Collect points
+        for _ in range(n_plot):
+            x = r * x * (1 - x)
+            r_plot.append(r)
+            x_plot.append(x)
+    
+    return np.array(r_plot), np.array(x_plot)
+
+def lyapunov_exponent(r: float, x0: float = 0.5, n_iterations: int = 10000) -> float:
+    """
+    Compute Lyapunov exponent for logistic map.
+    
+    λ = lim (1/n) Σ log|f'(x_i)|
+    """
+    x = x0
+    log_sum = 0.0
+    
+    # Skip transient
+    for _ in range(1000):
+        x = r * x * (1 - x)
+    
+    # Compute sum
+    for _ in range(n_iterations):
+        x = r * x * (1 - x)
+        derivative = abs(r * (1 - 2*x))
+        if derivative > 0:
+            log_sum += np.log(derivative)
+    
+    return log_sum / n_iterations
+
+# Demonstrate different behaviors
+print("Logistic Map: From Order to Chaos")
+print("=" * 60)
+
+r_values = [0.5, 2.5, 3.2, 3.5, 3.8, 4.0]
+behaviors = [
+    "Extinction (converges to 0)",
+    "Stable fixed point",
+    "Period-2 cycle",
+    "Period-4 cycle",
+    "Chaos",
+    "Chaos (full orbit)"
+]
+
+for r, desc in zip(r_values, behaviors):
+    orbit = logistic_map(r, 0.5, 100)
+    final_values = np.unique(np.round(orbit[-20:], 6))
+    print(f"\nr = {r}: {desc}")
+    print(f"  Final values (last 20 iterates): {final_values}")
+
+# Period-doubling cascade
+print("\n" + "=" * 60)
+print("Period-Doubling Cascade:")
+
+r_critical = [3.0, 3.449, 3.544, 3.564, 3.569]
+periods = [2, 4, 8, 16, 32]
+
+for r, period in zip(r_critical, periods):
+    orbit = logistic_map(r, 0.5, 1000)
+    # Check if orbit actually has this period
+    final_segment = orbit[-100:]
+    unique_vals = len(np.unique(np.round(final_segment, 4)))
+    print(f"  r ≈ {r}: Period-{period} cycle (observed {unique_vals} unique values)")
+
+# Lyapunov exponents
+print("\n" + "=" * 60)
+print("Lyapunov Exponents:")
+print("(λ < 0: stable, λ = 0: bifurcation, λ > 0: chaos)")
+
+test_r = [2.5, 3.0, 3.4, 3.6, 3.8, 4.0]
+for r in test_r:
+    lam = lyapunov_exponent(r)
+    regime = "stable" if lam < -0.01 else ("bifurcation" if abs(lam) < 0.01 else "chaos")
+    print(f"  r = {r}: λ ≈ {lam:.4f} ({regime})")
+
+# Sensitive dependence on initial conditions
+print("\n" + "=" * 60)
+print("Sensitive Dependence on Initial Conditions (Butterfly Effect):")
+
+r = 3.9  # Chaotic regime
+x0_1 = 0.5
+x0_2 = 0.50001  # Tiny difference
+
+orbit1 = logistic_map(r, x0_1, 50)
+orbit2 = logistic_map(r, x0_2, 50)
+difference = np.abs(orbit1 - orbit2)
+
+print(f"r = {r}, initial difference = {abs(x0_1 - x0_2):.5f}")
+print(f"\nIteration | x_n (1)    | x_n (2)    | |difference|")
+print("-" * 55)
+for i in [0, 5, 10, 15, 20, 25, 30]:
+    print(f"{i:>9} | {orbit1[i]:.6f} | {orbit2[i]:.6f} | {difference[i]:.6f}")
+</code></pre>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Math History -->
+        <section class="section">
+            <h2 class="section-title">📜 Math History Moment</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">1897</span>
+                    <p><strong>Kurt Hensel introduces p-adic numbers</strong> - Hensel's work on algebraic numbers led him to develop the p-adic numbers, inspired by the power series expansions used in analysis. His motivation was to apply similar techniques to number theory, creating a new way to complete the rational numbers.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1931</span>
+                    <p><strong>Gödel's Incompleteness Theorems</strong> - Kurt Gödel proved that any consistent formal system powerful enough to describe arithmetic contains true statements that cannot be proven within that system. This revolutionary result changed the foundations of mathematics forever.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1943</span>
+                    <p><strong>Category Theory Born</strong> - Samuel Eilenberg and Saunders Mac Lane introduced category theory in their paper "General Theory of Natural Equivalences." What began as a tool for algebraic topology has become a unifying language for all of mathematics.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1958</span>
+                    <p><strong>The Hahn-Banach Theorem Generalized</strong> - While the theorem dates to the 1920s, its full power and generalizations were developed through the 1950s, becoming a cornerstone of functional analysis with applications throughout mathematics and physics.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1975</span>
+                    <p><strong>Feigenbaum Discovers Universality</strong> - Mitchell Feigenbaum discovered that the period-doubling route to chaos follows universal constants, independent of the specific system. This was a watershed moment connecting chaos theory with statistical mechanics.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1977</span>
+                    <p><strong>RSA Cryptosystem Published</strong> - Ron Rivest, Adi Shamir, and Leonard Adleman published the RSA algorithm, the first practical public-key cryptosystem. It revolutionized cryptography and enabled secure internet commerce.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: External Articles -->
+        <section class="section">
+            <h2 class="section-title">🌐 Featured External Articles</h2>
+            
+            <div class="article-card">
+                <div class="article-source">Quanta Magazine</div>
+                <h3><a href="https://www.quantamagazine.org/mathematicians-prove-homology-theory-works-in-higher-dimensions-20240101/" target="_blank">Mathematicians Prove Homology Theory Works in Higher Dimensions</a></h3>
+                <p>Recent advances in homological algebra have resolved long-standing questions about the behavior of homology in high-dimensional spaces. This work connects algebraic topology with algebraic geometry in surprising ways.</p>
+            </div>
+            
+            <div class="article-card">
+                <div class="article-source">3Blue1Brown</div>
+                <h3><a href="https://www.3blue1brown.com/lessons/chaos" target="_blank">Chaos and the Logistic Map</a></h3>
+                <p>Grant Sanderson's beautiful visual exploration of how simple mathematical rules can produce extraordinarily complex behavior. The logistic map serves as a gateway to understanding chaos theory and its universal properties.</p>
+            </div>
+            
+            <div class="article-card">
+                <div class="article-source">Numberphile</div>
+                <h3><a href="https://www.numberphile.com/videos/p-adic-numbers" target="_blank">p-adic Numbers: An Alternative Way to Measure Distance</a></h3>
+                <p>A fascinating introduction to p-adic numbers and how they provide a completely different way to complete the rational numbers. Discover why in the p-adic world, large integers can be very close to zero.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Daily Math Digest</strong> — Exploring the beauty of mathematics</p>
+        <p>Generated: February 16, 2026</p>
+    </footer>
+</body>
+</html>
