@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Math Digest - February 15, 2026</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html">← Daily Math Digest</a>
+            <a href="../index.html">Home</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="post-header">
+            <div class="post-date">February 15, 2026</div>
+            <h1>Daily Math Digest</h1>
+            <p>Topology • Number Theory • Abstract Algebra • Real Analysis • Special Topics</p>
+        </div>
+
+        <!-- Math Links Section -->
+        <section class="section">
+            <h2 class="section-title">📚 Today's Math Links</h2>
+            <ul class="links-list">
+                <li>
+                    <a href="https://en.wikipedia.org/wiki/Euler_characteristic" target="_blank">Euler Characteristic - Wikipedia</a>
+                    <p class="description">A topological invariant describing a shape's structure, connecting vertices, edges, and faces in a profound way: χ = V − E + F.</p>
+                </li>
+                <li>
+                    <a href="https://terrytao.wordpress.com/" target="_blank">What's New - Terence Tao's Blog</a>
+                    <p class="description">Fields Medalist Terence Tao shares insights on cutting-edge mathematical research, from prime number theory to compressed sensing.</p>
+                </li>
+                <li>
+                    <a href="https://www.quantamagazine.org/tag/mathematics/" target="_blank">Quanta Magazine - Mathematics</a>
+                    <p class="description">Beautifully written articles on the latest breakthroughs in mathematics, accessible to enthusiasts and researchers alike.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Free Math Book Section -->
+        <section class="section">
+            <h2 class="section-title">📖 Free Math Book of the Day</h2>
+            <div class="book-highlight">
+                <h3>Abstract Algebra: Theory and Applications</h3>
+                <p><strong>by Thomas W. Judson</strong></p>
+                <p>A comprehensive, open-source textbook covering groups, rings, fields, and Galois theory. Perfect for undergraduate and beginning graduate students.</p>
+                <p><a href="http://abstract.ups.edu/" target="_blank">📥 Download Free at abstract.ups.edu</a></p>
+            </div>
+        </section>
+
+        <!-- Pure Math Deep Dives -->
+        <section class="section">
+            <h2 class="section-title">🔬 Pure Math Deep Dives</h2>
+
+            <!-- Topology -->
+            <div class="topic-card">
+                <h3>1. Topology: The Brouwer Fixed-Point Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Topology studies properties of spaces that remain unchanged under continuous deformations—stretching, bending, but not tearing or gluing. Imagine a coffee cup morphing into a donut: they're topologically equivalent because both have exactly one hole.</p>
+                
+                <p>The <strong>Brouwer Fixed-Point Theorem</strong> is one of topology's most elegant results. It states that if you stir a cup of coffee and let it settle, at least one point ends up exactly where it started. More formally: any continuous function mapping a closed disk to itself must have at least one fixed point.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(D^n\) — the closed n-dimensional unit disk: all points in \(\mathbb{R}^n\) with \(\|x\| \leq 1\)</li>
+                        <li>\(\partial D^n\) or \(S^{n-1}\) — the boundary of the disk, the \((n-1)\)-dimensional sphere</li>
+                        <li>\(f: X \to Y\) — a function from space \(X\) to space \(Y\)</li>
+                        <li>\(C^0\) — continuous (no jumps or breaks)</li>
+                        <li>\(x^*\) — a fixed point where \(f(x^*) = x^*\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Brouwer Fixed-Point Theorem</div>
+                    <p>Let \(D^n = \{x \in \mathbb{R}^n : \|x\| \leq 1\}\) be the closed unit disk in \(\mathbb{R}^n\). For any continuous function \(f: D^n \to D^n\), there exists at least one point \(x^* \in D^n\) such that:</p>
+                    <p>\[f(x^*) = x^*\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof (by contradiction, for n = 2)</div>
+                    <p><strong>Step 1:</strong> Assume \(f: D^2 \to D^2\) has <em>no</em> fixed points, so \(f(x) \neq x\) for all \(x \in D^2\).</p>
+                    
+                    <p><strong>Step 2:</strong> Define a retraction. For each \(x\), draw a ray from \(f(x)\) through \(x\). This ray intersects the boundary circle \(S^1\) at a unique point \(r(x)\).</p>
+                    
+                    <p><strong>Step 3:</strong> This defines a continuous map \(r: D^2 \to S^1\) where \(r(x) = x\) for all \(x \in S^1\) (i.e., \(r\) is a retraction).</p>
+                    
+                    <p><strong>Step 4:</strong> Let \(i: S^1 \hookrightarrow D^2\) be the inclusion map. The composition \(r \circ i = \text{id}_{S^1}\).</p>
+                    
+                    <p><strong>Step 5:</strong> Apply the fundamental group functor \(\pi_1\):</p>
+                    <p>\[\pi_1(r) \circ \pi_1(i) = \pi_1(\text{id}_{S^1}) = \text{id}_{\pi_1(S^1)}\]</p>
+                    
+                    <p><strong>Step 6:</strong> We know \(\pi_1(S^1) = \mathbb{Z}\) and \(\pi_1(D^2) = 0\) (trivial group, since \(D^2\) is contractible).</p>
+                    
+                    <p><strong>Step 7:</strong> So we have: \(\mathbb{Z} \xrightarrow{\pi_1(i)} 0 \xrightarrow{\pi_1(r)} \mathbb{Z}\) composing to \(\text{id}_{\mathbb{Z}}\).</p>
+                    
+                    <p><strong>Step 8:</strong> But the only homomorphism \(0 \to \mathbb{Z}\) sends everything to 0, so this composition cannot equal the identity on \(\mathbb{Z}\). <strong>Contradiction!</strong></p>
+                    
+                    <p>Therefore, our assumption was false, and \(f\) must have a fixed point. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import fsolve
+
+def find_fixed_point(f, n=2, initial_guess=None):
+    """
+    Numerically find a fixed point of f: D^n -> D^n.
+    
+    Parameters:
+        f: function taking array of shape (n,) and returning array of shape (n,)
+        n: dimension
+        initial_guess: starting point for search
+    
+    Returns:
+        Fixed point x* where f(x*) = x*
+    """
+    if initial_guess is None:
+        initial_guess = np.zeros(n)
+    
+    # Define g(x) = f(x) - x, find root
+    def g(x):
+        return f(x) - x
+    
+    fixed_point = fsolve(g, initial_guess)
+    return fixed_point
+
+# Example: A continuous map from disk to disk
+def example_map(x):
+    """
+    A continuous function D^2 -> D^2.
+    Maps (x,y) to a point inside the unit disk.
+    """
+    # A simple contraction-like map
+    result = np.array([
+        0.5 * x[0] + 0.3 * x[1],
+        -0.2 * x[0] + 0.4 * x[1] + 0.1
+    ])
+    # Ensure it stays in disk (normalize if needed)
+    norm = np.linalg.norm(result)
+    if norm > 1:
+        result = result / norm * 0.99
+    return result
+
+# Find fixed point
+x_star = find_fixed_point(example_map, n=2, initial_guess=np.array([0.5, 0.5]))
+print(f"Fixed point: x* = {x_star}")
+print(f"Verification: f(x*) = {example_map(x_star)}")
+print(f"Difference: {np.linalg.norm(example_map(x_star) - x_star)}")
+
+# Visualize
+fig, ax = plt.subplots(1, 1, figsize=(8, 8))
+theta = np.linspace(0, 2*np.pi, 100)
+ax.plot(np.cos(theta), np.sin(theta), 'b-', linewidth=2, label='Boundary $S^1$')
+
+# Sample points and their images
+np.random.seed(42)
+for _ in range(50):
+    # Random point in disk
+    r = np.sqrt(np.random.random())
+    theta_pt = np.random.random() * 2 * np.pi
+    x = np.array([r * np.cos(theta_pt), r * np.sin(theta_pt)])
+    fx = example_map(x)
+    ax.arrow(x[0], x[1], fx[0]-x[0], fx[1]-x[1], 
+             head_width=0.05, head_length=0.03, fc='gray', ec='gray', alpha=0.5)
+
+ax.plot(x_star[0], x_star[1], 'r*', markersize=20, label=f'Fixed point ({x_star[0]:.3f}, {x_star[1]:.3f})')
+ax.set_xlim(-1.2, 1.2)
+ax.set_ylim(-1.2, 1.2)
+ax.set_aspect('equal')
+ax.legend()
+ax.set_title('Brouwer Fixed-Point Theorem Visualization')
+plt.savefig('brouwer_fixed_point.png', dpi=150, bbox_inches='tight')
+plt.show()
+</code></pre>
+            </div>
+
+            <!-- Number Theory -->
+            <div class="topic-card">
+                <h3>2. Number Theory: Fermat's Little Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Number theory, the "queen of mathematics," studies the properties of integers. Despite its ancient origins, it underpins modern cryptography—including the RSA algorithm securing internet communications.</p>
+                
+                <p><strong>Fermat's Little Theorem</strong> (not to be confused with his Last Theorem) provides a powerful tool for working with modular arithmetic. It reveals a beautiful periodicity in powers of integers modulo a prime.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(p\) — a prime number (only divisible by 1 and itself)</li>
+                        <li>\(a\) — an integer with \(\gcd(a, p) = 1\) (coprime to \(p\))</li>
+                        <li>\(a \equiv b \pmod{p}\) — \(a\) and \(b\) have the same remainder when divided by \(p\)</li>
+                        <li>\(\mathbb{Z}_p^*\) — the multiplicative group of integers modulo \(p\)</li>
+                        <li>\(\phi(n)\) — Euler's totient function, counting integers up to \(n\) coprime to \(n\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Fermat's Little Theorem</div>
+                    <p>Let \(p\) be a prime number and \(a\) be an integer such that \(p \nmid a\) (i.e., \(\gcd(a, p) = 1\)). Then:</p>
+                    <p>\[a^{p-1} \equiv 1 \pmod{p}\]</p>
+                    <p>Equivalently: \(a^p \equiv a \pmod{p}\) for any integer \(a\).</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof (using group theory)</div>
+                    <p><strong>Step 1:</strong> Consider the multiplicative group \(\mathbb{Z}_p^* = \{1, 2, \ldots, p-1\}\) with multiplication modulo \(p\).</p>
+                    
+                    <p><strong>Step 2:</strong> This group has order \(p-1\) (contains \(p-1\) elements).</p>
+                    
+                    <p><strong>Step 3:</strong> For any \(a \in \mathbb{Z}_p^*\), consider the cyclic subgroup generated by \(a\):</p>
+                    <p>\[\langle a \rangle = \{a^1, a^2, a^3, \ldots, a^k = 1\}\]</p>
+                    
+                    <p><strong>Step 4:</strong> By Lagrange's theorem, the order of any subgroup divides the order of the group. So \(|\langle a \rangle| \mid (p-1)\).</p>
+                    
+                    <p><strong>Step 5:</strong> Let \(d = |\langle a \rangle|\). Then \(a^d = 1\), and since \(d \mid (p-1)\), we can write \(p-1 = d \cdot m\) for some integer \(m\).</p>
+                    
+                    <p><strong>Step 6:</strong> Therefore:</p>
+                    <p>\[a^{p-1} = a^{d \cdot m} = (a^d)^m = 1^m = 1\]</p>
+                    
+                    <p>Hence \(a^{p-1} \equiv 1 \pmod{p}\). ∎</p>
+                </div>
+
+                <h4>Alternative Proof (Combinatorial)</h4>
+                <div class="proof">
+                    <div class="proof-title">Proof (counting necklaces)</div>
+                    <p><strong>Step 1:</strong> Consider necklaces made of \(p\) beads, each bead one of \(a\) colors.</p>
+                    
+                    <p><strong>Step 2:</strong> Total necklaces (ignoring rotation): \(a^p\).</p>
+                    
+                    <p><strong>Step 3:</strong> Necklaces with all beads the same color are unchanged by rotation. There are \(a\) such monochromatic necklaces.</p>
+                    
+                    <p><strong>Step 4:</strong> For any other necklace, rotating by one position gives a different coloring (since \(p\) is prime). So non-monochromatic necklaces come in groups of \(p\) (orbits under rotation).</p>
+                    
+                    <p><strong>Step 5:</strong> Therefore: \(a^p = a + p \cdot k\) for some integer \(k\).</p>
+                    
+                    <p><strong>Step 6:</strong> Rearranging: \(a^p - a = p \cdot k\), so \(a^p \equiv a \pmod{p}\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>def mod_exp(base, exp, mod):
+    """
+    Compute (base^exp) % mod using fast exponentiation.
+    Time complexity: O(log exp)
+    """
+    result = 1
+    base = base % mod
+    while exp > 0:
+        if exp % 2 == 1:  # If exp is odd
+            result = (result * base) % mod
+        exp = exp >> 1    # Divide exp by 2
+        base = (base * base) % mod
+    return result
+
+def fermat_little_theorem(a, p):
+    """
+    Verify Fermat's Little Theorem: a^(p-1) ≡ 1 (mod p)
+    for prime p and a not divisible by p.
+    """
+    if p == 1:
+        return False
+    
+    # Check if p is prime (simple check)
+    for i in range(2, int(p**0.5) + 1):
+        if p % i == 0:
+            raise ValueError(f"{p} is not prime")
+    
+    if a % p == 0:
+        raise ValueError(f"{a} is divisible by {p}")
+    
+    result = mod_exp(a, p - 1, p)
+    return result == 1
+
+# Verify the theorem for various values
+print("Verifying Fermat's Little Theorem:")
+print("=" * 50)
+
+test_cases = [
+    (2, 7),   # 2^6 = 64 ≡ 1 (mod 7) ✓
+    (3, 11),  # 3^10 ≡ 1 (mod 11) ✓
+    (5, 13),  # 5^12 ≡ 1 (mod 13) ✓
+    (10, 17), # 10^16 ≡ 1 (mod 17) ✓
+]
+
+for a, p in test_cases:
+    result = mod_exp(a, p - 1, p)
+    verified = (result == 1)
+    print(f"a={a}, p={p}: {a}^{p-1} ≡ {result} (mod {p}) {'✓' if verified else '✗'}")
+
+# Application: Efficient modular inverse
+def mod_inverse(a, p):
+    """
+    Compute a^(-1) mod p using Fermat's Little Theorem.
+    Only works when p is prime.
+    a^(-1) ≡ a^(p-2) (mod p)
+    """
+    return mod_exp(a, p - 2, p)
+
+print("\nModular Inverses (using Fermat's Little Theorem):")
+print("=" * 50)
+p = 17
+for a in [3, 5, 7, 10]:
+    inv = mod_inverse(a, p)
+    verification = (a * inv) % p
+    print(f"{a}^(-1) ≡ {inv} (mod {p}), verification: {a} × {inv} ≡ {verification} (mod {p})")
+
+# Visualize powers of a modulo p
+import matplotlib.pyplot as plt
+
+p = 17
+a = 3
+powers = [mod_exp(a, k, p) for k in range(1, p)]
+
+fig, ax = plt.subplots(figsize=(10, 5))
+ax.plot(range(1, p), powers, 'bo-', markersize=8, linewidth=2)
+ax.axhline(y=1, color='r', linestyle='--', label=f'{a}^{p-1} ≡ 1 (mod {p})')
+ax.set_xlabel('Exponent k')
+ax.set_ylabel(f'{a}^k mod {p}')
+ax.set_title(f"Fermat's Little Theorem: Powers of {a} modulo {p}")
+ax.set_xticks(range(1, p))
+ax.legend()
+ax.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.savefig('fermat_powers.png', dpi=150)
+plt.show()
+</code></pre>
+            </div>
+
+            <!-- Abstract Algebra -->
+            <div class="topic-card">
+                <h3>3. Abstract Algebra: Lagrange's Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Abstract algebra studies algebraic structures like groups, rings, and fields. These structures capture patterns that appear across all of mathematics—from symmetries of geometric objects to solutions of polynomial equations.</p>
+                
+                <p>A <strong>group</strong> is a set with a binary operation satisfying four axioms: closure, associativity, identity, and inverses. <strong>Lagrange's Theorem</strong> reveals a fundamental constraint on the structure of finite groups: the size of any subgroup must divide the size of the whole group.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(G\) — a group (set with operation satisfying group axioms)</li>
+                        <li>\(H \leq G\) — \(H\) is a subgroup of \(G\)</li>
+                        <li>\(|G|\) — the order of \(G\) (number of elements)</li>
+                        <li>\(gH = \{gh : h \in H\}\) — a left coset of \(H\) in \(G\)</li>
+                        <li>\([G : H]\) — the index of \(H\) in \(G\) (number of distinct cosets)</li>
+                        <li>\(e\) — the identity element of the group</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Lagrange's Theorem</div>
+                    <p>Let \(G\) be a finite group and \(H\) be a subgroup of \(G\). Then the order of \(H\) divides the order of \(G\):</p>
+                    <p>\[|H| \mid |G|\]</p>
+                    <p>Equivalently: \(|G| = |H| \cdot [G : H]\), where \([G : H]\) is the index of \(H\) in \(G\).</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof</div>
+                    <p><strong>Step 1 (Define Cosets):</strong> For each \(g \in G\), define the left coset:</p>
+                    <p>\[gH = \{gh : h \in H\}\]</p>
+                    
+                    <p><strong>Step 2 (Cosets Partition G):</strong> We claim the cosets partition \(G\) (every element is in exactly one coset).</p>
+                    
+                    <p><em>Proof of claim:</em> For any \(g \in G\), we have \(g = ge \in gH\), so every element is in some coset.</p>
+                    
+                    <p>Now suppose \(g_1H \cap g_2H \neq \emptyset\). Then there exist \(h_1, h_2 \in H\) with \(g_1h_1 = g_2h_2\).</p>
+                    
+                    <p>This gives \(g_1 = g_2h_2h_1^{-1}\), so for any \(h \in H\):</p>
+                    <p>\[g_1h = g_2h_2h_1^{-1}h \in g_2H\]</p>
+                    <p>Thus \(g_1H \subseteq g_2H\). By symmetry, \(g_2H \subseteq g_1H\), so \(g_1H = g_2H\).</p>
+                    
+                    <p><strong>Step 3 (All Cosets Have Equal Size):</strong> Define \(\phi: H \to gH\) by \(\phi(h) = gh\). This is a bijection:</p>
+                    <ul>
+                        <li><em>Injective:</em> If \(gh_1 = gh_2\), then \(h_1 = h_2\) by left cancellation.</li>
+                        <li><em>Surjective:</em> Every element of \(gH\) has the form \(gh\) for some \(h \in H\).</li>
+                    </ul>
+                    <p>Therefore \(|gH| = |H|\) for all \(g \in G\).</p>
+                    
+                    <p><strong>Step 4 (Count):</strong> Let \([G : H] = k\) be the number of distinct cosets. Since cosets partition \(G\) and each has size \(|H|\):</p>
+                    <p>\[|G| = k \cdot |H| = [G : H] \cdot |H|\]</p>
+                    
+                    <p>Therefore \(|H|\) divides \(|G|\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>from itertools import product
+import numpy as np
+
+class Group:
+    """
+    Simple representation of a finite group using Cayley table.
+    """
+    def __init__(self, elements, operation_table):
+        """
+        elements: list of element labels
+        operation_table: |G| x |G| matrix where table[i][j] = index of (element_i * element_j)
+        """
+        self.elements = list(elements)
+        self.n = len(elements)
+        self.table = operation_table
+        self.element_to_idx = {e: i for i, e in enumerate(elements)}
+    
+    def op(self, a, b):
+        """Group operation a * b"""
+        i = self.element_to_idx[a]
+        j = self.element_to_idx[b]
+        return self.elements[self.table[i][j]]
+    
+    def is_subgroup(self, subset):
+        """Check if subset forms a subgroup"""
+        subset = set(subset)
+        # Check closure
+        for a in subset:
+            for b in subset:
+                if self.op(a, b) not in subset:
+                    return False
+        # Check inverses
+        for a in subset:
+            found_inverse = False
+            for b in subset:
+                if self.op(a, b) == self.elements[0]:  # Assuming first element is identity
+                    found_inverse = True
+                    break
+            if not found_inverse:
+                return False
+        return True
+    
+    def cosets(self, subgroup):
+        """Compute left cosets of subgroup"""
+        cosets = []
+        used = set()
+        for g in self.elements:
+            if g in used:
+                continue
+            coset = {self.op(g, h) for h in subgroup}
+            cosets.append(coset)
+            used.update(coset)
+        return cosets
+
+def cyclic_group(n):
+    """Create cyclic group Z_n"""
+    elements = list(range(n))
+    # table[i][j] = (i + j) % n
+    table = [[(i + j) % n for j in range(n)] for i in range(n)]
+    return Group(elements, table)
+
+def symmetric_group(n):
+    """Create symmetric group S_n (permutations of n elements)"""
+    from itertools import permutations
+    elements = list(permutations(range(n)))
+    
+    def compose(p, q):
+        """Compose permutations: (p ∘ q)(i) = p(q(i))"""
+        return tuple(p[q[i]] for i in range(n))
+    
+    element_to_idx = {e: i for i, e in enumerate(elements)}
+    table = [[element_to_idx[compose(elements[i], elements[j])] 
+              for j in range(len(elements))] 
+             for i in range(len(elements))]
+    
+    return Group(elements, table)
+
+# Demonstrate Lagrange's Theorem with Z_12
+print("Lagrange's Theorem Demonstration: Z_12")
+print("=" * 50)
+
+Z12 = cyclic_group(12)
+print(f"Group: Z_{Z12.n}, Order: {Z12.n}")
+print(f"Divisors of {Z12.n}: {[d for d in range(1, 13) if 12 % d == 0]}")
+
+# Find all subgroups
+subgroups_found = []
+for size in range(1, 13):
+    if 12 % size != 0:
+        continue  # By Lagrange, only these sizes are possible
+    
+    # For cyclic groups, there's exactly one subgroup for each divisor
+    if size > 0:
+        # Subgroup generated by 12/size
+        generator = 12 // size
+        subgroup = [(i * generator) % 12 for i in range(size)]
+        if Z12.is_subgroup(subgroup):
+            subgroups_found.append((size, subgroup))
+            print(f"\nSubgroup of order {size}: {subgroup}")
+            
+            # Compute cosets
+            cosets = Z12.cosets(subgroup)
+            print(f"  Number of cosets (index): {len(cosets)}")
+            print(f"  Verification: {size} × {len(cosets)} = {size * len(cosets)}")
+
+# Verify Lagrange's Theorem for S_4
+print("\n\nLagrange's Theorem: S_4 (Symmetric Group)")
+print("=" * 50)
+
+S4 = symmetric_group(4)
+print(f"Order of S_4: {S4.n}")
+print(f"Divisors of 24: {[d for d in range(1, 25) if 24 % d == 0]}")
+
+# Klein four-group as a subgroup of S_4
+V4 = [(0, 1, 2, 3), (1, 0, 3, 2), (2, 3, 0, 1), (3, 2, 1, 0)]
+print(f"\nKlein four-group V_4: {len(V4)} elements")
+print(f"Is V_4 a subgroup? {S4.is_subgroup(V4)}")
+
+cosets = S4.cosets(V4)
+print(f"Number of cosets of V_4 in S_4: {len(cosets)}")
+print(f"Lagrange check: |V_4| × [S_4:V_4] = {len(V4)} × {len(cosets)} = {len(V4) * len(cosets)} = |S_4| ✓")
+
+# Visualize subgroup lattice for Z_12
+import matplotlib.pyplot as plt
+import networkx as nx
+
+fig, ax = plt.subplots(figsize=(10, 8))
+
+# Create subgroup lattice
+G = nx.DiGraph()
+subgroups = [
+    (1, [0]),
+    (2, [0, 6]),
+    (3, [0, 4, 8]),
+    (4, [0, 3, 6, 9]),
+    (6, [0, 2, 4, 6, 8, 10]),
+    (12, list(range(12)))
+]
+
+for size, _ in subgroups:
+    G.add_node(size)
+
+edges = [(12, 6), (12, 4), (12, 3), (12, 2), (6, 3), (6, 2), (4, 2), (3, 1), (2, 1)]
+G.add_edges_from(edges)
+
+pos = {
+    12: (0.5, 1),
+    6: (0.3, 0.7),
+    4: (0.7, 0.7),
+    3: (0.2, 0.4),
+    2: (0.5, 0.4),
+    1: (0.5, 0.1)
+}
+
+nx.draw(G, pos, with_labels=True, node_color='lightblue', 
+        node_size=2000, font_size=12, font_weight='bold',
+        arrows=True, arrowsize=20, ax=ax)
+ax.set_title("Subgroup Lattice of Z_12 (Lagrange's Theorem)")
+plt.tight_layout()
+plt.savefig('lagrange_lattice.png', dpi=150)
+plt.show()
+</code></pre>
+            </div>
+        </section>
+
+        <!-- Special Topics -->
+        <section class="section">
+            <h2 class="section-title">🎯 Special Topics</h2>
+
+            <!-- Collatz Conjecture -->
+            <div class="topic-card">
+                <h3>1. The Collatz Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Collatz conjecture is one of mathematics' most notorious unsolved problems. Lothar Collatz posed it in 1937, and despite its simple statement, it has resisted proof for nearly 90 years.</p>
+                
+                <p>The conjecture asks: starting from any positive integer, if you repeatedly apply the rule "if even, divide by 2; if odd, multiply by 3 and add 1," do you always eventually reach 1?</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(f(n)\) — the Collatz function: \(f(n) = n/2\) if \(n\) even, \(3n+1\) if \(n\) odd</li>
+                        <li>\(C(n)\) — the total stopping time (number of steps to reach 1)</li>
+                        <li>\(T^k(n)\) — the k-th iterate of the function applied to \(n\)</li>
+                        <li>\(\sigma(n)\) — the stopping time (steps to reach a value less than \(n\))</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Total Stopping Time Bound (Tao, 2019)</div>
+                    <p>Almost all Collatz orbits attain almost bounded values. More precisely, for any function \(f: \mathbb{N} \to \mathbb{R}^+\) with \(f(n) \to \infty\) as \(n \to \infty\):</p>
+                    <p>\[\lim_{N \to \infty} \frac{1}{N} \left|\{n \leq N : \min_{k \geq 0} T^k(n) < f(n)\}\right| = 1\]</p>
+                    <p>This means that for 99% of starting values (in a logarithmic density sense), the orbit eventually reaches a value smaller than any slowly growing function.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (Probabilistic Heuristic)</div>
+                    <p><strong>Step 1:</strong> Model the Collatz process probabilistically. For a random odd number, \(3n+1\) is even, and the expected number of divisions by 2 is:</p>
+                    <p>\[\mathbb{E}[\text{divisions}] = \sum_{k=1}^{\infty} \frac{1}{2^k} \cdot k = 2\]</p>
+                    
+                    <p><strong>Step 2:</strong> So on average, an odd number \(n\) maps to roughly \((3n+1)/4 \approx 3n/4\).</p>
+                    
+                    <p><strong>Step 3:</strong> Since \(3/4 < 1\), the "expected value" of the sequence decreases geometrically.</p>
+                    
+                    <p><strong>Step 4:</strong> Formally, consider the logarithm. For odd \(n\):</p>
+                    <p>\[\log((3n+1)/2^k) = \log(3n+1) - k\log(2)\]</p>
+                    
+                    <p><strong>Step 5:</strong> With probability \(1/2^k\), we divide by \(2^k\). The expected change is:</p>
+                    <p>\[\mathbb{E}[\Delta \log n] = \log(3) - \log(2) \cdot \sum_{k=1}^{\infty} \frac{k}{2^k} = \log(3) - 2\log(2) = \log(3/4) < 0\]</p>
+                    
+                    <p>This negative drift suggests convergence. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>def collatz(n):
+    """
+    Generate the Collatz sequence starting from n.
+    """
+    sequence = [n]
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        sequence.append(n)
+    return sequence
+
+def total_stopping_time(n):
+    """Number of steps to reach 1."""
+    steps = 0
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        steps += 1
+    return steps
+
+def max_value(n):
+    """Maximum value reached in the Collatz sequence."""
+    max_val = n
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        max_val = max(max_val, n)
+    return max_val
+
+# Test the conjecture for various starting values
+print("Collatz Conjecture Verification")
+print("=" * 50)
+
+test_values = [7, 19, 27, 97, 871]
+for n in test_values:
+    seq = collatz(n)
+    tst = len(seq) - 1
+    mx = max(seq)
+    print(f"n = {n:3d}: steps = {tst:3d}, max = {mx:6d}, sequence length = {len(seq)}")
+    if n <= 19:
+        print(f"  Sequence: {' -> '.join(map(str, seq[:15]))}{'...' if len(seq) > 15 else ''}")
+
+# Find numbers with large total stopping times
+print("\nNumbers with largest stopping times (n ≤ 10000):")
+print("=" * 50)
+
+stopping_times = [(n, total_stopping_time(n)) for n in range(1, 10001)]
+stopping_times.sort(key=lambda x: x[1], reverse=True)
+
+for n, tst in stopping_times[:10]:
+    mx = max_value(n)
+    print(f"n = {n:5d}: stopping time = {tst:3d}, max value = {mx:8d}")
+
+# Visualize Collatz tree
+import matplotlib.pyplot as plt
+import networkx as nx
+
+def build_collatz_tree(max_n=50):
+    """Build reverse Collatz tree up to max_n."""
+    G = nx.DiGraph()
+    
+    for n in range(1, max_n + 1):
+        seq = collatz(n)
+        for i in range(len(seq) - 1):
+            if seq[i+1] <= max_n:
+                G.add_edge(seq[i+1], seq[i])
+    
+    return G
+
+fig, axes = plt.subplots(1, 2, figsize=(16, 8))
+
+# Plot 1: Collatz sequences for various starting values
+ax1 = axes[0]
+for n in [6, 7, 9, 11, 15, 27]:
+    seq = collatz(n)
+    ax1.plot(range(len(seq)), seq, 'o-', label=f'n={n}', markersize=4)
+ax1.set_xlabel('Step')
+ax1.set_ylabel('Value')
+ax1.set_title('Collatz Sequences')
+ax1.legend()
+ax1.set_yscale('log')
+ax1.grid(True, alpha=0.3)
+
+# Plot 2: Stopping time distribution
+ax2 = axes[1]
+tst_values = [total_stopping_time(n) for n in range(1, 10001)]
+ax2.hist(tst_values, bins=50, edgecolor='black', alpha=0.7)
+ax2.set_xlabel('Total Stopping Time')
+ax2.set_ylabel('Frequency')
+ax2.set_title('Distribution of Stopping Times (n = 1 to 10000)')
+ax2.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('collatz_analysis.png', dpi=150)
+plt.show()
+
+# Verify the conjecture for a large range
+print("\nVerifying Collatz conjecture for n = 1 to 1,000,000...")
+all_reach_one = all(len(collatz(n)) > 0 and collatz(n)[-1] == 1 for n in range(1, 1000001))
+print(f"All values reach 1: {all_reach_one}")
+</code></pre>
+            </div>
+
+            <!-- Prime Numbers -->
+            <div class="topic-card">
+                <h3>2. The Prime Number Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Prime numbers are the atoms of arithmetic—every integer factors uniquely into primes. Yet their distribution among the integers has fascinated mathematicians for millennia.</p>
+                
+                <p>The <strong>Prime Number Theorem</strong> (PNT), proved independently by Hadamard and de la Vallée Poussin in 1896, reveals the asymptotic density of primes. It states that the number of primes up to \(x\) is approximately \(x/\ln(x)\).</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\pi(x)\) — the prime-counting function: number of primes ≤ \(x\)</li>
+                        <li>\(\ln(x)\) or \(\log(x)\) — natural logarithm</li>
+                        <li>\(\text{Li}(x)\) — logarithmic integral: \(\int_2^x \frac{dt}{\ln t}\)</li>
+                        <li>\(f(x) \sim g(x)\) — asymptotic equivalence: \(\lim_{x \to \infty} f(x)/g(x) = 1\)</li>
+                        <li>\(\zeta(s)\) — Riemann zeta function</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Prime Number Theorem</div>
+                    <p>Let \(\pi(x)\) denote the number of prime numbers less than or equal to \(x\). Then:</p>
+                    <p>\[\pi(x) \sim \frac{x}{\ln x}\]</p>
+                    <p>Equivalently:</p>
+                    <p>\[\lim_{x \to \infty} \frac{\pi(x)}{x / \ln x} = 1\]</p>
+                    <p>A more precise form uses the logarithmic integral:</p>
+                    <p>\[\pi(x) \sim \text{Li}(x) = \int_2^x \frac{dt}{\ln t}\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (via Complex Analysis)</div>
+                    <p><strong>Step 1:</strong> Define the von Mangoldt function:</p>
+                    <p>\[\Lambda(n) = \begin{cases} \ln p & \text{if } n = p^k \text{ for prime } p \\ 0 & \text{otherwise} \end{cases}\]</p>
+                    
+                    <p><strong>Step 2:</strong> The key is to study \(\psi(x) = \sum_{n \leq x} \Lambda(n)\), the Chebyshev function. One can show \(\psi(x) \sim x\) implies PNT.</p>
+                    
+                    <p><strong>Step 3:</strong> Using the identity:</p>
+                    <p>\[-\frac{\zeta'(s)}{\zeta(s)} = \sum_{n=1}^{\infty} \frac{\Lambda(n)}{n^s}\]</p>
+                    
+                    <p><strong>Step 4:</strong> Apply Perron's formula to relate \(\psi(x)\) to a contour integral:</p>
+                    <p>\[\psi(x) = \frac{1}{2\pi i} \int_{c-i\infty}^{c+i\infty} \left(-\frac{\zeta'(s)}{\zeta(s)}\right) \frac{x^s}{s} ds\]</p>
+                    
+                    <p><strong>Step 5:</strong> The poles of \(-\zeta'(s)/\zeta(s)\) are at \(s = 1\) (residue 1) and at zeros of \(\zeta(s)\). The Riemann Hypothesis concerns these zeros.</p>
+                    
+                    <p><strong>Step 6:</strong> Hadamard and de la Vallée Poussin proved \(\zeta(s) \neq 0\) for \(\text{Re}(s) = 1\), which is sufficient to show the main term comes from the pole at \(s = 1\), giving \(\psi(x) \sim x\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import integrate
+
+def sieve_of_eratosthenes(n):
+    """
+    Generate all primes up to n using the Sieve of Eratosthenes.
+    Time complexity: O(n log log n)
+    """
+    is_prime = [True] * (n + 1)
+    is_prime[0] = is_prime[1] = False
+    
+    for i in range(2, int(n**0.5) + 1):
+        if is_prime[i]:
+            for j in range(i*i, n + 1, i):
+                is_prime[j] = False
+    
+    return [i for i in range(2, n + 1) if is_prime[i]]
+
+def prime_counting_function(x, primes):
+    """
+    Return π(x) = number of primes ≤ x.
+    Uses binary search for efficiency.
+    """
+    from bisect import bisect_right
+    return bisect_right(primes, x)
+
+def logarithmic_integral(x):
+    """
+    Compute Li(x) = ∫₂ˣ dt/ln(t)
+    """
+    if x <= 2:
+        return 0
+    result, _ = integrate.quad(lambda t: 1/np.log(t), 2, x)
+    return result
+
+# Generate primes up to 1 million
+print("Generating primes up to 1,000,000...")
+primes = sieve_of_eratosthenes(1000000)
+print(f"Found {len(primes)} primes")
+print(f"π(1,000,000) = {len(primes)}")
+print(f"1,000,000/ln(1,000,000) = {1000000/np.log(1000000):.2f}")
+print(f"Ratio: {len(primes) / (1000000/np.log(1000000)):.6f}")
+
+# Verify PNT at various points
+print("\nPrime Number Theorem Verification:")
+print("=" * 60)
+print(f"{'x':>12} {'π(x)':>10} {'x/ln(x)':>12} {'Li(x)':>12} {'π(x)/(x/lnx)':>14}")
+print("-" * 60)
+
+test_points = [10, 100, 1000, 10000, 100000, 1000000]
+for x in test_points:
+    pi_x = prime_counting_function(x, primes)
+    x_over_lnx = x / np.log(x)
+    li_x = logarithmic_integral(x)
+    ratio = pi_x / x_over_lnx
+    print(f"{x:12,} {pi_x:10,} {x_over_lnx:12.2f} {li_x:12.2f} {ratio:14.6f}")
+
+# Visualize
+fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+
+# Plot 1: π(x) vs approximations
+ax1 = axes[0, 0]
+x_values = np.linspace(10, 1000000, 500)
+pi_values = [prime_counting_function(int(x), primes) for x in x_values]
+ax1.plot(x_values, pi_values, 'b-', label='$\\pi(x)$', linewidth=2)
+ax1.plot(x_values, x_values/np.log(x_values), 'r--', label='$x/\\ln(x)$', linewidth=2)
+ax1.plot(x_values, [logarithmic_integral(x) for x in x_values], 'g:', label='Li(x)', linewidth=2)
+ax1.set_xlabel('x')
+ax1.set_ylabel('Number of primes')
+ax1.set_title('Prime Counting Function and Approximations')
+ax1.legend()
+ax1.set_xscale('log')
+ax1.set_yscale('log')
+ax1.grid(True, alpha=0.3)
+
+# Plot 2: Ratio π(x)/(x/ln x)
+ax2 = axes[0, 1]
+ratio_values = [p / (x/np.log(x)) for p, x in zip(pi_values, x_values)]
+ax2.plot(x_values, ratio_values, 'b-', linewidth=2)
+ax2.axhline(y=1, color='r', linestyle='--', label='y = 1')
+ax2.set_xlabel('x')
+ax2.set_ylabel('$\\pi(x) / (x/\\ln x)$')
+ax2.set_title('Convergence to 1 (Prime Number Theorem)')
+ax2.set_xscale('log')
+ax2.legend()
+ax2.grid(True, alpha=0.3)
+
+# Plot 3: Error terms
+ax3 = axes[1, 0]
+errors_xlnx = [abs(p - x/np.log(x)) for p, x in zip(pi_values, x_values)]
+errors_li = [abs(p - logarithmic_integral(x)) for p, x in zip(pi_values, x_values)]
+ax3.plot(x_values, errors_xlnx, 'r-', label='$|\\pi(x) - x/\\ln(x)|$', linewidth=2)
+ax3.plot(x_values, errors_li, 'g-', label='$|\\pi(x) - \\text{Li}(x)|$', linewidth=2)
+ax3.set_xlabel('x')
+ax3.set_ylabel('Absolute error')
+ax3.set_title('Approximation Error')
+ax3.set_xscale('log')
+ax3.set_yscale('log')
+ax3.legend()
+ax3.grid(True, alpha=0.3)
+
+# Plot 4: Prime gaps
+ax4 = axes[1, 1]
+gaps = [primes[i+1] - primes[i] for i in range(len(primes)-1)]
+ax4.scatter(primes[:-1], gaps, s=1, alpha=0.5)
+ax4.plot(primes[:-1], [np.log(p) for p in primes[:-1]], 'r-', label='$\\ln(x)$', linewidth=2)
+ax4.set_xlabel('Prime $p_n$')
+ax4.set_ylabel('Gap $p_{n+1} - p_n$')
+ax4.set_title('Prime Gaps')
+ax4.set_xscale('log')
+ax4.legend()
+ax4.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('prime_number_theorem.png', dpi=150)
+plt.show()
+
+# Bertrand's Postulate (a consequence of PNT methods)
+def bertrand_check(n):
+    """Check if there's always a prime between n and 2n."""
+    for p in primes:
+        if n < p < 2*n:
+            return True
+        if p >= 2*n:
+            return False
+    return False
+
+print("\nBertrand's Postulate: Is there always a prime between n and 2n?")
+print("=" * 60)
+all_have_prime = all(bertrand_check(n) for n in range(2, 500001))
+print(f"Verified for n = 2 to 500,000: {all_have_prime}")
+</code></pre>
+            </div>
+
+            <!-- Goldbach's Conjecture -->
+            <div class="topic-card">
+                <h3>3. Goldbach's Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>In 1742, Christian Goldbach wrote to Leonhard Euler proposing that every even integer greater than 2 can be expressed as the sum of two primes. Euler believed it true but couldn't prove it. Despite extensive computational verification, the conjecture remains unproven.</p>
+                
+                <p>The weak (or odd) Goldbach conjecture—every odd number greater than 5 is the sum of three primes—was proven by Harald Helfgott in 2013.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(G(n)\) — number of ways to write even \(n\) as sum of two primes</li>
+                        <li>\(r_2(n)\) — number of representations of \(n\) as sum of two primes</li>
+                        <li>\(\Lambda(n)\) — von Mangoldt function</li>
+                        <li>\(\prod_{p|n}\) — product over primes dividing \(n\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Chen's Theorem (1966)</div>
+                    <p>Every sufficiently large even integer \(n\) can be written as the sum of:</p>
+                    <ul>
+                        <li>A prime, and</li>
+                        <li>A product of at most two primes (a semiprime)</li>
+                    </ul>
+                    <p>This is denoted as "1 + 2" in the context of Goldbach-like problems.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch of Chen's Theorem</div>
+                    <p><strong>Step 1:</strong> Define the sieving function. For even \(n\), let:</p>
+                    <p>\[D(n) = \{p : p \leq n, n - p \text{ is prime or semiprime}\}\]</p>
+                    
+                    <p><strong>Step 2:</strong> Use the circle method. The number of representations is:</p>
+                    <p>\[r(n) = \int_0^1 S(\alpha)^2 e(-n\alpha) d\alpha\]</p>
+                    <p>where \(S(\alpha) = \sum_{p \leq n} e(p\alpha)\) and \(e(x) = e^{2\pi i x}\).</p>
+                    
+                    <p><strong>Step 3:</strong> Decompose the integral into major and minor arcs. On major arcs (near rationals with small denominator), use analytic properties of Dirichlet L-functions.</p>
+                    
+                    <p><strong>Step 4:</strong> On minor arcs, bound \(|S(\alpha)|\) using exponential sum estimates (Vinogradov's method).</p>
+                    
+                    <p><strong>Step 5:</strong> Chen's innovation: a weighted sieve that handles the "semiprime" condition. The key is the sieve identity:</p>
+                    <p>\[S(\mathcal{A}, \mathcal{P}, z) = S(\mathcal{A}, \mathcal{P}, w) - \sum_{w \leq p < z} S(\mathcal{A}_p, \mathcal{P}, p)\]</p>
+                    
+                    <p><strong>Step 6:</strong> Careful estimation shows the main term dominates the error, proving infinitely many representations of the form \(p + P_2\) where \(P_2\) has at most two prime factors. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>def sieve_of_eratosthenes(n):
+    """Generate all primes up to n."""
+    is_prime = [True] * (n + 1)
+    is_prime[0] = is_prime[1] = False
+    for i in range(2, int(n**0.5) + 1):
+        if is_prime[i]:
+            for j in range(i*i, n + 1, i):
+                is_prime[j] = False
+    return [i for i in range(2, n + 1) if is_prime[i]], is_prime
+
+def goldbach_partitions(n, primes_set):
+    """
+    Find all ways to write n as sum of two primes.
+    Returns list of tuples (p, n-p) where both are prime.
+    """
+    partitions = []
+    for p in primes_set:
+        if p > n // 2:
+            break
+        if (n - p) in primes_set:
+            partitions.append((p, n - p))
+    return partitions
+
+def goldbach_verification(limit):
+    """
+    Verify Goldbach's conjecture for all even numbers up to limit.
+    Returns True if all satisfy the conjecture.
+    """
+    primes_list, is_prime = sieve_of_eratosthenes(limit)
+    primes_set = set(primes_list)
+    
+    failed = []
+    for n in range(4, limit + 1, 2):  # Even numbers from 4 to limit
+        found = False
+        for p in primes_list:
+            if p > n // 2:
+                break
+            if (n - p) in primes_set:
+                found = True
+                break
+        if not found:
+            failed.append(n)
+    
+    return len(failed) == 0, failed
+
+# Verify Goldbach's conjecture
+print("Goldbach's Conjecture Verification")
+print("=" * 50)
+
+limit = 100000
+print(f"Verifying for all even n from 4 to {limit}...")
+is_valid, failures = goldbach_verification(limit)
+print(f"All even numbers verified: {is_valid}")
+if failures:
+    print(f"Failed for: {failures[:10]}")
+
+# Count partitions for various even numbers
+primes_list, is_prime = sieve_of_eratosthenes(10000)
+primes_set = set(primes_list)
+
+print("\nNumber of Goldbach partitions G(n):")
+print("=" * 50)
+print(f"{'n':>8} {'G(n)':>8} {'Partitions'}")
+print("-" * 50)
+
+for n in [10, 20, 50, 100, 200, 500, 1000]:
+    parts = goldbach_partitions(n, primes_set)
+    parts_str = ', '.join([f"{p}+{q}" for p, q in parts[:5]])
+    if len(parts) > 5:
+        parts_str += f", ... ({len(parts)-5} more)"
+    print(f"{n:8} {len(parts):8} {parts_str}")
+
+# Hardy-Littlewood asymptotic
+def goldbach_asymptotic(n):
+    """
+    Hardy-Littlewood conjectured asymptotic for G(n):
+    G(n) ~ 2 * C_2 * n / (ln n)^2 * prod_{p|n, p>2} (p-1)/(p-2)
+    where C_2 is the twin prime constant.
+    """
+    import math
+    
+    # Twin prime constant
+    C2 = 0.6601618158468695739278121100145557784326233602847334133
+    
+    # Product over odd prime divisors of n
+    prod = 1.0
+    temp = n
+    p = 3
+    while p * p <= temp:
+        if temp % p == 0:
+            prod *= (p - 1) / (p - 2)
+            while temp % p == 0:
+                temp //= p
+        p += 2
+    if temp > 2:
+        prod *= (temp - 1) / (temp - 2)
+    
+    return 2 * C2 * n / (math.log(n)**2) * prod
+
+print("\nHardy-Littlewood Asymptotic vs Actual:")
+print("=" * 50)
+print(f"{'n':>8} {'Actual G(n)':>12} {'Predicted':>12} {'Ratio':>10}")
+print("-" * 50)
+
+for n in [100, 500, 1000, 5000, 10000]:
+    actual = len(goldbach_partitions(n, primes_set))
+    predicted = goldbach_asymptotic(n)
+    ratio = actual / predicted if predicted > 0 else 0
+    print(f"{n:8} {actual:12} {predicted:12.2f} {ratio:10.4f}")
+
+# Visualize Goldbach comet
+import matplotlib.pyplot as plt
+import numpy as np
+
+even_numbers = list(range(4, 10000, 2))
+g_values = [len(goldbach_partitions(n, primes_set)) for n in even_numbers]
+
+fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+
+# Plot 1: Goldbach comet
+ax1 = axes[0, 0]
+ax1.scatter(even_numbers, g_values, s=2, alpha=0.5, c='blue')
+ax1.set_xlabel('Even number n')
+ax1.set_ylabel('G(n) = number of partitions')
+ax1.set_title('Goldbach Comet')
+ax1.grid(True, alpha=0.3)
+
+# Plot 2: G(n) vs asymptotic
+ax2 = axes[0, 1]
+predicted = [goldbach_asymptotic(n) for n in even_numbers]
+ax2.scatter(even_numbers, g_values, s=2, alpha=0.5, label='Actual G(n)', c='blue')
+ax2.plot(even_numbers, predicted, 'r-', linewidth=2, label='Hardy-Littlewood')
+ax2.set_xlabel('Even number n')
+ax2.set_ylabel('G(n)')
+ax2.set_title('Goldbach Partitions vs Asymptotic')
+ax2.legend()
+ax2.grid(True, alpha=0.3)
+
+# Plot 3: Ratio G(n) / asymptotic
+ax3 = axes[1, 0]
+ratios = [g/a for g, a in zip(g_values, predicted) if a > 0]
+ax3.scatter(even_numbers[:len(ratios)], ratios, s=2, alpha=0.5)
+ax3.axhline(y=1, color='r', linestyle='--', label='y = 1')
+ax3.set_xlabel('Even number n')
+ax3.set_ylabel('G(n) / Predicted')
+ax3.set_title('Ratio: Actual vs Predicted')
+ax3.legend()
+ax3.grid(True, alpha=0.3)
+
+# Plot 4: Distribution of G(n)
+ax4 = axes[1, 1]
+ax4.hist(g_values, bins=50, edgecolor='black', alpha=0.7)
+ax4.set_xlabel('G(n)')
+ax4.set_ylabel('Frequency')
+ax4.set_title('Distribution of G(n) for n ≤ 10000')
+ax4.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('goldbach_conjecture.png', dpi=150)
+plt.show()
+
+# Chen's theorem verification: p + P_2 representations
+def is_semiprime(n, primes_set):
+    """Check if n is a semiprime (product of exactly 2 primes)."""
+    for p in primes_set:
+        if p * p > n:
+            break
+        if n % p == 0:
+            q = n // p
+            if q in primes_set and q >= p:
+                return True
+    return False
+
+def chen_representations(n, primes_set):
+    """Find representations of n as p + P_2 (prime + semiprime)."""
+    reps = []
+    for p in primes_set:
+        if p >= n:
+            break
+        if is_semiprime(n - p, primes_set):
+            reps.append(p)
+    return reps
+
+print("\nChen's Theorem (1+2) Verification:")
+print("=" * 50)
+for n in [100, 1000, 10000]:
+    chen_reps = chen_representations(n, primes_set)
+    goldbach_reps = goldbach_partitions(n, primes_set)
+    print(f"n = {n}: Goldbach reps = {len(goldbach_reps)}, Chen reps = {len(chen_reps)}")
+</code></pre>
+            </div>
+
+            <!-- p-adic Numbers -->
+            <div class="topic-card">
+                <h3>4. p-adic Numbers</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>p-adic numbers</strong>, introduced by Kurt Hensel in 1897, provide an alternative way to complete the rational numbers. While real numbers fill in the "gaps" between rationals using the usual absolute value, p-adic numbers use a different notion of "closeness" based on divisibility by a prime \(p\).</p>
+                
+                <p>In the p-adic world, two numbers are close if their difference is divisible by a high power of \(p\). This leads to counterintuitive properties: in the 2-adics, the sequence \(2^n\) converges to 0!</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{Q}_p\) — the field of p-adic numbers</li>
+                        <li>\(\mathbb{Z}_p\) — the ring of p-adic integers</li>
+                        <li>\(|x|_p\) — p-adic absolute value: \(|p^n \cdot a/b|_p = p^{-n}\) where \(p \nmid ab\)</li>
+                        <li>\(v_p(x)\) — p-adic valuation: the highest power of \(p\) dividing \(x\)</li>
+                        <li>\(\nu_p(n!)\) — exponent of highest power of \(p\) dividing \(n!\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Ostrowski's Theorem</div>
+                    <p>Every non-trivial absolute value on \(\mathbb{Q}\) is equivalent to either:</p>
+                    <ol>
+                        <li>The usual absolute value \(|\cdot|_\infty\) (giving \(\mathbb{R}\)), or</li>
+                        <li>The p-adic absolute value \(|\cdot|_p\) for some prime \(p\) (giving \(\mathbb{Q}_p\)).</li>
+                    </ol>
+                    <p>More precisely, if \(|\cdot|\) is a non-trivial absolute value on \(\mathbb{Q}\) satisfying the triangle inequality, then either:</p>
+                    <ul>
+                        <li>\(|x| = |x|_\infty^c\) for some \(c > 0\), or</li>
+                        <li>\(|x| = |x|_p^c\) for some prime \(p\) and \(c > 0\).</li>
+                    </ul>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of Ostrowski's Theorem</div>
+                    <p><strong>Step 1:</strong> Let \(|\cdot|\) be a non-trivial absolute value on \(\mathbb{Q}\). Consider \(|n|\) for integers \(n\).</p>
+                    
+                    <p><strong>Case 1:</strong> Suppose \(|n| \leq 1\) for all integers \(n\).</p>
+                    
+                    <p>Since the absolute value is non-trivial, there exists some integer with \(|n| < 1\). Let \(p\) be the smallest positive integer with \(|p| < 1\).</p>
+                    
+                    <p><strong>Step 2:</strong> We claim \(p\) is prime. If \(p = ab\) with \(1 < a, b < p\), then by minimality, \(|a| = |b| = 1\), so \(|p| = |a||b| = 1\), contradiction.</p>
+                    
+                    <p><strong>Step 3:</strong> For any integer \(n\) not divisible by \(p\), we can write \(1 = an + bp\) for some integers \(a, b\) (Bezout). Then:</p>
+                    <p>\[1 = |1| = |an + bp| \leq |an| + |bp| = |a||n| + |b||p|\]</p>
+                    
+                    <p>Since \(|a|, |b| \leq 1\) and \(|p| < 1\), we get \(|n| = 1\).</p>
+                    
+                    <p><strong>Step 4:</strong> For any rational \(x = p^k \cdot a/b\) where \(p \nmid ab\):</p>
+                    <p>\[|x| = |p|^k \cdot |a|/|b| = |p|^k\]</p>
+                    
+                    <p>Setting \(c = -\log|p|/\log(p) > 0\), we get \(|x| = |x|_p^c\).</p>
+                    
+                    <p><strong>Case 2:</strong> Suppose \(|n| > 1\) for some integer \(n\). One can show this forces \(|n| = |n|_\infty^c\) for some \(c\). ∎</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Legendre's Formula (p-adic valuation of factorial)</div>
+                    <p>For a prime \(p\) and positive integer \(n\):</p>
+                    <p>\[\nu_p(n!) = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor = \frac{n - s_p(n)}{p-1}\]</p>
+                    <p>where \(s_p(n)\) is the sum of digits of \(n\) in base \(p\).</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of Legendre's Formula</div>
+                    <p><strong>Step 1:</strong> Among \(1, 2, \ldots, n\), exactly \(\lfloor n/p \rfloor\) are divisible by \(p\).</p>
+                    
+                    <p><strong>Step 2:</strong> Among these, exactly \(\lfloor n/p^2 \rfloor\) are divisible by \(p^2\), contributing an additional factor of \(p\).</p>
+                    
+                    <p><strong>Step 3:</strong> Continuing, the total power of \(p\) in \(n!\) is:</p>
+                    <p>\[\nu_p(n!) = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor\]</p>
+                    
+                    <p><strong>Step 4:</strong> For the digit sum formula, write \(n = a_0 + a_1 p + a_2 p^2 + \cdots\) in base \(p\).</p>
+                    
+                    <p><strong>Step 5:</strong> Then:</p>
+                    <p>\[\left\lfloor \frac{n}{p} \right\rfloor = a_1 + a_2 p + a_3 p^2 + \cdots\]</p>
+                    <p>\[\left\lfloor \frac{n}{p^2} \right\rfloor = a_2 + a_3 p + \cdots\]</p>
+                    <p>\[\vdots\]</p>
+                    
+                    <p><strong>Step 6:</strong> Summing:</p>
+                    <p>\[\sum_{k \geq 1} \left\lfloor \frac{n}{p^k} \right\rfloor = a_1 + a_2(1+p) + a_3(1+p+p^2) + \cdots\]</p>
+                    <p>\[= \sum_{j \geq 1} a_j \frac{p^j - 1}{p-1} = \frac{1}{p-1}\left(\sum_{j \geq 0} a_j p^j - \sum_{j \geq 0} a_j\right)\]</p>
+                    <p>\[= \frac{n - s_p(n)}{p-1}\] ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>from fractions import Fraction
+import math
+
+def p_adic_valuation(n, p):
+    """
+    Compute the p-adic valuation v_p(n).
+    This is the highest power of p dividing n.
+    For n = 0, returns infinity (represented as None).
+    """
+    if n == 0:
+        return float('inf')
+    
+    n = abs(n)
+    val = 0
+    while n % p == 0:
+        n //= p
+        val += 1
+    return val
+
+def p_adic_absolute_value(x, p):
+    """
+    Compute the p-adic absolute value |x|_p.
+    For x = p^n * (a/b) where p doesn't divide ab:
+    |x|_p = p^(-n)
+    """
+    if x == 0:
+        return 0
+    
+    # Convert to fraction
+    if isinstance(x, (int, float)):
+        x = Fraction(x).limit_denominator()
+    
+    # v_p(x) = v_p(numerator) - v_p(denominator)
+    v_p = p_adic_valuation(x.numerator, p) - p_adic_valuation(x.denominator, p)
+    return p ** (-v_p)
+
+def p_adic_distance(x, y, p):
+    """Compute the p-adic distance |x - y|_p."""
+    return p_adic_absolute_value(x - y, p)
+
+def p_adic_expansion(x, p, precision=20):
+    """
+    Compute the p-adic expansion of a rational number x.
+    Returns coefficients [a0, a1, a2, ...] where
+    x = a0 + a1*p + a2*p^2 + ... (mod p^precision)
+    """
+    if x == 0:
+        return [0] * precision
+    
+    if isinstance(x, (int, float)):
+        x = Fraction(x).limit_denominator()
+    
+    # Ensure x is a p-adic integer (|x|_p <= 1)
+    # If not, we need to multiply by appropriate power of p
+    v_p = p_adic_valuation(x.numerator, p) - p_adic_valuation(x.denominator, p)
+    
+    coeffs = []
+    current = x
+    
+    for _ in range(precision):
+        # Find a0 such that x ≡ a0 (mod p)
+        # a0 = x mod p, in range [0, p-1]
+        if isinstance(current, Fraction):
+            # Convert to integer mod p
+            inv_denom = pow(current.denominator, -1, p)
+            a0 = (current.numerator * inv_denom) % p
+        else:
+            a0 = int(current) % p
+        
+        coeffs.append(a0)
+        current = (current - a0) / p
+    
+    return coeffs
+
+def legendre_formula(n, p):
+    """
+    Compute v_p(n!) using Legendre's formula.
+    v_p(n!) = sum_{k=1}^∞ floor(n / p^k)
+    """
+    val = 0
+    power = p
+    while power <= n:
+        val += n // power
+        power *= p
+    return val
+
+def digit_sum(n, p):
+    """Sum of digits of n in base p."""
+    s = 0
+    while n > 0:
+        s += n % p
+        n //= p
+    return s
+
+def legendre_formula_digit_sum(n, p):
+    """
+    Alternative form: v_p(n!) = (n - s_p(n)) / (p - 1)
+    where s_p(n) is the sum of digits of n in base p.
+    """
+    return (n - digit_sum(n, p)) // (p - 1)
+
+# Demonstrate p-adic properties
+print("p-adic Numbers Demonstration")
+print("=" * 60)
+
+p = 5
+print(f"\nUsing p = {p}:")
+print("-" * 40)
+
+# Show p-adic absolute values
+test_numbers = [1, 5, 25, 125, 2, 10, 1/5, 1/25, 0]
+print(f"{'x':>10} {'|x|_p':>12} {'v_p(x)':>10}")
+print("-" * 40)
+for x in test_numbers:
+    if x == 0:
+        print(f"{str(x):>10} {'0':>12} {'∞':>10}")
+    else:
+        abs_val = p_adic_absolute_value(x, p)
+        val = p_adic_valuation(Fraction(x).limit_denominator().numerator, p) - \
+              p_adic_valuation(Fraction(x).limit_denominator().denominator, p)
+        print(f"{str(Fraction(x)):>10} {abs_val:>12.6f} {val:>10}")
+
+# Show that high powers of p are "small" in p-adic metric
+print(f"\nIn {p}-adic metric, p^n → 0 as n → ∞:")
+print("-" * 40)
+for n in range(1, 11):
+    val = p_adic_absolute_value(p**n, p)
+    print(f"|{p}^{n}|_{p} = |{p**n}|_{p} = {val}")
+
+# p-adic expansion
+print(f"\np-adic expansions:")
+print("-" * 40)
+test_vals = [1, 2, 1/2, -1, 1/5]
+for x in test_vals:
+    coeffs = p_adic_expansion(x, p, precision=10)
+    expansion = " + ".join([f"{c}·{p}^{i}" for i, c in enumerate(coeffs) if c != 0][:5])
+    if len([c for c in coeffs if c != 0]) > 5:
+        expansion += " + ..."
+    print(f"{str(Fraction(x)):>6} = {expansion}")
+
+# Verify Legendre's formula
+print(f"\nLegendre's Formula verification for p = {p}:")
+print("-" * 40)
+print(f"{'n':>5} {'v_p(n!)':>10} {'Sum formula':>12} {'Digit formula':>14}")
+print("-" * 40)
+for n in [10, 25, 50, 100]:
+    # Direct computation
+    factorial = math.factorial(n)
+    v_p_direct = p_adic_valuation(factorial, p)
+    v_p_sum = legendre_formula(n, p)
+    v_p_digit = legendre_formula_digit_sum(n, p)
+    print(f"{n:>5} {v_p_direct:>10} {v_p_sum:>12} {v_p_digit:>14}")
+
+# Visualize p-adic absolute values
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+
+# Plot 1: p-adic absolute values for various p
+ax1 = axes[0, 0]
+x_vals = list(range(1, 101))
+for p in [2, 3, 5, 7]:
+    abs_vals = [p_adic_absolute_value(x, p) for x in x_vals]
+    ax1.scatter(x_vals, abs_vals, s=10, alpha=0.6, label=f'p={p}')
+ax1.set_xlabel('x')
+ax1.set_ylabel('|x|_p')
+ax1.set_title('p-adic Absolute Values')
+ax1.set_yscale('log')
+ax1.legend()
+ax1.grid(True, alpha=0.3)
+
+# Plot 2: Convergence of p^n to 0
+ax2 = axes[0, 1]
+n_vals = list(range(1, 21))
+for p in [2, 3, 5]:
+    p_powers = [p_adic_absolute_value(p**n, p) for n in n_vals]
+    ax2.plot(n_vals, p_powers, 'o-', label=f'|{p}^n|_{p}', markersize=6)
+ax2.set_xlabel('n')
+ax2.set_ylabel('|p^n|_p')
+ax2.set_title('p^n → 0 in p-adic metric')
+ax2.set_yscale('log')
+ax2.legend()
+ax2.grid(True, alpha=0.3)
+
+# Plot 3: p-adic valuation of factorial
+ax3 = axes[1, 0]
+n_vals = list(range(1, 101))
+for p in [2, 3, 5]:
+    v_p_factorials = [legendre_formula(n, p) for n in n_vals]
+    ax3.plot(n_vals, v_p_factorials, label=f'v_{p}(n!)', linewidth=2)
+ax3.set_xlabel('n')
+ax3.set_ylabel('v_p(n!)')
+ax3.set_title('p-adic Valuation of Factorial (Legendre)')
+ax3.legend()
+ax3.grid(True, alpha=0.3)
+
+# Plot 4: Comparison of |·|_p and |·|_∞
+ax4 = axes[1, 1]
+x_vals = np.linspace(0.01, 2, 1000)
+p = 2
+usual_abs = np.abs(x_vals - 1)
+p_adic_abs = [p_adic_distance(x, 1, p) for x in x_vals]
+ax4.plot(x_vals, usual_abs, 'b-', label='|x-1| (usual)', linewidth=2)
+ax4.plot(x_vals, p_adic_abs, 'r-', label=f'|x-1|_{p} (2-adic)', linewidth=2)
+ax4.set_xlabel('x')
+ax4.set_ylabel('Distance from 1')
+ax4.set_title('Usual vs 2-adic Distance')
+ax4.legend()
+ax4.grid(True, alpha=0.3)
+ax4.set_yscale('log')
+
+plt.tight_layout()
+plt.savefig('p_adic_numbers.png', dpi=150)
+plt.show()
+
+# Hensel's Lemma demonstration
+def hensel_lift(f, df, x0, p, k):
+    """
+    Hensel's Lemma: Lift a solution mod p to mod p^k.
+    f: polynomial function
+    df: derivative of f
+    x0: initial solution where f(x0) ≡ 0 (mod p) and f'(x0) ≢ 0 (mod p)
+    """
+    x = x0
+    for i in range(1, k):
+        # Newton iteration: x_{n+1} = x_n - f(x_n)/f'(x_n)
+        correction = (f(x) // p**i) * pow(df(x), -1, p)
+        x = x - correction * p**i
+    return x
+
+print("\nHensel's Lemma: Lifting solutions")
+print("=" * 40)
+# Find sqrt(2) in 7-adics
+# 3^2 = 9 ≡ 2 (mod 7), so 3 is a starting point
+p = 7
+x = 3
+print(f"Finding √2 in {p}-adic numbers")
+print(f"Starting with x = 3 since 3² = 9 ≡ 2 (mod 7)")
+for k in range(1, 10):
+    mod = p**k
+    x_lifted = pow(2, (mod + 1) // 2, mod)  # Tonelli-Shanks would be used in practice
+    print(f"√2 ≡ {x_lifted} (mod {mod})")
+</code></pre>
+            </div>
+        </section>
+
+        <!-- Math History Section -->
+        <section class="section">
+            <h2 class="section-title">📜 Today in Math History</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">1637</span>
+                    <p><strong>Fermat's Last Theorem</strong> — Pierre de Fermat writes in the margin of his copy of Diophantus' Arithmetica: "I have discovered a truly marvelous proof of this, which this margin is too narrow to contain." The theorem would remain unproven until 1994.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1854</span>
+                    <p><strong>Riemannian Geometry</strong> — Bernhard Riemann delivers his habilitation lecture "Über die Hypothesen, welche der Geometrie zu Grunde liegen" (On the Hypotheses Which Lie at the Foundations of Geometry), introducing the concept of curved space and laying groundwork for Einstein's general relativity.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1900</span>
+                    <p><strong>Hilbert's Problems</strong> — David Hilbert presents 23 unsolved problems at the International Congress of Mathematicians in Paris. These problems shaped mathematical research throughout the 20th century; some remain open today.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1931</span>
+                    <p><strong>Gödel's Incompleteness Theorems</strong> — Kurt Gödel publishes his incompleteness theorems, proving that any consistent formal system powerful enough to describe arithmetic contains statements that cannot be proved or disproved within the system.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1966</span>
+                    <p><strong>Chen's Theorem</strong> — Chen Jingrun proves that every sufficiently large even number can be written as the sum of a prime and a product of at most two primes (the "1+2" result), the closest anyone has come to proving Goldbach's conjecture.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1994</span>
+                    <p><strong>Fermat's Last Theorem Proved</strong> — Andrew Wiles completes his proof of Fermat's Last Theorem, using elliptic curves, modular forms, and Galois representations. The proof spans over 100 pages and represents a triumph of modern number theory.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">2003</span>
+                    <p><strong>Poincaré Conjecture Progress</strong> — Grigori Perelman publishes the first of three papers proving the Poincaré conjecture (a problem in topology about 3-dimensional spheres). He would decline both the Fields Medal and the million-dollar Millennium Prize.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Daily Math Digest — February 15, 2026</p>
+        <p>Exploring the beauty and depth of mathematics, one day at a time.</p>
+    </footer>
+</body>
+</html>
