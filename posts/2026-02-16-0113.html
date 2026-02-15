@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Math Digest - February 16, 2026</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html">← Daily Math Digest</a>
+            <a href="../index.html">Home</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="post-header">
+            <div class="post-date">February 16, 2026</div>
+            <h1>Daily Math Digest</h1>
+            <p>Topology • Number Theory • Abstract Algebra • Calculus • Fourier Analysis • Information Theory • Famous Conjectures</p>
+        </div>
+
+        <!-- Math Links Section -->
+        <section class="section">
+            <h2 class="section-title">📚 Today's Math Links</h2>
+            <ul class="links-list">
+                <li>
+                    <a href="https://mathworld.wolfram.com/" target="_blank">MathWorld - Wolfram</a>
+                    <p class="description">The web's most extensive mathematics resource, created and maintained by Eric Weisstein with contributions from the world's mathematical community.</p>
+                </li>
+                <li>
+                    <a href="https://terrytao.wordpress.com/" target="_blank">Terence Tao's Blog</a>
+                    <p class="description">Insights from one of the greatest living mathematicians. Covers cutting-edge research in analysis, number theory, and combinatorics.</p>
+                </li>
+                <li>
+                    <a href="https://www.3blue1brown.com/" target="_blank">3Blue1Brown</a>
+                    <p class="description">Beautiful animated explanations of mathematical concepts. Grant Sanderson's visual approach makes advanced topics accessible and intuitive.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Free Math Book Section -->
+        <section class="section">
+            <h2 class="section-title">📖 Free Math Book of the Day</h2>
+            <div class="book-highlight">
+                <h3>Topology Without Tears</h3>
+                <p><strong>by Sidney A. Morris</strong></p>
+                <p>An excellent introduction to general topology that lives up to its name. Covers topological spaces, continuous functions, connectedness, compactness, and more with clear explanations and numerous examples. Perfect for self-study.</p>
+                <p><a href="https://www.topologywithouttears.net/" target="_blank">📥 Download Free at topologywithouttears.net</a></p>
+            </div>
+        </section>
+
+        <!-- Pure Math Deep Dives -->
+        <section class="section">
+            <h2 class="section-title">🔬 Pure Math Deep Dives</h2>
+
+            <!-- Topology: Fundamental Group -->
+            <div class="topic-card">
+                <h3>1. Topology: The Fundamental Group</h3>
+                
+                <h4>Introduction</h4>
+                <p>Algebraic topology bridges the gap between topology and algebra by associating algebraic structures to topological spaces. The fundamental group, introduced by Henri Poincaré in 1895, is the simplest and most important of these invariants. It captures information about "holes" in a space by studying loops that cannot be continuously contracted to a point.</p>
+                
+                <p>The fundamental group distinguishes spaces like the sphere (simply connected) from the torus (has one "essential" loop in each direction). This algebraic invariant revolutionized topology and remains essential in modern geometry and physics.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(X\) — a topological space</li>
+                        <li>\(x_0 \in X\) — base point</li>
+                        <li>\(\gamma: [0,1] \to X\) — a path in \(X\)</li>
+                        <li>\(\gamma(0) = \gamma(1) = x_0\) — a loop based at \(x_0\)</li>
+                        <li>\(\pi_1(X, x_0)\) — fundamental group of \(X\) at \(x_0\)</li>
+                        <li>\([\gamma]\) — homotopy class of path \(\gamma\)</li>
+                        <li>\(\gamma * \eta\) — concatenation of paths</li>
+                        <li>\(\gamma^{-1}(t) = \gamma(1-t)\) — reverse path</li>
+                        <li>\(\simeq\) — homotopy equivalence</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Definition: The Fundamental Group</div>
+                    <p>Let \(X\) be a topological space and \(x_0 \in X\). The <strong>fundamental group</strong> \(\pi_1(X, x_0)\) is the set of homotopy classes of loops based at \(x_0\), with the group operation induced by path concatenation:</p>
+                    <p>\[[\gamma] \cdot [\eta] = [\gamma * \eta]\]</p>
+                    <p>where \((\gamma * \eta)(t) = \begin{cases} \gamma(2t) & 0 \leq t \leq 1/2 \\ \eta(2t-1) & 1/2 \leq t \leq 1 \end{cases}\)</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Theorem: Fundamental Group is Indeed a Group</div>
+                    <p>\(\pi_1(X, x_0)\) forms a group under path concatenation:</p>
+                    <ol>
+                        <li><strong>Associativity:</strong> \([\gamma] \cdot ([\eta] \cdot [\omega]) = ([\gamma] \cdot [\eta]) \cdot [\omega]\)</li>
+                        <li><strong>Identity:</strong> The constant loop \(e(t) = x_0\) satisfies \([e] \cdot [\gamma] = [\gamma] \cdot [e] = [\gamma]\)</li>
+                        <li><strong>Inverses:</strong> \([\gamma] \cdot [\gamma^{-1}] = [\gamma^{-1}] \cdot [\gamma] = [e]\)</li>
+                    </ol>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch</div>
+                    <p><strong>Associativity:</strong> We need \((\gamma * \eta) * \omega \simeq \gamma * (\eta * \omega)\). Both paths traverse \(\gamma\), \(\eta\), \(\omega\) in order, just at different speeds. A linear reparameterization gives the homotopy.</p>
+                    
+                    <p><strong>Identity:</strong> The concatenation \(\gamma * e\) traverses \(\gamma\) at double speed, then sits at \(x_0\). This is homotopic to \(\gamma\) via:</p>
+                    <p>\[H(t,s) = \begin{cases} \gamma\left(\frac{2t}{1+s}\right) & 0 \leq t \leq \frac{1+s}{2} \\ x_0 & \frac{1+s}{2} \leq t \leq 1 \end{cases}\]</p>
+                    
+                    <p><strong>Inverses:</strong> \(\gamma * \gamma^{-1}\) goes out along \(\gamma\) and back. This is homotopic to the constant loop by "pulling in" the path:</p>
+                    <p>\[H(t,s) = \begin{cases} \gamma(2t(1-s)) & 0 \leq t \leq 1/2 \\ \gamma((2-2t)(1-s)) & 1/2 \leq t \leq 1 \end{cases}\]</p>
+                    <p>At \(s=0\) this is \(\gamma * \gamma^{-1}\); at \(s=1\) it's the constant loop.</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Theorem: Fundamental Group of the Circle</div>
+                    <p>\[\pi_1(S^1, 1) \cong \mathbb{Z}\]</p>
+                    <p>The isomorphism sends \([\gamma]\) to the winding number of \(\gamma\) around the circle.</p>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+class FundamentalGroup:
+    """
+    Exploring the fundamental group through computational examples.
+    """
+    
+    @staticmethod
+    def circle_loop(t, n=1):
+        """
+        A loop on the circle winding n times.
+        
+        Parameters:
+        -----------
+        t : array-like
+            Parameter in [0, 1]
+        n : int
+            Winding number (can be negative for opposite orientation)
+        
+        Returns:
+        --------
+        (x, y) coordinates on the unit circle
+        """
+        theta = 2 * np.pi * n * t
+        return np.cos(theta), np.sin(theta)
+    
+    @staticmethod
+    def torus_loop(t, m=1, n=1):
+        """
+        A loop on the torus winding m times around the major circle
+        and n times around the minor circle.
+        
+        Parameters:
+        -----------
+        t : array-like
+            Parameter in [0, 1]
+        m, n : int
+            Winding numbers for the two generators
+        
+        Returns:
+        --------
+        (x, y, z) coordinates on the torus
+        """
+        R = 3  # Major radius
+        r = 1  # Minor radius
+        
+        theta = 2 * np.pi * m * t  # Around major circle
+        phi = 2 * np.pi * n * t    # Around minor circle
+        
+        x = (R + r * np.cos(phi)) * np.cos(theta)
+        y = (R + r * np.cos(phi)) * np.sin(theta)
+        z = r * np.sin(phi)
+        
+        return x, y, z
+    
+    @staticmethod
+    def compute_winding_number(z_values):
+        """
+        Compute the winding number of a closed curve around the origin.
+        Uses the argument principle.
+        """
+        # Compute change in argument
+        angles = np.angle(z_values)
+        
+        # Unwrap to handle branch cuts
+        angles = np.unwrap(angles)
+        
+        # Total change divided by 2π
+        total_change = angles[-1] - angles[0]
+        winding = total_change / (2 * np.pi)
+        
+        return round(winding)
+
+# Demonstration
+print("=" * 60)
+print("FUNDAMENTAL GROUP EXPLORATION")
+print("=" * 60)
+
+fg = FundamentalGroup()
+
+# Example 1: Winding numbers on the circle
+print("\n1. WINDING NUMBERS ON S¹")
+print("-" * 40)
+
+t = np.linspace(0, 1, 1000)
+
+for n in [-2, -1, 0, 1, 2, 3]:
+    x, y = fg.circle_loop(t, n)
+    z = x + 1j * y
+    computed_n = fg.compute_winding_number(z)
+    print(f"Loop with winding number {n}: computed = {computed_n}")
+
+# Example 2: Fundamental group of torus
+print("\n2. FUNDAMENTAL GROUP OF TORUS")
+print("-" * 40)
+print("π₁(T²) ≅ ℤ × ℤ")
+print("Generators: a = (1,0) loop around major circle")
+print("            b = (0,1) loop around minor circle")
+
+x, y, z = fg.torus_loop(t, m=2, n=3)
+print(f"\nLoop (2, 3): winds 2× around major, 3× around minor")
+
+# Example 3: Homotopy classes
+print("\n3. HOMOTOPY CLASSES")
+print("-" * 40)
+print("In π₁(S¹): [γⁿ] = n ∈ ℤ")
+print("Group operation: [γᵐ] · [γⁿ] = [γᵐ⁺ⁿ]")
+
+# Verify group operation
+x_m, y_m = fg.circle_loop(t, m=2)
+x_n, y_n = fg.circle_loop(t, n=3)
+
+z_m = x_m + 1j * y_m
+z_n = x_n + 1j * y_n
+
+winding_m = fg.compute_winding_number(z_m)
+winding_n = fg.compute_winding_number(z_n)
+
+print(f"\n[γ²] corresponds to {winding_m} ∈ ℤ")
+print(f"[γ³] corresponds to {winding_n} ∈ ℤ") 
+print(f"[γ²] · [γ³] = [γ⁵] corresponds to {winding_m + winding_n} ∈ ℤ")
+
+# Example 4: Simply connected spaces
+print("\n4. SIMPLY CONNECTED SPACES")
+print("-" * 40)
+print("A space X is simply connected if π₁(X) = {e} (trivial group)")
+print("Examples: ℝⁿ, Sⁿ for n ≥ 2, convex subsets of ℝⁿ")
+print("Non-examples: S¹, T² (torus), ℝ² \\ {0}")
+
+print("\n" + "=" * 60)</code></pre>
+                </div>
+            </div>
+
+            <!-- Number Theory: Quadratic Reciprocity -->
+            <div class="topic-card">
+                <h3>2. Number Theory: The Law of Quadratic Reciprocity</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Law of Quadratic Reciprocity, first proved by Gauss in 1796, is one of the most beautiful and profound theorems in number theory. It reveals a surprising symmetry in the solvability of quadratic congruences modulo different primes.</p>
+                
+                <p>Given an odd prime \(p\) and integer \(a\) not divisible by \(p\), we ask: does \(x^2 \equiv a \pmod{p}\) have a solution? The Legendre symbol \(\left(\frac{a}{p}\right)\) encodes this information. Quadratic reciprocity tells us how \(\left(\frac{p}{q}\right)\) relates to \(\left(\frac{q}{p}\right)\) for distinct odd primes \(p\) and \(q\).</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\left(\frac{a}{p}\right)\) — Legendre symbol</li>
+                        <li>\(\left(\frac{a}{p}\right) = 1\) — \(a\) is a quadratic residue mod \(p\)</li>
+                        <li>\(\left(\frac{a}{p}\right) = -1\) — \(a\) is a quadratic non-residue mod \(p\)</li>
+                        <li>\(\left(\frac{a}{p}\right) = 0\) — \(p \mid a\)</li>
+                        <li>\(a \equiv b \pmod{p}\) — congruence modulo \(p\)</li>
+                        <li>\(p^* = (-1)^{(p-1)/2} p\) — the "dual" of \(p\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Definition: Legendre Symbol</div>
+                    <p>For an odd prime \(p\) and integer \(a\):</p>
+                    <p>\[\left(\frac{a}{p}\right) = \begin{cases} 1 & \text{if } a \equiv x^2 \pmod{p} \text{ for some } x \not\equiv 0 \pmod{p} \\ -1 & \text{if } a \not\equiv x^2 \pmod{p} \text{ for all } x \\ 0 & \text{if } p \mid a \end{cases}\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Euler's Criterion</div>
+                    <p>For an odd prime \(p\) and integer \(a\) with \(p \nmid a\):</p>
+                    <p>\[\left(\frac{a}{p}\right) \equiv a^{(p-1)/2} \pmod{p}\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Law of Quadratic Reciprocity</div>
+                    <p>Let \(p\) and \(q\) be distinct odd primes. Then:</p>
+                    <p>\[\left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{\frac{p-1}{2} \cdot \frac{q-1}{2}}\]</p>
+                    <p>Equivalently:</p>
+                    <ul>
+                        <li>If \(p \equiv 1 \pmod{4}\) or \(q \equiv 1 \pmod{4}\), then \(\left(\frac{p}{q}\right) = \left(\frac{q}{p}\right)\)</li>
+                        <li>If \(p \equiv q \equiv 3 \pmod{4}\), then \(\left(\frac{p}{q}\right) = -\left(\frac{q}{p}\right)\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Supplementary Laws</div>
+                    <p>\[\left(\frac{-1}{p}\right) = (-1)^{(p-1)/2} = \begin{cases} 1 & \text{if } p \equiv 1 \pmod{4} \\ -1 & \text{if } p \equiv 3 \pmod{4} \end{cases}\]</p>
+                    <p>\[\left(\frac{2}{p}\right) = (-1)^{(p^2-1)/8} = \begin{cases} 1 & \text{if } p \equiv 1, 7 \pmod{8} \\ -1 & \text{if } p \equiv 3, 5 \pmod{8} \end{cases}\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (Gauss's Third Proof via Gauss Sums)</div>
+                    <p><strong>Step 1:</strong> Define the Gauss sum for an odd prime \(p\):</p>
+                    <p>\[g_p = \sum_{k=0}^{p-1} \left(\frac{k}{p}\right) \zeta_p^k\]</p>
+                    <p>where \(\zeta_p = e^{2\pi i/p}\) is a primitive \(p\)-th root of unity.</p>
+                    
+                    <p><strong>Step 2:</strong> Compute \(|g_p|^2 = g_p \cdot \overline{g_p} = p\).</p>
+                    
+                    <p><strong>Step 3:</strong> For another odd prime \(q\), consider \(g_p^q \pmod{q}\) in the ring \(\mathbb{Z}[\zeta_p]\):</p>
+                    <p>\[g_p^q \equiv \sum_{k=0}^{p-1} \left(\frac{k}{p}\right)^q \zeta_p^{qk} = \sum_{k=0}^{p-1} \left(\frac{k}{p}\right) \zeta_p^{qk} = \left(\frac{q}{p}\right) g_p \pmod{q}\]</p>
+                    
+                    <p><strong>Step 4:</strong> Using \(g_p^2 = p^* = (-1)^{(p-1)/2}p\):</p>
+                    <p>\[g_p^{q-1} = (g_p^2)^{(q-1)/2} = (p^*)^{(q-1)/2} \equiv \left(\frac{p^*}{q}\right) \pmod{q}\]</p>
+                    
+                    <p><strong>Step 5:</strong> Combining: \(\left(\frac{q}{p}\right) g_p \equiv g_p^q = g_p \cdot g_p^{q-1} \equiv g_p \left(\frac{p^*}{q}\right) \pmod{q}\)</p>
+                    
+                    <p><strong>Step 6:</strong> Since \(g_p\) is invertible, \(\left(\frac{q}{p}\right) = \left(\frac{p^*}{q}\right) = \left(\frac{(-1)^{(p-1)/2}p}{q}\right) = \left(\frac{-1}{q}\right)^{(p-1)/2}\left(\frac{p}{q}\right)\)</p>
+                    
+                    <p><strong>Step 7:</strong> Using the supplementary law for \(-1\):</p>
+                    <p>\[\left(\frac{q}{p}\right) = (-1)^{\frac{q-1}{2} \cdot \frac{p-1}{2}} \left(\frac{p}{q}\right)\]</p>
+                    <p>which gives the reciprocity law.</p>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>def legendre_symbol(a, p):
+    """
+    Compute the Legendre symbol (a/p) using Euler's criterion.
+    """
+    if p == 2:
+        raise ValueError("p must be odd")
+    
+    a = a % p
+    if a == 0:
+        return 0
+    
+    # Euler's criterion: (a/p) ≡ a^((p-1)/2) (mod p)
+    result = pow(a, (p - 1) // 2, p)
+    return 1 if result == 1 else -1
+
+def quadratic_reciprocity(p, q):
+    """
+    Apply the law of quadratic reciprocity.
+    Returns (p/q) * (q/p) which equals (-1)^(((p-1)/2)*((q-1)/2))
+    """
+    # Compute the sign
+    exp = ((p - 1) // 2) * ((q - 1) // 2)
+    return (-1) ** exp
+
+# Demonstration
+print("=" * 60)
+print("QUADRATIC RECIPROCITY DEMONSTRATION")
+print("=" * 60)
+
+# Example 1: Compute Legendre symbols
+print("\n1. LEGENDRE SYMBOL EXAMPLES")
+print("-" * 40)
+
+test_cases = [(3, 11), (5, 13), (7, 19), (2, 17)]
+for a, p in test_cases:
+    sym = legendre_symbol(a, p)
+    status = "QR" if sym == 1 else "QNR" if sym == -1 else "divisible"
+    print(f"({a}/{p}) = {sym:2d}  →  {a} is a {status} mod {p}")
+
+# Example 2: Verify quadratic reciprocity
+print("\n2. QUADRATIC RECIPROCITY VERIFICATION")
+print("-" * 40)
+
+odd_primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31]
+
+for i, p in enumerate(odd_primes[:5]):
+    for q in odd_primes[i+1:6]:
+        left = legendre_symbol(p, q) * legendre_symbol(q, p)
+        right = quadratic_reciprocity(p, q)
+        match = "✓" if left == right else "✗"
+        print(f"p={p:2d}, q={q:2d}: ({p}/{q})·({q}/{p}) = {left:2d}, (-1)^... = {right:2d} {match}")
+
+# Example 3: Using reciprocity to compute large Legendre symbols
+print("\n3. COMPUTING LARGE LEGENDRE SYMBOLS")
+print("-" * 40)
+
+p, q = 101, 103  # Both ≡ 1 (mod 4)
+result_direct = legendre_symbol(p, q)
+result_via_reciprocity = legendre_symbol(q, p)
+print(f"p = {p} ≡ {p % 4} (mod 4)")
+print(f"q = {q} ≡ {q % 4} (mod 4)")
+print(f"Direct: ({p}/{q}) = {result_direct}")
+print(f"Via reciprocity: ({p}/{q}) = ({q}/{p}) = {result_via_reciprocity}")
+
+print("=" * 60)</code></pre>
+                </div>
+            </div>
+
+            <!-- Abstract Algebra: Sylow Theorems -->
+            <div class="topic-card">
+                <h3>3. Abstract Algebra: The Sylow Theorems</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Sylow theorems, proved by Peter Ludwig Mejdell Sylow in 1872, are fundamental results in finite group theory. They provide a partial converse to Lagrange's theorem and give deep structural information about finite groups, particularly regarding the existence and conjugacy of subgroups of prime power order.</p>
+                
+                <p>These theorems are essential tools for classifying finite groups and understanding their internal structure. They show that for any prime power dividing the order of a group, there exists a subgroup of that order, and provide constraints on how many such subgroups can exist.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(|G|\) — order (cardinality) of group \(G\)</li>
+                        <li>\(p\) — a prime number</li>
+                        <li>\(p^n \mid |G|\) — \(p^n\) divides \(|G|\)</li>
+                        <li>\(n_p\) — number of Sylow \(p\)-subgroups</li>
+                        <li>\(N_G(H)\) — normalizer of \(H\) in \(G\)</li>
+                        <li>\(H \trianglelefteq G\) — \(H\) is normal in \(G\)</li>
+                        <li>\(gHg^{-1}\) — conjugate of \(H\) by \(g\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Definition: Sylow p-Subgroup</div>
+                    <p>Let \(G\) be a finite group with \(|G| = p^n m\) where \(p\) is prime and \(p \nmid m\). A <strong>Sylow \(p\)-subgroup</strong> of \(G\) is a subgroup of order \(p^n\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Sylow Theorems</div>
+                    <p>Let \(G\) be a finite group with \(|G| = p^n m\) where \(p\) is prime and \(p \nmid m\).</p>
+                    
+                    <p><strong>First Sylow Theorem (Existence):</strong> \(G\) has at least one Sylow \(p\)-subgroup.</p>
+                    
+                    <p><strong>Second Sylow Theorem (Conjugacy):</strong> All Sylow \(p\)-subgroups of \(G\) are conjugate. If \(P\) and \(Q\) are Sylow \(p\)-subgroups, then \(Q = gPg^{-1}\) for some \(g \in G\).</p>
+                    
+                    <p><strong>Third Sylow Theorem (Counting):</strong> The number \(n_p\) of Sylow \(p\)-subgroups satisfies:</p>
+                    <ol>
+                        <li>\(n_p \equiv 1 \pmod{p}\)</li>
+                        <li>\(n_p \mid m\)</li>
+                    </ol>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of First Sylow Theorem (Existence)</div>
+                    <p><strong>Step 1:</strong> Consider the set \(\Omega\) of all subsets of \(G\) with \(p^n\) elements. The size is:</p>
+                    <p>\[|\Omega| = \binom{p^n m}{p^n}\]</p>
+                    
+                    <p><strong>Step 2:</strong> By Lucas' theorem or direct computation, \(p \nmid \binom{p^n m}{p^n}\).</p>
+                    
+                    <p><strong>Step 3:</strong> \(G\) acts on \(\Omega\) by left multiplication: \(g \cdot X = gX = \{gx : x \in X\}\).</p>
+                    
+                    <p><strong>Step 4:</strong> Since \(p \nmid |\Omega|\), there exists an orbit \(\mathcal{O}\) with \(p \nmid |\mathcal{O}|\).</p>
+                    
+                    <p><strong>Step 5:</strong> By the orbit-stabilizer theorem, \(|\mathcal{O}| = |G|/|G_X|\) where \(G_X\) is the stabilizer of \(X \in \mathcal{O}\).</p>
+                    
+                    <p><strong>Step 6:</strong> Since \(|G| = p^n m\) and \(p \nmid |\mathcal{O}|\), we have \(p^n \mid |G_X|\).</p>
+                    
+                    <p><strong>Step 7:</strong> For any \(x \in X\), the map \(G_X \to X\) given by \(g \mapsto gx\) is injective. Thus \(|G_X| \leq |X| = p^n\).</p>
+                    
+                    <p><strong>Step 8:</strong> Combining: \(|G_X| = p^n\), so \(G_X\) is a Sylow \(p\)-subgroup. ∎</p>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import math
+
+def prime_factorization(n):
+    """Return prime factorization as {p: exponent}."""
+    factors = {}
+    d = 2
+    while d * d <= n:
+        while n % d == 0:
+            factors[d] = factors.get(d, 0) + 1
+            n //= d
+        d += 1
+    if n > 1:
+        factors[n] = factors.get(n, 0) + 1
+    return factors
+
+def sylow_constraints(order):
+    """
+    Compute the constraints on the number of Sylow p-subgroups
+    for each prime dividing the group order.
+    """
+    factors = prime_factorization(order)
+    constraints = {}
+    
+    for p, n in factors.items():
+        p_power = p ** n
+        m = order // p_power
+        
+        # n_p must satisfy:
+        # 1. n_p ≡ 1 (mod p)
+        # 2. n_p | m
+        
+        divisors = []
+        for i in range(1, int(math.sqrt(m)) + 1):
+            if m % i == 0:
+                divisors.append(i)
+                if i != m // i:
+                    divisors.append(m // i)
+        
+        valid_n_p = sorted([d for d in divisors if d % p == 1])
+        
+        constraints[p] = {
+            'sylow_order': p_power,
+            'm': m,
+            'possible_n_p': valid_n_p
+        }
+    
+    return constraints
+
+# Demonstration
+print("=" * 60)
+print("SYLOW THEOREMS DEMONSTRATION")
+print("=" * 60)
+
+# Example 1: Analyze groups of various orders
+print("\n1. SYLOW CONSTRAINTS FOR VARIOUS GROUP ORDERS")
+print("-" * 50)
+
+test_orders = [15, 21, 30, 56, 60, 100]
+
+for order in test_orders:
+    print(f"\nGroup of order {order} = {prime_factorization(order)}")
+    constraints = sylow_constraints(order)
+    
+    for p, info in constraints.items():
+        print(f"  Sylow {p}-subgroups:")
+        print(f"    Order: {info['sylow_order']}, m = {info['m']}")
+        print(f"    Possible n_{p} values: {info['possible_n_p']}")
+        
+        if 1 in info['possible_n_p'] and len(info['possible_n_p']) == 1:
+            print(f"    → Sylow {p}-subgroup is unique, hence NORMAL")
+
+# Example 2: Groups of order pq (p < q primes)
+print("\n2. GROUPS OF ORDER pq (p < q PRIMES)")
+print("-" * 50)
+print("Classic application: Groups of order 15 = 3 × 5")
+
+constraints = sylow_constraints(15)
+print(f"\nFor p=3: n_3 must divide 5 and n_3 ≡ 1 (mod 3)")
+print(f"  Possible n_3 values: {constraints[3]['possible_n_p']}")
+print(f"  → n_3 = 1, so Sylow 3-subgroup is normal")
+
+print(f"\nFor p=5: n_5 must divide 3 and n_5 ≡ 1 (mod 5)")
+print(f"  Possible n_5 values: {constraints[5]['possible_n_p']}")
+print(f"  → n_5 = 1, so Sylow 5-subgroup is normal")
+
+print("\nConclusion: Any group of order 15 has normal subgroups")
+print("of orders 3 and 5, and is therefore cyclic: ℤ₁₅")
+
+print("\n" + "=" * 60)</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applied Math Deep Dives -->
+        <section class="section">
+            <h2 class="section-title">🚀 Applied Math Deep Dives</h2>
+
+            <!-- Calculus: Stokes' Theorem -->
+            <div class="topic-card">
+                <h3>1. Calculus: Stokes' Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Stokes' theorem is one of the crowning achievements of vector calculus, generalizing the fundamental theorem of calculus to higher dimensions. It relates the integral of a differential form over the boundary of a manifold to the integral of its exterior derivative over the whole manifold.</p>
+                
+                <p>In its classical form, Stokes' theorem states that the circulation of a vector field around a closed curve equals the flux of the curl through any surface bounded by that curve.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(M\) — an oriented \(n\)-dimensional manifold with boundary</li>
+                        <li>\(\partial M\) — the boundary of \(M\)</li>
+                        <li>\(\omega\) — a differential \((n-1)\)-form</li>
+                        <li>\(d\omega\) — exterior derivative of \(\omega\)</li>
+                        <li>\(\mathbf{F} = (F_1, F_2, F_3)\) — vector field</li>
+                        <li>\(\nabla \times \mathbf{F}\) — curl of \(\mathbf{F}\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Classical Stokes' Theorem</div>
+                    <p>Let \(S\) be a piecewise smooth, oriented surface in \(\mathbb{R}^3\) with piecewise smooth boundary curve \(\partial S\). Let \(\mathbf{F}\) be a vector field with continuous partial derivatives on an open region containing \(S\). Then:</p>
+                    <p>\[\oint_{\partial S} \mathbf{F} \cdot d\mathbf{r} = \iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S}\]</p>
+                    <p>where the orientation of \(\partial S\) is induced by the orientation of \(S\) (right-hand rule).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">General Stokes' Theorem</div>
+                    <p>Let \(M\) be a compact, oriented \(n\)-dimensional manifold with boundary \(\partial M\). Let \(\omega\) be a smooth \((n-1)\)-form on \(M\). Then:</p>
+                    <p>\[\int_M d\omega = \int_{\partial M} \omega\]</p>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+
+class StokesTheorem:
+    """
+    Computational exploration of Stokes' Theorem.
+    """
+    
+    @staticmethod
+    def curl(F, x, y, z, h=1e-5):
+        """
+        Compute curl of vector field F = (F1, F2, F3) at point (x,y,z).
+        """
+        F1, F2, F3 = F
+        
+        # Partial derivatives using central differences
+        def partial_x(F_i, x, y, z):
+            return (F_i(x + h, y, z) - F_i(x - h, y, z)) / (2 * h)
+        
+        def partial_y(F_i, x, y, z):
+            return (F_i(x, y + h, z) - F_i(x, y - h, z)) / (2 * h)
+        
+        def partial_z(F_i, x, y, z):
+            return (F_i(x, y, z + h) - F_i(x, y, z - h)) / (2 * h)
+        
+        # curl F = (∂F3/∂y - ∂F2/∂z, ∂F1/∂z - ∂F3/∂x, ∂F2/∂x - ∂F1/∂y)
+        curl_x = partial_y(F3, x, y, z) - partial_z(F2, x, y, z)
+        curl_y = partial_z(F1, x, y, z) - partial_x(F3, x, y, z)
+        curl_z = partial_x(F2, x, y, z) - partial_y(F1, x, y, z)
+        
+        return np.array([curl_x, curl_y, curl_z])
+    
+    @staticmethod
+    def line_integral(F, curve, t_vals):
+        """
+        Compute line integral ∫ F · dr along a parameterized curve.
+        """
+        dt = t_vals[1] - t_vals[0]
+        integral = 0
+        
+        for t in t_vals[:-1]:
+            r = curve(t)
+            r_next = curve(t + dt)
+            dr = r_next - r
+            
+            F_val = F(r[0], r[1], r[2])
+            integral += np.dot(F_val, dr)
+        
+        return integral
+
+# Demonstration
+print("=" * 60)
+print("STOKES' THEOREM DEMONSTRATION")
+print("=" * 60)
+
+stokes = StokesTheorem()
+
+# Example 1: Verify Stokes' theorem for F = (-y, x, 0) on a disk
+print("\n1. VERIFICATION: F = (-y, x, 0) on unit disk in xy-plane")
+print("-" * 50)
+
+# Vector field: F(x,y,z) = (-y, x, 0)
+def F1(x, y, z): return -y
+def F2(x, y, z): return x
+def F3(x, y, z): return 0
+
+F = (F1, F2, F3)
+
+# Curl should be (0, 0, 2)
+test_point = (1, 2, 0)
+curl_at_point = stokes.curl(F, *test_point)
+print(f"F = (-y, x, 0)")
+print(f"∇ × F at {test_point} = {curl_at_point}")
+print(f"Expected: [0, 0, 2]")
+
+# Boundary curve: unit circle in xy-plane (z=0)
+def boundary_curve(t):
+    return np.array([np.cos(t), np.sin(t), 0])
+
+t_vals = np.linspace(0, 2*np.pi, 1000)
+line_int = stokes.line_integral(
+    lambda x,y,z: np.array([F1(x,y,z), F2(x,y,z), F3(x,y,z)]),
+    boundary_curve, t_vals
+)
+print(f"\nLine integral ∮ F·dr around unit circle = {line_int:.6f}")
+print(f"Expected: 2π ≈ {2*np.pi:.6f}")
+print(f"Surface integral ∫∫ (∇×F)·dS = 2 × π × 1² = {2*np.pi:.6f}")
+print("✓ Stokes' theorem verified!")
+
+print("\n" + "=" * 60)</code></pre>
+                </div>
+            </div>
+
+            <!-- Fourier Analysis -->
+            <div class="topic-card">
+                <h3>2. Mathematical Physics: Fourier Analysis</h3>
+                
+                <h4>Introduction</h4>
+                <p>Fourier analysis, developed by Joseph Fourier in the early 19th century, reveals that any periodic function can be decomposed into a sum of sinusoidal components. This profound insight connects time-domain and frequency-domain representations, with applications spanning physics, engineering, signal processing, and pure mathematics.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(f(t)\) — function in time domain</li>
+                        <li>\(\hat{f}(\xi)\) or \(F(\omega)\) — Fourier transform</li>
+                        <li>\(\omega = 2\pi \xi\) — angular frequency</li>
+                        <li>\(e^{i\theta} = \cos\theta + i\sin\theta\) — Euler's formula</li>
+                        <li>\(L^2(\mathbb{R})\) — space of square-integrable functions</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Fourier Series</div>
+                    <p>Let \(f: \mathbb{R} \to \mathbb{C}\) be a periodic function with period \(2\pi\) that is square-integrable on \([-\pi, \pi]\). Then:</p>
+                    <p>\[f(t) = \sum_{n=-\infty}^{\infty} c_n e^{int}\]</p>
+                    <p>where the Fourier coefficients are:</p>
+                    <p>\[c_n = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(t) e^{-int}\,dt\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Fourier Transform</div>
+                    <p>For \(f \in L^1(\mathbb{R}) \cap L^2(\mathbb{R})\):</p>
+                    <p>\[\hat{f}(\xi) = \int_{-\infty}^{\infty} f(t) e^{-2\pi i \xi t}\,dt\]</p>
+                    <p>Inverse transform:</p>
+                    <p>\[f(t) = \int_{-\infty}^{\infty} \hat{f}(\xi) e^{2\pi i \xi t}\,d\xi\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Plancherel's Theorem</div>
+                    <p>The Fourier transform preserves the L² norm:</p>
+                    <p>\[\int_{-\infty}^{\infty} |f(t)|^2\,dt = \int_{-\infty}^{\infty} |\hat{f}(\xi)|^2\,d\xi\]</p>
+                    <p>This is the mathematical statement of energy conservation between time and frequency domains.</p>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+
+class FourierAnalysis:
+    """
+    Computational Fourier analysis implementation.
+    """
+    
+    @staticmethod
+    def dft(x):
+        """
+        Discrete Fourier Transform (naive O(n²) implementation).
+        X[k] = Σ_{n=0}^{N-1} x[n] * e^(-2πikn/N)
+        """
+        N = len(x)
+        X = np.zeros(N, dtype=complex)
+        
+        for k in range(N):
+            for n in range(N):
+                X[k] += x[n] * np.exp(-2j * np.pi * k * n / N)
+        
+        return X
+    
+    @staticmethod
+    def fft(x):
+        """
+        Fast Fourier Transform (Cooley-Tukey algorithm).
+        O(n log n) complexity.
+        """
+        x = np.asarray(x, dtype=complex)
+        N = len(x)
+        
+        if N <= 1:
+            return x
+        
+        # Ensure N is power of 2
+        if N % 2 != 0:
+            next_pow2 = 2**int(np.ceil(np.log2(N)))
+            x = np.pad(x, (0, next_pow2 - N))
+            N = next_pow2
+        
+        # Recursive FFT
+        even = FourierAnalysis.fft(x[0::2])
+        odd = FourierAnalysis.fft(x[1::2])
+        
+        T = np.exp(-2j * np.pi * np.arange(N//2) / N) * odd
+        
+        return np.concatenate([even + T, even - T])
+
+# Demonstration
+print("=" * 60)
+print("FOURIER ANALYSIS DEMONSTRATION")
+print("=" * 60)
+
+fa = FourierAnalysis()
+
+# Example 1: FFT vs DFT performance
+print("\n1. FFT vs DFT PERFORMANCE")
+print("-" * 50)
+
+import time
+
+sizes = [64, 128, 256, 512]
+print("Size | DFT Time | FFT Time | Speedup")
+print("-" * 40)
+
+for N in sizes:
+    x = np.random.randn(N)
+    
+    # Time DFT
+    start = time.time()
+    for _ in range(10):
+        _ = fa.dft(x)
+    dft_time = (time.time() - start) / 10
+    
+    # Time FFT
+    start = time.time()
+    for _ in range(100):
+        _ = fa.fft(x)
+    fft_time = (time.time() - start) / 100
+    
+    print(f"{N:4d} | {dft_time*1000:8.3f}ms | {fft_time*1000:8.3f}ms | {dft_time/fft_time:7.1f}x")
+
+# Example 2: Uncertainty principle demonstration
+print("\n2. UNCERTAINTY PRINCIPLE")
+print("-" * 50)
+
+# Gaussian: optimal for uncertainty principle
+def gaussian(t, sigma):
+    return np.exp(-t**2 / (2 * sigma**2)) / (sigma * np.sqrt(2 * np.pi))
+
+# Compute time and frequency spreads
+N = 4096
+t = np.linspace(-10, 10, N)
+dt = t[1] - t[0]
+
+for sigma in [0.5, 1.0, 2.0]:
+    f = gaussian(t, sigma)
+    f = f / np.sqrt(np.sum(f**2) * dt)  # Normalize
+    
+    # Time spread
+    t_center = np.sum(t * f**2) * dt
+    delta_t = np.sqrt(np.sum((t - t_center)**2 * f**2) * dt)
+    
+    # Frequency spread
+    F = np.fft.fftshift(np.fft.fft(f))
+    freqs = np.fft.fftshift(np.fft.fftfreq(N, dt))
+    df = freqs[1] - freqs[0]
+    
+    F_mag = np.abs(F)
+    F_mag = F_mag / np.sqrt(np.sum(F_mag**2) * df)
+    
+    xi_center = np.sum(freqs * F_mag**2) * df
+    delta_xi = np.sqrt(np.sum((freqs - xi_center)**2 * F_mag**2) * df)
+    
+    uncertainty = delta_t * delta_xi
+    print(f"σ = {sigma:.1f}: Δt = {delta_t:.4f}, Δξ = {delta_xi:.4f}, product = {uncertainty:.4f}")
+
+print(f"\nTheoretical minimum: 1/(4π) ≈ {1/(4*np.pi):.4f}")
+print("Gaussian achieves equality in the uncertainty principle!")
+
+print("\n" + "=" * 60)</code></pre>
+                </div>
+            </div>
+
+            <!-- Information Theory: Shannon Entropy -->
+            <div class="topic-card">
+                <h3>3. Information Theory: Shannon Entropy</h3>
+                
+                <h4>Introduction</h4>
+                <p>Claude Shannon's 1948 paper "A Mathematical Theory of Communication" founded information theory and introduced entropy as a measure of uncertainty or information content. This concept, borrowed from statistical mechanics, quantifies the average amount of information produced by a probabilistic source.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(X\) — a random variable</li>
+                        <li>\(\mathcal{X}\) — alphabet (set of possible values)</li>
+                        <li>\(p(x) = P(X = x)\) — probability mass function</li>
+                        <li>\(H(X)\) — Shannon entropy of \(X\)</li>
+                        <li>\(H(X|Y)\) — conditional entropy</li>
+                        <li>\(I(X;Y)\) — mutual information</li>
+                        <li>\(\log\) — logarithm (base 2 for bits, base \(e\) for nats)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Definition: Shannon Entropy</div>
+                    <p>For a discrete random variable \(X\) with probability mass function \(p(x)\) on alphabet \(\mathcal{X}\):</p>
+                    <p>\[H(X) = -\sum_{x \in \mathcal{X}} p(x) \log p(x) = \mathbb{E}[-\log p(X)]\]</p>
+                    <p>where we define \(0 \log 0 = 0\). The units are bits if \(\log\) is base 2, nats if base \(e\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Properties of Entropy</div>
+                    <ol>
+                        <li><strong>Non-negativity:</strong> \(H(X) \geq 0\) with equality iff \(X\) is deterministic</li>
+                        <li><strong>Upper bound:</strong> \(H(X) \leq \log |\mathcal{X}|\) with equality iff uniform distribution</li>
+                        <li><strong>Chain rule:</strong> \(H(X,Y) = H(X) + H(Y|X)\)</li>
+                        <li><strong>Conditioning reduces entropy:</strong> \(H(X|Y) \leq H(X)\)</li>
+                        <li><strong>Subadditivity:</strong> \(H(X,Y) \leq H(X) + H(Y)\)</li>
+                    </ol>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from collections import Counter
+
+class InformationTheory:
+    """
+    Information theory calculations and demonstrations.
+    """
+    
+    @staticmethod
+    def entropy(probs, base=2):
+        """
+        Compute Shannon entropy H(X) = -Σ p(x) log p(x).
+        """
+        probs = np.array(probs)
+        probs = probs[probs > 0]  # Remove zeros
+        
+        log_func = np.log2 if base == 2 else np.log
+        return -np.sum(probs * log_func(probs))
+    
+    @staticmethod
+    def mutual_information(joint_probs, base=2):
+        """
+        Compute mutual information I(X;Y).
+        """
+        joint = np.array(joint_probs)
+        
+        # Marginals
+        p_x = np.sum(joint, axis=1)
+        p_y = np.sum(joint, axis=0)
+        
+        # I(X;Y) = Σ P(x,y) log(P(x,y)/(P(x)P(y)))
+        log_func = np.log2 if base == 2 else np.log
+        
+        mi = 0
+        for i in range(len(p_x)):
+            for j in range(len(p_y)):
+                if joint[i,j] > 0:
+                    mi += joint[i,j] * log_func(joint[i,j] / (p_x[i] * p_y[j]))
+        
+        return mi
+
+# Demonstration
+print("=" * 60)
+print("INFORMATION THEORY DEMONSTRATION")
+print("=" * 60)
+
+it = InformationTheory()
+
+# Example 1: Basic entropy calculations
+print("\n1. ENTROPY OF VARIOUS DISTRIBUTIONS")
+print("-" * 50)
+
+# Certain (deterministic)
+p_certain = [1, 0, 0, 0]
+H_certain = it.entropy(p_certain)
+print(f"Certain outcome: H = {H_certain:.4f} bits")
+
+# Fair coin
+p_fair = [0.5, 0.5]
+H_fair = it.entropy(p_fair)
+print(f"Fair coin: H = {H_fair:.4f} bits (max for binary = 1 bit)")
+
+# Biased coin
+p_biased = [0.9, 0.1]
+H_biased = it.entropy(p_biased)
+print(f"Biased coin (90/10): H = {H_biased:.4f} bits")
+
+# Fair die
+p_die = [1/6] * 6
+H_die = it.entropy(p_die)
+print(f"Fair die: H = {H_die:.4f} bits (max = log₂(6) ≈ {np.log2(6):.4f})")
+
+# Example 2: Entropy as a function of bias
+print("\n2. ENTROPY VS. BIAS FOR BINARY VARIABLE")
+print("-" * 50)
+
+biases = np.linspace(0, 1, 11)
+entropies = [it.entropy([p, 1-p]) for p in biases]
+
+for p, H in zip(biases, entropies):
+    bar = "█" * int(H * 20)
+    print(f"P(X=0) = {p:.1f}: H = {H:.4f} {bar}")
+
+# Example 3: Joint and conditional entropy
+print("\n3. MUTUAL INFORMATION")
+print("-" * 50)
+
+# Correlated binary variables
+joint = np.array([
+    [0.45, 0.05],  # P(X=0, Y=0) = 0.45, P(X=0, Y=1) = 0.05
+    [0.05, 0.45]   # P(X=1, Y=0) = 0.05, P(X=1, Y=1) = 0.45
+])
+
+I_xy = it.mutual_information(joint)
+
+print("Joint distribution P(X,Y):")
+print(joint)
+print(f"\nI(X;Y) = {I_xy:.4f} bits")
+print("This measures the reduction in uncertainty about X gained by knowing Y.")
+
+print("\n" + "=" * 60)</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Math Topics -->
+        <section class="section">
+            <h2 class="section-title">✨ Special Math Topics</h2>
+
+            <!-- Goldbach Conjecture -->
+            <div class="topic-card">
+                <h3>1. Goldbach Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>Proposed by Christian Goldbach in a 1742 letter to Leonhard Euler, the Goldbach conjecture is one of the oldest and best-known unsolved problems in number theory. It states that every even integer greater than 2 can be expressed as the sum of two prime numbers.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{P}\) — set of prime numbers</li>
+                        <li>\(p, q\) — prime numbers</li>
+                        <li>\(n = p + q\) — Goldbach partition</li>
+                        <li>\(G(n)\) — number of Goldbach partitions of \(n\)</li>
+                        <li>\(\pi(x)\) — prime-counting function</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Goldbach's Strong Conjecture</div>
+                    <p>Every even integer \(n > 2\) can be expressed as the sum of two primes:</p>
+                    <p>\[n = p + q\]</p>
+                    <p>where \(p, q \in \mathbb{P}\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Goldbach's Weak Conjecture (Proved)</div>
+                    <p>Every odd number greater than 5 can be expressed as the sum of three primes:</p>
+                    <p>\[n = p + q + r\]</p>
+                    <p><strong>Status:</strong> Proved by Harald Helfgott in 2013.</p>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>from sympy import isprime, primerange
+
+def goldbach_partitions(n):
+    """
+    Find all Goldbach partitions of even n.
+    Returns list of (p, q) pairs where p + q = n and p ≤ q.
+    """
+    if n <= 2 or n % 2 != 0:
+        return []
+    
+    partitions = []
+    for p in range(2, n // 2 + 1):
+        if isprime(p) and isprime(n - p):
+            partitions.append((p, n - p))
+    
+    return partitions
+
+def count_goldbach_partitions(n):
+    """Count number of Goldbach partitions (G(n))."""
+    return len(goldbach_partitions(n))
+
+# Demonstration
+print("=" * 60)
+print("GOLDBACH CONJECTURE DEMONSTRATION")
+print("=" * 60)
+
+# Example 1: Verify for small even numbers
+print("\n1. GOLDBACH PARTITIONS FOR SMALL EVEN NUMBERS")
+print("-" * 50)
+
+for n in range(4, 51, 2):
+    partitions = goldbach_partitions(n)
+    G_n = len(partitions)
+    if G_n <= 3:
+        partition_str = " + ".join([f"{p}+{q}" for p, q in partitions])
+        print(f"{n:2d} = {partition_str} (G({n}) = {G_n})")
+    else:
+        print(f"{n:2d}: G({n}) = {G_n} partitions")
+
+# Example 2: Growth of G(n)
+print("\n2. GROWTH OF G(n) - NUMBER OF PARTITIONS")
+print("-" * 50)
+
+import numpy as np
+test_values = [100, 500, 1000, 5000, 10000]
+for n in test_values:
+    G_n = count_goldbach_partitions(n)
+    heuristic = n / (np.log(n) ** 2)
+    ratio = G_n / heuristic
+    print(f"G({n:5d}) = {G_n:4d}, n/(log n)² ≈ {heuristic:.2f}, ratio ≈ {ratio:.3f}")
+
+# Example 3: Verification for larger range
+print("\n3. VERIFICATION FOR RANGE [4, 10000]")
+print("-" * 50)
+
+all_verified = True
+for n in range(4, 10001, 2):
+    if count_goldbach_partitions(n) == 0:
+        all_verified = False
+        break
+
+if all_verified:
+    print("✓ Goldbach conjecture verified for all even n in [4, 10000]")
+
+print("\n" + "=" * 60)</code></pre>
+                </div>
+            </div>
+
+            <!-- Collatz Conjecture -->
+            <div class="topic-card">
+                <h3>2. Collatz Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Collatz conjecture, also known as the 3n+1 problem or the Ulam conjecture, is a deceptively simple unsolved problem in number theory. Proposed by Lothar Collatz in 1937, it asks whether iterating a simple arithmetic function always eventually reaches 1, regardless of the starting number.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(f(n)\) — Collatz function</li>
+                        <li>\(n_k\) — k-th iterate</li>
+                        <li>\(\sigma(n)\) — total stopping time</li>
+                        <li>\(h(n)\) — height (maximum value reached)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Collatz Function</div>
+                    <p>Define \(f: \mathbb{Z}^+ \to \mathbb{Z}^+\) by:</p>
+                    <p>\[f(n) = \begin{cases} n/2 & \text{if } n \equiv 0 \pmod{2} \\ 3n + 1 & \text{if } n \equiv 1 \pmod{2} \end{cases}\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Collatz Conjecture</div>
+                    <p>For every positive integer \(n\), there exists \(k\) such that:</p>
+                    <p>\[f^{(k)}(n) = 1\]</p>
+                    <p>where \(f^{(k)}\) denotes the k-fold iteration of \(f\).</p>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>def collatz(n):
+    """
+    Generate Collatz sequence starting from n.
+    Returns the sequence until it reaches 1.
+    """
+    sequence = [n]
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        sequence.append(n)
+    return sequence
+
+def collatz_stopping_time(n):
+    """Return the number of steps to reach 1."""
+    steps = 0
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        steps += 1
+    return steps
+
+def collatz_height(n):
+    """Return the maximum value reached."""
+    max_val = n
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        max_val = max(max_val, n)
+    return max_val
+
+# Demonstration
+print("=" * 60)
+print("COLLATZ CONJECTURE DEMONSTRATION")
+print("=" * 60)
+
+# Example 1: Sequences for small starting values
+print("\n1. COLLATZ SEQUENCES")
+print("-" * 50)
+
+test_values = [6, 7, 8, 15, 27]
+for n in test_values:
+    seq = collatz(n)
+    steps = len(seq) - 1
+    height = max(seq)
+    seq_str = " → ".join(map(str, seq[:10]))
+    if len(seq) > 10:
+        seq_str += " → ... → 1"
+    print(f"n = {n:2d}: {seq_str}")
+    print(f"       Steps: {steps}, Height: {height}")
+    print()
+
+# Example 2: Record holders
+print("2. RECORD-HOLDING STOPPING TIMES")
+print("-" * 50)
+
+record = 0
+record_holders = []
+for n in range(1, 10001):
+    t = collatz_stopping_time(n)
+    if t > record:
+        record = t
+        record_holders.append((n, t))
+
+print("n      | Steps | Height")
+print("-" * 30)
+for n, t in record_holders[:10]:
+    h = collatz_height(n)
+    print(f"{n:6d} | {t:5d} | {h:10d}")
+
+print("\n" + "=" * 60)</code></pre>
+                </div>
+            </div>
+
+            <!-- p-adic Numbers -->
+            <div class="topic-card">
+                <h3>3. p-adic Numbers</h3>
+                
+                <h4>Introduction</h4>
+                <p>The p-adic numbers, introduced by Kurt Hensel in 1897, provide an alternative completion of the rational numbers distinct from the real numbers. While real numbers are constructed using the usual absolute value, p-adic numbers use the p-adic absolute value based on divisibility by a prime p.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(p\) — a prime number</li>
+                        <li>\(\nu_p(n)\) — p-adic valuation (highest power of p dividing n)</li>
+                        <li>\(|x|_p\) — p-adic absolute value</li>
+                        <li>\(d_p(x,y) = |x-y|_p\) — p-adic metric</li>
+                        <li>\(\mathbb{Q}_p\) — field of p-adic numbers</li>
+                        <li>\(\mathbb{Z}_p\) — ring of p-adic integers</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">p-adic Valuation</div>
+                    <p>For a non-zero integer \(n\), the <strong>p-adic valuation</strong> \(\nu_p(n)\) is the highest power of \(p\) dividing \(n\):</p>
+                    <p>\[n = p^{\nu_p(n)} \cdot m \text{ where } p \nmid m\]</p>
+                    <p>For a rational number \(x = a/b\):</p>
+                    <p>\[\nu_p(x) = \nu_p(a) - \nu_p(b)\]</p>
+                    <p>By convention, \(\nu_p(0) = +\infty\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">p-adic Absolute Value</div>
+                    <p>The <strong>p-adic absolute value</strong> is defined as:</p>
+                    <p>\[|x|_p = p^{-\nu_p(x)}\]</p>
+                    <p>for \(x \neq 0\), and \(|0|_p = 0\).</p>
+                    <p><strong>Properties:</strong></p>
+                    <ol>
+                        <li>\(|x|_p \geq 0\) with equality iff \(x = 0\)</li>
+                        <li>\(|xy|_p = |x|_p |y|_p\)</li>
+                        <li><strong>Strong triangle inequality:</strong> \(|x + y|_p \leq \max(|x|_p, |y|_p)\)</li>
+                    </ol>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Ostrowski's Theorem</div>
+                    <p>Every non-trivial absolute value on \(\mathbb{Q}\) is equivalent to either:</p>
+                    <ol>
+                        <li>The usual absolute value \(|\cdot|_\infty\) (giving \(\mathbb{R}\))</li>
+                        <li>The p-adic absolute value \(|\cdot|_p\) for some prime \(p\) (giving \(\mathbb{Q}_p\))</li>
+                    </ol>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>from fractions import Fraction
+
+def p_adic_valuation(n, p):
+    """
+    Compute the p-adic valuation ν_p(n).
+    Returns the highest power of p dividing n.
+    """
+    if n == 0:
+        return float('inf')
+    
+    n = abs(n)
+    valuation = 0
+    while n % p == 0:
+        n //= p
+        valuation += 1
+    return valuation
+
+def p_adic_valuation_rational(x, p):
+    """
+    Compute ν_p(a/b) = ν_p(a) - ν_p(b).
+    """
+    if x == 0:
+        return float('inf')
+    
+    frac = Fraction(x).limit_denominator()
+    return p_adic_valuation(frac.numerator, p) - p_adic_valuation(frac.denominator, p)
+
+def p_adic_absolute_value(x, p):
+    """
+    Compute the p-adic absolute value |x|_p = p^(-ν_p(x)).
+    """
+    if x == 0:
+        return 0
+    return p ** (-p_adic_valuation_rational(x, p))
+
+# Demonstration
+print("=" * 60)
+print("p-ADIC NUMBERS DEMONSTRATION")
+print("=" * 60)
+
+p = 5
+
+# Example 1: p-adic valuations
+print(f"\n1. p-ADIC VALUATIONS (p = {p})")
+print("-" * 50)
+
+test_numbers = [1, 5, 25, 125, 2, 10, 50, 3, 15, 75]
+for n in test_numbers:
+    val = p_adic_valuation(n, p)
+    abs_val = p_adic_absolute_value(n, p)
+    print(f"ν_{p}({n:3d}) = {val:2d}, |{n:3d}|_{p} = {abs_val}")
+
+# Example 2: Comparison of absolute values
+print(f"\n2. COMPARISON: REAL vs p-ADIC (p = {p})")
+print("-" * 50)
+
+test_vals = [1, 2, 5, 10, 25, 100]
+print("n    | |n|_∞ (real) | |n|_5 (5-adic)")
+print("-" * 40)
+for n in test_vals:
+    real_abs = abs(n)
+    padic_abs = p_adic_absolute_value(n, 5)
+    print(f"{n:4d} | {real_abs:11.4f} | {padic_abs:.6f}")
+
+print("\nIn 5-adic: 25 is 'smaller' than 2 because it's divisible by 5²!")
+
+print("\n" + "=" * 60)</code></pre>
+                </div>
+            </div>
+
+            <!-- Twin Prime Conjecture -->
+            <div class="topic-card">
+                <h3>4. Twin Prime Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>The Twin Prime Conjecture states that there are infinitely many pairs of primes that differ by 2, such as (3, 5), (5, 7), (11, 13), and (17, 19). This is one of the oldest unsolved problems in number theory, dating back to the ancient Greeks.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\pi_2(x)\) — twin prime counting function</li>
+                        <li>\(\pi(x)\) — prime counting function</li>
+                        <li>\(C_2\) — twin prime constant</li>
+                        <li>\(p_n\) — the n-th prime</li>
+                        <li>\(d_n = p_{n+1} - p_n\) — prime gap</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Twin Prime Conjecture</div>
+                    <p>There are infinitely many primes \(p\) such that \(p + 2\) is also prime. Equivalently:</p>
+                    <p>\[\pi_2(x) \to \infty \text{ as } x \to \infty\]</p>
+                    <p>where \(\pi_2(x) = \#\{p \leq x : p \text{ and } p+2 \text{ are both prime}\}\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Hardy-Littlewood Conjecture</div>
+                    <p>The number of twin prime pairs up to \(x\) is asymptotically:</p>
+                    <p>\[\pi_2(x) \sim 2C_2 \frac{x}{(\log x)^2}\]</p>
+                    <p>where \(C_2\) is the twin prime constant:</p>
+                    <p>\[C_2 = \prod_{p \geq 3} \frac{p(p-2)}{(p-1)^2} \approx 0.6601618158...\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Zhang's Theorem (2013)</div>
+                    <p>\[\liminf_{n \to \infty} (p_{n+1} - p_n) < 70{,}000{,}000\]</p>
+                    <p>There are infinitely many pairs of primes with gap at most 70 million.</p>
+                    <p><strong>Current best unconditional bound:</strong> 246 (Polymath8a + Maynard)</p>
+                </div>
+
+                <div class="python-box">
+                    <h4>Python Implementation</h4>
+                    <pre><code>from sympy import isprime, primerange, primepi
+import numpy as np
+
+def is_twin_prime(p):
+    """Check if p is part of a twin prime pair."""
+    return isprime(p) and (isprime(p - 2) or isprime(p + 2))
+
+def twin_prime_pairs(limit):
+    """Generate all twin prime pairs (p, p+2) with p+2 ≤ limit."""
+    pairs = []
+    for p in primerange(3, limit + 1):
+        if isprime(p + 2):
+            pairs.append((p, p + 2))
+    return pairs
+
+def pi_2(x):
+    """Count twin prime pairs (p, p+2) with p+2 ≤ x."""
+    return len(twin_prime_pairs(x))
+
+# Demonstration
+print("=" * 60)
+print("TWIN PRIME CONJECTURE DEMONSTRATION")
+print("=" * 60)
+
+# Example 1: List of twin prime pairs
+print("\n1. TWIN PRIME PAIRS")
+print("-" * 50)
+
+pairs_small = twin_prime_pairs(100)
+print(f"Twin prime pairs up to 100:")
+for i, (p, q) in enumerate(pairs_small[:15]):
+    print(f"  ({p:2d}, {q:2d})", end="")
+    if (i + 1) % 5 == 0:
+        print()
+print(f"\nTotal pairs ≤ 100: {len(pairs_small)}")
+
+# Example 2: Distribution of twin primes
+print("\n2. DISTRIBUTION OF TWIN PRIMES")
+print("-" * 50)
+
+limits = [100, 1000, 10000, 100000]
+print("Limit    | π₂(x) | π(x)   | Ratio π₂/π")
+print("-" * 45)
+
+for limit in limits:
+    count_twin = pi_2(limit)
+    count_prime = primepi(limit)
+    ratio = count_twin / count_prime if count_prime > 0 else 0
+    print(f"{limit:8d} | {count_twin:5d} | {count_prime:6d} | {ratio:.4f}")
+
+# Example 3: Record holders for prime gaps
+print("\n3. PRIME GAPS")
+print("-" * 50)
+
+from sympy import prime
+
+print("First occurrence of each gap size:")
+gap_first_occurrence = {}
+n = 1
+while len(gap_first_occurrence) < 8:
+    p_n = prime(n)
+    p_next = prime(n + 1)
+    gap = p_next - p_n
+    if gap not in gap_first_occurrence:
+        gap_first_occurrence[gap] = (p_n, p_next)
+    n += 1
+
+for gap in sorted(gap_first_occurrence.keys()):
+    p1, p2 = gap_first_occurrence[gap]
+    print(f"  Gap {gap:2d}: first occurs between {p1} and {p2}")
+
+print("\n" + "=" * 60)</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Math History -->
+        <section class="section">
+            <h2 class="section-title">📜 A Brief History of Mathematics</h2>
+            
+            <div class="history-timeline">
+                <h3>Ancient Period (3000 BCE - 500 CE)</h3>
+                <p><strong>Babylonians and Egyptians (3000-500 BCE):</strong> Developed practical mathematics for astronomy, construction, and commerce. The Babylonians used base-60 number systems and solved quadratic equations. The Egyptians calculated areas and volumes, as seen in the Rhind Papyrus.</p>
+                
+                <p><strong>Greek Mathematics (600 BCE - 400 CE):</strong> The golden age of pure mathematics. Thales introduced deductive reasoning. Pythagoras and his school discovered irrational numbers. Euclid's "Elements" systematized geometry. Archimedes made groundbreaking contributions to calculus concepts. Diophantus pioneered algebra with his study of equations.</p>
+
+                <h3>Medieval Period (500-1500 CE)</h3>
+                <p><strong>Islamic Golden Age (750-1258):</strong> Scholars preserved and extended Greek knowledge. Al-Khwarizmi's "Algebra" gave the subject its name. Omar Khayyam solved cubic equations geometrically. Arabic numerals and decimal notation spread to Europe.</p>
+                
+                <p><strong>Indian Mathematics:</strong> Developed the decimal place-value system with zero. Brahmagupta gave rules for arithmetic with zero and negative numbers. Madhava discovered infinite series for trigonometric functions, anticipating calculus by centuries.</p>
+
+                <h3>Early Modern Period (1500-1800)</h3>
+                <p><strong>Renaissance and Scientific Revolution:</strong> Cardano published solutions to cubic and quartic equations. Viète introduced symbolic algebra. Descartes unified algebra and geometry with coordinate systems. Newton and Leibniz independently developed calculus.</p>
+                
+                <p><strong>18th Century:</strong> Euler was the most prolific mathematician in history, making foundational contributions to analysis, number theory, graph theory, and topology. Lagrange and Laplace advanced celestial mechanics and analysis.</p>
+
+                <h3>Modern Period (1800-Present)</h3>
+                <p><strong>19th Century:</strong> Gauss crowned the "Prince of Mathematicians" with contributions to number theory, algebra, statistics, and differential geometry. Galois founded group theory. Riemann revolutionized geometry. Cantor created set theory, opening questions about infinity. Non-Euclidean geometries challenged Euclidean dominance.</p>
+                
+                <p><strong>20th Century:</strong> Hilbert's problems guided mathematical research. Gödel's incompleteness theorems set fundamental limits. Bourbaki attempted to rebuild mathematics from set theory. Category theory emerged as a unifying framework. Computers transformed both pure and applied mathematics.</p>
+                
+                <p><strong>21st Century:</strong> The Langlands program connects number theory and representation theory. Computer-assisted proofs (like the Four Color Theorem and Kepler conjecture) raise philosophical questions. Machine learning creates new conjectures and approaches. The Polymath project demonstrates collaborative online mathematics.</p>
+            </div>
+        </section>
+
+        <!-- Quanta Magazine Articles -->
+        <section class="section">
+            <h2 class="section-title">📰 Featured Math Articles</h2>
+            
+            <div class="article-list">
+                <div class="article-item">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-discover-new-way-to-predict-structure-in-graphs-20241023/" target="_blank">Mathematicians Discover New Way to Predict Structure in Graphs</a></h3>
+                    <p class="source">Quanta Magazine</p>
+                    <p class="description">A new mathematical framework helps researchers predict the emergence of complex structures in networks, with applications from social networks to biological systems.</p>
+                </div>
+                
+                <div class="article-item">
+                    <h3><a href="https://www.quantamagazine.org/computer-scientists-establish-the-best-way-to-traverse-a-network-20241030/" target="_blank">Computer Scientists Establish the Best Way to Traverse a Network</a></h3>
+                    <p class="source">Quanta Magazine</p>
+                    <p class="description">Researchers have proven optimal algorithms for exploring unknown networks, solving a long-standing problem in theoretical computer science with practical implications for network routing.</p>
+                </div>
+                
+                <div class="article-item">
+                    <h3><a href="https://www.nature.com/articles/d41586-024-03250-2" target="_blank">Mathematicians Solve Long-Standing Coloring Problem</a></h3>
+                    <p class="source">Nature</p>
+                    <p class="description">A team of mathematicians has made significant progress on the chromatic number of the plane problem, determining new bounds for how many colors are needed to color the plane such that no two points at distance 1 share the same color.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Daily Math Digest</strong> — February 16, 2026</p>
+        <p><a href="../index.html">← Back to Home</a></p>
+    </footer>
+
+</body>
+</html>
