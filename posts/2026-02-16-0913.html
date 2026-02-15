@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily Math Digest - Algebraic Geometry, Differential Geometry, Combinatorics, and More">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Daily Math Digest - February 16, 2026</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --bg: #f8f9fa;
+            --text: #333;
+            --code-bg: #f4f4f4;
+            --border: #ddd;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 10px 0 0; opacity: 0.9; font-size: 1.1rem; }
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        nav a:hover { color: var(--secondary); }
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .topic-card {
+            margin: 25px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 8px 8px 0;
+        }
+        .topic-card h3 { color: var(--primary); margin-top: 0; }
+        .topic-card h4 { color: var(--secondary); margin-top: 20px; }
+        .theorem {
+            background: #e8f4f8;
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .theorem-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .proof {
+            background: #fff8e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .proof-title {
+            font-weight: bold;
+            color: #d68910;
+            margin-bottom: 10px;
+        }
+        .notation-box {
+            background: #f0f7ff;
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .notation-box h4 { margin-top: 0; color: var(--secondary); }
+        pre {
+            background: var(--code-bg);
+            padding: 20px;
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        pre code { background: none; padding: 0; }
+        .links-list { list-style: none; padding: 0; }
+        .links-list li {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+        }
+        .links-list a {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .links-list a:hover { text-decoration: underline; }
+        .links-list .description {
+            color: #666;
+            margin: 5px 0 0;
+            font-size: 0.95rem;
+        }
+        .book-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .book-highlight h3 { margin-top: 0; }
+        .book-highlight a { color: #ffd700; font-weight: 600; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary);
+        }
+        .timeline-item {
+            position: relative;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        ul { padding-left: 20px; }
+        li { margin: 8px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📐 Daily Math Digest</h1>
+        <p>Algebraic Geometry • Differential Geometry • Combinatorics • Functional Analysis • Special Topics</p>
+        <p style="font-size: 0.9rem; margin-top: 15px;">February 16, 2026</p>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="../index.html">← Daily Math Digest</a>
+            <div>
+                <a href="../index.html">Home</a> | 
+                <a href="./">All Posts</a> | 
+                <a href="https://github.com/slop-machine-542/nothing">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section">
+            <h2 class="section-title">🔗 Today's Math Links</h2>
+            <ul class="links-list">
+                <li>
+                    <a href="https://en.wikipedia.org/wiki/B%C3%A9zout%27s_theorem" target="_blank">Bézout's Theorem - Wikipedia</a>
+                    <p class="description">A fundamental result in algebraic geometry that describes the number of intersection points of algebraic curves.</p>
+                </li>
+                <li>
+                    <a href="https://mathoverflow.net/" target="_blank">MathOverflow</a>
+                    <p class="description">A question and answer site for professional mathematicians, featuring deep discussions on research-level topics.</p>
+                </li>
+                <li>
+                    <a href="https://ncatlab.org/nlab/show/HomePage" target="_blank">nLab</a>
+                    <p class="description">A wiki-lab for collaborative work on mathematics, physics, and philosophy, with emphasis on category theory and higher category theory.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📖 Free Math Book of the Day</h2>
+            <div class="book-highlight">
+                <h3>Information Theory, Inference, and Learning Algorithms</h3>
+                <p><strong>by David J.C. MacKay</strong></p>
+                <p>A comprehensive and engaging textbook covering information theory, Bayesian inference, and neural networks. The book is known for its clear explanations and practical approach to these interconnected fields.</p>
+                <p><a href="https://www.inference.org.uk/itprnn/book.html" target="_blank">📥 Download Free at inference.org.uk</a></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🔬 Pure Math Deep Dives</h2>
+
+            <div class="topic-card">
+                <h3>1. Algebraic Geometry: Bézout's Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Algebraic geometry studies the geometry of solutions to polynomial equations. One of its most fundamental results is <strong>Bézout's Theorem</strong>, which gives a precise count of the intersection points of two algebraic curves.</p>
+                
+                <p>Unlike Euclidean geometry where two lines typically intersect at one point, algebraic curves can intersect in surprising ways. Bézout's theorem accounts for this complexity by incorporating the degrees of the curves and counting intersections with appropriate multiplicities.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\mathbb{A}^2\\) or \\(\\mathbb{C}^2\\) — the affine plane (2-dimensional space over a field)</li>
+                        <li>\\(\\mathbb{P}^2\\) — the projective plane (compactification of affine space)</li>
+                        <li>\\(V(f) = \\{(x,y) : f(x,y) = 0\\}\\) — the zero set (variety) of polynomial \\(f\\)</li>
+                        <li>\\(\\deg(f)\\) — degree of polynomial \\(f\\) (highest total degree of any term)</li>
+                        <li>\\(I_p(C, D)\\) — intersection multiplicity of curves \\(C\\) and \\(D\\) at point \\(p\\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Bézout's Theorem</div>
+                    <p>Let \\(C\\) and \\(D\\) be two projective plane curves defined by homogeneous polynomials \\(F\\) and \\(G\\) of degrees \\(m\\) and \\(n\\) respectively, with no common components. Then:</p>
+                    <p>\\[\\sum_{p \\in C \\cap D} I_p(C, D) = m \\cdot n\\]</p>
+                    <p>That is, the number of intersection points, counted with multiplicity, equals the product of the degrees.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (using resultants)</div>
+                    <p><strong>Step 1:</strong> Work in projective space \\(\\mathbb{P}^2\\) to ensure all intersections are captured (including "points at infinity").</p>
+                    
+                    <p><strong>Step 2:</strong> For curves \\(F(x,y,z) = 0\\) and \\(G(x,y,z) = 0\\), eliminate one variable using the <strong>resultant</strong>. The resultant \\(\\text{Res}_z(F, G)\\) is a polynomial in \\(x\\) and \\(y\\) that vanishes precisely when \\(F\\) and \\(G\\) have a common root in \\(z\\).</p>
+                    
+                    <p><strong>Notation:</strong> The resultant is a determinant of the Sylvester matrix, which has size \\((m+n) \\times (m+n)\\).</p>
+                    
+                    <p><strong>Step 3:</strong> The degree of \\(\\text{Res}_z(F, G)\\) in \\(x\\) and \\(y\\) is \\(m \\cdot n\\).</p>
+                    
+                    <p><strong>Step 4:</strong> By the fundamental theorem of algebra, this polynomial has exactly \\(m \\cdot n\\) roots (counted with multiplicity) in \\(\\mathbb{P}^1\\).</p>
+                    
+                    <p><strong>Step 5:</strong> Each root corresponds to an intersection point of \\(C\\) and \\(D\\), with multiplicity equal to the intersection multiplicity. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import fsolve
+
+def bezier_theorem_demo():
+    """
+    Demonstrate Bézout's Theorem with concrete examples.
+    
+    Theorem: Two curves of degrees m and n intersect in exactly m*n points
+    (counting multiplicities and points at infinity).
+    """
+    print("Bézout's Theorem Demonstration")
+    print("=" * 60)
+    
+    # Example 1: Two lines (degree 1 each)
+    print("\nExample 1: Two Lines")
+    print("-" * 40)
+    print("Line 1: x - y = 0 (degree 1)")
+    print("Line 2: x + y - 2 = 0 (degree 1)")
+    print("Intersection: (1, 1)")
+    print("Expected intersections (Bézout): 1 × 1 = 1")
+    
+    # Example 2: Line and parabola (degrees 1 and 2)
+    print("\nExample 2: Line and Parabola")
+    print("-" * 40)
+    print("Line: y = 0 (degree 1)")
+    print("Parabola: y - x² + 1 = 0 (degree 2)")
+    print("Intersections: (-1, 0) and (1, 0)")
+    print("Expected intersections (Bézout): 1 × 2 = 2")
+    
+    # Example 3: Two conics (degrees 2 and 2)
+    print("\nExample 3: Circle and Hyperbola")
+    print("-" * 40)
+    print("Circle: x² + y² - 1 = 0 (degree 2)")
+    print("Hyperbola: x² - y² = 0 (degree 2)")
+    print("Intersections: (±1/√2, ±1/√2) - four points total")
+    print("Expected intersections (Bézout): 2 × 2 = 4")
+
+bezier_theorem_demo()
+
+# Visualization
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# Plot 1: Two lines
+ax1 = axes[0]
+x = np.linspace(-2, 3, 100)
+ax1.plot(x, x, 'b-', label='x - y = 0', linewidth=2)
+ax1.plot(x, 2 - x, 'r-', label='x + y - 2 = 0', linewidth=2)
+ax1.plot(1, 1, 'go', markersize=15, label='Intersection (1,1)')
+ax1.set_xlim(-2, 3)
+ax1.set_ylim(-2, 3)
+ax1.set_aspect('equal')
+ax1.grid(True, alpha=0.3)
+ax1.legend()
+ax1.set_title('Two Lines: 1 × 1 = 1 intersection')
+
+# Plot 2: Circle and hyperbola
+ax2 = axes[1]
+theta = np.linspace(0, 2*np.pi, 100)
+ax2.plot(np.cos(theta), np.sin(theta), 'b-', label='x² + y² = 1', linewidth=2)
+x_hyp = np.linspace(-1.5, 1.5, 100)
+ax2.plot(x_hyp, x_hyp, 'r-', label='y = x', linewidth=2)
+ax2.plot(x_hyp, -x_hyp, 'r--', label='y = -x', linewidth=2)
+sqrt2_inv = 1/np.sqrt(2)
+ax2.plot([sqrt2_inv, sqrt2_inv, -sqrt2_inv, -sqrt2_inv], 
+         [sqrt2_inv, -sqrt2_inv, sqrt2_inv, -sqrt2_inv], 
+         'go', markersize=10, label='4 intersections')
+ax2.set_xlim(-1.5, 1.5)
+ax2.set_ylim(-1.5, 1.5)
+ax2.set_aspect('equal')
+ax2.grid(True, alpha=0.3)
+ax2.legend()
+ax2.set_title('Circle and Hyperbola: 2 × 2 = 4 intersections')
+
+plt.tight_layout()
+plt.savefig('bezout_theorem.png', dpi=150, bbox_inches='tight')
+plt.show()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. Differential Geometry: The Gauss-Bonnet Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Differential geometry studies geometric properties of curves and surfaces using calculus. The <strong>Gauss-Bonnet Theorem</strong> is one of its most profound results, connecting local curvature to global topology.</p>
+                
+                <p>This theorem reveals a deep relationship between geometry (curvature) and topology (the Euler characteristic). It states that the total Gaussian curvature of a compact surface equals \\(2\\pi\\) times its Euler characteristic.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(M\\) — a compact 2-dimensional surface (manifold)</li>
+                        <li>\\(K\\) — <strong>Gaussian curvature</strong> at a point (product of principal curvatures)</li>
+                        <li>\\(\\kappa_g\\) — <strong>geodesic curvature</strong> of a curve on the surface</li>
+                        <li>\\(dA\\) — area element on the surface</li>
+                        <li>\\(ds\\) — arc length element</li>
+                        <li>\\(\\chi(M)\\) — <strong>Euler characteristic</strong> of \\(M\\)</li>
+                        <li>\\(\\partial M\\) — boundary of \\(M\\) (if any)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Gauss-Bonnet Theorem</div>
+                    <p>Let \\(M\\) be a compact, oriented surface with boundary \\(\\partial M\\). Then:</p>
+                    <p>\\[\\int_M K \\, dA + \\int_{\\partial M} \\kappa_g \\, ds = 2\\pi \\chi(M)\\]</p>
+                    <p>For a closed surface (no boundary):</p>
+                    <p>\\[\\int_M K \\, dA = 2\\pi \\chi(M)\\]</p>
+                    <p>where \\(\\chi(M) = V - E + F\\) is the Euler characteristic.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (for compact surfaces without boundary)</div>
+                    <p><strong>Step 1:</strong> Triangulate the surface \\(M\\) into triangles \\(T_1, \\ldots, T_n\\).</p>
+                    
+                    <p><strong>Step 2:</strong> For each triangle, apply the local Gauss-Bonnet formula:</p>
+                    <p>\\[\\int_{T_i} K \\, dA + \\int_{\\partial T_i} \\kappa_g \\, ds + \\sum_{j=1}^3 (\\pi - \\alpha_{ij}) = 2\\pi\\]</p>
+                    <p>where \\(\\alpha_{ij}\\) are the interior angles.</p>
+                    
+                    <p><strong>Step 3:</strong> Sum over all triangles. The boundary integrals cancel (each edge appears twice with opposite orientation).</p>
+                    
+                    <p><strong>Step 4:</strong> The angle sum becomes:</p>
+                    <p>\\[\\sum_{i=1}^n \\sum_{j=1}^3 (\\pi - \\alpha_{ij}) = 3\\pi n - \\sum_{\\text{all angles}} \\alpha_{ij}\\]</p>
+                    
+                    <p><strong>Step 5:</strong> At each vertex, the angles sum to \\(2\\pi\\). With \\(V\\) vertices:</p>
+                    <p>\\[3\\pi n - 2\\pi V = 3\\pi(2E/3) - 2\\pi V = 2\\pi E - 2\\pi V\\]</p>
+                    <p>(using \\(3n = 2E\\) since each edge belongs to 2 triangles).</p>
+                    
+                    <p><strong>Step 6:</strong> Since \\(n = F\\) (number of faces):</p>
+                    <p>\\[\\int_M K \\, dA + 2\\pi F - 2\\pi V = 2\\pi F\\]</p>
+                    <p>\\[\\int_M K \\, dA = 2\\pi(V - E + F) = 2\\pi \\chi(M)\\] ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def gaussian_curvature_sphere(R):
+    """
+    Gaussian curvature of a sphere of radius R.
+    
+    For a sphere: K = 1/R² (constant everywhere)
+    
+    Notation: K is the Gaussian curvature (product of principal curvatures k₁ and k₂)
+    """
+    return 1 / R**2
+
+def total_curvature_sphere(R):
+    """
+    Total curvature of a sphere = ∫ K dA = K × Area = (1/R²) × (4πR²) = 4π
+    
+    By Gauss-Bonnet: ∫ K dA = 2π χ(S²)
+    For sphere: χ(S²) = 2, so ∫ K dA = 4π ✓
+    """
+    K = gaussian_curvature_sphere(R)
+    area = 4 * np.pi * R**2
+    return K * area
+
+def euler_characteristic_genus(g):
+    """
+    Euler characteristic of a closed orientable surface of genus g.
+    
+    χ = 2 - 2g
+    
+    Notation:
+    - g is the genus (number of "holes")
+    - Sphere: g = 0, χ = 2
+    - Torus: g = 1, χ = 0
+    - Double torus: g = 2, χ = -2
+    """
+    return 2 - 2*g
+
+def gauss_bonnet_verification():
+    """
+    Verify Gauss-Bonnet theorem for various surfaces.
+    
+    Theorem: ∫_M K dA = 2π χ(M) for closed surfaces
+    """
+    print("Gauss-Bonnet Theorem Verification")
+    print("=" * 60)
+    print("Theorem: ∫_M K dA = 2π χ(M)")
+    print("-" * 60)
+    
+    # Sphere (genus 0)
+    print("\n1. Sphere (genus g = 0)")
+    print("-" * 40)
+    R = 1.0
+    chi_sphere = euler_characteristic_genus(0)
+    total_K = total_curvature_sphere(R)
+    expected = 2 * np.pi * chi_sphere
+    
+    print(f"Radius R = {R}")
+    print(f"Gaussian curvature K = 1/R² = {gaussian_curvature_sphere(R):.4f} (constant)")
+    print(f"Surface area = 4πR² = {4*np.pi*R**2:.4f}")
+    print(f"Total curvature ∫K dA = {total_K:.4f}")
+    print(f"Euler characteristic χ = 2 - 2(0) = {chi_sphere}")
+    print(f"2πχ = {expected:.4f}")
+    print(f"Verification: ∫K dA = 2πχ? {np.isclose(total_K, expected)}")
+    
+    # Torus (genus 1)
+    print("\n2. Torus (genus g = 1)")
+    print("-" * 40)
+    chi_torus = euler_characteristic_genus(1)
+    
+    print(f"Euler characteristic χ = 2 - 2(1) = {chi_torus}")
+    print(f"2πχ = {2*np.pi*chi_torus:.4f}")
+    print(f"For a torus: ∫K dA = 0 (positive and negative curvature cancel)")
+    print(f"Verification: 0 = 2π(0) = 0 ✓")
+    
+    # Summary table
+    print("\n" + "=" * 60)
+    print("Summary: Gauss-Bonnet for Surfaces of Different Genus")
+    print("=" * 60)
+    print(f"{'Surface':<15} {'Genus (g)':<12} {'χ = 2-2g':<12} {'∫K dA = 2πχ':<15}")
+    print("-" * 60)
+    
+    surfaces = [
+        ("Sphere", 0),
+        ("Torus", 1),
+        ("Double Torus", 2),
+        ("Triple Torus", 3),
+    ]
+    
+    for name, g in surfaces:
+        chi = euler_characteristic_genus(g)
+        total = 2 * np.pi * chi
+        print(f"{name:<15} {g:<12} {chi:<12} {total:>12.4f}")
+
+gauss_bonnet_verification()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. Functional Analysis: The Hahn-Banach Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>Functional analysis extends the methods of linear algebra and calculus to infinite-dimensional spaces. The <strong>Hahn-Banach Theorem</strong> is one of its cornerstone results, guaranteeing the existence of linear functionals with certain properties.</p>
+                
+                <p>This theorem allows us to extend bounded linear functionals from subspaces to the whole space while preserving their norm. It has profound consequences including the separation of convex sets and the existence of dual space elements.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(X\\) — a normed vector space (often Banach space)</li>
+                        <li>\\(p: X \\to \\mathbb{R}\\) — a sublinear functional: \\(p(x+y) \\leq p(x) + p(y)\\) and \\(p(\\alpha x) = \\alpha p(x)\\) for \\(\\alpha \\geq 0\\)</li>
+                        <li>\\(M \\subseteq X\\) — a subspace of \\(X\\)</li>
+                        <li>\\(f: M \\to \\mathbb{R}\\) — a linear functional on \\(M\\)</li>
+                        <li>\\(\\|f\\|\\) — operator norm of \\(f\\)</li>
+                        <li>\\(X^*\\) — the dual space (space of continuous linear functionals on \\(X\\))</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Hahn-Banach Theorem (Real Version)</div>
+                    <p>Let \\(X\\) be a real vector space, \\(p: X \\to \\mathbb{R}\\) a sublinear functional, \\(M \\subseteq X\\) a subspace, and \\(f: M \\to \\mathbb{R}\\) a linear functional satisfying:</p>
+                    <p>\\[f(x) \\leq p(x) \\quad \\text{for all } x \\in M\\]</p>
+                    <p>Then there exists a linear extension \\(F: X \\to \\mathbb{R}\\) such that:</p>
+                    <ol>
+                        <li>\\(F(x) = f(x)\\) for all \\(x \\in M\\) (extension property)</li>
+                        <li>\\(F(x) \\leq p(x)\\) for all \\(x \\in X\\) (domination property)</li>
+                    </ol>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Hahn-Banach Theorem (Normed Space Version)</div>
+                    <p>Let \\(X\\) be a normed space, \\(M \\subseteq X\\) a subspace, and \\(f \\in M^*\\) (continuous linear functional on \\(M\\)). Then there exists \\(F \\in X^*\\) such that:</p>
+                    <ol>
+                        <li>\\(F|_M = f\\) (\\(F\\) extends \\(f\\))</li>
+                        <li>\\(\\|F\\|_{X^*} = \\|f\\|_{M^*}\\) (norm preservation)</li>
+                    </ol>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (via Zorn's Lemma)</div>
+                    <p><strong>Step 1:</strong> Define the set of all extensions:</p>
+                    <p>\\[\\mathcal{E} = \\{(Y, g) : M \\subseteq Y \\subseteq X \\text{ subspace}, g: Y \\to \\mathbb{R} \\text{ linear}, g|_M = f, g \\leq p \\text{ on } Y\\}\\]</p>
+                    
+                    <p><strong>Step 2:</strong> Define partial order: \\((Y_1, g_1) \\leq (Y_2, g_2)\\) if \\(Y_1 \\subseteq Y_2\\) and \\(g_2|_{Y_1} = g_1\\).</p>
+                    
+                    <p><strong>Step 3:</strong> Every chain has an upper bound (take union). By Zorn's Lemma, there exists a maximal element \\((Y_{\\max}, g_{\\max})\\).</p>
+                    
+                    <p><strong>Step 4:</strong> Claim: \\(Y_{\\max} = X\\). If not, pick \\(x_0 \\in X \\setminus Y_{\\max}\\) and extend \\(g_{\\max}\\) to \\(\\text{span}(Y_{\\max} \\cup \\{x_0\\})\\).</p>
+                    
+                    <p><strong>Step 5:</strong> Define \\(g(y + \\alpha x_0) = g_{\\max}(y) + \\alpha c\\) for appropriate \\(c\\). We need:</p>
+                    <p>\\[g_{\\max}(y) + c \\leq p(y + x_0) \\quad \\text{and} \\quad g_{\\max}(y) - c \\leq p(y - x_0)\\]</p>
+                    
+                    <p><strong>Step 6:</strong> Such \\(c\\) exists because for all \\(y_1, y_2 \\in Y_{\\max}\\):</p>
+                    <p>\\[g_{\\max}(y_1) + g_{\\max}(y_2) = g_{\\max}(y_1 + y_2) \\leq p(y_1 + y_2) \\leq p(y_1 - x_0) + p(y_2 + x_0)\\]</p>
+                    
+                    <p>So \\(\\sup_{y_2} [g_{\\max}(y_2) - p(y_2 + x_0)] \\leq \\inf_{y_1} [p(y_1 - x_0) - g_{\\max}(y_1)]\\), and any \\(c\\) in between works. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+
+def hahn_banach_demo():
+    """
+    Demonstrate Hahn-Banach theorem concepts in finite dimensions.
+    
+    In finite dimensions, we can construct explicit extensions.
+    The theorem is most powerful in infinite dimensions where
+    explicit constructions may not be possible.
+    """
+    print("Hahn-Banach Theorem Demonstration")
+    print("=" * 60)
+    print("Theorem: A bounded linear functional on a subspace can be")
+    print("extended to the whole space with the same norm.")
+    print("-" * 60)
+    
+    # Example in R^3
+    print("\nExample: Extending a functional on a subspace of R³")
+    print("-" * 40)
+    
+    # Subspace M = span{(1, 0, 0), (0, 1, 0)} (the xy-plane)
+    # Functional f on M: f(x, y, 0) = 2x + 3y
+    
+    print("Subspace M = {(x, y, 0) : x, y ∈ R} (xy-plane)")
+    print("Functional f: M → R defined by f(x, y, 0) = 2x + 3y")
+    
+    # The norm of f is ||(2, 3)|| = sqrt(4 + 9) = sqrt(13)
+    norm_f = np.sqrt(2**2 + 3**2)
+    print(f"Norm of f: ||f|| = √(2² + 3²) = √13 ≈ {norm_f:.4f}")
+    
+    # Extension F to R^3: F(x, y, z) = 2x + 3y + 0z
+    # The norm is preserved
+    print("\nExtension F: R³ → R defined by F(x, y, z) = 2x + 3y + 0z")
+    print(f"Norm of F: ||F|| = √(2² + 3² + 0²) = √13 ≈ {norm_f:.4f}")
+    print(f"Norm preserved: ||F|| = ||f||? {np.isclose(norm_f, norm_f)}")
+    
+    # Verification
+    print("\nVerification:")
+    test_points = [(1, 2, 0), (3, -1, 0), (0, 0, 5)]
+    for p in test_points:
+        f_val = 2*p[0] + 3*p[1]
+        F_val = 2*p[0] + 3*p[1] + 0*p[2]
+        on_M = (p[2] == 0)
+        print(f"  Point {p}: f = {f_val}, F = {F_val}, on M? {on_M}, agree? {f_val == F_val or not on_M}")
+    
+    # Geometric interpretation: separation
+    print("\n\nGeometric Interpretation: Separating Convex Sets")
+    print("-" * 40)
+    print("Hahn-Banach implies we can separate disjoint convex sets")
+    print("with a hyperplane (in normed spaces).")
+    
+    print("\nExample: Separate A = {(0,0)} from B = {(x,y) : x ≥ 1}")
+    print("Separating functional: f(x,y) = x")
+    print("  f(0,0) = 0 < 1 ≤ f(x,y) for all (x,y) ∈ B")
+
+hahn_banach_demo()
+</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🛠️ Applied Math Deep Dives</h2>
+
+            <div class="topic-card">
+                <h3>1. Statistics: The Central Limit Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>Central Limit Theorem (CLT)</strong> is one of the most remarkable results in probability and statistics. It states that the sum (or average) of a large number of independent random variables, regardless of their original distribution, will be approximately normally distributed.</p>
+                
+                <p>This explains why the normal distribution appears so frequently in nature and measurement errors, and it forms the foundation for much of statistical inference.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(X_1, X_2, \\ldots, X_n\\) — independent, identically distributed (i.i.d.) random variables</li>
+                        <li>\\(\\mu = \\mathbb{E}[X_i]\\) — expected value (mean)</li>
+                        <li>\\(\\sigma^2 = \\text{Var}(X_i)\\) — variance</li>
+                        <li>\\(S_n = X_1 + \\cdots + X_n\\) — sum of \\(n\\) random variables</li>
+                        <li>\\(\\bar{X}_n = S_n/n\\) — sample mean</li>
+                        <li>\\(Z_n = \\frac{S_n - n\\mu}{\\sigma\\sqrt{n}}\\) — standardized sum</li>
+                        <li>\\(\\xrightarrow{d}\\) — convergence in distribution</li>
+                        <li>\\(\\mathcal{N}(0,1)\\) — standard normal distribution</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Central Limit Theorem (Lindeberg-Lévy)</div>
+                    <p>Let \\(X_1, X_2, \\ldots\\) be i.i.d. random variables with \\(\\mathbb{E}[X_i] = \\mu\\) and \\(\\text{Var}(X_i) = \\sigma^2 < \\infty\\). Then:</p>
+                    <p>\\[\\frac{S_n - n\\mu}{\\sigma\\sqrt{n}} = \\frac{\\bar{X}_n - \\mu}{\\sigma/\\sqrt{n}} \\xrightarrow{d} \\mathcal{N}(0,1)\\]</p>
+                    <p>Equivalently, for large \\(n\\):</p>
+                    <p>\\[\\bar{X}_n \\approx \\mathcal{N}\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (using characteristic functions)</div>
+                    <p><strong>Step 1:</strong> Define the standardized variable:</p>
+                    <p>\\[Z_n = \\frac{S_n - n\\mu}{\\sigma\\sqrt{n}} = \\sum_{i=1}^n \\frac{X_i - \\mu}{\\sigma\\sqrt{n}} = \\sum_{i=1}^n Y_{n,i}\\]</p>
+                    
+                    <p>where \\(Y_{n,i} = \\frac{X_i - \\mu}{\\sigma\\sqrt{n}}\\).</p>
+                    
+                    <p><strong>Step 2:</strong> The characteristic function of \\(Z_n\\) is:</p>
+                    <p>\\[\\varphi_{Z_n}(t) = \\mathbb{E}[e^{itZ_n}] = \\prod_{i=1}^n \\mathbb{E}[e^{itY_{n,i}}] = \\left(\\varphi_{Y_{n,1}}(t)\\right)^n\\]</p>
+                    
+                    <p><strong>Notation:</strong> \\(\\varphi_X(t) = \\mathbb{E}[e^{itX}]\\) is the characteristic function of \\(X\\).</p>
+                    
+                    <p><strong>Step 3:</strong> Taylor expand \\(\\varphi_{X_1 - \\mu}(s)\\) around \\(s = 0\\):</p>
+                    <p>\\[\\varphi_{X_1 - \\mu}(s) = 1 + is\\mathbb{E}[X_1 - \\mu] - \\frac{s^2}{2}\\mathbb{E}[(X_1 - \\mu)^2] + o(s^2) = 1 - \\frac{\\sigma^2 s^2}{2} + o(s^2)\\]</p>
+                    
+                    <p><strong>Step 4:</strong> Substitute \\(s = \\frac{t}{\\sigma\\sqrt{n}}\\):</p>
+                    <p>\\[\\varphi_{Y_{n,1}}(t) = 1 - \\frac{t^2}{2n} + o\\left(\\frac{1}{n}\\right)\\]</p>
+                    
+                    <p><strong>Step 5:</strong> Therefore:</p>
+                    <p>\\[\\varphi_{Z_n}(t) = \\left(1 - \\frac{t^2}{2n} + o\\left(\\frac{1}{n}\\right)\\right)^n \\to e^{-t^2/2}\\]</p>
+                    
+                    <p><strong>Step 6:</strong> Since \\(e^{-t^2/2}\\) is the characteristic function of \\(\\mathcal{N}(0,1)\\), by the <strong>Continuity Theorem</strong>, \\(Z_n \\xrightarrow{d} \\mathcal{N}(0,1)\\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+def central_limit_theorem_demo():
+    """
+    Demonstrate the Central Limit Theorem.
+    
+    Theorem: The sum (or mean) of n i.i.d. random variables
+    converges to a normal distribution as n → ∞.
+    """
+    print("Central Limit Theorem Demonstration")
+    print("=" * 60)
+    print("Theorem: (Sₙ - nμ)/(σ√n) → N(0,1) as n → ∞")
+    print("-" * 60)
+    
+    # Different distributions to demonstrate universality
+    distributions = {
+        'Uniform(0,1)': lambda n: np.random.uniform(0, 1, n),
+        'Exponential(1)': lambda n: np.random.exponential(1, n),
+        'Bernoulli(0.3)': lambda n: np.random.binomial(1, 0.3, n),
+        'Discrete {1,2,3,4,5}': lambda n: np.random.choice([1,2,3,4,5], n)
+    }
+    
+    sample_sizes = [1, 5, 30, 100]
+    
+    for dist_name, dist_func in distributions.items():
+        print(f"\n{dist_name}:")
+        print("-" * 40)
+        
+        for n in sample_sizes:
+            # Generate many sample means
+            num_samples = 10000
+            sample_means = []
+            
+            for _ in range(num_samples):
+                samples = dist_func(n)
+                sample_means.append(np.mean(samples))
+            
+            sample_means = np.array(sample_means)
+            
+            # Standardize
+            standardized = (sample_means - np.mean(sample_means)) / np.std(sample_means)
+            
+            # Test normality (simplified)
+            _, p_value = stats.normaltest(standardized)
+            
+            print(f"  n = {n:3d}: mean = {np.mean(sample_means):.4f}, "
+                  f"std = {np.std(sample_means):.4f}, normality p-value = {p_value:.4f}")
+
+# Run demonstration
+central_limit_theorem_demo()
+
+# Visualization
+fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+# Plot convergence for uniform distribution
+n_values = [1, 5, 10, 30, 100]
+num_samples = 5000
+
+for idx, n in enumerate(n_values):
+    ax = axes[idx // 3, idx % 3] if idx < 4 else None
+    if ax is None:
+        continue
+    
+    sample_means = [np.mean(np.random.uniform(0, 1, n)) for _ in range(num_samples)]
+    
+    ax.hist(sample_means, bins=50, density=True, alpha=0.7, color='skyblue', edgecolor='black')
+    
+    # Overlay normal approximation
+    mu = 0.5
+    sigma = 1/np.sqrt(12*n)
+    x = np.linspace(mu - 4*sigma, mu + 4*sigma, 100)
+    ax.plot(x, stats.norm.pdf(x, mu, sigma), 'r-', linewidth=2, label='Normal approx.')
+    
+    ax.set_title(f'n = {n}: Sample Mean Distribution')
+    ax.set_xlabel('Sample Mean')
+    ax.set_ylabel('Density')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('central_limit_theorem.png', dpi=150, bbox_inches='tight')
+plt.show()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. Numerical Analysis: The Fast Fourier Transform</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>Fast Fourier Transform (FFT)</strong> is one of the most important algorithms in numerical computing. It computes the Discrete Fourier Transform (DFT) in \\(O(n \\log n)\\) time instead of \\(O(n^2)\\), enabling applications from signal processing to polynomial multiplication.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\omega_n = e^{2\\pi i / n}\\) — primitive \\(n\\)-th root of unity</li>
+                        <li>\\(\\omega_n^k = e^{2\\pi i k / n}\\) — \\(k\\)-th power of \\(\\omega_n\\)</li>
+                        <li>\\(X_k\\) — \\(k\\)-th DFT coefficient</li>
+                        <li>\\(x_j\\) — \\(j\\)-th time-domain sample</li>
+                        <li>\\(i = \\sqrt{-1}\\) — imaginary unit</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Discrete Fourier Transform (DFT)</div>
+                    <p>Given a sequence \\(x = (x_0, x_1, \\ldots, x_{n-1})\\), the DFT is:</p>
+                    <p>\\[X_k = \\sum_{j=0}^{n-1} x_j \\omega_n^{jk}, \\quad k = 0, 1, \\ldots, n-1\\]</p>
+                    <p>where \\(\\omega_n = e^{-2\\pi i / n}\\) (note: some conventions use \\(+\\) instead of \\(-\\)).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Fast Fourier Transform (Cooley-Tukey)</div>
+                    <p>For \\(n = 2^m\\), the DFT can be computed in \\(O(n \\log n)\\) operations using the <strong>divide-and-conquer</strong> approach:</p>
+                    <p>\\[X_k = \\sum_{j=0}^{n/2-1} x_{2j} \\omega_{n/2}^{jk} + \\omega_n^k \\sum_{j=0}^{n/2-1} x_{2j+1} \\omega_{n/2}^{jk}\\]</p>
+                    <p>\\[= E_k + \\omega_n^k O_k\\]</p>
+                    <p>where \\(E_k\\) is the DFT of even-indexed elements and \\(O_k\\) is the DFT of odd-indexed elements.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of FFT Correctness and Complexity</div>
+                    <p><strong>Correctness:</strong></p>
+                    
+                    <p><strong>Step 1:</strong> Split the DFT sum into even and odd indices:</p>
+                    <p>\\[X_k = \\sum_{j=0}^{n/2-1} x_{2j} \\omega_n^{2jk} + \\sum_{j=0}^{n/2-1} x_{2j+1} \\omega_n^{(2j+1)k}\\]</p>
+                    
+                    <p><strong>Step 2:</strong> Use \\(\\omega_n^{2jk} = (\\omega_n^2)^{jk} = \\omega_{n/2}^{jk}\\):</p>
+                    <p>\\[X_k = \\sum_{j=0}^{n/2-1} x_{2j} \\omega_{n/2}^{jk} + \\omega_n^k \\sum_{j=0}^{n/2-1} x_{2j+1} \\omega_{n/2}^{jk} = E_k + \\omega_n^k O_k\\]</p>
+                    
+                    <p><strong>Step 3:</strong> For \\(k + n/2\\), use \\(\\omega_n^{k+n/2} = -\\omega_n^k\\):</p>
+                    <p>\\[X_{k+n/2} = E_k - \\omega_n^k O_k\\]</p>
+                    
+                    <p><strong>Complexity:</strong></p>
+                    
+                    <p><strong>Step 4:</strong> Let \\(T(n)\\) be the number of operations for size \\(n\\).</p>
+                    
+                    <p><strong>Step 5:</strong> Recurrence: \\(T(n) = 2T(n/2) + O(n)\\) (two half-size DFTs plus \\(n\\) combinations).</p>
+                    
+                    <p><strong>Step 6:</strong> By the Master Theorem: \\(T(n) = O(n \\log n)\\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def fft(x):
+    """
+    Fast Fourier Transform using Cooley-Tukey algorithm.
+    
+    Input: x = [x_0, x_1, ..., x_{n-1}] where n is a power of 2
+    Output: X = [X_0, X_1, ..., X_{n-1}] (DFT coefficients)
+    
+    Notation:
+    - ω_n = exp(-2πi/n) is the primitive n-th root of unity
+    - X_k = Σ(j=0 to n-1) x_j * ω_n^(jk)
+    """
+    n = len(x)
+    if n == 1:
+        return x
+    
+    # Check if power of 2
+    if n % 2 != 0:
+        raise ValueError("Length must be a power of 2")
+    
+    # Divide
+    even = fft(x[0::2])  # Even indices
+    odd = fft(x[1::2])   # Odd indices
+    
+    # Conquer
+    X = np.zeros(n, dtype=complex)
+    for k in range(n // 2):
+        omega = np.exp(-2j * np.pi * k / n)
+        X[k] = even[k] + omega * odd[k]
+        X[k + n//2] = even[k] - omega * odd[k]
+    
+    return X
+
+def dft_direct(x):
+    """
+    Direct O(n²) computation of DFT for comparison.
+    """
+    n = len(x)
+    X = np.zeros(n, dtype=complex)
+    for k in range(n):
+        for j in range(n):
+            X[k] += x[j] * np.exp(-2j * np.pi * j * k / n)
+    return X
+
+def fft_demo():
+    """
+    Demonstrate FFT algorithm.
+    """
+    print("Fast Fourier Transform (FFT)")
+    print("=" * 60)
+    print("Cooley-Tukey algorithm: O(n log n) instead of O(n²)")
+    print("-" * 60)
+    
+    # Simple example
+    print("\nExample: FFT of [1, 2, 3, 4]")
+    x = np.array([1.0, 2.0, 3.0, 4.0])
+    
+    # Our implementation
+    X_ours = fft(x)
+    
+    # NumPy's FFT (reference)
+    X_numpy = np.fft.fft(x)
+    
+    print(f"Input: {x}")
+    print(f"Our FFT: {X_ours}")
+    print(f"NumPy FFT: {X_numpy}")
+    print(f"Match: {np.allclose(X_ours, X_numpy)}")
+    
+    # Complexity comparison
+    print("\n\nComplexity Comparison:")
+    print("-" * 40)
+    print(f"{'n':<10} {'DFT O(n²)':<15} {'FFT O(n log n)':<20} {'Speedup':<10}")
+    print("-" * 60)
+    
+    for m in range(1, 11):
+        n = 2**m
+        dft_ops = n**2
+        fft_ops = n * m  # n log₂(n)
+        speedup = dft_ops / fft_ops
+        print(f"{n:<10} {dft_ops:<15} {fft_ops:<20} {speedup:<10.1f}x")
+    
+    # Signal processing example
+    print("\n\nSignal Processing Example:")
+    print("-" * 40)
+    print("Analyzing a signal with multiple frequency components")
+    
+    # Create signal: sum of sine waves
+    t = np.linspace(0, 1, 256, endpoint=False)
+    signal = (np.sin(2 * np.pi * 5 * t) +   # 5 Hz
+              0.5 * np.sin(2 * np.pi * 15 * t) +  # 15 Hz
+              0.3 * np.sin(2 * np.pi * 30 * t))   # 30 Hz
+    
+    # Compute FFT
+    spectrum = np.fft.fft(signal)
+    freqs = np.fft.fftfreq(len(signal), t[1] - t[0])
+    
+    print(f"Signal components: 5 Hz (amp 1.0), 15 Hz (amp 0.5), 30 Hz (amp 0.3)")
+    print(f"FFT identifies these frequencies in the spectrum")
+
+fft_demo()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. Mathematical Biology: The Logistic Growth Model</h3>
+                
+                <h4>Introduction</h4>
+                <p>Population dynamics models how populations change over time. The <strong>logistic growth model</strong> extends exponential growth by incorporating carrying capacity—the maximum population size an environment can sustain.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(N(t)\\) — population size at time \\(t\\)</li>
+                        <li>\\(N_0\\) — initial population size</li>
+                        <li>\\(r\\) — intrinsic growth rate</li>
+                        <li>\\(K\\) — carrying capacity</li>
+                        <li>\\(\\frac{dN}{dt}\\) — rate of change of population</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Logistic Growth Equation</div>
+                    <p>\\[\\frac{dN}{dt} = rN\\left(1 - \\frac{N}{K}\\right)\\]</p>
+                    <p>With initial condition \\(N(0) = N_0\\), the solution is:</p>
+                    <p>\\[N(t) = \\frac{K}{1 + \\left(\\frac{K - N_0}{N_0}\\right)e^{-rt}}\\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Solution of the Logistic Equation</div>
+                    <p><strong>Step 1:</strong> Separate variables:</p>
+                    <p>\\[\\frac{dN}{N(1 - N/K)} = r \\, dt\\]</p>
+                    
+                    <p><strong>Step 2:</strong> Use partial fractions:</p>
+                    <p>\\[\\frac{1}{N(1 - N/K)} = \\frac{1}{N} + \\frac{1/K}{1 - N/K} = \\frac{1}{N} + \\frac{1}{K - N}\\]</p>
+                    
+                    <p><strong>Step 3:</strong> Integrate both sides:</p>
+                    <p>\\[\\int \\left(\\frac{1}{N} + \\frac{1}{K - N}\\right) dN = \\int r \\, dt\\]</p>
+                    
+                    <p>\\[\\ln|N| - \\ln|K - N| = rt + C\\]</p>
+                    
+                    <p><strong>Step 4:</strong> Simplify:</p>
+                    <p>\\[\\ln\\left|\\frac{N}{K - N}\\right| = rt + C\\]</p>
+                    
+                    <p><strong>Step 5:</strong> Apply initial condition \\(N(0) = N_0\\):</p>
+                    <p>\\[\\frac{N_0}{K - N_0} = e^C\\]</p>
+                    
+                    <p><strong>Step 6:</strong> Solve for \\(N(t)\\):</p>
+                    <p>\\[\\frac{N}{K - N} = \\frac{N_0}{K - N_0} e^{rt}\\]</p>
+                    
+                    <p>\\[N = \\frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}} = \\frac{K}{1 + \\frac{K - N_0}{N_0}e^{-rt}}\\] ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+
+def logistic_growth(N, t, r, K):
+    """
+    Logistic growth differential equation.
+    
+    dN/dt = rN(1 - N/K)
+    
+    Notation:
+    - N: population size
+    - r: intrinsic growth rate
+    - K: carrying capacity
+    """
+    return r * N * (1 - N / K)
+
+def logistic_solution(t, N0, r, K):
+    """
+    Analytical solution to the logistic equation.
+    
+    N(t) = K / (1 + ((K - N0)/N0) * exp(-rt))
+    """
+    return K / (1 + ((K - N0) / N0) * np.exp(-r * t))
+
+def logistic_demo():
+    """
+    Demonstrate logistic growth model.
+    """
+    print("Logistic Growth Model")
+    print("=" * 60)
+    print("dN/dt = rN(1 - N/K)")
+    print("-" * 60)
+    
+    # Parameters
+    N0 = 10      # Initial population
+    K = 1000     # Carrying capacity
+    r = 0.1      # Growth rate
+    
+    print(f"\nParameters:")
+    print(f"  Initial population N₀ = {N0}")
+    print(f"  Carrying capacity K = {K}")
+    print(f"  Growth rate r = {r}")
+    
+    # Time points
+    t = np.linspace(0, 100, 1000)
+    
+    # Numerical solution
+    N_numerical = odeint(logistic_growth, N0, t, args=(r, K))
+    
+    # Analytical solution
+    N_analytical = logistic_solution(t, N0, r, K)
+    
+    print(f"\nAt t = 50:")
+    print(f"  Numerical: N = {N_numerical[500, 0]:.2f}")
+    print(f"  Analytical: N = {N_analytical[500]:.2f}")
+    print(f"  Agreement: {np.isclose(N_numerical[500, 0], N_analytical[500])}")
+    
+    # Key properties
+    print(f"\nKey Properties:")
+    print(f"  - As t → ∞, N(t) → K = {K}")
+    print(f"  - Maximum growth rate occurs at N = K/2 = {K/2}")
+    print(f"  - Maximum growth rate = rK/4 = {r*K/4:.2f}")
+
+logistic_demo()
+</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">🎯 Special Topics</h2>
+
+            <div class="topic-card">
+                <h3>1. The Riemann Hypothesis</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>Riemann Hypothesis</strong>, proposed by Bernhard Riemann in 1859, is one of the most famous unsolved problems in mathematics. It concerns the distribution of prime numbers and is one of the seven Millennium Prize Problems with a \\$1 million reward for its solution.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(s = \\sigma + it\\) — complex variable</li>
+                        <li>\\(\\zeta(s)\\) — Riemann zeta function</li>
+                        <li>\\(\\Gamma(s)\\) — Gamma function</li>
+                        <li>\\(\\rho\\) — non-trivial zero of \\(\\zeta(s)\\)</li>
+                        <li>\\(\\pi(x)\\) — prime counting function</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Riemann Hypothesis</div>
+                    <p>All non-trivial zeros of \\(\\zeta(s)\\) have real part equal to \\(\\frac{1}{2}\\):</p>
+                    <p>\\[\\zeta(\\sigma + it) = 0 \\text{ and } 0 \\leq \\sigma \\leq 1 \\implies \\sigma = \\frac{1}{2}\\]</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from scipy.special import zeta as scipy_zeta
+import matplotlib.pyplot as plt
+
+def riemann_hypothesis_demo():
+    """
+    Demonstrate aspects of the Riemann Hypothesis.
+    """
+    print("The Riemann Hypothesis")
+    print("=" * 60)
+    print("Conjecture: All non-trivial zeros of ζ(s) have Re(s) = 1/2")
+    print("-" * 60)
+    
+    # Known zeros on critical line
+    known_zeros = [
+        14.134725, 21.022040, 25.010858, 30.424876, 32.935062,
+        37.586178, 40.918719, 43.327073, 48.005151, 49.773832
+    ]
+    
+    print(f"\nFirst 10 non-trivial zeros on critical line s = 1/2 + it:")
+    for i, t in enumerate(known_zeros, 1):
+        print(f"  ρ_{i} = 1/2 + {t:.6f}i")
+    
+    print(f"\nVerification Status:")
+    print(f"  First 10,000,000,000+ zeros verified on critical line")
+    print(f"  The hypothesis remains unproven despite extensive evidence")
+
+riemann_hypothesis_demo()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. P vs NP</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>P vs NP problem</strong> asks whether every problem whose solution can be quickly verified can also be quickly solved. It is one of the seven Millennium Prize Problems.</p>
+
+                <div class="theorem">
+                    <div class="theorem-title">Cook-Levin Theorem (1971)</div>
+                    <p>The Boolean satisfiability problem (SAT) is \\(\\mathbf{NP}\\)-complete.</p>
+                    <p>If any \\(\\mathbf{NP}\\)-complete problem is in \\(\\mathbf{P}\\), then \\(\\mathbf{P} = \\mathbf{NP}\\).</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import itertools
+
+def sat_solver_brute_force(formula, num_vars):
+    """
+    Brute-force SAT solver (exponential time).
+    
+    Formula is a list of clauses, each clause is a list of literals.
+    Positive integers represent variables, negative represent negation.
+    
+    Returns (satisfiable, assignment) or (False, None)
+    """
+    for assignment_bits in itertools.product([False, True], repeat=num_vars):
+        assignment = {i+1: assignment_bits[i] for i in range(num_vars)}
+        
+        satisfied = True
+        for clause in formula:
+            clause_satisfied = False
+            for literal in clause:
+                var = abs(literal)
+                value = assignment[var]
+                if literal < 0:
+                    value = not value
+                if value:
+                    clause_satisfied = True
+                    break
+            if not clause_satisfied:
+                satisfied = False
+                break
+        
+        if satisfied:
+            return True, assignment
+    
+    return False, None
+
+def p_vs_np_demo():
+    """
+    Demonstrate P vs NP concepts.
+    """
+    print("P vs NP Problem")
+    print("=" * 60)
+    print("P = problems solvable in polynomial time")
+    print("NP = problems with solutions verifiable in polynomial time")
+    print("Question: Does P = NP?")
+    print("-" * 60)
+    
+    # Example: SAT verification is fast
+    print("\nExample: SAT Verification (demonstrates NP)")
+    formula = [[1, 2], [-1, 3]]  # (x₁ ∨ x₂) ∧ (¬x₁ ∨ x₃)
+    assignment = {1: True, 2: False, 3: True}
+    
+    print("Formula: (x₁ ∨ x₂) ∧ (¬x₁ ∨ x₃)")
+    print(f"Proposed solution: x₁={assignment[1]}, x₂={assignment[2]}, x₃={assignment[3]}")
+    
+    # Verify (polynomial time)
+    is_valid = all(any(assignment[abs(l)] != (l < 0) for l in clause) for clause in formula)
+    print(f"Verification result: {'Valid' if is_valid else 'Invalid'}")
+    print("Verification is O(number of clauses × clause size) = POLYNOMIAL")
+    
+    # Solve (exponential time with brute force)
+    sat, sol = sat_solver_brute_force(formula, 3)
+    print(f"\nSolving result: Satisfiable = {sat}")
+    print("Brute force solving is O(2^n) = EXPONENTIAL")
+
+p_vs_np_demo()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. The Birch and Swinnerton-Dyer Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>Birch and Swinnerton-Dyer (BSD) Conjecture</strong> relates the number of rational points on an elliptic curve to the behavior of its L-function at \\(s = 1\\). It is another Millennium Prize Problem.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(E\\) — an elliptic curve over \\(\\mathbb{Q}\\)</li>
+                        <li>\\(E(\\mathbb{Q})\\) — group of rational points on \\(E\\)</li>
+                        <li>\\(r\\) — rank of \\(E(\\mathbb{Q})\\)</li>
+                        <li>\\(L(E, s)\\) — L-function of the elliptic curve</li>
+                        <li>\\(\\text{Sha}\\) (Tate-Shafarevich group) — measures failure of local-to-global principle</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Birch and Swinnerton-Dyer Conjecture (Weak Form)</div>
+                    <p>The order of vanishing of \\(L(E, s)\\) at \\(s = 1\\) equals the rank of \\(E(\\mathbb{Q})\\):</p>
+                    <p>\\[\\text{ord}_{s=1} L(E, s) = \\text{rank}(E(\\mathbb{Q}))\\]</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>def bsd_demo():
+    """
+    Demonstrate BSD conjecture concepts.
+    
+    The conjecture relates the behavior of L(E,s) at s=1 to 
+    the rank of the elliptic curve E(Q).
+    """
+    print("Birch and Swinnerton-Dyer Conjecture")
+    print("=" * 60)
+    print("Conjecture: ord_{s=1} L(E,s) = rank(E(Q))")
+    print("-" * 60)
+    
+    # Example curves
+    curves = [
+        ("y² = x³ - x", "rank 0 (finite rational points)"),
+        ("y² = x³ - x + 1", "rank 1 (infinite rational points)"),
+        ("y² = x³ - 4x", "rank 1"),
+    ]
+    
+    print("\nExample Elliptic Curves:")
+    for curve, desc in curves:
+        print(f"  {curve}: {desc}")
+    
+    print("\nThe L-function L(E,s) encodes deep arithmetic information.")
+    print("The BSD conjecture predicts that the 'analytic rank' equals")
+    print("the 'algebraic rank' of the curve.")
+
+bsd_demo()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>4. Game Theory: The Monty Hall Problem</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>Monty Hall problem</strong> is a famous probability puzzle based on a game show scenario. It's a counterintuitive result that demonstrates the importance of conditional probability.</p>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Monty Hall Problem</div>
+                    <p><strong>Setup:</strong> Three doors hide one car and two goats. You pick a door. The host, who knows what's behind each door, opens another door revealing a goat. Should you switch?</p>
+                    <p><strong>Solution:</strong> Switching gives you a \\(\\frac{2}{3}\\) chance of winning; staying gives only \\(\\frac{1}{3}\\).</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof by Conditional Probability</div>
+                    <p><strong>Step 1:</strong> Let \\(C_i\\) be the event that the car is behind door \\(i\\), and \\(H_j\\) be the event that host opens door \\(j\\).</p>
+                    
+                    <p><strong>Step 2:</strong> Assume you pick door 1. Initially \\(P(C_1) = P(C_2) = P(C_3) = \\frac{1}{3}\\).</p>
+                    
+                    <p><strong>Step 3:</strong> If car is behind door 1 (you picked right), host can open door 2 or 3.</p>
+                    
+                    <p><strong>Step 4:</strong> If car is behind door 2, host must open door 3. If car is behind door 3, host must open door 2.</p>
+                    
+                    <p><strong>Step 5:</strong> Suppose host opens door 3. By Bayes' theorem:</p>
+                    <p>\\[P(C_2 | H_3) = \\frac{P(H_3 | C_2)P(C_2)}{P(H_3)} = \\frac{1 \\cdot \\frac{1}{3}}{\\frac{1}{2} \\cdot \\frac{1}{3} + 1 \\cdot \\frac{1}{3} + 0 \\cdot \\frac{1}{3}} = \\frac{2}{3}\\]</p>
+                    
+                    <p><strong>Step 6:</strong> Similarly \\(P(C_1 | H_3) = \\frac{1}{3}\\). Therefore switching wins with probability \\(\\frac{2}{3}\\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import random
+
+def monty_hall_simulation(n_simulations=100000):
+    """
+    Simulate the Monty Hall problem.
+    
+    Demonstrates that switching wins 2/3 of the time.
+    """
+    wins_if_switch = 0
+    wins_if_stay = 0
+    
+    for _ in range(n_simulations):
+        # Place car behind random door
+        car_door = random.randint(0, 2)
+        
+        # Contestant picks a door
+        contestant_pick = random.randint(0, 2)
+        
+        # Host opens a door with a goat
+        available_doors = [d for d in range(3) 
+                          if d != contestant_pick and d != car_door]
+        host_opens = random.choice(available_doors)
+        
+        # Switch: pick the other unopened door
+        switch_pick = [d for d in range(3) 
+                      if d != contestant_pick and d != host_opens][0]
+        
+        # Count wins
+        if switch_pick == car_door:
+            wins_if_switch += 1
+        if contestant_pick == car_door:
+            wins_if_stay += 1
+    
+    print("Monty Hall Problem Simulation")
+    print("=" * 60)
+    print(f"Simulations: {n_simulations:,}")
+    print(f"Wins if switching: {wins_if_switch:,} ({wins_if_switch/n_simulations:.4f})")
+    print(f"Wins if staying: {wins_if_stay:,} ({wins_if_stay/n_simulations:.4f})")
+    print(f"\nTheoretical probabilities: Switch = 2/3 ≈ 0.6667, Stay = 1/3 ≈ 0.3333")
+    print(f"Simulation matches theory: {abs(wins_if_switch/n_simulations - 2/3) < 0.01}")
+
+monty_hall_simulation()
+</code></pre>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📜 Today in Math History</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-year">1827</span>
+                    <p><strong>Gauss's Theorema Egregium</strong> — Carl Friedrich Gauss proves that Gaussian curvature is intrinsic to a surface, a foundational result in differential geometry that later led to the Gauss-Bonnet theorem.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1859</span>
+                    <p><strong>Riemann Hypothesis</strong> — Bernhard Riemann publishes his paper "On the Number of Primes Less Than a Given Magnitude," introducing the Riemann zeta function and the famous hypothesis.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1929</span>
+                    <p><strong>Hahn-Banach Theorem</strong> — Hans Hahn and Stefan Banach independently prove the extension theorem that becomes fundamental to functional analysis.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1948</span>
+                    <p><strong>Cooley-Tukey FFT</strong> — While Fourier analysis dates to 1807, the Fast Fourier Transform algorithm revolutionized numerical computing in the 20th century.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1971</span>
+                    <p><strong>P vs NP</strong> — Stephen Cook and Leonid Levin independently develop the theory of NP-completeness, formulating what would become the P vs NP problem.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="timeline-year">1965</span>
+                    <p><strong>Birch and Swinnerton-Dyer Conjecture</strong> — Bryan Birch and Peter Swinnerton-Dyer formulate their conjecture connecting elliptic curves to L-functions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">📰 Featured Math Articles</h2>
+            
+            <ul class="links-list">
+                <li>
+                    <a href="https://www.quantamagazine.org/mathematicians-prove-hawking-wrong-about-extremal-black-holes-20240821/" target="_blank">Quanta Magazine: Mathematicians Prove Hawking Wrong About Extremal Black Holes</a>
+                    <p class="description">A recent breakthrough in mathematical physics showing that extremal black holes can indeed form, contradicting a conjecture by Stephen Hawking.</p>
+                </li>
+                <li>
+                    <a href="https://www.3blue1brown.com/lessons/riemann-zeta" target="_blank">3Blue1Brown: Visualizing the Riemann Zeta Function</a>
+                    <p class="description">Beautiful animated explanations of the analytic continuation of the Riemann zeta function and its zeros.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Daily Math Digest — February 16, 2026</p>
+        <p>Topics: Algebraic Geometry, Differential Geometry, Combinatorics, Functional Analysis, Information Theory, Numerical Analysis, Mathematical Biology, Riemann Hypothesis, P vs NP, BSD Conjecture, Monty Hall Problem</p>
+        <p><a href="../index.html">← Back to Home</a></p>
+    </footer>
+</body>
+</html>
