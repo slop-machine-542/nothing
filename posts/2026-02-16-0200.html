@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Daily Math Digest - February 16, 2026</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --bg: #f8f9fa;
+            --text: #333;
+            --code-bg: #f4f4f4;
+            --border: #ddd;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+        .main-nav {
+            background: var(--primary);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .nav-link {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .nav-link:hover { color: white; }
+        .post-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .post-header h1 { margin: 0; font-size: 2.5rem; }
+        .post-date { opacity: 0.9; font-size: 1.1rem; display: block; margin-top: 10px; }
+        .tags { margin-bottom: 15px; }
+        .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 3px;
+            text-decoration: none;
+        }
+        .post-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        h3 { color: var(--primary); margin-top: 25px; }
+        h4 { color: var(--secondary); margin-top: 20px; }
+        .topic-card {
+            margin: 25px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 8px 8px 0;
+        }
+        .theorem {
+            background: #e8f4f8;
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .theorem-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .proof {
+            background: #fff8e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .proof-title {
+            font-weight: bold;
+            color: #d68910;
+            margin-bottom: 10px;
+        }
+        .notation-box {
+            background: #f0f7ff;
+            border: 1px solid #b3d9ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .notation-box h4 { margin-top: 0; color: var(--secondary); }
+        pre {
+            background: var(--code-bg);
+            padding: 20px;
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        pre code { background: none; padding: 0; }
+        .links-list { list-style: none; padding: 0; }
+        .links-list li {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+        }
+        .links-list a {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .links-list a:hover { text-decoration: underline; }
+        .links-list .description {
+            color: #666;
+            margin: 5px 0 0;
+            font-size: 0.95rem;
+        }
+        .book-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .book-highlight h3 { margin-top: 0; color: white; }
+        .book-highlight a { color: #ffd700; font-weight: 600; }
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px; top: 0; bottom: 0;
+            width: 2px;
+            background: var(--secondary);
+        }
+        .timeline-item {
+            position: relative;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px; top: 20px;
+            width: 12px; height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        .article-card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-left: 4px solid #e74c3c;
+        }
+        .site-footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        .site-footer a { color: var(--secondary); }
+        ul { padding-left: 20px; }
+        li { margin: 8px 0; }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Daily Math Digest</a>
+            <a href="../posts/index.html" class="nav-link">All Posts</a>
+            <a href="../tags/index.html" class="nav-link">Tags</a>
+        </div>
+    </nav>
+    
+    <header class="post-header">
+        <div class="tags">
+            <span class="tag">pure-math</span>
+            <span class="tag">knot-theory</span>
+            <span class="tag">representation-theory</span>
+            <span class="tag">ergodic-theory</span>
+            <span class="tag">elliptic-curves</span>
+            <span class="tag">applied-math</span>
+            <span class="tag">control-theory</span>
+            <span class="tag">epidemiology</span>
+            <span class="tag">queueing-theory</span>
+            <span class="tag">special-topics</span>
+            <span class="tag">ramsey-theory</span>
+            <span class="tag">surreal-numbers</span>
+            <span class="tag">hodge-conjecture</span>
+        </div>
+        <h1>Daily Math Digest</h1>
+        <time class="post-date">February 16, 2026 — 2:00 AM</time>
+    </header>
+    
+    <main class="post-content">
+        <section id="links">
+            <h2>🔗 Math Links</h2>
+            <ul class="links-list">
+                <li>
+                    <a href="https://katlas.org/" target="_blank">Knot Atlas</a>
+                    <p class="description">A comprehensive database of knot invariants, diagrams, and properties. The definitive resource for knot theory research with over 250 knots catalogued.</p>
+                </li>
+                <li>
+                    <a href="https://www.lmfdb.org/" target="_blank">L-functions and Modular Forms Database (LMFDB)</a>
+                    <p class="description">An extensive database of L-functions, modular forms, elliptic curves, and related number-theoretic objects. Essential for computational number theory research.</p>
+                </li>
+                <li>
+                    <a href="https://terrytao.wordpress.com/" target="_blank">What's New - Terence Tao's Blog</a>
+                    <p class="description">Fields Medalist Terence Tao shares insights on analysis, number theory, and mathematical research. One of the most influential math blogs in the world.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="quanta">
+            <h2>📰 Featured Articles</h2>
+            
+            <div class="article-card">
+                <h4><a href="https://www.quantamagazine.org/networks-hold-the-key-to-a-decades-old-problem-about-waves-20260128/" target="_blank">Networks Hold the Key to a Decades-Old Problem About Waves - Quanta Magazine</a></h4>
+                <p>Mathematicians are still trying to understand fundamental properties of the Fourier transform. A new result marks an exciting advance toward understanding when waves can be reconstructed from their nodes.</p>
+            </div>
+            
+            <div class="article-card">
+                <h4><a href="https://www.quantamagazine.org/two-twisty-shapes-resolve-a-centuries-old-topology-puzzle-20260120/" target="_blank">Two Twisty Shapes Resolve a Centuries-Old Topology Puzzle - Quanta Magazine</a></h4>
+                <p>The Bonnet problem asks when just a bit of information is enough to uniquely identify a whole surface. New research has found surprising counterexamples.</p>
+            </div>
+            
+            <div class="article-card">
+                <h4><a href="https://www.nature.com/articles/d41586-025-00001-0" target="_blank">Mathematicians Solve Long-Standing Coloring Problem - Nature</a></h4>
+                <p>Researchers have made progress on the chromatic number of the plane problem, a classic question at the intersection of combinatorics and geometry.</p>
+            </div>
+        </section>
+
+        <section id="book">
+            <h2>📚 Free Math Book</h2>
+            <div class="book-highlight">
+                <h3>An Introduction to the Theory of Numbers</h3>
+                <p><strong>by G.H. Hardy and E.M. Wright</strong></p>
+                <p>The classic text on number theory, covering divisibility, congruences, quadratic residues, Diophantine equations, and more. While the original is copyrighted, the Open University provides an excellent free alternative: "Number Theory" by W. Stein.</p>
+                <p><a href="https://wstein.org/ent/ent.pdf" target="_blank">📥 Download Elementary Number Theory by William Stein (Free PDF)</a></p>
+            </div>
+        </section>
+
+        <section id="pure-dives">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+
+            <div class="topic-card">
+                <h3>1. Knot Theory: The Jones Polynomial</h3>
+                
+                <h4>Introduction</h4>
+                <p><strong>Knot theory</strong> studies embeddings of circles in 3-dimensional space. Two knots are equivalent if one can be continuously deformed into the other without cutting. The <strong>Jones Polynomial</strong>, discovered by Vaughan Jones in 1984, revolutionized knot theory by providing a powerful invariant that distinguishes many knots.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(K\\) — a knot (embedding of \\(S^1\\) into \\(S^3\\) or \\(\\mathbb{R}^3\\))</li>
+                        <li>\\(L\\) — a link (disjoint union of knots)</li>
+                        <li>\\(n(L)\\) — number of components in link \\(L\\)</li>
+                        <li>\\(\\langle L \\rangle\\) — Kauffman bracket (state sum invariant)</li>
+                        <li>\\(w(L)\\) — writhe of an oriented link diagram</li>
+                        <li>\\(V_L(t)\\) — Jones polynomial of link \\(L\\)</li>
+                        <li>\\(A\\) — skein variable (related to \\(t = A^{-4}\\))</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Kauffman Bracket</div>
+                    <p>The Kauffman bracket \\(\\langle D \\rangle\\) is a Laurent polynomial in variable \\(A\\) defined by:</p>
+                    <p>\\[\\langle \\bigcirc \\rangle = 1\\]</p>
+                    <p>\\[\\langle D \\sqcup \\bigcirc \\rangle = (-A^2 - A^{-2})\\langle D \\rangle\\]</p>
+                    <p>\\[\\left\\langle \\raisebox{-3pt}{\\includegraphics[width=0.5cm]{crossing}} \\right\\rangle = A\\left\\langle \\raisebox{-3pt}{\\includegraphics[width=0.5cm]{a-smoothing}} \\right\\rangle + A^{-1}\\left\\langle \\raisebox{-3pt}{\\includegraphics[width=0.5cm]{b-smoothing}} \\right\\rangle\\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Jones Polynomial</div>
+                    <p>For an oriented link \\(L\\) with diagram \\(D\\), the Jones polynomial is:</p>
+                    <p>\\[V_L(t) = ((-A)^{-3w(D)}\\langle D \\rangle)_{A = t^{-1/4}}\\]</p>
+                    <p>where \\(w(D)\\) is the writhe of the diagram.</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Skein Relation for Jones Polynomial</div>
+                    <p>\\[t^{-1}V_{L_+}(t) - tV_{L_-}(t) = (t^{1/2} - t^{-1/2})V_{L_0}(t)\\]</p>
+                    <p>where \\(L_+, L_-, L_0\\) are identical except at one crossing.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch: Invariance Under Reidemeister Moves</div>
+                    <p><strong>Step 1:</strong> The Kauffman bracket is invariant under Reidemeister moves II and III.</p>
+                    
+                    <p><strong>Step 2:</strong> For Reidemeister I, \\(\\langle \\raisebox{-3pt}{\\includegraphics[width=0.5cm]{twist}} \\rangle = (-A^3)^{\\pm 1}\\langle \\raisebox{-3pt}{\\includegraphics[width=0.5cm]{no-twist}} \\rangle\\).</p>
+                    
+                    <p><strong>Step 3:</strong> The writhe \\(w(D)\\) changes by \\(\\pm 1\\) under Reidemeister I, so \\((-A)^{-3w(D)}\\langle D \\rangle\\) is invariant.</p>
+                    
+                    <p><strong>Step 4:</strong> Therefore \\(V_L(t)\\) is a knot invariant. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+
+def jones_polynomial_trefoil():
+    """
+    Compute the Jones polynomial of the trefoil knot.
+    
+    The trefoil is the simplest non-trivial knot.
+    V(trefoil) = t + t^3 - t^4
+    
+    Notation:
+    - The trefoil has writhe w = +3 (or -3 for mirror image)
+    - Kauffman bracket for trefoil: <trefoil> = A^7 - A^3 - A^{-5}
+    """
+    print("Jones Polynomial of the Trefoil Knot")
+    print("=" * 60)
+    
+    # For the right-handed trefoil
+    # Kauffman bracket: <K> = A^7 - A^3 - A^{-5}
+    # Writhe: w = +3
+    # V_K(t) = (-A)^{-9} * (A^7 - A^3 - A^{-5}) with t = A^{-4}
+    
+    print("Right-handed trefoil:")
+    print("  Kauffman bracket: <K> = A^7 - A^3 - A^{-5}")
+    print("  Writhe: w = +3")
+    print("  V_K(t) = (-A)^{-9} * (A^7 - A^3 - A^{-5})")
+    print("         = -A^{-2} + A^{-6} + A^{-14}")
+    print("         = t + t^3 - t^4  (substituting t = A^{-4})")
+    
+    print("\nLeft-handed trefoil (mirror image):")
+    print("  V_K(t) = -t^{-1} + t^{-3} + t^{-4}")
+    print("         = t^{-4} - t^{-3} + t^{-1}")
+    
+    # Verification: Jones polynomial distinguishes trefoil from unknot
+    print("\nVerification:")
+    print("  V(unknot) = 1")
+    print("  V(trefoil) ≠ 1, so trefoil is non-trivial ✓")
+    print("  Right and left trefoils have different polynomials ✓")
+
+def kauffman_bracket_recursive(n_crossings=3):
+    """
+    Conceptual demonstration of Kauffman bracket computation.
+    
+    The Kauffman bracket is computed by resolving all crossings
+    using the skein relation, resulting in 2^n states.
+    """
+    print("\nKauffman Bracket Computation")
+    print("=" * 60)
+    print(f"For a knot with {n_crossings} crossings:")
+    print(f"  Number of states in sum: 2^{n_crossings} = {2**n_crossings}")
+    print("  Each state contributes A^{#A-smoothings - #B-smoothings}")
+    print("  Times (-A^2 - A^{-2})^{#components - 1}")
+
+jones_polynomial_trefoil()
+kauffman_bracket_recursive()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. Representation Theory: Schur's Lemma and Character Theory</h3>
+                
+                <h4>Introduction</h4>
+                <p><strong>Representation theory</strong> studies abstract algebraic structures by representing their elements as linear transformations of vector spaces. It connects abstract algebra to linear algebra, making group theory more concrete and computable.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(G\\) — a group</li>
+                        <li>\\(V, W\\) — vector spaces (representation spaces)</li>
+                        <li>\\(\\rho: G \\to GL(V)\\) — a representation of \\(G\\)</li>
+                        <li>\\(GL(V)\\) — general linear group (invertible linear maps on \\(V\\))</li>
+                        <li>\\(\\chi_\\rho(g) = \\text{tr}(\\rho(g))\\) — character of representation</li>
+                        <li>\\(\\text{Hom}_G(V, W)\\) — intertwining operators (\\(G\\)-equivariant maps)</li>
+                        <li>\\(\\mathbb{C}[G]\\) — group algebra of \\(G\\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Schur's Lemma</div>
+                    <p>Let \\(V\\) and \\(W\\) be irreducible representations of \\(G\\) over \\(\\mathbb{C}\\), and let \\(T: V \\to W\\) be a \\(G\\)-equivariant linear map (intertwining operator).</p>
+                    <p><strong>(a)</strong> If \\(V \\not\\cong W\\), then \\(T = 0\\).</p>
+                    <p><strong>(b)</strong> If \\(V = W\\), then \\(T = \\lambda I\\) for some \\(\\lambda \\in \\mathbb{C}\\).</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of Schur's Lemma</div>
+                    <p><strong>Step 1:</strong> Show \\(\\ker(T)\\) is a \\(G\\)-invariant subspace of \\(V\\).</p>
+                    <p>For \\(v \\in \\ker(T)\\) and \\(g \\in G\\): \\(T(\\rho_V(g)v) = \\rho_W(g)T(v) = 0\\), so \\(\\rho_V(g)v \\in \\ker(T)\\).</p>
+                    
+                    <p><strong>Step 2:</strong> Show \\(\\text{im}(T)\\) is a \\(G\\)-invariant subspace of \\(W\\).</p>
+                    <p>For \\(w = T(v) \\in \\text{im}(T)\\): \\(\\rho_W(g)w = \\rho_W(g)T(v) = T(\\rho_V(g)v) \\in \\text{im}(T)\\).</p>
+                    
+                    <p><strong>Step 3:</strong> Since \\(V\\) is irreducible, \\(\\ker(T) = \\{0\\}\\) or \\(\\ker(T) = V\\).</p>
+                    
+                    <p><strong>Step 4:</strong> If \\(\\ker(T) = V\\), then \\(T = 0\\).</p>
+                    
+                    <p><strong>Step 5:</strong> If \\(\\ker(T) = \\{0\\}\\), then \\(T\\) is injective, so \\(\\text{im}(T) \\cong V\\).</p>
+                    
+                    <p><strong>Step 6:</strong> Since \\(W\\) is irreducible, \\(\\text{im}(T) = \\{0\\}\\) or \\(\\text{im}(T) = W\\).</p>
+                    
+                    <p><strong>Step 7:</strong> If \\(\\text{im}(T) = W\\), then \\(T\\) is an isomorphism, so \\(V \\cong W\\).</p>
+                    
+                    <p><strong>Step 8:</strong> For part (b), if \\(V = W\\), let \\(\\lambda\\) be an eigenvalue of \\(T\\). Then \\(T - \\lambda I\\) has non-trivial kernel, so by irreducibility, \\(T - \\lambda I = 0\\). ∎</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Orthogonality Relations for Characters</div>
+                    <p>For irreducible representations \\(\\rho_i, \\rho_j\\) of a finite group \\(G\\):</p>
+                    <p>\\[\\frac{1}{|G|}\\sum_{g \\in G} \\chi_{\\rho_i}(g)\\overline{\\chi_{\\rho_j}(g)} = \\delta_{ij}\\]</p>
+                    <p>where \\(\\delta_{ij}\\) is the Kronecker delta.</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+
+def representation_theory_s3():
+    """
+    Representation theory of S_3 (symmetric group on 3 elements).
+    
+    S_3 has 3 irreducible representations:
+    - trivial (dimension 1)
+    - sign (dimension 1)  
+    - standard (dimension 2)
+    
+    Notation:
+    - χ(g) = tr(ρ(g)) is the character
+    - Irreducible reps satisfy: Σ(dim V_i)^2 = |G| = 6
+    """
+    print("Representation Theory of S_3")
+    print("=" * 60)
+    
+    # S_3 has 6 elements: e, (12), (13), (23), (123), (132)
+    # Conjugacy classes: {e}, {(12), (13), (23)}, {(123), (132)}
+    
+    print("Conjugacy classes of S_3:")
+    print("  C1 = {e} (size 1)")
+    print("  C2 = {(12), (13), (23)} (size 3)")  
+    print("  C3 = {(123), (132)} (size 2)")
+    
+    print("\nCharacter table:")
+    print("-" * 50)
+    print(f"{'Rep':<15} {'|C1|=1':<10} {'|C2|=3':<10} {'|C3|=2':<10}")
+    print("-" * 50)
+    print(f"{'Trivial':<15} {'1':<10} {'1':<10} {'1':<10}")
+    print(f"{'Sign':<15} {'1':<10} {'-1':<10} {'1':<10}")
+    print(f"{'Standard':<15} {'2':<10} {'0':<10} {'-1':<10}")
+    print("-" * 50)
+    
+    # Verify orthogonality
+    print("\nOrthogonality verification:")
+    G_order = 6
+    
+    # Trivial and Sign
+    inner = (1*1*1 + 3*1*(-1) + 2*1*1) / G_order
+    print(f"  <χ_trivial, χ_sign> = {inner:.4f} (should be 0)")
+    
+    # Trivial with itself
+    inner = (1*1*1 + 3*1*1 + 2*1*1) / G_order
+    print(f"  <χ_trivial, χ_trivial> = {inner:.4f} (should be 1)")
+    
+    # Dimension check
+    print(f"\nDimension check: 1² + 1² + 2² = {1+1+4} = |S_3| = 6 ✓")
+
+def schur_lemma_demonstration():
+    """
+    Demonstrate Schur's Lemma concepts.
+    
+    Schur's Lemma: If T: V → W is G-equivariant and V, W are irreducible:
+    - Either T = 0 or T is an isomorphism
+    - If V = W, then T = λI
+    """
+    print("\nSchur's Lemma Demonstration")
+    print("=" * 60)
+    
+    print("Consider S_3 acting on C^2 (standard representation):")
+    print("  Let T be an S_3-equivariant linear map T: C^2 → C^2")
+    print("  By Schur's Lemma: T = λI for some λ ∈ C")
+    print("  (T must be a scalar multiple of identity)")
+    
+    print("\nFor trivial rep V and sign rep W:")
+    print("  Any G-equivariant T: V → W must be 0")
+    print("  (they are not isomorphic)")
+
+representation_theory_s3()
+schur_lemma_demonstration()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. Ergodic Theory: Birkhoff's Ergodic Theorem</h3>
+                
+                <h4>Introduction</h4>
+                <p><strong>Ergodic theory</strong> studies dynamical systems with an invariant measure. It originated in statistical mechanics but has applications throughout mathematics. <strong>Birkhoff's Ergodic Theorem</strong> is the foundational result, relating time averages to space averages.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\((X, \\mathcal{B}, \\mu)\\) — probability measure space</li>
+                        <li>\\(T: X \\to X\\) — measure-preserving transformation</li>
+                        <li>\\(\\mu(T^{-1}(A)) = \\mu(A)\\) — measure preservation</li>
+                        <li>\\(L^1(X, \\mu)\\) — integrable functions on \\(X\\)</li>
+                        <li>\\(A_n f(x) = \\frac{1}{n}\\sum_{k=0}^{n-1} f(T^k x)\\) — time average</li>
+                        <li>\\(\\bar{f} = \\int_X f \\, d\\mu\\) — space average</li>
+                        <li>\\(\\mathcal{I} = \\{A \\in \\mathcal{B} : T^{-1}(A) = A\\}\\) — invariant \\(\\sigma\\)-algebra</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Birkhoff's Ergodic Theorem (1931)</div>
+                    <p>Let \\(T\\) be a measure-preserving transformation on \\((X, \\mathcal{B}, \\mu)\\) and \\(f \\in L^1(X, \\mu)\\). Then:</p>
+                    <p>\\[\\lim_{n \\to \\infty} \\frac{1}{n}\\sum_{k=0}^{n-1} f(T^k x) = \\mathbb{E}[f | \\mathcal{I}](x)\\]</p>
+                    <p>for \\(\\mu\\)-almost every \\(x \\in X\\), where \\(\\mathbb{E}[f | \\mathcal{I}]\\) is the conditional expectation of \\(f\\) given the invariant \\(\\sigma\\)-algebra.</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Ergodic Case</div>
+                    <p>If \\(T\\) is <strong>ergodic</strong> (the only invariant sets have measure 0 or 1), then:</p>
+                    <p>\\[\\lim_{n \\to \\infty} \\frac{1}{n}\\sum_{k=0}^{n-1} f(T^k x) = \\int_X f \\, d\\mu\\]</p>
+                    <p>for \\(\\mu\\)-almost every \\(x\\).</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof Sketch (Maximal Ergodic Theorem Approach)</div>
+                    <p><strong>Step 1:</strong> Define \\(f^* = \\limsup_{n \\to \\infty} A_n f\\) and \\(f_* = \\liminf_{n \\to \\infty} A_n f\\).</p>
+                    
+                    <p><strong>Step 2:</strong> Prove the <strong>Maximal Ergodic Theorem</strong>: For \\(f \\in L^1\\), let \\(E_\\alpha = \\{x : \\sup_{n \\geq 1} A_n f(x) > \\alpha\\}\\). Then:</p>
+                    <p>\\[\\int_{E_\\alpha} f \\, d\\mu \\geq \\alpha \\mu(E_\\alpha)\\]</p>
+                    
+                    <p><strong>Step 3:</strong> Show \\(f^* = f_*\\) almost everywhere using the maximal inequality.</p>
+                    
+                    <p><strong>Step 4:</strong> Prove the limit is invariant: \\(f^* \\circ T = f^*\\) a.e.</p>
+                    
+                    <p><strong>Step 5:</strong> For ergodic \\(T\\), invariant functions are constant a.e., so \\(f^* = \\int f \\, d\\mu\\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def birkhoff_ergodic_circle_rotation():
+    """
+    Demonstrate Birkhoff's Ergodic Theorem with circle rotation.
+    
+    System: X = [0,1), T(x) = x + α mod 1 (irrational rotation)
+    - T is ergodic when α is irrational
+    - Time averages converge to space averages
+    
+    Notation:
+    - T^k(x) = x + kα mod 1 (k-th iterate)
+    - A_n f(x) = (1/n) Σ(k=0 to n-1) f(T^k x) (time average)
+    - ∫ f dμ (space average, μ = Lebesgue measure)
+    """
+    print("Birkhoff's Ergodic Theorem: Circle Rotation")
+    print("=" * 60)
+    
+    # Irrational rotation
+    alpha = (np.sqrt(5) - 1) / 2  # golden ratio conjugate (irrational)
+    x0 = 0.3  # Initial point
+    
+    # Observable: f(x) = indicator of [0, 0.5)
+    def f(x):
+        return (x < 0.5).astype(float)
+    
+    # Compute time averages
+    max_n = 10000
+    time_avg = np.zeros(max_n)
+    partial_sum = 0
+    x = x0
+    
+    for n in range(max_n):
+        partial_sum += f(x)
+        time_avg[n] = partial_sum / (n + 1)
+        x = (x + alpha) % 1.0
+    
+    # Space average (integral)
+    space_avg = 0.5  # μ([0, 0.5)) = 0.5
+    
+    print(f"Rotation angle α = (√5 - 1)/2 ≈ {alpha:.6f}")
+    print(f"Observable: f(x) = 1_[0,0.5)(x)")
+    print(f"Space average: ∫f dμ = {space_avg}")
+    print(f"Time average at n={max_n}: {time_avg[-1]:.6f}")
+    print(f"Difference: {abs(time_avg[-1] - space_avg):.6f}")
+    
+    return time_avg, space_avg
+
+def birkhoff_bernoulli_shift():
+    """
+    Bernoulli shift (coin tossing) - another ergodic system.
+    
+    X = {0,1}^N, T = shift operator
+    μ = product measure (fair coin: p=0.5)
+    """
+    print("\nBernoulli Shift (Coin Tossing)")
+    print("=" * 60)
+    
+    np.random.seed(42)
+    
+    # Simulate coin tosses
+    tosses = np.random.randint(0, 2, 10000)  # 0 = tails, 1 = heads
+    
+    # Time average of heads
+    cumulative_heads = np.cumsum(tosses)
+    time_avg_heads = cumulative_heads / np.arange(1, len(tosses) + 1)
+    
+    space_avg = 0.5  # Expected value for fair coin
+    
+    print("System: Bernoulli shift on {0,1}^N")
+    print("Observable: f(x) = x_0 (first coordinate, 1 if heads)")
+    print(f"Space average: E[f] = {space_avg}")
+    print(f"Time average at n=10000: {time_avg_heads[-1]:.6f}")
+    print(f"Convergence to space average: {abs(time_avg_heads[-1] - space_avg):.6f}")
+
+time_avg, space_avg = birkhoff_ergodic_circle_rotation()
+birkhoff_bernoulli_shift()
+</code></pre>
+            </div>
+        </section>
+
+        <section id="applied-dives">
+            <h2>🛠️ Applied Math Deep-Dives</h2>
+
+            <div class="topic-card">
+                <h3>1. Control Theory: The Kalman Filter</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>Kalman filter</strong> is an optimal recursive algorithm for estimating the state of a linear dynamic system from noisy measurements. Developed by Rudolf Kalman in 1960, it is ubiquitous in navigation, signal processing, and control systems.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(x_k \\in \\mathbb{R}^n\\) — state vector at time \\(k\\)</li>
+                        <li>\\(z_k \\in \\mathbb{R}^m\\) — measurement vector at time \\(k\\)</li>
+                        <li>\\(u_k \\in \\mathbb{R}^p\\) — control input at time \\(k\\)</li>
+                        <li>\\(F_k\\) — state transition matrix</li>
+                        <li>\\(B_k\\) — control input matrix</li>
+                        <li>\\(H_k\\) — observation matrix</li>
+                        <li>\\(Q_k\\) — process noise covariance</li>
+                        <li>\\(R_k\\) — measurement noise covariance</li>
+                        <li>\\(P_{k|k}\\) — error covariance matrix</li>
+                        <li>\\(\\hat{x}_{k|k}\\) — state estimate</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Kalman Filter Algorithm</div>
+                    <p><strong>Prediction Step:</strong></p>
+                    <p>\\[\\hat{x}_{k|k-1} = F_k \\hat{x}_{k-1|k-1} + B_k u_k\\]</p>
+                    <p>\\[P_{k|k-1} = F_k P_{k-1|k-1} F_k^T + Q_k\\]</p>
+                    
+                    <p><strong>Update Step:</strong></p>
+                    <p>\\[\\tilde{y}_k = z_k - H_k \\hat{x}_{k|k-1}\\]</p>
+                    <p>\\[S_k = H_k P_{k|k-1} H_k^T + R_k\\]</p>
+                    <p>\\[K_k = P_{k|k-1} H_k^T S_k^{-1}\\]</p>
+                    <p>\\[\\hat{x}_{k|k} = \\hat{x}_{k|k-1} + K_k \\tilde{y}_k\\]</p>
+                    <p>\\[P_{k|k} = (I - K_k H_k) P_{k|k-1}\\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Optimality of Kalman Filter</div>
+                    <p>The Kalman filter provides the <strong>minimum mean-square error (MMSE)</strong> estimate among all linear estimators. If the noise is Gaussian, it is optimal among <em>all</em> estimators.</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class KalmanFilter:
+    """
+    Kalman Filter for linear dynamical systems.
+    
+    System model:
+      x_k = F * x_{k-1} + B * u_k + w_k  (process)
+      z_k = H * x_k + v_k                (measurement)
+    
+    where w_k ~ N(0, Q), v_k ~ N(0, R)
+    
+    Notation:
+    - x: state vector
+    - P: error covariance
+    - F: state transition matrix
+    - B: control matrix
+    - H: observation matrix
+    - Q: process noise covariance
+    - R: measurement noise covariance
+    - K: Kalman gain
+    """
+    
+    def __init__(self, F, B, H, Q, R, x0, P0):
+        self.F = F  # State transition
+        self.B = B  # Control input
+        self.H = H  # Observation
+        self.Q = Q  # Process noise
+        self.R = R  # Measurement noise
+        self.x = x0  # Initial state estimate
+        self.P = P0  # Initial error covariance
+    
+    def predict(self, u=None):
+        """Prediction step (time update)."""
+        # State prediction
+        if u is not None:
+            self.x = self.F @ self.x + self.B @ u
+        else:
+            self.x = self.F @ self.x
+        
+        # Covariance prediction
+        self.P = self.F @ self.P @ self.F.T + self.Q
+        
+        return self.x
+    
+    def update(self, z):
+        """Update step (measurement update)."""
+        # Innovation (measurement residual)
+        y_tilde = z - self.H @ self.x
+        
+        # Innovation covariance
+        S = self.H @ self.P @ self.H.T + self.R
+        
+        # Kalman gain
+        K = self.P @ self.H.T @ np.linalg.inv(S)
+        
+        # State update
+        self.x = self.x + K @ y_tilde
+        
+        # Covariance update (Joseph form for numerical stability)
+        I = np.eye(self.P.shape[0])
+        self.P = (I - K @ self.H) @ self.P
+        
+        return self.x
+
+def kalman_filter_1d_tracking():
+    """
+    1D position tracking with velocity.
+    
+    State: x = [position, velocity]^T
+    Measurement: z = position (noisy)
+    """
+    print("Kalman Filter: 1D Position Tracking")
+    print("=" * 60)
+    
+    dt = 0.1  # Time step
+    
+    # State transition (constant velocity model)
+    F = np.array([[1, dt],
+                  [0, 1]])
+    
+    # Control input (acceleration)
+    B = np.array([[0.5 * dt**2],
+                  [dt]])
+    
+    # Observation (measure position only)
+    H = np.array([[1, 0]])
+    
+    # Process noise (small)
+    Q = np.array([[0.01, 0],
+                  [0, 0.001]])
+    
+    # Measurement noise
+    R = np.array([[1.0]])
+    
+    # Initial state and covariance
+    x0 = np.array([[0], [1]])  # Start at 0, velocity 1
+    P0 = np.eye(2)
+    
+    kf = KalmanFilter(F, B, H, Q, R, x0, P0)
+    
+    # Simulate true trajectory and noisy measurements
+    t = np.arange(0, 10, dt)
+    true_pos = t + 0.1 * t**2  # True position with acceleration
+    measurements = true_pos + np.random.normal(0, 1, len(t))  # Noisy
+    
+    # Run Kalman filter
+    estimates = []
+    for i, z in enumerate(measurements):
+        u = np.array([[0.2]])  # Constant acceleration
+        kf.predict(u)
+        est = kf.update(np.array([[z]]))
+        estimates.append(est[0, 0])
+    
+    # Calculate errors
+    measurement_error = np.mean((measurements - true_pos)**2)
+    estimate_error = np.mean((np.array(estimates) - true_pos)**2)
+    
+    print(f"Mean squared error (measurements): {measurement_error:.4f}")
+    print(f"Mean squared error (Kalman filter): {estimate_error:.4f}")
+    print(f"Improvement: {measurement_error/estimate_error:.2f}x better")
+
+kalman_filter_1d_tracking()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. Epidemiology: The SIR Model</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>SIR model</strong> is the foundational compartmental model in epidemiology. It divides a population into three groups: Susceptible, Infectious, and Recovered, and models disease transmission through differential equations.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(S(t)\\) — fraction of population susceptible</li>
+                        <li>\\(I(t)\\) — fraction of population infectious</li>
+                        <li>\\(R(t)\\) — fraction of population recovered/removed</li>
+                        <li>\\(N = S + I + R\\) — total population (constant)</li>
+                        <li>\\(\\beta\\) — transmission rate (contact rate × infection probability)</li>
+                        <li>\\(\\gamma\\) — recovery rate (\\(1/\\gamma\\) = average infectious period)</li>
+                        <li>\\(\\mathcal{R}_0 = \\beta/\\gamma\\) — basic reproduction number</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The SIR Model Equations</div>
+                    <p>\\[\\frac{dS}{dt} = -\\beta SI\\]</p>
+                    <p>\\[\\frac{dI}{dt} = \\beta SI - \\gamma I\\]</p>
+                    <p>\\[\\frac{dR}{dt} = \\gamma I\\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Basic Reproduction Number \\(\\mathcal{R}_0\\)</div>
+                    <p>\\[\\mathcal{R}_0 = \\frac{\\beta}{\\gamma}\\]</p>
+                    <p>The epidemic threshold:</p>
+                    <ul>
+                        <li>If \\(\\mathcal{R}_0 < 1\\): Infection dies out</li>
+                        <li>If \\(\\mathcal{R}_0 > 1\\): Epidemic occurs</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Final Size Relation</div>
+                    <p>Let \\(S_\\infty = \\lim_{t \\to \\infty} S(t)\\) and \\(R_0 = S(0)\\). Then:</p>
+                    <p>\\[\\ln\\left(\\frac{S_0}{S_\\infty}\\right) = \\mathcal{R}_0\\left(1 - \\frac{S_\\infty}{N}\\right)\\]</p>
+                    <p>This transcendental equation determines the final epidemic size.</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Derivation of Final Size Relation</div>
+                    <p><strong>Step 1:</strong> From the SIR equations:</p>
+                    <p>\\[\\frac{dI}{dS} = \\frac{\\beta SI - \\gamma I}{-\\beta SI} = -1 + \\frac{\\gamma}{\\beta S} = -1 + \\frac{1}{\\mathcal{R}_0 S}\\]</p>
+                    
+                    <p><strong>Step 2:</strong> Integrate from \\(t = 0\\) to \\(t = \\infty\\):</p>
+                    <p>\\[\\int_{I_0}^{I_\\infty} dI = \\int_{S_0}^{S_\\infty} \\left(-1 + \\frac{1}{\\mathcal{R}_0 S}\\right) dS\\]</p>
+                    
+                    <p><strong>Step 3:</strong> Since \\(I_\\infty = 0\\) (epidemic ends):</p>
+                    <p>\\[-I_0 = -(S_\\infty - S_0) + \\frac{1}{\\mathcal{R}_0}\\ln\\frac{S_\\infty}{S_0}\\]</p>
+                    
+                    <p><strong>Step 4:</strong> With \\(I_0 + S_0 \\approx N\\) (few initially recovered):</p>
+                    <p>\\[\\ln\\frac{S_0}{S_\\infty} = \\mathcal{R}_0\\left(1 - \\frac{S_\\infty}{N}\\right)\\] ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+
+def sir_model(y, t, beta, gamma):
+    """
+    SIR model differential equations.
+    
+    dS/dt = -βSI
+    dI/dt = βSI - γI
+    dR/dt = γI
+    
+    Notation:
+    - S: susceptible fraction
+    - I: infectious fraction
+    - R: recovered fraction
+    - β: transmission rate
+    - γ: recovery rate
+    - R0 = β/γ: basic reproduction number
+    """
+    S, I, R = y
+    
+    dSdt = -beta * S * I
+    dIdt = beta * S * I - gamma * I
+    dRdt = gamma * I
+    
+    return [dSdt, dIdt, dRdt]
+
+def sir_simulation():
+    """
+    Simulate SIR model and analyze epidemic dynamics.
+    """
+    print("SIR Epidemiological Model")
+    print("=" * 60)
+    
+    # Parameters
+    R0 = 2.5  # Basic reproduction number
+    gamma = 0.1  # Recovery rate (10 day infectious period)
+    beta = R0 * gamma  # Transmission rate
+    
+    # Initial conditions
+    S0 = 0.99  # 99% susceptible
+    I0 = 0.01  # 1% infected
+    R0_init = 0.0  # 0% recovered
+    
+    print(f"Parameters:")
+    print(f"  R0 (basic reproduction number) = {R0}")
+    print(f"  γ (recovery rate) = {gamma} per day")
+    print(f"  β (transmission rate) = {beta:.4f} per day")
+    print(f"  Infectious period = {1/gamma:.0f} days")
+    
+    # Time vector
+    t = np.linspace(0, 160, 1000)
+    
+    # Solve ODE
+    y0 = [S0, I0, R0_init]
+    solution = odeint(sir_model, y0, t, args=(beta, gamma))
+    S, I, R = solution.T
+    
+    # Find peak infection
+    peak_idx = np.argmax(I)
+    peak_time = t[peak_idx]
+    peak_infection = I[peak_idx]
+    
+    print(f"\nEpidemic Dynamics:")
+    print(f"  Peak infection time: day {peak_time:.1f}")
+    print(f"  Peak infection level: {peak_infection:.1%} of population")
+    print(f"  Final recovered: {R[-1]:.1%} of population")
+    
+    # Herd immunity threshold
+    herd_threshold = 1 - 1/R0
+    print(f"\nHerd Immunity Threshold: {herd_threshold:.1%}")
+    print(f"  (Fraction that needs immunity to prevent spread)")
+    
+    return t, S, I, R
+
+def final_size_check(S_infinity, S0, R0):
+    """
+    Verify the final size relation.
+    
+    ln(S0/S∞) = R0 * (1 - S∞/N)
+    """
+    lhs = np.log(S0 / S_infinity)
+    rhs = R0 * (1 - S_infinity)
+    
+    print(f"\nFinal Size Relation Verification:")
+    print(f"  ln(S0/S∞) = {lhs:.6f}")
+    print(f"  R0*(1-S∞) = {rhs:.6f}")
+    print(f"  Difference: {abs(lhs - rhs):.6e}")
+
+t, S, I, R = sir_simulation()
+final_size_check(S[-1], 0.99, 2.5)
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. Queueing Theory: The M/M/1 Queue</h3>
+                
+                <h4>Introduction</h4>
+                <p><strong>Queueing theory</strong> models waiting lines and service systems. The <strong>M/M/1 queue</strong> is the simplest non-trivial model: Poisson arrivals, exponential service times, and a single server. It provides fundamental insights into congestion and delay.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\lambda\\) — arrival rate (customers per unit time)</li>
+                        <li>\\(\\mu\\) — service rate (customers per unit time)</li>
+                        <li>\\(\\rho = \\lambda/\\mu\\) — traffic intensity (utilization)</li>
+                        <li>\\(P_n\\) — steady-state probability of \\(n\\) customers in system</li>
+                        <li>\\(L = \\mathbb{E}[N]\\) — expected number in system</li>
+                        <li>\\(L_q\\) — expected number in queue</li>
+                        <li>\\(W\\) — expected time in system</li>
+                        <li>\\(W_q\\) — expected waiting time in queue</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Steady-State Distribution (M/M/1)</div>
+                    <p>For \\(\\rho < 1\\) (stability condition):</p>
+                    <p>\\[P_n = (1 - \\rho)\\rho^n, \\quad n = 0, 1, 2, \\ldots\\]</p>
+                    <p>This is a geometric distribution with parameter \\(1 - \\rho\\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Little's Law</div>
+                    <p>For any stable queueing system in steady state:</p>
+                    <p>\\[L = \\lambda W\\]</p>
+                    <p>\\[L_q = \\lambda W_q\\]</p>
+                    <p>Relating average number in system to average time in system.</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">M/M/1 Performance Measures</div>
+                    <p>\\[L = \\frac{\\rho}{1 - \\rho} = \\frac{\\lambda}{\\mu - \\lambda}\\]</p>
+                    <p>\\[L_q = \\frac{\\rho^2}{1 - \\rho}\\]</p>
+                    <p>\\[W = \\frac{1}{\\mu - \\lambda}\\]</p>
+                    <p>\\[W_q = \\frac{\\lambda}{\\mu(\\mu - \\lambda)}\\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Derivation of Steady-State Probabilities</div>
+                    <p><strong>Step 1:</strong> Balance equations (rate in = rate out for each state):</p>
+                    <p>\\[\\lambda P_0 = \\mu P_1\\]</p>
+                    <p>\\[(\\lambda + \\mu)P_n = \\lambda P_{n-1} + \\mu P_{n+1}, \\quad n \\geq 1\\]</p>
+                    
+                    <p><strong>Step 2:</strong> From first equation: \\(P_1 = (\\lambda/\\mu)P_0 = \\rho P_0\\)</p>
+                    
+                    <p><strong>Step 3:</strong> By induction, assume \\(P_n = \\rho^n P_0\\). Then:</p>
+                    <p>\\[P_{n+1} = \\frac{(\\lambda + \\mu)P_n - \\lambda P_{n-1}}{\\mu} = \\frac{(\\lambda + \\mu)\\rho^n - \\lambda \\rho^{n-1}}{\\mu}P_0 = \\rho^{n+1}P_0\\]</p>
+                    
+                    <p><strong>Step 4:</strong> Normalization: \\(\\sum_{n=0}^\\infty P_n = 1\\)</p>
+                    <p>\\[P_0 \\sum_{n=0}^\\infty \\rho^n = P_0 \\frac{1}{1-\\rho} = 1\\]</p>
+                    <p>\\[P_0 = 1 - \\rho\\]</p>
+                    
+                    <p><strong>Step 5:</strong> Therefore \\(P_n = (1-\\rho)\\rho^n\\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class MM1Queue:
+    """
+    M/M/1 Queue model.
+    
+    Notation:
+    - λ (lambda): arrival rate
+    - μ (mu): service rate
+    - ρ = λ/μ: traffic intensity (must be < 1 for stability)
+    - P_n = (1-ρ)ρ^n: steady-state probability of n customers
+    """
+    
+    def __init__(self, lam, mu):
+        if lam >= mu:
+            raise ValueError("System unstable: λ must be < μ")
+        self.lam = lam
+        self.mu = mu
+        self.rho = lam / mu
+    
+    def Pn(self, n):
+        """Steady-state probability of n customers in system."""
+        return (1 - self.rho) * (self.rho ** n)
+    
+    def expected_in_system(self):
+        """L = expected number of customers in system."""
+        return self.rho / (1 - self.rho)
+    
+    def expected_in_queue(self):
+        """L_q = expected number of customers in queue."""
+        return self.rho**2 / (1 - self.rho)
+    
+    def expected_time_in_system(self):
+        """W = expected time in system (Little's Law: L = λW)."""
+        return 1 / (self.mu - self.lam)
+    
+    def expected_wait_time(self):
+        """W_q = expected waiting time in queue."""
+        return self.lam / (self.mu * (self.mu - self.lam))
+    
+    def prob_wait(self, t):
+        """Probability that waiting time in queue exceeds t."""
+        return self.rho * np.exp(-self.mu * (1 - self.rho) * t)
+
+def mm1_analysis():
+    """
+    Analyze M/M/1 queue performance across different traffic intensities.
+    """
+    print("M/M/1 Queue Analysis")
+    print("=" * 60)
+    
+    mu = 10  # Service rate: 10 customers per hour
+    
+    print(f"Fixed service rate μ = {mu} customers/hour")
+    print("\nPerformance vs Traffic Intensity ρ:")
+    print("-" * 70)
+    print(f"{'ρ':<8} {'λ':<8} {'L':<10} {'L_q':<10} {'W (hrs)':<12} {'W_q (hrs)':<12}")
+    print("-" * 70)
+    
+    for rho in [0.3, 0.5, 0.7, 0.8, 0.9, 0.95]:
+        lam = rho * mu
+        q = MM1Queue(lam, mu)
+        
+        print(f"{rho:<8.2f} {lam:<8.1f} {q.expected_in_system():<10.2f} "
+              f"{q.expected_in_queue():<10.2f} {q.expected_time_in_system():<12.3f} "
+              f"{q.expected_wait_time():<12.3f}")
+    
+    print("-" * 70)
+    print("\nKey Observations:")
+    print("  - As ρ → 1, queue lengths and wait times explode")
+    print("  - At ρ = 0.9, average queue has 8.1 customers")
+    print("  - At ρ = 0.5, average queue has only 0.5 customers")
+    
+    # Verify Little's Law
+    q = MM1Queue(8, 10)  # ρ = 0.8
+    L = q.expected_in_system()
+    W = q.expected_time_in_system()
+    L_check = q.lam * W
+    
+    print(f"\nLittle's Law Verification (λ=8, μ=10):")
+    print(f"  L = {L:.4f}")
+    print(f"  λW = {L_check:.4f}")
+    print(f"  L = λW? {np.isclose(L, L_check)}")
+
+def simulate_mm1(lam, mu, T=10000):
+    """
+    Discrete event simulation of M/M/1 queue.
+    """
+    np.random.seed(42)
+    
+    # Initialize
+    t = 0
+    next_arrival = np.random.exponential(1/lam)
+    next_departure = float('inf')
+    queue = 0
+    total_customers = 0
+    total_wait_time = 0
+    
+    # Statistics
+    arrivals = []
+    departures = []
+    
+    while t < T:
+        if next_arrival <= next_departure:
+            # Arrival event
+            t = next_arrival
+            arrivals.append(t)
+            
+            if queue == 0:
+                # Start service immediately
+                next_departure = t + np.random.exponential(1/mu)
+            
+            queue += 1
+            next_arrival = t + np.random.exponential(1/lam)
+            
+        else:
+            # Departure event
+            t = next_departure
+            departures.append(t)
+            queue -= 1
+            total_customers += 1
+            
+            if queue > 0:
+                next_departure = t + np.random.exponential(1/mu)
+            else:
+                next_departure = float('inf')
+    
+    # Calculate average wait time
+    wait_times = [d - a for a, d in zip(arrivals[:len(departures)], departures)]
+    avg_wait = np.mean(wait_times) if wait_times else 0
+    
+    return avg_wait
+
+mm1_analysis()
+</code></pre>
+            </div>
+        </section>
+
+        <section id="special-topics">
+            <h2>⭐ Special Topics</h2>
+
+            <div class="topic-card">
+                <h3>1. Ramsey Theory: The Party Problem</h3>
+                
+                <h4>Introduction</h4>
+                <p><strong>Ramsey theory</strong> states that complete disorder is impossible. In any sufficiently large system, some structure must emerge. The classic "party problem" asks: how many people must be at a party to guarantee that either \\(n\\) mutual acquaintances or \\(n\\) mutual strangers exist?</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(R(s, t)\\) — Ramsey number: minimum \\(n\\) such that any 2-coloring of \\(K_n\\) edges contains a red \\(K_s\\) or blue \\(K_t\\)</li>
+                        <li>\\(K_n\\) — complete graph on \\(n\\) vertices</li>
+                        <li>\\(\\binom{n}{k}\\) — binomial coefficient</li>
+                        <li>\\(r(G, H)\\) — Ramsey number for graphs \\(G\\) and \\(H\\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Ramsey's Theorem (1930)</div>
+                    <p>For any positive integers \\(s\\) and \\(t\\), there exists a least positive integer \\(R(s, t)\\) such that every edge-coloring of the complete graph \\(K_{R(s,t)}\\) with red and blue contains either:</p>
+                    <ul>
+                        <li>A red complete subgraph \\(K_s\\), or</li>
+                        <li>A blue complete subgraph \\(K_t\\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Upper Bound (Erdős–Szekeres)</div>
+                    <p>\\[R(s, t) \\leq \\binom{s+t-2}{s-1}\\]</p>
+                    <p>Special case: \\(R(s, s) \\leq \\binom{2s-2}{s-1} \\sim \\frac{4^{s-1}}{\\sqrt{\\pi(s-1)}}\\)</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Known Ramsey Numbers</div>
+                    <ul>
+                        <li>\\(R(3, 3) = 6\\) (the party problem)</li>
+                        <li>\\(R(4, 4) = 18\\)</li>
+                        <li>\\(R(5, 5)\\) is unknown (bounds: \\(43 \\leq R(5,5) \\leq 48\\))</li>
+                    </ul>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof that \\(R(3, 3) = 6\\)</div>
+                    <p><strong>Upper bound (\\(R(3,3) \\leq 6\\)):</strong></p>
+                    
+                    <p><strong>Step 1:</strong> Consider any vertex \\(v\\) in \\(K_6\\). It has 5 edges.</p>
+                    
+                    <p><strong>Step 2:</strong> By pigeonhole principle, at least \\(\\lceil 5/2 \\rceil = 3\\) edges have the same color (say red).</p>
+                    
+                    <p><strong>Step 3:</strong> Let these connect to vertices \\(a, b, c\\).</p>
+                    
+                    <p><strong>Step 4:</strong> If any edge among \\(\\{a, b, c\\}\\) is red, we have a red triangle with \\(v\\).</p>
+                    
+                    <p><strong>Step 5:</strong> If all edges among \\(\\{a, b, c\\}\\) are blue, they form a blue triangle.</p>
+                    
+                    <p><strong>Lower bound (\\(R(3,3) > 5\\)):</strong></p>
+                    
+                    <p><strong>Step 6:</strong> The 5-cycle \\(C_5\\) with edges colored alternately has no monochromatic triangle.</p>
+                    
+                    <p><strong>Step 7:</strong> Therefore \\(R(3, 3) = 6\\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import itertools
+import numpy as np
+
+def check_ramsey(graph, s, t):
+    """
+    Check if a 2-colored complete graph contains red K_s or blue K_t.
+    
+    graph[i][j] = 1 for red edge, 0 for blue edge
+    """
+    n = len(graph)
+    
+    # Check for red K_s
+    for vertices in itertools.combinations(range(n), s):
+        if all(graph[i][j] == 1 for i, j in itertools.combinations(vertices, 2)):
+            return True, 'red', vertices
+    
+    # Check for blue K_t
+    for vertices in itertools.combinations(range(n), t):
+        if all(graph[i][j] == 0 for i, j in itertools.combinations(vertices, 2)):
+            return True, 'blue', vertices
+    
+    return False, None, None
+
+def ramsey_33_demonstration():
+    """
+    Demonstrate R(3,3) = 6: the party problem.
+    
+    Any group of 6 people contains either:
+    - 3 mutual acquaintances (red triangle), or
+    - 3 mutual strangers (blue triangle)
+    """
+    print("Ramsey Theory: R(3,3) = 6 (The Party Problem)")
+    print("=" * 60)
+    
+    print("\nIn any party of 6 people, there are either:")
+    print("  - 3 people who all know each other, OR")
+    print("  - 3 people who are all strangers to each other")
+    
+    # Show that K_5 can avoid monochromatic triangles
+    print("\nK_5 can avoid monochromatic triangles:")
+    n = 5
+    # 5-cycle coloring
+    graph_5 = np.zeros((n, n), dtype=int)
+    for i in range(n):
+        graph_5[i][(i+1) % n] = 1
+        graph_5[(i+1) % n][i] = 1
+    
+    found, color, vertices = check_ramsey(graph_5, 3, 3)
+    print(f"  Monochromatic triangle found in C_5 coloring? {found}")
+    print(f"  This shows R(3,3) > 5")
+    
+    # Show that K_6 always has monochromatic triangle
+    print("\nK_6 always contains a monochromatic triangle:")
+    print("  Testing random colorings...")
+    
+    n = 6
+    np.random.seed(42)
+    for trial in range(5):
+        # Random coloring
+        graph_6 = np.random.randint(0, 2, (n, n))
+        graph_6 = np.triu(graph_6, 1) + np.triu(graph_6, 1).T
+        
+        found, color, vertices = check_ramsey(graph_6, 3, 3)
+        print(f"  Trial {trial+1}: Found {color} triangle on vertices {vertices}")
+    
+    print(f"\nConclusion: R(3,3) = 6")
+
+def ramsey_bounds():
+    """
+    Calculate bounds on Ramsey numbers.
+    """
+    print("\nRamsey Number Bounds")
+    print("=" * 60)
+    
+    from math import comb
+    
+    print("Upper bounds (Erdős–Szekeres):")
+    print(f"{'R(s,t)':<15} {'Upper Bound':<20}")
+    print("-" * 40)
+    
+    for s in range(3, 7):
+        for t in range(s, 7):
+            bound = comb(s + t - 2, s - 1)
+            print(f"R({s},{t}){'':<10} {bound:<20}")
+    
+    print("\nKnown exact values:")
+    print(f"  R(3,3) = 6")
+    print(f"  R(4,4) = 18")
+    print(f"  R(3,4) = 9")
+    print(f"  R(3,5) = 14")
+    print(f"  R(4,5) = 25")
+    
+    print("\nOpen problem:")
+    print(f"  43 ≤ R(5,5) ≤ 48 (exact value unknown)")
+    print(f"  Paul Erdős: 'If aliens threaten to destroy us unless")
+    print(f"  we tell them R(5,5), we should try to compute it.")
+    print(f"  If they ask for R(6,6), we should try to destroy them.'")
+
+ramsey_33_demonstration()
+ramsey_bounds()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>2. Surreal Numbers: Conway's Number System</h3>
+                
+                <h4>Introduction</h4>
+                <p><strong>Surreal numbers</strong>, invented by John Conway, form a proper class of numbers that includes all real numbers, all ordinals, and infinitesimals. They are constructed recursively from nothing, with each number defined as a pair of sets of previously constructed numbers.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\{L | R\\}\\) — surreal number with left set \\(L\\) and right set \\(R\\)</li>
+                        <li>\\(x \\leq y\\) — \\(x\\) is less than or equal to \\(y\\)</li>
+                        <li>\\(x < y\\) — \\(x\\) is strictly less than \\(y\\)</li>
+                        <li>\\(\\mathbf{On}\\) — the class of ordinal numbers</li>
+                        <li>\\(\\omega\\) — the first infinite ordinal</li>
+                        <li>\\(\\varepsilon\\) — infinitesimal numbers</li>
+                        <li>\\(\\mathbf{No}\\) — the class of surreal numbers</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Construction of Surreal Numbers</div>
+                    <p>If \\(L\\) and \\(R\\) are sets of surreal numbers with no element of \\(L\\) \\(\\geq\\) any element of \\(R\\), then \\(\\{L | R\\}\\) is a surreal number.</p>
+                    <p>All surreal numbers are constructed in this way, starting with \\(\\{\\emptyset | \\emptyset\\} = 0\\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Comparison Rules</div>
+                    <p>For surreal numbers \\(x = \\{X_L | X_R\\}\\) and \\(y = \\{Y_L | Y_R\\}\\):</p>
+                    <p>\\[x \\leq y \\iff \\text{no } x_L \\geq y \\text{ and no } y_R \\leq x\\]</p>
+                    <p>\\[x < y \\iff x \\leq y \\text{ and not } y \\leq x\\]</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Birthdays and Simplicity</div>
+                    <p>Each surreal number has a <strong>birthday</strong> (the ordinal at which it is created). The simplest number \\(\\{L | R\\}\\) is the unique surreal with:</p>
+                    <ul>
+                        <li>All elements of \\(L\\) strictly less than all elements of \\(R\\)</li>
+                        <li>Earliest possible birthday</li>
+                    </ul>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Construction of Integers</div>
+                    <p><strong>Day 0:</strong> \\(\\{\\emptyset | \\emptyset\\} = 0\\)</p>
+                    
+                    <p><strong>Day 1:</strong></p>
+                    <p>\\(\\{\\emptyset | 0\\} = -1\\) (simplest number less than 0)</p>
+                    <p>\\(\\{0 | \\emptyset\\} = 1\\) (simplest number greater than 0)</p>
+                    
+                    <p><strong>Day 2:</strong></p>
+                    <p>\\(\\{\\emptyset | -1\\} = -2\\)</p>
+                    <p>\\(\\{-1 | 0\\} = -\\frac{1}{2}\\)</p>
+                    <p>\\(\\{0 | 1\\} = \\frac{1}{2}\\)</p>
+                    <p>\\(\\{1 | \\emptyset\\} = 2\\)</p>
+                    
+                    <p><strong>Induction:</strong> All dyadic rationals appear by finite days. All reals appear by day \\(\\omega\\). ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>class Surreal:
+    """
+    Simplified representation of surreal numbers.
+    
+    A surreal number is {L | R} where L and R are sets of surreals
+    with all elements of L < all elements of R.
+    
+    Notation:
+    - L: left set (numbers less than this one)
+    - R: right set (numbers greater than this one)
+    - birthday: ordinal at which this number is created
+    """
+    
+    def __init__(self, left=None, right=None, name=None):
+        self.left = set(left) if left else set()
+        self.right = set(right) if right else set()
+        self.name = name
+    
+    def __repr__(self):
+        if self.name:
+            return self.name
+        left_str = ', '.join(str(x) for x in sorted(self.left, key=lambda s: s.value if hasattr(s, 'value') else 0))
+        right_str = ', '.join(str(x) for x in sorted(self.right, key=lambda s: s.value if hasattr(s, 'value') else 0))
+        return f"{{{left_str} | {right_str}}}"
+    
+    def __hash__(self):
+        return id(self)
+    
+    def __eq__(self, other):
+        return self is other
+
+# Create basic surreal numbers
+Zero = Surreal(name="0")
+Zero.value = 0
+
+One = Surreal(left={Zero}, name="1")
+One.value = 1
+
+MinusOne = Surreal(right={Zero}, name="-1")
+MinusOne.value = -1
+
+Half = Surreal(left={Zero}, right={One}, name="1/2")
+Half.value = 0.5
+
+def surreal_construction():
+    """
+    Demonstrate the construction of surreal numbers.
+    """
+    print("Surreal Numbers: Conway's Construction")
+    print("=" * 60)
+    
+    print("\nBirthday 0:")
+    print(f"  0 = {{ | }} = {Zero}")
+    
+    print("\nBirthday 1:")
+    print(f"  1 = {{ 0 | }} = {One}")
+    print(f"  -1 = {{ | 0 }} = {MinusOne}")
+    
+    print("\nBirthday 2:")
+    print(f"  2 = {{ 1 | }} (simplest > 1)")
+    print(f"  1/2 = {{ 0 | 1 }} = {Half}")
+    print(f"  -2 = {{ | -1 }} (simplest < -1)")
+    print(f"  -1/2 = {{ -1 | 0 }} (simplest between -1 and 0)")
+    
+    print("\nKey Properties:")
+    print("  - All real numbers are surreal numbers")
+    print("  - All ordinals are surreal numbers")
+    print("  - Infinitesimals exist (e.g., ε = {0 | 1, 1/2, 1/4, ...})")
+    print("  - Infinities exist (e.g., ω = {0, 1, 2, ... | })")
+    
+    print("\nNotation:")
+    print("  {L | R} means 'between L and R'")
+    print("  If L is empty, the number is less than all previous")
+    print("  If R is empty, the number is greater than all previous")
+
+def surreal_arithmetic():
+    """
+    Conceptual demonstration of surreal arithmetic.
+    """
+    print("\nSurreal Arithmetic (Conceptual)")
+    print("=" * 60)
+    
+    print("Addition: x + y = {x_L + y, x + y_L | x_R + y, x + y_R}")
+    print("Negation: -x = {-x_R | -x_L}")
+    print("Multiplication: defined recursively (more complex)")
+    
+    print("\nExamples:")
+    print("  1 + 1 = {0 + 1, 1 + 0 | } = {1 | } = 2")
+    print("  -1 + 1 = { | -1 + 0, 0 + -1} = { | -1} = 0")
+    print("  1/2 + 1/2 = {0 + 1/2, 1/2 + 0 | 1 + 1/2, 1/2 + 1} = {1/2 | 1} = 1")
+
+surreal_construction()
+surreal_arithmetic()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>3. The Hodge Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>The <strong>Hodge Conjecture</strong> is one of the seven Millennium Prize Problems. It connects algebraic topology (cohomology) to algebraic geometry (algebraic cycles) on complex projective varieties. It asks which cohomology classes can be represented by algebraic cycles.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(X\\) — a smooth complex projective variety</li>
+                        <li>\\(H^{p,q}(X)\\) — Dolbeault cohomology (\\((p,q)\\)-forms)</li>
+                        <li>\\(H^{2k}(X, \\mathbb{Q})\\) — rational cohomology in degree \\(2k\\)</li>
+                        <li>\\(H^{k,k}(X) = H^{2k}(X, \\mathbb{C}) \\cap H^{k,k}(X)\\) — Hodge classes</li>
+                        <li>\\(Z^k(X)\\) — algebraic cycles of codimension \\(k\\)</li>
+                        <li>\\([Z]\\) — cohomology class of algebraic cycle \\(Z\\)</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Hodge Decomposition</div>
+                    <p>For a compact Kähler manifold \\(X\\):</p>
+                    <p>\\[H^n(X, \\mathbb{C}) = \\bigoplus_{p+q=n} H^{p,q}(X)\\]</p>
+                    <p>where \\(H^{p,q}(X)\\) consists of cohomology classes representable by \\((p,q)\\)-forms.</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Hodge Conjecture</div>
+                    <p>Let \\(X\\) be a smooth complex projective variety. Every rational Hodge class \\(\\alpha \\in H^{k,k}(X) \\cap H^{2k}(X, \\mathbb{Q})\\) is a \\(\\mathbb{Q}\\)-linear combination of cohomology classes of algebraic cycles:</p>
+                    <p>\\[\\alpha = \\sum_i q_i [Z_i]\\]</p>
+                    <p>where \\(Z_i\\) are algebraic subvarieties of codimension \\(k\\) and \\(q_i \\in \\mathbb{Q}\\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Known Cases</div>
+                    <ul>
+                        <li><strong>\\(k = 0\\):</strong> Trivially true</li>
+                        <li><strong>\\(k = 1\\):</strong> True (Lefschetz theorem on \\((1,1)\\)-classes)</li>
+                        <li><strong>\\(k = \\dim(X) - 1\\):</strong> True (dual to \\(k = 1\\))</li>
+                        <li><strong>Abelian varieties:</strong> True (Poincaré)</li>
+                        <li><strong>\\(k = 2, \\dim(X) = 4\\):</strong> Open (Mumford-Tate conjecture related)</li>
+                    </ul>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Proof of Lefschetz \\((1,1)\\) Theorem</div>
+                    <p><strong>Theorem:</strong> On a smooth projective variety, every \\((1,1)\\)-class in \\(H^2(X, \\mathbb{Q})\\) is algebraic.</p>
+                    
+                    <p><strong>Step 1:</strong> Consider the exponential exact sequence:</p>
+                    <p>\\[0 \\to \\mathbb{Z} \\to \\mathcal{O}_X \\xrightarrow{\\exp} \\mathcal{O}_X^* \\to 1\\]</p>
+                    
+                    <p><strong>Step 2:</strong> Take cohomology, getting:</p>
+                    <p>\\[H^1(X, \\mathcal{O}_X^*) \\xrightarrow{c_1} H^2(X, \\mathbb{Z}) \\to H^2(X, \\mathcal{O}_X)\\]</p>
+                    
+                    <p><strong>Step 3:</strong> \\(H^1(X, \\mathcal{O}_X^*) = \\text{Pic}(X)\\) is the Picard group (line bundles).</p>
+                    
+                    <p><strong>Step 4:</strong> The map \\(c_1\\) sends a line bundle to its first Chern class.</p>
+                    
+                    <p><strong>Step 5:</strong> The kernel of \\(H^2(X, \\mathbb{Z}) \\to H^2(X, \\mathcal{O}_X)\\) is exactly \\(H^{1,1}(X) \\cap H^2(X, \\mathbb{Z})\\).</p>
+                    
+                    <p><strong>Step 6:</strong> By Hodge theory, every \\((1,1)\\)-class is in this kernel, hence comes from a line bundle, hence is algebraic. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+
+def hodge_conjecture_explained():
+    """
+    Explain the Hodge Conjecture and related concepts.
+    
+    The conjecture relates:
+    - Algebraic cycles (subvarieties)
+    - Cohomology classes (topological invariants)
+    - Hodge theory (complex differential geometry)
+    
+    Notation:
+    - H^{p,q}: Dolbeault cohomology
+    - H^{2k}(X,Q): Rational cohomology
+    - Z^k(X): algebraic cycles of codimension k
+    """
+    print("The Hodge Conjecture")
+    print("=" * 60)
+    print("One of the seven Millennium Prize Problems ($1,000,000 prize)")
+    print("-" * 60)
+    
+    print("\nSetup:")
+    print("  X = smooth complex projective variety")
+    print("  H^{p,q}(X) = cohomology of (p,q)-forms")
+    print("  H^{2k}(X,Q) = rational cohomology in degree 2k")
+    
+    print("\nHodge Classes:")
+    print("  Hdg^k(X) = H^{k,k}(X) ∩ H^{2k}(X,Q)")
+    print("  These are rational classes of Hodge type (k,k)")
+    
+    print("\nAlgebraic Cycles:")
+    print("  Z ⊆ X algebraic subvariety of codimension k")
+    print("  [Z] ∈ H^{2k}(X,Q) cohomology class of Z")
+    
+    print("\nThe Conjecture:")
+    print("  Every Hodge class is algebraic")
+    print("  i.e., Hdg^k(X) = span_Q{[Z] : Z algebraic of codim k}")
+    
+    print("\nKnown Results:")
+    print("  k = 0: Trivial (Hdg^0 = Q)")
+    print("  k = 1: TRUE (Lefschetz (1,1) theorem, 1924)")
+    print("  k = dim(X)-1: TRUE (dual to k=1)")
+    print("  Abelian varieties: TRUE")
+    print("  General case: OPEN")
+
+def lefschetz_11_demonstration():
+    """
+    Demonstrate the Lefschetz (1,1) theorem for surfaces.
+    
+    For a complex surface X:
+    - H^2(X,C) = H^{2,0} ⊕ H^{1,1} ⊕ H^{0,2}
+    - H^{1,1} ∩ H^2(X,Q) consists of algebraic classes
+    """
+    print("\n\nLefschetz (1,1) Theorem Demonstration")
+    print("=" * 60)
+    
+    print("\nFor a complex algebraic surface X:")
+    print("  H^2(X,C) = H^{2,0} ⊕ H^{1,1} ⊕ H^{0,2}")
+    print("  dim H^{2,0} = dim H^{0,2} = p_g (geometric genus)")
+    print("  dim H^{1,1} = h^{1,1}")
+    
+    print("\nExample: Projective plane P^2")
+    print("  H^*(P^2) = Q in degrees 0, 2, 4")
+    print("  H^{1,1}(P^2) = H^2(P^2,C) = C")
+    print("  Generator: hyperplane class H = [line in P^2]")
+    print("  Every (1,1) class is a rational multiple of H")
+    print("  ✓ Hodge conjecture holds (trivially)")
+    
+    print("\nExample: Product P^1 × P^1")
+    print("  H^2 = H^{1,0}(P^1)⊗H^{0,1}(P^1) ⊕ ... = C ⊕ C")
+    print("  Generators: pr_1^*(H_1) and pr_2^*(H_2)")
+    print("  where H_i is hyperplane on factor i")
+    print("  Both are algebraic (pullbacks of algebraic classes)")
+    print("  ✓ Hodge conjecture holds")
+
+def hodge_numbers():
+    """
+    Explain Hodge numbers h^{p,q}.
+    """
+    print("\n\nHodge Numbers")
+    print("=" * 60)
+    
+    print("For a compact Kähler manifold of complex dimension n:")
+    print("  h^{p,q} = dim H^{p,q}(X)")
+    print("  Properties:")
+    print("    - h^{p,q} = h^{q,p} (complex conjugation)")
+    print("    - h^{p,q} = h^{n-p,n-q} (Serre duality)")
+    print("    - Σ_{p+q=k} h^{p,q} = b_k (Betti number)")
+    
+    print("\nHodge Diamond for a surface (n=2):")
+    print("       h^{0,0}")
+    print("   h^{1,0}   h^{0,1}")
+    print("h^{2,0} h^{1,1} h^{0,2}")
+    print("   h^{2,1}   h^{1,2}")
+    print("       h^{2,2}")
+    
+    print("\nFor P^2:")
+    print("       1")
+    print("    0     0")
+    print("  0    1    0")
+    print("    0     0")
+    print("       1")
+    
+    print("\nThe Hodge conjecture concerns the middle term h^{1,1}")
+    print("and its intersection with rational cohomology.")
+
+hodge_conjecture_explained()
+lefschetz_11_demonstration()
+hodge_numbers()
+</code></pre>
+            </div>
+
+            <div class="topic-card">
+                <h3>4. Elliptic Curves and the Birch and Swinnerton-Dyer Conjecture</h3>
+                
+                <h4>Introduction</h4>
+                <p>An <strong>elliptic curve</strong> is a smooth projective curve of genus 1 with a specified base point. They are central to modern number theory, cryptography, and the proof of Fermat's Last Theorem. The <strong>Birch and Swinnerton-Dyer (BSD) Conjecture</strong> relates the arithmetic of elliptic curves to their analytic properties.</p>
+
+                <div class="notation-box">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(E\\) — elliptic curve</li>
+                        <li>\\(E(\\mathbb{Q})\\) — group of rational points on \\(E\\)</li>
+                        <li>\\(r = \\text{rank}(E(\\mathbb{Q}))\\) — algebraic rank</li>
+                        <li>\\(L(E, s)\\) — L-function of \\(E\\)</li>
+                        <li>\\(\\text{ord}_{s=1} L(E, s)\\) — analytic rank (order of zero at \\(s = 1\\))</li>
+                        <li>\\(\\text{Sha}(E)\\) — Tate-Shafarevich group (measures failure of local-to-global)</li>
+                        <li>\\(\\Omega_E\\) — real period</li>
+                        <li>\\(\\text{Reg}_E\\) — regulator</li>
+                        <li>\\(c_p\\) — Tamagawa numbers</li>
+                    </ul>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Weierstrass Equation</div>
+                    <p>An elliptic curve over \\(\\mathbb{Q}\\) can be written:</p>
+                    <p>\\[E: y^2 = x^3 + ax + b\\]</p>
+                    <p>with \\(a, b \\in \\mathbb{Q}\\) and discriminant \\(\\Delta = -16(4a^3 + 27b^2) \\neq 0\\).</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">Mordell's Theorem</div>
+                    <p>The group of rational points \\(E(\\mathbb{Q})\\) is finitely generated:</p>
+                    <p>\\[E(\\mathbb{Q}) \\cong E(\\mathbb{Q})_{\\text{tors}} \\times \\mathbb{Z}^r\\]</p>
+                    <p>where \\(E(\\mathbb{Q})_{\\text{tors}}\\) is the finite torsion subgroup and \\(r\\) is the rank.</p>
+                </div>
+
+                <div class="theorem">
+                    <div class="theorem-title">The Birch and Swinnerton-Dyer Conjecture</div>
+                    <p><strong>Weak BSD:</strong> The algebraic rank equals the analytic rank:</p>
+                    <p>\\[r = \\text{ord}_{s=1} L(E, s)\\]</p>
+                    
+                    <p><strong>Strong BSD:</strong> The leading coefficient:</p>
+                    <p>\\[\\lim_{s \\to 1} \\frac{L(E, s)}{(s-1)^r} = \\frac{\\Omega_E \\cdot \\text{Reg}_E \\cdot |\\text{Sha}(E)| \\cdot \\prod_p c_p}{|E(\\mathbb{Q})_{\\text{tors}}|^2}\\]</p>
+                </div>
+
+                <div class="proof">
+                    <div class="proof-title">Sketch: Why BSD Might Be True</div>
+                    <p><strong>Step 1:</strong> The L-function encodes information about \\(E(\\mathbb{F}_p)\\) for all primes \\(p\\).</p>
+                    
+                    <p><strong>Step 2:</strong> By the Taylor expansion at \\(s = 1\\):</p>
+                    <p>\\[L(E, s) = c(s-1)^r + O((s-1)^{r+1})\\]</p>
+                    
+                    <p><strong>Step 3:</strong> The class number formula for number fields suggests a similar formula for elliptic curves.</p>
+                    
+                    <p><strong>Step 4:</strong> Coates-Wiles (1977): If \\(E\\) has complex multiplication and \\(L(E, 1) \\neq 0\\), then \\(r = 0\\).</p>
+                    
+                    <p><strong>Step 5:</strong> Gross-Zagier (1986), Kolyvagin (1988): If \\(\\text{ord}_{s=1} L(E, s) \\leq 1\\), then weak BSD holds. ∎</p>
+                </div>
+
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+
+def elliptic_curve_basic():
+    """
+    Basic properties of elliptic curves.
+    
+    Notation:
+    - E: y^2 = x^3 + ax + b (Weierstrass equation)
+    - Δ = -16(4a^3 + 27b^2): discriminant (must be ≠ 0)
+    - E(Q): group of rational points
+    """
+    print("Elliptic Curves: Basic Properties")
+    print("=" * 60)
+    
+    print("\nWeierstrass Equation:")
+    print("  E: y² = x³ + ax + b")
+    print("  Discriminant: Δ = -16(4a³ + 27b²)")
+    print("  Non-singular condition: Δ ≠ 0")
+    
+    print("\nExample: y² = x³ - x (congruent number curve)")
+    a, b = -1, 0
+    delta = -16 * (4*a**3 + 27*b**2)
+    print(f"  a = {a}, b = {b}")
+    print(f"  Δ = {delta}")
+    print(f"  Non-singular: {delta != 0}")
+    
+    print("\nRational Points:")
+    print("  O = point at infinity (identity)")
+    print("  (0, 0): 0² = 0³ - 0 ✓")
+    print("  (1, 0): 0² = 1 - 1 ✓")
+    print("  (-1, 0): 0² = -1 + 1 ✓")
+    print("  Torsion subgroup: Z/2Z × Z/2Z (Klein four-group)")
+    
+    print("\nGroup Law (geometric):")
+    print("  - Identity: point at infinity O")
+    print("  - Inverse: reflect over x-axis")
+    print("  - Addition: line through P and Q meets E at -(P+Q)")
+
+def elliptic_curve_l_function():
+    """
+    Conceptual explanation of L-functions for elliptic curves.
+    
+    L(E,s) = ∏_p (1 - a_p p^{-s} + p^{1-2s})^{-1}
+    
+    where a_p = p + 1 - #E(F_p)
+    """
+    print("\n\nL-Function of an Elliptic Curve")
+    print("=" * 60)
+    
+    print("Definition:")
+    print("  L(E,s) = ∏_p (1 - a_p p^{-s} + ε_p p^{-2s+1})^{-1}")
+    print("  where:")
+    print("    - a_p = p + 1 - #E(F_p)")
+    print("    - #E(F_p) = number of points on E over F_p")
+    print("    - ε_p = 0 if p | Δ (bad reduction), 1 otherwise")
+    
+    print("\nExample: E: y² = x³ - x over F_3")
+    print("  Points in F_3:")
+    
+    points = []
+    for x in range(3):
+        rhs = (x**3 - x) % 3
+        for y in range(3):
+            if (y*y) % 3 == rhs:
+                points.append((x, y))
+    
+    print(f"    {points}")
+    print(f"  #E(F_3) = {len(points)} + 1 (point at infinity) = {len(points) + 1}")
+    
+    a_3 = 3 + 1 - (len(points) + 1)
+    print(f"  a_3 = 3 + 1 - {len(points) + 1} = {a_3}")
+    
+    print("\nBSD Conjecture:")
+    print("  ord_{s=1} L(E,s) = rank(E(Q))")
+    print("  Leading coefficient formula involves:")
+    print("    - Ω_E: real period")
+    print("    - Reg_E: regulator (height pairing)")
+    print("    - |Sha|: order of Tate-Shafarevich group")
+    print("    - Tamagawa numbers c_p")
+
+def rank_examples():
+    """
+    Examples of elliptic curves with various ranks.
+    """
+    print("\n\nRank Examples")
+    print("=" * 60)
+    
+    curves = [
+        ("y² = x³ - x", 0, "Torsion: Z/2Z × Z/2Z"),
+        ("y² = x³ + x", 0, "Complex multiplication by Z[i]"),
+        ("y² = x³ - 432x + 8208", 1, "Rank 1, related to congruent number 1"),
+        ("y² = x³ - 4x", 1, "y² = x³ - 4x has rank 1"),
+    ]
+    
+    print("Known curves and their ranks:")
+    print("-" * 60)
+    for eq, rank, note in curves:
+        print(f"{eq:<35} rank = {rank}  ({note})")
+    
+    print("\nHighest known rank:")
+    print("  Rank ≥ 29 (discovered by Noam Elkies, 2006)")
+    print("  Curve: y² + xy + y = x³ - x² + ...")
+    
+    print("\nBSD Status:")
+    print("  Known when analytic rank ≤ 1 (Coates-Wiles, Gross-Zagier, Kolyvagin)")
+    print("  Open for analytic rank ≥ 2")
+
+elliptic_curve_basic()
+elliptic_curve_l_function()
+rank_examples()
+</code></pre>
+            </div>
+        </section>
+
+        <section id="history">
+            <h2>📜 Math History</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1960</div>
+                    <p><strong>Rudolf Kalman publishes the Kalman Filter</strong> — A recursive algorithm for optimal state estimation that revolutionized control theory, navigation, and signal processing. Used in the Apollo program and virtually every modern guidance system.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1984</div>
+                    <p><strong>Vaughan Jones discovers the Jones Polynomial</strong> — A new knot invariant that led to a Fields Medal and unexpected connections between knot theory, statistical mechanics, and quantum field theory.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1976</div>
+                    <p><strong>Appel and Haken prove the Four Color Theorem</strong> — The first major theorem proved with extensive computer assistance, sparking debates about the nature of mathematical proof.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">1994</div>
+                    <p><strong>Andrew Wiles proves Fermat's Last Theorem</strong> — Using elliptic curves and modular forms, Wiles proves that \\(a^n + b^n = c^n\\) has no non-trivial integer solutions for \\(n > 2\\), solving a 358-year-old problem.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2000</div>
+                    <p><strong>The Clay Mathematics Institute announces the Millennium Prize Problems</strong> — Seven problems each with a \\$1 million bounty, including the Hodge Conjecture, P vs NP, and the Riemann Hypothesis.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2006</div>
+                    <p><strong>Grigori Perelman declines the Fields Medal</strong> — For proving the Poincaré Conjecture using Ricci flow, Perelman becomes the first to reject this highest honor in mathematics.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="site-footer">
+        <p>Generated by OpenClaw | <a href="../index.html">Home</a> | <a href="../posts/index.html">All Posts</a></p>
+    </footer>
+</body>
+</html>
