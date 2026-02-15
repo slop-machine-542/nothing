@@ -6,12 +6,11 @@
     <meta name="description" content="Mathematical explorations covering topology, number theory, and analysis - Daily Math Digest">
     <title>Daily Math Digest - 2026-02-15</title>
 
-        <!-- MathJax Configuration -->
+        
     <script>
-MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\)']],
-    displayMath: [['$$', '$$'], ['\[', '\]']],
+    inlineMath: [['<span class="math">', '</span>'], ['<span class="math">', '</span>']],
+    displayMath: [['<div class="math-display">', '</div>'], ['<div class="math-display">', '</div>']],
     processEscapes: true,
     processEnvironments: true
   },
@@ -22,7 +21,7 @@ MathJax = {
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -57,7 +56,7 @@ MathJax = {
     <div class="section">
         <h2>🔗 3 Random Math Links</h2>
         <ul>
-            <li><a href="https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem">Fermat's Last Theorem - Wikipedia</a> — The famous theorem stating that no three positive integers \(a\), \(b\), and \(c\) satisfy the equation \(a^n + b^n = c^n\) for any integer value of \(n\) greater than 2.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem">Fermat's Last Theorem - Wikipedia</a> — The famous theorem stating that no three positive integers <span class="math">a</span>, <span class="math">b</span>, and <span class="math">c</span> satisfy the equation <span class="math">a<sup>n</sup> + b<sup>n</sup> = c<sup>n</sup></span> for any integer value of <span class="math">n</span> greater than 2.</li>
             <li><a href="https://terrytao.wordpress.com/">Terence Tao's Blog</a> — One of the most influential mathematics blogs, covering cutting-edge research in analysis, number theory, and combinatorics.</li>
             <li><a href="https://en.wikipedia.org/wiki/Riemann_hypothesis">The Riemann Hypothesis - Wikipedia</a> — The most famous unsolved problem in mathematics, concerning the distribution of prime numbers and the zeros of the Riemann zeta function.</li>
         </ul>
@@ -85,28 +84,28 @@ MathJax = {
             
             <div class="definition">
                 <h4>Definition: Fundamental Group</h4>
-                <p>Let \(X\) be a topological space and \(x_0 \in X\) a basepoint. The <strong>fundamental group</strong> \(\pi_1(X, x_0)\) consists of homotopy classes of loops based at \(x_0\), with the group operation being concatenation of loops.</p>
+                <p>Let <span class="math">X</span> be a topological space and <span class="math">x<sub>0</sub> in X</span> a basepoint. The <strong>fundamental group</strong> <span class="math">π₁(X, x<sub>0</sub>)</span> consists of homotopy classes of loops based at <span class="math">x<sub>0</sub></span>, with the group operation being concatenation of loops.</p>
                 <p><strong>Notation explained:</strong></p>
                 <ul>
-                    <li>\(\pi_1\): The first homotopy group (the subscript 1 indicates we're looking at 1-dimensional loops)</li>
-                    <li>\(X\): A topological space (a set with a notion of "open sets" defining continuity)</li>
-                    <li>\(x_0\): A chosen point in \(X\) that serves as the start and end of all loops</li>
+                    <li><span class="math">π₁</span>: The first homotopy group (the subscript 1 indicates we're looking at 1-dimensional loops)</li>
+                    <li><span class="math">X</span>: A topological space (a set with a notion of "open sets" defining continuity)</li>
+                    <li><span class="math">x<sub>0</sub></span>: A chosen point in <span class="math">X</span> that serves as the start and end of all loops</li>
                 </ul>
             </div>
 
             <div class="theorem">
                 <h4>Theorem: The Fundamental Group of the Circle</h4>
-                <p>\[\pi_1(S^1, 1) \cong \mathbb{Z}\]</p>
-                <p>The fundamental group of the unit circle \(S^1\) (based at the point 1) is isomorphic to the integers \(\mathbb{Z}\).</p>
+                <p><div class="math-display">π₁(S<sup>1</sup>, 1) ≅ ℤ</div></p>
+                <p>The fundamental group of the unit circle <span class="math">S<sup>1</sup></span> (based at the point 1) is isomorphic to the integers <span class="math">ℤ</span>.</p>
             </div>
 
             <div class="proof">
                 <h4>Proof Sketch</h4>
-                <p>We construct an isomorphism using the covering space \(\exp: \mathbb{R} \to S^1\) given by \(\exp(t) = e^{2\pi i t}\).</p>
-                <p><strong>Step 1:</strong> Define the map \(\phi: \pi_1(S^1, 1) \to \mathbb{Z}\) as follows: for a loop \(\gamma: [0,1] \to S^1\) with \(\gamma(0) = \gamma(1) = 1\), lift it to a path \(\tilde{\gamma}: [0,1] \to \mathbb{R}\) with \(\tilde{\gamma}(0) = 0\). Then \(\phi([\gamma]) = \tilde{\gamma}(1) \in \mathbb{Z}\).</p>
-                <p><strong>Step 2:</strong> Show \(\phi\) is well-defined: if \(\gamma_1 \sim \gamma_2\) (homotopic), then their lifts end at the same point.</p>
-                <p><strong>Step 3:</strong> Show \(\phi\) is a homomorphism: concatenation of loops corresponds to addition of winding numbers.</p>
-                <p><strong>Step 4:</strong> Show \(\phi\) is bijective: surjective because for any \(n \in \mathbb{Z}\), the loop \(\gamma_n(t) = e^{2\pi i n t}\) has winding number \(n\); injective because different winding numbers give non-homotopic loops.</p>
+                <p>We construct an isomorphism using the covering space <span class="math">exp: ℝ to S<sup>1</sup></span> given by <span class="math">exp(t) = e<sup>2pi i t</sup></span>.</p>
+                <p><strong>Step 1:</strong> Define the map <span class="math">phi: π₁(S<sup>1</sup>, 1) to ℤ</span> as follows: for a loop <span class="math">gamma: [0,1] to S<sup>1</sup></span> with <span class="math">gamma(0) = gamma(1) = 1</span>, lift it to a path <span class="math">gammã: [0,1] to ℝ</span> with <span class="math">gammã(0) = 0</span>. Then <span class="math">phi([gamma]) = gammã(1) in ℤ</span>.</p>
+                <p><strong>Step 2:</strong> Show φ is well-defined: if <span class="math">gamma<sub>1</sub> sim gamma<sub>2</sub></span> (homotopic), then their lifts end at the same point.</p>
+                <p><strong>Step 3:</strong> Show φ is a homomorphism: concatenation of loops corresponds to addition of winding numbers.</p>
+                <p><strong>Step 4:</strong> Show φ is bijective: surjective because for any <span class="math">n in ℤ</span>, the loop <span class="math">gamma<sub>n</sub>(t) = e<sup>2pi i n t</sup></span> has winding number <span class="math">n</span>; injective because different winding numbers give non-homotopic loops.</p>
             </div>
 
             <h4>Python Implementation</h4>
@@ -183,47 +182,47 @@ print(f"Winding numbers computed: {wn0}, {wn1}, {wn2}")</code></pre>
             
             <div class="definition">
                 <h4>Definition: Legendre Symbol</h4>
-                <p>For an odd prime \(p\) and integer \(a\) not divisible by \(p\), the <strong>Legendre symbol</strong> is defined as:</p>
-                <p>\[\left(\frac{a}{p}\right) = \begin{cases} 1 & \text{if } a \text{ is a quadratic residue mod } p \\ -1 & \text{if } a \text{ is a quadratic non-residue mod } p \end{cases}\]</p>
+                <p>For an odd prime <span class="math">p</span> and integer <span class="math">a</span> not divisible by <span class="math">p</span>, the <strong>Legendre symbol</strong> is defined as:</p>
+                <p><div class="math-display">(<span class="math">a/p</span>) = begincases 1 & if  a  is a quadratic residue mod  p \\ -1 & if  a  is a quadratic non-residue mod  p endcases</div></p>
                 <p><strong>Notation explained:</strong></p>
                 <ul>
-                    <li>\(\left(\frac{a}{p}\right)\): The Legendre symbol (note: this is NOT a fraction!)</li>
-                    <li>Quadratic residue: \(a\) is a QR mod \(p\) if \(a \equiv x^2 \pmod{p}\) for some \(x\)</li>
+                    <li><span class="math">(<span class="math">a/p</span>)</span>: The Legendre symbol (note: this is NOT a fraction!)</li>
+                    <li>Quadratic residue: <span class="math">a</span> is a QR mod <span class="math">p</span> if <span class="math">a equiv x<sup>2</sup> pmodp</span> for some <span class="math">x</span></li>
                 </ul>
             </div>
 
             <div class="theorem">
                 <h4>Theorem: Law of Quadratic Reciprocity</h4>
-                <p>Let \(p\) and \(q\) be distinct odd primes. Then:</p>
-                <p>\[\left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{\frac{p-1}{2} \cdot \frac{q-1}{2}}\]</p>
+                <p>Let <span class="math">p</span> and <span class="math">q</span> be distinct odd primes. Then:</p>
+                <p><div class="math-display">(<span class="math">p/q</span>)(<span class="math">q/p</span>) = (-1)<sup>fracp-1</sup>2 cdot <span class="math">q-1/2</span></div></p>
                 <p>Equivalently:</p>
                 <ul>
-                    <li>If at least one of \(p, q \equiv 1 \pmod{4}\), then \(\left(\frac{p}{q}\right) = \left(\frac{q}{p}\right)\)</li>
-                    <li>If both \(p \equiv q \equiv 3 \pmod{4}\), then \(\left(\frac{p}{q}\right) = -\left(\frac{q}{p}\right)\)</li>
+                    <li>If at least one of <span class="math">p, q equiv 1 pmod4</span>, then <span class="math">(<span class="math">p/q</span>) = (<span class="math">q/p</span>)</span></li>
+                    <li>If both <span class="math">p equiv q equiv 3 pmod4</span>, then <span class="math">(<span class="math">p/q</span>) = -(<span class="math">q/p</span>)</span></li>
                 </ul>
             </div>
 
             <div class="proof">
                 <h4>Proof via Gauss's Lemma</h4>
-                <p><strong>Gauss's Lemma:</strong> For odd prime \(p\) and \(a\) coprime to \(p\), consider the least positive residues of \(a, 2a, \ldots, \frac{p-1}{2}a\) modulo \(p\). Let \(n\) be the number of these that exceed \(p/2\). Then \(\left(\frac{a}{p}\right) = (-1)^n\).</p>
+                <p><strong>Gauss's Lemma:</strong> For odd prime <span class="math">p</span> and <span class="math">a</span> coprime to <span class="math">p</span>, consider the least positive residues of <span class="math">a, 2a, ldots, <span class="math">p-1/2</span>a</span> modulo <span class="math">p</span>. Let <span class="math">n</span> be the number of these that exceed <span class="math">p/2</span>. Then <span class="math">(<span class="math">a/p</span>) = (-1)<sup>n</sup></span>.</p>
                 
                 <p><strong>Main Proof:</strong></p>
-                <p>Consider the lattice points in the rectangle with corners \((0,0)\), \((p/2, 0)\), \((p/2, q/2)\), \((0, q/2)\).</p>
+                <p>Consider the lattice points in the rectangle with corners <span class="math">(0,0)</span>, <span class="math">(p/2, 0)</span>, <span class="math">(p/2, q/2)</span>, <span class="math">(0, q/2)</span>.</p>
                 
                 <p>Count the number of lattice points strictly inside this rectangle in two ways:</p>
-                <p><strong>Method 1:</strong> Total interior points = \(\frac{p-1}{2} \cdot \frac{q-1}{2}\)</p>
+                <p><strong>Method 1:</strong> Total interior points = <span class="math"><span class="math">p-1/2</span> cdot <span class="math">q-1/2</span></span></p>
                 
-                <p><strong>Method 2:</strong> Split by the diagonal line \(y = \frac{q}{p}x\).</p>
+                <p><strong>Method 2:</strong> Split by the diagonal line <span class="math">y = <span class="math">q/p</span>x</span>.</p>
                 <ul>
-                    <li>Points below diagonal: For each \(k = 1, \ldots, \frac{p-1}{2}\), count integers \(j\) with \(0 < j < \frac{qk}{p}\). This gives \(n_p = \sum_{k=1}^{(p-1)/2} \left\lfloor \frac{qk}{p} \right\rfloor\).</li>
-                    <li>Points above diagonal: Similarly \(n_q = \sum_{k=1}^{(q-1)/2} \left\lfloor \frac{pk}{q} \right\rfloor\).</li>
+                    <li>Points below diagonal: For each <span class="math">k = 1, ldots, <span class="math">p-1/2</span></span>, count integers <span class="math">j</span> with <span class="math">0 < j < <span class="math">qk/p</span></span>. This gives <span class="math">n<sub>p</sub> = sum<sub>k=1</sub><sup>(p-1)/2</sup> lfloor <span class="math">qk/p</span> rfloor</span>.</li>
+                    <li>Points above diagonal: Similarly <span class="math">n<sub>q</sub> = sum<sub>k=1</sub><sup>(q-1)/2</sup> lfloor <span class="math">pk/q</span> rfloor</span>.</li>
                 </ul>
                 
                 <p>By Gauss's Lemma applied to both directions, one can show:</p>
-                <p>\[\left(\frac{q}{p}\right) = (-1)^{n_p} \quad \text{and} \quad \left(\frac{p}{q}\right) = (-1)^{n_q}\]</p>
+                <p><div class="math-display">(<span class="math">q/p</span>) = (-1)<sup>n<sub>p</sub></sup> quad and quad (<span class="math">p/q</span>) = (-1)<sup>n<sub>q</sub></sup></div></p>
                 
-                <p>Since \(n_p + n_q = \frac{p-1}{2} \cdot \frac{q-1}{2}\), we get:</p>
-                <p>\[\left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{n_p + n_q} = (-1)^{\frac{p-1}{2} \cdot \frac{q-1}{2}}\]</p>
+                <p>Since <span class="math">n<sub>p</sub> + n<sub>q</sub> = <span class="math">p-1/2</span> cdot <span class="math">q-1/2</span></span>, we get:</p>
+                <p><div class="math-display">(<span class="math">p/q</span>)(<span class="math">q/p</span>) = (-1)<sup>n<sub>p</sub> + n<sub>q</sub></sup> = (-1)<sup>fracp-1</sup>2 cdot <span class="math">q-1/2</span></div></p>
             </div>
 
             <h4>Python Implementation</h4>
@@ -310,35 +309,35 @@ for a, x in residues:
             
             <div class="definition">
                 <h4>Definition: Group Homomorphism</h4>
-                <p>Let \((G, \cdot)\) and \((H, \star)\) be groups. A function \(\phi: G \to H\) is a <strong>homomorphism</strong> if:</p>
-                <p>\[\phi(g_1 \cdot g_2) = \phi(g_1) \star \phi(g_2)\]</p>
-                <p>for all \(g_1, g_2 \in G\).</p>
+                <p>Let <span class="math">(G, cdot)</span> and <span class="math">(H, star)</span> be groups. A function <span class="math">phi: G to H</span> is a <strong>homomorphism</strong> if:</p>
+                <p><div class="math-display">phi(g<sub>1</sub> cdot g<sub>2</sub>) = phi(g<sub>1</sub>) star phi(g<sub>2</sub>)</div></p>
+                <p>for all <span class="math">g<sub>1</sub>, g<sub>2</sub> in G</span>.</p>
                 <ul>
-                    <li>\(\ker(\phi) = \{g \in G : \phi(g) = e_H\}\) is the <strong>kernel</strong></li>
-                    <li>\(\text{im}(\phi) = \{\phi(g) : g \in G\}\) is the <strong>image</strong></li>
+                    <li><span class="math">ker(phi) = \g in G : phi(g) = e<sub>H</sub>\</span> is the <strong>kernel</strong></li>
+                    <li><span class="math">im(phi) = \phi(g) : g in G\</span> is the <strong>image</strong></li>
                 </ul>
             </div>
 
             <div class="theorem">
                 <h4>Theorem: First Isomorphism Theorem</h4>
-                <p>Let \(\phi: G \to H\) be a group homomorphism. Then:</p>
-                <p>\[G / \ker(\phi) \cong \text{im}(\phi)\]</p>
-                <p>Specifically, the map \(\bar{\phi}: G/\ker(\phi) \to \text{im}(\phi)\) defined by \(\bar{\phi}(gK) = \phi(g)\) is a well-defined isomorphism, where \(K = \ker(\phi)\).</p>
+                <p>Let <span class="math">phi: G to H</span> be a group homomorphism. Then:</p>
+                <p><div class="math-display">G / ker(phi) ≅ im(phi)</div></p>
+                <p>Specifically, the map <span class="math">phī: G/ker(phi) to im(phi)</span> defined by <span class="math">phī(gK) = phi(g)</span> is a well-defined isomorphism, where <span class="math">K = ker(phi)</span>.</p>
             </div>
 
             <div class="proof">
                 <h4>Proof</h4>
-                <p>Let \(K = \ker(\phi)\). We define \(\bar{\phi}: G/K \to \text{im}(\phi)\) by \(\bar{\phi}(gK) = \phi(g)\).</p>
+                <p>Let <span class="math">K = ker(phi)</span>. We define <span class="math">phī: G/K to im(phi)</span> by <span class="math">phī(gK) = phi(g)</span>.</p>
                 
-                <p><strong>Well-defined:</strong> If \(gK = hK\), then \(h^{-1}g \in K\), so \(\phi(h^{-1}g) = e_H\). Thus \(\phi(g) = \phi(h)\), making \(\bar{\phi}\) well-defined.</p>
+                <p><strong>Well-defined:</strong> If <span class="math">gK = hK</span>, then <span class="math">h<sup>-1</sup>g in K</span>, so <span class="math">phi(h<sup>-1</sup>g) = e<sub>H</sub></span>. Thus <span class="math">phi(g) = phi(h)</span>, making <span class="math">phī</span> well-defined.</p>
                 
-                <p><strong>Homomorphism:</strong> \(\bar{\phi}(gK \cdot hK) = \bar{\phi}(ghK) = \phi(gh) = \phi(g)\phi(h) = \bar{\phi}(gK)\bar{\phi}(hK)\).</p>
+                <p><strong>Homomorphism:</strong> <span class="math">phī(gK cdot hK) = phī(ghK) = phi(gh) = phi(g)phi(h) = phī(gK)phī(hK)</span>.</p>
                 
-                <p><strong>Injective:</strong> If \(\bar{\phi}(gK) = e_H\), then \(\phi(g) = e_H\), so \(g \in K\), meaning \(gK = K\) (the identity in \(G/K\)).</p>
+                <p><strong>Injective:</strong> If <span class="math">phī(gK) = e<sub>H</sub></span>, then <span class="math">phi(g) = e<sub>H</sub></span>, so <span class="math">g in K</span>, meaning <span class="math">gK = K</span> (the identity in <span class="math">G/K</span>).</p>
                 
-                <p><strong>Surjective:</strong> For any \(h \in \text{im}(\phi)\), there exists \(g \in G\) with \(\phi(g) = h\), so \(\bar{\phi}(gK) = h\).</p>
+                <p><strong>Surjective:</strong> For any <span class="math">h in im(phi)</span>, there exists <span class="math">g in G</span> with <span class="math">phi(g) = h</span>, so <span class="math">phī(gK) = h</span>.</p>
                 
-                <p>Therefore, \(\bar{\phi}\) is an isomorphism.</p>
+                <p>Therefore, <span class="math">phī</span> is an isomorphism.</p>
             </div>
 
             <h4>Python Implementation</h4>
@@ -474,37 +473,37 @@ isomorphism_theorem_verification()</code></pre>
             
             <div class="definition">
                 <h4>The Collatz Function</h4>
-                <p>For a positive integer \(n\), define:</p>
-                <p>\[f(n) = \begin{cases} n/2 & \text{if } n \text{ is even} \\ 3n + 1 & \text{if } n \text{ is odd} \end{cases}\]</p>
-                <p>The <strong>Collatz conjecture</strong> states that for any starting value \(n\), iterating \(f\) eventually reaches 1.</p>
+                <p>For a positive integer <span class="math">n</span>, define:</p>
+                <p><div class="math-display">f(n) = begincases n/2 & if  n  is even \\ 3n + 1 & if  n  is odd endcases</div></p>
+                <p>The <strong>Collatz conjecture</strong> states that for any starting value <span class="math">n</span>, iterating <span class="math">f</span> eventually reaches 1.</p>
             </div>
 
             <div class="theorem">
                 <h4>Theorem: Properties of Collatz Trajectories</h4>
-                <p>For any positive integer \(n\), let \(T(n)\) be the number of steps to reach 1 (the <strong>total stopping time</strong>). Then:</p>
+                <p>For any positive integer <span class="math">n</span>, let <span class="math">T(n)</span> be the number of steps to reach 1 (the <strong>total stopping time</strong>). Then:</p>
                 <ol>
-                    <li>If \(n = 2^k\), then \(T(n) = k\).</li>
-                    <li>For odd \(n\), the next odd number in the trajectory is \(\frac{3n+1}{2^j}\) where \(2^j \parallel (3n+1)\) (meaning \(2^j\) divides \(3n+1\) but \(2^{j+1}\) does not).</li>
+                    <li>If <span class="math">n = 2<sup>k</sup></span>, then <span class="math">T(n) = k</span>.</li>
+                    <li>For odd <span class="math">n</span>, the next odd number in the trajectory is <span class="math"><span class="math">3n+1/2<sup>j</sup></span></span> where <span class="math">2<sup>j</sup> parallel (3n+1)</span> (meaning <span class="math">2<sup>j</sup></span> divides <span class="math">3n+1</span> but <span class="math">2<sup>j+1</sup></span> does not).</li>
                 </ol>
             </div>
 
             <div class="proof">
                 <h4>Proof of Property 1</h4>
-                <p>Let \(n = 2^k\). Then:</p>
-                <p>\[f(n) = f(2^k) = 2^{k-1}\]</p>
-                <p>\[f^2(n) = f(2^{k-1}) = 2^{k-2}\]</p>
+                <p>Let <span class="math">n = 2<sup>k</sup></span>. Then:</p>
+                <p><div class="math-display">f(n) = f(2<sup>k</sup>) = 2<sup>k-1</sup></div></p>
+                <p><div class="math-display">f<sup>2</sup>(n) = f(2<sup>k-1</sup>) = 2<sup>k-2</sup></div></p>
                 <p>Continuing:</p>
-                <p>\[f^k(n) = f(2^1) = 2^0 = 1\]</p>
-                <p>Thus exactly \(k\) steps are needed, so \(T(2^k) = k\).</p>
+                <p><div class="math-display">f<sup>k</sup>(n) = f(2<sup>1</sup>) = 2<sup>0</sup> = 1</div></p>
+                <p>Thus exactly <span class="math">k</span> steps are needed, so <span class="math">T(2<sup>k</sup>) = k</span>.</p>
                 
                 <h4>Proof of Property 2</h4>
-                <p>For odd \(n\), \(3n+1\) is even (since odd×odd + 1 = even). Let \(3n+1 = 2^j \cdot m\) where \(m\) is odd.</p>
+                <p>For odd <span class="math">n</span>, <span class="math">3n+1</span> is even (since odd×odd + 1 = even). Let <span class="math">3n+1 = 2<sup>j</sup> cdot m</span> where <span class="math">m</span> is odd.</p>
                 <p>Then:</p>
-                <p>\[f(n) = 3n+1 = 2^j \cdot m\]</p>
-                <p>\[f^2(n) = 2^{j-1} \cdot m\]</p>
-                <p>\[\vdots\]</p>
-                <p>\[f^{j+1}(n) = m\]</p>
-                <p>So the next odd number is \(m = \frac{3n+1}{2^j}\).</p>
+                <p><div class="math-display">f(n) = 3n+1 = 2<sup>j</sup> cdot m</div></p>
+                <p><div class="math-display">f<sup>2</sup>(n) = 2<sup>j-1</sup> cdot m</div></p>
+                <p><div class="math-display">vdots</div></p>
+                <p><div class="math-display">f<sup>j+1</sup>(n) = m</div></p>
+                <p>So the next odd number is <span class="math">m = <span class="math">3n+1/2<sup>j</sup></span></span>.</p>
             </div>
 
             <h4>Python Implementation</h4>
@@ -590,40 +589,40 @@ print(f"Max value reached: {max_value(max_n)}")</code></pre>
             
             <div class="definition">
                 <h4>Definition: Prime Counting Function</h4>
-                <p>The <strong>prime counting function</strong> \(\pi(x)\) is defined as:</p>
-                <p>\[\pi(x) = \text{number of primes } p \leq x\]</p>
-                <p><strong>Notation:</strong> \(\pi\) here has nothing to do with the circle constant! It's just traditional notation for this function.</p>
+                <p>The <strong>prime counting function</strong> <span class="math">pi(x)</span> is defined as:</p>
+                <p><div class="math-display">pi(x) = number of primes  p leq x</div></p>
+                <p><strong>Notation:</strong> π here has nothing to do with the circle constant! It's just traditional notation for this function.</p>
             </div>
 
             <div class="theorem">
                 <h4>Theorem: The Prime Number Theorem (PNT)</h4>
-                <p>\[\lim_{x \to \infty} \frac{\pi(x)}{x / \ln(x)} = 1\]</p>
-                <p>Equivalently, \(\pi(x) \sim \frac{x}{\ln x}\), meaning the ratio approaches 1 as \(x \to \infty\).</p>
+                <p><div class="math-display">lim<sub>x to infty</sub> <span class="math">pi(x)/x / ln(x)</span> = 1</div></p>
+                <p>Equivalently, <span class="math">pi(x) sim <span class="math">x/ln x</span></span>, meaning the ratio approaches 1 as <span class="math">x to infty</span>.</p>
                 <p>This was first proved independently by Hadamard and de la Vallée Poussin in 1896.</p>
             </div>
 
             <div class="proof">
                 <h4>Sketch of Proof (via Complex Analysis)</h4>
                 <p>The proof relies on the Riemann zeta function:</p>
-                <p>\[\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_p \frac{1}{1 - p^{-s}}\]</p>
-                <p>for \(\text{Re}(s) > 1\).</p>
+                <p><div class="math-display">zeta(s) = sum<sub>n=1</sub><sup>infty</sup> <span class="math">1/n<sup>s</sup></span> = prod<sub>p</sub> <span class="math">1/1 - p<sup>-s</sup></span></div></p>
+                <p>for <span class="math">Re(s) > 1</span>.</p>
                 
                 <p><strong>Key steps:</strong></p>
                 <ol>
-                    <li>Define \(\psi(x) = \sum_{p^k \leq x} \ln p\) (Chebyshev function).</li>
-                    <li>Show \(\psi(x) \sim x\) implies \(\pi(x) \sim x/\ln x\) via partial summation.</li>
-                    <li>Use Perron's formula to relate \(\psi(x)\) to the zeta function:</li>
+                    <li>Define <span class="math">psi(x) = sum<sub>p<sup>k</sup> leq x</sub> ln p</span> (Chebyshev function).</li>
+                    <li>Show <span class="math">psi(x) sim x</span> implies <span class="math">pi(x) sim x/ln x</span> via partial summation.</li>
+                    <li>Use Perron's formula to relate <span class="math">psi(x)</span> to the zeta function:</li>
                 </ol>
-                <p>\[\psi(x) = -\frac{1}{2\pi i} \int_{c-i\infty}^{c+i\infty} \frac{\zeta'(s)}{\zeta(s)} \frac{x^s}{s} ds\]</p>
+                <p><div class="math-display">psi(x) = -<span class="math">1/2pi i</span> int<sub>c-iinfty</sub><sup>c+iinfty</sup> <span class="math">zeta'(s)/zeta(s)</span> <span class="math">x<sup>s</sup>/s</span> ds</div></p>
                 
                 <p><strong>Notation explained:</strong></p>
                 <ul>
-                    <li>\(\zeta'(s)\): The derivative of the zeta function</li>
+                    <li><span class="math">zeta'(s)</span>: The derivative of the zeta function</li>
                     <li>The integral is a contour integral in the complex plane</li>
-                    <li>\(c > 1\) ensures convergence</li>
+                    <li><span class="math">c > 1</span> ensures convergence</li>
                 </ul>
                 
-                <p>The proof concludes by moving the contour to the left and showing the main contribution comes from the pole at \(s = 1\), giving \(\psi(x) \sim x\).</p>
+                <p>The proof concludes by moving the contour to the left and showing the main contribution comes from the pole at <span class="math">s = 1</span>, giving <span class="math">psi(x) sim x</span>.</p>
             </div>
 
             <h4>Python Implementation</h4>
@@ -739,16 +738,16 @@ print(f"Count: {len(twins)} pairs")</code></pre>
             
             <div class="definition">
                 <h4>Goldbach's Conjectures</h4>
-                <p><strong>Strong Goldbach Conjecture:</strong> Every even integer \(n > 2\) can be written as \(n = p + q\) where \(p\) and \(q\) are primes.</p>
-                <p><strong>Weak Goldbach Conjecture:</strong> Every odd integer \(n > 5\) can be written as \(n = p + q + r\) where \(p, q, r\) are primes.</p>
+                <p><strong>Strong Goldbach Conjecture:</strong> Every even integer <span class="math">n > 2</span> can be written as <span class="math">n = p + q</span> where <span class="math">p</span> and <span class="math">q</span> are primes.</p>
+                <p><strong>Weak Goldbach Conjecture:</strong> Every odd integer <span class="math">n > 5</span> can be written as <span class="math">n = p + q + r</span> where <span class="math">p, q, r</span> are primes.</p>
                 <p>The weak conjecture was proved by Harald Helfgott in 2013. The strong conjecture remains open.</p>
             </div>
 
             <div class="theorem">
                 <h4>Theorem: Chen's Theorem (1966)</h4>
-                <p>Every sufficiently large even integer \(n\) can be written as:</p>
-                <p>\[n = p + P_2\]</p>
-                <p>where \(p\) is prime and \(P_2\) is either prime or a product of two primes (a semiprime).</p>
+                <p>Every sufficiently large even integer <span class="math">n</span> can be written as:</p>
+                <p><div class="math-display">n = p + P<sub>2</sub></div></p>
+                <p>where <span class="math">p</span> is prime and <span class="math">P<sub>2</sub></span> is either prime or a product of two primes (a semiprime).</p>
                 <p>This is the closest result to Goldbach's conjecture proven to date.</p>
             </div>
 
@@ -756,11 +755,11 @@ print(f"Count: {len(twins)} pairs")</code></pre>
                 <h4>Proof of a Related Result: Verification for Small Cases</h4>
                 <p>While we cannot prove Goldbach's conjecture in general, we can prove it holds for any <em>finite</em> set of even numbers by direct verification.</p>
                 
-                <p><strong>Theorem:</strong> Goldbach's conjecture holds for all even \(n\) with \(4 \leq n \leq N\) for any fixed \(N\).</p>
+                <p><strong>Theorem:</strong> Goldbach's conjecture holds for all even <span class="math">n</span> with <span class="math">4 leq n leq N</span> for any fixed <span class="math">N</span>.</p>
                 
-                <p><strong>Proof:</strong> By the well-ordering principle, either there exists a smallest counterexample \(n_0\) or no counterexample exists. For any finite \(N\), we can computationally verify each even \(n \in [4, N]\). If all verify, no counterexample exists in this range.</p>
+                <p><strong>Proof:</strong> By the well-ordering principle, either there exists a smallest counterexample <span class="math">n<sub>0</sub></span> or no counterexample exists. For any finite <span class="math">N</span>, we can computationally verify each even <span class="math">n in [4, N]</span>. If all verify, no counterexample exists in this range.</p>
                 
-                <p>As of 2023, the conjecture has been verified by computer for all \(n \leq 4 \times 10^{18}\).</p>
+                <p>As of 2023, the conjecture has been verified by computer for all <span class="math">n leq 4 times 10<sup>18</sup></span>.</p>
             </div>
 
             <h4>Python Implementation</h4>
@@ -861,39 +860,39 @@ goldbach_count(1000)</code></pre>
             
             <div class="definition">
                 <h4>Definition: p-adic Valuation and Absolute Value</h4>
-                <p>For a prime \(p\) and nonzero integer \(n\), the <strong>p-adic valuation</strong> \(v_p(n)\) is the highest power of \(p\) dividing \(n\):</p>
-                <p>\[v_p(n) = k \text{ where } p^k \mid n \text{ but } p^{k+1} \nmid n\]</p>
-                <p>For a rational \(x = a/b\), \(v_p(x) = v_p(a) - v_p(b)\).</p>
+                <p>For a prime <span class="math">p</span> and nonzero integer <span class="math">n</span>, the <strong>p-adic valuation</strong> <span class="math">v<sub>p</sub>(n)</span> is the highest power of <span class="math">p</span> dividing <span class="math">n</span>:</p>
+                <p><div class="math-display">v<sub>p</sub>(n) = k  where  p<sup>k</sup> mid n  but  p<sup>k+1</sup> nmid n</div></p>
+                <p>For a rational <span class="math">x = a/b</span>, <span class="math">v<sub>p</sub>(x) = v<sub>p</sub>(a) - v<sub>p</sub>(b)</span>.</p>
                 <p>The <strong>p-adic absolute value</strong> is:</p>
-                <p>\[|x|_p = p^{-v_p(x)}\]</p>
-                <p>with \(|0|_p = 0\).</p>
-                <p><strong>Key property:</strong> In p-adics, a number is "small" if it's divisible by a high power of \(p\) (opposite of usual absolute value!).</p>
+                <p><div class="math-display">|x|<sub>p</sub> = p<sup>-v<sub>p</sub>(x)</sup></div></p>
+                <p>with <span class="math">|0|<sub>p</sub> = 0</span>.</p>
+                <p><strong>Key property:</strong> In p-adics, a number is "small" if it's divisible by a high power of <span class="math">p</span> (opposite of usual absolute value!).</p>
             </div>
 
             <div class="theorem">
                 <h4>Theorem: Ostrowski's Theorem</h4>
-                <p>Every nontrivial absolute value on \(\mathbb{Q}\) is equivalent to either:</p>
+                <p>Every nontrivial absolute value on <span class="math">ℚ</span> is equivalent to either:</p>
                 <ol>
-                    <li>The usual absolute value \(|
-\cdot|_{\infty}\)</li>
-                    <li>The p-adic absolute value \(|\cdot|_p\) for some prime \(p\)</li>
+                    <li>The usual absolute value <span class="math">|
+cdot|<sub>infty</sub></span></li>
+                    <li>The p-adic absolute value <span class="math">|cdot|<sub>p</sub></span> for some prime <span class="math">p</span></li>
                 </ol>
                 <p>This shows the p-adic completions are, in a sense, the only alternatives to the real numbers.</p>
             </div>
 
             <div class="proof">
                 <h4>Proof Sketch of Ostrowski's Theorem</h4>
-                <p>Let \(|\cdot|\) be a nontrivial absolute value on \(\mathbb{Q}\).</p>
+                <p>Let <span class="math">|cdot|</span> be a nontrivial absolute value on <span class="math">ℚ</span>.</p>
                 
-                <p><strong>Case 1:</strong> \(|n| \leq 1\) for all integers \(n\).</p>
-                <p>Since \(|
-\cdot|\) is nontrivial, there exists a smallest positive integer \(p\) with \(|p| < 1\). One can show \(p\) must be prime.</p>
-                <p>For any integer \(n = p^k m\) with \(p \nmid m\), we have \(|m| = 1\) (by minimality of \(p\)).</p>
-                <p>Thus \(|n| = |p|^k\). Setting \(|p| = p^{-\alpha}\) for some \(\alpha > 0\), we get \(|n| = p^{-\alpha k} = |n|_p^{\alpha}\), so \(|
-\cdot|\) is equivalent to \(|\cdot|_p\).</p>
+                <p><strong>Case 1:</strong> <span class="math">|n| leq 1</span> for all integers <span class="math">n</span>.</p>
+                <p>Since <span class="math">|
+cdot|</span> is nontrivial, there exists a smallest positive integer <span class="math">p</span> with <span class="math">|p| < 1</span>. One can show <span class="math">p</span> must be prime.</p>
+                <p>For any integer <span class="math">n = p<sup>k</sup> m</span> with <span class="math">p nmid m</span>, we have <span class="math">|m| = 1</span> (by minimality of <span class="math">p</span>).</p>
+                <p>Thus <span class="math">|n| = |p|<sup>k</sup></span>. Setting <span class="math">|p| = p<sup>-alpha</sup></span> for some <span class="math">alpha > 0</span>, we get <span class="math">|n| = p<sup>-alpha k</sup> = |n|<sub>p</sub><sup>alpha</sup></span>, so <span class="math">|
+cdot|</span> is equivalent to <span class="math">|cdot|<sub>p</sub></span>.</p>
                 
-                <p><strong>Case 2:</strong> There exists \(n\) with \(|n| > 1\).</p>
-                <p>Let \(n_0\) be the smallest such integer. One can show \(n_0\) must be prime, and by analyzing \(|n_0^k|\), one finds \(|\cdot|\) is equivalent to the usual absolute value.</p>
+                <p><strong>Case 2:</strong> There exists <span class="math">n</span> with <span class="math">|n| > 1</span>.</p>
+                <p>Let <span class="math">n<sub>0</sub></span> be the smallest such integer. One can show <span class="math">n<sub>0</sub></span> must be prime, and by analyzing <span class="math">|n<sub>0</sub><sup>k</sup>|</span>, one finds <span class="math">|cdot|</span> is equivalent to the usual absolute value.</p>
             </div>
 
             <h4>Python Implementation</h4>
@@ -1016,7 +1015,7 @@ def hensel_lift(f, df, x0, p, n):
         dfx = df(x)
         
         # In p-adics, division is multiplication by inverse
-        # For simplicity, we work with the congruence
+        # For simplicity, we work with the ≅ruence
         delta = (fx // dfx) if dfx != 0 else 0
         x = x - delta
         
@@ -1056,12 +1055,12 @@ print("This lifts to a 5-adic integer by Hensel's lemma!")</code></pre>
         <p>A <strong>simple group</strong> is a group with no nontrivial normal subgroups—they are the "atoms" of group theory. The classification states that every finite simple group is either:</p>
         <ul>
             <li>A cyclic group of prime order</li>
-            <li>An alternating group \(A_n\) for \(n \geq 5\)</li>
+            <li>An alternating group <span class="math">A<sub>n</sub></span> for <span class="math">n geq 5</span></li>
             <li>A group of Lie type</li>
             <li>One of 26 sporadic groups</li>
         </ul>
         
-        <p>The largest sporadic group, the <strong>Monster group</strong>, has approximately \(8 \times 10^{53}\) elements and connections to string theory through <strong>Monstrous Moonshine</strong>.</p>
+        <p>The largest sporadic group, the <strong>Monster group</strong>, has approximately <span class="math">8 times 10<sup>53</sup></span> elements and connections to string theory through <strong>Monstrous Moonshine</strong>.</p>
     </div>
 
     <footer>

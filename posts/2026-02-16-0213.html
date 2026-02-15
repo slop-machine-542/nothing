@@ -7,12 +7,11 @@
     <meta name="theme-color" content="#2c3e50">
     <title>Daily Math Digest - February 16, 2026</title>
 
-        <!-- MathJax Configuration -->
+        
     <script>
-MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\)']],
-    displayMath: [['$$', '$$'], ['\[', '\]']],
+    inlineMath: [['<span class="math">', '</span>'], ['<span class="math">', '</span>']],
+    displayMath: [['<div class="math-display">', '</div>'], ['<div class="math-display">', '</div>']],
     processEscapes: true,
     processEnvironments: true
   },
@@ -23,7 +22,7 @@ MathJax = {
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     
     <style>
         :root {
@@ -263,30 +262,30 @@ MathJax = {
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(\\mathbb{C}\\) — the field of complex numbers \\(a + bi\\) where \\(a, b \\in \\mathbb{R}\\) and \\(i^2 = -1\\)</li>
-                        <li>\\(f: U \\to \\mathbb{C}\\) — a complex-valued function on an open set \\(U \\subseteq \\mathbb{C}\\)</li>
-                        <li>\\(f'(z)\\) — the complex derivative: \\(\\lim_{h \\to 0} \\frac{f(z+h) - f(z)}{h}\\)</li>
+                        <li>\<span class="math">ℂ\</span> — the field of complex numbers \<span class="math">a + bi\</span> where \<span class="math">a, b ∈ ℝ\</span> and \<span class="math">i<sup>2</sup> = -1\</span></li>
+                        <li>\<span class="math">f: U → ℂ\</span> — a complex-valued function on an open set \<span class="math">U ⊆ ℂ\</span></li>
+                        <li>\<span class="math">f'(z)\</span> — the complex derivative: \<span class="math">\lim<sub>h → 0</sub> \<span class="math">f(z+h) - f(z)/h</span>\</span></li>
                         <li><strong>Holomorphic</strong> — complex differentiable at every point in a domain</li>
-                        <li>\\(\\gamma\\) — a piecewise smooth closed curve (contour) in \\(\\mathbb{C}\\)</li>
-                        <li>\\(\\oint_\\gamma f(z)\\, dz\\) — contour integral of \\(f\\) around \\(\\gamma\\)</li>
+                        <li>\<span class="math">γ\</span> — a piecewise smooth closed curve (contour) in \<span class="math">ℂ\</span></li>
+                        <li>\<span class="math">\oint_γ f(z)\\, dz\</span> — contour integral of \<span class="math">f\</span> around \<span class="math">γ\</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Cauchy's Integral Theorem</div>
-                    <p>Let \\(U \\subseteq \\mathbb{C}\\) be a simply connected open set, and let \\(f: U \\to \\mathbb{C}\\) be holomorphic on \\(U\\). If \\(\\gamma\\) is any piecewise smooth closed curve in \\(U\\), then:</p>
-                    <p>\\[\\oint_\\gamma f(z)\\, dz = 0\\]</p>
+                    <p>Let \<span class="math">U ⊆ ℂ\</span> be a simply connected open set, and let \<span class="math">f: U → ℂ\</span> be holomorphic on \<span class="math">U\</span>. If \<span class="math">γ\</span> is any piecewise smooth closed curve in \<span class="math">U\</span>, then:</p>
+                    <p>\<div class="math-display">\oint_γ f(z)\\, dz = 0\</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (using Green's Theorem)</div>
-                    <p><strong>Step 1:</strong> Write \\(f(z) = u(x,y) + iv(x,y)\\) where \\(z = x + iy\\), and \\(u, v\\) are real-valued functions.</p>
+                    <p><strong>Step 1:</strong> Write \<span class="math">f(z) = u(x,y) + iv(x,y)\</span> where \<span class="math">z = x + iy\</span>, and \<span class="math">u, v\</span> are real-valued functions.</p>
                     
-                    <p><strong>Step 2:</strong> The complex derivative condition \\(f'(z)\\) existing implies the <strong>Cauchy-Riemann equations</strong>:</p>
-                    <p>\\[\\frac{\\partial u}{\\partial x} = \\frac{\\partial v}{\\partial y} \\quad \\text{and} \\quad \\frac{\\partial u}{\\partial y} = -\\frac{\\partial v}{\\partial x}\\]</p>
+                    <p><strong>Step 2:</strong> The complex derivative condition \<span class="math">f'(z)\</span> existing implies the <strong>Cauchy-Riemann equations</strong>:</p>
+                    <p>\<div class="math-display">\<span class="math">∂ u/∂ x</span> = \<span class="math">∂ v/∂ y</span> \quad and \quad \<span class="math">∂ u/∂ y</span> = -\<span class="math">∂ v/∂ x</span>\</div></p>
                     
                     <p><strong>Step 3:</strong> Write the contour integral as:</p>
-                    <p>\\[\\oint_\\gamma f(z)\\, dz = \\oint_\\gamma (u\\, dx - v\\, dy) + i\\oint_\\gamma (v\\, dx + u\\, dy)\\]</p>
+                    <p>\<div class="math-display">\oint_γ f(z)\\, dz = \oint_γ (u\\, dx - v\\, dy) + i\oint_γ (v\\, dx + u\\, dy)\</div></p>
                     
                     <p><strong>Step 4:</strong> Apply <strong>Green's Theorem</strong> to each real line integral.</p>
                     
@@ -294,7 +293,7 @@ MathJax = {
                     
                     <p><strong>Step 6:</strong> Similarly, the imaginary part equals 0.</p>
                     
-                    <p><strong>Therefore:</strong> Both real and imaginary parts are zero, so \\(\\oint_\\gamma f(z)\\, dz = 0\\). ∎</p>
+                    <p><strong>Therefore:</strong> Both real and imaginary parts are zero, so \<span class="math">\oint_γ f(z)\\, dz = 0\</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -356,41 +355,41 @@ print(f"Error = {abs(computed - actual):.2e}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(G = (V, E)\\) — a graph with vertex set \\(V\\) and edge set \\(E\\)</li>
-                        <li>\\(|V|\\) or \\(v\\) — number of vertices</li>
-                        <li>\\(|E|\\) or \\(e\\) — number of edges</li>
-                        <li>\\(F\\) or \\(f\\) — number of faces (including the outer face)</li>
+                        <li>\<span class="math">G = (V, E)\</span> — a graph with vertex set \<span class="math">V\</span> and edge set \<span class="math">E\</span></li>
+                        <li>\<span class="math">|V|\</span> or \<span class="math">v\</span> — number of vertices</li>
+                        <li>\<span class="math">|E|\</span> or \<span class="math">e\</span> — number of edges</li>
+                        <li>\<span class="math">F\</span> or \<span class="math">f\</span> — number of faces (including the outer face)</li>
                         <li><strong>Planar graph</strong> — can be drawn on a plane without edge crossings</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Euler's Formula for Planar Graphs</div>
-                    <p>For any connected planar graph \\(G\\) drawn in the plane without edge crossings:</p>
-                    <p>\\[V - E + F = 2\\]</p>
+                    <p>For any connected planar graph \<span class="math">G\</span> drawn in the plane without edge crossings:</p>
+                    <p>\<div class="math-display">V - E + F = 2\</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (by induction on edges)</div>
-                    <p><strong>Base Case:</strong> A tree has \\(F = 1\\) and \\(E = V - 1\\). Thus:</p>
-                    <p>\\[V - (V - 1) + 1 = 2\\]</p>
+                    <p><strong>Base Case:</strong> A tree has \<span class="math">F = 1\</span> and \<span class="math">E = V - 1\</span>. Thus:</p>
+                    <p>\<div class="math-display">V - (V - 1) + 1 = 2\</div></p>
                     
-                    <p><strong>Inductive Step:</strong> Assume true for graphs with fewer than \\(E\\) edges.</p>
+                    <p><strong>Inductive Step:</strong> Assume true for graphs with fewer than \<span class="math">E\</span> edges.</p>
                     
-                    <p>If \\(G\\) contains a cycle, remove one edge \\(e\\). The resulting graph has:</p>
+                    <p>If \<span class="math">G\</span> contains a cycle, remove one edge \<span class="math">e\</span>. The resulting graph has:</p>
                     <ul>
-                        <li>\\(V' = V\\) (same vertices)</li>
-                        <li>\\(E' = E - 1\\) (one fewer edge)</li>
-                        <li>\\(F' = F - 1\\) (removing cycle edge merges two faces)</li>
+                        <li>\<span class="math">V' = V\</span> (same vertices)</li>
+                        <li>\<span class="math">E' = E - 1\</span> (one fewer edge)</li>
+                        <li>\<span class="math">F' = F - 1\</span> (removing cycle edge merges two faces)</li>
                     </ul>
                     
-                    <p>By induction: \\(V - (E-1) + (F-1) = V - E + F = 2\\). ∎</p>
+                    <p>By induction: \<span class="math">V - (E-1) + (F-1) = V - E + F = 2\</span>. ∎</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Corollary: Edge Bound for Planar Graphs</div>
-                    <p>For any simple connected planar graph with \\(V \\geq 3\\):</p>
-                    <p>\\[E \\leq 3V - 6\\]</p>
+                    <p>For any simple connected planar graph with \<span class="math">V ≥ 3\</span>:</p>
+                    <p>\<div class="math-display">E ≤ 3V - 6\</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -438,31 +437,31 @@ print(f"  Edge bound check: E = {K5.number_of_edges()}, 3V-6 = {3*5 - 6}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(m(E)\\) or \\(\\mu(E)\\) — Lebesgue measure of set \\(E\\)</li>
-                        <li>\\(\\int_E f\\, d\\mu\\) — Lebesgue integral of \\(f\\) over \\(E\\)</li>
-                        <li>\\(\\chi_E\\) — characteristic function of set \\(E\\)</li>
+                        <li>\<span class="math">m(E)\</span> or \<span class="math">μ(E)\</span> — Lebesgue measure of set \<span class="math">E\</span></li>
+                        <li>\<span class="math">∫<sub>E</sub> f\\, dμ\</span> — Lebesgue integral of \<span class="math">f\</span> over \<span class="math">E\</span></li>
+                        <li>\<span class="math">χ<sub>E</sub>\</span> — characteristic function of set \<span class="math">E\</span></li>
                         <li><strong>Measurable set</strong> — a set for which Lebesgue measure is defined</li>
-                        <li>\\(\\mathcal{L}^1\\) — space of Lebesgue integrable functions</li>
+                        <li>\<span class="math">L<sup>1</sup>\</span> — space of Lebesgue integrable functions</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Monotone Convergence Theorem</div>
-                    <p>Let \\((f_n)_{n=1}^\\infty\\) be a sequence of non-negative measurable functions with \\(f_n \\leq f_{n+1}\\) a.e. Let \\(f = \\lim_{n \\to \\infty} f_n\\). Then:</p>
-                    <p>\\[\\lim_{n \\to \\infty} \\int f_n\\, d\\mu = \\int f\\, d\\mu\\]</p>
+                    <p>Let \<span class="math">(f<sub>n</sub>)<sub>n=1</sub>^∞\</span> be a sequence of non-negative measurable functions with \<span class="math">f<sub>n</sub> ≤ f<sub>n+1</sub>\</span> a.e. Let \<span class="math">f = \lim<sub>n → ∞</sub> f<sub>n</sub>\</span>. Then:</p>
+                    <p>\<div class="math-display">\lim<sub>n → ∞</sub> ∫ f<sub>n</sub>\\, dμ = ∫ f\\, dμ\</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch</div>
-                    <p><strong>Step 1:</strong> Since \\(f_n \\leq f_{n+1}\\), we have \\(\\int f_n \\leq \\int f_{n+1}\\), so the limit exists.</p>
+                    <p><strong>Step 1:</strong> Since \<span class="math">f<sub>n</sub> ≤ f<sub>n+1</sub>\</span>, we have \<span class="math">∫ f<sub>n</sub> ≤ ∫ f<sub>n+1</sub>\</span>, so the limit exists.</p>
                     
-                    <p><strong>Step 2:</strong> Since \\(f_n \\leq f\\), we have \\(\\lim \\int f_n \\leq \\int f\\).</p>
+                    <p><strong>Step 2:</strong> Since \<span class="math">f<sub>n</sub> ≤ f\</span>, we have \<span class="math">\lim ∫ f<sub>n</sub> ≤ ∫ f\</span>.</p>
                     
                     <p><strong>Step 3:</strong> For the reverse inequality, use the definition of Lebesgue integral via simple functions.</p>
                     
-                    <p><strong>Step 4:</strong> For any simple \\(s \\leq f\\), show \\(\\lim \\int f_n \\geq \\int s\\).</p>
+                    <p><strong>Step 4:</strong> For any simple \<span class="math">s ≤ f\</span>, show \<span class="math">\lim ∫ f<sub>n</sub> ≥ ∫ s\</span>.</p>
                     
-                    <p><strong>Step 5:</strong> Taking supremum over all such \\(s\\) gives \\(\\lim \\int f_n \\geq \\int f\\). ∎</p>
+                    <p><strong>Step 5:</strong> Taking supremum over all such \<span class="math">s\</span> gives \<span class="math">\lim ∫ f<sub>n</sub> ≥ ∫ f\</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -511,25 +510,25 @@ monotone_convergence_demo()
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(A \\in \\mathbb{R}^{m \\times n}\\) — an \\(m \\times n\\) real matrix</li>
-                        <li>\\(U \\in \\mathbb{R}^{m \\times m}\\) — orthogonal matrix (\\(U^T U = I_m\\))</li>
-                        <li>\\(\\Sigma \\in \\mathbb{R}^{m \\times n}\\) — diagonal with \\(\\sigma_1 \\geq \\sigma_2 \\geq \\cdots \\geq 0\\)</li>
-                        <li>\\(V \\in \\mathbb{R}^{n \\times n}\\) — orthogonal matrix (\\(V^T V = I_n\\))</li>
-                        <li>\\(\\sigma_i\\) — singular values of \\(A\\)</li>
+                        <li>\<span class="math">A ∈ ℝ<sup>m × n</sup>\</span> — an \<span class="math">m × n\</span> real matrix</li>
+                        <li>\<span class="math">U ∈ ℝ<sup>m × m</sup>\</span> — orthogonal matrix (\<span class="math">U<sup>T</sup> U = I<sub>m</sub>\</span>)</li>
+                        <li>\<span class="math">Σ ∈ ℝ<sup>m × n</sup>\</span> — diagonal with \<span class="math">σ<sub>1</sub> ≥ σ<sub>2</sub> ≥ ⋯ ≥ 0\</span></li>
+                        <li>\<span class="math">V ∈ ℝ<sup>n × n</sup>\</span> — orthogonal matrix (\<span class="math">V<sup>T</sup> V = I<sub>n</sub>\</span>)</li>
+                        <li>\<span class="math">σ<sub>i</sub>\</span> — singular values of \<span class="math">A\</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Singular Value Decomposition</div>
-                    <p>Every matrix \\(A \\in \\mathbb{R}^{m \\times n}\\) can be factored as:</p>
-                    <p>\\[A = U\\Sigma V^T\\]</p>
+                    <p>Every matrix \<span class="math">A ∈ ℝ<sup>m × n</sup>\</span> can be factored as:</p>
+                    <p>\<div class="math-display">A = UΣ V<sup>T</sup>\</div></p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Eckart-Young-Mirsky Theorem</div>
-                    <p>Let \\(A = \\sum_{i=1}^r \\sigma_i u_i v_i^T\\). The best rank-\\(k\\) approximation is:</p>
-                    <p>\\[A_k = \\sum_{i=1}^k \\sigma_i u_i v_i^T\\]</p>
-                    <p>with error \\(\\|A - A_k\\|_2 = \\sigma_{k+1}\\).</p>
+                    <p>Let \<span class="math">A = Σ<sub>i=1</sub><sup>r</sup> σ<sub>i</sub> u<sub>i</sub> v<sub>i</sub><sup>T</sup>\</span>. The best rank-\<span class="math">k\</span> approximation is:</p>
+                    <p>\<div class="math-display">A<sub>k</sub> = Σ<sub>i=1</sub><sup>k</sup> σ<sub>i</sub> u<sub>i</sub> v<sub>i</sub><sup>T</sup>\</div></p>
+                    <p>with error \<span class="math">\\|A - A<sub>k</sub>\\|<sub>2</sub> = σ<sub>k+1</sub>\</span>.</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -572,16 +571,16 @@ print(f"Compression ratio: {original/compressed:.1f}x")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(\\frac{dy}{dt} = f(t, y)\\) — first-order ODE</li>
-                        <li>\\(y(t_0) = y_0\\) — initial condition</li>
-                        <li><strong>Lipschitz condition</strong>: \\(|f(t, y_1) - f(t, y_2)| \\leq L|y_1 - y_2|\\)</li>
-                        <li>\\(L\\) — Lipschitz constant</li>
+                        <li>\<span class="math">\<span class="math">dy/dt</span> = f(t, y)\</span> — first-order ODE</li>
+                        <li>\<span class="math">y(t<sub>0</sub>) = y<sub>0</sub>\</span> — initial condition</li>
+                        <li><strong>Lipschitz condition</strong>: \<span class="math">|f(t, y<sub>1</sub>) - f(t, y<sub>2</sub>)| ≤ L|y<sub>1</sub> - y<sub>2</sub>|\</span></li>
+                        <li>\<span class="math">L\</span> — Lipschitz constant</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Picard-Lindelöf Theorem</div>
-                    <p>Consider \\(\\frac{dy}{dt} = f(t, y), \\quad y(t_0) = y_0\\). If \\(f\\) is continuous in \\(t\\) and Lipschitz in \\(y\\), then there exists a unique solution locally.</p>
+                    <p>Consider \<span class="math">\<span class="math">dy/dt</span> = f(t, y), \quad y(t<sub>0</sub>) = y<sub>0</sub>\</span>. If \<span class="math">f\</span> is continuous in \<span class="math">t\</span> and Lipschitz in \<span class="math">y\</span>, then there exists a unique solution locally.</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -624,25 +623,25 @@ print("Unique solution guaranteed by Picard-Lindelöf.")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(f: \\mathbb{R}^n \\to \\mathbb{R}\\) — objective function</li>
-                        <li>\\(\\nabla f(x)\\) — gradient</li>
-                        <li>\\(x^*\\) — optimal solution</li>
-                        <li><strong>L-smooth</strong>: \\(\\|\\nabla f(x) - \\nabla f(y)\\| \\leq L\\|x - y\\|\\)</li>
-                        <li>\\(\\kappa = L/\\mu\\) — condition number</li>
+                        <li>\<span class="math">f: ℝ<sup>n</sup> → ℝ\</span> — objective function</li>
+                        <li>\<span class="math">∇ f(x)\</span> — gradient</li>
+                        <li>\<span class="math">x^*\</span> — optimal solution</li>
+                        <li><strong>L-smooth</strong>: \<span class="math">\\|∇ f(x) - ∇ f(y)\\| ≤ L\\|x - y\\|\</span></li>
+                        <li>\<span class="math">κ = L/μ\</span> — condition number</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Convergence for L-Smooth Convex Functions</div>
-                    <p>With step size \\(\\eta = \\frac{1}{L}\\):</p>
-                    <p>\\[f(x_k) - f^* \\leq \\frac{2L\\|x_0 - x^*\\|^2}{k}\\]</p>
-                    <p>This is \\(O(1/k)\\) convergence.</p>
+                    <p>With step size \<span class="math">η = \<span class="math">1/L</span>\</span>:</p>
+                    <p>\<div class="math-display">f(x<sub>k</sub>) - f^* ≤ \<span class="math">2L\\|x<sub>0</sub> - x^*\\|<sup>2</sup>/k</span>\</div></p>
+                    <p>This is \<span class="math">O(1/k)\</span> convergence.</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Linear Convergence for Strongly Convex</div>
-                    <p>If \\(f\\) is \\(\\mu\\)-strongly convex and L-smooth:</p>
-                    <p>\\[f(x_k) - f^* \\leq \\left(1 - \\frac{1}{\\kappa}\\right)^k (f(x_0) - f^*)\\]</p>
+                    <p>If \<span class="math">f\</span> is \<span class="math">μ\</span>-strongly convex and L-smooth:</p>
+                    <p>\<div class="math-display">f(x<sub>k</sub>) - f^* ≤ <span class="math">1 - \<span class="math">1/κ</span></span><sup>k</sup> (f(x<sub>0</sub>) - f^*)\</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -695,16 +694,16 @@ print(f"Optimal f*: {f(np.linalg.solve(A, b)):.6f}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(\\{L | R\\}\\) — surreal number notation</li>
-                        <li>\\(\\omega\\) — simplest infinite surreal</li>
-                        <li>\\(\\varepsilon\\) — infinitesimal</li>
+                        <li>\<span class="math">\\L | R\\\</span> — surreal number notation</li>
+                        <li>\<span class="math">ω\</span> — simplest infinite surreal</li>
+                        <li>\<span class="math">\varepsilon\</span> — infinitesimal</li>
                         <li><strong>Birthday</strong> — ordinal at which a surreal is created</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Conway's Simplicity Theorem</div>
-                    <p>If \\(L\\) and \\(R\\) are sets of surreals with every element of \\(L\\) less than every element of \\(R\\), then there exists a unique simplest surreal \\(x = \\{L | R\\}\\) with \\(x^L < x < x^R\\).</p>
+                    <p>If \<span class="math">L\</span> and \<span class="math">R\</span> are sets of surreals with every element of \<span class="math">L\</span> less than every element of \<span class="math">R\</span>, then there exists a unique simplest surreal \<span class="math">x = \\L | R\\\</span> with \<span class="math">x<sup>L</sup> < x < x<sup>R</sup>\</span>.</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -744,15 +743,15 @@ print("On day n, all dyadic rationals with denominator 2^n appear.")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(f_c(z) = z^2 + c\\) — quadratic polynomial</li>
-                        <li>\\(M = \\{c : \\sup_n |f_c^n(0)| < \\infty\\}\\) — Mandelbrot set</li>
-                        <li><strong>Escape radius</strong>: \\(|z| > 2\\) implies escape</li>
+                        <li>\<span class="math">f<sub>c</sub>(z) = z<sup>2</sup> + c\</span> — quadratic polynomial</li>
+                        <li>\<span class="math">M = \\c : \sup<sub>n</sub> |f<sub>c</sub><sup>n</sup>(0)| < ∞\\\</span> — Mandelbrot set</li>
+                        <li><strong>Escape radius</strong>: \<span class="math">|z| > 2\</span> implies escape</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Escape Criterion</div>
-                    <p>If \\(|z| > \\max(2, |c|)\\), then \\(|f_c^n(z)| \\to \\infty\\). The Mandelbrot set is contained in \\(|c| \\leq 2\\).</p>
+                    <p>If \<span class="math">|z| > \max(2, |c|)\</span>, then \<span class="math">|f<sub>c</sub><sup>n</sup>(z)| → ∞\</span>. The Mandelbrot set is contained in \<span class="math">|c| ≤ 2\</span>.</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -801,21 +800,21 @@ print("\\nTheorem: The Mandelbrot set is connected.")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(\\sigma\\) — Prandtl number</li>
-                        <li>\\(\\rho\\) — Rayleigh number</li>
-                        <li>\\(\\beta\\) — geometric factor</li>
-                        <li>\\(\\lambda\\) — Lyapunov exponent</li>
+                        <li>\<span class="math">σ\</span> — Prandtl number</li>
+                        <li>\<span class="math">ρ\</span> — Rayleigh number</li>
+                        <li>\<span class="math">β\</span> — geometric factor</li>
+                        <li>\<span class="math">λ\</span> — Lyapunov exponent</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Lorenz System</div>
-                    <p>\\[\\begin{aligned}
-    \\dot{x} &= \\sigma(y - x) \\\\[4pt]
-    \\dot{y} &= x(\\rho - z) - y \\\\[4pt]
-    \\dot{z} &= xy - \\beta z
-                    \\end{aligned}\\]</p>
-                    <p>with classic parameters \\(\\sigma = 10\\), \\(\\rho = 28\\), \\(\\beta = 8/3\\).</p>
+                    <p>\<div class="math-display">\beginaligned
+    ẋ &= σ(y - x) \\\\[4pt]
+    ẏ &= x(ρ - z) - y \\\\[4pt]
+    ż &= xy - β z
+                    \endaligned\</div></p>
+                    <p>with classic parameters \<span class="math">σ = 10\</span>, \<span class="math">ρ = 28\</span>, \<span class="math">β = 8/3\</span>.</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -868,9 +867,9 @@ print("\\nThis is the 'butterfly effect'!")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(G = (N, (S_i), (u_i))\\) — a game with players \\(N\\), strategy sets \\(S_i\\), and utilities \\(u_i\\)</li>
-                        <li>\\(s_{-i}\\) — strategies of all players except \\(i\\)</li>
-                        <li>\\(BR_i(s_{-i})\\) — best response of player \\(i\\)</li>
+                        <li>\<span class="math">G = (N, (S<sub>i</sub>), (u<sub>i</sub>))\</span> — a game with players \<span class="math">N\</span>, strategy sets \<span class="math">S<sub>i</sub>\</span>, and utilities \<span class="math">u<sub>i</sub>\</span></li>
+                        <li>\<span class="math">s<sub>-i</sub>\</span> — strategies of all players except \<span class="math">i\</span></li>
+                        <li>\<span class="math">BR<sub>i</sub>(s<sub>-i</sub>)\</span> — best response of player \<span class="math">i\</span></li>
                         <li><strong>Mixed strategy</strong> — probability distribution over pure strategies</li>
                     </ul>
                 </div>
@@ -882,13 +881,13 @@ print("\\nThis is the 'butterfly effect'!")
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (via Brouwer Fixed-Point)</div>
-                    <p><strong>Step 1:</strong> Define the best response correspondence \\(BR\\) mapping strategy profiles to sets of best responses.</p>
+                    <p><strong>Step 1:</strong> Define the best response correspondence \<span class="math">BR\</span> mapping strategy profiles to sets of best responses.</p>
                     
-                    <p><strong>Step 2:</strong> Show \\(BR\\) is upper hemicontinuous with non-empty convex values.</p>
+                    <p><strong>Step 2:</strong> Show \<span class="math">BR\</span> is upper hemicontinuous with non-empty convex values.</p>
                     
                     <p><strong>Step 3:</strong> Apply Kakutani's fixed-point theorem (or Brouwer for smooth approximations).</p>
                     
-                    <p><strong>Step 4:</strong> A fixed point of \\(BR\\) is a Nash equilibrium. ∎</p>
+                    <p><strong>Step 4:</strong> A fixed point of \<span class="math">BR\</span> is a Nash equilibrium. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -952,7 +951,7 @@ print(f"P1 cannot improve by deviating: {cooperate_payoff_p1 <= defect_payoff_p1
                 
                 <div class="timeline-item">
                     <span class="timeline-year">1750</span>
-                    <p><strong>Euler's Formula</strong> — Leonhard Euler presents his formula for polyhedra (\\(V - E + F = 2\\)), laying the foundation for topology and graph theory.</p>
+                    <p><strong>Euler's Formula</strong> — Leonhard Euler presents his formula for polyhedra (\<span class="math">V - E + F = 2\</span>), laying the foundation for topology and graph theory.</p>
                 </div>
                 
                 <div class="timeline-item">

@@ -7,30 +7,6 @@
     <meta name="theme-color" content="#2c3e50">
     <title>Daily Math Digest</title>
     
-    <!-- MathJax Configuration -->
-    <script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    processEscapes: true,
-    processEnvironments: true
-  },
-  chtml: {
-    scale: 1,
-    minScale: 0.8,
-    matchFontHeight: true
-  },
-  startup: {
-    pageReady: () => {
-      return MathJax.startup.defaultPageReady();
-    }
-  }
-};
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -55,7 +31,6 @@ MathJax = {
         <section class="section">
             <h2>📚 Latest Posts</h2>
             <ul class="post-list" id="latest-posts">
-                <!-- Latest 5 posts will be loaded here -->
             </ul>
             <p style="margin-top: 20px;">
                 <a href="posts/index.html" class="tag">View All Posts →</a>
@@ -114,7 +89,6 @@ MathJax = {
     </footer>
 
     <script>
-        // Posts data - sorted by date (newest first)
         const posts = [
             {
                 title: "Daily Math Digest - Set Theory, Lie Theory, Modular Forms, Spectral Theory, PDEs, Machine Learning, Coding Theory, Matroid Theory, Symplectic Geometry, Geometric Group Theory",
@@ -160,7 +134,6 @@ MathJax = {
             }
         ];
 
-        // Render latest 5 posts
         function renderLatestPosts() {
             const container = document.getElementById('latest-posts');
             
@@ -184,7 +157,6 @@ MathJax = {
             container.innerHTML = html;
         }
 
-        // Initialize
         renderLatestPosts();
     </script>
 </body>

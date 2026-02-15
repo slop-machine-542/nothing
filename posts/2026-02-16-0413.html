@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Daily Math Digest - Complex Analysis, Algebraic Geometry, Differential Geometry, Statistics, Differential Equations, Linear Algebra, Riemann Hypothesis, P vs NP, Navier-Stokes, Surreal Numbers">
     <title>Daily Math Digest - February 16, 2026</title>
-        <!-- MathJax Configuration -->
+        
     <script>
-MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\)']],
-    displayMath: [['$$', '$$'], ['\[', '\]']],
+    inlineMath: [['<span class="math">', '</span>'], ['<span class="math">', '</span>']],
+    displayMath: [['<div class="math-display">', '</div>'], ['<div class="math-display">', '</div>']],
     processEscapes: true,
     processEnvironments: true
   },
@@ -21,7 +20,7 @@ MathJax = {
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     
     <link rel="stylesheet" href="../css/style.css">
 
@@ -208,28 +207,28 @@ MathJax = {
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbb{C}\) — the field of complex numbers</li>
-                        <li>\(f: U \to \mathbb{C}\) — a complex-valued function</li>
-                        <li>\(\gamma\) — a contour (piecewise smooth curve)</li>
-                        <li>\(\oint_\gamma f(z)\, dz\) — the contour integral</li>
-                        <li>\(\text{Holomorphic}\) — complex differentiable</li>
+                        <li><span class="math">ℂ</span> — the field of complex numbers</li>
+                        <li><span class="math">f: U to ℂ</span> — a complex-valued function</li>
+                        <li>γ — a contour (piecewise smooth curve)</li>
+                        <li><span class="math">oint_gamma f(z)\, dz</span> — the contour integral</li>
+                        <li><span class="math">Holomorphic</span> — complex differentiable</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <h4>Cauchy's Integral Theorem</h4>
-                    <p>Let \(U \subseteq \mathbb{C}\) be simply connected, and let \(f: U \to \mathbb{C}\) be holomorphic. If \(\gamma\) is a piecewise smooth, simple closed curve in \(U\), then:</p>
-                    <p>\[\oint_\gamma f(z)\, dz = 0\]</p>
+                    <p>Let <span class="math">U subseteq ℂ</span> be simply connected, and let <span class="math">f: U to ℂ</span> be holomorphic. If γ is a piecewise smooth, simple closed curve in <span class="math">U</span>, then:</p>
+                    <p><div class="math-display">oint_gamma f(z)\, dz = 0</div></p>
                 </div>
 
                 <div class="proof">
                     <h4>Proof (using Green's Theorem)</h4>
-                    <p>Write \(f(z) = u(x,y) + iv(x,y)\). The integral becomes:
-                    \[\oint_\gamma (u\, dx - v\, dy) + i\oint_\gamma (v\, dx + u\, dy)\]</p>
+                    <p>Write <span class="math">f(z) = u(x,y) + iv(x,y)</span>. The integral becomes:
+                    <div class="math-display">oint_gamma (u\, dx - v\, dy) + ioint_gamma (v\, dx + u\, dy)</div></p>
                     
                     <p>By Green's theorem and the Cauchy-Riemann equations 
-                    \(\partial u/\partial x = \partial v/\partial y\) and 
-                    \(\partial u/\partial y = -\partial v/\partial x\), both integrals vanish. ∎</p>
+                    <span class="math">partial u/partial x = partial v/partial y</span> and 
+                    <span class="math">partial u/partial y = -partial v/partial x</span>, both integrals vanish. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -271,22 +270,22 @@ print(f"∮ (1/z) dz = {result}")  # Should be ≈ 2πi
                 <h3>2. Algebraic Geometry: Bézout's Theorem</h3>
                 
                 <h4>Introduction</h4>
-                <p>Algebraic geometry is the study of solutions to polynomial equations. <strong>Bézout's Theorem</strong> is a fundamental result counting the intersections of algebraic curves. It states that two curves of degrees \(m\) and \(n\) intersect in exactly \(mn\) points (counting multiplicities).</p>
+                <p>Algebraic geometry is the study of solutions to polynomial equations. <strong>Bézout's Theorem</strong> is a fundamental result counting the intersections of algebraic curves. It states that two curves of degrees <span class="math">m</span> and <span class="math">n</span> intersect in exactly <span class="math">mn</span> points (counting multiplicities).</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbb{P}^n\) — complex projective n-space</li>
-                        <li>\(V(f)\) — the vanishing locus of polynomial \(f\)</li>
-                        <li>\(\deg(f)\) — degree of polynomial \(f\)</li>
-                        <li>\(I_p(C_1, C_2)\) — intersection multiplicity at point \(p\)</li>
+                        <li><span class="math">ℙ<sup>n</sup></span> — complex projective n-space</li>
+                        <li><span class="math">V(f)</span> — the vanishing locus of polynomial <span class="math">f</span></li>
+                        <li><span class="math">deg(f)</span> — degree of polynomial <span class="math">f</span></li>
+                        <li><span class="math">I<sub>p</sub>(C<sub>1</sub>, C<sub>2</sub>)</span> — intersection multiplicity at point <span class="math">p</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <h4>Bézout's Theorem</h4>
-                    <p>Let \(C_1\) and \(C_2\) be projective plane curves of degrees \(m\) and \(n\) with no common component. Then:</p>
-                    <p>\[\sum_{p \in C_1 \cap C_2} I_p(C_1, C_2) = m \cdot n\]</p>
+                    <p>Let <span class="math">C<sub>1</sub></span> and <span class="math">C<sub>2</sub></span> be projective plane curves of degrees <span class="math">m</span> and <span class="math">n</span> with no common component. Then:</p>
+                    <p><div class="math-display">sum<sub>p in C<sub>1</sub> cap C<sub>2</sub></sub> I<sub>p</sub>(C<sub>1</sub>, C<sub>2</sub>) = m cdot n</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -323,22 +322,22 @@ plt.savefig('bezout_theorem.png', dpi=150)
                 <h3>3. Differential Geometry: The Gauss-Bonnet Theorem</h3>
                 
                 <h4>Introduction</h4>
-                <p>The <strong>Gauss-Bonnet Theorem</strong> connects local geometry (curvature) to global topology. It states that the total Gaussian curvature of a compact surface equals \(2\pi\) times its Euler characteristic.</p>
+                <p>The <strong>Gauss-Bonnet Theorem</strong> connects local geometry (curvature) to global topology. It states that the total Gaussian curvature of a compact surface equals <span class="math">2pi</span> times its Euler characteristic.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(S\) — a smooth, compact, oriented surface</li>
-                        <li>\(K\) — Gaussian curvature</li>
-                        <li>\(\chi(S) = V - E + F\) — Euler characteristic</li>
-                        <li>\(dA\) — area element</li>
+                        <li><span class="math">S</span> — a smooth, compact, oriented surface</li>
+                        <li><span class="math">K</span> — Gaussian curvature</li>
+                        <li><span class="math">chi(S) = V - E + F</span> — Euler characteristic</li>
+                        <li><span class="math">dA</span> — area element</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <h4>The Gauss-Bonnet Theorem</h4>
-                    <p>Let \(S\) be a compact, oriented surface without boundary. Then:</p>
-                    <p>\[\int_S K\, dA = 2\pi \chi(S)\]</p>
+                    <p>Let <span class="math">S</span> be a compact, oriented surface without boundary. Then:</p>
+                    <p><div class="math-display">int<sub>S</sub> K\, dA = 2pi chi(S)</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -377,18 +376,18 @@ print(f"\nTorus: χ = {chi_torus}, so ∫K dA = 0")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(X_1, X_2, \ldots, X_n\) — i.i.d. random variables</li>
-                        <li>\(\mu = \mathbb{E}[X_i]\) — expected value</li>
-                        <li>\(\sigma^2 = \text{Var}(X_i)\) — variance</li>
-                        <li>\(\bar{X}_n = \frac{1}{n}\sum_{i=1}^{n} X_i\) — sample mean</li>
-                        <li>\(\mathcal{N}(\mu, \sigma^2)\) — normal distribution</li>
+                        <li><span class="math">X<sub>1</sub>, X<sub>2</sub>, ldots, X<sub>n</sub></span> — i.i.d. random variables</li>
+                        <li><span class="math">mu = mathbbE[X<sub>i</sub>]</span> — expected value</li>
+                        <li><span class="math">sigma<sup>2</sup> = Var(X<sub>i</sub>)</span> — variance</li>
+                        <li><span class="math">X̄<sub>n</sub> = <span class="math">1/n</span>sum<sub>i=1</sub><sup>n</sup> X<sub>i</sub></span> — sample mean</li>
+                        <li><span class="math">N(mu, sigma<sup>2</sup>)</span> — normal distribution</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <h4>The Central Limit Theorem</h4>
-                    <p>Let \(X_1, X_2, \ldots\) be i.i.d. with mean \(\mu\) and variance \(\sigma^2＜\infty\). Then:</p>
-                    <p>\[\frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} \mathcal{N}(0, 1)\]</p>
+                    <p>Let <span class="math">X<sub>1</sub>, X<sub>2</sub>, ldots</span> be i.i.d. with mean μ and variance <span class="math">sigma<sup>2</sup>＜infty</span>. Then:</p>
+                    <p><div class="math-display">fracX̄<sub>n</sub> - musigma/√(n) xrightarrowd N(0, 1)</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -431,18 +430,18 @@ plt.savefig('central_limit_theorem.png', dpi=150)
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\frac{dy}{dt} = f(t, y)\) — first-order ODE</li>
-                        <li>\(y(t_0) = y_0\) — initial condition</li>
-                        <li>\(L\) — Lipschitz constant</li>
-                        <li>\((Ty)(t) = y_0 + \int_{t_0}^{t} f(s, y(s))\, ds\) — Picard operator</li>
+                        <li><span class="math"><span class="math">dy/dt</span> = f(t, y)</span> — first-order ODE</li>
+                        <li><span class="math">y(t<sub>0</sub>) = y<sub>0</sub></span> — initial condition</li>
+                        <li><span class="math">L</span> — Lipschitz constant</li>
+                        <li><span class="math">(Ty)(t) = y<sub>0</sub> + int<sub>t<sub>0</sub></sub><sup>t</sup> f(s, y(s))\, ds</span> — Picard operator</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <h4>Picard-Lindelöf Existence and Uniqueness Theorem</h4>
-                    <p>Let \(f\) be continuous and Lipschitz in \(y\) with constant \(L\). Then for any \((t_0, y_0)\), there exists \(\epsilon > 0\) such that the IVP:</p>
-                    <p>\[\frac{dy}{dt} = f(t, y), \quad y(t_0) = y_0\]</p>
-                    <p>has a unique solution on \([t_0 - \epsilon, t_0 + \epsilon]\).</p>
+                    <p>Let <span class="math">f</span> be continuous and Lipschitz in <span class="math">y</span> with constant <span class="math">L</span>. Then for any <span class="math">(t<sub>0</sub>, y<sub>0</sub>)</span>, there exists <span class="math">epsilon > 0</span> such that the IVP:</p>
+                    <p><div class="math-display"><span class="math">dy/dt</span> = f(t, y), quad y(t<sub>0</sub>) = y<sub>0</sub></div></p>
+                    <p>has a unique solution on <span class="math">[t<sub>0</sub> - epsilon, t<sub>0</sub> + epsilon]</span>.</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -487,23 +486,23 @@ print(f"Exact y(2) = e² = {y_exact[-1]:.6f}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(A = U\Sigma V^T\) — SVD decomposition</li>
-                        <li>\(U, V\) — orthogonal matrices</li>
-                        <li>\(\Sigma\) — diagonal matrix of singular values\(\sigma_1 \geq \sigma_2 \geq \cdots\)</li>
-                        <li>\(\|A\|_F\) — Frobenius norm</li>
+                        <li><span class="math">A = USigma V<sup>T</sup></span> — SVD decomposition</li>
+                        <li><span class="math">U, V</span> — orthogonal matrices</li>
+                        <li><span class="math">Sigma</span> — diagonal matrix of singular values<span class="math">sigma<sub>1</sub> geq sigma<sub>2</sub> geq cdots</span></li>
+                        <li><span class="math">\|A\|<sub>F</sub></span> — Frobenius norm</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <h4>Singular Value Decomposition</h4>
-                    <p>Let \(A \in \mathbb{R}^{m \times n}\). Then there exist orthogonal \(U, V\) such that:</p>
-                    <p>\[A = U\Sigma V^T\]</p>
-                    <p>where \(\Sigma = \text{diag}(\sigma_1, \ldots, \sigma_r)\) with \(r = \text{rank}(A)\).</p>
+                    <p>Let <span class="math">A in ℝ<sup>m times n</sup></span>. Then there exist orthogonal <span class="math">U, V</span> such that:</p>
+                    <p><div class="math-display">A = USigma V<sup>T</sup></div></p>
+                    <p>where <span class="math">Sigma = diag(sigma<sub>1</sub>, ldots, sigma<sub>r</sub>)</span> with <span class="math">r = rank(A)</span>.</p>
                 </div>
 
                 <div class="theorem">
                     <h4>Eckart-Young-Mirsky Theorem</h4>
-                    <p>The best rank-\(k\) approximation to \(A\) is \(A_k = \sum_{i=1}^{k} \sigma_i u_i v_i^T\) with error \(\|A - A_k\|_F^2 = \sum_{i=k+1}^{r} \sigma_i^2\).</p>
+                    <p>The best rank-<span class="math">k</span> approximation to <span class="math">A</span> is <span class="math">A<sub>k</sub> = sum<sub>i=1</sub><sup>k</sup> sigma<sub>i</sub> u<sub>i</sub> v<sub>i</sub><sup>T</sup></span> with error <span class="math">\|A - A<sub>k</sub>\|<sub>F</sub><sup>2</sup> = sum<sub>i=k+1</sub><sup>r</sup> sigma<sub>i</sub><sup>2</sup></span>.</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -551,15 +550,15 @@ print(f"Theoretical error: {theory_error:.6f}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}\) — Riemann zeta function</li>
-                        <li>\(s = \sigma + it\) — complex variable</li>
-                        <li>\(\rho = \beta + i\gamma\) — non-trivial zero</li>
+                        <li><span class="math">zeta(s) = sum<sub>n=1</sub><sup>infty</sup> <span class="math">1/n<sup>s</sup></span></span> — Riemann zeta function</li>
+                        <li><span class="math">s = sigma + it</span> — complex variable</li>
+                        <li><span class="math">rho = beta + igamma</span> — non-trivial zero</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <h4>The Riemann Hypothesis</h4>
-                    <p>All non-trivial zeros of \(\zeta(s)\) satisfy \(\Re(s) = \frac{1}{2}\).</p>
+                    <p>All non-trivial zeros of <span class="math">zeta(s)</span> satisfy <span class="math">Re(s) = <span class="math">1/2</span></span>.</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -606,10 +605,10 @@ plt.savefig('riemann_hypothesis.png', dpi=150)
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(P\) — polynomial time solvable</li>
-                        <li>\(NP\) — polynomial time verifiable</li>
-                        <li>\(NPC\) — NP-complete (hardest problems)</li>
-                        <li>\(O(f(n))\) — big-O notation</li>
+                        <li><span class="math">P</span> — polynomial time solvable</li>
+                        <li><span class="math">NP</span> — polynomial time verifiable</li>
+                        <li><span class="math">NPC</span> — NP-complete (hardest problems)</li>
+                        <li><span class="math">O(f(n))</span> — big-O notation</li>
                     </ul>
                 </div>
 
@@ -657,17 +656,17 @@ print(f"Satisfiable: {sat}, Solution: x1={sol[0]}, x2={sol[1] if sol else None}"
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbf{u}(x, t)\) — velocity field</li>
-                        <li>\(p(x, t)\) — pressure</li>
-                        <li>\(\nu\) — viscosity</li>
-                        <li>\(\Delta\) — Laplacian</li>
+                        <li><span class="math"><strong>u</strong>(x, t)</span> — velocity field</li>
+                        <li><span class="math">p(x, t)</span> — pressure</li>
+                        <li><span class="math">nu</span> — viscosity</li>
+                        <li><span class="math">Delta</span> — Laplacian</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <h4>Navier-Stokes Equations (Incompressible)</h4>
-                    <p>\[\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = \nu \Delta \mathbf{u} - \nabla p + \mathbf{f}\]</p>
-                    <p>\[\nabla \cdot \mathbf{u} = 0\]</p>
+                    <p><div class="math-display">fracpartial <strong>u</strong>partial t + (<strong>u</strong> cdot nabla)<strong>u</strong> = nu Delta <strong>u</strong> - nabla p + <strong>f</strong></div></p>
+                    <p><div class="math-display">nabla cdot <strong>u</strong> = 0</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -713,16 +712,16 @@ plt.savefig('burgers_equation.png', dpi=150)
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\{L | R\}\) — surreal number with left set \(L\), right set \(R\)</li>
-                        <li>\(\omega\) — first infinite surreal</li>
-                        <li>\(\varepsilon\) — infinitesimal surreals</li>
+                        <li><span class="math">\L | R\</span> — surreal number with left set <span class="math">L</span>, right set <span class="math">R</span></li>
+                        <li>ω — first infinite surreal</li>
+                        <li><span class="math">varepsilon</span> — infinitesimal surreals</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <h4>Definition of Surreal Numbers</h4>
-                    <p>If \(L, R\) are sets of surreals with no element of \(L \geq\) any element of \(R\), then \(\{L | R\}\) is a surreal number.</p>
-                    <p>Examples: \(0 = \{\ |\ \}\), \(1 = \{0 |\ \}\), \(\frac{1}{2} = \{0 | 1\}\), \(\omega = \{0, 1, 2, \ldots |\ \}\)</p>
+                    <p>If <span class="math">L, R</span> are sets of surreals with no element of <span class="math">L geq</span> any element of <span class="math">R</span>, then <span class="math">\L | R\</span> is a surreal number.</p>
+                    <p>Examples: <span class="math">0 = \\ |\ \</span>, <span class="math">1 = \0 |\ \</span>, <span class="math"><span class="math">1/2</span> = \0 | 1\</span>, <span class="math">omega = \0, 1, 2, ldots |\ \</span></p>
                 </div>
 
                 <h4>Python Implementation</h4>

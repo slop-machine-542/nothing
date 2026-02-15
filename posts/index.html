@@ -7,37 +7,12 @@
     <meta name="theme-color" content="#2c3e50">
     <title>All Posts - Daily Math Digest</title>
     
-    <!-- MathJax Configuration -->
-    <script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    processEscapes: true,
-    processEnvironments: true
-  },
-  chtml: {
-    scale: 1,
-    minScale: 0.8,
-    matchFontHeight: true
-  },
-  startup: {
-    pageReady: () => {
-      return MathJax.startup.defaultPageReady();
-    }
-  }
-};
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="site-header">
         <h1>📐 Daily Math Digest</h1>
-        <p class="site-description">
-            All Posts Archive
-        </p>
+        <p class="site-description">All Posts Archive</p>
     </header>
 
     <nav>
@@ -54,20 +29,14 @@ MathJax = {
             <h2>📚 All Posts</h2>
             <p>Browse all mathematical explorations, theorems, and insights from the Daily Math Digest.</p>
             
-            <div id="posts-container">
-                <!-- Posts will be loaded here -->
-            </div>
+            <div id="posts-container"></div>
 
-            <div class="pagination" id="pagination">
-                <!-- Pagination will be generated here -->
-            </div>
+            <div class="pagination" id="pagination"></div>
         </section>
     </main>
 
     <footer>
-        <p>
-            <strong>Daily Math Digest</strong> — Powered by curiosity and mathematics.
-        </p>
+        <p><strong>Daily Math Digest</strong> — Powered by curiosity and mathematics.</p>
         <p>
             <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> | 
             <a href="../index.html">Home</a> |
@@ -76,7 +45,6 @@ MathJax = {
     </footer>
 
     <script>
-        // Posts data - all posts from the site
         const posts = [
             {
                 title: "Daily Math Digest - Set Theory, Lie Theory, Modular Forms, Spectral Theory, PDEs, Machine Learning, Coding Theory, Matroid Theory, Symplectic Geometry, Geometric Group Theory",
@@ -185,17 +153,14 @@ MathJax = {
             
             let html = '';
             
-            // Previous button
             if (currentPage > 1) {
                 html += `<a href="?page=${currentPage - 1}">← Previous</a>`;
             } else {
                 html += `<span class="disabled">← Previous</span>`;
             }
             
-            // Page info
             html += `<span class="current-page">Page ${currentPage} of ${totalPages}</span>`;
             
-            // Next button
             if (currentPage < totalPages) {
                 html += `<a href="?page=${currentPage + 1}">Next →</a>`;
             } else {
@@ -205,7 +170,6 @@ MathJax = {
             pagination.innerHTML = html;
         }
 
-        // Initialize
         const currentPage = getPageNumber();
         renderPosts(currentPage);
         renderPagination(currentPage);

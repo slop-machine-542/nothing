@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Math Digest - February 15, 2026</title>
 
-        <!-- MathJax Configuration -->
+        
     <script>
-MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\)']],
-    displayMath: [['$$', '$$'], ['\[', '\]']],
+    inlineMath: [['<span class="math">', '</span>'], ['<span class="math">', '</span>']],
+    displayMath: [['<div class="math-display">', '</div>'], ['<div class="math-display">', '</div>']],
     processEscapes: true,
     processEnvironments: true
   },
@@ -21,7 +20,7 @@ MathJax = {
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -102,40 +101,40 @@ MathJax = {
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(D^n\) — the closed n-dimensional unit disk: all points in \(\mathbb{R}^n\) with \(\|x\| \leq 1\)</li>
-                        <li>\(\partial D^n\) or \(S^{n-1}\) — the boundary of the disk, the \((n-1)\)-dimensional sphere</li>
-                        <li>\(f: X \to Y\) — a function from space \(X\) to space \(Y\)</li>
-                        <li>\(C^0\) — continuous (no jumps or breaks)</li>
-                        <li>\(x^*\) — a fixed point where \(f(x^*) = x^*\)</li>
+                        <li><span class="math">D<sup>n</sup></span> — the closed n-dimensional unit disk: all points in <span class="math">ℝ<sup>n</sup></span> with <span class="math">\|x\| leq 1</span></li>
+                        <li><span class="math">partial D<sup>n</sup></span> or <span class="math">S<sup>n-1</sup></span> — the boundary of the disk, the <span class="math">(n-1)</span>-dimensional sphere</li>
+                        <li><span class="math">f: X to Y</span> — a function from space <span class="math">X</span> to space <span class="math">Y</span></li>
+                        <li><span class="math">C<sup>0</sup></span> — continuous (no jumps or breaks)</li>
+                        <li><span class="math">x^*</span> — a fixed point where <span class="math">f(x^*) = x^*</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Brouwer Fixed-Point Theorem</div>
-                    <p>Let \(D^n = \{x \in \mathbb{R}^n : \|x\| \leq 1\}\) be the closed unit disk in \(\mathbb{R}^n\). For any continuous function \(f: D^n \to D^n\), there exists at least one point \(x^* \in D^n\) such that:</p>
-                    <p>\[f(x^*) = x^*\]</p>
+                    <p>Let <span class="math">D<sup>n</sup> = \x in ℝ<sup>n</sup> : \|x\| leq 1\</span> be the closed unit disk in <span class="math">ℝ<sup>n</sup></span>. For any continuous function <span class="math">f: D<sup>n</sup> to D<sup>n</sup></span>, there exists at least one point <span class="math">x^* in D<sup>n</sup></span> such that:</p>
+                    <p><div class="math-display">f(x^*) = x^*</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (by contradiction, for n = 2)</div>
-                    <p><strong>Step 1:</strong> Assume \(f: D^2 \to D^2\) has <em>no</em> fixed points, so \(f(x) \neq x\) for all \(x \in D^2\).</p>
+                    <p><strong>Step 1:</strong> Assume <span class="math">f: D<sup>2</sup> to D<sup>2</sup></span> has <em>no</em> fixed points, so <span class="math">f(x) neq x</span> for all <span class="math">x in D<sup>2</sup></span>.</p>
                     
-                    <p><strong>Step 2:</strong> Define a retraction. For each \(x\), draw a ray from \(f(x)\) through \(x\). This ray intersects the boundary circle \(S^1\) at a unique point \(r(x)\).</p>
+                    <p><strong>Step 2:</strong> Define a retraction. For each <span class="math">x</span>, draw a ray from <span class="math">f(x)</span> through <span class="math">x</span>. This ray intersects the boundary circle <span class="math">S<sup>1</sup></span> at a unique point <span class="math">r(x)</span>.</p>
                     
-                    <p><strong>Step 3:</strong> This defines a continuous map \(r: D^2 \to S^1\) where \(r(x) = x\) for all \(x \in S^1\) (i.e., \(r\) is a retraction).</p>
+                    <p><strong>Step 3:</strong> This defines a continuous map <span class="math">r: D<sup>2</sup> to S<sup>1</sup></span> where <span class="math">r(x) = x</span> for all <span class="math">x in S<sup>1</sup></span> (i.e., <span class="math">r</span> is a retraction).</p>
                     
-                    <p><strong>Step 4:</strong> Let \(i: S^1 \hookrightarrow D^2\) be the inclusion map. The composition \(r \circ i = \text{id}_{S^1}\).</p>
+                    <p><strong>Step 4:</strong> Let <span class="math">i: S<sup>1</sup> hookrightarrow D<sup>2</sup></span> be the inclusion map. The composition <span class="math">r circ i = id<sub>S<sup>1</sup></sub></span>.</p>
                     
-                    <p><strong>Step 5:</strong> Apply the fundamental group functor \(\pi_1\):</p>
-                    <p>\[\pi_1(r) \circ \pi_1(i) = \pi_1(\text{id}_{S^1}) = \text{id}_{\pi_1(S^1)}\]</p>
+                    <p><strong>Step 5:</strong> Apply the fundamental group functor <span class="math">π₁</span>:</p>
+                    <p><div class="math-display">π₁(r) circ π₁(i) = π₁(id<sub>S<sup>1</sup></sub>) = id<sub>π₁(S<sup>1</sup>)</sub></div></p>
                     
-                    <p><strong>Step 6:</strong> We know \(\pi_1(S^1) = \mathbb{Z}\) and \(\pi_1(D^2) = 0\) (trivial group, since \(D^2\) is contractible).</p>
+                    <p><strong>Step 6:</strong> We know <span class="math">π₁(S<sup>1</sup>) = ℤ</span> and <span class="math">π₁(D<sup>2</sup>) = 0</span> (trivial group, since <span class="math">D<sup>2</sup></span> is contractible).</p>
                     
-                    <p><strong>Step 7:</strong> So we have: \(\mathbb{Z} \xrightarrow{\pi_1(i)} 0 \xrightarrow{\pi_1(r)} \mathbb{Z}\) composing to \(\text{id}_{\mathbb{Z}}\).</p>
+                    <p><strong>Step 7:</strong> So we have: <span class="math">ℤ xrightarrowπ₁(i) 0 xrightarrowπ₁(r) ℤ</span> composing to <span class="math">id<sub>ℤ</sub></span>.</p>
                     
-                    <p><strong>Step 8:</strong> But the only homomorphism \(0 \to \mathbb{Z}\) sends everything to 0, so this composition cannot equal the identity on \(\mathbb{Z}\). <strong>Contradiction!</strong></p>
+                    <p><strong>Step 8:</strong> But the only homomorphism <span class="math">0 to ℤ</span> sends everything to 0, so this composition cannot equal the identity on <span class="math">ℤ</span>. <strong>Contradiction!</strong></p>
                     
-                    <p>Therefore, our assumption was false, and \(f\) must have a fixed point. ∎</p>
+                    <p>Therefore, our assumption was false, and <span class="math">f</span> must have a fixed point. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -191,7 +190,7 @@ print(f"Difference: {np.linalg.norm(example_map(x_star) - x_star)}")
 # Visualize
 fig, ax = plt.subplots(1, 1, figsize=(8, 8))
 theta = np.linspace(0, 2*np.pi, 100)
-ax.plot(np.cos(theta), np.sin(theta), 'b-', linewidth=2, label='Boundary $S^1$')
+ax.plot(np.cos(theta), np.sin(theta), 'b-', linewidth=2, label='Boundary <span class="math">S<sup>1</sup></span>')
 
 # Sample points and their images
 np.random.seed(42)
@@ -227,54 +226,54 @@ plt.show()
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(p\) — a prime number (only divisible by 1 and itself)</li>
-                        <li>\(a\) — an integer with \(\gcd(a, p) = 1\) (coprime to \(p\))</li>
-                        <li>\(a \equiv b \pmod{p}\) — \(a\) and \(b\) have the same remainder when divided by \(p\)</li>
-                        <li>\(\mathbb{Z}_p^*\) — the multiplicative group of integers modulo \(p\)</li>
-                        <li>\(\phi(n)\) — Euler's totient function, counting integers up to \(n\) coprime to \(n\)</li>
+                        <li><span class="math">p</span> — a prime number (only divisible by 1 and itself)</li>
+                        <li><span class="math">a</span> — an integer with <span class="math">gcd(a, p) = 1</span> (coprime to <span class="math">p</span>)</li>
+                        <li><span class="math">a equiv b pmodp</span> — <span class="math">a</span> and <span class="math">b</span> have the same remainder when divided by <span class="math">p</span></li>
+                        <li><span class="math">ℤ<sub>p</sub>^*</span> — the multiplicative group of integers modulo <span class="math">p</span></li>
+                        <li><span class="math">phi(n)</span> — Euler's totient function, counting integers up to <span class="math">n</span> coprime to <span class="math">n</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Fermat's Little Theorem</div>
-                    <p>Let \(p\) be a prime number and \(a\) be an integer such that \(p \nmid a\) (i.e., \(\gcd(a, p) = 1\)). Then:</p>
-                    <p>\[a^{p-1} \equiv 1 \pmod{p}\]</p>
-                    <p>Equivalently: \(a^p \equiv a \pmod{p}\) for any integer \(a\).</p>
+                    <p>Let <span class="math">p</span> be a prime number and <span class="math">a</span> be an integer such that <span class="math">p nmid a</span> (i.e., <span class="math">gcd(a, p) = 1</span>). Then:</p>
+                    <p><div class="math-display">a<sup>p-1</sup> equiv 1 pmodp</div></p>
+                    <p>Equivalently: <span class="math">a<sup>p</sup> equiv a pmodp</span> for any integer <span class="math">a</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (using group theory)</div>
-                    <p><strong>Step 1:</strong> Consider the multiplicative group \(\mathbb{Z}_p^* = \{1, 2, \ldots, p-1\}\) with multiplication modulo \(p\).</p>
+                    <p><strong>Step 1:</strong> Consider the multiplicative group <span class="math">ℤ<sub>p</sub>^* = \1, 2, ldots, p-1\</span> with multiplication modulo <span class="math">p</span>.</p>
                     
-                    <p><strong>Step 2:</strong> This group has order \(p-1\) (contains \(p-1\) elements).</p>
+                    <p><strong>Step 2:</strong> This group has order <span class="math">p-1</span> (contains <span class="math">p-1</span> elements).</p>
                     
-                    <p><strong>Step 3:</strong> For any \(a \in \mathbb{Z}_p^*\), consider the cyclic subgroup generated by \(a\):</p>
-                    <p>\[\langle a \rangle = \{a^1, a^2, a^3, \ldots, a^k = 1\}\]</p>
+                    <p><strong>Step 3:</strong> For any <span class="math">a in ℤ<sub>p</sub>^*</span>, consider the cyclic subgroup generated by <span class="math">a</span>:</p>
+                    <p><div class="math-display">langle a rangle = \a<sup>1</sup>, a<sup>2</sup>, a<sup>3</sup>, ldots, a<sup>k</sup> = 1\</div></p>
                     
-                    <p><strong>Step 4:</strong> By Lagrange's theorem, the order of any subgroup divides the order of the group. So \(|\langle a \rangle| \mid (p-1)\).</p>
+                    <p><strong>Step 4:</strong> By Lagrange's theorem, the order of any subgroup divides the order of the group. So <span class="math">|langle a rangle| mid (p-1)</span>.</p>
                     
-                    <p><strong>Step 5:</strong> Let \(d = |\langle a \rangle|\). Then \(a^d = 1\), and since \(d \mid (p-1)\), we can write \(p-1 = d \cdot m\) for some integer \(m\).</p>
+                    <p><strong>Step 5:</strong> Let <span class="math">d = |langle a rangle|</span>. Then <span class="math">a<sup>d</sup> = 1</span>, and since <span class="math">d mid (p-1)</span>, we can write <span class="math">p-1 = d cdot m</span> for some integer <span class="math">m</span>.</p>
                     
                     <p><strong>Step 6:</strong> Therefore:</p>
-                    <p>\[a^{p-1} = a^{d \cdot m} = (a^d)^m = 1^m = 1\]</p>
+                    <p><div class="math-display">a<sup>p-1</sup> = a<sup>d cdot m</sup> = (a<sup>d</sup>)<sup>m</sup> = 1<sup>m</sup> = 1</div></p>
                     
-                    <p>Hence \(a^{p-1} \equiv 1 \pmod{p}\). ∎</p>
+                    <p>Hence <span class="math">a<sup>p-1</sup> equiv 1 pmodp</span>. ∎</p>
                 </div>
 
                 <h4>Alternative Proof (Combinatorial)</h4>
                 <div class="proof">
                     <div class="proof-title">Proof (counting necklaces)</div>
-                    <p><strong>Step 1:</strong> Consider necklaces made of \(p\) beads, each bead one of \(a\) colors.</p>
+                    <p><strong>Step 1:</strong> Consider necklaces made of <span class="math">p</span> beads, each bead one of <span class="math">a</span> colors.</p>
                     
-                    <p><strong>Step 2:</strong> Total necklaces (ignoring rotation): \(a^p\).</p>
+                    <p><strong>Step 2:</strong> Total necklaces (ignoring rotation): <span class="math">a<sup>p</sup></span>.</p>
                     
-                    <p><strong>Step 3:</strong> Necklaces with all beads the same color are unchanged by rotation. There are \(a\) such monochromatic necklaces.</p>
+                    <p><strong>Step 3:</strong> Necklaces with all beads the same color are unchanged by rotation. There are <span class="math">a</span> such monochromatic necklaces.</p>
                     
-                    <p><strong>Step 4:</strong> For any other necklace, rotating by one position gives a different coloring (since \(p\) is prime). So non-monochromatic necklaces come in groups of \(p\) (orbits under rotation).</p>
+                    <p><strong>Step 4:</strong> For any other necklace, rotating by one position gives a different coloring (since <span class="math">p</span> is prime). So non-monochromatic necklaces come in groups of <span class="math">p</span> (orbits under rotation).</p>
                     
-                    <p><strong>Step 5:</strong> Therefore: \(a^p = a + p \cdot k\) for some integer \(k\).</p>
+                    <p><strong>Step 5:</strong> Therefore: <span class="math">a<sup>p</sup> = a + p cdot k</span> for some integer <span class="math">k</span>.</p>
                     
-                    <p><strong>Step 6:</strong> Rearranging: \(a^p - a = p \cdot k\), so \(a^p \equiv a \pmod{p}\). ∎</p>
+                    <p><strong>Step 6:</strong> Rearranging: <span class="math">a<sup>p</sup> - a = p cdot k</span>, so <span class="math">a<sup>p</sup> equiv a pmodp</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -378,48 +377,48 @@ plt.show()
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(G\) — a group (set with operation satisfying group axioms)</li>
-                        <li>\(H \leq G\) — \(H\) is a subgroup of \(G\)</li>
-                        <li>\(|G|\) — the order of \(G\) (number of elements)</li>
-                        <li>\(gH = \{gh : h \in H\}\) — a left coset of \(H\) in \(G\)</li>
-                        <li>\([G : H]\) — the index of \(H\) in \(G\) (number of distinct cosets)</li>
-                        <li>\(e\) — the identity element of the group</li>
+                        <li><span class="math">G</span> — a group (set with operation satisfying group axioms)</li>
+                        <li><span class="math">H leq G</span> — <span class="math">H</span> is a subgroup of <span class="math">G</span></li>
+                        <li><span class="math">|G|</span> — the order of <span class="math">G</span> (number of elements)</li>
+                        <li><span class="math">gH = \gh : h in H\</span> — a left coset of <span class="math">H</span> in <span class="math">G</span></li>
+                        <li><span class="math">[G : H]</span> — the index of <span class="math">H</span> in <span class="math">G</span> (number of distinct cosets)</li>
+                        <li><span class="math">e</span> — the identity element of the group</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Lagrange's Theorem</div>
-                    <p>Let \(G\) be a finite group and \(H\) be a subgroup of \(G\). Then the order of \(H\) divides the order of \(G\):</p>
-                    <p>\[|H| \mid |G|\]</p>
-                    <p>Equivalently: \(|G| = |H| \cdot [G : H]\), where \([G : H]\) is the index of \(H\) in \(G\).</p>
+                    <p>Let <span class="math">G</span> be a finite group and <span class="math">H</span> be a subgroup of <span class="math">G</span>. Then the order of <span class="math">H</span> divides the order of <span class="math">G</span>:</p>
+                    <p><div class="math-display">|H| mid |G|</div></p>
+                    <p>Equivalently: <span class="math">|G| = |H| cdot [G : H]</span>, where <span class="math">[G : H]</span> is the index of <span class="math">H</span> in <span class="math">G</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof</div>
-                    <p><strong>Step 1 (Define Cosets):</strong> For each \(g \in G\), define the left coset:</p>
-                    <p>\[gH = \{gh : h \in H\}\]</p>
+                    <p><strong>Step 1 (Define Cosets):</strong> For each <span class="math">g in G</span>, define the left coset:</p>
+                    <p><div class="math-display">gH = \gh : h in H\</div></p>
                     
-                    <p><strong>Step 2 (Cosets Partition G):</strong> We claim the cosets partition \(G\) (every element is in exactly one coset).</p>
+                    <p><strong>Step 2 (Cosets Partition G):</strong> We claim the cosets partition <span class="math">G</span> (every element is in exactly one coset).</p>
                     
-                    <p><em>Proof of claim:</em> For any \(g \in G\), we have \(g = ge \in gH\), so every element is in some coset.</p>
+                    <p><em>Proof of claim:</em> For any <span class="math">g in G</span>, we have <span class="math">g = ge in gH</span>, so every element is in some coset.</p>
                     
-                    <p>Now suppose \(g_1H \cap g_2H \neq \emptyset\). Then there exist \(h_1, h_2 \in H\) with \(g_1h_1 = g_2h_2\).</p>
+                    <p>Now suppose <span class="math">g<sub>1</sub>H cap g<sub>2</sub>H neq emptyset</span>. Then there exist <span class="math">h<sub>1</sub>, h<sub>2</sub> in H</span> with <span class="math">g<sub>1</sub>h<sub>1</sub> = g<sub>2</sub>h<sub>2</sub></span>.</p>
                     
-                    <p>This gives \(g_1 = g_2h_2h_1^{-1}\), so for any \(h \in H\):</p>
-                    <p>\[g_1h = g_2h_2h_1^{-1}h \in g_2H\]</p>
-                    <p>Thus \(g_1H \subseteq g_2H\). By symmetry, \(g_2H \subseteq g_1H\), so \(g_1H = g_2H\).</p>
+                    <p>This gives <span class="math">g<sub>1</sub> = g<sub>2</sub>h<sub>2</sub>h<sub>1</sub><sup>-1</sup></span>, so for any <span class="math">h in H</span>:</p>
+                    <p><div class="math-display">g<sub>1</sub>h = g<sub>2</sub>h<sub>2</sub>h<sub>1</sub><sup>-1</sup>h in g<sub>2</sub>H</div></p>
+                    <p>Thus <span class="math">g<sub>1</sub>H subseteq g<sub>2</sub>H</span>. By symmetry, <span class="math">g<sub>2</sub>H subseteq g<sub>1</sub>H</span>, so <span class="math">g<sub>1</sub>H = g<sub>2</sub>H</span>.</p>
                     
-                    <p><strong>Step 3 (All Cosets Have Equal Size):</strong> Define \(\phi: H \to gH\) by \(\phi(h) = gh\). This is a bijection:</p>
+                    <p><strong>Step 3 (All Cosets Have Equal Size):</strong> Define <span class="math">phi: H to gH</span> by <span class="math">phi(h) = gh</span>. This is a bijection:</p>
                     <ul>
-                        <li><em>Injective:</em> If \(gh_1 = gh_2\), then \(h_1 = h_2\) by left cancellation.</li>
-                        <li><em>Surjective:</em> Every element of \(gH\) has the form \(gh\) for some \(h \in H\).</li>
+                        <li><em>Injective:</em> If <span class="math">gh<sub>1</sub> = gh<sub>2</sub></span>, then <span class="math">h<sub>1</sub> = h<sub>2</sub></span> by left cancellation.</li>
+                        <li><em>Surjective:</em> Every element of <span class="math">gH</span> has the form <span class="math">gh</span> for some <span class="math">h in H</span>.</li>
                     </ul>
-                    <p>Therefore \(|gH| = |H|\) for all \(g \in G\).</p>
+                    <p>Therefore <span class="math">|gH| = |H|</span> for all <span class="math">g in G</span>.</p>
                     
-                    <p><strong>Step 4 (Count):</strong> Let \([G : H] = k\) be the number of distinct cosets. Since cosets partition \(G\) and each has size \(|H|\):</p>
-                    <p>\[|G| = k \cdot |H| = [G : H] \cdot |H|\]</p>
+                    <p><strong>Step 4 (Count):</strong> Let <span class="math">[G : H] = k</span> be the number of distinct cosets. Since cosets partition <span class="math">G</span> and each has size <span class="math">|H|</span>:</p>
+                    <p><div class="math-display">|G| = k cdot |H| = [G : H] cdot |H|</div></p>
                     
-                    <p>Therefore \(|H|\) divides \(|G|\). ∎</p>
+                    <p>Therefore <span class="math">|H|</span> divides <span class="math">|G|</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -604,34 +603,34 @@ plt.show()
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(f(n)\) — the Collatz function: \(f(n) = n/2\) if \(n\) even, \(3n+1\) if \(n\) odd</li>
-                        <li>\(C(n)\) — the total stopping time (number of steps to reach 1)</li>
-                        <li>\(T^k(n)\) — the k-th iterate of the function applied to \(n\)</li>
-                        <li>\(\sigma(n)\) — the stopping time (steps to reach a value less than \(n\))</li>
+                        <li><span class="math">f(n)</span> — the Collatz function: <span class="math">f(n) = n/2</span> if <span class="math">n</span> even, <span class="math">3n+1</span> if <span class="math">n</span> odd</li>
+                        <li><span class="math">C(n)</span> — the total stopping time (number of steps to reach 1)</li>
+                        <li><span class="math">T<sup>k</sup>(n)</span> — the k-th iterate of the function applied to <span class="math">n</span></li>
+                        <li><span class="math">sigma(n)</span> — the stopping time (steps to reach a value less than <span class="math">n</span>)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Total Stopping Time Bound (Tao, 2019)</div>
-                    <p>Almost all Collatz orbits attain almost bounded values. More precisely, for any function \(f: \mathbb{N} \to \mathbb{R}^+\) with \(f(n) \to \infty\) as \(n \to \infty\):</p>
-                    <p>\[\lim_{N \to \infty} \frac{1}{N} \left|\{n \leq N : \min_{k \geq 0} T^k(n) < f(n)\}\right| = 1\]</p>
+                    <p>Almost all Collatz orbits attain almost bounded values. More precisely, for any function <span class="math">f: ℕ to ℝ^+</span> with <span class="math">f(n) to infty</span> as <span class="math">n to infty</span>:</p>
+                    <p><div class="math-display">lim<sub>N to infty</sub> <span class="math">1/N</span> |\n leq N : min<sub>k geq 0</sub> T<sup>k</sup>(n) < f(n)\| = 1</div></p>
                     <p>This means that for 99% of starting values (in a logarithmic density sense), the orbit eventually reaches a value smaller than any slowly growing function.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (Probabilistic Heuristic)</div>
-                    <p><strong>Step 1:</strong> Model the Collatz process probabilistically. For a random odd number, \(3n+1\) is even, and the expected number of divisions by 2 is:</p>
-                    <p>\[\mathbb{E}[\text{divisions}] = \sum_{k=1}^{\infty} \frac{1}{2^k} \cdot k = 2\]</p>
+                    <p><strong>Step 1:</strong> Model the Collatz process probabilistically. For a random odd number, <span class="math">3n+1</span> is even, and the expected number of divisions by 2 is:</p>
+                    <p><div class="math-display">mathbbE[divisions] = sum<sub>k=1</sub><sup>infty</sup> <span class="math">1/2<sup>k</sup></span> cdot k = 2</div></p>
                     
-                    <p><strong>Step 2:</strong> So on average, an odd number \(n\) maps to roughly \((3n+1)/4 \approx 3n/4\).</p>
+                    <p><strong>Step 2:</strong> So on average, an odd number <span class="math">n</span> maps to roughly <span class="math">(3n+1)/4 approx 3n/4</span>.</p>
                     
-                    <p><strong>Step 3:</strong> Since \(3/4 < 1\), the "expected value" of the sequence decreases geometrically.</p>
+                    <p><strong>Step 3:</strong> Since <span class="math">3/4 < 1</span>, the "expected value" of the sequence decreases geometrically.</p>
                     
-                    <p><strong>Step 4:</strong> Formally, consider the logarithm. For odd \(n\):</p>
-                    <p>\[\log((3n+1)/2^k) = \log(3n+1) - k\log(2)\]</p>
+                    <p><strong>Step 4:</strong> Formally, consider the logarithm. For odd <span class="math">n</span>:</p>
+                    <p><div class="math-display">log((3n+1)/2<sup>k</sup>) = log(3n+1) - klog(2)</div></p>
                     
-                    <p><strong>Step 5:</strong> With probability \(1/2^k\), we divide by \(2^k\). The expected change is:</p>
-                    <p>\[\mathbb{E}[\Delta \log n] = \log(3) - \log(2) \cdot \sum_{k=1}^{\infty} \frac{k}{2^k} = \log(3) - 2\log(2) = \log(3/4) < 0\]</p>
+                    <p><strong>Step 5:</strong> With probability <span class="math">1/2<sup>k</sup></span>, we divide by <span class="math">2<sup>k</sup></span>. The expected change is:</p>
+                    <p><div class="math-display">mathbbE[Delta log n] = log(3) - log(2) cdot sum<sub>k=1</sub><sup>infty</sup> <span class="math">k/2<sup>k</sup></span> = log(3) - 2log(2) = log(3/4) < 0</div></p>
                     
                     <p>This negative drift suggests convergence. ∎</p>
                 </div>
@@ -753,45 +752,45 @@ print(f"All values reach 1: {all_reach_one}")
                 <h4>Introduction</h4>
                 <p>Prime numbers are the atoms of arithmetic—every integer factors uniquely into primes. Yet their distribution among the integers has fascinated mathematicians for millennia.</p>
                 
-                <p>The <strong>Prime Number Theorem</strong> (PNT), proved independently by Hadamard and de la Vallée Poussin in 1896, reveals the asymptotic density of primes. It states that the number of primes up to \(x\) is approximately \(x/\ln(x)\).</p>
+                <p>The <strong>Prime Number Theorem</strong> (PNT), proved independently by Hadamard and de la Vallée Poussin in 1896, reveals the asymptotic density of primes. It states that the number of primes up to <span class="math">x</span> is approximately <span class="math">x/ln(x)</span>.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\pi(x)\) — the prime-counting function: number of primes ≤ \(x\)</li>
-                        <li>\(\ln(x)\) or \(\log(x)\) — natural logarithm</li>
-                        <li>\(\text{Li}(x)\) — logarithmic integral: \(\int_2^x \frac{dt}{\ln t}\)</li>
-                        <li>\(f(x) \sim g(x)\) — asymptotic equivalence: \(\lim_{x \to \infty} f(x)/g(x) = 1\)</li>
-                        <li>\(\zeta(s)\) — Riemann zeta function</li>
+                        <li><span class="math">pi(x)</span> — the prime-counting function: number of primes ≤ <span class="math">x</span></li>
+                        <li><span class="math">ln(x)</span> or <span class="math">log(x)</span> — natural logarithm</li>
+                        <li><span class="math">Li(x)</span> — logarithmic integral: <span class="math">int<sub>2</sub><sup>x</sup> <span class="math">dt/ln t</span></span></li>
+                        <li><span class="math">f(x) sim g(x)</span> — asymptotic equivalence: <span class="math">lim<sub>x to infty</sub> f(x)/g(x) = 1</span></li>
+                        <li><span class="math">zeta(s)</span> — Riemann zeta function</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Prime Number Theorem</div>
-                    <p>Let \(\pi(x)\) denote the number of prime numbers less than or equal to \(x\). Then:</p>
-                    <p>\[\pi(x) \sim \frac{x}{\ln x}\]</p>
+                    <p>Let <span class="math">pi(x)</span> denote the number of prime numbers less than or equal to <span class="math">x</span>. Then:</p>
+                    <p><div class="math-display">pi(x) sim <span class="math">x/ln x</span></div></p>
                     <p>Equivalently:</p>
-                    <p>\[\lim_{x \to \infty} \frac{\pi(x)}{x / \ln x} = 1\]</p>
+                    <p><div class="math-display">lim<sub>x to infty</sub> <span class="math">pi(x)/x / ln x</span> = 1</div></p>
                     <p>A more precise form uses the logarithmic integral:</p>
-                    <p>\[\pi(x) \sim \text{Li}(x) = \int_2^x \frac{dt}{\ln t}\]</p>
+                    <p><div class="math-display">pi(x) sim Li(x) = int<sub>2</sub><sup>x</sup> <span class="math">dt/ln t</span></div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (via Complex Analysis)</div>
                     <p><strong>Step 1:</strong> Define the von Mangoldt function:</p>
-                    <p>\[\Lambda(n) = \begin{cases} \ln p & \text{if } n = p^k \text{ for prime } p \\ 0 & \text{otherwise} \end{cases}\]</p>
+                    <p><div class="math-display">Lambda(n) = begincases ln p & if  n = p<sup>k</sup>  for prime  p \\ 0 & otherwise endcases</div></p>
                     
-                    <p><strong>Step 2:</strong> The key is to study \(\psi(x) = \sum_{n \leq x} \Lambda(n)\), the Chebyshev function. One can show \(\psi(x) \sim x\) implies PNT.</p>
+                    <p><strong>Step 2:</strong> The key is to study <span class="math">psi(x) = sum<sub>n leq x</sub> Lambda(n)</span>, the Chebyshev function. One can show <span class="math">psi(x) sim x</span> implies PNT.</p>
                     
                     <p><strong>Step 3:</strong> Using the identity:</p>
-                    <p>\[-\frac{\zeta'(s)}{\zeta(s)} = \sum_{n=1}^{\infty} \frac{\Lambda(n)}{n^s}\]</p>
+                    <p><div class="math-display">-<span class="math">zeta'(s)/zeta(s)</span> = sum<sub>n=1</sub><sup>infty</sup> <span class="math">Lambda(n)/n<sup>s</sup></span></div></p>
                     
-                    <p><strong>Step 4:</strong> Apply Perron's formula to relate \(\psi(x)\) to a contour integral:</p>
-                    <p>\[\psi(x) = \frac{1}{2\pi i} \int_{c-i\infty}^{c+i\infty} \left(-\frac{\zeta'(s)}{\zeta(s)}\right) \frac{x^s}{s} ds\]</p>
+                    <p><strong>Step 4:</strong> Apply Perron's formula to relate <span class="math">psi(x)</span> to a contour integral:</p>
+                    <p><div class="math-display">psi(x) = <span class="math">1/2pi i</span> int<sub>c-iinfty</sub><sup>c+iinfty</sup> (-<span class="math">zeta'(s)/zeta(s)</span>) <span class="math">x<sup>s</sup>/s</span> ds</div></p>
                     
-                    <p><strong>Step 5:</strong> The poles of \(-\zeta'(s)/\zeta(s)\) are at \(s = 1\) (residue 1) and at zeros of \(\zeta(s)\). The Riemann Hypothesis concerns these zeros.</p>
+                    <p><strong>Step 5:</strong> The poles of <span class="math">-zeta'(s)/zeta(s)</span> are at <span class="math">s = 1</span> (residue 1) and at zeros of <span class="math">zeta(s)</span>. The Riemann Hypothesis concerns these zeros.</p>
                     
-                    <p><strong>Step 6:</strong> Hadamard and de la Vallée Poussin proved \(\zeta(s) \neq 0\) for \(\text{Re}(s) = 1\), which is sufficient to show the main term comes from the pole at \(s = 1\), giving \(\psi(x) \sim x\). ∎</p>
+                    <p><strong>Step 6:</strong> Hadamard and de la Vallée Poussin proved <span class="math">zeta(s) neq 0</span> for <span class="math">Re(s) = 1</span>, which is sufficient to show the main term comes from the pole at <span class="math">s = 1</span>, giving <span class="math">psi(x) sim x</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -860,8 +859,8 @@ fig, axes = plt.subplots(2, 2, figsize=(14, 12))
 ax1 = axes[0, 0]
 x_values = np.linspace(10, 1000000, 500)
 pi_values = [prime_counting_function(int(x), primes) for x in x_values]
-ax1.plot(x_values, pi_values, 'b-', label='$\\pi(x)$', linewidth=2)
-ax1.plot(x_values, x_values/np.log(x_values), 'r--', label='$x/\\ln(x)$', linewidth=2)
+ax1.plot(x_values, pi_values, 'b-', label='<span class="math">π(x)</span>', linewidth=2)
+ax1.plot(x_values, x_values/np.log(x_values), 'r--', label='<span class="math">x/\ln(x)</span>', linewidth=2)
 ax1.plot(x_values, [logarithmic_integral(x) for x in x_values], 'g:', label='Li(x)', linewidth=2)
 ax1.set_xlabel('x')
 ax1.set_ylabel('Number of primes')
@@ -877,7 +876,7 @@ ratio_values = [p / (x/np.log(x)) for p, x in zip(pi_values, x_values)]
 ax2.plot(x_values, ratio_values, 'b-', linewidth=2)
 ax2.axhline(y=1, color='r', linestyle='--', label='y = 1')
 ax2.set_xlabel('x')
-ax2.set_ylabel('$\\pi(x) / (x/\\ln x)$')
+ax2.set_ylabel('<span class="math">π(x) / (x/\ln x)</span>')
 ax2.set_title('Convergence to 1 (Prime Number Theorem)')
 ax2.set_xscale('log')
 ax2.legend()
@@ -887,8 +886,8 @@ ax2.grid(True, alpha=0.3)
 ax3 = axes[1, 0]
 errors_xlnx = [abs(p - x/np.log(x)) for p, x in zip(pi_values, x_values)]
 errors_li = [abs(p - logarithmic_integral(x)) for p, x in zip(pi_values, x_values)]
-ax3.plot(x_values, errors_xlnx, 'r-', label='$|\\pi(x) - x/\\ln(x)|$', linewidth=2)
-ax3.plot(x_values, errors_li, 'g-', label='$|\\pi(x) - \\text{Li}(x)|$', linewidth=2)
+ax3.plot(x_values, errors_xlnx, 'r-', label='<span class="math">|π(x) - x/\ln(x)|</span>', linewidth=2)
+ax3.plot(x_values, errors_li, 'g-', label='<span class="math">|π(x) - Li(x)|</span>', linewidth=2)
 ax3.set_xlabel('x')
 ax3.set_ylabel('Absolute error')
 ax3.set_title('Approximation Error')
@@ -901,9 +900,9 @@ ax3.grid(True, alpha=0.3)
 ax4 = axes[1, 1]
 gaps = [primes[i+1] - primes[i] for i in range(len(primes)-1)]
 ax4.scatter(primes[:-1], gaps, s=1, alpha=0.5)
-ax4.plot(primes[:-1], [np.log(p) for p in primes[:-1]], 'r-', label='$\\ln(x)$', linewidth=2)
-ax4.set_xlabel('Prime $p_n$')
-ax4.set_ylabel('Gap $p_{n+1} - p_n$')
+ax4.plot(primes[:-1], [np.log(p) for p in primes[:-1]], 'r-', label='<span class="math">\ln(x)</span>', linewidth=2)
+ax4.set_xlabel('Prime <span class="math">p<sub>n</sub></span>')
+ax4.set_ylabel('Gap <span class="math">p<sub>n+1</sub> - p<sub>n</sub></span>')
 ax4.set_title('Prime Gaps')
 ax4.set_xscale('log')
 ax4.legend()
@@ -942,16 +941,16 @@ print(f"Verified for n = 2 to 500,000: {all_have_prime}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(G(n)\) — number of ways to write even \(n\) as sum of two primes</li>
-                        <li>\(r_2(n)\) — number of representations of \(n\) as sum of two primes</li>
-                        <li>\(\Lambda(n)\) — von Mangoldt function</li>
-                        <li>\(\prod_{p|n}\) — product over primes dividing \(n\)</li>
+                        <li><span class="math">G(n)</span> — number of ways to write even <span class="math">n</span> as sum of two primes</li>
+                        <li><span class="math">r<sub>2</sub>(n)</span> — number of representations of <span class="math">n</span> as sum of two primes</li>
+                        <li><span class="math">Lambda(n)</span> — von Mangoldt function</li>
+                        <li><span class="math">prod<sub>p|n</sub></span> — product over primes dividing <span class="math">n</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Chen's Theorem (1966)</div>
-                    <p>Every sufficiently large even integer \(n\) can be written as the sum of:</p>
+                    <p>Every sufficiently large even integer <span class="math">n</span> can be written as the sum of:</p>
                     <ul>
                         <li>A prime, and</li>
                         <li>A product of at most two primes (a semiprime)</li>
@@ -961,21 +960,21 @@ print(f"Verified for n = 2 to 500,000: {all_have_prime}")
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch of Chen's Theorem</div>
-                    <p><strong>Step 1:</strong> Define the sieving function. For even \(n\), let:</p>
-                    <p>\[D(n) = \{p : p \leq n, n - p \text{ is prime or semiprime}\}\]</p>
+                    <p><strong>Step 1:</strong> Define the sieving function. For even <span class="math">n</span>, let:</p>
+                    <p><div class="math-display">D(n) = \p : p leq n, n - p  is prime or semiprime\</div></p>
                     
                     <p><strong>Step 2:</strong> Use the circle method. The number of representations is:</p>
-                    <p>\[r(n) = \int_0^1 S(\alpha)^2 e(-n\alpha) d\alpha\]</p>
-                    <p>where \(S(\alpha) = \sum_{p \leq n} e(p\alpha)\) and \(e(x) = e^{2\pi i x}\).</p>
+                    <p><div class="math-display">r(n) = int<sub>0</sub><sup>1</sup> S(alpha)<sup>2</sup> e(-nalpha) dalpha</div></p>
+                    <p>where <span class="math">S(alpha) = sum<sub>p leq n</sub> e(palpha)</span> and <span class="math">e(x) = e<sup>2pi i x</sup></span>.</p>
                     
                     <p><strong>Step 3:</strong> Decompose the integral into major and minor arcs. On major arcs (near rationals with small denominator), use analytic properties of Dirichlet L-functions.</p>
                     
-                    <p><strong>Step 4:</strong> On minor arcs, bound \(|S(\alpha)|\) using exponential sum estimates (Vinogradov's method).</p>
+                    <p><strong>Step 4:</strong> On minor arcs, bound <span class="math">|S(alpha)|</span> using exponential sum estimates (Vinogradov's method).</p>
                     
                     <p><strong>Step 5:</strong> Chen's innovation: a weighted sieve that handles the "semiprime" condition. The key is the sieve identity:</p>
-                    <p>\[S(\mathcal{A}, \mathcal{P}, z) = S(\mathcal{A}, \mathcal{P}, w) - \sum_{w \leq p < z} S(\mathcal{A}_p, \mathcal{P}, p)\]</p>
+                    <p><div class="math-display">S(A, P, z) = S(A, P, w) - sum<sub>w leq p < z</sub> S(A<sub>p</sub>, P, p)</div></p>
                     
-                    <p><strong>Step 6:</strong> Careful estimation shows the main term dominates the error, proving infinitely many representations of the form \(p + P_2\) where \(P_2\) has at most two prime factors. ∎</p>
+                    <p><strong>Step 6:</strong> Careful estimation shows the main term dominates the error, proving infinitely many representations of the form <span class="math">p + P<sub>2</sub></span> where <span class="math">P<sub>2</sub></span> has at most two prime factors. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1176,85 +1175,85 @@ for n in [100, 1000, 10000]:
                 <h3>4. p-adic Numbers</h3>
                 
                 <h4>Introduction</h4>
-                <p>The <strong>p-adic numbers</strong>, introduced by Kurt Hensel in 1897, provide an alternative way to complete the rational numbers. While real numbers fill in the "gaps" between rationals using the usual absolute value, p-adic numbers use a different notion of "closeness" based on divisibility by a prime \(p\).</p>
+                <p>The <strong>p-adic numbers</strong>, introduced by Kurt Hensel in 1897, provide an alternative way to complete the rational numbers. While real numbers fill in the "gaps" between rationals using the usual absolute value, p-adic numbers use a different notion of "closeness" based on divisibility by a prime <span class="math">p</span>.</p>
                 
-                <p>In the p-adic world, two numbers are close if their difference is divisible by a high power of \(p\). This leads to counterintuitive properties: in the 2-adics, the sequence \(2^n\) converges to 0!</p>
+                <p>In the p-adic world, two numbers are close if their difference is divisible by a high power of <span class="math">p</span>. This leads to counterintuitive properties: in the 2-adics, the sequence <span class="math">2<sup>n</sup></span> converges to 0!</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbb{Q}_p\) — the field of p-adic numbers</li>
-                        <li>\(\mathbb{Z}_p\) — the ring of p-adic integers</li>
-                        <li>\(|x|_p\) — p-adic absolute value: \(|p^n \cdot a/b|_p = p^{-n}\) where \(p \nmid ab\)</li>
-                        <li>\(v_p(x)\) — p-adic valuation: the highest power of \(p\) dividing \(x\)</li>
-                        <li>\(\nu_p(n!)\) — exponent of highest power of \(p\) dividing \(n!\)</li>
+                        <li><span class="math">ℚ<sub>p</sub></span> — the field of p-adic numbers</li>
+                        <li><span class="math">ℤ<sub>p</sub></span> — the ring of p-adic integers</li>
+                        <li><span class="math">|x|<sub>p</sub></span> — p-adic absolute value: <span class="math">|p<sup>n</sup> cdot a/b|<sub>p</sub> = p<sup>-n</sup></span> where <span class="math">p nmid ab</span></li>
+                        <li><span class="math">v<sub>p</sub>(x)</span> — p-adic valuation: the highest power of <span class="math">p</span> dividing <span class="math">x</span></li>
+                        <li><span class="math">nu<sub>p</sub>(n!)</span> — exponent of highest power of <span class="math">p</span> dividing <span class="math">n!</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Ostrowski's Theorem</div>
-                    <p>Every non-trivial absolute value on \(\mathbb{Q}\) is equivalent to either:</p>
+                    <p>Every non-trivial absolute value on <span class="math">ℚ</span> is equivalent to either:</p>
                     <ol>
-                        <li>The usual absolute value \(|\cdot|_\infty\) (giving \(\mathbb{R}\)), or</li>
-                        <li>The p-adic absolute value \(|\cdot|_p\) for some prime \(p\) (giving \(\mathbb{Q}_p\)).</li>
+                        <li>The usual absolute value <span class="math">|cdot|_infty</span> (giving <span class="math">ℝ</span>), or</li>
+                        <li>The p-adic absolute value <span class="math">|cdot|<sub>p</sub></span> for some prime <span class="math">p</span> (giving <span class="math">ℚ<sub>p</sub></span>).</li>
                     </ol>
-                    <p>More precisely, if \(|\cdot|\) is a non-trivial absolute value on \(\mathbb{Q}\) satisfying the triangle inequality, then either:</p>
+                    <p>More precisely, if <span class="math">|cdot|</span> is a non-trivial absolute value on <span class="math">ℚ</span> satisfying the triangle inequality, then either:</p>
                     <ul>
-                        <li>\(|x| = |x|_\infty^c\) for some \(c > 0\), or</li>
-                        <li>\(|x| = |x|_p^c\) for some prime \(p\) and \(c > 0\).</li>
+                        <li><span class="math">|x| = |x|_infty<sup>c</sup></span> for some <span class="math">c > 0</span>, or</li>
+                        <li><span class="math">|x| = |x|<sub>p</sub><sup>c</sup></span> for some prime <span class="math">p</span> and <span class="math">c > 0</span>.</li>
                     </ul>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof of Ostrowski's Theorem</div>
-                    <p><strong>Step 1:</strong> Let \(|\cdot|\) be a non-trivial absolute value on \(\mathbb{Q}\). Consider \(|n|\) for integers \(n\).</p>
+                    <p><strong>Step 1:</strong> Let <span class="math">|cdot|</span> be a non-trivial absolute value on <span class="math">ℚ</span>. Consider <span class="math">|n|</span> for integers <span class="math">n</span>.</p>
                     
-                    <p><strong>Case 1:</strong> Suppose \(|n| \leq 1\) for all integers \(n\).</p>
+                    <p><strong>Case 1:</strong> Suppose <span class="math">|n| leq 1</span> for all integers <span class="math">n</span>.</p>
                     
-                    <p>Since the absolute value is non-trivial, there exists some integer with \(|n| < 1\). Let \(p\) be the smallest positive integer with \(|p| < 1\).</p>
+                    <p>Since the absolute value is non-trivial, there exists some integer with <span class="math">|n| < 1</span>. Let <span class="math">p</span> be the smallest positive integer with <span class="math">|p| < 1</span>.</p>
                     
-                    <p><strong>Step 2:</strong> We claim \(p\) is prime. If \(p = ab\) with \(1 < a, b < p\), then by minimality, \(|a| = |b| = 1\), so \(|p| = |a||b| = 1\), contradiction.</p>
+                    <p><strong>Step 2:</strong> We claim <span class="math">p</span> is prime. If <span class="math">p = ab</span> with <span class="math">1 < a, b < p</span>, then by minimality, <span class="math">|a| = |b| = 1</span>, so <span class="math">|p| = |a||b| = 1</span>, contradiction.</p>
                     
-                    <p><strong>Step 3:</strong> For any integer \(n\) not divisible by \(p\), we can write \(1 = an + bp\) for some integers \(a, b\) (Bezout). Then:</p>
-                    <p>\[1 = |1| = |an + bp| \leq |an| + |bp| = |a||n| + |b||p|\]</p>
+                    <p><strong>Step 3:</strong> For any integer <span class="math">n</span> not divisible by <span class="math">p</span>, we can write <span class="math">1 = an + bp</span> for some integers <span class="math">a, b</span> (Bezout). Then:</p>
+                    <p><div class="math-display">1 = |1| = |an + bp| leq |an| + |bp| = |a||n| + |b||p|</div></p>
                     
-                    <p>Since \(|a|, |b| \leq 1\) and \(|p| < 1\), we get \(|n| = 1\).</p>
+                    <p>Since <span class="math">|a|, |b| leq 1</span> and <span class="math">|p| < 1</span>, we get <span class="math">|n| = 1</span>.</p>
                     
-                    <p><strong>Step 4:</strong> For any rational \(x = p^k \cdot a/b\) where \(p \nmid ab\):</p>
-                    <p>\[|x| = |p|^k \cdot |a|/|b| = |p|^k\]</p>
+                    <p><strong>Step 4:</strong> For any rational <span class="math">x = p<sup>k</sup> cdot a/b</span> where <span class="math">p nmid ab</span>:</p>
+                    <p><div class="math-display">|x| = |p|<sup>k</sup> cdot |a|/|b| = |p|<sup>k</sup></div></p>
                     
-                    <p>Setting \(c = -\log|p|/\log(p) > 0\), we get \(|x| = |x|_p^c\).</p>
+                    <p>Setting <span class="math">c = -log|p|/log(p) > 0</span>, we get <span class="math">|x| = |x|<sub>p</sub><sup>c</sup></span>.</p>
                     
-                    <p><strong>Case 2:</strong> Suppose \(|n| > 1\) for some integer \(n\). One can show this forces \(|n| = |n|_\infty^c\) for some \(c\). ∎</p>
+                    <p><strong>Case 2:</strong> Suppose <span class="math">|n| > 1</span> for some integer <span class="math">n</span>. One can show this forces <span class="math">|n| = |n|_infty<sup>c</sup></span> for some <span class="math">c</span>. ∎</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Legendre's Formula (p-adic valuation of factorial)</div>
-                    <p>For a prime \(p\) and positive integer \(n\):</p>
-                    <p>\[\nu_p(n!) = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor = \frac{n - s_p(n)}{p-1}\]</p>
-                    <p>where \(s_p(n)\) is the sum of digits of \(n\) in base \(p\).</p>
+                    <p>For a prime <span class="math">p</span> and positive integer <span class="math">n</span>:</p>
+                    <p><div class="math-display">nu<sub>p</sub>(n!) = sum<sub>k=1</sub><sup>infty</sup> lfloor <span class="math">n/p<sup>k</sup></span> rfloor = <span class="math">n - s<sub>p</sub>(n)/p-1</span></div></p>
+                    <p>where <span class="math">s<sub>p</sub>(n)</span> is the sum of digits of <span class="math">n</span> in base <span class="math">p</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof of Legendre's Formula</div>
-                    <p><strong>Step 1:</strong> Among \(1, 2, \ldots, n\), exactly \(\lfloor n/p \rfloor\) are divisible by \(p\).</p>
+                    <p><strong>Step 1:</strong> Among <span class="math">1, 2, ldots, n</span>, exactly <span class="math">lfloor n/p rfloor</span> are divisible by <span class="math">p</span>.</p>
                     
-                    <p><strong>Step 2:</strong> Among these, exactly \(\lfloor n/p^2 \rfloor\) are divisible by \(p^2\), contributing an additional factor of \(p\).</p>
+                    <p><strong>Step 2:</strong> Among these, exactly <span class="math">lfloor n/p<sup>2</sup> rfloor</span> are divisible by <span class="math">p<sup>2</sup></span>, contributing an additional factor of <span class="math">p</span>.</p>
                     
-                    <p><strong>Step 3:</strong> Continuing, the total power of \(p\) in \(n!\) is:</p>
-                    <p>\[\nu_p(n!) = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor\]</p>
+                    <p><strong>Step 3:</strong> Continuing, the total power of <span class="math">p</span> in <span class="math">n!</span> is:</p>
+                    <p><div class="math-display">nu<sub>p</sub>(n!) = sum<sub>k=1</sub><sup>infty</sup> lfloor <span class="math">n/p<sup>k</sup></span> rfloor</div></p>
                     
-                    <p><strong>Step 4:</strong> For the digit sum formula, write \(n = a_0 + a_1 p + a_2 p^2 + \cdots\) in base \(p\).</p>
+                    <p><strong>Step 4:</strong> For the digit sum formula, write <span class="math">n = a<sub>0</sub> + a<sub>1</sub> p + a<sub>2</sub> p<sup>2</sup> + cdots</span> in base <span class="math">p</span>.</p>
                     
                     <p><strong>Step 5:</strong> Then:</p>
-                    <p>\[\left\lfloor \frac{n}{p} \right\rfloor = a_1 + a_2 p + a_3 p^2 + \cdots\]</p>
-                    <p>\[\left\lfloor \frac{n}{p^2} \right\rfloor = a_2 + a_3 p + \cdots\]</p>
-                    <p>\[\vdots\]</p>
+                    <p><div class="math-display">lfloor <span class="math">n/p</span> rfloor = a<sub>1</sub> + a<sub>2</sub> p + a<sub>3</sub> p<sup>2</sup> + cdots</div></p>
+                    <p><div class="math-display">lfloor <span class="math">n/p<sup>2</sup></span> rfloor = a<sub>2</sub> + a<sub>3</sub> p + cdots</div></p>
+                    <p><div class="math-display">vdots</div></p>
                     
                     <p><strong>Step 6:</strong> Summing:</p>
-                    <p>\[\sum_{k \geq 1} \left\lfloor \frac{n}{p^k} \right\rfloor = a_1 + a_2(1+p) + a_3(1+p+p^2) + \cdots\]</p>
-                    <p>\[= \sum_{j \geq 1} a_j \frac{p^j - 1}{p-1} = \frac{1}{p-1}\left(\sum_{j \geq 0} a_j p^j - \sum_{j \geq 0} a_j\right)\]</p>
-                    <p>\[= \frac{n - s_p(n)}{p-1}\] ∎</p>
+                    <p><div class="math-display">sum<sub>k geq 1</sub> lfloor <span class="math">n/p<sup>k</sup></span> rfloor = a<sub>1</sub> + a<sub>2</sub>(1+p) + a<sub>3</sub>(1+p+p<sup>2</sup>) + cdots</div></p>
+                    <p><div class="math-display">= sum<sub>j geq 1</sub> a<sub>j</sub> <span class="math">p<sup>j</sup> - 1/p-1</span> = <span class="math">1/p-1</span>(sum<sub>j geq 0</sub> a<sub>j</sub> p<sup>j</sup> - sum<sub>j geq 0</sub> a<sub>j</sub>)</div></p>
+                    <p><div class="math-display">= <span class="math">n - s<sub>p</sub>(n)/p-1</span></div> ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>

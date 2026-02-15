@@ -6,12 +6,11 @@
     <meta name="description" content="Daily Math Digest - Homological Algebra, Category Theory, Functional Analysis, Numerical Analysis, Mathematical Physics, Cryptography, Collatz Conjecture, Goldbach Conjecture, p-adic Numbers, Chaos Theory">
     <title>Daily Math Digest - February 16, 2026</title>
 
-        <!-- MathJax Configuration -->
+        
     <script>
-MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\)']],
-    displayMath: [['$$', '$$'], ['\[', '\]']],
+    inlineMath: [['<span class="math">', '</span>'], ['<span class="math">', '</span>']],
+    displayMath: [['<div class="math-display">', '</div>'], ['<div class="math-display">', '</div>']],
     processEscapes: true,
     processEnvironments: true
   },
@@ -22,7 +21,7 @@ MathJax = {
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     
     <style>
         :root {
@@ -280,55 +279,55 @@ MathJax = {
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(R\) — a ring (typically commutative with unity)</li>
-                        <li>\(M, N, P\) — modules over the ring \(R\)</li>
-                        <li>\(\ker(f)\) — kernel of homomorphism \(f\): elements mapping to zero</li>
-                        <li>\(\text{coker}(f) = N/\text{im}(f)\) — cokernel of \(f: M \to N\)</li>
-                        <li>\(\text{im}(f)\) — image of homomorphism \(f\)</li>
-                        <li>\(\partial\) — connecting homomorphism (the "snake" map)</li>
-                        <li>\(A \xrightarrow{f} B\) — homomorphism \(f\) from \(A\) to \(B\)</li>
-                        <li>\(0 \to A \to B \to C \to 0\) — short exact sequence</li>
+                        <li><span class="math">R</span> — a ring (typically commutative with unity)</li>
+                        <li><span class="math">M, N, P</span> — modules over the ring <span class="math">R</span></li>
+                        <li><span class="math">ker(f)</span> — kernel of homomorphism <span class="math">f</span>: elements mapping to zero</li>
+                        <li><span class="math">coker(f) = N/im(f)</span> — cokernel of <span class="math">f: M to N</span></li>
+                        <li><span class="math">im(f)</span> — image of homomorphism <span class="math">f</span></li>
+                        <li><span class="math">partial</span> — connecting homomorphism (the "snake" map)</li>
+                        <li><span class="math">A xrightarrowf B</span> — homomorphism <span class="math">f</span> from <span class="math">A</span> to <span class="math">B</span></li>
+                        <li><span class="math">0 to A to B to C to 0</span> — short exact sequence</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Snake Lemma</div>
                     <p>Consider the following commutative diagram with exact rows:</p>
-                    <p>\[
-                    \begin{array}{ccccccccc}
-                    & & M_1 & \xrightarrow{f} & M_2 & \xrightarrow{g} & M_3 & \to & 0 \\
-                    & & \downarrow{\alpha} & & \downarrow{\beta} & & \downarrow{\gamma} & & \\
-                    0 & \to & N_1 & \xrightarrow{h} & N_2 & \xrightarrow{k} & N_3 & &
-                    \end{array}
-                    \]</p>
+                    <p><div class="math-display">
+                    beginarrayccccccccc
+                    & & M<sub>1</sub> & xrightarrowf & M<sub>2</sub> & xrightarrowg & M<sub>3</sub> & to & 0 \\
+                    & & downarrowalpha & & downarrowbeta & & downarrowgamma & & \\
+                    0 & to & N<sub>1</sub> & xrightarrowh & N<sub>2</sub> & xrightarrowk & N<sub>3</sub> & &
+                    endarray
+                    </div></p>
                     <p>Then there exists an exact sequence:</p>
-                    <p>\[
-                    \ker(\alpha) \xrightarrow{\tilde{f}} \ker(\beta) \xrightarrow{\tilde{g}} \ker(\gamma) \xrightarrow{\partial} \text{coker}(\alpha) \xrightarrow{\tilde{h}} \text{coker}(\beta) \xrightarrow{\tilde{k}} \text{coker}(\gamma)
-                    \]</p>
-                    <p>where \(\partial\) is the connecting homomorphism. If \(f\) is injective, so is \(\tilde{f}\); if \(k\) is surjective, so is \(\tilde{k}\).</p>
+                    <p><div class="math-display">
+                    ker(alpha) xrightarrowf̃ ker(beta) xrightarrowg̃ ker(gamma) xrightarrowpartial coker(alpha) xrightarrowh̃ coker(beta) xrightarrowk̃ coker(gamma)
+                    </div></p>
+                    <p>where <span class="math">partial</span> is the connecting homomorphism. If <span class="math">f</span> is injective, so is <span class="math">f̃</span>; if <span class="math">k</span> is surjective, so is <span class="math">k̃</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (Construction of the Connecting Homomorphism)</div>
                     
                     <p><strong>Step 1: Define the maps on kernels.</strong></p>
-                    <p>For \(m \in \ker(\alpha)\), we have \(\alpha(m) = 0\). Define \(\tilde{f}(m) = f(m)\). Since the diagram commutes: \(\beta(f(m)) = h(\alpha(m)) = h(0) = 0\), so \(f(m) \in \ker(\beta)\).</p>
+                    <p>For <span class="math">m in ker(alpha)</span>, we have <span class="math">alpha(m) = 0</span>. Define <span class="math">f̃(m) = f(m)</span>. Since the diagram commutes: <span class="math">beta(f(m)) = h(alpha(m)) = h(0) = 0</span>, so <span class="math">f(m) in ker(beta)</span>.</p>
                     
                     <p><strong>Step 2: Define the maps on cokernels.</strong></p>
-                    <p>For \([n] \in \text{coker}(\alpha) = N_1/\text{im}(\alpha)\), define \(\tilde{h}([n]) = [h(n)]\). This is well-defined because if \(n = \alpha(m)\), then \(h(n) = h(\alpha(m)) = \beta(f(m)) \in \text{im}(\beta)\).</p>
+                    <p>For <span class="math">[n] in coker(alpha) = N<sub>1</sub>/im(alpha)</span>, define <span class="math">h̃([n]) = [h(n)]</span>. This is well-defined because if <span class="math">n = alpha(m)</span>, then <span class="math">h(n) = h(alpha(m)) = beta(f(m)) in im(beta)</span>.</p>
                     
-                    <p><strong>Step 3: Construct the connecting homomorphism \(\partial\).</strong></p>
-                    <p>Take \(m \in \ker(\gamma)\). Since \(g\) is surjective, there exists \(m_2 \in M_2\) with \(g(m_2) = m\). Then:</p>
-                    <p>\[k(\beta(m_2)) = \gamma(g(m_2)) = \gamma(m) = 0\]</p>
-                    <p>So \(\beta(m_2) \in \ker(k) = \text{im}(h)\). Thus \(\beta(m_2) = h(n_1)\) for some unique \(n_1 \in N_1\) (since \(h\) is injective).</p>
+                    <p><strong>Step 3: Construct the connecting homomorphism <span class="math">partial</span>.</strong></p>
+                    <p>Take <span class="math">m in ker(gamma)</span>. Since <span class="math">g</span> is surjective, there exists <span class="math">m<sub>2</sub> in M<sub>2</sub></span> with <span class="math">g(m<sub>2</sub>) = m</span>. Then:</p>
+                    <p><div class="math-display">k(beta(m<sub>2</sub>)) = gamma(g(m<sub>2</sub>)) = gamma(m) = 0</div></p>
+                    <p>So <span class="math">beta(m<sub>2</sub>) in ker(k) = im(h)</span>. Thus <span class="math">beta(m<sub>2</sub>) = h(n<sub>1</sub>)</span> for some unique <span class="math">n<sub>1</sub> in N<sub>1</sub></span> (since <span class="math">h</span> is injective).</p>
                     
-                    <p><strong>Step 4: Define \(\partial(m) = [n_1] \in \text{coker}(\alpha)\).</strong></p>
-                    <p>We must check this is well-defined. If \(m_2'\) is another choice with \(g(m_2') = m\), then \(m_2 - m_2' \in \ker(g) = \text{im}(f)\), so \(m_2 - m_2' = f(m_1)\). Then:</p>
-                    <p>\[\beta(m_2) - \beta(m_2') = \beta(f(m_1)) = h(\alpha(m_1))\]</p>
-                    <p>So the corresponding \(n_1\) differs by \(\alpha(m_1) \in \text{im}(\alpha)\), meaning \([n_1]\) is well-defined in the cokernel.</p>
+                    <p><strong>Step 4: Define <span class="math">partial(m) = [n<sub>1</sub>] in coker(alpha)</span>.</strong></p>
+                    <p>We must check this is well-defined. If <span class="math">m<sub>2</sub>'</span> is another choice with <span class="math">g(m<sub>2</sub>') = m</span>, then <span class="math">m<sub>2</sub> - m<sub>2</sub>' in ker(g) = im(f)</span>, so <span class="math">m<sub>2</sub> - m<sub>2</sub>' = f(m<sub>1</sub>)</span>. Then:</p>
+                    <p><div class="math-display">beta(m<sub>2</sub>) - beta(m<sub>2</sub>') = beta(f(m<sub>1</sub>)) = h(alpha(m<sub>1</sub>))</div></p>
+                    <p>So the corresponding <span class="math">n<sub>1</sub></span> differs by <span class="math">alpha(m<sub>1</sub>) in im(alpha)</span>, meaning <span class="math">[n<sub>1</sub>]</span> is well-defined in the cokernel.</p>
                     
                     <p><strong>Step 5: Verify exactness.</strong></p>
-                    <p>Exactness at each point follows from careful diagram chasing. For example, \(\text{im}(\tilde{g}) = \ker(\partial)\) because \(m \in \ker(\gamma)\) has \(\partial(m) = 0\) iff we can choose \(m_2 \in \ker(\beta)\), which means \(m = g(m_2)\) for some \(m_2 \in \ker(\beta)\). ∎</p>
+                    <p>Exactness at each point follows from careful diagram chasing. For example, <span class="math">im(g̃) = ker(partial)</span> because <span class="math">m in ker(gamma)</span> has <span class="math">partial(m) = 0</span> iff we can choose <span class="math">m<sub>2</sub> in ker(beta)</span>, which means <span class="math">m = g(m<sub>2</sub>)</span> for some <span class="math">m<sub>2</sub> in ker(beta)</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -464,66 +463,66 @@ print("The Snake Lemma guarantees an exact sequence connecting kernels and coker
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathcal{C}\) — a category</li>
-                        <li>\(\text{Ob}(\mathcal{C})\) — objects of category \(\mathcal{C}\)</li>
-                        <li>\(\text{Hom}_{\mathcal{C}}(A, B)\) or \(\mathcal{C}(A, B)\) — morphisms from \(A\) to \(B\)</li>
-                        <li>\(\mathcal{C}^{\text{op}}\) — opposite category (arrows reversed)</li>
-                        <li>\(\mathbf{Set}\) — category of sets and functions</li>
-                        <li>\(y_A = \mathcal{C}(-, A)\) — Yoneda embedding (representable functor)</li>
-                        <li>\(\text{Nat}(F, G)\) — natural transformations from \(F\) to \(G\)</li>
-                        <li>\([\mathcal{C}^{\text{op}}, \mathbf{Set}]\) — category of presheaves on \(\mathcal{C}\)</li>
+                        <li><span class="math">C</span> — a category</li>
+                        <li><span class="math">Ob(C)</span> — objects of category <span class="math">C</span></li>
+                        <li><span class="math">Hom<sub>C</sub>(A, B)</span> or <span class="math">C(A, B)</span> — morphisms from <span class="math">A</span> to <span class="math">B</span></li>
+                        <li><span class="math">C<sup>op</sup></span> — opposite category (arrows reversed)</li>
+                        <li><span class="math"><strong>Set</strong></span> — category of sets and functions</li>
+                        <li><span class="math">y<sub>A</sub> = C(-, A)</span> — Yoneda embedding (representable functor)</li>
+                        <li><span class="math">Nat(F, G)</span> — natural transformations from <span class="math">F</span> to <span class="math">G</span></li>
+                        <li><span class="math">[C<sup>op</sup>, <strong>Set</strong>]</span> — category of presheaves on <span class="math">C</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Yoneda's Lemma</div>
-                    <p>Let \(\mathcal{C}\) be a locally small category, \(F: \mathcal{C}^{\text{op}} \to \mathbf{Set}\) a functor, and \(A \in \mathcal{C}\) an object. Then there is a natural bijection:</p>
-                    <p>\[\text{Nat}(\mathcal{C}(-, A), F) \cong F(A)\]</p>
-                    <p>Explicitly: natural transformations from the representable functor \(y_A = \mathcal{C}(-, A)\) to \(F\) are in one-to-one correspondence with elements of \(F(A)\).</p>
-                    <p>The bijection is given by: \(\alpha \mapsto \alpha_A(\text{id}_A)\) with inverse \(x \mapsto (f: B \to A) \mapsto F(f)(x)\).</p>
+                    <p>Let <span class="math">C</span> be a locally small category, <span class="math">F: C<sup>op</sup> to <strong>Set</strong></span> a functor, and <span class="math">A in C</span> an object. Then there is a natural bijection:</p>
+                    <p><div class="math-display">Nat(C(-, A), F) ≅ F(A)</div></p>
+                    <p>Explicitly: natural transformations from the representable functor <span class="math">y<sub>A</sub> = C(-, A)</span> to <span class="math">F</span> are in one-to-one correspondence with elements of <span class="math">F(A)</span>.</p>
+                    <p>The bijection is given by: <span class="math">alpha mapsto alpha<sub>A</sub>(id<sub>A</sub>)</span> with inverse <span class="math">x mapsto (f: B to A) mapsto F(f)(x)</span>.</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Corollary: Yoneda Embedding is Fully Faithful</div>
-                    <p>The functor \(y: \mathcal{C} \to [\mathcal{C}^{\text{op}}, \mathbf{Set}]\) sending \(A \mapsto \mathcal{C}(-, A)\) is fully faithful. That is, for all \(A, B \in \mathcal{C}\):</p>
-                    <p>\[\mathcal{C}(A, B) \cong \text{Nat}(\mathcal{C}(-, A), \mathcal{C}(-, B))\]</p>
+                    <p>The functor <span class="math">y: C to [C<sup>op</sup>, <strong>Set</strong>]</span> sending <span class="math">A mapsto C(-, A)</span> is fully faithful. That is, for all <span class="math">A, B in C</span>:</p>
+                    <p><div class="math-display">C(A, B) ≅ Nat(C(-, A), C(-, B))</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof of Yoneda's Lemma</div>
                     
-                    <p><strong>Step 1: Define the map \(\Phi: \text{Nat}(y_A, F) \to F(A)\).</strong></p>
-                    <p>For a natural transformation \(\alpha: y_A \to F\), define:</p>
-                    <p>\[\Phi(\alpha) = \alpha_A(\text{id}_A) \in F(A)\]</p>
-                    <p>where \(\text{id}_A \in \mathcal{C}(A, A) = y_A(A)\).</p>
+                    <p><strong>Step 1: Define the map <span class="math">Phi: Nat(y<sub>A</sub>, F) to F(A)</span>.</strong></p>
+                    <p>For a natural transformation <span class="math">alpha: y<sub>A</sub> to F</span>, define:</p>
+                    <p><div class="math-display">Phi(alpha) = alpha<sub>A</sub>(id<sub>A</sub>) in F(A)</div></p>
+                    <p>where <span class="math">id<sub>A</sub> in C(A, A) = y<sub>A</sub>(A)</span>.</p>
                     
-                    <p><strong>Step 2: Define the inverse map \(\Psi: F(A) \to \text{Nat}(y_A, F)\).</strong></p>
-                    <p>For \(x \in F(A)\), define \(\Psi(x)\) to be the natural transformation whose component at \(B\) is:</p>
-                    <p>\[\Psi(x)_B: \mathcal{C}(B, A) \to F(B), \quad f \mapsto F(f)(x)\]</p>
+                    <p><strong>Step 2: Define the inverse map <span class="math">Psi: F(A) to Nat(y<sub>A</sub>, F)</span>.</strong></p>
+                    <p>For <span class="math">x in F(A)</span>, define <span class="math">Psi(x)</span> to be the natural transformation whose component at <span class="math">B</span> is:</p>
+                    <p><div class="math-display">Psi(x)<sub>B</sub>: C(B, A) to F(B), quad f mapsto F(f)(x)</div></p>
                     
-                    <p><strong>Step 3: Verify \(\Psi(x)\) is a natural transformation.</strong></p>
-                    <p>For \(g: C \to B\), we need the naturality square to commute:</p>
-                    <p>\[
-                    \begin{array}{ccc}
-                    \mathcal{C}(B, A) & \xrightarrow{\Psi(x)_B} & F(B) \\
-                    \downarrow{g^*} & & \downarrow{F(g)} \\
-                    \mathcal{C}(C, A) & \xrightarrow{\Psi(x)_C} & F(C)
-                    \end{array}
-                    \]</p>
-                    <p>For \(f: B \to A\):</p>
-                    <p>\[\Psi(x)_C(g^*(f)) = \Psi(x)_C(f \circ g) = F(f \circ g)(x) = F(g)(F(f)(x)) = F(g)(\Psi(x)_B(f))\]</p>
-                    <p>The square commutes, so \(\Psi(x)\) is natural.</p>
+                    <p><strong>Step 3: Verify <span class="math">Psi(x)</span> is a natural transformation.</strong></p>
+                    <p>For <span class="math">g: C to B</span>, we need the naturality square to commute:</p>
+                    <p><div class="math-display">
+                    beginarrayccc
+                    C(B, A) & xrightarrowPsi(x)<sub>B</sub> & F(B) \\
+                    downarrowg^* & & downarrowF(g) \\
+                    C(C, A) & xrightarrowPsi(x)<sub>C</sub> & F(C)
+                    endarray
+                    </div></p>
+                    <p>For <span class="math">f: B to A</span>:</p>
+                    <p><div class="math-display">Psi(x)<sub>C</sub>(g^*(f)) = Psi(x)<sub>C</sub>(f circ g) = F(f circ g)(x) = F(g)(F(f)(x)) = F(g)(Psi(x)<sub>B</sub>(f))</div></p>
+                    <p>The square commutes, so <span class="math">Psi(x)</span> is natural.</p>
                     
-                    <p><strong>Step 4: Show \(\Phi \circ \Psi = \text{id}_{F(A)}\).</strong></p>
-                    <p>For \(x \in F(A)\):</p>
-                    <p>\[\Phi(\Psi(x)) = \Psi(x)_A(\text{id}_A) = F(\text{id}_A)(x) = \text{id}_{F(A)}(x) = x\]</p>
+                    <p><strong>Step 4: Show <span class="math">Phi circ Psi = id<sub>F(A)</sub></span>.</strong></p>
+                    <p>For <span class="math">x in F(A)</span>:</p>
+                    <p><div class="math-display">Phi(Psi(x)) = Psi(x)<sub>A</sub>(id<sub>A</sub>) = F(id<sub>A</sub>)(x) = id<sub>F(A)</sub>(x) = x</div></p>
                     
-                    <p><strong>Step 5: Show \(\Psi \circ \Phi = \text{id}_{\text{Nat}(y_A, F)}\).</strong></p>
-                    <p>For \(\alpha: y_A \to F\), we show \(\Psi(\Phi(\alpha)) = \alpha\). For any \(B\) and \(f: B \to A\):</p>
-                    <p>\[\Psi(\Phi(\alpha))_B(f) = F(f)(\alpha_A(\text{id}_A))\]</p>
-                    <p>By naturality of \(\alpha\) applied to \(f: B \to A\):</p>
-                    <p>\[\alpha_B(f) = \alpha_B(f^*(\text{id}_A)) = F(f)(\alpha_A(\text{id}_A))\]</p>
-                    <p>So \(\Psi(\Phi(\alpha))_B(f) = \alpha_B(f)\) for all \(f\), hence \(\Psi(\Phi(\alpha)) = \alpha\). ∎</p>
+                    <p><strong>Step 5: Show <span class="math">Psi circ Phi = id<sub>Nat</sub>(y<sub>A</sub>, F)</span>.</strong></p>
+                    <p>For <span class="math">alpha: y<sub>A</sub> to F</span>, we show <span class="math">Psi(Phi(alpha)) = alpha</span>. For any <span class="math">B</span> and <span class="math">f: B to A</span>:</p>
+                    <p><div class="math-display">Psi(Phi(alpha))<sub>B</sub>(f) = F(f)(alpha<sub>A</sub>(id<sub>A</sub>))</div></p>
+                    <p>By naturality of α applied to <span class="math">f: B to A</span>:</p>
+                    <p><div class="math-display">alpha<sub>B</sub>(f) = alpha<sub>B</sub>(f^*(id<sub>A</sub>)) = F(f)(alpha<sub>A</sub>(id<sub>A</sub>))</div></p>
+                    <p>So <span class="math">Psi(Phi(alpha))<sub>B</sub>(f) = alpha<sub>B</sub>(f)</span> for all <span class="math">f</span>, hence <span class="math">Psi(Phi(alpha)) = alpha</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -658,33 +657,33 @@ C = yoneda_lemma_demo()
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(X\) — a normed vector space over \(\mathbb{R}\) or \(\mathbb{C}\)</li>
-                        <li>\(\|x\|\) — norm of vector \(x\)</li>
-                        <li>\(X^*\) — dual space (space of continuous linear functionals)</li>
-                        <li>\(M \subseteq X\) — a subspace of \(X\)</li>
-                        <li>\(f: M \to \mathbb{R}\) (or \(\mathbb{C}\)) — linear functional</li>
-                        <li>\(\|f\| = \sup_{\|x\| \leq 1} |f(x)|\) — operator norm</li>
-                        <li>\(p: X \to \mathbb{R}\) — sublinear functional: \(p(x+y) \leq p(x) + p(y)\) and \(p(\alpha x) = \alpha p(x)\) for \(\alpha \geq 0\)</li>
+                        <li><span class="math">X</span> — a normed vector space over <span class="math">ℝ</span> or <span class="math">ℂ</span></li>
+                        <li><span class="math">\|x\|</span> — norm of vector <span class="math">x</span></li>
+                        <li><span class="math">X^*</span> — dual space (space of continuous linear functionals)</li>
+                        <li><span class="math">M subseteq X</span> — a subspace of <span class="math">X</span></li>
+                        <li><span class="math">f: M to ℝ</span> (or <span class="math">ℂ</span>) — linear functional</li>
+                        <li><span class="math">\|f\| = sup<sub>\|x\| leq 1</sub> |f(x)|</span> — operator norm</li>
+                        <li><span class="math">p: X to ℝ</span> — sublinear functional: <span class="math">p(x+y) leq p(x) + p(y)</span> and <span class="math">p(alpha x) = alpha p(x)</span> for <span class="math">alpha geq 0</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Hahn-Banach Theorem (Real Version)</div>
-                    <p>Let \(X\) be a real vector space and \(p: X \to \mathbb{R}\) a sublinear functional. Let \(M \subseteq X\) be a subspace and \(f: M \to \mathbb{R}\) a linear functional satisfying:</p>
-                    <p>\[f(x) \leq p(x) \quad \text{for all } x \in M\]</p>
-                    <p>Then there exists a linear extension \(F: X \to \mathbb{R}\) such that:</p>
+                    <p>Let <span class="math">X</span> be a real vector space and <span class="math">p: X to ℝ</span> a sublinear functional. Let <span class="math">M subseteq X</span> be a subspace and <span class="math">f: M to ℝ</span> a linear functional satisfying:</p>
+                    <p><div class="math-display">f(x) leq p(x) quad for all  x in M</div></p>
+                    <p>Then there exists a linear extension <span class="math">F: X to ℝ</span> such that:</p>
                     <ol>
-                        <li>\(F|_M = f\) (extension)</li>
-                        <li>\(F(x) \leq p(x)\) for all \(x \in X\) (domination)</li>
+                        <li><span class="math">F|<sub>M</sub> = f</span> (extension)</li>
+                        <li><span class="math">F(x) leq p(x)</span> for all <span class="math">x in X</span> (domination)</li>
                     </ol>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Hahn-Banach Theorem (Normed Space Version)</div>
-                    <p>Let \(X\) be a normed vector space, \(M \subseteq X\) a subspace, and \(f \in M^*\) a bounded linear functional. Then there exists \(F \in X^*\) such that:</p>
+                    <p>Let <span class="math">X</span> be a normed vector space, <span class="math">M subseteq X</span> a subspace, and <span class="math">f in M^*</span> a bounded linear functional. Then there exists <span class="math">F in X^*</span> such that:</p>
                     <ol>
-                        <li>\(F|_M = f\)</li>
-                        <li>\(\|F\| = \|f\|\)</li>
+                        <li><span class="math">F|<sub>M</sub> = f</span></li>
+                        <li><span class="math">\|F\| = \|f\|</span></li>
                     </ol>
                 </div>
 
@@ -692,17 +691,17 @@ C = yoneda_lemma_demo()
                     <div class="proof-title">Proof Sketch (by Zorn's Lemma)</div>
                     
                     <p><strong>Step 1: One-dimensional extension.</strong></p>
-                    <p>Given \(f\) defined on \(M\), we first extend to \(M + \mathbb{R}x_0\) for some \(x_0 \notin M\). We need to define \(F(x_0) = c\) such that:</p>
-                    <p>\[f(y) + \alpha c \leq p(y + \alpha x_0) \quad \text{for all } y \in M, \alpha \in \mathbb{R}\]</p>
-                    <p>For \(\alpha > 0\): \(c \leq \frac{p(y + \alpha x_0) - f(y)}{\alpha}\)</p>
-                    <p>For \(\alpha < 0\): \(c \geq \frac{f(y) - p(y + \alpha x_0)}{-\alpha}\)</p>
-                    <p>One shows these bounds are compatible, so such \(c\) exists.</p>
+                    <p>Given <span class="math">f</span> defined on <span class="math">M</span>, we first extend to <span class="math">M + ℝx<sub>0</sub></span> for some <span class="math">x<sub>0</sub> notin M</span>. We need to define <span class="math">F(x<sub>0</sub>) = c</span> such that:</p>
+                    <p><div class="math-display">f(y) + alpha c leq p(y + alpha x<sub>0</sub>) quad for all  y in M, alpha in ℝ</div></p>
+                    <p>For <span class="math">alpha > 0</span>: <span class="math">c leq <span class="math">p(y + alpha x<sub>0</sub>) - f(y)/alpha</span></span></p>
+                    <p>For <span class="math">alpha < 0</span>: <span class="math">c geq <span class="math">f(y) - p(y + alpha x<sub>0</sub>)/-alpha</span></span></p>
+                    <p>One shows these bounds are compatible, so such <span class="math">c</span> exists.</p>
                     
                     <p><strong>Step 2: Apply Zorn's Lemma.</strong></p>
-                    <p>Consider the set of all extensions \((N, g)\) where \(N \supseteq M\) and \(g\) extends \(f\) with \(g \leq p\) on \(N\). Order by extension: \((N_1, g_1) \leq (N_2, g_2)\) if \(N_1 \subseteq N_2\) and \(g_2|_{N_1} = g_1\).</p>
+                    <p>Consider the set of all extensions <span class="math">(N, g)</span> where <span class="math">N supseteq M</span> and <span class="math">g</span> extends <span class="math">f</span> with <span class="math">g leq p</span> on <span class="math">N</span>. Order by extension: <span class="math">(N<sub>1</sub>, g<sub>1</sub>) leq (N<sub>2</sub>, g<sub>2</sub>)</span> if <span class="math">N<sub>1</sub> subseteq N<sub>2</sub></span> and <span class="math">g<sub>2</sub>|<sub>N<sub>1</sub></sub> = g<sub>1</sub></span>.</p>
                     
                     <p><strong>Step 3: Maximal element.</strong></p>
-                    <p>By Zorn's Lemma, there exists a maximal extension \((N_{\max}, F)\). If \(N_{\max} \neq X\), we could extend further by Step 1, contradicting maximality. Hence \(N_{\max} = X\). ∎</p>
+                    <p>By Zorn's Lemma, there exists a maximal extension <span class="math">(N<sub>max</sub>, F)</span>. If <span class="math">N<sub>max</sub> neq X</span>, we could extend further by Step 1, contradicting maximality. Hence <span class="math">N<sub>max</sub> = X</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -825,55 +824,55 @@ for v in test_vectors_X:
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(f: \mathbb{R} \to \mathbb{R}\) — a differentiable function</li>
-                        <li>\(f'(x)\) — derivative of \(f\) at \(x\)</li>
-                        <li>\(x^*\) — root: \(f(x^*) = 0\)</li>
-                        <li>\(x_n\) — nth iterate of Newton's method</li>
-                        <li>\(e_n = x_n - x^*\) — error at step \(n\)</li>
-                        <li>\(f^{(k)}(x)\) — kth derivative of \(f\)</li>
-                        <li>\(O(\cdot)\) — big-O notation for asymptotic behavior</li>
+                        <li><span class="math">f: ℝ to ℝ</span> — a differentiable function</li>
+                        <li><span class="math">f'(x)</span> — derivative of <span class="math">f</span> at <span class="math">x</span></li>
+                        <li><span class="math">x^*</span> — root: <span class="math">f(x^*) = 0</span></li>
+                        <li><span class="math">x<sub>n</sub></span> — nth iterate of Newton's method</li>
+                        <li><span class="math">e<sub>n</sub> = x<sub>n</sub> - x^*</span> — error at step <span class="math">n</span></li>
+                        <li><span class="math">f<sup>(k)</sup>(x)</span> — kth derivative of <span class="math">f</span></li>
+                        <li><span class="math">O(cdot)</span> — big-O notation for asymptotic behavior</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Newton's Method</div>
-                    <p>Given \(f\) differentiable with \(f'(x_n) \neq 0\), the iteration is:</p>
-                    <p>\[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\]</p>
+                    <p>Given <span class="math">f</span> differentiable with <span class="math">f'(x<sub>n</sub>) neq 0</span>, the iteration is:</p>
+                    <p><div class="math-display">x<sub>n+1</sub> = x<sub>n</sub> - <span class="math">f(x<sub>n</sub>)/f'(x<sub>n</sub>)</span></div></p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Local Quadratic Convergence</div>
-                    <p>Let \(f\) be twice continuously differentiable with \(f(x^*) = 0\) and \(f'(x^*) \neq 0\). Then there exists \(\delta > 0\) such that for any \(x_0\) with \(|x_0 - x^*| < \delta\):</p>
+                    <p>Let <span class="math">f</span> be twice continuously differentiable with <span class="math">f(x^*) = 0</span> and <span class="math">f'(x^*) neq 0</span>. Then there exists <span class="math">delta > 0</span> such that for any <span class="math">x<sub>0</sub></span> with <span class="math">|x<sub>0</sub> - x^*| < delta</span>:</p>
                     <ol>
-                        <li>The Newton iteration converges to \(x^*\)</li>
-                        <li>The convergence is quadratic: \(|x_{n+1} - x^*| \leq C|x_n - x^*|^2\) for some constant \(C\)</li>
+                        <li>The Newton iteration converges to <span class="math">x^*</span></li>
+                        <li>The convergence is quadratic: <span class="math">|x<sub>n+1</sub> - x^*| leq C|x<sub>n</sub> - x^*|<sup>2</sup></span> for some constant <span class="math">C</span></li>
                     </ol>
                     <p>More precisely:</p>
-                    <p>\[\lim_{n \to \infty} \frac{|x_{n+1} - x^*|}{|x_n - x^*|^2} = \frac{|f''(x^*)|}{2|f'(x^*)|}\]</p>
+                    <p><div class="math-display">lim<sub>n to infty</sub> <span class="math">|x<sub>n+1</sub> - x^*|/|x<sub>n</sub> - x^*|<sup>2</sup></span> = <span class="math">|f''(x^*)|/2|f'(x^*)|</span></div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof of Quadratic Convergence</div>
                     
-                    <p><strong>Step 1: Taylor expansion around \(x_n\).</strong></p>
-                    <p>\[0 = f(x^*) = f(x_n) + f'(x_n)(x^* - x_n) + \frac{f''(\xi_n)}{2}(x^* - x_n)^2\]</p>
-                    <p>for some \(\xi_n\) between \(x_n\) and \(x^*\).</p>
+                    <p><strong>Step 1: Taylor expansion around <span class="math">x<sub>n</sub></span>.</strong></p>
+                    <p><div class="math-display">0 = f(x^*) = f(x<sub>n</sub>) + f'(x<sub>n</sub>)(x^* - x<sub>n</sub>) + <span class="math">f''(xi<sub>n</sub>)/2</span>(x^* - x<sub>n</sub>)<sup>2</sup></div></p>
+                    <p>for some <span class="math">xi<sub>n</sub></span> between <span class="math">x<sub>n</sub></span> and <span class="math">x^*</span>.</p>
                     
                     <p><strong>Step 2: Rearrange.</strong></p>
-                    <p>\[f(x_n) = f'(x_n)(x_n - x^*) - \frac{f''(\xi_n)}{2}(x_n - x^*)^2\]</p>
+                    <p><div class="math-display">f(x<sub>n</sub>) = f'(x<sub>n</sub>)(x<sub>n</sub> - x^*) - <span class="math">f''(xi<sub>n</sub>)/2</span>(x<sub>n</sub> - x^*)<sup>2</sup></div></p>
                     
                     <p><strong>Step 3: Substitute into Newton's formula.</strong></p>
-                    <p>\[x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} = x_n - (x_n - x^*) + \frac{f''(\xi_n)}{2f'(x_n)}(x_n - x^*)^2\]</p>
+                    <p><div class="math-display">x<sub>n+1</sub> = x<sub>n</sub> - <span class="math">f(x<sub>n</sub>)/f'(x<sub>n</sub>)</span> = x<sub>n</sub> - (x<sub>n</sub> - x^*) + <span class="math">f''(xi<sub>n</sub>)/2f'(x<sub>n</sub>)</span>(x<sub>n</sub> - x^*)<sup>2</sup></div></p>
                     
                     <p><strong>Step 4: Simplify.</strong></p>
-                    <p>\[x_{n+1} - x^* = \frac{f''(\xi_n)}{2f'(x_n)}(x_n - x^*)^2\]</p>
+                    <p><div class="math-display">x<sub>n+1</sub> - x^* = <span class="math">f''(xi<sub>n</sub>)/2f'(x<sub>n</sub>)</span>(x<sub>n</sub> - x^*)<sup>2</sup></div></p>
                     
                     <p><strong>Step 5: Take absolute values.</strong></p>
-                    <p>\[|x_{n+1} - x^*| = \frac{|f''(\xi_n)|}{2|f'(x_n)|}|x_n - x^*|^2\]</p>
+                    <p><div class="math-display">|x<sub>n+1</sub> - x^*| = <span class="math">|f''(xi<sub>n</sub>)|/2|f'(x<sub>n</sub>)|</span>|x<sub>n</sub> - x^*|<sup>2</sup></div></p>
                     
-                    <p><strong>Step 6: As \(n \to \infty\), \(x_n \to x^*\), so \(\xi_n \to x^*\).</strong></p>
-                    <p>By continuity of \(f'\) and \(f''\):</p>
-                    <p>\[\lim_{n \to \infty} \frac{|x_{n+1} - x^*|}{|x_n - x^*|^2} = \frac{|f''(x^*)|}{2|f'(x^*)|}\]</p>
+                    <p><strong>Step 6: As <span class="math">n to infty</span>, <span class="math">x<sub>n</sub> to x^*</span>, so <span class="math">xi<sub>n</sub> to x^*</span>.</strong></p>
+                    <p>By continuity of <span class="math">f'</span> and <span class="math">f''</span>:</p>
+                    <p><div class="math-display">lim<sub>n to infty</sub> <span class="math">|x<sub>n+1</sub> - x^*|/|x<sub>n</sub> - x^*|<sup>2</sup></span> = <span class="math">|f''(x^*)|/2|f'(x^*)|</span></div></p>
                     <p>This establishes quadratic convergence. ∎</p>
                 </div>
 
@@ -1031,60 +1030,60 @@ print(f"Expected: x = y = √2 ≈ {np.sqrt(2):.10f}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\psi(x, t)\) — wave function (complex-valued)</li>
-                        <li>\(\hbar = h/(2\pi)\) — reduced Planck's constant</li>
-                        <li>\(m\) — mass of particle</li>
-                        <li>\(V(x)\) — potential energy function</li>
-                        <li>\(\hat{H}\) — Hamiltonian operator</li>
-                        <li>\(\nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\) — Laplacian</li>
-                        <li>\(|\psi(x,t)|^2\) — probability density</li>
-                        <li>\(E_n\) — energy eigenvalues</li>
-                        <li>\(\phi_n(x)\) — energy eigenfunctions</li>
+                        <li><span class="math">psi(x, t)</span> — wave function (complex-valued)</li>
+                        <li><span class="math">hbar = h/(2pi)</span> — reduced Planck's constant</li>
+                        <li><span class="math">m</span> — mass of particle</li>
+                        <li><span class="math">V(x)</span> — potential energy function</li>
+                        <li><span class="math">Ĥ</span> — Hamiltonian operator</li>
+                        <li><span class="math">nabla<sup>2</sup> = <span class="math">partial<sup>2</sup>/partial x<sup>2</sup></span> + <span class="math">partial<sup>2</sup>/partial y<sup>2</sup></span> + <span class="math">partial<sup>2</sup>/partial z<sup>2</sup></span></span> — Laplacian</li>
+                        <li><span class="math">|psi(x,t)|<sup>2</sup></span> — probability density</li>
+                        <li><span class="math">E<sub>n</sub></span> — energy eigenvalues</li>
+                        <li><span class="math">phi<sub>n</sub>(x)</span> — energy eigenfunctions</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Time-Dependent Schrödinger Equation</div>
-                    <p>For a particle of mass \(m\) in potential \(V(x)\):</p>
-                    <p>\[i\hbar \frac{\partial \psi}{\partial t} = -\frac{\hbar^2}{2m}\nabla^2\psi + V(x)\psi = \hat{H}\psi\]</p>
+                    <p>For a particle of mass <span class="math">m</span> in potential <span class="math">V(x)</span>:</p>
+                    <p><div class="math-display">ihbar <span class="math">partial psi/partial t</span> = -<span class="math">hbar<sup>2</sup>/2m</span>nabla<sup>2</sup>psi + V(x)psi = Ĥpsi</div></p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Time-Independent Schrödinger Equation</div>
-                    <p>For stationary states \(\psi(x,t) = \phi(x)e^{-iEt/\hbar}\):</p>
-                    <p>\[\hat{H}\phi = E\phi\]</p>
-                    <p>\[-\frac{\hbar^2}{2m}\frac{d^2\phi}{dx^2} + V(x)\phi = E\phi\]</p>
+                    <p>For stationary states <span class="math">psi(x,t) = phi(x)e<sup>-iEt/hbar</sup></span>:</p>
+                    <p><div class="math-display">Ĥphi = Ephi</div></p>
+                    <p><div class="math-display">-<span class="math">hbar<sup>2</sup>/2m</span><span class="math">d<sup>2</sup>phi/dx<sup>2</sup></span> + V(x)phi = Ephi</div></p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Infinite Square Well Solution</div>
-                    <p>For \(V(x) = 0\) on \((0, L)\) and \(\infty\) otherwise:</p>
-                    <p>\[\phi_n(x) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right), \quad n = 1, 2, 3, \ldots\]</p>
-                    <p>\[E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}\]</p>
+                    <p>For <span class="math">V(x) = 0</span> on <span class="math">(0, L)</span> and <span class="math">infty</span> otherwise:</p>
+                    <p><div class="math-display">phi<sub>n</sub>(x) = √(<span class="math">2/L</span>)sin(<span class="math">npi x/L</span>), quad n = 1, 2, 3, ldots</div></p>
+                    <p><div class="math-display">E<sub>n</sub> = <span class="math">n<sup>2</sup>pi<sup>2</sup>hbar<sup>2</sup>/2mL<sup>2</sup></span></div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Derivation of Infinite Square Well Eigenfunctions</div>
                     
-                    <p><strong>Step 1:</strong> Inside the well \((0, L)\), \(V(x) = 0\), so:</p>
-                    <p>\[-\frac{\hbar^2}{2m}\frac{d^2\phi}{dx^2} = E\phi\]</p>
+                    <p><strong>Step 1:</strong> Inside the well <span class="math">(0, L)</span>, <span class="math">V(x) = 0</span>, so:</p>
+                    <p><div class="math-display">-<span class="math">hbar<sup>2</sup>/2m</span><span class="math">d<sup>2</sup>phi/dx<sup>2</sup></span> = Ephi</div></p>
                     
                     <p><strong>Step 2:</strong> Rearrange:</p>
-                    <p>\[\frac{d^2\phi}{dx^2} = -k^2\phi, \quad k = \frac{\sqrt{2mE}}{\hbar}\]</p>
+                    <p><div class="math-display"><span class="math">d<sup>2</sup>phi/dx<sup>2</sup></span> = -k<sup>2</sup>phi, quad k = frac√(2mE)hbar</div></p>
                     
                     <p><strong>Step 3:</strong> General solution:</p>
-                    <p>\[\phi(x) = A\sin(kx) + B\cos(kx)\]</p>
+                    <p><div class="math-display">phi(x) = Asin(kx) + Bcos(kx)</div></p>
                     
-                    <p><strong>Step 4:</strong> Apply boundary conditions \(\phi(0) = \phi(L) = 0\):</p>
-                    <p>\(\phi(0) = B = 0\), so \(\phi(x) = A\sin(kx)\)</p>
-                    <p>\(\phi(L) = A\sin(kL) = 0\), so \(kL = n\pi\) for integer \(n\)</p>
+                    <p><strong>Step 4:</strong> Apply boundary conditions <span class="math">phi(0) = phi(L) = 0</span>:</p>
+                    <p><span class="math">phi(0) = B = 0</span>, so <span class="math">phi(x) = Asin(kx)</span></p>
+                    <p><span class="math">phi(L) = Asin(kL) = 0</span>, so <span class="math">kL = npi</span> for integer <span class="math">n</span></p>
                     
                     <p><strong>Step 5:</strong> Quantization:</p>
-                    <p>\[k_n = \frac{n\pi}{L}, \quad E_n = \frac{\hbar^2 k_n^2}{2m} = \frac{n^2\pi^2\hbar^2}{2mL^2}\]</p>
+                    <p><div class="math-display">k<sub>n</sub> = <span class="math">npi/L</span>, quad E<sub>n</sub> = <span class="math">hbar<sup>2</sup> k<sub>n</sub><sup>2</sup>/2m</span> = <span class="math">n<sup>2</sup>pi<sup>2</sup>hbar<sup>2</sup>/2mL<sup>2</sup></span></div></p>
                     
-                    <p><strong>Step 6:</strong> Normalization \(\int_0^L |\phi|^2 dx = 1\):</p>
-                    <p>\[A^2 \int_0^L \sin^2\left(\frac{n\pi x}{L}\right) dx = A^2 \cdot \frac{L}{2} = 1\]</p>
-                    <p>So \(A = \sqrt{2/L}\). ∎</p>
+                    <p><strong>Step 6:</strong> Normalization <span class="math">int<sub>0</sub><sup>L</sup> |phi|<sup>2</sup> dx = 1</span>:</p>
+                    <p><div class="math-display">A<sup>2</sup> int<sub>0</sub><sup>L</sup> sin<sup>2</sup>(<span class="math">npi x/L</span>) dx = A<sup>2</sup> cdot <span class="math">L/2</span> = 1</div></p>
+                    <p>So <span class="math">A = √(2/L)</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1243,62 +1242,62 @@ for i in range(5):
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(p, q\) — large prime numbers</li>
-                        <li>\(n = pq\) — RSA modulus (public)</li>
-                        <li>\(\phi(n) = (p-1)(q-1)\) — Euler's totient function</li>
-                        <li>\(e\) — public exponent (encryption key)</li>
-                        <li>\(d\) — private exponent (decryption key)</li>
-                        <li>\(m\) — plaintext message</li>
-                        <li>\(c\) — ciphertext</li>
-                        <li>\(a \equiv b \pmod{n}\) — congruence modulo \(n\)</li>
-                        <li>\(\gcd(a, b)\) — greatest common divisor</li>
+                        <li><span class="math">p, q</span> — large prime numbers</li>
+                        <li><span class="math">n = pq</span> — RSA modulus (public)</li>
+                        <li><span class="math">phi(n) = (p-1)(q-1)</span> — Euler's totient function</li>
+                        <li><span class="math">e</span> — public exponent (encryption key)</li>
+                        <li><span class="math">d</span> — private exponent (decryption key)</li>
+                        <li><span class="math">m</span> — plaintext message</li>
+                        <li><span class="math">c</span> — ciphertext</li>
+                        <li><span class="math">a equiv b pmodn</span> — ≅ruence modulo <span class="math">n</span></li>
+                        <li><span class="math">gcd(a, b)</span> — greatest common divisor</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">RSA Key Generation</div>
                     <ol>
-                        <li>Choose two distinct large primes \(p\) and \(q\)</li>
-                        <li>Compute \(n = pq\) and \(\phi(n) = (p-1)(q-1)\)</li>
-                        <li>Choose \(e\) such that \(1 < e < \phi(n)\) and \(\gcd(e, \phi(n)) = 1\)</li>
-                        <li>Compute \(d\) such that \(ed \equiv 1 \pmod{\phi(n)}\)</li>
+                        <li>Choose two distinct large primes <span class="math">p</span> and <span class="math">q</span></li>
+                        <li>Compute <span class="math">n = pq</span> and <span class="math">phi(n) = (p-1)(q-1)</span></li>
+                        <li>Choose <span class="math">e</span> such that <span class="math">1 < e < phi(n)</span> and <span class="math">gcd(e, phi(n)) = 1</span></li>
+                        <li>Compute <span class="math">d</span> such that <span class="math">ed equiv 1 pmodphi(n)</span></li>
                     </ol>
-                    <p><strong>Public key:</strong> \((n, e)\)</p>
-                    <p><strong>Private key:</strong> \((n, d)\)</p>
+                    <p><strong>Public key:</strong> <span class="math">(n, e)</span></p>
+                    <p><strong>Private key:</strong> <span class="math">(n, d)</span></p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">RSA Encryption and Decryption</div>
-                    <p><strong>Encryption:</strong> \(c \equiv m^e \pmod{n}\)</p>
-                    <p><strong>Decryption:</strong> \(m \equiv c^d \pmod{n}\)</p>
+                    <p><strong>Encryption:</strong> <span class="math">c equiv m<sup>e</sup> pmodn</span></p>
+                    <p><strong>Decryption:</strong> <span class="math">m equiv c<sup>d</sup> pmodn</span></p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Correctness of RSA</div>
-                    <p>For any message \(m\) with \(0 \leq m < n\):</p>
-                    <p>\[(m^e)^d \equiv m \pmod{n}\]</p>
-                    <p>Equivalently: \(m^{ed} \equiv m \pmod{n}\)</p>
+                    <p>For any message <span class="math">m</span> with <span class="math">0 leq m < n</span>:</p>
+                    <p><div class="math-display">(m<sup>e</sup>)<sup>d</sup> equiv m pmodn</div></p>
+                    <p>Equivalently: <span class="math">m<sup>ed</sup> equiv m pmodn</span></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof of RSA Correctness</div>
                     
-                    <p><strong>Step 1:</strong> Since \(ed \equiv 1 \pmod{\phi(n)}\), we have \(ed = 1 + k\phi(n)\) for some integer \(k\).</p>
+                    <p><strong>Step 1:</strong> Since <span class="math">ed equiv 1 pmodphi(n)</span>, we have <span class="math">ed = 1 + kphi(n)</span> for some integer <span class="math">k</span>.</p>
                     
-                    <p><strong>Step 2:</strong> We need to show \(m^{ed} \equiv m \pmod{n}\), i.e., \(m^{1+k\phi(n)} \equiv m \pmod{n}\).</p>
+                    <p><strong>Step 2:</strong> We need to show <span class="math">m<sup>ed</sup> equiv m pmodn</span>, i.e., <span class="math">m<sup>1+kphi(n)</sup> equiv m pmodn</span>.</p>
                     
                     <p><strong>Step 3:</strong> By the Chinese Remainder Theorem, it suffices to prove:</p>
-                    <p>\[m^{ed} \equiv m \pmod{p} \quad \text{and} \quad m^{ed} \equiv m \pmod{q}\]</p>
+                    <p><div class="math-display">m<sup>ed</sup> equiv m pmodp quad and quad m<sup>ed</sup> equiv m pmodq</div></p>
                     
-                    <p><strong>Step 4:</strong> Case 1: If \(p \nmid m\), by Fermat's Little Theorem:</p>
-                    <p>\[m^{p-1} \equiv 1 \pmod{p}\]</p>
-                    <p>Since \(\phi(n) = (p-1)(q-1)\):</p>
-                    <p>\[m^{ed} = m \cdot m^{k\phi(n)} = m \cdot (m^{p-1})^{k(q-1)} \equiv m \cdot 1^{k(q-1)} \equiv m \pmod{p}\]</p>
+                    <p><strong>Step 4:</strong> Case 1: If <span class="math">p nmid m</span>, by Fermat's Little Theorem:</p>
+                    <p><div class="math-display">m<sup>p-1</sup> equiv 1 pmodp</div></p>
+                    <p>Since <span class="math">phi(n) = (p-1)(q-1)</span>:</p>
+                    <p><div class="math-display">m<sup>ed</sup> = m cdot m<sup>kphi(n)</sup> = m cdot (m<sup>p-1</sup>)<sup>k(q-1)</sup> equiv m cdot 1<sup>k(q-1)</sup> equiv m pmodp</div></p>
                     
-                    <p><strong>Step 5:</strong> Case 2: If \(p \mid m\), then \(m \equiv 0 \pmod{p}\), so:</p>
-                    <p>\[m^{ed} \equiv 0 \equiv m \pmod{p}\]</p>
+                    <p><strong>Step 5:</strong> Case 2: If <span class="math">p mid m</span>, then <span class="math">m equiv 0 pmodp</span>, so:</p>
+                    <p><div class="math-display">m<sup>ed</sup> equiv 0 equiv m pmodp</div></p>
                     
-                    <p><strong>Step 6:</strong> The same argument applies modulo \(q\). Therefore \(m^{ed} \equiv m \pmod{n}\). ∎</p>
+                    <p><strong>Step 6:</strong> The same argument applies modulo <span class="math">q</span>. Therefore <span class="math">m<sup>ed</sup> equiv m pmodn</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1477,27 +1476,27 @@ print(f"Decrypted: '{text_decrypted}'")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(n\) — a positive integer</li>
-                        <li>\(T(n)\) — Collatz function</li>
-                        <li>\(n_k\) — kth iterate of the Collatz function</li>
-                        <li>\(\sigma(n)\) — total stopping time</li>
-                        <li>\(\mathbb{N}\) — natural numbers (positive integers)</li>
+                        <li><span class="math">n</span> — a positive integer</li>
+                        <li><span class="math">T(n)</span> — Collatz function</li>
+                        <li><span class="math">n<sub>k</sub></span> — kth iterate of the Collatz function</li>
+                        <li><span class="math">sigma(n)</span> — total stopping time</li>
+                        <li><span class="math">ℕ</span> — natural numbers (positive integers)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Collatz Conjecture</div>
-                    <p>Define the function \(T: \mathbb{N} \to \mathbb{N}\) by:</p>
-                    <p>\[T(n) = \begin{cases} n/2 & \text{if } n \equiv 0 \pmod{2} \\ 3n + 1 & \text{if } n \equiv 1 \pmod{2} \end{cases}\]</p>
-                    <p>The conjecture states that for every positive integer \(n\), the sequence \(n, T(n), T(T(n)), \ldots\) eventually reaches 1.</p>
+                    <p>Define the function <span class="math">T: ℕ to ℕ</span> by:</p>
+                    <p><div class="math-display">T(n) = begincases n/2 & if  n equiv 0 pmod2 \\ 3n + 1 & if  n equiv 1 pmod2 endcases</div></p>
+                    <p>The conjecture states that for every positive integer <span class="math">n</span>, the sequence <span class="math">n, T(n), T(T(n)), ldots</span> eventually reaches 1.</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Properties of the Collatz Function</div>
                     <ol>
-                        <li>If \(n = 2^k m\) with \(m\) odd, then \(T^k(n) = m\)</li>
-                        <li>For odd \(n\), \(T(n) = 3n + 1\) is even, so \(T^2(n) = (3n + 1)/2\)</li>
-                        <li>The "shortcut" map: \(f(n) = n/2\) if even, \((3n+1)/2\) if odd</li>
+                        <li>If <span class="math">n = 2<sup>k</sup> m</span> with <span class="math">m</span> odd, then <span class="math">T<sup>k</sup>(n) = m</span></li>
+                        <li>For odd <span class="math">n</span>, <span class="math">T(n) = 3n + 1</span> is even, so <span class="math">T<sup>2</sup>(n) = (3n + 1)/2</span></li>
+                        <li>The "shortcut" map: <span class="math">f(n) = n/2</span> if even, <span class="math">(3n+1)/2</span> if odd</li>
                     </ol>
                 </div>
 
@@ -1614,18 +1613,18 @@ for n in [7, 15, 27]:
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(n\) — an even integer greater than 2</li>
-                        <li>\(p, q\) — prime numbers</li>
-                        <li>\(G(n)\) — number of ways to write \(n = p + q\) with \(p, q\) prime</li>
-                        <li>\(\pi(x)\) — prime counting function</li>
-                        <li>\(\mathbb{P}\) — set of prime numbers</li>
+                        <li><span class="math">n</span> — an even integer greater than 2</li>
+                        <li><span class="math">p, q</span> — prime numbers</li>
+                        <li><span class="math">G(n)</span> — number of ways to write <span class="math">n = p + q</span> with <span class="math">p, q</span> prime</li>
+                        <li><span class="math">pi(x)</span> — prime counting function</li>
+                        <li><span class="math">ℙ</span> — set of prime numbers</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Goldbach Conjecture</div>
-                    <p><strong>Strong (Binary) Goldbach Conjecture:</strong> Every even integer \(n > 2\) can be expressed as the sum of two primes:</p>
-                    <p>\[n = p + q \quad \text{where } p, q \in \mathbb{P}\]</p>
+                    <p><strong>Strong (Binary) Goldbach Conjecture:</strong> Every even integer <span class="math">n > 2</span> can be expressed as the sum of two primes:</p>
+                    <p><div class="math-display">n = p + q quad where  p, q in ℙ</div></p>
                     
                     <p><strong>Weak (Ternary) Goldbach Conjecture:</strong> Every odd integer greater than 5 can be expressed as the sum of three primes.</p>
                     <p><em>Note: The weak conjecture was proven by Harald Helfgott in 2013.</em></p>
@@ -1633,8 +1632,8 @@ for n in [7, 15, 27]:
 
                 <div class="theorem">
                     <div class="theorem-title">Goldbach's Comet</div>
-                    <p>The function \(G(n)\) counting Goldbach partitions is highly irregular but shows interesting patterns when plotted. For large \(n\), heuristic arguments suggest:</p>
-                    <p>\[G(n) \sim \frac{n}{2\log^2 n} \prod_{p > 2} \left(1 - \frac{1}{(p-1)^2}\right) \prod_{\substack{p | n \\ p > 2}} \frac{p-1}{p-2}\]</p>
+                    <p>The function <span class="math">G(n)</span> counting Goldbach partitions is highly irregular but shows interesting patterns when plotted. For large <span class="math">n</span>, heuristic arguments suggest:</p>
+                    <p><div class="math-display">G(n) sim <span class="math">n/2log<sup>2</sup> n</span> prod<sub>p > 2</sub> (1 - <span class="math">1/(p-1)<sup>2</sup></span>) prod<sub>substackp | n \\ p > 2</sub> <span class="math">p-1/p-2</span></div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1752,70 +1751,70 @@ for n in [100, 500, 1000, 5000]:
                 <h3>3. p-adic Numbers</h3>
                 
                 <h4>Introduction</h4>
-                <p>The p-adic numbers, introduced by Kurt Hensel in 1897, provide an alternative completion of the rational numbers. While real numbers complete \(\mathbb{Q}\) using the usual absolute value, p-adic numbers use a different notion of "closeness" based on divisibility by a prime \(p\).</p>
+                <p>The p-adic numbers, introduced by Kurt Hensel in 1897, provide an alternative completion of the rational numbers. While real numbers complete <span class="math">ℚ</span> using the usual absolute value, p-adic numbers use a different notion of "closeness" based on divisibility by a prime <span class="math">p</span>.</p>
                 
-                <p>In the p-adic world, two numbers are close if their difference is divisible by a high power of \(p\). This leads to a number system with remarkable properties and deep applications in number theory.</p>
+                <p>In the p-adic world, two numbers are close if their difference is divisible by a high power of <span class="math">p</span>. This leads to a number system with remarkable properties and deep applications in number theory.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(p\) — a prime number</li>
-                        <li>\(\nu_p(x)\) — p-adic valuation: highest power of \(p\) dividing \(x\)</li>
-                        <li>\(|x|_p = p^{-\nu_p(x)}\) — p-adic absolute value</li>
-                        <li>\(d_p(x, y) = |x - y|_p\) — p-adic metric</li>
-                        <li>\(\mathbb{Q}_p\) — field of p-adic numbers</li>
-                        <li>\(\mathbb{Z}_p\) — ring of p-adic integers</li>
-                        <li>\(\sum_{n=k}^{\infty} a_n p^n\) — p-adic expansion (\(a_n \in \{0, 1, \ldots, p-1\}\))</li>
+                        <li><span class="math">p</span> — a prime number</li>
+                        <li><span class="math">nu<sub>p</sub>(x)</span> — p-adic valuation: highest power of <span class="math">p</span> dividing <span class="math">x</span></li>
+                        <li><span class="math">|x|<sub>p</sub> = p<sup>-nu<sub>p</sub>(x)</sup></span> — p-adic absolute value</li>
+                        <li><span class="math">d<sub>p</sub>(x, y) = |x - y|<sub>p</sub></span> — p-adic metric</li>
+                        <li><span class="math">ℚ<sub>p</sub></span> — field of p-adic numbers</li>
+                        <li><span class="math">ℤ<sub>p</sub></span> — ring of p-adic integers</li>
+                        <li><span class="math">sum<sub>n=k</sub><sup>infty</sup> a<sub>n</sub> p<sup>n</sup></span> — p-adic expansion (<span class="math">a<sub>n</sub> in \0, 1, ldots, p-1\</span>)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">p-adic Valuation and Absolute Value</div>
-                    <p>For a nonzero rational \(x = p^k \frac{a}{b}\) where \(p \nmid ab\):</p>
-                    <p>\[\nu_p(x) = k\]</p>
-                    <p>\[|x|_p = p^{-k}\]</p>
-                    <p>By convention: \(|0|_p = 0\).</p>
+                    <p>For a nonzero rational <span class="math">x = p<sup>k</sup> <span class="math">a/b</span></span> where <span class="math">p nmid ab</span>:</p>
+                    <p><div class="math-display">nu<sub>p</sub>(x) = k</div></p>
+                    <p><div class="math-display">|x|<sub>p</sub> = p<sup>-k</sup></div></p>
+                    <p>By convention: <span class="math">|0|<sub>p</sub> = 0</span>.</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Properties of the p-adic Absolute Value</div>
                     <ol>
-                        <li><strong>Non-Archimedean property:</strong> \(|x + y|_p \leq \max(|x|_p, |y|_p)\)</li>
-                        <li><strong>Strong triangle inequality:</strong> If \(|x|_p \neq |y|_p\), then \(|x + y|_p = \max(|x|_p, |y|_p)\)</li>
-                        <li><strong>Multiplicative:</strong> \(|xy|_p = |x|_p |y|_p\)</li>
+                        <li><strong>Non-Archimedean property:</strong> <span class="math">|x + y|<sub>p</sub> leq max(|x|<sub>p</sub>, |y|<sub>p</sub>)</span></li>
+                        <li><strong>Strong triangle inequality:</strong> If <span class="math">|x|<sub>p</sub> neq |y|<sub>p</sub></span>, then <span class="math">|x + y|<sub>p</sub> = max(|x|<sub>p</sub>, |y|<sub>p</sub>)</span></li>
+                        <li><strong>Multiplicative:</strong> <span class="math">|xy|<sub>p</sub> = |x|<sub>p</sub> |y|<sub>p</sub></span></li>
                     </ol>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Ostrowski's Theorem</div>
-                    <p>Every nontrivial absolute value on \(\mathbb{Q}\) is equivalent to either:</p>
+                    <p>Every nontrivial absolute value on <span class="math">ℚ</span> is equivalent to either:</p>
                     <ol>
-                        <li>The usual absolute value \(|\cdot|_{\infty}\) (giving \(\mathbb{R}\))</li>
-                        <li>A p-adic absolute value \(|\cdot|_p\) for some prime \(p\) (giving \(\mathbb{Q}_p\))</li>
+                        <li>The usual absolute value <span class="math">|cdot|<sub>infty</sub></span> (giving <span class="math">ℝ</span>)</li>
+                        <li>A p-adic absolute value <span class="math">|cdot|<sub>p</sub></span> for some prime <span class="math">p</span> (giving <span class="math">ℚ<sub>p</sub></span>)</li>
                     </ol>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof of the Non-Archimedean Property</div>
                     
-                    <p><strong>Step 1:</strong> Show \(\nu_p(x + y) \geq \min(\nu_p(x), \nu_p(y))\).</p>
+                    <p><strong>Step 1:</strong> Show <span class="math">nu<sub>p</sub>(x + y) geq min(nu<sub>p</sub>(x), nu<sub>p</sub>(y))</span>.</p>
                     
-                    <p>Let \(k = \nu_p(x)\) and \(l = \nu_p(y)\) with \(k \leq l\). Then:</p>
-                    <p>\[x = p^k a, \quad y = p^l b\]</p>
-                    <p>where \(p \nmid a\) and \(p \nmid b\).</p>
+                    <p>Let <span class="math">k = nu<sub>p</sub>(x)</span> and <span class="math">l = nu<sub>p</sub>(y)</span> with <span class="math">k leq l</span>. Then:</p>
+                    <p><div class="math-display">x = p<sup>k</sup> a, quad y = p<sup>l</sup> b</div></p>
+                    <p>where <span class="math">p nmid a</span> and <span class="math">p nmid b</span>.</p>
                     
-                    <p><strong>Step 2:</strong> Compute \(x + y\):</p>
-                    <p>\[x + y = p^k a + p^l b = p^k(a + p^{l-k}b)\]</p>
+                    <p><strong>Step 2:</strong> Compute <span class="math">x + y</span>:</p>
+                    <p><div class="math-display">x + y = p<sup>k</sup> a + p<sup>l</sup> b = p<sup>k</sup>(a + p<sup>l-k</sup>b)</div></p>
                     
-                    <p><strong>Step 3:</strong> Since \(l - k \geq 0\), we have \(a + p^{l-k}b \in \mathbb{Z}\).</p>
-                    <p>Therefore \(\nu_p(x + y) \geq k = \min(\nu_p(x), \nu_p(y))\).</p>
+                    <p><strong>Step 3:</strong> Since <span class="math">l - k geq 0</span>, we have <span class="math">a + p<sup>l-k</sup>b in ℤ</span>.</p>
+                    <p>Therefore <span class="math">nu<sub>p</sub>(x + y) geq k = min(nu<sub>p</sub>(x), nu<sub>p</sub>(y))</span>.</p>
                     
                     <p><strong>Step 4:</strong> Convert to absolute values:</p>
-                    <p>\[|x + y|_p = p^{-\nu_p(x+y)} \leq p^{-\min(k,l)} = \max(p^{-k}, p^{-l}) = \max(|x|_p, |y|_p)\]</p>
+                    <p><div class="math-display">|x + y|<sub>p</sub> = p<sup>-nu<sub>p</sub>(x+y)</sup> leq p<sup>-min(k,l)</sup> = max(p<sup>-k</sup>, p<sup>-l</sup>) = max(|x|<sub>p</sub>, |y|<sub>p</sub>)</div></p>
                     
-                    <p><strong>Step 5:</strong> For the strong triangle inequality when \(|x|_p \neq |y|_p\):</p>
-                    <p>Assume \(k < l\). Then \(a + p^{l-k}b \equiv a \not\equiv 0 \pmod{p}\), so \(\nu_p(x+y) = k\).</p>
-                    <p>Hence \(|x + y|_p = p^{-k} = \max(|x|_p, |y|_p)\). ∎</p>
+                    <p><strong>Step 5:</strong> For the strong triangle inequality when <span class="math">|x|<sub>p</sub> neq |y|<sub>p</sub></span>:</p>
+                    <p>Assume <span class="math">k < l</span>. Then <span class="math">a + p<sup>l-k</sup>b equiv a notequiv 0 pmodp</span>, so <span class="math">nu<sub>p</sub>(x+y) = k</span>.</p>
+                    <p>Hence <span class="math">|x + y|<sub>p</sub> = p<sup>-k</sup> = max(|x|<sub>p</sub>, |y|<sub>p</sub>)</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1979,72 +1978,72 @@ print("This is the geometric series: (p-1)/(1-p) = -1")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(x_n\) — population at generation \(n\) (normalized to \([0, 1]\))</li>
-                        <li>\(r\) — growth rate parameter</li>
-                        <li>\(f_r(x) = rx(1-x)\) — logistic map function</li>
-                        <li>\(x^*\) — fixed point: \(f(x^*) = x^*\)</li>
-                        <li>\(f^n(x)\) — n-fold composition of \(f\)</li>
-                        <li>\(\lambda\) — Lyapunov exponent</li>
-                        <li>\(B(r)\) — bifurcation diagram value</li>
+                        <li><span class="math">x<sub>n</sub></span> — population at generation <span class="math">n</span> (normalized to <span class="math">[0, 1]</span>)</li>
+                        <li><span class="math">r</span> — growth rate parameter</li>
+                        <li><span class="math">f<sub>r</sub>(x) = rx(1-x)</span> — logistic map function</li>
+                        <li><span class="math">x^*</span> — fixed point: <span class="math">f(x^*) = x^*</span></li>
+                        <li><span class="math">f<sup>n</sup>(x)</span> — n-fold composition of <span class="math">f</span></li>
+                        <li>λ — Lyapunov exponent</li>
+                        <li><span class="math">B(r)</span> — bifurcation diagram value</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Logistic Map</div>
                     <p>The logistic map is defined by the recurrence:</p>
-                    <p>\[x_{n+1} = rx_n(1 - x_n)\]</p>
-                    <p>where \(r \in [0, 4]\) and \(x_0 \in [0, 1]\).</p>
+                    <p><div class="math-display">x<sub>n+1</sub> = rx<sub>n</sub>(1 - x<sub>n</sub>)</div></p>
+                    <p>where <span class="math">r in [0, 4]</span> and <span class="math">x<sub>0</sub> in [0, 1]</span>.</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Fixed Points and Stability</div>
                     <p>The logistic map has fixed points at:</p>
-                    <p>\[x^* = 0 \quad \text{and} \quad x^* = 1 - \frac{1}{r}\]</p>
-                    <p>A fixed point is stable if \(|f'(x^*)| < 1\):</p>
+                    <p><div class="math-display">x^* = 0 quad and quad x^* = 1 - <span class="math">1/r</span></div></p>
+                    <p>A fixed point is stable if <span class="math">|f'(x^*)| < 1</span>:</p>
                     <ul>
-                        <li>\(x^* = 0\) is stable for \(0 \leq r < 1\)</li>
-                        <li>\(x^* = 1 - 1/r\) is stable for \(1 < r < 3\)</li>
+                        <li><span class="math">x^* = 0</span> is stable for <span class="math">0 leq r < 1</span></li>
+                        <li><span class="math">x^* = 1 - 1/r</span> is stable for <span class="math">1 < r < 3</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Period-Doubling Cascade</div>
-                    <p>As \(r\) increases:</p>
+                    <p>As <span class="math">r</span> increases:</p>
                     <ul>
-                        <li>\(r < 1\): Population dies out (\(x_n \to 0\))</li>
-                        <li>\(1 < r < 3\): Stable fixed point</li>
-                        <li>\(3 < r < 1 + \sqrt{6} \approx 3.449\): Period-2 cycle</li>
-                        <li>\(3.449 < r < 3.544\): Period-4 cycle</li>
+                        <li><span class="math">r < 1</span>: Population dies out (<span class="math">x<sub>n</sub> to 0</span>)</li>
+                        <li><span class="math">1 < r < 3</span>: Stable fixed point</li>
+                        <li><span class="math">3 < r < 1 + √(6) approx 3.449</span>: Period-2 cycle</li>
+                        <li><span class="math">3.449 < r < 3.544</span>: Period-4 cycle</li>
                         <li>Period-doubling continues...</li>
-                        <li>\(r > 3.56995...\): Chaos (Feigenbaum point)</li>
+                        <li><span class="math">r > 3.56995...</span>: Chaos (Feigenbaum point)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Feigenbaum's Constants</div>
                     <p>The ratio of successive bifurcation intervals converges:</p>
-                    <p>\[\delta = \lim_{n \to \infty} \frac{r_n - r_{n-1}}{r_{n+1} - r_n} \approx 4.669201609\ldots\]</p>
+                    <p><div class="math-display">delta = lim<sub>n to infty</sub> <span class="math">r<sub>n</sub> - r<sub>n-1</sub>/r<sub>n+1</sub> - r<sub>n</sub></span> approx 4.669201609ldots</div></p>
                     <p>This universal constant appears in all period-doubling routes to chaos.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Analysis of Fixed Point Stability</div>
                     
-                    <p><strong>Step 1:</strong> Find fixed points by solving \(f_r(x) = x\):</p>
-                    <p>\[rx(1-x) = x\]</p>
-                    <p>\[x(r(1-x) - 1) = 0\]</p>
-                    <p>So \(x = 0\) or \(r(1-x) = 1\), giving \(x = 1 - 1/r\).</p>
+                    <p><strong>Step 1:</strong> Find fixed points by solving <span class="math">f<sub>r</sub>(x) = x</span>:</p>
+                    <p><div class="math-display">rx(1-x) = x</div></p>
+                    <p><div class="math-display">x(r(1-x) - 1) = 0</div></p>
+                    <p>So <span class="math">x = 0</span> or <span class="math">r(1-x) = 1</span>, giving <span class="math">x = 1 - 1/r</span>.</p>
                     
                     <p><strong>Step 2:</strong> Compute the derivative:</p>
-                    <p>\[f_r'(x) = r(1 - 2x)\]</p>
+                    <p><div class="math-display">f<sub>r</sub>'(x) = r(1 - 2x)</div></p>
                     
-                    <p><strong>Step 3:</strong> At \(x = 0\):</p>
-                    <p>\[f_r'(0) = r\]</p>
-                    <p>Stable when \(|r| < 1\), i.e., \(0 \leq r < 1\).</p>
+                    <p><strong>Step 3:</strong> At <span class="math">x = 0</span>:</p>
+                    <p><div class="math-display">f<sub>r</sub>'(0) = r</div></p>
+                    <p>Stable when <span class="math">|r| < 1</span>, i.e., <span class="math">0 leq r < 1</span>.</p>
                     
-                    <p><strong>Step 4:</strong> At \(x = 1 - 1/r\) (for \(r > 1\)):</p>
-                    <p>\[f_r'(1 - 1/r) = r(1 - 2(1 - 1/r)) = r(-1 + 2/r) = 2 - r\]</p>
-                    <p>Stable when \(|2 - r| < 1\), i.e., \(1 < r < 3\). ∎</p>
+                    <p><strong>Step 4:</strong> At <span class="math">x = 1 - 1/r</span> (for <span class="math">r > 1</span>):</p>
+                    <p><div class="math-display">f<sub>r</sub>'(1 - 1/r) = r(1 - 2(1 - 1/r)) = r(-1 + 2/r) = 2 - r</div></p>
+                    <p>Stable when <span class="math">|2 - r| < 1</span>, i.e., <span class="math">1 < r < 3</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>

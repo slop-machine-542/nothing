@@ -7,10 +7,9 @@
     <title>Daily Math Digest - February 16, 2026</title>
     
     <script>
-MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\)']],
-    displayMath: [['$$', '$$'], ['\[', '\]']],
+    inlineMath: [['<span class="math">', '</span>'], ['<span class="math">', '</span>']],
+    displayMath: [['<div class="math-display">', '</div>'], ['<div class="math-display">', '</div>']],
     processEscapes: true,
     processEnvironments: true
   },
@@ -21,7 +20,7 @@ MathJax = {
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -127,47 +126,47 @@ MathJax = {
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(L^2(\mathbb{R})\) — the space of square-integrable functions: \(\int_{-\infty}^{\infty} |f(x)|^2 dx < \infty\)</li>
-                        <li>\(\hat{f}(\xi)\) — the Fourier transform of \(f\): \(\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} dx\)</li>
-                        <li>\(\|f\|_2\) — the \(L^2\) norm: \(\sqrt{\int |f|^2}\)</li>
-                        <li>\(\Delta x\) — variance in position (spread of function in space)</li>
-                        <li>\(\Delta \xi\) — variance in frequency (spread of Fourier transform)</li>
-                        <li>\(\hbar\) — reduced Planck's constant (\(h/2\pi\)) in physics; we set \(\hbar = 1\) for pure math</li>
+                        <li><span class="math">L<sup>2</sup>(ℝ)</span> — the space of square-integrable functions: <span class="math">int<sub>-infty</sub><sup>infty</sup> |f(x)|<sup>2</sup> dx < infty</span></li>
+                        <li><span class="math">f̂(xi)</span> — the Fourier transform of <span class="math">f</span>: <span class="math">f̂(xi) = int<sub>-infty</sub><sup>infty</sup> f(x) e<sup>-2pi i x xi</sup> dx</span></li>
+                        <li><span class="math">\|f\|<sub>2</sub></span> — the <span class="math">L<sup>2</sup></span> norm: <span class="math">√(int |f|<sup>2</sup>)</span></li>
+                        <li><span class="math">Delta x</span> — variance in position (spread of function in space)</li>
+                        <li><span class="math">Delta xi</span> — variance in frequency (spread of Fourier transform)</li>
+                        <li><span class="math">hbar</span> — reduced Planck's constant (<span class="math">h/2pi</span>) in physics; we set <span class="math">hbar = 1</span> for pure math</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Heisenberg Uncertainty Principle (Mathematical Form)</div>
-                    <p>Let \(f \in L^2(\mathbb{R})\) with \(\|f\|_2 = 1\). Define the variances:</p>
-                    <p>\[(\Delta x)^2 = \int_{-\infty}^{\infty} x^2 |f(x)|^2 dx, \quad (\Delta \xi)^2 = \int_{-\infty}^{\infty} \xi^2 |\hat{f}(\xi)|^2 d\xi\]</p>
+                    <p>Let <span class="math">f in L<sup>2</sup>(ℝ)</span> with <span class="math">\|f\|<sub>2</sub> = 1</span>. Define the variances:</p>
+                    <p><div class="math-display">(Delta x)<sup>2</sup> = int<sub>-infty</sub><sup>infty</sup> x<sup>2</sup> |f(x)|<sup>2</sup> dx, quad (Delta xi)<sup>2</sup> = int<sub>-infty</sub><sup>infty</sup> xi<sup>2</sup> |f̂(xi)|<sup>2</sup> dxi</div></p>
                     <p>Then:</p>
-                    <p>\[\Delta x \cdot \Delta \xi \geq \frac{1}{4\pi}\]</p>
-                    <p>Equality holds if and only if \(f\) is a Gaussian function.</p>
+                    <p><div class="math-display">Delta x cdot Delta xi geq <span class="math">1/4pi</span></div></p>
+                    <p>Equality holds if and only if <span class="math">f</span> is a Gaussian function.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (using the Cauchy-Schwarz inequality)</div>
-                    <p><strong>Step 1:</strong> Define operators \(X\) and \(D\) acting on \(f\):</p>
-                    <p>\[(Xf)(x) = x \cdot f(x), \quad (Df)(x) = \frac{1}{2\pi i} \frac{df}{dx}\]</p>
-                    <p>Note: \(D\) corresponds to multiplication by \(\xi\) in the Fourier domain.</p>
+                    <p><strong>Step 1:</strong> Define operators <span class="math">X</span> and <span class="math">D</span> acting on <span class="math">f</span>:</p>
+                    <p><div class="math-display">(Xf)(x) = x cdot f(x), quad (Df)(x) = <span class="math">1/2pi i</span> <span class="math">df/dx</span></div></p>
+                    <p>Note: <span class="math">D</span> corresponds to multiplication by <span class="math">xi</span> in the Fourier domain.</p>
                     
-                    <p><strong>Step 2:</strong> Compute the commutator \([X, D] = XD - DX\):</p>
-                    <p>\[[X, D]f = X(Df) - D(Xf) = x \cdot \frac{1}{2\pi i}f' - \frac{1}{2\pi i}(f + xf') = -\frac{1}{2\pi i}f\]</p>
-                    <p>So \([X, D] = -\frac{1}{2\pi i} I\).</p>
+                    <p><strong>Step 2:</strong> Compute the commutator <span class="math">[X, D] = XD - DX</span>:</p>
+                    <p><div class="math-display">[X, D]f = X(Df) - D(Xf) = x cdot <span class="math">1/2pi i</span>f' - <span class="math">1/2pi i</span>(f + xf') = -<span class="math">1/2pi i</span>f</div></p>
+                    <p>So <span class="math">[X, D] = -<span class="math">1/2pi i</span> I</span>.</p>
                     
-                    <p><strong>Step 3:</strong> Apply the Cauchy-Schwarz inequality to \(Xf\) and \(Df\):</p>
-                    <p>\[|\langle Xf, Df \rangle| \leq \|Xf\|_2 \cdot \|Df\|_2 = \Delta x \cdot \Delta \xi\]</p>
+                    <p><strong>Step 3:</strong> Apply the Cauchy-Schwarz inequality to <span class="math">Xf</span> and <span class="math">Df</span>:</p>
+                    <p><div class="math-display">|langle Xf, Df rangle| leq \|Xf\|<sub>2</sub> cdot \|Df\|<sub>2</sub> = Delta x cdot Delta xi</div></p>
                     
                     <p><strong>Step 4:</strong> Use the identity for operators:</p>
-                    <p>\[\langle [X, D]f, f \rangle = \langle XDf, f \rangle - \langle DXf, f \rangle = \langle Df, Xf \rangle - \langle Xf, Df \rangle = -2i \cdot \text{Im}\langle Xf, Df \rangle\]</p>
+                    <p><div class="math-display">langle [X, D]f, f rangle = langle XDf, f rangle - langle DXf, f rangle = langle Df, Xf rangle - langle Xf, Df rangle = -2i cdot Imlangle Xf, Df rangle</div></p>
                     
-                    <p><strong>Step 5:</strong> From Step 2, \(\langle [X, D]f, f \rangle = -\frac{1}{2\pi i}\). Taking imaginary parts:</p>
-                    <p>\[2 \cdot \text{Im}\langle Xf, Df \rangle = \frac{1}{2\pi}\]</p>
+                    <p><strong>Step 5:</strong> From Step 2, <span class="math">langle [X, D]f, f rangle = -<span class="math">1/2pi i</span></span>. Taking imaginary parts:</p>
+                    <p><div class="math-display">2 cdot Imlangle Xf, Df rangle = <span class="math">1/2pi</span></div></p>
                     
                     <p><strong>Step 6:</strong> Therefore:</p>
-                    <p>\[\frac{1}{4\pi} = |\text{Im}\langle Xf, Df \rangle| \leq |\langle Xf, Df \rangle| \leq \Delta x \cdot \Delta \xi\]</p>
+                    <p><div class="math-display"><span class="math">1/4pi</span> = |Imlangle Xf, Df rangle| leq |langle Xf, Df rangle| leq Delta x cdot Delta xi</div></p>
                     
-                    <p><strong>Step 7:</strong> Equality in Cauchy-Schwarz requires \(Df = c \cdot Xf\) for some constant \(c\). This differential equation has Gaussian solutions. ∎</p>
+                    <p><strong>Step 7:</strong> Equality in Cauchy-Schwarz requires <span class="math">Df = c cdot Xf</span> for some constant <span class="math">c</span>. This differential equation has Gaussian solutions. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -254,72 +253,72 @@ print(f"Rectangle: Δx={dx_r:.4f}, Δξ={dxi_r:.4f}, product={unc_r:.6f}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(H_n(X)\) — the \(n\)-th homology group of space \(X\), measuring \(n\)-dimensional "holes"</li>
-                        <li>\(A, B\) — open subsets of \(X\) such that \(X = A \cup B\)</li>
-                        <li>\(A \cap B\) — the intersection of \(A\) and \(B\)</li>
-                        <li>\(i_*: H_n(A \cap B) \to H_n(A)\) — the map induced by inclusion \(i: A \cap B \hookrightarrow A\)</li>
-                        <li>\(j_*: H_n(A) \to H_n(X)\) — the map induced by inclusion \(j: A \hookrightarrow X\)</li>
-                        <li>\(\partial_*: H_n(X) \to H_{n-1}(A \cap B)\) — the connecting homomorphism</li>
-                        <li>\(\mathbb{Z}\) — the integers (coefficient group)</li>
+                        <li><span class="math">H<sub>n</sub>(X)</span> — the <span class="math">n</span>-th homology group of space <span class="math">X</span>, measuring <span class="math">n</span>-dimensional "holes"</li>
+                        <li><span class="math">A, B</span> — open subsets of <span class="math">X</span> such that <span class="math">X = A cup B</span></li>
+                        <li><span class="math">A cap B</span> — the intersection of <span class="math">A</span> and <span class="math">B</span></li>
+                        <li><span class="math">i_*: H<sub>n</sub>(A cap B) to H<sub>n</sub>(A)</span> — the map induced by inclusion <span class="math">i: A cap B hookrightarrow A</span></li>
+                        <li><span class="math">j_*: H<sub>n</sub>(A) to H<sub>n</sub>(X)</span> — the map induced by inclusion <span class="math">j: A hookrightarrow X</span></li>
+                        <li><span class="math">partial_*: H<sub>n</sub>(X) to H<sub>n-1</sub>(A cap B)</span> — the connecting homomorphism</li>
+                        <li><span class="math">ℤ</span> — the integers (coefficient group)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Mayer-Vietoris Sequence</div>
-                    <p>Let \(X\) be a topological space and \(A, B\) be open subsets such that \(X = A \cup B\). Then there is a long exact sequence:</p>
-                    <p>\[\cdots \to H_n(A \cap B) \xrightarrow{(i_*, i_*)} H_n(A) \oplus H_n(B) \xrightarrow{j_* - k_*} H_n(X) \xrightarrow{\partial_*} H_{n-1}(A \cap B) \to \cdots\]</p>
-                    <p>where \(i: A \cap B \hookrightarrow A\), \(k: A \cap B \hookrightarrow B\), \(j: A \hookrightarrow X\), and \(l: B \hookrightarrow X\) are inclusion maps.</p>
+                    <p>Let <span class="math">X</span> be a topological space and <span class="math">A, B</span> be open subsets such that <span class="math">X = A cup B</span>. Then there is a long exact sequence:</p>
+                    <p><div class="math-display">cdots to H<sub>n</sub>(A cap B) xrightarrow(i_*, i_*) H<sub>n</sub>(A) oplus H<sub>n</sub>(B) xrightarrowj_* - k_* H<sub>n</sub>(X) xrightarrowpartial_* H<sub>n-1</sub>(A cap B) to cdots</div></p>
+                    <p>where <span class="math">i: A cap B hookrightarrow A</span>, <span class="math">k: A cap B hookrightarrow B</span>, <span class="math">j: A hookrightarrow X</span>, and <span class="math">l: B hookrightarrow X</span> are inclusion maps.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (via exact sequences)</div>
                     <p><strong>Step 1:</strong> Consider the short exact sequence of chain complexes:</p>
-                    <p>\[0 \to C_n(A \cap B) \xrightarrow{(i_\#, k_\#)} C_n(A) \oplus C_n(B) \xrightarrow{j_\# - l_\#} C_n(A + B) \to 0\]</p>
-                    <p>where \(C_n(A + B)\) denotes chains that are sums of chains in \(A\) and chains in \(B\).</p>
+                    <p><div class="math-display">0 to C<sub>n</sub>(A cap B) xrightarrow(i_#, k_#) C<sub>n</sub>(A) oplus C<sub>n</sub>(B) xrightarrowj_# - l_# C<sub>n</sub>(A + B) to 0</div></p>
+                    <p>where <span class="math">C<sub>n</sub>(A + B)</span> denotes chains that are sums of chains in <span class="math">A</span> and chains in <span class="math">B</span>.</p>
                     
-                    <p><strong>Step 2:</strong> The map \((i_\#, k_\#)\) sends a chain \(\sigma\) to \((\sigma, -\sigma)\), and \(j_\# - l_\#\) sends \((\alpha, \beta)\) to \(\alpha + \beta\).</p>
+                    <p><strong>Step 2:</strong> The map <span class="math">(i_#, k_#)</span> sends a chain σ to <span class="math">(sigma, -sigma)</span>, and <span class="math">j_# - l_#</span> sends <span class="math">(alpha, beta)</span> to <span class="math">alpha + beta</span>.</p>
                     
                     <p><strong>Step 3:</strong> This sequence is exact:
-                    <br>• Injective: If \((\sigma, -\sigma) = (0, 0)\), then \(\sigma = 0\).
-                    <br>• Image in kernel: \((j_\# - l_\#)(\sigma, -\sigma) = \sigma - \sigma = 0\).
-                    <br>• Kernel in image: If \(\alpha + \beta = 0\), then \(\beta = -\alpha\), so \((\alpha, \beta) = (\alpha, -\alpha)\).</p>
+                    <br>• Injective: If <span class="math">(sigma, -sigma) = (0, 0)</span>, then <span class="math">sigma = 0</span>.
+                    <br>• Image in kernel: <span class="math">(j_# - l_#)(sigma, -sigma) = sigma - sigma = 0</span>.
+                    <br>• Kernel in image: If <span class="math">alpha + beta = 0</span>, then <span class="math">beta = -alpha</span>, so <span class="math">(alpha, beta) = (alpha, -alpha)</span>.</p>
                     
                     <p><strong>Step 4:</strong> Apply the Zig-Zag Lemma from homological algebra, which states that a short exact sequence of chain complexes induces a long exact sequence in homology.</p>
                     
-                    <p><strong>Step 5:</strong> The connecting homomorphism \(\partial_*\) is constructed as follows: for \([x] \in H_n(X)\), write \(x = a + b\) with \(a\) a chain in \(A\) and \(b\) a chain in \(B\). Then \(\partial a = -\partial b\) (since \(\partial x = 0\)), so \(\partial a\) is a cycle in \(A \cap B\). Define \(\partial_*([x]) = [\partial a]\).</p>
+                    <p><strong>Step 5:</strong> The connecting homomorphism <span class="math">partial_*</span> is constructed as follows: for <span class="math">[x] in H<sub>n</sub>(X)</span>, write <span class="math">x = a + b</span> with <span class="math">a</span> a chain in <span class="math">A</span> and <span class="math">b</span> a chain in <span class="math">B</span>. Then <span class="math">partial a = -partial b</span> (since <span class="math">partial x = 0</span>), so <span class="math">partial a</span> is a cycle in <span class="math">A cap B</span>. Define <span class="math">partial_*([x]) = [partial a]</span>.</p>
                     
                     <p><strong>Step 6:</strong> By the Zig-Zag Lemma, the resulting long sequence is exact at each term. ∎</p>
                 </div>
 
                 <h4>Application: Homology of the Sphere</h4>
                 <div class="theorem">
-                    <div class="theorem-title">Theorem: Homology of \(S^n\)</div>
-                    <p>For the \(n\)-dimensional sphere \(S^n\):</p>
-                    <p>\[H_k(S^n) = \begin{cases} \mathbb{Z} & k = 0 \text{ or } k = n \\ 0 & \text{otherwise} \end{cases}\]</p>
+                    <div class="theorem-title">Theorem: Homology of <span class="math">S<sup>n</sup></span></div>
+                    <p>For the <span class="math">n</span>-dimensional sphere <span class="math">S<sup>n</sup></span>:</p>
+                    <p><div class="math-display">H<sub>k</sub>(S<sup>n</sup>) = begincases ℤ & k = 0  or  k = n \\ 0 & otherwise endcases</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (by induction using Mayer-Vietoris)</div>
-                    <p><strong>Base case (n=0):</strong> \(S^0 = \{-1, 1\}\) has two points, so \(H_0(S^0) = \mathbb{Z} \oplus \mathbb{Z}\) and all higher homology vanishes.</p>
+                    <p><strong>Base case (n=0):</strong> <span class="math">S<sup>0</sup> = \-1, 1\</span> has two points, so <span class="math">H<sub>0</sub>(S<sup>0</sup>) = ℤ oplus ℤ</span> and all higher homology vanishes.</p>
                     
-                    <p><strong>Inductive step:</strong> Write \(S^n = A \cup B\) where \(A = S^n \setminus \{N\}\) (sphere minus north pole) and \(B = S^n \setminus \{S\}\) (sphere minus south pole).</p>
+                    <p><strong>Inductive step:</strong> Write <span class="math">S<sup>n</sup> = A cup B</span> where <span class="math">A = S<sup>n</sup> setminus \N\</span> (sphere minus north pole) and <span class="math">B = S<sup>n</sup> setminus \S\</span> (sphere minus south pole).</p>
                     
                     <p><strong>Key observations:</strong>
-                    <br>• \(A \cong B \cong \mathbb{R}^n\) (stereographic projection), so \(H_k(A) = H_k(B) = 0\) for \(k > 0\) and \(H_0(A) = H_0(B) = \mathbb{Z}\).
-                    <br>• \(A \cap B \cong S^{n-1} \times \mathbb{R} \simeq S^{n-1}\) (homotopy equivalent).</p>
+                    <br>• <span class="math">A ≅ B ≅ ℝ<sup>n</sup></span> (stereographic projection), so <span class="math">H<sub>k</sub>(A) = H<sub>k</sub>(B) = 0</span> for <span class="math">k > 0</span> and <span class="math">H<sub>0</sub>(A) = H<sub>0</sub>(B) = ℤ</span>.
+                    <br>• <span class="math">A cap B ≅ S<sup>n-1</sup> times ℝ simeq S<sup>n-1</sup></span> (homotopy equivalent).</p>
                     
-                    <p><strong>Apply Mayer-Vietoris:</strong> For \(k > 1\):</p>
-                    <p>\[\cdots \to H_k(A) \oplus H_k(B) \to H_k(S^n) \to H_{k-1}(A \cap B) \to H_{k-1}(A) \oplus H_{k-1}(B) \to \cdots\]</p>
+                    <p><strong>Apply Mayer-Vietoris:</strong> For <span class="math">k > 1</span>:</p>
+                    <p><div class="math-display">cdots to H<sub>k</sub>(A) oplus H<sub>k</sub>(B) to H<sub>k</sub>(S<sup>n</sup>) to H<sub>k-1</sub>(A cap B) to H<sub>k-1</sub>(A) oplus H<sub>k-1</sub>(B) to cdots</div></p>
                     
-                    <p>Since \(H_k(A) = H_k(B) = 0\) for \(k > 0\), we get:</p>
-                    <p>\[0 \to H_k(S^n) \to H_{k-1}(S^{n-1}) \to 0\]</p>
-                    <p>So \(H_k(S^n) \cong H_{k-1}(S^{n-1})\) for \(k > 1\).</p>
+                    <p>Since <span class="math">H<sub>k</sub>(A) = H<sub>k</sub>(B) = 0</span> for <span class="math">k > 0</span>, we get:</p>
+                    <p><div class="math-display">0 to H<sub>k</sub>(S<sup>n</sup>) to H<sub>k-1</sub>(S<sup>n-1</sup>) to 0</div></p>
+                    <p>So <span class="math">H<sub>k</sub>(S<sup>n</sup>) ≅ H<sub>k-1</sub>(S<sup>n-1</sup>)</span> for <span class="math">k > 1</span>.</p>
                     
                     <p><strong>For k = 1:</strong> The sequence gives:</p>
-                    <p>\[0 \to H_1(S^n) \to H_0(S^{n-1}) \to H_0(A) \oplus H_0(B) \to H_0(S^n) \to 0\]</p>
-                    <p>For \(n > 1\), \(S^{n-1}\) is connected, so the map \(H_0(S^{n-1}) \to H_0(A) \oplus H_0(B)\) is injective, giving \(H_1(S^n) = 0\).</p>
+                    <p><div class="math-display">0 to H<sub>1</sub>(S<sup>n</sup>) to H<sub>0</sub>(S<sup>n-1</sup>) to H<sub>0</sub>(A) oplus H<sub>0</sub>(B) to H<sub>0</sub>(S<sup>n</sup>) to 0</div></p>
+                    <p>For <span class="math">n > 1</span>, <span class="math">S<sup>n-1</sup></span> is connected, so the map <span class="math">H<sub>0</sub>(S<sup>n-1</sup>) to H<sub>0</sub>(A) oplus H<sub>0</sub>(B)</span> is injective, giving <span class="math">H<sub>1</sub>(S<sup>n</sup>) = 0</span>.</p>
                     
-                    <p><strong>Conclusion:</strong> By induction, \(H_n(S^n) = H_{n-1}(S^{n-1}) = \cdots = H_1(S^1) = \mathbb{Z}\), and all other positive homology groups vanish. ∎</p>
+                    <p><strong>Conclusion:</strong> By induction, <span class="math">H<sub>n</sub>(S<sup>n</sup>) = H<sub>n-1</sub>(S<sup>n-1</sup>) = cdots = H<sub>1</sub>(S<sup>1</sup>) = ℤ</span>, and all other positive homology groups vanish. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -373,44 +372,44 @@ print(f"  b_0 = {compute_betti_numbers_simplified(k4)}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\((X, \mathcal{B}, \mu)\) — a probability space (measure space with \(\mu(X) = 1\))</li>
-                        <li>\(T: X \to X\) — a measure-preserving transformation: \(\mu(T^{-1}(A)) = \mu(A)\) for all measurable \(A\)</li>
-                        <li>\(f: X \to \mathbb{R}\) — an integrable observable function</li>
-                        <li>\(L^1(X)\) — space of integrable functions: \(\int_X |f| d\mu < \infty\)</li>
-                        <li>\(A_n f(x) = \frac{1}{n} \sum_{k=0}^{n-1} f(T^k x)\) — time average of \(f\) along orbit of \(x\)</li>
-                        <li>\(\bar{f} = \int_X f d\mu\) — space average (expectation)</li>
-                        <li>\(\mathcal{I}\) — the \(\sigma\)-algebra of \(T\)-invariant sets</li>
+                        <li><span class="math">(X, B, mu)</span> — a probability space (measure space with <span class="math">mu(X) = 1</span>)</li>
+                        <li><span class="math">T: X to X</span> — a measure-preserving transformation: <span class="math">mu(T<sup>-1</sup>(A)) = mu(A)</span> for all measurable <span class="math">A</span></li>
+                        <li><span class="math">f: X to ℝ</span> — an integrable observable function</li>
+                        <li><span class="math">L<sup>1</sup>(X)</span> — space of integrable functions: <span class="math">int<sub>X</sub> |f| dmu < infty</span></li>
+                        <li><span class="math">A<sub>n</sub> f(x) = <span class="math">1/n</span> sum<sub>k=0</sub><sup>n-1</sup> f(T<sup>k</sup> x)</span> — time average of <span class="math">f</span> along orbit of <span class="math">x</span></li>
+                        <li><span class="math">f̄ = int<sub>X</sub> f dmu</span> — space average (expectation)</li>
+                        <li><span class="math">I</span> — the σ-algebra of <span class="math">T</span>-invariant sets</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Birkhoff's Ergodic Theorem (1931)</div>
-                    <p>Let \((X, \mathcal{B}, \mu)\) be a probability space, \(T: X \to X\) measure-preserving, and \(f \in L^1(X)\). Then:</p>
-                    <p><strong>(1)</strong> The limit \(\tilde{f}(x) = \lim_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} f(T^k x)\) exists for \(\mu\)-almost every \(x \in X\).</p>
-                    <p><strong>(2)</strong> \(\tilde{f} \in L^1(X)\) and \(\tilde{f} \circ T = \tilde{f}\) (\(\tilde{f}\) is invariant).</p>
-                    <p><strong>(3)</strong> \(\int_X \tilde{f} d\mu = \int_X f d\mu\).</p>
-                    <p><strong>If T is ergodic:</strong> \(\tilde{f}(x) = \int_X f d\mu\) for \(\mu\)-a.e. \(x\).</p>
+                    <p>Let <span class="math">(X, B, mu)</span> be a probability space, <span class="math">T: X to X</span> measure-preserving, and <span class="math">f in L<sup>1</sup>(X)</span>. Then:</p>
+                    <p><strong>(1)</strong> The limit <span class="math">f̃(x) = lim<sub>n to infty</sub> <span class="math">1/n</span> sum<sub>k=0</sub><sup>n-1</sup> f(T<sup>k</sup> x)</span> exists for μ-almost every <span class="math">x in X</span>.</p>
+                    <p><strong>(2)</strong> <span class="math">f̃ in L<sup>1</sup>(X)</span> and <span class="math">f̃ circ T = f̃</span> (<span class="math">f̃</span> is invariant).</p>
+                    <p><strong>(3)</strong> <span class="math">int<sub>X</sub> f̃ dmu = int<sub>X</sub> f dmu</span>.</p>
+                    <p><strong>If T is ergodic:</strong> <span class="math">f̃(x) = int<sub>X</sub> f dmu</span> for μ-a.e. <span class="math">x</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (Maximal Ergodic Theorem approach)</div>
-                    <p><strong>Step 1 (Maximal Ergodic Lemma):</strong> Let \(f^* = \sup_{n \geq 1} A_n f\). Then for any \(\lambda \in \mathbb{R}\):</p>
-                    <p>\[\int_{\{f^* > \lambda\}} (f - \lambda) d\mu \geq 0\]</p>
-                    <p><em>Proof of lemma:</em> Define \(g = f - \lambda\) and \(G_n = \max_{1 \leq k \leq n} \sum_{i=0}^{k-1} g \circ T^i\). On \(\{G_n > 0\}\), we have \(G_n \leq g + G_n \circ T\). Integrating gives the result.</p>
+                    <p><strong>Step 1 (Maximal Ergodic Lemma):</strong> Let <span class="math">f^* = sup<sub>n geq 1</sub> A<sub>n</sub> f</span>. Then for any <span class="math">lambda in ℝ</span>:</p>
+                    <p><div class="math-display">int<sub>\f^* > lambda\</sub> (f - lambda) dmu geq 0</div></p>
+                    <p><em>Proof of lemma:</em> Define <span class="math">g = f - lambda</span> and <span class="math">G<sub>n</sub> = max<sub>1 leq k leq n</sub> sum<sub>i=0</sub><sup>k-1</sup> g circ T<sup>i</sup></span>. On <span class="math">\G<sub>n</sub> > 0\</span>, we have <span class="math">G<sub>n</sub> leq g + G<sub>n</sub> circ T</span>. Integrating gives the result.</p>
                     
                     <p><strong>Step 2:</strong> Define the limsup and liminf:</p>
-                    <p>\[\bar{f}(x) = \limsup_{n \to \infty} A_n f(x), \quad \underline{f}(x) = \liminf_{n \to \infty} A_n f(x)\]</p>
+                    <p><div class="math-display">f̄(x) = limsup<sub>n to infty</sub> A<sub>n</sub> f(x), quad f̲(x) = liminf<sub>n to infty</sub> A<sub>n</sub> f(x)</div></p>
                     
-                    <p><strong>Step 3:</strong> Both \(\bar{f}\) and \(\underline{f}\) are invariant (\(\bar{f} \circ T = \bar{f}\)).</p>
+                    <p><strong>Step 3:</strong> Both <span class="math">f̄</span> and <span class="math">f̲</span> are invariant (<span class="math">f̄ circ T = f̄</span>).</p>
                     
-                    <p><strong>Step 4:</strong> For any \(\epsilon > 0\), apply the maximal lemma to show:</p>
-                    <p>\[\int_{\{\bar{f} - \underline{f} > \epsilon\}} (\bar{f} - \underline{f} - \epsilon) d\mu \leq 0\]</p>
+                    <p><strong>Step 4:</strong> For any <span class="math">epsilon > 0</span>, apply the maximal lemma to show:</p>
+                    <p><div class="math-display">int<sub>\f</sub> - f̄ > epsilon\̲ (f̄ - f̲ - epsilon) dmu leq 0</div></p>
                     
-                    <p><strong>Step 5:</strong> This implies \(\bar{f} = \underline{f}\) almost everywhere, so the limit exists.</p>
+                    <p><strong>Step 5:</strong> This implies <span class="math">f̄ = f̲</span> almost everywhere, so the limit exists.</p>
                     
-                    <p><strong>Step 6:</strong> By the dominated convergence theorem, \(\int \tilde{f} = \int f\).</p>
+                    <p><strong>Step 6:</strong> By the dominated convergence theorem, <span class="math">int f̃ = int f</span>.</p>
                     
-                    <p><strong>Step 7 (Ergodic case):</strong> If \(T\) is ergodic, the only invariant functions are constants. So \(\tilde{f} = c\) a.e., and \(c = \int f\). ∎</p>
+                    <p><strong>Step 7 (Ergodic case):</strong> If <span class="math">T</span> is ergodic, the only invariant functions are constants. So <span class="math">f̃ = c</span> a.e., and <span class="math">c = int f</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -490,51 +489,51 @@ for n in n_iterations:
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(X\) — a discrete random variable representing the source</li>
-                        <li>\(\mathcal{X} = \{x_1, x_2, \ldots, x_n\}\) — the alphabet (set of possible symbols)</li>
-                        <li>\(p(x) = P(X = x)\) — probability mass function</li>
-                        <li>\(H(X) = -\sum_{x} p(x) \log_2 p(x)\) — Shannon entropy (in bits)</li>
-                        <li>\(L\) — average code length per symbol</li>
-                        <li>\(\ell(x)\) — length of codeword for symbol \(x\)</li>
-                        <li>\(\log_2\) — logarithm base 2 (information measured in bits)</li>
+                        <li><span class="math">X</span> — a discrete random variable representing the source</li>
+                        <li><span class="math">X = \x<sub>1</sub>, x<sub>2</sub>, ldots, x<sub>n</sub>\</span> — the alphabet (set of possible symbols)</li>
+                        <li><span class="math">p(x) = P(X = x)</span> — probability mass function</li>
+                        <li><span class="math">H(X) = -sum<sub>x</sub> p(x) log<sub>2</sub> p(x)</span> — Shannon entropy (in bits)</li>
+                        <li><span class="math">L</span> — average code length per symbol</li>
+                        <li><span class="math">ell(x)</span> — length of codeword for symbol <span class="math">x</span></li>
+                        <li><span class="math">log<sub>2</sub></span> — logarithm base 2 (information measured in bits)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Shannon's Source Coding Theorem</div>
-                    <p>For a discrete memoryless source \(X\) with entropy \(H(X)\):</p>
-                    <p><strong>(Achievability)</strong> There exists a prefix-free code with average length \(L\) satisfying:</p>
-                    <p>\[H(X) \leq L < H(X) + 1\]</p>
-                    <p><strong>(Converse)</strong> No uniquely decodable code can achieve \(L < H(X)\).</p>
-                    <p>Moreover, for block coding of \(n\) symbols, the average length per symbol satisfies:</p>
-                    <p>\[\frac{L_n}{n} \to H(X) \text{ as } n \to \infty\]</p>
+                    <p>For a discrete memoryless source <span class="math">X</span> with entropy <span class="math">H(X)</span>:</p>
+                    <p><strong>(Achievability)</strong> There exists a prefix-free code with average length <span class="math">L</span> satisfying:</p>
+                    <p><div class="math-display">H(X) leq L < H(X) + 1</div></p>
+                    <p><strong>(Converse)</strong> No uniquely decodable code can achieve <span class="math">L < H(X)</span>.</p>
+                    <p>Moreover, for block coding of <span class="math">n</span> symbols, the average length per symbol satisfies:</p>
+                    <p><div class="math-display"><span class="math">L<sub>n</sub>/n</span> to H(X)  as  n to infty</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof of the Bounds</div>
                     <p><strong>Lower bound (Converse):</strong></p>
-                    <p>For any uniquely decodable code, Kraft's inequality states: \(\sum_{x} 2^{-\ell(x)} \leq 1\).</p>
-                    <p>We want to minimize \(L = \sum_{x} p(x) \ell(x)\) subject to this constraint.</p>
+                    <p>For any uniquely decodable code, Kraft's inequality states: <span class="math">sum<sub>x</sub> 2<sup>-ell(x)</sup> leq 1</span>.</p>
+                    <p>We want to minimize <span class="math">L = sum<sub>x</sub> p(x) ell(x)</span> subject to this constraint.</p>
                     
                     <p>Using Lagrange multipliers or Gibbs' inequality:</p>
-                    <p>\[L - H(X) = \sum_{x} p(x) \ell(x) + \sum_{x} p(x) \log_2 p(x)\]</p>
-                    <p>\[= \sum_{x} p(x) \log_2 \frac{p(x)}{2^{-\ell(x)}}\]</p>
+                    <p><div class="math-display">L - H(X) = sum<sub>x</sub> p(x) ell(x) + sum<sub>x</sub> p(x) log<sub>2</sub> p(x)</div></p>
+                    <p><div class="math-display">= sum<sub>x</sub> p(x) log<sub>2</sub> <span class="math">p(x)/2<sup>-ell(x)</sup></span></div></p>
                     
-                    <p>Define \(q(x) = 2^{-\ell(x)} / c\) where \(c = \sum_{y} 2^{-\ell(y)} \leq 1\). Then:</p>
-                    <p>\[L - H(X) = \sum_{x} p(x) \log_2 \frac{p(x)}{q(x)} + \log_2 c = D(p \| q) + \log_2 c\]</p>
+                    <p>Define <span class="math">q(x) = 2<sup>-ell(x)</sup> / c</span> where <span class="math">c = sum<sub>y</sub> 2<sup>-ell(y)</sup> leq 1</span>. Then:</p>
+                    <p><div class="math-display">L - H(X) = sum<sub>x</sub> p(x) log<sub>2</sub> <span class="math">p(x)/q(x)</span> + log<sub>2</sub> c = D(p \| q) + log<sub>2</sub> c</div></p>
                     
-                    <p>Since \(D(p \| q) \geq 0\) (Gibbs' inequality) and \(c \leq 1\), we have \(L \geq H(X)\).</p>
+                    <p>Since <span class="math">D(p \| q) geq 0</span> (Gibbs' inequality) and <span class="math">c leq 1</span>, we have <span class="math">L geq H(X)</span>.</p>
                     
                     <p><strong>Upper bound (Achievability):</strong></p>
-                    <p>Choose codeword lengths: \(\ell(x) = \lceil -\log_2 p(x) \rceil\).</p>
+                    <p>Choose codeword lengths: <span class="math">ell(x) = lceil -log<sub>2</sub> p(x) rceil</span>.</p>
                     
                     <p>Check Kraft's inequality:</p>
-                    <p>\[\sum_{x} 2^{-\ell(x)} \leq \sum_{x} 2^{\log_2 p(x)} = \sum_{x} p(x) = 1\]</p>
+                    <p><div class="math-display">sum<sub>x</sub> 2<sup>-ell(x)</sup> leq sum<sub>x</sub> 2<sup>log<sub>2</sub> p(x)</sup> = sum<sub>x</sub> p(x) = 1</div></p>
                     
                     <p>So a prefix code exists with these lengths (by Kraft's theorem).</p>
                     
                     <p>The average length:</p>
-                    <p>\[L = \sum_{x} p(x) \lceil -\log_2 p(x) \rceil < \sum_{x} p(x) (-\log_2 p(x) + 1) = H(X) + 1\] ∎</p>
+                    <p><div class="math-display">L = sum<sub>x</sub> p(x) lceil -log<sub>2</sub> p(x) rceil < sum<sub>x</sub> p(x) (-log<sub>2</sub> p(x) + 1) = H(X) + 1</div> ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -629,40 +628,40 @@ for letter in ['E', 'T', 'A', 'Q', 'Z']:
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(N = \{1, 2, \ldots, n\}\) — set of players</li>
-                        <li>\(S_i\) — strategy set for player \(i\)</li>
-                        <li>\(s = (s_1, s_2, \ldots, s_n)\) — strategy profile (one strategy per player)</li>
-                        <li>\(s_{-i} = (s_1, \ldots, s_{i-1}, s_{i+1}, \ldots, s_n)\) — strategies of all players except \(i\)</li>
-                        <li>\(u_i: S_1 \times \cdots \times S_n \to \mathbb{R}\) — payoff function for player \(i\)</li>
-                        <li>\(\Delta(S_i)\) — set of mixed strategies (probability distributions over \(S_i\))</li>
-                        <li>\(BR_i(s_{-i})\) — best response correspondence for player \(i\)</li>
+                        <li><span class="math">N = \1, 2, ldots, n\</span> — set of players</li>
+                        <li><span class="math">S<sub>i</sub></span> — strategy set for player <span class="math">i</span></li>
+                        <li><span class="math">s = (s<sub>1</sub>, s<sub>2</sub>, ldots, s<sub>n</sub>)</span> — strategy profile (one strategy per player)</li>
+                        <li><span class="math">s<sub>-i</sub> = (s<sub>1</sub>, ldots, s<sub>i-1</sub>, s<sub>i+1</sub>, ldots, s<sub>n</sub>)</span> — strategies of all players except <span class="math">i</span></li>
+                        <li><span class="math">u<sub>i</sub>: S<sub>1</sub> times cdots times S<sub>n</sub> to ℝ</span> — payoff function for player <span class="math">i</span></li>
+                        <li><span class="math">Delta(S<sub>i</sub>)</span> — set of mixed strategies (probability distributions over <span class="math">S<sub>i</sub></span>)</li>
+                        <li><span class="math">BR<sub>i</sub>(s<sub>-i</sub>)</span> — best response correspondence for player <span class="math">i</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Nash's Existence Theorem (1950)</div>
                     <p>Every finite strategic-form game has at least one Nash equilibrium in mixed strategies.</p>
-                    <p>That is, for any game with finite strategy sets \(S_1, \ldots, S_n\), there exists a mixed strategy profile \(\sigma^* = (\sigma_1^*, \ldots, \sigma_n^*)\) such that for each player \(i\):</p>
-                    <p>\[u_i(\sigma_i^*, \sigma_{-i}^*) \geq u_i(\sigma_i, \sigma_{-i}^*) \quad \text{for all } \sigma_i \in \Delta(S_i)\]</p>
+                    <p>That is, for any game with finite strategy sets <span class="math">S<sub>1</sub>, ldots, S<sub>n</sub></span>, there exists a mixed strategy profile <span class="math">sigma^* = (sigma<sub>1</sub>^*, ldots, sigma<sub>n</sub>^*)</span> such that for each player <span class="math">i</span>:</p>
+                    <p><div class="math-display">u<sub>i</sub>(sigma<sub>i</sub>^*, sigma<sub>-i</sub>^*) geq u<sub>i</sub>(sigma<sub>i</sub>, sigma<sub>-i</sub>^*) quad for all  sigma<sub>i</sub> in Delta(S<sub>i</sub>)</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (via Kakutani's Fixed-Point Theorem)</div>
-                    <p><strong>Step 1:</strong> Define the best-response correspondence \(BR: \Delta \to 2^{\Delta}\) where \(\Delta = \Delta(S_1) \times \cdots \times \Delta(S_n)\):</p>
-                    <p>\[BR(\sigma) = BR_1(\sigma_{-1}) \times \cdots \times BR_n(\sigma_{-n})\]</p>
-                    <p>where \(BR_i(\sigma_{-i}) = \arg\max_{\sigma_i'} u_i(\sigma_i', \sigma_{-i})\).</p>
+                    <p><strong>Step 1:</strong> Define the best-response correspondence <span class="math">BR: Delta to 2<sup>Delta</sup></span> where <span class="math">Delta = Delta(S<sub>1</sub>) times cdots times Delta(S<sub>n</sub>)</span>:</p>
+                    <p><div class="math-display">BR(sigma) = BR<sub>1</sub>(sigma<sub>-1</sub>) times cdots times BR<sub>n</sub>(sigma<sub>-n</sub>)</div></p>
+                    <p>where <span class="math">BR<sub>i</sub>(sigma<sub>-i</sub>) = argmax<sub>sigma<sub>i</sub>'</sub> u<sub>i</sub>(sigma<sub>i</sub>', sigma<sub>-i</sub>)</span>.</p>
                     
-                    <p><strong>Step 2:</strong> \(\Delta\) is a non-empty, compact, convex subset of a Euclidean space (product of simplices).</p>
+                    <p><strong>Step 2:</strong> <span class="math">Delta</span> is a non-empty, compact, convex subset of a Euclidean space (product of simplices).</p>
                     
-                    <p><strong>Step 3:</strong> For each \(\sigma\), \(BR(\sigma)\) is non-empty (payoffs are continuous, max exists on compact set).</p>
+                    <p><strong>Step 3:</strong> For each σ, <span class="math">BR(sigma)</span> is non-empty (payoffs are continuous, max exists on compact set).</p>
                     
-                    <p><strong>Step 4:</strong> \(BR(\sigma)\) is convex: if \(\sigma_i', \sigma_i'' \in BR_i(\sigma_{-i})\), any convex combination gives the same payoff.</p>
+                    <p><strong>Step 4:</strong> <span class="math">BR(sigma)</span> is convex: if <span class="math">sigma<sub>i</sub>', sigma<sub>i</sub>'' in BR<sub>i</sub>(sigma<sub>-i</sub>)</span>, any convex combination gives the same payoff.</p>
                     
-                    <p><strong>Step 5:</strong> \(BR\) has a closed graph: if \((\sigma^k, \hat{\sigma}^k) \to (\sigma, \hat{\sigma})\) with \(\hat{\sigma}^k \in BR(\sigma^k)\), then \(\hat{\sigma} \in BR(\sigma)\). This follows from continuity of expected payoffs.</p>
+                    <p><strong>Step 5:</strong> <span class="math">BR</span> has a closed graph: if <span class="math">(sigma<sup>k</sup>, sigmâ<sup>k</sup>) to (sigma, sigmâ)</span> with <span class="math">sigmâ<sup>k</sup> in BR(sigma<sup>k</sup>)</span>, then <span class="math">sigmâ in BR(sigma)</span>. This follows from continuity of expected payoffs.</p>
                     
                     <p><strong>Step 6:</strong> Apply <strong>Kakutani's Fixed-Point Theorem</strong>: Any upper hemicontinuous correspondence from a compact convex set to itself with non-empty convex values has a fixed point.</p>
                     
-                    <p><strong>Step 7:</strong> Let \(\sigma^*\) be a fixed point: \(\sigma^* \in BR(\sigma^*)\). This means each \(\sigma_i^*\) is a best response to \(\sigma_{-i}^*\), which is exactly the definition of Nash equilibrium. ∎</p>
+                    <p><strong>Step 7:</strong> Let <span class="math">sigma^*</span> be a fixed point: <span class="math">sigma^* in BR(sigma^*)</span>. This means each <span class="math">sigma<sub>i</sub>^*</span> is a best response to <span class="math">sigma<sub>-i</sub>^*</span>, which is exactly the definition of Nash equilibrium. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -737,51 +736,51 @@ for p, q, typ in eqs:
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(L(q, \dot{q}, t)\) — Lagrangian function (typically \(L = T - V\), kinetic minus potential energy)</li>
-                        <li>\(S = \int L dt\) — the action functional</li>
-                        <li>\(q = (q_1, \ldots, q_n)\) — generalized coordinates</li>
-                        <li>\(\dot{q} = dq/dt\) — generalized velocities</li>
-                        <li>\(\frac{\partial L}{\partial q_i}\) — partial derivative of Lagrangian with respect to coordinate \(q_i\)</li>
-                        <li>\(\frac{\partial L}{\partial \dot{q}_i}\) — partial derivative with respect to velocity (conjugate momentum)</li>
-                        <li>\(\epsilon\) — infinitesimal parameter of symmetry transformation</li>
-                        <li>\(Q_i\) — conserved quantity (Noether charge)</li>
+                        <li><span class="math">L(q, q̇, t)</span> — Lagrangian function (typically <span class="math">L = T - V</span>, kinetic minus potential energy)</li>
+                        <li><span class="math">S = int L dt</span> — the action functional</li>
+                        <li><span class="math">q = (q<sub>1</sub>, ldots, q<sub>n</sub>)</span> — generalized coordinates</li>
+                        <li><span class="math">q̇ = dq/dt</span> — generalized velocities</li>
+                        <li><span class="math"><span class="math">partial L/partial q<sub>i</sub></span></span> — partial derivative of Lagrangian with respect to coordinate <span class="math">q<sub>i</sub></span></li>
+                        <li><span class="math"><span class="math">partial L/partial q</span><sub>i</sub>̇</span> — partial derivative with respect to velocity (conjugate momentum)</li>
+                        <li>ε — infinitesimal parameter of symmetry transformation</li>
+                        <li><span class="math">Q<sub>i</sub></span> — conserved quantity (Noether charge)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Noether's Theorem (1918)</div>
-                    <p>Suppose the action \(S = \int_{t_1}^{t_2} L(q, \dot{q}, t) dt\) is invariant under a continuous one-parameter family of transformations:</p>
-                    <p>\[q_i(t) \mapsto q_i(t, \epsilon) = q_i(t) + \epsilon \psi_i(q, t) + O(\epsilon^2)\]</p>
-                    <p>where \(\epsilon\) is an infinitesimal parameter. Then the quantity:</p>
-                    <p>\[Q = \sum_{i} \frac{\partial L}{\partial \dot{q}_i} \psi_i\]</p>
-                    <p>is conserved along solutions of the Euler-Lagrange equations, i.e., \(\frac{dQ}{dt} = 0\).</p>
+                    <p>Suppose the action <span class="math">S = int<sub>t<sub>1</sub></sub><sup>t<sub>2</sub></sup> L(q, q̇, t) dt</span> is invariant under a continuous one-parameter family of transformations:</p>
+                    <p><div class="math-display">q<sub>i</sub>(t) mapsto q<sub>i</sub>(t, epsilon) = q<sub>i</sub>(t) + epsilon psi<sub>i</sub>(q, t) + O(epsilon<sup>2</sup>)</div></p>
+                    <p>where ε is an infinitesimal parameter. Then the quantity:</p>
+                    <p><div class="math-display">Q = sum<sub>i</sub> <span class="math">partial L/partial q</span><sub>i</sub>̇ psi<sub>i</sub></div></p>
+                    <p>is conserved along solutions of the Euler-Lagrange equations, i.e., <span class="math"><span class="math">dQ/dt</span> = 0</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof</div>
                     <p><strong>Step 1:</strong> Invariance of the action means:</p>
-                    <p>\[\frac{d}{d\epsilon}\bigg|_{\epsilon=0} \int L(q(t,\epsilon), \dot{q}(t,\epsilon), t) dt = 0\]</p>
+                    <p><div class="math-display"><span class="math">d/depsilon</span>bigg|<sub>epsilon=0</sub> int L(q(t,epsilon), q̇(t,epsilon), t) dt = 0</div></p>
                     
                     <p><strong>Step 2:</strong> Compute the variation:</p>
-                    <p>\[\delta S = \int \sum_i \left(\frac{\partial L}{\partial q_i} \psi_i + \frac{\partial L}{\partial \dot{q}_i} \dot{\psi}_i\right) dt = 0\]</p>
-                    where \(\dot{\psi}_i = \frac{d\psi_i}{dt}\).</p>
+                    <p><div class="math-display">delta S = int sum<sub>i</sub> (<span class="math">partial L/partial q<sub>i</sub></span> psi<sub>i</sub> + <span class="math">partial L/partial q</span><sub>i</sub>̇ psi̇<sub>i</sub>) dt = 0</div></p>
+                    where <span class="math">psi̇<sub>i</sub> = <span class="math">dpsi<sub>i</sub>/dt</span></span>.</p>
                     
                     <p><strong>Step 3:</strong> Integrate the second term by parts:</p>
-                    <p>\[\int \frac{\partial L}{\partial \dot{q}_i} \dot{\psi}_i dt = \left[\frac{\partial L}{\partial \dot{q}_i} \psi_i\right]_{t_1}^{t_2} - \int \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right) \psi_i dt\]</p>
+                    <p><div class="math-display">int <span class="math">partial L/partial q</span><sub>i</sub>̇ psi̇<sub>i</sub> dt = [<span class="math">partial L/partial q</span><sub>i</sub>̇ psi<sub>i</sub>]<sub>t<sub>1</sub></sub><sup>t<sub>2</sub></sup> - int <span class="math">d/dt</span>(<span class="math">partial L/partial q</span><sub>i</sub>̇) psi<sub>i</sub> dt</div></p>
                     
                     <p><strong>Step 4:</strong> For variations vanishing at the endpoints, the boundary term is zero, so:</p>
-                    <p>\[\delta S = \int \sum_i \left(\frac{\partial L}{\partial q_i} - \frac{d}{dt}\frac{\partial L}{\partial \dot{q}_i}\right) \psi_i dt = 0\]</p>
+                    <p><div class="math-display">delta S = int sum<sub>i</sub> (<span class="math">partial L/partial q<sub>i</sub></span> - <span class="math">d/dt</span><span class="math">partial L/partial q</span><sub>i</sub>̇) psi<sub>i</sub> dt = 0</div></p>
                     
                     <p><strong>Step 5:</strong> Along solutions of the Euler-Lagrange equations:</p>
-                    <p>\[\frac{\partial L}{\partial q_i} - \frac{d}{dt}\frac{\partial L}{\partial \dot{q}_i} = 0\]</p>
+                    <p><div class="math-display"><span class="math">partial L/partial q<sub>i</sub></span> - <span class="math">d/dt</span><span class="math">partial L/partial q</span><sub>i</sub>̇ = 0</div></p>
                     
-                    <p><strong>Step 6:</strong> Now consider the total time derivative of \(Q = \sum_i \frac{\partial L}{\partial \dot{q}_i} \psi_i\):</p>
-                    <p>\[\frac{dQ}{dt} = \sum_i \left(\frac{d}{dt}\frac{\partial L}{\partial \dot{q}_i}\right) \psi_i + \sum_i \frac{\partial L}{\partial \dot{q}_i} \dot{\psi}_i\]</p>
+                    <p><strong>Step 6:</strong> Now consider the total time derivative of <span class="math">Q = sum<sub>i</sub> <span class="math">partial L/partial q</span><sub>i</sub>̇ psi<sub>i</sub></span>:</p>
+                    <p><div class="math-display"><span class="math">dQ/dt</span> = sum<sub>i</sub> (<span class="math">d/dt</span><span class="math">partial L/partial q</span><sub>i</sub>̇) psi<sub>i</sub> + sum<sub>i</sub> <span class="math">partial L/partial q</span><sub>i</sub>̇ psi̇<sub>i</sub></div></p>
                     
                     <p><strong>Step 7:</strong> Using the Euler-Lagrange equation:</p>
-                    <p>\[\frac{dQ}{dt} = \sum_i \frac{\partial L}{\partial q_i} \psi_i + \sum_i \frac{\partial L}{\partial \dot{q}_i} \dot{\psi}_i\]</p>
+                    <p><div class="math-display"><span class="math">dQ/dt</span> = sum<sub>i</sub> <span class="math">partial L/partial q<sub>i</sub></span> psi<sub>i</sub> + sum<sub>i</sub> <span class="math">partial L/partial q</span><sub>i</sub>̇ psi̇<sub>i</sub></div></p>
                     
-                    <p><strong>Step 8:</strong> This equals the integrand from Step 2. For the symmetry transformation, the variation of the Lagrangian is a total time derivative: \(\delta L = \frac{dF}{dt}\) for some \(F\). When the action is invariant, this implies \(\frac{dQ}{dt} = 0\). ∎</p>
+                    <p><strong>Step 8:</strong> This equals the integrand from Step 2. For the symmetry transformation, the variation of the Lagrangian is a total time derivative: <span class="math">delta L = <span class="math">dF/dt</span></span> for some <span class="math">F</span>. When the action is invariant, this implies <span class="math"><span class="math">dQ/dt</span> = 0</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -854,40 +853,40 @@ print(f"   Angular momentum variation: {max(angular_momentum) - min(angular_mome
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbb{P}\) — the set of prime numbers</li>
-                        <li>\(\pi(x)\) — the prime counting function: number of primes \(\leq x\)</li>
-                        <li>\(\pi_2(x)\) — the twin prime counting function: number of twin prime pairs \((p, p+2)\) with \(p \leq x\)</li>
-                        <li>\(\zeta(s)\) — the Riemann zeta function</li>
-                        <li>\(\prod_p\) — product over all primes</li>
-                        <li>\(C_2\) — the twin prime constant</li>
+                        <li><span class="math">ℙ</span> — the set of prime numbers</li>
+                        <li><span class="math">pi(x)</span> — the prime counting function: number of primes <span class="math">leq x</span></li>
+                        <li><span class="math">π₂(x)</span> — the twin prime counting function: number of twin prime pairs <span class="math">(p, p+2)</span> with <span class="math">p leq x</span></li>
+                        <li><span class="math">zeta(s)</span> — the Riemann zeta function</li>
+                        <li><span class="math">prod<sub>p</sub></span> — product over all primes</li>
+                        <li><span class="math">C<sub>2</sub></span> — the twin prime constant</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">First Hardy-Littlewood Conjecture (for Twin Primes)</div>
-                    <p>The number of twin prime pairs up to \(x\) is asymptotically:</p>
-                    <p>\[\pi_2(x) \sim 2C_2 \frac{x}{(\ln x)^2}\]</p>
-                    <p>where \(C_2\) is the twin prime constant:</p>
-                    <p>\[C_2 = \prod_{p \geq 3} \frac{p(p-2)}{(p-1)^2} \approx 0.6601618158\ldots\]</p>
+                    <p>The number of twin prime pairs up to <span class="math">x</span> is asymptotically:</p>
+                    <p><div class="math-display">π₂(x) sim 2C<sub>2</sub> <span class="math">x/(ln x)<sup>2</sup></span></div></p>
+                    <p>where <span class="math">C<sub>2</sub></span> is the twin prime constant:</p>
+                    <p><div class="math-display">C<sub>2</sub> = prod<sub>p geq 3</sub> <span class="math">p(p-2)/(p-1)<sup>2</sup></span> approx 0.6601618158ldots</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Heuristic Argument (Probabilistic)</div>
-                    <p><strong>Step 1:</strong> By the Prime Number Theorem, the probability that a random integer near \(n\) is prime is approximately \(1/\ln n\).</p>
+                    <p><strong>Step 1:</strong> By the Prime Number Theorem, the probability that a random integer near <span class="math">n</span> is prime is approximately <span class="math">1/ln n</span>.</p>
                     
-                    <p><strong>Step 2:</strong> Naively, the probability that both \(n\) and \(n+2\) are prime would be \(1/(\ln n)^2\).</p>
+                    <p><strong>Step 2:</strong> Naively, the probability that both <span class="math">n</span> and <span class="math">n+2</span> are prime would be <span class="math">1/(ln n)<sup>2</sup></span>.</p>
                     
-                    <p><strong>Step 3:</strong> However, divisibility by small primes creates correlations. For any odd prime \(p\), the residues of \(n\) and \(n+2\) modulo \(p\) are perfectly correlated.</p>
+                    <p><strong>Step 3:</strong> However, divisibility by small primes creates correlations. For any odd prime <span class="math">p</span>, the residues of <span class="math">n</span> and <span class="math">n+2</span> modulo <span class="math">p</span> are perfectly correlated.</p>
                     
-                    <p><strong>Step 4:</strong> For a random pair of integers, the probability neither is divisible by \(p\) is \((1 - 1/p)^2\).</p>
+                    <p><strong>Step 4:</strong> For a random pair of integers, the probability neither is divisible by <span class="math">p</span> is <span class="math">(1 - 1/p)<sup>2</sup></span>.</p>
                     
-                    <p><strong>Step 5:</strong> For twin primes, if \(n \not\equiv 0 \pmod{p}\), then \(n+2 \not\equiv 2 \pmod{p}\). The probability neither is divisible by \(p\) is:</p>
-                    <p>\[1 - \frac{2}{p} \text{ for } p > 2\]</p>
+                    <p><strong>Step 5:</strong> For twin primes, if <span class="math">n notequiv 0 pmodp</span>, then <span class="math">n+2 notequiv 2 pmodp</span>. The probability neither is divisible by <span class="math">p</span> is:</p>
+                    <p><div class="math-display">1 - <span class="math">2/p</span>  for  p > 2</div></p>
                     
-                    <p><strong>Step 6:</strong> The correction factor for each prime \(p\) is:</p>
-                    <p>\[\frac{1 - 2/p}{(1 - 1/p)^2} = \frac{p(p-2)}{(p-1)^2}\]</p>
+                    <p><strong>Step 6:</strong> The correction factor for each prime <span class="math">p</span> is:</p>
+                    <p><div class="math-display"><span class="math">1 - 2/p/(1 - 1/p)<sup>2</sup></span> = <span class="math">p(p-2)/(p-1)<sup>2</sup></span></div></p>
                     
-                    <p><strong>Step 7:</strong> Taking the product over all odd primes gives the twin prime constant \(C_2\), yielding the conjectured asymptotic formula. ∎</p>
+                    <p><strong>Step 7:</strong> Taking the product over all odd primes gives the twin prime constant <span class="math">C<sub>2</sub></span>, yielding the conjectured asymptotic formula. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -955,26 +954,26 @@ for i, (p, q) in enumerate(twins_small[:20]):
                 <h3>2. The Hodge Conjecture</h3>
                 
                 <h4>Introduction</h4>
-                <p>The <strong>Hodge Conjecture</strong> is one of the seven Millennium Prize Problems with a $1 million reward. Proposed by W.V.D. Hodge in 1950, it connects algebraic topology and algebraic geometry. It states that certain topologically defined subspaces of a projective algebraic variety (Hodge cycles) can be built from algebraic subvarieties. In simpler terms: topological features that "look algebraic" actually come from algebraic geometry.</p>
+                <p>The <strong>Hodge Conjecture</strong> is one of the seven Millennium Prize Problems with a <span class="math">1 million reward. Proposed by W.V.D. Hodge in 1950, it connects algebraic topology and algebraic geometry. It states that certain topologically defined subspaces of a projective algebraic variety (Hodge cycles) can be built from algebraic subvarieties. In simpler terms: topological features that "look algebraic" actually come from algebraic geometry.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(X\) — a smooth projective algebraic variety over \(\mathbb{C}\)</li>
-                        <li>\(H^k(X, \mathbb{Q})\) — the \(k\)-th singular cohomology group with rational coefficients</li>
-                        <li>\(H^{p,q}(X)\) — the Dolbeault cohomology group of type \((p,q)\)</li>
-                        <li>\(H^{2k}(X, \mathbb{Q}) \cap H^{k,k}(X)\) — Hodge classes (rational classes of type \((k,k)\))</li>
-                        <li>\(Z^k(X)\) — the group of algebraic cycles of codimension \(k\)</li>
-                        <li>\([V]\) — the cohomology class of an algebraic subvariety \(V\)</li>
-                        <li>\(Hdg^k(X)\) — the Hodge classes in degree \(2k\)</li>
+                        <li><span class="math">X</span> — a smooth projective algebraic variety over <span class="math">ℂ</span></li>
+                        <li><span class="math">H<sup>k</sup>(X, ℚ)</span> — the <span class="math">k</span>-th singular cohomology group with rational coefficients</li>
+                        <li><span class="math">H<sup>p,q</sup>(X)</span> — the Dolbeault cohomology group of type <span class="math">(p,q)</span></li>
+                        <li><span class="math">H<sup>2k</sup>(X, ℚ) cap H<sup>k,k</sup>(X)</span> — Hodge classes (rational classes of type <span class="math">(k,k)</span>)</li>
+                        <li><span class="math">Z<sup>k</sup>(X)</span> — the group of algebraic cycles of codimension <span class="math">k</span></li>
+                        <li><span class="math">[V]</span> — the cohomology class of an algebraic subvariety <span class="math">V</span></li>
+                        <li><span class="math">Hdg<sup>k</sup>(X)</span> — the Hodge classes in degree <span class="math">2k</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Hodge Conjecture (Simplified Statement)</div>
-                    <p>Let \(X\) be a smooth projective variety over \(\mathbb{C}\). Every rational Hodge class on \(X\) of degree \(2k\) is a rational linear combination of cohomology classes of algebraic subvarieties of codimension \(k\).</p>
+                    <p>Let <span class="math">X</span> be a smooth projective variety over <span class="math">ℂ</span>. Every rational Hodge class on <span class="math">X</span> of degree <span class="math">2k</span> is a rational linear combination of cohomology classes of algebraic subvarieties of codimension <span class="math">k</span>.</p>
                     <p>Equivalently: The cycle class map</p>
-                    <p>\[Z^k(X) \otimes \mathbb{Q} \to H^{2k}(X, \mathbb{Q}) \cap H^{k,k}(X)\]</p>
+                    <p><div class="math-display">Z<sup>k</sup>(X) otimes ℚ to H<sup>2k</sup>(X, ℚ) cap H<sup>k,k</sup>(X)</div></p>
                     <p>is surjective.</p>
                 </div>
 
@@ -984,8 +983,8 @@ for i, (p, q) in enumerate(twins_small[:20]):
                     
                     <p><strong>Known cases:</strong></p>
                     <ul>
-                        <li><strong>Hodge (1950):</strong> Proved for varieties of dimension \(\leq 4\).</li>
-                        <li><strong>Lefschetz (1,1)-Theorem:</strong> The case \(k = 1\) is true. Every Hodge class of degree 2 is algebraic.</li>
+                        <li><strong>Hodge (1950):</strong> Proved for varieties of dimension <span class="math">leq 4</span>.</li>
+                        <li><strong>Lefschetz (1,1)-Theorem:</strong> The case <span class="math">k = 1</span> is true. Every Hodge class of degree 2 is algebraic.</li>
                         <li><strong>Abelian varieties:</strong> Significant partial results by Moonen, Zarhin, and others.</li>
                         <li><strong>Hypersurfaces:</strong> Some results for specific types.</li>
                     </ul>
@@ -993,7 +992,7 @@ for i, (p, q) in enumerate(twins_small[:20]):
                     <p><strong>Counterexamples in related settings:</strong></p>
                     <ul>
                         <li>Totaro constructed Hodge classes that are not generated by Chern classes of vector bundles.</li>
-                        <li>Kollár showed that the integral Hodge conjecture (with \(\mathbb{Z}\) instead of \(\mathbb{Q}\)) is false.</li>
+                        <li>Kollár showed that the integral Hodge conjecture (with <span class="math">ℤ</span> instead of <span class="math">ℚ</span>) is false.</li>
                     </ul>
                     
                     <p><strong>Why rational coefficients matter:</strong> The conjecture is known to fail for integer coefficients (torsion phenomena), but remains open for rational coefficients. ∎</p>
@@ -1012,7 +1011,7 @@ The Hodge Conjecture asks whether topological features (Hodge classes)
 that "look like" they come from algebraic geometry actually do.
 
 Key concepts illustrated:
-1. Complex projective space CP^n
+1. Complex projective space CP<sup>n</sup>
 2. Cohomology groups and the Hodge decomposition
 3. Algebraic cycles
 """)
@@ -1025,9 +1024,9 @@ print("H² = ℚ (top class, volume form)")
 print("All cohomology is algebraic (generated by points and the whole space)")
 print("Hodge conjecture: TRUE (trivially satisfied)")
 
-print(f"\n{'='*60}")
+print(f"n'='*60")
 print("Example 2: Complex Torus (Elliptic Curve)")
-print(f"{'='*60}")
+print(f"'='*60")
 print("A complex torus ℂ/Λ where Λ is a lattice.")
 print("H¹ = ℚ² (generated by dz and dž)")
 print("Hodge decomposition: H¹ = H¹'⁰ ⊕ H⁰'¹")
@@ -1037,10 +1036,10 @@ print("For elliptic curves, all Hodge classes are algebraic.")
 fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 
 # Hodge diamond for CP²
-hodge_cp2 = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
-hodge_k3 = [[1, 0, 0], [0, 20, 0], [1, 0, 1]]
+hodge<sub>c</sub>p2 = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+hodge<sub>k</sub>3 = [[1, 0, 0], [0, 20, 0], [1, 0, 1]]
 
-for idx, (hodge, title) in enumerate([(hodge_cp2, 'CP²'), (hodge_k3, 'K3 Surface')]):
+for idx, (hodge, title) in enumerate([(hodge<sub>c</sub>p2, 'CP²'), (hodge<sub>k</sub>3, 'K3 Surface')]):
     ax = axes[idx]
     n = 2
     for i in range(n + 1):
@@ -1054,22 +1053,22 @@ for idx, (hodge, title) in enumerate([(hodge_cp2, 'CP²'), (hodge_k3, 'K3 Surfac
                 color = 'steelblue' if val > 0 else 'lightgray'
                 ax.scatter(x, y, s=size, c=color, alpha=0.6, edgecolors='black')
                 ax.text(x, y, str(val), ha='center', va='center', fontsize=16, fontweight='bold')
-    ax.set_xlim(-0.5, n + 0.5)
-    ax.set_ylim(-0.5, n + 0.5)
-    ax.set_aspect('equal')
+    ax.set<sub>x</sub>lim(-0.5, n + 0.5)
+    ax.set<sub>y</sub>lim(-0.5, n + 0.5)
+    ax.set<sub>a</sub>spect('equal')
     ax.axis('off')
-    ax.set_title(f'Hodge Diamond: {title}', fontsize=12, fontweight='bold')
+    ax.set<sub>t</sub>itle(f'Hodge Diamond: title', fontsize=12, fontweight='bold')
 
-plt.savefig('hodge_conjecture.png', dpi=150)
+plt.savefig('hodge<sub>c</sub>onjecture.png', dpi=150)
 plt.show()
 
-print(f"\n{'='*60}")
+print(f"n'='*60")
 print("The Hodge Conjecture Status:")
 print("-" * 50)
 print("• Proven for k=1 (Lefschetz (1,1) theorem, 1924)")
 print("• Proven for dimensions ≤ 4 (Hodge, 1950)")
 print("• Open in general (one of 7 Millennium Prize Problems)")
-print("• $1,000,000 prize for proof or counterexample")
+print("• </span>1,000,000 prize for proof or counterexample")
 print("="*60)
 </code></pre>
             </div>
@@ -1084,45 +1083,45 @@ print("="*60)
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbb{C}\) — the complex plane</li>
-                        <li>\(c = a + bi\) — a complex parameter</li>
-                        <li>\(z_n\) — the \(n\)-th iterate of the sequence</li>
-                        <li>\(f_c(z) = z^2 + c\) — the quadratic family of maps</li>
-                        <li>\(z_{n+1} = z_n^2 + c\) — the iteration rule (starting with \(z_0 = 0\))</li>
-                        <li>\(|z| = \sqrt{a^2 + b^2}\) — modulus (absolute value) of complex number</li>
-                        <li>\(M = \{c \in \mathbb{C} : \sup_n |z_n| < \infty\}\) — the Mandelbrot set</li>
-                        <li>\(K_c\) — the filled Julia set for parameter \(c\)</li>
+                        <li><span class="math">ℂ</span> — the complex plane</li>
+                        <li><span class="math">c = a + bi</span> — a complex parameter</li>
+                        <li><span class="math">z<sub>n</sub></span> — the <span class="math">n</span>-th iterate of the sequence</li>
+                        <li><span class="math">f<sub>c</sub>(z) = z<sup>2</sup> + c</span> — the quadratic family of maps</li>
+                        <li><span class="math">z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + c</span> — the iteration rule (starting with <span class="math">z<sub>0</sub> = 0</span>)</li>
+                        <li><span class="math">|z| = √(a<sup>2</sup> + b<sup>2</sup>)</span> — modulus (absolute value) of complex number</li>
+                        <li><span class="math">M = \c in ℂ : sup<sub>n</sub> |z<sub>n</sub>| < infty\</span> — the Mandelbrot set</li>
+                        <li><span class="math">K<sub>c</sub></span> — the filled Julia set for parameter <span class="math">c</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Fundamental Properties of the Mandelbrot Set</div>
-                    <p><strong>(1) Escape Criterion:</strong> If \(|z_n| > 2\) for some \(n\), then \(|z_m| \to \infty\) as \(m \to \infty\). Therefore:</p>
-                    <p>\[M \subseteq \{c \in \mathbb{C} : |c| \leq 2\}\]</p>
+                    <p><strong>(1) Escape Criterion:</strong> If <span class="math">|z<sub>n</sub>| > 2</span> for some <span class="math">n</span>, then <span class="math">|z<sub>m</sub>| to infty</span> as <span class="math">m to infty</span>. Therefore:</p>
+                    <p><div class="math-display">M subseteq \c in ℂ : |c| leq 2\</div></p>
                     
                     <p><strong>(2) Connectedness:</strong> The Mandelbrot set is connected (Douady and Hubbard, 1982).</p>
                     
-                    <p><strong>(3) Main Cardioid:</strong> The largest component of the interior consists of parameters where \(f_c\) has an attracting fixed point. It is given by:</p>
-                    <p>\[c = \frac{e^{i\theta}}{2} - \frac{e^{2i\theta}}{4}, \quad \theta \in [0, 2\pi)\]</p>
+                    <p><strong>(3) Main Cardioid:</strong> The largest component of the interior consists of parameters where <span class="math">f<sub>c</sub></span> has an attracting fixed point. It is given by:</p>
+                    <p><div class="math-display">c = <span class="math">e<sup>itheta</sup>/2</span> - <span class="math">e<sup>2itheta</sup>/4</span>, quad theta in [0, 2pi)</div></p>
                     
-                    <p><strong>(4) Period-Doubling Cascade:</strong> Along the real axis from \(c = -2\) to \(c = -0.75\), the attracting periodic orbits undergo period-doubling bifurcations accumulating at the Feigenbaum point \(c \approx -1.401155\).</p>
+                    <p><strong>(4) Period-Doubling Cascade:</strong> Along the real axis from <span class="math">c = -2</span> to <span class="math">c = -0.75</span>, the attracting periodic orbits undergo period-doubling bifurcations accumulating at the Feigenbaum point <span class="math">c approx -1.401155</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof of the Escape Criterion</div>
-                    <p><strong>Step 1:</strong> Suppose \(|z_n| > 2\) and \(|z_n| \geq |c|\).</p>
+                    <p><strong>Step 1:</strong> Suppose <span class="math">|z<sub>n</sub>| > 2</span> and <span class="math">|z<sub>n</sub>| geq |c|</span>.</p>
                     
                     <p><strong>Step 2:</strong> Then by the triangle inequality:</p>
-                    <p>\[|z_{n+1}| = |z_n^2 + c| \geq |z_n|^2 - |c| \geq |z_n|^2 - |z_n| = |z_n|(|z_n| - 1)\]</p>
+                    <p><div class="math-display">|z<sub>n+1</sub>| = |z<sub>n</sub><sup>2</sup> + c| geq |z<sub>n</sub>|<sup>2</sup> - |c| geq |z<sub>n</sub>|<sup>2</sup> - |z<sub>n</sub>| = |z<sub>n</sub>|(|z<sub>n</sub>| - 1)</div></p>
                     
-                    <p><strong>Step 3:</strong> If \(|z_n| > 2\), then \(|z_n| - 1 > 1\), so:</p>
-                    <p>\[|z_{n+1}| > |z_n|\]</p>
+                    <p><strong>Step 3:</strong> If <span class="math">|z<sub>n</sub>| > 2</span>, then <span class="math">|z<sub>n</sub>| - 1 > 1</span>, so:</p>
+                    <p><div class="math-display">|z<sub>n+1</sub>| > |z<sub>n</sub>|</div></p>
                     
-                    <p><strong>Step 4:</strong> Moreover, \(|z_{n+1}| \geq |z_n|(|z_n| - 1) > 2|z_n| - |z_n| = |z_n| > 2\).</p>
+                    <p><strong>Step 4:</strong> Moreover, <span class="math">|z<sub>n+1</sub>| geq |z<sub>n</sub>|(|z<sub>n</sub>| - 1) > 2|z<sub>n</sub>| - |z<sub>n</sub>| = |z<sub>n</sub>| > 2</span>.</p>
                     
-                    <p><strong>Step 5:</strong> The sequence \(|z_n|\) is increasing and unbounded, so \(|z_n| \to \infty\).</p>
+                    <p><strong>Step 5:</strong> The sequence <span class="math">|z<sub>n</sub>|</span> is increasing and unbounded, so <span class="math">|z<sub>n</sub>| to infty</span>.</p>
                     
-                    <p><strong>Step 6:</strong> For the initial condition, if \(|c| > 2\), then \(|z_1| = |c| > 2\), so \(c \notin M\). ∎</p>
+                    <p><strong>Step 6:</strong> For the initial condition, if <span class="math">|c| > 2</span>, then <span class="math">|z<sub>1</sub>| = |c| > 2</span>, so <span class="math">c notin M</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1219,35 +1218,35 @@ print("="*60)
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbb{R}^3\) — 3-dimensional Euclidean space</li>
-                        <li>\(B\) — the unit ball: \(\{x \in \mathbb{R}^3 : |x| \leq 1\}\)</li>
-                        <li>\(SO(3)\) — the special orthogonal group (rotations in 3D)</li>
-                        <li>\(F_2\) — the free group on two generators</li>
-                        <li>\(\cong\) — equidecomposable (can be cut and reassembled into each other)</li>
-                        <li>\(\mathbb{S}^2\) — the unit sphere in \(\mathbb{R}^3\)</li>
-                        <li>\(\lambda\) — Lebesgue measure (volume)</li>
+                        <li><span class="math">ℝ<sup>3</sup></span> — 3-dimensional Euclidean space</li>
+                        <li><span class="math">B</span> — the unit ball: <span class="math">\x in ℝ<sup>3</sup> : |x| leq 1\</span></li>
+                        <li><span class="math">SO(3)</span> — the special orthogonal group (rotations in 3D)</li>
+                        <li><span class="math">F<sub>2</sub></span> — the free group on two generators</li>
+                        <li><span class="math">≅</span> — equidecomposable (can be cut and reassembled into each other)</li>
+                        <li><span class="math">mathbbS<sup>2</sup></span> — the unit sphere in <span class="math">ℝ<sup>3</sup></span></li>
+                        <li>λ — Lebesgue measure (volume)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Banach-Tarski Paradox (1924)</div>
-                    <p>Given a solid ball \(B\) in \(\mathbb{R}^3\), there exists a decomposition of \(B\) into finitely many disjoint subsets \(B = A_1 \cup A_2 \cup \cdots \cup A_n\) such that, by applying rigid motions (rotations and translations) to these pieces, one can reassemble them into two disjoint solid balls, each congruent to the original:</p>
-                    <p>\[B \cong B_1 \cup B_2\]</p>
-                    <p>where \(B_1\) and \(B_2\) are disjoint balls, each with the same radius as \(B\).</p>
+                    <p>Given a solid ball <span class="math">B</span> in <span class="math">ℝ<sup>3</sup></span>, there exists a decomposition of <span class="math">B</span> into finitely many disjoint subsets <span class="math">B = A<sub>1</sub> cup A<sub>2</sub> cup cdots cup A<sub>n</sub></span> such that, by applying rigid motions (rotations and translations) to these pieces, one can reassemble them into two disjoint solid balls, each ≅ruent to the original:</p>
+                    <p><div class="math-display">B ≅ B<sub>1</sub> cup B<sub>2</sub></div></p>
+                    <p>where <span class="math">B<sub>1</sub></span> and <span class="math">B<sub>2</sub></span> are disjoint balls, each with the same radius as <span class="math">B</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (Hausdorff Paradox → Banach-Tarski)</div>
-                    <p><strong>Step 1 (Hausdorff Paradox, 1914):</strong> There exists a countable subset \(D \subset \mathbb{S}^2\) such that \(\mathbb{S}^2 \setminus D\) can be partitioned into three sets \(A, B, C\) where each is congruent to the union of the other two:</p>
-                    <p>\[A \cong B \cong C \cong B \cup C \cong A \cup C \cong A \cup B\]</p>
+                    <p><strong>Step 1 (Hausdorff Paradox, 1914):</strong> There exists a countable subset <span class="math">D subset mathbbS<sup>2</sup></span> such that <span class="math">mathbbS<sup>2</sup> setminus D</span> can be partitioned into three sets <span class="math">A, B, C</span> where each is ≅ruent to the union of the other two:</p>
+                    <p><div class="math-display">A ≅ B ≅ C ≅ B cup C ≅ A cup C ≅ A cup B</div></p>
                     
-                    <p><strong>Step 2:</strong> This uses the free group \(F_2\) on two generators. Consider two rotations \(\phi\) and \(\psi\) of the sphere that generate a free group. The orbit of any point under this group can be partitioned to create the paradoxical decomposition.</p>
+                    <p><strong>Step 2:</strong> This uses the free group <span class="math">F<sub>2</sub></span> on two generators. Consider two rotations φ and ψ of the sphere that generate a free group. The orbit of any point under this group can be partitioned to create the paradoxical decomposition.</p>
                     
-                    <p><strong>Step 3:</strong> The key is that the group of rotations contains a copy of \(F_2\), and this group action allows us to "duplicate" the sphere (minus a countable set).</p>
+                    <p><strong>Step 3:</strong> The key is that the group of rotations contains a copy of <span class="math">F<sub>2</sub></span>, and this group action allows us to "duplicate" the sphere (minus a countable set).</p>
                     
                     <p><strong>Step 4:</strong> Extend from the sphere to the ball using radial extension. The decomposition of the sphere induces a decomposition of the solid ball.</p>
                     
-                    <p><strong>Step 5:</strong> The countable set \(D\) can be absorbed using the Banach-Schröder-Bernstein theorem for equidecomposability.</p>
+                    <p><strong>Step 5:</strong> The countable set <span class="math">D</span> can be absorbed using the Banach-Schröder-Bernstein theorem for equidecomposability.</p>
                     
                     <p><strong>Step 6:</strong> By carefully choosing the pieces, we can duplicate the ball. ∎</p>
                 </div>

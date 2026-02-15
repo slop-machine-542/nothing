@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Math Digest - February 16, 2026</title>
 
-        <!-- MathJax Configuration -->
+        
     <script>
-MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\)']],
-    displayMath: [['$$', '$$'], ['\[', '\]']],
+    inlineMath: [['<span class="math">', '</span>'], ['<span class="math">', '</span>']],
+    displayMath: [['<div class="math-display">', '</div>'], ['<div class="math-display">', '</div>']],
     processEscapes: true,
     processEnvironments: true
   },
@@ -21,7 +20,7 @@ MathJax = {
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -102,49 +101,49 @@ MathJax = {
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbb{C}\) — the complex plane</li>
-                        <li>\(z = x + iy\) — a complex number with real part \(x\) and imaginary part \(y\)</li>
-                        <li>\(\bar{z} = x - iy\) — complex conjugate</li>
-                        <li>\(|z| = \sqrt{x^2 + y^2}\) — modulus (absolute value)</li>
-                        <li>\(\gamma\) — a curve (path) in the complex plane</li>
-                        <li>\(\oint_\gamma f(z)\,dz\) — contour integral around closed curve \(\gamma\)</li>
-                        <li>\(f'(z)\) — complex derivative of \(f\) at \(z\)</li>
-                        <li>\(\partial D\) — boundary of domain \(D\)</li>
+                        <li><span class="math">ℂ</span> — the complex plane</li>
+                        <li><span class="math">z = x + iy</span> — a complex number with real part <span class="math">x</span> and imaginary part <span class="math">y</span></li>
+                        <li><span class="math">z̄ = x - iy</span> — complex conjugate</li>
+                        <li><span class="math">|z| = √(x<sup>2</sup> + y<sup>2</sup>)</span> — modulus (absolute value)</li>
+                        <li>γ — a curve (path) in the complex plane</li>
+                        <li><span class="math">oint_gamma f(z)\,dz</span> — contour integral around closed curve γ</li>
+                        <li><span class="math">f'(z)</span> — complex derivative of <span class="math">f</span> at <span class="math">z</span></li>
+                        <li><span class="math">partial D</span> — boundary of domain <span class="math">D</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Cauchy's Integral Theorem</div>
-                    <p>Let \(D\) be a simply connected open subset of \(\mathbb{C}\). Let \(f: D \to \mathbb{C}\) be a holomorphic function (complex differentiable at every point in \(D\)). If \(\gamma\) is a closed, piecewise smooth curve in \(D\), then:</p>
-                    <p>\[\oint_\gamma f(z)\,dz = 0\]</p>
+                    <p>Let <span class="math">D</span> be a simply connected open subset of <span class="math">ℂ</span>. Let <span class="math">f: D to ℂ</span> be a holomorphic function (complex differentiable at every point in <span class="math">D</span>). If γ is a closed, piecewise smooth curve in <span class="math">D</span>, then:</p>
+                    <p><div class="math-display">oint_gamma f(z)\,dz = 0</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (using Green's Theorem)</div>
-                    <p><strong>Step 1:</strong> Write \(f(z) = u(x,y) + iv(x,y)\) where \(z = x + iy\), and \(dz = dx + i\,dy\).</p>
+                    <p><strong>Step 1:</strong> Write <span class="math">f(z) = u(x,y) + iv(x,y)</span> where <span class="math">z = x + iy</span>, and <span class="math">dz = dx + i\,dy</span>.</p>
                     
                     <p><strong>Step 2:</strong> Expand the integral:</p>
-                    <p>\[\oint_\gamma f(z)\,dz = \oint_\gamma (u + iv)(dx + i\,dy) = \oint_\gamma (u\,dx - v\,dy) + i\oint_\gamma (v\,dx + u\,dy)\]</p>
+                    <p><div class="math-display">oint_gamma f(z)\,dz = oint_gamma (u + iv)(dx + i\,dy) = oint_gamma (u\,dx - v\,dy) + ioint_gamma (v\,dx + u\,dy)</div></p>
                     
                     <p><strong>Step 3:</strong> Apply Green's theorem to both real integrals. Green's theorem states:</p>
-                    <p>\[\oint_\gamma (P\,dx + Q\,dy) = \iint_R \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dx\,dy\]</p>
-                    <p>where \(R\) is the region enclosed by \(\gamma\).</p>
+                    <p><div class="math-display">oint_gamma (P\,dx + Q\,dy) = iint<sub>R</sub> (<span class="math">partial Q/partial x</span> - <span class="math">partial P/partial y</span>) dx\,dy</div></p>
+                    <p>where <span class="math">R</span> is the region enclosed by γ.</p>
                     
-                    <p><strong>Step 4:</strong> For the first integral with \(P = u, Q = -v\):</p>
-                    <p>\[\oint_\gamma (u\,dx - v\,dy) = \iint_R \left(-\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\right) dx\,dy\]</p>
+                    <p><strong>Step 4:</strong> For the first integral with <span class="math">P = u, Q = -v</span>:</p>
+                    <p><div class="math-display">oint_gamma (u\,dx - v\,dy) = iint<sub>R</sub> (-<span class="math">partial v/partial x</span> - <span class="math">partial u/partial y</span>) dx\,dy</div></p>
                     
-                    <p><strong>Step 5:</strong> For the second integral with \(P = v, Q = u\):</p>
-                    <p>\[\oint_\gamma (v\,dx + u\,dy) = \iint_R \left(\frac{\partial u}{\partial x} - \frac{\partial v}{\partial y}\right) dx\,dy\]</p>
+                    <p><strong>Step 5:</strong> For the second integral with <span class="math">P = v, Q = u</span>:</p>
+                    <p><div class="math-display">oint_gamma (v\,dx + u\,dy) = iint<sub>R</sub> (<span class="math">partial u/partial x</span> - <span class="math">partial v/partial y</span>) dx\,dy</div></p>
                     
-                    <p><strong>Step 6:</strong> Since \(f\) is holomorphic, it satisfies the <strong>Cauchy-Riemann equations</strong>:</p>
-                    <p>\[\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}\]</p>
+                    <p><strong>Step 6:</strong> Since <span class="math">f</span> is holomorphic, it satisfies the <strong>Cauchy-Riemann equations</strong>:</p>
+                    <p><div class="math-display"><span class="math">partial u/partial x</span> = <span class="math">partial v/partial y</span>, quad <span class="math">partial u/partial y</span> = -<span class="math">partial v/partial x</span></div></p>
                     
                     <p><strong>Step 7:</strong> Substituting the Cauchy-Riemann equations:</p>
-                    <p>\[-\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} = \frac{\partial u}{\partial y} - \frac{\partial u}{\partial y} = 0\]</p>
-                    <p>\[\frac{\partial u}{\partial x} - \frac{\partial v}{\partial y} = \frac{\partial u}{\partial x} - \frac{\partial u}{\partial x} = 0\]</p>
+                    <p><div class="math-display">-<span class="math">partial v/partial x</span> - <span class="math">partial u/partial y</span> = <span class="math">partial u/partial y</span> - <span class="math">partial u/partial y</span> = 0</div></p>
+                    <p><div class="math-display"><span class="math">partial u/partial x</span> - <span class="math">partial v/partial y</span> = <span class="math">partial u/partial x</span> - <span class="math">partial u/partial x</span> = 0</div></p>
                     
                     <p><strong>Step 8:</strong> Both double integrals vanish, so:</p>
-                    <p>\[\oint_\gamma f(z)\,dz = 0 + i \cdot 0 = 0\] ∎</p>
+                    <p><div class="math-display">oint_gamma f(z)\,dz = 0 + i cdot 0 = 0</div> ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -241,46 +240,46 @@ print(f"Actual f({a}) = {f(a):.6f}")
                 <h4>Introduction</h4>
                 <p>Real analysis provides the rigorous foundation for calculus. It studies the properties of real numbers, sequences, and functions, addressing questions about limits, continuity, and convergence that are often glossed over in introductory courses.</p>
                 
-                <p>The <strong>Bolzano-Weierstrass Theorem</strong> is a fundamental result about sequences in \(\mathbb{R}^n\). It states that every bounded sequence has a convergent subsequence. This theorem is crucial for proving the existence of solutions to many problems in analysis.</p>
+                <p>The <strong>Bolzano-Weierstrass Theorem</strong> is a fundamental result about sequences in <span class="math">ℝ<sup>n</sup></span>. It states that every bounded sequence has a convergent subsequence. This theorem is crucial for proving the existence of solutions to many problems in analysis.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbb{R}^n\) — n-dimensional Euclidean space</li>
-                        <li>\(\{x_n\}_{n=1}^\infty\) — a sequence of points</li>
-                        <li>\(x_{n_k}\) — a subsequence (indices \(n_1 < n_2 < n_3 < \cdots\))</li>
-                        <li>\(\|x\|\) — Euclidean norm: \(\sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}\)</li>
-                        <li>\(B(x, r)\) — open ball of radius \(r\) centered at \(x\)</li>
-                        <li>\(\lim_{k \to \infty} x_{n_k} = L\) — the subsequence converges to limit \(L\)</li>
+                        <li><span class="math">ℝ<sup>n</sup></span> — n-dimensional Euclidean space</li>
+                        <li><span class="math">\x<sub>n</sub>\<sub>n=1</sub>^infty</span> — a sequence of points</li>
+                        <li><span class="math">x<sub>n<sub>k</sub></sub></span> — a subsequence (indices <span class="math">n<sub>1</sub> < n<sub>2</sub> < n<sub>3</sub> < cdots</span>)</li>
+                        <li><span class="math">\|x\|</span> — Euclidean norm: <span class="math">√(x<sub>1</sub><sup>2</sup> + x<sub>2</sub><sup>2</sup> + cdots + x<sub>n</sub><sup>2</sup>)</span></li>
+                        <li><span class="math">B(x, r)</span> — open ball of radius <span class="math">r</span> centered at <span class="math">x</span></li>
+                        <li><span class="math">lim<sub>k to infty</sub> x<sub>n<sub>k</sub></sub> = L</span> — the subsequence converges to limit <span class="math">L</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Bolzano-Weierstrass Theorem</div>
-                    <p>Every bounded sequence in \(\mathbb{R}^n\) has a convergent subsequence.</p>
-                    <p>More precisely: If \(\{x_k\}_{k=1}^\infty\) is a sequence in \(\mathbb{R}^n\) such that \(\|x_k\| \leq M\) for all \(k\) and some \(M > 0\), then there exists a subsequence \(\{x_{k_j}\}_{j=1}^\infty\) and a point \(x \in \mathbb{R}^n\) such that:</p>
-                    <p>\[\lim_{j \to \infty} x_{k_j} = x\]</p>
+                    <p>Every bounded sequence in <span class="math">ℝ<sup>n</sup></span> has a convergent subsequence.</p>
+                    <p>More precisely: If <span class="math">\x<sub>k</sub>\<sub>k=1</sub>^infty</span> is a sequence in <span class="math">ℝ<sup>n</sup></span> such that <span class="math">\|x<sub>k</sub>\| leq M</span> for all <span class="math">k</span> and some <span class="math">M > 0</span>, then there exists a subsequence <span class="math">\x<sub>k<sub>j</sub></sub>\<sub>j=1</sub>^infty</span> and a point <span class="math">x in ℝ<sup>n</sup></span> such that:</p>
+                    <p><div class="math-display">lim<sub>j to infty</sub> x<sub>k<sub>j</sub></sub> = x</div></p>
                 </div>
 
                 <div class="proof">
-                    <div class="proof-title">Proof (for \(\mathbb{R}\), using the Nested Interval Property)</div>
-                    <p><strong>Step 1:</strong> Let \(\{x_n\}\) be a bounded sequence in \(\mathbb{R}\). Then there exists an interval \([a_1, b_1]\) containing all terms of the sequence.</p>
+                    <div class="proof-title">Proof (for <span class="math">ℝ</span>, using the Nested Interval Property)</div>
+                    <p><strong>Step 1:</strong> Let <span class="math">\x<sub>n</sub>\</span> be a bounded sequence in <span class="math">ℝ</span>. Then there exists an interval <span class="math">[a<sub>1</sub>, b<sub>1</sub>]</span> containing all terms of the sequence.</p>
                     
-                    <p><strong>Step 2:</strong> Bisect \([a_1, b_1]\) into two subintervals: \([a_1, (a_1+b_1)/2]\) and \([(a_1+b_1)/2, b_1]\).</p>
+                    <p><strong>Step 2:</strong> Bisect <span class="math">[a<sub>1</sub>, b<sub>1</sub>]</span> into two subintervals: <span class="math">[a<sub>1</sub>, (a<sub>1</sub>+b<sub>1</sub>)/2]</span> and <span class="math">[(a<sub>1</sub>+b<sub>1</sub>)/2, b<sub>1</sub>]</span>.</p>
                     
-                    <p><strong>Step 3:</strong> At least one of these subintervals contains infinitely many terms of the sequence. Choose such an interval and call it \([a_2, b_2]\). Select \(x_{n_2} \in [a_2, b_2]\) with \(n_2 > n_1\).</p>
+                    <p><strong>Step 3:</strong> At least one of these subintervals contains infinitely many terms of the sequence. Choose such an interval and call it <span class="math">[a<sub>2</sub>, b<sub>2</sub>]</span>. Select <span class="math">x<sub>n<sub>2</sub></sub> in [a<sub>2</sub>, b<sub>2</sub>]</span> with <span class="math">n<sub>2</sub> > n<sub>1</sub></span>.</p>
                     
-                    <p><strong>Step 4:</strong> Continue inductively. At step \(k\), bisect \([a_k, b_k]\) and choose the half containing infinitely many terms as \([a_{k+1}, b_{k+1}]\). Select \(x_{n_{k+1}} \in [a_{k+1}, b_{k+1}]\) with \(n_{k+1} > n_k\).</p>
+                    <p><strong>Step 4:</strong> Continue inductively. At step <span class="math">k</span>, bisect <span class="math">[a<sub>k</sub>, b<sub>k</sub>]</span> and choose the half containing infinitely many terms as <span class="math">[a<sub>k+1</sub>, b<sub>k+1</sub>]</span>. Select <span class="math">x<sub>n_k+1</sub> in [a<sub>k+1</sub>, b<sub>k+1</sub>]</span> with <span class="math">n<sub>k+1</sub> > n<sub>k</sub></span>.</p>
                     
                     <p><strong>Step 5:</strong> We obtain a nested sequence of intervals:</p>
-                    <p>\[[a_1, b_1] \supseteq [a_2, b_2] \supseteq [a_3, b_3] \supseteq \cdots\]</p>
-                    <p>with \(b_k - a_k = (b_1 - a_1)/2^{k-1} \to 0\).</p>
+                    <p><div class="math-display">[a<sub>1</sub>, b<sub>1</sub>] supseteq [a<sub>2</sub>, b<sub>2</sub>] supseteq [a<sub>3</sub>, b<sub>3</sub>] supseteq cdots</div></p>
+                    <p>with <span class="math">b<sub>k</sub> - a<sub>k</sub> = (b<sub>1</sub> - a<sub>1</sub>)/2<sup>k-1</sup> to 0</span>.</p>
                     
-                    <p><strong>Step 6:</strong> By the Nested Interval Property, \(\bigcap_{k=1}^\infty [a_k, b_k] = \{x\}\) for some unique point \(x\).</p>
+                    <p><strong>Step 6:</strong> By the Nested Interval Property, <span class="math">bigcap<sub>k=1</sub>^infty [a<sub>k</sub>, b<sub>k</sub>] = \x\</span> for some unique point <span class="math">x</span>.</p>
                     
-                    <p><strong>Step 7:</strong> Since \(x_{n_k} \in [a_k, b_k]\) for all \(k\), we have \(|x_{n_k} - x| \leq b_k - a_k \to 0\).</p>
+                    <p><strong>Step 7:</strong> Since <span class="math">x<sub>n<sub>k</sub></sub> in [a<sub>k</sub>, b<sub>k</sub>]</span> for all <span class="math">k</span>, we have <span class="math">|x<sub>n<sub>k</sub></sub> - x| leq b<sub>k</sub> - a<sub>k</sub> to 0</span>.</p>
                     
-                    <p>Therefore, \(\lim_{k \to \infty} x_{n_k} = x\). ∎</p>
+                    <p>Therefore, <span class="math">lim<sub>k to infty</sub> x<sub>n<sub>k</sub></sub> = x</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -365,40 +364,40 @@ print(f"Subsequence converges to: {limit:.6f}")
                 <h4>Introduction</h4>
                 <p>Algebraic geometry studies the solutions of polynomial equations. It connects algebra (the equations) with geometry (the shapes they define) and topology (the properties preserved under continuous deformation).</p>
                 
-                <p><strong>Bézout's Theorem</strong> is a fundamental result about the intersection of algebraic curves. It states that two curves of degrees \(m\) and \(n\) intersect in exactly \(mn\) points (counting multiplicities and points at infinity), assuming they have no common components.</p>
+                <p><strong>Bézout's Theorem</strong> is a fundamental result about the intersection of algebraic curves. It states that two curves of degrees <span class="math">m</span> and <span class="math">n</span> intersect in exactly <span class="math">mn</span> points (counting multiplicities and points at infinity), assuming they have no common components.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathbb{P}^2\) — the projective plane (extends affine plane with points at infinity)</li>
-                        <li>\(V(f)\) — the variety (zero set) of polynomial \(f\)</li>
-                        <li>\(\deg(f)\) — degree of polynomial \(f\)</li>
-                        <li>\(I(P, f \cap g)\) — intersection multiplicity at point \(P\)</li>
-                        <li>\([x:y:z]\) — homogeneous coordinates in projective space</li>
-                        <li>\(\mathbb{A}^2\) — the affine plane \(\mathbb{C}^2\) or \(\mathbb{R}^2\)</li>
+                        <li><span class="math">ℙ<sup>2</sup></span> — the projective plane (extends affine plane with points at infinity)</li>
+                        <li><span class="math">V(f)</span> — the variety (zero set) of polynomial <span class="math">f</span></li>
+                        <li><span class="math">deg(f)</span> — degree of polynomial <span class="math">f</span></li>
+                        <li><span class="math">I(P, f cap g)</span> — intersection multiplicity at point <span class="math">P</span></li>
+                        <li><span class="math">[x:y:z]</span> — homogeneous coordinates in projective space</li>
+                        <li><span class="math">mathbbA<sup>2</sup></span> — the affine plane <span class="math">ℂ<sup>2</sup></span> or <span class="math">ℝ<sup>2</sup></span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Bézout's Theorem</div>
-                    <p>Let \(C\) and \(D\) be two projective plane curves of degrees \(m\) and \(n\) respectively, defined over an algebraically closed field (e.g., \(\mathbb{C}\)). If \(C\) and \(D\) have no common component, then:</p>
-                    <p>\[\sum_{P \in C \cap D} I(P, C \cap D) = m \cdot n\]</p>
-                    <p>where \(I(P, C \cap D)\) is the intersection multiplicity at point \(P\).</p>
+                    <p>Let <span class="math">C</span> and <span class="math">D</span> be two projective plane curves of degrees <span class="math">m</span> and <span class="math">n</span> respectively, defined over an algebraically closed field (e.g., <span class="math">ℂ</span>). If <span class="math">C</span> and <span class="math">D</span> have no common component, then:</p>
+                    <p><div class="math-display">sum<sub>P in C cap D</sub> I(P, C cap D) = m cdot n</div></p>
+                    <p>where <span class="math">I(P, C cap D)</span> is the intersection multiplicity at point <span class="math">P</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (using resultants)</div>
-                    <p><strong>Step 1:</strong> Work in projective space \(\mathbb{P}^2\) with homogeneous coordinates \([X:Y:Z]\). A curve of degree \(d\) is defined by a homogeneous polynomial of degree \(d\).</p>
+                    <p><strong>Step 1:</strong> Work in projective space <span class="math">ℙ<sup>2</sup></span> with homogeneous coordinates <span class="math">[X:Y:Z]</span>. A curve of degree <span class="math">d</span> is defined by a homogeneous polynomial of degree <span class="math">d</span>.</p>
                     
-                    <p><strong>Step 2:</strong> Let \(F(X,Y,Z) = 0\) and \(G(X,Y,Z) = 0\) define curves of degrees \(m\) and \(n\). Dehomogenize by setting \(Z = 1\) to work in the affine plane: \(f(x,y) = F(x,y,1)\), \(g(x,y) = G(x,y,1)\).</p>
+                    <p><strong>Step 2:</strong> Let <span class="math">F(X,Y,Z) = 0</span> and <span class="math">G(X,Y,Z) = 0</span> define curves of degrees <span class="math">m</span> and <span class="math">n</span>. Dehomogenize by setting <span class="math">Z = 1</span> to work in the affine plane: <span class="math">f(x,y) = F(x,y,1)</span>, <span class="math">g(x,y) = G(x,y,1)</span>.</p>
                     
-                    <p><strong>Step 3:</strong> The <strong>resultant</strong> \(\text{Res}_y(f, g)\) is a polynomial in \(x\) obtained by eliminating \(y\). It vanishes precisely when \(f\) and \(g\) have a common root in \(y\) for that value of \(x\).</p>
+                    <p><strong>Step 3:</strong> The <strong>resultant</strong> <span class="math">Res<sub>y</sub>(f, g)</span> is a polynomial in <span class="math">x</span> obtained by eliminating <span class="math">y</span>. It vanishes precisely when <span class="math">f</span> and <span class="math">g</span> have a common root in <span class="math">y</span> for that value of <span class="math">x</span>.</p>
                     
-                    <p><strong>Step 4:</strong> The degree of \(\text{Res}_y(f, g)\) in \(x\) is at most \(mn\). This counts the number of intersection points (with multiplicity) in the affine plane.</p>
+                    <p><strong>Step 4:</strong> The degree of <span class="math">Res<sub>y</sub>(f, g)</span> in <span class="math">x</span> is at most <span class="math">mn</span>. This counts the number of intersection points (with multiplicity) in the affine plane.</p>
                     
-                    <p><strong>Step 5:</strong> Points at infinity correspond to solutions with \(Z = 0\). The line at infinity \(Z = 0\) intersects \(C\) in at most \(m\) points and \(D\) in at most \(n\) points.</p>
+                    <p><strong>Step 5:</strong> Points at infinity correspond to solutions with <span class="math">Z = 0</span>. The line at infinity <span class="math">Z = 0</span> intersects <span class="math">C</span> in at most <span class="math">m</span> points and <span class="math">D</span> in at most <span class="math">n</span> points.</p>
                     
-                    <p><strong>Step 6:</strong> Careful analysis of multiplicities shows the total count equals \(mn\). The key is that the resultant has degree exactly \(mn\) when curves have no common component. ∎</p>
+                    <p><strong>Step 6:</strong> Careful analysis of multiplicities shows the total count equals <span class="math">mn</span>. The key is that the resultant has degree exactly <span class="math">mn</span> when curves have no common component. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -502,49 +501,49 @@ g2 = lambda x, y: x**2/4 + y**2 - 1
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(X_1, X_2, \ldots, X_n\) — independent, identically distributed (i.i.d.) random variables</li>
-                        <li>\(\mu = \mathbb{E}[X_i]\) — expected value (mean)</li>
-                        <li>\(\sigma^2 = \text{Var}(X_i)\) — variance</li>
-                        <li>\(\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i\) — sample mean</li>
-                        <li>\(S_n = \sum_{i=1}^n X_i\) — sample sum</li>
-                        <li>\(\xrightarrow{d}\) — convergence in distribution</li>
-                        <li>\(\mathcal{N}(\mu, \sigma^2)\) — normal distribution with mean \(\mu\) and variance \(\sigma^2\)</li>
+                        <li><span class="math">X<sub>1</sub>, X<sub>2</sub>, ldots, X<sub>n</sub></span> — independent, identically distributed (i.i.d.) random variables</li>
+                        <li><span class="math">mu = mathbbE[X<sub>i</sub>]</span> — expected value (mean)</li>
+                        <li><span class="math">sigma<sup>2</sup> = Var(X<sub>i</sub>)</span> — variance</li>
+                        <li><span class="math">X̄<sub>n</sub> = <span class="math">1/n</span>sum<sub>i=1</sub><sup>n</sup> X<sub>i</sub></span> — sample mean</li>
+                        <li><span class="math">S<sub>n</sub> = sum<sub>i=1</sub><sup>n</sup> X<sub>i</sub></span> — sample sum</li>
+                        <li><span class="math">xrightarrowd</span> — convergence in distribution</li>
+                        <li><span class="math">N(mu, sigma<sup>2</sup>)</span> — normal distribution with mean μ and variance <span class="math">sigma<sup>2</sup></span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Central Limit Theorem</div>
-                    <p>Let \(X_1, X_2, \ldots\) be a sequence of i.i.d. random variables with \(\mathbb{E}[X_i] = \mu\) and \(\text{Var}(X_i) = \sigma^2 < \infty\). Define:</p>
-                    <p>\[Z_n = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} = \frac{S_n - n\mu}{\sigma\sqrt{n}}\]</p>
-                    <p>Then as \(n \to \infty\):</p>
-                    <p>\[Z_n \xrightarrow{d} \mathcal{N}(0, 1)\]</p>
-                    <p>Equivalently, for any real \(z\):</p>
-                    <p>\[\lim_{n \to \infty} P(Z_n \leq z) = \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z e^{-t^2/2} dt\]</p>
+                    <p>Let <span class="math">X<sub>1</sub>, X<sub>2</sub>, ldots</span> be a sequence of i.i.d. random variables with <span class="math">mathbbE[X<sub>i</sub>] = mu</span> and <span class="math">Var(X<sub>i</sub>) = sigma<sup>2</sup> < infty</span>. Define:</p>
+                    <p><div class="math-display">Z<sub>n</sub> = fracX̄<sub>n</sub> - musigma/√(n) = <span class="math">S<sub>n</sub> - nmu/sigma√(n</span>)</div></p>
+                    <p>Then as <span class="math">n to infty</span>:</p>
+                    <p><div class="math-display">Z<sub>n</sub> xrightarrowd N(0, 1)</div></p>
+                    <p>Equivalently, for any real <span class="math">z</span>:</p>
+                    <p><div class="math-display">lim<sub>n to infty</sub> P(Z<sub>n</sub> leq z) = Phi(z) = <span class="math">1/√(2pi</span>) int<sub>-infty</sub><sup>z</sup> e<sup>-t<sup>2</sup>/2</sup> dt</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (using characteristic functions)</div>
-                    <p><strong>Step 1:</strong> The characteristic function of a random variable \(X\) is \(\phi_X(t) = \mathbb{E}[e^{itX}]\).</p>
+                    <p><strong>Step 1:</strong> The characteristic function of a random variable <span class="math">X</span> is <span class="math">phi<sub>X</sub>(t) = mathbbE[e<sup>itX</sup>]</span>.</p>
                     
-                    <p><strong>Step 2:</strong> For \(Z_n = \frac{S_n - n\mu}{\sigma\sqrt{n}}\), we compute its characteristic function:</p>
-                    <p>\[\phi_{Z_n}(t) = \mathbb{E}\left[\exp\left(it \cdot \frac{S_n - n\mu}{\sigma\sqrt{n}}\right)\right]\]</p>
+                    <p><strong>Step 2:</strong> For <span class="math">Z<sub>n</sub> = <span class="math">S<sub>n</sub> - nmu/sigma√(n</span>)</span>, we compute its characteristic function:</p>
+                    <p><div class="math-display">phi<sub>Z<sub>n</sub></sub>(t) = mathbbE[exp(it cdot <span class="math">S<sub>n</sub> - nmu/sigma√(n</span>))]</div></p>
                     
-                    <p><strong>Step 3:</strong> Since the \(X_i\) are i.i.d.:</p>
-                    <p>\[\phi_{Z_n}(t) = \left(\mathbb{E}\left[\exp\left(\frac{it(X_1 - \mu)}{\sigma\sqrt{n}}\right)\right]\right)^n\]</p>
+                    <p><strong>Step 3:</strong> Since the <span class="math">X<sub>i</sub></span> are i.i.d.:</p>
+                    <p><div class="math-display">phi<sub>Z<sub>n</sub></sub>(t) = (mathbbE[exp(<span class="math">it(X<sub>1</sub> - mu)/sigma√(n</span>))])<sup>n</sup></div></p>
                     
-                    <p><strong>Step 4:</strong> Let \(Y = \frac{X_1 - \mu}{\sigma}\), so \(\mathbb{E}[Y] = 0\) and \(\text{Var}(Y) = 1\). Then:</p>
-                    <p>\[\phi_{Z_n}(t) = \left(\phi_Y\left(\frac{t}{\sqrt{n}}\right)\right)^n\]</p>
+                    <p><strong>Step 4:</strong> Let <span class="math">Y = <span class="math">X<sub>1</sub> - mu/sigma</span></span>, so <span class="math">mathbbE[Y] = 0</span> and <span class="math">Var(Y) = 1</span>. Then:</p>
+                    <p><div class="math-display">phi<sub>Z<sub>n</sub></sub>(t) = (phi<sub>Y</sub>(<span class="math">t/√(n</span>)))<sup>n</sup></div></p>
                     
                     <p><strong>Step 5:</strong> Using Taylor expansion around 0:</p>
-                    <p>\[\phi_Y(s) = 1 + is\mathbb{E}[Y] - \frac{s^2}{2}\mathbb{E}[Y^2] + o(s^2) = 1 - \frac{s^2}{2} + o(s^2)\]</p>
+                    <p><div class="math-display">phi<sub>Y</sub>(s) = 1 + ismathbbE[Y] - <span class="math">s<sup>2</sup>/2</span>mathbbE[Y<sup>2</sup>] + o(s<sup>2</sup>) = 1 - <span class="math">s<sup>2</sup>/2</span> + o(s<sup>2</sup>)</div></p>
                     
-                    <p><strong>Step 6:</strong> Substituting \(s = t/\sqrt{n}\):</p>
-                    <p>\[\phi_{Z_n}(t) = \left(1 - \frac{t^2}{2n} + o(1/n)\right)^n\]</p>
+                    <p><strong>Step 6:</strong> Substituting <span class="math">s = t/√(n)</span>:</p>
+                    <p><div class="math-display">phi<sub>Z<sub>n</sub></sub>(t) = (1 - <span class="math">t<sup>2</sup>/2n</span> + o(1/n))<sup>n</sup></div></p>
                     
-                    <p><strong>Step 7:</strong> As \(n \to \infty\), using \(\lim_{n \to \infty}(1 + a/n)^n = e^a\):</p>
-                    <p>\[\lim_{n \to \infty} \phi_{Z_n}(t) = e^{-t^2/2}\]</p>
+                    <p><strong>Step 7:</strong> As <span class="math">n to infty</span>, using <span class="math">lim<sub>n to infty</sub>(1 + a/n)<sup>n</sup> = e<sup>a</sup></span>:</p>
+                    <p><div class="math-display">lim<sub>n to infty</sub> phi<sub>Z<sub>n</sub></sub>(t) = e<sup>-t<sup>2</sup>/2</sup></div></p>
                     
-                    <p><strong>Step 8:</strong> This is the characteristic function of \(\mathcal{N}(0,1)\). By the continuity theorem for characteristic functions, \(Z_n \xrightarrow{d} \mathcal{N}(0,1)\). ∎</p>
+                    <p><strong>Step 8:</strong> This is the characteristic function of <span class="math">N(0,1)</span>. By the continuity theorem for characteristic functions, <span class="math">Z<sub>n</sub> xrightarrowd N(0,1)</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -606,40 +605,40 @@ for n in n_samples_list:
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(y' = \frac{dy}{dt}\) — derivative of \(y\) with respect to \(t\)</li>
-                        <li>\(f(t, y)\) — a function defining the differential equation</li>
-                        <li>\(y(t_0) = y_0\) — initial condition</li>
-                        <li>\(R = [t_0 - a, t_0 + a] \times [y_0 - b, y_0 + b]\) — rectangle in the \(ty\)-plane</li>
-                        <li>\(L\) — Lipschitz constant</li>
-                        <li>\(C^0\) — continuous functions</li>
-                        <li>\(C^1\) — continuously differentiable functions</li>
+                        <li><span class="math">y' = <span class="math">dy/dt</span></span> — derivative of <span class="math">y</span> with respect to <span class="math">t</span></li>
+                        <li><span class="math">f(t, y)</span> — a function defining the differential equation</li>
+                        <li><span class="math">y(t<sub>0</sub>) = y<sub>0</sub></span> — initial condition</li>
+                        <li><span class="math">R = [t<sub>0</sub> - a, t<sub>0</sub> + a] times [y<sub>0</sub> - b, y<sub>0</sub> + b]</span> — rectangle in the <span class="math">ty</span>-plane</li>
+                        <li><span class="math">L</span> — Lipschitz constant</li>
+                        <li><span class="math">C<sup>0</sup></span> — continuous functions</li>
+                        <li><span class="math">C<sup>1</sup></span> — continuously differentiable functions</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Picard-Lindelöf Existence and Uniqueness Theorem</div>
                     <p>Consider the initial value problem:</p>
-                    <p>\[y' = f(t, y), \quad y(t_0) = y_0\]</p>
-                    <p>If \(f(t, y)\) and \(\frac{\partial f}{\partial y}\) are continuous in a rectangle \(R\) containing \((t_0, y_0)\), then there exists a unique solution \(y(t)\) defined on some interval \(|t - t_0| < h\).</p>
-                    <p>More precisely, if \(f\) is continuous on \(R\) and Lipschitz continuous in \(y\) with constant \(L\):</p>
-                    <p>\[|f(t, y_1) - f(t, y_2)| \leq L|y_1 - y_2|\]</p>
-                    <p>for all \((t, y_1), (t, y_2) \in R\), then the solution exists and is unique on \([t_0 - h, t_0 + h]\) where:</p>
-                    <p>\[h = \min\left(a, \frac{b}{M}\right), \quad M = \max_{(t,y) \in R} |f(t,y)|\]</p>
+                    <p><div class="math-display">y' = f(t, y), quad y(t<sub>0</sub>) = y<sub>0</sub></div></p>
+                    <p>If <span class="math">f(t, y)</span> and <span class="math"><span class="math">partial f/partial y</span></span> are continuous in a rectangle <span class="math">R</span> containing <span class="math">(t<sub>0</sub>, y<sub>0</sub>)</span>, then there exists a unique solution <span class="math">y(t)</span> defined on some interval <span class="math">|t - t<sub>0</sub>| < h</span>.</p>
+                    <p>More precisely, if <span class="math">f</span> is continuous on <span class="math">R</span> and Lipschitz continuous in <span class="math">y</span> with constant <span class="math">L</span>:</p>
+                    <p><div class="math-display">|f(t, y<sub>1</sub>) - f(t, y<sub>2</sub>)| leq L|y<sub>1</sub> - y<sub>2</sub>|</div></p>
+                    <p>for all <span class="math">(t, y<sub>1</sub>), (t, y<sub>2</sub>) in R</span>, then the solution exists and is unique on <span class="math">[t<sub>0</sub> - h, t<sub>0</sub> + h]</span> where:</p>
+                    <p><div class="math-display">h = min(a, <span class="math">b/M</span>), quad M = max<sub>(t,y) in R</sub> |f(t,y)|</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof (Picard Iteration)</div>
                     <p><strong>Step 1:</strong> Convert the IVP to an integral equation:</p>
-                    <p>\[y(t) = y_0 + \int_{t_0}^t f(s, y(s))\,ds\]</p>
+                    <p><div class="math-display">y(t) = y<sub>0</sub> + int<sub>t<sub>0</sub></sub><sup>t</sup> f(s, y(s))\,ds</div></p>
                     
                     <p><strong>Step 2:</strong> Define the Picard iteration scheme:</p>
-                    <p>\[y_0(t) = y_0\]</p>
-                    <p>\[y_{n+1}(t) = y_0 + \int_{t_0}^t f(s, y_n(s))\,ds\]</p>
+                    <p><div class="math-display">y<sub>0</sub>(t) = y<sub>0</sub></div></p>
+                    <p><div class="math-display">y<sub>n+1</sub>(t) = y<sub>0</sub> + int<sub>t<sub>0</sub></sub><sup>t</sup> f(s, y<sub>n</sub>(s))\,ds</div></p>
                     
-                    <p><strong>Step 3:</strong> Show that \(\{y_n\}\) is well-defined on \([t_0 - h, t_0 + h]\). By induction, if \(|y_n(t) - y_0| \leq b\), then:</p>
-                    <p>\[|y_{n+1}(t) - y_0| \leq \int_{t_0}^t |f(s, y_n(s))|\,ds \leq M|t - t_0| \leq Mh \leq b\]</p>
+                    <p><strong>Step 3:</strong> Show that <span class="math">\y<sub>n</sub>\</span> is well-defined on <span class="math">[t<sub>0</sub> - h, t<sub>0</sub> + h]</span>. By induction, if <span class="math">|y<sub>n</sub>(t) - y<sub>0</sub>| leq b</span>, then:</p>
+                    <p><div class="math-display">|y<sub>n+1</sub>(t) - y<sub>0</sub>| leq int<sub>t<sub>0</sub></sub><sup>t</sup> |f(s, y<sub>n</sub>(s))|\,ds leq M|t - t<sub>0</sub>| leq Mh leq b</div></p>
                     
-                    <p><strong>Step 4:</strong> Show \(\{y_n\}\) is Cauchy using the Lipschitz condition. This implies convergence to a unique solution. ∎</p>
+                    <p><strong>Step 4:</strong> Show <span class="math">\y<sub>n</sub>\</span> is Cauchy using the Lipschitz condition. This implies convergence to a unique solution. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -704,36 +703,36 @@ print(f"  True y(1) = {np.exp(1):.6f}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(f: \mathbb{R}^n \to \mathbb{R}\) — objective function to minimize</li>
-                        <li>\(\nabla f(x)\) — gradient of \(f\) at \(x\)</li>
-                        <li>\(x^*\) — optimal solution (minimizer)</li>
-                        <li>\(f^* = f(x^*)\) — optimal value</li>
-                        <li>\(\eta\) — learning rate (step size)</li>
-                        <li>\(L\) — Lipschitz constant of the gradient</li>
-                        <li>\(\mu\) — strong convexity parameter</li>
-                        <li>\(\kappa = L/\mu\) — condition number</li>
+                        <li><span class="math">f: ℝ<sup>n</sup> to ℝ</span> — objective function to minimize</li>
+                        <li><span class="math">nabla f(x)</span> — gradient of <span class="math">f</span> at <span class="math">x</span></li>
+                        <li><span class="math">x^*</span> — optimal solution (minimizer)</li>
+                        <li><span class="math">f^* = f(x^*)</span> — optimal value</li>
+                        <li><span class="math">eta</span> — learning rate (step size)</li>
+                        <li><span class="math">L</span> — Lipschitz constant of the gradient</li>
+                        <li>μ — strong convexity parameter</li>
+                        <li><span class="math">kappa = L/mu</span> — condition number</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Gradient Descent Convergence for L-Smooth Convex Functions</div>
-                    <p>Let \(f: \mathbb{R}^n \to \mathbb{R}\) be convex and differentiable, with \(L\)-Lipschitz continuous gradient:</p>
-                    <p>\[\|\nabla f(x) - \nabla f(y)\| \leq L\|x - y\|\]</p>
-                    <p>Using gradient descent with fixed step size \(\eta \leq 1/L\):</p>
-                    <p>\[x_{k+1} = x_k - \eta \nabla f(x_k)\]</p>
+                    <p>Let <span class="math">f: ℝ<sup>n</sup> to ℝ</span> be convex and differentiable, with <span class="math">L</span>-Lipschitz continuous gradient:</p>
+                    <p><div class="math-display">\|nabla f(x) - nabla f(y)\| leq L\|x - y\|</div></p>
+                    <p>Using gradient descent with fixed step size <span class="math">eta leq 1/L</span>:</p>
+                    <p><div class="math-display">x<sub>k+1</sub> = x<sub>k</sub> - eta nabla f(x<sub>k</sub>)</div></p>
                     <p>we have:</p>
-                    <p>\[f(x_k) - f^* \leq \frac{\|x_0 - x^*\|^2}{2\eta k} = O\left(\frac{1}{k}\right)\]</p>
+                    <p><div class="math-display">f(x<sub>k</sub>) - f^* leq <span class="math">\|x<sub>0</sub> - x^*\|<sup>2</sup>/2eta k</span> = O(<span class="math">1/k</span>)</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof</div>
-                    <p><strong>Step 1:</strong> From \(L\)-smoothness:</p>
-                    <p>\[f(y) \leq f(x) + \nabla f(x)^T(y-x) + \frac{L}{2}\|y-x\|^2\]</p>
+                    <p><strong>Step 1:</strong> From <span class="math">L</span>-smoothness:</p>
+                    <p><div class="math-display">f(y) leq f(x) + nabla f(x)<sup>T</sup>(y-x) + <span class="math">L/2</span>\|y-x\|<sup>2</sup></div></p>
                     
-                    <p><strong>Step 2:</strong> Apply with \(y = x_{k+1}\), \(x = x_k\), using \(x_{k+1} - x_k = -\eta \nabla f(x_k)\):</p>
-                    <p>\[f(x_{k+1}) \leq f(x_k) - \eta\left(1 - \frac{L\eta}{2}\right)\|\nabla f(x_k)\|^2\]</p>
+                    <p><strong>Step 2:</strong> Apply with <span class="math">y = x<sub>k+1</sub></span>, <span class="math">x = x<sub>k</sub></span>, using <span class="math">x<sub>k+1</sub> - x<sub>k</sub> = -eta nabla f(x<sub>k</sub>)</span>:</p>
+                    <p><div class="math-display">f(x<sub>k+1</sub>) leq f(x<sub>k</sub>) - eta(1 - <span class="math">Leta/2</span>)\|nabla f(x<sub>k</sub>)\|<sup>2</sup></div></p>
                     
-                    <p><strong>Step 3:</strong> With \(\eta \leq 1/L\), we get \(f(x_{k+1}) \leq f(x_k) - \frac{\eta}{2}\|\nabla f(x_k)\|^2\).</p>
+                    <p><strong>Step 3:</strong> With <span class="math">eta leq 1/L</span>, we get <span class="math">f(x<sub>k+1</sub>) leq f(x<sub>k</sub>) - <span class="math">eta/2</span>\|nabla f(x<sub>k</sub>)\|<sup>2</sup></span>.</p>
                     
                     <p><strong>Step 4:</strong> By convexity and telescoping, we obtain the result. ∎</p>
                 </div>
@@ -797,34 +796,34 @@ print(f"   Final: f(x₅₀) = {history1['f'][-1]:.10f}")
                 <h3>1. The Riemann Hypothesis</h3>
                 
                 <h4>Introduction</h4>
-                <p>The Riemann Hypothesis, posed by Bernhard Riemann in 1859, is one of the seven Millennium Prize Problems with a $1 million reward for its solution. It concerns the distribution of prime numbers and the zeros of the Riemann zeta function.</p>
+                <p>The Riemann Hypothesis, posed by Bernhard Riemann in 1859, is one of the seven Millennium Prize Problems with a <span class="math">1 million reward for its solution. It concerns the distribution of prime numbers and the zeros of the Riemann zeta function.</p>
                 
                 <p>The hypothesis states that all non-trivial zeros of the zeta function have real part equal to 1/2. This seemingly simple statement, if proven, would have profound implications for number theory.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\zeta(s)\) — Riemann zeta function</li>
-                        <li>\(s = \sigma + it\) — complex variable</li>
-                        <li>\(\Re(s) = \sigma\) — real part of \(s\)</li>
-                        <li>\(\Im(s) = t\) — imaginary part of \(s\)</li>
-                        <li>\(\Gamma(s)\) — Gamma function (generalization of factorial)</li>
-                        <li>\(\pi(x)\) — prime counting function</li>
-                        <li>\(\text{Li}(x)\) — logarithmic integral</li>
+                        <li><span class="math">zeta(s)</span> — Riemann zeta function</li>
+                        <li><span class="math">s = sigma + it</span> — complex variable</li>
+                        <li><span class="math">Re(s) = sigma</span> — real part of <span class="math">s</span></li>
+                        <li><span class="math">Im(s) = t</span> — imaginary part of <span class="math">s</span></li>
+                        <li><span class="math">Gamma(s)</span> — Gamma function (generalization of factorial)</li>
+                        <li><span class="math">pi(x)</span> — prime counting function</li>
+                        <li><span class="math">Li(x)</span> — logarithmic integral</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Riemann Hypothesis</div>
-                    <p>The non-trivial zeros of the Riemann zeta function \(\zeta(s)\) all have real part equal to \(\frac{1}{2}\).</p>
-                    <p>Equivalently: If \(\zeta(s) = 0\) with \(0 < \Re(s) < 1\), then \(\Re(s) = \frac{1}{2}\).</p>
-                    <p>The line \(\Re(s) = \frac{1}{2}\) is called the <strong>critical line</strong>.</p>
+                    <p>The non-trivial zeros of the Riemann zeta function <span class="math">zeta(s)</span> all have real part equal to <span class="math"><span class="math">1/2</span></span>.</p>
+                    <p>Equivalently: If <span class="math">zeta(s) = 0</span> with <span class="math">0 < Re(s) < 1</span>, then <span class="math">Re(s) = <span class="math">1/2</span></span>.</p>
+                    <p>The line <span class="math">Re(s) = <span class="math">1/2</span></span> is called the <strong>critical line</strong>.</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Functional Equation of the Zeta Function</div>
                     <p>The Riemann zeta function satisfies the functional equation:</p>
-                    <p>\[\zeta(s) = 2^s \pi^{s-1} \sin\left(\frac{\pi s}{2}\right) \Gamma(1-s) \zeta(1-s)\]</p>
+                    <p><div class="math-display">zeta(s) = 2<sup>s</sup> pi<sup>s-1</sup> sin(<span class="math">pi s/2</span>) Gamma(1-s) zeta(1-s)</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -832,35 +831,35 @@ print(f"   Final: f(x₅₀) = {history1['f'][-1]:.10f}")
 import matplotlib.pyplot as plt
 from scipy.special import gamma, zeta
 
-def compute_zeta_on_critical_line(t_values):
+def compute<sub>z</sub>eta<sub>o</sub>n<sub>c</sub>ritical<sub>l</sub>ine(t<sub>v</sub>alues):
     """
     Compute zeta(1/2 + it) for given t values.
     """
     results = []
-    for t in t_values:
+    for t in t<sub>v</sub>alues:
         s = 0.5 + 1j * t
-        zeta_val = zeta(s)
-        results.append(zeta_val)
+        zeta<sub>v</sub>al = zeta(s)
+        results.append(zeta<sub>v</sub>al)
     return np.array(results)
 
 print("Riemann Hypothesis Exploration")
 print("=" * 50)
 
 # Compute zeta on critical line
-t_vals = np.linspace(0, 50, 1000)
-zeta_critical = compute_zeta_on_critical_line(t_vals)
+t<sub>v</sub>als = np.linspace(0, 50, 1000)
+zeta<sub>c</sub>ritical = compute<sub>z</sub>eta<sub>o</sub>n<sub>c</sub>ritical<sub>l</sub>ine(t<sub>v</sub>als)
 
 print("First few approximate zeros (where |ζ(1/2 + it)| is small):")
-magnitudes = np.abs(zeta_critical)
-from scipy.signal import find_peaks
-peaks = find_peaks(-magnitudes, distance=10)[0]
-zero_approximations = t_vals[peaks][:10]
-for i, t in enumerate(zero_approximations, 1):
-    print(f"  Zero {i}: t ≈ {t:.6f}")
+magnitudes = np.abs(zeta<sub>c</sub>ritical)
+from scipy.signal import find<sub>p</sub>eaks
+peaks = find<sub>p</sub>eaks(-magnitudes, distance=10)[0]
+zero<sub>a</sub>pproximations = t<sub>v</sub>als[peaks][:10]
+for i, t in enumerate(zero<sub>a</sub>pproximations, 1):
+    print(f"  Zero i: t ≈ t:.6f")
 
 # Known zeros
-known_zeros = [14.134725, 21.022040, 25.010858, 30.424876, 32.935062]
-print("\n  Known first 5 zeros:", [f"{z:.6f}" for z in known_zeros])
+known<sub>z</sub>eros = [14.134725, 21.022040, 25.010858, 30.424876, 32.935062]
+print("n  Known first 5 zeros:", [f"z:.6f" for z in known<sub>z</sub>eros])
 </code></pre>
             </div>
 
@@ -874,27 +873,27 @@ print("\n  Known first 5 zeros:", [f"{z:.6f}" for z in known_zeros])
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(u(x,t)\) — velocity field</li>
-                        <li>\(p(x,t)\) — pressure field</li>
-                        <li>\(\nu\) — kinematic viscosity</li>
-                        <li>\(\nabla \cdot u = 0\) — incompressibility condition</li>
-                        <li>\(\Delta u\) — Laplacian of \(u\)</li>
-                        <li>\((u \cdot \nabla)u\) — convective derivative</li>
+                        <li><span class="math">u(x,t)</span> — velocity field</li>
+                        <li><span class="math">p(x,t)</span> — pressure field</li>
+                        <li><span class="math">nu</span> — kinematic viscosity</li>
+                        <li><span class="math">nabla cdot u = 0</span> — incompressibility condition</li>
+                        <li><span class="math">Delta u</span> — Laplacian of <span class="math">u</span></li>
+                        <li><span class="math">(u cdot nabla)u</span> — convective derivative</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Navier-Stokes Equations (Incompressible)</div>
-                    <p>For an incompressible fluid in \(\mathbb{R}^3\) or \(\mathbb{T}^3\):</p>
-                    <p>\[\frac{\partial u}{\partial t} + (u \cdot \nabla)u = \nu \Delta u - \nabla p + f\]</p>
-                    <p>\[\nabla \cdot u = 0\]</p>
-                    <p>with initial condition \(u(x, 0) = u_0(x)\) where \(\nabla \cdot u_0 = 0\).</p>
+                    <p>For an incompressible fluid in <span class="math">ℝ<sup>3</sup></span> or <span class="math">mathbbT<sup>3</sup></span>:</p>
+                    <p><div class="math-display"><span class="math">partial u/partial t</span> + (u cdot nabla)u = nu Delta u - nabla p + f</div></p>
+                    <p><div class="math-display">nabla cdot u = 0</div></p>
+                    <p>with initial condition <span class="math">u(x, 0) = u<sub>0</sub>(x)</span> where <span class="math">nabla cdot u<sub>0</sub> = 0</span>.</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Energy Equality</div>
-                    <p>For smooth solutions of the Navier-Stokes equations on \(\mathbb{T}^3\) with \(f = 0\):</p>
-                    <p>\[\frac{1}{2}\frac{d}{dt}\|u(t)\|_{L^2}^2 + \nu\|\nabla u(t)\|_{L^2}^2 = 0\]</p>
+                    <p>For smooth solutions of the Navier-Stokes equations on <span class="math">mathbbT<sup>3</sup></span> with <span class="math">f = 0</span>:</p>
+                    <p><div class="math-display"><span class="math">1/2</span><span class="math">d/dt</span>\|u(t)\|<sub>L<sup>2</sup></sub><sup>2</sup> + nu\|nabla u(t)\|<sub>L<sup>2</sup></sub><sup>2</sup> = 0</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -902,7 +901,7 @@ print("\n  Known first 5 zeros:", [f"{z:.6f}" for z in known_zeros])
 import matplotlib.pyplot as plt
 from scipy.fft import fftn, ifftn, fftfreq
 
-def solve_navier_stokes_2d_spectral(N=64, dt=0.001, nu=0.001, T=1.0):
+def solve<sub>n</sub>avier<sub>s</sub>tokes<sub>2</sub>d<sub>s</sub>pectral(N=64, dt=0.001, nu=0.001, T=1.0):
     """
     Solve 2D Navier-Stokes using spectral method (Fourier space).
     """
@@ -922,41 +921,41 @@ def solve_navier_stokes_2d_spectral(N=64, dt=0.001, nu=0.001, T=1.0):
     u = np.sin(X) * np.cos(Y)
     v = -np.cos(X) * np.sin(Y)
     
-    n_steps = int(T / dt)
-    history = {'u': [u.copy()], 'v': [v.copy()], 't': [0]}
+    n<sub>s</sub>teps = int(T / dt)
+    history = 'u': [u.copy()], 'v': [v.copy()], 't': [0]
     
-    for step in range(n_steps):
+    for step in range(n<sub>s</sub>teps):
         # Transform to Fourier space
-        u_hat = fftn(u)
-        v_hat = fftn(v)
+        u<sub>h</sub>at = fftn(u)
+        v<sub>h</sub>at = fftn(v)
         
         # Compute derivatives spectrally
-        ux = np.real(ifftn(1j * KX * u_hat))
-        uy = np.real(ifftn(1j * KY * u_hat))
-        vx = np.real(ifftn(1j * KX * v_hat))
-        vy = np.real(ifftn(1j * KY * v_hat))
+        ux = np.real(ifftn(1j * KX * u<sub>h</sub>at))
+        uy = np.real(ifftn(1j * KY * u<sub>h</sub>at))
+        vx = np.real(ifftn(1j * KX * v<sub>h</sub>at))
+        vy = np.real(ifftn(1j * KY * v<sub>h</sub>at))
         
         # Nonlinear terms
-        nonlinear_u = -(u * ux + v * uy)
-        nonlinear_v = -(u * vx + v * vy)
+        nonlinear<sub>u</sub> = -(u * ux + v * uy)
+        nonlinear<sub>v</sub> = -(u * vx + v * vy)
         
         # Transform nonlinear terms
-        nonlinear_u_hat = fftn(nonlinear_u)
-        nonlinear_v_hat = fftn(nonlinear_v)
+        nonlinear<sub>u</sub><sub>h</sub>at = fftn(nonlinear<sub>u</sub>)
+        nonlinear<sub>v</sub><sub>h</sub>at = fftn(nonlinear<sub>v</sub>)
         
         # Projection to divergence-free space
-        div_nonlinear_hat = 1j * KX * nonlinear_u_hat + 1j * KY * nonlinear_v_hat
-        p_hat = div_nonlinear_hat / K2
+        div<sub>n</sub>onlinear<sub>h</sub>at = 1j * KX * nonlinear<sub>u</sub><sub>h</sub>at + 1j * KY * nonlinear<sub>v</sub><sub>h</sub>at
+        p<sub>h</sub>at = div<sub>n</sub>onlinear<sub>h</sub>at / K2
         
-        nonlinear_u_hat -= 1j * KX * p_hat
-        nonlinear_v_hat -= 1j * KY * p_hat
+        nonlinear<sub>u</sub><sub>h</sub>at -= 1j * KX * p<sub>h</sub>at
+        nonlinear<sub>v</sub><sub>h</sub>at -= 1j * KY * p<sub>h</sub>at
         
         # Time stepping (semi-implicit)
-        u_hat_new = (u_hat + dt * nonlinear_u_hat) / (1 + nu * dt * K2)
-        v_hat_new = (v_hat + dt * nonlinear_v_hat) / (1 + nu * dt * K2)
+        u<sub>h</sub>at<sub>n</sub>ew = (u<sub>h</sub>at + dt * nonlinear<sub>u</sub><sub>h</sub>at) / (1 + nu * dt * K2)
+        v<sub>h</sub>at<sub>n</sub>ew = (v<sub>h</sub>at + dt * nonlinear<sub>v</sub><sub>h</sub>at) / (1 + nu * dt * K2)
         
-        u = np.real(ifftn(u_hat_new))
-        v = np.real(ifftn(v_hat_new))
+        u = np.real(ifftn(u<sub>h</sub>at<sub>n</sub>ew))
+        v = np.real(ifftn(v<sub>h</sub>at<sub>n</sub>ew))
         
         if step % 100 == 0:
             history['u'].append(u.copy())
@@ -973,11 +972,11 @@ dt = 0.001
 nu = 0.01
 T = 2.0
 
-X, Y, history = solve_navier_stokes_2d_spectral(N, dt, nu, T)
+X, Y, history = solve<sub>n</sub>avier<sub>s</sub>tokes<sub>2</sub>d<sub>s</sub>pectral(N, dt, nu, T)
 
-print(f"Grid size: {N}×{N}")
-print(f"Viscosity: {nu}")
-print(f"Time simulated: {T}")
+print(f"Grid size: N×N")
+print(f"Viscosity: nu")
+print(f"Time simulated: T")
 </code></pre>
             </div>
 
@@ -991,11 +990,11 @@ print(f"Time simulated: {T}")
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(\mathcal{P}\) — class of problems solvable in polynomial time</li>
-                        <li>\(\mathcal{NP}\) — class of problems with polynomial-time verifiable certificates</li>
-                        <li>\(\mathcal{NPC}\) — NP-complete problems</li>
-                        <li>\(O(n^k)\) — polynomial time complexity</li>
-                        <li>\(O(2^n)\) — exponential time complexity</li>
+                        <li><span class="math">P</span> — class of problems solvable in polynomial time</li>
+                        <li><span class="math">NP</span> — class of problems with polynomial-time verifiable certificates</li>
+                        <li><span class="math">NPC</span> — NP-complete problems</li>
+                        <li><span class="math">O(n<sup>k</sup>)</span> — polynomial time complexity</li>
+                        <li><span class="math">O(2<sup>n</sup>)</span> — exponential time complexity</li>
                     </ul>
                 </div>
 
@@ -1013,23 +1012,23 @@ print(f"Time simulated: {T}")
                 <pre><code class="language-python">import itertools
 import time
 
-def brute_force_sat(formula, n_vars):
+def brute<sub>f</sub>orce<sub>s</sub>at(formula, n<sub>v</sub>ars):
     """
     Solve SAT by brute force (exponential time).
     """
-    for assignment in itertools.product([False, True], repeat=n_vars):
+    for assignment in itertools.product([False, True], repeat=n<sub>v</sub>ars):
         if formula(assignment):
             return assignment
     return None
 
-def verify_sat(formula, assignment):
+def verify<sub>s</sub>at(formula, assignment):
     """
     Verify a SAT solution (polynomial time).
     """
     return formula(assignment)
 
 # Example SAT formula
-def example_sat(assignment):
+def example<sub>s</sub>at(assignment):
     """
     (x1 OR x2) AND (NOT x1 OR x3) AND (x2 OR NOT x3)
     """
@@ -1039,34 +1038,34 @@ def example_sat(assignment):
 print("P vs NP: Computational Complexity Demonstration")
 print("=" * 50)
 
-print("\nFormula: (x1 ∨ x2) ∧ (¬x1 ∨ x3) ∧ (x2 ∨ ¬x3)")
+print("nFormula: (x1 ∨ x2) ∧ (¬x1 ∨ x3) ∧ (x2 ∨ ¬x3)")
 start = time.time()
-solution = brute_force_sat(example_sat, 3)
-solve_time = time.time() - start
+solution = brute<sub>f</sub>orce<sub>s</sub>at(example<sub>s</sub>at, 3)
+solve<sub>t</sub>ime = time.time() - start
 
 if solution:
-    print(f"Solution found: x1={solution[0]}, x2={solution[1]}, x3={solution[2]}")
+    print(f"Solution found: x1=solution[0], x2=solution[1], x3=solution[2]")
     
     start = time.time()
-    is_valid = verify_sat(example_sat, solution)
-    verify_time = time.time() - start
+    is<sub>v</sub>alid = verify<sub>s</sub>at(example<sub>s</sub>at, solution)
+    verify<sub>t</sub>ime = time.time() - start
     
-    print(f"Verification: {is_valid}")
-    print(f"Solve time: {solve_time:.6f}s, Verify time: {verify_time:.9f}s")
+    print(f"Verification: is<sub>v</sub>alid")
+    print(f"Solve time: solve<sub>t</sub>ime:.6fs, Verify time: verify<sub>t</sub>ime:.9fs")
 
-print("\nScaling Analysis:")
-print(f"{'Variables':>10} {'Assignments':>15} {'Time (ms)':>12}")
+print("nScaling Analysis:")
+print(f"'Variables':>10 'Assignments':>15 'Time (ms)':>12")
 print("-" * 40)
 
 for n in range(4, 21, 4):
-    def simple_formula(assign):
+    def simple<sub>f</sub>ormula(assign):
         return all(assign)
     
     start = time.time()
-    sol = brute_force_sat(simple_formula, n)
+    sol = brute<sub>f</sub>orce<sub>s</sub>at(simple<sub>f</sub>ormula, n)
     elapsed = (time.time() - start) * 1000
     
-    print(f"{n:>10} {2**n:>15,} {elapsed:>12.3f}")
+    print(f"n:>10 2**n:>15, elapsed:>12.3f")
 </code></pre>
             </div>
 
@@ -1077,67 +1076,67 @@ for n in range(4, 21, 4):
                 <h4>Introduction</h4>
                 <p>Fractals are geometric shapes that exhibit self-similarity at different scales. They often have intricate structures and non-integer dimensions. The <strong>Mandelbrot set</strong> is perhaps the most famous fractal, named after mathematician Benoit Mandelbrot.</p>
                 
-                <p>The Mandelbrot set is defined as the set of complex numbers \(c\) for which the iteration \(z_{n+1} = z_n^2 + c\) starting from \(z_0 = 0\) remains bounded.</p>
+                <p>The Mandelbrot set is defined as the set of complex numbers <span class="math">c</span> for which the iteration <span class="math">z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + c</span> starting from <span class="math">z<sub>0</sub> = 0</span> remains bounded.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\(M\) — the Mandelbrot set</li>
-                        <li>\(f_c(z) = z^2 + c\) — the quadratic polynomial</li>
-                        <li>\(f_c^n(z)\) — n-fold iteration of \(f_c\)</li>
-                        <li>\(K_c\) — filled Julia set for parameter \(c\)</li>
-                        <li>\(\partial M\) — boundary of the Mandelbrot set</li>
-                        <li>\(\mathbb{C}\) — complex plane</li>
+                        <li><span class="math">M</span> — the Mandelbrot set</li>
+                        <li><span class="math">f<sub>c</sub>(z) = z<sup>2</sup> + c</span> — the quadratic polynomial</li>
+                        <li><span class="math">f<sub>c</sub><sup>n</sup>(z)</span> — n-fold iteration of <span class="math">f<sub>c</sub></span></li>
+                        <li><span class="math">K<sub>c</sub></span> — filled Julia set for parameter <span class="math">c</span></li>
+                        <li><span class="math">partial M</span> — boundary of the Mandelbrot set</li>
+                        <li><span class="math">ℂ</span> — complex plane</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Definition of the Mandelbrot Set</div>
                     <p>The Mandelbrot set is defined as:</p>
-                    <p>\[M = \{c \in \mathbb{C} : \sup_{n \geq 0} |f_c^n(0)| < \infty\}\]</p>
-                    <p>where \(f_c(z) = z^2 + c\) and \(f_c^n\) denotes the n-fold composition of \(f_c\).</p>
-                    <p>Equivalently, \(c \in M\) if and only if the sequence defined by \(z_0 = 0\) and \(z_{n+1} = z_n^2 + c\) remains bounded.</p>
+                    <p><div class="math-display">M = c in ℂ : sup<sub>n geq 0</sub> |f<sub>c</sub><sup>n</sup>(0)| < infty\</div></p>
+                    <p>where <span class="math">f<sub>c</sub>(z) = z<sup>2</sup> + c</span> and <span class="math">f<sub>c</sub><sup>n</sup></span> denotes the n-fold composition of <span class="math">f<sub>c</sub></span>.</p>
+                    <p>Equivalently, <span class="math">c in M</span> if and only if the sequence defined by <span class="math">z<sub>0</sub> = 0</span> and <span class="math">z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + c</span> remains bounded.</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Escape Criterion</div>
-                    <p>If \(|z_n| > 2\) for some \(n\), then the orbit \(\{z_k\}\) escapes to infinity.</p>
+                    <p>If <span class="math">|z<sub>n</sub>| > 2</span> for some <span class="math">n</span>, then the orbit <span class="math">z<sub>k</sub>\</span> escapes to infinity.</p>
                     <p>Therefore:</p>
-                    <p>\[M \subseteq \{c \in \mathbb{C} : |c| \leq 2\}\]</p>
-                    <p>More precisely, if \(|c| > 2\), then \(c \notin M\).</p>
+                    <p><div class="math-display">M subseteq c in ℂ : |c| leq 2\</div></p>
+                    <p>More precisely, if <span class="math">|c| > 2</span>, then <span class="math">c notin M</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof of Escape Criterion</div>
-                    <p><strong>Step 1:</strong> Suppose \(|z_n| > \max(2, |c|)\). Then:</p>
-                    <p>\[|z_{n+1}| = |z_n^2 + c| \geq |z_n|^2 - |c| \u003e |z_n|^2 - |z_n| = |z_n|(|z_n| - 1)\]</p>
+                    <p><strong>Step 1:</strong> Suppose <span class="math">|z<sub>n</sub>| > max(2, |c|)</span>. Then:</p>
+                    <p><div class="math-display">|z<sub>n+1</sub>| = |z<sub>n</sub><sup>2</sup> + c| geq |z<sub>n</sub>|<sup>2</sup> - |c| u003e |z<sub>n</sub>|<sup>2</sup> - |z<sub>n</sub>| = |z<sub>n</sub>|(|z<sub>n</sub>| - 1)</div></p>
                     
-                    <p><strong>Step 2:</strong> Since \(|z_n| > 2\), we have \(|z_n| - 1 > 1\), so:</p>
-                    <p>\[|z_{n+1}| > |z_n| \cdot 1 = |z_n|\]</p>
+                    <p><strong>Step 2:</strong> Since <span class="math">|z<sub>n</sub>| > 2</span>, we have <span class="math">|z<sub>n</sub>| - 1 > 1</span>, so:</p>
+                    <p><div class="math-display">|z<sub>n+1</sub>| > |z<sub>n</sub>| cdot 1 = |z<sub>n</sub>|</div></p>
                     
-                    <p><strong>Step 3:</strong> Moreover, \(|z_{n+1}| > |z_n|^2 - |c| \u003e 2|z_n| - |c| > |z_n|\) when \(|z_n| > |c|\).</p>
+                    <p><strong>Step 3:</strong> Moreover, <span class="math">|z<sub>n+1</sub>| > |z<sub>n</sub>|<sup>2</sup> - |c| u003e 2|z<sub>n</sub>| - |c| > |z<sub>n</sub>|</span> when <span class="math">|z<sub>n</sub>| > |c|</span>.</p>
                     
-                    <p><strong>Step 4:</strong> The sequence \(|z_n|\) grows at least exponentially, so \(|z_n| \to \infty\). ∎</p>
+                    <p><strong>Step 4:</strong> The sequence <span class="math">|z<sub>n</sub>|</span> grows at least exponentially, so <span class="math">|z<sub>n</sub>| to infty</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
                 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 
-def mandelbrot(c, max_iter=100, escape_radius=2.0):
+def mandelbrot(c, max<sub>i</sub>ter=100, escape<sub>r</sub>adius=2.0):
     """
     Compute the number of iterations until escape for a given c.
-    Returns max_iter if the point doesn't escape.
+    Returns max<sub>i</sub>ter if the point doesn't escape.
     """
     z = 0
-    for n in range(max_iter):
-        if abs(z) > escape_radius:
+    for n in range(max<sub>i</sub>ter):
+        if abs(z) > escape<sub>r</sub>adius:
             return n
         z = z*z + c
-    return max_iter
+    return max<sub>i</sub>ter
 
-def mandelbrot_set(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25, 
-                   width=800, height=800, max_iter=100):
+def mandelbrot<sub>s</sub>et(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25, 
+                   width=800, height=800, max<sub>i</sub>ter=100):
     """
     Compute the Mandelbrot set on a grid.
     """
@@ -1149,7 +1148,7 @@ def mandelbrot_set(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25,
     M = np.zeros((height, width), dtype=int)
     for i in range(height):
         for j in range(width):
-            M[i, j] = mandelbrot(C[i, j], max_iter)
+            M[i, j] = mandelbrot(C[i, j], max<sub>i</sub>ter)
     
     return M, X, Y
 
@@ -1157,11 +1156,11 @@ print("Mandelbrot Set Computation")
 print("=" * 50)
 
 # Compute Mandelbrot set
-M, X, Y = mandelbrot_set(width=400, height=400, max_iter=80)
+M, X, Y = mandelbrot<sub>s</sub>et(width=400, height=400, max<sub>i</sub>ter=80)
 
-print(f"Grid size: {M.shape}")
-print(f"Points in set (didn't escape): {np.sum(M == 80)}")
-print(f"Points escaped: {np.sum(M < 80)}")
+print(f"Grid size: M.shape")
+print(f"Points in set (didn't escape): np.sum(M == 80)")
+print(f"Points escaped: np.sum(M < 80)")
 
 # Visualize
 fig, axes = plt.subplots(2, 2, figsize=(14, 12))
@@ -1170,25 +1169,25 @@ fig, axes = plt.subplots(2, 2, figsize=(14, 12))
 ax1 = axes[0, 0]
 im1 = ax1.imshow(M, extent=[-2.5, 1.0, -1.25, 1.25], 
                  cmap='hot', origin='lower', interpolation='bilinear')
-ax1.set_title('Mandelbrot Set')
-ax1.set_xlabel('Re(c)')
-ax1.set_ylabel('Im(c)')
+ax1.set<sub>t</sub>itle('Mandelbrot Set')
+ax1.set<sub>x</sub>label('Re(c)')
+ax1.set<sub>y</sub>label('Im(c)')
 plt.colorbar(im1, ax=ax1, label='Iterations')
 
 # Plot 2: Zoom into a region
 ax2 = axes[0, 1]
-M_zoom, X_zoom, Y_zoom = mandelbrot_set(xmin=-0.75, xmax=-0.74, 
+M<sub>z</sub>oom, X<sub>z</sub>oom, Y<sub>z</sub>oom = mandelbrot<sub>s</sub>et(xmin=-0.75, xmax=-0.74, 
                                          ymin=0.1, ymax=0.11,
-                                         width=400, height=400, max_iter=200)
-im2 = ax2.imshow(M_zoom, extent=[-0.75, -0.74, 0.1, 0.11], 
+                                         width=400, height=400, max<sub>i</sub>ter=200)
+im2 = ax2.imshow(M<sub>z</sub>oom, extent=[-0.75, -0.74, 0.1, 0.11], 
                  cmap='hot', origin='lower', interpolation='bilinear')
-ax2.set_title('Zoom: Mini Mandelbrot')
-ax2.set_xlabel('Re(c)')
-ax2.set_ylabel('Im(c)')
+ax2.set<sub>t</sub>itle('Zoom: Mini Mandelbrot')
+ax2.set<sub>x</sub>label('Re(c)')
+ax2.set<sub>y</sub>label('Im(c)')
 
 # Plot 3: Julia set for c = -0.7 + 0.27015j
-def julia_set(c, xmin=-2, xmax=2, ymin=-2, ymax=2, 
-              width=400, height=400, max_iter=100):
+def julia<sub>s</sub>et(c, xmin=-2, xmax=2, ymin=-2, ymax=2, 
+              width=400, height=400, max<sub>i</sub>ter=100):
     x = np.linspace(xmin, xmax, width)
     y = np.linspace(ymin, ymax, height)
     X, Y = np.meshgrid(x, y)
@@ -1198,39 +1197,39 @@ def julia_set(c, xmin=-2, xmax=2, ymin=-2, ymax=2,
     for i in range(height):
         for j in range(width):
             z = Z[i, j]
-            for n in range(max_iter):
+            for n in range(max<sub>i</sub>ter):
                 if abs(z) > 2:
                     J[i, j] = n
                     break
                 z = z*z + c
             else:
-                J[i, j] = max_iter
+                J[i, j] = max<sub>i</sub>ter
     
     return J
 
 ax3 = axes[1, 0]
-c_julia = -0.7 + 0.27015j
-J = julia_set(c_julia, width=400, height=400, max_iter=100)
+c<sub>j</sub>ulia = -0.7 + 0.27015j
+J = julia<sub>s</sub>et(c<sub>j</sub>ulia, width=400, height=400, max<sub>i</sub>ter=100)
 im3 = ax3.imshow(J, extent=[-2, 2, -2, 2], 
                  cmap='viridis', origin='lower', interpolation='bilinear')
-ax3.set_title(f'Julia Set for c = {c_julia}')
-ax3.set_xlabel('Re(z)')
-ax3.set_ylabel('Im(z)')
+ax3.set<sub>t</sub>itle(f'Julia Set for c = c<sub>j</sub>ulia')
+ax3.set<sub>x</sub>label('Re(z)')
+ax3.set<sub>y</sub>label('Im(z)')
 
 # Plot 4: Comparison of iteration counts
 ax4 = axes[1, 1]
 iterations = M.flatten()
 ax4.hist(iterations[iterations < 80], bins=50, edgecolor='black', alpha=0.7)
-ax4.set_xlabel('Iterations to escape')
-ax4.set_ylabel('Count')
-ax4.set_title('Distribution of Escape Times')
+ax4.set<sub>x</sub>label('Iterations to escape')
+ax4.set<sub>y</sub>label('Count')
+ax4.set<sub>t</sub>itle('Distribution of Escape Times')
 ax4.grid(True, alpha=0.3)
 
-plt.tight_layout()
-plt.savefig('mandelbrot_set.png', dpi=150)
+plt.tight<sub>l</sub>ayout()
+plt.savefig('mandelbrot<sub>s</sub>et.png', dpi=150)
 plt.show()
 
-print("\nKey properties of the Mandelbrot set:")
+print("nKey properties of the Mandelbrot set:")
 print("- Connected (proved by Douady and Hubbard, 1980s)")
 print("- Boundary has Hausdorff dimension 2")
 print("- Contains infinitely many small copies of itself")
@@ -1276,7 +1275,7 @@ print("- Local connectivity is still an open problem (MLC conjecture)")
                 
                 <div class="timeline-item">
                     <span class="timeline-year">2000</span>
-                    <p><strong>Millennium Prize Problems</strong> — The Clay Mathematics Institute announces seven Millennium Prize Problems, including the Riemann Hypothesis, P vs NP, and Navier-Stokes existence, each with a $1 million prize.</p>
+                    <p><strong>Millennium Prize Problems</strong> — The Clay Mathematics Institute announces seven Millennium Prize Problems, including the Riemann Hypothesis, P vs NP, and Navier-Stokes existence, each with a </span>1 million prize.</p>
                 </div>
             </div>
         </section>

@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Math Digest - February 16, 2026</title>
     <script>
-MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\)']],
-    displayMath: [['$$', '$$'], ['\[', '\]']],
+    inlineMath: [['<span class="math">', '</span>'], ['<span class="math">', '</span>']],
+    displayMath: [['<div class="math-display">', '</div>'], ['<div class="math-display">', '</div>']],
     processEscapes: true,
     processEnvironments: true
   },
@@ -19,7 +18,7 @@ MathJax = {
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -89,25 +88,25 @@ MathJax = {
             
             <article class="deep-dive">
                 <h3>Set Theory: The Continuum Hypothesis</h3>
-                <p><strong>Theorem (Cantor, 1878; Cohen, 1963):</strong> The Continuum Hypothesis ($CH$) is independent of ZFC axioms.</p>
+                <p><strong>Theorem (Cantor, 1878; Cohen, 1963):</strong> The Continuum Hypothesis (<span class="math">CH</span>) is independent of ZFC axioms.</p>
                 
                 <p><strong>Statement:</strong> There is no set whose cardinality is strictly between that of the integers and the real numbers:</p>
-                $$\nexists S : |\mathbb{N}| < |S| < |\mathbb{R}|$$
+                <div class="math-display">nexists S : |ℕ| < |S| < |ℝ|</div>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$|A|$ denotes the cardinality (size) of set $A$</li>
-                    <li>$\aleph_0 = |\mathbb{N}|$ is the cardinality of countably infinite sets</li>
-                    <li>$\mathfrak{c} = |\mathbb{R}| = 2^{\aleph_0}$ is the cardinality of the continuum</li>
-                    <li>$CH$ asserts $\aleph_1 = 2^{\aleph_0}$</li>
+                    <li><span class="math">|A|</span> denotes the cardinality (size) of set <span class="math">A</span></li>
+                    <li><span class="math">aleph<sub>0</sub> = |ℕ|</span> is the cardinality of countably infinite sets</li>
+                    <li><span class="math">c = |ℝ| = 2<sup>aleph<sub>0</sub></sup></span> is the cardinality of the continuum</li>
+                    <li><span class="math">CH</span> asserts <span class="math">aleph<sub>1</sub> = 2<sup>aleph<sub>0</sub></sup></span></li>
                 </ul>
                 
                 <p><strong>Proof Sketch (Cohen's Forcing):</strong></p>
-                <p>Cohen developed the method of forcing to prove $CH$ cannot be proved from ZFC:</p>
+                <p>Cohen developed the method of forcing to prove <span class="math">CH</span> cannot be proved from ZFC:</p>
                 <ol>
-                    <li>Start with a countable transitive model $M$ of ZFC</li>
-                    <li>Add $\aleph_2^M$ many new "generic" reals via forcing poset</li>
-                    <li>Show the extension $M[G]$ satisfies ZFC + $\neg CH$</li>
+                    <li>Start with a countable transitive model <span class="math">M</span> of ZFC</li>
+                    <li>Add <span class="math">aleph<sub>2</sub><sup>M</sup></span> many new "generic" reals via forcing poset</li>
+                    <li>Show the extension <span class="math">M[G]</span> satisfies ZFC + <span class="math">neg CH</span></li>
                 </ol>
                 
                 <p><strong>Python: Cardinality Computations</strong></p>
@@ -154,25 +153,25 @@ is_countable_example()</code></pre>
 
             <article class="deep-dive">
                 <h3>Lie Theory: The Exponential Map</h3>
-                <p><strong>Theorem:</strong> For a matrix Lie group $G$ with Lie algebra $\mathfrak{g}$, the exponential map $\exp: \mathfrak{g} \to G$ is a local diffeomorphism near $0$.</p>
+                <p><strong>Theorem:</strong> For a matrix Lie group <span class="math">G</span> with Lie algebra <span class="math">g</span>, the exponential map <span class="math">exp: g to G</span> is a local diffeomorphism near <span class="math">0</span>.</p>
                 
-                <p><strong>Definition:</strong> For $X \in \mathfrak{g}$ (an $n \times n$ matrix):</p>
-                $$\exp(X) = \sum_{k=0}^{\infty} \frac{X^k}{k!}$$
+                <p><strong>Definition:</strong> For <span class="math">X in g</span> (an <span class="math">n times n</span> matrix):</p>
+                <div class="math-display">exp(X) = sum<sub>k=0</sub><sup>infty</sup> <span class="math">X<sup>k</sup>/k!</span></div>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$\mathfrak{g} = T_e G$ is the tangent space at identity (Lie algebra)</li>
-                    <li>$[X, Y] = XY - YX$ is the Lie bracket</li>
-                    <li>$\exp$ connects the linear Lie algebra to the curved Lie group</li>
+                    <li><span class="math">g = T<sub>e</sub> G</span> is the tangent space at identity (Lie algebra)</li>
+                    <li><span class="math">[X, Y] = XY - YX</span> is the Lie bracket</li>
+                    <li><span class="math">exp</span> connects the linear Lie algebra to the curved Lie group</li>
                 </ul>
                 
                 <p><strong>Baker-Campbell-Hausdorff Formula:</strong></p>
-                $$\log(\exp X \cdot \exp Y) = X + Y + \frac{1}{2}[X,Y] + \frac{1}{12}[X,[X,Y]] - \frac{1}{12}[Y,[X,Y]] + \cdots$$
+                <div class="math-display">log(exp X cdot exp Y) = X + Y + <span class="math">1/2</span>[X,Y] + <span class="math">1/12</span>[X,[X,Y]] - <span class="math">1/12</span>[Y,[X,Y]] + cdots</div>
                 
                 <p><strong>Proof Sketch:</strong></p>
-                <p>The differential of $\exp$ at $0$ is the identity:</p>
-                $$d(\exp)_0(X) = \left.\frac{d}{dt}\right|_{t=0} \exp(tX) = X$$
-                <p>By the inverse function theorem, $\exp$ is a local diffeomorphism.</p>
+                <p>The differential of <span class="math">exp</span> at <span class="math">0</span> is the identity:</p>
+                <div class="math-display">d(exp)<sub>0</sub>(X) = .<span class="math">d/dt</span>|<sub>t=0</sub> exp(tX) = X</div>
+                <p>By the inverse function theorem, <span class="math">exp</span> is a local diffeomorphism.</p>
                 
                 <p><strong>Python: Lie Group Computations</strong></p>
                 <pre><code class="language-python">import numpy as np
@@ -247,26 +246,26 @@ R = rotation_from_axis_angle([0, 0, 1], np.pi/2)  # 90 degree rotation about z-a
             </article>
 
             <article class="deep-dive">
-                <h3>Modular Forms: The $j$-invariant</h3>
-                <p><strong>Theorem:</strong> The $j$-invariant is a modular function that gives a bijection:</p>
-                $$j: SL_2(\mathbb{Z})\backslash\mathbb{H} \xrightarrow{\cong} \mathbb{C}$$
-                <p>where $\mathbb{H}$ is the upper half-plane.</p>
+                <h3>Modular Forms: The <span class="math">j</span>-invariant</h3>
+                <p><strong>Theorem:</strong> The <span class="math">j</span>-invariant is a modular function that gives a bijection:</p>
+                <div class="math-display">j: SL<sub>2</sub>(ℤ)backslashmathbbH xrightarrow≅ ℂ</div>
+                <p>where <span class="math">mathbbH</span> is the upper half-plane.</p>
                 
-                <p><strong>Definition:</strong> For $\tau \in \mathbb{H}$:</p>
-                $$j(\tau) = 1728 \frac{g_2(\tau)^3}{g_2(\tau)^3 - 27g_3(\tau)^2} = 1728 \frac{g_2(\tau)^3}{\Delta(\tau)}$$
+                <p><strong>Definition:</strong> For <span class="math">tau in mathbbH</span>:</p>
+                <div class="math-display">j(tau) = 1728 <span class="math">g<sub>2</sub>(tau)<sup>3</sup>/g<sub>2</sub>(tau)<sup>3</sup> - 27g<sub>3</sub>(tau)<sup>2</sup></span> = 1728 <span class="math">g<sub>2</sub>(tau)<sup>3</sup>/Delta(tau)</span></div>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$g_2(\tau) = 60 \sum_{(m,n) \neq (0,0)} (m\tau + n)^{-4}$ is the Eisenstein series of weight 4</li>
-                    <li>$g_3(\tau) = 140 \sum_{(m,n) \neq (0,0)} (m\tau + n)^{-6}$ is the Eisenstein series of weight 6</li>
-                    <li>$\Delta(\tau) = g_2(\tau)^3 - 27g_3(\tau)^2$ is the modular discriminant (weight 12 cusp form)</li>
-                    <li>The factor 1728 normalizes $j(i) = 1728$</li>
+                    <li><span class="math">g<sub>2</sub>(tau) = 60 sum<sub>(m,n) neq (0,0)</sub> (mtau + n)<sup>-4</sup></span> is the Eisenstein series of weight 4</li>
+                    <li><span class="math">g<sub>3</sub>(tau) = 140 sum<sub>(m,n) neq (0,0)</sub> (mtau + n)<sup>-6</sup></span> is the Eisenstein series of weight 6</li>
+                    <li><span class="math">Delta(tau) = g<sub>2</sub>(tau)<sup>3</sup> - 27g<sub>3</sub>(tau)<sup>2</sup></span> is the modular discriminant (weight 12 cusp form)</li>
+                    <li>The factor 1728 normalizes <span class="math">j(i) = 1728</span></li>
                 </ul>
                 
-                <p><strong>Modular Transformation:</strong> For $\gamma = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in SL_2(\mathbb{Z})$:</p>
-                $$j\left(\frac{a\tau + b}{c\tau + d}\right) = j(\tau)$$
+                <p><strong>Modular Transformation:</strong> For <span class="math">gamma = beginpmatrix a & b \\ c & d endpmatrix in SL<sub>2</sub>(ℤ)</span>:</p>
+                <div class="math-display">j(<span class="math">atau + b/ctau + d</span>) = j(tau)</div>
                 
-                <p><strong>Python: Computing the $j$-invariant</strong></p>
+                <p><strong>Python: Computing the <span class="math">j</span>-invariant</strong></p>
                 <pre><code class="language-python">import numpy as np
 from scipy.special import ellipk
 
@@ -337,24 +336,24 @@ print("E: y^2 = x^3 + ax + b has j = 1728 * 4a^3 / (4a^3 + 27b^2)")</code></pre>
             
             <article class="deep-dive">
                 <h3>Spectral Theory: The Rayleigh Quotient</h3>
-                <p><strong>Theorem (Rayleigh-Ritz):</strong> For a self-adjoint operator $A$ on a Hilbert space $\mathcal{H}$, the Rayleigh quotient:</p>
-                $$R(x) = \frac{\langle Ax, x \rangle}{\langle x, x \rangle}, \quad x \neq 0$$
-                <p>attains its minimum at the smallest eigenvalue $\lambda_1$ and its maximum (if bounded) at the largest eigenvalue.</p>
+                <p><strong>Theorem (Rayleigh-Ritz):</strong> For a self-adjoint operator <span class="math">A</span> on a Hilbert space <span class="math">H</span>, the Rayleigh quotient:</p>
+                <div class="math-display">R(x) = <span class="math">langle Ax, x rangle/langle x, x rangle</span>, quad x neq 0</div>
+                <p>attains its minimum at the smallest eigenvalue <span class="math">lambda<sub>1</sub></span> and its maximum (if bounded) at the largest eigenvalue.</p>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$\langle \cdot, \cdot \rangle$ denotes the inner product on $\mathcal{H}$</li>
-                    <li>$\sigma(A)$ denotes the spectrum of $A$</li>
-                    <li>$\lambda_1 \leq \lambda_2 \leq \cdots$ are eigenvalues (if discrete)</li>
+                    <li><span class="math">langle cdot, cdot rangle</span> denotes the inner product on <span class="math">H</span></li>
+                    <li><span class="math">sigma(A)</span> denotes the spectrum of <span class="math">A</span></li>
+                    <li><span class="math">lambda<sub>1</sub> leq lambda<sub>2</sub> leq cdots</span> are eigenvalues (if discrete)</li>
                 </ul>
                 
                 <p><strong>Courant-Fischer Minimax Theorem:</strong></p>
-                $$\lambda_k = \min_{\dim V = k} \max_{x \in V, x \neq 0} R(x) = \max_{\dim W = n-k+1} \min_{x \in W, x \neq 0} R(x)$$
+                <div class="math-display">lambda<sub>k</sub> = min<sub>dim V = k</sub> max<sub>x in V, x neq 0</sub> R(x) = max<sub>dim W = n-k+1</sub> min<sub>x in W, x neq 0</sub> R(x)</div>
                 
                 <p><strong>Proof Sketch:</strong></p>
-                <p>For self-adjoint $A$, there exists an orthonormal basis of eigenvectors $\{e_i\}$ with $Ae_i = \lambda_i e_i$. Expanding $x = \sum c_i e_i$:</p>
-                $$R(x) = \frac{\sum \lambda_i |c_i|^2}{\sum |c_i|^2}$$
-                <p>This is a weighted average of eigenvalues, so $\lambda_1 \leq R(x) \leq \lambda_n$.</p>
+                <p>For self-adjoint <span class="math">A</span>, there exists an orthonormal basis of eigenvectors <span class="math">\e<sub>i</sub>\</span> with <span class="math">Ae<sub>i</sub> = lambda<sub>i</sub> e<sub>i</sub></span>. Expanding <span class="math">x = sum c<sub>i</sub> e<sub>i</sub></span>:</p>
+                <div class="math-display">R(x) = <span class="math">sum lambda<sub>i</sub> |c<sub>i</sub>|<sup>2</sup>/sum |c<sub>i</sub>|<sup>2</sup></span></div>
+                <p>This is a weighted average of eigenvalues, so <span class="math">lambda<sub>1</sub> leq R(x) leq lambda<sub>n</sub></span>.</p>
                 
                 <p><strong>Python: Eigenvalue Computation via Rayleigh Quotient</strong></p>
                 <pre><code class="language-python">import numpy as np
@@ -458,26 +457,26 @@ print(f"All eigenvalues: {w}")</code></pre>
 
             <article class="deep-dive">
                 <h3>Partial Differential Equations: The Heat Equation</h3>
-                <p><strong>Theorem:</strong> The fundamental solution to the heat equation on $\mathbb{R}^n$:</p>
-                $$\frac{\partial u}{\partial t} = \Delta u = \sum_{i=1}^n \frac{\partial^2 u}{\partial x_i^2}$$
+                <p><strong>Theorem:</strong> The fundamental solution to the heat equation on <span class="math">ℝ<sup>n</sup></span>:</p>
+                <div class="math-display"><span class="math">partial u/partial t</span> = Delta u = sum<sub>i=1</sub><sup>n</sup> <span class="math">partial<sup>2</sup> u/partial x<sub>i</sub><sup>2</sup></span></div>
                 <p>is given by the heat kernel:</p>
-                $$\Phi(x, t) = \frac{1}{(4\pi t)^{n/2}} e^{-|x|^2/(4t)}, \quad t > 0$$
+                <div class="math-display">Phi(x, t) = <span class="math">1/(4pi t)<sup>n/2</sup></span> e<sup>-|x|<sup>2</sup>/(4t)</sup>, quad t > 0</div>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$\Delta$ is the Laplacian operator</li>
-                    <li>$|x|^2 = x_1^2 + \cdots + x_n^2$ is the squared Euclidean norm</li>
-                    <li>$\Phi$ is also called the Gaussian kernel or fundamental solution</li>
+                    <li><span class="math">Delta</span> is the Laplacian operator</li>
+                    <li><span class="math">|x|<sup>2</sup> = x<sub>1</sub><sup>2</sup> + cdots + x<sub>n</sub><sup>2</sup></span> is the squared Euclidean norm</li>
+                    <li><span class="math">Phi</span> is also called the Gaussian kernel or fundamental solution</li>
                 </ul>
                 
-                <p><strong>Solution Formula:</strong> For initial condition $u(x, 0) = g(x)$:</p>
-                $$u(x, t) = \int_{\mathbb{R}^n} \Phi(x - y, t) g(y) \, dy = (\Phi(\cdot, t) * g)(x)$$
+                <p><strong>Solution Formula:</strong> For initial condition <span class="math">u(x, 0) = g(x)</span>:</p>
+                <div class="math-display">u(x, t) = int<sub>ℝ</sub><sup>n</sup> Phi(x - y, t) g(y) \, dy = (Phi(cdot, t) * g)(x)</div>
                 
-                <p><strong>Proof that $\Phi$ satisfies the heat equation:</strong></p>
+                <p><strong>Proof that <span class="math">Phi</span> satisfies the heat equation:</strong></p>
                 <p>Direct computation shows:</p>
-                $$\frac{\partial \Phi}{\partial t} = \left(-\frac{n}{2t} + \frac{|x|^2}{4t^2}\right)\Phi$$
-                $$\Delta \Phi = \sum_{i=1}^n \frac{\partial^2 \Phi}{\partial x_i^2} = \left(-\frac{n}{2t} + \frac{|x|^2}{4t^2}\right)\Phi$$
-                <p>Hence $\partial_t \Phi = \Delta \Phi$.</p>
+                <div class="math-display"><span class="math">partial Phi/partial t</span> = (-<span class="math">n/2t</span> + <span class="math">|x|<sup>2</sup>/4t<sup>2</sup></span>)Phi</div>
+                <div class="math-display">Delta Phi = sum<sub>i=1</sub><sup>n</sup> <span class="math">partial<sup>2</sup> Phi/partial x<sub>i</sub><sup>2</sup></span> = (-<span class="math">n/2t</span> + <span class="math">|x|<sup>2</sup>/4t<sup>2</sup></span>)Phi</div>
+                <p>Hence <span class="math">partial<sub>t</sub> Phi = Delta Phi</span>.</p>
                 
                 <p><strong>Python: Heat Equation Simulation</strong></p>
                 <pre><code class="language-python">import numpy as np
@@ -591,22 +590,22 @@ print(f"Maximum principle: {np.max(u_mp) <= np.max(u0_bump(x_mp))}")</code></pre
 
             <article class="deep-dive">
                 <h3>Machine Learning Theory: PAC Learning</h3>
-                <p><strong>Theorem (PAC Learning Bound):</strong> For a hypothesis class $\mathcal{H}$ with finite VC dimension $d$, with probability at least $1 - \delta$, any hypothesis $h \in \mathcal{H}$ consistent with $m$ i.i.d. training examples has generalization error:</p>
-                $$\text{err}(h) \leq O\left(\frac{d \log(m/d) + \log(1/\delta)}{m}\right)$$
+                <p><strong>Theorem (PAC Learning Bound):</strong> For a hypothesis class <span class="math">H</span> with finite VC dimension <span class="math">d</span>, with probability at least <span class="math">1 - delta</span>, any hypothesis <span class="math">h in H</span> consistent with <span class="math">m</span> i.i.d. training examples has generalization error:</p>
+                <div class="math-display">err(h) leq O(<span class="math">d log(m/d) + log(1/delta)/m</span>)</div>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$PAC$ = Probably Approximately Correct</li>
-                    <li>$VC$ dimension = Vapnik-Chervonenkis dimension (measure of hypothesis class complexity)</li>
-                    <li>$\text{err}(h) = P(h(X) \neq Y)$ is the true error</li>
-                    <li>$\hat{\text{err}}(h)$ is the empirical error on training data</li>
+                    <li><span class="math">PAC</span> = Probably Approximately Correct</li>
+                    <li><span class="math">VC</span> dimension = Vapnik-Chervonenkis dimension (measure of hypothesis class complexity)</li>
+                    <li><span class="math">err(h) = P(h(X) neq Y)</span> is the true error</li>
+                    <li><span class="math">err̂(h)</span> is the empirical error on training data</li>
                 </ul>
                 
-                <p><strong>VC Dimension Definition:</strong> The largest $m$ such that $\mathcal{H}$ can shatter some set of $m$ points:</p>
-                $$\text{VC}(\mathcal{H}) = \max\{m : \exists S \subseteq \mathcal{X}, |S| = m, \Pi_{\mathcal{H}}(S) = 2^m\}$$
+                <p><strong>VC Dimension Definition:</strong> The largest <span class="math">m</span> such that <span class="math">H</span> can shatter some set of <span class="math">m</span> points:</p>
+                <div class="math-display">VC(H) = max\m : exists S subseteq X, |S| = m, Pi<sub>H</sub>(S) = 2<sup>m</sup>\</div>
                 
-                <p><strong>Sauer-Shelah Lemma:</strong> For $m \geq d = \text{VC}(\mathcal{H})$:</p>
-                $$\Pi_{\mathcal{H}}(m) \leq \sum_{i=0}^{d} \binom{m}{i} \leq \left(\frac{em}{d}\right)^d$$
+                <p><strong>Sauer-Shelah Lemma:</strong> For <span class="math">m geq d = VC(H)</span>:</p>
+                <div class="math-display">Pi<sub>H</sub>(m) leq sum<sub>i=0</sub><sup>d</sup> binommi leq (<span class="math">em/d</span>)<sup>d</sup></div>
                 
                 <p><strong>Python: VC Dimension and Generalization Bounds</strong></p>
                 <pre><code class="language-python">import numpy as np
@@ -760,24 +759,24 @@ print("4. Rademacher complexity provides data-dependent bounds")</code></pre>
             
             <article class="deep-dive">
                 <h3>Coding Theory: Reed-Solomon Codes</h3>
-                <p><strong>Theorem:</strong> A Reed-Solomon code with parameters $[n, k, d]$ over $\mathbb{F}_q$ satisfies:</p>
-                $$d = n - k + 1$$
+                <p><strong>Theorem:</strong> A Reed-Solomon code with parameters <span class="math">[n, k, d]</span> over <span class="math">mathbbF<sub>q</sub></span> satisfies:</p>
+                <div class="math-display">d = n - k + 1</div>
                 <p>achieving the Singleton bound (MDS code).</p>
                 
-                <p><strong>Construction:</strong> Let $\mathbb{F}_q$ be a finite field with $q > n$. Choose distinct $\alpha_1, \ldots, \alpha_n \in \mathbb{F}_q$. For message polynomial $m(x) = m_0 + m_1 x + \cdots + m_{k-1} x^{k-1}$:</p>
-                $$\text{RS}(m) = (m(\alpha_1), m(\alpha_2), \ldots, m(\alpha_n))$$
+                <p><strong>Construction:</strong> Let <span class="math">mathbbF<sub>q</sub></span> be a finite field with <span class="math">q > n</span>. Choose distinct <span class="math">alpha<sub>1</sub>, ldots, alpha<sub>n</sub> in mathbbF<sub>q</sub></span>. For message polynomial <span class="math">m(x) = m<sub>0</sub> + m<sub>1</sub> x + cdots + m<sub>k-1</sub> x<sup>k-1</sup></span>:</p>
+                <div class="math-display">RS(m) = (m(alpha<sub>1</sub>), m(alpha<sub>2</sub>), ldots, m(alpha<sub>n</sub>))</div>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$[n, k, d]$: block length $n$, dimension $k$, minimum distance $d$</li>
-                    <li>$\mathbb{F}_q$: finite field with $q$ elements ($q = p^m$)</li>
+                    <li><span class="math">[n, k, d]</span>: block length <span class="math">n</span>, dimension <span class="math">k</span>, minimum distance <span class="math">d</span></li>
+                    <li><span class="math">mathbbF<sub>q</sub></span>: finite field with <span class="math">q</span> elements (<span class="math">q = p<sup>m</sup></span>)</li>
                     <li>MDS = Maximum Distance Separable</li>
-                    <li>Can correct up to $\lfloor (d-1)/2 \rfloor = \lfloor (n-k)/2 \rfloor$ errors</li>
+                    <li>Can correct up to <span class="math">lfloor (d-1)/2 rfloor = lfloor (n-k)/2 rfloor</span> errors</li>
                 </ul>
                 
-                <p><strong>Decoding (Berlekamp-Welch):</strong> Given received word $(r_1, \ldots, r_n)$ with at most $e$ errors, find polynomials $N(x)$ and $E(x)$ with $\deg(N) \leq k-1+e$, $\deg(E) = e$ such that:</p>
-                $$N(\alpha_i) = r_i E(\alpha_i) \quad \text{for all } i$$
-                <p>Then $m(x) = N(x)/E(x)$.</p>
+                <p><strong>Decoding (Berlekamp-Welch):</strong> Given received word <span class="math">(r<sub>1</sub>, ldots, r<sub>n</sub>)</span> with at most <span class="math">e</span> errors, find polynomials <span class="math">N(x)</span> and <span class="math">E(x)</span> with <span class="math">deg(N) leq k-1+e</span>, <span class="math">deg(E) = e</span> such that:</p>
+                <div class="math-display">N(alpha<sub>i</sub>) = r<sub>i</sub> E(alpha<sub>i</sub>) quad for all  i</div>
+                <p>Then <span class="math">m(x) = N(x)/E(x)</span>.</p>
                 
                 <p><strong>Python: Reed-Solomon Encoding and Decoding</strong></p>
                 <pre><code class="language-python">import numpy as np
@@ -969,28 +968,28 @@ print("4. Efficient decoding algorithms exist (Berlekamp-Massey, etc.)")</code><
 
             <article class="deep-dive">
                 <h3>Matroid Theory: The Tutte Polynomial</h3>
-                <p><strong>Theorem:</strong> The Tutte polynomial $T_M(x, y)$ of a matroid $M$ is a universal deletion-contraction invariant defined by:</p>
-                $$T_M(x, y) = \begin{cases} 1 & \text{if } M \text{ has no elements} \\ x \cdot T_{M/e}(x, y) & \text{if } e \text{ is a coloop} \\ y \cdot T_{M \setminus e}(x, y) & \text{if } e \text{ is a loop} \\ T_{M \setminus e}(x, y) + T_{M/e}(x, y) & \text{otherwise} \end{cases}$$
+                <p><strong>Theorem:</strong> The Tutte polynomial <span class="math">T<sub>M</sub>(x, y)</span> of a matroid <span class="math">M</span> is a universal deletion-contraction invariant defined by:</p>
+                <div class="math-display">T<sub>M</sub>(x, y) = begincases 1 & if  M  has no elements \\ x cdot T<sub>M/e</sub>(x, y) & if  e  is a coloop \\ y cdot T<sub>M setminus e</sub>(x, y) & if  e  is a loop \\ T<sub>M setminus e</sub>(x, y) + T<sub>M/e</sub>(x, y) & otherwise endcases</div>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$M \setminus e$: deletion of element $e$</li>
-                    <li>$M / e$: contraction of element $e$</li>
-                    <li>Loop: element $e$ with $r(\{e\}) = 0$</li>
-                    <li>Coloop (isthmus): element $e$ with $r(E) = r(E \setminus \{e\}) + 1$</li>
-                    <li>$r(A)$: rank of set $A$ in the matroid</li>
+                    <li><span class="math">M setminus e</span>: deletion of element <span class="math">e</span></li>
+                    <li><span class="math">M / e</span>: contraction of element <span class="math">e</span></li>
+                    <li>Loop: element <span class="math">e</span> with <span class="math">r(\e\) = 0</span></li>
+                    <li>Coloop (isthmus): element <span class="math">e</span> with <span class="math">r(E) = r(E setminus \e\) + 1</span></li>
+                    <li><span class="math">r(A)</span>: rank of set <span class="math">A</span> in the matroid</li>
                 </ul>
                 
                 <p><strong>Rank Generating Function:</strong></p>
-                $$T_M(x, y) = \sum_{A \subseteq E} (x-1)^{r(E) - r(A)} (y-1)^{|A| - r(A)}$$
+                <div class="math-display">T<sub>M</sub>(x, y) = sum<sub>A subseteq E</sub> (x-1)<sup>r(E) - r(A)</sup> (y-1)<sup>|A| - r(A)</sup></div>
                 
                 <p><strong>Specializations:</strong></p>
                 <ul>
-                    <li>$T_M(2, 1)$: number of spanning forests</li>
-                    <li>$T_M(1, 2)$: number of spanning connected subgraphs</li>
-                    <li>$T_M(2, 0)$: number of acyclic orientations</li>
-                    <li>$T_M(0, 2)$: number of totally cyclic orientations</li>
-                    <li>$T_M(1, 1)$: number of spanning trees (for graphs)</li>
+                    <li><span class="math">T<sub>M</sub>(2, 1)</span>: number of spanning forests</li>
+                    <li><span class="math">T<sub>M</sub>(1, 2)</span>: number of spanning connected subgraphs</li>
+                    <li><span class="math">T<sub>M</sub>(2, 0)</span>: number of acyclic orientations</li>
+                    <li><span class="math">T<sub>M</sub>(0, 2)</span>: number of totally cyclic orientations</li>
+                    <li><span class="math">T<sub>M</sub>(1, 1)</span>: number of spanning trees (for graphs)</li>
                 </ul>
                 
                 <p><strong>Python: Computing the Tutte Polynomial</strong></p>
@@ -1185,28 +1184,28 @@ print("7. Chromatic polynomial: P(G,q) = (-1)^{r(E)} q^{c(G)} T(1-q, 0)")</code>
 
             <article class="deep-dive">
                 <h3>Symplectic Geometry: The Moment Map</h3>
-                <p><strong>Theorem (Atiyah-Guillemin-Sternberg):</strong> Let $(M, \omega)$ be a compact connected symplectic manifold with a Hamiltonian torus action $T^k \curvearrowright M$. The image of the moment map $\mu: M \to (\mathfrak{t}^k)^* \cong \mathbb{R}^k$ is a convex polytope, the convex hull of the images of the fixed points.</p>
+                <p><strong>Theorem (Atiyah-Guillemin-Sternberg):</strong> Let <span class="math">(M, omega)</span> be a compact connected symplectic manifold with a Hamiltonian torus action <span class="math">T<sup>k</sup> curvearrowright M</span>. The image of the moment map <span class="math">mu: M to (t<sup>k</sup>)^* ≅ ℝ<sup>k</sup></span> is a convex polytope, the convex hull of the images of the fixed points.</p>
                 
-                <p><strong>Definition:</strong> For a Hamiltonian action of Lie group $G$ on $(M, \omega)$, the moment map $\mu: M \to \mathfrak{g}^*$ satisfies:</p>
-                $$d\langle \mu, \xi \rangle = \iota_{X_\xi} \omega$$
-                <p>for all $\xi \in \mathfrak{g}$, where $X_\xi$ is the vector field generated by $\xi$.</p>
+                <p><strong>Definition:</strong> For a Hamiltonian action of Lie group <span class="math">G</span> on <span class="math">(M, omega)</span>, the moment map <span class="math">mu: M to g^*</span> satisfies:</p>
+                <div class="math-display">dlangle mu, xi rangle = iota<sub>X_xi</sub> omega</div>
+                <p>for all <span class="math">xi in g</span>, where <span class="math">X_xi</span> is the vector field generated by <span class="math">xi</span>.</p>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$\omega$: symplectic form (closed, non-degenerate 2-form)</li>
-                    <li>$\mathfrak{g}$: Lie algebra of $G$</li>
-                    <li>$\mathfrak{g}^*$: dual Lie algebra</li>
-                    <li>$\iota_X \omega$: interior product (contraction)</li>
-                    <li>$X_\xi$: fundamental vector field: $X_\xi(p) = \left.\frac{d}{dt}\right|_{t=0} \exp(t\xi) \cdot p$</li>
+                    <li>ω: symplectic form (closed, non-degenerate 2-form)</li>
+                    <li><span class="math">g</span>: Lie algebra of <span class="math">G</span></li>
+                    <li><span class="math">g^*</span>: dual Lie algebra</li>
+                    <li><span class="math">iota<sub>X</sub> omega</span>: interior product (contraction)</li>
+                    <li><span class="math">X_xi</span>: fundamental vector field: <span class="math">X_xi(p) = .<span class="math">d/dt</span>|<sub>t=0</sub> exp(txi) cdot p</span></li>
                 </ul>
                 
-                <p><strong>Equivariance:</strong> The moment map is $G$-equivariant:</p>
-                $$\mu(g \cdot p) = \text{Ad}^*_g \mu(p)$$
+                <p><strong>Equivariance:</strong> The moment map is <span class="math">G</span>-equivariant:</p>
+                <div class="math-display">mu(g cdot p) = Ad^*<sub>g</sub> mu(p)</div>
                 
-                <p><strong>Example: $S^1$ action on $\mathbb{C}^n$:</strong></p>
-                $$e^{i\theta} \cdot (z_1, \ldots, z_n) = (e^{i\theta}z_1, \ldots, e^{i\theta}z_n)$$
+                <p><strong>Example: <span class="math">S<sup>1</sup></span> action on <span class="math">ℂ<sup>n</sup></span>:</strong></p>
+                <div class="math-display">e<sup>itheta</sup> cdot (z<sub>1</sub>, ldots, z<sub>n</sub>) = (e<sup>itheta</sup>z<sub>1</sub>, ldots, e<sup>itheta</sup>z<sub>n</sub>)</div>
                 <p>with moment map:</p>
-                $$\mu(z) = \frac{1}{2}\sum_{j=1}^n |z_j|^2$$
+                <div class="math-display">mu(z) = <span class="math">1/2</span>sum<sub>j=1</sub><sup>n</sup> |z<sub>j</sub>|<sup>2</sup></div>
                 
                 <p><strong>Python: Moment Map for Torus Actions</strong></p>
                 <pre><code class="language-python">import numpy as np
@@ -1368,23 +1367,23 @@ print("4. Kirillov: Coadjoint orbits ↔ Unitary irreps of Lie groups")</code></
 
             <article class="deep-dive">
                 <h3>Geometric Group Theory: Hyperbolic Groups</h3>
-                <p><strong>Theorem (Gromov):</strong> A finitely generated group $\Gamma$ is hyperbolic if and only if its Cayley graph satisfies the thin triangle condition: there exists $\delta \geq 0$ such that any side of a geodesic triangle is contained in the $\delta$-neighborhood of the union of the other two sides.</p>
+                <p><strong>Theorem (Gromov):</strong> A finitely generated group <span class="math">Gamma</span> is hyperbolic if and only if its Cayley graph satisfies the thin triangle condition: there exists <span class="math">delta geq 0</span> such that any side of a geodesic triangle is contained in the δ-neighborhood of the union of the other two sides.</p>
                 
-                <p><strong>Definition:</strong> A geodesic metric space $(X, d)$ is $\delta$-hyperbolic if for all geodesic triangles $\Delta = [x, y] \cup [y, z] \cup [z, x]$:</p>
-                $$[x, y] \subseteq N_\delta([y, z] \cup [z, x])$$
-                <p>where $N_\delta(A)$ denotes the $\delta$-neighborhood of $A$.</p>
+                <p><strong>Definition:</strong> A geodesic metric space <span class="math">(X, d)</span> is δ-hyperbolic if for all geodesic triangles <span class="math">Delta = [x, y] cup [y, z] cup [z, x]</span>:</p>
+                <div class="math-display">[x, y] subseteq N_delta([y, z] cup [z, x])</div>
+                <p>where <span class="math">N_delta(A)</span> denotes the δ-neighborhood of <span class="math">A</span>.</p>
                 
                 <p><strong>Notation Explanation:</strong></p>
                 <ul>
-                    <li>$\Gamma$: finitely generated group</li>
-                    <li>$Cay(\Gamma, S)$: Cayley graph with respect to generating set $S$</li>
-                    <li>$|g|$: word length of $g \in \Gamma$ with respect to $S$</li>
-                    <li>$\partial \Gamma$: Gromov boundary (space of geodesic rays)</li>
+                    <li><span class="math">Gamma</span>: finitely generated group</li>
+                    <li><span class="math">Cay(Gamma, S)</span>: Cayley graph with respect to generating set <span class="math">S</span></li>
+                    <li><span class="math">|g|</span>: word length of <span class="math">g in Gamma</span> with respect to <span class="math">S</span></li>
+                    <li><span class="math">partial Gamma</span>: Gromov boundary (space of geodesic rays)</li>
                 </ul>
                 
-                <p><strong>Linear Isoperimetric Inequality:</strong> For hyperbolic groups, any loop of length $n$ in the Cayley graph can be filled with a disk of area $O(n)$:</p>
-                $$\text{Area}(w) \leq C \cdot |w|$$
-                <p>for any word $w$ representing the identity.</p>
+                <p><strong>Linear Isoperimetric Inequality:</strong> For hyperbolic groups, any loop of length <span class="math">n</span> in the Cayley graph can be filled with a disk of area <span class="math">O(n)</span>:</p>
+                <div class="math-display">Area(w) leq C cdot |w|</div>
+                <p>for any word <span class="math">w</span> representing the identity.</p>
                 
                 <p><strong>Python: Hyperbolicity in Cayley Graphs</strong></p>
                 <pre><code class="language-python">from collections import deque, defaultdict

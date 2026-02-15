@@ -7,37 +7,12 @@
     <meta name="theme-color" content="#2c3e50">
     <title>Tags - Daily Math Digest</title>
     
-    <!-- MathJax Configuration -->
-    <script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    processEscapes: true,
-    processEnvironments: true
-  },
-  chtml: {
-    scale: 1,
-    minScale: 0.8,
-    matchFontHeight: true
-  },
-  startup: {
-    pageReady: () => {
-      return MathJax.startup.defaultPageReady();
-    }
-  }
-};
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="site-header">
         <h1>📐 Daily Math Digest</h1>
-        <p class="site-description">
-            Browse Posts by Tag
-        </p>
+        <p class="site-description">Browse Posts by Tag</p>
     </header>
 
     <nav>
@@ -54,20 +29,14 @@ MathJax = {
             <h2>🏷️ Tags</h2>
             <p>Explore mathematical content organized by topic. Click on a tag to see related posts.</p>
             
-            <div class="tags-cloud" id="tags-cloud">
-                <!-- Tags will be generated here -->
-            </div>
+            <div class="tags-cloud" id="tags-cloud"></div>
         </section>
 
-        <section class="section" id="tag-sections">
-            <!-- Tag sections will be generated here -->
-        </section>
+        <section class="section" id="tag-sections"></section>
     </main>
 
     <footer>
-        <p>
-            <strong>Daily Math Digest</strong> — Powered by curiosity and mathematics.
-        </p>
+        <p><strong>Daily Math Digest</strong> — Powered by curiosity and mathematics.</p>
         <p>
             <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> | 
             <a href="../index.html">Home</a> |
@@ -76,7 +45,6 @@ MathJax = {
     </footer>
 
     <script>
-        // Posts data with tags
         const posts = [
             {
                 title: "Daily Math Digest - Set Theory, Lie Theory, Modular Forms, Spectral Theory, PDEs, Machine Learning, Coding Theory, Matroid Theory, Symplectic Geometry, Geometric Group Theory",
@@ -146,15 +114,6 @@ MathJax = {
             }
         ];
 
-        // Tag categories for organization
-        const tagCategories = {
-            "pure-math": "Pure Mathematics",
-            "applied-math": "Applied Mathematics",
-            "special-topics": "Special Topics",
-            "millennium-problems": "Millennium Prize Problems"
-        };
-
-        // Tag display names
         const tagDisplayNames = {
             "pure-math": "Pure Mathematics",
             "applied-math": "Applied Mathematics",
@@ -247,7 +206,6 @@ MathJax = {
             const counts = countPostsByTag();
             const cloud = document.getElementById('tags-cloud');
             
-            // Sort tags by count
             const sortedTags = Object.keys(counts).sort((a, b) => counts[b] - counts[a]);
             
             let html = '';
@@ -289,11 +247,9 @@ MathJax = {
             container.innerHTML = html;
         }
 
-        // Initialize
         renderTagsCloud();
         renderTagSections();
 
-        // Handle hash navigation
         if (window.location.hash) {
             const element = document.querySelector(window.location.hash);
             if (element) {

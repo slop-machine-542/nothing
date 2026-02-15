@@ -7,12 +7,11 @@
     <meta name="theme-color" content="#2c3e50">
     <title>Daily Math Digest - February 16, 2026</title>
 
-        <!-- MathJax Configuration -->
+        
     <script>
-MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\(', '\)']],
-    displayMath: [['$$', '$$'], ['\[', '\]']],
+    inlineMath: [['<span class="math">', '</span>'], ['<span class="math">', '</span>']],
+    displayMath: [['<div class="math-display">', '</div>'], ['<div class="math-display">', '</div>']],
     processEscapes: true,
     processEnvironments: true
   },
@@ -23,7 +22,7 @@ MathJax = {
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     
     <style>
         :root {
@@ -264,34 +263,34 @@ MathJax = {
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(\\mathbb{A}^2\\) or \\(\\mathbb{C}^2\\) — the affine plane (2-dimensional space over a field)</li>
-                        <li>\\(\\mathbb{P}^2\\) — the projective plane (compactification of affine space)</li>
-                        <li>\\(V(f) = \\{(x,y) : f(x,y) = 0\\}\\) — the zero set (variety) of polynomial \\(f\\)</li>
-                        <li>\\(\\deg(f)\\) — degree of polynomial \\(f\\) (highest total degree of any term)</li>
-                        <li>\\(I_p(C, D)\\) — intersection multiplicity of curves \\(C\\) and \\(D\\) at point \\(p\\)</li>
+                        <li>\<span class="math">\mathbbA<sup>2</sup>\</span> or \<span class="math">ℂ<sup>2</sup>\</span> — the affine plane (2-dimensional space over a field)</li>
+                        <li>\<span class="math">ℙ<sup>2</sup>\</span> — the projective plane (compactification of affine space)</li>
+                        <li>\<span class="math">V(f) = \\(x,y) : f(x,y) = 0\\\</span> — the zero set (variety) of polynomial \<span class="math">f\</span></li>
+                        <li>\<span class="math">\deg(f)\</span> — degree of polynomial \<span class="math">f\</span> (highest total degree of any term)</li>
+                        <li>\<span class="math">I<sub>p</sub>(C, D)\</span> — intersection multiplicity of curves \<span class="math">C\</span> and \<span class="math">D\</span> at point \<span class="math">p\</span></li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Bézout's Theorem</div>
-                    <p>Let \\(C\\) and \\(D\\) be two projective plane curves defined by homogeneous polynomials \\(F\\) and \\(G\\) of degrees \\(m\\) and \\(n\\) respectively, with no common components. Then:</p>
-                    <p>\\[\\sum_{p \\in C \\cap D} I_p(C, D) = m \\cdot n\\]</p>
+                    <p>Let \<span class="math">C\</span> and \<span class="math">D\</span> be two projective plane curves defined by homogeneous polynomials \<span class="math">F\</span> and \<span class="math">G\</span> of degrees \<span class="math">m\</span> and \<span class="math">n\</span> respectively, with no common components. Then:</p>
+                    <p>\<div class="math-display">Σ<sub>p ∈ C ∩ D</sub> I<sub>p</sub>(C, D) = m · n\</div></p>
                     <p>That is, the number of intersection points, counted with multiplicity, equals the product of the degrees.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (using resultants)</div>
-                    <p><strong>Step 1:</strong> Work in projective space \\(\\mathbb{P}^2\\) to ensure all intersections are captured (including "points at infinity").</p>
+                    <p><strong>Step 1:</strong> Work in projective space \<span class="math">ℙ<sup>2</sup>\</span> to ensure all intersections are captured (including "points at infinity").</p>
                     
-                    <p><strong>Step 2:</strong> For curves \\(F(x,y,z) = 0\\) and \\(G(x,y,z) = 0\\), eliminate one variable using the <strong>resultant</strong>. The resultant \\(\\text{Res}_z(F, G)\\) is a polynomial in \\(x\\) and \\(y\\) that vanishes precisely when \\(F\\) and \\(G\\) have a common root in \\(z\\).</p>
+                    <p><strong>Step 2:</strong> For curves \<span class="math">F(x,y,z) = 0\</span> and \<span class="math">G(x,y,z) = 0\</span>, eliminate one variable using the <strong>resultant</strong>. The resultant \<span class="math">Res<sub>z</sub>(F, G)\</span> is a polynomial in \<span class="math">x\</span> and \<span class="math">y\</span> that vanishes precisely when \<span class="math">F\</span> and \<span class="math">G\</span> have a common root in \<span class="math">z\</span>.</p>
                     
-                    <p><strong>Notation:</strong> The resultant is a determinant of the Sylvester matrix, which has size \\((m+n) \\times (m+n)\\).</p>
+                    <p><strong>Notation:</strong> The resultant is a determinant of the Sylvester matrix, which has size \<span class="math">(m+n) × (m+n)\</span>.</p>
                     
-                    <p><strong>Step 3:</strong> The degree of \\(\\text{Res}_z(F, G)\\) in \\(x\\) and \\(y\\) is \\(m \\cdot n\\).</p>
+                    <p><strong>Step 3:</strong> The degree of \<span class="math">Res<sub>z</sub>(F, G)\</span> in \<span class="math">x\</span> and \<span class="math">y\</span> is \<span class="math">m · n\</span>.</p>
                     
-                    <p><strong>Step 4:</strong> By the fundamental theorem of algebra, this polynomial has exactly \\(m \\cdot n\\) roots (counted with multiplicity) in \\(\\mathbb{P}^1\\).</p>
+                    <p><strong>Step 4:</strong> By the fundamental theorem of algebra, this polynomial has exactly \<span class="math">m · n\</span> roots (counted with multiplicity) in \<span class="math">ℙ<sup>1</sup>\</span>.</p>
                     
-                    <p><strong>Step 5:</strong> Each root corresponds to an intersection point of \\(C\\) and \\(D\\), with multiplicity equal to the intersection multiplicity. ∎</p>
+                    <p><strong>Step 5:</strong> Each root corresponds to an intersection point of \<span class="math">C\</span> and \<span class="math">D\</span>, with multiplicity equal to the intersection multiplicity. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -381,50 +380,50 @@ plt.show()
                 <h4>Introduction</h4>
                 <p>Differential geometry studies geometric properties of curves and surfaces using calculus. The <strong>Gauss-Bonnet Theorem</strong> is one of its most profound results, connecting local curvature to global topology.</p>
                 
-                <p>This theorem reveals a deep relationship between geometry (curvature) and topology (the Euler characteristic). It states that the total Gaussian curvature of a compact surface equals \\(2\\pi\\) times its Euler characteristic.</p>
+                <p>This theorem reveals a deep relationship between geometry (curvature) and topology (the Euler characteristic). It states that the total Gaussian curvature of a compact surface equals \<span class="math">2π\</span> times its Euler characteristic.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(M\\) — a compact 2-dimensional surface (manifold)</li>
-                        <li>\\(K\\) — <strong>Gaussian curvature</strong> at a point (product of principal curvatures)</li>
-                        <li>\\(\\kappa_g\\) — <strong>geodesic curvature</strong> of a curve on the surface</li>
-                        <li>\\(dA\\) — area element on the surface</li>
-                        <li>\\(ds\\) — arc length element</li>
-                        <li>\\(\\chi(M)\\) — <strong>Euler characteristic</strong> of \\(M\\)</li>
-                        <li>\\(\\partial M\\) — boundary of \\(M\\) (if any)</li>
+                        <li>\<span class="math">M\</span> — a compact 2-dimensional surface (manifold)</li>
+                        <li>\<span class="math">K\</span> — <strong>Gaussian curvature</strong> at a point (product of principal curvatures)</li>
+                        <li>\<span class="math">κ<sub>g</sub>\</span> — <strong>geodesic curvature</strong> of a curve on the surface</li>
+                        <li>\<span class="math">dA\</span> — area element on the surface</li>
+                        <li>\<span class="math">ds\</span> — arc length element</li>
+                        <li>\<span class="math">χ(M)\</span> — <strong>Euler characteristic</strong> of \<span class="math">M\</span></li>
+                        <li>\<span class="math">∂ M\</span> — boundary of \<span class="math">M\</span> (if any)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Gauss-Bonnet Theorem</div>
-                    <p>Let \\(M\\) be a compact, oriented surface with boundary \\(\\partial M\\). Then:</p>
-                    <p>\\[\\int_M K \\, dA + \\int_{\\partial M} \\kappa_g \\, ds = 2\\pi \\chi(M)\\]</p>
+                    <p>Let \<span class="math">M\</span> be a compact, oriented surface with boundary \<span class="math">∂ M\</span>. Then:</p>
+                    <p>\<div class="math-display">∫<sub>M</sub> K \\, dA + ∫<sub>∂ M</sub> κ<sub>g</sub> \\, ds = 2π χ(M)\</div></p>
                     <p>For a closed surface (no boundary):</p>
-                    <p>\\[\\int_M K \\, dA = 2\\pi \\chi(M)\\]</p>
-                    <p>where \\(\\chi(M) = V - E + F\\) is the Euler characteristic.</p>
+                    <p>\<div class="math-display">∫<sub>M</sub> K \\, dA = 2π χ(M)\</div></p>
+                    <p>where \<span class="math">χ(M) = V - E + F\</span> is the Euler characteristic.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (for compact surfaces without boundary)</div>
-                    <p><strong>Step 1:</strong> Triangulate the surface \\(M\\) into triangles \\(T_1, \\ldots, T_n\\).</p>
+                    <p><strong>Step 1:</strong> Triangulate the surface \<span class="math">M\</span> into triangles \<span class="math">T<sub>1</sub>, …, T<sub>n</sub>\</span>.</p>
                     
                     <p><strong>Step 2:</strong> For each triangle, apply the local Gauss-Bonnet formula:</p>
-                    <p>\\[\\int_{T_i} K \\, dA + \\int_{\\partial T_i} \\kappa_g \\, ds + \\sum_{j=1}^3 (\\pi - \\alpha_{ij}) = 2\\pi\\]</p>
-                    <p>where \\(\\alpha_{ij}\\) are the interior angles.</p>
+                    <p>\<div class="math-display">∫<sub>T<sub>i</sub></sub> K \\, dA + ∫<sub>∂ T<sub>i</sub></sub> κ<sub>g</sub> \\, ds + Σ<sub>j=1</sub><sup>3</sup> (π - α<sub>ij</sub>) = 2π\</div></p>
+                    <p>where \<span class="math">α<sub>ij</sub>\</span> are the interior angles.</p>
                     
                     <p><strong>Step 3:</strong> Sum over all triangles. The boundary integrals cancel (each edge appears twice with opposite orientation).</p>
                     
                     <p><strong>Step 4:</strong> The angle sum becomes:</p>
-                    <p>\\[\\sum_{i=1}^n \\sum_{j=1}^3 (\\pi - \\alpha_{ij}) = 3\\pi n - \\sum_{\\text{all angles}} \\alpha_{ij}\\]</p>
+                    <p>\<div class="math-display">Σ<sub>i=1</sub><sup>n</sup> Σ<sub>j=1</sub><sup>3</sup> (π - α<sub>ij</sub>) = 3π n - Σ<sub>all angles</sub> α<sub>ij</sub>\</div></p>
                     
-                    <p><strong>Step 5:</strong> At each vertex, the angles sum to \\(2\\pi\\). With \\(V\\) vertices:</p>
-                    <p>\\[3\\pi n - 2\\pi V = 3\\pi(2E/3) - 2\\pi V = 2\\pi E - 2\\pi V\\]</p>
-                    <p>(using \\(3n = 2E\\) since each edge belongs to 2 triangles).</p>
+                    <p><strong>Step 5:</strong> At each vertex, the angles sum to \<span class="math">2π\</span>. With \<span class="math">V\</span> vertices:</p>
+                    <p>\<div class="math-display">3π n - 2π V = 3π(2E/3) - 2π V = 2π E - 2π V\</div></p>
+                    <p>(using \<span class="math">3n = 2E\</span> since each edge belongs to 2 triangles).</p>
                     
-                    <p><strong>Step 6:</strong> Since \\(n = F\\) (number of faces):</p>
-                    <p>\\[\\int_M K \\, dA + 2\\pi F - 2\\pi V = 2\\pi F\\]</p>
-                    <p>\\[\\int_M K \\, dA = 2\\pi(V - E + F) = 2\\pi \\chi(M)\\] ∎</p>
+                    <p><strong>Step 6:</strong> Since \<span class="math">n = F\</span> (number of faces):</p>
+                    <p>\<div class="math-display">∫<sub>M</sub> K \\, dA + 2π F - 2π V = 2π F\</div></p>
+                    <p>\<div class="math-display">∫<sub>M</sub> K \\, dA = 2π(V - E + F) = 2π χ(M)\</div> ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -537,53 +536,53 @@ gauss_bonnet_verification()
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(X\\) — a normed vector space (often Banach space)</li>
-                        <li>\\(p: X \\to \\mathbb{R}\\) — a sublinear functional: \\(p(x+y) \\leq p(x) + p(y)\\) and \\(p(\\alpha x) = \\alpha p(x)\\) for \\(\\alpha \\geq 0\\)</li>
-                        <li>\\(M \\subseteq X\\) — a subspace of \\(X\\)</li>
-                        <li>\\(f: M \\to \\mathbb{R}\\) — a linear functional on \\(M\\)</li>
-                        <li>\\(\\|f\\|\\) — operator norm of \\(f\\)</li>
-                        <li>\\(X^*\\) — the dual space (space of continuous linear functionals on \\(X\\))</li>
+                        <li>\<span class="math">X\</span> — a normed vector space (often Banach space)</li>
+                        <li>\<span class="math">p: X → ℝ\</span> — a sublinear functional: \<span class="math">p(x+y) ≤ p(x) + p(y)\</span> and \<span class="math">p(α x) = α p(x)\</span> for \<span class="math">α ≥ 0\</span></li>
+                        <li>\<span class="math">M ⊆ X\</span> — a subspace of \<span class="math">X\</span></li>
+                        <li>\<span class="math">f: M → ℝ\</span> — a linear functional on \<span class="math">M\</span></li>
+                        <li>\<span class="math">\\|f\\|\</span> — operator norm of \<span class="math">f\</span></li>
+                        <li>\<span class="math">X^*\</span> — the dual space (space of continuous linear functionals on \<span class="math">X\</span>)</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Hahn-Banach Theorem (Real Version)</div>
-                    <p>Let \\(X\\) be a real vector space, \\(p: X \\to \\mathbb{R}\\) a sublinear functional, \\(M \\subseteq X\\) a subspace, and \\(f: M \\to \\mathbb{R}\\) a linear functional satisfying:</p>
-                    <p>\\[f(x) \\leq p(x) \\quad \\text{for all } x \\in M\\]</p>
-                    <p>Then there exists a linear extension \\(F: X \\to \\mathbb{R}\\) such that:</p>
+                    <p>Let \<span class="math">X\</span> be a real vector space, \<span class="math">p: X → ℝ\</span> a sublinear functional, \<span class="math">M ⊆ X\</span> a subspace, and \<span class="math">f: M → ℝ\</span> a linear functional satisfying:</p>
+                    <p>\<div class="math-display">f(x) ≤ p(x) \quad for all  x ∈ M\</div></p>
+                    <p>Then there exists a linear extension \<span class="math">F: X → ℝ\</span> such that:</p>
                     <ol>
-                        <li>\\(F(x) = f(x)\\) for all \\(x \\in M\\) (extension property)</li>
-                        <li>\\(F(x) \\leq p(x)\\) for all \\(x \\in X\\) (domination property)</li>
+                        <li>\<span class="math">F(x) = f(x)\</span> for all \<span class="math">x ∈ M\</span> (extension property)</li>
+                        <li>\<span class="math">F(x) ≤ p(x)\</span> for all \<span class="math">x ∈ X\</span> (domination property)</li>
                     </ol>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Hahn-Banach Theorem (Normed Space Version)</div>
-                    <p>Let \\(X\\) be a normed space, \\(M \\subseteq X\\) a subspace, and \\(f \\in M^*\\) (continuous linear functional on \\(M\\)). Then there exists \\(F \\in X^*\\) such that:</p>
+                    <p>Let \<span class="math">X\</span> be a normed space, \<span class="math">M ⊆ X\</span> a subspace, and \<span class="math">f ∈ M^*\</span> (continuous linear functional on \<span class="math">M\</span>). Then there exists \<span class="math">F ∈ X^*\</span> such that:</p>
                     <ol>
-                        <li>\\(F|_M = f\\) (\\(F\\) extends \\(f\\))</li>
-                        <li>\\(\\|F\\|_{X^*} = \\|f\\|_{M^*}\\) (norm preservation)</li>
+                        <li>\<span class="math">F|<sub>M</sub> = f\</span> (\<span class="math">F\</span> extends \<span class="math">f\</span>)</li>
+                        <li>\<span class="math">\\|F\\|<sub>X^*</sub> = \\|f\\|<sub>M^*</sub>\</span> (norm preservation)</li>
                     </ol>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (via Zorn's Lemma)</div>
                     <p><strong>Step 1:</strong> Define the set of all extensions:</p>
-                    <p>\\[\\mathcal{E} = \\{(Y, g) : M \\subseteq Y \\subseteq X \\text{ subspace}, g: Y \\to \\mathbb{R} \\text{ linear}, g|_M = f, g \\leq p \\text{ on } Y\\}\\]</p>
+                    <p>\<div class="math-display">E = \<span class="math">Y, g) : M ⊆ Y ⊆ X \ subspace, g: Y → ℝ \ linear, g|<sub>M</sub> = f, g ≤ p \ on  Y\\\</div></p>
                     
-                    <p><strong>Step 2:</strong> Define partial order: \\((Y_1, g_1) \\leq (Y_2, g_2)\\) if \\(Y_1 \\subseteq Y_2\\) and \\(g_2|_{Y_1} = g_1\\).</p>
+                    <p><strong>Step 2:</strong> Define partial order: \\((Y<sub>1</sub>, g<sub>1</sub>) ≤ (Y<sub>2</sub>, g<sub>2</sub>)\</span> if \<span class="math">Y<sub>1</sub> ⊆ Y<sub>2</sub>\</span> and \<span class="math">g<sub>2</sub>|<sub>Y<sub>1</sub></sub> = g<sub>1</sub>\</span>.</p>
                     
-                    <p><strong>Step 3:</strong> Every chain has an upper bound (take union). By Zorn's Lemma, there exists a maximal element \\((Y_{\\max}, g_{\\max})\\).</p>
+                    <p><strong>Step 3:</strong> Every chain has an upper bound (take union). By Zorn's Lemma, there exists a maximal element \<span class="math">(Y<sub>\max</sub>, g<sub>\max</sub>)\</span>.</p>
                     
-                    <p><strong>Step 4:</strong> Claim: \\(Y_{\\max} = X\\). If not, pick \\(x_0 \\in X \\setminus Y_{\\max}\\) and extend \\(g_{\\max}\\) to \\(\\text{span}(Y_{\\max} \\cup \\{x_0\\})\\).</p>
+                    <p><strong>Step 4:</strong> Claim: \<span class="math">Y<sub>\max</sub> = X\</span>. If not, pick \<span class="math">x<sub>0</sub> ∈ X \ Y<sub>\max</sub>\</span> and extend \<span class="math">g<sub>\max</sub>\</span> to \<span class="math">span(Y<sub>\max</sub> ∪ \\x<sub>0</sub>\\)\</span>.</p>
                     
-                    <p><strong>Step 5:</strong> Define \\(g(y + \\alpha x_0) = g_{\\max}(y) + \\alpha c\\) for appropriate \\(c\\). We need:</p>
-                    <p>\\[g_{\\max}(y) + c \\leq p(y + x_0) \\quad \\text{and} \\quad g_{\\max}(y) - c \\leq p(y - x_0)\\]</p>
+                    <p><strong>Step 5:</strong> Define \<span class="math">g(y + α x<sub>0</sub>) = g<sub>\max</sub>(y) + α c\</span> for appropriate \<span class="math">c\</span>. We need:</p>
+                    <p>\<div class="math-display">g<sub>\max</sub>(y) + c ≤ p(y + x<sub>0</sub>) \quad and \quad g<sub>\max</sub>(y) - c ≤ p(y - x<sub>0</sub>)\</div></p>
                     
-                    <p><strong>Step 6:</strong> Such \\(c\\) exists because for all \\(y_1, y_2 \\in Y_{\\max}\\):</p>
-                    <p>\\[g_{\\max}(y_1) + g_{\\max}(y_2) = g_{\\max}(y_1 + y_2) \\leq p(y_1 + y_2) \\leq p(y_1 - x_0) + p(y_2 + x_0)\\]</p>
+                    <p><strong>Step 6:</strong> Such \<span class="math">c\</span> exists because for all \<span class="math">y<sub>1</sub>, y<sub>2</sub> ∈ Y<sub>\max</sub>\</span>:</p>
+                    <p>\<div class="math-display">g<sub>\max</sub>(y<sub>1</sub>) + g<sub>\max</sub>(y<sub>2</sub>) = g<sub>\max</sub>(y<sub>1</sub> + y<sub>2</sub>) ≤ p(y<sub>1</sub> + y<sub>2</sub>) ≤ p(y<sub>1</sub> - x<sub>0</sub>) + p(y<sub>2</sub> + x<sub>0</sub>)\</div></p>
                     
-                    <p>So \\(\\sup_{y_2} [g_{\\max}(y_2) - p(y_2 + x_0)] \\leq \\inf_{y_1} [p(y_1 - x_0) - g_{\\max}(y_1)]\\), and any \\(c\\) in between works. ∎</p>
+                    <p>So \<span class="math">\sup<sub>y<sub>2</sub></sub> [g<sub>\max</sub>(y<sub>2</sub>) - p(y<sub>2</sub> + x<sub>0</sub>)] ≤ ∈f<sub>y<sub>1</sub></sub> [p(y<sub>1</sub> - x<sub>0</sub>) - g<sub>\max</sub>(y<sub>1</sub>)]\</span>, and any \<span class="math">c\</span> in between works. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -661,47 +660,47 @@ hahn_banach_demo()
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(X_1, X_2, \\ldots, X_n\\) — independent, identically distributed (i.i.d.) random variables</li>
-                        <li>\\(\\mu = \\mathbb{E}[X_i]\\) — expected value (mean)</li>
-                        <li>\\(\\sigma^2 = \\text{Var}(X_i)\\) — variance</li>
-                        <li>\\(S_n = X_1 + \\cdots + X_n\\) — sum of \\(n\\) random variables</li>
-                        <li>\\(\\bar{X}_n = S_n/n\\) — sample mean</li>
-                        <li>\\(Z_n = \\frac{S_n - n\\mu}{\\sigma\\sqrt{n}}\\) — standardized sum</li>
-                        <li>\\(\\xrightarrow{d}\\) — convergence in distribution</li>
-                        <li>\\(\\mathcal{N}(0,1)\\) — standard normal distribution</li>
+                        <li>\<span class="math">X<sub>1</sub>, X<sub>2</sub>, …, X<sub>n</sub>\</span> — independent, identically distributed (i.i.d.) random variables</li>
+                        <li>\<span class="math">μ = \mathbbE[X<sub>i</sub>]\</span> — expected value (mean)</li>
+                        <li>\<span class="math">σ<sup>2</sup> = Var(X<sub>i</sub>)\</span> — variance</li>
+                        <li>\<span class="math">S<sub>n</sub> = X<sub>1</sub> + ⋯ + X<sub>n</sub>\</span> — sum of \<span class="math">n\</span> random variables</li>
+                        <li>\<span class="math">X̄<sub>n</sub> = S<sub>n</sub>/n\</span> — sample mean</li>
+                        <li>\<span class="math">Z<sub>n</sub> = \<span class="math">S<sub>n</sub> - nμ/σ\√(n</span>)\</span> — standardized sum</li>
+                        <li>\<span class="math">\xrightarrowd\</span> — convergence in distribution</li>
+                        <li>\<span class="math">N(0,1)\</span> — standard normal distribution</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Central Limit Theorem (Lindeberg-Lévy)</div>
-                    <p>Let \\(X_1, X_2, \\ldots\\) be i.i.d. random variables with \\(\\mathbb{E}[X_i] = \\mu\\) and \\(\\text{Var}(X_i) = \\sigma^2 < \\infty\\). Then:</p>
-                    <p>\\[\\frac{S_n - n\\mu}{\\sigma\\sqrt{n}} = \\frac{\\bar{X}_n - \\mu}{\\sigma/\\sqrt{n}} \\xrightarrow{d} \\mathcal{N}(0,1)\\]</p>
-                    <p>Equivalently, for large \\(n\\):</p>
-                    <p>\\[\\bar{X}_n \\approx \\mathcal{N}\\left(\\mu, \\frac{\\sigma^2}{n}\\right)\\]</p>
+                    <p>Let \<span class="math">X<sub>1</sub>, X<sub>2</sub>, …\</span> be i.i.d. random variables with \<span class="math">\mathbbE[X<sub>i</sub>] = μ\</span> and \<span class="math">Var(X<sub>i</sub>) = σ<sup>2</sup> < ∞\</span>. Then:</p>
+                    <p>\<div class="math-display">\<span class="math">S<sub>n</sub> - nμ/σ\√(n</span>) = \fracX̄<sub>n</sub> - μσ/\√(n) \xrightarrowd N(0,1)\</div></p>
+                    <p>Equivalently, for large \<span class="math">n\</span>:</p>
+                    <p>\<div class="math-display">X̄<sub>n</sub> ≈ N<span class="math">μ, \<span class="math">σ<sup>2</sup>/n</span></span>\</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof Sketch (using characteristic functions)</div>
                     <p><strong>Step 1:</strong> Define the standardized variable:</p>
-                    <p>\\[Z_n = \\frac{S_n - n\\mu}{\\sigma\\sqrt{n}} = \\sum_{i=1}^n \\frac{X_i - \\mu}{\\sigma\\sqrt{n}} = \\sum_{i=1}^n Y_{n,i}\\]</p>
+                    <p>\<div class="math-display">Z<sub>n</sub> = \<span class="math">S<sub>n</sub> - nμ/σ\√(n</span>) = Σ<sub>i=1</sub><sup>n</sup> \<span class="math">X<sub>i</sub> - μ/σ\√(n</span>) = Σ<sub>i=1</sub><sup>n</sup> Y<sub>n,i</sub>\</div></p>
                     
-                    <p>where \\(Y_{n,i} = \\frac{X_i - \\mu}{\\sigma\\sqrt{n}}\\).</p>
+                    <p>where \<span class="math">Y<sub>n,i</sub> = \<span class="math">X<sub>i</sub> - μ/σ\√(n</span>)\</span>.</p>
                     
-                    <p><strong>Step 2:</strong> The characteristic function of \\(Z_n\\) is:</p>
-                    <p>\\[\\varphi_{Z_n}(t) = \\mathbb{E}[e^{itZ_n}] = \\prod_{i=1}^n \\mathbb{E}[e^{itY_{n,i}}] = \\left(\\varphi_{Y_{n,1}}(t)\\right)^n\\]</p>
+                    <p><strong>Step 2:</strong> The characteristic function of \<span class="math">Z<sub>n</sub>\</span> is:</p>
+                    <p>\<div class="math-display">ϕ<sub>Z<sub>n</sub></sub>(t) = \mathbbE[e<sup>itZ<sub>n</sub></sup>] = Π<sub>i=1</sub><sup>n</sup> \mathbbE[e<sup>itY<sub>n,i</sup></sub>] = <span class="math">ϕ<sub>Y<sub>n</sub>,1</sub>(t)</span><sup>n</sup>\</div></p>
                     
-                    <p><strong>Notation:</strong> \\(\\varphi_X(t) = \\mathbb{E}[e^{itX}]\\) is the characteristic function of \\(X\\).</p>
+                    <p><strong>Notation:</strong> \<span class="math">ϕ<sub>X</sub>(t) = \mathbbE[e<sup>itX</sup>]\</span> is the characteristic function of \<span class="math">X\</span>.</p>
                     
-                    <p><strong>Step 3:</strong> Taylor expand \\(\\varphi_{X_1 - \\mu}(s)\\) around \\(s = 0\\):</p>
-                    <p>\\[\\varphi_{X_1 - \\mu}(s) = 1 + is\\mathbb{E}[X_1 - \\mu] - \\frac{s^2}{2}\\mathbb{E}[(X_1 - \\mu)^2] + o(s^2) = 1 - \\frac{\\sigma^2 s^2}{2} + o(s^2)\\]</p>
+                    <p><strong>Step 3:</strong> Taylor expand \<span class="math">ϕ<sub>X<sub>1</sub> - μ</sub>(s)\</span> around \<span class="math">s = 0\</span>:</p>
+                    <p>\<div class="math-display">ϕ<sub>X<sub>1</sub> - μ</sub>(s) = 1 + is\mathbbE[X<sub>1</sub> - μ] - \<span class="math">s<sup>2</sup>/2</span>\mathbbE[(X<sub>1</sub> - μ)<sup>2</sup>] + o(s<sup>2</sup>) = 1 - \<span class="math">σ<sup>2</sup> s<sup>2</sup>/2</span> + o(s<sup>2</sup>)\</div></p>
                     
-                    <p><strong>Step 4:</strong> Substitute \\(s = \\frac{t}{\\sigma\\sqrt{n}}\\):</p>
-                    <p>\\[\\varphi_{Y_{n,1}}(t) = 1 - \\frac{t^2}{2n} + o\\left(\\frac{1}{n}\\right)\\]</p>
+                    <p><strong>Step 4:</strong> Substitute \<span class="math">s = \<span class="math">t/σ\√(n</span>)\</span>:</p>
+                    <p>\<div class="math-display">ϕ<sub>Y_n,1</sub>(t) = 1 - \<span class="math">t<sup>2</sup>/2n</span> + o<span class="math">\<span class="math">1/n</span></span>\</div></p>
                     
                     <p><strong>Step 5:</strong> Therefore:</p>
-                    <p>\\[\\varphi_{Z_n}(t) = \\left(1 - \\frac{t^2}{2n} + o\\left(\\frac{1}{n}\\right)\\right)^n \\to e^{-t^2/2}\\]</p>
+                    <p>\<div class="math-display">ϕ<sub>Z<sub>n</sub></sub>(t) = <span class="math">1 - \<span class="math">t<sup>2</sup>/2n</span> + o\(\<span class="math">1/n</span></span>\)<sup>n</sup> → e<sup>-t<sup>2</sup>/2</sup>\</div></p>
                     
-                    <p><strong>Step 6:</strong> Since \\(e^{-t^2/2}\\) is the characteristic function of \\(\\mathcal{N}(0,1)\\), by the <strong>Continuity Theorem</strong>, \\(Z_n \\xrightarrow{d} \\mathcal{N}(0,1)\\). ∎</p>
+                    <p><strong>Step 6:</strong> Since \<span class="math">e<sup>-t<sup>2</sup>/2</sup>\</span> is the characteristic function of \<span class="math">N(0,1)\</span>, by the <strong>Continuity Theorem</strong>, \<span class="math">Z<sub>n</sub> \xrightarrowd N(0,1)\</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -796,32 +795,32 @@ plt.show()
                 <h3>2. Numerical Analysis: The Fast Fourier Transform</h3>
                 
                 <h4>Introduction</h4>
-                <p>The <strong>Fast Fourier Transform (FFT)</strong> is one of the most important algorithms in numerical computing. It computes the Discrete Fourier Transform (DFT) in \\(O(n \\log n)\\) time instead of \\(O(n^2)\\), enabling applications from signal processing to polynomial multiplication.</p>
+                <p>The <strong>Fast Fourier Transform (FFT)</strong> is one of the most important algorithms in numerical computing. It computes the Discrete Fourier Transform (DFT) in \<span class="math">O(n \log n)\</span> time instead of \<span class="math">O(n<sup>2</sup>)\</span>, enabling applications from signal processing to polynomial multiplication.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(\\omega_n = e^{2\\pi i / n}\\) — primitive \\(n\\)-th root of unity</li>
-                        <li>\\(\\omega_n^k = e^{2\\pi i k / n}\\) — \\(k\\)-th power of \\(\\omega_n\\)</li>
-                        <li>\\(X_k\\) — \\(k\\)-th DFT coefficient</li>
-                        <li>\\(x_j\\) — \\(j\\)-th time-domain sample</li>
-                        <li>\\(i = \\sqrt{-1}\\) — imaginary unit</li>
+                        <li>\<span class="math">ω<sub>n</sub> = e<sup>2π i / n</sup>\</span> — primitive \<span class="math">n\</span>-th root of unity</li>
+                        <li>\<span class="math">ω<sub>n</sub><sup>k</sup> = e<sup>2π i k / n</sup>\</span> — \<span class="math">k\</span>-th power of \<span class="math">ω<sub>n</sub>\</span></li>
+                        <li>\<span class="math">X<sub>k</sub>\</span> — \<span class="math">k\</span>-th DFT coefficient</li>
+                        <li>\<span class="math">x<sub>j</sub>\</span> — \<span class="math">j\</span>-th time-domain sample</li>
+                        <li>\<span class="math">i = \√(-1)\</span> — imaginary unit</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Discrete Fourier Transform (DFT)</div>
-                    <p>Given a sequence \\(x = (x_0, x_1, \\ldots, x_{n-1})\\), the DFT is:</p>
-                    <p>\\[X_k = \\sum_{j=0}^{n-1} x_j \\omega_n^{jk}, \\quad k = 0, 1, \\ldots, n-1\\]</p>
-                    <p>where \\(\\omega_n = e^{-2\\pi i / n}\\) (note: some conventions use \\(+\\) instead of \\(-\\)).</p>
+                    <p>Given a sequence \<span class="math">x = (x<sub>0</sub>, x<sub>1</sub>, …, x<sub>n-1</sub>)\</span>, the DFT is:</p>
+                    <p>\<div class="math-display">X<sub>k</sub> = Σ<sub>j=0</sub><sup>n-1</sup> x<sub>j</sub> ω<sub>n</sub><sup>jk</sup>, \quad k = 0, 1, …, n-1\</div></p>
+                    <p>where \<span class="math">ω<sub>n</sub> = e<sup>-2π i / n</sup>\</span> (note: some conventions use \<span class="math">+\</span> instead of \<span class="math">-\</span>).</p>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Fast Fourier Transform (Cooley-Tukey)</div>
-                    <p>For \\(n = 2^m\\), the DFT can be computed in \\(O(n \\log n)\\) operations using the <strong>divide-and-conquer</strong> approach:</p>
-                    <p>\\[X_k = \\sum_{j=0}^{n/2-1} x_{2j} \\omega_{n/2}^{jk} + \\omega_n^k \\sum_{j=0}^{n/2-1} x_{2j+1} \\omega_{n/2}^{jk}\\]</p>
-                    <p>\\[= E_k + \\omega_n^k O_k\\]</p>
-                    <p>where \\(E_k\\) is the DFT of even-indexed elements and \\(O_k\\) is the DFT of odd-indexed elements.</p>
+                    <p>For \<span class="math">n = 2<sup>m</sup>\</span>, the DFT can be computed in \<span class="math">O(n \log n)\</span> operations using the <strong>divide-and-conquer</strong> approach:</p>
+                    <p>\<div class="math-display">X<sub>k</sub> = Σ<sub>j=0</sub><sup>n/2-1</sup> x<sub>2j</sub> ω<sub>n/2</sub><sup>jk</sup> + ω<sub>n</sub><sup>k</sup> Σ<sub>j=0</sub><sup>n/2-1</sup> x<sub>2j+1</sub> ω<sub>n/2</sub><sup>jk</sup>\</div></p>
+                    <p>\<div class="math-display">= E<sub>k</sub> + ω<sub>n</sub><sup>k</sup> O<sub>k</sub>\</div></p>
+                    <p>where \<span class="math">E<sub>k</sub>\</span> is the DFT of even-indexed elements and \<span class="math">O<sub>k</sub>\</span> is the DFT of odd-indexed elements.</p>
                 </div>
 
                 <div class="proof">
@@ -829,21 +828,21 @@ plt.show()
                     <p><strong>Correctness:</strong></p>
                     
                     <p><strong>Step 1:</strong> Split the DFT sum into even and odd indices:</p>
-                    <p>\\[X_k = \\sum_{j=0}^{n/2-1} x_{2j} \\omega_n^{2jk} + \\sum_{j=0}^{n/2-1} x_{2j+1} \\omega_n^{(2j+1)k}\\]</p>
+                    <p>\<div class="math-display">X<sub>k</sub> = Σ<sub>j=0</sub><sup>n/2-1</sup> x<sub>2j</sub> ω<sub>n</sub><sup>2jk</sup> + Σ<sub>j=0</sub><sup>n/2-1</sup> x<sub>2j+1</sub> ω<sub>n</sub><sup>(2j+1)k</sup>\</div></p>
                     
-                    <p><strong>Step 2:</strong> Use \\(\\omega_n^{2jk} = (\\omega_n^2)^{jk} = \\omega_{n/2}^{jk}\\):</p>
-                    <p>\\[X_k = \\sum_{j=0}^{n/2-1} x_{2j} \\omega_{n/2}^{jk} + \\omega_n^k \\sum_{j=0}^{n/2-1} x_{2j+1} \\omega_{n/2}^{jk} = E_k + \\omega_n^k O_k\\]</p>
+                    <p><strong>Step 2:</strong> Use \<span class="math">ω<sub>n</sub><sup>2jk</sup> = (ω<sub>n</sub><sup>2</sup>)<sup>jk</sup> = ω<sub>n/2</sub><sup>jk</sup>\</span>:</p>
+                    <p>\<div class="math-display">X<sub>k</sub> = Σ<sub>j=0</sub><sup>n/2-1</sup> x<sub>2j</sub> ω<sub>n/2</sub><sup>jk</sup> + ω<sub>n</sub><sup>k</sup> Σ<sub>j=0</sub><sup>n/2-1</sup> x<sub>2j+1</sub> ω<sub>n/2</sub><sup>jk</sup> = E<sub>k</sub> + ω<sub>n</sub><sup>k</sup> O<sub>k</sub>\</div></p>
                     
-                    <p><strong>Step 3:</strong> For \\(k + n/2\\), use \\(\\omega_n^{k+n/2} = -\\omega_n^k\\):</p>
-                    <p>\\[X_{k+n/2} = E_k - \\omega_n^k O_k\\]</p>
+                    <p><strong>Step 3:</strong> For \<span class="math">k + n/2\</span>, use \<span class="math">ω<sub>n</sub><sup>k+n/2</sup> = -ω<sub>n</sub><sup>k</sup>\</span>:</p>
+                    <p>\<div class="math-display">X<sub>k+n/2</sub> = E<sub>k</sub> - ω<sub>n</sub><sup>k</sup> O<sub>k</sub>\</div></p>
                     
                     <p><strong>Complexity:</strong></p>
                     
-                    <p><strong>Step 4:</strong> Let \\(T(n)\\) be the number of operations for size \\(n\\).</p>
+                    <p><strong>Step 4:</strong> Let \<span class="math">T(n)\</span> be the number of operations for size \<span class="math">n\</span>.</p>
                     
-                    <p><strong>Step 5:</strong> Recurrence: \\(T(n) = 2T(n/2) + O(n)\\) (two half-size DFTs plus \\(n\\) combinations).</p>
+                    <p><strong>Step 5:</strong> Recurrence: \<span class="math">T(n) = 2T(n/2) + O(n)\</span> (two half-size DFTs plus \<span class="math">n\</span> combinations).</p>
                     
-                    <p><strong>Step 6:</strong> By the Master Theorem: \\(T(n) = O(n \\log n)\\). ∎</p>
+                    <p><strong>Step 6:</strong> By the Master Theorem: \<span class="math">T(n) = O(n \log n)\</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -961,44 +960,44 @@ fft_demo()
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(N(t)\\) — population size at time \\(t\\)</li>
-                        <li>\\(N_0\\) — initial population size</li>
-                        <li>\\(r\\) — intrinsic growth rate</li>
-                        <li>\\(K\\) — carrying capacity</li>
-                        <li>\\(\\frac{dN}{dt}\\) — rate of change of population</li>
+                        <li>\<span class="math">N(t)\</span> — population size at time \<span class="math">t\</span></li>
+                        <li>\<span class="math">N<sub>0</sub>\</span> — initial population size</li>
+                        <li>\<span class="math">r\</span> — intrinsic growth rate</li>
+                        <li>\<span class="math">K\</span> — carrying capacity</li>
+                        <li>\<span class="math">\<span class="math">dN/dt</span>\</span> — rate of change of population</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Logistic Growth Equation</div>
-                    <p>\\[\\frac{dN}{dt} = rN\\left(1 - \\frac{N}{K}\\right)\\]</p>
-                    <p>With initial condition \\(N(0) = N_0\\), the solution is:</p>
-                    <p>\\[N(t) = \\frac{K}{1 + \\left(\\frac{K - N_0}{N_0}\\right)e^{-rt}}\\]</p>
+                    <p>\<div class="math-display">\<span class="math">dN/dt</span> = rN<span class="math">1 - \<span class="math">N/K</span></span>\</div></p>
+                    <p>With initial condition \<span class="math">N(0) = N<sub>0</sub>\</span>, the solution is:</p>
+                    <p>\<div class="math-display">N(t) = \<span class="math">K/1 + <span class="math">fracK - N<sub>0</sub></span>N<sub>0</sub></span>e<sup>-rt</sup>\</div></p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Solution of the Logistic Equation</div>
                     <p><strong>Step 1:</strong> Separate variables:</p>
-                    <p>\\[\\frac{dN}{N(1 - N/K)} = r \\, dt\\]</p>
+                    <p>\<div class="math-display">\<span class="math">dN/N(1 - N/K)</span> = r \\, dt\</div></p>
                     
                     <p><strong>Step 2:</strong> Use partial fractions:</p>
-                    <p>\\[\\frac{1}{N(1 - N/K)} = \\frac{1}{N} + \\frac{1/K}{1 - N/K} = \\frac{1}{N} + \\frac{1}{K - N}\\]</p>
+                    <p>\<div class="math-display">\<span class="math">1/N(1 - N/K)</span> = \<span class="math">1/N</span> + \<span class="math">1/K/1 - N/K</span> = \<span class="math">1/N</span> + \<span class="math">1/K - N</span>\</div></p>
                     
                     <p><strong>Step 3:</strong> Integrate both sides:</p>
-                    <p>\\[\\int \\left(\\frac{1}{N} + \\frac{1}{K - N}\\right) dN = \\int r \\, dt\\]</p>
+                    <p>\<div class="math-display">∫ <span class="math">\<span class="math">1/N</span> + \<span class="math">1/K - N</span></span> dN = ∫ r \\, dt\</div></p>
                     
-                    <p>\\[\\ln|N| - \\ln|K - N| = rt + C\\]</p>
+                    <p>\<div class="math-display">\ln|N| - \ln|K - N| = rt + C\</div></p>
                     
                     <p><strong>Step 4:</strong> Simplify:</p>
-                    <p>\\[\\ln\\left|\\frac{N}{K - N}\\right| = rt + C\\]</p>
+                    <p>\<div class="math-display">\ln\|\<span class="math">N/K - N</span>\| = rt + C\</div></p>
                     
-                    <p><strong>Step 5:</strong> Apply initial condition \\(N(0) = N_0\\):</p>
-                    <p>\\[\\frac{N_0}{K - N_0} = e^C\\]</p>
+                    <p><strong>Step 5:</strong> Apply initial condition \<span class="math">N(0) = N<sub>0</sub>\</span>:</p>
+                    <p>\<div class="math-display">\<span class="math">N<sub>0</sub>/K - N<sub>0</sub></span> = e<sup>C</sup>\</div></p>
                     
-                    <p><strong>Step 6:</strong> Solve for \\(N(t)\\):</p>
-                    <p>\\[\\frac{N}{K - N} = \\frac{N_0}{K - N_0} e^{rt}\\]</p>
+                    <p><strong>Step 6:</strong> Solve for \<span class="math">N(t)\</span>:</p>
+                    <p>\<div class="math-display">\<span class="math">N/K - N</span> = \<span class="math">N<sub>0</sub>/K - N<sub>0</sub></span> e<sup>rt</sup>\</div></p>
                     
-                    <p>\\[N = \\frac{K N_0 e^{rt}}{K - N_0 + N_0 e^{rt}} = \\frac{K}{1 + \\frac{K - N_0}{N_0}e^{-rt}}\\] ∎</p>
+                    <p>\<div class="math-display">N = \<span class="math">K N<sub>0</sub> e<sup>rt</sup>/K - N<sub>0</sub> + N<sub>0</sub> e<sup>rt</sup></span> = \<span class="math">K/1 + \fracK - N<sub>0</sub></span>N<sub>0</sub>e<sup>-rt</sup>\</div> ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1083,18 +1082,18 @@ logistic_demo()
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(s = \\sigma + it\\) — complex variable</li>
-                        <li>\\(\\zeta(s)\\) — Riemann zeta function</li>
-                        <li>\\(\\Gamma(s)\\) — Gamma function</li>
-                        <li>\\(\\rho\\) — non-trivial zero of \\(\\zeta(s)\\)</li>
-                        <li>\\(\\pi(x)\\) — prime counting function</li>
+                        <li>\<span class="math">s = σ + it\</span> — complex variable</li>
+                        <li>\<span class="math">ζ(s)\</span> — Riemann zeta function</li>
+                        <li>\<span class="math">Γ(s)\</span> — Gamma function</li>
+                        <li>\<span class="math">ρ\</span> — non-trivial zero of \<span class="math">ζ(s)\</span></li>
+                        <li>\<span class="math">π(x)\</span> — prime counting function</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">The Riemann Hypothesis</div>
-                    <p>All non-trivial zeros of \\(\\zeta(s)\\) have real part equal to \\(\\frac{1}{2}\\):</p>
-                    <p>\\[\\zeta(\\sigma + it) = 0 \\text{ and } 0 \\leq \\sigma \\leq 1 \\implies \\sigma = \\frac{1}{2}\\]</p>
+                    <p>All non-trivial zeros of \<span class="math">ζ(s)\</span> have real part equal to \<span class="math">\<span class="math">1/2</span>\</span>:</p>
+                    <p>\<div class="math-display">ζ(σ + it) = 0 \ and  0 ≤ σ ≤ 1 ⇒ σ = \<span class="math">1/2</span>\</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1137,8 +1136,8 @@ riemann_hypothesis_demo()
 
                 <div class="theorem">
                     <div class="theorem-title">Cook-Levin Theorem (1971)</div>
-                    <p>The Boolean satisfiability problem (SAT) is \\(\\mathbf{NP}\\)-complete.</p>
-                    <p>If any \\(\\mathbf{NP}\\)-complete problem is in \\(\\mathbf{P}\\), then \\(\\mathbf{P} = \\mathbf{NP}\\).</p>
+                    <p>The Boolean satisfiability problem (SAT) is \<span class="math">\<strong>NP</strong>\</span>-complete.</p>
+                    <p>If any \<span class="math">\<strong>NP</strong>\</span>-complete problem is in \<span class="math">\<strong>P</strong>\</span>, then \<span class="math">\<strong>P</strong> = \<strong>NP</strong>\</span>.</p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1213,23 +1212,23 @@ p_vs_np_demo()
                 <h3>3. The Birch and Swinnerton-Dyer Conjecture</h3>
                 
                 <h4>Introduction</h4>
-                <p>The <strong>Birch and Swinnerton-Dyer (BSD) Conjecture</strong> relates the number of rational points on an elliptic curve to the behavior of its L-function at \\(s = 1\\). It is another Millennium Prize Problem.</p>
+                <p>The <strong>Birch and Swinnerton-Dyer (BSD) Conjecture</strong> relates the number of rational points on an elliptic curve to the behavior of its L-function at \<span class="math">s = 1\</span>. It is another Millennium Prize Problem.</p>
 
                 <div class="notation-box">
                     <h4>Notation Guide</h4>
                     <ul>
-                        <li>\\(E\\) — an elliptic curve over \\(\\mathbb{Q}\\)</li>
-                        <li>\\(E(\\mathbb{Q})\\) — group of rational points on \\(E\\)</li>
-                        <li>\\(r\\) — rank of \\(E(\\mathbb{Q})\\)</li>
-                        <li>\\(L(E, s)\\) — L-function of the elliptic curve</li>
-                        <li>\\(\\text{Sha}\\) (Tate-Shafarevich group) — measures failure of local-to-global principle</li>
+                        <li>\<span class="math">E\</span> — an elliptic curve over \<span class="math">ℚ\</span></li>
+                        <li>\<span class="math">E(ℚ)\</span> — group of rational points on \<span class="math">E\</span></li>
+                        <li>\<span class="math">r\</span> — rank of \<span class="math">E(ℚ)\</span></li>
+                        <li>\<span class="math">L(E, s)\</span> — L-function of the elliptic curve</li>
+                        <li>\<span class="math">Sha\</span> (Tate-Shafarevich group) — measures failure of local-to-global principle</li>
                     </ul>
                 </div>
 
                 <div class="theorem">
                     <div class="theorem-title">Birch and Swinnerton-Dyer Conjecture (Weak Form)</div>
-                    <p>The order of vanishing of \\(L(E, s)\\) at \\(s = 1\\) equals the rank of \\(E(\\mathbb{Q})\\):</p>
-                    <p>\\[\\text{ord}_{s=1} L(E, s) = \\text{rank}(E(\\mathbb{Q}))\\]</p>
+                    <p>The order of vanishing of \<span class="math">L(E, s)\</span> at \<span class="math">s = 1\</span> equals the rank of \<span class="math">E(ℚ)\</span>:</p>
+                    <p>\<div class="math-display">ord<sub>s=1</sub> L(E, s) = rank(E(ℚ))\</div></p>
                 </div>
 
                 <h4>Python Implementation</h4>
@@ -1273,23 +1272,23 @@ bsd_demo()
                 <div class="theorem">
                     <div class="theorem-title">The Monty Hall Problem</div>
                     <p><strong>Setup:</strong> Three doors hide one car and two goats. You pick a door. The host, who knows what's behind each door, opens another door revealing a goat. Should you switch?</p>
-                    <p><strong>Solution:</strong> Switching gives you a \\(\\frac{2}{3}\\) chance of winning; staying gives only \\(\\frac{1}{3}\\).</p>
+                    <p><strong>Solution:</strong> Switching gives you a \<span class="math">\<span class="math">2/3</span>\</span> chance of winning; staying gives only \<span class="math">\<span class="math">1/3</span>\</span>.</p>
                 </div>
 
                 <div class="proof">
                     <div class="proof-title">Proof by Conditional Probability</div>
-                    <p><strong>Step 1:</strong> Let \\(C_i\\) be the event that the car is behind door \\(i\\), and \\(H_j\\) be the event that host opens door \\(j\\).</p>
+                    <p><strong>Step 1:</strong> Let \<span class="math">C<sub>i</sub>\</span> be the event that the car is behind door \<span class="math">i\</span>, and \<span class="math">H<sub>j</sub>\</span> be the event that host opens door \<span class="math">j\</span>.</p>
                     
-                    <p><strong>Step 2:</strong> Assume you pick door 1. Initially \\(P(C_1) = P(C_2) = P(C_3) = \\frac{1}{3}\\).</p>
+                    <p><strong>Step 2:</strong> Assume you pick door 1. Initially \<span class="math">P(C<sub>1</sub>) = P(C<sub>2</sub>) = P(C<sub>3</sub>) = \<span class="math">1/3</span>\</span>.</p>
                     
                     <p><strong>Step 3:</strong> If car is behind door 1 (you picked right), host can open door 2 or 3.</p>
                     
                     <p><strong>Step 4:</strong> If car is behind door 2, host must open door 3. If car is behind door 3, host must open door 2.</p>
                     
                     <p><strong>Step 5:</strong> Suppose host opens door 3. By Bayes' theorem:</p>
-                    <p>\\[P(C_2 | H_3) = \\frac{P(H_3 | C_2)P(C_2)}{P(H_3)} = \\frac{1 \\cdot \\frac{1}{3}}{\\frac{1}{2} \\cdot \\frac{1}{3} + 1 \\cdot \\frac{1}{3} + 0 \\cdot \\frac{1}{3}} = \\frac{2}{3}\\]</p>
+                    <p>\<div class="math-display">P(C<sub>2</sub> | H<sub>3</sub>) = \<span class="math">P(H<sub>3</sub> | C<sub>2</sub>)P(C<sub>2</sub>)/P(H<sub>3</sub>)</span> = \<span class="math">1 · \frac1/3</span>\<span class="math">1/2</span> · \<span class="math">1/3</span> + 1 · \<span class="math">1/3</span> + 0 · \<span class="math">1/3</span> = \<span class="math">2/3</span>\</div></p>
                     
-                    <p><strong>Step 6:</strong> Similarly \\(P(C_1 | H_3) = \\frac{1}{3}\\). Therefore switching wins with probability \\(\\frac{2}{3}\\). ∎</p>
+                    <p><strong>Step 6:</strong> Similarly \<span class="math">P(C<sub>1</sub> | H<sub>3</sub>) = \<span class="math">1/3</span>\</span>. Therefore switching wins with probability \<span class="math">\<span class="math">2/3</span>\</span>. ∎</p>
                 </div>
 
                 <h4>Python Implementation</h4>
