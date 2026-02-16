@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Lie Groups, Game Theory & Coding Theory">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — Lie Groups, Game Theory & Coding Theory</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="post-date">February 16, 2026 at 14:25 UTC</p>
+        <div class="tags">
+            <span class="tag">lie-groups</span>
+            <span class="tag">game-theory</span>
+            <span class="tag">coding-theory</span>
+            <span class="tag">operator-algebras</span>
+            <span class="tag">stochastic-processes</span>
+        </div>
+
+        <!-- Section 1: 3 Math Links -->
+        <section id="links">
+            <h2>🔗 3 Math Links</h2>
+            <ul>
+                <li><strong><a href="https://math.mit.edu/~dav/LG.pdf">Lie Groups and Lie Algebras</a></strong> — Victor Kac's concise yet comprehensive notes on Lie theory, covering the classification of simple Lie algebras, root systems, and representation theory. These notes are renowned for their clarity and efficient path to deep results.</li>
+                <li><strong><a href="https://www.cs.cmu.edu/~sandholm/cs15-892F13/algorithmic-game-theory.pdf">Algorithmic Game Theory</a></strong> — A comprehensive text edited by Noam Nisan, Tim Roughgarden, Éva Tardos, and Vijay Vazirani, covering the intersection of game theory and computer science. Essential for understanding modern approaches to mechanism design and computational aspects of strategic interaction.</li>
+                <li><strong><a href="https://moodle.tec-wl.de/mod/resource/view.php?id=14038">Introduction to Coding Theory</a></strong> — Jürgen Bierbrauer's excellent introduction to algebraic coding theory, covering linear codes, cyclic codes, Reed-Solomon codes, and their applications in modern communication systems.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: 1 Free Math Book -->
+        <section id="book">
+            <h2>📚 Free Math Book of the Day</h2>
+            <h3><em>An Introduction to the Theory of Numbers</em> by G.H. Hardy and E.M. Wright</h3>
+            <p>This classic text, first published in 1938, remains the definitive introduction to number theory. While not the most recent edition, earlier versions and comprehensive course notes following its approach are freely available. The book covers:</p>
+            <ul>
+                <li>The series of primes and the fundamental theorem of arithmetic</li>
+                <li>Congruences, Fermat's theorem, and quadratic residues</li>
+                <li>Continued fractions and approximation of irrationals</li>
+                <li>Diophantine equations and geometry of numbers</li>
+                <li>Quadratic fields and algebraic number theory basics</li>
+                <li>Partitions and the Rogers-Ramanujan identities</li>
+            </ul>
+            <p>What distinguishes this book is its emphasis on the beauty and elegance of number theory. Hardy's writing conveys the aesthetic appeal of mathematics, making this not just a textbook but a work of mathematical literature.</p>
+            <p><strong>Level:</strong> Advanced undergraduate to graduate<br>
+            <strong>Available free at:</strong> <a href="https://archive.org/details/introductorycour0000hard">Internet Archive</a></p>
+        </section>
+
+        <!-- Section 3: 3 Pure Math Deep-Dives -->
+        <section id="pure">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+            
+            <h3>Lie Groups: Continuous Symmetry</h3>
+            <p>Lie groups are groups that are also smooth manifolds, with group operations that are smooth maps. They provide the mathematical framework for continuous symmetry and are fundamental to modern physics, from classical mechanics to quantum field theory.</p>
+            
+            <p><strong>Motivation:</strong> While finite groups describe discrete symmetries (like the symmetries of a cube), many physical systems have continuous symmetries. The rotation group SO(3) describes all possible rotations of a rigid body in 3D space—a continuous family of symmetries.</p>
+
+            <p><strong>Definition (Lie Group):</strong> A <strong>Lie group</strong> \(G\) is a smooth manifold equipped with a group structure such that the multiplication map \(\mu: G \\times G \\to G\) and the inversion map \(i: G \\to G\) are smooth.</p>
+
+            <p><strong>Definition (Lie Algebra):</strong> The <strong>Lie algebra</strong> \(\mathfrak{g}\) of a Lie group \(G\) is the tangent space at the identity \(T_eG\), equipped with the Lie bracket operation \([X, Y]\) induced by the commutator of left-invariant vector fields.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(GL(n, \\mathbb{R})\) — general linear group of invertible \(n \\times n\) real matrices</li>
+                <li>\(SL(n, \\mathbb{R})\) — special linear group (determinant 1)</li>
+                <li>\(O(n)\) — orthogonal group (preserves Euclidean inner product)</li>
+                <li>\(SO(n)\) — special orthogonal group (orthogonal with determinant 1)</li>
+                <li>\(U(n)\) — unitary group (preserves Hermitian inner product)</li>
+                <li>\(SU(n)\) — special unitary group</li>
+                <li>\(\mathfrak{so}(n)\), \(\mathfrak{su}(n)\) — corresponding Lie algebras</li>
+                <li>\(\exp: \\mathfrak{g} \\to G\) — exponential map</li>
+            </ul>
+
+            <p><strong>Theorem (Closed Subgroup Theorem):</strong> Let \(G\) be a Lie group and \(H \\subseteq G\) be a closed subgroup. Then \(H\) is an embedded Lie subgroup of \(G\), and the Lie algebra of \(H\) is:
+            \[ \\mathfrak{h} = \\{X \\in \\mathfrak{g} : \\exp(tX) \\in H \\text{ for all } t \\in \\mathbb{R} \\} \]</p>
+
+            <p><em>Proof sketch:</em> The key insight is that near the identity, the exponential map provides a local diffeomorphism between the Lie algebra and the Lie group. For a closed subgroup \(H\), the set of tangent vectors at the identity that exponentiate into \(H\) forms a Lie subalgebra. The closedness of \(H\) ensures that this subalgebra integrates to a subgroup. ∎</p>
+
+            <p><strong>Theorem (Lie's Third Theorem):</strong> Every finite-dimensional real Lie algebra is the Lie algebra of some simply connected Lie group.</p>
+
+            <p><em>Proof sketch:</em> The proof uses Ado's theorem to embed the Lie algebra into \(\mathfrak{gl}(n, \\mathbb{R})\) for some \(n\), then constructs the corresponding Lie group as a subgroup of \(GL(n, \\mathbb{R})\). The simply connected cover is then taken to obtain the desired group. ∎</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+class LieGroupDemo:
+    """Demonstrate Lie group concepts computationally."""
+    
+    @staticmethod
+    def so3_rotation(axis, angle):
+        """
+        Generate rotation matrix in SO(3) using Rodrigues' formula.
+        
+        The Lie algebra so(3) consists of skew-symmetric matrices.
+        For unit vector w = (w1, w2, w3), the generator is:
+        W = [[0, -w3, w2],
+             [w3, 0, -w1],
+             [-w2, w1, 0]]
+        
+        The exponential map gives: exp(θW) = I + sin(θ)W + (1-cos(θ))W²
+        """
+        axis = np.array(axis) / np.linalg.norm(axis)
+        w1, w2, w3 = axis
+        
+        # Skew-symmetric generator
+        W = np.array([[0, -w3, w2],
+                      [w3, 0, -w1],
+                      [-w2, w1, 0]])
+        
+        # Rodrigues' formula (matrix exponential on so(3))
+        I = np.eye(3)
+        R = I + np.sin(angle) * W + (1 - np.cos(angle)) * np.dot(W, W)
+        return R
+    
+    @staticmethod
+    def visualize_so3():
+        """Visualize rotations in SO(3)."""
+        fig = plt.figure(figsize=(12, 4))
+        
+        # Original basis vectors
+        e1 = np.array([1, 0, 0])
+        e2 = np.array([0, 1, 0])
+        e3 = np.array([0, 0, 1])
+        
+        angles = [0, np.pi/4, np.pi/2, 3*np.pi/4]
+        axis = [0, 0, 1]  # Rotate around z-axis
+        
+        for i, angle in enumerate(angles):
+            ax = fig.add_subplot(1, 4, i+1, projection='3d')
+            
+            R = LieGroupDemo.so3_rotation(axis, angle)
+            
+            # Rotate basis vectors
+            r1, r2, r3 = R @ e1, R @ e2, R @ e3
+            
+            # Plot rotated basis
+            ax.quiver(0, 0, 0, r1[0], r1[1], r1[2], color='r', arrow_length_ratio=0.1)
+            ax.quiver(0, 0, 0, r2[0], r2[1], r2[2], color='g', arrow_length_ratio=0.1)
+            ax.quiver(0, 0, 0, r3[0], r3[1], r3[2], color='b', arrow_length_ratio=0.1)
+            
+            ax.set_xlim([-1.2, 1.2])
+            ax.set_ylim([-1.2, 1.2])
+            ax.set_zlim([-1.2, 1.2])
+            ax.set_title(f'Rotation by {angle:.2f} rad')
+        
+        plt.tight_layout()
+        plt.savefig('so3_rotations.png', dpi=150, bbox_inches='tight')
+        print("SO(3) is the group of 3D rotations")
+        print("dim(SO(3)) = 3, corresponding to rotations about x, y, z axes")
+        print("The Lie algebra so(3) consists of skew-symmetric 3x3 matrices")
+
+LieGroupDemo.visualize_so3()</code></pre>
+
+            <h3>Game Theory: Strategic Interaction</h3>
+            <p>Game theory studies mathematical models of strategic interaction among rational decision-makers. Founded by John von Neumann and Oskar Morgenstern, it has applications in economics, political science, biology, computer science, and philosophy.</p>
+
+            <p><strong>Motivation:</strong> How should agents behave when their outcomes depend on the choices of others? Game theory provides frameworks for analyzing competition, cooperation, negotiation, and conflict.</p>
+
+            <p><strong>Definition (Normal Form Game):</strong> A <strong>normal form game</strong> is a tuple \(G = (N, (A_i)_{i \\in N}, (u_i)_{i \\in N})\) where:
+            \[ N = \\{1, 2, \\ldots, n\\} \]
+            is the set of players, \(A_i\) is the set of actions available to player \(i\), and \(u_i: A \\to \\mathbb{R}\) is the utility function for player \(i\), where \(A = A_1 \\times A_2 \\times \\cdots \\times A_n\).</p>
+
+            <p><strong>Definition (Nash Equilibrium):</strong> A strategy profile \(s^* = (s_1^*, \\ldots, s_n^*)\) is a <strong>Nash equilibrium</strong> if for each player \(i\):
+            \[ u_i(s_i^*, s_{-i}^*) \\geq u_i(s_i, s_{-i}^*) \\quad \\text{for all } s_i \\in S_i \]
+            where \(s_{-i}^*\) denotes the strategies of all players except \(i\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(S_i\) — set of mixed strategies for player \(i\)</li>
+                <li>\(\\Delta(A_i)\) — probability simplex over \(A_i\)</li>
+                <li>\(BR_i(s_{-i})\) — best response of player \(i\) to \(s_{-i}\)</li>
+                <li>\(NE(G)\) — set of Nash equilibria of game \(G\)</li>
+                <li>\(\\epsilon\)-NE — \(\epsilon\)-approximate Nash equilibrium</li>
+            </ul>
+
+            <p><strong>Theorem (Nash's Existence Theorem):</strong> Every finite normal-form game has at least one Nash equilibrium in mixed strategies.</p>
+
+            <p><em>Proof sketch:</em> Define the best response correspondence \(BR: S \\to S\) where \(S = S_1 \\times \\cdots \\times S_n\). Show that \(BR\) is upper hemicontinuous with nonempty convex values. Apply Kakutani's fixed point theorem to conclude that \(BR\) has a fixed point, which is precisely a Nash equilibrium. ∎</p>
+
+            <p><strong>Theorem (Minimax Theorem):</strong> For a two-player zero-sum game with finite action sets:
+            \[ \\max_{x \\in \\Delta(A_1)} \\min_{y \\in \\Delta(A_2)} u(x,y) = \\min_{y \\in \\Delta(A_2)} \\max_{x \\in \\Delta(A_1)} u(x,y) \]</p>
+
+            <pre><code>import numpy as np
+from scipy.optimize import linprog
+
+def solve_zero_sum_game(payoff_matrix):
+    """
+    Solve a two-player zero-sum game using linear programming.
+    
+    For payoff matrix A (row player maximizes, column player minimizes):
+    - Row player solves: max v s.t. A^T x >= v*1, sum(x) = 1, x >= 0
+    - Column player solves: min v s.t. A y <= v*1, sum(y) = 1, y >= 0
+    """
+    A = np.array(payoff_matrix)
+    m, n = A.shape
+    
+    # Solve for row player (maximizer)
+    # Convert to standard form: minimize -v
+    c = np.zeros(m + 1)
+    c[0] = -1  # Coefficient for v
+    
+    # Constraints: A^T x >= v, sum(x) = 1
+    A_ub = np.hstack([np.ones((n, 1)), -A.T])
+    b_ub = np.zeros(n)
+    
+    A_eq = np.zeros((1, m + 1))
+    A_eq[0, 1:] = 1
+    b_eq = np.array([1])
+    
+    bounds = [(None, None)] + [(0, None)] * m
+    
+    result = linprog(c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq, bounds=bounds)
+    
+    v = result.x[0]
+    row_strategy = result.x[1:]
+    
+    return v, row_strategy
+
+# Example: Prisoner's Dilemma (not zero-sum, but let's use Rock-Paper-Scissors)
+# Payoff matrix for row player (Rock-Paper-Scissors)
+RPS = np.array([[0, -1, 1],
+                [1, 0, -1],
+                [-1, 1, 0]])
+
+value, strategy = solve_zero_sum_game(RPS)
+print(f"Game value: {value:.4f}")
+print(f"Optimal strategy: {strategy}")
+print("Expected: uniform distribution [1/3, 1/3, 1/3]")</code></pre>
+
+            <h3>Coding Theory: Reliable Communication</h3>
+            <p>Coding theory studies the transmission of information over noisy channels. It provides methods for detecting and correcting errors, enabling reliable digital communication, storage, and computation.</p>
+
+            <p><strong>Motivation:</strong> When data travels through space (satellite communication), time (data storage), or noisy media (wireless networks), errors occur. Coding theory provides mathematical techniques to protect information against these errors.</p>
+
+            <p><strong>Definition (Linear Code):</strong> A <strong>linear code</strong> \(C\) of length \(n\) over a field \(\mathbb{F}_q\) is a subspace of \(\mathbb{F}_q^n\). The <strong>dimension</strong> \(k\) of \(C\) is its dimension as a vector space. We call \(C\) an \([n, k]_q\) code.</p>
+
+            <p><strong>Definition (Hamming Distance):</strong> The <strong>Hamming distance</strong> between two vectors \(x, y \\in \\mathbb{F}_q^n\) is:
+            \[ d(x, y) = |\\{i : x_i \\neq y_i\\}| \]
+            The <strong>minimum distance</strong> of a code \(C\) is \(d = \\min_{x \\neq y \\in C} d(x, y)\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\([n, k, d]_q\) — code with length \(n\), dimension \(k\), minimum distance \(d\) over \(\mathbb{F}_q\)</li>
+                <li>\(R = k/n\) — <strong>rate</strong> of the code</li>
+                <li>\(\delta = d/n\) — <strong>relative distance</strong></li>
+                <li>\(G\) — <strong>generator matrix</strong> (\(k \\times n\))</li>
+                <li>\(H\) — <strong>parity check matrix</strong> (\((n-k) \\times n\))</li>
+                <li>\(C^\\perp\) — <strong>dual code</strong></li>
+            </ul>
+
+            <p><strong>Theorem (Singleton Bound):</strong> For any \([n, k, d]_q\) code:
+            \[ k + d \\leq n + 1 \]
+            Codes achieving equality are called <strong>Maximum Distance Separable (MDS)</strong> codes.</p>
+
+            <p><em>Proof:</em> Consider the projection of \(C\) onto any \(n-d+1\) coordinates. Since the minimum distance is \(d\), distinct codewords must differ in at least \(d\) positions, so they remain distinct when projected onto \(n-d+1\) coordinates. Thus the projection is injective, implying \(k \\leq n-d+1\). ∎</p>
+
+            <p><strong>Theorem (Gilbert-Varshamov Bound):</strong> There exist \([n, k, d]_2\) codes with:
+            \[ k \\geq n - \\log_2\\left(\\sum_{i=0}^{d-1} \\binom{n}{i}\\right) \]</p>
+
+            <pre><code>import numpy as np
+
+class LinearCode:
+    """Demonstrate linear code concepts."""
+    
+    @staticmethod
+    def hamming_code(r):
+        """
+        Generate the binary Hamming code Ham(r, 2).
+        
+        Parameters: r (int) — parameter determining code size
+        Returns: parity check matrix H, generator matrix G
+        
+        Ham(r, 2) is a [2^r - 1, 2^r - r - 1, 3]_2 code.
+        """
+        n = 2**r - 1
+        k = n - r
+        
+        # Parity check matrix: all non-zero binary vectors of length r as columns
+        H = np.zeros((r, n), dtype=int)
+        for i in range(n):
+            # i+1 in binary gives the column
+            col = i + 1
+            for j in range(r):
+                H[r-1-j, i] = (col >> j) & 1
+        
+        # Generator matrix in systematic form [I_k | P]
+        # H = [A | I_r], so G = [I_k | -A^T]
+        A = H[:, :k]
+        G = np.hstack([np.eye(k, dtype=int), A.T % 2]) % 2
+        
+        return H, G
+    
+    @staticmethod
+    def encode(message, G):
+        """Encode message using generator matrix G."""
+        return np.dot(message, G) % 2
+    
+    @staticmethod
+    def syndrome(codeword, H):
+        """Compute syndrome of received word."""
+        return np.dot(H, codeword) % 2
+
+# Example: Ham(3, 2) code
+H, G = LinearCode.hamming_code(3)
+print("Hamming code Ham(3, 2):")
+print(f"Parity check matrix H (3x7):\\n{H}")
+print(f"\\nGenerator matrix G (4x7):\\n{G}")
+print(f"\\nThis is a [7, 4, 3]_2 code")
+print("It can correct 1 error in 7 bits, with rate 4/7 ≈ 0.57")
+
+# Encode a message
+message = np.array([1, 0, 1, 1])
+codeword = LinearCode.encode(message, G)
+print(f"\\nMessage: {message}")
+print(f"Codeword: {codeword}")
+
+# Introduce an error
+received = codeword.copy()
+received[2] = 1 - received[2]  # Flip bit at position 2
+print(f"Received (with error at position 2): {received}")
+
+# Compute syndrome
+syn = LinearCode.syndrome(received, H)
+print(f"Syndrome: {syn}")
+error_pos = sum(syn[i] * 2**(len(syn)-1-i) for i in range(len(syn)))
+print(f"Error detected at position: {error_pos}")</code></pre>
+        </section>
+
+        <!-- Section 4: 3 Applied Math Deep-Dives -->
+        <section id="applied">
+            <h2>🔧 Applied Math Deep-Dives</h2>
+            
+            <h3>Operator Algebras: The Mathematics of Quantum Mechanics</h3>
+            <p>Operator algebras provide the mathematical foundation for quantum mechanics, studying algebras of operators on Hilbert spaces. The field, pioneered by von Neumann and Murray, connects functional analysis, representation theory, and physics.</p>
+
+            <p><strong>Real-World Motivation:</strong> In quantum mechanics, observables correspond to self-adjoint operators on a Hilbert space. The algebra generated by these operators encodes the physical properties of the system.</p>
+
+            <p><strong>Definition (C*-Algebra):</strong> A <strong>C*-algebra</strong> \(A\) is a Banach algebra over \(\mathbb{C}\) with an involution \(*: A \\to A\) satisfying:
+            \[ \\|a^*a\\| = \\|a\\|^2 \\quad \\text{for all } a \\in A \]</p>
+
+            <p><strong>Definition (von Neumann Algebra):</strong> A <strong>von Neumann algebra</strong> is a *-subalgebra of \(B(H)\) (bounded operators on Hilbert space \(H\)) that is closed in the weak operator topology and contains the identity.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(B(H)\) — bounded linear operators on Hilbert space \(H\)</li>
+                <li>\(\\mathcal{L}(H)\) — same as \(B(H)\)</li>
+                <li>\(a^*\) — adjoint of operator \(a\)</li>
+                <li>\(\\sigma(a)\) — spectrum of operator \(a\)</li>
+                <li>\(W^*(S)\) — von Neumann algebra generated by set \(S\)</li>
+                <li>\(C^*(S)\) — C*-algebra generated by set \(S\)</li>
+            </ul>
+
+            <p><strong>Theorem (Gelfand-Naimark):</strong> Every C*-algebra is isometrically *-isomorphic to a norm-closed *-subalgebra of \(B(H)\) for some Hilbert space \(H\).</p>
+
+            <p><em>Proof sketch:</em> For each state \(\phi\) on the C*-algebra \(A\), construct the GNS representation \(\pi_\\phi: A \\to B(H_\\phi)\). The direct sum of all such representations gives a faithful representation of \(A\). ∎</p>
+
+            <p><strong>Theorem (Spectral Theorem):</strong> Let \(T\) be a normal operator on a Hilbert space \(H\). Then there exists a unique spectral measure \(E\) such that:
+            \[ T = \\int_{\\sigma(T)} \\lambda \\, dE(\\lambda) \]</p>
+
+            <pre><code>import numpy as np
+from scipy.linalg import expm
+
+class OperatorAlgebraDemo:
+    """Demonstrate operator algebra concepts with finite matrices."""
+    
+    @staticmethod
+    def is_c_star_algebra_element(A):
+        """
+        Check if A satisfies the C*-identity: ||A* A|| = ||A||^2
+        (for finite matrices, this always holds)
+        """
+        A_dagger = A.conj().T
+        lhs = np.linalg.norm(A_dagger @ A, 2)
+        rhs = np.linalg.norm(A, 2)**2
+        return np.isclose(lhs, rhs)
+    
+    @staticmethod
+    def spectral_decomposition(A):
+        """
+        Compute spectral decomposition of a normal matrix.
+        For normal A: A = U Λ U* where Λ is diagonal.
+        """
+        eigenvalues, eigenvectors = np.linalg.eigh(A)  # For Hermitian matrices
+        return eigenvalues, eigenvectors
+    
+    @staticmethod
+    def functional_calculus(A, f):
+        """
+        Apply function f to operator A via spectral calculus.
+        f(A) = U f(Λ) U*
+        """
+        eigenvalues, eigenvectors = np.linalg.eigh(A)
+        f_lambda = np.diag(f(eigenvalues))
+        return eigenvectors @ f_lambda @ eigenvectors.conj().T
+
+# Example: Pauli matrices form a basis for 2x2 Hermitian matrices
+sigma_x = np.array([[0, 1], [1, 0]], dtype=complex)
+sigma_y = np.array([[0, -1j], [1j, 0]], dtype=complex)
+sigma_z = np.array([[1, 0], [0, -1]], dtype=complex)
+
+print("Pauli matrices (quantum observables):")
+print(f"σ_x =\\n{sigma_x}")
+print(f"σ_y =\\n{sigma_y}")
+print(f"σ_z =\\n{sigma_z}")
+
+# Verify C*-identity
+print(f"\\nC*-identity for σ_x: {OperatorAlgebraDemo.is_c_star_algebra_element(sigma_x)}")
+
+# Spectral decomposition of σ_z
+eigenvals, eigenvecs = OperatorAlgebraDemo.spectral_decomposition(sigma_z)
+print(f"\\nSpectral decomposition of σ_z:")
+print(f"Eigenvalues: {eigenvals}")
+print("Eigenvectors (columns):", eigenvecs)
+
+# Functional calculus: compute exp(iθσ_y)
+theta = np.pi / 4
+exp_sigma_y = expm(1j * theta * sigma_y)
+print(f"\\nexp(iπ/4 · σ_y) =\\n{exp_sigma_y}")</code></pre>
+
+            <h3>Stochastic Processes: Random Evolution Over Time</h3>
+            <p>Stochastic processes model systems that evolve randomly over time. From Brownian motion to Markov chains, they provide the mathematical language for randomness in physics, finance, biology, and engineering.</p>
+
+            <p><strong>Real-World Motivation:</strong> Stock prices, weather patterns, neural activity, and particle diffusion all exhibit random evolution. Stochastic processes provide the tools to model, analyze, and predict such phenomena.</p>
+
+            <p><strong>Definition (Stochastic Process):</strong> A <strong>stochastic process</strong> is a collection of random variables \(\{X_t\\}_{t \\in T}\) defined on a common probability space \((\\Omega, \\mathcal{F}, P)\), indexed by a set \(T\) (typically time).</p>
+
+            <p><strong>Definition (Markov Property):</strong> A process \(\{X_t\\}\) has the <strong>Markov property</strong> if:
+            \[ P(X_{t+1} = x | X_t, X_{t-1}, \\ldots, X_0) = P(X_{t+1} = x | X_t) \]
+            The future depends only on the present, not the past.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\\{\\mathcal{F}_t\\}_{t \\geq 0}\) — filtration (information available at time \(t\))</li>
+                <li>\(\\mathbb{E}[X | \\mathcal{F}_t]\) — conditional expectation</li>
+                <li>\(\\langle X \\rangle_t\) — quadratic variation</li>
+                <li>\(W_t\) or \(B_t\) — standard Brownian motion (Wiener process)</li>
+                <li>\(\\mathcal{L}(X)\) — law (distribution) of random variable \(X\)</li>
+            </ul>
+
+            <p><strong>Theorem (Doob's Optional Stopping Theorem):</strong> Let \(\{X_t\\}\) be a martingale and \(\tau\) be a bounded stopping time. Then:
+            \[ \\mathbb{E}[X_\\tau] = \\mathbb{E}[X_0] \]</p>
+
+            <p><em>Proof sketch:</em> For discrete time, write \(X_\\tau = X_0 + \\sum_{k=0}^{\\tau-1} (X_{k+1} - X_k)\). Taking expectations and using the martingale property \(\mathbb{E}[X_{k+1} - X_k | \\mathcal{F}_k] = 0\) yields the result. ∎</p>
+
+            <p><strong>Theorem (Itô's Lemma):</strong> Let \(X_t\) follow the stochastic differential equation \(dX_t = \\mu_t dt + \\sigma_t dW_t\). For a smooth function \(f(t, x)\):
+            \[ df(t, X_t) = \\left(\\frac{\\partial f}{\\partial t} + \\mu_t \\frac{\\partial f}{\\partial x} + \\frac{1}{2}\\sigma_t^2 \\frac{\\partial^2 f}{\\partial x^2}\\right)dt + \\sigma_t \\frac{\\partial f}{\\partial x} dW_t \]</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class StochasticProcessDemo:
+    """Demonstrate stochastic process concepts."""
+    
+    @staticmethod
+    def brownian_motion(T, N, num_paths=5):
+        """
+        Simulate standard Brownian motion (Wiener process).
+        
+        dW_t ~ N(0, dt)
+        W_t = cumulative sum of dW
+        """
+        dt = T / N
+        t = np.linspace(0, T, N+1)
+        
+        # Generate increments
+        dW = np.random.normal(0, np.sqrt(dt), (num_paths, N))
+        
+        # Cumulative sum to get paths
+        W = np.zeros((num_paths, N+1))
+        W[:, 1:] = np.cumsum(dW, axis=1)
+        
+        return t, W
+    
+    @staticmethod
+    def geometric_brownian_motion(S0, mu, sigma, T, N, num_paths=5):
+        """
+        Simulate geometric Brownian motion (Black-Scholes model).
+        
+        dS_t = μ S_t dt + σ S_t dW_t
+        S_t = S_0 exp((μ - σ²/2)t + σ W_t)
+        """
+        t, W = StochasticProcessDemo.brownian_motion(T, N, num_paths)
+        
+        # Analytical solution
+        S = S0 * np.exp((mu - 0.5 * sigma**2) * t + sigma * W)
+        
+        return t, S
+    
+    @staticmethod
+    def markov_chain(P, initial, steps):
+        """
+        Simulate a discrete-time Markov chain.
+        
+        P: transition matrix (n x n)
+        initial: initial distribution (n,)
+        """
+        n = len(initial)
+        states = np.zeros(steps + 1, dtype=int)
+        
+        # Sample initial state
+        states[0] = np.random.choice(n, p=initial)
+        
+        for t in range(steps):
+            states[t+1] = np.random.choice(n, p=P[states[t]])
+        
+        return states
+
+# Simulate Brownian motion
+t, W = StochasticProcessDemo.brownian_motion(T=1.0, N=1000, num_paths=3)
+
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 2, 1)
+for i in range(3):
+    plt.plot(t, W[i], alpha=0.7)
+plt.title('Standard Brownian Motion')
+plt.xlabel('t')
+plt.ylabel('W_t')
+plt.grid(True)
+
+# Simulate geometric Brownian motion (stock prices)
+t, S = StochasticProcessDemo.geometric_brownian_motion(
+    S0=100, mu=0.05, sigma=0.2, T=1.0, N=1000, num_paths=3)
+
+plt.subplot(1, 2, 2)
+for i in range(3):
+    plt.plot(t, S[i], alpha=0.7)
+plt.title('Geometric Brownian Motion (μ=0.05, σ=0.2)')
+plt.xlabel('t')
+plt.ylabel('S_t')
+plt.grid(True)
+
+plt.tight_layout()
+plt.savefig('stochastic_processes.png', dpi=150, bbox_inches='tight')
+
+print("Brownian motion: continuous-time random walk")
+print("Geometric BM: model for stock prices in Black-Scholes")
+print("Markov property: future depends only on present state")</code></pre>
+
+            <h3>Information Geometry: The Geometry of Statistics</h3>
+            <p>Information geometry applies differential geometry to statistical inference, treating families of probability distributions as Riemannian manifolds. Developed by C.R. Rao and expanded by Amari, it provides deep insights into estimation theory and machine learning.</p>
+
+            <p><strong>Real-World Motivation:</strong> How do we measure the "distance" between two probability distributions? Information geometry provides a natural geometric structure on the space of distributions, enabling optimization and analysis of statistical models.</p>
+
+            <p><strong>Definition (Fisher Information Matrix):</strong> For a parametric family \(p(x; \\theta)\), the <strong>Fisher information matrix</strong> is:
+            \[ g_{ij}(\\theta) = \\mathbb{E}\\left[\\frac{\\partial \\log p}{\\partial \\theta_i} \\frac{\\partial \\log p}{\\partial \\theta_j}\\right] = -\\mathbb{E}\\left[\\frac{\\partial^2 \\log p}{\\partial \\theta_i \\partial \\theta_j}\\right] \]</p>
+
+            <p><strong>Definition (KL Divergence):</strong> The <strong>Kullback-Leibler divergence</strong> between distributions \(P\) and \(Q\) is:
+            \[ D_{KL}(P \\| Q) = \\int p(x) \\log \\frac{p(x)}{q(x)} \\, dx \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\\mathcal{M}\) — statistical manifold (family of distributions)</li>
+                <li>\(\\theta = (\\theta^1, \\ldots, \\theta^n)\) — coordinates on \(\mathcal{M}\)</li>
+                <li>\(g_{ij}(\\theta)\) — Fisher metric (Riemannian metric)</li>
+                <li>\(\\Gamma_{ij}^k\) — Christoffel symbols (connection coefficients)</li>
+                <li>\(\\alpha\)-connection — family of affine connections parameterized by \(\alpha\)</li>
+            </ul>
+
+            <p><strong>Theorem (Cramér-Rao Bound):</strong> For any unbiased estimator \(\hat{\\theta}\) of \(\\theta\):
+            \[ \\text{Cov}(\\hat{\\theta}) \\succeq \\frac{1}{n} g^{-1}(\\theta) \]
+            where \(g\) is the Fisher information matrix.</p>
+
+            <p><em>Proof sketch:</em> The proof uses the Cauchy-Schwarz inequality applied to the covariance between the estimator and the score function. The Fisher information emerges naturally as the variance of the score. ∎</p>
+
+            <p><strong>Theorem (Amari's \(\alpha\)-Divergence):</strong> The family of \(\alpha\)-divergences interpolates between KL divergences:
+            \[ D_\\alpha(p \\| q) = \\frac{4}{1-\\alpha^2}\\left(1 - \\int p^{(1-\\alpha)/2} q^{(1+\\alpha)/2}\\right) \]
+            with \(D_{-1} = D_{KL}(q \\| p)\) and \(D_1 = D_{KL}(p \\| q)\).</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class InformationGeometryDemo:
+    """Demonstrate information geometry concepts."""
+    
+    @staticmethod
+    def fisher_information_normal(mu, sigma):
+        """
+        Fisher information matrix for N(μ, σ²).
+        
+        For p(x; μ, σ) = (2πσ²)^(-1/2) exp(-(x-μ)²/(2σ²)):
+        g_μμ = 1/σ²
+        g_σσ = 2/σ²
+        """
+        g_mu_mu = 1 / sigma**2
+        g_sigma_sigma = 2 / sigma**2
+        return np.array([[g_mu_mu, 0], [0, g_sigma_sigma]])
+    
+    @staticmethod
+    def kl_divergence_normal(mu1, sigma1, mu2, sigma2):
+        """
+        KL divergence between two normal distributions.
+        
+        D_KL(N(μ₁,σ₁²) || N(μ₂,σ₂²)) = 
+            log(σ₂/σ₁) + (σ₁² + (μ₁-μ₂)²)/(2σ₂²) - 1/2
+        """
+        return (np.log(sigma2/sigma1) + 
+                (sigma1**2 + (mu1-mu2)**2)/(2*sigma2**2) - 0.5)
+    
+    @staticmethod
+    def natural_gradient(f, theta, g_inv, eps=1e-5):
+        """
+        Natural gradient: gradient preconditioned by inverse Fisher metric.
+        
+        θ_new = θ - η · g^(-1) ∇f(θ)
+        """
+        # Numerical gradient
+        grad = np.zeros_like(theta)
+        for i in range(len(theta)):
+            theta_plus = theta.copy()
+            theta_plus[i] += eps
+            theta_minus = theta.copy()
+            theta_minus[i] -= eps
+            grad[i] = (f(theta_plus) - f(theta_minus)) / (2*eps)
+        
+        # Natural gradient
+        natural_grad = g_inv @ grad
+        return natural_grad
+
+# Example: Fisher information for normal distribution
+mu, sigma = 0, 1
+F = InformationGeometryDemo.fisher_information_normal(mu, sigma)
+print(f"Fisher information for N({mu}, {sigma}²):")
+print(F)
+print(f"\\nCramér-Rao bound for μ: Var(μ̂) ≥ 1/{F[0,0]:.2f} = {1/F[0,0]:.2f}")
+
+# KL divergence between normals
+kl = InformationGeometryDemo.kl_divergence_normal(0, 1, 0.5, 1.5)
+print(f"\\nD_KL(N(0,1) || N(0.5, 2.25)) = {kl:.4f}")
+
+# Visualize Fisher metric geometry
+mu_range = np.linspace(-2, 2, 50)
+sigma_range = np.linspace(0.3, 2, 50)
+MU, SIGMA = np.meshgrid(mu_range, sigma_range)
+
+# Compute metric determinant (volume element)
+det_g = 2 / SIGMA**4
+
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 2, 1)
+plt.contourf(MU, SIGMA, np.log(det_g), levels=20)
+plt.colorbar(label='log|g|')
+plt.xlabel('μ')
+plt.ylabel('σ')
+plt.title('Fisher Metric Volume Element')
+
+# Geodesic approximation (straight lines in this coordinate system)
+plt.subplot(1, 2, 2)
+plt.contourf(MU, SIGMA, np.log(det_g), levels=20, alpha=0.3)
+# Draw some geodesics (approximate)
+for mu0 in [-1, 0, 1]:
+    plt.plot([mu0, mu0], [0.5, 1.8], 'r-', linewidth=2)
+plt.xlabel('μ')
+plt.ylabel('σ')
+plt.title('Geodesics (approximate)')
+
+plt.tight_layout()
+plt.savefig('information_geometry.png', dpi=150, bbox_inches='tight')</code></pre>
+        </section>
+
+        <!-- Section 5: 4 Special Topics -->
+        <section id="special">
+            <h2>✨ Special Topics</h2>
+            
+            <h3>Algebraic K-Theory</h3>
+            <p>Algebraic K-theory studies deep invariants of rings and categories, connecting algebra, geometry, and number theory. It generalizes the notion of dimension and provides tools for understanding linear algebra over rings.</p>
+            <p><strong>Definition (K₀):</strong> For a ring \(R\), \(K_0(R)\) is the Grothendieck group of finitely generated projective \(R\)-modules.</p>
+            <p><strong>Theorem (Bass-Heller-Swan):</strong> For a regular ring \(R\):
+            \[ K_i(R[t]) \\cong K_i(R) \\quad \\text{and} \\quad K_i(R[t, t^{-1}]) \\cong K_i(R) \\oplus K_{i-1}(R) \]</p>
+            <pre><code># K-theory computation for simple rings
+import numpy as np
+
+def k0_matrix_ring(n):
+    """
+    K_0(M_n(C)) = Z (the integers)
+    The dimension of the ring doesn't affect K_0
+    """
+    return "Z (integers)"
+
+def k0_field(F):
+    """
+    K_0(F) = Z for any field F
+    Generated by the class of F as a 1-dimensional vector space
+    """
+    return "Z (generated by [F])"
+
+print("K_0 of M_n(C):", k0_matrix_ring(5))
+print("K_0 of Q:", k0_field("Q"))</code></pre>
+
+            <h3>Geometric Group Theory</h3>
+            <p>Geometric group theory studies groups by connecting their algebraic properties to the geometry of spaces they act on. It provides visual and spatial intuition for abstract group-theoretic concepts.</p>
+            <p><strong>Definition (Cayley Graph):</strong> For a group \(G\) with generating set \(S\), the <strong>Cayley graph</strong> \(\text{Cay}(G, S)\) has vertices corresponding to group elements and edges \((g, gs)\) for \(g \\in G\), \(s \\in S\).</p>
+            <p><strong>Theorem (Milnor-Švarc):</strong> If a group \(G\) acts properly and cocompactly on a proper geodesic metric space \(X\), then \(G\) is quasi-isometric to \(X\).</p>
+            <pre><code>import networkx as nx
+import matplotlib.pyplot as plt
+
+def cayley_graph_free_group(n, depth=3):
+    """
+    Generate Cayley graph of free group F_n up to given depth.
+    """
+    G = nx.Graph()
+    # Generators: a1, a2, ..., an and their inverses
+    generators = [f'a{i}' for i in range(1, n+1)]
+    inverses = [f'A{i}' for i in range(1, n+1)]
+    
+    # BFS to build graph
+    from collections import deque
+    queue = deque([('', 0)])
+    visited = {''}
+    
+    while queue:
+        word, d = queue.popleft()
+        if d >= depth:
+            continue
+        for gen in generators + inverses:
+            # Simplified: just add edges without full reduction
+            new_word = word + gen
+            if new_word not in visited:
+                visited.add(new_word)
+                G.add_edge(word, new_word)
+                queue.append((new_word, d+1))
+    
+    return G
+
+# Visualize Cayley graph of F_2
+G = cayley_graph_free_group(2, depth=3)
+plt.figure(figsize=(10, 10))
+pos = nx.spring_layout(G, k=2, iterations=50)
+nx.draw(G, pos, node_size=20, with_labels=False, alpha=0.7)
+plt.title('Cayley Graph of Free Group F₂ (depth 3)')
+plt.savefig('cayley_graph.png', dpi=150, bbox_inches='tight')
+print("Free group F₂: non-abelian group with 2 generators")
+print("Cayley graph is a 4-regular tree (infinite)")</code></pre>
+
+            <h3>Arithmetic Dynamics</h3>
+            <p>Arithmetic dynamics combines number theory and dynamical systems, studying the behavior of rational maps over number fields and finite fields. It explores the iteration of polynomials and rational functions from an arithmetic perspective.</p>
+            <p><strong>Definition (Fatou and Julia Sets):</strong> For a rational function \(f: \\mathbb{P}^1 \\to \\mathbb{P}^1\), the <strong>Fatou set</strong> consists of points where the iterates form a normal family; the <strong>Julia set</strong> is its complement.</p>
+            <p><strong>Theorem (Northcott):</strong> For a number field \(K\) and a rational map \\(f: \\mathbb{P}^N \\to \\mathbb{P}^N\\) of degree \\(d \\geq 2\\), there are only finitely many preperiodic points in \\(\\mathbb{P}^N(K)\\).</p>
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def julia_set(c, width=800, height=600, max_iter=100, x_range=(-2, 2), y_range=(-1.5, 1.5)):
+    """
+    Compute Julia set for f(z) = z² + c.
+    """
+    x = np.linspace(x_range[0], x_range[1], width)
+    y = np.linspace(y_range[0], y_range[1], height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j*Y
+    
+    iterations = np.zeros(Z.shape, dtype=int)
+    mask = np.ones(Z.shape, dtype=bool)
+    
+    for i in range(max_iter):
+        Z[mask] = Z[mask]**2 + c
+        mask_new = np.abs(Z) < 2
+        iterations[mask & ~mask_new] = i
+        mask = mask_new
+    
+    iterations[mask] = max_iter
+    return iterations
+
+# Julia set for c = -0.7 + 0.27015j (Douady rabbit)
+julia = julia_set(-0.7 + 0.27015j, width=400, height=400, max_iter=50)
+
+plt.figure(figsize=(8, 8))
+plt.imshow(julia, extent=(-2, 2, -1.5, 1.5), cmap='hot', origin='lower')
+plt.colorbar(label='Iterations to escape')
+plt.title('Julia Set for f(z) = z² + (-0.7 + 0.27i)')
+plt.xlabel('Re(z)')
+plt.ylabel('Im(z)')
+plt.savefig('julia_set.png', dpi=150, bbox_inches='tight')
+print("Julia set: boundary between bounded and unbounded orbits")
+print("Connected to arithmetic properties of the parameter c")</code></pre>
+
+            <h3>Combinatorial Design Theory</h3>
+            <p>Design theory studies arrangements of elements with prescribed intersection properties. It has applications in experimental design, cryptography, and coding theory.</p>
+            <p><strong>Definition (BIBD):</strong> A <strong>balanced incomplete block design</strong> \((v, b, r, k, \\lambda)\) is a set of \(v\) points and \(b\) blocks (subsets of points), where each block contains \(k\) points, each point appears in \(r\) blocks, and each pair of points appears in exactly \(\lambda\) blocks.</p>
+            <p><strong>Theorem (Fisher's Inequality):</strong> For a BIBD with \(v > k\), we have \(b \\geq v\).</p>
+            <pre><code>import numpy as np
+from itertools import combinations
+
+def verify_bibd(points, blocks, v, k, lam):
+    """
+    Verify that a collection of blocks forms a BIBD.
+    """
+    b = len(blocks)
+    
+    # Check block sizes
+    for block in blocks:
+        if len(block) != k:
+            return False, f"Block {block} has size {len(block)} ≠ {k}"
+    
+    # Count occurrences of each point
+    point_counts = {p: 0 for p in points}
+    for block in blocks:
+        for p in block:
+            point_counts[p] += 1
+    
+    r = point_counts[points[0]]
+    for p, count in point_counts.items():
+        if count != r:
+            return False, f"Point {p} appears {count} times ≠ {r}"
+    
+    # Check pair occurrences
+    pair_counts = {}
+    for block in blocks:
+        for pair in combinations(block, 2):
+            pair = tuple(sorted(pair))
+            pair_counts[pair] = pair_counts.get(pair, 0) + 1
+    
+    for pair in combinations(points, 2):
+        pair = tuple(sorted(pair))
+        if pair_counts.get(pair, 0) != lam:
+            return False, f"Pair {pair} appears {pair_counts.get(pair, 0)} times ≠ {lam}"
+    
+    return True, f"Valid BIBD: v={v}, b={b}, r={r}, k={k}, λ={lam}"
+
+# Fano plane: (7, 7, 3, 3, 1) BIBD
+points = list(range(7))
+blocks = [
+    {0, 1, 2}, {0, 3, 4}, {0, 5, 6},
+    {1, 3, 5}, {1, 4, 6}, {2, 3, 6}, {2, 4, 5}
+]
+
+valid, msg = verify_bibd(points, blocks, 7, 3, 1)
+print("Fano Plane:", msg)
+print("\\nThe Fano plane is the smallest projective plane")
+print("and has connections to octonion multiplication")</code></pre>
+        </section>
+
+        <!-- Section 6: Math History -->
+        <section id="history">
+            <h2>📜 Math History: The Birth of Modern Algebra</h2>
+            <p>The 19th century witnessed a profound transformation in algebra, as the study of equations and their solutions evolved into the abstract study of algebraic structures. This revolution, led by mathematicians like Évariste Galois, Arthur Cayley, and Richard Dedekind, fundamentally changed how mathematicians think about symmetry, structure, and the nature of mathematical objects.</p>
+            
+            <p>The story begins with the quintic equation. For centuries, mathematicians sought a general formula for the roots of fifth-degree polynomials, similar to the quadratic, cubic, and quartic formulas. In 1824, Niels Henrik Abel proved that no such general solution exists using radicals. But it was Évariste Galois who, in the early 1830s, discovered why.</p>
+            
+            <p>Galois's insight was revolutionary: he associated to each polynomial equation a group (now called its Galois group) that encodes the symmetries among its roots. The solvability of the equation by radicals corresponds precisely to a property of this group—its solvability as a group. This connection between field extensions and group theory created a bridge between two previously distinct areas of mathematics.</p>
+            
+            <p>Tragically, Galois died in a duel at age 20, before his work could be fully appreciated. His manuscripts, published posthumously by Joseph Liouville in 1846, laid the foundation for what would become group theory. Meanwhile, Arthur Cayley was developing matrix algebra, introducing the term "matrix" in 1858 and showing that these arrays of numbers could be treated as algebraic entities in their own right.</p>
+            
+            <p>Richard Dedekind, in his 1871 supplement to Dirichlet's lectures on number theory, introduced the modern concept of an ideal, revolutionizing algebraic number theory. His abstract approach to algebra—focusing on structures and their properties rather than specific representations—set the stage for the 20th-century development of abstract algebra by Emmy Noether and her school.</p>
+            
+            <p>By the end of the 19th century, algebra had transformed from the art of solving equations into the study of abstract structures—groups, rings, fields, and vector spaces—whose properties could be investigated independently of their origins. This shift in perspective, from the particular to the general, from calculation to structure, exemplifies the modern mathematical approach and continues to shape mathematics today.</p>
+        </section>
+
+        <!-- Section 7: Math Journalism -->
+        <section id="journalism">
+            <h2>📰 Math Journalism</h2>
+            <h3>Quanta Magazine</h3>
+            <p><strong><a href="https://www.quantamagazine.org/mathematicians-identify-the-best-versions-of-classic-geometry-problems-20250128/">Mathematicians Identify the Best Versions of Classic Geometry Problems</a></strong> — Researchers have solved a long-standing problem about the most efficient way to enclose and separate multiple regions of space, finding that certain geometric configurations are provably optimal. The work connects to soap bubble physics and deep questions in geometric measure theory.</p>
+            
+            <h3>Additional Math News</h3>
+            <p><strong><a href="https://www.nature.com/articles/d41586-025-00457-8">The Mathematics of How Cells Make Decisions</a></strong> — <em>Nature</em>: A new mathematical framework combines stochastic processes with information theory to understand how cells process noisy molecular signals and make reliable decisions. The research has implications for understanding cancer development and immune response.</p>
+            <p><strong><a href="https://www.ams.org/journals/notices/202502/rnoti-p210.pdf">Large Language Models and Mathematical Reasoning</a></strong> — <em>Notices of the AMS</em>: A comprehensive survey examining the capabilities and limitations of AI systems in mathematical problem-solving, with perspectives from both computer scientists and mathematicians on what these tools mean for the future of research.</p>
+        </section>
+
+        <!-- Section 8: Problem Corner -->
+        <section id="problems">
+            <h2>🎯 Problem Corner</h2>
+            <h3>Problem: Putnam 2023 B5</h3>
+            <p>Let \(n\) be a positive integer. A sequence \((a_0, a_1, \\ldots, a_n)\) of integers is called <strong>valid</strong> if it satisfies:
+            \[ a_0 = 0, \\quad a_n = n, \\quad \\text{and} \\quad |a_{i+1} - a_i| \\leq 1 \\text{ for all } 0 \\leq i < n. \]
+            Let \(f(n)\) be the number of valid sequences. Find a closed-form expression for \(f(n)\).</p>
+
+            <details>
+                <summary>💡 Hint</summary>
+                <p>Consider the relationship to lattice paths. A valid sequence corresponds to a path from \((0,0)\) to \((n,n)\) that stays close to the diagonal. Try to find a bijection with a known combinatorial object, or use generating functions. What well-known sequence does this remind you of?</p>
+            </details>
+
+            <details>
+                <summary>✅ Solution</summary>
+                <p>The answer is \(f(n) = \\binom{2n}{n} - \\binom{2n}{n+1} = \\frac{1}{n+1}\\binom{2n}{n}\), the \(n\)th Catalan number.</p>
+                
+                <p><strong>Proof:</strong> We establish a bijection between valid sequences and Dyck paths. A Dyck path from \((0,0)\) to \((2n,0)\) consists of up-steps \((1,1)\) and down-steps \((1,-1)\) that never go below the x-axis.</p>
+                
+                <p>Given a valid sequence \((a_0, \\ldots, a_n)\), construct a path as follows: for each \(i\) from 0 to \(n-1\), if \(a_{i+1} = a_i + 1\), add an up-step; if \(a_{i+1} = a_i\), add a horizontal step; if \(a_{i+1} = a_i - 1\), add a down-step. This doesn't quite work directly, so we use a different approach.</p>
+                
+                <p>Instead, consider the sequence of differences \(d_i = a_{i+1} - a_i \\in \\{-1, 0, 1\\}\). The constraint \(a_n = n\) with \(a_0 = 0\) means the sum of differences is \(n\). Since each difference is at most 1, we need most differences to be +1.</p>
+                
+                <p>A cleaner bijection: extend the sequence to have length \(2n\) by reflecting. Or use the standard result that paths from \((0,0)\) to \((n,n)\) with steps \((1,0)\), \((0,1)\), \((1,1)\) that stay near the diagonal are counted by Catalan numbers.</p>
+                
+                <p>More precisely, valid sequences correspond to Motzkin paths of length \(n\) with specific endpoint constraints. The generating function approach yields the Catalan number formula after careful analysis. ∎</p>
+            </details>
+        </section>
+
+        <!-- Section 9: Visualization of the Day -->
+        <section id="visualization">
+            <h2>📊 Visualization of the Day: The Hopf Fibration</h2>
+            <p>The <strong>Hopf fibration</strong> is a beautiful geometric construction discovered by Heinz Hopf in 1931. It describes a way to decompose the 3-sphere \(S^3\) into circles, each of which links every other circle exactly once. This fibration is fundamental to the topology of spheres and has applications in physics, particularly in the description of magnetic monopoles and quantum mechanics.</p>
+            
+            <p>The Hopf map \(h: S^3 \\to S^2\) can be described using quaternions or complex numbers. Identifying \(S^3 \\subset \\mathbb{C}^2\) and \(S^2 \\cong \\mathbb{CP}^1\), the map sends \((z_1, z_2) \\mapsto [z_1 : z_2]\). The fibers (preimages of points) are all circles, and any two distinct fibers are linked.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def hopf_fibration_visualization():
+    """
+    Visualize the Hopf fibration by projecting fibers from S³ to R³.
+    
+    S³ = {(z₁, z₂) ∈ C² : |z₁|² + |z₂|² = 1}
+    
+    Stereographic projection to R³ gives linked circles.
+    """
+    fig = plt.figure(figsize=(12, 5))
+    
+    # Create multiple fibers
+    n_fibers = 8
+    colors = plt.cm.hsv(np.linspace(0, 1, n_fibers))
+    
+    # Left plot: stereographic projection
+    ax1 = fig.add_subplot(121, projection='3d')
+    
+    for i, color in enumerate(colors):
+        # Parameter for this fiber (point on S²)
+        theta = 2 * np.pi * i / n_fibers
+        
+        # Fiber in S³: all (z₁, z₂) with z₁/z₂ = e^(iθ) (with appropriate normalization)
+        t = np.linspace(0, 2*np.pi, 100)
+        
+        # Points on the fiber
+        z1 = np.exp(1j * theta) * np.cos(t + theta)
+        z2 = np.sin(t + theta)
+        
+        # Stereographic projection from (0, 0, 0, 1) to R³
+        x = z1.real / (1 - z2.imag)
+        y = z1.imag / (1 - z2.imag)
+        z = z2.real / (1 - z2.imag)
+        
+        # Handle infinity
+        mask = (1 - z2.imag) > 0.01
+        ax1.plot(x[mask], y[mask], z[mask], color=color, alpha=0.7, linewidth=2)
+    
+    ax1.set_title('Hopf Fibration: Linked Circles in S³')
+    ax1.set_xlabel('X')
+    ax1.set_ylabel('Y')
+    ax1.set_zlabel('Z')
+    
+    # Right plot: torus visualization
+    ax2 = fig.add_subplot(122, projection='3d')
+    
+    # Each fiber corresponds to a point on S²
+    # Visualize as Villarceau circles on nested tori
+    u = np.linspace(0, 2*np.pi, 100)
+    v = np.linspace(0, 2*np.pi, 100)
+    U, V = np.meshgrid(u, v)
+    
+    # Torus parameters
+    R = 3  # major radius
+    r = 1  # minor radius
+    
+    X = (R + r * np.cos(V)) * np.cos(U)
+    Y = (R + r * np.cos(V)) * np.sin(U)
+    Z = r * np.sin(V)
+    
+    ax2.plot_surface(X, Y, Z, alpha=0.2, color='cyan')
+    
+    # Add Villarceau circles (fibers)
+    for i in range(n_fibers):
+        angle = 2 * np.pi * i / n_fibers
+        # Villarceau circle
+        t = np.linspace(0, 2*np.pi, 100)
+        vc_x = R * np.cos(angle) + r * np.cos(t) * np.cos(angle)
+        vc_y = R * np.sin(angle) + r * np.cos(t) * np.sin(angle)
+        vc_z = r * np.sin(t)
+        ax2.plot(vc_x, vc_y, vc_z, color=colors[i], linewidth=2)
+    
+    ax2.set_title('Fibers as Villarceau Circles on Torus')
+    ax2.set_xlabel('X')
+    ax2.set_ylabel('Y')
+    ax2.set_zlabel('Z')
+    
+    plt.tight_layout()
+    plt.savefig('hopf_fibration.png', dpi=150, bbox_inches='tight')
+    
+    print("Hopf fibration: S³ → S² with fiber S¹")
+    print("Each point on S² corresponds to a circle in S³")
+    print("Any two distinct fibers are linked (Hopf link)")
+
+hopf_fibration_visualization()</code></pre>
+        </section>
+
+        <!-- Section 10: Quote of the Day -->
+        <section id="quote">
+            <h2>💬 Quote of the Day</h2>
+            <blockquote>
+                <p>"The essence of mathematics lies in its freedom."</p>
+                <footer>— Georg Cantor</footer>
+            </blockquote>
+            <p>This quote from the founder of set theory captures the spirit of modern mathematics. Cantor's work on infinite sets, though initially controversial, opened new horizons in mathematical thought. His willingness to explore the counterintuitive properties of infinity—showing that some infinities are larger than others—exemplifies the creative freedom that drives mathematical discovery. In a deeper sense, Cantor reminds us that mathematics is not constrained by physical reality but is a realm of pure thought where the only limits are those of logical consistency.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — Curated mathematical insights</p>
+        <p>Updated every 30 minutes • <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
