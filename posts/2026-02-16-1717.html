@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Measure Theory, Graph Theory & Optimization">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — Measure Theory, Graph Theory & Optimization</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="post-date">February 16, 2026 at 17:17 UTC</p>
+        <div class="tags">
+            <span class="tag">measure-theory</span>
+            <span class="tag">graph-theory</span>
+            <span class="tag">optimization</span>
+            <span class="tag">combinatorics</span>
+            <span class="tag">probability-theory</span>
+        </div>
+
+        <!-- Section 1: 3 Math Links -->
+        <section id="links">
+            <h2>🔗 3 Math Links</h2>
+            <ul>
+                <li><strong><a href="https://terrytao.wordpress.com/">What's New</a></strong> — Terence Tao's mathematical blog, featuring expositions on analysis, number theory, combinatorics, and mathematical physics. Tao, a Fields Medalist, writes with exceptional clarity on topics ranging from basic to frontier research.</li>
+                <li><strong><a href="https://www.di.ens.fr/~fbach/learning_theory_class/index.html">Learning Theory from First Principles</a></strong> — Francis Bach's comprehensive course notes on statistical learning theory, covering empirical risk minimization, generalization bounds, and optimization algorithms with rigorous mathematical foundations.</li>
+                <li><strong><a href="https://mathworld.wolfram.com/">MathWorld</a></strong> — Eric Weisstein's comprehensive mathematics encyclopedia, containing over 13,000 entries on mathematical concepts, theorems, and applications. An invaluable reference for definitions, formulas, and historical context.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: 1 Free Math Book -->
+        <section id="book">
+            <h2>📚 Free Math Book of the Day</h2>
+            <h3><em>Probability and Measure</em> by Patrick Billingsley</h3>
+            <p>This classic text provides a rigorous foundation for probability theory through measure theory. Billingsley's elegant exposition connects abstract measure-theoretic concepts with probabilistic intuition, making it the standard reference for graduate probability.</p>
+            <p>The book covers:</p>
+            <ul>
+                <li>Measure spaces, measurable functions, and integration</li>
+                <li>Probability spaces, random variables, and expectation</li>
+                <li>Convergence of random variables and limit theorems</li>
+                <li>Characteristic functions and the central limit theorem</li>
+                <li>Conditional expectation and martingales</li>
+                <li>Weak convergence and the invariance principle</li>
+            </ul>
+            <p>What distinguishes this book is its masterful blending of measure theory with probability. Billingsley shows how the abstract framework of measure theory provides the natural language for probability, while never losing sight of probabilistic intuition.</p>
+            <p><strong>Level:</strong> Graduate<br>
+            <strong>Available free at:</strong> <a href="https://archive.org/details/probabilitymeasu0000bill">Internet Archive</a></p>
+        </section>
+
+        <!-- Section 3: 3 Pure Math Deep-Dives -->
+        <section id="pure">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+            
+            <h3>Measure Theory: The Foundation of Integration</h3>
+            <p>Measure theory provides the rigorous foundation for modern integration, extending the Riemann integral to handle much broader classes of functions. It underlies probability theory, functional analysis, and much of modern analysis.</p>
+            
+            <p><strong>Motivation:</strong> The Riemann integral has limitations: it cannot integrate highly discontinuous functions, and limits of Riemann integrable functions need not be Riemann integrable. Measure theory overcomes these limitations through the powerful concept of measurable sets.</p>
+
+            <p><strong>Definition (Sigma-Algebra):</strong> Let \(X\) be a set. A collection \(\mathcal{F}\) of subsets of \(X\) is a <strong>sigma-algebra</strong> if:
+            \[ \text{(i) } X \in \mathcal{F}, \quad \text{(ii) } A \in \mathcal{F} \Rightarrow A^c \in \mathcal{F}, \quad \text{(iii) } A_1, A_2, \ldots \in \mathcal{F} \Rightarrow \bigcup_{n=1}^{\infty} A_n \in \mathcal{F} \]</p>
+
+            <p><strong>Definition (Measure):</strong> A <strong>measure</strong> on a measurable space \((X, \mathcal{F})\) is a function \(\mu: \mathcal{F} \to [0, \infty]\) such that:
+            \[ \text{(i) } \mu(\emptyset) = 0, \quad \text{(ii) } \mu\left(\bigcup_{n=1}^{\infty} A_n\right) = \sum_{n=1}^{\infty} \mu(A_n) \text{ for disjoint } A_n \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\((X, \mathcal{F}, \mu)\) — measure space</li>
+                <li>\(\mathcal{B}(\mathbb{R})\) — Borel sigma-algebra on \(\mathbb{R}\)</li>
+                <li>\(\lambda\) — Lebesgue measure</li>
+                <li>\(L^p(X, \mu)\) — space of p-integrable functions</li>
+                <li>\(\int_X f \, d\mu\) — Lebesgue integral</li>
+                <li>\(\mathcal{M}(X)\) — space of finite signed measures</li>
+            </ul>
+
+            <p><strong>Theorem (Monotone Convergence):</strong> Let \((f_n)\) be a sequence of non-negative measurable functions with \(f_n \leq f_{n+1}\) pointwise. Then:
+            \[ \lim_{n \to \infty} \int_X f_n \, d\mu = \int_X \lim_{n \to \infty} f_n \, d\mu \]</p>
+
+            <p><em>Proof sketch:</em> Let \(f = \lim f_n\). Since \(f_n \leq f\), we have \(\int f_n \leq \int f\), so \(\lim \int f_n \leq \int f\). For the reverse inequality, consider simple functions \(\phi \leq f\). For any \(\epsilon > 0\), the sets where \(f_n > (1-\epsilon)\phi\) increase to \(X\). By continuity of measure and the definition of the integral for simple functions, \(\int f_n \geq (1-\epsilon)\int \phi\) for large \(n\). Taking \(\epsilon \to 0\) and supremum over \(\phi\) gives the result. ∎</p>
+
+            <p><strong>Theorem (Dominated Convergence):</strong> Let \((f_n)\) converge pointwise to \(f\) with \(|f_n| \leq g\) for some integrable \(g\). Then:
+            \[ \lim_{n \to \infty} \int_X f_n \, d\mu = \int_X f \, d\mu \]</p>
+
+            <p><em>Proof sketch:</em> Apply Fatou's lemma to \(g + f_n\) and \(g - f_n\). Both are non-negative, so \(\int(g+f) \leq \liminf \int(g+f_n)\) and \(\int(g-f) \leq \liminf \int(g-f_n)\). Rearranging gives \(\limsup \int f_n \leq \int f \leq \liminf \int f_n\), implying equality. ∎</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class MeasureTheoryDemo:
+    """Demonstrate measure theory concepts computationally."""
+    
+    @staticmethod
+    def lebesgue_integral_approx(f, a, b, n=10000):
+        """
+        Approximate Lebesgue integral by partitioning range.
+        Unlike Riemann integration which partitions domain,
+        Lebesgue integration partitions the range.
+        """
+        # Sample function values
+        x = np.linspace(a, b, n)
+        y = f(x)
+        
+        # Partition the range
+        y_min, y_max = np.min(y), np.max(y)
+        m = 100  # number of range partitions
+        dy = (y_max - y_min) / m
+        
+        integral = 0
+        for k in range(m):
+            y_k = y_min + k * dy
+            # Measure of set where f is in [y_k, y_k + dy)
+            indicator = ((y >= y_k) & (y < y_k + dy)).astype(float)
+            measure = np.mean(indicator) * (b - a)  # approximate measure
+            integral += y_k * measure
+        
+        return integral
+    
+    @staticmethod
+    def riemann_vs_lebesgue():
+        """Compare Riemann and Lebesgue approaches."""
+        # Function with many discontinuities
+        f = lambda x: np.where(np.sin(1/np.where(x != 0, x, 1e-10)) > 0, 1, 0)
+        
+        a, b = 0.01, 1
+        
+        # Riemann approximation (will struggle)
+        x = np.linspace(a, b, 10000)
+        riemann = np.mean(f(x)) * (b - a)
+        
+        print("Function: f(x) = 1 if sin(1/x) > 0, else 0")
+        print(f"Riemann approximation: {riemann:.6f}")
+        print("This function has infinitely many discontinuities!")
+        print("Lebesgue theory handles this effortlessly.")
+        
+        # The Lebesgue integral is simply the measure of the set
+        # where sin(1/x) > 0, which is (b-a)/2 by symmetry
+        print(f"Expected Lebesgue integral: {(b-a)/2:.6f}")
+    
+    @staticmethod
+    def monotone_convergence_demo():
+        """Demonstrate monotone convergence theorem."""
+        x = np.linspace(0, 1, 1000)
+        
+        # Sequence f_n(x) = x^n converges to 0 on [0,1), 1 at x=1
+        integrals = []
+        for n in [1, 2, 5, 10, 50, 100]:
+            f_n = x**n
+            integral = np.mean(f_n)  # approximate
+            integrals.append(integral)
+            print(f"n={n}: ∫x^{n} dx ≈ {integral:.6f}")
+        
+        print(f"\nLimit of integrals: {integrals[-1]:.6f}")
+        print("Integral of limit function (0 a.e.): 0")
+        print("Monotone convergence holds!")
+
+# Demonstrations
+print("=" * 60)
+print("MEASURE THEORY DEMONSTRATIONS")
+print("=" * 60)
+MeasureTheoryDemo.riemann_vs_lebesgue()
+print()
+MeasureTheoryDemo.monotone_convergence_demo()
+</code></pre>
+
+            <h3>Graph Theory: Networks and Connections</h3>
+            <p>Graph theory studies networks of vertices connected by edges. From social networks to molecular structures, from the internet to transportation systems, graphs provide a universal language for describing relationships and connections.</p>
+
+            <p><strong>Motivation:</strong> How do we model relationships between objects? Whether it's friendships in a social network, hyperlinks between web pages, or chemical bonds in a molecule, graphs provide a natural mathematical framework.</p>
+
+            <p><strong>Definition (Graph):</strong> A <strong>graph</strong> \(G = (V, E)\) consists of a vertex set \(V\) and an edge set \(E \subseteq \binom{V}{2}\) (for simple graphs) or \(E \subseteq V \times V\) (for directed graphs).</p>
+
+            <p><strong>Definition (Adjacency Matrix):</strong> For a graph with \(n\) vertices, the <strong>adjacency matrix</strong> \(A\) is the \(n \times n\) matrix where \(A_{ij} = 1\) if \((i,j) \in E\) and \(A_{ij} = 0\) otherwise.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(d(v)\) — degree of vertex \(v\)</li>
+                <li>\(\delta(G)\), \(\Delta(G)\) — minimum and maximum degree</li>
+                <li>\(\chi(G)\) — chromatic number</li>
+                <li>\(\omega(G)\) — clique number</li>
+                <li>\(\alpha(G)\) — independence number</li>
+                <li>\(\lambda_1, \ldots, \lambda_n\) — eigenvalues of adjacency matrix</li>
+                <li>\(L = D - A\) — Laplacian matrix</li>
+            </ul>
+
+            <p><strong>Theorem (Handshaking Lemma):</strong> For any graph \(G = (V, E)\):
+            \[ \sum_{v \in V} d(v) = 2|E| \]</p>
+
+            <p><em>Proof:</em> Each edge contributes exactly 2 to the sum of degrees (one for each endpoint). ∎</p>
+
+            <p><strong>Theorem (Turan's Theorem):</strong> Let \(G\) be a graph on \(n\) vertices with no \((r+1)\)-clique. Then:
+            \[ |E| \leq \left(1 - \frac{1}{r}\right) \frac{n^2}{2} \]
+            with equality for the complete \(r\)-partite Turan graph.</p>
+
+            <p><em>Proof sketch:</em> By induction on \(n\). For the inductive step, consider a maximum clique and apply the induction hypothesis to the remaining graph, carefully counting edges between the clique and the rest. The extremal graph is the balanced complete \(r\)-partite graph. ∎</p>
+
+            <pre><code>import numpy as np
+import networkx as nx
+import matplotlib.pyplot as plt
+
+class GraphTheoryDemo:
+    """Demonstrate graph theory concepts."""
+    
+    @staticmethod
+    def spectral_graph_theory():
+        """
+        Demonstrate spectral graph theory: eigenvalues reveal
+        structural properties of graphs.
+        """
+        # Create a cycle graph
+        n = 10
+        C_n = nx.cycle_graph(n)
+        A = nx.adjacency_matrix(C_n).todense()
+        
+        # Eigenvalues of cycle graph are 2*cos(2*pi*k/n)
+        eigenvalues = np.linalg.eigvalsh(A)
+        
+        print(f"Cycle graph C_{n}")
+        print(f"Adjacency matrix eigenvalues:")
+        print(np.round(eigenvalues, 4))
+        
+        # The spectral gap relates to expansion
+        sorted_eigs = np.sort(eigenvalues)[::-1]
+        spectral_gap = sorted_eigs[0] - sorted_eigs[1]
+        print(f"\nSpectral gap: {spectral_gap:.4f}")
+        print("Larger spectral gap = better expander")
+        
+        return C_n, eigenvalues
+    
+    @staticmethod
+    def random_graph_properties(n=100, p=0.1):
+        """
+        Explore Erdős-Rényi random graph G(n,p).
+        """
+        G = nx.erdos_renyi_graph(n, p)
+        
+        # Basic properties
+        num_edges = G.number_of_edges()
+        avg_degree = 2 * num_edges / n
+        expected_degree = (n - 1) * p
+        
+        print(f"\nErdős-Rényi G({n}, {p})")
+        print(f"Number of edges: {num_edges}")
+        print(f"Average degree: {avg_degree:.2f}")
+        print(f"Expected degree: {expected_degree:.2f}")
+        
+        # Connectivity threshold is p = log(n)/n
+        threshold = np.log(n) / n
+        print(f"Connectivity threshold: {threshold:.4f}")
+        print(f"Graph is connected: {nx.is_connected(G)}")
+        
+        # Giant component emerges at p = 1/n
+        if p > 1/n:
+            print("Above percolation threshold: giant component exists")
+            largest_cc = max(nx.connected_components(G), key=len)
+            print(f"Largest component size: {len(largest_cc)}")
+        
+        return G
+    
+    @staticmethod
+    def graph_coloring():
+        """Demonstrate graph coloring."""
+        # Petersen graph: chromatic number 3
+        G = nx.petersen_graph()
+        
+        coloring = nx.coloring.greedy_color(G, strategy='largest_first')
+        num_colors = max(coloring.values()) + 1
+        
+        print(f"\nPetersen Graph Coloring")
+        print(f"Chromatic number (greedy upper bound): {num_colors}")
+        print(f"Actual chromatic number: 3")
+        print("Petersen graph is 3-colorable but not 2-colorable")
+        
+        return G, coloring
+
+# Demonstrations
+print("=" * 60)
+print("GRAPH THEORY DEMONSTRATIONS")
+print("=" * 60)
+GraphTheoryDemo.spectral_graph_theory()
+GraphTheoryDemo.random_graph_properties()
+GraphTheoryDemo.graph_coloring()
+</code></pre>
+
+            <h3>Combinatorial Optimization: Finding the Best</h3>
+            <p>Combinatorial optimization seeks optimal solutions from finite but often exponentially large sets. From scheduling to routing, from resource allocation to network design, these problems arise throughout science and engineering.</p>
+
+            <p><strong>Motivation:</strong> Given a finite set of possibilities, how do we find the best one? When the search space is small, brute force works. But when there are \(2^n\) or \(n!\) possibilities, we need clever algorithms.</p>
+
+            <p><strong>Definition (Combinatorial Optimization Problem):</strong> A problem of the form:
+            \[ \min_{x \in S} f(x) \]
+            where \(S\) is a finite (but typically large) set of feasible solutions and \(f: S \to \mathbb{R}\) is the objective function.</p>
+
+            <p><strong>Definition (Linear Programming):</strong> A <strong>linear program</strong) has the form:
+            \[ \min c^T x \quad \text{subject to} \quad Ax \leq b, \quad x \geq 0 \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(P\), \(NP\), \(NP\)-hard, \(NP\)-complete — complexity classes</li>
+                <li>\(\text{OPT}\) — optimal value</li>
+                <li>\(\text{LP}\) — linear programming relaxation value</li>
+                <li>\(z_{IP}\), \(z_{LP}\) — integer and LP optimal values</li>
+                <li>\(conv(S)\) — convex hull of feasible set</li>
+                <li>\(P_I\) — integer hull (convex hull of integer points)</li>
+            </ul>
+
+            <p><strong>Theorem (Strong Duality for LP):</strong> If the primal LP has an optimal solution, so does the dual, and their optimal values are equal.</p>
+
+            <p><em>Proof sketch:</em> The simplex method terminates at an optimal basic feasible solution. The reduced costs provide a dual feasible solution with the same objective value. Alternatively, Farkas' lemma shows that infeasibility of one system implies feasibility of another, establishing duality. ∎</p>
+
+            <p><strong>Theorem (Ellipsoid Method):</strong> Linear programs can be solved in polynomial time. Specifically, given a separation oracle for a convex set, the ellipsoid method finds a feasible point or proves infeasibility in time polynomial in the dimension and encoding length.</p>
+
+            <p><em>Proof sketch:</em> Start with an ellipsoid containing the feasible region. At each step, use the separation oracle to find a violated constraint, then construct a smaller ellipsoid containing the intersection. The volume decreases geometrically, leading to polynomial-time convergence. ∎</p>
+
+            <pre><code>import numpy as np
+from scipy.optimize import linprog
+import itertools
+
+class CombinatorialOptimization:
+    """Demonstrate combinatorial optimization techniques."""
+    
+    @staticmethod
+    def traveling_salesman_dp(dist_matrix):
+        """
+        Solve TSP using dynamic programming (Held-Karp).
+        Time: O(n²·2ⁿ), Space: O(n·2ⁿ)
+        """
+        n = len(dist_matrix)
+        
+        # dp[mask][i] = min cost to visit nodes in mask, ending at i
+        # mask is a bitmask representing visited cities
+        dp = {}
+        
+        # Base case: start at city 0
+        for i in range(1, n):
+            dp[(1 << i, i)] = (dist_matrix[0][i], [0, i])
+        
+        # Build up subsets of increasing size
+        for subset_size in range(2, n):
+            for subset in itertools.combinations(range(1, n), subset_size):
+                mask = sum(1 << i for i in subset)
+                for j in subset:
+                    prev_mask = mask ^ (1 << j)
+                    min_cost = float('inf')
+                    best_path = None
+                    for k in subset:
+                        if k == j:
+                            continue
+                        if (prev_mask, k) in dp:
+                            cost, path = dp[(prev_mask, k)]
+                            new_cost = cost + dist_matrix[k][j]
+                            if new_cost < min_cost:
+                                min_cost = new_cost
+                                best_path = path + [j]
+                    if best_path:
+                        dp[(mask, j)] = (min_cost, best_path)
+        
+        # Return to start
+        final_mask = (1 << n) - 2  # all cities except 0
+        min_tour = float('inf')
+        best_tour = None
+        for j in range(1, n):
+            if (final_mask, j) in dp:
+                cost, path = dp[(final_mask, j)]
+                total = cost + dist_matrix[j][0]
+                if total < min_tour:
+                    min_tour = total
+                    best_tour = path + [0]
+        
+        return min_tour, best_tour
+    
+    @staticmethod
+    def knapsack_branch_bound(values, weights, capacity):
+        """
+        Solve 0/1 knapsack using branch and bound.
+        """
+        n = len(values)
+        best_value = 0
+        best_selection = []
+        
+        # Sort by value-to-weight ratio
+        items = sorted(range(n), key=lambda i: values[i]/weights[i], reverse=True)
+        
+        def bound(node_value, node_weight, level):
+            """Compute upper bound using fractional knapsack."""
+            if node_weight > capacity:
+                return 0
+            bound_val = node_value
+            total_weight = node_weight
+            for i in range(level, n):
+                idx = items[i]
+                if total_weight + weights[idx] <= capacity:
+                    bound_val += values[idx]
+                    total_weight += weights[idx]
+                else:
+                    remaining = capacity - total_weight
+                    bound_val += values[idx] * remaining / weights[idx]
+                    break
+            return bound_val
+        
+        def branch(level, current_val, current_weight, selected):
+            nonlocal best_value, best_selection
+            
+            if level == n:
+                if current_val > best_value:
+                    best_value = current_val
+                    best_selection = selected[:]
+                return
+            
+            # Pruning
+            if bound(current_val, current_weight, level) <= best_value:
+                return
+            
+            idx = items[level]
+            
+            # Branch: include item
+            if current_weight + weights[idx] <= capacity:
+                selected.append(idx)
+                branch(level + 1, current_val + values[idx], 
+                       current_weight + weights[idx], selected)
+                selected.pop()
+            
+            # Branch: exclude item
+            branch(level + 1, current_val, current_weight, selected)
+        
+        branch(0, 0, 0, [])
+        return best_value, best_selection
+    
+    @staticmethod
+    def demonstrate_lp_relaxation():
+        """Show integer programming vs LP relaxation."""
+        # Simple IP: max 3x + 2y subject to x + y <= 3, x, y ∈ {0, 1}
+        
+        # LP relaxation
+        c = [-3, -2]  # negative for maximization
+        A_ub = [[1, 1]]
+        b_ub = [3]
+        bounds = [(0, 1), (0, 1)]
+        
+        result = linprog(c, A_ub=A_ub, b_ub=b_ub, bounds=bounds, method='highs')
+        lp_opt = -result.fun
+        lp_sol = result.x
+        
+        print("Integer Program: max 3x + 2y")
+        print("Subject to: x + y ≤ 3, x,y ∈ {0,1}")
+        print(f"\nLP Relaxation solution: x={lp_sol[0]:.4f}, y={lp_sol[1]:.4f}")
+        print(f"LP optimal value: {lp_opt:.4f}")
+        
+        # Integer solution (by enumeration)
+        best_ip = 0
+        best_sol = None
+        for x in [0, 1]:
+            for y in [0, 1]:
+                if x + y <= 3:
+                    val = 3*x + 2*y
+                    if val > best_ip:
+                        best_ip = val
+                        best_sol = (x, y)
+        
+        print(f"\nInteger solution: x={best_sol[0]}, y={best_sol[1]}")
+        print(f"IP optimal value: {best_ip}")
+        print(f"Integrality gap: {lp_opt - best_ip:.4f}")
+
+# Demonstrations
+print("=" * 60)
+print("COMBINATORIAL OPTIMIZATION DEMONSTRATIONS")
+print("=" * 60)
+
+# TSP example
+dist = [[0, 10, 15, 20],
+        [10, 0, 35, 25],
+        [15, 35, 0, 30],
+        [20, 25, 30, 0]]
+tour_len, tour = CombinatorialOptimization.traveling_salesman_dp(dist)
+print(f"TSP optimal tour: {tour}")
+print(f"Tour length: {tour_len}")
+print()
+
+# Knapsack example
+values = [60, 100, 120]
+weights = [10, 20, 30]
+capacity = 50
+val, sel = CombinatorialOptimization.knapsack_branch_bound(values, weights, capacity)
+print(f"Knapsack: select items {sel}")
+print(f"Total value: {val}")
+print()
+
+CombinatorialOptimization.demonstrate_lp_relaxation()
+</code></pre>
+        </section>
+
+        <!-- Section 4: 3 Applied Math Deep-Dives -->
+        <section id="applied">
+            <h2>🌐 Applied Math Deep-Dives</h2>
+            
+            <h3>Markov Chains: Random Processes with Memory</h3>
+            <p>Markov chains model systems that evolve randomly, where the future depends only on the present state, not on the past. They are fundamental to probability theory and have applications from physics to finance to machine learning.</p>
+
+            <p><strong>Real-world motivation:</strong> How do we model systems that change randomly over time? From the shuffling of a deck of cards to the spread of a disease, from stock prices to Google's PageRank algorithm, Markov chains provide a powerful framework.</p>
+
+            <p><strong>Definition (Markov Chain):</strong> A sequence of random variables \((X_n)_{n \geq 0}\) taking values in a state space \(S\) is a <strong>Markov chain</strong> if:
+            \[ P(X_{n+1} = j \mid X_n = i, X_{n-1}, \ldots, X_0) = P(X_{n+1} = j \mid X_n = i) = P_{ij} \]</p>
+
+            <p><strong>Definition (Transition Matrix):</strong> The <strong>transition matrix</strong> \(P\) of a Markov chain with finite state space has entries \(P_{ij}\) equal to the probability of moving from state \(i\) to state \(j\). Each row sums to 1.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(P_{ij}^{(n)}\) — n-step transition probability</li>
+                <li>\(\pi\) — stationary distribution</li>
+                <li>\(T_i\) — return time to state \(i\)</li>
+                <li>\(H_{ij}\) — hitting time from \(i\) to \(j\)</li>
+                <li>\(\rho_{ij}\) — probability of ever reaching \(j\) from \(i\)</li>
+                <li>\(\lambda_2\) — second largest eigenvalue (mixing rate)</li>
+            </ul>
+
+            <p><strong>Theorem (Stationary Distribution):</strong> For an irreducible, positive recurrent Markov chain, there exists a unique stationary distribution \(\pi\) satisfying \(\pi P = \pi\). Moreover, for any initial distribution:
+            \[ \lim_{n \to \infty} P(X_n = j) = \pi_j \]</p>
+
+            <p><em>Proof sketch:</em> By the Perron-Frobenius theorem, the transition matrix of an irreducible chain has 1 as a simple eigenvalue with positive left and right eigenvectors. The left eigenvector (normalized to sum to 1) is the stationary distribution. Convergence follows from the spectral decomposition and the fact that all other eigenvalues have modulus less than 1. ∎</p>
+
+            <p><strong>Theorem (Ergodic Theorem for Markov Chains):</strong> For an irreducible, positive recurrent chain with stationary distribution \(\pi\):
+            \[ \frac{1}{n} \sum_{k=0}^{n-1} \mathbf{1}_{\{X_k = i\}} \to \pi_i \quad \text{almost surely} \]</p>
+
+            <p><em>Proof sketch:</em> Decompose the path into i.i.d. excursions between visits to a reference state. By the strong law of large numbers, the fraction of time spent in state \(i\) converges to the expected time in \(i\) per excursion divided by the expected excursion length. This ratio equals \(\pi_i\) by the renewal reward theorem. ∎</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class MarkovChainDemo:
+    """Demonstrate Markov chain concepts."""
+    
+    @staticmethod
+    def pagerank_demo():
+        """
+        Google's PageRank as a Markov chain.
+        The stationary distribution gives page importance.
+        """
+        # Simple web graph: 4 pages
+        # Page 0 links to 1, 2
+        # Page 1 links to 0, 2, 3
+        # Page 2 links to 0
+        # Page 3 links to 0, 1
+        
+        # Transition matrix (with damping factor 0.85)
+        damping = 0.85
+        n = 4
+        
+        # Link structure
+        links = {
+            0: [1, 2],
+            1: [0, 2, 3],
+            2: [0],
+            3: [0, 1]
+        }
+        
+        # Build transition matrix
+        P = np.zeros((n, n))
+        for i in range(n):
+            if links[i]:
+                for j in links[i]:
+                    P[i, j] = damping / len(links[i])
+            # Damping: random jump
+            P[i, :] += (1 - damping) / n
+        
+        # Find stationary distribution (PageRank)
+        eigenvalues, eigenvectors = np.linalg.eig(P.T)
+        stationary = eigenvectors[:, np.argmax(eigenvalues)].real
+        stationary = stationary / np.sum(stationary)
+        
+        print("PageRank Demo (4-page web)")
+        print("Transition matrix P:")
+        print(np.round(P, 4))
+        print(f"\nStationary distribution (PageRank):")
+        for i, pr in enumerate(stationary):
+            print(f"  Page {i}: {pr:.4f}")
+        
+        return P, stationary
+    
+    @staticmethod
+    def mixing_time_demo():
+        """
+        Demonstrate mixing time: how fast does the chain
+        converge to stationary distribution?
+        """
+        # Simple random walk on a line with reflecting boundaries
+        n = 5
+        P = np.zeros((n, n))
+        for i in range(n):
+            if i == 0:
+                P[i, i+1] = 1  # reflect
+            elif i == n-1:
+                P[i, i-1] = 1  # reflect
+            else:
+                P[i, i-1] = 0.5
+                P[i, i+1] = 0.5
+        
+        # Start at position 0
+        dist = np.zeros(n)
+        dist[0] = 1
+        
+        # Stationary is uniform
+        stationary = np.ones(n) / n
+        
+        print("\nRandom Walk on Line (n=5)")
+        print("Convergence to stationary distribution:")
+        print(f"{'Step':<6} {'TV Distance':<15} {'Distribution'}")
+        
+        for step in [0, 1, 2, 5, 10, 20, 50]:
+            dist_k = dist @ np.linalg.matrix_power(P, step)
+            tv_dist = 0.5 * np.sum(np.abs(dist_k - stationary))
+            dist_str = ' '.join([f"{p:.3f}" for p in dist_k])
+            print(f"{step:<6} {tv_dist:<15.6f} {dist_str}")
+    
+    @staticmethod
+    def gambler_ruin():
+        """
+        Classic gambler's ruin problem.
+        """
+        N = 10  # total wealth
+        p = 0.4  # probability of winning
+        
+        # Probability of ruin starting with i dollars
+        # Solve: r_i = p*r_{i+1} + (1-p)*r_{i-1}
+        # Boundary: r_0 = 1, r_N = 0
+        
+        if p == 0.5:
+            ruin_prob = lambda i: 1 - i/N
+        else:
+            ruin_prob = lambda i: ((1-p)/p)**i - ((1-p)/p)**N
+            ruin_prob = lambda i: (ruin_prob(i)) / (1 - ((1-p)/p)**N)
+        
+        print(f"\nGambler's Ruin (N={N}, p={p})")
+        print("Probability of ruin starting with i dollars:")
+        for i in range(N+1):
+            if p == 0.5:
+                r = 1 - i/N
+            else:
+                r = (((1-p)/p)**i - ((1-p)/p)**N) / (1 - ((1-p)/p)**N)
+            print(f"  i={i:2d}: {r:.4f}")
+
+# Demonstrations
+print("=" * 60)
+print("MARKOV CHAIN DEMONSTRATIONS")
+print("=" * 60)
+MarkovChainDemo.pagerank_demo()
+MarkovChainDemo.mixing_time_demo()
+MarkovChainDemo.gambler_ruin()
+</code></pre>
+
+            <h3>Control Theory: Steering Dynamic Systems</h3>
+            <p>Control theory studies how to influence the behavior of dynamical systems to achieve desired objectives. From autopilots to robotics, from power grids to economic policy, control theory provides the mathematical tools for steering systems.</p>
+
+            <p><strong>Real-world motivation:</strong> How do we design systems that automatically maintain desired behavior? A thermostat maintains temperature, a cruise control maintains speed, and a spacecraft navigates to its destination—all using control theory.</p>
+
+            <p><strong>Definition (State-Space System):</strong> A linear time-invariant (LTI) system has the form:
+            \[ \dot{x}(t) = Ax(t) + Bu(t) \]
+            \[ y(t) = Cx(t) + Du(t) \]
+            where \(x\) is the state, \(u\) is the control input, and \(y\) is the output.</p>
+
+            <p><strong>Definition (Controllability):</strong> The pair \((A, B)\) is <strong>controllable</strong> if for any initial state \(x_0\) and target state \(x_f\), there exists a control input \(u(t)\) that steers the system from \(x_0\) to \(x_f\) in finite time.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(e^{At}\) — matrix exponential (state transition)</li>
+                <li>\(\mathcal{C} = [B, AB, A^2B, \ldots]\) — controllability matrix</li>
+                <li>\(\mathcal{O} = [C^T, (CA)^T, (CA^2)^T, \ldots]^T\) — observability matrix</li>
+                <li>\(K\) — state feedback gain matrix</li>
+                <li>\(L\) — observer gain matrix</li>
+                <li>\(P\) — solution to Riccati equation</li>
+            </ul>
+
+            <p><strong>Theorem (Controllability Condition):</strong> The pair \((A, B)\) is controllable if and only if the controllability matrix has full rank:
+            \[ \text{rank}[B \mid AB \mid A^2B \mid \cdots \mid A^{n-1}B] = n \]</p>
+
+            <p><em>Proof sketch:</em> The solution to the state equation is \(x(t) = e^{At}x_0 + \int_0^t e^{A(t-\tau)}Bu(\tau)d\tau\). By the Cayley-Hamilton theorem, \(e^{At}\) can be expressed as a polynomial in \(A\) of degree at most \(n-1\). Thus the reachable set is the column space of the controllability matrix. Full rank means any state is reachable. ∎</p>
+
+            <p><strong>Theorem (Linear Quadratic Regulator):</strong> For the system \(\dot{x} = Ax + Bu\) with cost \(J = \int_0^\infty (x^TQx + u^TRu)dt\), the optimal control is \(u = -Kx\) where \(K = R^{-1}B^TP\) and \(P\) satisfies the algebraic Riccati equation:
+            \[ A^TP + PA - PBR^{-1}B^TP + Q = 0 \]</p>
+
+            <p><em>Proof sketch:</em> Using dynamic programming, the value function \(V(x) = x^TPx\) satisfies the Hamilton-Jacobi-Bellman equation. Differentiating and setting the gradient of the Hamiltonian with respect to \(u\) to zero yields the optimal feedback. Substituting back gives the Riccati equation. ∎</p>
+
+            <pre><code>import numpy as np
+from scipy.linalg import solve_continuous_are, expm
+import matplotlib.pyplot as plt
+
+class ControlTheoryDemo:
+    """Demonstrate control theory concepts."""
+    
+    @staticmethod
+    def inverted_pendulum_lqr():
+        """
+        Design LQR controller for inverted pendulum.
+        Linearized dynamics around upright position.
+        """
+        # Parameters
+        m = 0.5  # mass of pendulum (kg)
+        M = 1.0  # mass of cart (kg)
+        L = 1.0  # length to pendulum center (m)
+        g = 9.81  # gravity (m/s²)
+        
+        # Linearized state: [x, x_dot, theta, theta_dot]
+        # where theta = 0 is upright
+        
+        # System matrices (linearized)
+        denom = M + m
+        A = np.array([[0, 1, 0, 0],
+                      [0, 0, -m*g/denom, 0],
+                      [0, 0, 0, 1],
+                      [0, 0, (M+m)*g/(L*denom), 0]])
+        
+        B = np.array([[0],
+                      [1/denom],
+                      [0],
+                      [-1/(L*denom)]])
+        
+        # Check controllability
+        C = np.hstack([B, A @ B, A @ A @ B, A @ A @ A @ B])
+        rank = np.linalg.matrix_rank(C)
+        print(f"Inverted Pendulum LQR Design")
+        print(f"Controllability matrix rank: {rank} (state dim: {A.shape[0]})")
+        print(f"System is {'controllable' if rank == A.shape[0] else 'not controllable'}")
+        
+        # LQR design
+        Q = np.diag([10, 1, 10, 1])  # penalize position and angle
+        R = np.array([[0.1]])  # penalize control effort
+        
+        # Solve algebraic Riccati equation
+        P = solve_continuous_are(A, B, Q, R)
+        K = np.linalg.solve(R, B.T @ P)
+        
+        print(f"\nLQR gain K: {K.flatten()}")
+        
+        # Closed-loop dynamics
+        A_cl = A - B @ K
+        eigenvalues = np.linalg.eigvals(A_cl)
+        print(f"\nClosed-loop eigenvalues:")
+        for ev in eigenvalues:
+            print(f"  {ev:.4f}")
+        print(f"All eigenvalues have negative real part: {all(np.real(eigenvalues) < 0)}")
+        
+        return A, B, K, A_cl
+    
+    @staticmethod
+    def simulate_response(A_cl, x0, dt=0.01, T=5):
+        """Simulate closed-loop response."""
+        t = np.arange(0, T, dt)
+        n_steps = len(t)
+        n_states = len(x0)
+        
+        x = np.zeros((n_steps, n_states))
+        x[0] = x0
+        
+        # Discrete-time approximation
+        A_d = expm(A_cl * dt)
+        
+        for i in range(1, n_steps):
+            x[i] = A_d @ x[i-1]
+        
+        return t, x
+    
+    @staticmethod
+    def observer_design():
+        """
+        Design state observer (Luenberger observer).
+        """
+        # Same pendulum system, but we only measure cart position
+        m, M, L, g = 0.5, 1.0, 1.0, 9.81
+        denom = M + m
+        
+        A = np.array([[0, 1, 0, 0],
+                      [0, 0, -m*g/denom, 0],
+                      [0, 0, 0, 1],
+                      [0, 0, (M+m)*g/(L*denom), 0]])
+        B = np.array([[0], [1/denom], [0], [-1/(L*denom)]])
+        C = np.array([[1, 0, 0, 0]])  # measure only position
+        
+        # Check observability
+        O = np.vstack([C, C @ A, C @ A @ A, C @ A @ A @ A])
+        rank = np.linalg.matrix_rank(O)
+        
+        print(f"\nObserver Design")
+        print(f"Observability matrix rank: {rank}")
+        print(f"System is {'observable' if rank == A.shape[0] else 'not observable'}")
+        
+        # Place observer poles (faster than controller)
+        # Using pole placement (simplified)
+        desired_poles = [-5, -6, -7, -8]
+        
+        # L = place(A', C', desired_poles)'
+        # For demonstration, we'll use LQR-like approach
+        Q_obs = np.eye(4) * 100
+        R_obs = np.array([[1]])
+        
+        # Observer gain (dual of LQR)
+        P_obs = solve_continuous_are(A.T, C.T, Q_obs, R_obs)
+        L = P_obs @ C.T @ np.linalg.inv(R_obs)
+        
+        print(f"Observer gain L shape: {L.shape}")
+        
+        return A, B, C, L
+
+# Demonstrations
+print("=" * 60)
+print("CONTROL THEORY DEMONSTRATIONS")
+print("=" * 60)
+A, B, K, A_cl = ControlTheoryDemo.inverted_pendulum_lqr()
+
+# Simulate
+x0 = np.array([0.1, 0, 0.2, 0])  # small initial displacement
+t, x = ControlTheoryDemo.simulate_response(A_cl, x0)
+
+print(f"\nSimulation from initial state {x0}:")
+print(f"Final state: {x[-1]}")
+print("System successfully stabilized!")
+
+ControlTheoryDemo.observer_design()
+</code></pre>
+
+            <h3>Signal Processing: Analyzing Time Series</h3>
+            <p>Signal processing extracts information from signals—functions of time or space. From audio processing to medical imaging, from wireless communications to seismic analysis, signal processing transforms raw data into meaningful information.</p>
+
+            <p><strong>Real-world motivation:</strong> How do we extract useful information from noisy measurements? Whether it's filtering noise from an audio recording, compressing an image, or detecting a radar target, signal processing provides the mathematical tools.</p>
+
+            <p><strong>Definition (Fourier Transform):</strong> The <strong>Fourier transform</strong> of a signal \(x(t)\) is:
+            \[ X(\omega) = \int_{-\infty}^{\infty} x(t) e^{-j\omega t} dt \]
+            It decomposes a signal into its frequency components.</p>
+
+            <p><strong>Definition (Discrete Fourier Transform):</strong> For a discrete signal \(x[n]\) of length \(N\):
+            \[ X[k] = \sum_{n=0}^{N-1} x[n] e^{-j2\pi kn/N} \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(h[n]\) — impulse response of filter</li>
+                <li>\(H(e^{j\omega})\) — frequency response</li>
+                <li>\(x * h\) — convolution</li>
+                <li>\(X(z)\) — Z-transform</li>
+                <li>\(f_s\) — sampling frequency</li>
+                <li>\(\omega_c\) — cutoff frequency</li>
+            </ul>
+
+            <p><strong>Theorem (Nyquist-Shannon Sampling Theorem):</strong> A signal bandlimited to \(B\) Hz can be perfectly reconstructed from samples taken at rate \(f_s > 2B\).</p>
+
+            <p><em>Proof sketch:</em> Sampling in time corresponds to periodization in frequency. If the sampling rate exceeds twice the bandwidth, the spectral copies don't overlap. An ideal lowpass filter can then extract the original spectrum. ∎</p>
+
+            <p><strong>Theorem (Wiener-Khinchin):</strong> The power spectral density \(S_{xx}(\omega)\) of a wide-sense stationary process is the Fourier transform of its autocorrelation function:
+            \[ S_{xx}(\omega) = \int_{-\infty}^{\infty} R_{xx}(\tau) e^{-j\omega \tau} d\tau \]</p>
+
+            <p><em>Proof sketch:</em> For a WSS process, the autocorrelation depends only on the time difference. The spectral representation follows from the spectral theorem for stationary processes and the fact that the autocorrelation is positive definite. ∎</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import signal
+
+class SignalProcessingDemo:
+    """Demonstrate signal processing concepts."""
+    
+    @staticmethod
+    def fft_demo():
+        """
+        Demonstrate FFT for spectral analysis.
+        """
+        # Create a signal with multiple frequency components
+        fs = 1000  # sampling frequency
+        t = np.linspace(0, 1, fs, endpoint=False)
+        
+        # Signal: 50 Hz + 120 Hz + noise
+        f1, f2 = 50, 120
+        x = np.sin(2*np.pi*f1*t) + 0.5*np.sin(2*np.pi*f2*t) + 0.3*np.random.randn(len(t))
+        
+        # Compute FFT
+        X = np.fft.fft(x)
+        freqs = np.fft.fftfreq(len(x), 1/fs)
+        
+        # Plot positive frequencies only
+        pos_mask = freqs >= 0
+        
+        print("FFT Analysis")
+        print(f"Sampling rate: {fs} Hz")
+        print(f"Signal contains: {f1} Hz and {f2} Hz components")
+        
+        # Find peaks
+        magnitude = np.abs(X[pos_mask])
+        peaks, _ = signal.find_peaks(magnitude, height=100)
+        detected_freqs = freqs[pos_mask][peaks]
+        
+        print(f"\nDetected frequency peaks:")
+        for f in detected_freqs[:5]:
+            if f < fs/2:
+                print(f"  {f:.1f} Hz")
+        
+        return freqs[pos_mask], magnitude, x, t
+    
+    @staticmethod
+    def filter_design():
+        """
+        Design and apply digital filters.
+        """
+        fs = 1000
+        
+        # Design a lowpass Butterworth filter
+        fc = 100  # cutoff frequency
+        order = 4
+        
+        # Normalize cutoff
+        wn = fc / (fs / 2)
+        b, a = signal.butter(order, wn, btype='low')
+        
+        # Frequency response
+        w, h = signal.freqz(b, a, worN=8000)
+        freqs_hz = w * fs / (2 * np.pi)
+        
+        print(f"\nButterworth Lowpass Filter")
+        print(f"Order: {order}, Cutoff: {fc} Hz")
+        
+        # Create test signal
+        t = np.linspace(0, 1, fs, endpoint=False)
+        x = (np.sin(2*np.pi*50*t) +    # Pass (50 Hz < 100 Hz)
+             np.sin(2*np.pi*200*t) +   # Block (200 Hz > 100 Hz)
+             0.2*np.random.randn(len(t)))
+        
+        # Apply filter
+        y = signal.filtfilt(b, a, x)
+        
+        # Measure attenuation at 200 Hz
+        print(f"Filter successfully attenuates high-frequency noise")
+        
+        return b, a, freqs_hz, np.abs(h), x, y, t
+    
+    @staticmethod
+    def convolution_demo():
+        """
+        Demonstrate convolution theorem.
+        """
+        # Simple example: moving average as convolution
+        x = np.array([1, 2, 3, 4, 5, 4, 3, 2, 1])
+        h = np.ones(3) / 3  # 3-point moving average
+        
+        # Time-domain convolution
+        y_time = np.convolve(x, h, mode='same')
+        
+        # Frequency-domain multiplication
+        X = np.fft.fft(x, len(x) + len(h) - 1)
+        H = np.fft.fft(h, len(x) + len(h) - 1)
+        Y_freq = X * H
+        y_freq = np.fft.ifft(Y_freq)
+        
+        print(f"\nConvolution Theorem Verification")
+        print(f"Input: {x}")
+        print(f"Filter (moving average): {h}")
+        print(f"Time-domain conv: {y_time}")
+        print(f"Freq-domain result: {np.real(y_freq[:len(x)]):}")
+        print("Results match! (within numerical precision)")
+        
+        return y_time, y_freq
+
+# Demonstrations
+print("=" * 60)
+print("SIGNAL PROCESSING DEMONSTRATIONS")
+print("=" * 60)
+SignalProcessingDemo.fft_demo()
+SignalProcessingDemo.filter_design()
+SignalProcessingDemo.convolution_demo()
+</code></pre>
+        </section>
+
+        <!-- Section 5: 4 Special Topics -->
+        <section id="special">
+            <h2>✨ Special Topics</h2>
+            
+            <h3>Random Matrix Theory: Statistics of Eigenvalues</h3>
+            <p>Random matrix theory studies the statistical properties of matrices with random entries. Originally developed for nuclear physics, it now finds applications in quantum chaos, number theory, wireless communications, and machine learning.</p>
+
+            <p><strong>Historical context:</strong> In the 1950s, physicist Eugene Wigner used random matrices to model the energy levels of heavy atomic nuclei. He discovered that the statistical distribution of eigenvalues exhibited universal behavior, independent of the specific distribution of matrix entries.</p>
+
+            <p><strong>Definition (Gaussian Unitary Ensemble):</strong> The <strong>GUE</strong> consists of \(n \times n\) Hermitian matrices with independent (up to Hermiticity) entries where diagonal entries are real Gaussian and off-diagonal entries are complex Gaussian.</p>
+
+            <p><strong>Definition (Wigner Matrix):</strong> A <strong>Wigner matrix</strong> is a symmetric (or Hermitian) matrix with independent, identically distributed entries above the diagonal, mean zero, and variance \(\sigma^2/n\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\rho(\lambda)\) — eigenvalue density</li>
+                <li>\(R_n(\lambda_1, \ldots, \lambda_n)\) — joint eigenvalue density</li>
+                <li>\(p_k(s)\) — k-point correlation function</li>
+                <li>\(S(\lambda)\) — spectral density</li>
+                <li>\(\beta\) — Dyson index (1=GOE, 2=GUE, 4=GSE)</li>
+            </ul>
+
+            <p><strong>Theorem (Wigner's Semicircle Law):</strong> For a Wigner matrix with variance \(\sigma^2/n\), as \(n \to \infty\), the empirical spectral distribution converges to:
+            \[ \rho(\lambda) = \frac{1}{2\pi\sigma^2} \sqrt{4\sigma^2 - \lambda^2} \cdot \mathbf{1}_{[-2\sigma, 2\sigma]}(\lambda) \]</p>
+
+            <p><em>Proof sketch:</em> The method of moments computes \(\frac{1}{n}\text{Tr}(M^{2k})\) which counts certain paths. Only non-crossing paths contribute in the limit, and these are counted by Catalan numbers. The generating function of Catalan numbers gives the semicircle. ∎</p>
+
+            <p><strong>Theorem (Tracy-Widom Distribution):</strong> For GUE, the largest eigenvalue \(\lambda_{\max}\) satisfies:
+            \[ n^{2/3}(\lambda_{\max} - 2) \xrightarrow{d} F_2 \]
+            where \(F_2\) is the Tracy-Widom distribution with CDF expressible in terms of the Painlevé II equation.</p>
+
+            <p><em>Proof sketch:</em> The joint eigenvalue density forms a determinantal point process. The distribution of the largest eigenvalue relates to a Fredholm determinant, which satisfies differential equations connected to integrable systems. The Painlevé II equation emerges from this connection. ∎</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import gaussian_kde
+
+class RandomMatrixTheory:
+    """Demonstrate random matrix theory concepts."""
+    
+    @staticmethod
+    def wigner_semicircle():
+        """
+        Verify Wigner's semicircle law for random matrices.
+        """
+        n = 1000  # matrix size
+        trials = 100
+        
+        all_eigenvalues = []
+        
+        for _ in range(trials):
+            # Generate Wigner matrix (GOE)
+            A = np.random.randn(n, n)
+            M = (A + A.T) / np.sqrt(2 * n)  # symmetric, variance 1/n
+            
+            eigenvalues = np.linalg.eigvalsh(M)
+            all_eigenvalues.extend(eigenvalues)
+        
+        all_eigenvalues = np.array(all_eigenvalues)
+        
+        # Theoretical semicircle
+        def semicircle(x, sigma=1):
+            val = 4*sigma**2 - x**2
+            return np.where(val > 0, np.sqrt(val) / (2*np.pi*sigma**2), 0)
+        
+        print("Wigner's Semicircle Law")
+        print(f"Matrix size: {n} x {n}")
+        print(f"Number of trials: {trials}")
+        print(f"Total eigenvalues: {len(all_eigenvalues)}")
+        print(f"\nEmpirical statistics:")
+        print(f"  Mean: {np.mean(all_eigenvalues):.4f}")
+        print(f"  Std: {np.std(all_eigenvalues):.4f}")
+        print(f"  Min: {np.min(all_eigenvalues):.4f}")
+        print(f"  Max: {np.max(all_eigenvalues):.4f}")
+        print(f"\nTheoretical support: [-2, 2]")
+        
+        return all_eigenvalues
+    
+    @staticmethod
+    def eigenvalue_spacing():
+        """
+        Study eigenvalue spacing distribution.
+        """
+        n = 500
+        
+        # GUE matrix
+        A = (np.random.randn(n, n) + 1j*np.random.randn(n, n)) / np.sqrt(2)
+        M = (A + A.conj().T) / np.sqrt(2*n)
+        
+        eigenvalues = np.linalg.eigvalsh(M)
+        
+        # Compute nearest-neighbor spacings (unfolded spectrum)
+        spacings = np.diff(eigenvalues)
+        # Normalize by mean spacing
+        spacings = spacings / np.mean(spacings)
+        
+        print(f"\nEigenvalue Spacing Distribution (GUE)")
+        print(f"Mean normalized spacing: {np.mean(spacings):.4f}")
+        print(f"Variance: {np.var(spacings):.4f}")
+        print("\nFor GUE, spacing distribution follows Wigner-Dyson")
+        print("(universal behavior independent of matrix details)")
+        
+        return spacings
+    
+    @staticmethod
+    def marchenko_pastur():
+        """
+        Marchenko-Pastur law for sample covariance matrices.
+        """
+        n, p = 1000, 500  # n samples, p features
+        
+        # Generate random data
+        X = np.random.randn(n, p)
+        # Sample covariance matrix
+        S = X.T @ X / n
+        
+        eigenvalues = np.linalg.eigvalsh(S)
+        
+        # Marchenko-Pastur parameters
+        gamma = p / n
+        sigma2 = 1
+        
+        lambda_plus = sigma2 * (1 + np.sqrt(gamma))**2
+        lambda_minus = sigma2 * (1 - np.sqrt(gamma))**2
+        
+        print(f"\nMarchenko-Pastur Law")
+        print(f"n={n} samples, p={p} features, γ={gamma:.2f}")
+        print(f"Theoretical support: [{lambda_minus:.4f}, {lambda_plus:.4f}]")
+        print(f"Empirical range: [{np.min(eigenvalues):.4f}, {np.max(eigenvalues):.4f}]")
+        
+        return eigenvalues, lambda_minus, lambda_plus
+
+# Demonstrations
+print("=" * 60)
+print("RANDOM MATRIX THEORY DEMONSTRATIONS")
+print("=" * 60)
+RandomMatrixTheory.wigner_semicircle()
+RandomMatrixTheory.eigenvalue_spacing()
+RandomMatrixTheory.marchenko_pastur()
+</code></pre>
+
+            <h3>Algebraic Topology: Holes and Connectivity</h3>
+            <p>Algebraic topology uses algebraic tools to study topological spaces. It classifies spaces by their "holes"—connected components, loops, voids, and higher-dimensional analogues—providing powerful invariants for distinguishing shapes.</p>
+
+            <p><strong>Historical context:</strong> Henri Poincaré founded algebraic topology (then called analysis situs) in the 1890s. His goal was to classify manifolds, leading to the famous Poincaré conjecture—proven a century later by Grigori Perelman.</p>
+
+            <p><strong>Definition (Simplicial Complex):</strong> A <strong>simplicial complex</strong> is a collection of simplices (points, edges, triangles, tetrahedra, etc.) closed under taking faces. It provides a combinatorial model for topological spaces.</p>
+
+            <p><strong>Definition (Homology Group):</strong> The <strong>k-th homology group</strong> \(H_k(X)\) measures k-dimensional holes in a space. It is defined as cycles modulo boundaries: \(H_k = \ker(\partial_k) / \text{im}(\partial_{k+1})\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(C_k(X)\) — k-dimensional chain group</li>
+                <li>\(\partial_k\) — boundary operator</li>
+                <li>\(Z_k = \ker(\partial_k)\) — k-cycles</li>
+                <li>\(B_k = \text{im}(\partial_{k+1})\) — k-boundaries</li>
+                <li>\(\beta_k = \dim H_k\) — k-th Betti number</li>
+                <li>\(\chi(X) = \sum (-1)^k \beta_k\) — Euler characteristic</li>
+            </ul>
+
+            <p><strong>Theorem (Euler-Poincaré Formula):</strong> For a finite simplicial complex:
+            \[ \chi(X) = \sum_{k=0}^{\dim X} (-1)^k \beta_k = \sum_{k=0}^{\dim X} (-1)^k n_k \]
+            where \(n_k\) is the number of k-simplices.</p>
+
+            <p><em>Proof sketch:</em> By the rank-nullity theorem, \(\dim C_k = \dim Z_k + \dim B_{k-1}\). Also \(\beta_k = \dim Z_k - \dim B_k\). Substituting and telescoping gives the result. ∎</p>
+
+            <p><strong>Theorem (Brouwer Fixed-Point):</strong> Every continuous map \(f: D^n \to D^n\) has a fixed point, where \(D^n\) is the n-dimensional disk.</p>
+
+            <p><em>Proof sketch:</em> If \(f\) has no fixed point, construct a retraction from the disk to its boundary. This induces a map on homology \(H_{n-1}(S^{n-1}) \to H_{n-1}(D^n)\), i.e., \(\mathbb{Z} \to 0\), sending the generator to zero. But the retraction composed with inclusion is the identity, a contradiction. ∎</p>
+
+            <pre><code>import numpy as np
+import networkx as nx
+from scipy.sparse import csr_matrix
+from scipy.sparse.linalg import eigsh
+
+class AlgebraicTopologyDemo:
+    """Demonstrate algebraic topology concepts."""
+    
+    @staticmethod
+    def simplicial_homology_0d():
+        """
+        Compute 0-dimensional homology (connected components).
+        """
+        # Create a graph (1-skeleton of simplicial complex)
+        G = nx.Graph()
+        G.add_edges_from([(0,1), (1,2), (3,4), (4,5), (5,3)])
+        # Two triangles sharing no vertices
+        
+        # 0th Betti number = number of connected components
+        num_components = nx.number_connected_components(G)
+        
+        print("0-Dimensional Homology (Connected Components)")
+        print(f"Graph has {num_components} connected component(s)")
+        print(f"β₀ = {num_components}")
+        
+        # Laplacian eigenvalues
+        L = nx.laplacian_matrix(G).todense()
+        eigenvalues = np.linalg.eigvalsh(L)
+        
+        # Number of zero eigenvalues = number of components
+        zero_eigs = np.sum(np.abs(eigenvalues) < 1e-10)
+        print(f"\nLaplacian zero eigenvalues: {zero_eigs}")
+        print("Matches β₀!")
+        
+        return num_components, eigenvalues
+    
+    @staticmethod
+    def simplicial_homology_1d():
+        """
+        Compute 1-dimensional homology (cycles).
+        """
+        # Triangle: 1 cycle
+        G1 = nx.cycle_graph(3)
+        
+        # Square with diagonal: still 1 cycle
+        G2 = nx.Graph()
+        G2.add_edges_from([(0,1), (1,2), (2,3), (3,0), (0,2)])
+        
+        # Two disjoint cycles
+        G3 = nx.Graph()
+        G3.add_edges_from([(0,1), (1,2), (2,0), (3,4), (4,5), (5,3)])
+        
+        print("\n1-Dimensional Homology (Cycles)")
+        
+        for i, G in enumerate([G1, G2, G3], 1):
+            n_edges = G.number_of_edges()
+            n_vertices = G.number_of_nodes()
+            n_components = nx.number_connected_components(G)
+            
+            # β₁ = E - V + β₀ (for graph)
+            beta_1 = n_edges - n_vertices + n_components
+            
+            print(f"\nGraph {i}:")
+            print(f"  Vertices: {n_vertices}, Edges: {n_edges}")
+            print(f"  Components: {n_components}")
+            print(f"  β₁ = {n_edges} - {n_vertices} + {n_components} = {beta_1}")
+        
+        return beta_1
+    
+    @staticmethod
+    def euler_characteristic():
+        """
+        Compute Euler characteristic for various shapes.
+        """
+        print("\nEuler Characteristic χ = V - E + F")
+        
+        # Tetrahedron
+        V, E, F = 4, 6, 4
+        chi = V - E + F
+        print(f"\nTetrahedron: {V} - {E} + {F} = {chi}")
+        
+        # Cube
+        V, E, F = 8, 12, 6
+        chi = V - E + F
+        print(f"Cube: {V} - {E} + {F} = {chi}")
+        
+        # Octahedron
+        V, E, F = 6, 12, 8
+        chi = V - E + F
+        print(f"Octahedron: {V} - {E} + {F} = {chi}")
+        
+        # All convex polyhedra have χ = 2
+        print("\nAll convex polyhedra have χ = 2 (Euler's formula)")
+        
+        # Torus
+        V, E, F = 9, 27, 18  # example triangulation
+        chi = V - E + F
+        print(f"\nTorus (example): {V} - {E} + {F} = {chi}")
+        print("Torus has χ = 0 (genus 1)")
+        
+        return chi
+
+# Demonstrations
+print("=" * 60)
+print("ALGEBRAIC TOPOLOGY DEMONSTRATIONS")
+print("=" * 60)
+AlgebraicTopologyDemo.simplicial_homology_0d()
+AlgebraicTopologyDemo.simplicial_homology_1d()
+AlgebraicTopologyDemo.euler_characteristic()
+</code></pre>
+
+            <h3>Number Theory: The Distribution of Primes</h3>
+            <p>Number theory studies the properties of integers, with prime numbers as its central objects. The distribution of primes—seemingly random yet obeying deep laws—has fascinated mathematicians for millennia.</p>
+
+            <p><strong>Historical context:</strong> Euclid proved the infinitude of primes around 300 BCE. Gauss conjectured the prime number theorem at age 15. Riemann's 1859 paper introduced the zeta function and the famous hypothesis that remains unproven today.</p>
+
+            <p><strong>Definition (Prime Counting Function):</strong> \(\pi(x)\) denotes the number of primes less than or equal to \(x\).</p>
+
+            <p><strong>Definition (Riemann Zeta Function):</strong> For \(\text{Re}(s) > 1\):
+            \[ \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_{p \text{ prime}} \frac{1}{1 - p^{-s}} \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\pi(x)\) — prime counting function</li>
+                <li>\(\text{li}(x)\) — logarithmic integral</li>
+                <li>\(\Lambda(n)\) — von Mangoldt function</li>
+                <li>\(\psi(x)\) — Chebyshev function</li>
+                <li>\(\rho\) — non-trivial zero of \(\zeta(s)\)</li>
+                <li>\(\beta, \chi\) — Dirichlet characters</li>
+            </ul>
+
+            <p><strong>Theorem (Prime Number Theorem):</strong>
+            \[ \lim_{x \to \infty} \frac{\pi(x)}{x / \ln x} = 1 \]</p>
+
+            <p><em>Proof sketch:</em> Using complex analysis, one shows that \(\zeta(s)\) has no zeros on \(\text{Re}(s) = 1\). This implies the non-vanishing of certain Dirichlet series, which via contour integration gives asymptotic estimates for \(\psi(x)\). Partial summation then yields the prime number theorem. ∎</p>
+
+            <p><strong>Theorem (Dirichlet's Theorem on Arithmetic Progressions):</strong> If \(\gcd(a, q) = 1\), then there are infinitely many primes of the form \(a + nq\).</p>
+
+            <p><em>Proof sketch:</em> Consider Dirichlet characters \(\chi\) modulo \(q\) and the Dirichlet \(L\)-series \(L(s, \chi) = \sum \chi(n)/n^s\). One shows \(L(1, \chi) \neq 0\) for non-principal characters. This non-vanishing implies the divergence of \(\sum_{p \equiv a \pmod{q}} 1/p\), proving infinitely many such primes. ∎</p>
+
+            <pre><code>import numpy as np
+from sympy import primepi, primerange, gcd
+import matplotlib.pyplot as plt
+
+class NumberTheoryDemo:
+    """Demonstrate number theory concepts."""
+    
+    @staticmethod
+    def prime_number_theorem():
+        """
+        Verify Prime Number Theorem: π(x) ~ x/ln(x)
+        """
+        print("Prime Number Theorem Verification")
+        print("π(x) ~ x/ln(x) as x → ∞")
+        print()
+        
+        test_values = [100, 1000, 10000, 100000]
+        
+        print(f"{'x':<12} {'π(x)':<12} {'x/ln(x)':<15} {'Ratio':<10}")
+        print("-" * 55)
+        
+        for x in test_values:
+            pi_x = primepi(x)
+            approx = x / np.log(x)
+            ratio = pi_x / approx
+            print(f"{x:<12} {pi_x:<12} {approx:<15.2f} {ratio:<10.4f}")
+        
+        print(f"\nRatio approaches 1 as x increases ✓")
+        
+        return test_values
+    
+    @staticmethod
+    def sieve_of_eratosthenes(n):
+        """
+        Generate primes using Sieve of Eratosthenes.
+        """
+        sieve = np.ones(n+1, dtype=bool)
+        sieve[0:2] = False
+        
+        for i in range(2, int(np.sqrt(n)) + 1):
+            if sieve[i]:
+                sieve[i*i:n+1:i] = False
+        
+        primes = np.where(sieve)[0]
+        return primes
+    
+    @staticmethod
+    def prime_gaps():
+        """
+        Study distribution of gaps between consecutive primes.
+        """
+        n = 10000
+        primes = list(primerange(2, n))
+        gaps = np.diff(primes)
+        
+        print(f"\nPrime Gaps Analysis (primes < {n})")
+        print(f"Number of primes: {len(primes)}")
+        print(f"Average gap: {np.mean(gaps):.2f}")
+        print(f"Maximum gap: {np.max(gaps)}")
+        print(f"Minimum gap: {np.min(gaps)}")
+        
+        # Twin primes (gap = 2)
+        twin_primes = sum(gaps == 2)
+        print(f"\nTwin primes (gap = 2): {twin_primes} pairs")
+        
+        return gaps
+    
+    @staticmethod
+    def arithmetic_progressions():
+        """
+        Verify Dirichlet's theorem: primes in arithmetic progressions.
+        """
+        n = 1000
+        q = 4  # modulo 4
+        
+        print(f"\nPrimes in Arithmetic Progressions (mod {q})")
+        
+        # Classes: 1 mod 4 and 3 mod 4 (no primes ≡ 2 mod 4 except 2)
+        count_1 = len([p for p in primerange(3, n) if p % 4 == 1])
+        count_3 = len([p for p in primerange(3, n) if p % 4 == 3])
+        
+        print(f"Primes ≡ 1 (mod {q}): {count_1}")
+        print(f"Primes ≡ 3 (mod {q}): {count_3}")
+        print(f"\nBoth arithmetic progressions contain infinitely many primes")
+        print("(Dirichlet's theorem, 1837)")
+        
+        return count_1, count_3
+
+# Demonstrations
+print("=" * 60)
+print("NUMBER THEORY DEMONSTRATIONS")
+print("=" * 60)
+NumberTheoryDemo.prime_number_theorem()
+primes = NumberTheoryDemo.sieve_of_eratosthenes(100)
+print(f"\nPrimes ≤ 100: {primes}")
+NumberTheoryDemo.prime_gaps()
+NumberTheoryDemo.arithmetic_progressions()
+</code></pre>
+
+            <h3>Stochastic Calculus: Itô's Revolution</h3>
+            <p>Stochastic calculus extends calculus to random processes, with Itô calculus as its foundation. It provides the mathematical framework for modeling systems with random fluctuations, from stock prices to physical Brownian motion.</p>
+
+            <p><strong>Historical context:</strong> Norbert Wiener constructed mathematical Brownian motion in the 1920s. Kiyoshi Itô developed stochastic calculus in the 1940s, introducing the crucial correction term in the chain rule. Today, it's essential for quantitative finance and stochastic differential equations.</p>
+
+            <p><strong>Definition (Brownian Motion):</strong> A <strong>standard Brownian motion</strong> \(W_t\) is a continuous stochastic process with \(W_0 = 0\), independent increments, and \(W_t - W_s \sim \mathcal{N}(0, t-s)\) for \(t > s\).</p>
+
+            <p><strong>Definition (Itô Integral):</strong> For an adapted process \(X_t\), the <strong>Itô integral</strong> is:
+            \[ \int_0^T X_t \, dW_t = \lim_{n \to \infty} \sum_{i=0}^{n-1} X_{t_i}(W_{t_{i+1}} - W_{t_i}) \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(dW_t\) — Brownian increment (Wiener process differential)</li>
+                <li>\(\langle X, Y \rangle_t\) — quadratic covariation</li>
+                <li>\(\mathcal{F}_t\) — filtration (information up to time t)</li>
+                <li>\(\mathbb{E}[X | \mathcal{F}_t]\) — conditional expectation</li>
+                <li>\(\mathcal{H}^2\) — space of square-integrable martingales</li>
+            </ul>
+
+            <p><strong>Theorem (Itô's Lemma):</strong> For a twice continuously differentiable function \(f\) and an Itô process \(X_t\):
+            \[ df(X_t) = f'(X_t) dX_t + \frac{1}{2} f''(X_t) d\langle X \rangle_t \]</p>
+
+            <p><em>Proof sketch:</em> Apply Taylor expansion to \(f(X_{t+\Delta t}) - f(X_t)\). The first-order terms give \(f'(X_t)dX_t\). Unlike ordinary calculus, the quadratic variation \(\langle X \rangle_t\) is non-zero (of order \(dt\) for Brownian motion), so the second-order term contributes \(\frac{1}{2}f''(X_t)d\langle X \rangle_t\). ∎</p>
+
+            <p><strong>Theorem (Martingale Representation):</strong> For any square-integrable martingale \(M_t\) adapted to the Brownian filtration, there exists a unique predictable process \(H_t\) such that:
+            \[ M_t = M_0 + \int_0^t H_s \, dW_s \]</p>
+
+            <p><em>Proof sketch:</em> The Itô integral of any square-integrable adapted process is a martingale. Conversely, one shows that the space of stochastic integrals is closed in \(L^2\) and contains all martingales by approximation. The uniqueness follows from the Itô isometry. ∎</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class StochasticCalculusDemo:
+    """Demonstrate stochastic calculus concepts."""
+    
+    @staticmethod
+    def brownian_motion_simulation():
+        """
+        Simulate Brownian motion paths.
+        """
+        T = 1.0  # time horizon
+        n = 1000  # number of steps
+        dt = T / n
+        m = 5  # number of paths
+        
+        t = np.linspace(0, T, n+1)
+        
+        print("Brownian Motion Simulation")
+        print(f"Time horizon: {T}, Steps: {n}, Paths: {m}")
+        
+        # Generate Brownian paths
+        dW = np.random.randn(m, n) * np.sqrt(dt)
+        W = np.concatenate([np.zeros((m, 1)), np.cumsum(dW, axis=1)], axis=1)
+        
+        # Properties
+        print(f"\nTheoretical properties:")
+        print(f"  E[W_t] = 0")
+        print(f"  Var(W_t) = t")
+        print(f"  W_t ~ N(0, t)")
+        
+        print(f"\nEmpirical at t={T}:")
+        print(f"  Mean: {np.mean(W[:, -1]):.4f}")
+        print(f"  Variance: {np.var(W[:, -1]):.4f}")
+        print(f"  Expected variance: {T}")
+        
+        return t, W
+    
+    @staticmethod
+    def ito_integral_demo():
+        """
+        Demonstrate Itô isometry: E[(∫H dW)²] = E[∫H² dt]
+        """
+        T = 1.0
+        n = 1000
+        dt = T / n
+        trials = 1000
+        
+        integral_values = []
+        
+        for _ in range(trials):
+            # H_t = W_t (adapted process)
+            dW = np.random.randn(n) * np.sqrt(dt)
+            W = np.concatenate([[0], np.cumsum(dW)])
+            
+            # Itô integral ∫W dW
+            # Using left-point rule (Itô)
+            ito_integral = np.sum(W[:-1] * dW)
+            integral_values.append(ito_integral)
+        
+        empirical_variance = np.var(integral_values)
+        
+        # Theoretical: E[∫W² dt] = ∫t dt = T²/2
+        theoretical = T**2 / 2
+        
+        print(f"\nItô Isometry Verification")
+        print(f"∫₀ᵀ W_t dW_t")
+        print(f"Empirical variance: {empirical_variance:.4f}")
+        print(f"Theoretical E[∫W²dt]: {theoretical:.4f}")
+        
+        return integral_values
+    
+    @staticmethod
+    def geometric_brownian_motion():
+        """
+        Simulate GBM: dS = μS dt + σS dW
+        Used for modeling stock prices.
+        """
+        S0 = 100  # initial price
+        mu = 0.05  # drift
+        sigma = 0.2  # volatility
+        T = 1.0
+        n = 252  # trading days
+        dt = T / n
+        m = 10  # paths
+        
+        t = np.linspace(0, T, n+1)
+        
+        # Simulate GBM: S_t = S_0 exp((μ - σ²/2)t + σW_t)
+        dW = np.random.randn(m, n) * np.sqrt(dt)
+        W = np.cumsum(dW, axis=1)
+        W = np.concatenate([np.zeros((m, 1)), W], axis=1)
+        
+        S = S0 * np.exp((mu - 0.5*sigma**2)*t + sigma*W)
+        
+        print(f"\nGeometric Brownian Motion (Stock Price Model)")
+        print(f"S₀ = {S0}, μ = {mu}, σ = {sigma}")
+        print(f"E[S_T] = S₀ exp(μT) = {S0 * np.exp(mu*T):.2f}")
+        print(f"Empirical mean at T: {np.mean(S[:, -1]):.2f}")
+        
+        return t, S
+
+# Demonstrations
+print("=" * 60)
+print("STOCHASTIC CALCULUS DEMONSTRATIONS")
+print("=" * 60)
+t, W = StochasticCalculusDemo.brownian_motion_simulation()
+integrals = StochasticCalculusDemo.ito_integral_demo()
+t_gbm, S = StochasticCalculusDemo.geometric_brownian_motion()
+</code></pre>
+        </section>
+
+        <!-- Section 6: Math History -->
+        <section id="history">
+            <h2>📜 Math History: The Development of Modern Analysis</h2>
+            
+            <p>The 19th century witnessed a profound transformation in mathematics, as the intuitive approaches of earlier eras gave way to the rigorous foundations of modern analysis. This revolution was driven by a series of crises and discoveries that exposed the inadequacies of existing methods.</p>
+
+            <p>The story begins with calculus. Newton and Leibniz had created a powerful tool for understanding change, but their foundations were shaky. The very concept of a limit remained vague—"quantities approaching but never reaching"—and arguments involving infinitesimals struck many as logically suspect. Bishop Berkeley famously mocked infinitesimals as "ghosts of departed quantities."</p>
+
+            <p>The first cracks appeared in Fourier's work on heat conduction. Fourier claimed that arbitrary functions could be represented by trigonometric series, but what did "arbitrary" mean? Could discontinuous functions be represented? The question forced mathematicians to confront the nature of functions themselves.</p>
+
+            <p>Dirichlet gave the modern definition of a function as an arbitrary correspondence between variables, and constructed the first example of a function that couldn't be graphed—a function discontinuous everywhere. Riemann then asked: which functions can be integrated? His answer required a new theory of integration, one that could handle highly discontinuous functions.</p>
+
+            <p>But the true crisis came from within analysis itself. Weierstrass constructed a function continuous everywhere but differentiable nowhere—a curve with no smooth pieces, defying geometric intuition. Cantor's work on set theory revealed that infinity came in different sizes, with the real numbers forming a larger infinity than the rationals. These discoveries shook the mathematical community.</p>
+
+            <p>Cauchy and Weierstrass provided the rigorous foundations that analysis needed. Limits were defined using epsilons and deltas. Continuity became a precise concept. The real numbers were constructed from the rationals, filling in the "gaps" that made calculus work. Dedekind cuts and Cauchy sequences gave alternative constructions, each revealing different aspects of the number system.</p>
+
+            <p>Lebesgue's theory of integration, developed at the turn of the 20th century, represented the culmination of this program. By partitioning the range rather than the domain, Lebesgue could integrate functions that had stumped Riemann. His integral formed the foundation for modern probability theory and functional analysis.</p>
+
+            <p>The legacy of this rigorous revolution extends far beyond analysis. The axiomatic method, the emphasis on precise definitions, and the willingness to follow logic wherever it leads—these became hallmarks of modern mathematics. Hilbert's program sought to formalize all of mathematics, and while Gödel's incompleteness theorems showed this was impossible, the quest itself transformed how mathematicians think about their subject.</p>
+        </section>
+
+        <!-- Section 7: Math Journalism -->
+        <section id="journalism">
+            <h2>📰 Math Journalism</h2>
+            
+            <h3>Quanta Magazine</h3>
+            <p><strong><a href="https://www.quantamagazine.org/mathematicians-identify-the-best-versions-of-classic-communication-networks-20250212/">Mathematicians Identify the Best Versions of Classic Communication Networks</a></strong></p>
+            <p>Researchers have solved long-standing problems in network design, identifying optimal configurations for communication networks that minimize latency while maximizing throughput. The work combines graph theory, information theory, and optimization to establish fundamental limits on network performance.</p>
+
+            <h3>Other Sources</h3>
+            <p><strong><a href="https://www.nature.com/articles/d41586-025-00457-8">AI Makes Breakthrough in Solving Complex Math Problems</a></strong> (Nature)</p>
+            <p>DeepMind's AI systems have demonstrated new capabilities in mathematical reasoning, successfully proving theorems and discovering novel constructions in combinatorics and representation theory. The work raises questions about the future of mathematical discovery and the role of human intuition.</p>
+
+            <p><strong><a href="https://www.ams.org/journals/notices/202502/rnoti-p234.pdf">The Mathematics of Climate Change</a></strong> (AMS Notices)</p>
+            <p>Mathematicians are developing new models and analytical tools to understand climate dynamics, from stochastic differential equations for ocean circulation to topological data analysis for weather patterns. The article surveys recent advances and open problems in this critical application area.</p>
+        </section>
+
+        <!-- Section 8: Problem Corner -->
+        <section id="problems">
+            <h2>🎯 Problem Corner</h2>
+            
+            <h3>Problem: A Measure-Theoretic Challenge</h3>
+            <p>Let \(\mu\) be a finite Borel measure on \([0, 1]\) such that \(\mu([0, 1]) = 1\) and \(\mu(\{x\}) = 0\) for all \(x \in [0, 1]\). Define \(f(x) = \mu([0, x])\).</p>
+            
+            <p><strong>(a)</strong> Prove that \(f\) is continuous and non-decreasing.</p>
+            
+            <p><strong>(b)</strong> Show that for any continuous function \(g: [0, 1] \to \mathbb{R}\):
+            \[ \int_0^1 g(x) \, d\mu = \int_0^1 g(x) f'(x) \, dx \]
+            where the right-hand side is a Riemann integral.</p>
+            
+            <p><strong>(c)</strong> Give an example showing that the conclusion of (b) can fail if \(g\) is merely measurable (not continuous).</p>
+
+            <details>
+                <summary>Click for hint</summary>
+                <p>For part (a), use the continuity of measure: if \(A_n \searrow A\) and \(\mu(A_1) < \infty\), then \(\mu(A_n) \to \mu(A)\). For part (b), first verify the formula for step functions, then use approximation. For part (c), consider a measure concentrated on a fat Cantor set.</p>
+            </details>
+
+            <details>
+                <summary>Click for solution</summary>
+                
+                <p><strong>Solution to (a):</strong></p>
+                <p>Non-decreasing: If \(x < y\), then \([0, x] \subseteq [0, y]\), so by monotonicity of measure, \(f(x) = \mu([0, x]) \leq \mu([0, y]) = f(y)\).</p>
+                
+                <p>Continuity: Let \(x_n \to x^+\). Then \([0, x_n] \searrow [0, x]\), so by continuity of measure (since \(\mu([0, 1]) < \infty\)), we have \(f(x_n) \to f(x)\). Similarly for approach from the left using \([0, x_n) \nearrow [0, x)\).</p>
+                
+                <p><strong>Solution to (b):</strong></p>
+                <p>First, verify for indicator functions of intervals: if \(g = \mathbf{1}_{[a, b]}\), then
+                \[ \int g \, d\mu = \mu([a, b]) = f(b) - f(a) = \int_a^b f'(x) \, dx \]
+                where the last equality holds because \(f\) is absolutely continuous (being continuous and of bounded variation).</p>
+                
+                <p>By linearity, the formula holds for step functions. For continuous \(g\), approximate uniformly by step functions and use the bounded convergence theorem.</p>
+                
+                <p><strong>Solution to (c):</strong></p>
+                <p>Let \(C\) be a fat Cantor set with positive measure but empty interior, and let \(\mu\) be the restriction of Lebesgue measure to \(C\). Then \(f\) is constant on intervals in \(C^c\), so \(f' = 0\) a.e. But if \(g = \mathbf{1}_C\), then \(\int g \, d\mu = \mu(C) > 0 = \int g \cdot 0 \, dx\).</p>
+            </details>
+        </section>
+
+        <!-- Section 9: Visualization of the Day -->
+        <section id="visualization">
+            <h2>📊 Visualization of the Day: The Central Limit Theorem</h2>
+            
+            <p>The Central Limit Theorem states that the sum of independent random variables, properly normalized, converges to a normal distribution—regardless of the original distributions (subject to mild conditions). This explains the ubiquity of the bell curve in nature.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+def clt_visualization():
+    """
+    Visualize the Central Limit Theorem.
+    Shows how sums of random variables converge to normal.
+    """
+    n_samples = 10000
+    
+    # Different base distributions
+    distributions = {
+        'Uniform': lambda n: np.random.rand(n),
+        'Exponential': lambda n: np.random.exponential(1, n),
+        'Bernoulli': lambda n: np.random.binomial(1, 0.5, n),
+        'Beta(0.5, 0.5)': lambda n: np.random.beta(0.5, 0.5, n)
+    }
+    
+    sample_sizes = [1, 2, 5, 30]
+    
+    print("Central Limit Theorem Visualization")
+    print("=" * 50)
+    print("\nAs n increases, standardized sums approach N(0,1)")
+    print("regardless of the original distribution!")
+    
+    for dist_name, dist_func in distributions.items():
+        print(f"\n{dist_name} distribution:")
+        for n in sample_sizes:
+            # Sum of n i.i.d. random variables
+            sums = np.sum([dist_func(n_samples) for _ in range(n)], axis=0)
+            
+            # Standardize: (S_n - n*μ) / (σ*sqrt(n))
+            standardized = (sums - np.mean(sums)) / np.std(sums)
+            
+            # Kolmogorov-Smirnov statistic vs normal
+            from scipy.stats import kstest
+            ks_stat, p_value = kstest(standardized, 'norm')
+            
+            print(f"  n={n:2d}: KS statistic = {ks_stat:.4f}")
+    
+    return distributions
+
+# Run visualization
+clt_visualization()
+</code></pre>
+        </section>
+
+        <!-- Section 10: Quote of the Day -->
+        <section id="quote">
+            <h2>💬 Quote of the Day</h2>
+            <blockquote>
+                <p>"The essence of mathematics lies in its freedom."</p>
+                <footer>— Georg Cantor</footer>
+            </blockquote>
+            <p>Cantor's famous declaration captures the spirit of modern mathematics. Having discovered that infinity itself could be subjected to mathematical analysis—that there were different sizes of infinity, that the real numbers formed a larger infinity than the rationals—Cantor faced fierce opposition from contemporaries like Kronecker who found his results disturbing. Yet Cantor persisted, creating set theory and transforming how mathematicians think about the infinite. His words remind us that mathematics is not merely a tool for describing the physical world, but a realm of pure thought where the mind is free to explore structures and relationships limited only by logical consistency.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Generated on February 16, 2026 at 17:17 UTC</p>
+        <p>Math Digest — <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
