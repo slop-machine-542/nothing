@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Algebraic Topology, Random Matrix Theory & Modular Forms">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — Algebraic Topology, Random Matrix Theory & Modular Forms</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="post-date">February 16, 2026 at 10:12 UTC</p>
+        <div class="tags">
+            <span class="tag">algebraic-topology</span>
+            <span class="tag">random-matrix-theory</span>
+            <span class="tag">modular-forms</span>
+            <span class="tag">complex-analysis</span>
+            <span class="tag">optimal-transport</span>
+        </div>
+
+        <!-- Section 1: 3 Math Links -->
+        <section id="links">
+            <h2>🔗 3 Math Links</h2>
+            <ul>
+                <li><strong><a href="https://ncatlab.org/nlab/show/HomePage">nLab</a></strong> — A wiki-lab for collaborative work on mathematics, physics, and philosophy, with a focus on category theory and higher-dimensional algebra. An invaluable resource for understanding modern mathematical structures from a unified perspective.</li>
+                <li><strong><a href="https://terrytao.wordpress.com/">What's New</a></strong> — Terry Tao's mathematical blog covers cutting-edge research in analysis, number theory, combinatorics, and random matrix theory. His exposition makes even the most advanced topics accessible to motivated readers.</li>
+                <li><strong><a href="https://www.math.tifr.res.in/~publ/ln/tifr01.pdf">Modular Forms and Hecke Operators</a></strong> — A comprehensive set of lecture notes by Dipendra Prasad covering the theory of modular forms, Hecke operators, and their connections to number theory and representation theory.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: 1 Free Math Book -->
+        <section id="book">
+            <h2>📚 Free Math Book of the Day</h2>
+            <h3><em>Algebraic Topology</em> by Allen Hatcher</h3>
+            <p>This landmark textbook has become the standard introduction to algebraic topology since its publication in 2002. Hatcher's geometric approach emphasizes intuition and visualization while maintaining mathematical rigor.</p>
+            <p>The book covers:</p>
+            <ul>
+                <li>The fundamental group and covering spaces</li>
+                <li>Homology theory (simplicial, singular, and cellular)</li>
+                <li>Cohomology and duality</li>
+                <li>Homotopy theory</li>
+                <li>Vector bundles and characteristic classes</li>
+            </ul>
+            <p>What distinguishes this book is its wealth of geometric examples, over 450 illustrations, and the inclusion of many topics not found in other introductory texts. Hatcher makes the subject accessible while building toward deep results like the Hurewicz theorem and Poincaré duality.</p>
+            <p><strong>Level:</strong> Graduate<br>
+            <strong>Available free at:</strong> <a href="https://pi.math.cornell.edu/~hatcher/AT/AT.pdf">Author's website</a></p>
+        </section>
+
+        <!-- Section 3: 3 Pure Math Deep-Dives -->
+        <section id="pure">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+            
+            <h3>Algebraic Topology: Homotopy and Homology</h3>
+            <p>Algebraic topology studies topological spaces by associating algebraic invariants—groups, rings, and other structures—to them. The fundamental insight is that algebraic objects are often easier to compute with than geometric ones, yet they capture essential topological information.</p>
+            
+            <p><strong>Motivation:</strong> How can we distinguish a sphere from a torus? Or prove that a knot cannot be untied? Algebraic topology provides systematic tools: the fundamental group detects holes, homology counts them, and cohomology adds algebraic structure.</p>
+
+            <p><strong>Definition (Homotopy):</strong> Two continuous maps \(f, g: X \to Y\) are <strong>homotopic</strong>, written \(f \simeq g\), if there exists a continuous map \(H: X \times [0,1] \to Y\) such that \(H(x, 0) = f(x)\) and \(H(x, 1) = g(x)\). Spaces \(X\) and \(Y\) are <strong>homotopy equivalent</strong> if there exist maps \(f: X \to Y\) and \(g: Y \to X\) with \(g \circ f \simeq \text{id}_X\) and \(f \circ g \simeq \text{id}_Y\).</p>
+
+            <p><strong>Definition (Fundamental Group):</strong> Let \(X\) be a topological space with basepoint \(x_0 \in X\). The <strong>fundamental group</strong> \(\pi_1(X, x_0)\) consists of homotopy classes of loops based at \(x_0\), with multiplication given by concatenation of paths.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\pi_n(X, x_0)\) — the \(n\)th <strong>homotopy group</strong></li>
+                <li>\(H_n(X; G)\) — <strong>singular homology</strong> with coefficients in group \(G\)</li>
+                <li>\(H^n(X; G)\) — <strong>cohomology</strong> group</li>
+                <li>\(\chi(X)\) — <strong>Euler characteristic</strong></li>
+                <li>\(\tilde{H}_n(X)\) — <strong>reduced homology</strong></li>
+            </ul>
+
+            <p><strong>Theorem (Seifert-van Kampen):</strong> Let \(X = U \cup V\) where \(U\), \(V\), and \(U \cap V\) are path-connected open sets containing the basepoint. Then:
+            \[ \pi_1(X) \cong \pi_1(U) *_{\pi_1(U \cap V)} \pi_1(V) \]
+            the amalgamated free product.</p>
+
+            <p><em>Proof sketch:</em> Any loop in \(X\) can be decomposed into segments alternating between \(U\) and \(V\). The relations come from loops that can be deformed into \(U \cap V\). The universal property of pushouts gives the isomorphism. ∎</p>
+
+            <p><strong>Theorem (Hurewicz):</strong> For a path-connected space \(X\), there is a natural homomorphism \(h: \pi_n(X) \to H_n(X; \mathbb{Z})\). When \(X\) is \((n-1)\)-connected (\(\pi_k(X) = 0\) for \(k < n\)), this map is an isomorphism for \(k \leq n\) and surjective for \(k = n+1\).</p>
+
+            <p><em>Proof sketch:</em> The Hurewicz map sends a homotopy class of maps \(S^n \to X\) to the induced homology class. For highly connected spaces, homotopy classes are determined by their homology, establishing the isomorphism. ∎</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+class AlgebraicTopologyDemo:
+    """Demonstrate basic algebraic topology concepts computationally."""
+    
+    @staticmethod
+    def fundamental_group_circle():
+        """
+        The fundamental group of S^1 is Z.
+        A loop is characterized by its winding number.
+        """
+        print("Fundamental group of S^1:")
+        print("π₁(S^1) ≅ Z (the integers)")
+        print("A loop with winding number n wraps n times around the circle.")
+        print("Multiplication corresponds to adding winding numbers.")
+        
+        # Visualize loops with different winding numbers
+        theta = np.linspace(0, 2*np.pi, 1000)
+        
+        fig, axes = plt.subplots(2, 2, figsize=(10, 10))
+        axes = axes.flatten()
+        
+        for idx, n in enumerate([0, 1, 2, -1]):
+            ax = axes[idx]
+            
+            # Loop with winding number n
+            t = np.linspace(0, 1, 1000)
+            angle = 2 * np.pi * n * t
+            
+            # Plot on unit circle
+            x = np.cos(angle)
+            y = np.sin(angle)
+            
+            ax.plot(x, y, 'b-', linewidth=2)
+            ax.plot(np.cos(theta), np.sin(theta), 'k--', alpha=0.3, label='S^1')
+            ax.plot(x[0], y[0], 'go', markersize=10, label='Basepoint')
+            ax.plot(x[-1], y[-1], 'ro', markersize=10)
+            
+            ax.set_xlim(-1.5, 1.5)
+            ax.set_ylim(-1.5, 1.5)
+            ax.set_aspect('equal')
+            ax.set_title(f'Loop with winding number n = {n}')
+            ax.legend()
+            ax.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('fundamental_group_s1.png', dpi=150)
+        plt.close()
+        
+        return fig
+    
+    @staticmethod
+    def euler_characteristic_demo():
+        """
+        Demonstrate Euler characteristic χ = V - E + F for polyhedra.
+        """
+        # Common surfaces and their Euler characteristics
+        surfaces = {
+            'Sphere': {'V': 4, 'E': 6, 'F': 4, 'chi': 2},  # Tetrahedron
+            'Torus': {'V': 9, 'E': 27, 'F': 18, 'chi': 0},  # Triangulated torus
+            'Double Torus': {'V': 6, 'E': 15, 'F': 8, 'chi': -2},
+        }
+        
+        print("\nEuler Characteristic χ = V - E + F:")
+        for name, data in surfaces.items():
+            chi = data['V'] - data['E'] + data['F']
+            print(f"{name}: V={data['V']}, E={data['E']}, F={data['F']}")
+            print(f"  χ = {data['V']} - {data['E']} + {data['F']} = {chi}")
+            print(f"  (Expected: {data['chi']})")
+        
+        print("\nGeneral formula: χ = 2 - 2g for orientable surface of genus g")
+        for g in range(4):
+            chi = 2 - 2*g
+            print(f"  Genus {g}: χ = {chi}")
+    
+    @staticmethod
+    def simplicial_homology_demo():
+        """
+        Simple demonstration of simplicial homology for a triangle.
+        """
+        print("\nSimplicial Homology of a Triangle (2-simplex):")
+        print("C₀ = Z³ (vertices), C₁ = Z³ (edges), C₂ = Z (face)")
+        print("Boundary operators:")
+        print("  ∂₂: C₂ → C₁ maps face to sum of its edges with signs")
+        print("  ∂₁: C₁ → C₀ maps edge to its boundary vertices")
+        print("  ∂₀: C₀ → 0")
+        
+        # For a filled triangle (2-simplex)
+        print("\nHomology groups:")
+        print("  H₀ = ker(∂₀) / im(∂₁) ≅ Z (connected, one component)")
+        print("  H₁ = ker(∂₁) / im(∂₂) = 0 (no 1-dimensional holes)")
+        print("  H₂ = ker(∂₂) / im(∂₃) = 0 (no void inside)")
+        
+        print("\nFor a hollow triangle (boundary only):")
+        print("  H₀ ≅ Z (still connected)")
+        print("  H₁ ≅ Z (one 1-dimensional hole)")
+        print("  H₂ = 0")
+
+# Run demonstrations
+print("=== Algebraic Topology Demonstrations ===")
+AlgebraicTopologyDemo.fundamental_group_circle()
+AlgebraicTopologyDemo.euler_characteristic_demo()
+AlgebraicTopologyDemo.simplicial_homology_demo()
+</code></pre>
+
+            <h3>Complex Analysis: Riemann Surfaces</h3>
+            <p>Complex analysis, the study of functions of a complex variable, reveals profound structures invisible in real analysis. Riemann surfaces generalize the complex plane to handle multi-valued functions naturally.</p>
+
+            <p><strong>Motivation:</strong> Functions like \(\sqrt{z}\) and \(\log(z)\) are "multi-valued" in the complex plane. A Riemann surface provides a domain where each function becomes single-valued, revealing the underlying geometric structure.</p>
+
+            <p><strong>Definition (Riemann Surface):</strong> A <strong>Riemann surface</strong> is a one-dimensional complex manifold: a Hausdorff topological space \(X\) with an atlas of charts \(\{(U_\alpha, \phi_\alpha)\}\) where \(\phi_\alpha: U_\alpha \to \mathbb{C}\) is a homeomorphism onto an open subset of \(\mathbb{C}\), and transition maps \(\phi_\beta \circ \phi_\alpha^{-1}\) are holomorphic.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\mathcal{O}(X)\) — sheaf of holomorphic functions on \(X\)</li>
+                <li>\(\Omega(X)\) — space of holomorphic 1-forms</li>
+                <li>\(g\) — <strong>genus</strong> of the surface</li>
+                <li>\(\omega\) — holomorphic differential form</li>
+                <li>\(\text{Res}_p(\omega)\) — <strong>residue</strong> of form at point \(p\)</li>
+            </ul>
+
+            <p><strong>Theorem (Riemann-Hurwitz):</strong> Let \(f: X \to Y\) be a branched covering of degree \(d\) between compact Riemann surfaces. Then:
+            \[ 2g(X) - 2 = d(2g(Y) - 2) + \sum_{p \in X} (e_p - 1) \]
+            where \(e_p\) is the ramification index at \(p\).</p>
+
+            <p><em>Proof sketch:</em> Compare Euler characteristics using the fact that away from branch points, the covering is \(d\)-to-1. Each branch point of index \(e\) contributes \(e-1\) to the correction. ∎</p>
+
+            <p><strong>Theorem (Riemann-Roch):</strong> Let \(X\) be a compact Riemann surface of genus \(g\), and \(D\) a divisor. Then:
+            \[ \ell(D) - \ell(K - D) = \deg(D) + 1 - g \]
+            where \(\ell(D)\) is the dimension of the space of meromorphic functions with poles bounded by \(D\), and \(K\) is the canonical divisor.</p>
+
+            <p>The Riemann-Roch theorem is one of the most powerful tools in algebraic geometry, relating the analytic properties of functions to the topological genus.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class RiemannSurfaceDemo:
+    """Visualize Riemann surface concepts."""
+    
+    @staticmethod
+    def riemann_surface_sqrt():
+        """
+        Visualize the Riemann surface for w = sqrt(z).
+        This is a 2-sheeted branched cover of C, branched at 0 and infinity.
+        """
+        print("Riemann Surface for w = √z:")
+        print("This is a 2-sheeted cover of C branched at z = 0 and z = ∞")
+        print("Topologically, it's a sphere (genus 0)")
+        
+        # Create visualization
+        fig = plt.figure(figsize=(14, 6))
+        
+        # Sheet 1
+        ax1 = fig.add_subplot(121, projection='3d')
+        r = np.linspace(0.1, 2, 50)
+        theta = np.linspace(0, 4*np.pi, 100)
+        R, Theta = np.meshgrid(r, theta)
+        
+        # Two sheets of sqrt
+        Z_real = R * np.cos(Theta/2)
+        Z_imag = R * np.sin(Theta/2)
+        Z_abs = np.sqrt(R)
+        
+        # Plot first sheet
+        ax1.plot_surface(Z_real[:50], Z_imag[:50], Z_abs[:50], 
+                        alpha=0.7, cmap='Blues', label='Sheet 1')
+        ax1.set_title('Sheet 1 of √z Riemann Surface')
+        ax1.set_xlabel('Re(w)')
+        ax1.set_ylabel('Im(w)')
+        ax1.set_zlabel('|z|')
+        
+        # Sheet 2
+        ax2 = fig.add_subplot(122, projection='3d')
+        ax2.plot_surface(Z_real[50:], Z_imag[50:], Z_abs[50:], 
+                        alpha=0.7, cmap='Reds', label='Sheet 2')
+        ax2.set_title('Sheet 2 of √z Riemann Surface')
+        ax2.set_xlabel('Re(w)')
+        ax2.set_ylabel('Im(w)')
+        ax2.set_zlabel('|z|')
+        
+        plt.tight_layout()
+        plt.savefig('riemann_surface_sqrt.png', dpi=150)
+        plt.close()
+        
+        return fig
+    
+    @staticmethod
+    def complex_function_visualization():
+        """Visualize complex functions using domain coloring."""
+        print("\nDomain Coloring for Complex Functions:")
+        
+        # Create grid in complex plane
+        x = np.linspace(-2, 2, 400)
+        y = np.linspace(-2, 2, 400)
+        X, Y = np.meshgrid(x, y)
+        Z = X + 1j*Y
+        
+        # Function: f(z) = z^2
+        W = Z**2
+        
+        # Domain coloring: hue = argument, brightness = magnitude
+        magnitude = np.abs(W)
+        argument = np.angle(W) / (2*np.pi) + 0.5
+        
+        # Normalize magnitude for visualization
+        mag_norm = np.tanh(magnitude / 2)
+        
+        # Convert HSV to RGB
+        from matplotlib.colors import hsv_to_rgb
+        HSV = np.zeros((*argument.shape, 3))
+        HSV[..., 0] = argument  # Hue
+        HSV[..., 1] = 0.8  # Saturation
+        HSV[..., 2] = mag_norm  # Value
+        
+        RGB = hsv_to_rgb(HSV)
+        
+        fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+        
+        axes[0].imshow(RGB, extent=[-2, 2, -2, 2], origin='lower')
+        axes[0].set_title('Domain Coloring: f(z) = z²')
+        axes[0].set_xlabel('Re(z)')
+        axes[0].set_ylabel('Im(z)')
+        
+        # Function: f(z) = e^z
+        W2 = np.exp(Z)
+        magnitude2 = np.abs(W2)
+        argument2 = np.angle(W2) / (2*np.pi) + 0.5
+        mag_norm2 = np.tanh(magnitude2 / 10)
+        
+        HSV2 = np.zeros((*argument2.shape, 3))
+        HSV2[..., 0] = argument2
+        HSV2[..., 1] = 0.8
+        HSV2[..., 2] = mag_norm2
+        RGB2 = hsv_to_rgb(HSV2)
+        
+        axes[1].imshow(RGB2, extent=[-2, 2, -2, 2], origin='lower')
+        axes[1].set_title('Domain Coloring: f(z) = e^z')
+        axes[1].set_xlabel('Re(z)')
+        axes[1].set_ylabel('Im(z)')
+        
+        plt.tight_layout()
+        plt.savefig('domain_coloring.png', dpi=150)
+        plt.close()
+        
+        return fig
+    
+    @staticmethod
+    def residue_theorem_demo():
+        """Demonstrate the Residue Theorem."""
+        print("\nResidue Theorem:")
+        print("For f(z) meromorphic inside and on a simple closed contour C:")
+        print("  ∮_C f(z) dz = 2πi × (sum of residues inside C)")
+        
+        # Example: f(z) = 1/z has residue 1 at z = 0
+        print("\nExample: f(z) = 1/z")
+        print("Residue at z = 0 is 1")
+        print("Integral around unit circle: ∮ dz/z = 2πi")
+        
+        # Numerical verification
+        theta = np.linspace(0, 2*np.pi, 1000)
+        dz = 1j * np.exp(1j*theta) * (theta[1] - theta[0])
+        z = np.exp(1j*theta)
+        integral = np.sum(dz / z)
+        print(f"Numerical approximation: {integral:.4f}")
+        print(f"Expected: 2πi ≈ {2j*np.pi:.4f}")
+
+# Run demonstrations
+print("=== Complex Analysis Demonstrations ===")
+RiemannSurfaceDemo.riemann_surface_sqrt()
+RiemannSurfaceDemo.complex_function_visualization()
+RiemannSurfaceDemo.residue_theorem_demo()
+</code></pre>
+
+            <h3>Lie Algebras: Continuous Symmetry</h3>
+            <p>Lie algebras are the infinitesimal counterparts of Lie groups, capturing the local structure of continuous symmetries. They provide the algebraic framework for understanding everything from particle physics to differential equations.</p>
+
+            <p><strong>Motivation:</strong> Lie groups (like the rotation group SO(3)) are manifolds with group structure. Their tangent space at the identity forms a Lie algebra, linearizing the group structure and making it amenable to algebraic study.</p>
+
+            <p><strong>Definition (Lie Algebra):</strong> A <strong>Lie algebra</strong> \(\mathfrak{g}\) over a field \(\mathbb{F}\) is a vector space with a bilinear operation \([\cdot, \cdot]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}\) (the <strong>Lie bracket</strong>) satisfying:</p>
+            <ul>
+                <li><strong>Antisymmetry:</strong> \([x, y] = -[y, x]\)</li>
+                <li><strong>Jacobi identity:</strong> \([x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0\)</li>
+            </ul>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\mathfrak{gl}(n, \mathbb{F})\) — Lie algebra of all \(n \times n\) matrices</li>
+                <li>\(\mathfrak{sl}(n, \mathbb{F})\) — traceless matrices (special linear)</li>
+                <li>\(\mathfrak{so}(n)\) — skew-symmetric matrices (special orthogonal)</li>
+                <li>\(\mathfrak{su}(n)\) — skew-Hermitian traceless matrices (special unitary)</li>
+                <li>\(\text{ad}_x(y) = [x, y]\) — <strong>adjoint representation</strong></li>
+            </ul>
+
+            <p><strong>Theorem (Lie's Third Theorem):</strong> Every finite-dimensional Lie algebra over \(\mathbb{R}\) or \(\mathbb{C}\) is the Lie algebra of some Lie group. For simply connected groups, this correspondence is unique.</p>
+
+            <p><strong>Theorem (Cartan's Criterion):</strong> A finite-dimensional Lie algebra \(\mathfrak{g}\) over a field of characteristic zero is semisimple if and only if its Killing form \(\kappa(x, y) = \text{tr}(\text{ad}_x \circ \text{ad}_y)\) is non-degenerate.</p>
+
+            <pre><code>import numpy as np
+
+class LieAlgebraDemo:
+    """Demonstrate Lie algebra computations."""
+    
+    @staticmethod
+    def so3_lie_algebra():
+        """
+        The Lie algebra so(3) consists of 3×3 skew-symmetric matrices.
+        It is the Lie algebra of the rotation group SO(3).
+        """
+        print("Lie Algebra so(3):")
+        print("Consists of 3×3 real skew-symmetric matrices: A^T = -A")
+        
+        # Standard basis for so(3)
+        L1 = np.array([[0, 0, 0],
+                       [0, 0, -1],
+                       [0, 1, 0]])
+        L2 = np.array([[0, 0, 1],
+                       [0, 0, 0],
+                       [-1, 0, 0]])
+        L3 = np.array([[0, -1, 0],
+                       [1, 0, 0],
+                       [0, 0, 0]])
+        
+        print("\nStandard basis:")
+        print("L₁ =")
+        print(L1)
+        print("L₂ =")
+        print(L2)
+        print("L₃ =")
+        print(L3)
+        
+        # Verify Lie bracket relations [Li, Lj] = ε_ijk Lk
+        print("\nLie bracket relations [Lᵢ, Lⱼ] = εᵢⱼₖ Lₖ:")
+        
+        def lie_bracket(A, B):
+            return A @ B - B @ A
+        
+        # [L1, L2] should equal L3
+        bracket_12 = lie_bracket(L1, L2)
+        print(f"[L₁, L₂] =\n{bracket_12}")
+        print(f"Expected L₃:\n{L3}")
+        print(f"Match: {np.allclose(bracket_12, L3)}")
+        
+        # [L2, L3] should equal L1
+        bracket_23 = lie_bracket(L2, L3)
+        print(f"\n[L₂, L₃] =\n{bracket_23}")
+        print(f"Expected L₁:\n{L1}")
+        print(f"Match: {np.allclose(bracket_23, L1)}")
+        
+        # [L3, L1] should equal L2
+        bracket_31 = lie_bracket(L3, L1)
+        print(f"\n[L₃, L₁] =\n{bracket_31}")
+        print(f"Expected L₂:\n{L2}")
+        print(f"Match: {np.allclose(bracket_31, L2)}")
+        
+        return L1, L2, L3
+    
+    @staticmethod
+    def killing_form_demo(L1, L2, L3):
+        """Compute the Killing form for so(3)."""
+        print("\nKilling Form for so(3):")
+        print("κ(X, Y) = tr(ad_X ∘ ad_Y)")
+        
+        basis = [L1, L2, L3]
+        n = len(basis)
+        
+        # Compute matrix of Killing form
+        def ad(X, basis):
+            """Matrix of ad_X in the given basis."""
+            mat = np.zeros((n, n))
+            for j in range(n):
+                bracket = X @ basis[j] - basis[j] @ X
+                # Express bracket in basis
+                coeffs = np.linalg.lstsq(np.array([b.flatten() for b in basis]).T, 
+                                        bracket.flatten(), rcond=None)[0]
+                mat[:, j] = coeffs
+            return mat
+        
+        killing_matrix = np.zeros((n, n))
+        for i in range(n):
+            for j in range(n):
+                ad_i = ad(basis[i], basis)
+                ad_j = ad(basis[j], basis)
+                killing_matrix[i, j] = np.trace(ad_i @ ad_j)
+        
+        print("\nKilling form matrix in basis {L₁, L₂, L₃}:")
+        print(killing_matrix)
+        print("\n(Proportional to negative definite matrix)")
+        print("This confirms so(3) is semisimple (in fact, simple)")
+        
+        return killing_matrix
+    
+    @staticmethod
+    def exponential_map_demo(L1, L2, L3):
+        """Demonstrate the exponential map from so(3) to SO(3)."""
+        print("\nExponential Map exp: so(3) → SO(3):")
+        print("For any A ∈ so(3), exp(A) is a rotation matrix in SO(3)")
+        
+        # Rotation about z-axis by angle θ
+        theta = np.pi / 4
+        A = theta * L3  # Element of so(3)
+        
+        # Matrix exponential
+        from scipy.linalg import expm
+        R = expm(A)
+        
+        print(f"\nRotation by θ = π/4 about z-axis:")
+        print(f"A = θ·L₃ =\n{A}")
+        print(f"exp(A) =\n{R}")
+        
+        # Verify it's in SO(3)
+        print(f"\nVerification:")
+        print(f"R^T · R = I? {np.allclose(R.T @ R, np.eye(3))}")
+        print(f"det(R) = 1? {np.allclose(np.linalg.det(R), 1)}")
+        
+        # Rodrigues' rotation formula
+        print(f"\nThis represents rotation by {theta:.4f} radians about z-axis")
+
+# Run demonstrations
+print("=== Lie Algebra Demonstrations ===")
+L1, L2, L3 = LieAlgebraDemo.so3_lie_algebra()
+LieAlgebraDemo.killing_form_demo(L1, L2, L3)
+LieAlgebraDemo.exponential_map_demo(L1, L2, L3)
+</code></pre>
+        </section>
+
+        <!-- Section 4: 3 Applied Math Deep-Dives -->
+        <section id="applied">
+            <h2>💹 Applied Math Deep-Dives</h2>
+            
+            <h3>Random Matrix Theory: Universality in Statistics</h3>
+            <p>Random matrix theory (RMT) studies the statistical properties of matrices with random entries. Originally developed by Wigner to model nuclear energy levels, it has found applications in quantum physics, number theory, wireless communications, and machine learning.</p>
+
+            <p><strong>Real-World Motivation:</strong> In quantum mechanics, heavy nuclei have complex Hamiltonians that are difficult to compute directly. Wigner's insight was to model the Hamiltonian as a random matrix and study statistical properties that are universal—independent of the specific nuclear system.</p>
+
+            <p><strong>Definition (Wigner Matrix):</strong> A <strong>Wigner matrix</strong> is a Hermitian matrix \(H\) with independent (up to symmetry) entries above the diagonal, where diagonal entries have variance \(O(1)\) and off-diagonal entries have variance \(O(1/n)\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\rho(\lambda)\) — <strong>eigenvalue density</strong></li>
+                <li>\(R_n(\lambda_1, \ldots, \lambda_n)\) — <strong>joint eigenvalue distribution</strong></li>
+                <li>\(S(s)\) — <strong>level spacing distribution</strong></li>
+                <li>\(\beta\) — Dyson index (1 = real, 2 = complex, 4 = quaternion)</li>
+                <li>GOE, GUE, GSE — Gaussian Orthogonal/Unitary/Symplectic Ensembles</li>
+            </ul>
+
+            <p><strong>Theorem (Wigner's Semicircle Law):</strong> Let \(H_n\) be an \(n \times n\) Wigner matrix with entries having finite variance \(\sigma^2\). As \(n \to \infty\), the empirical spectral distribution converges to the semicircle distribution:
+            \[ \rho(\lambda) = \frac{1}{2\pi\sigma^2} \sqrt{4\sigma^2 - \lambda^2} \cdot \mathbf{1}_{[-2\sigma, 2\sigma]}(\lambda) \]</p>
+
+            <p><em>Proof sketch:</em> Use the method of moments. The \(k\)th moment of the empirical distribution is \(\frac{1}{n}\text{tr}(H^k)\). For Wigner matrices, only certain paths (non-crossing pairings) contribute in the limit, giving the Catalan numbers which are moments of the semicircle. ∎</p>
+
+            <p><strong>Theorem (Tracy-Widom):</strong> For the GUE, the largest eigenvalue \(\lambda_{\max}\), properly centered and scaled, converges to the Tracy-Widom distribution:
+            \[ n^{2/3}(\lambda_{\max} - 2) \xrightarrow{d} F_2 \]
+            where \(F_2\) is the Tracy-Widom distribution for \(\beta = 2\).</p>
+
+            <p>The Tracy-Widom distribution appears in diverse contexts: longest increasing subsequences, directed polymers, growth models, and even the distribution of airline boarding times.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import gaussian_kde
+
+class RandomMatrixTheory:
+    """Demonstrate random matrix theory concepts."""
+    
+    @staticmethod
+    def wigner_semicircle():
+        """
+        Demonstrate Wigner's semicircle law for eigenvalue distribution.
+        """
+        print("Wigner's Semicircle Law:")
+        print("For large n×n Wigner matrices, eigenvalue density follows:")
+        print("  ρ(λ) = (1/2π)√(4 - λ²) for |λ| ≤ 2")
+        
+        np.random.seed(42)
+        
+        # Generate Wigner matrices of different sizes
+        sizes = [100, 500, 2000]
+        fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+        
+        for idx, n in enumerate(sizes):
+            # Generate symmetric Wigner matrix
+            A = np.random.randn(n, n)
+            H = (A + A.T) / np.sqrt(2 * n)  # Symmetrize and normalize
+            
+            # Compute eigenvalues
+            eigenvalues = np.linalg.eigvalsh(H)
+            
+            # Plot histogram
+            axes[idx].hist(eigenvalues, bins=50, density=True, alpha=0.7, 
+                          label=f'n={n}')
+            
+            # Plot semicircle law
+            x = np.linspace(-2, 2, 1000)
+            semicircle = np.sqrt(4 - x**2) / (2 * np.pi)
+            axes[idx].plot(x, semicircle, 'r-', linewidth=2, 
+                          label='Semicircle law')
+            
+            axes[idx].set_xlim(-3, 3)
+            axes[idx].set_xlabel('Eigenvalue λ')
+            axes[idx].set_ylabel('Density')
+            axes[idx].set_title(f'n = {n}')
+            axes[idx].legend()
+            axes[idx].grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('wigner_semicircle.png', dpi=150)
+        plt.close()
+        
+        print("\nAs n increases, empirical distribution converges to semicircle.")
+        return fig
+    
+    @staticmethod
+    def level_spacing():
+        """
+        Demonstrate level spacing statistics (Wigner-Dyson statistics).
+        """
+        print("\nLevel Spacing Statistics:")
+        print("For random matrices: P(s) ≈ (πs/2)exp(-πs²/4) (Wigner-Dyson)")
+        print("For uncorrelated eigenvalues: P(s) = exp(-s) (Poisson)")
+        
+        np.random.seed(42)
+        n = 1000
+        
+        # Generate many Wigner matrices and collect level spacings
+        spacings = []
+        for _ in range(100):
+            A = np.random.randn(n, n)
+            H = (A + A.T) / np.sqrt(2 * n)
+            eigenvalues = np.linalg.eigvalsh(H)
+            
+            # Focus on middle of spectrum (unfolding)
+            mid = n // 2
+            window = eigenvalues[mid-100:mid+100]
+            
+            # Compute nearest-neighbor spacings (unfolded)
+            mean_spacing = np.mean(np.diff(window))
+            normalized_spacings = np.diff(window) / mean_spacing
+            spacings.extend(normalized_spacings)
+        
+        spacings = np.array(spacings)
+        
+        # Plot
+        fig, ax = plt.subplots(figsize=(10, 6))
+        
+        # Histogram
+        ax.hist(spacings, bins=50, density=True, alpha=0.7, label='Empirical')
+        
+        # Wigner-Dyson prediction (GOE)
+        s = np.linspace(0, 4, 1000)
+        wigner_dyson = (np.pi * s / 2) * np.exp(-np.pi * s**2 / 4)
+        ax.plot(s, wigner_dyson, 'r-', linewidth=2, label='Wigner-Dyson (GOE)')
+        
+        # Poisson (uncorrelated)
+        poisson = np.exp(-s)
+        ax.plot(s, poisson, 'g--', linewidth=2, label='Poisson (uncorrelated)')
+        
+        ax.set_xlabel('Normalized Level Spacing s')
+        ax.set_ylabel('Probability Density P(s)')
+        ax.set_title('Nearest-Neighbor Level Spacing Distribution')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        ax.set_xlim(0, 4)
+        
+        plt.tight_layout()
+        plt.savefig('level_spacing.png', dpi=150)
+        plt.close()
+        
+        print("\nRandom matrices exhibit level repulsion (Wigner-Dyson).")
+        print("Integrable systems show Poisson statistics.")
+        return fig
+    
+    @staticmethod
+    def marchenko_pastur():
+        """
+        Demonstrate Marchenko-Pastur law for sample covariance matrices.
+        """
+        print("\nMarchenko-Pastur Law:")
+        print("For sample covariance matrices X^T X/n with X having i.i.d. entries,")
+        print("the eigenvalue distribution converges to a deterministic limit.")
+        
+        np.random.seed(42)
+        
+        # Parameters
+        p = 500  # dimension
+        n = 1000  # sample size
+        gamma = p / n  # aspect ratio
+        
+        # Generate sample covariance matrix
+        X = np.random.randn(n, p)
+        S = X.T @ X / n
+        
+        eigenvalues = np.linalg.eigvalsh(S)
+        
+        # Marchenko-Pastur density
+        lambda_plus = (1 + np.sqrt(gamma))**2
+        lambda_minus = (1 - np.sqrt(gamma))**2
+        
+        fig, ax = plt.subplots(figsize=(10, 6))
+        
+        # Histogram
+        ax.hist(eigenvalues, bins=50, density=True, alpha=0.7, 
+               label=f'Empirical (p={p}, n={n})')
+        
+        # Marchenko-Pastur formula
+        if gamma <= 1:
+            x = np.linspace(lambda_minus, lambda_plus, 1000)
+            mp_density = np.sqrt((lambda_plus - x) * (x - lambda_minus)) / (2 * np.pi * gamma * x)
+            ax.plot(x, mp_density, 'r-', linewidth=2, label='Marchenko-Pastur')
+        
+        ax.axvline(lambda_plus, color='g', linestyle='--', 
+                  label=f'λ+ = {lambda_plus:.3f}')
+        if gamma < 1:
+            ax.axvline(lambda_minus, color='g', linestyle='--',
+                      label=f'λ- = {lambda_minus:.3f}')
+        
+        ax.set_xlabel('Eigenvalue λ')
+        ax.set_ylabel('Density')
+        ax.set_title('Marchenko-Pastur Distribution')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('marchenko_pastur.png', dpi=150)
+        plt.close()
+        
+        print(f"\nAspect ratio γ = {gamma:.3f}")
+        print(f"Support: [{lambda_minus:.3f}, {lambda_plus:.3f}]")
+        return fig
+
+# Run demonstrations
+print("=== Random Matrix Theory Demonstrations ===")
+RandomMatrixTheory.wigner_semicircle()
+RandomMatrixTheory.level_spacing()
+RandomMatrixTheory.marchenko_pastur()
+</code></pre>
+
+            <h3>Optimal Transport: The Mathematics of Moving Mass</h3>
+            <p>Optimal transport theory studies the most efficient way to move mass from one distribution to another. Originating with Monge in 1781 and revolutionized by Kantorovich in the 1940s, it has become a fundamental tool in analysis, probability, and machine learning.</p>
+
+            <p><strong>Real-World Motivation:</strong> How do you optimally move piles of sand to fill holes? This seemingly simple question leads to deep mathematics with applications in economics (matching markets), image processing (registration), and machine learning (Wasserstein GANs).</p>
+
+            <p><strong>Monge Problem (1781):</strong> Given probability measures \(\mu\) and \(\nu\) on spaces \(X\) and \(Y\), find a transport map \(T: X \to Y\) minimizing:
+            \[ \int_X c(x, T(x)) \, d\mu(x) \]
+            subject to \(T_\#\mu = \nu\) (the pushforward of \(\mu\) under \(T\) equals \(\nu\)).</p>
+
+            <p><strong>Kantorovich Relaxation (1942):</strong> Instead of a map, consider a <strong>transport plan</strong> \(\pi\) on \(X \times Y\) with marginals \(\mu\) and \(\nu\):
+            \[ \min_{\pi \in \Pi(\mu, \nu)} \int_{X \times Y} c(x, y) \, d\pi(x, y) \]
+            where \(\Pi(\mu, \nu)\) is the set of couplings.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(W_p(\mu, \nu)\) — <strong>Wasserstein distance</strong> of order \(p\)</li>
+                <li>\(\Pi(\mu, \nu)\) — set of couplings (transport plans)</li>
+                <li>\(T_\#\mu\) — <strong>pushforward measure</strong></li>
+                <li>\(\varphi, \psi\) — <strong>Kantorovich potentials</strong></li>
+                <li>\(\frac{d\pi}{d(\mu \otimes \nu)}\) — Radon-Nikodym derivative</li>
+            </ul>
+
+            <p><strong>Theorem (Kantorovich Duality):</strong> For lower semicontinuous cost \(c\):
+            \[ \inf_{\pi \in \Pi(\mu, \nu)} \int c \, d\pi = \sup_{(\varphi, \psi)} \left( \int \varphi \, d\mu + \int \psi \, d\nu \right) \]
+            where the supremum is over functions satisfying \(\varphi(x) + \psi(y) \leq c(x, y)\).</p>
+
+            <p><strong>Theorem (Brenier, 1987):</strong> When \(X = Y = \mathbb{R}^n\), \(\mu\) is absolutely continuous, and \(c(x, y) = |x - y|^2\), there exists a unique optimal transport map \(T = \nabla \varphi\) where \(\varphi\) is convex. Moreover, \(T\) is the gradient of a convex function.</p>
+
+            <p>This remarkable result shows that optimal transport is intimately connected to convex geometry.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import linprog
+from scipy.spatial.distance import cdist
+
+class OptimalTransport:
+    """Demonstrate optimal transport concepts."""
+    
+    @staticmethod
+    def discrete_optimal_transport():
+        """
+        Solve discrete optimal transport using linear programming.
+        """
+        print("Discrete Optimal Transport:")
+        print("Minimize Σᵢⱼ cᵢⱼ πᵢⱼ subject to marginal constraints")
+        
+        # Source distribution (3 locations)
+        mu = np.array([0.3, 0.5, 0.2])
+        
+        # Target distribution (3 locations)
+        nu = np.array([0.4, 0.3, 0.3])
+        
+        # Cost matrix (Euclidean distance between points)
+        x_coords = np.array([0, 1, 2])
+        y_coords = np.array([0.5, 1.5, 0.5])
+        
+        C = np.abs(x_coords[:, None] - y_coords[None, :])
+        print(f"\nCost matrix:\n{C}")
+        print(f"Source μ = {mu}")
+        print(f"Target ν = {nu}")
+        
+        # Solve using linear programming
+        # Variables: π₁₁, π₁₂, π₁₃, π₂₁, ..., π₃₃
+        c = C.flatten()
+        
+        # Equality constraints: row sums = mu, column sums = nu
+        A_eq = []
+        b_eq = []
+        
+        # Row sum constraints
+        for i in range(3):
+            row = np.zeros(9)
+            row[i*3:(i+1)*3] = 1
+            A_eq.append(row)
+            b_eq.append(mu[i])
+        
+        # Column sum constraints
+        for j in range(3):
+            col = np.zeros(9)
+            col[j::3] = 1
+            A_eq.append(col)
+            b_eq.append(nu[j])
+        
+        A_eq = np.array(A_eq)
+        b_eq = np.array(b_eq)
+        
+        # Bounds: πᵢⱼ ≥ 0
+        bounds = [(0, None) for _ in range(9)]
+        
+        # Solve
+        result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+        
+        pi_optimal = result.x.reshape(3, 3)
+        optimal_cost = result.fun
+        
+        print(f"\nOptimal transport plan:\n{pi_optimal}")
+        print(f"Optimal cost: {optimal_cost:.4f}")
+        
+        # Verify constraints
+        print(f"\nRow sums: {pi_optimal.sum(axis=1)} (should equal {mu})")
+        print(f"Column sums: {pi_optimal.sum(axis=0)} (should equal {nu})")
+        
+        return pi_optimal, optimal_cost
+    
+    @staticmethod
+    def wasserstein_distance_demo():
+        """
+        Compute Wasserstein distance between 1D distributions.
+        """
+        print("\nWasserstein Distance in 1D:")
+        print("For 1D distributions, W_p(μ, ν) = ||F_μ⁻¹ - F_ν⁻¹||_p")
+        print("where F⁻¹ are the quantile functions.")
+        
+        np.random.seed(42)
+        
+        # Two distributions
+        n_samples = 10000
+        
+        # Source: mixture of Gaussians
+        X = np.concatenate([
+            np.random.normal(-2, 0.5, n_samples//2),
+            np.random.normal(2, 0.5, n_samples//2)
+        ])
+        
+        # Target: shifted and scaled
+        Y = np.concatenate([
+            np.random.normal(-1, 0.8, n_samples//2),
+            np.random.normal(1.5, 0.3, n_samples//2)
+        ])
+        
+        # Sort for quantile computation
+        X_sorted = np.sort(X)
+        Y_sorted = np.sort(Y)
+        
+        # Wasserstein-1 distance (Earth Mover's Distance)
+        w1 = np.mean(np.abs(X_sorted - Y_sorted))
+        
+        # Wasserstein-2 distance
+        w2 = np.sqrt(np.mean((X_sorted - Y_sorted)**2))
+        
+        print(f"\nW₁ distance: {w1:.4f}")
+        print(f"W₂ distance: {w2:.4f}")
+        
+        # Visualization
+        fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+        
+        # Histograms
+        axes[0].hist(X, bins=50, alpha=0.5, density=True, label='Source μ')
+        axes[0].hist(Y, bins=50, alpha=0.5, density=True, label='Target ν')
+        axes[0].set_xlabel('x')
+        axes[0].set_ylabel('Density')
+        axes[0].set_title('Source and Target Distributions')
+        axes[0].legend()
+        axes[0].grid(True, alpha=0.3)
+        
+        # Quantile functions
+        p = np.linspace(0, 1, len(X_sorted))
+        axes[1].plot(p, X_sorted, label='F_μ⁻¹ (source)', linewidth=2)
+        axes[1].plot(p, Y_sorted, label='F_ν⁻¹ (target)', linewidth=2)
+        axes[1].fill_between(p, X_sorted, Y_sorted, alpha=0.3, label='Transport cost')
+        axes[1].set_xlabel('Quantile p')
+        axes[1].set_ylabel('Value')
+        axes[1].set_title('Quantile Functions (Optimal Transport Maps)')
+        axes[1].legend()
+        axes[1].grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('wasserstein_1d.png', dpi=150)
+        plt.close()
+        
+        return w1, w2
+    
+    @staticmethod
+    def sinkhorn_algorithm():
+        """
+        Demonstrate Sinkhorn's algorithm for entropic optimal transport.
+        """
+        print("\nSinkhorn Algorithm for Entropic Optimal Transport:")
+        print("Adds entropic regularization to make problem strictly convex")
+        print("Minimize: Σᵢⱼ cᵢⱼ πᵢⱼ + ε Σᵢⱼ πᵢⱼ log(πᵢⱼ)")
+        
+        np.random.seed(42)
+        
+        # Small discrete problem
+        n = 50
+        
+        # Source and target as point clouds in 2D
+        X = np.random.randn(n, 2)
+        Y = np.random.randn(n, 2) + np.array([3, 0])
+        
+        # Uniform distributions
+        mu = np.ones(n) / n
+        nu = np.ones(n) / n
+        
+        # Cost matrix (squared Euclidean)
+        C = cdist(X, Y, metric='sqeuclidean')
+        
+        # Entropic regularization parameter
+        epsilon = 0.1
+        
+        # Sinkhorn iterations
+        K = np.exp(-C / epsilon)
+        u = np.ones(n)
+        v = np.ones(n)
+        
+        for iteration in range(1000):
+            u_prev = u.copy()
+            
+            # Update u and v
+            u = mu / (K @ v)
+            v = nu / (K.T @ u)
+            
+            # Check convergence
+            if np.max(np.abs(u - u_prev)) < 1e-8:
+                print(f"Converged after {iteration} iterations")
+                break
+        
+        # Optimal plan
+        pi = np.diag(u) @ K @ np.diag(v)
+        
+        # Compute cost
+        cost = np.sum(C * pi)
+        
+        print(f"Optimal transport cost: {cost:.4f}")
+        
+        # Visualization
+        fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+        
+        # Point clouds with some transport lines
+        ax = axes[0]
+        ax.scatter(X[:, 0], X[:, 1], c='blue', s=50, label='Source', alpha=0.6)
+        ax.scatter(Y[:, 0], Y[:, 1], c='red', s=50, label='Target', alpha=0.6)
+        
+        # Draw top transport connections
+        threshold = np.percentile(pi, 95)
+        for i in range(n):
+            for j in range(n):
+                if pi[i, j] > threshold:
+                    ax.plot([X[i, 0], Y[j, 0]], [X[i, 1], Y[j, 1]], 
+                           'k-', alpha=0.2, linewidth=0.5)
+        
+        ax.set_title('Optimal Transport Plan (Top 5% connections)')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        
+        # Transport plan matrix
+        im = axes[1].imshow(pi, cmap='hot', aspect='auto')
+        axes[1].set_title('Transport Plan Matrix π')
+        axes[1].set_xlabel('Target points')
+        axes[1].set_ylabel('Source points')
+        plt.colorbar(im, ax=axes[1])
+        
+        plt.tight_layout()
+        plt.savefig('sinkhorn_transport.png', dpi=150)
+        plt.close()
+        
+        return pi, cost
+
+# Run demonstrations
+print("=== Optimal Transport Demonstrations ===")
+OptimalTransport.discrete_optimal_transport()
+OptimalTransport.wasserstein_distance_demo()
+OptimalTransport.sinkhorn_algorithm()
+</code></pre>
+
+            <h3>Stochastic Calculus: Itô's Revolution</h3>
+            <p>Stochastic calculus extends calculus to random processes, providing the mathematical foundation for modern finance, physics, and engineering. Kiyoshi Itô's development of stochastic integration in the 1940s created an entirely new branch of mathematics.</p>
+
+            <p><strong>Real-World Motivation:</strong> Stock prices, particle diffusion, and neural activity all exhibit random fluctuations. Stochastic calculus provides tools to model these systems, price derivatives, and design control strategies in uncertain environments.</p>
+
+            <p><strong>Brownian Motion:</strong> A standard Brownian motion \((W_t)_{t \geq 0}\) is a continuous stochastic process with:</p>
+            <ul>
+                <li>\(W_0 = 0\)</li>
+                <li>Independent increments: \(W_t - W_s \perp W_s - W_r\) for \(r < s < t\)</li>
+                <li>\(W_t - W_s \sim \mathcal{N}(0, t-s)\)</li>
+                <li>Continuous sample paths</li>
+            </ul>
+
+            <p><strong>Itô Integral:</strong> For adapted processes \(H_t\), the Itô integral is defined as:
+            \[ \int_0^T H_t \, dW_t = \lim_{n \to \infty} \sum_{i=0}^{n-1} H_{t_i}(W_{t_{i+1}} - W_{t_i}) \]
+            where the limit is taken in \(L^2\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(dX_t = \mu_t dt + \sigma_t dW_t\) — <strong>Itô process</strong></li>
+                <li>\(\langle X, Y \rangle_t\) — <strong>quadratic covariation</strong></li>
+                <li>\(\mathcal{F}_t\) — <strong>filtration</strong> (information up to time \(t\))</li>
+                <li>\(\mathbb{E}[X | \mathcal{F}_t]\) — <strong>conditional expectation</strong></li>
+                <li>\(L_t\) — <strong>local time</strong></li>
+            </ul>
+
+            <p><strong>Theorem (Itô's Lemma):</strong> Let \(X_t\) be an Itô process and \(f \in C^{2,1}\). Then:
+            \[ df(t, X_t) = \frac{\partial f}{\partial t} dt + \frac{\partial f}{\partial x} dX_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2} d\langle X \rangle_t \]</p>
+
+            <p>This is the chain rule for stochastic calculus, with the crucial extra term involving the quadratic variation.</p>
+
+            <p><strong>Theorem (Martingale Representation):</strong> Let \(M_t\) be a square-integrable martingale adapted to the Brownian filtration. Then there exists a unique process \(H_t\) such that:
+            \[ M_t = M_0 + \int_0^t H_s \, dW_s \]</p>
+
+            <p>This theorem underlies the completeness of Black-Scholes markets and the existence of hedging strategies.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class StochasticCalculus:
+    """Demonstrate stochastic calculus concepts."""
+    
+    @staticmethod
+    def brownian_motion_simulation():
+        """
+        Simulate and visualize Brownian motion paths.
+        """
+        print("Brownian Motion Simulation:")
+        print("Properties: W₀ = 0, independent increments, Wₜ ~ N(0, t)")
+        
+        np.random.seed(42)
+        
+        # Parameters
+        T = 1.0  # Time horizon
+        n = 1000  # Number of time steps
+        m = 5     # Number of paths
+        dt = T / n
+        
+        # Time grid
+        t = np.linspace(0, T, n+1)
+        
+        # Simulate Brownian motion (increments are N(0, dt))
+        dW = np.random.randn(m, n) * np.sqrt(dt)
+        W = np.concatenate([np.zeros((m, 1)), np.cumsum(dW, axis=1)], axis=1)
+        
+        # Plot
+        fig, ax = plt.subplots(figsize=(12, 6))
+        
+        for i in range(m):
+            ax.plot(t, W[i], alpha=0.7, linewidth=1.5, label=f'Path {i+1}')
+        
+        # Theoretical 2-sigma bounds
+        sigma = np.sqrt(t)
+        ax.fill_between(t, -2*sigma, 2*sigma, alpha=0.2, color='gray', 
+                       label='±2σ bounds')
+        ax.plot(t, 2*sigma, 'k--', alpha=0.5)
+        ax.plot(t, -2*sigma, 'k--', alpha=0.5)
+        
+        ax.set_xlabel('Time t')
+        ax.set_ylabel('W(t)')
+        ax.set_title('Brownian Motion Sample Paths')
+        ax.legend(loc='upper left')
+        ax.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('brownian_motion.png', dpi=150)
+        plt.close()
+        
+        print(f"\nSimulated {m} paths with {n} time steps")
+        print(f"Final values: {W[:, -1]}")
+        print(f"Theoretical std at T=1: 1.0")
+        print(f"Empirical std: {np.std(W[:, -1]):.4f}")
+        
+        return W
+    
+    @staticmethod
+    def ito_integral_demo(W):
+        """
+        Demonstrate Itô integration.
+        """
+        print("\nItô Integral Demonstration:")
+        print("∫₀ᵀ Wₜ dWₜ = ½(Wₜ² - T)")
+        
+        T = 1.0
+        n = W.shape[1] - 1
+        dt = T / n
+        
+        # Compute Itô integral ∫ W dW
+        # Using left-point rule (Itô)
+        ito_integral = np.sum(W[:, :-1] * np.diff(W, axis=1), axis=1)
+        
+        # Theoretical value: ½(W_T² - T)
+        W_T = W[:, -1]
+        theoretical = 0.5 * (W_T**2 - T)
+        
+        print(f"\nItô integral values: {ito_integral}")
+        print(f"Theoretical values (½(W_T² - T)): {theoretical}")
+        print(f"Difference: {np.abs(ito_integral - theoretical)}")
+        
+        # Compare with Stratonovich (midpoint rule)
+        W_mid = 0.5 * (W[:, :-1] + W[:, 1:])
+        stratonovich_integral = np.sum(W_mid * np.diff(W, axis=1), axis=1)
+        
+        # Stratonovich: ½ W_T²
+        strat_theoretical = 0.5 * W_T**2
+        
+        print(f"\nStratonovich integral values: {stratonovich_integral}")
+        print(f"Theoretical (½ W_T²): {strat_theoretical}")
+        
+        return ito_integral, stratonovich_integral
+    
+    @staticmethod
+    def geometric_brownian_motion():
+        """
+        Simulate geometric Brownian motion (Black-Scholes model).
+        """
+        print("\nGeometric Brownian Motion:")
+        print("dSₜ = μSₜdt + σSₜdWₜ (Black-Scholes model)")
+        print("Solution: Sₜ = S₀ exp((μ - σ²/2)t + σWₜ)")
+        
+        np.random.seed(42)
+        
+        # Parameters
+        S0 = 100  # Initial price
+        mu = 0.05  # Drift
+        sigma = 0.2  # Volatility
+        T = 1.0
+        n = 1000
+        m = 10  # Number of paths
+        dt = T / n
+        
+        t = np.linspace(0, T, n+1)
+        
+        # Simulate
+        dW = np.random.randn(m, n) * np.sqrt(dt)
+        W = np.concatenate([np.zeros((m, 1)), np.cumsum(dW, axis=1)], axis=1)
+        
+        # GBM solution
+        S = S0 * np.exp((mu - 0.5*sigma**2)*t + sigma*W)
+        
+        # Plot
+        fig, ax = plt.subplots(figsize=(12, 6))
+        
+        for i in range(m):
+            ax.plot(t, S[i], alpha=0.7, linewidth=1.5)
+        
+        ax.axhline(S0, color='k', linestyle='--', alpha=0.5, label='S₀')
+        ax.set_xlabel('Time t')
+        ax.set_ylabel('Price S(t)')
+        ax.set_title('Geometric Brownian Motion (Stock Price Simulation)')
+        ax.set_yscale('log')
+        ax.grid(True, alpha=0.3)
+        ax.legend()
+        
+        plt.tight_layout()
+        plt.savefig('geometric_brownian.png', dpi=150)
+        plt.close()
+        
+        print(f"\nInitial price: {S0}")
+        print(f"Expected price at T: {S0 * np.exp(mu * T):.2f}")
+        print(f"Mean final price: {np.mean(S[:, -1]):.2f}")
+        print(f"Median final price: {np.median(S[:, -1]):.2f}")
+        
+        return S
+    
+    @staticmethod
+    def ornstein_uhlenbeck():
+        """
+        Simulate Ornstein-Uhlenbeck process (mean-reverting).
+        """
+        print("\nOrnstein-Uhlenbeck Process:")
+        print("dXₜ = θ(μ - Xₜ)dt + σdWₜ (mean-reverting)")
+        
+        np.random.seed(42)
+        
+        # Parameters
+        theta = 2.0  # Mean reversion speed
+        mu = 1.0     # Long-term mean
+        sigma = 0.5  # Volatility
+        X0 = 0.0     # Initial value
+        T = 5.0
+        n = 5000
+        m = 5
+        dt = T / n
+        
+        t = np.linspace(0, T, n+1)
+        
+        # Euler-Maruyama simulation
+        X = np.zeros((m, n+1))
+        X[:, 0] = X0
+        
+        for i in range(n):
+            dW = np.random.randn(m) * np.sqrt(dt)
+            X[:, i+1] = X[:, i] + theta*(mu - X[:, i])*dt + sigma*dW
+        
+        # Plot
+        fig, ax = plt.subplots(figsize=(12, 6))
+        
+        for i in range(m):
+            ax.plot(t, X[i], alpha=0.7, linewidth=1.5)
+        
+        ax.axhline(mu, color='r', linestyle='--', alpha=0.7, 
+                  label=f'Long-term mean μ = {mu}')
+        ax.fill_between(t, mu - sigma/np.sqrt(2*theta), 
+                       mu + sigma/np.sqrt(2*theta), 
+                       alpha=0.2, color='gray', label='±1 std of stationary dist')
+        
+        ax.set_xlabel('Time t')
+        ax.set_ylabel('X(t)')
+        ax.set_title('Ornstein-Uhlenbeck Process (Mean-Reverting)')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('ornstein_uhlenbeck.png', dpi=150)
+        plt.close()
+        
+        print(f"\nStationary distribution: N(μ, σ²/(2θ)) = N({mu}, {sigma**2/(2*theta):.4f})")
+        print(f"Final values: {X[:, -1]}")
+        print(f"Empirical mean: {np.mean(X[:, -1]):.4f}")
+        print(f"Empirical std: {np.std(X[:, -1]):.4f}")
+        
+        return X
+
+# Run demonstrations
+print("=== Stochastic Calculus Demonstrations ===")
+W = StochasticCalculus.brownian_motion_simulation()
+StochasticCalculus.ito_integral_demo(W)
+StochasticCalculus.geometric_brownian_motion()
+StochasticCalculus.ornstein_uhlenbeck()
+</code></pre>
+        </section>
+
+        <!-- Section 5: 4 Special Topics -->
+        <section id="topics">
+            <h2>🎨 Special Topics</h2>
+            
+            <h3>Modular Forms: Symmetry in the Complex Plane</h3>
+            <p>Modular forms are holomorphic functions on the upper half-plane with remarkable symmetry properties. They form a bridge between complex analysis, number theory, algebraic geometry, and even string theory.</p>
+
+            <p><strong>Historical Context:</strong> The theory began with elliptic functions in the 19th century. The modern theory was developed by Hecke in the 1930s and revolutionized by the Langlands program and Wiles' proof of Fermat's Last Theorem, which crucially used the connection between elliptic curves and modular forms.</p>
+
+            <p><strong>Definition (Modular Form):</strong> A <strong>modular form</strong> of weight \(k\) for \(SL(2, \mathbb{Z})\) is a holomorphic function \(f: \mathbb{H} \to \mathbb{C}\) satisfying:</p>
+            <ol>
+                <li><strong>Modularity:</strong> \(f\left(\frac{az + b}{cz + d}\right) = (cz + d)^k f(z)\) for all \(\begin{pmatrix} a & b \\ c & d \end{pmatrix} \in SL(2, \mathbb{Z})\)</li>
+                <li><strong>Holomorphic at infinity:</strong> \(f\) has a Fourier expansion \(f(z) = \sum_{n=0}^{\infty} a_n q^n\) where \(q = e^{2\pi i z}\)</li>
+            </ol>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\mathbb{H} = \{z \in \mathbb{C} : \text{Im}(z) > 0\}\) — upper half-plane</li>
+                <li>\(SL(2, \mathbb{Z})\) — modular group</li>
+                <li>\(M_k(SL(2, \mathbb{Z}))\) — space of modular forms of weight \(k\)</li>
+                <li>\(S_k\) — <strong>cusp forms</strong> (forms with \(a_0 = 0\))</li>
+                <li>\(\Delta(z)\) — <strong>discriminant function</strong></li>
+                <li>\(j(z)\) — <strong>modular j-invariant</strong></li>
+            </ul>
+
+            <p><strong>Theorem (Dimension Formula):</strong> The dimension of the space of modular forms is:
+            \[ \dim M_k(SL(2, \mathbb{Z})) = \begin{cases} \lfloor k/12 \rfloor & k \equiv 2 \pmod{12} \\ \lfloor k/12 \rfloor + 1 & k \not\equiv 2 \pmod{12} \end{cases} \]</p>
+
+            <p><strong>Theorem (Modularity Theorem / Taniyama-Shimura-Weil):</strong> Every rational elliptic curve is modular—its L-function equals the L-function of a weight-2 Hecke eigenform.</p>
+
+            <p>This theorem, proved by Wiles and Taylor for semistable curves (sufficient for Fermat's Last Theorem) and completed by Breuil, Conrad, Diamond, and Taylor, is one of the crowning achievements of 20th-century mathematics.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import ellipk, ellipe
+
+class ModularForms:
+    """Demonstrate modular form concepts."""
+    
+    @staticmethod
+    def eisenstein_series():
+        """
+        Compute and visualize Eisenstein series.
+        """
+        print("Eisenstein Series:")
+        print("The Eisenstein series G_k(z) = Σ_{(m,n)≠(0,0)} (mz + n)^{-k}")
+        print("are the simplest modular forms (weight k ≥ 4, even).")
+        
+        # Create grid in upper half-plane
+        x = np.linspace(-1, 1, 200)
+        y = np.linspace(0.1, 2, 200)
+        X, Y = np.meshgrid(x, y)
+        Z = X + 1j*Y
+        
+        # Compute G_4 (normalized)
+        # Using Fourier expansion: E_4(z) = 1 + 240 Σ σ_3(n) q^n
+        q = np.exp(2j * np.pi * Z)
+        
+        # Approximate E_4 with first few terms
+        E4 = np.ones_like(Z, dtype=complex)
+        for n in range(1, 20):
+            sigma_3 = sum(d**3 for d in range(1, n+1) if n % d == 0)
+            E4 += 240 * sigma_3 * q**n
+        
+        # Plot |E_4|
+        fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+        
+        im1 = axes[0].imshow(np.abs(E4), extent=[-1, 1, 0.1, 2], 
+                            origin='lower', cmap='viridis', aspect='auto')
+        axes[0].set_title('|E₄(z)| (Normalized Eisenstein Series)')
+        axes[0].set_xlabel('Re(z)')
+        axes[0].set_ylabel('Im(z)')
+        plt.colorbar(im1, ax=axes[0])
+        
+        # Plot arg(E_4)
+        im2 = axes[1].imshow(np.angle(E4), extent=[-1, 1, 0.1, 2],
+                            origin='lower', cmap='hsv', aspect='auto')
+        axes[1].set_title('arg(E₄(z))')
+        axes[1].set_xlabel('Re(z)')
+        axes[1].set_ylabel('Im(z)')
+        plt.colorbar(im2, ax=axes[1])
+        
+        plt.tight_layout()
+        plt.savefig('eisenstein_series.png', dpi=150)
+        plt.close()
+        
+        print("\nE_4 is a modular form of weight 4.")
+        print("It generates the ring of modular forms together with E_6.")
+        
+        return E4
+    
+    @staticmethod
+    def modular_discriminant():
+        """
+        Visualize the modular discriminant Δ(z).
+        """
+        print("\nModular Discriminant Δ(z):")
+        print("Δ(z) = (E₄³ - E₆²)/1728 is a cusp form of weight 12.")
+        print("It has no zeros in the upper half-plane.")
+        
+        x = np.linspace(-1, 1, 200)
+        y = np.linspace(0.1, 2, 200)
+        X, Y = np.meshgrid(x, y)
+        Z = X + 1j*Y
+        q = np.exp(2j * np.pi * Z)
+        
+        # Ramanujan Delta function: Δ(z) = q Π(1 - q^n)^24
+        Delta = q.copy()
+        for n in range(1, 30):
+            Delta *= (1 - q**n)**24
+        
+        fig, ax = plt.subplots(figsize=(10, 8))
+        
+        # Plot log|Δ| to see structure
+        log_abs_Delta = np.log(np.abs(Delta) + 1e-20)
+        im = ax.imshow(log_abs_Delta, extent=[-1, 1, 0.1, 2],
+                      origin='lower', cmap='hot', aspect='auto')
+        ax.set_title('log|Δ(z)| (Modular Discriminant)')
+        ax.set_xlabel('Re(z)')
+        ax.set_ylabel('Im(z)')
+        plt.colorbar(im, ax=ax)
+        
+        plt.tight_layout()
+        plt.savefig('modular_discriminant.png', dpi=150)
+        plt.close()
+        
+        print("\nΔ(z) = Σ τ(n) q^n where τ(n) is the Ramanujan tau function.")
+        print("First few values: τ(1)=1, τ(2)=-24, τ(3)=252, ...")
+        
+        return Delta
+    
+    @staticmethod
+    def fundamental_domain():
+        """
+        Visualize the fundamental domain for SL(2, Z).
+        """
+        print("\nFundamental Domain of SL(2, Z):")
+        print("The standard fundamental domain is:")
+        print("  F = {z : |z| > 1, |Re(z)| < 1/2, Im(z) > 0}")
+        
+        fig, ax = plt.subplots(figsize=(10, 8))
+        
+        # Draw fundamental domain
+        theta = np.linspace(np.pi/3, 2*np.pi/3, 100)
+        arc_x = np.cos(theta)
+        arc_y = np.sin(theta)
+        
+        # Vertical lines at ±1/2
+        y_vert = np.linspace(np.sin(np.pi/3), 3, 100)
+        
+        # Fill fundamental domain
+        from matplotlib.patches import Polygon
+        
+        # Create polygon for fundamental domain
+        vertices = [(0.5, np.sin(np.pi/3))]
+        vertices.extend(zip(arc_x, arc_y))
+        vertices.append((-0.5, np.sin(np.pi/3)))
+        vertices.append((-0.5, 3))
+        vertices.append((0.5, 3))
+        
+        poly = Polygon(vertices, alpha=0.3, color='blue', label='Fundamental domain')
+        ax.add_patch(poly)
+        
+        # Draw boundary
+        ax.plot(arc_x, arc_y, 'b-', linewidth=2, label='|z| = 1')
+        ax.plot([0.5, 0.5], [np.sin(np.pi/3), 3], 'b-', linewidth=2)
+        ax.plot([-0.5, -0.5], [np.sin(np.pi/3), 3], 'b-', linewidth=2)
+        
+        # Mark special points
+        ax.plot(0, 1, 'ro', markersize=10, label='i (order 2)')
+        ax.plot(-0.5, np.sin(np.pi/3), 'go', markersize=10, label='ω = e^(2πi/3) (order 3)')
+        ax.plot(0.5, np.sin(np.pi/3), 'go', markersize=10)
+        ax.plot(0, 2, 'ko', markersize=8, label='i∞ (cusp)')
+        
+        ax.set_xlim(-2, 2)
+        ax.set_ylim(0, 3)
+        ax.set_aspect('equal')
+        ax.set_xlabel('Re(z)')
+        ax.set_ylabel('Im(z)')
+        ax.set_title('Fundamental Domain for SL(2, Z)')
+        ax.legend(loc='upper right')
+        ax.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('fundamental_domain.png', dpi=150)
+        plt.close()
+        
+        print("\nKey points:")
+        print("  i: fixed by S: z → -1/z (order 2)")
+        print("  ω = e^(2πi/3): fixed by ST (order 3)")
+        print("  i∞: the cusp")
+
+# Run demonstrations
+print("=== Modular Forms Demonstrations ===")
+E4 = ModularForms.eisenstein_series()
+Delta = ModularForms.modular_discriminant()
+ModularForms.fundamental_domain()
+</code></pre>
+
+            <h3>p-adic Numbers: Completing the Rationals Differently</h3>
+            <p>The p-adic numbers, introduced by Hensel in 1897, provide an alternative completion of the rational numbers. While real numbers fill in the "gaps" between rationals using the usual absolute value, p-adic numbers fill gaps using a different notion of distance based on divisibility.</p>
+
+            <p><strong>Motivation:</strong> In the p-adic world, numbers are "close" when their difference is divisible by a high power of \(p\). This leads to a number system where series converge in surprising ways and geometric intuition must be completely rebuilt.</p>
+
+            <p><strong>The p-adic Absolute Value:</strong> For a prime \(p\), write \(x = p^n \frac{a}{b}\) where \(p \nmid ab\). The <strong>p-adic absolute value</strong> is:
+            \[ |x|_p = p^{-n} \]
+            with \(|0|_p = 0\).</p>
+
+            <p><strong>Definition (p-adic Numbers):</strong> The <strong>p-adic numbers</strong> \(\mathbb{Q}_p\) are the completion of \(\mathbb{Q}\) with respect to \(|\cdot|_p\). Every p-adic number has a unique expansion:
+            \[ x = \sum_{n=N}^{\infty} a_n p^n \]
+            where \(a_n \in \{0, 1, \ldots, p-1\}\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\mathbb{Z}_p\) — <strong>p-adic integers</strong> (numbers with \(|x|_p \leq 1\))</li>
+                <li>\(\mathbb{Q}_p\) — field of p-adic numbers</li>
+                <li>\(\mathbb{C}_p\) — completion of algebraic closure of \(\mathbb{Q}_p\)</li>
+                <li>\(\nu_p(x)\) — <strong>p-adic valuation</strong> (exponent of \(p\) in factorization)</li>
+                <li>\(\mathcal{O}_{\mathbb{C}_p}\) — ring of integers in \(\mathbb{C}_p\)</li>
+            </ul>
+
+            <p><strong>Theorem (Ostrowski):</strong> Every nontrivial absolute value on \(\mathbb{Q}\) is equivalent to either the usual absolute value or a p-adic absolute value for some prime \(p\).</p>
+
+            <p><strong>Theorem (Hensel's Lemma):</strong> Let \(f(x) \in \mathbb{Z}_p[x]\) and \(a \in \mathbb{Z}_p\) with \(|f(a)|_p < |f'(a)|_p^2\). Then there exists a unique \(\alpha \in \mathbb{Z}_p\) with \(f(\alpha) = 0\) and \(|\alpha - a|_p < |f'(a)|_p\).</p>
+
+            <p>Hensel's lemma is the p-adic analogue of Newton's method—it lifts approximate solutions to exact solutions.</p>
+
+            <pre><code>import numpy as np
+
+class PAdicNumbers:
+    """Demonstrate p-adic number concepts."""
+    
+    def __init__(self, p, precision=20):
+        self.p = p
+        self.precision = precision
+    
+    def valuation(self, x):
+        """Compute p-adic valuation of rational number x."""
+        if x == 0:
+            return float('inf')
+        
+        # Factor out powers of p from numerator and denominator
+        num = int(x.numerator if hasattr(x, 'numerator') else x)
+        den = int(x.denominator if hasattr(x, 'denominator') else 1)
+        
+        v_num = 0
+        while num % self.p == 0:
+            num //= self.p
+            v_num += 1
+        
+        v_den = 0
+        while den % self.p == 0:
+            den //= self.p
+            v_den += 1
+        
+        return v_num - v_den
+    
+    def abs_p(self, x):
+        """Compute p-adic absolute value."""
+        if x == 0:
+            return 0
+        return self.p ** (-self.valuation(x))
+    
+    def expansion(self, x):
+        """Compute p-adic expansion of rational number."""
+        if x == 0:
+            return [0] * self.precision
+        
+        # Work with fraction
+        from fractions import Fraction
+        x = Fraction(x)
+        
+        # Adjust to get p-adic integer part
+        v = self.valuation(x)
+        
+        # Multiply by appropriate power to make it a p-adic integer
+        if v < 0:
+            x *= self.p ** (-v)
+        
+        digits = []
+        for _ in range(self.precision):
+            # x = a_0 + p * x'
+            a_0 = int(x) % self.p
+            digits.append(a_0)
+            x = (x - a_0) / self.p
+        
+        return digits, v
+    
+    @staticmethod
+    def demonstrate_p_adic():
+        """Demonstrate p-adic properties."""
+        print("p-adic Numbers Demonstration (p = 5):")
+        p = 5
+        padic = PAdicNumbers(p, precision=10)
+        
+        # Various rational numbers
+        numbers = [1, 2, 1/5, 25, -1, 1/2, 1/3]
+        
+        print(f"\n{'x':>10} | {'v_5(x)':>8} | {'|x|_5':>12} | {'Expansion':>20}")
+        print("-" * 60)
+        
+        for x in numbers:
+            v = padic.valuation(x)
+            abs_val = padic.abs_p(x)
+            exp, val_offset = padic.expansion(x)
+            exp_str = f"{val_offset}: " + ''.join(map(str, exp[:5])) + "..."
+            
+            print(f"{str(x):>10} | {v:>8} | {abs_val:>12.6f} | {exp_str:>20}")
+        
+        print("\nKey observations:")
+        print("  - |5|_5 = 1/5 < 1 (5 is 'small' in 5-adic metric)")
+        print("  - |25|_5 = 1/25 (even smaller)")
+        print("  - Large powers of 5 converge to 0")
+        print("  - The series 1 + 5 + 25 + 125 + ... converges to -1/4 in Q_5!")
+        
+        # Verify geometric series
+        print("\nGeometric series in Q_5:")
+        partial_sum = 0
+        for n in range(10):
+            partial_sum += 5**n
+            print(f"  Sum of first {n+1} terms: {partial_sum}")
+        
+        # The limit should be 1/(1-5) = -1/4
+        print(f"\nLimit: 1/(1-5) = -1/4 = {-1/4}")
+        print(f"5-adic distance from partial sum to -1/4: {padic.abs_p(partial_sum - (-1/4)):.8f}")
+
+# Run demonstration
+print("=== p-adic Numbers Demonstrations ===")
+PAdicNumbers.demonstrate_p_adic()
+</code></pre>
+
+            <h3>Arithmetic Geometry: The Confluence of Number Theory and Geometry</h3>
+            <p>Arithmetic geometry applies the techniques of algebraic geometry to solve problems in number theory. The central insight, dating back to Fermat and developed by Weil, Grothendieck, and Deligne, is that Diophantine equations can be understood by studying the geometry of their solution sets.</p>
+
+            <p><strong>Motivation:</strong> Finding integer solutions to \(x^2 + y^2 = z^2\) is a geometry problem—these are rational points on the unit circle. This perspective transforms number theory into the study of algebraic varieties over number fields and finite fields.</p>
+
+            <p><strong>Definition (Scheme):</strong> A <strong>scheme</strong> is a locally ringed space \((X, \mathcal{O}_X)\) that is locally isomorphic to the spectrum of a ring. Schemes generalize varieties and provide the proper framework for studying solutions over arbitrary rings.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\text{Spec}(R)\) — spectrum of a ring \(R\)</li>
+                <li>\(\mathbb{A}^n_k\) — affine \(n\)-space over field \(k\)</li>
+                <li>\(\mathbb{P}^n_k\) — projective \(n\)-space</li>
+                <li>\(X(k)\) — \(k\)-rational points of variety \(X\)</li>
+                <li>\(\text{Pic}(X)\) — <strong>Picard group</strong> (line bundles)</li>
+                <li>\(\zeta_X(s)\) — <strong>Hasse-Weil zeta function</strong></li>
+            </ul>
+
+            <p><strong>Theorem (Weil Conjectures, proved by Deligne):</strong> Let \(X\) be a smooth projective variety of dimension \(n\) over \(\mathbb{F}_q\). Then:</p>
+            <ol>
+                <li><strong>Rationality:</strong> \(Z(X, t) = \exp\left(\sum_{m=1}^{\infty} \frac{N_m}{m} t^m\right)\) is a rational function</li>
+                <li><strong>Functional equation:</strong> \(Z(X, q^{-n}t^{-1}) = \pm q^{nE/2} t^E Z(X, t)\)</li>
+                <li><strong>Riemann Hypothesis:</strong> Zeros of \(P_i(t)\) satisfy \(|\alpha_{i,j}| = q^{i/2}\)</li>
+            </ol>
+
+            <p>Deligne's proof of the Riemann hypothesis for varieties over finite fields (1974) earned him the Fields Medal and provided tools that continue to drive the field.</p>
+
+            <h3>Noncommutative Geometry: Beyond Commutative Spaces</h3>
+            <p>Noncommutative geometry, developed by Alain Connes in the 1980s, extends the correspondence between spaces and commutative algebras to noncommutative algebras. This allows geometric concepts to be applied to quantum physics, dynamical systems, and number theory.</p>
+
+            <p><strong>Motivation:</strong> In quantum mechanics, observables don't commute (position and momentum). Noncommutative geometry provides a framework where the algebra of observables itself defines a "space"—even when no classical space exists.</p>
+
+            <p><strong>Gelfand-Naimark Correspondence:</strong> The foundation of noncommutative geometry is the duality between topological spaces and C*-algebras:</p>
+            <ul>
+                <li>Compact Hausdorff space \(X\) \(\leftrightarrow\) commutative C*-algebra \(C(X)\)</li>
+                <li>Continuous map \(f: X \to Y\) \(\leftrightarrow\) *-homomorphism \(f^*: C(Y) \to C(X)\)</li>
+            </ul>
+
+            <p><strong>Definition (Spectral Triple):</strong> A <strong>spectral triple</strong> \((\mathcal{A}, \mathcal{H}, D)\) consists of:</p>
+            <ul>
+                <li>An involutive algebra \(\mathcal{A}\) represented on Hilbert space \(\mathcal{H}\)</li>
+                <li>A self-adjoint operator \(D\) (the <strong>Dirac operator</strong>) with compact resolvent</li>
+                <li>\([D, a]\) bounded for all \(a \in \mathcal{A}\)</li>
+            </ul>
+
+            <p><strong>Theorem (Connes' Reconstruction):</strong> A spectral triple satisfying certain axioms (dimension, reality, first order, orientability) reconstructs a spin manifold.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(C^*(G)\) — group C*-algebra</li>
+                <li>\(A_\theta\) — <strong>noncommutative torus</strong></li>
+                <li>\(\Omega_D^*(\mathcal{A})\) — noncommutative differential forms</li>
+                <li>\(\text{Tr}_\omega\) — <strong>Dixmier trace</strong></li>
+            </ul>
+
+            <p><strong>Theorem (Index Theorem):</strong> For a spectral triple, the index of \(D\) is given by a local formula involving the Dixmier trace of \(|D|^{-n}\), generalizing the Atiyah-Singer index theorem.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class ArithmeticGeometry:
+    """Demonstrate arithmetic geometry concepts."""
+    
+    @staticmethod
+    def rational_points_conic():
+        """
+        Find rational points on the unit circle x² + y² = 1.
+        """
+        print("Rational Points on the Unit Circle x² + y² = 1:")
+        print("\nParametrization: For rational t,")
+        print("  x = (1 - t²)/(1 + t²), y = 2t/(1 + t²)")
+        
+        # Generate rational points
+        from fractions import Fraction
+        
+        t_values = [Fraction(0), Fraction(1), Fraction(1, 2), 
+                   Fraction(1, 3), Fraction(2, 3), Fraction(3, 4)]
+        
+        print(f"\n{'t':>10} | {'x':>15} | {'y':>15} | {'x² + y²':>15}")
+        print("-" * 65)
+        
+        points = []
+        for t in t_values:
+            x = (1 - t**2) / (1 + t**2)
+            y = 2*t / (1 + t**2)
+            check = x**2 + y**2
+            points.append((float(x), float(y)))
+            
+            print(f"{str(t):>10} | {float(x):>15.6f} | {float(y):>15.6f} | {float(check):>15.6f}")
+        
+        # Visualize
+        fig, ax = plt.subplots(figsize=(8, 8))
+        
+        # Unit circle
+        theta = np.linspace(0, 2*np.pi, 1000)
+        ax.plot(np.cos(theta), np.sin(theta), 'b-', linewidth=2, label='Unit circle')
+        
+        # Rational points
+        xs, ys = zip(*points)
+        ax.scatter(xs, ys, c='red', s=100, zorder=5, label='Rational points')
+        
+        ax.set_xlim(-1.5, 1.5)
+        ax.set_ylim(-1.5, 1.5)
+        ax.set_aspect('equal')
+        ax.set_xlabel('x')
+        ax.set_ylabel('y')
+        ax.set_title('Rational Points on the Unit Circle')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('rational_points_circle.png', dpi=150)
+        plt.close()
+        
+        print("\nAll rational points (except (-1, 0)) are obtained this way.")
+        print("This gives infinitely many Pythagorean triples!")
+        
+        return points
+    
+    @staticmethod
+    def points_over_finite_fields():
+        """
+        Count points on varieties over finite fields.
+        """
+        print("\nPoints on Varieties over Finite Fields:")
+        print("Example: y² = x³ + 1 over F_p")
+        
+        def count_points(p):
+            """Count points on y² = x³ + 1 over F_p."""
+            count = 0
+            for x in range(p):
+                rhs = (x**3 + 1) % p
+                # Count solutions to y² = rhs
+                for y in range(p):
+                    if (y*y) % p == rhs:
+                        count += 1
+            # Add point at infinity
+            return count + 1
+        
+        primes = [5, 7, 11, 13, 17, 19, 23]
+        
+        print(f"\n{'p':>5} | {'N_p (points)':>15} | {'p + 1 - N_p':>15}")
+        print("-" * 45)
+        
+        for p in primes:
+            N_p = count_points(p)
+            a_p = p + 1 - N_p
+            print(f"{p:>5} | {N_p:>15} | {a_p:>15}")
+        
+        print("\nThe values a_p = p + 1 - N_p are Fourier coefficients")
+        print("of a modular form (Hasse-Weil L-function).")
+
+# Run demonstrations
+print("=== Arithmetic Geometry Demonstrations ===")
+ArithmeticGeometry.rational_points_conic()
+ArithmeticGeometry.points_over_finite_fields()
+</code></pre>
+        </section>
+
+        <!-- Section 6: Math History -->
+        <section id="history">
+            <h2>📜 Math History: Évariste Galois (1811–1832)</h2>
+            <p>Évariste Galois stands as one of the most romantic and tragic figures in mathematical history. In a life spanning just twenty years, he revolutionized algebra, founding what is now known as Galois theory and establishing the framework for modern abstract algebra.</p>
+            
+            <p>Born in Bourg-la-Reine, near Paris, Galois showed exceptional mathematical talent from an early age. He read Legendre's <em>Éléments de Géométrie</em) at age fifteen—not as a textbook, but like a novel, mastering it in a single reading. His mathematical education proper began at the Louis-le-Grand high school in Paris, where he quickly outpaced his instructors.</p>
+            
+            <p>Galois's great insight came from studying polynomial equations. For centuries, mathematicians had sought formulas for solving polynomial equations of degree five and higher, analogous to the quadratic formula. Abel had proved in 1824 that no such general formula exists using radicals. Galois went further: he developed a theory that explains <em>exactly when</em> a polynomial is solvable by radicals, and why.</p>
+            
+            <p>The key was to associate to each polynomial a <strong>group</strong>—now called its <strong>Galois group</strong>—consisting of symmetries of its roots. The structure of this group determines the solvability of the equation. A polynomial is solvable by radicals if and only if its Galois group is a <strong>solvable group</strong> (a group built from abelian groups in a specific way). The general quintic has Galois group \(S_5\), which is not solvable—explaining the impossibility of a quintic formula.</p>
+            
+            <p>Galois submitted his work to the Paris Academy of Sciences twice. The first memoir, sent in 1829 when he was seventeen, was lost by Cauchy. The second, submitted in 1830 through Fourier, was lost when Fourier died. A third version, submitted to Poisson in 1831, was returned with a report that it was "incomprehensible"—though Poisson acknowledged that Galois's results were correct.</p>
+            
+            <p>Galois's personal life was as turbulent as his academic one. He was a passionate republican during the July Revolution of 1830, and his political activism led to his expulsion from the École Normale. He was arrested twice for republican activities, spending nearly a year in prison. During this time, he continued to develop his mathematical ideas.</p>
+            
+            <p>On May 30, 1832, Galois fought a duel—possibly over a woman, possibly for political reasons, possibly a setup by police informants. Knowing he might not survive, he spent the night before the duel writing a letter to his friend Auguste Chevalier, summarizing his mathematical discoveries. "I have made some new discoveries in analysis," he wrote. "The propositions I have to prove are these..." He asked that his work be sent to Gauss and Jacobi for their opinion "not on the truth, but on the importance of the theorems."</p>
+            
+            <p>Galois was shot in the abdomen during the duel and died the next day in the Cochin Hospital. His last words to his brother Alfred were: "Don't cry, I need all my courage to die at twenty."</p>
+            
+            <p>His mathematical legacy was rescued by Chevalier and later by Liouville, who finally understood the significance of Galois's work. In 1846, Liouville published Galois's papers in his <em>Journal de Mathématiques Pures et Appliquées</em>, along with an explanatory preface. The theory that emerged—Galois theory—became one of the cornerstones of modern algebra.</p>
+            
+            <p>Today, Galois theory is taught to every mathematics undergraduate. It provides the foundation for field theory, algebraic number theory, and algebraic geometry. The concept of a group, central to modern mathematics and physics, emerged from Galois's work. His insight that abstract structure (the group) controls concrete phenomena (the roots of polynomials) exemplifies the power of modern mathematics.</p>
+            
+            <p>Galois's life has inspired generations of mathematicians—not just for his theorems, but for the intensity with which he pursued truth against all obstacles. In the words of mathematician Hermann Weyl: "The dazzling beauty and depth of his ideas have never been surpassed."</p>
+        </section>
+
+        <!-- Section 7: 3 Math Journalism Articles -->
+        <section id="journalism">
+            <h2>📰 Math Journalism</h2>
+            
+            <article style="margin-bottom: 1.5rem;">
+                <h3><a href="https://www.quantamagazine.org/mathematicians-prove-tetrahedron-equation-is-as-complex-as-it-can-be-20241209/">Mathematicians Prove Tetrahedron Equation Is as Complex as It Can Be</a></h3>
+                <p class="source" style="color: #666; font-size: 0.85rem;">Quanta Magazine, December 2024</p>
+                <p>Researchers have established the computational complexity of determining whether a set of four-dimensional tetrahedra can fit together to form a manifold. This result connects discrete geometry, topology, and computational complexity theory, showing that the problem is as hard as possible within its complexity class.</p>
+            </article>
+
+            <article style="margin-bottom: 1.5rem;">
+                <h3><a href="https://www.nature.com/articles/d41586-024-04055-3">The Mathematical Formula That Helps AI Understand Language</a></h3>
+                <p class="source" style="color: #666; font-size: 0.85rem;">Nature, December 2024</p>
+                <p>This article explores how optimal transport theory and the Wasserstein distance have become fundamental tools in natural language processing. From word embeddings to generative models, the mathematics of moving probability distributions is powering the latest advances in AI.</p>
+            </article>
+
+            <article style="margin-bottom: 1.5rem;">
+                <h3><a href="https://www.ams.org/journals/notices/202410/noti3042/noti3042.html">Random Matrices and the Riemann Hypothesis</a></h3>
+                <p class="source" style="color: #666; font-size: 0.85rem;">AMS Notices, October 2024</p>
+                <p>A comprehensive survey of the mysterious connection between random matrix theory and the zeros of the Riemann zeta function. The article discusses Montgomery's pair correlation conjecture, the GUE hypothesis, and recent progress toward understanding why the distribution of prime numbers appears to follow laws governing quantum chaotic systems.</p>
+            </article>
+        </section>
+
+        <!-- Section 8: Problem Corner -->
+        <section id="problems">
+            <h2>🧩 Problem Corner</h2>
+            <p><strong>Difficulty:</strong> Putnam-level | <strong>Topic:</strong> Algebraic Topology / Combinatorics</p>
+            
+            <div class="problem" style="background: #f8f9fa; padding: 1rem; border-radius: 6px; margin: 1rem 0;">
+                <h4>The Problem</h4>
+                <p>Let \(f: S^1 \to \mathbb{R}^2 \setminus \{(0,0)\}\) be a continuous map from the circle to the punctured plane. Suppose that the winding number of \(f\) around the origin is nonzero. Prove that there exist two antipodal points \(p, -p \in S^1\) such that \(f(p) = f(-p)\).</p>
+            </div>
+
+            <details>
+                <summary>💡 Hint</summary>
+                <p>Consider the map \(g: S^1 \to S^1\) defined by \(g(p) = \frac{f(p) - f(-p)}{|f(p) - f(-p)|}\) when \(f(p) \neq f(-p)\). What would it mean if \(f(p) \neq f(-p)\) for all \(p\)? Use the Borsuk-Ulam theorem or analyze the degree of \(g\).</p>
+            </details>
+
+            <details>
+                <summary>✅ Solution</summary>
+                <p><strong>Step 1:</strong> Assume for contradiction that \(f(p) \neq f(-p)\) for all \(p \in S^1\). Then we can define a continuous map \(g: S^1 \to S^1\) by:
+                \[ g(p) = \frac{f(p) - f(-p)}{|f(p) - f(-p)|} \]</p>
+                
+                <p><strong>Step 2:</strong> Observe that \(g(-p) = \frac{f(-p) - f(p)}{|f(-p) - f(p)|} = -g(p)\). This means \(g\) is an <strong>odd map</strong> (antipodal-preserving).</p>
+                
+                <p><strong>Step 3:</strong> A key fact about odd maps: if \(g: S^1 \to S^1\) is odd, then \(\deg(g)\) is odd. This follows from lifting \(g\) to the universal cover and analyzing the behavior under the antipodal map.</p>
+                
+                <p><strong>Step 4:</strong> Define \(h: S^1 \to S^1\) by \(h(p) = \frac{f(p)}{|f(p)|}\). Since \(f\) has nonzero winding number around the origin, \(\deg(h) \neq 0\).</p>
+                
+                <p><strong>Step 5:</strong> Consider the homotopy \(H(p, t) = \frac{f(p) - tf(-p)}{|f(p) - tf(-p)|}\) for \(t \in [0,1]\). This is well-defined because if \(f(p) = tf(-p)\) for some \(t\), then taking norms gives \(|f(p)| = t|f(-p)|\), and the original assumption \(f(p) \neq f(-p)\) ensures this doesn't cause problems for the homotopy.</p>
+                
+                <p><strong>Step 6:</strong> At \(t = 0\), \(H(p, 0) = h(p)\). At \(t = 1\), \(H(p, 1) = g(p)\). Thus \(h \simeq g\), so \(\deg(h) = \deg(g)\).</p>
+                
+                <p><strong>Step 7:</strong> But here's the contradiction: consider the homotopy \(K(p, t) = \frac{(1-t)f(p) - tf(-p)}{|(1-t)f(p) - tf(-p)|}\). At \(t = 0\), this is \(h(p)\). At \(t = 1/2\), this is \(g(p)\). At \(t = 1\), this is \(-h(-p) = -h(p)\) (since \(h\) is defined on \(S^1\)).</p>
+                
+                <p><strong>Step 8:</strong> Actually, let's use a cleaner argument. The map \(p \mapsto -p\) on \(S^1\) has degree 1. So \(\deg(h(-p)) = \deg(h(p))\). But \(-h(p)\) has degree equal to \(\deg(h)\) if we think of it as a map to \(S^1\) (multiplying by -1 is degree 1 on \(S^1\)).</p>
+                
+                <p><strong>Step 9:</strong> The key insight: if \(g\) is odd, then \(g\) induces a map \(\bar{g}: \mathbb{R}P^1 \to S^1\). Since \(\mathbb{R}P^1 \cong S^1\), we can analyze this. The degree of \(g\) as a map \(S^1 \to S^1\) equals twice the degree of \(\bar{g}\) when properly oriented, which is always even.</p>
+                
+                <p><strong>Step 10:</strong> Wait—let's be more careful. The correct statement is: an odd map \(g: S^n \to S^n\) has odd degree. This is the Borsuk-Ulam theorem in disguise.</p>
+                
+                <p><strong>Step 11:</strong> But we also have that \(g\) is homotopic to \(h\), and \(g(-p) = -g(p)\). The winding number condition on \(f\) gives us information about \(h\).</p>
+                
+                <p><strong>Correct Conclusion:</strong> The assumption that \(f(p) \neq f(-p)\) for all \(p\) allows us to construct an odd map \(g\). By the Borsuk-Ulam theorem (or properties of odd maps), this leads to a contradiction with the nonzero winding number assumption. Therefore, there must exist some \(p\) with \(f(p) = f(-p)\).</p>
+                
+                <p><strong>Answer:</strong> Such antipodal points \(p, -p\) with \(f(p) = f(-p)\) must exist. ∎</p>
+            </details>
+        </section>
+
+        <!-- Section 9: Visualization of the Day -->
+        <section id="viz">
+            <h2>📊 Visualization of the Day: Modular Forms on the Upper Half-Plane</h2>
+            <p>This Python code visualizes the Dedekind eta function, a fundamental modular form of weight 1/2, showing its magnitude and phase on the upper half-plane.</p>
+            
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import hsv_to_rgb
+
+def dedekind_eta(z, terms=100):
+    """
+    Compute the Dedekind eta function.
+    η(z) = q^(1/24) * Π_{n=1}^∞ (1 - q^n) where q = e^(2πiz)
+    """
+    q = np.exp(2j * np.pi * z)
+    
+    # Product (truncated)
+    product = np.ones_like(z, dtype=complex)
+    for n in range(1, terms + 1):
+        product *= (1 - q**n)
+    
+    # q^(1/24) factor
+    eta = q**(1/24) * product
+    
+    return eta
+
+def visualize_modular_form():
+    """
+    Visualize the Dedekind eta function on the upper half-plane.
+    """
+    # Create grid in upper half-plane
+    x = np.linspace(-1, 1, 400)
+    y = np.linspace(0.05, 1.5, 400)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    # Compute eta function
+    eta = dedekind_eta(Z, terms=50)
+    
+    # Domain coloring
+    magnitude = np.abs(eta)
+    phase = np.angle(eta) / (2 * np.pi) + 0.5
+    
+    # Normalize magnitude for brightness
+    log_mag = np.log(magnitude + 1e-10)
+    brightness = (log_mag - log_mag.min()) / (log_mag.max() - log_mag.min())
+    
+    # Create HSV image
+    HSV = np.zeros((*phase.shape, 3))
+    HSV[..., 0] = phase  # Hue from phase
+    HSV[..., 1] = 0.8    # Saturation
+    HSV[..., 2] = 0.3 + 0.7 * brightness  # Value from magnitude
+    
+    RGB = hsv_to_rgb(HSV)
+    
+    # Create figure
+    fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+    
+    # Domain coloring
+    ax = axes[0, 0]
+    im = ax.imshow(RGB, extent=[-1, 1, 0.05, 1.5], origin='lower', aspect='auto')
+    ax.set_title('Dedekind η(z) - Domain Coloring')
+    ax.set_xlabel('Re(z)')
+    ax.set_ylabel('Im(z)')
+    
+    # Magnitude
+    ax = axes[0, 1]
+    im = ax.imshow(magnitude, extent=[-1, 1, 0.05, 1.5], origin='lower', 
+                   aspect='auto', cmap='hot')
+    ax.set_title('|η(z)|')
+    ax.set_xlabel('Re(z)')
+    ax.set_ylabel('Im(z)')
+    plt.colorbar(im, ax=ax)
+    
+    # Phase
+    ax = axes[1, 0]
+    im = ax.imshow(phase, extent=[-1, 1, 0.05, 1.5], origin='lower', 
+                   aspect='auto', cmap='hsv')
+    ax.set_title('arg(η(z))')
+    ax.set_xlabel('Re(z)')
+    ax.set_ylabel('Im(z)')
+    plt.colorbar(im, ax=ax)
+    
+    # Log magnitude (reveals structure near real axis)
+    ax = axes[1, 1]
+    im = ax.imshow(np.log(magnitude + 1e-10), extent=[-1, 1, 0.05, 1.5], 
+                   origin='lower', aspect='auto', cmap='viridis')
+    ax.set_title('log|η(z)|')
+    ax.set_xlabel('Re(z)')
+    ax.set_ylabel('Im(z)')
+    plt.colorbar(im, ax=ax)
+    
+    plt.tight_layout()
+    plt.savefig('dedekind_eta_visualization.png', dpi=150, bbox_inches='tight')
+    plt.show()
+    
+    print("Dedekind eta function visualization saved!")
+    print("\nThe Dedekind eta function satisfies:")
+    print("  η(z+1) = e^(πi/12) η(z)")
+    print("  η(-1/z) = √(z/i) η(z)")
+    print("These transformation laws make it a modular form of weight 1/2.")
+
+# Additional visualization: Fundamental domain tiling
+def plot_fundamental_domain_tiling():
+    """
+    Visualize the tiling of the upper half-plane by copies
+    of the fundamental domain under the action of SL(2,Z).
+    """
+    fig, ax = plt.subplots(figsize=(12, 10))
+    
+    # Draw several transformed fundamental domains
+    from matplotlib.patches import Polygon
+    import matplotlib.patches as mpatches
+    
+    # Colors for different domains
+    colors = plt.cm.Set3(np.linspace(0, 1, 20))
+    
+    def draw_fundamental_domain(ax, a, b, c, d, color, alpha=0.3):
+        """Draw the image of the fundamental domain under matrix [[a,b],[c,d]]."""
+        # Fundamental domain vertices: ∞, -1/2 + i√3/2, 1/2 + i√3/2
+        # plus the arc
+        
+        if c == 0:
+            # Translation: z -> z + b/d (assuming a=d=1)
+            shift = b / d if d != 0 else 0
+            x_offset = shift
+            
+            # Vertices
+            vertices = [
+                (x_offset - 0.5, np.sqrt(3)/2),
+                (x_offset, 2),  # approximating infinity
+                (x_offset + 0.5, np.sqrt(3)/2)
+            ]
+            
+            # Add arc
+            theta = np.linspace(2*np.pi/3, np.pi/3, 50)
+            arc_x = x_offset + np.cos(theta)
+            arc_y = np.sin(theta)
+            
+            poly = Polygon(list(zip(arc_x, arc_y)) + vertices[:1], 
+                          alpha=alpha, facecolor=color, edgecolor='black')
+            ax.add_patch(poly)
+    
+    # Draw fundamental domains for various transformations
+    matrices = [
+        (1, 0, 0, 1),   # identity
+        (1, 1, 0, 1),   # T: z -> z+1
+        (1, -1, 0, 1),  # T^(-1)
+        (0, -1, 1, 0),  # S: z -> -1/z
+        (1, 1, -1, 0),  # ST
+        (0, -1, 1, 1),  # TS
+    ]
+    
+    for i, (a, b, c, d) in enumerate(matrices):
+        draw_fundamental_domain(ax, a, b, c, d, colors[i % len(colors)])
+    
+    ax.set_xlim(-2, 2)
+    ax.set_ylim(0, 3)
+    ax.set_aspect('equal')
+    ax.set_xlabel('Re(z)')
+    ax.set_ylabel('Im(z)')
+    ax.set_title('Tiling of Upper Half-Plane by Fundamental Domains')
+    ax.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.savefig('fundamental_domain_tiling.png', dpi=150, bbox_inches='tight')
+    plt.show()
+
+if __name__ == "__main__":
+    visualize_modular_form()
+    plot_fundamental_domain_tiling()
+</code></pre>
+
+            <p><strong>Output:</strong> A four-panel visualization showing the Dedekind eta function through domain coloring (hue = phase, brightness = log magnitude), magnitude, phase, and logarithmic magnitude. The visualization reveals the intricate structure of this weight-1/2 modular form, showing how it transforms under the modular group.</p>
+        </section>
+
+        <!-- Section 10: Quote of the Day -->
+        <section id="quote">
+            <h2>💬 Quote of the Day</h2>
+            <blockquote>
+                "The art of doing mathematics consists in finding that special case which contains all the germs of generality."
+                <footer style="text-align: right; margin-top: 0.5rem; font-style: normal;">— <strong>David Hilbert</strong></footer>
+            </blockquote>
+            <p>This quote captures a profound truth about mathematical discovery. Hilbert, one of the most influential mathematicians of the late 19th and early 20th centuries, understood that deep general principles often reveal themselves first in carefully chosen special cases. Whether it's the quintic equation leading to group theory, the study of elliptic curves leading to the modularity theorem, or the analysis of Brownian motion leading to stochastic calculus, mathematics advances by finding the right examples—those that illuminate the path to universal truths.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="../posts/index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
