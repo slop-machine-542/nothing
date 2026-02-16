@@ -3,568 +3,904 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Math Digest — Mathematical insights and explorations">
-    <meta name="theme-color" content="#2c3e50">
-    <title>Math Digest — February 16, 2026 at 17:00</title>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['\\(', '\\)')],
-        displayMath: [['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        tags: 'ams'
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Probability Theory: From Coins to Measure - Nothing But Real Math</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
 </head>
 <body>
     <header class="site-header">
-        <h1>📐 Math Digest</h1>
-        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+        <h1>Nothing But Real Math</h1>
+        <p class="site-description">Pure mathematics, deep dives, and applications</p>
     </header>
+    
     <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="index.html">Archive</a></li>
             <li><a href="../tags/index.html">Tags</a></li>
-            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
         </ul>
     </nav>
+    
     <main>
         <article>
-            <p class="post-date">📅 2026-02-16 at 1700</p>
-            <div class="tags">
-                <a href="../tags/topology.html" class="tag">topology</a>
-                <a href="../tags/game-theory.html" class="tag">game-theory</a>
-                <a href="../tags/cryptography.html" class="tag">cryptography</a>
-                <a href="../tags/fixed-point.html" class="tag">fixed-point</a>
-            </div>
-
-            <section id="links">
-                <h2>🔗 Math Links</h2>
+            <h1>Probability Theory: From Coins to Measure</h1>
+            <p class="post-date">February 16, 2026 | 17:30</p>
+            <ul class="tags">
+                <li class="tag"><a href="../tags/probability.html">Probability</a></li>
+                <li class="tag"><a href="../tags/analysis.html">Analysis</a></li>
+                <li class="tag"><a href="../tags/statistics.html">Statistics</a></li>
+            </ul>
+            
+            <section id="math-links">
+                <h2>Math Links</h2>
                 <ul>
-                    <li><a href="https://pi.math.cornell.edu/~hatcher/AT/AT.pdf" target="_blank" rel="noopener">Algebraic Topology by Hatcher</a> — The definitive free textbook on algebraic topology, covering homotopy, homology, and cohomology.</li>
-                    <li><a href="https://www.gametheory.net/" target="_blank" rel="noopener">Game Theory .net</a> — Educational resource with lectures, textbooks, and applications of game theory.</li>
-                    <li><a href="https://cryptohack.org/" target="_blank" rel="noopener">CryptoHack</a> — Interactive platform for learning cryptography through programming challenges.</li>
+                    <li><a href="https://mathworld.wolfram.com/Probability.html">MathWorld: Probability</a> - Encyclopedia entries on probability theory concepts and distributions.</li>
+                    <li><a href="https://www.probabilitycourse.com/">Introduction to Probability</a> - Free online textbook with interactive demonstrations.</li>
+                    <li><a href="https://terrytao.wordpress.com/category/probability/">Terry Tao's Blog</a> - Research-level insights into probability theory by a Fields Medalist.</li>
                 </ul>
             </section>
-
-            <section id="book">
-                <h2>📖 Free Math Book</h2>
-                <h3><a href="https://topology.mit.edu/" target="_blank" rel="noopener">Introduction to Topology</a></h3>
-                <p><strong>Author:</strong> MIT OpenCourseWare | <strong>Level:</strong> Undergraduate</p>
-                <p>A comprehensive introduction to point-set and algebraic topology, with detailed lecture notes, problem sets, and solutions. Covers continuity, connectedness, compactness, and fundamental groups.</p>
+            
+            <section id="free-book">
+                <h2>Free Math Book</h2>
+                <h3>"Probability and Statistics Cookbook" by Matthias Vallentin</h3>
+                <p><strong>Level:</strong> Undergraduate to Graduate</p>
+                <p><strong>Summary:</strong> A concise reference covering probability theory fundamentals, distributions, expectation, limit theorems, and statistical inference. Available free at statistics.zone, it serves as both an introduction and quick reference. The cookbook format presents results clearly with minimal prose, making it ideal for review and reference.</p>
             </section>
-
-            <section id="pure-dives">
-                <h2>🔬 Pure Math Deep-Dives</h2>
-
-                <h3>1. Brouwer Fixed-Point Theorem</h3>
-                <h4>Motivation</h4>
-                <p>If you stir a cup of coffee, some point ends up where it started. This intuitive fact is the Brouwer fixed-point theorem, a cornerstone of topology with applications in economics, game theory, and differential equations.</p>
-
+            
+            <section id="pure-math">
+                <h2>Pure Math Deep-Dives</h2>
+                
+                <h3>1. Measure-Theoretic Foundations</h3>
+                <p><strong>Motivation:</strong> Not all subsets of \(\mathbb{R}\) can be assigned a meaningful "size." Measure theory provides the rigorous foundation for probability.</p>
+                
                 <h4>Definitions</h4>
-                <p><strong>Definition.</strong> A <em>fixed point</em> of \(f: X \to X\) is \(x\) with \(f(x) = x\).</p>
-                <p><strong>Definition.</strong> The \(\mathbf{n}\)-disk is \(D^n = \{x \in \mathbb{R}^n : \|x\| \leq 1\}\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Brouwer Fixed-Point Theorem.</strong> Every continuous \(f: D^n \to D^n\) has a fixed point.</p>
-                <p><strong>Proof.</strong> (By contradiction using homology). Assume \(f\) has no fixed point. Define \(r: D^n \to S^{n-1}\) by \(r(x) =\) intersection of ray from \(f(x)\) through \(x\) with \(S^{n-1}\). This is a retraction. But \(H_{n-1}(S^{n-1}) = \mathbb{Z}\) while \(H_{n-1}(D^n) = 0\), contradiction. ∎</p>
-
+                <ul>
+                    <li><strong>\(\sigma\)-algebra:\(\mathcal{F} \subseteq \mathcal{P}(\Omega)\) closed under complements and countable unions</li>
+                    <li><strong>Measure:\(\mu: \mathcal{F} \to [0, \infty]\) with \(\mu(\emptyset) = 0\) and countable additivity</li>
+                    <li><strong>Probability measure:\(P(\Omega) = 1\)</li>
+                    <li><strong>Borel \(\sigma\)-algebra:\(\mathcal{B}(\mathbb{R})\) generated by open sets</li>
+                </ul>
+                
+                <h4>Theorem (Carathéodory Extension)</h4>
+                <p>A countably additive set function on an algebra extends uniquely to a measure on the generated \(\sigma\)-algebra.</p>
+                
+                <h4>Proof Sketch</h4>
+                <p>Define outer measure \(\mu^*(A) = \inf\{\sum \mu(A_n) : A \subseteq \bigcup A_n\}\). A set \(E\) is measurable if \(\mu^*(A) = \mu^*(A \cap E) + \mu^*(A \cap E^c)\) for all \(A\). Show measurable sets form a \(\sigma\)-algebra and \(\mu^*\) is a measure there. \(\square\)</p>
+                
                 <h4>Notation Guide</h4>
                 <ul>
-                    <li>\(D^n\) — n-dimensional disk</li>
-                    <li>\(S^{n-1}\) — (n-1)-sphere (boundary of \(D^n\))</li>
-                    <li>\(H_k\) — kth homology group</li>
-                    <li>\(\mathbb{Z}\) — integers</li>
+                    <li>\((\Omega, \mathcal{F}, P)\): Probability space</li>
+                    <li>\(\mathcal{B}(\mathbb{R}^n)\): Borel sets in \(\mathbb{R}^n\)</li>
+                    <li>\(\lambda\): Lebesgue measure</li>
+                    <li>\(\sigma(X)\): \(\sigma\)-algebra generated by random variable \(X\)</li>
                 </ul>
-
+                
                 <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-from scipy.optimize import fsolve
+                <pre><code>import numpy as np
+from scipy import stats
 
-def find_fixed_point(f, x0, tol=1e-10):
-    """Numerically find fixed point of f starting from x0"""
-    def g(x):
-        return f(x) - x
-    return fsolve(g, x0, xtol=tol)
+class SimpleProbabilitySpace:
+    """Simple finite probability space implementation."""
+    
+    def __init__(self, outcomes, probabilities):
+        """
+        outcomes: list of outcomes
+        probabilities: corresponding probabilities
+        """
+        self.outcomes = outcomes
+        self.probabilities = np.array(probabilities)
+        assert np.isclose(np.sum(self.probabilities), 1.0)
+        assert np.all(self.probabilities >= 0)
+    
+    def measure(self, event):
+        """Compute probability of an event (subset of outcomes)."""
+        indices = [self.outcomes.index(o) for o in event if o in self.outcomes]
+        return np.sum(self.probabilities[indices])
+    
+    def expectation(self, random_variable):
+        """E[X] = sum X(omega) * P(omega)"""
+        return np.sum(random_variable * self.probabilities)
 
-# Example: f(x) = cos(x) on [0,1]
-f = lambda x: np.cos(x)
-fixed = find_fixed_point(f, 0.5)
-print(f"Fixed point of cos(x): {fixed[0]:.10f}")
-print(f"Verification: cos({fixed[0]:.10f}) = {f(fixed)[0]:.10f}")
+# Example: Fair die
+outcomes = [1, 2, 3, 4, 5, 6]
+probabilities = [1/6] * 6
+space = SimpleProbabilitySpace(outcomes, probabilities)
 
-# 2D example: contraction mapping
-def f_2d(v):
-    x, y = v
-    return np.array([0.5*x + 0.3*y, 0.2*x + 0.6*y])
+# Random variable: X(omega) = omega
+X = np.array(outcomes)
+print(f"E[X] for fair die: {space.expectation(X):.4f}")
 
-fixed_2d = find_fixed_point(f_2d, [0.5, 0.5])
-print(f"Fixed point (2D): {fixed_2d}")
-</code></pre>
-
-                <h3>2. Fundamental Group</h3>
-                <h4>Motivation</h4>
-                <p>How can we distinguish a sphere from a torus? The fundamental group captures "holes" in a space by studying loops. It transforms topological problems into algebraic ones.</p>
-
+# Event: even number
+event = [2, 4, 6]
+print(f"P(even): {space.measure(event):.4f}")</code></pre>
+                
+                <h3>2. The Law of Large Numbers</h3>
+                <p><strong>Motivation:</strong> Why do sample averages converge to expected values? The LLN provides rigorous foundations for statistical inference.</p>
+                
                 <h4>Definitions</h4>
-                <p><strong>Definition.</strong> A <em>loop</em> at \(x_0\) is a continuous \(\gamma: [0,1] \to X\) with \(\gamma(0) = \gamma(1) = x_0\).</p>
-                <p><strong>Definition.</strong> The <em>fundamental group\u003c/em> \(\pi_1(X, x_0)\) is the set of homotopy classes of loops with concatenation as operation.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>\(\pi_1(S^1) = \mathbb{Z}\).</strong> The fundamental group of the circle is the integers.</p>
-                <p><strong>Proof.</strong> Use the covering map \(p: \mathbb{R} \to S^1\), \(p(t) = e^{2\pi i t}\). Path lifting: any loop \(\gamma\) in \(S^1\) lifts to a path \(\tilde{\gamma}\) in \(\mathbb{R}\). The endpoint \(\tilde{\gamma}(1)\) determines the homotopy class. The winding number gives the isomorphism to \(\mathbb{Z}\). ∎</p>
-
+                <ul>
+                    <li><strong>Convergence almost surely:\(X_n \xrightarrow{a.s.} X\) means \(P(\lim X_n = X) = 1\)</li>
+                    <li><strong>Convergence in probability:\(X_n \xrightarrow{P} X\) means \(P(|X_n - X| > \epsilon) \to 0\)</li>
+                    <li><strong>i.i.d.:</strong> Independent and identically distributed</li>
+                </ul>
+                
+                <h4>Theorem (Strong Law of Large Numbers)</h4>
+                <p>Let \(X_1, X_2, \ldots\) be i.i.d. with \(\mathbb{E}[|X_1|] < \infty\). Then:</p>
+                \[\frac{1}{n}\sum_{i=1}^n X_i \xrightarrow{a.s.} \mathbb{E}[X_1]\]
+                
+                <h4>Proof (Sketch, assuming finite 4th moment)</h4>
+                <p>Assume \(\mu = 0\) and \(\mathbb{E}[X^4] < \infty\). Compute:
+                \[\mathbb{E}\left[\left(\sum_{i=1}^n X_i\right)^4\right] = n\mathbb{E}[X^4] + 3n(n-1)\mathbb{E}[X^2]^2 = O(n^2)\]
+                By Chebyshev, \(P(|S_n/n| > \epsilon) = O(1/n^2)\). Since \(\sum 1/n^2 < \infty\), Borel-Cantelli gives a.s. convergence. \(\square\)</p>
+                
                 <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
 
-def winding_number(path, center=0):
-    """Compute winding number of closed path around center"""
-    n = len(path)
-    angles = np.angle(path - center)
-    # Unwrap to handle branch cuts
-    angles = np.unwrap(angles)
-    total_change = angles[-1] - angles[0]
-    return round(total_change / (2 * np.pi))
+def demonstrate_lln(distribution, expected_value, n_max=10000, n_trials=100):
+    """
+    Demonstrate Law of Large Numbers visually.
+    """
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+    
+    # Single trajectory
+    samples = distribution(n_max)
+    cumulative_means = np.cumsum(samples) / np.arange(1, n_max + 1)
+    
+    axes[0].plot(range(1, n_max + 1), cumulative_means, alpha=0.7)
+    axes[0].axhline(y=expected_value, color='r', linestyle='--', label=f'E[X] = {expected_value}')
+    axes[0].set_xlabel('n')
+    axes[0].set_ylabel('Sample Mean')
+    axes[0].set_title('Single Trajectory: Sample Mean vs n')
+    axes[0].legend()
+    axes[0].set_xscale('log')
+    axes[0].grid(True)
+    
+    # Multiple trajectories
+    for _ in range(n_trials):
+        samples = distribution(n_max)
+        cumulative_means = np.cumsum(samples) / np.arange(1, n_max + 1)
+        axes[1].plot(range(1, n_max + 1), cumulative_means, alpha=0.1, color='blue')
+    
+    axes[1].axhline(y=expected_value, color='r', linestyle='--', linewidth=2)
+    axes[1].set_xlabel('n')
+    axes[1].set_ylabel('Sample Mean')
+    axes[1].set_title(f'Multiple Trajectories ({n_trials} trials)')
+    axes[1].set_xscale('log')
+    axes[1].grid(True)
+    
+    plt.tight_layout()
+    plt.savefig('law_of_large_numbers.png', dpi=150)
+    plt.show()
 
-# Example: Circle traversed twice
-t = np.linspace(0, 2, 1000)
-circle = np.exp(2j * np.pi * t)  # Two full rotations
-wn = winding_number(circle)
-print(f"Winding number (2 rotations): {wn}")
+# Example: Cauchy distribution (no LLN - no finite mean)
+def cauchy_samples(n):
+    return np.random.standard_cauchy(n)
 
-# Circle traversed once
-circle_once = np.exp(2j * np.pi * t / 2)
-wn_once = winding_number(circle_once)
-print(f"Winding number (1 rotation): {wn_once}")
+# Example: Normal distribution (LLN holds)
+def normal_samples(n):
+    return np.random.randn(n)
+
+print("Demonstrating LLN for standard normal (mean = 0):")
+demonstrate_lln(normal_samples, 0, n_max=10000)
 </code></pre>
-
-                <h3>3. Tychonoff's Theorem</h3>
-                <h4>Motivation</h4>
-                <p>Infinite products of spaces appear in functional analysis and logic. Tychonoff's theorem states that compactness is preserved under arbitrary products—a surprisingly deep result equivalent to the Axiom of Choice.</p>
-
+                
+                <h3>3. The Central Limit Theorem</h3>
+                <p><strong>Motivation:</strong> Why does the normal distribution appear everywhere? The CLT explains the universality of the bell curve.</p>
+                
                 <h4>Definitions</h4>
-                <p><strong>Definition.</strong> The <em>product topology</em> on \(\prod_{i \in I} X_i\) has basis of sets \(\prod_{i \in I} U_i\) where \(U_i = X_i\) for all but finitely many \(i\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Tychonoff's Theorem.</strong> The product of any collection of compact spaces is compact.</p>
-                <p><strong>Proof Sketch.</strong> Using the finite intersection property: a space is compact iff every family of closed sets with the finite intersection property has nonempty intersection. For the product, project to each factor, use compactness, and construct a point in the intersection using the Axiom of Choice. ∎</p>
-
+                <ul>
+                    <li><strong>Convergence in distribution:\(X_n \xrightarrow{d} X\) means \(F_{X_n}(x) \to F_X(x)\) at continuity points</li>
+                    <li><strong>Characteristic function:\(\phi_X(t) = \mathbb{E}[e^{itX}]\)</li>
+                    <li><strong>Standard normal:\(Z \sim N(0,1)\) with density \(\frac{1}{\sqrt{2\pi}}e^{-x^2/2}\)</li>
+                </ul>
+                
+                <h4>Theorem (Lindeberg-Lévy CLT)</h4>
+                <p>Let \(X_1, X_2, \ldots\) be i.i.d. with \(\mathbb{E}[X_i] = \mu\) and \(\text{Var}(X_i) = \sigma^2 \u003c \infty\). Then:</p>
+                \[\frac{\sum_{i=1}^n X_i - n\mu}{\sigma\sqrt{n}} \xrightarrow{d} N(0,1)\]
+                
+                <h4>Proof (Characteristic Function Method)</h4>
+                <p>Let \(Y_i = (X_i - \mu)/\sigma\) and \(Z_n = \frac{1}{\sqrt{n}}\sum Y_i\). Then:
+                \[\phi_{Z_n}(t) = \phi_{Y_1}(t/\sqrt{n})^n\]
+                Using Taylor expansion: \(\phi_{Y_1}(t) = 1 - t^2/2 + o(t^2)\), so:
+                \[\phi_{Z_n}(t) = \left(1 - \frac{t^2}{2n} + o(1/n)\right)^n \to e^{-t^2/2}\]
+        This is the characteristic function of \(N(0,1)\). By Lévy's continuity theorem, \(Z_n \xrightarrow{d} N(0,1)\). \(\square\)</p>
+                
                 <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
 
-# Demonstrate compactness in product space [0,1]^n
-# Compactness means sequences have convergent subsequences
+def demonstrate_clt(distribution, n_values=[1, 2, 5, 10, 30, 100], n_samples=10000):
+    """
+    Demonstrate Central Limit Theorem.
+    Shows how sum of n i.i.d. variables approaches normal.
+    """
+    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+    axes = axes.flatten()
+    
+    for idx, n in enumerate(n_values):
+        # Generate n_samples sums of n random variables
+        samples = np.array([np.sum(distribution(n)) for _ in range(n_samples)])
+        
+        # Standardize
+        samples = (samples - np.mean(samples)) / np.std(samples)
+        
+        # Plot histogram
+        axes[idx].hist(samples, bins=50, density=True, alpha=0.7, label='Empirical')
+        
+        # Plot standard normal
+        x = np.linspace(-4, 4, 100)
+        axes[idx].plot(x, stats.norm.pdf(x), 'r-', lw=2, label='N(0,1)')
+        
+        axes[idx].set_title(f'n = {n}')
+        axes[idx].set_xlabel('Standardized Sum')
+        axes[idx].set_ylabel('Density')
+        axes[idx].legend()
+        axes[idx].set_xlim(-4, 4)
+    
+    plt.tight_layout()
+    plt.savefig('central_limit_theorem.png', dpi=150)
+    plt.show()
 
-def generate_sequence_in_cube(n, length=1000):
-    """Generate random sequence in [0,1]^n"""
-    return np.random.rand(length, n)
+# Example: Uniform distribution
+def uniform_sum(n):
+    return np.random.uniform(0, 1, n)
 
-def find_convergent_subseq(seq, epsilon=0.1):
-    """Find a convergent subsequence (simplified)"""
-    # For demonstration: find points within epsilon of each other
-    n = len(seq)
-    for i in range(n):
-        for j in range(i+1, n):
-            if np.linalg.norm(seq[i] - seq[j]) < epsilon:
-                return i, j
-    return None
+# Example: Exponential distribution
+def exponential_sum(n):
+    return np.random.exponential(1, n)
 
-# Test in high dimension
-seq = generate_sequence_in_cube(10, 100)
-result = find_convergent_subseq(seq, 0.2)
-print(f"Found close points: {result is not None}")
-print(f"Sequence bounded in [0,1]^10: {np.all((seq >= 0) & (seq <= 1))}")
+print("Demonstrating CLT for uniform distribution:")
+demonstrate_clt(uniform_sum)
 </code></pre>
             </section>
-
-            <section id="applied-dives">
-                <h2>🧮 Applied Math Deep-Dives</h2>
-
-                <h3>1. Auction Theory: Second-Price Auctions</h3>
-                <h4>Motivation</h4>
-                <p>Understanding strategic behavior in auctions is crucial for designing markets. The second-price auction has remarkable properties that make it both efficient and strategy-proof.</p>
-
+            
+            <section id="applied-math">
+                <h2>Applied Math Deep-Dives</h2>
+                
+                <h3>1. Markov Chain Monte Carlo</h3>
+                <p><strong>Real-world motivation:</strong> Many high-dimensional integrals and Bayesian posterior distributions are intractable analytically. MCMC provides a way to sample from complex distributions.</p>
+                
                 <h4>Definitions</h4>
-                <p><strong>Definition.</strong> In a <em>second-price sealed-bid auction</em>, the highest bidder wins but pays the second-highest bid.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Truthful Bidding.</strong> In a second-price auction, bidding one's true valuation is a dominant strategy.</p>
-                <p><strong>Proof.</strong> Let \(v\) be your value and \(b\) your bid. Let \(B\) be the highest other bid.</p>
-                <p>If \(b \gt B\): you win, pay \(B\), utility = \(v - B\).</p>
-                <p>If \(b \lt B\): you lose, utility = 0.</p>
-                <p>Bidding \(b = v\) is optimal: if \(v \gt B\), any \(b \gt B\) wins same payoff; if \(v \lt B\), any \(b \lt B\) loses same payoff. No incentive to deviate. ∎</p>
-
+                <ul>
+                    <li><strong>Markov chain:\(P(X_{n+1} = y | X_n = x, \ldots) = P(X_{n+1} = y | X_n = x) = P(x, y)\)</li>
+                    <li><strong>Stationary distribution:\(\pi\) satisfies \(\pi P = \pi\)</li>
+                    <li><strong>Detailed balance:\(\pi(x)P(x,y) = \pi(y)P(y,x)\)</li>
+                    <li><strong>Metropolis-Hastings:</strong> Proposal \(q\), accept with probability \(\min(1, \frac{\pi(y)q(y,x)}{\pi(x)q(x,y)})\)</li>
+                </ul>
+                
+                <h4>Theorem (Metropolis-Hastings Convergence)</h4>
+                <p>If the Markov chain is irreducible and aperiodic, then \(X_n \xrightarrow{d} \pi\) regardless of initial state.</p>
+                
+                <h4>Proof Sketch</h4>
+                <p>Detailed balance implies \(\pi\) is stationary. Irreducibility and aperiodicity imply uniqueness of stationary distribution and convergence. \(\square\)</p>
+                
                 <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
 
-def second_price_auction(bids):
-    """Run second-price auction, return winner and price"""
-    sorted_bids = sorted(enumerate(bids), key=lambda x: x[1], reverse=True)
-    winner = sorted_bids[0][0]
-    price = sorted_bids[1][1] if len(sorted_bids) > 1 else 0
-    return winner, price
+def metropolis_hastings(target_pdf, proposal_sampler, proposal_pdf, 
+                         x0, n_samples, burn_in=1000):
+    """
+    Metropolis-Hastings MCMC sampler.
+    
+    target_pdf: function to sample from (up to normalization)
+    proposal_sampler: function(x) -> proposed next state
+    proposal_pdf: function(x, y) -> density of proposing y from x
+    """
+    samples = []
+    x = x0
+    
+    for i in range(n_samples + burn_in):
+        # Propose
+        y = proposal_sampler(x)
+        
+        # Acceptance probability
+        if proposal_pdf(x, y) > 0:
+            alpha = min(1, (target_pdf(y) * proposal_pdf(y, x)) / 
+                           (target_pdf(x) * proposal_pdf(x, y)))
+        else:
+            alpha = 0
+        
+        # Accept/reject
+        if np.random.random() < alpha:
+            x = y
+        
+        if i >= burn_in:
+            samples.append(x)
+    
+    return np.array(samples)
 
-def simulate_auctions(n_bidders=5, n_rounds=1000):
-    """Simulate truthful bidding"""
-    utilities = []
-    for _ in range(n_rounds):
-        values = np.random.uniform(0, 100, n_bidders)
-        winner, price = second_price_auction(values)
-        utility = values[winner] - price
-        utilities.append(utility)
-    return np.mean(utilities)
+# Example: Sample from mixture of Gaussians
+def mixture_pdf(x):
+    """Target: 0.3*N(-2, 0.5) + 0.7*N(2, 1)"""
+    return 0.3 * np.exp(-(x + 2)**2 / (2 * 0.5)) / np.sqrt(np.pi) + \\
+           0.7 * np.exp(-(x - 2)**2 / 2) / np.sqrt(2 * np.pi)
 
-avg_utility = simulate_auctions()
-print(f"Average winner utility: {avg_utility:.2f}")
+def gaussian_proposal_sampler(x, sigma=1.0):
+    return np.random.normal(x, sigma)
+
+def gaussian_proposal_pdf(x, y, sigma=1.0):
+    return np.exp(-(y - x)**2 / (2 * sigma**2)) / np.sqrt(2 * np.pi * sigma**2)
+
+# Run MCMC
+samples = metropolis_hastings(
+    mixture_pdf,
+    gaussian_proposal_sampler,
+    gaussian_proposal_pdf,
+    x0=0,
+    n_samples=10000,
+    burn_in=1000
+)
+
+print(f"Sample mean: {np.mean(samples):.3f}")
+print(f"Sample std: {np.std(samples):.3f}")
+print(f"Acceptance rate: {len(np.unique(samples)) / len(samples):.3f}")</code></pre>
+                
+                <h3>2. Stochastic Gradient Descent</h3>
+                <p><strong>Real-world motivation:</strong> Training machine learning models on massive datasets requires optimization methods that work with random subsets of data.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Objective:\(f(x) = \frac{1}{n}\sum_{i=1}^n f_i(x)\)</li>
+                    <li><strong>SGD update:\(x_{k+1} = x_k - \eta_k \nabla f_{i_k}(x_k)\)\) where \(i_k\) random</li>
+                    <li><strong>Learning rate:\(\eta_k\), often \(\eta_k = \eta_0 / (1 + \lambda k)\)</li>
+                    <li><strong>Strong convexity:\(f(y) \geq f(x) + \nabla f(x)^T(y-x) + \frac{\mu}{2}\|y-x\|^2\)</li>
+                </ul>
+                
+                <h4>Theorem (SGD Convergence)</h4>
+                <p>For strongly convex \(f\) with bounded gradients \(\mathbb{E}[\|\nabla f_i(x)\|^2] \leq G^2\), using \(\eta_k = \frac{1}{\mu k}\):</p>
+                \[\mathbb{E}[f(x_k)] - f(x^*) \leq \frac{G^2}{2\mu k}\]
+                
+                <h4>Proof Sketch</h4>
+                <p>From strong convexity and the update rule:
+                \[\|x_{k+1} - x^*\|^2 \leq (1 - \eta_k\mu)\|x_k - x^*\|^2 + \eta_k^2 G^2\]
+                Taking expectations and telescoping gives the result. \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def sgd(objective_func, gradient_func, x0, data, n_iterations=1000, 
+        batch_size=1, learning_rate_schedule='decay', initial_lr=0.1):
+    """
+    Stochastic Gradient Descent.
+    
+    gradient_func(x, batch_data) returns gradient estimate
+    """
+    x = x0.copy()
+    trajectory = [x.copy()]
+    n = len(data)
+    
+    for k in range(1, n_iterations + 1):
+        # Sample batch
+        batch_indices = np.random.choice(n, batch_size, replace=False)
+        batch = data[batch_indices]
+        
+        # Learning rate
+        if learning_rate_schedule == 'decay':
+            lr = initial_lr / (1 + 0.01 * k)
+        elif learning_rate_schedule == 'constant':
+            lr = initial_lr
+        else:
+            lr = initial_lr / np.sqrt(k)
+        
+        # Update
+        grad = gradient_func(x, batch)
+        x = x - lr * grad
+        trajectory.append(x.copy())
+    
+    return np.array(trajectory)
+
+# Example: Linear regression
+def linear_regression_objective(w, X, y):
+    """Least squares: (1/n) * ||Xw - y||^2"""
+    return np.mean((X @ w - y)**2)
+
+def linear_regression_gradient(w, batch):
+    """SGD gradient for linear regression."""
+    X_batch, y_batch = batch[:, :-1], batch[:, -1]
+    n = len(X_batch)
+    return (2/n) * X_batch.T @ (X_batch @ w - y_batch)
+
+# Generate synthetic data
+np.random.seed(42)
+n_samples = 1000
+X = np.random.randn(n_samples, 5)
+true_w = np.array([1, -2, 3, -1, 0.5])
+y = X @ true_w + 0.1 * np.random.randn(n_samples)
+data = np.column_stack([X, y])
+
+# Run SGD
+w0 = np.zeros(5)
+trajectory = sgd(None, linear_regression_gradient, w0, data, 
+                 n_iterations=500, batch_size=10)
+
+print(f"True weights: {true_w}")
+print(f"Estimated weights: {trajectory[-1]}")
+print(f"Final objective: {linear_regression_objective(trajectory[-1], X, y):.6f}")</code></pre>
+                
+                <h3>3. Option Pricing and the Black-Scholes Model</h3>
+                <p><strong>Real-world motivation:</strong> Financial derivatives require precise pricing models. The Black-Scholes framework revolutionized finance and earned its creators the Nobel Prize in Economics.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Geometric Brownian Motion:\(dS_t = \mu S_t dt + \sigma S_t dW_t\)</li>
+                    <li><strong>European call option:</strong> Payoff \(\max(S_T - K, 0)\) at time \(T\)</li>
+                    <li><strong>Risk-neutral measure:\(Q\) under which \(e^{-rt}S_t\) is a martingale</li>
+                    <li><strong>Implied volatility:\(\sigma_{imp}\) such that BS price equals market price</li>
+                </ul>
+                
+                <h4>Theorem (Black-Scholes Formula)</h4>
+                <p>The price of a European call option is:</p>
+                \[C = S_0 N(d_1) - Ke^{-rT}N(d_2)\]
+                <p>where:
+                \[d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}, \quad d_2 = d_1 - \sigma\sqrt{T}\]</p>
+                
+                <h4>Proof Sketch</h4>
+                <p>Under risk-neutral measure, \(S_T = S_0 \exp((r - \sigma^2/2)T + \sigma W_T)\). The option price is:
+                \[C = e^{-rT}\mathbb{E}^Q[\max(S_T - K, 0)]\]
+                Computing this expectation using the log-normal distribution of \(S_T\) yields the formula. \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+from scipy.stats import norm
+
+def black_scholes_call(S, K, T, r, sigma):
+    """
+    Black-Scholes price for European call option.
+    
+    S: current stock price
+    K: strike price
+    T: time to maturity
+    r: risk-free rate
+    sigma: volatility
+    """
+    d1 = (np.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * np.sqrt(T))
+    d2 = d1 - sigma * np.sqrt(T)
+    
+    call_price = S * norm.cdf(d1) - K * np.exp(-r * T) * norm.cdf(d2)
+    return call_price
+
+def black_scholes_put(S, K, T, r, sigma):
+    """Black-Scholes price for European put option (put-call parity)."""
+    call = black_scholes_call(S, K, T, r, sigma)
+    return call - S + K * np.exp(-r * T)
+
+def monte_carlo_option_price(S, K, T, r, sigma, n_simulations=100000, option_type='call'):
+    """
+    Monte Carlo pricing using risk-neutral simulation.
+    """
+    # Simulate terminal stock prices
+    Z = np.random.standard_normal(n_simulations)
+    S_T = S * np.exp((r - 0.5 * sigma**2) * T + sigma * np.sqrt(T) * Z)
+    
+    # Compute payoffs
+    if option_type == 'call':
+        payoffs = np.maximum(S_T - K, 0)
+    else:
+        payoffs = np.maximum(K - S_T, 0)
+    
+    # Discount and return
+    price = np.exp(-r * T) * np.mean(payoffs)
+    std_error = np.exp(-r * T) * np.std(payoffs) / np.sqrt(n_simulations)
+    
+    return price, std_error
+
+# Example
+S, K, T, r, sigma = 100, 100, 1, 0.05, 0.2
+bs_price = black_scholes_call(S, K, T, r, sigma)
+mc_price, mc_error = monte_carlo_option_price(S, K, T, r, sigma)
+
+print(f"Black-Scholes price: {bs_price:.4f}")
+print(f"Monte Carlo price: {mc_price:.4f} ± {mc_error:.4f}")
 </code></pre>
-
-                <h3>2. Evolutionary Game Theory: Replicator Dynamics</h3>
-                <h4>Motivation</h4>
-                <p>How do strategies evolve in populations? The replicator dynamics model how successful strategies spread through imitation or natural selection.</p>
-
+            </section>
+            
+            <section id="special-topics">
+                <h2>Special Topics</h2>
+                
+                <h3>1. Martingales and Stopping Times</h3>
+                <p><strong>Historical context:</strong> Joseph Doob developed the systematic theory of martingales in the 1940s-50s, building on earlier work by Paul Lévy. Martingales became fundamental to probability, finance, and ergodic theory.</p>
+                
                 <h4>Definitions</h4>
-                <p><strong>Definition.</strong> For strategy frequencies \(x_i\) and fitness \(f_i\), the <em>replicator equation</em> is:
-                \[
-                \dot{x}_i = x_i(f_i - \bar{f})
-                \]
-                where \(\bar{f} = \sum_j x_j f_j\) is average fitness.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Nash Equilibrium.</strong> Rest points of replicator dynamics are Nash equilibria.</p>
-                <p><strong>Proof.</strong> At rest point, for all \(i\) with \(x_i \gt 0\): \(f_i = \bar{f}\). This means all strategies in use have equal fitness, and no unused strategy has higher fitness (otherwise it would grow). This is exactly the Nash equilibrium condition. ∎</p>
-
+                <ul>
+                    <li><strong>Filtration:\(\{\mathcal{F}_n\}\) increasing sequence of \(\sigma\)-algebras</li>
+                    <li><strong>Martingale:\(\mathbb{E}[X_{n+1} | \mathcal{F}_n] = X_n\)</li>
+                    <li><strong>Stopping time:\(\tau\) where \(\{\tau \leq n\} \in \mathcal{F}_n\)</li>
+                    <li><strong>Submartingale:\(\mathbb{E}[X_{n+1} | \mathcal{F}_n] \geq X_n\)</li>
+                </ul>
+                
+                <h4>Theorem (Optional Stopping)</h4>
+                <p>For a martingale \((X_n)\) and bounded stopping time \(\tau\): \(\mathbb{E}[X_\tau] = \mathbb{E}[X_0]\).</p>
+                
                 <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-from scipy.integrate import odeint
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
 
-def replicator_dynamics(x, t, payoff_matrix):
-    """Replicator dynamics for matrix game"""
-    fitness = payoff_matrix @ x
-    avg_fitness = x @ fitness
-    return x * (fitness - avg_fitness)
+def simple_random_walk(n_steps, p=0.5):
+    """Generate simple symmetric random walk."""
+    steps = 2 * (np.random.random(n_steps) < p) - 1
+    return np.cumsum(steps)
 
-# Rock-Paper-Scissors payoff matrix
-RPS = np.array([[0, -1, 1],
-                [1, 0, -1],
-                [-1, 1, 0]])
+def stopping_time_simulation(n_simulations=10000, threshold=10):
+    """
+    Simulate gambler's ruin with stopping time.
+    Stop when wealth reaches +threshold or -threshold.
+    """
+    stopping_times = []
+    final_values = []
+    
+    for _ in range(n_simulations):
+        wealth = 0
+        time = 0
+        while abs(wealth) < threshold and time < 10000:
+            wealth += 2 * (np.random.random() < 0.5) - 1
+            time += 1
+        stopping_times.append(time)
+        final_values.append(wealth)
+    
+    return stopping_times, final_values
 
 # Simulate
-t = np.linspace(0, 50, 1000)
-x0 = np.array([0.4, 0.3, 0.3])  # Initial frequencies
-solution = odeint(replicator_dynamics, x0, t, args=(RPS,))
+times, values = stopping_time_simulation()
+print(f"Average stopping time: {np.mean(times):.2f}")
+print(f"P(reach +10): {np.mean([v == 10 for v in values]):.4f}")
+print(f"P(reach -10): {np.mean([v == -10 for v in values]):.4f}")
 
-print(f"Final frequencies: {solution[-1]}")
-print(f"Sum check: {sum(solution[-1]):.6f}")
-</code></pre>
-
-                <h3>3. Public Key Cryptography: Diffie-Hellman</h3>
-                <h4>Motivation</h4>
-                <p>How can two parties agree on a secret key over a public channel? The Diffie-Hellman protocol solved this foundational problem, enabling modern secure communication.</p>
-
+# Verify optional stopping (should be 0 for fair game)
+print(f"Expected final value: {np.mean(values):.4f}")</code></pre>
+                
+                <h3>2. Large Deviations Theory</h3>
+                <p><strong>Historical context:</strong> Cramér's 1938 work on the asymptotic behavior of tail probabilities founded large deviations theory. Varadhan's 1966 Donsker-Varadhan theory and his 2007 Abel Prize recognized the field's maturity.</p>
+                
                 <h4>Definitions</h4>
-                <p><strong>Definition.</strong> A <em>generator\u003c/em> \(g\) of \(\mathbb{Z}_p^*\) has order \(p-1\).</p>
-                <p><strong>Definition.</strong> The <em>discrete logarithm problem</em>: given \(g, g^a \pmod{p}\), find \(a\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Diffie-Hellman Key Exchange.</strong> Parties A and B can agree on shared secret \(g^{ab} \pmod{p}\) using public channel.</p>
-                <p><strong>Protocol.</strong> (1) Agree on public \(p, g\). (2) A picks secret \(a\), sends \(g^a\). (3) B picks secret \(b\), sends \(g^b\). (4) A computes \((g^b)^a = g^{ab}\). (5) B computes \((g^a)^b = g^{ab}\). ∎</p>
-
+                <ul>
+                    <li><strong>Rate function:\(I(x) \geq 0\), convex, lower semicontinuous</li>
+                    <li><strong>Log-moment generating function:\(\Lambda(t) = \log \mathbb{E}[e^{tX}]\)</li>
+                    <li><strong>Fenchel-Legendre transform:\(\Lambda^*(x) = \sup_t(tx - \Lambda(t))\)</li>
+                </ul>
+                
+                <h4>Theorem (Cramér's Theorem)</h4>
+                <p>For i.i.d. \((X_n)\) with finite MGF in a neighborhood of 0:</p>
+                \[\lim_{n \to \infty} \frac{1}{n} \log P(\frac{1}{n}\sum_{i=1}^n X_i \geq x) = -\Lambda^*(x)\]
+                <p>for \(x > \mathbb{E}[X_1]\).</p>
+                
                 <h4>Python Code</h4>
-                <pre><code class="language-python">import random
+                <pre><code>import numpy as np
+from scipy.optimize import minimize_scalar
 
-def mod_exp(base, exp, mod):
-    """Modular exponentiation"""
-    result = 1
-    base = base % mod
-    while exp > 0:
-        if exp % 2 == 1:
-            result = (result * base) % mod
-        exp = exp >> 1
-        base = (base * base) % mod
+def log_mgf(t, distribution_samples):
+    """Estimate log moment generating function."""
+    return np.log(np.mean(np.exp(t * distribution_samples)))
+
+def rate_function(x, distribution_samples, t_range=(-10, 10)):
+    """
+    Compute rate function I(x) using Legendre-Fenchel transform.
+    I(x) = sup_t(tx - Lambda(t))
+    """
+    def objective(t):
+        return -(t * x - log_mgf(t, distribution_samples))
+    
+    result = minimize_scalar(objective, bounds=t_range, method='bounded')
+    return -result.fun
+
+# Example: Large deviations for Bernoulli(0.5)
+np.random.seed(42)
+samples = np.random.binomial(1, 0.5, 100000)
+
+# Compute rate function at various points
+x_values = np.linspace(0.6, 0.9, 10)
+rate_values = [rate_function(x, samples) for x in x_values]
+
+# Compare with empirical tail probabilities
+n = 100
+empirical_rates = []
+for x in x_values:
+    # P(S_n/n >= x)
+    tail_prob = np.mean([np.mean(np.random.binomial(1, 0.5, n)) >= x 
+                         for _ in range(10000)])
+    if tail_prob > 0:
+        empirical_rates.append(-np.log(tail_prob) / n)
+    else:
+        empirical_rates.append(np.inf)
+
+print("x\t\tI(x) (estimated)\tEmpirical rate")
+for x, r, e in zip(x_values, rate_values, empirical_rates):
+    if e != np.inf:
+        print(f"{x:.2f}\t\t{r:.4f}\t\t{e:.4f}")
+    else:
+        print(f"{x:.2f}\t\t{r:.4f}\t\tinf")</code></pre>
+                
+                <h3>3. Random Matrix Theory</h3>
+                <p><strong>Historical context:</strong> Wigner introduced random matrices in the 1950s to model heavy nuclei energy levels. The field exploded with connections to number theory (Montgomery-Dyson), combinatorics, and machine learning.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Wigner matrix:\(M = \frac{1}{\sqrt{n}}(A + A^T)\) where \(A_{ij}\) i.i.d.</li>
+                    <li><strong>Empirical spectral distribution:\(\mu_n = \frac{1}{n}\sum_{i=1}^n \delta_{\lambda_i}\)</li>
+                    <li><strong>Semicircle law:\(\rho(x) = \frac{1}{2\pi}\sqrt{4-x^2}\) for \(|x| \leq 2\)</li>
+                </ul>
+                
+                <h4>Theorem (Wigner's Semicircle Law)</h4>
+                <p>For a Wigner matrix with finite moments, the empirical spectral distribution converges to the semicircle law:</p>
+                \[\mu_n \xrightarrow{d} \mu_{sc}\]
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def generate_wigner_matrix(n, distribution='gaussian'):
+    """Generate n x n Wigner matrix."""
+    if distribution == 'gaussian':
+        A = np.random.randn(n, n)
+    elif distribution == 'bernoulli':
+        A = 2 * (np.random.random((n, n)) < 0.5) - 1
+    
+    # Symmetrize
+    M = (A + A.T) / np.sqrt(2 * n)
+    return M
+
+def semicircle_pdf(x):
+    """Semicircle distribution PDF."""
+    mask = np.abs(x) <= 2
+    result = np.zeros_like(x)
+    result[mask] = np.sqrt(4 - x[mask]**2) / (2 * np.pi)
     return result
 
-def diffie_hellman(p, g):
-    """Simulate DH key exchange"""
-    # Alice
-    a = random.randint(2, p-2)
-    A = mod_exp(g, a, p)
+def demonstrate_semicircle_law(n_values=[50, 100, 500, 1000]):
+    """Show convergence to semicircle law."""
+    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+    axes = axes.flatten()
     
-    # Bob
-    b = random.randint(2, p-2)
-    B = mod_exp(g, b, p)
+    x = np.linspace(-3, 3, 1000)
     
-    # Shared secret
-    secret_alice = mod_exp(B, a, p)
-    secret_bob = mod_exp(A, b, p)
+    for idx, n in enumerate(n_values):
+        M = generate_wigner_matrix(n)
+        eigenvalues = np.linalg.eigvalsh(M)
+        
+        axes[idx].hist(eigenvalues, bins=30, density=True, alpha=0.7, label='Empirical')
+        axes[idx].plot(x, semicircle_pdf(x), 'r-', lw=2, label='Semicircle')
+        axes[idx].set_title(f'n = {n}')
+        axes[idx].set_xlabel('Eigenvalue')
+        axes[idx].set_ylabel('Density')
+        axes[idx].legend()
+        axes[idx].set_xlim(-3, 3)
     
-    return secret_alice, secret_bob
+    plt.tight_layout()
+    plt.savefig('semicircle_law.png', dpi=150)
+    plt.show()
 
-# Small example (insecure!)
-p, g = 23, 5
-s1, s2 = diffie_hellman(p, g)
-print(f"Alice's secret: {s1}")
-print(f"Bob's secret: {s2}")
-print(f"Match: {s1 == s2}")
-</code></pre>
-            </section>
+# Example: Marchenko-Pastur law for sample covariance
+def marchenko_pastur_pdf(x, gamma):
+    """
+    Marchenko-Pastur distribution for sample covariance matrices.
+    gamma = p/n (aspect ratio)
+    """
+    lambda_plus = (1 + np.sqrt(gamma))**2
+    lambda_minus = (1 - np.sqrt(gamma))**2
+    
+    mask = (x >= lambda_minus) & (x <= lambda_plus)
+    result = np.zeros_like(x)
+    result[mask] = np.sqrt((lambda_plus - x[mask]) * (x[mask] - lambda_minus)) / (2 * np.pi * gamma * x[mask])
+    return result
 
-            <section id="special-topics">
-                <h2>🌟 Special Topics</h2>
-
-                <h3>1. Knot Theory: The Jones Polynomial</h3>
-                <h4>Historical Context</h4>
-                <p>In 1984, Vaughan Jones discovered a new knot polynomial while studying operator algebras. His surprise discovery connected knot theory to statistical mechanics and earned him the Fields Medal.</p>
-
+print("Demonstrating Wigner's Semicircle Law:")
+demonstrate_semicircle_law()</code></pre>
+                
+                <h3>4. Percolation Theory</h3>
+                <p><strong>Historical context:</strong> Broadbent and Hammersley introduced percolation in 1957 to model fluid flow through porous media. The field revealed deep connections to statistical mechanics and conformal field theory, culminating in Smirnov's 2001 proof of conformal invariance for critical percolation.</p>
+                
                 <h4>Definitions</h4>
-                <p><strong>Definition.</strong> The <em>Kauffman bracket\u003c/em> \(\langle L \rangle\) is defined by: (1) \(\langle \bigcirc \rangle = 1\), (2) \(\langle L \cup \bigcirc \rangle = (-A^2 - A^{-2})\langle L \rangle\), (3) Skein relation.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Jones Polynomial Invariant.</strong> The Jones polynomial \(V_L(t)\) is a knot invariant.</p>
-                <p><strong>Proof Sketch.</strong> Show the Kauffman bracket, properly normalized, is invariant under Reidemeister moves. The Jones polynomial is obtained by substituting \(A = t^{-1/4}\). ∎</p>
-
+                \u003cul>
+                    <li><strong>Site percolation:</strong> Each site of lattice is open with probability \(p\)</li>
+                    <li><strong>Cluster:</strong> Connected component of open sites</li>
+                    <li><strong>Percolation probability:\(\theta(p) = P(\text{origin in infinite cluster})\)</li>
+                    <li><strong>Critical probability:\(p_c = \inf\{p : \theta(p) > 0\}\)</li>
+                </ul>
+                
+                <h4>Theorem (Kesten, 1980)</h4>
+                \[p_c(\mathbb{Z}^2) = \frac{1}{2}\]
+                <p>For 2D site percolation on the square lattice.</p>
+                
                 <h4>Python Code</h4>
-                <pre><code class="language-python"># Simplified Jones polynomial for trefoil knot
-def jones_trefoil():
-    """Jones polynomial of trefoil knot V(t) = t + t^3 - t^4"""
-    # Coefficients: [0, 1, 0, 1, -1] for t^0, t^1, t^2, t^3, t^4
-    return [0, 1, 0, 1, -1]
-
-# Verify it's not the unknot (V(unknot) = 1)
-trefoil = jones_trefoil()
-print(f"Jones polynomial of trefoil: {trefoil}")
-print(f"Not equal to unknot: {trefoil != [1]}")
-</code></pre>
-
-                <h3>2. Braid Groups</h3>
-                <h4>Historical Context</h4>
-                <p>Emil Artin introduced braid groups in 1925. They have applications in cryptography, quantum computing, and understanding the topology of configuration spaces.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> The <em>braid group\u003c/em> \(B_n\) has generators \(\sigma_1, \ldots, \sigma_{n-1}\) with relations: \(\sigma_i\sigma_j = \sigma_j\sigma_i\) for \(|i-j| \geq 2\) and \(\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Word Problem.</strong> There exists an algorithm to determine if two braid words represent the same element.</p>
-                <p><strong>Proof.</strong> Garside's solution: every braid has a unique normal form as a product of positive braids and powers of the Garside element \(\Delta\). ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">class Braid:
-    """Simple braid representation"""
-    def __init__(self, word):
-        self.word = word  # List of integers: +i = sigma_i, -i = sigma_i^{-1}
-    
-    def __mul__(self, other):
-        return Braid(self.word + other.word)
-    
-    def __str__(self):
-        return ''.join(f"σ{i}" if i > 0 else f"σ{-i}⁻¹" for i in self.word)
-
-# Example: B_3
-sigma1 = Braid([1])
-sigma2 = Braid([2])
-braid = sigma1 * sigma2 * sigma1
-print(f"Braid: {braid}")
-
-# Braid relation: sigma1 * sigma2 * sigma1 = sigma2 * sigma1 * sigma2
-braid2 = sigma2 * sigma1 * sigma2
-print(f"Braid2: {braid2}")
-print(f"Same word: {braid.word == braid2.word}")  # Different words, same element
-</code></pre>
-
-                <h3>3. Topological Data Analysis: Persistent Homology</h3>
-                <h4>Historical Context</h4>
-                <p>Developed in the early 2000s by Gunnar Carlsson and collaborators, persistent homology extracts robust topological features from noisy data, with applications in biology, materials science, and machine learning.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> Given a filtration \(X_1 \subseteq X_2 \subseteq \cdots\), the \(\mathbf{p}\)-persistent kth homology tracks cycles born at \(X_i\) that die entering \(X_{i+p}\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Structure Theorem.</strong> Persistent homology decomposes into interval modules \(\mathbb{I}[a,b)\).</p>
-                <p><strong>Proof.</strong> The persistence module is a graded module over the polynomial ring \(\mathbb{F}[t]\). By the structure theorem for PID modules, it decomposes into cyclic summands corresponding to birth-death pairs. ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-from scipy.spatial.distance import pdist, squareform
-
-def rips_complex(points, epsilon):
-    """Build Rips complex at scale epsilon"""
-    dists = squareform(pdist(points))
-    n = len(points)
-    edges = [(i, j) for i in range(n) for j in range(i+1, n) if dists[i,j] <= epsilon]
-    return edges
-
-# Example: Circle with noise
-np.random.seed(42)
-theta = np.linspace(0, 2*np.pi, 50)
-circle = np.column_stack([np.cos(theta), np.sin(theta)])
-circle += np.random.normal(0, 0.1, circle.shape)
-
-edges_small = rips_complex(circle, 0.3)
-edges_large = rips_complex(circle, 1.0)
-
-print(f"Edges at epsilon=0.3: {len(edges_small)}")
-print(f"Edges at epsilon=1.0: {len(edges_large)}")
-</code></pre>
-
-                <h3>4. Morse Theory</h3>
-                <h4>Historical Context</h4>
-                <p>Marston Morse developed this theory in the 1920s-30s. It connects the critical points of smooth functions to the topology of manifolds, providing powerful tools for computing homology.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> A function \(f: M \to \mathbb{R}\) is <em>Morse</em> if all critical points are non-degenerate (Hessian is non-singular).</p>
-                <p><strong>Definition.</strong> The <em>index</em> of a critical point is the number of negative eigenvalues of the Hessian.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Morse Inequalities.</strong> Let \(c_k\) be the number of critical points of index \(k\). Then:
-                \[
-                \sum_{k=0}^n c_k t^k = \sum_{k=0}^n \beta_k t^k + (1+t)R(t)
-                \]
-                where \(\beta_k\) are Betti numbers and \(R\) has non-negative coefficients.</p>
-                <p><strong>Proof Sketch.</strong> The Morse complex computes homology. The boundary operator strictly decreases the "height" function, making the complex graded. The inequalities follow from rank arguments. ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-
-def morse_function(x, y):
-    """Example Morse function: f(x,y) = x^2 - y^2 (saddle)"""
-    return x**2 - y**2
-
-def gradient_morse(x, y):
-    """Gradient of Morse function"""
-    return np.array([2*x, -2*y])
-
-def hessian_morse(x, y):
-    """Hessian matrix"""
-    return np.array([[2, 0], [0, -2]])
-
-# Critical point at origin
-hess = hessian_morse(0, 0)
-eigenvalues = np.linalg.eigvals(hess)
-print(f"Hessian at origin: {hess}")
-print(f"Eigenvalues: {eigenvalues}")
-print(f"Index (negative eigenvalues): {sum(eigenvalues < 0)}")
-print(f"Non-degenerate: {all(eigenvalues != 0)}")
-</code></pre>
-            </section>
-
-            <section id="history">
-                <h2>📜 Math History</h2>
-                <h3>Henri Poincaré: The Last Universalist</h3>
-                <p>Henri Poincaré (1854-1912) was called "the last universalist" because he made fundamental contributions to virtually every area of mathematics and physics. His work laid the foundations for topology, dynamical systems, and special relativity.</p>
-                <p>Born in Nancy, France, Poincaré displayed exceptional abilities from an early age, though he struggled with physical coordination. He entered the École Polytechnique in 1873 and quickly established himself as a mathematical prodigy.</p>
-                <p>Poincaré's 1895 paper "Analysis Situs" essentially created algebraic topology. He introduced fundamental concepts like homology and the fundamental group. The famous Poincaré conjecture—his question about characterizing the 3-sphere—remained open for nearly a century until Perelman's proof in 2003.</p>
-                <p>In dynamical systems, his study of the three-body problem led to the discovery of chaotic behavior and homoclinic tangles. His work on the qualitative theory of differential equations transformed the field.</p>
-                <p>Poincaré was also a philosopher of science. His conventionalist view—that the geometry of space is a matter of convention rather than fact—influenced Einstein's development of general relativity. He came tantalizingly close to discovering special relativity himself, deriving the Lorentz transformations and recognizing the relativity of simultaneity.</p>
-                <p>His work style was unusual: he would think deeply about problems, then write papers rapidly without revision. He claimed that ideas came to him in flashes of intuition, often when not consciously working on the problem. Despite his enormous output—nearly 500 papers and 30 books—he maintained that he was not a fast thinker, but rather one who persisted.</p>
-            </section>
-
-            <section id="journalism">
-                <h2>📰 Math in the News</h2>
-                <h3><a href="https://www.quantamagazine.org/mathematicians-solve-hidden-convexity-problem-20250127/" target="_blank" rel="noopener">Hidden Convexity Problem Solved</a> — <em>Quanta Magazine</em></h3>
-                <p>Mathematicians have resolved a long-standing question about when non-convex optimization problems secretly have convex structure. The result has implications for machine learning and signal processing.</p>
-
-                <h3><a href="https://www.math3ma.com/blog/the-topology-of-data" target="_blank" rel="noopener">The Topology of Data</a> — <em>Math3ma</em></h3>
-                <p>An accessible introduction to topological data analysis, explaining how persistent homology extracts shape from high-dimensional datasets with applications in genomics and materials science.</p>
-
-                <h3><a href="https://www.nature.com/articles/d41586-025-00123-4" target="_blank" rel="noopener">AI Discovers New Algorithms</a> — <em>Nature</em></h3>
-                <p>DeepMind's AlphaTensor has discovered faster matrix multiplication algorithms, beating records that stood for decades. The work demonstrates how AI can assist mathematical discovery in combinatorial optimization.</p>
-            </section>
-
-            <section id="problem">
-                <h2>🧩 Problem Corner</h2>
-                <p><strong>Problem (AIME 2021).</strong> Let \(ABCD\) be a convex quadrilateral with \(AB = 2\), \(AD = 7\), and \(CD = 3\) such that the bisectors of acute angles \(\angle DAB\) and \(\angle ADC\) intersect at the midpoint of \(\overline{BC}\). Find the square of the area of \(ABCD\).</p>
-                <details>
-                    <summary>💡 Hint</summary>
-                    <p>Use the angle bisector property and coordinate geometry. Place \(A\) at origin and use the fact that the angle bisectors meet at the midpoint of \(BC\).</p>
-                </details>
-                <details>
-                    <summary>✅ Solution</summary>
-                    <p>Place \(A\) at origin, \(D\) at \((7,0)\). Let \(\angle DAB = 2\alpha\) and \(\angle ADC = 2\beta\).</p>
-                    <p>By angle bisector properties and the midpoint condition, we can set up coordinates. Let \(B = (2\cos(2\alpha), 2\sin(2\alpha))\) and \(C = (7 - 3\cos(2\beta), 3\sin(2\beta))\).</p>
-                    <p>The midpoint of \(BC\) lies on both angle bisectors. Using the angle bisector theorem and the fact that the internal bisectors of adjacent angles in a quadrilateral meet on the diagonal, we derive constraints.</p>
-                    <p>After calculation (or using the key insight that this configuration implies the quadrilateral has an incircle), we find:
-                    \[
-                    [ABCD]^2 = \boxed{420}
-                    \]</p>
-                </details>
-            </section>
-
-            <section id="visualization">
-                <h2>🎨 Visualization of the Day</h2>
-                <h3>Homotopy of Loops on a Torus</h3>
-                <p>The torus \(T^2 = S^1 \times S^1\) has fundamental group \(\mathbb{Z} \times \mathbb{Z}\), meaning loops are classified by how many times they wind around each circle direction. This visualization shows how different loops can be deformed into each other.</p>
-
-                <pre><code class="language-python">import numpy as np
+                <pre><code>import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+from scipy.ndimage import label
 
-def torus_param(u, v, R=2, r=1):
-    """Parametrize torus"""
-    x = (R + r * np.cos(v)) * np.cos(u)
-    y = (R + r * np.cos(v)) * np.sin(u)
-    z = r * np.sin(v)
-    return x, y, z
+def generate_percolation_grid(n, p):
+    """Generate n x n site percolation configuration."""
+    return np.random.random((n, n)) < p
 
-def loop_on_torus(t, m=1, n=0):
-    """Loop winding m times around big circle, n around small"""
-    u = m * t
-    v = n * t
-    return torus_param(u, v)
+def find_clusters(grid):
+    """Find connected clusters using scipy.ndimage.label."""
+    labeled_array, num_features = label(grid)
+    return labeled_array, num_features
 
-# Generate loops
-t = np.linspace(0, 2*np.pi, 500)
+def has_spanning_cluster(grid):
+    """Check if there's a cluster spanning left-right or top-bottom."""
+    clusters, _ = find_clusters(grid)
+    
+    # Check left-right spanning
+    left_sites = set(clusters[:, 0])
+    right_sites = set(clusters[:, -1])
+    if left_sites & right_sites - {0}:  # Exclude background (0)
+        return True
+    
+    # Check top-bottom spanning
+    top_sites = set(clusters[0, :])
+    bottom_sites = set(clusters[-1, :])
+    if top_sites & bottom_sites - {0}:
+        return True
+    
+    return False
 
-fig = plt.figure(figsize=(12, 5))
+def estimate_critical_probability(n=100, n_trials=100, p_values=None):
+    """Estimate percolation probability for various p."""
+    if p_values is None:
+        p_values = np.linspace(0.3, 0.7, 20)
+    
+    percolation_probs = []
+    for p in p_values:
+        count = sum(has_spanning_cluster(generate_percolation_grid(n, p)) 
+                    for _ in range(n_trials))
+        percolation_probs.append(count / n_trials)
+    
+    return p_values, percolation_probs
 
-# (1,0) loop - around big circle
-ax1 = fig.add_subplot(131, projection='3d')
-x, y, z = loop_on_torus(t, 1, 0)
-ax1.plot(x, y, z, 'b-', linewidth=2)
-ax1.set_title('Loop (1,0): Around big circle')
+# Simulate
+p_values, percolation_probs = estimate_critical_probability(n=50, n_trials=200)
 
-# (0,1) loop - around small circle
-ax2 = fig.add_subplot(132, projection='3d')
-x, y, z = loop_on_torus(t, 0, 1)
-ax2.plot(x, y, z, 'r-', linewidth=2)
-ax2.set_title('Loop (0,1): Around small circle')
+print("Percolation probability vs p:")
+for p, prob in zip(p_values, percolation_probs):
+    print(f"p = {p:.3f}: P(percolation) = {prob:.3f}")
 
-# (1,1) loop - around both
-ax3 = fig.add_subplot(133, projection='3d')
-x, y, z = loop_on_torus(t, 1, 1)
-ax3.plot(x, y, z, 'g-', linewidth=2)
-ax3.set_title('Loop (1,1): Around both')
-
-plt.tight_layout()
-plt.savefig('/tmp/torus_loops.png', dpi=150)
-print("Torus loops visualization saved")
-</code></pre>
+# Visualize a configuration near criticality
+grid = generate_percolation_grid(100, 0.5)
+clusters, n_clusters = find_clusters(grid)
+print(f"\nVisualization: {n_clusters} clusters in 100x100 grid at p=0.5")</code></pre>
             </section>
+            
+            <section id="math-history">
+                <h2>Math History</h2>
+                <p>Probability theory's journey from gambling puzzles to rigorous mathematics spans centuries. Cardano's "Liber de Ludo Aleae" (c. 1564, published 1663) contained early calculations of dice probabilities, but the field truly began with the 1654 correspondence between Pascal and Fermat on the "problem of points"—how to fairly divide stakes in an interrupted game. Their solution established the concept of expected value.</p>
+                <p>Huygens' "De Ratiociniis in Ludo Aleae" (1657) was the first probability textbook. The Bernoulli family made foundational contributions: Jacob's "Ars Conjectandi" (1713) proved the first law of large numbers, while Daniel developed utility theory. De Moivre discovered the normal distribution as an approximation to the binomial (1733), and Laplace's "Théorie Analytique des Probabilités" (1812) systematized the field.</p>
+                <p>The 20th century brought measure theory to probability through the work of Borel, Lebesgue, and Kolmogorov. Kolmogorov's "Grundbegriffe" (1933) axiomatically founded modern probability theory using measure theory. This enabled rigorous treatment of stochastic processes: Brownian motion (Wiener, Lévy), martingales (Doob), and Markov processes. The interplay with physics (Einstein, Smoluchowski on Brownian motion) and later with finance (Black, Scholes, Merton) drove practical applications.</p>
+                <p>Contemporary probability theory spans pure and applied domains: random matrix theory connects to quantum physics and number theory; percolation theory to materials science; concentration inequalities to machine learning. The field has evolved from calculating gambling odds to providing the mathematical language of uncertainty in science, engineering, and finance.</p>
+            </section>
+            
+            <section id="math-journalism">
+                <h2>Math Journalism</h2>
+                
+                <h3>1. Quanta Magazine</h3>
+                <p><strong>Article:</strong> "Mathematicians Calculate How Randomness Creeps In"</p>
+                <p><strong>Summary:</strong> Recent work on the cutoff phenomenon in Markov chains shows how random systems can transition abruptly from order to disorder, with applications to card shuffling and statistical physics.</p>
+                
+                <h3>2. Probability Surveys</h3>
+                <p><strong>Article:</strong> "Random Walks and Electric Networks" by Doyle and Snell</p>
+                <p><strong>Summary:</strong> An accessible exposition of the deep connections between random walks on graphs and electrical network theory, showing how physical intuition illuminates probabilistic results.</p>
+                
+                <h3>3. Nautilus</h3>
+                <p><strong>Article:</strong> "How to Build a Probability Machine"</p>
+                <p><strong>Summary:</strong> An exploration of how modern probability theory, from Bayesian inference to Monte Carlo methods, powers artificial intelligence and scientific discovery.</p>
+            </section>
+            
+            <section id="problem-corner">
+                <h2>Problem Corner</h2>
+                <p><strong>Problem (Putnam 2002 B2):</strong> Consider a polyhedron with at least five faces such that exactly three edges emerge from each of its vertices. Two players play the following game:
+Each player, in turn, signs his or her name on a previously unsigned face. The winner is the player who first succeeds in signing three faces that share a common vertex.
+Prove that the first player always has a winning strategy.</p>
+                
+                <details>
+                    <summary>Hint</summary>
+                    <p>Use the probabilistic method or strategy stealing. Consider what happens if the first player picks any face and then mirrors the second player's moves appropriately.</p>
+                </details>
+                
+                <details>
+                    <summary>Solution</summary>
+                    <p>We use a strategy-stealing argument. Suppose, for contradiction, that the second player has a winning strategy.</p>
+                    
+                    <p>The first player picks any face \(F_1\). Whatever face \(F_2\) the second player picks in response, the first player now "forgets" about \(F_1\) and pretends to be the second player in a new game where \(F_2\) was the first move.</p>
+                    
+                    <p>Since we assumed the second player has a winning strategy, our first player (now playing as "second") can force a win. But this means the original first player wins, contradicting the assumption.</p>
+                    
+                    <p>Therefore, the second player cannot have a winning strategy. Since the game cannot end in a draw (finite game, no draws possible), the first player must have a winning strategy. \(\square\)</p>
+                </details>
+            </section>
+            
+            <section id="visualization">
+                <h2>Visualization of the Day</h2>
+                <p>Brownian motion, the random movement of particles suspended in fluid, was mathematically described by Wiener and Lévy. Its fractal nature and self-similarity make it a beautiful object of study.</p>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
 
+def brownian_motion(n_steps, n_dimensions=2, dt=0.01):
+    """
+    Generate Brownian motion path.
+    """
+    dW = np.random.randn(n_steps, n_dimensions) * np.sqrt(dt)
+    W = np.cumsum(dW, axis=0)
+    return W
+
+def visualize_brownian_motion():
+    """
+    Create artistic visualization of Brownian motion.
+    """
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    
+    # 2D Brownian motion with multiple paths
+    ax1 = axes[0]
+    for i in range(5):
+        path = brownian_motion(10000, 2)
+        ax1.plot(path[:, 0], path[:, 1], alpha=0.6, linewidth=0.5)
+    ax1.set_aspect('equal')
+    ax1.set_title('2D Brownian Motion Paths')
+    ax1.set_xlabel('X')
+    ax1.set_ylabel('Y')
+    
+    # Time series of 1D Brownian motion
+    ax2 = axes[1]
+    t = np.linspace(0, 10, 10000)
+    for i in range(3):
+        W = brownian_motion(10000, 1, dt=0.001)
+        ax2.plot(t, W, alpha=0.7)
+    ax2.set_title('1D Brownian Motion')
+    ax2.set_xlabel('Time')
+    ax2.set_ylabel('Position')
+    ax2.grid(True)
+    
+    # Scaling property demonstration
+    ax3 = axes[2]
+    # Brownian motion is self-similar: W(at) ~ sqrt(a) W(t)
+    W = brownian_motion(5000, 1, dt=0.001)[:, 0]
+    t = np.arange(len(W))
+    
+    ax3.plot(t, W, 'b-', alpha=0.5, label='W(t)')
+    ax3.plot(t * 4, W * 2, 'r-', alpha=0.5, label='2W(t/4) ~ W(t)')
+    ax3.set_title('Self-Similarity: W(at) ~ √a W(t)')
+    ax3.set_xlabel('Time')
+    ax3.set_ylabel('Position')
+    ax3.legend()
+    
+    plt.tight_layout()
+    plt.savefig('brownian_motion.png', dpi=150)
+    plt.show()
+
+visualize_brownian_motion()
+
+# Compute some statistics
+n_samples = 1000
+n_steps = 1000
+final_positions = [brownian_motion(n_steps, 1)[-1, 0] for _ in range(n_samples)]
+print(f"Mean of final positions: {np.mean(final_positions):.4f}")
+print(f"Variance of final positions: {np.var(final_positions):.4f}")
+print(f"Theoretical variance: {n_steps * 0.01:.4f}")</code></pre>
+            </section>
+            
             <section id="quote">
-                <h2>💬 Quote of the Day</h2>
+                <h2>Quote of the Day</h2>
                 <blockquote>
-                    <p>"Topology is precisely the mathematical discipline that allows the passage from local to global."</p>
-                    <footer>— René Thom</footer>
+                    "Probability theory is nothing but common sense reduced to calculation."
+                    <footer>— Pierre-Simon Laplace</footer>
                 </blockquote>
             </section>
-
         </article>
     </main>
-
+    
     <footer>
-        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
-        <p>
-            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
-            <a href="../index.html">Home</a> |
-            <a href="../posts/index.html">All Posts</a>
-        </p>
+        <p>&copy; 2026 Nothing But Real Math. All rights reserved.</p>
+        <p>Built with curiosity and caffeine.</p>
     </footer>
 </body>
 </html>
