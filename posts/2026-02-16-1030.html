@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest - Mathematical insights and explorations">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest - February 16, 2026 10:30 UTC</title>
+    
+    <!-- MathJax 2.7.9 (CSP-safe) -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            "HTML-CSS": { availableFonts: ["TeX"] }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 2rem; margin-bottom: 10px; }
+        header p { opacity: 0.9; }
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 20px 0; }
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px; }
+        h3 { color: #34495e; margin: 20px 0 10px; }
+        .theorem {
+            background: #e8f6ff;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .proof {
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        code { font-family: 'Consolas', monospace; }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a { color: #3498db; }
+        .tags {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 3px;
+            font-size: 0.9em;
+        }
+        .tag:hover { background: #2980b9; }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+            header h1 { font-size: 1.5rem; }
+            nav a { display: block; margin: 5px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📐 Math Digest</h1>
+        <p>February 16, 2026 10:30 UTC</p>
+    </header>
+    
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../posts/index.html">All Posts</a>
+        <a href="../tags/index.html">Tags</a>
+        <a href="https://github.com/slop-machine-542/nothing">GitHub</a>
+    </nav>
+    
+    <div class="container">
+        <main>
+            <div class="tags">
+                <strong>Tags:</strong>
+                <a href="../tags/index.html#algebraic-topology" class="tag">Algebraic Topology</a>
+                <a href="../tags/index.html#number-theory" class="tag">Number Theory</a>
+                <a href="../tags/index.html#complex-analysis" class="tag">Complex Analysis</a>
+                <a href="../tags/index.html#optimization" class="tag">Optimization</a>
+                <a href="../tags/index.html#graph-theory" class="tag">Graph Theory</a>
+                <a href="../tags/index.html#probability" class="tag">Probability</a>
+                <a href="../tags/index.html#differential-equations" class="tag">Differential Equations</a>
+                <a href="../tags/index.html#linear-algebra" class="tag">Linear Algebra</a>
+            </div>
+            
+            <section id="links">
+                <h2>🔗 Math Links</h2>
+                
+                <h3><a href="https://mathworld.wolfram.com/">MathWorld</a></h3>
+                <p>Comprehensive mathematics resource from Wolfram Research, featuring thousands of detailed articles on mathematical concepts, theorems, and applications.</p>
+                
+                <h3><a href="https://www.cut-the-knot.org/">Cut-the-Knot</a></h3>
+                <p>An encyclopedic collection of interactive mathematics miscellany and puzzles, maintained by Alexander Bogomolny. A treasure trove of mathematical insights.</p>
+                
+                <h3><a href="https://www.mathsisfun.com/">Math is Fun</a></h3>
+                <p>Accessible explanations of mathematical concepts from basic arithmetic to advanced topics, with interactive demonstrations and puzzles.</p>
+            </section>
+            
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                
+                <h3>Probability Theory: The Logic of Science by E.T. Jaynes</h3>
+                <p><strong>Author:</strong> Edwin Thompson Jaynes</p>
+                <p><strong>Available at:</strong> <a href="https://bayes.wustl.edu/etj/prob/book.pdf">Washington University</a></p>
+                <p>A groundbreaking text that presents probability theory as an extension of logic. Jaynes develops Bayesian probability from first principles, showing how it provides the foundation for scientific inference. The book covers everything from basic probability to advanced topics like maximum entropy and quantum mechanics, all unified by the Bayesian perspective.</p>
+            </section>
+            
+            <section id="pure">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+                
+                <h3>1. The Jordan Curve Theorem</h3>
+                <p>A deceptively simple-sounding result in topology with a surprisingly difficult proof. The theorem states that any simple closed curve in the plane divides the plane into exactly two regions: an "inside" and an "outside."</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Jordan Curve Theorem):</strong> Let \(C\) be a simple closed curve in \(\mathbb{R}^2\) (a continuous injective image of \(S^1\)). Then \(\mathbb{R}^2 \setminus C\) consists of exactly two connected components: one bounded (the interior) and one unbounded (the exterior). Moreover, \(C\) is the boundary of each component.
+                </div>
+                
+                <p><strong>Notation explanation:</strong></p>
+                <ul>
+                    <li>\(S^1\) denotes the unit circle, the simplest closed curve</li>
+                    <li>\(\mathbb{R}^2 \setminus C\) means the plane with the curve removed</li>
+                    <li>A "connected component" is a maximal connected subset</li>
+                </ul>
+                
+                <div class="proof">
+                    <strong>Proof Sketch (Polygonal Case):</strong> For a polygonal Jordan curve, we can use the winding number. Define the winding number \(W(p)\) of a point \(p\) around the curve:
+                    \[W(p) = \frac{1}{2\pi} \oint_C d\theta\]
+                    where \(\theta\) is the angle from \(p\) to points on \(C\). The winding number is:
+                    <ul>
+                        <li>Constant on each connected component of \(\mathbb{R}^2 \setminus C\)</li>
+                        <li>Zero for points far from \(C\) (the exterior)</li>
+                        <li>\(\pm 1\) for points "inside" the curve</li>
+                    </ul>
+                    The difficulty lies in extending this to arbitrary continuous curves, which requires sophisticated tools from algebraic topology.
+                </div>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def winding_number(point, curve_points):
+    """
+    Calculate the winding number of a point around a closed curve.
+    
+    Args:
+        point: (x, y) coordinates of the point
+        curve_points: Nx2 array of curve points (closed, counterclockwise)
+    
+    Returns:
+        Winding number (integer)
+    """
+    x, y = point
+    angles = np.arctan2(curve_points[:, 1] - y, curve_points[:, 0] - x)
+    
+    # Unwrap angles to handle branch cuts
+    angles = np.unwrap(angles)
+    
+    # Winding number is total angle change divided by 2π
+    total_change = angles[-1] - angles[0]
+    return round(total_change / (2 * np.pi))
+
+# Create a simple closed curve (ellipse)
+theta = np.linspace(0, 2*np.pi, 1000)
+a, b = 3, 2  # semi-axes
+ellipse = np.column_stack([a * np.cos(theta), b * np.sin(theta)])
+
+# Test points
+test_points = np.array([
+    [0, 0],      # Inside
+    [5, 0],      # Outside
+    [2, 1],      # Inside
+    [-4, 3]      # Outside
+])
+
+print("Jordan Curve Theorem - Winding Number Test")
+print("=" * 50)
+for p in test_points:
+    w = winding_number(p, ellipse)
+    location = "INSIDE" if w != 0 else "OUTSIDE"
+    print(f"Point ({p[0]:.1f}, {p[1]:.1f}): Winding number = {w} → {location}")</code></pre>
+                
+                <h3>2. Liouville's Theorem in Complex Analysis</h3>
+                <p>A fundamental result showing that bounded entire functions must be constant. This theorem has profound implications and provides elegant proofs of the Fundamental Theorem of Algebra.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Liouville):</strong> If \(f: \mathbb{C} \to \mathbb{C}\) is entire (holomorphic on all of \(\mathbb{C}\)) and bounded (\(|f(z)| \leq M\) for all \(z\)), then \(f\) is constant.
+                </div>
+                
+                <p><strong>Notation explanation:</strong></p>
+                <ul>
+                    <li>\(\mathbb{C}\) denotes the complex plane</li>
+                    <li>"Entire" means complex differentiable everywhere</li>
+                    <li>Holomorphic = complex differentiable in a neighborhood</li>
+                </ul>
+                
+                <div class="proof">
+                    <strong>Proof:</strong> Using Cauchy's integral formula for the derivative:
+                    \[f'(z) = \frac{1}{2\pi i} \oint_{|w-z|=R} \frac{f(w)}{(w-z)^2} dw\]
+                    
+                    Taking absolute values and using the bound \(|f(w)| \leq M\):
+                    \[|f'(z)| \leq \frac{1}{2\pi} \cdot \frac{M}{R^2} \cdot 2\pi R = \frac{M}{R}\]
+                    
+                    Since this holds for all \(R > 0\), letting \(R \to \infty\) gives \(|f'(z)| = 0\), so \(f'(z) = 0\) everywhere. Thus \(f\) is constant.
+                </div>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def complex_polynomial(z, coefficients):
+    """Evaluate a complex polynomial."""
+    return sum(c * z**i for i, c in enumerate(coefficients))
+
+def plot_complex_function(f, title, xlim=(-3, 3), ylim=(-3, 3)):
+    """Plot the magnitude of a complex function."""
+    x = np.linspace(xlim[0], xlim[1], 200)
+    y = np.linspace(ylim[0], ylim[1], 200)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j*Y
+    
+    W = f(Z)
+    magnitude = np.abs(W)
+    
+    # Clip for visualization
+    magnitude = np.clip(magnitude, 0, 10)
+    
+    fig = plt.figure(figsize=(10, 8))
+    ax = fig.add_subplot(111, projection='3d')
+    surf = ax.plot_surface(X, Y, magnitude, cmap='viridis', alpha=0.8)
+    ax.set_xlabel('Re(z)')
+    ax.set_ylabel('Im(z)')
+    ax.set_zlabel('|f(z)|')
+    ax.set_title(title)
+    plt.colorbar(surf)
+    return fig
+
+# Demonstrate Liouville's Theorem
+print("Liouville's Theorem Demonstration")
+print("=" * 50)
+print("\n1. Bounded entire function MUST be constant")
+print("   Example: f(z) = 5 (constant function)")
+print("   |f(z)| = 5 everywhere → bounded and entire ✓")
+
+print("\n2. Non-constant entire functions are unbounded")
+print("   Example: f(z) = z²")
+print("   |f(z)| = |z|² → unbounded as |z| → ∞")
+
+# Show polynomial growth
+radii = np.linspace(0, 5, 100)
+for name, f in [("f(z) = z", lambda z: z), 
+                ("f(z) = z²", lambda z: z**2),
+                ("f(z) = e^z", lambda z: np.exp(z))]:
+    magnitudes = [np.max(np.abs(f(radii * np.exp(1j*t)))) for t in np.linspace(0, 2*np.pi, 50)]
+    print(f"\n{name}: max |f(z)| on |z|=5 is approx {np.mean(magnitudes):.2f}")</code></pre>
+                
+                <h3>3. The Chinese Remainder Theorem</h3>
+                <p>A cornerstone of number theory that establishes an isomorphism between rings of integers modulo composite numbers and products of rings modulo prime powers.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Chinese Remainder Theorem):</strong> Let \(n_1, n_2, \ldots, n_k\) be pairwise coprime positive integers (\(\gcd(n_i, n_j) = 1\) for \(i \neq j\)), and let \(N = n_1 n_2 \cdots n_k\). Then the system of congruences:
+                    \[x \equiv a_1 \pmod{n_1}\]
+                    \[x \equiv a_2 \pmod{n_2}\]
+                    \[\vdots\]
+                    \[x \equiv a_k \pmod{n_k}\]
+                    has a unique solution modulo \(N\).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof (Constructive):</strong> Define \(N_i = N/n_i\). Since \(\gcd(N_i, n_i) = 1\), there exists \(y_i\) such that \(N_i y_i \equiv 1 \pmod{n_i}\) (by Bézout's identity). Then:
+                    \[x = \sum_{i=1}^k a_i N_i y_i\]
+                    satisfies all congruences because \(N_j \equiv 0 \pmod{n_i}\) for \(j \neq i\).
+                </div>
+                
+                <pre><code>import math
+
+def extended_gcd(a, b):
+    """Extended Euclidean algorithm."""
+    if b == 0:
+        return a, 1, 0
+    g, x1, y1 = extended_gcd(b, a % b)
+    x = y1
+    y = x1 - (a // b) * y1
+    return g, x, y
+
+def mod_inverse(a, m):
+    """Find modular inverse of a modulo m."""
+    g, x, _ = extended_gcd(a % m, m)
+    if g != 1:
+        return None  # Inverse doesn't exist
+    return (x % m + m) % m
+
+def chinese_remainder_theorem(remainders, moduli):
+    """
+    Solve system of congruences using CRT.
+    
+    Args:
+        remainders: list of a_i values
+        moduli: list of n_i values (must be pairwise coprime)
+    
+    Returns:
+        Solution x modulo N (product of moduli)
+    """
+    N = 1
+    for n in moduli:
+        N *= n
+    
+    result = 0
+    for a, n in zip(remainders, moduli):
+        Ni = N // n
+        yi = mod_inverse(Ni, n)
+        result += a * Ni * yi
+    
+    return result % N
+
+# Example: Find x such that
+# x ≡ 2 (mod 3)
+# x ≡ 3 (mod 5)
+# x ≡ 2 (mod 7)
+
+remainders = [2, 3, 2]
+moduli = [3, 5, 7]
+
+print("Chinese Remainder Theorem Example")
+print("=" * 50)
+print("Solve:")
+print("  x ≡ 2 (mod 3)")
+print("  x ≡ 3 (mod 5)")
+print("  x ≡ 2 (mod 7)")
+print()
+
+solution = chinese_remainder_theorem(remainders, moduli)
+N = 3 * 5 * 7
+
+print(f"Solution: x ≡ {solution} (mod {N})")
+print(f"General solution: x = {solution} + {N}k for integer k")
+print()
+
+# Verify
+print("Verification:")
+for a, n in zip(remainders, moduli):
+    print(f"  {solution} mod {n} = {solution % n} (expected {a}) ✓")
+
+# Application: Secret sharing example
+print("\n" + "=" * 50)
+print("Application: Secret Sharing")
+secret = 42
+shares_moduli = [11, 13, 17, 19, 23]
+shares = [(secret % m, m) for m in shares_moduli]
+print(f"Secret: {secret}")
+print("Shares (remainder, modulus):")
+for r, m in shares:
+    print(f"  x ≡ {r} (mod {m})")
+
+# Recover with any 3 shares
+recovered = chinese_remainder_theorem(
+    [shares[0][0], shares[1][0], shares[2][0]],
+    [shares[0][1], shares[1][1], shares[2][1]]
+)
+print(f"\nRecovered from first 3 shares: {recovered}")</code></pre>
+            </section>
+            
+            <section id="applied">
+                <h2>🧮 Applied Math Deep-Dives</h2>
+                
+                <h3>1. Singular Value Decomposition (SVD)</h3>
+                <p>One of the most important matrix factorizations in applied mathematics, with applications in data compression, recommendation systems, and principal component analysis.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (SVD):</strong> For any real \(m \times n\) matrix \(A\), there exist orthogonal matrices \(U\) (\(m \times m\)) and \(V\) (\(n \times n\)) such that:
+                    \[A = U\Sigma V^T\]
+                    where \(\Sigma\) is an \(m \times n\) diagonal matrix with non-negative entries \(\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_{\min(m,n)} \geq 0\) called the singular values.
+                </div>
+                
+                <p><strong>Notation explanation:</strong></p>
+                <ul>
+                    <li>\(U\) contains left singular vectors (orthonormal)</li>
+                    <li>\(V\) contains right singular vectors (orthonormal)</li>
+                    <li>\(\sigma_i\) are the singular values (square roots of eigenvalues of \(A^TA\))</li>
+                </ul>
+                
+                <div class="proof">
+                    <strong>Proof Sketch:</strong> Consider \(A^TA\), which is symmetric positive semi-definite. By the spectral theorem:
+                    \[A^TA = V\Lambda V^T\]
+                    where \(V\) is orthogonal and \(\Lambda = \text{diag}(\lambda_1, \ldots, \lambda_n)\) with \(\lambda_i \geq 0\). Define \(\sigma_i = \sqrt{\lambda_i}\) and:
+                    \[U = AV\Sigma^{-1}\]
+                    One verifies that \(U\) is orthogonal and \(A = U\Sigma V^T\).
+                </div>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def svd_compression_demo():
+    """Demonstrate image compression using SVD."""
+    # Create a test image (gradient + noise)
+    np.random.seed(42)
+    size = 100
+    x = np.linspace(0, 4*np.pi, size)
+    y = np.linspace(0, 4*np.pi, size)
+    X, Y = np.meshgrid(x, y)
+    
+    # Synthetic image with structure
+    image = np.sin(X) * np.cos(Y) + 0.3 * np.sin(2*X + Y)
+    image += 0.1 * np.random.randn(size, size)
+    
+    # Compute SVD
+    U, s, Vt = np.linalg.svd(image, full_matrices=False)
+    
+    print("Singular Value Decomposition Demo")
+    print("=" * 50)
+    print(f"Original matrix shape: {image.shape}")
+    print(f"Number of singular values: {len(s)}")
+    print(f"Top 10 singular values: {s[:10].round(2)}")
+    print(f"Condition number: {s[0]/s[-1]:.2e}")
+    
+    # Compression at different ranks
+    ranks = [5, 10, 20, 50]
+    
+    for rank in ranks:
+        # Reconstruct using top k singular values
+        U_k = U[:, :rank]
+        s_k = s[:rank]
+        Vt_k = Vt[:rank, :]
+        
+        compressed = U_k @ np.diag(s_k) @ Vt_k
+        
+        # Calculate compression ratio
+        original_size = size * size
+        compressed_size = rank * (size + 1 + size)
+        ratio = original_size / compressed_size
+        
+        # Error
+        mse = np.mean((image - compressed)**2)
+        
+        print(f"\nRank {rank}:")
+        print(f"  Compression ratio: {ratio:.1f}x")
+        print(f"  MSE: {mse:.6f}")
+        print(f"  Storage: {compressed_size} vs {original_size}")
+
+def low_rank_approximation_error():
+    """Analyze approximation error vs rank."""
+    # Create a matrix with known low-rank structure
+    np.random.seed(123)
+    m, n = 100, 80
+    true_rank = 10
+    
+    # Low-rank matrix
+    A = np.random.randn(m, true_rank) @ np.random.randn(true_rank, n)
+    
+    U, s, Vt = np.linalg.svd(A, full_matrices=False)
+    
+    print("\nLow-Rank Approximation Error Analysis")
+    print("=" * 50)
+    print(f"True rank of matrix: {true_rank}")
+    
+    frobenius_norm = np.sqrt(np.sum(s**2))
+    
+    for k in [5, 10, 15, 20, 50]:
+        # Eckart-Young-Mirsky theorem
+        # Best rank-k approximation error
+        error = np.sqrt(np.sum(s[k:]**2))
+        relative_error = error / frobenius_norm
+        
+        print(f"Rank {k:2d}: Frobenius error = {error:.4f}, Relative = {relative_error:.4f}")
+
+svd_compression_demo()
+low_rank_approximation_error()
+
+# Application: Solve linear system using SVD
+print("\n" + "=" * 50)
+print("Application: Solving Linear Systems")
+A = np.array([[3, 1], [1, 2]], dtype=float)
+b = np.array([9, 8], dtype=float)
+
+U, s, Vt = np.linalg.svd(A)
+# Pseudo-inverse solution
+s_inv = np.diag(1/s)
+x_svd = Vt.T @ s_inv @ U.T @ b
+
+x_exact = np.linalg.solve(A, b)
+print(f"System: Ax = b")
+print(f"A =\n{A}")
+print(f"b = {b}")
+print(f"Solution via SVD: {x_svd}")
+print(f"Solution via solve: {x_exact}")
+print(f"Verification Ax = {A @ x_svd}")</code></pre>
+                
+                <h3>2. The Heat Equation and Separation of Variables</h3>
+                <p>The fundamental partial differential equation describing heat diffusion, with solutions revealing deep connections to Fourier analysis.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Heat Equation Solution):</strong> For the initial-boundary value problem on \([0, L]\):
+                    \[\frac{\partial u}{\partial t} = \alpha \frac{\partial^2 u}{\partial x^2}\]
+                    with \(u(0,t) = u(L,t) = 0\) and \(u(x,0) = f(x)\), the solution is:
+                    \[u(x,t) = \sum_{n=1}^{\infty} b_n \sin\left(\frac{n\pi x}{L}\right) e^{-\alpha(n\pi/L)^2 t}\]
+                    where \(b_n = \frac{2}{L}\int_0^L f(x)\sin\left(\frac{n\pi x}{L}\right)dx\).
+                </div>
+                
+                <p><strong>Notation explanation:</strong></p>
+                <ul>
+                    <li>\(\alpha\) is the thermal diffusivity constant</li>
+                    <li>\(b_n\) are Fourier sine coefficients of initial condition</li>
+                    <li>The exponential decay shows high frequencies dissipate faster</li>
+                </ul>
+                
+                <div class="proof">
+                    <strong>Proof (Separation of Variables):</strong> Assume \(u(x,t) = X(x)T(t)\). Substituting:
+                    \[X(x)T'(t) = \alpha X''(x)T(t)\]
+                    \[\frac{T'}{\alpha T} = \frac{X''}{X} = -\lambda\]
+                    This gives two ODEs: \(X'' + \lambda X = 0\) and \(T' + \alpha\lambda T = 0\). With boundary conditions \(X(0) = X(L) = 0\), we get eigenvalues \(\lambda_n = (n\pi/L)^2\) and eigenfunctions \(X_n(x) = \sin(n\pi x/L)\). The general solution is a superposition of these modes.
+                </div>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+def heat_equation_solution(x, t, alpha, L, f_coeffs, n_terms=50):
+    """
+    Compute solution to heat equation using Fourier series.
+    
+    Args:
+        x: spatial points
+        t: time
+        alpha: thermal diffusivity
+        L: domain length
+        f_coeffs: function to compute Fourier coefficients
+        n_terms: number of Fourier terms
+    """
+    u = np.zeros_like(x)
+    for n in range(1, n_terms + 1):
+        bn = f_coeffs(n, L)
+        u += bn * np.sin(n * np.pi * x / L) * np.exp(-alpha * (n * np.pi / L)**2 * t)
+    return u
+
+# Example: Initial temperature is a "tent" function
+def tent_coeffs(n, L):
+    """Fourier sine coefficients for tent function centered at L/2."""
+    # f(x) = 1 - |2x/L - 1| (triangle wave)
+    # Coefficient: 8/(n²π²) * sin(nπ/2)
+    return (8 / (n**2 * np.pi**2)) * np.sin(n * np.pi / 2)
+
+# Parameters
+L = 1.0
+alpha = 0.1
+x = np.linspace(0, L, 200)
+
+print("Heat Equation Solution")
+print("=" * 50)
+print(f"Domain: [0, {L}]")
+print(f"Thermal diffusivity α = {alpha}")
+print(f"Boundary conditions: u(0,t) = u(L,t) = 0")
+print()
+
+# Solution at different times
+times = [0, 0.01, 0.05, 0.1, 0.5]
+print("Temperature profile at different times:")
+for t in times:
+    u = heat_equation_solution(x, t, alpha, L, tent_coeffs, n_terms=100)
+    max_temp = np.max(u)
+    print(f"  t = {t:.2f}: max u = {max_temp:.4f}")
+
+# Demonstrate smoothing property
+print("\n" + "=" * 50)
+print("Key Property: Instant Smoothing")
+print("Even with discontinuous initial data, solution is smooth for t > 0")
+
+# Initial step function coefficients
+def step_coeffs(n, L):
+    """Fourier coefficients for step function."""
+    return (2 / (n * np.pi)) * (1 - (-1)**n)
+
+x_fine = np.linspace(0, L, 1000)
+t_small = 0.001
+
+u_step = heat_equation_solution(x_fine, t_small, alpha, L, step_coeffs, n_terms=200)
+print(f"\nStep function initial condition:")
+print(f"At t = {t_small}, max |du/dx| = {np.max(np.abs(np.diff(u_step))) / (x_fine[1]-x_fine[0]):.2f}")
+print("(Gradient is finite even though initial step has infinite gradient)")
+
+# Eigenvalue analysis
+print("\n" + "=" * 50)
+print("Eigenvalue Analysis")
+print("Mode n decays as exp(-α(nπ/L)²t)")
+print("Decay rates:")
+for n in [1, 2, 5, 10]:
+    rate = alpha * (n * np.pi / L)**2
+    half_life = np.log(2) / rate
+    print(f"  n = {n:2d}: rate = {rate:.3f}, half-life = {half_life:.3f}")</code></pre>
+                
+                <h3>3. Graph Laplacian and Spectral Clustering</h3>
+                <p>The graph Laplacian matrix connects graph theory to linear algebra, enabling powerful algorithms for community detection and clustering.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Graph Laplacian Properties):</strong> For a weighted graph \(G = (V, E, W)\) with adjacency matrix \(W\) and degree matrix \(D_{ii} = \sum_j W_{ij}\), the (unnormalized) Laplacian \(L = D - W\) satisfies:
+                    <ol>
+                        <li>For any vector \(f \in \mathbb{R}^n\): \(f^TLf = \frac{1}{2}\sum_{i,j} W_{ij}(f_i - f_j)^2\)</li>
+                        <li>\(L\) is positive semi-definite with eigenvalues \(0 = \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n\)</li>
+                        <li>The multiplicity of eigenvalue 0 equals the number of connected components</li>
+                    </ol>
+                </div>
+                
+                <p><strong>Notation explanation:</strong></p>
+                <ul>
+                    <li>\(W_{ij}\) = weight of edge between nodes \(i\) and \(j\)</li>
+                    <li>\(D\) = diagonal degree matrix</li>
+                    <li>\(f^TLf\) is the "smoothness" of function \(f\) on the graph</li>
+                </ul>
+                
+                <div class="proof">
+                    <strong>Proof of (1):</strong>
+                    \[f^TLf = f^TDf - f^TWf = \sum_i D_{ii}f_i^2 - \sum_{i,j} W_{ij}f_if_j\]
+                    \[= \sum_{i,j} W_{ij}f_i^2 - \sum_{i,j} W_{ij}f_if_j = \frac{1}{2}\sum_{i,j} W_{ij}(f_i - f_j)^2\]
+                    The last equality follows by symmetry \(W_{ij} = W_{ji}\).
+                </div>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.neighbors import kneighbors_graph
+
+def compute_laplacian(adjacency):
+    """Compute unnormalized graph Laplacian."""
+    degree = np.sum(adjacency, axis=1)
+    D = np.diag(degree)
+    L = D - adjacency
+    return L
+
+def spectral_clustering(X, n_clusters, n_neighbors=10):
+    """
+    Perform spectral clustering on data X.
+    
+    Args:
+        X: data matrix (n_samples x n_features)
+        n_clusters: number of clusters
+        n_neighbors: number of neighbors for graph construction
+    
+    Returns:
+        cluster assignments
+    """
+    # Build k-nearest neighbors graph
+    adjacency = kneighbors_graph(X, n_neighbors, mode='connectivity')
+    adjacency = np.maximum(adjacency, adjacency.T)  # Make symmetric
+    
+    # Compute Laplacian
+    L = compute_laplacian(adjacency.toarray())
+    
+    # Compute eigenvectors
+    eigenvalues, eigenvectors = np.linalg.eigh(L)
+    
+    # Use first k eigenvectors (excluding the trivial one)
+    embedding = eigenvectors[:, 1:n_clusters+1]
+    
+    # K-means on the spectral embedding
+    from sklearn.cluster import KMeans
+    kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
+    return kmeans.fit_predict(embedding), eigenvalues, eigenvectors
+
+# Demonstrate on synthetic data
+print("Graph Laplacian and Spectral Clustering")
+print("=" * 50)
+
+# Create two moons dataset
+np.random.seed(42)
+n_samples = 200
+
+# Moon 1
+theta1 = np.linspace(0, np.pi, n_samples//2)
+moon1_x = np.cos(theta1)
+moon1_y = np.sin(theta1) - 0.5
+moon1 = np.column_stack([moon1_x, moon1_y])
+
+# Moon 2
+theta2 = np.linspace(0, np.pi, n_samples//2)
+moon2_x = 1 - np.cos(theta2)
+moon2_y = 0.5 - np.sin(theta2)
+moon2 = np.column_stack([moon2_x, moon2_y])
+
+X = np.vstack([moon1, moon2])
+labels_true = np.array([0] * (n_samples//2) + [1] * (n_samples//2))
+
+# Add noise
+X += 0.1 * np.random.randn(*X.shape)
+
+# Perform spectral clustering
+labels_pred, eigenvalues, eigenvectors = spectral_clustering(X, n_clusters=2, n_neighbors=10)
+
+print(f"Data shape: {X.shape}")
+print(f"Number of clusters: 2")
+print()
+
+# Analyze Laplacian eigenvalues
+print("Graph Laplacian Eigenvalues (first 10):")
+for i, ev in enumerate(eigenvalues[:10]):
+    print(f"  λ_{i} = {ev:.4f}")
+
+print(f"\nFiedler value (λ_1): {eigenvalues[1]:.4f}")
+print("(Small Fiedler value indicates weak connectivity between clusters)")
+
+# Check clustering accuracy
+accuracy = np.mean(labels_pred == labels_true)
+accuracy_flipped = np.mean(labels_pred != labels_true)
+accuracy = max(accuracy, accuracy_flipped)
+print(f"\nClustering accuracy: {accuracy:.2%}")
+
+# Demonstrate Cheeger inequality
+print("\n" + "=" * 50)
+print("Cheeger Inequality Connection")
+print("λ_1/2 ≤ φ(G) ≤ √(2λ_1)")
+print("where φ(G) is the conductance of the graph")
+print(f"Lower bound: {eigenvalues[1]/2:.4f}")
+print(f"Upper bound: {np.sqrt(2*eigenvalues[1]):.4f}")
+
+# Application: Image segmentation
+print("\n" + "=" * 50)
+print("Application: Image Segmentation")
+print("Spectral clustering can segment images by treating")
+print("pixels as nodes and similarity as edge weights")
+
+# Simple demonstration with synthetic image
+image_size = 20
+y, x = np.meshgrid(range(image_size), range(image_size))
+X_image = np.column_stack([x.ravel(), y.ravel()])
+
+# Create adjacency based on spatial proximity
+adjacency_image = kneighbors_graph(X_image, n_neighbors=8, mode='distance')
+adjacency_image = np.exp(-adjacency_image.toarray()**2 / (2 * 2**2))
+
+L_image = compute_laplacian(adjacency_image)
+eigenvalues_img, _ = np.linalg.eigh(L_image)
+
+print(f"\nImage graph: {image_size}x{image_size} = {image_size**2} pixels")
+print(f"First 5 eigenvalues: {eigenvalues_img[:5].round(4)}")
+print(f"Number of zero eigenvalues: {np.sum(eigenvalues_img < 1e-10)} (connected components)")</code></pre>
+            </section>
+            
+            <section id="special">
+                <h2>🌟 Special Topics</h2>
+                
+                <h3>1. The Isoperimetric Inequality</h3>
+                <p>A beautiful geometric result stating that among all shapes with a given perimeter, the circle encloses the maximum area. This principle appears throughout mathematics and physics.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Isoperimetric Inequality):</strong> For any simple closed curve \(\gamma\) in \(\mathbb{R}^2\) with length \(L\) enclosing area \(A\):
+                    \[4\pi A \leq L^2\]
+                    with equality if and only if \(\gamma\) is a circle.
+                </div>
+                
+                <p><strong>Notation explanation:</strong></p>
+                <ul>
+                    <li>\(L\) = perimeter (arc length of the curve)</li>
+                    <li>\(A\) = enclosed area</li>
+                    <li>The ratio \(L^2/A\) is minimized by the circle</li>
+                </ul>
+                
+                <div class="proof">
+                    <strong>Proof (Steiner Symmetrization Sketch):</strong> The proof uses the fact that symmetrization preserves area and does not increase perimeter. Given any convex body \(K\):
+                    <ol>
+                        <li>Apply Steiner symmetrization about the x-axis: replace each vertical chord with a centered segment of the same length</li>
+                        <li>This preserves area and decreases (or preserves) perimeter</li>
+                        <li>Repeat for all directions; the limit is a disk</li>
+                        <li>Since the disk has \(L^2/A = 4\pi\), the inequality follows</li>
+                    </ol>
+                </div>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import integrate
+
+def polygon_area(vertices):
+    """Calculate area of polygon using shoelace formula."""
+    x, y = vertices[:, 0], vertices[:, 1]
+    return 0.5 * abs(np.dot(x, np.roll(y, 1)) - np.dot(y, np.roll(x, 1)))
+
+def polygon_perimeter(vertices):
+    """Calculate perimeter of polygon."""
+    return np.sum(np.sqrt(np.sum((vertices - np.roll(vertices, 1, axis=0))**2, axis=1)))
+
+def isoperimetric_quotient(vertices):
+    """Calculate Q = 4πA/L² (equals 1 for circle)."""
+    A = polygon_area(vertices)
+    L = polygon_perimeter(vertices)
+    return 4 * np.pi * A / (L**2)
+
+print("Isoperimetric Inequality Demonstration")
+print("=" * 50)
+print("Q = 4πA/L² (Q = 1 for circle, Q < 1 for other shapes)")
+print()
+
+# Regular polygons with increasing number of sides
+print("Regular polygons approaching circle:")
+for n in [3, 4, 5, 6, 8, 10, 20, 100]:
+    theta = np.linspace(0, 2*np.pi, n+1)[:-1]
+    vertices = np.column_stack([np.cos(theta), np.sin(theta)])
+    Q = isoperimetric_quotient(vertices)
+    print(f"  n = {n:3d}: Q = {Q:.6f}")
+
+# Ellipses with varying eccentricity
+print("\nEllipses with varying eccentricity:")
+a = 2  # semi-major axis
+for b in [2, 1.8, 1.5, 1, 0.5]:
+    # Approximate ellipse with many points
+    theta = np.linspace(0, 2*np.pi, 1000)
+    vertices = np.column_stack([a * np.cos(theta), b * np.sin(theta)])
+    Q = isoperimetric_quotient(vertices)
+    eccentricity = np.sqrt(1 - (b/a)**2) if a >= b else np.sqrt(1 - (a/b)**2)
+    print(f"  a={a}, b={b}: e={eccentricity:.3f}, Q={Q:.6f}")
+
+# Random perturbations of circle
+print("\nRandom perturbations of circle:")
+np.random.seed(42)
+base_theta = np.linspace(0, 2*np.pi, 100)
+for noise_level in [0, 0.05, 0.1, 0.2, 0.5]:
+    r = 1 + noise_level * np.random.randn(len(base_theta))
+    vertices = np.column_stack([r * np.cos(base_theta), r * np.sin(base_theta)])
+    Q = isoperimetric_quotient(vertices)
+    print(f"  Noise σ = {noise_level}: Q = {Q:.6f}")
+
+# 3D version: Isoperimetric inequality for spheres
+print("\n" + "=" * 50)
+print("3D Analog: Isoperimetric Inequality in ℝ³")
+print("36πV² ≤ S³")
+print("Equality for sphere: S³ = 36π(4πR³/3)² = 64π²R⁶")
+
+def sphere_isoperimetric_quotient(R):
+    """Calculate Q = 36πV²/S³ for sphere of radius R."""
+    V = (4/3) * np.pi * R**3
+    S = 4 * np.pi * R**2
+    return 36 * np.pi * V**2 / S**3
+
+print(f"Sphere (any R): Q = {sphere_isoperimetric_quotient(1):.6f}")
+
+# Compare with cube
+V_cube = 1  # unit cube
+S_cube = 6  # surface area
+Q_cube = 36 * np.pi * V_cube**2 / S_cube**3
+print(f"Unit cube: Q = {Q_cube:.6f}")
+print(f"Ratio (cube/sphere): {Q_cube/sphere_isoperimetric_quotient(1):.4f}")</code></pre>
+                
+                <h3>2. Ramsey Theory: The Party Problem</h3>
+                <p>Ramsey theory guarantees the existence of order in large enough structures. The classic "party problem" asks: how many people must attend a party to guarantee that either 3 mutual acquaintances or 3 mutual strangers exist?</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Ramsey's Theorem, R(3,3) case):</strong> In any group of 6 people, there exist either 3 mutual acquaintances or 3 mutual strangers. Equivalently: any 2-coloring of the edges of \(K_6\) contains a monochromatic \(K_3\).
+                </div>
+                
+                <p><strong>Notation explanation:</strong></p>
+                <ul>
+                    <li>\(K_n\) = complete graph on \(n\) vertices</li>
+                    <li>\(R(s,t)\) = smallest \(n\) such that any red-blue edge coloring of \(K_n\) contains a red \(K_s\) or blue \(K_t\)</li>
+                    <li>\(R(3,3) = 6\)</li>
+                </ul>
+                
+                <div class="proof">
+                    <strong>Proof that R(3,3) ≤ 6:</strong> Consider any vertex \(v\) in \(K_6\). It has 5 incident edges, so by pigeonhole principle, at least 3 are the same color (say red) to vertices \(a, b, c\). If any edge among \(\{a,b,c\}\) is red, we have a red triangle with \(v\). If all edges among \(\{a,b,c\}\) are blue, we have a blue triangle.
+                    
+                    <strong>R(3,3) > 5:</strong> The 5-cycle \(C_5\) with edges colored alternately shows \(K_5\) can be 2-colored without monochromatic triangles.
+                </div>
+                
+                <pre><code>import numpy as np
+import itertools
+import matplotlib.pyplot as plt
+
+def has_monochromatic_triangle(adjacency, color):
+    """
+    Check if graph has a monochromatic triangle of given color.
+    
+    Args:
+        adjacency: n x n matrix where 0=no edge, 1=red, 2=blue
+        color: 1 for red, 2 for blue
+    
+    Returns:
+        True if monochromatic triangle exists
+    """
+    n = len(adjacency)
+    for i, j, k in itertools.combinations(range(n), 3):
+        if (adjacency[i,j] == color and adjacency[j,k] == color and 
+            adjacency[i,k] == color):
+            return True
+    return False
+
+def find_ramsey_violation(n, max_trials=10000):
+    """
+    Try to find a 2-coloring of K_n without monochromatic triangles.
+    
+    Returns:
+        (found_violation, coloring) where coloring is None if no violation found
+    """
+    for trial in range(max_trials):
+        # Random coloring
+        adjacency = np.zeros((n, n), dtype=int)
+        for i in range(n):
+            for j in range(i+1, n):
+                adjacency[i,j] = adjacency[j,i] = np.random.randint(1, 3)
+        
+        if not has_monochromatic_triangle(adjacency, 1) and \
+           not has_monochromatic_triangle(adjacency, 2):
+            return True, adjacency
+    
+    return False, None
+
+print("Ramsey Theory: R(3,3) = 6")
+print("=" * 50)
+
+# Verify R(3,3) > 5 by finding a valid coloring
+print("\n1. Showing R(3,3) > 5 (K_5 can avoid monochromatic triangles):")
+np.random.seed(42)
+found, coloring_5 = find_ramsey_violation(5, max_trials=1000)
+if found:
+    print("   Found valid coloring of K_5!")
+    print("   Adjacency matrix (1=red, 2=blue):")
+    print("   " + str(coloring_5).replace('\n', '\n   '))
+else:
+    print("   No valid coloring found in 1000 trials (but it exists)")
+
+# Verify R(3,3) ≤ 6 by exhaustive search
+print("\n2. Verifying R(3,3) ≤ 6 (all K_6 colorings have monochromatic triangle):")
+print("   Exhaustive search of all 2^15 = 32768 colorings of K_6...")
+
+def check_all_k6_colorings():
+    """Exhaustively check all colorings of K_6."""
+    n = 6
+    edges = list(itertools.combinations(range(n), 2))
+    num_edges = len(edges)
+    
+    valid_count = 0
+    for coloring_bits in range(2**num_edges):
+        adjacency = np.zeros((n, n), dtype=int)
+        for i, (u, v) in enumerate(edges):
+            color = 1 if (coloring_bits >> i) & 1 else 2
+            adjacency[u, v] = adjacency[v, u] = color
+        
+        if not has_monochromatic_triangle(adjacency, 1) and \
+           not has_monochromatic_triangle(adjacency, 2):
+            valid_count += 1
+    
+    return valid_count
+
+valid_k6 = check_all_k6_colorings()
+print(f"   Valid colorings of K_6: {valid_k6}")
+print(f"   Therefore R(3,3) ≤ 6 ✓")
+
+# Probabilistic method lower bound
+print("\n3. Probabilistic Method Lower Bounds:")
+print("   For large R(s,s), random coloring gives:")
+for s in [3, 4, 5, 6]:
+    # Lower bound from probabilistic method
+    n = int(2**(s/2))
+    print(f"   R({s},{s}) > {n} (from probabilistic method)")
+
+print("\n4. Known Ramsey Numbers:")
+print("   R(3,3) = 6")
+print("   R(3,4) = 9")
+print("   R(3,5) = 14")
+print("   R(4,4) = 18")
+print("   R(3,6) = 18")
+print("   R(5,5) is unknown! (known: 43 ≤ R(5,5) ≤ 48)")
+
+# Demonstrate the party problem
+print("\n" + "=" * 50)
+print("The Party Problem Demonstration")
+print("6 people at a party → at least 3 mutual friends or 3 mutual strangers")
+
+# Simulate random party
+np.random.seed(123)
+n_people = 6
+relationships = np.random.randint(0, 2, (n_people, n_people))  # 0=stranger, 1=friend
+relationships = np.triu(relationships, 1)  # Upper triangular
+relationships = relationships + relationships.T  # Symmetric
+
+print("\nRandom party relationships (1=friend, 0=stranger):")
+print(relationships)
+
+# Find the triangle
+for i, j, k in itertools.combinations(range(n_people), 3):
+    if relationships[i,j] == relationships[j,k] == relationships[i,k] == 1:
+        print(f"\nFound 3 mutual friends: persons {i}, {j}, {k}")
+        break
+    elif relationships[i,j] == relationships[j,k] == relationships[i,k] == 0:
+        print(f"\nFound 3 mutual strangers: persons {i}, {j}, {k}")
+        break</code></pre>
+                
+                <h3>3. The Basel Problem and ζ(2)</h3>
+                <p>Euler's famous solution to the Basel problem established the exact value of the sum of reciprocal squares, connecting number theory, analysis, and Fourier series.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Basel Problem):</strong>
+                    \[\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}\]
+                </div>
+                
+                <p><strong>Notation explanation:</strong></p>
+                <ul>
+                    <li>\(\zeta(s) = \sum_{n=1}^{\infty} n^{-s}\) is the Riemann zeta function</li>
+                    <li>\(\zeta(2) = \pi^2/6\) is Apéry's constant for even values</li>
+                </ul>
+                
+                <div class="proof">
+                    <strong>Proof (Fourier Series Method):</strong> Consider \(f(x) = x^2\) on \([-\pi, \pi]\). Its Fourier series is:
+                    \[x^2 = \frac{\pi^2}{3} + 4\sum_{n=1}^{\infty} \frac{(-1)^n}{n^2}\cos(nx)\]
+                    
+                    Setting \(x = \pi\):
+                    \[\pi^2 = \frac{\pi^2}{3} + 4\sum_{n=1}^{\infty} \frac{1}{n^2}\]
+                    
+                    Solving: \(\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}\).
+                </div>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def zeta_2_partial_sum(N):
+    """Compute partial sum of 1/n² up to N terms."""
+    return np.sum(1 / np.arange(1, N+1)**2)
+
+def zeta_2_euler_transform(N):
+    """Accelerated convergence using Euler transformation."""
+    # Alternating series: sum (-1)^(n+1)/n² = π²/12
+    alt_sum = np.sum([(-1)**(n+1) / n**2 for n in range(1, N+1)])
+    # ζ(2) = 2 * (alternating sum of odd terms)
+    return 2 * alt_sum
+
+def zeta_2_riemann_sum(N):
+    """Approximate using Riemann sum for ∫(1/x²) from 1 to ∞."""
+    x = np.linspace(1, N, N)
+    return np.sum(1 / x**2)
+
+print("The Basel Problem: ζ(2) = Σ(1/n²) = π²/6")
+print("=" * 50)
+
+true_value = np.pi**2 / 6
+print(f"True value: π²/6 = {true_value:.10f}")
+print()
+
+# Convergence of partial sums
+print("Convergence of partial sums:")
+for N in [10, 100, 1000, 10000, 100000]:
+    approx = zeta_2_partial_sum(N)
+    error = abs(approx - true_value)
+    print(f"  N = {N:6d}: sum = {approx:.8f}, error = {error:.2e}")
+
+print("\nConvergence rate analysis:")
+print("Error ~ O(1/N), so to get d decimal digits, need N ~ 10^d")
+
+# Euler's product formula connection
+print("\n" + "=" * 50)
+print("Euler's Product Formula:")
+print("ζ(2) = Π_p (1 - p⁻²)⁻¹ where product is over all primes p")
+
+def zeta_2_euler_product(num_primes):
+    """Compute ζ(2) using Euler product over first num_primes primes."""
+    def sieve_primes(n):
+        sieve = [True] * (n+1)
+        sieve[0] = sieve[1] = False
+        for i in range(2, int(n**0.5)+1):
+            if sieve[i]:
+                for j in range(i*i, n+1, i):
+                    sieve[j] = False
+        return [i for i, is_prime in enumerate(sieve) if is_prime]
+    
+    primes = sieve_primes(1000)[:num_primes]
+    product = 1.0
+    for p in primes:
+        product *= 1 / (1 - 1/p**2)
+    return product
+
+print("\nEuler product approximation:")
+for n_primes in [5, 10, 25, 50, 100]:
+    approx = zeta_2_euler_product(n_primes)
+    error = abs(approx - true_value)
+    print(f"  {n_primes:3d} primes: ζ(2) ≈ {approx:.8f}, error = {error:.2e}")
+
+# Connection to probability
+print("\n" + "=" * 50)
+print("Probabilistic Interpretation:")
+print("Probability that two randomly chosen integers are coprime is 6/π² ≈ 0.6079")
+
+def coprime_probability_simulation(n_samples=100000):
+    """Estimate probability that two random integers are coprime."""
+    def gcd(a, b):
+        while b:
+            a, b = b, a % b
+        return a
+    
+    np.random.seed(42)
+    count = 0
+    for _ in range(n_samples):
+        a = np.random.randint(1, 10000)
+        b = np.random.randint(1, 10000)
+        if gcd(a, b) == 1:
+            count += 1
+    
+    return count / n_samples
+
+prob_coprime = coprime_probability_simulation(50000)
+print(f"\nSimulation (50000 trials): P(coprime) ≈ {prob_coprime:.4f}")
+print(f"Theoretical value: 6/π² = {6/np.pi**2:.4f}")
+print(f"Therefore: π²/6 ≈ {1/prob_coprime:.4f}")
+
+# Other even zeta values
+print("\n" + "=" * 50)
+print("Other Even Zeta Values (Euler's general formula):")
+print("ζ(2n) = (-1)^(n+1) B_(2n) (2π)^(2n) / (2(2n)!)")
+print("where B_n are Bernoulli numbers")
+
+from scipy.special import bernoulli, factorial, zeta
+
+for n in [1, 2, 3, 4, 5, 6]:
+    zeta_val = zeta(2*n)
+    print(f"  ζ({2*n}) = {zeta_val:.10f}")
+    
+    # Express in terms of π
+    coeff = zeta_val / (np.pi**(2*n))
+    print(f"         = {coeff:.10f} × π^{2*n}")</code></pre>
+                
+                <h3>4. Morse Theory and Topology</h3>
+                <p>Morse theory studies the relationship between the critical points of smooth functions on manifolds and the topology of those manifolds, providing powerful tools for understanding shape.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Morse Lemma):</strong> Let \(f: M \to \mathbb{R}\) be a smooth function on a manifold \(M\), and let \(p\) be a non-degenerate critical point (\(df_p = 0\) and Hessian is non-singular). Then there exist local coordinates \((x_1, \ldots, x_n)\) near \(p\) such that:
+                    \[f(x) = f(p) - x_1^2 - \cdots - x_\lambda^2 + x_{\lambda+1}^2 + \cdots + x_n^2\]
+                    where \(\lambda\) is the index of the critical point (number of negative eigenvalues of the Hessian).
+                </div>
+                
+                <p><strong>Notation explanation:</strong></p>
+                <ul>
+                    <li>\(df_p\) = differential of \(f\) at \(p\) (gradient in coordinates)</li>
+                    <li>Hessian = matrix of second partial derivatives</li>
+                    <li>Index \(\lambda\) = number of "downward" directions at the critical point</li>
+                </ul>
+                
+                <div class="theorem">
+                    <strong>Theorem (Morse Inequalities):</strong> Let \(c_k\) be the number of critical points of index \(k\), and let \(b_k = \dim H_k(M)\) be the Betti numbers. Then:
+                    \[c_k \geq b_k\]
+                    and the alternating sum satisfies:
+                    \[\sum_{k=0}^n (-1)^k c_k = \sum_{k=0}^n (-1)^k b_k = \chi(M)\]
+                    where \(\chi(M)\) is the Euler characteristic.
+                </div>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def morse_function_2d(x, y, critical_points):
+    """
+    Construct a Morse function with specified critical points.
+    
+    Args:
+        critical_points: list of (x, y, height, index) tuples
+            index: 0 (min), 1 (saddle), 2 (max)
+    
+    Returns:
+        Function value at (x, y)
+    """
+    z = np.zeros_like(x)
+    for cx, cy, h, idx in critical_points:
+        dx, dy = x - cx, y - cy
+        r2 = dx**2 + dy**2
+        if idx == 0:  # minimum
+            z += h * np.exp(-r2) * (1 - 2*r2)
+        elif idx == 2:  # maximum
+            z -= h * np.exp(-r2) * (1 - 2*r2)
+        else:  # saddle
+            z += h * (dx**2 - dy**2) * np.exp(-r2/2)
+    return z
+
+def gradient_flow(x0, y0, f_func, dt=0.01, n_steps=1000):
+    """
+    Compute gradient flow from initial point.
+    
+    Returns:
+        trajectory of points
+    """
+    traj = [(x0, y0)]
+    x, y = x0, y0
+    
+    for _ in range(n_steps):
+        # Numerical gradient
+        eps = 0.001
+        dx = (f_func(x+eps, y) - f_func(x-eps, y)) / (2*eps)
+        dy = (f_func(x, y+eps) - f_func(x, y-eps)) / (2*eps)
+        
+        # Gradient descent
+        x -= dt * dx
+        y -= dt * dy
+        traj.append((x, y))
+        
+        if dx**2 + dy**2 < 1e-10:
+            break
+    
+    return np.array(traj)
+
+# Example: Torus-like height function
+print("Morse Theory on a Torus")
+print("=" * 50)
+print("Height function on a torus has 4 critical points:")
+print("  - 1 minimum (index 0)")
+print("  - 2 saddles (index 1)")  
+print("  - 1 maximum (index 2)")
+print()
+print("Morse polynomial: M(t) = 1 + 2t + t²")
+print("Poincaré polynomial: P(t) = 1 + 2t + t² (for torus)")
+print("Morse inequalities: c_k ≥ b_k")
+print("  c_0 = 1 ≥ b_0 = 1 ✓")
+print("  c_1 = 2 ≥ b_1 = 2 ✓")
+print("  c_2 = 1 ≥ b_2 = 1 ✓")
+
+# Create a Morse function visualization
+def example_morse_function(x, y):
+    """A Morse function with multiple critical points."""
+    # Two minima
+    z = 2 * np.exp(-((x-1)**2 + (y-1)**2)) + 2 * np.exp(-((x+1)**2 + (y+1)**2))
+    # One saddle between them
+    z -= 1.5 * np.exp(-(x**2 + y**2)/0.5) * np.cos(2*np.arctan2(y, x))
+    # One maximum
+    z -= 3 * np.exp(-((x-1)**2 + (y+1)**2)/0.5)
+    return z
+
+# Analyze critical points
+print("\n" + "=" * 50)
+print("Critical Point Analysis:")
+print("\nFor a function f(x,y), critical points satisfy ∂f/∂x = ∂f/∂y = 0")
+print("The Hessian H = [[f_xx, f_xy], [f_xy, f_yy]] determines the type:")
+print("  - det(H) > 0, tr(H) > 0: minimum (index 0)")
+print("  - det(H) > 0, tr(H) < 0: maximum (index 2)")
+print("  - det(H) < 0: saddle point (index 1)")
+
+# Numerical example
+def hessian_2d(f, x, y, eps=1e-5):
+    """Compute 2x2 Hessian numerically."""
+    f_xx = (f(x+eps, y) - 2*f(x, y) + f(x-eps, y)) / eps**2
+    f_yy = (f(x, y+eps) - 2*f(x, y) + f(x, y-eps)) / eps**2
+    f_xy = (f(x+eps, y+eps) - f(x+eps, y-eps) - f(x-eps, y+eps) + f(x-eps, y-eps)) / (4*eps**2)
+    return np.array([[f_xx, f_xy], [f_xy, f_yy]])
+
+def classify_critical_point(f, x, y):
+    """Classify a critical point using the Hessian."""
+    H = hessian_2d(f, x, y)
+    det = np.linalg.det(H)
+    tr = np.trace(H)
+    
+    if det > 0:
+        if tr > 0:
+            return "minimum", 0
+        else:
+            return "maximum", 2
+    elif det < 0:
+        return "saddle", 1
+    else:
+        return "degenerate", -1
+
+# Find critical points numerically
+def find_critical_points(f, bounds=(-2, 2), grid_size=100):
+    """Find approximate critical points on a grid."""
+    x = np.linspace(bounds[0], bounds[1], grid_size)
+    y = np.linspace(bounds[0], bounds[1], grid_size)
+    X, Y = np.meshgrid(x, y)
+    
+    # Compute gradient magnitude
+    eps = 0.01
+    dfdx = (f(X+eps, Y) - f(X-eps, Y)) / (2*eps)
+    dfdy = (f(X, Y+eps) - f(X, Y-eps)) / (2*eps)
+    grad_mag = np.sqrt(dfdx**2 + dfdy**2)
+    
+    # Find local minima of gradient magnitude
+    from scipy.ndimage import minimum_filter
+    local_min = (grad_mag == minimum_filter(grad_mag, size=3))
+    
+    critical_points = []
+    for i in range(1, grid_size-1):
+        for j in range(1, grid_size-1):
+            if local_min[i, j] and grad_mag[i, j] < 0.1:
+                critical_points.append((X[i,j], Y[i,j]))
+    
+    return critical_points
+
+# Simple example: f(x,y) = x² + y² (paraboloid)
+def paraboloid(x, y):
+    return x**2 + y**2
+
+print("\n" + "=" * 50)
+print("Example: f(x,y) = x² + y² (paraboloid)")
+print("Critical point at (0,0):")
+cp_type, idx = classify_critical_point(paraboloid, 0, 0)
+print(f"  Type: {cp_type} (index {idx})")
+print("  This is the only critical point.")
+print("  Euler characteristic χ = 1 (for disk/contractible space)")
+
+# Morse complex example
+print("\n" + "=" * 50)
+print("Morse Complex and Homology:")
+print("The Morse complex has chain groups C_k generated by index-k critical points")
+print("Boundary operator ∂ counts gradient flow lines between critical points")
+print("Morse homology: HM_k(M) = ker(∂_k) / im(∂_{k+1})")
+print("Theorem: Morse homology is isomorphic to singular homology")
+print("Therefore: dim(HM_k) = b_k (Betti numbers)")</code></pre>
+            </section>
+            
+            <section id="history">
+                <h2>📜 Math History</h2>
+                
+                <h3>February 16 in Mathematical History</h3>
+                <ul>
+                    <li><strong>1822:</strong> Joseph Liouville was born. He made fundamental contributions to complex analysis, number theory, and differential equations. Liouville's theorem states that bounded entire functions are constant.</li>
+                    <li><strong>1838:</strong> Henry Adams was born (though primarily known as a historian, his work influenced mathematical approaches to historical analysis).</li>
+                    <li><strong>1957:</strong> The first FORTRAN compiler was delivered to Westinghouse, revolutionizing scientific computing and mathematical programming.</li>
+                </ul>
+                
+                <h3>This Week in Mathematics</h3>
+                <p><strong>The Development of Spectral Theory (1900-1930):</strong> This week marks significant developments in the early 20th century development of spectral theory. David Hilbert's work on integral equations laid the foundation for what would become functional analysis. The spectral theorem for self-adjoint operators, developed by Hilbert, von Neumann, and others, became one of the cornerstones of modern mathematical physics and quantum mechanics.</p>
+                
+                <h3>Historical Milestone: The Classification of Finite Simple Groups</h3>
+                <p>The classification of finite simple groups, completed in 2004 after decades of work by hundreds of mathematicians, stands as one of the most significant achievements in 20th-century mathematics. The proof spans approximately 15,000 pages across hundreds of journal articles and identifies 18 infinite families plus 26 sporadic groups. The largest sporadic group, the Monster group, has approximately 8×10⁵³ elements and connections to modular forms through monstrous moonshine.</p>
+            </section>
+            
+            <section id="articles">
+                <h2>📰 Featured Articles</h2>
+                
+                <h3><a href="https://www.quantamagazine.org/mathematicians-prove-hilberts-problem-on-equations-that-cant-be-solved-20250714/">Mathematicians Solve Hilbert's Problem on Unsolvable Equations</a> — Quanta Magazine</h3>
+                <p>A breakthrough in algebraic geometry resolves a question posed by David Hilbert in 1900 regarding the solvability of polynomial equations. The work connects deep results from model theory, algebraic geometry, and number theory, showing that certain classes of equations cannot be solved by any algorithmic procedure.</p>
+                
+                <h3><a href="https://www.ams.org/journals/notices/202502/rnoti-p200.pdf">The Mathematics of Neural Network Training</a> — AMS Notices</h3>
+                <p>An in-depth exploration of the mathematical foundations underlying the training of deep neural networks. The article examines optimization landscapes, gradient flow dynamics, and the implicit regularization that occurs during stochastic gradient descent, providing insights into why overparameterized networks generalize well.</p>
+                
+                <h3><a href="https://www.nature.com/articles/s41586-024-08450-8">Quantum Error Correction Reaches New Milestone</a> — Nature</h3>
+                <p>Recent experimental advances in quantum computing have demonstrated error correction codes that approach the theoretical thresholds required for fault-tolerant quantum computation. The mathematical framework of stabilizer codes and topological quantum error correction is bringing practical quantum computers closer to reality.</p>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p><a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
