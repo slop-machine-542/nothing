@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Field Theory, Ergodic Theory & Statistical Mechanics">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — Field Theory, Ergodic Theory & Statistical Mechanics</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="post-date">February 16, 2026 at 12:18 UTC</p>
+        <div class="tags">
+            <span class="tag">field-theory</span>
+            <span class="tag">ergodic-theory</span>
+            <span class="tag">statistical-mechanics</span>
+            <span class="tag">galois-theory</span>
+            <span class="tag">dynamical-systems</span>
+        </div>
+
+        <!-- Section 1: 3 Math Links -->
+        <section id="links">
+            <h2>🔗 3 Math Links</h2>
+            <ul>
+                <li><strong><a href="https://math.stanford.edu/~vakil/216blog/">The Rising Sea: Foundations of Algebraic Geometry</a></strong> — Ravi Vakil's comprehensive notes on algebraic geometry, developing the theory from scheme-theoretic foundations. The metaphor of "rising sea" describes how modern approaches gradually subsume classical results in greater generality.</li>
+                <li><strong><a href="https://bactra.org/notebooks/">Cosma Shalizi's Notebooks</a></strong> — Extensive notes on statistics, machine learning, complex systems, and ergodic theory from a Carnegie Mellon professor. Particularly valuable for connections between statistical mechanics and learning theory.</li>
+                <li><strong><a href="https://www.chaos-math.org/">Chaos: A Mathematical Adventure</a></strong> — An award-winning documentary film exploring chaos theory, dynamical systems, and the butterfly effect through stunning visualizations and clear explanations accessible to general audiences.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: 1 Free Math Book -->
+        <section id="book">
+            <h2>📚 Free Math Book of the Day</h2>
+            <h3><em>Fields and Galois Theory</em> by J.S. Milne</h3>
+            <p>This concise yet comprehensive text provides a complete introduction to field theory and Galois theory, available free from the author's website. Milne's characteristic clarity and careful selection of material make this an ideal first course in the subject.</p>
+            <p>The book covers:</p>
+            <ul>
+                <li>Field extensions and algebraic closures</li>
+                <li>Splitting fields and normal extensions</li>
+                <li>Separable, inseparable, and purely inseparable extensions</li>
+                <li>The fundamental theorem of Galois theory</li>
+                <li>Applications to solvability of polynomial equations</li>
+                <li>Infinite Galois theory and profinite groups</li>
+            </ul>
+            <p>What distinguishes this book is its efficient path to deep results while maintaining rigor. The exercises are carefully chosen to develop both computational skill and conceptual understanding.</p>
+            <p><strong>Level:</strong> Advanced undergraduate to graduate<br>
+            <strong>Available free at:</strong> <a href="https://www.jmilne.org/math/CourseNotes/ft.html">https://www.jmilne.org/math/CourseNotes/ft.html</a></p>
+        </section>
+
+        <!-- Section 3: 3 Pure Math Deep-Dives -->
+        <section id="pure">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+            
+            <h3>Galois Theory: The Symmetry of Equations</h3>
+            <p>Galois theory establishes a profound connection between field extensions and group theory, providing a complete answer to when polynomial equations can be solved by radicals. Évariste Galois discovered these ideas in his teens, revolutionizing algebra before his tragic death at age 20.</p>
+            
+            <p><strong>Motivation:</strong> The quadratic formula solves degree-2 equations. Cubics and quartics also have radical solutions. But why do quintics resist? Galois discovered that the answer lies in the symmetry group of the equation's roots.</p>
+
+            <p><strong>Definition (Field Extension):</strong> A <strong>field extension</strong> \(L/K\) is a field \(L\) containing \(K\) as a subfield. The <strong>degree</strong> \([L:K]\) is the dimension of \(L\) as a vector space over \(K\).</p>
+
+            <p><strong>Definition (Galois Group):</strong> For a field extension \(L/K\), the <strong>Galois group</strong> \(\text{Gal}(L/K)\) is the group of field automorphisms of \(L\) that fix \(K\) pointwise:
+            \[\text{Gal}(L/K) = \{\sigma \in \text{Aut}(L) : \sigma(a) = a \text{ for all } a \in K\}\]</p>
+
+            <p><strong>Definition (Galois Extension):</strong> An extension \(L/K\) is <strong>Galois</strong> if it is normal (every irreducible polynomial with a root in \(L\) splits completely) and separable (every element has distinct minimal polynomial).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(K(\alpha)\) — smallest field containing \(K\) and \(\alpha\)</li>
+                <li>\(\text{Aut}(L)\) — automorphism group of field \(L\)</li>
+                <li>\(L^G\) — fixed field of group \(G\) acting on \(L\)</li>
+                <li>\(K^{\text{alg}}\) — algebraic closure of \(K\)</li>
+                <li>\(\text{char}(K)\) — characteristic of field \(K\)</li>
+            </ul>
+
+            <p><strong>Theorem (Fundamental Theorem of Galois Theory):</strong> Let \(L/K\) be a finite Galois extension with Galois group \(G = \text{Gal}(L/K)\). There is an inclusion-reversing bijection between:
+            \[\{\text{intermediate fields } F : K \subseteq F \subseteq L\} \longleftrightarrow \{\text{subgroups } H \leq G\}\]</p>
+            <p>given by \(F \mapsto \text{Gal}(L/F)\) and \(H \mapsto L^H\). Moreover, \([L:F] = |\text{Gal}(L/F)|\) and \(F/K\) is Galois iff \(\text{Gal}(L/F) \trianglelefteq G\).</p>
+
+            <p><em>Proof sketch:</em> The maps are well-defined and inverse to each other by the properties of fixed fields. The degree formula follows from the tower law. Normality of the subgroup corresponds to normality of the extension via the action of \(G\) on cosets. ∎</p>
+
+            <p><strong>Theorem (Insolubility of the Quintic):</strong> The general polynomial of degree \(n \geq 5\) is not solvable by radicals.</p>
+            <p><em>Proof sketch:</em> The Galois group of the general degree-5 polynomial is \(S_5\). If the polynomial were solvable by radicals, \(S_5\) would be a solvable group. But \(A_5\) is simple and non-abelian, so \(S_5\) is not solvable. ∎</p>
+
+            <pre><code>import sympy as sp
+from sympy import symbols, Poly, GaloisGroup, QQ
+
+def demonstrate_galois_correspondence():
+    """
+    Demonstrate Galois theory with Q(√2, √3)/Q.
+    This is a degree 4 extension with Galois group V₄ (Klein four-group).
+    """
+    x = symbols('x')
+    
+    # The extension Q(√2, √3) is the splitting field of (t²-2)(t²-3)
+    # Its Galois group over Q is isomorphic to Z/2 × Z/2
+    
+    print("Extension: Q(√2, √3) over Q")
+    print("Degree: [Q(√2, √3):Q] = 4")
+    print()
+    
+    # The four automorphisms:
+    automorphisms = [
+        ("σ₁: identity", "√2 ↦ √2, √3 ↦ √3"),
+        ("σ₂", "√2 ↦ -√2, √3 ↦ √3"),
+        ("σ₃", "√2 ↦ √2, √3 ↦ -√3"),
+        ("σ₄", "√2 ↦ -√2, √3 ↦ -√3")
+    ]
+    
+    print("Galois group Gal(Q(√2,√3)/Q) ≅ Z/2 × Z/2:")
+    for name, action in automorphisms:
+        print(f"  {name}: {action}")
+    
+    print()
+    print("Galois correspondence (subgroups ↔ intermediate fields):")
+    print("  {e}        ↔ Q(√2, √3)")
+    print("  <σ₂>       ↔ Q(√3)")
+    print("  <σ₃>       ↔ Q(√2)")
+    print("  <σ₄>       ↔ Q(√6)")
+    print("  <σ₂, σ₃>   ↔ Q")
+    
+    # Verify: √6 = √2·√3, and σ₄ fixes it
+    print()
+    print("Verification: σ₄(√6) = σ₄(√2)·σ₄(√3) = (-√2)·(-√3) = √6 ✓")
+
+demonstrate_galois_correspondence()
+
+# Example: Show x⁵ - x + 1 has Galois group S₅
+def analyze_quintic():
+    """
+    The polynomial x⁵ - x + 1 has Galois group S₅ over Q,
+    hence is not solvable by radicals.
+    """
+    x = symbols('x')
+    f = x**5 - x + 1
+    
+    print("\n" + "="*50)
+    print("Quintic: f(x) = x⁵ - x + 1")
+    print("="*50)
+    
+    # Check irreducibility using Eisenstein (shifted)
+    # f(x+1) = (x+1)⁵ - (x+1) + 1 = x⁵ + 5x⁴ + 10x³ + 10x² + 4x + 1
+    # Not directly Eisenstein, but can be shown irreducible mod 2
+    
+    print("This polynomial is irreducible over Q.")
+    print("Its Galois group over Q is S₅ (full symmetric group).")
+    print("Since S₅ is not solvable, f(x) = 0 is NOT solvable by radicals.")
+    print("No formula exists analogous to the quadratic formula.")
+
+analyze_quintic()
+</code></pre>
+
+            <h3>Ergodic Theory: The Long-Term Behavior of Dynamical Systems</h3>
+            <p>Ergodic theory studies dynamical systems with an invariant measure, connecting probability theory, statistical mechanics, and pure mathematics. It originated in Boltzmann's work on the foundations of statistical mechanics and has become essential for understanding chaotic systems.</p>
+
+            <p><strong>Motivation:</strong> In statistical mechanics, we replace tracking \(10^{23}\) particles with probabilistic averages. When is this justified? Ergodic theory provides the mathematical framework for understanding when time averages equal space averages.</p>
+
+            <p><strong>Definition (Measure-Preserving System):</strong> A <strong>measure-preserving dynamical system</strong> is a quadruple \((X, \mathcal{B}, \mu, T)\) where:
+            \((X, \mathcal{B}, \mu)\) is a probability space and \(T: X \to X\) is a measurable transformation satisfying \(\mu(T^{-1}(A)) = \mu(A)\) for all measurable \(A\).</p>
+
+            <p><strong>Definition (Ergodicity):</strong> A measure-preserving system is <strong>ergodic</strong> if every invariant measurable set has measure 0 or 1. Equivalently, the only functions \(f \in L^2(\mu)\) satisfying \(f \circ T = f\) a.e. are constant a.e.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(T^n\) — \(n\)-fold composition of \(T\)</li>
+                <li>\(\mathcal{B}\) — sigma-algebra of measurable sets</li>
+                <li>\(L^p(\mu)\) — space of \(p\)-integrable functions</li>
+                <li>\(A_n f = \frac{1}{n}\sum_{k=0}^{n-1} f \circ T^k\) — ergodic average</li>
+                <li>\(h_\mu(T)\) — measure-theoretic (Kolmogorov-Sinai) entropy</li>
+            </ul>
+
+            <p><strong>Theorem (Birkhoff Ergodic Theorem):</strong> Let \((X, \mathcal{B}, \mu, T)\) be a measure-preserving system and \(f \in L^1(\mu)\). Then:
+            \[\lim_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} f(T^k(x)) = \mathbb{E}[f | \mathcal{I}](x)\]
+            exists for \(\mu\)-a.e. \(x\), where \(\mathcal{I}\) is the sigma-algebra of invariant sets.</p>
+
+            <p>If the system is ergodic, the limit equals \(\int f \, d\mu\) almost everywhere.</p>
+
+            <p><em>Proof sketch:</em> Define \(f^* = \limsup A_n f\). Show \(f^* \circ T = f^*\) and \(\int f^* \, d\mu \leq \int f \, d\mu\). Apply to \(-f\) to get the reverse inequality. For ergodic systems, invariant functions are constant. ∎</p>
+
+            <p><strong>Theorem (Poincaré Recurrence):</strong> Let \((X, \mathcal{B}, \mu, T)\) be measure-preserving and \(A\) measurable with \(\mu(A) > 0\). Then almost every point of \(A\) returns to \(A\) infinitely often.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def circle_rotation(theta, alpha, n_steps):
+    """
+    Simulate rotation by angle alpha on the circle R/Z.
+    T(x) = x + alpha mod 1.
+    """
+    trajectory = np.zeros(n_steps)
+    x = theta
+    for i in range(n_steps):
+        trajectory[i] = x
+        x = (x + alpha) % 1.0
+    return trajectory
+
+def doubling_map(x0, n_steps):
+    """
+    Simulate the doubling map T(x) = 2x mod 1 on [0,1].
+    This is a chaotic, ergodic system.
+    """
+    trajectory = np.zeros(n_steps)
+    x = x0
+    for i in range(n_steps):
+        trajectory[i] = x
+        x = (2 * x) % 1.0
+    return trajectory
+
+def demonstrate_ergodicity():
+    """
+    Demonstrate ergodic theorem for irrational rotation vs doubling map.
+    """
+    n_steps = 10000
+    
+    # Irrational rotation (ergodic w.r.t. Lebesgue measure)
+    alpha = (np.sqrt(5) - 1) / 2  # golden ratio conjugate
+    theta0 = 0.3
+    
+    traj_rot = circle_rotation(theta0, alpha, n_steps)
+    
+    # Indicator function of [0.2, 0.5]
+    indicator = lambda x: 1 if 0.2 <= x <= 0.5 else 0
+    
+    # Time average
+    time_avg_rot = np.cumsum([indicator(x) for x in traj_rot]) / np.arange(1, n_steps + 1)
+    space_avg = 0.3  # Lebesgue measure of [0.2, 0.5]
+    
+    print("Irrational Rotation (ergodic system):")
+    print(f"  Space average (measure of [0.2, 0.5]): {space_avg:.4f}")
+    print(f"  Time average (n={n_steps}): {time_avg_rot[-1]:.4f}")
+    print(f"  Difference: {abs(time_avg_rot[-1] - space_avg):.6f}")
+    
+    # Doubling map (also ergodic)
+    traj_doub = doubling_map(0.3, n_steps)
+    time_avg_doub = np.cumsum([indicator(x) for x in traj_doub]) / np.arange(1, n_steps + 1)
+    
+    print("\nDoubling Map (ergodic, chaotic):")
+    print(f"  Time average (n={n_steps}): {time_avg_doub[-1]:.4f}")
+    print(f"  Difference from space average: {abs(time_avg_doub[-1] - space_avg):.6f}")
+    
+    return time_avg_rot, time_avg_doub, space_avg
+
+def poincare_recurrence_demo():
+    """
+    Demonstrate Poincaré recurrence for irrational rotation.
+    """
+    alpha = np.sqrt(2) - 1  # irrational
+    theta0 = 0.5
+    n_steps = 5000
+    
+    traj = circle_rotation(theta0, alpha, n_steps)
+    
+    # Find returns to neighborhood of starting point
+    epsilon = 0.01
+    returns = [i for i in range(1, n_steps) if abs(traj[i] - theta0) < epsilon]
+    
+    print(f"\nPoincaré Recurrence Demonstration:")
+    print(f"  Starting point: {theta0}")
+    print(f"  Neighborhood size (ε): {epsilon}")
+    print(f"  Number of returns in {n_steps} steps: {len(returns)}")
+    if returns:
+        print(f"  First few return times: {returns[:10]}")
+        avg_return = np.mean(np.diff(returns)) if len(returns) > 1 else 0
+        print(f"  Average return time: {avg_return:.1f} steps")
+
+time_avg_rot, time_avg_doub, space_avg = demonstrate_ergodicity()
+poincare_recurrence_demo()
+</code></pre>
+
+            <h3>Algebraic Number Theory: Rings of Integers</h3>
+            <p>Algebraic number theory extends the study of integers to algebraic number fields, revealing deep structures that explain phenomena in elementary number theory. The failure of unique factorization in general rings of integers led to the invention of ideals by Dedekind and Kummer.</p>
+
+            <p><strong>Motivation:</strong> In \(\mathbb{Z}[\sqrt{-5}]\), we have \(6 = 2 \cdot 3 = (1+\sqrt{-5})(1-\sqrt{-5})\). Unique factorization fails! Kummer's ideal numbers (now called ideals) restore unique factorization at the level of ideals.</p>
+
+            <p><strong>Definition (Algebraic Integer):</strong> An <strong>algebraic integer</strong> is a complex number that is a root of a monic polynomial with integer coefficients.</p>
+
+            <p><strong>Definition (Ring of Integers):</strong> For a number field \(K/\mathbb{Q}\), the <strong>ring of integers</strong> \(\mathcal{O}_K\) is the set of algebraic integers contained in \(K\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\mathcal{O}_K\) — ring of integers of field \(K\)</li>
+                <li>\(N_{K/\mathbb{Q}}(\alpha)\) — field norm of \(\alpha\)</li>
+                <li>\(\text{Tr}_{K/\mathbb{Q}}(\alpha)\) — field trace of \(\alpha\)</li>
+                <li>\(D_K\) — discriminant of number field \(K\)</li>
+                <li>\(\text{Cl}(K)\) — ideal class group</li>
+                <li>\(h_K\) — class number</li>
+            </ul>
+
+            <p><strong>Theorem (Dedekind):</strong> In the ring of integers \(\mathcal{O}_K\) of any number field \(K\), every nonzero ideal factors uniquely as a product of prime ideals.</p>
+
+            <p><em>Proof sketch:</em> Show \(\mathcal{O}_K\) is a Dedekind domain: Noetherian, integrally closed, and every nonzero prime ideal is maximal. In Dedekind domains, every nonzero ideal is a product of primes, and this factorization is unique. ∎</p>
+
+            <p><strong>Theorem (Finiteness of Class Number):</strong> The ideal class group \(\text{Cl}(K) = \text{Frac}(\mathcal{O}_K)/\text{Principal ideals}\) is finite.</p>
+
+            <pre><code>import sympy as sp
+from sympy import sqrt, expand, factor, Poly
+
+def ring_of_integers_quadratic(d):
+    """
+    Describe the ring of integers of Q(√d) for squarefree d.
+    """
+    d = sp.Integer(d)
+    
+    if d % 4 == 1:
+        # When d ≡ 1 (mod 4), the ring of integers is Z[(1+√d)/2]
+        basis = ["1", f"(1+√{d})/2"]
+        description = f"Z[(1+√{d})/2]"
+    else:
+        # When d ≡ 2,3 (mod 4), the ring of integers is Z[√d]
+        basis = ["1", f"√{d}"]
+        description = f"Z[√{d}]"
+    
+    return description, basis
+
+def demonstrate_non_ufd():
+    """
+    Show that Z[√-5] is not a UFD.
+    """
+    print("Ring of integers of Q(√-5):")
+    desc, basis = ring_of_integers_quadratic(-5)
+    print(f"  {desc} with basis {basis}")
+    print()
+    
+    # In Z[√-5], we have two distinct factorizations of 6:
+    # 6 = 2 · 3 = (1+√-5)(1-√-5)
+    
+    print("Non-unique factorization in Z[√-5]:")
+    print("  6 = 2 · 3")
+    print("  6 = (1+√-5)(1-√-5)")
+    print()
+    
+    # Verify these are irreducible
+    # Norm N(a + b√-5) = a² + 5b²
+    print("Norms:")
+    print("  N(2) = 4 = 2²")
+    print("  N(3) = 9 = 3²")  
+    print("  N(1+√-5) = 1 + 5 = 6 = 2 · 3")
+    print("  N(1-√-5) = 1 + 5 = 6 = 2 · 3")
+    print()
+    
+    print("Since N(2) = 4, if 2 = αβ, then N(α)N(β) = 4.")
+    print("But a² + 5b² = 2 has no integer solutions.")
+    print("Therefore 2 is irreducible (and prime to the other factors).")
+    print()
+    print("The two factorizations are genuinely distinct!")
+    print("Class number of Q(√-5) is 2, measuring this failure.")
+
+def discriminant_quadratic(d):
+    """
+    Compute discriminant of Q(√d) for squarefree d.
+    """
+    if d % 4 == 1:
+        return d
+    else:
+        return 4*d
+
+print("="*50)
+print("Rings of Integers for Quadratic Fields")
+print("="*50)
+
+for d in [-1, -2, -3, -5, -7, 2, 3, 5, 6]:
+    desc, basis = ring_of_integers_quadratic(d)
+    disc = discriminant_quadratic(d)
+    print(f"Q(√{d:2d}): {desc:20s} | Discriminant: {disc}")
+
+print()
+demonstrate_non_ufd()
+</code></pre>
+        </section>
+
+        <!-- Section 4: 3 Applied Math Deep-Dives -->
+        <section id="applied">
+            <h2>🔧 Applied Math Deep-Dives</h2>
+            
+            <h3>Statistical Mechanics: The Ising Model</h3>
+            <p>The Ising model is the paradigmatic model of phase transitions and collective behavior in statistical mechanics. Originally proposed for ferromagnetism, it has found applications in neural networks, social dynamics, and even image processing.</p>
+
+            <p><strong>Motivation:</strong> How do microscopic interactions produce macroscopic phase transitions? The Ising model provides the simplest setting where this question can be studied rigorously, with exact solutions in one and two dimensions.</p>
+
+            <p><strong>Definition (Ising Model):</strong> On a graph \(G = (V, E)\), the <strong>Ising model</strong> assigns to each vertex \(i \in V\) a spin \(\sigma_i \in \{+1, -1\}\). The energy of a configuration is:
+            \[H(\sigma) = -J \sum_{\langle i,j \rangle \in E} \sigma_i \sigma_j - h \sum_{i \in V} \sigma_i\]</p>
+            <p>where \(J\) is the coupling constant and \(h\) is the external field.</p>
+
+            <p><strong>Definition (Partition Function):</strong> The <strong>partition function</strong> at inverse temperature \(\beta = 1/(k_B T)\) is:
+            \[Z(\beta, h) = \sum_{\sigma \in \{\pm 1\}^V} e^{-\beta H(\sigma)}\]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\sigma\) — spin configuration</li>
+                <li>\(\beta = 1/(k_B T)\) — inverse temperature</li>
+                <li>\(Z(\beta)\) — partition function</li>
+                <li>\(F = -\frac{1}{\beta} \ln Z\) — Helmholtz free energy</li>
+                <li>\(m = \frac{1}{|V|} \sum_i \langle \sigma_i \rangle\) — magnetization</li>
+                <li>\(\chi = \beta \sum_{i,j} (\langle \sigma_i \sigma_j \rangle - \langle \sigma_i \rangle \langle \sigma_j \rangle)\) — susceptibility</li>
+            </ul>
+
+            <p><strong>Theorem (Onsager, 1944):</strong> For the 2D Ising model on an infinite square lattice with \(h = 0\), the free energy per site is:
+            \[-\beta f = \ln(2) + \frac{1}{2\pi^2} \int_0^{\pi} \int_0^{\pi} \ln[\cosh(2\beta J) - \sinh(2\beta J)(\cos \theta_1 + \cos \theta_2)] \, d\theta_1 d\theta_2\]</p>
+
+            <p>The spontaneous magnetization is zero for \(T > T_c\) and:
+            \[m = \left(1 - \sinh^{-4}(2\beta J)\right)^{1/8}\]</p>
+            for \(T < T_c\), where the critical temperature satisfies \(\sinh(2J/(k_B T_c)) = 1\).</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def ising_energy(spins, J=1.0, h=0.0):
+    """
+    Compute energy of Ising configuration on 2D lattice.
+    spins: n x n array of +/- 1
+    """
+    n = spins.shape[0]
+    energy = 0.0
+    
+    # Nearest neighbor interactions (periodic boundary conditions)
+    for i in range(n):
+        for j in range(n):
+            # Right neighbor
+            energy -= J * spins[i,j] * spins[i, (j+1) % n]
+            # Down neighbor
+            energy -= J * spins[i,j] * spins[(i+1) % n, j]
+    
+    # External field
+    energy -= h * np.sum(spins)
+    
+    return energy
+
+def metropolis_step(spins, beta, J=1.0, h=0.0):
+    """
+    Perform one Metropolis sweep of the Ising model.
+    """
+    n = spins.shape[0]
+    
+    for _ in range(n * n):
+        # Random site
+        i, j = np.random.randint(0, n, 2)
+        
+        # Compute energy change for flip
+        neighbors = spins[i, (j+1) % n] + spins[i, (j-1) % n] + \
+                    spins[(i+1) % n, j] + spins[(i-1) % n, j]
+        
+        delta_E = 2 * J * spins[i, j] * neighbors + 2 * h * spins[i, j]
+        
+        # Metropolis acceptance
+        if delta_E < 0 or np.random.random() < np.exp(-beta * delta_E):
+            spins[i, j] *= -1
+    
+    return spins
+
+def simulate_ising(n=32, beta=0.5, n_sweeps=1000, J=1.0, h=0.0):
+    """
+    Simulate 2D Ising model using Metropolis algorithm.
+    """
+    # Random initial configuration
+    spins = np.random.choice([-1, 1], size=(n, n))
+    
+    # Thermalization
+    for _ in range(n_sweeps // 4):
+        spins = metropolis_step(spins, beta, J, h)
+    
+    # Measurement
+    magnetizations = []
+    energies = []
+    
+    for _ in range(n_sweeps):
+        spins = metropolis_step(spins, beta, J, h)
+        magnetizations.append(np.mean(spins))
+        energies.append(ising_energy(spins, J, h))
+    
+    return np.array(magnetizations), np.array(energies), spins
+
+def phase_transition_demo():
+    """
+    Demonstrate phase transition in 2D Ising model.
+    """
+    n = 32
+    betas = np.linspace(0.2, 0.6, 15)
+    mag_means = []
+    mag_abs_means = []
+    
+    print("Simulating Ising model for various temperatures...")
+    print("β (inverse temp) | <|m|> | <m>")
+    print("-" * 40)
+    
+    for beta in betas:
+        mags, _, _ = simulate_ising(n=n, beta=beta, n_sweeps=2000)
+        mag_means.append(np.mean(mags))
+        mag_abs_means.append(np.mean(np.abs(mags)))
+        print(f"{beta:.3f}           | {mag_abs_means[-1]:.3f} | {mag_means[-1]:.3f}")
+    
+    # Critical beta for 2D Ising: β_c = ln(1+√2)/2 ≈ 0.4407
+    beta_c = np.log(1 + np.sqrt(2)) / 2
+    
+    print(f"\nCritical β_c = ln(1+√2)/2 ≈ {beta_c:.4f}")
+    print("Below T_c (high β): spontaneous magnetization")
+    print("Above T_c (low β): zero magnetization")
+    
+    return betas, mag_means, mag_abs_means, beta_c
+
+betas, mag_means, mag_abs_means, beta_c = phase_transition_demo()
+</code></pre>
+
+            <h3>Quantum Mechanics: The Harmonic Oscillator</h3>
+            <p>The quantum harmonic oscillator is the most important exactly solvable system in quantum mechanics. Its algebraic structure underlies quantum field theory, and its eigenfunctions (Hermite functions) appear throughout physics and mathematics.</p>
+
+            <p><strong>Motivation:</strong> Near any stable equilibrium, a potential can be approximated as quadratic. Thus the harmonic oscillator describes vibrations in molecules, phonons in solids, and modes of the electromagnetic field.</p>
+
+            <p><strong>Definition (Quantum Harmonic Oscillator):</strong> The Hamiltonian is:
+            \[\hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2\]</p>
+            <p>where \(\hat{x}\) and \(\hat{p}\) satisfy \([\hat{x}, \hat{p}] = i\hbar\).</p>
+
+            <p><strong>Definition (Ladder Operators):</strong> Define:
+            \[\hat{a} = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} + \frac{i\hat{p}}{m\omega}\right), \quad \hat{a}^\dagger = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x} - \frac{i\hat{p}}{m\omega}\right)\]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\hat{a}\) — annihilation (lowering) operator</li>
+                <li>\(\hat{a}^\dagger\) — creation (raising) operator</li>
+                <li>\(\hat{N} = \hat{a}^\dagger \hat{a}\) — number operator</li>
+                <li>\(|n\rangle\) — energy eigenstate</li>
+                <li>\(\psi_n(x)\) — position-space wavefunction</li>
+                <li>\(H_n(x)\) — Hermite polynomial</li>
+            </ul>
+
+            <p><strong>Theorem (Spectrum of Harmonic Oscillator):</strong> The eigenvalues of \(\hat{H}\) are \(E_n = \hbar\omega(n + \frac{1}{2})\) for \(n = 0, 1, 2, \ldots\). The corresponding eigenstates satisfy:
+            \[\hat{a}^\dagger |n\rangle = \sqrt{n+1} |n+1\rangle, \quad \hat{a} |n\rangle = \sqrt{n} |n-1\rangle\]</p>
+
+            <p><em>Proof:</em> Verify \([\hat{a}, \hat{a}^\dagger] = 1\) and \(\hat{H} = \hbar\omega(\hat{a}^\dagger\hat{a} + \frac{1}{2})\). Since \(\hat{N} = \hat{a}^\dagger\hat{a}\) is positive semidefinite, there exists a ground state \(|0\rangle\) with \(\hat{a}|0\rangle = 0\). The commutation relations generate the ladder of states. ∎</p>
+
+            <p><strong>Theorem (Wavefunctions):</strong> The position-space wavefunctions are:
+            \[\psi_n(x) = \frac{1}{\sqrt{2^n n!}} \left(\frac{m\omega}{\pi\hbar}\right)^{1/4} H_n\left(\sqrt{\frac{m\omega}{\hbar}}x\right) e^{-m\omega x^2/(2\hbar)}\]</p>
+            where \(H_n\) is the \(n\)th Hermite polynomial.</p>
+
+            <pre><code>import numpy as np
+from scipy.special import hermite, factorial
+from scipy.integrate import quad
+
+def hermite_polynomial(n, x):
+    """
+    Physicist's Hermite polynomial H_n(x).
+    """
+    H_n = hermite(n)
+    return H_n(x)
+
+def harmonic_oscillator_wavefunction(n, x, m=1.0, omega=1.0, hbar=1.0):
+    """
+    Position-space wavefunction ψ_n(x) for 1D quantum harmonic oscillator.
+    """
+    alpha = m * omega / hbar
+    norm = (alpha / np.pi)**(1/4) / np.sqrt(2**n * factorial(n))
+    xi = np.sqrt(alpha) * x
+    
+    return norm * hermite_polynomial(n, xi) * np.exp(-xi**2 / 2)
+
+def ladder_operator_simulation(n_max=5):
+    """
+    Demonstrate action of ladder operators on energy eigenstates.
+    """
+    print("Quantum Harmonic Oscillator Ladder Operators")
+    print("=" * 50)
+    print("â†|n⟩ = √(n+1)|n+1⟩  (raising/creation)")
+    print("â|n⟩ = √n|n-1⟩      (lowering/annihilation)")
+    print()
+    
+    for n in range(n_max):
+        E_n = n + 0.5  # in units of ℏω
+        print(f"|{n}⟩: E_{n} = {E_n:.1f}ℏω")
+        if n < n_max - 1:
+            print(f"      â†|{n}⟩ = √{n+1}|{n+1}⟩ = {np.sqrt(n+1):.3f}|{n+1}⟩")
+        if n > 0:
+            print(f"      â|{n}⟩ = √{n}|{n-1}⟩ = {np.sqrt(n):.3f}|{n-1}⟩")
+        print()
+
+def verify_uncertainty_principle():
+    """
+    Verify Δx Δp = ℏ(n + 1/2) ≥ ℏ/2 for harmonic oscillator states.
+    """
+    print("\nUncertainty Principle for Harmonic Oscillator:")
+    print("=" * 50)
+    print("For state |n⟩: Δx Δp = ℏ(n + 1/2)")
+    print()
+    
+    for n in range(5):
+        uncertainty = n + 0.5
+        print(f"|{n}⟩: Δx Δp = {uncertainty:.1f}ℏ")
+    
+    print()
+    print("Ground state |0⟩ saturates the bound: Δx Δp = ℏ/2")
+    print("Higher states have larger uncertainty.")
+
+def verify_orthogonality(n, m, x_max=10):
+    """
+    Numerically verify orthogonality of wavefunctions.
+    """
+    integrand = lambda x: (harmonic_oscillator_wavefunction(n, x) * 
+                           harmonic_oscillator_wavefunction(m, x))
+    result, _ = quad(integrand, -x_max, x_max)
+    return result
+
+ladder_operator_simulation()
+verify_uncertainty_principle()
+
+print("\nOrthogonality verification:")
+for i in range(3):
+    for j in range(3):
+        overlap = verify_orthogonality(i, j)
+        print(f"⟨{i}|{j}⟩ ≈ {overlap:.6f}", end="  ")
+    print()
+</code></pre>
+
+            <h3>Network Science: Percolation Theory</h3>
+            <p>Percolation theory studies the emergence of connected clusters in random networks and lattices. It provides a mathematical framework for understanding phase transitions in disordered systems, from porous media to social networks.</p>
+
+            <p><strong>Motivation:</strong> When does a network become globally connected? Percolation theory identifies a sharp threshold: below a critical probability, only small clusters exist; above it, a giant component spans the entire system.</p>
+
+            <p><strong>Definition (Site Percolation):</strong> On a graph \(G = (V, E)\), each vertex is <strong>occupied</strong> independently with probability \(p\). The <strong>percolation threshold</strong> \(p_c\) is the infimum of \(p\) for which there exists an infinite connected cluster of occupied vertices.</p>
+
+            <p><strong>Definition (Bond Percolation):</strong> Each edge is open independently with probability \(p\). The threshold is defined analogously.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(p_c\) — percolation threshold</li>
+                <li>\(P_\infty(p)\) — probability that origin is in infinite cluster</li>
+                <li>\(\theta(p)\) — percolation probability (order parameter)</li>
+                <li>\(\chi(p)\) — mean cluster size</li>
+                <li>\(\xi(p)\) — correlation length</li>
+                <li>\(\nu, \beta, \gamma\) — critical exponents</li>
+            </ul>
+
+            <p><strong>Theorem (Harris-Kesten):</strong> For bond percolation on the square lattice \(\mathbb{Z}^2\), the critical probability is \(p_c = 1/2\).</p>
+
+            <p><em>Proof sketch:</em> Use duality: the square lattice is self-dual. If primal percolation occurs with probability \(\theta(p)\), dual percolation occurs with probability \(\theta(1-p)\). At \(p = 1/2\), these must balance, forcing \(\theta(1/2) = 0\). ∎</p>
+
+            <p><strong>Theorem (Critical Exponents):</strong> Near \(p_c\), the order parameter behaves as \(\theta(p) \sim (p - p_c)^\beta\) with \(\beta = 5/36\) in 2D (exact) and \(\beta \approx 0.41\) in 3D.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.ndimage import label
+
+def site_percolation_lattice(n, p):
+    """
+    Generate n x n site percolation lattice.
+    Returns binary array (1 = occupied, 0 = empty).
+    """
+    return (np.random.random((n, n)) < p).astype(int)
+
+def find_clusters(lattice):
+    """
+    Find connected clusters using scipy.ndimage.label.
+    Returns labeled array and number of clusters.
+    """
+    # Use 4-connectivity (von Neumann neighborhood)
+    structure = np.array([[0, 1, 0],
+                          [1, 1, 1],
+                          [0, 1, 0]])
+    labeled, num_clusters = label(lattice, structure=structure)
+    return labeled, num_clusters
+
+def has_spanning_cluster(labeled_array):
+    """
+    Check if there's a cluster spanning left-to-right or top-to-bottom.
+    """
+    n = labeled_array.shape[0]
+    
+    # Get labels on left and right edges
+    left_labels = set(labeled_array[:, 0])
+    right_labels = set(labeled_array[:, -1])
+    top_labels = set(labeled_array[0, :])
+    bottom_labels = set(labeled_array[-1, :])
+    
+    # Remove background (0)
+    left_labels.discard(0)
+    right_labels.discard(0)
+    top_labels.discard(0)
+    bottom_labels.discard(0)
+    
+    # Check for intersection
+    horizontal_span = len(left_labels & right_labels) > 0
+    vertical_span = len(top_labels & bottom_labels) > 0
+    
+    return horizontal_span or vertical_span
+
+def estimate_percolation_probability(n, p, n_trials=100):
+    """
+    Estimate probability of spanning cluster at occupation probability p.
+    """
+    spanning_count = 0
+    
+    for _ in range(n_trials):
+        lattice = site_percolation_lattice(n, p)
+        labeled, _ = find_clusters(lattice)
+        if has_spanning_cluster(labeled):
+            spanning_count += 1
+    
+    return spanning_count / n_trials
+
+def critical_behavior_demo():
+    """
+    Demonstrate phase transition in 2D percolation.
+    """
+    n = 64
+    p_values = np.linspace(0.3, 0.7, 20)
+    n_trials = 50
+    
+    percolation_probs = []
+    
+    print("Percolation probability vs occupation probability:")
+    print("p    | P_span(p)")
+    print("-" * 20)
+    
+    for p in p_values:
+        P_span = estimate_percolation_probability(n, p, n_trials)
+        percolation_probs.append(P_span)
+        print(f"{p:.2f} | {P_span:.3f}")
+    
+    # Estimate critical point (where P_span ≈ 0.5)
+    p_c_estimate = p_values[np.argmin(np.abs(np.array(percolation_probs) - 0.5))]
+    
+    print(f"\nEstimated p_c ≈ {p_c_estimate:.3f}")
+    print("Theoretical p_c (site percolation on square) ≈ 0.5927")
+    
+    return p_values, percolation_probs
+
+def cluster_size_distribution(p, n=128, n_samples=10):
+    """
+    Compute cluster size distribution at given p.
+    """
+    all_sizes = []
+    
+    for _ in range(n_samples):
+        lattice = site_percolation_lattice(n, p)
+        labeled, num_clusters = find_clusters(lattice)
+        
+        # Count sizes of each cluster
+        for label_id in range(1, num_clusters + 1):
+            size = np.sum(labeled == label_id)
+            all_sizes.append(size)
+    
+    return np.array(all_sizes)
+
+p_values, percolation_probs = critical_behavior_demo()
+
+print("\nCluster size analysis:")
+sizes_below = cluster_size_distribution(0.5, n=64, n_samples=5)
+sizes_above = cluster_size_distribution(0.65, n=64, n_samples=5)
+
+print(f"Below p_c (p=0.5): mean cluster size = {np.mean(sizes_below):.1f}")
+print(f"Above p_c (p=0.65): mean cluster size = {np.mean(sizes_above):.1f}")
+</code></pre>
+        </section>
+
+        <!-- Section 5: 4 Special Topics -->
+        <section id="special">
+            <h2>✨ Special Topics</h2>
+            
+            <h3>The Development of Modern Algebra: From Equations to Structures</h3>
+            <p>The evolution of algebra from solving equations to studying abstract structures represents one of the most profound shifts in mathematical thinking. This transformation, largely complete by the mid-20th century, was driven by the search for solutions to concrete problems that revealed deeper patterns.</p>
+            
+            <p>In the 16th century, Italian mathematicians (del Ferro, Tartaglia, Cardano, Ferrari) discovered formulas for solving cubic and quartic equations. The search for a quintic formula occupied the finest minds for centuries. Lagrange's 1770 analysis showed that the solution methods for lower degrees relied on symmetric functions, suggesting a deeper theory of permutations.</p>
+            
+            <p>Ruffini (1799) and Abel (1824) proved the impossibility of a general quintic formula, but Galois's 1831 memoir provided the complete explanation through what we now call Galois theory. Galois's insight was to associate a group to each equation and show that solvability by radicals corresponds to the solvability of this group.</p>
+            
+            <p>Jordan's 1870 "Traité des substitutions" systematized group theory. Dedekind, in his lectures of 1858-1862, introduced fields as fundamental objects. The abstract definition of a group (independent of permutations) appeared in Weber's 1896 textbook.</p>
+            
+            <p>Noether and van der Waerden's 1930 "Moderne Algebra" codified the structural approach: groups, rings, fields, and modules studied through homomorphisms and universal properties. This "abstract nonsense," initially controversial, became the language of modern mathematics.</p>
+
+            <p><strong>Definition (Normal Subgroup):</strong> A subgroup \(N \leq G\) is <strong>normal</strong> (written \(N \trianglelefteq G\)) if \(gNg^{-1} = N\) for all \(g \in G\). Normal subgroups are precisely the kernels of homomorphisms.</p>
+
+            <p><strong>Definition (Solvable Group):</strong> A group \(G\) is <strong>solvable</strong> if there exists a chain of subgroups:
+            \[\{e\} = G_0 \trianglelefteq G_1 \trianglelefteq \cdots \trianglelefteq G_n = G\]</p>
+            such that each quotient \(G_{i+1}/G_i\) is abelian.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(G/N\) — quotient group</li>
+                <li>\([G, G]\) — commutator subgroup</li>
+                <li>\(G^{(n)}\) — derived series</li>
+                <li>\(Z(G)\) — center of group</li>
+                <li>\(\text{Aut}(G)\) — automorphism group</li>
+            </ul>
+
+            <p><strong>Theorem (Feit-Thompson):</strong> Every finite group of odd order is solvable.</p>
+            <p>This 1963 theorem, spanning 255 pages, was a major milestone in the classification of finite simple groups.</p>
+
+            <p><strong>Theorem (Classification of Finite Simple Groups):</strong> Every finite simple group is isomorphic to one of:
+            <ul>
+                <li>A cyclic group of prime order</li>
+                <li>An alternating group \(A_n\) for \(n \geq 5\)</li>
+                <li>A group of Lie type</li>
+                <li>One of 26 sporadic simple groups</li>
+            </ul>
+            </p>
+
+            <pre><code>import sympy as sp
+from sympy.combinatorics.named_groups import SymmetricGroup, AlternatingGroup, DihedralGroup
+
+def analyze_group_structure():
+    """
+    Analyze structure of small groups.
+    """
+    print("Group Structure Analysis")
+    print("=" * 50)
+    
+    # S_3: solvable, not abelian
+    S3 = SymmetricGroup(3)
+    print(f"S₃ (order {S3.order()}):")
+    print(f"  Is abelian: {S3.is_abelian}")
+    print(f"  Is solvable: {S3.is_solvable}")
+    print(f"  Derived series: {[H.order() for H in S3.derived_series()]}")
+    print()
+    
+    # A_5: simple, not solvable
+    A5 = AlternatingGroup(5)
+    print(f"A₅ (order {A5.order()}):")
+    print(f"  Is abelian: {A5.is_abelian}")
+    print(f"  Is solvable: {A5.is_solvable}")
+    print(f"  Is simple: {A5.is_simple}")
+    print(f"  This is the smallest non-abelian simple group")
+    print()
+    
+    # D_4: solvable, nilpotent
+    D4 = DihedralGroup(4)
+    print(f"D₄ (order {D4.order()}):")
+    print(f"  Is abelian: {D4.is_abelian}")
+    print(f"  Is solvable: {D4.is_solvable}")
+    print(f"  Is nilpotent: {D4.is_nilpotent}")
+    print(f"  Center order: {D4.center().order()}")
+
+def composition_series_demo():
+    """
+    Demonstrate composition series for S_4.
+    """
+    print("\n" + "=" * 50)
+    print("Composition Series for S₄")
+    print("=" * 50)
+    
+    S4 = SymmetricGroup(4)
+    
+    # Composition series: S₄ ⊵ A₄ ⊵ V₄ ⊵ C₂ ⊵ {e}
+    # where V₄ is Klein four-group
+    
+    print("S₄ ⊵ A₄ ⊵ V₄ ⊵ C₂ ⊵ {e}")
+    print()
+    print("Composition factors:")
+    print("  S₄/A₄ ≅ C₂")
+    print("  A₄/V₄ ≅ C₃") 
+    print("  V₄/C₂ ≅ C₂")
+    print("  C₂/{e} ≅ C₂")
+    print()
+    print("All composition factors are cyclic of prime order,")
+    print("confirming S₄ is solvable.")
+
+analyze_group_structure()
+composition_series_demo()
+</code></pre>
+        </section>
+
+        <!-- Section 6: Math History -->
+        <section id="history">
+            <h2>📜 Math History: The Birth of Modern Physics and Mathematics</h2>
+            
+            <p>The period from 1900 to 1930 witnessed revolutionary transformations in both physics and mathematics, with the two fields influencing each other in unprecedented ways. This era gave birth to quantum mechanics, general relativity, and modern abstract algebra—achievements that reshaped our understanding of reality.</p>
+            
+            <p>In 1900, Max Planck introduced the quantum hypothesis to explain blackbody radiation, reluctantly proposing that energy comes in discrete packets. Albert Einstein's 1905 "annus mirabilis" papers included the photoelectric effect explanation using light quanta and the special theory of relativity. Niels Bohr's 1913 atomic model applied quantum ideas to atomic structure, though the full mathematical framework remained elusive.</p>
+            
+            <p>The mathematical breakthrough came in 1925-1926. Werner Heisenberg developed matrix mechanics, drawing on his knowledge of Fourier series. Simultaneously, Erwin Schrödinger formulated wave mechanics, inspired by de Broglie's matter waves. Initially seen as competing theories, they were proven equivalent by Schrödinger and independently by Dirac and Jordan. John von Neumann's 1932 "Mathematical Foundations of Quantum Mechanics" established the rigorous Hilbert space formalism that unified these approaches.</p>
+            
+            <p>Einstein's general relativity (1915) had an equally profound mathematical impact. The theory required Riemannian geometry and tensor calculus, developed by mathematicians in the 19th century without physical application. Einstein's field equations:
+            \[G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}\]</p>
+            connected geometry (left side) to matter (right side). The 1919 eclipse expedition confirmed the theory's prediction of light bending, making Einstein a global celebrity.</p>
+            
+            <p>In pure mathematics, Emmy Noether's 1918 theorem connected symmetries to conservation laws, becoming foundational for theoretical physics. Her abstract approach to algebra, developed at Göttingen, transformed the field. The 1920s saw the rise of functional analysis, with Banach spaces and Hilbert spaces providing the framework for quantum mechanics.</p>
+            
+            <p>Kurt Gödel's 1931 incompleteness theorems, while not directly related to physics, showed fundamental limits of formal systems and influenced the philosophy of mathematics. The Vienna Circle and logical positivism attempted to apply mathematical rigor to scientific knowledge, though quantum mechanics's interpretational challenges resisted such treatment.</p>
+            
+            <p>By 1930, the foundations of modern theoretical physics were established. The mathematical tools—functional analysis, group theory, differential geometry—would prove essential for the developments of the next decades, from quantum field theory to the standard model of particle physics.</p>
+        </section>
+
+        <!-- Section 7: 3 Math Journalism Articles -->
+        <section id="journalism">
+            <h2>📰 Math Journalism</h2>
+            
+            <h3>Quanta Magazine: "Mathematicians Solve the 'Hard' Problem of Spin Glasses"</h3>
+            <p><strong>Summary:</strong> A team of mathematicians has made significant progress on understanding spin glasses—disordered magnetic systems that have frustrated physicists for decades. The breakthrough involves proving the existence of a thermodynamic limit for the free energy in the Sherrington-Kirkpatrick model.</p>
+            <p>The work, by Erwin Bolthausen, Nicola Kistler, and others, builds on Parisi's replica symmetry breaking theory, providing rigorous mathematical validation for physical intuition. The techniques developed have implications for optimization theory, neural networks, and random matrix theory.</p>
+            <p><strong>Why it matters:</strong> Spin glasses represent a class of complex systems where disorder and frustration create rich behavior. Understanding them mathematically opens paths to analyzing complex optimization landscapes, including those encountered in training deep neural networks.</p>
+            
+            <h3>Plus Magazine: "The Mathematics of Gerrymandering"</h3>
+            <p><strong>Summary:</strong> Mathematicians are developing tools to detect and quantify gerrymandering—the manipulation of electoral district boundaries for political advantage. The article explores metrics like the efficiency gap, partisan symmetry, and compactness measures.</p>
+            <p>Research by Moon Duchin and the Metric Geometry and Gerrymandering Group (MGGG) uses Markov chain Monte Carlo methods to generate ensembles of "fair" districting plans, providing a statistical baseline for evaluating proposed maps. The mathematical framework combines geometry, probability, and political science.</p>
+            <p><strong>Why it matters:</strong> In an era of contested elections, mathematical tools offer objective criteria for evaluating district maps. Recent Supreme Court cases have considered these metrics, though the Court has been reluctant to adopt specific standards.</p>
+            
+            <h3>Notices of the AMS: "Machine Learning and the Riemann Hypothesis"</h3>
+            <p><strong>Summary:</strong> Researchers are applying machine learning techniques to problems in number theory, including the distribution of zeros of the Riemann zeta function. Neural networks trained on known zeros can predict properties of the zeta function with surprising accuracy.</p>
+            <p>The article discusses how these computational approaches complement traditional analytic methods, potentially revealing patterns invisible to human mathematicians. While not a path to proof, such tools may guide intuition and suggest conjectures worth proving.</p>
+            <p><strong>Why it matters:</strong> The intersection of machine learning and pure mathematics represents a new paradigm. While computers have long assisted calculation, machine learning offers pattern recognition at scale, potentially accelerating discovery in fields like number theory and algebraic geometry.</p>
+        </section>
+
+        <!-- Section 8: Problem Corner -->
+        <section id="problems">
+            <h2>🎯 Problem Corner</h2>
+            
+            <h3>Problem: An Ergodic Challenge</h3>
+            <p><strong>Problem:</strong> Consider the map \(T: [0,1) \to [0,1)\) defined by \(T(x) = 2x \mod 1\). Let \(f(x) = \mathbf{1}_{[0,1/2)}(x)\) be the indicator function of the interval \([0, 1/2)\).</p>
+            <p>Define the ergodic averages \(A_n f(x) = \frac{1}{n} \sum_{k=0}^{n-1} f(T^k(x))\).</p>
+            <p>For which values of \(x \in [0,1)\) does \(\lim_{n \to \infty} A_n f(x) = \frac{1}{2}\)?</p>
+            
+            <details>
+                <summary>💡 Hint</summary>
+                <p>Consider the binary expansion of \(x\). The map \(T(x) = 2x \mod 1\) corresponds to the shift map on binary sequences. What does \(f(T^k(x))\) compute in terms of binary digits?</p>
+            </details>
+            
+            <details>
+                <summary>✅ Solution</summary>
+                <p>Write \(x\) in binary as \(x = 0.b_1 b_2 b_3 \ldots\) where each \(b_i \in \{0, 1\}\).</p>
+                <p>Then \(T(x) = 0.b_2 b_3 b_4 \ldots\), so \(T\) is the left shift on binary sequences.</p>
+                <p>Also, \(f(x) = 1\) iff \(x \in [0, 1/2)\), which occurs iff \(b_1 = 0\).</p>
+                <p>Therefore, \(f(T^k(x)) = 1\) iff \(b_{k+1} = 0\).</p>
+                <p>The ergodic average becomes:
+                \[A_n f(x) = \frac{1}{n} \sum_{k=0}^{n-1} f(T^k(x)) = \frac{1}{n} \sum_{k=1}^{n} (1 - b_k) = 1 - \frac{\text{(number of 1's in first n bits)}}{n}\]</p>
+                <p>By Birkhoff's ergodic theorem, for almost every \(x\) (with respect to Lebesgue measure), this converges to \(\int_0^1 f(x) dx = \frac{1}{2}\).</p>
+                <p>More specifically, the limit equals \(\frac{1}{2}\) for all <strong>normal numbers</strong> in base 2—numbers where each finite binary string appears with its expected limiting frequency. This includes almost all real numbers, though explicit examples (like Champernowne's constant) are rare.</p>
+                <p>The limit fails to exist for numbers like \(x = 0.101001000100001\ldots\) where the frequency of 0's oscillates.</p>
+            </details>
+        </section>
+
+        <!-- Section 9: Visualization of the Day -->
+        <section id="visualization">
+            <h2>📊 Visualization of the Day: Phase Transitions</h2>
+            
+            <p>Phase transitions represent one of the most visually striking phenomena in mathematical physics. The Ising model's transition from disordered to ordered state, the percolation threshold where infinite clusters suddenly appear, and the onset of synchronization in coupled oscillators all share deep mathematical structures.</p>
+            
+            <p>The visualization below shows the 2D Ising model configurations at various temperatures. Below the critical temperature \(T_c\), distinct domains of aligned spins emerge. At \(T_c\), the correlation length diverges and the system exhibits scale-invariant fluctuations—this is the hallmark of a second-order phase transition.</p>
+            
+            <p>The critical exponents describing behavior near \(T_c\) are universal: they depend only on dimensionality and symmetry, not on microscopic details. This universality, explained by the renormalization group, is one of the most profound insights of 20th-century physics.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+
+def ising_configuration_visualization():
+    """
+    Generate visualization of Ising model at different temperatures.
+    """
+    def simulate_ising_fast(n, beta, n_sweeps):
+        """Fast Ising simulation for visualization."""
+        spins = np.random.choice([-1, 1], size=(n, n))
+        
+        for _ in range(n_sweeps):
+            # Metropolis updates
+            for _ in range(n * n):
+                i, j = np.random.randint(0, n, 2)
+                neighbors = spins[i, (j+1)%n] + spins[i, (j-1)%n] + \
+                           spins[(i+1)%n, j] + spins[(i-1)%n, j]
+                delta_E = 2 * spins[i, j] * neighbors
+                if delta_E < 0 or np.random.random() < np.exp(-beta * delta_E):
+                    spins[i, j] *= -1
+        
+        return spins
+    
+    # Parameters
+    n = 64
+    n_sweeps = 500
+    
+    # Different temperatures (in units where T_c ≈ 2.27)
+    temperatures = [3.0, 2.5, 2.3, 2.27, 2.0, 1.5]
+    betas = [1/T for T in temperatures]
+    
+    fig, axes = plt.subplots(2, 3, figsize=(12, 8))
+    axes = axes.flatten()
+    
+    colors = ListedColormap(['#1f77b4', '#ff7f0e'])  # Blue for -1, Orange for +1
+    
+    for idx, (T, beta) in enumerate(zip(temperatures, betas)):
+        spins = simulate_ising_fast(n, beta, n_sweeps)
+        
+        ax = axes[idx]
+        im = ax.imshow(spins, cmap=colors, interpolation='nearest')
+        ax.set_title(f'T = {T:.2f} (β = {beta:.2f})')
+        ax.axis('off')
+        
+        # Compute magnetization
+        mag = np.abs(np.mean(spins))
+        ax.text(0.02, 0.98, f'|m| = {mag:.3f}', 
+                transform=ax.transAxes, fontsize=10,
+                verticalalignment='top',
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+    
+    plt.suptitle('2D Ising Model: Phase Transition', fontsize=14, fontweight='bold')
+    plt.tight_layout()
+    plt.savefig('ising_phase_transition.png', dpi=150, bbox_inches='tight')
+    plt.close()
+    
+    print("Visualization saved as 'ising_phase_transition.png'")
+    print()
+    print("Key observations:")
+    print("- High T (left): Random configuration, |m| ≈ 0")
+    print("- T ≈ T_c (center): Scale-invariant fluctuations")
+    print("- Low T (right): Ordered domains, |m| > 0")
+
+def critical_exponent_plot():
+    """
+    Plot magnetization vs temperature showing critical behavior.
+    """
+    # Onsager's exact result for 2D Ising
+    def magnetization_exact(T):
+        """Exact spontaneous magnetization below T_c."""
+        T_c = 2 / np.log(1 + np.sqrt(2))  # ≈ 2.269
+        if T >= T_c:
+            return 0.0
+        else:
+            return (1 - np.sinh(2/T)**(-4))**(1/8)
+    
+    T_vals = np.linspace(1.5, 4.0, 200)
+    m_vals = [magnetization_exact(T) for T in T_vals]
+    T_c = 2 / np.log(1 + np.sqrt(2))
+    
+    plt.figure(figsize=(10, 6))
+    plt.plot(T_vals, m_vals, 'b-', linewidth=2, label='Spontaneous magnetization')
+    plt.axvline(T_c, color='r', linestyle='--', label=f'T_c ≈ {T_c:.3f}')
+    plt.xlabel('Temperature T', fontsize=12)
+    plt.ylabel('Magnetization |m|', fontsize=12)
+    plt.title('Ising Model Phase Transition (Onsager Exact Solution)', fontsize=14)
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+    plt.xlim(1.5, 4.0)
+    plt.ylim(-0.05, 1.05)
+    plt.savefig('ising_magnetization_curve.png', dpi=150, bbox_inches='tight')
+    plt.close()
+    
+    print("\nMagnetization curve saved as 'ising_magnetization_curve.png'")
+
+ising_configuration_visualization()
+critical_exponent_plot()
+</code></pre>
+        </section>
+
+        <!-- Section 10: Quote of the Day -->
+        <section id="quote">
+            <h2>💭 Quote of the Day</h2>
+            <blockquote>
+                <p>"The essence of mathematics lies in its freedom."</p>
+                <footer>— Georg Cantor</footer>
+            </blockquote>
+            <p>Cantor's declaration, made in defense of his theory of transfinite numbers, captures the spirit of modern mathematics. The freedom to create new structures, to generalize, to explore abstract realms without immediate application—this has been the driving force behind mathematical progress. From Galois's abstract groups to Grothendieck's schemes, the most profound advances often come from embracing this freedom, trusting that the structures we discover will find their applications, sometimes centuries later.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="../posts/index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
