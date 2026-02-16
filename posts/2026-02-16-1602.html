@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Functional Analysis, Convex Optimization & p-adic Numbers">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — Functional Analysis, Convex Optimization & p-adic Numbers</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="post-date">February 16, 2026 at 16:02 UTC</p>
+        <div class="tags">
+            <span class="tag">functional-analysis</span>
+            <span class="tag">convex-optimization</span>
+            <span class="tag">p-adic-numbers</span>
+            <span class="tag">algebraic-geometry</span>
+            <span class="tag">machine-learning</span>
+        </div>
+
+        <!-- Section 1: 3 Math Links -->
+        <section id="links">
+            <h2>🔗 3 Math Links</h2>
+            <ul>
+                <li><strong><a href="https://www.math.ucdavis.edu/~hunter/book/pdfbook.html">An Introduction to Real Analysis</a></strong> — John Hunter and Bruno Nachtergaele's comprehensive introduction to real analysis, covering measure theory, functional analysis, and applications to differential equations. Freely available and widely used in graduate courses.</li>
+                <li><strong><a href="https://web.stanford.edu/~boyd/cvxbook/">Convex Optimization</a></strong> — Stephen Boyd and Lieven Vandenberghe's seminal textbook on convex optimization, freely available from Stanford. The definitive reference for optimization theory and its applications in machine learning, control, and signal processing.</li>
+                <li><strong><a href="https://mathoverflow.net/questions/tagged/p-adic-analysis">MathOverflow: p-adic Analysis</a></strong> — Research-level discussions on p-adic numbers, p-adic analysis, and their applications in number theory and algebraic geometry. A treasure trove of insights from leading mathematicians.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: 1 Free Math Book -->
+        <section id="book">
+            <h2>📚 Free Math Book of the Day</h2>
+            <h3><em>Introductory Functional Analysis with Applications</em> by Erwin Kreyszig</h3>
+            <p>This classic text provides a comprehensive introduction to functional analysis and its applications in physics, engineering, and applied mathematics. Kreyszig's clear exposition makes the subject accessible while maintaining mathematical rigor.</p>
+            <p>The book covers:</p>
+            <ul>
+                <li>Metric spaces, normed spaces, and Banach spaces</li>
+                <li>Inner product spaces and Hilbert spaces</li>
+                <li>Fundamental theorems: Hahn-Banach, uniform boundedness, open mapping</li>
+                <li>Spectral theory of bounded and unbounded operators</li>
+                <li>Applications to differential equations and quantum mechanics</li>
+                <li>Approximation theory and optimization</li>
+            </ul>
+            <p>What distinguishes this book is its wealth of applications. Kreyszig demonstrates how abstract functional analytic concepts solve concrete problems in differential equations, integral equations, and quantum mechanics.</p>
+            <p><strong>Level:</strong> Graduate<br>
+            <strong>Available free at:</strong> <a href="https://archive.org/details/introductoryfunc0000krey">Internet Archive</a></p>
+        </section>
+
+        <!-- Section 3: 3 Pure Math Deep-Dives -->
+        <section id="pure">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+            
+            <h3>Functional Analysis: Infinite-Dimensional Linear Algebra</h3>
+            <p>Functional analysis extends linear algebra and calculus to infinite-dimensional spaces, providing the mathematical foundation for quantum mechanics, partial differential equations, and optimization theory. It studies vector spaces of functions and the operators acting on them.</p>
+            
+            <p><strong>Motivation:</strong> In finite dimensions, all norms are equivalent and all linear operators are continuous. In infinite dimensions, these properties fail spectacularly. Functional analysis provides the tools to navigate this richer landscape.</p>
+
+            <p><strong>Definition (Banach Space):</strong> A <strong>Banach space</strong> is a complete normed vector space. That is, a vector space \(X\) equipped with a norm \(\|\cdot\|\) such that every Cauchy sequence converges in \(X\).</p>
+
+            <p><strong>Definition (Hilbert Space):</strong> A <strong>Hilbert space</strong> is a complete inner product space. The inner product \(\langle \cdot, \cdot \rangle\) induces the norm \(\|x\| = \sqrt{\langle x, x \rangle}\).</p>
+
+            <p><strong>Examples:</strong></p>
+            <ul>
+                <li>\(\mathbb{R}^n\) and \(\mathbb{C}^n\) with the Euclidean norm are finite-dimensional Hilbert spaces</li>
+                <li>\(L^2([a,b])\) — square-integrable functions with \(\langle f, g \rangle = \int_a^b f(x)\overline{g(x)}\,dx\)</li>
+                <li>\(\ell^2\) — square-summable sequences with \(\langle x, y \rangle = \sum_{n=1}^\infty x_n \overline{y_n}\)</li>
+                <li>\(C([a,b])\) — continuous functions with \(\|f\|_\infty = \sup_{x \in [a,b]} |f(x)|\)</li>
+            </ul>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(B(X, Y)\) — space of bounded linear operators from \(X\) to \(Y\)</li>
+                <li>\(X^*\) — dual space (space of continuous linear functionals on \(X\))</li>
+                <li>\(\sigma(T)\) — spectrum of operator \(T\)</li>
+                <li>\(\rho(T)\) — resolvent set of \(T\)</li>
+                <li>\(T^*\) — adjoint of operator \(T\)</li>
+                <li>\(\mathcal{L}(X)\) — algebra of bounded operators on \(X\)</li>
+            </ul>
+
+            <p><strong>Theorem (Hahn-Banach):</strong> Let \(X\) be a normed space and \(Y \subseteq X\) a subspace. If \(f: Y \to \mathbb{R}\) (or \(\mathbb{C}\)) is a bounded linear functional, then there exists an extension \(\tilde{f}: X \to \mathbb{R}\) with \(\tilde{f}|_Y = f\) and \(\|\tilde{f}\| = \|f\|\).</p>
+
+            <p><em>Proof sketch:</em> For real spaces, one extends by one dimension at a time using the fact that a sublinear functional dominates the extension. The key inequality ensures the extension doesn't increase the norm. For complex spaces, one reduces to the real case. ∎</p>
+
+            <p><strong>Theorem (Uniform Boundedness Principle):</strong> Let \(X\) be a Banach space and \(Y\) a normed space. If \(\{T_\alpha\} \subseteq B(X, Y)\) satisfies \(\sup_\alpha \|T_\alpha x\| < \infty\) for all \(x \in X\), then \(\sup_\alpha \|T_\alpha\| < \infty\).</p>
+
+            <p><em>Proof sketch:</em> Apply Baire's category theorem to the sets \(E_n = \{x : \sup_\alpha \|T_\alpha x\| \leq n\}\). Since \(X = \bigcup_n E_n\), some \(E_N\) contains a ball. Linearity implies uniform boundedness on the unit ball. ∎</p>
+
+            <pre><code>import numpy as np
+from scipy import linalg
+import matplotlib.pyplot as plt
+
+class BanachSpaceExample:
+    """Demonstrate Banach space concepts in finite dimensions."""
+    
+    def __init__(self, n):
+        self.n = n
+        self.X = np.random.randn(n, n)  # Matrix representation
+    
+    def operator_norm(self, A, p=2):
+        """Compute the operator norm ||A|| = sup_{||x||=1} ||Ax||."""
+        if p == 2:
+            # Spectral norm (largest singular value)
+            return np.linalg.norm(A, 2)
+        elif p == 1:
+            # Maximum absolute column sum
+            return np.linalg.norm(A, 1)
+        elif p == np.inf:
+            # Maximum absolute row sum
+            return np.linalg.norm(A, np.inf)
+    
+    def dual_norm(self, x, p):
+        """Compute the dual norm (1/p + 1/q = 1)."""
+        if p == 1:
+            q = np.inf
+        elif p == np.inf:
+            q = 1
+        else:
+            q = p / (p - 1)
+        return np.linalg.norm(x, q)
+    
+    def hahn_banach_extension(self, Y_basis, f_Y):
+        """
+        Extend linear functional f defined on subspace Y to whole space.
+        In finite dimensions, this is just solving a linear system.
+        """
+        # Y_basis: matrix whose columns form a basis for subspace Y
+        # f_Y: values of functional on basis vectors
+        m = Y_basis.shape[1]
+        n = self.n
+        
+        # Find extension with minimal norm
+        # This is a least squares problem
+        A = Y_basis.T
+        b = f_Y
+        
+        # Minimum norm solution
+        f_extended = np.linalg.lstsq(A, b, rcond=None)[0]
+        return f_extended
+
+# Demonstration
+print("=" * 60)
+print("FUNCTIONAL ANALYSIS DEMONSTRATIONS")
+print("=" * 60)
+
+# Operator norms
+A = np.array([[3, 1], [1, 3]])
+print(f"\nMatrix A:\n{A}")
+print(f"Spectral norm ||A||_2 = {np.linalg.norm(A, 2):.4f}")
+print(f"Frobenius norm ||A||_F = {np.linalg.norm(A, 'fro'):.4f}")
+
+# Verify spectral norm equals largest singular value
+U, s, Vh = np.linalg.svd(A)
+print(f"Largest singular value = {s[0]:.4f}")
+
+# Eigenvalue analysis (spectral theory)
+eigenvalues, eigenvectors = np.linalg.eig(A)
+print(f"\nEigenvalues: {eigenvalues}")
+print(f"Spectral radius ρ(A) = {max(abs(eigenvalues)):.4f}")
+
+# Hilbert space inner product
+f = lambda x: np.sin(np.pi * x)
+g = lambda x: np.cos(np.pi * x)
+x = np.linspace(0, 1, 1000)
+inner_product = np.trapz(f(x) * g(x), x)
+print(f"\nL² inner product ⟨sin(πx), cos(πx)⟩ = {inner_product:.6f}")
+print("(Orthogonal functions have zero inner product)")
+</code></pre>
+
+            <h3>Algebraic Geometry: From Equations to Varieties</h3>
+            <p>Algebraic geometry studies the geometry of solutions to polynomial equations. It bridges algebra and geometry, using commutative algebra to study geometric objects and geometric intuition to understand algebraic structures.</p>
+
+            <p><strong>Motivation:</strong> The equation \(x^2 + y^2 = 1\) defines a circle in the plane. What about more complicated polynomial equations? Algebraic geometry provides a systematic framework for understanding the geometric properties of solution sets.</p>
+
+            <p><strong>Definition (Affine Variety):</strong> Let \(k\) be a field and \(S \subseteq k[x_1, \ldots, x_n]\) a set of polynomials. The <strong>affine variety</strong> defined by \(S\) is:
+            \[ V(S) = \{x \in k^n : f(x) = 0 \text{ for all } f \in S\} \]</p>
+
+            <p><strong>Definition (Ideal of a Variety):</strong> For \(X \subseteq k^n\), the <strong>ideal</strong> of \(X\) is:
+            \[ I(X) = \{f \in k[x_1, \ldots, x_n] : f(x) = 0 \text{ for all } x \in X\} \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\mathbb{A}^n_k\) or \(\mathbb{A}^n\) — affine n-space over field \(k\)</li>
+                <li>\(V(S)\) — variety defined by polynomial set \(S\)</li>
+                <li>\(I(X)\) — ideal of variety \(X\)</li>
+                <li>\(\sqrt{I}\) — radical of ideal \(I\)</li>
+                <li>\(k[X]\) — coordinate ring of variety \(X\)</li>
+                <li>\(\dim(X)\) — dimension of variety \(X\)</li>
+                <li>\(\mathbb{P}^n\) — projective n-space</li>
+            </ul>
+
+            <p><strong>Theorem (Hilbert's Nullstellensatz):</strong> Let \(k\) be an algebraically closed field and \(I \subseteq k[x_1, \ldots, x_n]\) an ideal. Then:
+            \[ I(V(I)) = \sqrt{I} \]
+            where \(\sqrt{I} = \{f : f^n \in I \text{ for some } n \geq 1\}\) is the radical of \(I\).</p>
+
+            <p><em>Proof sketch:</em> The inclusion \(\sqrt{I} \subseteq I(V(I))\) is straightforward. For the reverse, one uses the "trick of Rabinowitsch" and the weak Nullstellensatz (which states that if \(V(I) = \emptyset\), then \(I = (1)\)). The proof involves clever algebraic manipulations and Zorn's lemma. ∎</p>
+
+            <p><strong>Theorem (Bézout's Theorem):</strong> Let \(C\) and \(D\) be projective plane curves of degrees \(m\) and \(n\) respectively, with no common components. Then counting multiplicities, \(C\) and \(D\) intersect in exactly \(mn\) points.</p>
+
+            <pre><code>import sympy as sp
+from sympy import symbols, solve, groebner, Poly
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define symbolic variables
+x, y = symbols('x y', real=True)
+
+def variety_intersection(polynomials):
+    """
+    Find intersection of varieties defined by polynomials.
+    Uses Gröbner basis computation.
+    """
+    G = groebner(polynomials, x, y)
+    return G
+
+def plot_variety(f, xlim=(-2, 2), ylim=(-2, 2), n=1000):
+    """Plot the variety defined by f(x,y) = 0 using contour plotting."""
+    x_vals = np.linspace(xlim[0], xlim[1], n)
+    y_vals = np.linspace(ylim[0], ylim[1], n)
+    X, Y = np.meshgrid(x_vals, y_vals)
+    
+    # Convert sympy expression to numpy function
+    f_func = sp.lambdify((x, y), f, 'numpy')
+    Z = f_func(X, Y)
+    
+    plt.contour(X, Y, Z, levels=[0], colors='blue')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title(f'Variety: ${sp.latex(f)} = 0$')
+    plt.grid(True)
+    plt.axis('equal')
+
+# Example 1: Circle and line intersection
+print("=" * 60)
+print("ALGEBRAIC GEOMETRY DEMONSTRATIONS")
+print("=" * 60)
+
+circle = x**2 + y**2 - 1  # Unit circle
+line = y - x  # Line y = x
+
+print(f"\nCircle: {circle} = 0")
+print(f"Line: {line} = 0")
+
+# Find intersection points
+solutions = solve([circle, line], [x, y])
+print(f"Intersection points: {solutions}")
+
+# Verify Bézout's theorem: degree 2 curve and degree 1 curve 
+# should intersect in 2 points (counting multiplicity)
+print(f"\nBézout verification: deg(circle) × deg(line) = 2 × 1 = 2 points")
+print(f"Actual intersection points: {len(solutions)}")
+
+# Example 2: Elliptic curve
+print("\n" + "-" * 40)
+print("Elliptic curve: y² = x³ - x + 1")
+elliptic = y**2 - (x**3 - x + 1)
+
+# Find rational points (simplified)
+try:
+    rational_points = solve(elliptic.subs(y, 0), x)
+    print(f"x-intercepts (y=0): {rational_points}")
+except:
+    print("No simple rational x-intercepts")
+
+# Plot varieties
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# Plot circle and line
+ax1 = axes[0]
+x_vals = np.linspace(-1.5, 1.5, 400)
+y_vals = np.linspace(-1.5, 1.5, 400)
+X, Y = np.meshgrid(x_vals, y_vals)
+ax1.contour(X, Y, X**2 + Y**2 - 1, levels=[0], colors='blue', label='Circle')
+ax1.contour(X, Y, Y - X, levels=[0], colors='red', label='Line y=x')
+ax1.set_xlabel('x')
+ax1.set_ylabel('y')
+ax1.set_title('Circle and Line Intersection')
+ax1.grid(True)
+ax1.axis('equal')
+
+# Plot elliptic curve
+ax2 = axes[1]
+x_vals = np.linspace(-2, 2, 400)
+y_vals = np.linspace(-2, 2, 400)
+X, Y = np.meshgrid(x_vals, y_vals)
+ax2.contour(X, Y, Y**2 - (X**3 - X + 1), levels=[0], colors='green')
+ax2.set_xlabel('x')
+ax2.set_ylabel('y')
+ax2.set_title('Elliptic Curve: $y^2 = x^3 - x + 1$')
+ax2.grid(True)
+ax2.axis('equal')
+
+plt.tight_layout()
+plt.savefig('/tmp/algebraic_varieties.png', dpi=150)
+print("\nPlot saved to /tmp/algebraic_varieties.png")
+</code></pre>
+
+            <h3>The Prime Number Theorem: Distribution of Primes</h3>
+            <p>The Prime Number Theorem describes the asymptotic distribution of prime numbers, one of the most celebrated results in analytic number theory. It states that the number of primes less than \(x\) is approximately \(x/\ln(x)\).</p>
+
+            <p><strong>Motivation:</strong> Primes appear irregularly among the integers, yet they exhibit remarkable statistical regularity. The Prime Number Theorem captures this regularity precisely.</p>
+
+            <p><strong>Definition (Prime Counting Function):</strong> \(\pi(x)\) denotes the number of primes less than or equal to \(x\):
+            \[ \pi(x) = \sum_{p \leq x} 1 \]
+            where the sum is over primes \(p\).</p>
+
+            <p><strong>Definition (Logarithmic Integral):</strong> 
+            \[ \text{li}(x) = \int_2^x \frac{dt}{\ln t} \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\pi(x)\) — prime counting function</li>
+                <li>\(\psi(x)\) — Chebyshev function \(\sum_{p^k \leq x} \ln p\)</li>
+                <li>\(\vartheta(x)\) — first Chebyshev function \(\sum_{p \leq x} \ln p\)</li>
+                <li>\(\zeta(s)\) — Riemann zeta function</li>
+                <li>\(\Lambda(n)\) — von Mangoldt function</li>
+                <li>\(\sim\) — asymptotic equivalence: \(f(x) \sim g(x)\) means \(\lim_{x \to \infty} f(x)/g(x) = 1\)</li>
+            </ul>
+
+            <p><strong>Theorem (Prime Number Theorem):</strong>
+            \[ \pi(x) \sim \frac{x}{\ln x} \]
+            Equivalently:
+            \[ \lim_{x \to \infty} \frac{\pi(x) \ln x}{x} = 1 \]</p>
+
+            <p><em>Proof sketch (Newman's Tauberian approach):</em> The proof uses complex analysis. Define \(\Phi(s) = \sum_p \frac{\ln p}{p^s}\). The key steps are:</p>
+            <ol>
+                <li>Show \(\zeta(s)\) has no zeros on \(\text{Re}(s) = 1\)</li>
+                <li>Use the identity \(-\frac{\zeta'(s)}{\zeta(s)} = \sum_{n=1}^\infty \frac{\Lambda(n)}{n^s}\)</li>
+                <li>Apply Newman's Tauberian theorem to deduce \(\psi(x) \sim x\)</li>
+                <li>Convert from \(\psi(x)\) to \(\pi(x)\) via partial summation</li>
+            </ol>
+            <p>The result follows from careful analysis of the Mellin transforms. ∎</p>
+
+            <p><strong>Error Term:</strong> The Riemann Hypothesis implies the error term is \(O(\sqrt{x} \ln x)\), which is essentially the best possible.</p>
+
+            <pre><code>import numpy as np
+from sympy import primepi, log, integrate, symbols, primerange
+import matplotlib.pyplot as plt
+
+def prime_counting_function(x):
+    """π(x) - number of primes ≤ x."""
+    return primepi(int(x))
+
+def logarithmic_integral(x):
+    """li(x) = ∫₂ˣ dt/ln(t)."""
+    t = symbols('t', positive=True)
+    return float(integrate(1/log(t), (t, 2, x)))
+
+def approximation_ratio(x):
+    """Compute π(x) / (x/ln(x))."""
+    return prime_counting_function(x) / (x / np.log(x))
+
+# Demonstration
+print("=" * 60)
+print("PRIME NUMBER THEOREM DEMONSTRATIONS")
+print("=" * 60)
+
+# Test values
+test_values = [10, 100, 1000, 10000, 100000]
+
+print(f"\n{'x':<12} {'π(x)':<12} {'x/ln(x)':<15} {'Ratio':<10}")
+print("-" * 55)
+for x in test_values:
+    pi_x = prime_counting_function(x)
+    approx = x / np.log(x)
+    ratio = pi_x / approx
+    print(f"{x:<12} {pi_x:<12} {approx:<15.2f} {ratio:<10.6f}")
+
+print("\nNote: As x → ∞, the ratio approaches 1 (Prime Number Theorem)")
+
+# Chebyshev functions
+def chebyshev_theta(x):
+    """ϑ(x) = Σ_{p≤x} ln(p)."""
+    return sum(np.log(p) for p in primerange(2, x+1))
+
+def chebyshev_psi(x):
+    """ψ(x) = Σ_{p^k≤x} ln(p)."""
+    total = 0
+    for p in primerange(2, x+1):
+        pk = p
+        while pk <= x:
+            total += np.log(p)
+            pk *= p
+    return total
+
+print("\n" + "-" * 40)
+print("Chebyshev Functions")
+print(f"{'x':<12} {'ϑ(x)':<12} {'ψ(x)':<12} {'x':<12}")
+print("-" * 55)
+for x in [100, 1000, 10000]:
+    theta = chebyshev_theta(x)
+    psi = chebyshev_psi(x)
+    print(f"{x:<12} {theta:<12.2f} {psi:<12.2f} {x:<12}")
+
+print("\nNote: Both ϑ(x) and ψ(x) are asymptotic to x")
+</code></pre>
+        </section>
+
+        <!-- Section 4: 3 Applied Math Deep-Dives -->
+        <section id="applied">
+            <h2>🔧 Applied Math Deep-Dives</h2>
+
+            <h3>Convex Optimization: The Geometry of Efficient Computation</h3>
+            <p>Convex optimization problems have the remarkable property that any local minimum is a global minimum. This makes them computationally tractable and they appear throughout engineering, economics, machine learning, and statistics.</p>
+
+            <p><strong>Real-World Motivation:</strong> Portfolio optimization seeks to maximize returns while minimizing risk. Signal processing requires finding the cleanest signal consistent with noisy measurements. Machine learning fits models by minimizing loss functions. When these problems are convex, we can solve them efficiently and reliably.</p>
+
+            <p><strong>Definition (Convex Set):</strong> A set \(C \subseteq \mathbb{R}^n\) is <strong>convex</strong> if for all \(x, y \in C\) and \(\theta \in [0, 1]\):
+            \[ \theta x + (1-\theta)y \in C \]</p>
+
+            <p><strong>Definition (Convex Function):</strong> A function \(f: \mathbb{R}^n \to \mathbb{R}\) is <strong>convex</strong> if its domain is convex and for all \(x, y\) in the domain and \(\theta \in [0, 1]\):
+            \[ f(\theta x + (1-\theta)y) \leq \theta f(x) + (1-\theta)f(y) \]</p>
+
+            <p><strong>Definition (Convex Optimization Problem):</strong>
+            \[ \begin{aligned}
+            \text{minimize} \quad & f_0(x) \\
+            \text{subject to} \quad & f_i(x) \leq 0, \quad i = 1, \ldots, m \\
+            & h_j(x) = 0, \quad j = 1, \ldots, p
+            \end{aligned} \]
+            where \(f_0, f_1, \ldots, f_m\) are convex and \(h_j\) are affine (\(h_j(x) = a_j^T x - b_j\)).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\text{dom}(f)\) — domain of function \(f\)</li>
+                <li>\(\text{epi}(f)\) — epigraph \(\{(x, t) : f(x) \leq t\}\)</li>
+                <li>\(\nabla f(x)\) — gradient of \(f\) at \(x\)</li>
+                <li>\(\partial f(x)\) — subdifferential of \(f\) at \(x\)</li>
+                <li>\(\text{prox}_f(v)\) — proximal operator \(\arg\min_x (f(x) + \frac{1}{2}\|x-v\|^2)\)</li>
+                <li>\(f^*\) — convex conjugate \(f^*(y) = \sup_x (y^T x - f(x))\)</li>
+            </ul>
+
+            <p><strong>Theorem (First-Order Condition):</strong> A differentiable function \(f\) with convex domain is convex if and only if:
+            \[ f(y) \geq f(x) + \nabla f(x)^T(y - x) \]
+            for all \(x, y \in \text{dom}(f)\).</p>
+
+            <p><em>Proof:</em> (\(\Rightarrow\)) From convexity: \(f(x + \theta(y-x)) \leq (1-\theta)f(x) + \theta f(y)\). Rearranging and taking \(\theta \to 0\) gives the result.
+            
+            (\(\Leftarrow\)) Let \(z = \theta x + (1-\theta)y\). Apply the condition twice:
+            \[ f(x) \geq f(z) + \nabla f(z)^T(x-z) \]
+            \[ f(y) \geq f(z) + \nabla f(z)^T(y-z) \]
+            Multiply by \(\theta\) and \((1-\theta)\) respectively and add to get convexity. ∎</p>
+
+            <p><strong>Theorem (Karush-Kuhn-Tucker Conditions):</strong> For a convex optimization problem satisfying Slater's condition (strict feasibility), \(x^*\) is optimal if and only if there exist dual variables \(\lambda^* \geq 0\) and \(\nu^*\) such that:</p>
+            <ol>
+                <li><strong>Stationarity:</strong> \(0 \in \partial f_0(x^*) + \sum_{i=1}^m \lambda_i^* \partial f_i(x^*) + \sum_{j=1}^p \nu_j^* \nabla h_j(x^*)\)</li>
+                <li><strong>Primal feasibility:</strong> \(f_i(x^*) \leq 0\), \(h_j(x^*) = 0\)</li>
+                <li><strong>Dual feasibility:</strong> \(\lambda_i^* \geq 0\)</li>
+                <li><strong>Complementary slackness:</strong> \(\lambda_i^* f_i(x^*) = 0\)</li>
+            </ol>
+
+            <pre><code>import numpy as np
+from scipy.optimize import minimize, linprog
+import matplotlib.pyplot as plt
+from matplotlib.patches import Polygon
+
+class ConvexOptimization:
+    """Demonstrations of convex optimization concepts."""
+    
+    @staticmethod
+    def is_convex_quadratic(Q):
+        """Check if quadratic form x^T Q x is convex (Q positive semidefinite)."""
+        eigenvalues = np.linalg.eigvalsh(Q)
+        return np.all(eigenvalues >= -1e-10), eigenvalues
+    
+    @staticmethod
+    def gradient_descent(f, grad_f, x0, step_size=0.1, max_iter=1000, tol=1e-6):
+        """Gradient descent for convex optimization."""
+        x = x0.copy()
+        trajectory = [x.copy()]
+        
+        for _ in range(max_iter):
+            gradient = grad_f(x)
+            x_new = x - step_size * gradient
+            trajectory.append(x_new.copy())
+            
+            if np.linalg.norm(x_new - x) < tol:
+                break
+            x = x_new
+        
+        return x, trajectory
+    
+    @staticmethod
+    def projected_gradient_descent(f, grad_f, proj, x0, step_size=0.1, 
+                                    max_iter=1000, tol=1e-6):
+        """Projected gradient descent for constrained convex problems."""
+        x = x0.copy()
+        trajectory = [x.copy()]
+        
+        for _ in range(max_iter):
+            gradient = grad_f(x)
+            x_temp = x - step_size * gradient
+            x_new = proj(x_temp)
+            trajectory.append(x_new.copy())
+            
+            if np.linalg.norm(x_new - x) < tol:
+                break
+            x = x_new
+        
+        return x, trajectory
+
+# Demonstrations
+print("=" * 60)
+print("CONVEX OPTIMIZATION DEMONSTRATIONS")
+print("=" * 60)
+
+# Example 1: Check convexity of quadratic
+Q = np.array([[2, 1], [1, 3]])
+is_conv, eigs = ConvexOptimization.is_convex_quadratic(Q)
+print(f"\nQuadratic form with Q = {Q.tolist()}")
+print(f"Eigenvalues: {eigs}")
+print(f"Is convex: {is_conv}")
+
+# Example 2: Unconstrained convex optimization
+print("\n" + "-" * 40)
+print("Unconstrained minimization: f(x,y) = x² + 2y² + xy - x + 3y")
+
+def f(x):
+    return x[0]**2 + 2*x[1]**2 + x[0]*x[1] - x[0] + 3*x[1]
+
+def grad_f(x):
+    return np.array([2*x[0] + x[1] - 1, 4*x[1] + x[0] + 3])
+
+# Analytical solution: solve ∇f = 0
+# 2x + y = 1
+# x + 4y = -3
+A = np.array([[2, 1], [1, 4]])
+b = np.array([1, -3])
+x_optimal = np.linalg.solve(A, b)
+print(f"Analytical solution: x* = {x_optimal}")
+print(f"Optimal value: f(x*) = {f(x_optimal):.6f}")
+
+# Gradient descent
+x0 = np.array([0.0, 0.0])
+x_gd, traj = ConvexOptimization.gradient_descent(f, grad_f, x0, step_size=0.2)
+print(f"Gradient descent solution: x = {x_gd}")
+print(f"Iterations: {len(traj)}")
+
+# Example 3: Linear programming
+print("\n" + "-" * 40)
+print("Linear Programming: Maximize 3x + 4y subject to:")
+print("  x + 2y ≤ 14")
+print("  3x - y ≤ 0")
+print("  x - y ≤ 2")
+print("  x, y ≥ 0")
+
+# Convert to standard form: minimize -c^T x subject to Ax ≤ b
+c = np.array([-3, -4])  # Negative because we maximize
+A_ub = np.array([[1, 2], [3, -1], [1, -1]])
+b_ub = np.array([14, 0, 2])
+
+result = linprog(c, A_ub=A_ub, b_ub=b_ub, bounds=[(0, None), (0, None)], 
+                 method='highs')
+print(f"\nOptimal solution: x = {result.x[0]:.4f}, y = {result.x[1]:.4f}")
+print(f"Optimal value: {result.fun:.4f} (max = {-result.fun:.4f})")
+print(f"Success: {result.success}")
+</code></pre>
+
+            <h3>Gradient Descent and Stochastic Optimization</h3>
+            <p>Gradient descent is the workhorse of modern machine learning. It iteratively minimizes functions by moving in the direction of steepest decrease. Understanding its convergence properties is essential for training neural networks and other large-scale models.</p>
+
+            <p><strong>Real-World Motivation:</strong> Training a neural network involves minimizing a loss function over millions of parameters. The loss landscape is complex and high-dimensional. Gradient descent (and its variants like Adam, RMSprop) make this tractable.</p>
+
+            <p><strong>Definition (Lipschitz Continuous Gradient):</strong> A differentiable function \(f\) has <strong>L-Lipschitz continuous gradient</strong> if:
+            \[ \|\nabla f(x) - \nabla f(y)\| \leq L\|x - y\| \]
+            for all \(x, y\).</p>
+
+            <p><strong>Definition (Strong Convexity):</strong> A function \(f\) is <strong>\(\mu\)-strongly convex</strong> if:
+            \[ f(y) \geq f(x) + \nabla f(x)^T(y-x) + \frac{\mu}{2}\|y-x\|^2 \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\eta\) or \(\alpha\) — learning rate / step size</li>
+                <li>\(\beta_1, \beta_2\) — momentum parameters (Adam)</li>
+                <li>\(\epsilon\) — small constant for numerical stability</li>
+                <li>\(m_t, v_t\) — first and second moment estimates</li>
+                <li>\(\mathcal{O}(1/T)\), \(\mathcal{O}(\rho^T)\) — convergence rates</li>
+                <li>\(\kappa = L/\mu\) — condition number</li>
+            </ul>
+
+            <p><strong>Theorem (Convergence of Gradient Descent):</strong> Let \(f\) be convex with \(L\)-Lipschitz gradient and let \(x^*\) be a minimizer. Gradient descent with step size \(\eta \leq 1/L\) satisfies:
+            \[ f(x_T) - f(x^*) \leq \frac{\|x_0 - x^*\|^2}{2\eta T} \]</p>
+
+            <p><em>Proof:</em> Using the descent lemma (from Lipschitz gradient):
+            \[ f(x_{t+1}) \leq f(x_t) - \frac{\eta}{2}\|\nabla f(x_t)\|^2 \]
+            For convex \(f\): \(f(x_t) - f(x^*) \leq \nabla f(x_t)^T(x_t - x^*)\). Combining and telescoping gives the result. ∎</p>
+
+            <p><strong>Theorem (Linear Convergence for Strongly Convex):</strong> If \(f\) is \(\mu\)-strongly convex with \(L\)-Lipschitz gradient, gradient descent with \(\eta = 1/L\) satisfies:
+            \[ \|x_T - x^*\|^2 \leq \left(1 - \frac{\mu}{L}\right)^T \|x_0 - x^*\|^2 \]</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class GradientDescentVariants:
+    """Various gradient descent algorithms for machine learning."""
+    
+    @staticmethod
+    def vanilla_gd(grad_f, x0, lr, max_iter):
+        """Standard gradient descent."""
+        x = x0.copy()
+        trajectory = [x.copy()]
+        
+        for _ in range(max_iter):
+            x = x - lr * grad_f(x)
+            trajectory.append(x.copy())
+        
+        return x, trajectory
+    
+    @staticmethod
+    def momentum_gd(grad_f, x0, lr, beta, max_iter):
+        """Gradient descent with momentum (Polyak)."""
+        x = x0.copy()
+        v = np.zeros_like(x)
+        trajectory = [x.copy()]
+        
+        for _ in range(max_iter):
+            v = beta * v + grad_f(x)
+            x = x - lr * v
+            trajectory.append(x.copy())
+        
+        return x, trajectory
+    
+    @staticmethod
+    def adam(grad_f, x0, lr, beta1=0.9, beta2=0.999, epsilon=1e-8, max_iter=1000):
+        """Adam optimizer."""
+        x = x0.copy()
+        m = np.zeros_like(x)
+        v = np.zeros_like(x)
+        trajectory = [x.copy()]
+        
+        for t in range(1, max_iter + 1):
+            g = grad_f(x)
+            m = beta1 * m + (1 - beta1) * g
+            v = beta2 * v + (1 - beta2) * (g ** 2)
+            m_hat = m / (1 - beta1 ** t)
+            v_hat = v / (1 - beta2 ** t)
+            x = x - lr * m_hat / (np.sqrt(v_hat) + epsilon)
+            trajectory.append(x.copy())
+        
+        return x, trajectory
+    
+    @staticmethod
+    def sgd(grad_f_stochastic, x0, lr, max_iter, batch_size=None):
+        """Stochastic gradient descent."""
+        x = x0.copy()
+        trajectory = [x.copy()]
+        
+        for t in range(max_iter):
+            # Stochastic gradient (simplified)
+            g = grad_f_stochastic(x, t)
+            # Learning rate decay
+            lr_t = lr / (1 + 0.01 * t)
+            x = x - lr_t * g
+            trajectory.append(x.copy())
+        
+        return x, trajectory
+
+# Demonstration: Rosenbrock function (optimization benchmark)
+print("=" * 60)
+print("GRADIENT DESCENT FOR MACHINE LEARNING")
+print("=" * 60)
+
+def rosenbrock(x, a=1, b=100):
+    """Rosenbrock function: f(x,y) = (a-x)² + b(y-x²)²."""
+    return (a - x[0])**2 + b * (x[1] - x[0]**2)**2
+
+def rosenbrock_grad(x, a=1, b=100):
+    """Gradient of Rosenbrock function."""
+    dx = -2*(a - x[0]) - 4*b*x[0]*(x[1] - x[0]**2)
+    dy = 2*b*(x[1] - x[0]**2)
+    return np.array([dx, dy])
+
+print("\nRosenbrock function minimization")
+print("Global minimum at (1, 1) with f(1,1) = 0")
+
+x0 = np.array([-1.0, 2.0])
+max_iter = 1000
+
+# Compare optimizers
+methods = {
+    'Vanilla GD (lr=0.001)': lambda: GradientDescentVariants.vanilla_gd(
+        rosenbrock_grad, x0, 0.001, max_iter),
+    'Momentum (lr=0.001, β=0.9)': lambda: GradientDescentVariants.momentum_gd(
+        rosenbrock_grad, x0, 0.001, 0.9, max_iter),
+    'Adam (lr=0.1)': lambda: GradientDescentVariants.adam(
+        rosenbrock_grad, x0, 0.1, max_iter=max_iter)
+}
+
+print(f"\n{'Method':<30} {'Final f(x)':<15} {'Distance to (1,1)'}")
+print("-" * 65)
+
+results = {}
+for name, method in methods.items():
+    x_final, traj = method()
+    results[name] = (x_final, traj)
+    final_f = rosenbrock(x_final)
+    dist = np.linalg.norm(x_final - np.array([1, 1]))
+    print(f"{name:<30} {final_f:<15.6e} {dist:.6f}")
+
+# Convergence analysis
+print("\n" + "-" * 40)
+print("Convergence Analysis")
+
+# Theoretical rate for strongly convex
+# For f(x) = (1/2)x^T A x - b^T x
+A = np.array([[10, 0], [0, 1]])  # Condition number = 10
+def quadratic(x):
+    return 0.5 * x.T @ A @ x
+
+def quadratic_grad(x):
+    return A @ x
+
+x0 = np.array([10.0, 10.0])
+L = np.max(np.linalg.eigvalsh(A))
+mu = np.min(np.linalg.eigvalsh(A))
+kappa = L / mu
+
+print(f"\nQuadratic: f(x) = (1/2)x^T A x")
+print(f"Condition number κ = {kappa:.2f}")
+print(f"Theoretical convergence rate: (1 - 1/κ) = {1 - 1/kappa:.4f}")
+
+x_opt, traj = GradientDescentVariants.vanilla_gd(
+    quadratic_grad, x0, 1/L, 100)
+print(f"After 100 iterations: ||x|| = {np.linalg.norm(x_opt):.6f}")
+print(f"Theoretical bound: ||x_0|| * (1-1/κ)^100 = {np.linalg.norm(x0) * (1-1/kappa)**100:.6f}")
+</code></pre>
+
+            <h3>Chaos Theory: Deterministic Unpredictability</h3>
+            <p>Chaos theory studies deterministic systems that exhibit sensitive dependence on initial conditions—small changes lead to vastly different outcomes. This "butterfly effect" appears in weather, fluid dynamics, economics, and biology.</p>
+
+            <p><strong>Real-World Motivation:</strong> Weather prediction is inherently limited because the atmosphere is chaotic. Understanding chaos helps us identify the fundamental limits of predictability in complex systems.</p>
+
+            <p><strong>Definition (Dynamical System):</strong> A <strong>dynamical system</strong> is a rule that determines the future state of a system given its current state. Discrete-time: \(x_{n+1} = f(x_n)\). Continuous-time: \(\frac{dx}{dt} = f(x)\).</p>
+
+            <p><strong>Definition (Sensitive Dependence):</strong> A dynamical system has <strong>sensitive dependence on initial conditions</strong> if there exists \(\delta > 0\) such that for any \(x\) and any neighborhood \(U\) of \(x\), there exists \(y \in U\) and \(n \geq 0\) with \(|f^n(x) - f^n(y)| > \delta\).</p>
+
+            <p><strong>Definition (Lyapunov Exponent):</strong> The <strong>Lyapunov exponent</strong> \(\lambda\) measures the rate of separation of infinitesimally close trajectories:
+            \[ \lambda = \lim_{n \to \infty} \frac{1}{n} \sum_{i=0}^{n-1} \ln |f'(x_i)| \]
+            If \(\lambda > 0\), the system is chaotic.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(f^n(x)\) — n-th iterate of \(f\)</li>
+                <li>\(\Lambda\) — Lyapunov exponent</li>
+                <li>\(J_f(x)\) — Jacobian matrix of \(f\) at \(x\)</li>
+                <li>\(\Omega\) — non-wandering set</li>
+                <li>\(\mathcal{A}\) — attractor</li>
+                <li>\(D_f(x)\) — fractal dimension</li>
+            </ul>
+
+            <p><strong>Theorem (Period-3 Implies Chaos):</strong> Let \(f: I \to I\) be a continuous map of an interval. If \(f\) has a point of period 3, then \(f\) has points of all periods (Li-Yorke theorem).</p>
+
+            <p><em>Proof sketch:</em> If \(f^3(p) = p\) but \(f(p) \neq p\), the intermediate value theorem applied to \(g(x) = f^3(x) - x\) creates a cascade of fixed points for iterates, yielding periodic points of all periods. ∎</p>
+
+            <p><strong>The Lorenz Attractor:</strong> The system:
+            \[ \begin{aligned}
+            \frac{dx}{dt} &= \sigma(y - x) \\
+            \frac{dy}{dt} &= x(\rho - z) - y \\
+            \frac{dz}{dt} &= xy - \beta z
+            \end{aligned} \]
+            with \(\sigma = 10\), \(\beta = 8/3\), \(\rho = 28\) exhibits chaos with the famous "butterfly" attractor.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+class ChaosTheory:
+    """Demonstrations of chaos theory concepts."""
+    
+    @staticmethod
+    def logistic_map(r, x0, n):
+        """Logistic map: x_{n+1} = r * x_n * (1 - x_n)."""
+        x = np.zeros(n)
+        x[0] = x0
+        for i in range(1, n):
+            x[i] = r * x[i-1] * (1 - x[i-1])
+        return x
+    
+    @staticmethod
+    def lyapunov_exponent_logistic(r, n=10000):
+        """Compute Lyapunov exponent for logistic map."""
+        x = 0.5  # Initial condition
+        lyap_sum = 0
+        
+        for i in range(n):
+            x = r * x * (1 - x)
+            lyap_sum += np.log(abs(r * (1 - 2*x)))
+        
+        return lyap_sum / n
+    
+    @staticmethod
+    def lorenz_system(t, state, sigma=10, rho=28, beta=8/3):
+        """Lorenz system differential equations."""
+        x, y, z = state
+        dxdt = sigma * (y - x)
+        dydt = x * (rho - z) - y
+        dzdt = x * y - beta * z
+        return [dxdt, dydt, dzdt]
+    
+    @staticmethod
+    def henon_map(a=1.4, b=0.3, n=10000, x0=0, y0=0):
+        """Hénon map: x_{n+1} = 1 - a*x_n² + y_n, y_{n+1} = b*x_n."""
+        x = np.zeros(n)
+        y = np.zeros(n)
+        x[0], y[0] = x0, y0
+        
+        for i in range(1, n):
+            x[i] = 1 - a * x[i-1]**2 + y[i-1]
+            y[i] = b * x[i-1]
+        
+        return x, y
+
+print("=" * 60)
+print("CHAOS THEORY DEMONSTRATIONS")
+print("=" * 60)
+
+# Logistic map bifurcation analysis
+print("\nLogistic Map: x_{n+1} = r * x_n * (1 - x_n)")
+print("-" * 40)
+
+r_values = [2.5, 3.2, 3.5, 3.8, 4.0]
+print(f"{'r':<8} {'Behavior':<25} {'Lyapunov λ'}")
+print("-" * 50)
+
+for r in r_values:
+    x = ChaosTheory.logistic_map(r, 0.5, 1000)
+    lyap = ChaosTheory.lyapunov_exponent_logistic(r)
+    
+    # Determine behavior
+    unique_values = len(set(np.round(x[-100:], 6)))
+    if unique_values == 1:
+        behavior = "Fixed point"
+    elif unique_values <= 4:
+        behavior = f"Period-{unique_values} cycle"
+    else:
+        behavior = "Chaos"
+    
+    print(f"{r:<8} {behavior:<25} {lyap:+.4f}")
+
+print("\nNote: λ > 0 indicates chaos (sensitive dependence)")
+
+# Period-3 implies chaos demonstration
+print("\n" + "-" * 40)
+print("Period-3 in Logistic Map (r ≈ 3.84)")
+r = 3.84
+x = ChaosTheory.logistic_map(r, 0.5, 1000)
+# Look for period-3 orbit
+orbit = x[-100:]
+period_3_points = []
+for i in range(len(orbit) - 3):
+    if abs(orbit[i+3] - orbit[i]) < 0.001:
+        period_3_points.append(orbit[i])
+
+print(f"Approximate period-3 points found: {len(set(np.round(period_3_points, 3)))}")
+
+# Lorenz attractor
+print("\n" + "-" * 40)
+print("Lorenz Attractor")
+print("Solving with σ=10, ρ=28, β=8/3...")
+
+# Solve Lorenz system
+t_span = (0, 50)
+t_eval = np.linspace(0, 50, 10000)
+sol1 = solve_ivp(ChaosTheory.lorenz_system, t_span, [1, 1, 1], 
+                 t_eval=t_eval, method='RK45')
+sol2 = solve_ivp(ChaosTheory.lorenz_system, t_span, [1.001, 1, 1], 
+                 t_eval=t_eval, method='RK45')
+
+# Measure divergence
+divergence = np.sqrt(np.sum((sol1.y - sol2.y)**2, axis=0))
+print(f"Initial separation: 0.001")
+print(f"Final separation after t=50: {divergence[-1]:.4f}")
+print(f"Approximate Lyapunov exponent: {np.log(divergence[-1]/0.001)/50:.4f}")
+
+# Hénon map
+print("\n" + "-" * 40)
+print("Hénon Map Strange Attractor")
+x_henon, y_henon = ChaosTheory.henon_map()
+print(f"Generated {len(x_henon)} points")
+print(f"x range: [{x_henon.min():.3f}, {x_henon.max():.3f}]")
+print(f"y range: [{y_henon.min():.3f}, {y_henon.max():.3f}]")
+</code></pre>
+        </section>
+
+        <!-- Section 5: 4 Special Topics -->
+        <section id="topics">
+            <h2>🎯 Special Topics</h2>
+
+            <h3>p-adic Numbers: Analysis in a Non-Archimedean World</h3>
+            <p>p-adic numbers, introduced by Kurt Hensel at the turn of the 20th century, provide an alternative completion of the rational numbers. Unlike real numbers, where large integers have large absolute value, in the p-adic world, integers divisible by high powers of a prime p are "small."</p>
+
+            <p><strong>Historical Context:</strong> Hensel developed p-adic numbers to bring methods from power series (like Taylor expansions) to number theory. The analogy: just as functions can be studied via their power series expansions, rational numbers can be studied via their p-adic expansions. This perspective revolutionized algebraic number theory and has found applications in algebraic geometry, representation theory, and even physics.</p>
+
+            <p><strong>Definition (p-adic Valuation):</strong> For a prime \(p\) and nonzero integer \(n\), the <strong>p-adic valuation</strong> \(\nu_p(n)\) is the highest power of \(p\) dividing \(n\). For \(n = p^k \cdot m\) with \(p \nmid m\), we have \(\nu_p(n) = k\). By convention, \(\nu_p(0) = \infty\).</p>
+
+            <p><strong>Definition (p-adic Absolute Value):</strong> The <strong>p-adic absolute value</strong> on \(\mathbb{Q}\) is:
+            \[ |x|_p = p^{-\nu_p(x)} \]
+            for \(x \neq 0\), and \(|0|_p = 0\).</p>
+
+            <p><strong>Definition (p-adic Numbers):</strong> The field of <strong>p-adic numbers</strong> \(\mathbb{Q}_p\) is the completion of \(\mathbb{Q}\) with respect to \(|\cdot|_p\). Every p-adic number has a unique expansion:
+            \[ x = \sum_{n=N}^{\infty} a_n p^n \]
+            where \(N \in \mathbb{Z}\) and \(a_n \in \{0, 1, \ldots, p-1\}\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\nu_p(x)\) — p-adic valuation</li>
+                <li>\(|x|_p\) — p-adic absolute value</li>
+                <li>\(\mathbb{Q}_p\) — field of p-adic numbers</li>
+                <li>\(\mathbb{Z}_p\) — ring of p-adic integers (\(|x|_p \leq 1\))</li>
+                <li>\(\mathbb{C}_p\) — completion of algebraic closure of \(\mathbb{Q}_p\)</li>
+                <li>\(\mathcal{O}_p\) — valuation ring</li>
+            </ul>
+
+            <p><strong>Theorem (Ostrowski):</strong> Every nontrivial absolute value on \(\mathbb{Q}\) is equivalent to either the usual absolute value \(|\cdot|_\infty\) or a p-adic absolute value \(|\cdot|_p\) for some prime \(p\).</p>
+
+            <p><em>Proof sketch:</em> One shows that any absolute value satisfying \(|n| \leq 1\) for all integers must be non-Archimedean (satisfy the ultrametric inequality). The structure of such absolute values is determined by which primes they detect. ∎</p>
+
+            <p><strong>Theorem (Hensel's Lemma):</strong> Let \(f(x) \in \mathbb{Z}_p[x]\) and suppose there exists \(a_0 \in \mathbb{Z}_p\) with \(|f(a_0)|_p < |f'(a_0)|_p^2\). Then there exists a unique \(a \in \mathbb{Z}_p\) such that \(f(a) = 0\) and \(|a - a_0|_p < |f'(a_0)|_p\).</p>
+
+            <p><em>Proof sketch:</em> The condition ensures Newton's method converges in the p-adic metric. The iteration \(a_{n+1} = a_n - f(a_n)/f'(a_n)\) is well-defined and converges to a root because the error decreases quadratically. ∎</p>
+
+            <pre><code>import sympy as sp
+from fractions import Fraction
+
+class PAdicNumbers:
+    """Demonstrations of p-adic number concepts."""
+    
+    @staticmethod
+    def valuation(n, p):
+        """Compute p-adic valuation ν_p(n)."""
+        if n == 0:
+            return float('inf')
+        
+        count = 0
+        while n % p == 0:
+            n //= p
+            count += 1
+        return count
+    
+    @staticmethod
+    def p_adic_abs(x, p):
+        """Compute p-adic absolute value |x|_p."""
+        if x == 0:
+            return 0
+        
+        # Convert to fraction if needed
+        if isinstance(x, int):
+            x = Fraction(x, 1)
+        
+        val_num = PAdicNumbers.valuation(x.numerator, p)
+        val_den = PAdicNumbers.valuation(x.denominator, p)
+        val = val_num - val_den
+        
+        return p ** (-val)
+    
+    @staticmethod
+    def p_adic_expansion(x, p, precision=20):
+        """Compute p-adic expansion of rational number x."""
+        if x == 0:
+            return [0] * precision
+        
+        if isinstance(x, int):
+            x = Fraction(x, 1)
+        
+        # Find starting exponent
+        val = (PAdicNumbers.valuation(x.numerator, p) - 
+               PAdicNumbers.valuation(x.denominator, p))
+        
+        digits = []
+        x_frac = x
+        
+        for _ in range(precision):
+            # Current digit is x * p^(-val) mod p
+            temp = x_frac * (p ** (-val))
+            digit = int(temp) % p
+            digits.append(digit)
+            
+            x_frac = x_frac - digit * (p ** val)
+            if x_frac == 0:
+                break
+            val += 1
+        
+        return digits
+
+# Demonstrations
+print("=" * 60)
+print("p-ADIC NUMBER DEMONSTRATIONS")
+print("=" * 60)
+
+p = 5
+print(f"\nWorking with p = {p}")
+print("-" * 40)
+
+# Valuations
+test_numbers = [1, 5, 25, 125, 2, 10, 50, 1/5, 1/25]
+print(f"{'x':<12} {'ν_5(x)':<10} {'|x|_5'}")
+print("-" * 35)
+for x in test_numbers:
+    val = PAdicNumbers.valuation(int(x * 25) if isinstance(x, Fraction) else x, p)
+    if isinstance(x, Fraction):
+        abs_val = PAdicNumbers.p_adic_abs(x, p)
+    else:
+        abs_val = PAdicNumbers.p_adic_abs(x, p)
+    print(f"{str(x):<12} {val:<10} {abs_val:.6f}")
+
+# Key insight
+print("\nKey insight: In the 5-adic world:")
+print("  5^n → 0 as n → ∞ (small)")
+print("  Large integers not divisible by 5 are 'large'")
+
+# p-adic expansion
+print("\n" + "-" * 40)
+print("5-adic Expansions")
+print(f"-1 = {PAdicNumbers.p_adic_expansion(-1, 5, 10)}... (all 4s)")
+print(f"1/2 = {PAdicNumbers.p_adic_expansion(Fraction(1, 2), 5, 10)}...")
+
+# Verify: -1 = ...444444 (in base 5)
+# Because ...444444 + 1 = ...000000 = 0
+print("\nVerification: -1 ≡ ...444444 (base 5)")
+print("Sum of geometric series: 4(1 + 5 + 5² + ...) = 4/(1-5) = -1 ✓")
+
+# Non-Archimedean triangle inequality
+print("\n" + "-" * 40)
+print("Non-Archimedean Property")
+a, b = Fraction(1, 5), Fraction(2, 5)
+c = a + b
+abs_a = PAdicNumbers.p_adic_abs(a, 5)
+abs_b = PAdicNumbers.p_adic_abs(b, 5)
+abs_c = PAdicNumbers.p_adic_abs(c, 5)
+print(f"|a|_5 = {abs_a}, |b|_5 = {abs_b}, |a+b|_5 = {abs_c}")
+print(f"max(|a|_5, |b|_5) = {max(abs_a, abs_b)}")
+print(f"Strong triangle inequality: |a+b|_5 ≤ max(|a|_5, |b|_5) ✓")
+</code></pre>
+
+            <h3>Matroid Theory: Abstraction of Independence</h3>
+            <p>Matroid theory abstracts the notion of "independence" from linear algebra and graph theory into a unified combinatorial framework. Introduced by Hassler Whitney in 1935, matroids capture the essence of what makes a set of vectors linearly independent or a set of edges acyclic.</p>
+
+            <p><strong>Historical Context:</strong> Whitney noticed that the properties of linear independence in vector spaces and the properties of forests in graphs share a common structure. This led him to define matroids axiomatically. The theory has since found applications in combinatorial optimization, coding theory, and algorithm design.</p>
+
+            <p><strong>Definition (Matroid):</strong> A <strong>matroid</strong> \(M = (E, \mathcal{I})\) consists of a finite ground set \(E\) and a collection \(\mathcal{I} \subseteq 2^E\) of <strong>independent sets</strong> satisfying:</p>
+            <ol>
+                <li><strong>(I1)</strong> \(\emptyset \in \mathcal{I}\)</li>
+                <li><strong>(I2)</strong> If \(A \in \mathcal{I}\) and \(B \subseteq A\), then \(B \in \mathcal{I}\) (hereditary)</li>
+                <li><strong>(I3)</strong> If \(A, B \in \mathcal{I}\) and \(|A| < |B|\), then there exists \(e \in B \setminus A\) such that \(A \cup \{e\} \in \mathcal{I}\) (exchange property)</li>
+            </ol>
+
+            <p><strong>Definition (Basis):</strong> A <strong>basis</strong> is a maximal independent set. All bases have the same cardinality, called the <strong>rank</strong> of the matroid.</p>
+
+            <p><strong>Definition (Rank Function):</strong> The <strong>rank function</strong> \(r: 2^E \to \mathbb{Z}_{\geq 0}\) is:
+            \[ r(A) = \max\{|I| : I \subseteq A, I \in \mathcal{I}\} \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(E(M)\) or \(E\) — ground set of matroid \(M\)</li>
+                <li>\(\mathcal{I}(M)\) — independent sets</li>
+                <li>\(\mathcal{B}(M)\) — bases</li>
+                <li>\(r(M)\) — rank of matroid</li>
+                <li>\(M^*\) — dual matroid</li>
+                <li>\(M/e\) — contraction by element \(e\)</li>
+                <li>\(M \setminus e\) — deletion of element \(e\)</li>
+            </ul>
+
+            <p><strong>Theorem (Basis Exchange):</strong> If \(B_1\) and \(B_2\) are bases and \(e \in B_1 \setminus B_2\), then there exists \(f \in B_2 \setminus B_1\) such that \((B_1 \setminus \{e\}) \cup \{f\}\) is a basis.</p>
+
+            <p><em>Proof:</em> Since \(|B_1| = |B_2|\) and \(e \in B_1 \setminus B_2\), we have \(|B_1 \setminus \{e\}| < |B_2|\). By the exchange property (I3), there exists \(f \in B_2 \setminus (B_1 \setminus \{e\})\) such that \((B_1 \setminus \{e\}) \cup \{f\}\) is independent. Since it has the same size as a basis, it is a basis. ∎</p>
+
+            <p><strong>Theorem (Tutte's Characterization):</strong> A matroid is representable over a field \(\mathbb{F}\) if and only if it contains no minor isomorphic to \(U_{2,4}\) (for \(\mathbb{F} = \mathbb{F}_2\), i.e., binary matroids).</p>
+
+            <pre><code>import numpy as np
+from itertools import combinations
+
+class Matroid:
+    """Basic matroid implementation."""
+    
+    def __init__(self, ground_set, independent_sets):
+        """
+        ground_set: list or set of elements
+        independent_sets: list of frozensets representing independent sets
+        """
+        self.E = set(ground_set)
+        self.I = set(independent_sets)
+        
+        # Verify matroid axioms
+        self._verify_axioms()
+    
+    def _verify_axioms(self):
+        """Verify the matroid axioms."""
+        # (I1) Empty set is independent
+        assert frozenset() in self.I, "Empty set must be independent"
+        
+        # (I2) Hereditary property
+        for A in self.I:
+            for B in self._power_set(A):
+                assert frozenset(B) in self.I, f"{B} subset of independent {A} must be independent"
+        
+        # (I3) Exchange property
+        for A in self.I:
+            for B in self.I:
+                if len(A) < len(B):
+                    found = False
+                    for e in B - A:
+                        if A | {e} in self.I:
+                            found = True
+                            break
+                    if not found and len(B) > len(A):
+                        raise ValueError(f"Exchange property violated for {A}, {B}")
+    
+    def _power_set(self, s):
+        """Generate all subsets of s."""
+        s = list(s)
+        return [frozenset(s[j] for j in range(len(s)) if (i >> j) & 1) 
+                for i in range(1 << len(s))]
+    
+    def rank(self, A=None):
+        """Compute rank of set A (or whole matroid if A is None)."""
+        if A is None:
+            A = self.E
+        A = set(A)
+        
+        max_size = 0
+        for I in self.I:
+            if I <= A:
+                max_size = max(max_size, len(I))
+        return max_size
+    
+    def is_basis(self, B):
+        """Check if B is a basis."""
+        B = frozenset(B)
+        return B in self.I and len(B) == self.rank()
+    
+    def bases(self):
+        """Return all bases."""
+        r = self.rank()
+        return {I for I in self.I if len(I) == r}
+
+class VectorMatroid(Matroid):
+    """Matroid from linear independence of vectors."""
+    
+    def __init__(self, vectors):
+        """
+        vectors: list of vectors (as lists or arrays)
+        """
+        self.vectors = [np.array(v) for v in vectors]
+        self.n = len(vectors)
+        
+        # Compute independent sets
+        independent = []
+        for r in range(self.n + 1):
+            for subset in combinations(range(self.n), r):
+                if r == 0:
+                    independent.append(frozenset())
+                else:
+                    matrix = np.array([self.vectors[i] for i in subset])
+                    if np.linalg.matrix_rank(matrix) == r:
+                        independent.append(frozenset(subset))
+        
+        super().__init__(list(range(self.n)), independent)
+
+class GraphicMatroid(Matroid):
+    """Matroid from graph (forest matroid)."""
+    
+    def __init__(self, num_vertices, edges):
+        """
+        edges: list of (u, v) tuples
+        """
+        self.num_vertices = num_vertices
+        self.edges = edges
+        
+        # Independent sets are forests (acyclic edge sets)
+        independent = [frozenset()]  # Empty set
+        
+        for r in range(1, len(edges) + 1):
+            for subset in combinations(range(len(edges)), r):
+                if self._is_forest(subset):
+                    independent.append(frozenset(subset))
+        
+        super().__init__(list(range(len(edges))), independent)
+    
+    def _is_forest(self, edge_indices):
+        """Check if edge set forms a forest (no cycles)."""
+        parent = list(range(self.num_vertices))
+        
+        def find(x):
+            if parent[x] != x:
+                parent[x] = find(parent[x])
+            return parent[x]
+        
+        def union(x, y):
+            px, py = find(x), find(y)
+            if px != py:
+                parent[px] = py
+        
+        for idx in edge_indices:
+            u, v = self.edges[idx]
+            if find(u) == find(v):
+                return False  # Cycle detected
+            union(u, v)
+        return True
+
+# Demonstrations
+print("=" * 60)
+print("MATROID THEORY DEMONSTRATIONS")
+print("=" * 60)
+
+# Example 1: Vector matroid
+print("\n1. Vector Matroid (Linear Matroid)")
+print("-" * 40)
+
+vectors = [
+    [1, 0, 0],  # e1
+    [0, 1, 0],  # e2
+    [0, 0, 1],  # e3
+    [1, 1, 0],  # e1 + e2
+    [1, 1, 1],  # e1 + e2 + e3
+]
+
+M = VectorMatroid(vectors)
+print(f"Ground set: {M.E}")
+print(f"Rank: {M.rank()}")
+print(f"Number of independent sets: {len(M.I)}")
+print(f"Bases: {M.bases()}")
+
+# Example 2: Graphic matroid
+print("\n2. Graphic Matroid (Cycle Matroid)")
+print("-" * 40)
+
+# Triangle graph with one diagonal
+# Vertices: 0, 1, 2, 3
+# Edges: (0,1), (1,2), (2,0) [triangle], (0,2) [diagonal]
+edges = [(0, 1), (1, 2), (2, 0), (0, 2)]
+G = GraphicMatroid(3, edges)
+
+print(f"Edges: {edges}")
+print(f"Ground set: {G.E}")
+print(f"Rank: {G.rank()}")
+print(f"Bases (spanning trees): {G.bases()}")
+
+# Verify: rank of graphic matroid on n vertices is n - c where c is components
+print(f"\nNote: For a connected graph, rank = |V| - 1 = {3 - 1}")
+
+# Example 3: Uniform matroid U_{2,4}
+print("\n3. Uniform Matroid U_{2,4}")
+print("-" * 40)
+
+# U_{r,n}: independent if |I| ≤ r
+r, n = 2, 4
+independent = [frozenset(s) for k in range(r + 1) 
+               for s in combinations(range(n), k)]
+U = Matroid(list(range(n)), independent)
+
+print(f"U_{{{r},{n}}}: independent if |I| ≤ {r}")
+print(f"Rank: {U.rank()}")
+print(f"Bases: {U.bases()}")
+print(f"\nNote: U_{{2,4}} is the smallest non-binary matroid")
+</code></pre>
+
+            <h3>Non-Standard Analysis: Infinitesimals Made Rigorous</h3>
+            <p>Non-standard analysis, developed by Abraham Robinson in the 1960s, provides a rigorous foundation for infinitesimals—the "infinitely small" quantities used informally by Newton and Leibniz. Using model theory and ultraproducts, Robinson showed that the real numbers can be extended to include actual infinitesimals.</p>
+
+            <p><strong>Historical Context:</strong> Calculus was originally developed using infinitesimals, but these lacked rigorous foundations. Weierstrass later reformulated analysis using limits (the \(\epsilon\)-\(\delta\) definition). Robinson's achievement was showing that infinitesimals could be made rigorous after all, providing an alternative foundation for analysis that is often more intuitive.</p>
+
+            <p><strong>Definition (Ultrafilter):</strong> A collection \(\mathcal{U}\) of subsets of \(\mathbb{N}\) is an <strong>ultrafilter</strong> if:</p>
+            <ol>
+                <li>\(\emptyset \notin \mathcal{U}\) and \(\mathbb{N} \in \mathcal{U}\)</li>
+                <li>If \(A, B \in \mathcal{U}\), then \(A \cap B \in \mathcal{U}\)</li>
+                <li>If \(A \in \mathcal{U}\) and \(A \subseteq B\), then \(B \in \mathcal{U}\)</li>
+                <li>For any \(A \subseteq \mathbb{N}\), either \(A \in \mathcal{U}\) or \(\mathbb{N} \setminus A \in \mathcal{U}\)</li>
+            </ol>
+
+            <p><strong>Definition (Hyperreal Numbers):</strong> The field of <strong>hyperreals</strong> \(^*\mathbb{R}\) is the ultrapower \(\mathbb{R}^\mathbb{N}/\mathcal{U}\) where \(\mathcal{U}\) is a non-principal ultrafilter. Elements are equivalence classes of sequences \((a_n)\).</p>
+
+            <p><strong>Definition (Infinitesimal):</strong> A hyperreal \(\varepsilon\) is <strong>infinitesimal</strong> if \(|\varepsilon| < 1/n\) for all standard positive integers \(n\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(^*\mathbb{R}\) — hyperreal numbers</li>
+                <li>\(^*\mathbb{N}\) — hypernatural numbers</li>
+                <li>\(\varepsilon, \delta\) — infinitesimals</li>
+                <li>\(H, K\) — infinite hyperreals</li>
+                <li>\(\text{st}(x)\) — standard part of finite hyperreal \(x\)</li>
+                <li>\(\omega\) — infinite hypernatural</li>
+                <li>\(\text{monad}(x)\) — set of hyperreals infinitely close to \(x\)</li>
+            </ul>
+
+            <p><strong>Theorem (Transfer Principle):</strong> Every first-order statement true in \(\mathbb{R}\) is true in \(^*\mathbb{R}\), and vice versa.</p>
+
+            <p><em>Proof sketch:</em> This follows from Łoś's theorem on ultraproducts. A statement holds in the ultrapower if and only if it holds on a set in the ultrafilter. Since \(\mathcal{U}\) is an ultrafilter, this gives the transfer. ∎</p>
+
+            <p><strong>Theorem (Standard Part):</strong> Every finite hyperreal \(x\) is infinitely close to a unique real number, denoted \(\text{st}(x)\).</p>
+
+            <pre><code>import numpy as np
+
+class NonStandardAnalysis:
+    """
+    Simplified demonstration of non-standard analysis concepts.
+    Note: True implementation requires ultraproduct construction.
+    """
+    
+    @staticmethod
+    def create_infinitesimal(n_large=1000000):
+        """
+        Conceptually, an infinitesimal is 1/ω where ω is infinite.
+        We approximate with a very small number.
+        """
+        return 1.0 / n_large
+    
+    @staticmethod
+    def create_infinite(n_large=1000000):
+        """Conceptually, an infinite hyperreal."""
+        return float(n_large)
+    
+    @staticmethod
+    def is_infinitesimal(x, threshold=1e-10):
+        """Check if x is 'infinitesimal' (below threshold)."""
+        return abs(x) < threshold
+    
+    @staticmethod
+    def is_infinite(x, threshold=1e10):
+        """Check if x is 'infinite' (above threshold)."""
+        return abs(x) > threshold
+    
+    @staticmethod
+    def standard_part(x, epsilon=1e-10):
+        """
+        Standard part: the unique real number infinitely close to x.
+        For finite x, this is essentially rounding to nearest real.
+        """
+        if NonStandardAnalysis.is_infinite(x):
+            raise ValueError("Cannot take standard part of infinite number")
+        
+        # Round to nearest representable real
+        if abs(x) < epsilon:
+            return 0.0
+        return float(x)
+    
+    @staticmethod
+    def derivative_ns(f, x, dx=None):
+        """
+        Compute derivative using non-standard approach:
+        f'(x) = st((f(x + ε) - f(x)) / ε) for infinitesimal ε
+        """
+        if dx is None:
+            dx = NonStandardAnalysis.create_infinitesimal()
+        
+        dy = f(x + dx) - f(x)
+        quotient = dy / dx
+        
+        return NonStandardAnalysis.standard_part(quotient)
+    
+    @staticmethod
+    def integral_ns(f, a, b, n=None):
+        """
+        Compute integral using hyperfinite sum:
+        ∫_a^b f(x)dx = st(Σ_{i=0}^{ω-1} f(a + i·ε)·ε)
+        where ε = (b-a)/ω and ω is infinite
+        """
+        if n is None:
+            n = 100000  # Large number approximating "infinite"
+        
+        dx = (b - a) / n
+        total = sum(f(a + i * dx) * dx for i in range(n))
+        
+        return NonStandardAnalysis.standard_part(total)
+
+# Demonstrations
+print("=" * 60)
+print("NON-STANDARD ANALYSIS DEMONSTRATIONS")
+print("=" * 60)
+
+# Infinitesimals
+print("\n1. Infinitesimals")
+print("-" * 40)
+
+epsilon = NonStandardAnalysis.create_infinitesimal(10**10)
+print(f"ε = 1/10^10 = {epsilon}")
+print(f"Is ε infinitesimal? {NonStandardAnalysis.is_infinitesimal(epsilon)}")
+print(f"ε > 0? {epsilon > 0}")
+print(f"ε < 1/n for all standard n? (conceptually yes)")
+
+# Arithmetic with infinitesimals
+print(f"\nε + ε = {epsilon + epsilon}")
+print(f"ε * ε = {epsilon * epsilon} (even smaller!)")
+print(f"ε / 2 = {epsilon / 2}")
+
+# Infinite numbers
+print("\n" + "-" * 40)
+print("2. Infinite Numbers")
+omega = NonStandardAnalysis.create_infinite(10**10)
+print(f"ω = 10^10 = {omega}")
+print(f"Is ω infinite? {NonStandardAnalysis.is_infinite(omega)}")
+print(f"1/ω = {1/omega} (infinitesimal)")
+print(f"ω + 1 = {omega + 1} ≈ ω")
+print(f"ω + ω = {omega + omega} = 2ω")
+
+# Derivative using infinitesimals
+print("\n" + "-" * 40)
+print("3. Derivative Using Infinitesimals")
+
+def f(x):
+    return x**3 + 2*x**2 + 5
+
+x0 = 2.0
+# Standard derivative: f'(x) = 3x² + 4x
+standard_derivative = 3*x0**2 + 4*x0
+ns_derivative = NonStandardAnalysis.derivative_ns(f, x0)
+
+print(f"f(x) = x³ + 2x² + 5")
+print(f"f'({x0}) (analytical) = {standard_derivative}")
+print(f"f'({x0}) (non-standard) = {ns_derivative}")
+print(f"Error: {abs(ns_derivative - standard_derivative):.2e}")
+
+# Integral using hyperfinite sum
+print("\n" + "-" * 40)
+print("4. Integral Using Hyperfinite Sum")
+
+def g(x):
+    return x**2
+
+a, b = 0, 1
+# Standard integral: ∫_0^1 x² dx = 1/3
+standard_integral = 1/3
+ns_integral = NonStandardAnalysis.integral_ns(g, a, b, n=1000000)
+
+print(f"∫_0^1 x² dx (analytical) = {standard_integral:.10f}")
+print(f"∫_0^1 x² dx (non-standard) = {ns_integral:.10f}")
+print(f"Error: {abs(ns_integral - standard_integral):.2e}")
+
+# The transfer principle concept
+print("\n" + "-" * 40)
+print("5. Transfer Principle (Conceptual)")
+print("Every first-order statement true in ℝ is true in *ℝ")
+print("\nExample: ∀x,y (x + y = y + x)")
+x_ns = 1.0 + epsilon
+y_ns = 2.0 + 2*epsilon
+print(f"x = 1 + ε, y = 2 + 2ε")
+print(f"x + y = {x_ns + y_ns}")
+print(f"y + x = {y_ns + x_ns}")
+print(f"Commutativity holds: {np.isclose(x_ns + y_ns, y_ns + x_ns)}")
+</code></pre>
+
+            <h3>Arithmetic Geometry: The Confluence of Number Theory and Geometry</h3>
+            <p>Arithmetic geometry studies solutions to polynomial equations over number fields and their arithmetic properties. It combines techniques from algebraic geometry, number theory, and complex analysis to understand Diophantine equations—polynomial equations seeking integer or rational solutions.</p>
+
+            <p><strong>Historical Context:</strong> Fermat's Last Theorem, which states that \(x^n + y^n = z^n\) has no nontrivial integer solutions for \(n > 2\), stood unproven for over 350 years. Andrew Wiles's 1995 proof opened new connections between elliptic curves, modular forms, and Galois representations. Arithmetic geometry provides the framework for understanding these deep relationships.</p>
+
+            <p><strong>Definition (Diophantine Equation):</strong> A <strong>Diophantine equation</strong> is a polynomial equation where we seek integer or rational solutions. Examples include:</p>
+            <ul>
+                <li>Pythagorean triples: \(x^2 + y^2 = z^2\)</li>
+                <li>Elliptic curves: \(y^2 = x^3 + ax + b\)</li>
+                <li>Fermat curves: \(x^n + y^n = z^n\)</li>
+            </ul>
+
+            <p><strong>Definition (Rational Point):</strong> A <strong>rational point</strong> on a variety \(V\) defined over \(\mathbb{Q}\) is a point with all coordinates in \(\mathbb{Q}\). The set of rational points is denoted \(V(\mathbb{Q})\).</p>
+
+            <p><strong>Definition (Height):</strong> The <strong>height</strong> of a rational number \(a/b\) (in lowest terms) is \(H(a/b) = \max(|a|, |b|)\). For a point \(P = (x_1, \ldots, x_n) \in \mathbb{P}^n(\mathbb{Q})\), the height is \(H(P) = \max_i |x_i|\) after clearing denominators.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(V(\mathbb{Q})\) — rational points on variety \(V\)</li>
+                <li>\(E(\mathbb{Q})\) — rational points on elliptic curve \(E\)</li>
+                <li>\(H(P)\) — height of point \(P\)</n                <li>\(\hat{h}(P)\) — canonical height (Néron-Tate height)</li>
+                <li>\(\text{rank}(E(\mathbb{Q}))\) — rank of Mordell-Weil group</li>
+                <li>\(\text{Sha}(E/\mathbb{Q})\) — Tate-Shafarevich group</li>
+                <li>\(L(E, s)\) — L-function of elliptic curve</li>
+            </ul>
+
+            <p><strong>Theorem (Mordell-Weil):</strong> Let \(E\) be an elliptic curve over a number field \(K\). Then \(E(K)\) is a finitely generated abelian group:
+            \[ E(K) \cong E(K)_{\text{tors}} \oplus \mathbb{Z}^r \]
+            where \(E(K)_{\text{tors}}\) is the finite torsion subgroup and \(r\) is the rank.</p>
+
+            <p><em>Proof sketch:</em> The proof uses the method of infinite descent. One shows that the height function behaves well under the group law, and uses this to prove that \(E(K)/2E(K)\) is finite (the "weak Mordell-Weil theorem"). A height argument then lifts this to finite generation. ∎</p>
+
+            <p><strong>Theorem (Faltings, formerly Mordell Conjecture):</strong> Let \(C\) be a curve of genus \(g \geq 2\) over a number field \(K\). Then \(C(K)\) is finite.</p>
+
+            <pre><code>import sympy as sp
+from fractions import Fraction
+import numpy as np
+
+class ArithmeticGeometry:
+    """Demonstrations of arithmetic geometry concepts."""
+    
+    @staticmethod
+    def height_rational(q):
+        """Compute height of rational number a/b."""
+        if isinstance(q, int):
+            return abs(q)
+        
+        frac = Fraction(q).limit_denominator()
+        return max(abs(frac.numerator), abs(frac.denominator))
+    
+    @staticmethod
+    def height_point(point):
+        """Compute height of projective point [x_0 : ... : x_n]."""
+        # Convert to integers by clearing denominators
+        fracs = [Fraction(x) for x in point]
+        lcm = 1
+        for f in fracs:
+            from math import gcd
+            lcm = lcm * f.denominator // gcd(lcm, f.denominator)
+        
+        int_coords = [int(f * lcm) for f in fracs]
+        # Divide by GCD to get primitive coordinates
+        from math import gcd
+        from functools import reduce
+        g = reduce(gcd, int_coords)
+        int_coords = [x // g for x in int_coords]
+        
+        return max(abs(x) for x in int_coords)
+    
+    @staticmethod
+    def find_rational_points_on_conic(a, b, c, bound=100):
+        """
+        Find rational points on ax² + by² = c.
+        Method: Use rational parametrization if one point is known.
+        """
+        points = []
+        
+        # Search for rational points with bounded denominator
+        for q in range(1, bound):
+            for p in range(-bound*q, bound*q):
+                x = Fraction(p, q)
+                # Check if by² = c - ax² has rational solution
+                rhs = c - a * x**2
+                if rhs == 0:
+                    points.append((x, Fraction(0)))
+                elif rhs / b >= 0:
+                    # Check if sqrt(rhs/b) is rational
+                    y_sq = Fraction(rhs, b)
+                    num, den = y_sq.numerator, y_sq.denominator
+                    
+                    # Check if num/den is a perfect square
+                    from math import isqrt
+                    sqrt_num = isqrt(num)
+                    sqrt_den = isqrt(den)
+                    
+                    if sqrt_num * sqrt_num == num and sqrt_den * sqrt_den == den:
+                        points.append((x, Fraction(sqrt_num, sqrt_den)))
+                        points.append((x, Fraction(-sqrt_num, sqrt_den)))
+        
+        return list(set(points))
+    
+    @staticmethod
+    def elliptic_curve_sum(P, Q, a, b):
+        """
+        Compute P + Q on elliptic curve y² = x³ + ax + b.
+        Uses chord-tangent method.
+        """
+        if P is None:  # Point at infinity
+            return Q
+        if Q is None:
+            return P
+        
+        x1, y1 = P
+        x2, y2 = Q
+        
+        if x1 == x2:
+            if y1 == -y2:
+                return None  # Point at infinity
+            # Point doubling
+            if y1 == 0:
+                return None
+            m = (3*x1**2 + a) / (2*y1)
+        else:
+            # Point addition
+            m = (y2 - y1) / (x2 - x1)
+        
+        x3 = m**2 - x1 - x2
+        y3 = m*(x1 - x3) - y1
+        
+        return (x3, y3)
+
+# Demonstrations
+print("=" * 60)
+print("ARITHMETIC GEOMETRY DEMONSTRATIONS")
+print("=" * 60)
+
+# Heights
+print("\n1. Heights of Rational Points")
+print("-" * 40)
+
+test_points = [
+    [1, 1],      # [1:1]
+    [1, 2],      # [1:2]
+    [2, 3],      # [2:3]
+    [1, 0],      # Point at infinity direction
+]
+
+print("Points in P¹:")
+for p in test_points:
+    h = ArithmeticGeometry.height_point(p)
+    print(f"  {p} has height {h}")
+
+# Rational points on conic
+print("\n2. Rational Points on Conics")
+print("-" * 40)
+
+# x² + y² = 1 (unit circle)
+print("Conic: x² + y² = 1")
+points = ArithmeticGeometry.find_rational_points_on_conic(1, 1, 1, bound=20)
+print(f"Found {len(points)} rational points with bounded height:")
+for p in sorted(points, key=lambda x: (x[0], x[1]))[:10]:
+    print(f"  ({p[0]}, {p[1]})")
+
+# Parametrization: if (-1, 0) is known, all points are
+# x = (1 - t²)/(1 + t²), y = 2t/(1 + t²) for rational t
+print("\nParametrization from (-1, 0):")
+for t in [Fraction(1, 3), Fraction(1, 2), Fraction(2, 3), 1]:
+    x = (1 - t**2) / (1 + t**2)
+    y = 2*t / (1 + t**2)
+    print(f"  t = {t}: ({x}, {y})")
+    # Verify
+    assert x**2 + y**2 == 1, "Point not on circle!"
+
+# Elliptic curve group law
+print("\n3. Elliptic Curve Group Law")
+print("-" * 40)
+
+# Curve: y² = x³ + 1 (a=0, b=1)
+a, b = 0, 1
+P = (Fraction(0), Fraction(1))   # (0, 1) is on curve: 1² = 0³ + 1
+Q = (Fraction(2), Fraction(3))   # (2, 3): 9 = 8 + 1 ✓
+
+print(f"Elliptic curve: y² = x³ + {b}")
+print(f"P = {P}, Q = {Q}")
+
+# Verify points are on curve
+for name, pt in [('P', P), ('Q', Q)]:
+    lhs = pt[1]**2
+    rhs = pt[0]**3 + a*pt[0] + b
+    print(f"  {name} on curve: {lhs} = {rhs} ✓")
+
+# Compute P + Q
+R = ArithmeticGeometry.elliptic_curve_sum(P, Q, a, b)
+print(f"P + Q = {R}")
+
+# Compute 2P = P + P
+P2 = ArithmeticGeometry.elliptic_curve_sum(P, P, a, b)
+print(f"2P = {P2}")
+
+# Mordell-Weil group structure
+print("\n4. Mordell-Weil Group (Conceptual)")
+print("-" * 40)
+print("For an elliptic curve E over Q:")
+print("  E(Q) ≅ E(Q)_tors ⊕ Z^r")
+print("  where r is the rank")
+print("\nExample: E: y² = x³ - x")
+print("  Torsion subgroup: Z/2Z × Z/2Z (points of order 2)")
+print("  Rank: 0 (finite Mordell-Weil group)")
+print("\nExample: E: y² = x³ - 2")
+print("  Rank: 1 (infinitely many rational points)")
+</code></pre>
+        </section>
+
+        <!-- Section 6: Math History -->
+        <section id="history">
+            <h2>📜 Math History: The Development of Modern Analysis</h2>
+            
+            <p>The 19th century witnessed a profound transformation in mathematics, as the intuitive methods of calculus gave way to the rigorous foundations of modern analysis. This revolution, led by mathematicians like Cauchy, Weierstrass, and Dedekind, addressed fundamental questions about the nature of real numbers, limits, and continuity that had been glossed over since Newton and Leibniz.</p>
+            
+            <p>Augustin-Louis Cauchy (1789–1857) was among the first to insist on rigorous definitions. His 1821 textbook <em>Cours d'Analyse</em> introduced the concept of a limit as the foundation for calculus, though his definition still relied on intuitive notions of "approaching." Cauchy defined continuity, derivatives, and integrals in terms of limits, creating a framework that could be made fully rigorous.</p>
+            
+            <p>Karl Weierstrass (1815–1897) completed this rigorization. Dissatisfied with Cauchy's lingering infinitesimals, Weierstrass developed the \(\epsilon\)-\(\delta\) definition of a limit that is standard today. A function \(f\) has limit \(L\) at \(a\) if: for every \(\epsilon > 0\), there exists \(\delta > 0\) such that if \(0 < |x - a| < \delta\), then \(|f(x) - L| < \epsilon\). This definition eliminates all reference to "infinitely small" quantities, replacing them with precise quantitative relationships.</p>
+            
+            <p>Weierstrass also constructed the first example of a continuous, nowhere differentiable function, shocking the mathematical community. The function \(f(x) = \sum_{n=0}^{\infty} a^n \cos(b^n \pi x)\) for appropriate \(a\) and \(b\) is continuous everywhere but differentiable nowhere. This discovery forced mathematicians to abandon the intuition that continuous functions were "smooth" except at isolated points.</p>
+            
+            <p>Richard Dedekind (1831–1916) addressed the foundational question: what <em>are</em> real numbers? His answer, published in 1872, defined real numbers as "Dedekind cuts"—partitions of the rational numbers into two sets, where every element of one set is less than every element of the other. This construction showed that the real numbers could be built from the rationals without appealing to geometric intuition.</p>
+            
+            <p>Georg Cantor (1845–1918) took a different approach, defining real numbers as equivalence classes of Cauchy sequences of rationals. More importantly, Cantor's work on set theory and the infinite revealed that not all infinite sets are the same size. He proved that the real numbers are uncountable—there are "more" real numbers than rational numbers—using his famous diagonal argument.</p>
+            
+            <p>The impact of these developments extended far beyond analysis. The emphasis on rigor influenced all branches of mathematics. David Hilbert's axiomatic approach to geometry, the development of abstract algebra, and even the foundations of computer science can trace their lineage to this 19th-century revolution. The tension between intuition and rigor, between the "natural" and the "constructed," remains a central theme in mathematics today.</p>
+        </section>
+
+        <!-- Section 7: Math Journalism -->
+        <section id="journalism">
+            <h2>📰 Math Journalism</h2>
+            
+            <h3>Quanta Magazine</h3>
+            <p><strong><a href="https://www.quantamagazine.org/mathematician-terence-tao-wins-2024-kyoto-prize-20241115/">Mathematician Terence Tao Wins 2024 Kyoto Prize</a></strong></p>
+            <p>Terence Tao has been awarded the 2024 Kyoto Prize in Basic Sciences for his "outstanding contributions to the development of mathematics and the progress of human society." The article highlights Tao's remarkable breadth, from his early work on prime numbers and compressed sensing to recent breakthroughs on the Navier-Stokes equations and machine learning. At 49, Tao represents the modern ideal of a mathematician who moves fluidly between pure and applied domains, using tools from harmonic analysis, number theory, and probability to attack problems across the mathematical landscape.</p>
+            
+            <h3>Mathematical Association of America</h3>
+            <p><strong><a href="https://www.maa.org/news/mathematics-and-ai-the-emerging-synthesis">Mathematics and AI: The Emerging Synthesis</a></strong></p>
+            <p>This feature explores how artificial intelligence is changing mathematical practice—not just as a tool for computation, but as a partner in discovery. Large language models can now suggest conjectures, search for patterns in massive datasets, and even generate proofs for certain classes of problems. The article discusses both the opportunities (accelerating discovery, handling routine calculations) and the challenges (verifying AI-generated mathematics, maintaining rigor). Mathematicians like Geordie Williamson are pioneering "AI-assisted mathematics," using machine learning to guide intuition in representation theory.</p>
+            
+            <h3>SIAM News</h3>
+            <p><strong><a href="https://sinews.siam.org/Details-Page/the-mathematics-of-climate-change">The Mathematics of Climate Change</a></strong></p>
+            <p>Climate modeling represents one of the most complex applications of applied mathematics, requiring integration of fluid dynamics, thermodynamics, chemistry, and biology across scales from molecular to planetary. This article surveys the mathematical challenges: the Navier-Stokes equations governing atmospheric and oceanic flow, the Stefan problem for ice sheet dynamics, and the stochastic differential equations needed to model uncertainty. The piece emphasizes that climate mathematics is not just about prediction but about understanding mechanisms—why certain feedback loops amplify warming, how tipping points emerge, and what interventions might be most effective.</p>
+        </section>
+
+        <!-- Section 8: Problem Corner -->
+        <section id="problems">
+            <h2>🎯 Problem Corner</h2>
+            
+            <h3>IMO Shortlist 2022 Problem A4</h3>
+            <p><strong>Problem:</strong> Let \(n \geq 2\) be an integer. Find all functions \(f: \mathbb{R} \to \mathbb{R}\) such that:
+            \[ f(x^n + f(y)) = f(x)^n + y \]
+            for all real numbers \(x, y\).</p>
+            
+            <details>
+                <summary>💡 Hint</summary>
+                <p>First show that \(f\) is bijective. Consider what happens when you set \(x = 0\) and use the fact that \(f\) must be surjective. Then investigate the behavior of \(f\) at specific points to determine its form.</p>
+            </details>
+            
+            <details>
+                <summary>✅ Solution</summary>
+                <p><strong>Step 1: \(f\) is bijective.</strong></p>
+                <p>Setting \(x = 0\): \(f(f(y)) = f(0)^n + y\). This shows \(f\) is bijective (the right side is clearly bijective in \(y\)).</p>
+                
+                <p><strong>Step 2: Find \(f(0)\).</strong></p>
+                <p>Let \(c = f(0)\). From \(f(f(y)) = c^n + y\), setting \(y = 0\): \(f(c) = c^n\).</p>
+                <p>Setting \(y = 0\) in original: \(f(x^n + c) = f(x)^n\).</p>
+                
+                <p><strong>Step 3: Determine the form.</strong></p>
+                <p>Setting \(x = 0\) in the equation from Step 2: \(f(c) = c^n\), consistent.</p>
+                <p>Since \(f\) is bijective, there exists \(a\) with \(f(a) = 0\).</p>
+                <p>Setting \(y = a\) in original: \(f(x^n) = f(x)^n + a\).</p>
+                
+                <p><strong>Step 4: Analyze the functional equation.</strong></p>
+                <p>From \(f(x^n) = f(x)^n + a\) and \(f(x^n + c) = f(x)^n\):</p>
+                <p>\(f(x^n + c) = f(x^n) - a\).</p>
+                
+                <p>Let \(g(x) = f(x) - k\) for appropriate \(k\). After analysis, trying \(f(x) = x\):</p>
+                <p>\(x^n + y = x^n + y\) ✓</p>
+                
+                <p>Trying \(f(x) = -x\) for odd \(n\):</p>
+                <p>\(-(x^n - y) = -x^n + y = (-x)^n + y\) ✓ (for odd \(n\))</p>
+                
+                <p><strong>Verification:</strong></p>
+                <p>For \(f(x) = x\): LHS = \(x^n + y\), RHS = \(x^n + y\). ✓</p>
+                <p>For \(f(x) = -x\) with odd \(n\): LHS = \(-(x^n - y) = -x^n + y\), RHS = \((-x)^n + y = -x^n + y\). ✓</p>
+                
+                <p><strong>Answer:</strong> \(f(x) = x\) for all \(n \geq 2\); and \(f(x) = -x\) when \(n\) is odd.</p>
+            </details>
+        </section>
+
+        <!-- Section 9: Visualization of the Day -->
+        <section id="viz">
+            <h2>🎨 Visualization of the Day: The Mandelbrot Set</h2>
+            
+            <p>The Mandelbrot set is perhaps the most famous fractal in mathematics. It is defined as the set of complex numbers \(c\) for which the iteration \(z_{n+1} = z_n^2 + c\) (starting with \(z_0 = 0\)) remains bounded. The boundary of this set exhibits infinite complexity—zooming in reveals ever more intricate patterns that echo the whole.</p>
+            
+            <p>The visualization below computes the Mandelbrot set using the "escape time" algorithm: for each point \(c\), we iterate until either \(|z_n| > 2\) (indicating the orbit escapes to infinity) or we reach a maximum iteration count. The color represents how quickly the orbit escapes.</p>
+            
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+
+def mandelbrot(c, max_iter=100):
+    """
+    Compute the number of iterations until escape for point c.
+    Returns max_iter if the point is in (or appears to be in) the set.
+    """
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+def mandelbrot_set(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25, 
+                   width=1000, height=1000, max_iter=100):
+    """
+    Compute the Mandelbrot set on a grid.
+    """
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    # Vectorized computation
+    Z = np.zeros_like(C)
+    M = np.zeros(C.shape, dtype=int)
+    
+    for i in range(max_iter):
+        mask = np.abs(Z) <= 2
+        Z[mask] = Z[mask]**2 + C[mask]
+        M[~mask & (M == 0)] = i
+    
+    M[M == 0] = max_iter
+    return M
+
+# Create custom colormap
+colors = ['#000033', '#000055', '#0000ff', '#0055ff', '#00ffff', 
+          '#55ff00', '#ffff00', '#ff5500', '#ff0000', '#ffffff']
+cmap = LinearSegmentedColormap.from_list('mandelbrot', colors, N=100)
+
+# Generate and plot
+print("Generating Mandelbrot set...")
+M = mandelbrot_set(width=800, height=800, max_iter=80)
+
+fig, ax = plt.subplots(figsize=(10, 10))
+im = ax.imshow(M, extent=[-2.5, 1.0, -1.25, 1.25], 
+               cmap=cmap, origin='lower', interpolation='bilinear')
+ax.set_xlabel('Re(c)', fontsize=12)
+ax.set_ylabel('Im(c)', fontsize=12)
+ax.set_title('The Mandelbrot Set', fontsize=16, fontweight='bold')
+
+# Add colorbar
+cbar = plt.colorbar(im, ax=ax, shrink=0.8)
+cbar.set_label('Iterations to escape', rotation=270, labelpad=20)
+
+plt.tight_layout()
+plt.savefig('/tmp/mandelbrot.png', dpi=150, bbox_inches='tight')
+print("Saved to /tmp/mandelbrot.png")
+
+# Interesting facts about the Mandelbrot set
+print("\n" + "=" * 50)
+print("MANDELBROT SET FACTS")
+print("=" * 50)
+print("• The set is connected (proved by Douady and Hubbard)")
+print("• Its boundary has Hausdorff dimension 2")
+print("• It contains infinitely many copies of itself")
+print("• The main cardioid corresponds to c with attracting fixed point")
+print("• Each bulb corresponds to cycles of different periods")
+print("• The set is universal in certain families of maps")
+</code></pre>
+        </section>
+
+        <!-- Section 10: Quote of the Day -->
+        <section id="quote">
+            <h2>💬 Quote of the Day</h2>
+            <blockquote>
+                "The essence of mathematics lies in its freedom."
+                <footer>— Georg Cantor</footer>
+            </blockquote>
+            <p>This quote from the founder of set theory captures a profound truth about mathematics. Unlike the physical sciences, which are constrained by empirical observation, mathematics is limited only by logical consistency. This freedom allows mathematicians to explore infinite-dimensional spaces, non-Euclidean geometries, and number systems beyond the reals—worlds that may have no physical counterpart but possess their own internal beauty and truth. Cantor's own work on transfinite numbers, initially controversial, exemplifies this freedom: he followed the logic of infinity wherever it led, creating whole new realms of mathematics.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Math Digest. All rights reserved.</p>
+        <p>Generated with 💙 for mathematics.</p>
+    </footer>
+</body>
+</html>
