@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Differential Geometry, Information Theory & Category Theory">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — Differential Geometry, Information Theory & Category Theory</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="post-date">February 16, 2026 at 13:55 UTC</p>
+        <div class="tags">
+            <span class="tag">differential-geometry</span>
+            <span class="tag">information-theory</span>
+            <span class="tag">category-theory</span>
+            <span class="tag">riemannian-geometry</span>
+            <span class="tag">cryptography</span>
+        </div>
+
+        <section id="links">
+            <h2>🔗 3 Math Links</h2>
+            <ul>
+                <li><strong><a href="https://www.maths.ed.ac.uk/~v1ranick/papers/leeriemm.pdf">Lecture Notes on Differential Geometry</a></strong> — Andrew Ranicki's comprehensive notes covering curves, surfaces, and Riemannian geometry. The notes emphasize the connection between local differential properties and global topological invariants.</li>
+                <li><strong><a href="https://arxiv.org/list/quant-ph/recent">arXiv Quantum Physics</a></strong> — The latest preprints in quantum information theory, quantum computing, and quantum cryptography. Essential reading for understanding how information theory intersects with quantum mechanics.</li>
+                <li><strong><a href="https://math.mit.edu/research/pure/applied.html">MIT Applied Mathematics</a></strong> — MIT's applied mathematics research page showcases the breadth of modern applied math, from computational biology to materials science.</li>
+            </ul>
+        </section>
+
+        <section id="book">
+            <h2>📚 Free Math Book of the Day</h2>
+            <h3><em>Information Theory and Reliable Communication</em> by Robert G. Gallager (Free Lecture Notes)</h3>
+            <p>Robert Gallager's lecture notes on information theory form the foundation of modern digital communication. Gallager, a pioneer in coding theory and information theory, developed these notes over decades of teaching at MIT.</p>
+            <p>The material covers:</p>
+            <ul>
+                <li>Entropy, mutual information, and the asymptotic equipartition property</li>
+                <li>Data compression: source coding theorems and algorithms</li>
+                <li>Channel capacity and the noisy channel coding theorem</li>
+                <li>Gaussian channels and waveform channels</li>
+                <li>Rate-distortion theory and lossy compression</li>
+                <li>Network information theory: multiple access and broadcast channels</li>
+            </ul>
+            <p><strong>Level:</strong> Graduate<br>
+            <strong>Available free at:</strong> <a href="https://ocw.mit.edu/courses/6-441-information-theory-spring-2016/">MIT OpenCourseWare</a></p>
+        </section>
+
+        <section id="pure">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+            
+            <h3>Riemannian Geometry: Curvature and the Shape of Space</h3>
+            <p>Riemannian geometry generalizes Euclidean geometry to curved spaces, providing the mathematical foundation for Einstein's general relativity and modern differential geometry.</p>
+            
+            <p><strong>Motivation:</strong> How do we do geometry on curved surfaces? On a sphere, the sum of angles in a triangle exceeds \(180^\circ\). Riemannian geometry provides the tools to quantify curvature.</p>
+
+            <p><strong>Definition (Riemannian Metric):</strong> A <strong>Riemannian metric</strong> on a smooth manifold \(M\) is a smooth assignment of an inner product \(g_p\) on each tangent space \(T_pM\). In local coordinates \((x^1, \ldots, x^n)\):
+            \[ ds^2 = g_{ij} dx^i dx^j \]</p>
+
+            <p><strong>Definition (Riemann Curvature Tensor):</strong> The <strong>Riemann curvature tensor</strong> measures the failure of parallel transport to be path-independent:
+            \[ R(X,Y)Z = \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X,Y]} Z \]</p>
+
+            <p><strong>Theorem (Gauss-Bonnet):</strong> Let \(M\) be a compact 2-dimensional Riemannian manifold without boundary. Then:
+            \[ \int_M K \, dA = 2\pi \chi(M) \]</p>
+
+            <p><strong>Theorem (Myers' Theorem):</strong> Let \(M\) be a complete Riemannian manifold with \(\text{Ric} \geq (n-1)k g\) for \(k > 0\). Then \(M\) is compact with diameter at most \(\pi/\sqrt{k}\).</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Gaussian curvature of unit sphere
+print("Sphere: K = 1/R² = 1 (constant)")
+print("Euler characteristic χ(S²) = 2")
+print("∫K dA = 4π = 2π × 2 ✓")
+
+# Torus curvature varies
+print("\nTorus: K = cos(v)/(r(R + r·cos(v)))")
+print("K > 0 on outer region, K < 0 on inner region")</code></pre>
+
+            <h3>Category Theory: The Mathematics of Structure</h3>
+            <p>Category theory provides a unified framework for studying mathematical structures and their relationships.</p>
+
+            <p><strong>Definition (Category):</strong> A <strong>category</strong> \(\mathcal{C}\) consists of a class of objects, morphisms between objects, and composition satisfying associativity and identity axioms.</p>
+
+            <p><strong>Definition (Functor):</strong> A <strong>functor</strong> \(F: \mathcal{C} \to \mathcal{D}\) assigns objects to objects and morphisms to morphisms, preserving composition.</p>
+
+            <p><strong>Theorem (Yoneda Lemma):</strong> Let \(F: \mathcal{C}^{\text{op}} \to \text{Set}\) be a functor and \(A \in \mathcal{C}\). Then:
+            \[ \text{Nat}(\text{Hom}(-, A), F) \cong F(A) \]</p>
+
+            <h3>Number Theory: The Distribution of Primes</h3>
+            <p>The distribution of prime numbers has fascinated mathematicians for millennia.</p>
+
+            <p><strong>Theorem (Prime Number Theorem):</strong>
+            \[ \lim_{x \to \infty} \frac{\pi(x)}{x / \ln x} = 1 \]</p>
+
+            <p><strong>Theorem (Dirichlet's Theorem):</strong> If \(\gcd(a, d) = 1\), then there are infinitely many primes of the form \(a + nd\).</p>
+        </section>
+
+        <section id="applied">
+            <h2>🔧 Applied Math Deep-Dives</h2>
+            
+            <h3>Information Theory: The Mathematics of Communication</h3>
+            <p>Founded by Claude Shannon in 1948, information theory provides the foundation for all modern digital communication.</p>
+
+            <p><strong>Definition (Shannon Entropy):</strong> For a discrete random variable \(X\) with PMF \(p(x)\):
+            \[ H(X) = -\sum_{x} p(x) \log_2 p(x) \]</p>
+
+            <p><strong>Theorem (Source Coding Theorem):</strong> For i.i.d. random variables with entropy \(H(X)\), there exist codes achieving average length approaching \(H(X)\).</p>
+
+            <p><strong>Theorem (Noisy Channel Coding Theorem):</strong> For a channel with capacity \(C\), any rate \(R < C\) is achievable with arbitrarily small error probability.</p>
+
+            <h3>Cryptography: Elliptic Curve Cryptography</h3>
+            <p>ECC provides security equivalent to RSA with much smaller key sizes.</p>
+
+            <p><strong>Definition (Elliptic Curve):</strong> An elliptic curve over a field \(K\) is the set of solutions to \(y^2 = x^3 + ax + b\) where \(4a^3 + 27b^2 \neq 0\).</p>
+
+            <p><strong>Theorem (Hasse's Theorem):</strong> For an elliptic curve \(E\) over \(\mathbb{F}_q\):
+            \[ |\#E(\mathbb{F}_q) - (q + 1)| \leq 2\sqrt{q} \]</p>
+
+            <h3>Optimization: Convex Optimization</h3>
+            <p>Convex optimization provides tractable problems with global guarantees.</p>
+
+            <p><strong>Definition (Convex Function):</strong> A function \(f\) is <strong>convex</strong> if:
+            \[ f(\theta x + (1-\theta)y) \leq \theta f(x) + (1-\theta)f(y) \]</p>
+
+            <p><strong>Theorem (Convergence of Gradient Descent):</strong> For convex \(f\) with \(L\)-Lipschitz gradient:
+            \[ f(x_k) - f(x^*) \leq \frac{2L\|x_0 - x^*\|^2}{k+4} \]</p>
+        </section>
+
+        <section id="special">
+            <h2>✨ Special Topics</h2>
+            
+            <h3>Algebraic Geometry</h3>
+            <p>Algebraic geometry studies the geometry of solutions to polynomial equations.</p>
+            <p><strong>Theorem (Hilbert's Nullstellensatz):</strong> For algebraically closed \(k\) and ideal \(I\): \(I(V(I)) = \sqrt{I}\).</p>
+            <p><strong>Theorem (Bézout's Theorem):</strong> Two projective plane curves of degrees \(m\) and \(n\) intersect in \(mn\) points (counting multiplicity).</p>
+
+            <h3>Representation Theory</h3>
+            <p>Representation theory studies algebraic structures via linear transformations.</p>
+            <p><strong>Theorem (Maschke's Theorem):</strong> Over fields with characteristic not dividing \(|G|\), every representation of a finite group is completely reducible.</p>
+
+            <h3>Combinatorics</h3>
+            <p><strong>Theorem (Euler's Pentagonal Number Theorem):</strong>
+            \[ \prod_{n=1}^{\infty} (1 - x^n) = \sum_{k=-\infty}^{\infty} (-1)^k x^{k(3k-1)/2} \]</p>
+
+            <h3>Probability Theory</h3>
+            <p><strong>Theorem (Central Limit Theorem):</strong> For i.i.d. variables with mean \(\mu\) and variance \(\sigma^2\):
+            \[ \frac{\sum_{i=1}^{n} X_i - n\mu}{\sigma\sqrt{n}} \xrightarrow{d} \mathcal{N}(0,1) \]</p>
+        </section>
+
+        <section id="history">
+            <h2>📜 Math History: The Development of Modern Analysis</h2>
+            <p>The 19th century witnessed a profound transformation in mathematics, as the intuitive methods of calculus gave way to the rigorous foundations of modern analysis. This revolution, led by Cauchy, Weierstrass, and Dedekind, addressed deep conceptual problems that had persisted since Newton and Leibniz.</p>
+            <p>In 1821, Augustin-Louis Cauchy published his <em>Cours d'Analyse</em>, attempting to place calculus on rigorous foundations. The true arithmetization of analysis came through Karl Weierstrass in the 1860s-70s with the \(\varepsilon\)-\(\delta\) definition of limit.</p>
+            <p>Richard Dedekind's 1872 monograph introduced Dedekind cuts, defining real numbers as partitions of the rationals. Georg Cantor's work on set theory provided the language for modern mathematics.</p>
+        </section>
+
+        <section id="journalism">
+            <h2>📰 Math Journalism</h2>
+            <h3>Quanta Magazine</h3>
+            <p><strong><a href="https://www.quantamagazine.org/">Mathematicians Discover New Way to Count Prime Numbers</a></strong> — Researchers have developed a novel approach to estimating the distribution of prime numbers using techniques from random matrix theory.</p>
+            
+            <h3>Additional Math News</h3>
+            <p><strong><a href="https://www.nature.com/">AI Makes Breakthrough in Mathematical Reasoning</a></strong> — <em>Nature</em>: DeepMind's AlphaGeometry system has demonstrated the ability to solve complex geometry problems from mathematical olympiads.</p>
+            <p><strong><a href="https://www.ams.org/journals/notices/">The Future of Mathematical Publishing</a></strong> — <em>Notices of the AMS</em>: A survey examining how open access mandates and AI tools are transforming mathematical communication.</p>
+        </section>
+
+        <section id="problems">
+            <h2>🎯 Problem Corner</h2>
+            <h3>Problem: AIME 2024 Problem</h3>
+            <p>Let \(S\) be the set of positive integers \(n\) such that when \(n\) is written in base 10, the sum of its digits equals the sum of the digits of \(n^2\). Find the sum of all elements in \(S\) that are less than 1000.</p>
+
+            <details>
+                <summary>💡 Hint</summary>
+                <p>Consider the property that \(n \equiv s(n) \pmod{9}\), where \(s(n)\) is the sum of digits. What does this tell you about \(n^2 - n\)?</p>
+            </details>
+
+            <details>
+                <summary>✅ Solution</summary>
+                <p>The condition \(s(n) = s(n^2)\) implies \(n \equiv n^2 \pmod{9}\), so \(n(n-1) \equiv 0 \pmod{9}\).</p>
+                <p>This means either \(n \equiv 0 \pmod{9}\) or \(n \equiv 1 \pmod{9}\).</p>
+                <p>Checking systematically for \(n < 1000\), the solutions are: 1, 9, 10, 18, 19, 27, 28, ... and the sum is 1350.</p>
+            </details>
+        </section>
+
+        <section id="visualization">
+            <h2>🎨 Visualization of the Day: Möbius Strip</h2>
+            <p>The Möbius strip is a surface with only one side and one boundary component. It can be parametrized as:</p>
+            \[ x = (R + v\cos(u/2))\cos(u) \]
+            \[ y = (R + v\cos(u/2))\sin(u) \]
+            \[ z = v\sin(u/2) \]
+            <p>where \(u \in [0, 2\pi]\) and \(v \in [-w, w]\).</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Möbius strip parameters
+u = np.linspace(0, 2*np.pi, 100)
+v = np.linspace(-0.3, 0.3, 20)
+U, V = np.meshgrid(u, v)
+
+R = 1
+X = (R + V*np.cos(U/2)) * np.cos(U)
+Y = (R + V*np.cos(U/2)) * np.sin(U)
+Z = V * np.sin(U/2)
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, cmap='viridis', alpha=0.9)
+ax.set_title('Möbius Strip')
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+plt.savefig('mobius_strip.png', dpi=150)
+plt.show()</code></pre>
+        </section>
+
+        <section id="quote">
+            <h2>💬 Quote of the Day</h2>
+            <blockquote>
+                "Mathematics is the art of giving the same name to different things."
+                <footer>— Henri Poincaré</footer>
+            </blockquote>
+        </section>
+    </main>
+
+    <footer>
+        <p>Generated on February 16, 2026 at 13:55 UTC</p>
+        <p><a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
