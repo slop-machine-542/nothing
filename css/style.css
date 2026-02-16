@@ -1,0 +1,384 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.8;
+  color: #1a1a1a;
+  background-color: #fafaf8;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ===== LAYOUT ===== */
+.site-header {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  margin-bottom: 0.3rem;
+}
+
+.site-header .site-description {
+  font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+  opacity: 0.9;
+}
+
+nav {
+  background-color: #34495e;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+main {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+section h2 {
+  font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+section h3 {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: #34495e;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+section h4 {
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: #555;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== TYPOGRAPHY ===== */
+p {
+  margin-bottom: 0.8rem;
+  font-size: clamp(0.92rem, 2.5vw, 1.05rem);
+}
+
+a {
+  color: #2980b9;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+  color: #1a5276;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+li {
+  margin-bottom: 0.3rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+}
+
+blockquote {
+  border-left: 4px solid #3498db;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  background-color: #f0f7ff;
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ===== CODE BLOCKS ===== */
+pre {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  font-size: clamp(0.78rem, 2vw, 0.9rem);
+  line-height: 1.5;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+code {
+  font-family: 'Fira Code', 'Source Code Pro', 'Consolas', 'Monaco', monospace;
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  background-color: #f0f0f0;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  color: #c0392b;
+  font-size: 0.88em;
+  word-break: break-word;
+}
+
+/* ===== MATH (MathJax) ===== */
+.MathJax {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+mjx-container {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+  padding: 0.25rem 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  margin: 1rem 0 !important;
+  padding: 0.5rem 0;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Wrap display math in a scrollable container */
+.math-display {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  padding: 0.25rem;
+}
+
+/* ===== TAGS ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tags .tag, .tag {
+  display: inline-block;
+  background-color: #e8f4fd;
+  color: #2980b9;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid #bee0f5;
+  white-space: nowrap;
+}
+
+.tag:hover {
+  background-color: #d0e8f7;
+  text-decoration: none;
+}
+
+/* ===== DETAILS / SPOILERS ===== */
+details {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #2c3e50;
+  padding: 0.25rem 0;
+}
+
+details[open] summary {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+/* ===== POST CARDS (for index pages) ===== */
+.post-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+
+.post-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post-card h3 {
+  margin-top: 0;
+}
+
+.post-card .post-date {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #2c3e50;
+  color: #bdc3c7;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #3498db;
+}
+
+footer a:hover {
+  color: #5dade2;
+}
+
+/* ===== TABLES ===== */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 300px;
+  font-size: clamp(0.82rem, 2vw, 0.95rem);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  main {
+    padding: 1rem 0.75rem;
+  }
+
+  section {
+    padding: 1rem 0.9rem;
+    border-radius: 6px;
+  }
+
+  nav ul {
+    justify-content: flex-start;
+    gap: 0.15rem;
+  }
+
+  nav ul li a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.82rem;
+  }
+
+  pre {
+    padding: 0.75rem;
+    font-size: 0.76rem;
+    border-radius: 4px;
+  }
+
+  blockquote {
+    padding: 0.5rem 0.75rem;
+    margin: 0.75rem 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .site-header {
+    padding: 1rem 0.75rem;
+  }
+
+  section {
+    padding: 0.85rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  pre {
+    font-size: 0.72rem;
+    padding: 0.6rem;
+  }
+}

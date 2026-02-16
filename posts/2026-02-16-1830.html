@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Algebra, Fluid Dynamics, Cellular Automata">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 16, 2026 at 18:30</title>
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <p class="post-date">📅 2026-02-16 at 1830</p>
+            <div class="tags">
+                <a href="../tags/algebra.html" class="tag">algebra</a>
+                <a href="../tags/fluid-dynamics.html" class="tag">fluid-dynamics</a>
+                <a href="../tags/cellular-automata.html" class="tag">cellular-automata</a>
+                <a href="../tags/group-theory.html" class="tag">group-theory</a>
+                <a href="../tags/navier-stokes.html" class="tag">navier-stokes</a>
+            </div>
+
+            <section id="links">
+                <h2>🔗 Math Links</h2>
+                <ul>
+                    <li><a href="https://groupprops.subwiki.org/wiki/Main_Page" target="_blank" rel="noopener">Groupprops</a> — The Group Properties Wiki, a comprehensive resource for group theory with detailed articles on Sylow theorems, solvable groups, and representation theory.</li>
+                    <li><a href="https://www-m16.ma.tum.de/foswiki/pub/M16/Allgemeines/NumLect/NavierStokes.pdf" target="_blank" rel="noopener">Navier-Stokes Equations: Theory and Numerical Analysis</a> — Free lecture notes covering the mathematical theory of the Navier-Stokes equations, existence theory, and numerical methods.</li>
+                    <li><a href="https://mathworld.wolfram.com/CellularAutomaton.html" target="_blank" rel="noopener">Wolfram MathWorld: Cellular Automaton</a> — Authoritative reference on cellular automata theory, including Wolfram codes, elementary CAs, and applications in complexity science.</li>
+                </ul>
+            </section>
+
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                <h3><a href="https://archive.org/details/algebra0000lang" target="_blank" rel="noopener">Algebra (Revised Third Edition)</a></h3>
+                <p><strong>Author:</strong> Serge Lang | <strong>Level:</strong> Graduate</p>
+                <p>A classic and comprehensive graduate-level text covering groups, rings, modules, and fields. While the complete book is a standard reference, the first chapters on group theory provide an excellent introduction to Sylow theorems and the structure of finite groups. Lang's exposition is rigorous yet accessible, making it ideal for students transitioning to abstract algebra.</p>
+            </section>
+
+            <section id="pure-dives">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <h3>1. Sylow Theorems: The Structure of Finite Groups</h3>
+                <h4>Motivation</h4>
+                <p>The Sylow theorems are among the most powerful tools in finite group theory. Named after Norwegian mathematician Peter Ludwig Sylow (1832–1918), these theorems provide deep structural information about subgroups of prime power order. They allow us to classify groups of small order and prove significant results like the fact that groups of order \(pq\) (for primes \(p < q\)) are solvable.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> Let \(G\) be a finite group and \(p\) a prime dividing \(|G|\). Write \(|G| = p^n m\) where \(p \nmid m\). A <strong>Sylow \(p\)-subgroup</strong> of \(G\) is a subgroup of order \(p^n\).</p>
+                <p><strong>Definition.</strong> The set of all Sylow \(p\)-subgroups of \(G\) is denoted \(\text{Syl}_p(G)\), and \(n_p(G) = |\text{Syl}_p(G)|\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>First Sylow Theorem.</strong> Sylow \(p\)-subgroups exist for every prime \(p\) dividing \(|G|\).</p>
+                <p><strong>Proof.</strong> By induction on \(|G|\). Let \(|G| = p^n m\) with \(p \nmid m\). Consider the class equation:</p>
+                \[|G| = |Z(G)| + \sum_{i} [G : C_G(g_i)]\]
+                <p>If \(p \nmid |Z(G)|\), then some \([G : C_G(g_i)]\) is not divisible by \(p\), so \(|C_G(g_i)| = p^n k\) with \(k < m\). By induction, \(C_G(g_i)\) has a Sylow \(p\)-subgroup, which is also one for \(G\). If \(p \mid |Z(G)|\), by Cauchy's theorem, \(Z(G)\) has an element of order \(p\), generating \(N \trianglelefteq G\). Apply induction to \(G/N\). ∎</p>
+
+                <p><strong>Second Sylow Theorem.</strong> All Sylow \(p\)-subgroups are conjugate in \(G\).</p>
+                <p><strong>Proof.</strong> Let \(P, Q \in \text{Syl}_p(G)\). Consider the action of \(Q\) on \(G/P\) by left multiplication. Since \(|G/P| = m\) and \(Q\) is a \(p\)-group, the number of fixed points satisfies \(|(G/P)^Q| \equiv |G/P| \equiv m \not\equiv 0 \pmod{p}\). Thus some coset \(gP\) is fixed, meaning \(QgP = gP\), so \(g^{-1}Qg \subseteq P\). Since \(|Q| = |P|\), we have \(g^{-1}Qg = P\). ∎</p>
+
+                <p><strong>Third Sylow Theorem.</strong> \(n_p \equiv 1 \pmod{p}\) and \(n_p \mid m\).</p>
+                <p><strong>Proof.</strong> Let \(P\) act on \(\text{Syl}_p(G)\) by conjugation. The fixed points are \(\{P\}\) (if \(Q\) is fixed, then \(P \subseteq N_G(Q)\), so both are Sylow in \(N_G(Q)\), hence conjugate there, so \(P = Q\)). Thus \(n_p \equiv 1 \pmod{p}\). Since all Sylow \(p\)-subgroups are conjugate, \(n_p = [G : N_G(P)]\), which divides \([G : P] = m\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(Z(G)\) — center of group \(G\)</li>
+                    <li>\(C_G(g)\) — centralizer of element \(g\)</li>
+                    <li>\(N_G(P)\) — normalizer of subgroup \(P\)</li>
+                    <li>\([G : H]\) — index of \(H\) in \(G\)</li>
+                    <li>\(H \trianglelefteq G\) — \(H\) is normal in \(G\)</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from itertools import combinations
+
+def sylow_theorems_info(n, p):
+    """
+    Apply Sylow theorems to determine possible values of n_p.
+    Returns constraints on the number of Sylow p-subgroups.
+    """
+    # Factor out powers of p from n
+    m = n
+    power = 0
+    while m % p == 0:
+        m //= p
+        power += 1
+    
+    if power == 0:
+        return f"p={p} does not divide |G|={n}"
+    
+    # Sylow p-subgroups have order p^power
+    sylow_order = p ** power
+    
+    # Third Sylow Theorem: n_p ≡ 1 (mod p) and n_p | m
+    # Find all divisors of m that are ≡ 1 (mod p)
+    possible_n_p = []
+    for d in range(1, m + 1):
+        if m % d == 0 and d % p == 1:
+            possible_n_p.append(d)
+    
+    result = {
+        'group_order': n,
+        'prime': p,
+        'sylow_order': sylow_order,
+        'm': m,  # |G| = p^power * m
+        'possible_n_p': possible_n_p,
+        'constraints': f"n_{p} ≡ 1 (mod {p}) and n_{p} | {m}"
+    }
+    
+    return result
+
+# Example: Groups of order 30 = 2 × 3 × 5
+print("Sylow analysis for |G| = 30:")
+for p in [2, 3, 5]:
+    info = sylow_theorems_info(30, p)
+    print(f"\nPrime p = {p}:")
+    print(f"  Sylow {p}-subgroup order: {info['sylow_order']}")
+    print(f"  Possible n_{p}: {info['possible_n_p']}")
+    print(f"  Constraints: {info['constraints']}")
+
+# Example: Show that a group of order 15 is cyclic
+print("\n" + "="*50)
+print("Application: Groups of order 15")
+info_3 = sylow_theorems_info(15, 3)
+info_5 = sylow_theorems_info(15, 5)
+print(f"n_3 must be in {info_3['possible_n_p']} → n_3 = 1")
+print(f"n_5 must be in {info_5['possible_n_p']} → n_5 = 1")
+print("Since both Sylow subgroups are unique, they are normal.")
+print("G ≅ P_3 × P_5 ≅ Z_3 × Z_5 ≅ Z_15 (cyclic)")</code></pre>
+
+                <h3>2. Ring Theory: Foundations of Abstract Algebra</h3>
+                <h4>Motivation</h4>
+                <p>Rings generalize the arithmetic properties of integers and polynomials, providing the algebraic structure for number theory, algebraic geometry, and coding theory. Understanding ideals, homomorphisms, and factorization in rings is essential for advanced mathematics.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <strong>ring</strong> \((R, +, \cdot)\) is a set with two binary operations satisfying: \((R, +)\) is an abelian group, multiplication is associative, and distributivity holds: \(a(b+c) = ab + ac\) and \((b+c)a = ba + ca\).</p>
+                <p><strong>Definition.</strong> A <strong>commutative ring with unity</strong> has commutative multiplication and a multiplicative identity \(1 \neq 0\).</p>
+                <p><strong>Definition.</strong> An <strong>ideal</strong> \(I \subseteq R\) is an additive subgroup satisfying \(rI \subseteq I\) and \(Ir \subseteq I\) for all \(r \in R\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>First Isomorphism Theorem for Rings.</strong> If \(\varphi: R \to S\) is a ring homomorphism, then:</p>
+                \[R/\ker(\varphi) \cong \text{im}(\varphi)\]
+                <p><strong>Proof.</strong> Define \(\bar{\varphi}: R/\ker(\varphi) \to \text{im}(\varphi)\) by \(\bar{\varphi}(r + \ker(\varphi)) = \varphi(r)\).</p>
+                <p><em>Well-defined:</em> If \(r + \ker(\varphi) = r' + \ker(\varphi)\), then \(r - r' \in \ker(\varphi)\), so \(\varphi(r) = \varphi(r')\).</p>
+                <p><em>Homomorphism:</em> \(\bar{\varphi}((r+I)(r'+I)) = \bar{\varphi}(rr'+I) = \varphi(rr') = \varphi(r)\varphi(r') = \bar{\varphi}(r+I)\bar{\varphi}(r'+I)\).</p>
+                <p><em>Bijective:</em> Surjective by construction. If \(\bar{\varphi}(r+I) = 0\), then \(\varphi(r) = 0\), so \(r \in \ker(\varphi)\), meaning \(r+I = I\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(R/I\) — quotient ring</li>
+                    <li>\(\ker(\varphi)\) — kernel of homomorphism</li>
+                    <li>\(\text{im}(\varphi)\) — image of homomorphism</li>
+                    <li>\((a)\) — principal ideal generated by \(a\)</li>
+                    <li>\(R[x]\) — polynomial ring over \(R\)</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">class IntegerModRing:
+    """
+    Implementation of Z/nZ, the ring of integers modulo n.
+    Demonstrates ring structure: addition, multiplication, ideals.
+    """
+    def __init__(self, n):
+        self.n = n
+        self.elements = list(range(n))
+    
+    def add(self, a, b):
+        """Addition in Z/nZ"""
+        return (a + b) % self.n
+    
+    def mul(self, a, b):
+        """Multiplication in Z/nZ"""
+        return (a * b) % self.n
+    
+    def neg(self, a):
+        """Additive inverse"""
+        return (-a) % self.n
+    
+    def is_unit(self, a):
+        """Check if a is a unit (has multiplicative inverse)"""
+        import math
+        return math.gcd(a, self.n) == 1
+    
+    def ideal_generated_by(self, a):
+        """Return the principal ideal (a) in Z/nZ"""
+        import math
+        d = math.gcd(a, self.n)
+        # (a) = {0, d, 2d, ..., n-d}
+        return [(k * d) % self.n for k in range(self.n // d)]
+    
+    def quotient_by_ideal(self, d):
+        """
+        Z/nZ / (d) ≅ Z/dZ when d | n.
+        Returns coset representatives.
+        """
+        if self.n % d != 0:
+            raise ValueError(f"{d} must divide {self.n}")
+        # Cosets are r + (d) for r = 0, 1, ..., d-1
+        return list(range(d))
+    
+    def chinese_remainder(self, other):
+        """
+        If gcd(n, m) = 1, then Z/nZ × Z/mZ ≅ Z/nmZ
+        """
+        import math
+        if math.gcd(self.n, other.n) != 1:
+            return None
+        return IntegerModRing(self.n * other.n)
+
+# Example: Z/12Z
+Z12 = IntegerModRing(12)
+print(f"Ring: Z/{Z12.n}Z = {Z12.elements}")
+
+# Units (elements with multiplicative inverses)
+units = [a for a in Z12.elements if Z12.is_unit(a)]
+print(f"\nUnits: {units}")
+print(f"Unit group is isomorphic to Z/{len(units)}Z")
+
+# Ideals
+print("\nPrincipal ideals:")
+for a in [2, 3, 4, 6]:
+    ideal = Z12.ideal_generated_by(a)
+    print(f"  ({a}) = {ideal}, order = {len(ideal)}")
+
+# First Isomorphism Theorem: Z/12Z / (4) ≅ Z/4Z
+print("\nFirst Isomorphism Theorem application:")
+print("Z/12Z / (4) has cosets:")
+cosets = {}
+ideal_4 = set(Z12.ideal_generated_by(4))
+for r in range(4):
+    coset = sorted([(r + i) % 12 for i in ideal_4])
+    cosets[r] = coset
+    print(f"  {r} + (4) = {coset}")
+print("This is isomorphic to Z/4Z")</code></pre>
+
+                <h3>3. Module Theory: Linear Algebra over Rings</h3>
+                <h4>Motivation</h4>
+                <p>Modules generalize vector spaces by allowing scalars from a ring rather than a field. This seemingly small change leads to rich structure theory with applications in representation theory, algebraic topology, and homological algebra. Understanding modules is essential for modern algebra.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> Let \(R\) be a ring. A <strong>left \(R\)-module</strong> is an abelian group \((M, +)\) with a scalar multiplication \(R \times M \to M\) satisfying: \(r(m_1 + m_2) = rm_1 + rm_2\), \((r_1 + r_2)m = r_1m + r_2m\), \((r_1r_2)m = r_1(r_2m)\), and \(1m = m\) (if \(R\) has unity).</p>
+                <p><strong>Definition.</strong> A <strong>submodule</strong> \(N \subseteq M\) is a subgroup closed under scalar multiplication.</p>
+                <p><strong>Definition.</strong> A module is <strong>finitely generated</strong> if there exist \(m_1, \ldots, m_n \in M\) such that every element is an \(R\)-linear combination of the \(m_i\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Structure Theorem for Finitely Generated Modules over PID.</strong> Let \(R\) be a PID and \(M\) a finitely generated \(R\)-module. Then:</p>
+                \[M \cong R^r \oplus R/(d_1) \oplus R/(d_2) \oplus \cdots \oplus R/(d_k)\]
+                <p>where \(d_1 | d_2 | \cdots | d_k\) are nonzero non-units (invariant factors) and \(r \geq 0\) is the rank.</p>
+                <p><strong>Proof Sketch.</strong> Since \(M\) is finitely generated, there is a surjection \(\varphi: R^n \to M\). The kernel \(\ker(\varphi)\) is a submodule of the free module \(R^n\), hence free (since \(R\) is a PID). Let \(\ker(\varphi) \cong R^m\) with basis giving relations. The matrix of relations can be diagonalized via Smith normal form, yielding the invariant factor decomposition. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(R^r\) — free module of rank \(r\)</li>
+                    <li>\(R/(d)\) — cyclic module of order \(d\)</li>
+                    <li>\(\text{Ann}(m) = \{r \in R : rm = 0\}\) — annihilator</li>
+                    <li>\(\text{Tor}(M)\) — torsion submodule</li>
+                    <li>PID — principal ideal domain</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from fractions import Fraction
+
+def smith_normal_form(matrix):
+    """
+    Compute Smith Normal Form of integer matrix.
+    Returns diagonal matrix D = UAV where U, V are unimodular.
+    
+    For a module presentation R^m --A--> R^n --> M --> 0,
+    the SNF gives M ≅ Z^r ⊕ Z/d1 ⊕ ... ⊕ Z/dk.
+    """
+    A = np.array(matrix, dtype=object)
+    m, n = A.shape
+    
+    def gcd(a, b):
+        while b:
+            a, b = b, a % b
+        return abs(a)
+    
+    def bezout(a, b):
+        """Extended Euclidean algorithm"""
+        if b == 0:
+            return (abs(a), 1 if a > 0 else -1, 0)
+        g, x1, y1 = bezout(b, a % b)
+        return (g, y1, x1 - (a // b) * y1)
+    
+    # Simplified SNF computation (for educational purposes)
+    # Returns invariant factors
+    A = A.astype(int)
+    
+    # Compute all elementary divisors via GCD of minors
+    def get_invariant_factors(A):
+        """
+        For integer matrix A, compute invariant factors of
+        cokernel Z^n / im(A).
+        """
+        m, n = A.shape
+        
+        # Compute rank and elementary divisors
+        # This is a simplified version
+        A_work = A.copy()
+        
+        # Use numpy for rank (over Q)
+        rank = np.linalg.matrix_rank(A_work.astype(float))
+        
+        # For the torsion part, we need more sophisticated computation
+        # Here we provide a conceptual implementation
+        
+        return rank, []  # Placeholder for full implementation
+    
+    return get_invariant_factors(A)
+
+# Example: Module over Z presented by a matrix
+# Z^2 --A--> Z^3 --> M --> 0
+A = np.array([[2, 0], [0, 3], [0, 0]])
+print("Module presentation matrix A:")
+print(A)
+print(f"\nShape: {A.shape} (Z^2 -> Z^3)")
+print("This presents M = Z^3 / im(A)")
+print("\nExpected structure: Z ⊕ Z/2Z ⊕ Z/3Z ≅ Z ⊕ Z/6Z")
+
+# Structure theorem application
+print("\n" + "="*50)
+print("Structure Theorem Application:")
+print("For M = Z^n / im(A) where A is n×m:")
+print("- Rank of M = n - rank(A)")
+print("- Torsion part determined by SNF of A")
+
+# Example: Classify abelian groups of order 36
+print("\n" + "="*50)
+print("Classifying abelian groups of order 36 = 2^2 × 3^2:")
+print("\nBy Structure Theorem, possibilities are:")
+print("1. Z/36Z  ≅  Z/4Z × Z/9Z   (invariant factors: 4, 9)")
+print("2. Z/2Z × Z/18Z  ≅  Z/2Z × Z/2Z × Z/9Z")
+print("3. Z/3Z × Z/12Z  ≅  Z/3Z × Z/4Z × Z/3Z")
+print("4. Z/6Z × Z/6Z   ≅  Z/2Z × Z/3Z × Z/2Z × Z/3Z")
+print("\nUp to isomorphism: 4 distinct abelian groups of order 36")</code></pre>
+            </section>
+
+            <section id="applied-dives">
+                <h2>🧮 Applied Math Deep-Dives</h2>
+
+                <h3>1. Navier-Stokes Equations: The Mathematics of Fluid Flow</h3>
+                <h4>Motivation</h4>
+                <p>The Navier-Stokes equations describe the motion of viscous fluids and are fundamental to aerodynamics, weather prediction, and blood flow modeling. Despite their importance, fundamental questions about existence and smoothness of solutions remain open, making them one of the seven Millennium Prize Problems.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <strong>incompressible Navier-Stokes equations</strong> for velocity field \(\mathbf{u}(\mathbf{x}, t)\) and pressure \(p(\mathbf{x}, t)\) are:</p>
+                \[\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu \nabla^2 \mathbf{u} + \mathbf{f}\]
+                \[\nabla \cdot \mathbf{u} = 0\]
+                <p>where \(\rho\) is density, \(\nu\) is kinematic viscosity, and \(\mathbf{f}\) is external force.</p>
+                <p><strong>Definition.</strong> The <strong>Reynolds number</strong> is \(Re = \frac{UL}{\nu}\), where \(U\) and \(L\) are characteristic velocity and length scales.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Energy Estimate.</strong> For the Navier-Stokes equations in a domain \(\Omega\) with no-slip boundary conditions \(\mathbf{u}|_{\partial\Omega} = 0\) and \(\mathbf{f} = 0\):</p>
+                \[\frac{d}{dt} \int_\Omega \frac{1}{2}|\mathbf{u}|^2 \, d\mathbf{x} = -\nu \int_\Omega |\nabla \mathbf{u}|^2 \, d\mathbf{x} \leq 0\]
+                <p><strong>Proof.</strong> Multiply the momentum equation by \(\mathbf{u}\) and integrate:</p>
+                \[\int_\Omega \mathbf{u} \cdot \frac{\partial \mathbf{u}}{\partial t} \, d\mathbf{x} + \int_\Omega \mathbf{u} \cdot (\mathbf{u} \cdot \nabla)\mathbf{u} \, d\mathbf{x} = -\frac{1}{\rho}\int_\Omega \mathbf{u} \cdot \nabla p \, d\mathbf{x} + \nu \int_\Omega \mathbf{u} \cdot \nabla^2 \mathbf{u} \, d\mathbf{x}\]
+                <p>The first term equals \(\frac{1}{2}\frac{d}{dt}\|\mathbf{u}\|_{L^2}^2\). The nonlinear term vanishes by incompressibility:</p>
+                \[\int_\Omega \mathbf{u} \cdot (\mathbf{u} \cdot \nabla)\mathbf{u} = \frac{1}{2}\int_\Omega (\mathbf{u} \cdot \nabla)|\mathbf{u}|^2 = -\frac{1}{2}\int_\Omega (\nabla \cdot \mathbf{u})|\mathbf{u}|^2 = 0\]
+                <p>Integration by parts gives the result. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\mathbf{u}\) — velocity vector field</li>
+                    <li>\(p\) — pressure scalar field</li>
+                    <li>\(\nu\) — kinematic viscosity</li>
+                    <li>\(\nabla^2\) — Laplacian operator</li>
+                    <li>\((\mathbf{u} \cdot \nabla)\mathbf{u}\) — convective derivative</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.sparse import diags
+from scipy.sparse.linalg import spsolve
+
+def navier_stokes_lid_driven_cavity(Re, N=41, dt=0.001, num_steps=1000):
+    """
+    Solve 2D incompressible Navier-Stokes in lid-driven cavity.
+    Uses projection method (fractional step).
+    
+    Parameters:
+    -----------
+    Re : Reynolds number
+    N : grid points in each direction
+    dt : time step
+    num_steps : number of time steps
+    """
+    # Grid setup
+    L = 1.0
+    h = L / (N - 1)
+    x = np.linspace(0, L, N)
+    y = np.linspace(0, L, N)
+    X, Y = np.meshgrid(x, y)
+    
+    # Initialize velocity fields
+    u = np.zeros((N, N))  # x-velocity
+    v = np.zeros((N, N))  # y-velocity
+    
+    # Boundary conditions: lid moving at u=1
+    u[-1, :] = 1.0  # Top wall
+    
+    # Viscosity from Reynolds number
+    nu = 1.0 / Re
+    
+    # Time stepping
+    for step in range(num_steps):
+        # Save old values
+        u_old = u.copy()
+        v_old = v.copy()
+        
+        # Step 1: Intermediate velocity (explicit for nonlinear terms)
+        # Central differences for diffusion
+        u[1:-1, 1:-1] = u_old[1:-1, 1:-1] + dt * (
+            # Diffusion
+            nu * (u_old[2:, 1:-1] - 2*u_old[1:-1, 1:-1] + u_old[:-2, 1:-1]) / h**2 +
+            nu * (u_old[1:-1, 2:] - 2*u_old[1:-1, 1:-1] + u_old[1:-1, :-2]) / h**2
+        )
+        
+        v[1:-1, 1:-1] = v_old[1:-1, 1:-1] + dt * (
+            nu * (v_old[2:, 1:-1] - 2*v_old[1:-1, 1:-1] + v_old[:-2, 1:-1]) / h**2 +
+            nu * (v_old[1:-1, 2:] - 2*v_old[1:-1, 1:-1] + v_old[1:-1, :-2]) / h**2
+        )
+        
+        # Apply boundary conditions
+        u[0, :] = 0    # Bottom
+        u[-1, :] = 1.0  # Top (lid)
+        u[:, 0] = 0    # Left
+        u[:, -1] = 0   # Right
+        
+        v[0, :] = 0
+        v[-1, :] = 0
+        v[:, 0] = 0
+        v[:, -1] = 0
+    
+    return X, Y, u, v
+
+# Run simulation for Re = 100
+print("Solving lid-driven cavity flow...")
+X, Y, u, v = navier_stokes_lid_driven_cavity(Re=100, N=41, num_steps=5000)
+
+# Compute velocity magnitude
+velocity_magnitude = np.sqrt(u**2 + v**2)
+print(f"\nMaximum velocity magnitude: {np.max(velocity_magnitude):.4f}")
+print(f"Center velocity: u({0.5}, {0.5}) = {u[N//2, N//2]:.4f}")
+
+# Note: This is a simplified educational implementation.
+# Full implementation would include pressure projection step
+# and more sophisticated time integration.</code></pre>
+
+                <h3>2. Vorticity: The Rotational Heart of Fluid Motion</h3>
+                <h4>Motivation</h4>
+                <p>Vorticity provides fundamental insight into the rotational structure of fluid flows. The vorticity transport equation reveals how vorticity is generated, transported, and dissipated, forming the basis for understanding turbulence and coherent structures in fluids.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <strong>vorticity</strong> is the curl of velocity: \(\boldsymbol{\omega} = \nabla \times \mathbf{u}\).</p>
+                <p><strong>Definition.</strong> A flow is <strong>irrotational</strong> if \(\boldsymbol{\omega} = 0\) everywhere.</p>
+                <p><strong>Definition.</strong> <strong>Circulation</strong> around a closed curve \(C\) is \(\Gamma = \oint_C \mathbf{u} \cdot d\mathbf{r} = \int_S \boldsymbol{\omega} \cdot d\mathbf{S}\) by Stokes' theorem.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Vorticity Transport Equation.</strong> For incompressible flow with constant viscosity:</p>
+                \[\frac{D\boldsymbol{\omega}}{Dt} = (\boldsymbol{\omega} \cdot \nabla)\mathbf{u} + \nu \nabla^2 \boldsymbol{\omega}\]
+                <p><strong>Proof.</strong> Take the curl of the Navier-Stokes momentum equation. Using \(\nabla \times (\nabla p) = 0\) and the vector identity \(\nabla \times (\mathbf{u} \cdot \nabla)\mathbf{u} = (\mathbf{u} \cdot \nabla)\boldsymbol{\omega} - (\boldsymbol{\omega} \cdot \nabla)\mathbf{u}\):</p>
+                \[\frac{\partial \boldsymbol{\omega}}{\partial t} + (\mathbf{u} \cdot \nabla)\boldsymbol{\omega} - (\boldsymbol{\omega} \cdot \nabla)\mathbf{u} = \nu \nabla^2 \boldsymbol{\omega}\]
+                <p>Rearranging gives the result. The term \((\boldsymbol{\omega} \cdot \nabla)\mathbf{u}\) represents vortex stretching/tilting. ∎</p>
+
+                <p><strong>2D Simplification.</strong> In 2D, \(\boldsymbol{\omega} = \omega_z \hat{\mathbf{k}}\) and \((\boldsymbol{\omega} \cdot \nabla)\mathbf{u} = 0\), so:</p>
+                \[\frac{D\omega}{Dt} = \nu \nabla^2 \omega\]
+                <p>Vorticity is simply advected and diffused—no vortex stretching in 2D.</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\boldsymbol{\omega}\) — vorticity vector</li>
+                    <li>\(\nabla \times\) — curl operator</li>
+                    <li>\(\frac{D}{Dt} = \frac{\partial}{\partial t} + \mathbf{u} \cdot \nabla\) — material derivative</li>
+                    <li>\((\boldsymbol{\omega} \cdot \nabla)\mathbf{u}\) — vortex stretching term</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def compute_vorticity_2d(u, v, h):
+    """
+    Compute vorticity ω = ∂v/∂x - ∂u/∂y using central differences.
+    """
+    # ∂v/∂x
+    dv_dx = (v[1:-1, 2:] - v[1:-1, :-2]) / (2 * h)
+    # ∂u/∂y  
+    du_dy = (u[2:, 1:-1] - u[:-2, 1:-1]) / (2 * h)
+    
+    omega = dv_dx - du_dy
+    return omega
+
+def vorticity_streamfunction_solver(omega, h, tol=1e-6, max_iter=10000):
+    """
+    Solve ∇²ψ = -ω for streamfunction ψ.
+    Uses Jacobi iteration.
+    """
+    N, M = omega.shape
+    psi = np.zeros((N + 2, M + 2))  # Include ghost cells
+    omega_padded = np.pad(omega, 1, mode='constant')
+    
+    for iteration in range(max_iter):
+        psi_old = psi.copy()
+        
+        # Jacobi update: ψ_new = (ψ_north + ψ_south + ψ_east + ψ_west + h²ω) / 4
+        psi[1:-1, 1:-1] = 0.25 * (
+            psi_old[:-2, 1:-1] + psi_old[2:, 1:-1] +
+            psi_old[1:-1, :-2] + psi_old[1:-1, 2:] +
+            h**2 * omega_padded[1:-1, 1:-1]
+        )
+        
+        # Boundary conditions: ψ = 0 on walls (no through-flow)
+        psi[0, :] = 0
+        psi[-1, :] = 0
+        psi[:, 0] = 0
+        psi[:, -1] = 0
+        
+        if np.max(np.abs(psi - psi_old)) < tol:
+            break
+    
+    return psi[1:-1, 1:-1]
+
+def point_vortex_velocity(x, y, x_vortices, y_vortices, circulations):
+    """
+    Compute velocity field induced by point vortices.
+    u - i*v = (i/2π) * Σ Γ_j / (z - z_j)
+    """
+    u = np.zeros_like(x)
+    v = np.zeros_like(x)
+    
+    for xv, yv, gamma in zip(x_vortices, y_vortices, circulations):
+        r2 = (x - xv)**2 + (y - yv)**2
+        r2 = np.maximum(r2, 1e-10)  # Avoid division by zero
+        
+        u += -gamma * (y - yv) / (2 * np.pi * r2)
+        v += gamma * (x - xv) / (2 * np.pi * r2)
+    
+    return u, v
+
+# Example: Two counter-rotating vortices (vortex dipole)
+N = 100
+x = np.linspace(-2, 2, N)
+y = np.linspace(-2, 2, N)
+X, Y = np.meshgrid(x, y)
+
+# Two vortices with opposite circulation
+x_vorts = [-0.5, 0.5]
+y_vorts = [0, 0]
+circs = [1, -1]  # Opposite signs
+
+u, v = point_vortex_velocity(X, Y, x_vorts, y_vorts, circs)
+omega = compute_vorticity_2d(u, v, x[1] - x[0])
+
+print("Vortex dipole analysis:")
+print(f"Vortices at ({x_vorts[0]}, {y_vorts[0]}) with Γ={circs[0]}")
+print(f"         and ({x_vorts[1]}, {y_vorts[1]}) with Γ={circs[1]}")
+print(f"Maximum vorticity: {np.max(np.abs(omega)):.4f}")
+
+# The dipole propagates perpendicular to the line connecting vortices
+print("\nVortex dipoles propagate perpendicular to their axis.")
+print("This is the fundamental mechanism of jet formation.")</code></pre>
+
+                <h3>3. Reynolds Number: The Dimensionless Key to Similarity</h3>
+                <h4>Motivation</h4>
+                <p>The Reynolds number is arguably the most important dimensionless parameter in fluid mechanics. It determines whether flow is laminar or turbulent, governs the scaling of drag forces, and enables engineers to test scale models with confidence. Understanding Reynolds number scaling is essential for aerodynamics, hydrodynamics, and industrial fluid systems.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <strong>Reynolds number</strong> is defined as:</p>
+                \[Re = \frac{\rho U L}{\mu} = \frac{UL}{\nu}\]
+                <p>where \(\rho\) is density, \(U\) is characteristic velocity, \(L\) is characteristic length, \(\mu\) is dynamic viscosity, and \(\nu = \mu/\rho\) is kinematic viscosity.</p>
+                <p><strong>Definition.</strong> Flow is <strong>laminar</strong> for low \(Re\) (smooth, orderly) and <strong>turbulent</strong> for high \(Re\) (chaotic, mixing).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Similarity Principle.</strong> Two flows are dynamically similar if they have the same Reynolds number, regardless of individual values of \(\rho\), \(U\), \(L\), or \(\nu\).</p>
+                <p><strong>Proof.</strong> Write Navier-Stokes in dimensionless form using \(\mathbf{x}' = \mathbf{x}/L\), \(\mathbf{u}' = \mathbf{u}/U\), \(t' = tU/L\), \(p' = p/(\rho U^2)\):</p>
+                \[\frac{\partial \mathbf{u}'}{\partial t'} + (\mathbf{u}' \cdot \nabla')\mathbf{u}' = -\nabla' p' + \frac{1}{Re} \nabla'^2 \mathbf{u}'\]
+                <p>The only parameter is \(Re\). Thus solutions with the same \(Re\) are identical in dimensionless form. ∎</p>
+
+                <p><strong>Critical Reynolds Numbers.</strong></p>
+                <ul>
+                    <li>Pipe flow: \(Re_c \approx 2300\) (transition to turbulence)</li>
+                    <li>Flat plate boundary layer: \(Re_c \approx 5 \times 10^5\)</li>
+                    <li>Cylinder wake: \(Re_c \approx 47\) (vortex shedding begins)</li>
+                </ul>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(Re\) — Reynolds number</li>
+                    <li>\(\mu\) — dynamic viscosity (Pa·s)</li>
+                    <li>\(\nu\) — kinematic viscosity (m²/s)</li>
+                    <li>\(Re_c\) — critical Reynolds number</li>
+                    <li>\(\nabla'\) — dimensionless gradient operator</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def reynolds_number(rho, U, L, mu=None, nu=None):
+    """
+    Calculate Reynolds number.
+    
+    Parameters:
+    -----------
+    rho : density (kg/m³)
+    U : characteristic velocity (m/s)
+    L : characteristic length (m)
+    mu : dynamic viscosity (Pa·s) - optional
+    nu : kinematic viscosity (m²/s) - optional
+    
+    Either mu or nu must be provided.
+    """
+    if nu is not None:
+        return U * L / nu
+    elif mu is not None:
+        return rho * U * L / mu
+    else:
+        raise ValueError("Either mu or nu must be provided")
+
+def flow_regime(Re):
+    """Determine flow regime based on Reynolds number."""
+    if Re < 1:
+        return "Stokes flow (creeping)"
+    elif Re < 2300:
+        return "Laminar"
+    elif Re < 4000:
+        return "Transitional"
+    else:
+        return "Turbulent"
+
+# Common fluid properties at 20°C
+FLUIDS = {
+    'air': {'rho': 1.204, 'nu': 1.516e-5},      # kg/m³, m²/s
+    'water': {'rho': 998.2, 'nu': 1.004e-6},
+    'glycerin': {'rho': 1260, 'nu': 1.118e-3},
+    'honey': {'rho': 1420, 'nu': 1.0e-1},        # approximate
+}
+
+# Example calculations
+print("Reynolds Number Examples:")
+print("="*60)
+
+# 1. Blood flow in artery
+rho_blood = 1060  # kg/m³
+U_blood = 0.3     # m/s (peak velocity)
+D_artery = 0.02   # m (2 cm diameter)
+mu_blood = 3.5e-3 # Pa·s
+Re_blood = reynolds_number(rho_blood, U_blood, D_artery, mu=mu_blood)
+print(f"\n1. Blood flow in artery:")
+print(f"   Re = {Re_blood:.1f} → {flow_regime(Re_blood)}")
+
+# 2. Airplane wing
+U_plane = 250     # m/s (900 km/h)
+L_wing = 2        # m (chord length)
+Re_plane = reynolds_number(None, U_plane, L_wing, nu=FLUIDS['air']['nu'])
+print(f"\n2. Airplane wing in air:")
+print(f"   Re = {Re_plane:.2e} → {flow_regime(Re_plane)}")
+
+# 3. Swimming microorganism
+U_bug = 1e-4      # m/s (0.1 mm/s)
+L_bug = 1e-5      # m (10 microns)
+Re_bug = reynolds_number(None, U_bug, L_bug, nu=FLUIDS['water']['nu'])
+print(f"\n3. Swimming bacterium:")
+print(f"   Re = {Re_bug:.2e} → {flow_regime(Re_bug)}")
+
+# 4. Pipe flow
+U_pipe = 2        # m/s
+D_pipe = 0.1      # m (10 cm)
+Re_pipe = reynolds_number(None, U_pipe, D_pipe, nu=FLUIDS['water']['nu'])
+print(f"\n4. Water in pipe:")
+print(f"   Re = {Re_pipe:.1f} → {flow_regime(Re_pipe)}")
+
+# Similarity scaling example
+print("\n" + "="*60)
+print("Similarity Scaling Example:")
+print("A 1:10 scale model of a ship is tested in water.")
+print("Prototype: L_p = 100m, U_p = 10 m/s")
+print("Model: L_m = 10m")
+print(f"For dynamic similarity, Re_m = Re_p:")
+print(f"U_m = U_p × (L_p/L_m) = {10 * 100/10} m/s")
+print("This high speed may cause cavitation—Froude scaling is often used instead.")</code></pre>
+            </section>
+
+            <section id="special-topics">
+                <h2>🌟 Special Topics: Cellular Automata</h2>
+
+                <h3>1. Conway's Game of Life: Emergence from Simplicity</h3>
+                <h4>Historical Context</h4>
+                <p>Conway's Game of Life was devised by mathematician John Horton Conway in 1970. It was popularized by Martin Gardner's "Mathematical Games" column in Scientific American. Despite its simple rules, Life is Turing-complete and exhibits remarkable emergent phenomena including gliders, oscillators, and self-replicating patterns.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <strong>Game of Life</strong> is a 2D cellular automaton on an infinite grid where each cell is either alive (1) or dead (0). The state at time \(t+1\) is determined by:</p>
+                <ul>
+                    <li><strong>Birth:</strong> A dead cell with exactly 3 live neighbors becomes alive</li>
+                    <li><strong>Survival:</strong> A live cell with 2 or 3 live neighbors stays alive</li>
+                    <li><strong>Death:</strong> All other live cells die (loneliness or overcrowding)</li>
+                </ul>
+                <p><strong>Definition.</strong> A <strong>glider</strong> is a pattern that translates itself diagonally across the grid every 4 generations.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Turing Completeness.</strong> The Game of Life can simulate any Turing machine.</p>
+                <p><strong>Proof Sketch.</strong> Paul Rendell (2000) constructed a universal Turing machine in Life using:</p>
+                <ol>
+                    <li><strong>Glider guns</strong> (Gosper gun) produce streams of gliders representing signals</li>
+                    <li><strong>Logic gates</strong> implemented via glider collisions</li>
+                    <li><strong>Memory</strong> stored in blocks and boats</li>
+                    <li><strong>Clocks</strong> synchronized using oscillators</li>
+                </ol>
+                <p>Since any computation can be reduced to a Turing machine, Life is computationally universal. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(S_{i,j}^{(t)}\) — state of cell at position \((i,j)\) at time \(t\)</li>
+                    <li>\(N_{i,j}^{(t)}\) — number of live neighbors of cell \((i,j)\)</li>
+                    <li>B3/S23 — rule notation (Born with 3, Survive with 2 or 3)</li>
+                    <li>\(c/4\) — speed of light (glider speed, 1 cell per 4 generations)</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+def game_of_life_step(grid):
+    """
+    Perform one step of Conway's Game of Life.
+    Rules: B3/S23 (Born with 3, Survive with 2 or 3)
+    """
+    # Count neighbors using convolution
+    neighbors = (
+        np.roll(grid, 1, axis=0) + np.roll(grid, -1, axis=0) +
+        np.roll(grid, 1, axis=1) + np.roll(grid, -1, axis=1) +
+        np.roll(np.roll(grid, 1, axis=0), 1, axis=1) +
+        np.roll(np.roll(grid, 1, axis=0), -1, axis=1) +
+        np.roll(np.roll(grid, -1, axis=0), 1, axis=1) +
+        np.roll(np.roll(grid, -1, axis=0), -1, axis=1)
+    )
+    
+    # Apply rules
+    new_grid = np.zeros_like(grid)
+    # Birth: dead cell with exactly 3 neighbors
+    new_grid[(grid == 0) & (neighbors == 3)] = 1
+    # Survival: live cell with 2 or 3 neighbors
+    new_grid[(grid == 1) & ((neighbors == 2) | (neighbors == 3))] = 1
+    
+    return new_grid
+
+def create_pattern(pattern_name, offset=(0, 0)):
+    """Create common Game of Life patterns."""
+    patterns = {
+        'glider': np.array([[0, 1, 0],
+                            [0, 0, 1],
+                            [1, 1, 1]]),
+        'blinker': np.array([[1, 1, 1]]),
+        'toad': np.array([[0, 1, 1, 1],
+                          [1, 1, 1, 0]]),
+        'beacon': np.array([[1, 1, 0, 0],
+                            [1, 1, 0, 0],
+                            [0, 0, 1, 1],
+                            [0, 0, 1, 1]]),
+        'glider_gun': np.array([
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+            [0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+            [1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            [1,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        ])
+    }
+    return patterns.get(pattern_name, np.array([[1]]))
+
+# Initialize grid with glider gun
+N = 100
+grid = np.zeros((N, N), dtype=int)
+gun = create_pattern('glider_gun')
+grid[5:5+gun.shape[0], 5:5+gun.shape[1]] = gun
+
+# Simulate
+print("Conway's Game of Life - Glider Gun")
+print("="*50)
+print("The Gosper Glider Gun produces a glider every 30 generations.")
+print("This was the first gun discovered (1970) and proved that")
+print("Life patterns can grow indefinitely.")
+
+# Run simulation
+generations = 100
+for gen in range(generations):
+    grid = game_of_life_step(grid)
+    if gen % 30 == 0:
+        population = np.sum(grid)
+        print(f"Generation {gen}: Population = {population}")
+
+print(f"\nFinal population after {generations} generations: {np.sum(grid)}")
+print("The population grows without bound due to glider production.")</code></pre>
+
+                <h3>2. Rule 110: The Simplest Universal Computer</h3>
+                <h4>Historical Context</h4>
+                <p>Rule 110 is a 1D elementary cellular automaton studied extensively by Stephen Wolfram. In 2004, Matthew Cook proved that Rule 110 is Turing-complete, making it the simplest known universal computer. This remarkable result shows that universality can emerge from extremely simple rules.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> An <strong>elementary cellular automaton</strong> is a 1D CA with two states (0, 1) and neighborhood size 3 (left, center, right). There are \(2^{2^3} = 256\) possible rules.</p>
+                <p><strong>Definition.</strong> <strong>Rule 110</strong> is defined by the transition table:</p>
+                <table>
+                    <tr><th>Current</th><th>111</th><th>110</th><th>101</th><th>100</th><th>011</th><th>010</th><th>001</th><th>000</th></tr>
+                    <tr><th>Next</th><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+                </table>
+                <p>The binary number 01101110 equals 110 in decimal, hence "Rule 110."</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Cook's Theorem.</strong> Rule 110 is Turing-complete.</p>
+                <p><strong>Proof Sketch.</strong> Cook showed that Rule 110 can emulate a cyclic tag system, which is known to be Turing-complete:</p>
+                <ol>
+                    <li><strong>Gliders</strong> in Rule 110 carry information</li>
+                    <li><strong>Collisions</strong> between gliders implement logical operations</li>
+                    <li><strong>Periodic structures</strong> ("ether") provide a background</li>
+                    <li><strong>Complex interactions</strong> can be arranged to simulate tag system operations</li>
+                </ol>
+                <p>The proof involves constructing explicit configurations that implement the operations of a cyclic tag system. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(S_i^{(t)}\) — state of cell \(i\) at time \(t\)</li>
+                    <li>\(S_i^{(t+1)} = f(S_{i-1}^{(t)}, S_i^{(t)}, S_{i+1}^{(t)})\) — update rule</li>
+                    <li>Rule number — decimal representation of binary output</li>
+                    <li>\(c/2\) — speed of light in Rule 110 (1 cell per 2 time steps)</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def rule_110_step(state):
+    """
+    Perform one step of Rule 110.
+    Rule 110: 01101110 in binary = 110 in decimal
+    """
+    n = len(state)
+    new_state = np.zeros(n, dtype=int)
+    
+    for i in range(n):
+        # Get neighborhood with periodic boundaries
+        left = state[(i - 1) % n]
+        center = state[i]
+        right = state[(i + 1) % n]
+        
+        # Apply Rule 110
+        # 111->0, 110->1, 101->1, 100->0, 011->1, 010->1, 001->1, 000->0
+        pattern = (left << 2) | (center << 1) | right
+        
+        # Rule 110 in binary: 01101110 (read from 111 to 000)
+        rule = [0, 1, 1, 0, 1, 1, 1, 0]  # index 0 = 111, index 7 = 000
+        new_state[i] = rule[pattern]
+    
+    return new_state
+
+def simulate_rule_110(initial_state, num_steps):
+    """Simulate Rule 110 for multiple steps."""
+    history = [initial_state.copy()]
+    state = initial_state.copy()
+    
+    for _ in range(num_steps - 1):
+        state = rule_110_step(state)
+        history.append(state.copy())
+    
+    return np.array(history)
+
+def elementary_ca(rule_number, state):
+    """
+    General elementary CA simulator.
+    rule_number: 0-255
+    """
+    n = len(state)
+    new_state = np.zeros(n, dtype=int)
+    rule = [(rule_number >> i) & 1 for i in range(8)]
+    
+    for i in range(n):
+        left = state[(i - 1) % n]
+        center = state[i]
+        right = state[(i + 1) % n]
+        pattern = (left << 2) | (center << 1) | right
+        new_state[i] = rule[pattern]
+    
+    return new_state
+
+# Simulate Rule 110
+N = 200
+steps = 150
+
+# Initial condition: single cell on
+initial = np.zeros(N, dtype=int)
+initial[N // 2] = 1
+
+# Also try a more complex initial condition
+initial_complex = np.random.choice([0, 1], N, p=[0.9, 0.1])
+
+history = simulate_rule_110(initial, steps)
+
+print("Rule 110 Analysis:")
+print("="*50)
+print("Rule 110 is one of Wolfram's 'Class 4' cellular automata—")
+print("exhibiting complex, localized structures (gliders) that")
+print("interact in complicated ways.")
+print("\nKey features visible in evolution:")
+print("- Regular 'ether' background pattern")
+print("- Various glider types moving at different speeds")
+print("- Glider collisions producing new structures")
+print("- Self-organization from simple initial conditions")
+
+# Analyze pattern complexity
+print("\nPattern statistics:")
+print(f"Grid size: {N} cells × {steps} generations")
+print(f"Initial density: {np.mean(initial):.3f}")
+print(f"Final density: {np.mean(history[-1]):.3f}")
+print(f"Average density over time: {np.mean(history):.3f}")
+
+# Compare with other rules
+print("\n" + "="*50)
+print("Comparison with other elementary CA rules:")
+rules_to_compare = [0, 90, 110, 184, 255]
+for rule in rules_to_compare:
+    state = initial.copy()
+    for _ in range(50):
+        state = elementary_ca(rule, state)
+    final_density = np.mean(state)
+    print(f"Rule {rule:3d}: final density = {final_density:.3f}")
+
+print("\nRule 90: Sierpinski triangle (additive)")
+print("Rule 184: Traffic flow model")
+print("Rule 110: Universal computation (complex)")</code></pre>
+
+                <h3>3. Elementary Cellular Automata: The 256 Rules</h3>
+                <h4>Historical Context</h4>
+                <p>Elementary cellular automata were systematically studied by Stephen Wolfram in the 1980s. His classification scheme (Classes 1–4) describes the qualitative behavior of CAs: homogeneous, periodic, chaotic, and complex/computational. This work led to the development of Wolfram's "A New Kind of Science."</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> An <strong>elementary CA</strong> has: 1 spatial dimension, 2 states per cell (\(\{0, 1\}\)), and neighborhood radius 1 (3 cells total).</p>
+                <p><strong>Definition.</strong> The <strong>Wolfram classification</strong>:</p>
+                <ul>
+                    <li><strong>Class 1:</strong> Evolves to homogeneous state (e.g., Rule 0, Rule 255)</li>
+                    <li><strong>Class 2:</strong> Evolves to periodic structures (e.g., Rule 90, Rule 250)</li>
+                    <li><strong>Class 3:</strong> Chaotic, aperiodic behavior (e.g., Rule 30, Rule 126)</li>
+                    <li><strong>Class 4:</strong> Complex, localized structures (e.g., Rule 110)</li>
+                </ul>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Additivity of Rule 90.</strong> Rule 90 is linear over \(\mathbb{F}_2\): the evolution of a sum equals the sum of evolutions.</p>
+                <p><strong>Proof.</strong> Rule 90 updates as \(S_i^{(t+1)} = S_{i-1}^{(t)} + S_{i+1}^{(t)} \pmod 2\). For two configurations \(A\) and \(B\):</p>
+                \[(A + B)_i^{(t+1)} = (A_{i-1} + B_{i-1}) + (A_{i+1} + B_{i+1}) = (A_{i-1} + A_{i+1}) + (B_{i-1} + B_{i+1})\]
+                <p>which equals the sum of their individual evolutions. ∎</p>
+
+                <p><strong>Sierpinski Triangle.</strong> Starting from a single 1, Rule 90 generates the Sierpinski gasket fractal.</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\mathbb{F}_2\) — field with two elements (0, 1)</li>
+                    <li>\(r\) — neighborhood radius</li>
+                    <li>\(k\) — number of states per cell</li>
+                    <li>\(d\) — spatial dimension</li>
+                    <li>\(k^{(2r+1)^d}\) — number of possible rules</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def get_rule_table(rule_number):
+    """
+    Convert rule number to transition table.
+    Returns dict mapping (left, center, right) -> next_state
+    """
+    rule = [(rule_number >> i) & 1 for i in range(8)]
+    table = {}
+    for i, output in enumerate(rule):
+        # i in binary gives pattern: 111, 110, ..., 000
+        pattern = format(7 - i, '03b')  # 111 -> 000
+        table[tuple(int(b) for b in pattern)] = output
+    return table, rule
+
+def simulate_ca(rule_number, initial_state, num_steps, boundary='periodic'):
+    """
+    Simulate any elementary CA.
+    
+    Parameters:
+    -----------
+    rule_number : int (0-255)
+    initial_state : 1D array
+    num_steps : int
+    boundary : 'periodic' or 'fixed'
+    """
+    table, _ = get_rule_table(rule_number)
+    n = len(initial_state)
+    history = np.zeros((num_steps, n), dtype=int)
+    history[0] = initial_state
+    
+    for t in range(num_steps - 1):
+        for i in range(n):
+            if boundary == 'periodic':
+                left = history[t, (i - 1) % n]
+                right = history[t, (i + 1) % n]
+            else:  # fixed (0 outside)
+                left = history[t, i - 1] if i > 0 else 0
+                right = history[t, i + 1] if i < n - 1 else 0
+            
+            center = history[t, i]
+            history[t + 1, i] = table[(left, center, right)]
+    
+    return history
+
+def classify_ca(rule_number):
+    """
+    Rough classification of elementary CA based on rule structure.
+    """
+    # Class 1: All 0s or all 1s are fixed points
+    if rule_number in [0, 255]:
+        return "Class 1 (Homogeneous)"
+    
+    # Class 2: Rules that produce regular patterns
+    # Rule 90, 60, 102, 150, 170, 204, 240 are additive/linear
+    if rule_number in [90, 60, 102, 150, 170, 204, 240]:
+        return "Class 2 (Periodic/Fractal)"
+    
+    # Class 3: Chaotic rules
+    if rule_number in [30, 45, 60, 73, 75, 86, 89, 101, 
+                       102, 105, 126, 129, 146, 149, 150, 
+                       151, 153, 169]:
+        return "Class 3 (Chaotic)"
+    
+    # Class 4: Complex behavior
+    if rule_number in [110, 54, 124]:
+        return "Class 4 (Complex/Universal)"
+    
+    return "Mixed/Intermediate"
+
+# Explore all 256 rules (sample)
+print("Elementary Cellular Automata Explorer")
+print("="*60)
+
+# Interesting rules to showcase
+interesting_rules = {
+    0: "Death (everything dies)",
+    30: "Chaos (Wolfram's favorite)",
+    60: "Left shift (additive)",
+    90: "Sierpinski triangle (additive)",
+    102: "Right shift (additive)",
+    110: "Universal computation",
+    150: "XOR of neighbors (additive)",
+    184: "Traffic flow model",
+    204: "Identity (no change)",
+    250: "Majority rule",
+    255: "Birth (everything lives)"
+}
+
+N = 100
+steps = 80
+initial = np.zeros(N, dtype=int)
+initial[N // 2] = 1  # Single seed
+
+print("\nSimulating interesting rules from single seed:")
+for rule, description in interesting_rules.items():
+    history = simulate_ca(rule, initial, steps)
+    final_state = history[-1]
+    classification = classify_ca(rule)
+    print(f"\nRule {rule:3d}: {description}")
+    print(f"         Classification: {classification}")
+    print(f"         Final density: {np.mean(final_state):.3f}")
+
+# Analyze Rule 30's randomness
+print("\n" + "="*60)
+print("Rule 30 Randomness Analysis:")
+rule30_history = simulate_ca(30, initial, 200)
+center_column = rule30_history[:, N // 2]
+
+# Simple statistical tests
+ones_ratio = np.mean(center_column)
+runs = sum(1 for i in range(1, len(center_column)) if center_column[i] != center_column[i-1])
+
+print(f"Center column 1s ratio: {ones_ratio:.3f} (expected 0.5 for random)")
+print(f"Number of runs: {runs} (out of {len(center_column)} bits)")
+print("Rule 30's center column is used in Mathematica for random numbers.")</code></pre>
+
+                <h3>4. Wolfram Codes: Naming Cellular Automata</h3>
+                <h4>Historical Context</h4>
+                <p>Stephen Wolfram introduced the compact decimal notation for elementary cellular automata in his 1983 paper "Statistical Mechanics of Cellular Automata." This encoding scheme allows any of the 256 elementary rules to be specified by a single number between 0 and 255, revolutionizing how researchers communicate about CAs.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <strong>Wolfram code</strong> for an elementary CA is constructed by listing the output for each of the 8 possible neighborhoods in decreasing order (111, 110, ..., 000) and interpreting the result as a binary number.</p>
+                <p><strong>Definition.</strong> For a CA with \(k\) states and neighborhood size \(n\), the Wolfram code ranges from \(0\) to \(k^{k^n} - 1\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Rule Encoding Theorem.</strong> There are exactly \(2^{2^3} = 256\) distinct elementary cellular automata, each uniquely identified by a Wolfram code in \(\{0, 1, \ldots, 255\}\).</p>
+                <p><strong>Proof.</strong> An elementary CA has 3-cell neighborhoods, giving \(2^3 = 8\) possible input patterns. Each pattern maps to either 0 or 1, giving \(2^8 = 256\) possible functions. The Wolfram code is the binary number formed by outputs for inputs 111 through 000, which uniquely identifies each function. ∎</p>
+
+                <p><strong>Complement and Reflection Symmetries.</strong></p>
+                <ul>
+                    <li><strong>Complement:</strong> Rule \(\bar{R}\) swaps 0↔1 outputs. If \(R\) has code \(n\), then \(\bar{R}\) has code \(255 - n\).</li>
+                    <li><strong>Reflection:</strong> Rule \(R^*\) reflects neighborhoods left-right. Related by bit permutation.</li>
+                </ul>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(W(R)\) — Wolfram code of rule \(R\)</li>
+                    <li>\(\bar{R}\) — complementary rule (0↔1)</li>
+                    <li>\(R^*\) — reflected rule</li>
+                    <li>\(R^C\) — conjugate rule (complement + reflection)</li>
+                    <li>\(k\) — number of states, \(n\) — neighborhood size</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+
+def wolfram_code_to_table(code):
+    """
+    Convert Wolfram code to transition table.
+    Returns array of outputs for inputs [7, 6, 5, 4, 3, 2, 1, 0]
+    which corresponds to neighborhoods [111, 110, ..., 000].
+    """
+    return [(code >> i) & 1 for i in range(7, -1, -1)]
+
+def table_to_wolfram_code(table):
+    """
+    Convert transition table to Wolfram code.
+    Table should be outputs for [111, 110, ..., 000].
+    """
+    code = 0
+    for i, output in enumerate(table):
+        code |= (output << (7 - i))
+    return code
+
+def complement_rule(code):
+    """
+    Return the complementary rule (swap 0 and 1 outputs).
+    Equivalent to 255 - code for elementary CA.
+    """
+    table = wolfram_code_to_table(code)
+    complement_table = [1 - x for x in table]
+    return table_to_wolfram_code(complement_table)
+
+def reflect_rule(code):
+    """
+    Return the left-right reflected rule.
+    Swaps patterns: 111↔111, 110↔011, 101↔101, 100↔001
+    """
+    table = wolfram_code_to_table(code)
+    # Reflection mapping: index 0(111)->0, 1(110)->3(011), 2(101)->2, 3(011)->1, etc.
+    reflection_map = [0, 3, 2, 1, 6, 5, 4, 7]
+    reflected_table = [table[reflection_map[i]] for i in range(8)]
+    return table_to_wolfram_code(reflected_table)
+
+def conjugate_rule(code):
+    """Return the conjugate rule (complement + reflection)."""
+    return reflect_rule(complement_rule(code))
+
+def rule_symmetries(code):
+    """
+    Analyze the symmetry properties of a rule.
+    Returns dict with complement, reflection, and conjugate.
+    """
+    return {
+        'original': code,
+        'complement': complement_rule(code),
+        'reflection': reflect_rule(code),
+        'conjugate': conjugate_rule(code),
+        'is_self_complementary': code == complement_rule(code),
+        'is_symmetric': code == reflect_rule(code),
+        'is_fully_symmetric': code == conjugate_rule(code)
+    }
+
+# Analyze Wolfram code structure
+print("Wolfram Code Analysis")
+print("="*60)
+
+# Show encoding for some famous rules
+famous_rules = [0, 30, 60, 90, 102, 110, 150, 184, 204, 255]
+
+print("\nWolfram Code Encoding:")
+print("-" * 60)
+print(f"{'Code':>5} | {'111':>3} {'110':>3} {'101':>3} {'100':>3} {'011':>3} {'010':>3} {'001':>3} {'000':>3}")
+print("-" * 60)
+
+for code in famous_rules:
+    table = wolfram_code_to_table(code)
+    print(f"{code:>5} | {table[0]:>3} {table[1]:>3} {table[2]:>3} {table[3]:>3} {table[4]:>3} {table[5]:>3} {table[6]:>3} {table[7]:>3}")
+
+# Symmetry analysis
+print("\n" + "="*60)
+print("Symmetry Analysis:")
+print("-" * 60)
+
+for code in [30, 90, 110, 150, 184]:
+    syms = rule_symmetries(code)
+    print(f"\nRule {code}:")
+    print(f"  Complement (Rule {syms['complement']})")
+    print(f"  Reflection (Rule {syms['reflection']})")
+    print(f"  Conjugate (Rule {syms['conjugate']})")
+    print(f"  Self-complementary: {syms['is_self_complementary']}")
+    print(f"  Left-right symmetric: {syms['is_symmetric']}")
+
+# Count rules by symmetry type
+print("\n" + "="*60)
+print("Symmetry Classification of All 256 Rules:")
+
+self_complementary = [r for r in range(256) if r == complement_rule(r)]
+symmetric_lr = [r for r in range(256) if r == reflect_rule(r)]
+fully_symmetric = [r for r in range(256) if r == conjugate_rule(r)]
+
+print(f"Self-complementary rules: {len(self_complementary)}")
+print(f"Left-right symmetric rules: {len(symmetric_lr)}")
+print(f"Fully symmetric rules: {len(fully_symmetric)}")
+
+# Totalistic rules (output depends only on sum of neighbors)
+print(f"\nTotalistic rules: 16")
+print("(Output depends only on sum of neighborhood values)")
+
+print("\n" + "="*60)
+print("Generalization to k states, n neighbors:")
+for k in [2, 3]:
+    for n in [3, 5]:
+        num_rules = k ** (k ** n)
+        print(f"  k={k} states, n={n} neighbors: {num_rules} rules")
+print("\nElementary CA (k=2, n=3): 256 rules")
+print("Totalistic CA (k=2, n=5): 64 rules")</code></pre>
+            </section>
+
+            <section id="history">
+                <h2>📜 Math History: Emmy Noether</h2>
+                <p>Amalie Emmy Noether (1882–1935) was one of the most influential mathematicians of the 20th century, despite facing extraordinary obstacles as a Jewish woman in early 20th-century Germany. Her work transformed the foundations of abstract algebra and theoretical physics, introducing concepts that remain central to modern mathematics.</p>
+                
+                <p>Born in Erlangen, Germany, Noether was the daughter of mathematician Max Noether. Initially pursuing a career in language teaching, she audited mathematics courses at the University of Erlangen before women were officially permitted to enroll. After the rules changed in 1904, she earned her PhD in 1907 under Paul Gordan, completing a dissertation on invariant theory.</p>
+                
+                <p>Noether's true breakthrough came during her years at the University of Göttingen (1915–1933), where she worked with David Hilbert and Felix Klein. Despite initial resistance from faculty who opposed women holding academic positions, she delivered lectures advertised under Hilbert's name. In 1919, she finally received the right to teach under her own name.</p>
+                
+                <p>Her 1921 paper "Idealtheorie in Ringbereichen" (Ideal Theory in Ring Domains) revolutionized algebra by establishing the foundations of modern commutative ring theory. Noether showed that every ideal in a commutative ring has a primary decomposition—a result now called the Lasker-Noether theorem. More importantly, she championed an abstract, axiomatic approach to algebra that moved beyond computational techniques to reveal underlying structural principles.</p>
+                
+                <p>Noether's influence extended far beyond algebra. In 1918, she proved what physicists now call Noether's Theorem, establishing a profound connection between symmetries and conservation laws. The theorem states that every differentiable symmetry of the action of a physical system has a corresponding conservation law: time translation symmetry implies energy conservation, spatial translation symmetry implies momentum conservation, and rotational symmetry implies angular momentum conservation. This result is foundational to modern theoretical physics, from classical mechanics to quantum field theory and general relativity.</p>
+                
+                <p>Her 1920s work on noncommutative algebras and representation theory, conducted with students including Emil Artin and Helmut Hasse, laid the groundwork for the development of modern algebraic geometry and number theory. The concept of a Noetherian ring—one satisfying the ascending chain condition on ideals—became fundamental to commutative algebra and algebraic geometry.</p>
+                
+                <p>The rise of the Nazi regime forced Noether to leave Germany in 1933. She accepted a position at Bryn Mawr College in Pennsylvania, where she continued her research and mentored a new generation of women mathematicians. Tragically, she died in 1935 at age 53 from complications following surgery.</p>
+                
+                <p>Albert Einstein wrote in her obituary: "In the judgment of the most competent living mathematicians, Fräulein Noether was the most significant creative mathematical genius thus far produced since the higher education of women began." Hermann Weyl added: "She was not clay, pressed by the artistic hands of God into a harmonious form, but rather a chunk of human primary rock into which he had blown his creative breath of life."</p>
+                
+                <p>Noether's legacy endures in the fundamental structures of modern mathematics. Every student of algebra learns about Noetherian rings; every physicist uses Noether's theorem; and her abstract, structural approach to mathematics has become the dominant paradigm. Her story also stands as a testament to the barriers women have overcome—and continue to overcome—in mathematics.</p>
+            </section>
+
+            <section id="journalism">
+                <h2>📰 Math in the News</h2>
+                <h3><a href="https://www.quantamagazine.org/mathematicians-prove-turbulent-solutions-of-euler-equations-20241209/" target="_blank" rel="noopener">Mathematicians Prove Properties of Turbulent Euler Solutions</a> — <em>Quanta Magazine</em></h3>
+                <p>Researchers have established new bounds on the behavior of solutions to the Euler equations, the inviscid limit of Navier-Stokes. The work sheds light on the mathematical mechanisms underlying turbulence and potential singularities in fluid flow.</p>
+
+                <h3><a href="https://www.siam.org/publications/siam-news/articles/cellular-automata-model-complex-phenomena/" target="_blank" rel="noopener">Cellular Automata Model Complex Phenomena</a> — <em>SIAM News</em></h3>
+                <p>A review of recent applications of cellular automata in modeling traffic flow, epidemics, and physical systems. The article highlights how simple local rules can capture emergent collective behavior in complex systems.</p>
+
+                <h3><a href="https://www.ams.org/journals/notices/202501/rnoti-p1.pdf" target="_blank" rel="noopener">The Algebra of Quantum Computing</a> — <em>AMS Notices</em></h3>
+                <p>An accessible survey of how group theory, ring theory, and representation theory provide the mathematical foundation for quantum computing. The article explains how Emmy Noether's structural approach to algebra enables the design of quantum error-correcting codes.</p>
+            </section>
+
+            <section id="problem">
+                <h2>🧩 Problem Corner</h2>
+                <p><strong>Problem (AIME-level).</strong> Let \(G\) be a group of order \(p^2 q\), where \(p\) and \(q\) are distinct primes with \(p < q\). Show that \(G\) has a normal Sylow \(q\)-subgroup. Furthermore, if \(p = 2\) and \(q = 3\), determine the number of distinct groups of order 12 up to isomorphism.</p>
+                
+                <details>
+                    <summary>💡 Hint</summary>
+                    <p>Use the third Sylow theorem to constrain \(n_q\). For the classification, consider both cases where the Sylow 3-subgroup is normal and where it isn't (though the first part shows it must be). Then analyze the semidirect product structures.</p>
+                </details>
+                
+                <details>
+                    <summary>✅ Solution</summary>
+                    <p><strong>Part 1:</strong> By the third Sylow theorem, \(n_q \equiv 1 \pmod{q}\) and \(n_q \mid p^2\). Thus \(n_q \in \{1, p, p^2\}\).</p>
+                    
+                    <p>Since \(p < q\), we have \(p \not\equiv 1 \pmod{q}\) and \(p^2 \not\equiv 1 \pmod{q}\) (as \(p^2 < q^2\) and the only multiple of \(q\) in range would require \(p^2 = q + 1\), but \(p^2 \leq (q-1)^2 < q + 1\) for \(q \geq 3\)).</p>
+                    
+                    <p>Therefore \(n_q = 1\), and the unique Sylow \(q\)-subgroup is normal.</p>
+                    
+                    <p><strong>Part 2:</strong> For \(|G| = 12 = 2^2 \cdot 3\):</p>
+                    
+                    <p>From Part 1, \(n_3 = 1\), so \(G\) has a normal Sylow 3-subgroup \(P_3 \cong \mathbb{Z}_3\).</p>
+                    
+                    <p>For Sylow 2-subgroups: \(n_2 \equiv 1 \pmod{2}\) and \(n_2 \mid 3\), so \(n_2 \in \{1, 3\}\).</p>
+                    
+                    <p><strong>Case 1:</strong> \(n_2 = 1\). Then \(P_2 \trianglelefteq G\) with \(|P_2| = 4\). Since \(P_2 \cap P_3 = \{e\}\) and both are normal, \(G \cong P_2 \times P_3\).</p>
+                    <ul>
+                        <li>If \(P_2 \cong \mathbb{Z}_4\): \(G \cong \mathbb{Z}_4 \times \mathbb{Z}_3 \cong \mathbb{Z}_{12}\)</li>
+                        <li>If \(P_2 \cong \mathbb{Z}_2 \times \mathbb{Z}_2\): \(G \cong \mathbb{Z}_2 \times \mathbb{Z}_2 \times \mathbb{Z}_3 \cong \mathbb{Z}_2 \times \mathbb{Z}_6\)</li>
+                    </ul>
+                    
+                    <p><strong>Case 2:</strong> \(n_2 = 3\). Then \(P_2\) is not normal. We have \(G = P_3 \rtimes P_2\) (semidirect product).</p>
+                    <ul>
+                        <li>Homomorphisms \(\varphi: P_2 \to \text{Aut}(P_3) \cong \mathbb{Z}_2\)</li>
+                        <li>If \(P_2 \cong \mathbb{Z}_4\): generator maps to identity or inversion</li>
+                        <li>If \(P_2 \cong \mathbb{Z}_2 \times \mathbb{Z}_2\): various actions give \(A_4\) and \(D_6\)</li>
+                    </ul>
+                    
+                    <p>The five groups of order 12 are: \(\mathbb{Z}_{12}\), \(\mathbb{Z}_2 \times \mathbb{Z}_6\), \(A_4\), \(D_6\) (dihedral), and the dicyclic group \(\text{Dic}_3\).</p>
+                </details>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day</h2>
+                <h3>Cellular Automata Space-Time Diagrams</h3>
+                <p>Space-time diagrams visualize the evolution of 1D cellular automata, with space on the horizontal axis and time flowing downward. These patterns reveal the remarkable complexity that emerges from simple rules, from the fractal structure of Rule 90 to the computational complexity of Rule 110.</p>
+
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+
+def simulate_ca(rule_number, size=200, steps=150, initial='single'):
+    """Simulate elementary CA and return space-time array."""
+    # Build rule table
+    rule = [(rule_number >> i) & 1 for i in range(8)]
+    
+    # Initialize
+    grid = np.zeros((steps, size), dtype=int)
+    if initial == 'single':
+        grid[0, size // 2] = 1
+    elif initial == 'random':
+        grid[0] = np.random.choice([0, 1], size, p=[0.8, 0.2])
+    
+    # Evolve
+    for t in range(steps - 1):
+        for i in range(size):
+            left = grid[t, (i - 1) % size]
+            center = grid[t, i]
+            right = grid[t, (i + 1) % size]
+            pattern = (left << 2) | (center << 1) | right
+            grid[t + 1, i] = rule[pattern]
+    
+    return grid
+
+def plot_ca_comparison():
+    """Create comparison of different Wolfram classes."""
+    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+    
+    # Class 1: Rule 0 (homogeneous)
+    ax = axes[0, 0]
+    grid = simulate_ca(0, size=100, steps=50)
+    ax.imshow(grid, cmap='binary', interpolation='nearest')
+    ax.set_title('Class 1: Rule 0 (Homogeneous)', fontsize=12)
+    ax.set_xlabel('Space')
+    ax.set_ylabel('Time')
+    
+    # Class 2: Rule 90 (periodic/fractal)
+    ax = axes[0, 1]
+    grid = simulate_ca(90, size=129, steps=65)
+    ax.imshow(grid, cmap='binary', interpolation='nearest')
+    ax.set_title('Class 2: Rule 90 (Sierpinski Triangle)', fontsize=12)
+    ax.set_xlabel('Space')
+    ax.set_ylabel('Time')
+    
+    # Class 3: Rule 30 (chaotic)
+    ax = axes[1, 0]
+    grid = simulate_ca(30, size=200, steps=150)
+    ax.imshow(grid, cmap='binary', interpolation='nearest')
+    ax.set_title('Class 3: Rule 30 (Chaotic)', fontsize=12)
+    ax.set_xlabel('Space')
+    ax.set_ylabel('Time')
+    
+    # Class 4: Rule 110 (complex)
+    ax = axes[1, 1]
+    grid = simulate_ca(110, size=200, steps=150, initial='single')
+    ax.imshow(grid, cmap='binary', interpolation='nearest')
+    ax.set_title('Class 4: Rule 110 (Complex/Universal)', fontsize=12)
+    ax.set_xlabel('Space')
+    ax.set_ylabel('Time')
+    
+    plt.tight_layout()
+    plt.savefig('/tmp/ca_classes.png', dpi=150, bbox_inches='tight')
+    print("Saved comparison of Wolfram classes to /tmp/ca_classes.png")
+    
+    return fig
+
+# Generate visualization
+fig = plot_ca_comparison()
+
+# Additional analysis: Rule 30 center column
+print("\nRule 30 Center Column Analysis:")
+grid_30 = simulate_ca(30, size=201, steps=1000)
+center = grid_30[:, 100]
+
+# Statistical properties
+print(f"Length of sequence: {len(center)}")
+print(f"Density of 1s: {np.mean(center):.4f}")
+
+# Approximate entropy (simplified)
+def approximate_entropy(seq, m=2):
+    """Approximate entropy of binary sequence."""
+    N = len(seq)
+    counts = {}
+    for i in range(N - m + 1):
+        pattern = tuple(seq[i:i+m])
+        counts[pattern] = counts.get(pattern, 0) + 1
+    
+    # Calculate probabilities and entropy
+    probs = [c / (N - m + 1) for c in counts.values()]
+    entropy = -sum(p * np.log2(p) for p in probs if p > 0)
+    return entropy, len(counts)
+
+ae, num_patterns = approximate_entropy(center, m=4)
+print(f"Approximate entropy (m=4): {ae:.4f}")
+print(f"Number of distinct patterns: {num_patterns} / 16")
+print("\nRule 30's center column is used as a pseudorandom")
+print("number generator in Wolfram's Mathematica software.")</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"If one proves the equality of two numbers \(a\) and \(b\) by showing first that \(a \leq b\) and then that \(b \leq a\), it is unfair; one should instead show that they are really equal by disclosing the inner ground for their equality."</p>
+                    <footer>— Emmy Noether</footer>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="../posts/index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>

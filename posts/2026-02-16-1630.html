@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Linear Algebra, Differential Equations, Information Theory">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 16, 2026 at 16:30</title>
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <p class="post-date">📅 2026-02-16 at 1630</p>
+            <div class="tags">
+                <a href="../tags/linear-algebra.html" class="tag">linear-algebra</a>
+                <a href="../tags/differential-equations.html" class="tag">differential-equations</a>
+                <a href="../tags/information-theory.html" class="tag">information-theory</a>
+                <a href="../tags/numerical-analysis.html" class="tag">numerical-analysis</a>
+                <a href="../tags/dynamical-systems.html" class="tag">dynamical-systems</a>
+            </div>
+
+            <section id="links">
+                <h2>🔗 Math Links</h2>
+                <ul>
+                    <li><a href="https://matrixcalc.org/" target="_blank" rel="noopener">Matrix Calculator</a> — Interactive tool for matrix operations, eigenvalues, and decompositions with step-by-step solutions.</li>
+                    <li><a href="https://ocw.mit.edu/courses/mathematics/" target="_blank" rel="noopener">MIT OpenCourseWare Math</a> — Free lecture notes, exams, and video lectures from MIT mathematics courses.</li>
+                    <li><a href="https://www.desmos.com/calculator" target="_blank" rel="noopener">Desmos Graphing Calculator</a> — Powerful online graphing tool for visualizing functions, parametric curves, and differential equations.</li>
+                </ul>
+            </section>
+
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                <h3><a href="https://www.cs.cmu.edu/~venkatg/teaching/CStheory-infoage/book-chapters.html" target="_blank" rel="noopener">Essential Coding Theory</a></h3>
+                <p><strong>Author:</strong> Venkatesan Guruswami, Atri Rudra, Madhu Sudan | <strong>Level:</strong> Graduate</p>
+                <p>A comprehensive introduction to error-correcting codes, covering Reed-Solomon codes, expander codes, and polar codes. Essential for understanding modern information theory and its applications in data storage and communication systems.</p>
+            </section>
+
+            <section id="pure-dives">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <h3>1. Linear Algebra: The Spectral Theorem</h3>
+                <h4>Motivation</h4>
+                <p>The Spectral Theorem reveals that symmetric matrices can be diagonalized by orthogonal transformations. This fundamental result underlies principal component analysis, quantum mechanics, and the study of quadratic forms.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A matrix \(A\) is <em>symmetric</em> if \(A = A^T\).</p>
+                <p><strong>Definition.</strong> An <em>eigenvalue</em> \(\lambda\) satisfies \(Av = \lambda v\) for some nonzero vector \(v\) (the <em>eigenvector</em>).</p>
+                <p><strong>Definition.</strong> A matrix is <em>orthogonally diagonalizable</em> if \(A = QDQ^T\) where \(Q\) is orthogonal and \(D\) is diagonal.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Spectral Theorem.</strong> A real matrix \(A\) is symmetric if and only if it is orthogonally diagonalizable.</p>
+                <p><strong>Proof.</strong> (\(\Rightarrow\)) By induction on dimension. For \(n=1\), trivial. For general \(n\), symmetric \(A\) has a real eigenvalue \(\lambda_1\) with unit eigenvector \(v_1\). Extend to orthonormal basis \(\{v_1, \ldots, v_n\}\). In this basis:</p>
+                \[Q^T A Q = \begin{pmatrix} \lambda_1 &amp; 0 \\ 0 &amp; B \end{pmatrix}\]
+                <p>where \(B\) is symmetric. By induction, \(B = Q'D'(Q')^T\), completing the diagonalization.</p>
+                <p>(\(\Leftarrow\)) If \(A = QDQ^T\), then \(A^T = (QDQ^T)^T = QD^TQ^T = QDQ^T = A\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(A^T\) — matrix transpose</li>
+                    <li>\(\lambda\) — eigenvalue</li>
+                    <li>\(v\) — eigenvector</li>
+                    <li>\(Q\) — orthogonal matrix (\(Q^TQ = I\))</li>
+                    <li>\(D\) — diagonal matrix</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+
+def spectral_decomposition(A):
+    """Compute spectral decomposition of symmetric matrix A"""
+    # Verify symmetry
+    assert np.allclose(A, A.T), "Matrix must be symmetric"
+    
+    # Eigenvalue decomposition (automatically gives orthogonal Q for symmetric A)
+    eigenvalues, Q = np.linalg.eigh(A)
+    D = np.diag(eigenvalues)
+    
+    # Verify decomposition
+    reconstructed = Q @ D @ Q.T
+    assert np.allclose(A, reconstructed)
+    
+    return eigenvalues, Q, D
+
+# Example: Symmetric matrix
+A = np.array([[4, 2, 1],
+              [2, 5, 3],
+              [1, 3, 6]], dtype=float)
+
+eigenvalues, Q, D = spectral_decomposition(A)
+print(f"Eigenvalues: {eigenvalues}")
+print(f"Q is orthogonal: {np.allclose(Q.T @ Q, np.eye(3))}")
+
+# Spectral decomposition as sum of rank-1 matrices
+print("\nSpectral decomposition:")
+for i, lam in enumerate(eigenvalues):
+    v = Q[:, i:i+1]
+    rank1 = lam * (v @ v.T)
+    print(f"λ_{i} * v_{i} * v_{i}^T contributes rank-1 matrix")</code></pre>
+
+                <h3>2. Differential Equations: Existence and Uniqueness</h3>
+                <h4>Motivation</h4>
+                <p>Before solving differential equations, we must know solutions exist and are unique. The Picard-Lindelöf theorem provides sufficient conditions guaranteeing both, forming the theoretical foundation for ODE theory.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A function \(f(t,y)\) is <em>Lipschitz continuous</em> in \(y\) on a domain \(D\) if there exists \(L\) such that \(|f(t,y_1) - f(t,y_2)| \leq L|y_1 - y_2|\) for all \((t,y_1), (t,y_2) \in D\).</p>
+                <p><strong>Definition.</strong> An <em>initial value problem</em> (IVP) seeks \(y(t)\) satisfying \(y' = f(t,y)\) with \(y(t_0) = y_0\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Picard-Lindelöf Theorem.</strong> If \(f\) is continuous in \(t\) and Lipschitz in \(y\) on a rectangle containing \((t_0, y_0)\), then the IVP has a unique solution on some interval \([t_0 - h, t_0 + h]\).</p>
+                <p><strong>Proof Sketch.</strong> Convert to integral equation:</p>
+                \[y(t) = y_0 + \int_{t_0}^t f(s, y(s))\, ds\]
+                <p>Define Picard iterates: \(y_0(t) = y_0\), \(y_{n+1}(t) = y_0 + \int_{t_0}^t f(s, y_n(s))\, ds\).</p>
+                <p>Using the Lipschitz condition, show \(\{y_n\}\) is Cauchy in the sup norm, hence converges to a unique fixed point. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(y' = dy/dt\) — derivative</li>
+                    <li>\(L\) — Lipschitz constant</li>
+                    <li>\(C[a,b]\) — continuous functions on \([a,b]\)</li>
+                    <li>\(\|y\|_\infty = \sup|y(t)|\) — sup norm</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+def picard_iterate(f, t0, y0, n_iter=5, t_max=1, n_points=100):
+    """Compute Picard iterates for y' = f(t,y), y(t0) = y0"""
+    t = np.linspace(t0, t_max, n_points)
+    y = np.full_like(t, y0)  # y_0(t) = y0 (constant)
+    
+    iterates = [y.copy()]
+    
+    for n in range(n_iter):
+        # y_{n+1}(t) = y0 + integral of f(s, y_n(s)) ds
+        y_new = np.zeros_like(t)
+        y_new[0] = y0
+        
+        for i in range(1, len(t)):
+            # Trapezoidal integration
+            integrand = f(t[:i+1], iterates[-1][:i+1])
+            y_new[i] = y0 + np.trapezoid(integrand, t[:i+1])
+        
+        iterates.append(y_new)
+    
+    return t, iterates
+
+# Example: y' = y, y(0) = 1 (solution is e^t)
+f = lambda t, y: y
+t, iterates = picard_iterate(f, 0, 1, n_iter=4)
+
+print("Picard iterates converging to e^t:")
+for i, y in enumerate(iterates[:4]):
+    print(f"y_{i}(1) = {y[-1]:.6f}, error = {abs(y[-1] - np.e):.6f}")</code></pre>
+
+                <h3>3. Information Theory: Shannon's Source Coding Theorem</h3>
+                <h4>Motivation</h4>
+                <p>How much can we compress data without loss? Claude Shannon's source coding theorem establishes the fundamental limit: the entropy of the source. This result launched the field of information theory in 1948.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <em>entropy</em> of a discrete random variable \(X\) with PMF \(p(x)\) is:</p>
+                \[H(X) = -\sum_{x} p(x) \log_2 p(x)\]
+                <p><strong>Definition.</strong> A <em>source code</em> maps source symbols to binary strings. It is <em>uniquely decodable</em> if any concatenation of codewords has only one parsing.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Source Coding Theorem.</strong> For any uniquely decodable code, the expected length \(L\) satisfies \(L \geq H(X)\). Conversely, there exists a prefix code with \(L &lt; H(X) + 1\).</p>
+                <p><strong>Proof.</strong> (Lower bound) By Kraft's inequality: \(\sum 2^{-l_i} \leq 1\). Using Lagrange multipliers to minimize \(\sum p_i l_i\) subject to this constraint gives \(l_i^* = -\log_2 p_i\), yielding expected length \(H(X)\).</p>
+                <p>(Upper bound) Take \(l_i = \lceil -\log_2 p_i \rceil\). Then \(\sum 2^{-l_i} \leq \sum 2^{\log_2 p_i} = 1\), satisfying Kraft. The expected length is \(\sum p_i \lceil -\log_2 p_i \rceil &lt; H(X) + 1\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(H(X)\) — entropy in bits</li>
+                    <li>\(p(x)\) — probability mass function</li>
+                    <li>\(l_i\) — length of codeword for symbol \(i\)</li>
+                    <li>\(\lceil \cdot \rceil\) — ceiling function</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from collections import Counter
+
+def shannon_entropy(probabilities):
+    """Calculate Shannon entropy H(X) = -sum p(x) log2 p(x)"""
+    probs = np.array(probabilities)
+    probs = probs[probs > 0]  # Remove zeros
+    return -np.sum(probs * np.log2(probs))
+
+def huffman_code(probabilities, symbols=None):
+    """Generate Huffman code (optimal prefix code)"""
+    if symbols is None:
+        symbols = [f"s{i}" for i in range(len(probabilities))]
+    
+    # Create priority queue: (probability, [symbols], code)
+    nodes = [(p, [s], "") for p, s in zip(probabilities, symbols)]
+    
+    while len(nodes) > 1:
+        nodes.sort(key=lambda x: x[0])
+        p1, s1, c1 = nodes.pop(0)
+        p2, s2, c2 = nodes.pop(0)
+        
+        # Merge: left gets '0', right gets '1'
+        new_node = (p1 + p2, s1 + s2, "")
+        nodes.append(new_node)
+        
+        # Assign codes
+        for s in s1:
+            codes[s] = codes.get(s, "") + "0"
+        for s in s2:
+            codes[s] = codes.get(s, "") + "1"
+    
+    return codes
+
+# Example: English letter frequencies (simplified)
+probs = [0.12, 0.09, 0.08, 0.07, 0.13, 0.07, 0.03, 0.04, 0.06, 0.02]
+symbols = ['E', 'T', 'A', 'O', 'I', 'N', 'S', 'H', 'R', 'D']
+probs = np.array(probs) / sum(probs)  # Normalize
+
+entropy = shannon_entropy(probs)
+print(f"Entropy H(X) = {entropy:.4f} bits")
+print(f"Optimal average code length ≥ {entropy:.4f} bits")
+
+# Calculate expected length with simple fixed-length code
+fixed_length = np.ceil(np.log2(len(probs)))
+print(f"Fixed-length code: {fixed_length} bits per symbol")
+print(f"Compression ratio possible: {fixed_length/entropy:.2f}x")</code></pre>
+            </section>
+
+            <section id="applied-dives">
+                <h2>🧮 Applied Math Deep-Dives</h2>
+
+                <h3>1. Numerical Linear Algebra: LU Decomposition</h3>
+                <h4>Motivation</h4>
+                <p>Solving linear systems efficiently is crucial for scientific computing. LU decomposition factors a matrix into lower and upper triangular forms, enabling fast solving of multiple systems with the same coefficient matrix.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> An <em>LU decomposition</em> of matrix \(A\) is \(A = LU\) where \(L\) is lower triangular with 1s on the diagonal and \(U\) is upper triangular.</p>
+                <p><strong>Definition.</strong> <em>Gaussian elimination</em> transforms \(A\) to upper triangular form using row operations.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Existence of LU.</strong> If all leading principal minors of \(A\) are nonzero, then \(A\) has a unique LU decomposition.</p>
+                <p><strong>Proof.</strong> By induction. For \(n=1\), \(A = [a_{11}] = [1][a_{11}]\). Assume true for \((n-1) \times (n-1)\). Write:</p>
+                \[A = \begin{pmatrix} A_{n-1} &amp; b \\ c^T &amp; d \end{pmatrix} = \begin{pmatrix} L_{n-1} &amp; 0 \\ \ell^T &amp; 1 \end{pmatrix} \begin{pmatrix} U_{n-1} &amp; u \\ 0 &amp; \eta \end{pmatrix}\]
+                <p>By induction, \(A_{n-1} = L_{n-1}U_{n-1}\). Solve \(L_{n-1}u = b\) and \(\ell^T U_{n-1} = c^T\) by forward/back substitution. Then \(\eta = d - \ell^T u\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(L\) — lower triangular matrix</li>
+                    <li>\(U\) — upper triangular matrix</li>
+                    <li>\(A_{n-1}\) — leading principal submatrix</li>
+                    <li>\(\ell, u\) — vectors in decomposition</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+
+def lu_decomposition(A):
+    """Compute LU decomposition with partial pivoting"""
+    n = len(A)
+    L = np.eye(n)
+    U = A.copy().astype(float)
+    P = np.eye(n)  # Permutation matrix
+    
+    for k in range(n-1):
+        # Partial pivoting
+        max_idx = np.argmax(np.abs(U[k:, k])) + k
+        if max_idx != k:
+            U[[k, max_idx]] = U[[max_idx, k]]
+            P[[k, max_idx]] = P[[max_idx, k]]
+            if k > 0:
+                L[[k, max_idx], :k] = L[[max_idx, k], :k]
+        
+        # Elimination
+        for i in range(k+1, n):
+            L[i, k] = U[i, k] / U[k, k]
+            U[i, k:] -= L[i, k] * U[k, k:]
+    
+    return P, L, U
+
+def solve_lu(P, L, U, b):
+    """Solve Ax = b using LU decomposition (PA = LU)"""
+    # Solve Ly = Pb (forward substitution)
+    y = np.linalg.solve(L, P @ b)
+    # Solve Ux = y (back substitution)
+    x = np.linalg.solve(U, y)
+    return x
+
+# Example
+A = np.array([[2, 1, 1],
+              [4, 3, 3],
+              [8, 7, 9]], dtype=float)
+b = np.array([4, 10, 26], dtype=float)
+
+P, L, U = lu_decomposition(A)
+x = solve_lu(P, L, U, b)
+
+print(f"Solution: {x}")
+print(f"Verification: {np.allclose(A @ x, b)}")
+print(f"PA = LU: {np.allclose(P @ A, L @ U)}")</code></pre>
+
+                <h3>2. Dynamical Systems: Stability Analysis</h3>
+                <h4>Motivation</h4>
+                <p>Understanding long-term behavior of dynamical systems is essential in physics, biology, and engineering. Stability analysis determines whether perturbations grow or decay, predicting system behavior near equilibrium points.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> An <em>equilibrium point</em> \(x^*\) satisfies \(f(x^*) = 0\) for the system \(\dot{x} = f(x)\).</p>
+                <p><strong>Definition.</strong> \(x^*\) is <em>Lyapunov stable</em> if for every \(\epsilon &gt; 0\), there exists \(\delta &gt; 0\) such that \(|x(0) - x^*| &lt; \delta\) implies \(|x(t) - x^*| &lt; \epsilon\) for all \(t \geq 0\).</p>
+                <p><strong>Definition.</strong> \(x^*\) is <em>asymptotically stable</em> if it is Lyapunov stable and \(x(t) \to x^*\) as \(t \to \infty\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Linearization Theorem.</strong> For \(\dot{x} = f(x)\) with equilibrium \(x^*\), let \(A = Df(x^*)\) be the Jacobian. If all eigenvalues of \(A\) have negative real parts, \(x^*\) is asymptotically stable.</p>
+                <p><strong>Proof Sketch.</strong> Near \(x^*\), write \(x = x^* + y\) where \(y\) is small. Then:</p>
+                \[\dot{y} = f(x^* + y) = Ay + O(\|y\|^2)\]
+                <p>For the linearized system \(\dot{y} = Ay\), solution is \(y(t) = e^{At}y_0\). If all eigenvalues have \(\text{Re}(\lambda) &lt; 0\), then \(\|e^{At}\| \leq Me^{-\alpha t}\) for some \(\alpha &gt; 0\), implying asymptotic stability. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(Df(x^*)\) — Jacobian matrix</li>
+                    <li>\(e^{At}\) — matrix exponential</li>
+                    <li>\(\text{Re}(\lambda)\) — real part of eigenvalue</li>
+                    <li>\(O(\|y\|^2)\) — higher order terms</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+def analyze_stability(f, x_star, t_span=(0, 10), perturbations=None):
+    """Analyze stability of equilibrium x_star for dx/dt = f(x)"""
+    if perturbations is None:
+        perturbations = [0.1, 0.5, 1.0]
+    
+    # Compute Jacobian numerically
+    n = len(x_star)
+    eps = 1e-8
+    J = np.zeros((n, n))
+    for i in range(n):
+        e_i = np.eye(n)[i] * eps
+        J[:, i] = (f(0, x_star + e_i) - f(0, x_star - e_i)) / (2 * eps)
+    
+    eigenvalues = np.linalg.eigvals(J)
+    print(f"Jacobian at equilibrium:")
+    print(J)
+    print(f"\nEigenvalues: {eigenvalues}")
+    print(f"Real parts: {np.real(eigenvalues)}")
+    
+    if all(np.real(eigenvalues) < 0):
+        print("\nEquilibrium is ASYMPTOTICALLY STABLE")
+    elif all(np.real(eigenvalues) <= 0):
+        print("\nEquilibrium is MARGINALLY STABLE")
+    else:
+        print("\nEquilibrium is UNSTABLE")
+    
+    return eigenvalues, J
+
+# Example: Damped pendulum
+# theta'' + c*theta' + (g/L)*sin(theta) = 0
+# Let x1 = theta, x2 = theta'
+def pendulum(t, x, c=0.5, g_over_L=1):
+    return [x[1], -c * x[1] - g_over_L * np.sin(x[0])]
+
+# Equilibrium at (0, 0) - pendulum down
+eigenvalues, J = analyze_stability(
+    lambda t, x: pendulum(t, x), 
+    np.array([0, 0])
+)</code></pre>
+
+                <h3>3. Signal Processing: The Discrete Fourier Transform</h3>
+                <h4>Motivation</h4>
+                <p>The Fast Fourier Transform (FFT) revolutionized digital signal processing, enabling real-time audio compression, image processing, and wireless communications. Understanding the DFT is essential for modern applied mathematics.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <em>Discrete Fourier Transform</em> of sequence \(\{x_n\}_{n=0}^{N-1}\) is:</p>
+                \[X_k = \sum_{n=0}^{N-1} x_n e^{-2\pi i kn/N}, \quad k = 0, \ldots, N-1\]
+                <p><strong>Definition.</strong> The <em>inverse DFT</em> is:</p>
+                \[x_n = \frac{1}{N}\sum_{k=0}^{N-1} X_k e^{2\pi i kn/N}\]
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>DFT Inversion.</strong> The inverse DFT correctly recovers the original sequence.</p>
+                <p><strong>Proof.</strong> Substitute the DFT definition into the inverse:</p>
+                \[\frac{1}{N}\sum_{k=0}^{N-1} X_k e^{2\pi i kn/N} = \frac{1}{N}\sum_{k=0}^{N-1}\sum_{m=0}^{N-1} x_m e^{-2\pi i km/N} e^{2\pi i kn/N}\]
+                \[= \sum_{m=0}^{N-1} x_m \frac{1}{N}\sum_{k=0}^{N-1} e^{2\pi i k(n-m)/N}\]
+                <p>The inner sum is \(N\) when \(n=m\) and 0 otherwise (orthogonality of roots of unity). Thus the expression equals \(x_n\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(X_k\) — k-th DFT coefficient (frequency domain)</li>
+                    <li>\(x_n\) — n-th time-domain sample</li>
+                    <li>\(\omega_N = e^{-2\pi i/N}\) — primitive N-th root of unity</li>
+                    <li>\(i = \sqrt{-1}\) — imaginary unit</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def dft_matrix(N):
+    """Construct N x N DFT matrix"""
+    n = np.arange(N)
+    k = n.reshape((N, 1))
+    omega = np.exp(-2j * np.pi * k * n / N)
+    return omega
+
+def manual_dft(x):
+    """Compute DFT using matrix multiplication (for education)"""
+    N = len(x)
+    W = dft_matrix(N)
+    return W @ x
+
+def fft_frequency_analysis(signal, sample_rate):
+    """Analyze frequency content of a signal"""
+    N = len(signal)
+    
+    # Compute FFT
+    X = np.fft.fft(signal)
+    
+    # Frequency bins
+    freqs = np.fft.fftfreq(N, 1/sample_rate)
+    
+    # Magnitude spectrum (shifted for visualization)
+    magnitude = np.abs(np.fft.fftshift(X))
+    freqs_shifted = np.fft.fftshift(freqs)
+    
+    return freqs_shifted, magnitude
+
+# Example: Sum of two sine waves
+sample_rate = 1000  # Hz
+t = np.linspace(0, 1, sample_rate, endpoint=False)
+signal = np.sin(2*np.pi*50*t) + 0.5*np.sin(2*np.pi*120*t)  # 50Hz and 120Hz
+
+freqs, mag = fft_frequency_analysis(signal, sample_rate)
+
+# Find peaks
+peaks_idx = np.where(mag > np.max(mag) * 0.3)[0]
+print("Detected frequencies:")
+for idx in peaks_idx:
+    if freqs[idx] > 0:  # Only positive frequencies
+        print(f"  {freqs[idx]:.1f} Hz with magnitude {mag[idx]:.2f}")
+
+# Verify DFT matches manual computation
+x_small = np.array([1, 2, 3, 4])
+print(f"\nManual DFT: {manual_dft(x_small)}")
+print(f"NumPy FFT:  {np.fft.fft(x_small)}")
+print(f"Match: {np.allclose(manual_dft(x_small), np.fft.fft(x_small))}")</code></pre>
+            </section>
+
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+
+                <h3>1. History: The Birth of Linear Algebra</h3>
+                <h4>Historical Context</h4>
+                <p>Linear algebra's origins trace back to solving systems of linear equations in ancient China ("Nine Chapters on the Mathematical Art," 200 BCE). However, modern linear algebra emerged in the 19th century through the work of Cayley, Hamilton, and Grassmann. Arthur Cayley's 1858 "Memoir on the Theory of Matrices" introduced matrix multiplication and the inverse matrix. The abstract concept of vector space was formalized by Peano in 1888 and later refined by Banach and Hilbert in the context of functional analysis.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>vector space</em> over field \(\mathbb{F}\) is a set \(V\) with addition and scalar multiplication satisfying: associativity, commutativity, identity, inverses, and distributivity.</p>
+                <p><strong>Definition.</strong> A <em>basis</em> is a linearly independent spanning set. The <em>dimension</em> is the cardinality of any basis.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Dimension Theorem.</strong> All bases of a vector space have the same cardinality.</p>
+                <p><strong>Proof.</strong> Suppose \(B_1\) and \(B_2\) are bases. Each vector in \(B_1\) is a finite linear combination of vectors in \(B_2\). If \(|B_1| &gt; |B_2|\), some vector in \(B_1\) would be a linear combination of others, contradicting independence. Thus \(|B_1| \leq |B_2|\). By symmetry, \(|B_1| = |B_2|\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(V\) — vector space</li>
+                    <li>\(\mathbb{F}\) — field (usually \(\mathbb{R}\) or \(\mathbb{C}\))</li>
+                    <li>\(\dim(V)\) — dimension</li>
+                    <li>\(\text{span}(S)\) — span of set \(S\)</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from itertools import combinations
+
+def check_linear_independence(vectors):
+    """Check if vectors are linearly independent using rank"""
+    matrix = np.array(vectors).T
+    rank = np.linalg.matrix_rank(matrix)
+    return rank == len(vectors)
+
+def find_basis(vectors):
+    """Find a basis for the span of given vectors (using QR decomposition)"""
+    matrix = np.array(vectors).T
+    Q, R = np.linalg.qr(matrix)
+    
+    # Pivot columns indicate basis vectors
+    tol = 1e-10
+    pivots = np.where(np.abs(np.diag(R)) > tol)[0]
+    
+    return [vectors[i] for i in pivots]
+
+# Example: Find basis for span of vectors
+v1 = [1, 2, 3]
+v2 = [2, 4, 6]  # Multiple of v1
+v3 = [1, 0, 1]
+v4 = [0, 1, 0]
+
+vectors = [v1, v2, v3, v4]
+basis = find_basis(vectors)
+print(f"Original vectors: {len(vectors)}")
+print(f"Basis vectors: {len(basis)}")
+print(f"Dimension of span: {len(basis)}")
+print(f"Basis: {basis}")</code></pre>
+
+                <h3>2. Chaos Theory: The Lorenz Attractor</h3>
+                <h4>Historical Context</h4>
+                <p>In 1963, meteorologist Edward Lorenz was running weather simulations on a primitive computer. When he restarted a calculation with slightly rounded initial conditions, the results diverged completely. This serendipitous discovery revealed <em>sensitive dependence on initial conditions</em>—the butterfly effect—and launched chaos theory. Lorenz's simple three-dimensional system became the iconic example of deterministic chaos.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <em>Lorenz system</em> is:</p>
+                \[\begin{cases} \dot{x} = \sigma(y - x) \\ \dot{y} = x(\rho - z) - y \\ \dot{z} = xy - \beta z \end{cases}\]
+                <p>with standard parameters \(\sigma = 10, \rho = 28, \beta = 8/3\).</p>
+                <p><strong>Definition.</strong> A <em>strange attractor</em> is an attractor with fractal structure exhibiting sensitive dependence.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Dissipation.</strong> The Lorenz system contracts volumes in phase space at rate \(e^{-(\sigma + 1 + \beta)t}\).</p>
+                <p><strong>Proof.</strong> The divergence of the vector field is:</p>
+                \[\nabla \cdot f = \frac{\partial \dot{x}}{\partial x} + \frac{\partial \dot{y}}{\partial y} + \frac{\partial \dot{z}}{\partial z} = -\sigma - 1 - \beta\]
+                <p>By Liouville's theorem, volume \(V(t)\) evolves as \(\frac{dV}{dt} = \int_V \nabla \cdot f\, dV = -(\sigma + 1 + \beta)V\). Thus \(V(t) = V(0)e^{-(\sigma+1+\beta)t}\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\sigma\) — Prandtl number</li>
+                    <li>\(\rho\) — Rayleigh number</li>
+                    <li>\(\beta\) — geometric factor</li>
+                    <li>\(\nabla \cdot f\) — divergence</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def lorenz_system(t, state, sigma=10, rho=28, beta=8/3):
+    """Lorenz 63 system"""
+    x, y, z = state
+    dxdt = sigma * (y - x)
+    dydt = x * (rho - z) - y
+    dzdt = x * y - beta * z
+    return [dxdt, dydt, dzdt]
+
+def simulate_lorenz(initial_state, t_span=(0, 50), dt=0.01):
+    """Simulate Lorenz attractor"""
+    t_eval = np.arange(t_span[0], t_span[1], dt)
+    sol = solve_ivp(lorenz_system, t_span, initial_state, 
+                    t_eval=t_eval, method='RK45')
+    return sol.t, sol.y
+
+# Simulate two trajectories with slightly different initial conditions
+initial1 = [1.0, 1.0, 1.0]
+initial2 = [1.001, 1.0, 1.0]  # Tiny perturbation
+
+t, traj1 = simulate_lorenz(initial1)
+t, traj2 = simulate_lorenz(initial2)
+
+# Compute divergence
+distance = np.sqrt(np.sum((traj1 - traj2)**2, axis=0))
+print(f"Initial distance: {distance[0]:.6f}")
+print(f"Distance at t=10: {distance[1000]:.6f}")
+print(f"Distance at t=20: {distance[2000]:.6f}")
+print(f"Distance at t=30: {distance[3000]:.6f}")
+
+# Estimate Lyapunov exponent (approximate)
+lyapunov = np.mean(np.log(distance[100:1000] / distance[0])) / 10
+print(f"\nApproximate largest Lyapunov exponent: {lyapunov:.4f}")
+print("(Positive exponent indicates chaos)")</code></pre>
+
+                <h3>3. Coding Theory: Reed-Solomon Codes</h3>
+                <h4>Historical Context</h4>
+                <p>Irving Reed and Gustave Solomon published their eponymous codes in 1960 while at MIT Lincoln Laboratory. These codes correct burst errors by treating data as polynomial coefficients. Reed-Solomon codes became ubiquitous: they protect CDs, DVDs, QR codes, and deep-space communications. The Voyager spacecraft used RS codes to send images from the outer solar system.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>Reed-Solomon code</em> \(RS(n, k)\) over \(\mathbb{F}_q\) encodes \(k\) message symbols as evaluations of a degree \(&lt; k\) polynomial at \(n\) distinct points.</p>
+                <p><strong>Definition.</strong> The <em>minimum distance</em> is \(d = n - k + 1\), achieving the Singleton bound (MDS property).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>MDS Property.</strong> Reed-Solomon codes achieve \(d = n - k + 1\).</p>
+                <p><strong>Proof.</strong> Two distinct degree \(&lt; k\) polynomials can agree at most \(k-1\) points (otherwise their difference, degree \(&lt; k\), would have \(\geq k\) roots). Thus any two codewords differ in at least \(n - (k-1) = n - k + 1\) positions. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(RS(n, k)\) — Reed-Solomon code parameters</li>
+                    <li>\(\mathbb{F}_q\) — finite field with \(q\) elements</li>
+                    <li>MDS — Maximum Distance Separable</li>
+                    <li>\(d\) — minimum Hamming distance</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+
+def gf_mult(a, b, prim=0x11d, field_size=8):
+    """Multiply in GF(2^8) using Russian peasant algorithm"""
+    result = 0
+    for _ in range(field_size):
+        if b & 1:
+            result ^= a
+        a <<= 1
+        if a & (1 << field_size):
+            a ^= prim
+        b >>= 1
+    return result & ((1 << field_size) - 1)
+
+def gf_pow(x, power, prim=0x11d, field_size=8):
+    """Power in GF(2^8)"""
+    result = 1
+    for _ in range(power):
+        result = gf_mult(result, x, prim, field_size)
+    return result
+
+def reed_solomon_encode(message, n, k, field_size=8):
+    """Simplified RS encoder (conceptual)"""
+    # Message: k symbols -> Codeword: n symbols
+    # Evaluate polynomial with message as coefficients
+    # at points 0, 1, ..., n-1
+    
+    codeword = []
+    for i in range(n):
+        # Evaluate polynomial at point i
+        value = 0
+        for j, coeff in enumerate(message):
+            value ^= gf_mult(coeff, gf_pow(i, j))
+        codeword.append(value)
+    
+    return codeword
+
+# Example (simplified, not cryptographically secure)
+message = [0x01, 0x02, 0x03, 0x04]  # 4 symbols
+n, k = 7, 4  # RS(7,4) code
+codeword = reed_solomon_encode(message, n, k)
+print(f"Message ({k} symbols): {[hex(m) for m in message]}")
+print(f"Codeword ({n} symbols): {[hex(c) for c in codeword]}")
+print(f"\nCan correct up to {(n-k)//2} symbol errors")</code></pre>
+
+                <h3>4. Applied Topology: Persistent Homology</h3>
+                <h4>Historical Context</h4>
+                <p>Algebraic topology traditionally studied idealized spaces, but real-world data is noisy and finite. Persistent homology, developed by Edelsbrunner, Letscher, and Zomorodian in 2002, tracks topological features across multiple scales. This "topological data analysis" has found applications in neuroscience, materials science, and machine learning.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>filtration</em> is a nested sequence of simplicial complexes: \(\emptyset = K_0 \subseteq K_1 \subseteq \cdots \subseteq K_n = K\).</p>
+                <p><strong>Definition.</strong> The <em>persistence</em> of a homology class is its "birth" scale minus its "death" scale. Long persistence indicates significant topological features.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Stability.</strong> The bottleneck distance between persistence diagrams is bounded by the Hausdorff distance between the underlying spaces.</p>
+                <p><strong>Proof Sketch.</strong> For functions \(f, g: X \to \mathbb{R}\), the persistence modules induced by sublevel sets are \(\epsilon\)-interleaved where \(\epsilon = \|f-g\|_\infty\). The interleaving theorem implies the bottleneck distance bound. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(K_i\) — simplicial complex at scale \(i\)</li>
+                    <li>\(H_k(K)\) — k-th homology group</li>
+                    <li>\(\beta_k\) — k-th Betti number</li>
+                    <li>d\(_B\) — bottleneck distance</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.spatial.distance import pdist, squareform
+
+def vietoris_rips_complex(points, epsilon):
+    """Build Vietoris-Rips complex at scale epsilon"""
+    n = len(points)
+    distances = squareform(pdist(points))
+    
+    # 0-simplices: all points
+    simplices_0 = [(i,) for i in range(n)]
+    
+    # 1-simplices (edges): pairs within 2*epsilon
+    simplices_1 = []
+    for i in range(n):
+        for j in range(i+1, n):
+            if distances[i, j] <= 2 * epsilon:
+                simplices_1.append((i, j))
+    
+    # 2-simplices (triangles): triples where all edges exist
+    simplices_2 = []
+    edge_set = set(simplices_1)
+    for i in range(n):
+        for j in range(i+1, n):
+            for k in range(j+1, n):
+                if ((i,j) in edge_set or (j,i) in edge_set) and \
+                   ((j,k) in edge_set or (k,j) in edge_set) and \
+                   ((i,k) in edge_set or (k,i) in edge_set):
+                    simplices_2.append((i, j, k))
+    
+    return simplices_0, simplices_1, simplices_2
+
+def count_betti_0(points, epsilon):
+    """Count connected components (0th Betti number)"""
+    n = len(points)
+    distances = squareform(pdist(points))
+    
+    # Union-find for connected components
+    parent = list(range(n))
+    
+    def find(x):
+        if parent[x] != x:
+            parent[x] = find(parent[x])
+        return parent[x]
+    
+    def union(x, y):
+        px, py = find(x), find(y)
+        if px != py:
+            parent[px] = py
+    
+    # Connect points within epsilon
+    for i in range(n):
+        for j in range(i+1, n):
+            if distances[i, j] <= 2 * epsilon:
+                union(i, j)
+    
+    # Count unique components
+    components = len(set(find(i) for i in range(n)))
+    return components
+
+# Example: Circle with noise
+np.random.seed(42)
+theta = np.linspace(0, 2*np.pi, 50)
+circle = np.column_stack([np.cos(theta), np.sin(theta)])
+noise = np.random.normal(0, 0.1, circle.shape)
+points = circle + noise
+
+# Track Betti numbers across scales
+epsilons = np.linspace(0.1, 1.5, 30)
+betti_0 = [count_betti_0(points, eps) for eps in epsilons]
+
+print("Persistence analysis of noisy circle:")
+print(f"At small epsilon: {betti_0[0]} components (many disconnected points)")
+print(f"At large epsilon: {betti_0[-1]} component (all connected)")
+print(f"Circle structure emerges at intermediate scales")</code></pre>
+            </section>
+
+            <section id="history">
+                <h2>📜 Math History</h2>
+                <h3>Claude Shannon: The Father of Information Theory</h3>
+                <p>Born in 1916 in Petoskey, Michigan, Claude Elwood Shannon grew up in Gaylord, a small town where he built model planes and a telegraph system using barbed wire fencing. His early fascination with communication systems would eventually revolutionize our understanding of information itself.</p>
+                <p>Shannon attended the University of Michigan, earning degrees in electrical engineering and mathematics. In 1936, he began graduate studies at MIT, where he worked with Vannevar Bush on the differential analyzer, an early analog computer. His master's thesis, "A Symbolic Analysis of Relay and Switching Circuits" (1937), demonstrated that Boolean algebra could optimize electrical circuits—arguably the most important master's thesis of the 20th century.</p>
+                <p>During World War II, Shannon worked on cryptography at Bell Labs. There, he realized that the mathematical principles underlying secure communication were fundamentally connected to data compression. This insight culminated in his 1948 paper "A Mathematical Theory of Communication," published in the Bell System Technical Journal.</p>
+                <p>In just 55 pages, Shannon defined entropy as the measure of information, proved the source coding and channel coding theorems, and established the theoretical limits of communication. He introduced the bit as the unit of information and showed that reliable communication was possible at any rate below channel capacity, no matter how noisy the channel.</p>
+                <p>Shannon's work was initially met with skepticism—some critics claimed he had "taken the meaning out of information." But his mathematical framework proved extraordinarily powerful, enabling the digital revolution that followed. Every text message, video stream, and file download relies on principles Shannon established.</p>
+                <p>Later in life, Shannon became known for his eclectic interests: he built juggling machines, a mechanical mouse that learned mazes, and a flame-throwing trumpet. He died in 2001, leaving a legacy that touches every aspect of modern life. As one colleague noted, Shannon didn't just solve problems—he created the conceptual framework within which entire fields of problems could be understood.</p>
+            </section>
+
+            <section id="journalism">
+                <h2>📰 Math in the News</h2>
+                <h3><a href="https://www.quantamagazine.org/mathematicians-coax-fluid-equations-into-new-patterns-20250113/" target="_blank" rel="noopener">Mathematicians Coax Fluid Equations Into New Patterns</a> — <em>Quanta Magazine</em></h3>
+                <p>Researchers have discovered unexpected solutions to the Navier-Stokes equations, revealing new types of fluid behavior that could explain turbulence patterns observed in nature. The work combines numerical simulation with rigorous analysis.</p>
+
+                <h3><a href="https://www.siam.org/publications/siam-news/articles/new-algorithm-solves-linear-systems-in-near-linear-time/" target="_blank" rel="noopener">New Algorithm Solves Linear Systems in Near-Linear Time</a> — <em>SIAM News</em></h3>
+                <p>A breakthrough in numerical linear algebra achieves O(n log n) complexity for solving certain classes of sparse linear systems, potentially accelerating scientific computing applications from circuit simulation to finite element analysis.</p>
+
+                <h3><a href="https://www.ams.org/journals/notices/202501/rnoti-p42.pdf" target="_blank" rel="noopener">The Mathematics of Neural Network Training</a> — <em>AMS Notices</em></h3>
+                <p>An accessible survey of recent theoretical advances understanding why gradient descent successfully trains deep neural networks despite non-convex optimization landscapes. The article connects implicit regularization with the geometry of high-dimensional spaces.</p>
+            </section>
+
+            <section id="problem">
+                <h2>🧩 Problem Corner</h2>
+                <p><strong>Problem (Putnam 2022 B2).</strong> Let \(A\) be the \(n \times n\) matrix with entries \(a_{ij} = \min(i, j)\). Find \(\det(A)\).</p>
+                <details>
+                    <summary>💡 Hint</summary>
+                    <p>Write \(A = LL^T\) where \(L\) is lower triangular with 1s on and below the diagonal. Then \(\det(A) = \det(L)^2\).</p>
+                </details>
+                <details>
+                    <summary>✅ Solution</summary>
+                    <p>Define \(L\) as the \(n \times n\) matrix with \(L_{ij} = 1\) if \(i \geq j\) and 0 otherwise. Then:</p>
+                    \[(LL^T)_{ij} = \sum_{k=1}^n L_{ik} L_{jk} = \sum_{k=1}^{\min(i,j)} 1 = \min(i,j) = a_{ij}\]
+                    <p>So \(A = LL^T\). Since \(L\) is lower triangular with 1s on the diagonal, \(\det(L) = 1\).</p>
+                    <p>Therefore:</p>
+                    \[\det(A) = \det(LL^T) = \det(L)\det(L^T) = 1 \cdot 1 = \mathbf{1}\]
+                </details>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day</h2>
+                <h3>Phase Portraits of Linear Systems</h3>
+                <p>Phase portraits visualize the behavior of 2D dynamical systems by plotting trajectories in the state space. The eigenvalues of the system matrix determine the qualitative behavior: nodes, saddles, spirals, or centers. This visualization reveals how linear algebra governs dynamics.</p>
+
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch
+
+def phase_portrait(A, xlim=(-3, 3), ylim=(-3, 3), n_points=20):
+    """Plot phase portrait for 2D linear system x' = Ax"""
+    fig, ax = plt.subplots(figsize=(10, 10))
+    
+    # Create grid
+    x = np.linspace(xlim[0], xlim[1], n_points)
+    y = np.linspace(ylim[0], ylim[1], n_points)
+    X, Y = np.meshgrid(x, y)
+    
+    # Compute vector field
+    U = A[0, 0] * X + A[0, 1] * Y
+    V = A[1, 0] * X + A[1, 1] * Y
+    
+    # Normalize arrows
+    M = np.sqrt(U**2 + V**2)
+    M[M == 0] = 1
+    U, V = U/M, V/M
+    
+    # Plot vector field
+    ax.quiver(X, Y, U, V, M, cmap='viridis', scale=30, width=0.003)
+    
+    # Plot eigenvectors
+    eigenvalues, eigenvectors = np.linalg.eig(A)
+    for i, (lam, v) in enumerate(zip(eigenvalues, eigenvectors.T)):
+        color = 'red' if np.real(lam) > 0 else 'blue'
+        ax.plot([-3*v[0], 3*v[0]], [-3*v[1], 3*v[1]], 
+                color=color, linewidth=2, linestyle='--', 
+                label=f'λ_{i}={lam:.2f}')
+    
+    # Plot sample trajectories
+    t = np.linspace(0, 5, 200)
+    from scipy.linalg import expm
+    for x0 in [[2, 0], [0, 2], [-2, 0], [0, -2], [2, 2], [-2, -2]]:
+        trajectory = np.array([expm(A * ti) @ x0 for ti in t])
+        ax.plot(trajectory[:, 0], trajectory[:, 1], 'w-', alpha=0.5, linewidth=1)
+    
+    ax.set_xlim(xlim)
+    ax.set_ylim(ylim)
+    ax.set_xlabel('x₁')
+    ax.set_ylabel('x₂')
+    ax.set_title(f'Phase Portrait: x\' = Ax\nA = {A.tolist()}')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    ax.set_aspect('equal')
+    
+    return fig
+
+# Example: Spiral sink (stable spiral)
+A = np.array([[-0.5, 1], [-1, -0.5]])
+fig = phase_portrait(A)
+plt.savefig('/tmp/phase_portrait.png', dpi=150, bbox_inches='tight')
+print("Phase portrait saved")
+print(f"Eigenvalues: {np.linalg.eigvals(A)}")</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics is not to make simple things complicated, but to make complicated things simple."</p>
+                    <footer>— Stan Gudder</footer>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="../posts/index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Algebra: The Geometry of Vector Spaces - Nothing But Real Math</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>Nothing But Real Math</h1>
+        <p class="site-description">Pure mathematics, deep dives, and applications</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html">Archive</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <article>
+            <h1>Linear Algebra: The Geometry of Vector Spaces</h1>
+            <p class="post-date">February 16, 2026 | 17:00</p>
+            <ul class="tags">
+                <li class="tag"><a href="../tags/linear-algebra.html">Linear Algebra</a></li>
+                <li class="tag"><a href="../tags/algebra.html">Algebra</a></li>
+                <li class="tag"><a href="../tags/geometry.html">Geometry</a></li>
+            </ul>
+            
+            <section id="math-links">
+                <h2>Math Links</h2>
+                <ul>
+                    <li><a href="https://mathworld.wolfram.com/LinearAlgebra.html">MathWorld: Linear Algebra</a> - Comprehensive reference on matrices, vector spaces, and linear transformations.</li>
+                    <li><a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/">MIT OCW: Linear Algebra</a> - Gilbert Strang's legendary course with full video lectures.</li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">3Blue1Brown: Essence of Linear Algebra</a> - Visual intuition for linear algebra concepts.</li>
+                </ul>
+            </section>
+            
+            <section id="free-book">
+                <h2>Free Math Book</h2>
+                <h3>"Linear Algebra Done Right" by Sheldon Axler (Chapters 1-5 available)</h3>
+                <p><strong>Level:</strong> Undergraduate</p>
+                <p><strong>Summary:</strong> This revolutionary text develops linear algebra without determinants until the end. Starting with vector spaces and linear maps, it builds intuition through the structure of linear operators. The emphasis on understanding rather than computation makes it ideal for mathematics students. Selected chapters and solutions are freely available through the author's website.</p>
+            </section>
+            
+            <section id="pure-math">
+                <h2>Pure Math Deep-Dives</h2>
+                
+                <h3>1. The Rank-Nullity Theorem</h3>
+                <p><strong>Motivation:</strong> How does a linear transformation affect the dimension of a vector space? The rank-nullity theorem provides a fundamental accounting principle.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Linear map:\(T: V \to W\) satisfying \(T(av + bw) = aT(v) + bT(w)\)</li>
+                    <li><strong>Kernel (null space):\(\ker(T) = \{v \in V : T(v) = 0\}\)</li>
+                    <li><strong>Image (range):\(\text{im}(T) = \{T(v) : v \in V\}\)</li>
+                    <li><strong>Rank:\(\dim(\text{im}(T))\)</li>
+                    <li><strong>Nullity:\(\dim(\ker(T))\)</li>
+                </ul>
+                
+                <h4>Theorem (Rank-Nullity)</h4>
+                <p>For a linear map \(T: V \to W\) with \(V\) finite-dimensional:</p>
+                \[\dim(V) = \text{rank}(T) + \text{nullity}(T)\]
+                
+                <h4>Proof</h4>
+                <p>Let \(\{v_1, \ldots, v_k\}\) be a basis for \(\ker(T)\). Extend to a basis \(\{v_1, \ldots, v_k, w_1, \ldots, w_m\}\) of \(V\). We show \(\{T(w_1), \ldots, T(w_m)\}\) is a basis for \(\text{im}(T)\).</p>
+                <p><strong>Spanning:</strong> For any \(v \in V\), write \(v = \sum a_i v_i + \sum b_j w_j\). Then \(T(v) = \sum b_j T(w_j)\) since \(T(v_i) = 0\).</p>
+                <p><strong>Linear independence:</strong> If \(\sum c_j T(w_j) = 0\), then \(T(\sum c_j w_j) = 0\), so \(\sum c_j w_j \in \ker(T)\). Thus \(\sum c_j w_j = \sum d_i v_i\), giving \(\sum c_j w_j - \sum d_i v_i = 0\). By linear independence of the full basis, all \(c_j = 0\). \(\square\)</p>
+                
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\mathcal{L}(V,W)\): Space of linear maps from \(V\) to \(W\)</li>
+                    <li>\(V \cong W\): Vector spaces are isomorphic</li>
+                    <li>\(T|_U\): Restriction of \(T\) to subspace \(U\)</li>
+                </ul>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+from scipy.linalg import null_space, orth
+
+def rank_nullity_theorem(matrix):
+    """
+    Verify rank-nullity theorem for a matrix.
+    Returns rank, nullity, and verification.
+    """
+    m, n = matrix.shape
+    
+    # Compute rank
+    rank = np.linalg.matrix_rank(matrix)
+    
+    # Compute nullity (dimension of null space)
+    ns = null_space(matrix)
+    nullity = ns.shape[1] if ns.size > 0 else 0
+    
+    # Verify theorem
+    theorem_holds = (n == rank + nullity)
+    
+    return {
+        'input_dim': n,
+        'rank': rank,
+        'nullity': nullity,
+        'theorem_holds': theorem_holds,
+        'null_space_basis': ns
+    }
+
+# Example
+A = np.array([[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]])  # Rank 2 matrix
+result = rank_nullity_theorem(A)
+print(f"Matrix shape: {A.shape}")
+print(f"Rank: {result['rank']}, Nullity: {result['nullity']}")
+print(f"Rank + Nullity = {result['rank'] + result['nullity']}")
+print(f"Input dimension: {result['input_dim']}")
+print(f"Theorem verified: {result['theorem_holds']}")</code></pre>
+                
+                <h3>2. The Spectral Theorem</h3>
+                <p><strong>Motivation:</strong> Which matrices can be diagonalized? The spectral theorem characterizes normal matrices and provides the foundation for principal component analysis.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Adjoint:\(T^*\) satisfies \(\langle Tv, w \rangle = \langle v, T^*w \rangle\)</li>
+                    <li><strong>Normal:\(TT^* = T^*T\)</li>
+                    <li><strong>Self-adjoint (Hermitian):\(T = T^*\)</li>
+                    <li><strong>Unitary:\(T^*T = TT^* = I\)</li>
+                    <li><strong>Eigenvalue:\(\lambda\) where \(Tv = \lambda v\) for \(v \neq 0\)</li>
+                </ul>
+                
+                <h4>Theorem (Spectral Theorem for Normal Operators)</h4>
+                <p>A linear operator \(T\) on a finite-dimensional complex inner product space is normal if and only if there exists an orthonormal basis of eigenvectors of \(T\).</p>
+                
+                <h4>Proof (Sketch)</h4>
+                <p>(\(\Rightarrow\)) By induction on dimension. For normal \(T\), let \(\lambda\) be an eigenvalue with unit eigenvector \(v\). Then \(V = \text{span}(v) \oplus \text{span}(v)^\perp\). Show \(T\) preserves this decomposition and apply induction to the restriction.</p>
+                <p>(\(\Leftarrow\)) If \(T\) has an orthonormal eigenbasis, its matrix is diagonal, hence commutes with its conjugate transpose. \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+
+def is_normal(matrix, tol=1e-10):
+    """Check if matrix is normal (commutes with its conjugate transpose)."""
+    return np.allclose(matrix @ matrix.conj().T, 
+                       matrix.conj().T @ matrix, atol=tol)
+
+def spectral_decomposition(matrix):
+    """
+    Compute spectral decomposition of a normal matrix.
+    Returns eigenvalues, eigenvectors, and reconstruction.
+    """
+    if not is_normal(matrix):
+        raise ValueError("Matrix is not normal")
+    
+    eigenvalues, eigenvectors = np.linalg.eigh(matrix)
+    
+    # Verify orthonormality
+    orthonormal = np.allclose(eigenvectors @ eigenvectors.conj().T, np.eye(len(matrix)))
+    
+    # Reconstruct matrix
+    D = np.diag(eigenvalues)
+    reconstruction = eigenvectors @ D @ eigenvectors.conj().T
+    
+    return {
+        'eigenvalues': eigenvalues,
+        'eigenvectors': eigenvectors,
+        'is_orthonormal': orthonormal,
+        'reconstruction_error': np.max(np.abs(matrix - reconstruction))
+    }
+
+# Example: Hermitian matrix
+H = np.array([[2, 1+1j],
+              [1-1j, 3]], dtype=complex)
+result = spectral_decomposition(H)
+print(f"Eigenvalues: {result['eigenvalues']}")
+print(f"Orthonormal basis: {result['is_orthonormal']}")
+print(f"Reconstruction error: {result['reconstruction_error']:.2e}")</code></pre>
+                
+                <h3>3. Singular Value Decomposition</h3>
+                <p><strong>Motivation:</strong> Every matrix, even non-square and non-normal ones, has a canonical decomposition revealing its fundamental geometric action.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Singular values:\(\sigma_1 \geq \sigma_2 \geq \cdots \geq 0\), square roots of eigenvalues of \(A^*A\)</li>
+                    <li><strong>Left singular vectors:\(u_i\), eigenvectors of \(AA^*\)</li>
+                    <li><strong>Right singular vectors:\(v_i\), eigenvectors of \(A^*A\)</li>
+                </ul>
+                
+                <h4>Theorem (Singular Value Decomposition)</h4>
+                <p>Every \(m \times n\) matrix \(A\) can be written as:</p>
+                \[A = U\Sigma V^*\]
+                <p>where \(U\) is \(m \times m\) unitary, \(V\) is \(n \times n\) unitary, and \(\Sigma\) is \(m \times n\) diagonal with non-negative real entries (singular values).</p>
+                
+                <h4>Proof Sketch</h4>
+                <p>\(A^*A\) is positive semi-definite, so diagonalizable: \(A^*A = VDV^*\). Define \(\Sigma = D^{1/2}\) and \(U = AV\Sigma^+\) (where \(\Sigma^+\) is pseudoinverse). Verify \(U\) is unitary and \(A = U\Sigma V^*\). \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+
+def svd_compression(matrix, k):
+    """
+    Compress matrix using top-k singular values.
+    """
+    U, s, Vh = np.linalg.svd(matrix, full_matrices=False)
+    
+    # Keep only top k components
+    U_k = U[:, :k]
+    s_k = s[:k]
+    Vh_k = Vh[:k, :]
+    
+    # Reconstruct
+    compressed = U_k @ np.diag(s_k) @ Vh_k
+    
+    # Compression ratio
+    original_size = matrix.size
+    compressed_size = U_k.size + k + Vh_k.size
+    ratio = original_size / compressed_size
+    
+    return {
+        'compressed': compressed,
+        'error': np.linalg.norm(matrix - compressed, 'fro'),
+        'relative_error': np.linalg.norm(matrix - compressed, 'fro') / np.linalg.norm(matrix, 'fro'),
+        'compression_ratio': ratio,
+        'singular_values': s
+    }
+
+# Example: Image compression simulation
+np.random.seed(42)
+image = np.random.rand(100, 100)
+for k in [5, 10, 20, 50]:
+    result = svd_compression(image, k)
+    print(f"k={k}: Relative error={result['relative_error']:.4f}, "
+          f"Compression={result['compression_ratio']:.1f}x")</code></pre>
+            </section>
+            
+            <section id="applied-math">
+                <h2>Applied Math Deep-Dives</h2>
+                
+                <h3>1. Principal Component Analysis</h3>
+                <p><strong>Real-world motivation:</strong> High-dimensional data (images, gene expressions, financial time series) often lies near low-dimensional subspaces. PCA finds these subspaces for compression and visualization.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Covariance matrix:\(\Sigma = \frac{1}{n}X^TX\) for centered data \(X\)</li>
+                    <li><strong>Principal components:\(v_1, v_2, \ldots\), eigenvectors of \(\Sigma\)</li>
+                    <li><strong>Explained variance:\(\lambda_i / \sum_j \lambda_j\)</li>
+                </ul>
+                
+                <h4>Theorem (PCA Optimality)</h4>
+                <p>The \(k\)-dimensional subspace maximizing projected variance is spanned by the top \(k\) eigenvectors of the covariance matrix.</p>
+                
+                <h4>Proof</h4>
+                <p>For projection matrix \(P\) onto a \(k\)-dimensional subspace, the projected variance is \(\text{tr}(P\Sigma P)\). By the spectral theorem, \(\Sigma = V\Lambda V^T\). Writing \(P = WW^T\) where \(W\) has orthonormal columns, we maximize \(\text{tr}(W^T\Sigma W) = \sum_{i=1}^k w_i^T \Sigma w_i\). By the Courant-Fischer theorem, this is maximized when \(w_i = v_i\), the top eigenvectors. \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class PCA:
+    """Principal Component Analysis implementation."""
+    
+    def __init__(self, n_components):
+        self.n_components = n_components
+        self.components_ = None
+        self.explained_variance_ = None
+        self.mean_ = None
+    
+    def fit(self, X):
+        """Fit PCA to data X (n_samples x n_features)."""
+        # Center the data
+        self.mean_ = np.mean(X, axis=0)
+        X_centered = X - self.mean_
+        
+        # Compute covariance matrix
+        cov = np.cov(X_centered, rowvar=False)
+        
+        # Eigendecomposition
+        eigenvalues, eigenvectors = np.linalg.eigh(cov)
+        
+        # Sort in descending order
+        idx = np.argsort(eigenvalues)[::-1]
+        eigenvalues = eigenvalues[idx]
+        eigenvectors = eigenvectors[:, idx]
+        
+        # Store top components
+        self.components_ = eigenvectors[:, :self.n_components]
+        self.explained_variance_ = eigenvalues[:self.n_components]
+        
+        return self
+    
+    def transform(self, X):
+        """Project data onto principal components."""
+        X_centered = X - self.mean_
+        return X_centered @ self.components_
+    
+    def inverse_transform(self, X_transformed):
+        """Reconstruct data from projection."""
+        return X_transformed @ self.components_.T + self.mean_
+
+# Example: 2D data with correlation
+np.random.seed(42)
+n_samples = 500
+theta = np.random.uniform(0, 2*np.pi, n_samples)
+X = np.column_stack([
+    3 * np.cos(theta) + 0.3 * np.random.randn(n_samples),
+    2 * np.sin(theta) + 0.3 * np.random.randn(n_samples)
+])
+
+pca = PCA(n_components=2)
+pca.fit(X)
+print(f"Explained variance ratio: {pca.explained_variance_ / np.sum(pca.explained_variance_)}")
+print(f"Principal components shape: {pca.components_.shape}")
+</code></pre>
+                
+                <h3>2. PageRank Algorithm</h3>
+                <p><strong>Real-world motivation:</strong> Google's original search ranking algorithm uses linear algebra to measure the importance of web pages based on link structure.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Link matrix:\(L_{ij} = 1\) if page \(j\) links to page \(i\), 0 otherwise</li>
+                    <li><strong>Transition matrix:\(P_{ij} = L_{ij} / \sum_k L_{kj}\) (column stochastic)</li>
+                    <li><strong>Google matrix:\(G = \alpha P + (1-\alpha)\frac{1}{n}J\)</li>
+                    <li><strong>PageRank vector:\(r\) satisfying \(Gr = r\) (eigenvector with eigenvalue 1)</li>
+                </ul>
+                
+                <h4>Theorem (PageRank Convergence)</h4>
+                <p>The power iteration \(r_{k+1} = Gr_k\) converges to the unique stationary distribution for any initial \(r_0\) with \(\alpha \in (0,1)\).</p>
+                
+                <h4>Proof Sketch</h4>
+                <p>\(G\) is a positive matrix (all entries \(> 0\)). By the Perron-Frobenius theorem, \(G\) has a unique largest eigenvalue equal to 1 with a positive eigenvector. The power method converges to this eigenvector. \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+
+def pagerank(link_matrix, alpha=0.85, tol=1e-8, max_iter=1000):
+    """
+    Compute PageRank using power iteration.
+    
+    link_matrix: adjacency matrix where link_matrix[i,j] = 1 if j links to i
+    """
+    n = link_matrix.shape[0]
+    
+    # Create transition matrix (column stochastic)
+    out_degrees = np.sum(link_matrix, axis=0)
+    # Handle dangling nodes (pages with no out-links)
+    out_degrees[out_degrees == 0] = 1
+    transition = link_matrix / out_degrees
+    
+    # Google matrix
+    G = alpha * transition + (1 - alpha) / n * np.ones((n, n))
+    
+    # Power iteration
+    r = np.ones(n) / n  # Uniform initial distribution
+    for i in range(max_iter):
+        r_new = G @ r
+        if np.linalg.norm(r_new - r, 1) < tol:
+            break
+        r = r_new
+    
+    return r, i + 1
+
+# Example: Small web graph
+# Pages: A, B, C, D
+# A -> B, C
+# B -> C
+# C -> A
+# D -> C
+links = np.array([
+    [0, 0, 1, 0],  # A has links from C
+    [1, 0, 0, 0],  # B has links from A
+    [1, 1, 0, 1],  # C has links from A, B, D
+    [0, 0, 0, 0]   # D has no links
+]).T  # Transpose: columns are from, rows are to
+
+pagerank_scores, iterations = pagerank(links)
+print(f"PageRank scores: {pagerank_scores}")
+print(f"Iterations to converge: {iterations}")
+pages = ['A', 'B', 'C', 'D']
+for page, score in zip(pages, pagerank_scores):
+    print(f"{page}: {score:.4f}")</code></pre>
+                
+                <h3>3. Quantum Computing and Linear Algebra</h3>
+                <p><strong>Real-world motivation:</strong> Quantum computers manipulate quantum states represented as vectors in complex Hilbert spaces, with quantum gates as unitary matrices.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Qubit:\(|\psi\rangle = \alpha|0\rangle + \beta|1\rangle\) with \(|<strong>\alpha|\u003c/strong>|^2 + |\beta|^2 = 1\)</li>
+                    <li><strong>Quantum gate:\(U\) unitary matrix\)</li>
+                    <li><strong>Tensor product:\(\otimes\) for multi-qubit states\)</li>
+                </ul>
+                
+                <h4>Theorem (No-Cloning)</h4>
+                <p>There is no unitary operator \(U\) such that \(U(|\psi\rangle \otimes |0\rangle) = |\psi\rangle \otimes |\psi\rangle\) for all \(|</li>\psi\rangle\).</p>
+                
+                <h4>Proof</h4>
+                <p>Suppose such \(U\) exists. For states \(|</li>\psi\rangle, |\phi\rangle\):
+                \[\langle\psi|\phi\rangle = \langle\psi|0\rangle\langle0|\phi\rangle = \langle\psi|\langle0| U^* U |\phi\rangle|0\rangle = \langle\psi|\langle\psi| |\phi\rangle|\phi\rangle = (\langle\psi|\phi\rangle)^2\]
+                This implies \(\langle\psi|\phi\rangle \in \{0, 1\}\) for all states, a contradiction. \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+
+# Pauli matrices
+I = np.eye(2)
+X = np.array([[0, 1], [1, 0]])  # Pauli-X (NOT gate)
+Y = np.array([[0, -1j], [1j, 0]])  # Pauli-Y
+Z = np.array([[1, 0], [0, -1]])  # Pauli-Z
+H = np.array([[1, 1], [1, -1]]) / np.sqrt(2)  # Hadamard
+
+# CNOT gate
+def cnot():
+    """Controlled-NOT gate for 2 qubits."""
+    return np.array([
+        [1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 0, 1],
+        [0, 0, 1, 0]
+    ])
+
+def tensor_product(*matrices):
+    """Compute tensor product of multiple matrices."""
+    result = matrices[0]
+    for m in matrices[1:]:
+        result = np.kron(result, m)
+    return result
+
+def apply_gate(state, gate):
+    """Apply quantum gate to state."""
+    return gate @ state
+
+# Example: Bell state preparation
+# Start with |00>
+state_00 = np.array([1, 0, 0, 0])
+
+# Apply H to first qubit, then CNOT
+H_on_first = tensor_product(H, I)
+state_after_H = apply_gate(state_00, H_on_first)
+bell_state = apply_gate(state_after_H, cnot())
+
+print("Bell state |Φ+>:")
+print(bell_state)
+print(f"Probabilities: {np.abs(bell_state)**2}")
+</code></pre>
+            </section>
+            
+            <section id="special-topics">
+                <h2>Special Topics</h2>
+                
+                <h3>1. The Jordan Canonical Form</h3>
+                <p><strong>Historical context:</strong> Camille Jordan's 1870 Treatise on Substitutions introduced what we now call the Jordan canonical form, providing the most complete reduction theory for linear operators over algebraically closed fields.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Jordan block:\(J_k(\lambda)\) is \(k \times k\) matrix with \(\lambda\) on diagonal, 1s on superdiagonal</li>
+                    <li><strong>Generalized eigenspace:\(G(\lambda, T) = \ker((T - \lambda I)^{\dim V})\)</li>
+                    <li><strong>Nilpotent:\(N^k = 0\) for some \(k\)</li>
+                </ul>
+                
+                <h4>Theorem (Jordan Canonical Form)</h4>
+                <p>Every linear operator on a finite-dimensional complex vector space has a basis in which its matrix is block diagonal with Jordan blocks.</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>from scipy.linalg import jordan_blocks
+import numpy as np
+
+def jordan_form_analysis(matrix):
+    """
+    Analyze Jordan form of a matrix.
+    Note: scipy doesn't directly compute Jordan form due to numerical instability.
+    """
+    eigenvalues, _ = np.linalg.eig(matrix)
+    
+    # For educational purposes, construct a matrix with known Jordan form
+    # Jordan block of size 3 for eigenvalue 2
+    J3 = np.array([[2, 1, 0],
+                   [0, 2, 1],
+                   [0, 0, 2]])
+    
+    # Diagonalizable part
+    D = np.diag([3, 4])
+    
+    # Block diagonal
+    J = np.block([
+        [J3, np.zeros((3, 2))],
+        [np.zeros((2, 3)), D]
+    ])
+    
+    return J
+
+# Example: Create matrix with specific Jordan form
+J = jordan_form_analysis(None)
+print("Jordan form example:")
+print(J)
+print(f"Eigenvalues: {np.linalg.eigvals(J)}")</code></pre>
+                
+                <h3>2. Exterior Algebra and Determinants</h3>
+                <p><strong>Historical context:</strong> Grassmann's Ausdehnungslehre (1844) introduced exterior algebra, initially ignored but later recognized as fundamental to differential geometry and physics through the work of Cartan and others.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Exterior product (wedge):\(v \wedge w = -w \wedge v\)</li>
+                    <li>\(\Lambda^k(V)\): Space of \(k\)-vectors</li>
+                    <li><strong>Determinant:\(\det(T)\) = scalar by which \(T\) acts on \(\Lambda^n(V)\)</li>
+                </ul>
+                
+                <h4>Theorem (Determinant as Volume)</h4>
+                \[|\det(v_1, \ldots, v_n)| = \text{volume of parallelepiped spanned by } v_1, \ldots, v_n\]
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+
+def exterior_product(v, w):
+    """
+    Compute v ∧ w (as antisymmetric tensor).
+    Returns matrix representation.
+    """
+    n = len(v)
+    result = np.outer(v, w) - np.outer(w, v)
+    return result
+
+def volume_parallelepiped(vectors):
+    """
+    Compute volume of parallelepiped spanned by vectors.
+    """
+    matrix = np.array(vectors)
+    return abs(np.linalg.det(matrix))
+
+def signed_volume(vectors):
+    """Signed volume (determinant)."""
+    matrix = np.array(vectors)
+    return np.linalg.det(matrix)
+
+# Example: 3D parallelepiped
+v1 = np.array([1, 0, 0])
+v2 = np.array([0, 2, 0])
+v3 = np.array([0, 0, 3])
+
+vol = volume_parallelepiped([v1, v2, v3])
+print(f"Volume of box: {vol}")  # Should be 6
+
+# Exterior product
+v = np.array([1, 2, 3])
+w = np.array([4, 5, 6])
+ext_prod = exterior_product(v, w)
+print(f"v ∧ w (antisymmetric part of v⊗w):")
+print(ext_prod)</code></pre>
+                
+                <h3>3. Representation Theory of Finite Groups</h3>
+                <p><strong>Historical context:</strong> Frobenius founded character theory in 1896, providing a powerful tool for studying groups through their linear representations. This became essential to quantum mechanics and modern number theory.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Representation:\(\rho: G \to GL(V)\) homomorphism</li>
+                    <li><strong>Character:\(\chi(g) = \text{tr}(\rho(g))\)</li>
+                    <li><strong>Irreducible representation:</strong> No proper invariant subspace</li>
+                </ul>
+                
+                <h4>Theorem (Orthogonality Relations)</h4>
+                \[\frac{1}{|G|} \sum_{g \in G} \chi_i(g) \overline{\chi_j(g)} = \delta_{ij}\]
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+
+def regular_representation(G, g):
+    """
+    Regular representation of group element g.
+    G is a list of group elements with multiplication table.
+    """
+    n = len(G)
+    # For permutation groups
+    if isinstance(g, np.ndarray):  # Permutation matrix
+        return g
+    return np.eye(n)  # Placeholder
+
+def character(representation_matrix):
+    """Compute character (trace) of representation."""
+    return np.trace(representation_matrix)
+
+def inner_product_of_characters(chi1, chi2, group_order):
+    """
+    Compute inner product of two class functions.
+    """
+    return np.sum(np.array(chi1) * np.conj(np.array(chi2))) / group_order
+
+# Example: S_3 (symmetric group on 3 elements)
+# Conjugacy classes: identity, transpositions, 3-cycles
+# Irreducible characters
+S3_characters = {
+    'trivial': [1, 1, 1],
+    'sign': [1, -1, 1],
+    'standard': [2, 0, -1]
+}
+
+print("Characters of S_3:")
+for name, chi in S3_characters.items():
+    print(f"{name}: {chi}")
+
+# Verify orthogonality
+print("\nOrthogonality check:")
+for name1, chi1 in S3_characters.items():
+    for name2, chi2 in S3_characters.items():
+        inner = inner_product_of_characters(chi1, chi2, 6)
+        print(f"⟨{name1}, {name2}⟩ = {inner:.0f}")</code></pre>
+                
+                <h3>4. Numerical Linear Algebra and Stability</h3>
+                <p><strong>Historical context:</strong> The development of digital computers in the 1940s-50s created the field of numerical linear algebra. Wilkinson's backward error analysis (1960s) provided the theoretical foundation for understanding floating-point computation.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Condition number:\(\kappa(A) = \|A\| \|A^{-1}\|\)</li>
+                    <li><strong>Machine epsilon:\(\epsilon_{\text{mach}}\), smallest number with \(1 + \epsilon > 1\)</li>
+                    <li><strong>Backward stability:\(\tilde{f}(x) = f(\tilde{x})\) for some \(\tilde{x}\) close to \(x\)</li>
+                </ul>
+                
+                <h4>Theorem (Condition Number and Error)</h4>
+                \[\frac{\|\Delta x\|}{\|x\|} \leq \kappa(A) \frac{\|\Delta b\|}{\|b\|}\]
+                <p>for the system \(Ax = b\).</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+from scipy.linalg import hilbert
+
+def condition_number(matrix, p=2):
+    """Compute condition number in p-norm."""
+    return np.linalg.cond(matrix, p)
+
+def hilbert_matrix_condition_numbers(max_n=12):
+    """
+    Demonstrate ill-conditioning of Hilbert matrices.
+    """
+    results = []
+    for n in range(1, max_n + 1):
+        H = hilbert(n)
+        cond = condition_number(H)
+        results.append((n, cond))
+        print(f"n={n:2d}: κ(H) = {cond:.2e}")
+    return results
+
+def solve_with_perturbation(A, b, epsilon=1e-10):
+    """
+    Solve Ax=b and show sensitivity to perturbations.
+    """
+    x = np.linalg.solve(A, b)
+    
+    # Perturb b
+    delta_b = epsilon * np.random.randn(len(b))
+    b_perturbed = b + delta_b
+    x_perturbed = np.linalg.solve(A, b_perturbed)
+    
+    relative_error_x = np.linalg.norm(x - x_perturbed) / np.linalg.norm(x)
+    relative_error_b = np.linalg.norm(delta_b) / np.linalg.norm(b)
+    
+    return {
+        'x': x,
+        'relative_error_x': relative_error_x,
+        'relative_error_b': relative_error_b,
+        'amplification': relative_error_x / relative_error_b
+    }
+
+# Example: Well-conditioned vs ill-conditioned
+print("Condition numbers of Hilbert matrices:")
+hilbert_matrix_condition_numbers(8)
+
+print("\nSensitivity analysis:")
+A_well = np.array([[2, 1], [1, 2]], dtype=float)
+A_ill = hilbert(5)
+b = np.ones(5)
+
+result_well = solve_with_perturbation(A_well, np.ones(2))
+result_ill = solve_with_perturbation(A_ill, b)
+
+print(f"Well-conditioned: error amplification = {result_well['amplification']:.2f}")
+print(f"Ill-conditioned: error amplification = {result_ill['amplification']:.2e}")</code></pre>
+            </section>
+            
+            <section id="math-history">
+                <h2>Math History</h2>
+                <p>Linear algebra as we know it emerged from multiple threads woven together over centuries. The Chinese text "The Nine Chapters on the Mathematical Art" (c. 200 BCE) contained methods for solving systems of linear equations using what we would recognize as Gaussian elimination. Medieval Islamic mathematicians developed these techniques further, but the modern matrix notation only emerged in the 19th century.</p>
+                <p>Arthur Cayley's 1858 "Memoir on the Theory of Matrices" introduced the term "matrix" and established many fundamental results, including the Cayley-Hamilton theorem. Around the same time, Grassmann developed his theory of extension (exterior algebra), and Sylvester contributed the concepts of minors and rank. The abstract notion of vector space crystallized in the work of Peano (1888) and was fully developed by Weyl and von Neumann in the 1920s.</p>
+                <p>The 20th century brought explosive growth. Functional analysis extended linear algebra to infinite dimensions (Banach and Hilbert spaces). Numerical linear algebra became essential with the advent of computers—Householder, Wilkinson, and Golub developed the algorithms we use today. Quantum mechanics (1920s-30s) provided both motivation and application, with von Neumann's "Mathematical Foundations of Quantum Mechanics" (1932) establishing the Hilbert space formalism.</p>
+                <p>Today, linear algebra underlies virtually all of computational science. Google's PageRank, Netflix's recommendation algorithms, computer graphics, machine learning, and quantum computing all rest on these foundations. The subject has evolved from a tool for solving equations to the universal language of structure and transformation.</p>
+            </section>
+            
+            <section id="math-journalism">
+                <h2>Math Journalism</h2>
+                
+                <h3>1. Quanta Magazine</h3>
+                <p><strong>Article:</strong> "Mathematicians Find Structure in Biased Polynomials"</p>
+                <p><strong>Summary:</strong> Recent work connecting algebraic geometry with combinatorics uses linear algebraic methods to understand the structure of polynomials with restricted coefficients, with applications to theoretical computer science.</p>
+                
+                <h3>2. SIAM News</h3>
+                <p><strong>Article:</strong> "Randomized Numerical Linear Algebra: Foundations and Algorithms"</p>
+                <p><strong>Summary:</strong> An overview of how randomization is revolutionizing large-scale linear algebra, enabling matrix computations on data sets that would be intractable with classical deterministic algorithms.</p>
+                
+                <h3>3. AMS Notices</h3>
+                <p><strong>Article:</strong> "The Mathematics of Deep Learning: An Introduction"</p>
+                <p><strong>Summary:</strong> Explains how linear algebra provides the foundation for neural networks, from forward propagation as matrix multiplication to backpropagation as automatic differentiation of matrix functions.</p>
+            </section>
+            
+            <section id="problem-corner">
+                <h2>Problem Corner</h2>
+                <p><strong>Problem (Putnam 2016 B4):</strong> Let \(A\) be a \(2n \times 2n\) matrix with entries chosen independently and uniformly at random from \(\{0, 1\}\). Find the expected value of \(\det(A)^2\).</p>
+                
+                <details>
+                    <summary>Hint</summary>
+                    <p>Use the Leibniz formula for determinant and linearity of expectation. Most cross terms vanish due to independence.</p>
+                </details>
+                
+                <details>
+                    <summary>Solution</summary>
+                    <p>By the Leibniz formula:
+                    \[\det(A) = \sum_{\sigma \in S_{2n}} \text{sgn}(\sigma) \prod_{i=1}^{2n} a_{i, \sigma(i)}\]</p>
+                    
+                    <p>Therefore:
+                    \[\det(A)^2 = \sum_{\sigma, \tau} \text{sgn}(\sigma)\text{sgn}(\tau) \prod_{i=1}^{2n} a_{i, \sigma(i)} a_{i, \tau(i)}\]</p>
+                    
+                    <p>Taking expectation and using linearity:
+                    \[\mathbb{E}[\det(A)^2] = \sum_{\sigma, \tau} \text{sgn}(\sigma)\text{sgn}(\tau) \mathbb{E}\left[\prod_{i=1}^{2n} a_{i, \sigma(i)} a_{i, \tau(i)}\right]\]</p>
+                    
+                    <p>For the expectation to be non-zero, each factor \(a_{ij}\) must appear an even number of times in the product. Since entries are independent with \(\mathbb{E}[a_{ij}] = \frac{1}{2}\) and \(\mathbb{E}[a_{ij}^2] = \frac{1}{2}\), we need each entry appearing to have power at least 2.</p>
+                    
+                    <p>The diagonal terms \(\sigma = \tau\) contribute: there are \((2n)!\) such terms, each with value \((\frac{1}{2})^{2n}\).</p>
+                    
+                    <p>For \(\sigma \neq \tau\), the product involves at least \(2n+1\) distinct positions, so at least one entry appears exactly once, making the expectation zero.</p>
+                    
+                    <p>Therefore:
+                    \[\mathbb{E}[\det(A)^2] = (2n)! \cdot \left(\frac{1}{2}\right)^{2n} = \frac{(2n)!}{4^n}\]</p>
+                    
+                    <p>The answer is \(\boxed{\dfrac{(2n)!}{4^n}}\).</p>
+                </details>
+            </section>
+            
+            <section id="visualization">
+                <h2>Visualization of the Day</h2>
+                <p>The transformation of the unit circle by a linear map reveals the singular values as the semi-axes of the resulting ellipse. This geometric interpretation makes the SVD visually intuitive.</p>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch
+
+def visualize_svd_geometry(matrix):
+    """
+    Visualize how a 2x2 matrix transforms the unit circle.
+    Shows: original circle, singular vectors, transformed ellipse.
+    """
+    # Unit circle
+    theta = np.linspace(0, 2*np.pi, 100)
+    circle = np.array([np.cos(theta), np.sin(theta)])
+    
+    # Transform
+    transformed = matrix @ circle
+    
+    # SVD
+    U, S, Vh = np.linalg.svd(matrix)
+    
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    
+    # Original space
+    ax1 = axes[0]
+    ax1.plot(circle[0], circle[1], 'b-', label='Unit circle')
+    # Right singular vectors
+    ax1.arrow(0, 0, Vh[0,0], Vh[0,1], head_width=0.1, color='r', label='v1')
+    ax1.arrow(0, 0, Vh[1,0], Vh[1,1], head_width=0.1, color='g', label='v2')
+    ax1.set_xlim(-2, 2)
+    ax1.set_ylim(-2, 2)
+    ax1.set_aspect('equal')
+    ax1.set_title('Input Space (Right Singular Vectors)')
+    ax1.legend()
+    ax1.grid(True)
+    
+    # Transformed space
+    ax2 = axes[1]
+    ax2.plot(transformed[0], transformed[1], 'b-', label='Transformed')
+    # Left singular vectors scaled by singular values
+    ax2.arrow(0, 0, S[0]*U[0,0], S[0]*U[1,0], head_width=0.2, color='r', label='σ1·u1')
+    ax2.arrow(0, 0, S[1]*U[0,1], S[1]*U[1,1], head_width=0.2, color='g', label='σ2·u2')
+    ax2.set_xlim(-5, 5)
+    ax2.set_ylim(-5, 5)
+    ax2.set_aspect('equal')
+    ax2.set_title(f'Output Space (Left Singular Vectors)\nσ1={S[0]:.2f}, σ2={S[1]:.2f}')
+    ax2.legend()
+    ax2.grid(True)
+    
+    plt.tight_layout()
+    plt.savefig('svd_geometry.png', dpi=150)
+    plt.show()
+    
+    return S
+
+# Example: Shear transformation
+A = np.array([[2, 1], [1, 2]])
+singular_values = visualize_svd_geometry(A)
+print(f"Singular values: {singular_values}")
+</code></pre>
+            </section>
+            
+            <section id="quote">
+                <h2>Quote of the Day</h2>
+                <blockquote>
+                    "Linear algebra is the mathematics of the 21st century. It is the foundation of modern data science, machine learning, and quantum computing."
+                    <footer>— Unknown</footer>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Nothing But Real Math. All rights reserved.</p>
+        <p>Built with curiosity and caffeine.</p>
+    </footer>
+</body>
+</html>erators \(\sigma_1, \ldots, \sigma_{n-1}\) where \(\sigma_i\) crosses strand \(i\) over strand \(i+1\), with relations:</p>
+                <ol>
+                    <li>\(\sigma_i \sigma_j = \sigma_j \sigma_i\) if \(|i - j| \geq 2\) (far commutativity)</li>
+                    <li>\(\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}\) (braid relation)</li>
+                </ol>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem.</strong> The natural map \(B_n \to S_n\) (sending \(\sigma_i\) to the transposition \((i, i+1)\)) is a surjective homomorphism with kernel isomorphic to the pure braid group \(P_n\).</p>
+                <p><strong>Proof.</strong> The symmetric group \(S_n\) has presentation with generators \(s_i = (i, i+1)\) and relations: \(s_i^2 = 1\), \(s_i s_j = s_j s_i\) for \(|i-j| \geq 2\), and \(s_i s_{i+1} s_i = s_{i+1} s_i s_{i+1}\).</p>
+                <p>The braid relations map to the corresponding symmetric group relations. Adding \(\sigma_i^2 = 1\) to \(B_n\) gives a presentation of \(S_n\), so the map is well-defined and surjective.</p>
+                <p>The kernel consists of braids where each strand returns to its original position—the pure braids. The pure braid group is generated by elements of form:</p>
+                \[A_{ij} = \sigma_{j-1} \sigma_{j-2} \cdots \sigma_{i+1} \sigma_i^2 \sigma_{i+1}^{-1} \cdots \sigma_{j-2}^{-1} \sigma_{j-1}^{-1}\]
+                <p>representing the \(i\)-th strand winding around the \(j\)-th. ∎</p>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">from dataclasses import dataclass
+from typing import List, Tuple
+
+@dataclass
+class Braid:
+    """Represents an element of the braid group B_n"""
+    n: int  # number of strands
+    generators: List[int]  # positive = sigma_i, negative = sigma_i^{-1}
+    
+    def __mul__(self, other):
+        """Concatenate braids"""
+        if self.n != other.n:
+            raise ValueError("Braids must have same number of strands")
+        return Braid(self.n, self.generators + other.generators)
+    
+    def inverse(self):
+        """Invert the braid"""
+        return Braid(self.n, [-g for g in reversed(self.generators)])
+    
+    def simplify(self, max_iterations=100):
+        """Apply braid relations to simplify"""
+        gens = self.generators.copy()
+        
+        for _ in range(max_iterations):
+            changed = False
+            new_gens = []
+            i = 0
+            
+            while i < len(gens):
+                if i < len(gens) - 1:
+                    a, b = gens[i], gens[i + 1]
+                    # sigma_i * sigma_i^{-1} = 1
+                    if a == -b:
+                        i += 2
+                        changed = True
+                        continue
+                    # Braid relation: sigma_i sigma_{i+1} sigma_i = sigma_{i+1} sigma_i sigma_{i+1}
+                    if abs(a) == abs(b) - 1 and abs(gens[i+2]) == abs(a) if i+2 < len(gens) else False:
+                        if abs(a) == abs(gens[i+2]) and a * b > 0 and b * gens[i+2] > 0:
+                            # Apply relation in reverse
+                            new_gens.extend([b, a, b])
+                            i += 3
+                            changed = True
+                            continue
+                
+                new_gens.append(gens[i])
+                i += 1
+            
+            gens = new_gens
+            if not changed:
+                break
+        
+        return Braid(self.n, gens)
+    
+    def to_permutation(self) -> Tuple[int, ...]:
+        """Map to symmetric group S_n"""
+        perm = list(range(self.n))
+        
+        for g in self.generators:
+            i = abs(g) - 1  # sigma_i acts on positions i and i+1
+            if 0 <= i < self.n - 1:
+                perm[i], perm[i + 1] = perm[i + 1], perm[i]
+        
+        return tuple(perm)
+
+# Examples
+sigma1 = Braid(3, [1])
+sigma2 = Braid(3, [2])
+braid_relation_lhs = sigma1 * sigma2 * sigma1
+braid_relation_rhs = sigma2 * sigma1 * sigma2
+
+print("Braid Group B_3 Examples:")
+print(f"sigma_1 * sigma_2 * sigma_1 = {braid_relation_lhs.generators}")
+print(f"sigma_2 * sigma_1 * sigma_2 = {braid_relation_rhs.generators}")
+print(f"Both map to permutation: {braid_relation_lhs.to_permutation()}")
+
+# Pure braid: sigma_1 * sigma_1^{-1} = identity
+pure = sigma1 * sigma1.inverse()
+print(f"\nsigma_1 * sigma_1^(-1) = {pure.generators}")
+print(f"Permutation: {pure.to_permutation()}")</code></pre>
+
+                <h3>3. Topological Data Analysis Introduction</h3>
+                <h4>Introduction</h4>
+                <p>Topological Data Analysis (TDA) applies algebraic topology techniques to extract shape information from data. The flagship tool—persistent homology—tracks how topological features (connected components, holes, voids) appear and disappear as we vary a scale parameter. TDA has found applications in neuroscience, materials science, and machine learning.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> Given a point cloud \(X \subset \mathbb{R}^n\), the <em>Vietoris-Rips complex</em> at scale \(\epsilon\) is:</p>
+                \[VR_\epsilon(X) = \{\sigma \subseteq X : \text{diam}(\sigma) \leq \epsilon\}\]
+                <p><strong>Definition.</strong> A <em>filtration</em> is a nested sequence of complexes \(K_1 \subseteq K_2 \subseteq \cdots \subseteq K_m\).</p>
+                <p><strong>Definition.</strong> The <em>persistence diagram</em> records the birth and death scales of each homology class.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Stability Theorem (Cohen-Steiner, Edelsbrunner, Harer).</strong> Let \(X, Y \subset \mathbb{R}^n\) be finite point clouds. The bottleneck distance between their persistence diagrams is bounded by the Hausdorff distance between the point clouds:</p>
+                \[d_B(\text{Dgm}(X), \text{Dgm}(Y)) \leq d_H(X, Y)\]
+                <p><strong>Proof Sketch.</strong> The key lemma shows that for nested filtrations, the persistence modules are interleaved. Given point clouds with \(d_H(X, Y) \leq \epsilon\), one constructs \(\epsilon\)-interleavings between the corresponding persistence modules. The algebraic stability theorem for persistence modules then bounds the bottleneck distance. ∎</p>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from scipy.spatial.distance import pdist, squareform
+from collections import defaultdict
+
+def vietoris_rips_complex(points, epsilon):
+    """
+    Build Vietoris-Rips complex at scale epsilon.
+    Returns: list of simplices (as tuples of point indices)
+    """
+    n = len(points)
+    dist_matrix = squareform(pdist(points))
+    
+    # 0-simplices (vertices)
+    simplices = [(i,) for i in range(n)]
+    
+    # 1-simplices (edges)
+    edges = []
+    for i in range(n):
+        for j in range(i + 1, n):
+            if dist_matrix[i, j] <= epsilon:
+                edges.append((i, j))
+                simplices.append((i, j))
+    
+    # 2-simplices (triangles)
+    edge_set = set(edges)
+    for i in range(n):
+        for j in range(i + 1, n):
+            for k in range(j + 1, n):
+                if ((i, j) in edge_set or (j, i) in edge_set) and \
+                   ((j, k) in edge_set or (k, j) in edge_set) and \
+                   ((i, k) in edge_set or (k, i) in edge_set):
+                    if dist_matrix[i, j] <= epsilon and \
+                       dist_matrix[j, k] <= epsilon and \
+                       dist_matrix[i, k] <= epsilon:
+                        simplices.append((i, j, k))
+    
+    return simplices
+
+def count_connected_components(points, epsilon):
+    """
+    Count connected components using Union-Find.
+    """
+    n = len(points)
+    if n == 0:
+        return 0
+    
+    parent = list(range(n))
+    
+    def find(x):
+        if parent[x] != x:
+            parent[x] = find(parent[x])
+        return parent[x]
+    
+    def union(x, y):
+        px, py = find(x), find(y)
+        if px != py:
+            parent[px] = py
+    
+    dist_matrix = squareform(pdist(points))
+    
+    for i in range(n):
+        for j in range(i + 1, n):
+            if dist_matrix[i, j] <= epsilon:
+                union(i, j)
+    
+    # Count unique parents
+    components = len(set(find(i) for i in range(n)))
+    return components
+
+# Example: Circle with noise
+np.random.seed(42)
+n_points = 50
+theta = np.linspace(0, 2 * np.pi, n_points)
+circle = np.column_stack([
+    np.cos(theta) + 0.05 * np.random.randn(n_points),
+    np.sin(theta) + 0.05 * np.random.randn(n_points)
+])
+
+print("Topological Data Analysis Demo:")
+print(f"Point cloud: {n_points} points on noisy circle")
+
+# Track connected components as epsilon varies
+epsilons = np.linspace(0.1, 2.0, 20)
+print("\nScale (ε) -> Connected Components:")
+for eps in epsilons[::4]:
+    cc = count_connected_components(circle, eps)
+    print(f"  {eps:.2f} -> {cc}")
+
+# At small epsilon: many components
+# At medium epsilon: 1 component, 1 hole (circle topology)
+# At large epsilon: 1 component, hole filled in</code></pre>
+
+                <h3>4. Morse Theory Introduction</h3>
+                <h4>Introduction</h4>
+                <p>Morse theory connects the critical points of a smooth function on a manifold to the topology of that manifold. Developed by Marston Morse in the 1920s, it provides a powerful toolkit for computing homology and understanding the shape of spaces. Modern extensions include discrete Morse theory (Forman) and infinite-dimensional Morse theory (Floer).</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> Let \(f: M \to \mathbb{R}\) be a smooth function on a manifold \(M\). A point \(p \in M\) is <em>critical</em> if \(df_p = 0\). The <em>Hessian</em> at \(p\) is the matrix of second partial derivatives.</p>
+                <p><strong>Definition.</strong> A critical point is <em>non-degenerate</em> if the Hessian is non-singular. The <em>index</em> of a non-degenerate critical point is the number of negative eigenvalues of the Hessian.</p>
+                <p><strong>Definition.</strong> A function is <em>Morse</em> if all critical points are non-degenerate.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Morse Lemma.</strong> Let \(f: M \to \mathbb{R}\) be smooth and \(p\) a non-degenerate critical point of index \(k\). There exist local coordinates \((x_1, \ldots, x_n)\) near \(p\) with \(p\) at the origin such that:</p>
+                \[f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2\]
+                <p><strong>Proof.</strong> By the inverse function theorem and Taylor's theorem with remainder, we can write:</p>
+                \[f(x) = f(p) + \sum_{i,j} x_i x_j h_{ij}(x)\]
+                where \(h_{ij}(0) = \frac{1}{2}\frac{\partial^2 f}{\partial x_i \partial x_j}(p)\). The matrix \((h_{ij}(0))\) is symmetric and non-degenerate.</p>
+                <p>By Sylvester's law of inertia, we can find a coordinate change diagonalizing this quadratic form. The number of negative terms equals the index \(k\). ∎</p>
+
+                <h4>Morse Inequalities</h4>
+                <p>Let \(c_k\) be the number of critical points of index \(k\), and \(b_k = \dim H_k(M)\) the Betti numbers. Then:</p>
+                \[c_k \geq b_k \quad \text{for all } k\]
+                <p>and the alternating sum gives equality:</p>
+                \[\sum (-1)^k c_k = \sum (-1)^k b_k = \chi(M)\]
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from scipy.optimize import minimize
+from numpy.linalg import eigvalsh
+
+def morse_function_2d(x, y):
+    """
+    Example Morse function on R^2: f(x,y) = x^3 - 3x + y^3 - 3y
+    This has 4 critical points.
+    """
+    return x**3 - 3*x + y**3 - 3*y
+
+def gradient_morse(x, y):
+    """Gradient of the Morse function"""
+    dx = 3*x**2 - 3
+    dy = 3*y**2 - 3
+    return np.array([dx, dy])
+
+def hessian_morse(x, y):
+    """Hessian matrix"""
+    dxx = 6*x
+    dyy = 6*y
+    dxy = 0
+    return np.array([[dxx, dxy], [dxy, dyy]])
+
+def find_critical_points(grid_size=100, bounds=(-2, 2)):
+    """
+    Find approximate critical points by checking where gradient is small.
+    """
+    x = np.linspace(bounds[0], bounds[1], grid_size)
+    y = np.linspace(bounds[0], bounds[1], grid_size)
+    X, Y = np.meshgrid(x, y)
+    
+    # Compute gradient magnitude
+    dx = 3*X**2 - 3
+    dy = 3*Y**2 - 3
+    grad_mag = np.sqrt(dx**2 + dy**2)
+    
+    # Find local minima of gradient magnitude
+    critical_points = []
+    for i in range(1, grid_size - 1):
+        for j in range(1, grid_size - 1):
+            if grad_mag[i, j] < 0.2:
+                # Refine using optimization
+                result = minimize(
+                    lambda p: np.sum(np.array(gradient_morse(p[0], p[1]))**2),
+                    [X[i, j], Y[i, j]],
+                    method='BFGS'
+                )
+                if result.success:
+                    cp = tuple(result.x)
+                    # Check if we already have this point
+                    if all(np.linalg.norm(np.array(cp) - np.array(p)) > 0.1 for p in critical_points):
+                        critical_points.append(cp)
+    
+    return critical_points
+
+def analyze_critical_point(x, y):
+    """Determine index of critical point"""
+    H = hessian_morse(x, y)
+    eigenvalues = eigvalsh(H)
+    index = np.sum(eigenvalues < 0)
+    is_nondegenerate = np.all(np.abs(eigenvalues) > 1e-6)
+    return {
+        'point': (x, y),
+        'eigenvalues': eigenvalues,
+        'index': index,
+        'nondegenerate': is_nondegenerate,
+        'function_value': morse_function_2d(x, y)
+    }
+
+# Analyze the Morse function
+print("Morse Theory Analysis")
+print("Function: f(x,y) = x³ - 3x + y³ - 3y")
+print()
+
+critical_points = find_critical_points()
+print(f"Found {len(critical_points)} critical points:")
+
+for cp in critical_points:
+    analysis = analyze_critical_point(cp[0], cp[1])
+    print(f"\n  Point: ({cp[0]:.4f}, {cp[1]:.4f})")
+    print(f"  f value: {analysis['function_value']:.4f}")
+    print(f"  Eigenvalues: {analysis['eigenvalues']}")
+    print(f"  Index: {analysis['index']}")
+    print(f"  Type: {'Maximum' if analysis['index'] == 2 else 'Saddle' if analysis['index'] == 1 else 'Minimum'}")
+    print(f"  Non-degenerate: {analysis['nondegenerate']}")
+
+# Expected: 4 critical points
+# (1, 1): index 0 (minimum), f = -4
+# (1, -1): index 1 (saddle), f = 0
+# (-1, 1): index 1 (saddle), f = 0
+# (-1, -1): index 2 (maximum), f = 4</code></pre>
+            </section>
+
+            <section id="history">
+                <h2>📜 Math History</h2>
+                <h3>Henri Poincaré: The Last Universalist</h3>
+                <p>Henri Poincaré was born on April 29, 1854, in Nancy, France, into a distinguished family. His father was a professor of medicine, and his cousin Raymond Poincaré would later become President of France. From an early age, Poincaré displayed extraordinary intellectual gifts, though a bout of diphtheria left him physically frail and unable to speak for nine months as a child.</p>
+                <p>Poincaré entered the École Polytechnique in 1873, graduating at the top of his class. He pursued doctoral studies under Charles Hermite, completing his thesis on differential equations in 1879. His early work on the three-body problem in celestial mechanics—showing that the equations could not be solved by standard methods—laid the groundwork for chaos theory and dynamical systems.</p>
+                <p>In 1881, at age 27, Poincaré was appointed to a chair at the University of Paris. Over the next three decades, he would produce nearly 500 papers and 30 books, touching virtually every area of mathematics and physics. His work on automorphic functions, competing with Felix Klein, nearly led to a nervous breakdown for both mathematicians—a famous episode in mathematical history.</p>
+                <p>Poincaré's 1895 paper "Analysis Situs" founded algebraic topology (then called analysis situs). He introduced the fundamental group, homology, and the Euler-Poincaré characteristic. The famous Poincaré conjecture—stating that every simply connected, closed 3-manifold is homeomorphic to the 3-sphere—would resist proof for nearly a century until Grigori Perelman's 2003 solution.</p>
+                <p>His philosophical writings, particularly "Science and Hypothesis" (1902), explored the nature of mathematical reasoning and scientific discovery. Poincaré argued that mathematics is not merely derived from logic or experience but involves creative intuition. This view influenced logical positivism and the philosophy of mathematics throughout the twentieth century.</p>
+                <p>In 1905, independently of Einstein, Poincaré developed the mathematics of special relativity, including the Lorentz transformations. Some historians argue he deserves co-credit for the theory, though he never fully embraced the physical interpretation Einstein provided. His work on electrodynamics and the quantum hypothesis also advanced physics.</p>
+                <p>Poincaré died on July 17, 1912, at age 58, from an embolism following surgery for prostate cancer. His funeral was attended by the French President and numerous scientific dignitaries. He is buried in the Poincaré family vault in Paris. Today, his name appears throughout mathematics: the Poincaré group in physics, Poincaré duality in topology, the Poincaré-Bendixson theorem in dynamical systems, and the Poincaré inequality in analysis. He remains the only person to have won the Bolyai Prize, Hungary's highest mathematical honor, twice.</p>
+            </section>
+
+            <section id="journalism">
+                <h2>📰 Math in the News</h2>
+                <h3><a href="https://www.quantamagazine.org/computer-scientists-figure-out-how-to-make-encryption-safe-from-quantum-computers-20250115/" target="_blank" rel="noopener">Post-Quantum Cryptography Standards Finalized</a> — <em>Quanta Magazine</em></h3>
+                <p>NIST has released the first set of standardized post-quantum cryptographic algorithms designed to resist attacks from quantum computers. The standards include lattice-based schemes CRYSTALS-Kyber for key establishment and CRYSTALS-Dilithium for digital signatures, marking a critical milestone in preparing cybersecurity for the quantum era.</p>
+
+                <h3><a href="https://www.nature.com/articles/d41586-025-00123-4" target="_blank" rel="noopener">Topology Protects Quantum Information</a> — <em>Nature</em></h3>
+                <p>Physicists have demonstrated a new method for storing quantum information using topological protection. By encoding qubits in non-local topological properties rather than individual particles, the researchers achieved error rates orders of magnitude lower than conventional approaches, potentially solving one of quantum computing's biggest challenges.</p>
+
+                <h3><a href="https://www.economist.com/science-and-technology/2025/01/08/game-theory-explains-animal-cooperation" target="_blank" rel="noopener">Game Theory Explains Animal Cooperation</a> — <em>The Economist</em></h3>
+                <p>New research applies evolutionary game theory to explain cooperative behaviors in vampire bats and cleaner fish. The studies confirm predictions from the "shadow of the future" model: cooperation emerges when animals have high probability of future interactions, validating decades-old theoretical predictions with field data.</p>
+            </section>
+
+            <section id="problem">
+                <h2>🧩 Problem Corner</h2>
+                <p><strong>Problem (AIME-level).</strong> Let \(ABCD\) be a convex quadrilateral inscribed in a circle with center \(O\). Suppose that \(AC = 10\), \(BD = 14\), and the distance from \(O\) to \(AC\) is 3. Find the distance from \(O\) to \(BD\).</p>
+                <details>
+                    <summary>💡 Hint</summary>
+                    <p>For a chord of length \(2c\) in a circle of radius \(R\), the distance from the center to the chord is \(\sqrt{R^2 - c^2}\). Use the fact that both chords are in the same circle to find the relationship.</p>
+                </details>
+                <details>
+                    <summary>✅ Solution</summary>
+                    <p>Let \(R\) be the radius of the circumcircle. For a chord of length \(L\) at distance \(d\) from the center, we have:</p>
+                    \[\left(\frac{L}{2}\right)^2 + d^2 = R^2\]
+                    <p>For chord \(AC = 10\) with distance 3 from \(O\):</p>
+                    \[\left(\frac{10}{2}\right)^2 + 3^2 = R^2\]
+                    \[25 + 9 = R^2\]
+                    \[R^2 = 34\]
+                    <p>For chord \(BD = 14\) with distance \(d\) from \(O\):</p>
+                    \[\left(\frac{14}{2}\right)^2 + d^2 = R^2 = 34\]
+                    \[49 + d^2 = 34\]
+                    <p>This gives \(d^2 = -15\), which is impossible!</p>
+                    <p>Wait—we need to reconsider. The problem states the quadrilateral is convex and inscribed. Let us check if both chords can exist in the same circle. For \(BD = 14\) to be a chord of a circle with radius \(\sqrt{34}\):</p>
+                    \[\left(\frac{14}{2}\right)^2 = 49 > 34 = R^2\]
+                    <p>This means \(BD\) cannot be a chord of this circle if it passes through the interior. However, if the problem is well-posed, there must be a configuration. Re-reading: the distance from \(O\) to \(AC\) is 3. This could mean the perpendicular distance.</p>
+                    <p>Actually, let's reconsider: if \(AC = 10\) and distance from center is 3, then \(R^2 = 25 + 9 = 34\). For \(BD = 14\), we need:</p>
+                    \[d^2 = R^2 - 49 = 34 - 49 = -15\]
+                    <p>This suggests an error in the problem as stated, or perhaps the distance is measured differently. If we instead assume the problem intends for us to find a valid configuration, suppose the distance to \(BD\) is \(d\). Then:</p>
+                    \[R^2 = 25 + 9 = 49 + d^2\]
+                    <p>This would require \(d^2 = -15\), impossible.</p>
+                    <p><strong>Revised interpretation:</strong> Perhaps \(AC = 10\) means half-length is 5, and the problem has a typo. If instead \(AC = 6\), then \(R^2 = 9 + 9 = 18\), and \(d^2 = 18 - 49 < 0\) still fails.</p>
+                    <p>If \(BD = 10\) instead of 14: then \(d^2 = 34 - 25 = 9\), so <strong>d = 3</strong>.</p>
+                    <p>Given the problem as stated with \(AC = 10\), \(BD = 14\), distance to \(AC\) is 3: This is geometrically impossible in a Euclidean circle. The answer assuming a corrected problem with \(BD = 10\) would be <strong>3</strong>.</p>
+                </details>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day</h2>
+                <h3>Homotopy of Loops on the Torus</h3>
+                <p>This visualization demonstrates the fundamental group of the torus \(T^2 = S^1 \times S^1\). The torus has two independent non-contractible loops: one going around the "hole" (meridian) and one going around the "body" (longitude). Their homotopy classes generate \(\pi_1(T^2) \cong \mathbb{Z} \times \mathbb{Z}\).</p>
+                <p>The animation shows how different combinations of winding around each \(S^1\) factor correspond to distinct homotopy classes.</p>
+
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def torus_parametrization(u, v, R=3, r=1):
+    """
+    Parametric equations for a torus.
+    R = major radius (distance from center to tube center)
+    r = minor radius (radius of tube)
+    u, v in [0, 2π]
+    """
+    x = (R + r * np.cos(v)) * np.cos(u)
+    y = (R + r * np.cos(v)) * np.sin(u)
+    z = r * np.sin(v)
+    return x, y, z
+
+def torus_loop(t, m, n, R=3, r=1):
+    """
+    Loop on torus with winding numbers (m, n).
+    m = winding around meridian (v-direction)
+    n = winding around longitude (u-direction)
+    t in [0, 1]
+    """
+    u = 2 * np.pi * n * t
+    v = 2 * np.pi * m * t
+    return torus_parametrization(u, v, R, r)
+
+# Create visualization
+fig = plt.figure(figsize=(14, 6))
+
+# Plot 1: Torus with (1,0) loop (meridian)
+ax1 = fig.add_subplot(131, projection='3d')
+u = np.linspace(0, 2*np.pi, 50)
+v = np.linspace(0, 2*np.pi, 50)
+U, V = np.meshgrid(u, v)
+X, Y, Z = torus_parametrization(U, V)
+ax1.plot_surface(X, Y, Z, alpha=0.3, color='cyan', edgecolor='none')
+
+t = np.linspace(0, 1, 200)
+x_loop, y_loop, z_loop = torus_loop(t, 1, 0)
+ax1.plot(x_loop, y_loop, z_loop, 'r-', linewidth=3, label='(1,0) meridian')
+ax1.set_title('Meridian: (1,0)')
+ax1.set_box_aspect([1,1,0.5])
+
+# Plot 2: Torus with (0,1) loop (longitude)
+ax2 = fig.add_subplot(132, projection='3d')
+ax2.plot_surface(X, Y, Z, alpha=0.3, color='cyan', edgecolor='none')
+x_loop, y_loop, z_loop = torus_loop(t, 0, 1)
+ax2.plot(x_loop, y_loop, z_loop, 'g-', linewidth=3, label='(0,1) longitude')
+ax2.set_title('Longitude: (0,1)')
+ax2.set_box_aspect([1,1,0.5])
+
+# Plot 3: Torus with (1,1) loop
+ax3 = fig.add_subplot(133, projection='3d')
+ax3.plot_surface(X, Y, Z, alpha=0.3, color='cyan', edgecolor='none')
+x_loop, y_loop, z_loop = torus_loop(t, 1, 1)
+ax3.plot(x_loop, y_loop, z_loop, 'm-', linewidth=3, label='(1,1) diagonal')
+ax3.set_title('Diagonal: (1,1)')
+ax3.set_box_aspect([1,1,0.5])
+
+plt.tight_layout()
+plt.savefig('/tmp/torus_loops.png', dpi=150, bbox_inches='tight')
+print("Torus loops visualization saved to /tmp/torus_loops.png")
+print()
+print("The fundamental group π₁(T²) ≅ ℤ × ℤ")
+print("Generators: a = (1,0) meridian, b = (0,1) longitude")
+print("Relation: ab = ba (the torus fundamental group is abelian)")</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"Topology is precisely the mathematical discipline that allows the passage from local to global."</p>
+                    <footer>— René Thom</footer>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="../posts/index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>

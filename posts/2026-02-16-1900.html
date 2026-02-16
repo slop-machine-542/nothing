@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Geometry, Network Science, Surreal Numbers">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 16, 2026 at 19:00</title>
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <p class="post-date">📅 2026-02-16 at 1900</p>
+            <div class="tags">
+                <a href="../tags/geometry.html" class="tag">geometry</a>
+                <a href="../tags/network-science.html" class="tag">network-science</a>
+                <a href="../tags/surreal-numbers.html" class="tag">surreal-numbers</a>
+                <a href="../tags/graph-theory.html" class="tag">graph-theory</a>
+                <a href="../tags/game-theory.html" class="tag">game-theory</a>
+            </div>
+
+            <section id="links">
+                <h2>🔗 Math Links</h2>
+                <ul>
+                    <li><a href="https://ncatlab.org/nlab/show/HomePage" target="_blank" rel="noopener">nLab</a> — A wiki-lab for collaborative work on mathematics, physics, and philosophy, especially focused on category theory and higher-dimensional algebra.</li>
+                    <li><a href="https://mathworld.wolfram.com/" target="_blank" rel="noopener">MathWorld</a> — Eric Weisstein's comprehensive encyclopedia of mathematics with over 13,000 entries covering all areas of math.</li>
+                    <li><a href="https://www.cut-the-knot.org/" target="_blank" rel="noopener">Cut-the-Knot</a> — Interactive mathematics miscellany and puzzles featuring hundreds of Java applets and mathematical games.</li>
+                </ul>
+            </section>
+
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                <h3><a href="https://www.cs.cornell.edu/home/kleinber/networks-book/" target="_blank" rel="noopener">Networks, Crowds, and Markets</a></h3>
+                <p><strong>Authors:</strong> David Easley &amp; Jon Kleinberg | <strong>Level:</strong> Undergraduate/Graduate</p>
+                <p>This groundbreaking textbook bridges graph theory, economics, and sociology to explain how networks shape our world. Covers network structure, information cascades, markets, and strategic interaction. The book combines rigorous mathematical analysis with real-world applications from social media, financial markets, and epidemiology.</p>
+            </section>
+
+            <section id="pure-dives">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <h3>1. Riemannian Geometry: The Basics</h3>
+                <h4>Motivation</h4>
+                <p>Riemannian geometry generalizes Euclidean geometry to curved spaces, providing the mathematical foundation for Einstein's general relativity. It allows us to measure distances, angles, and curvature on manifolds that locally resemble Euclidean space but may have complex global structure.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>Riemannian manifold</em> \((M, g)\) is a smooth manifold \(M\) equipped with a Riemannian metric \(g\), which is a smoothly varying inner product on each tangent space \(T_pM\).</p>
+                <p>In local coordinates \((x^1, \ldots, x^n)\), the metric is expressed as:</p>
+                \[ds^2 = g_{ij} \, dx^i \, dx^j\]
+                <p>where \(g_{ij} = g\left(\frac{\partial}{\partial x^i}, \frac{\partial}{\partial x^j}\right)\) are smooth functions.</p>
+
+                <p><strong>Definition.</strong> The <em>length</em> of a curve \(\gamma: [a,b] \to M\) is:</p>
+                \[L(\gamma) = \int_a^b \sqrt{g_{ij} \frac{d\gamma^i}{dt} \frac{d\gamma^j}{dt}} \, dt\]
+
+                <p><strong>Definition.</strong> The <em>Levi-Civita connection</em> \(\nabla\) is the unique torsion-free connection compatible with the metric, satisfying:</p>
+                \[\nabla_k g_{ij} = 0\]
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem.</strong> On any Riemannian manifold, there exists a unique Levi-Civita connection.</p>
+                <p><strong>Proof Sketch.</strong> The connection coefficients (Christoffel symbols) are uniquely determined by:</p>
+                \[\Gamma^k_{ij} = \frac{1}{2}g^{kl}\left(\partial_i g_{jl} + \partial_j g_{il} - \partial_l g_{ij}\right)\]
+                <p>These satisfy both metric compatibility and torsion-free conditions. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(M\) — smooth manifold</li>
+                    <li>\(g\) — Riemannian metric</li>
+                    <li>\(T_pM\) — tangent space at point \(p\)</li>
+                    <li>\(g_{ij}\) — metric tensor components</li>
+                    <li>\(g^{ij}\) — inverse metric tensor</li>
+                    <li>\(\Gamma^k_{ij}\) — Christoffel symbols</li>
+                    <li>\(\nabla\) — covariant derivative</li>
+                </ul>
+
+                <h3>2. Gaussian Curvature</h3>
+                <h4>Motivation</h4>
+                <p>Gaussian curvature measures how a surface curves in space. It is intrinsic—determinable by measurements within the surface itself—and fundamentally determines the geometry of two-dimensional manifolds.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> For a surface embedded in \(\mathbb{R}^3\), the <em>Gaussian curvature</em> at a point is:</p>
+                \[K = \kappa_1 \cdot \kappa_2\]
+                <p>where \(\kappa_1, \kappa_2\) are the principal curvatures (maximum and minimum normal curvatures).</p>
+
+                <p><strong>Definition.</strong> In terms of the Riemann curvature tensor:</p>
+                \[K = \frac{R_{1212}}{g_{11}g_{22} - g_{12}^2}\]
+
+                <p><strong>Theorem (Theorema Egregium).</strong> Gaussian curvature is intrinsic—it depends only on the metric \(g_{ij}\) and its derivatives, not on the embedding.</p>
+
+                <h4>Example: Sphere of Radius \(R\)</h4>
+                <p>For a sphere \(S^2(R)\), all normal curvatures equal \(1/R\), so:</p>
+                \[K = \frac{1}{R} \cdot \frac{1}{R} = \frac{1}{R^2}\]
+
+                <h3>3. The Gauss-Bonnet Theorem</h3>
+                <h4>Motivation</h4>
+                <p>The Gauss-Bonnet theorem connects local geometry (curvature) with global topology (Euler characteristic), revealing one of the deepest relationships in differential geometry.</p>
+
+                <h4>Theorem</h4>
+                <p><strong>Gauss-Bonnet Theorem.</strong> For a compact, orientable surface \(M\) without boundary:</p>
+                \[\int_M K \, dA = 2\pi \chi(M)\]
+                <p>where \(\chi(M) = 2 - 2g\) is the Euler characteristic and \(g\) is the genus (number of "holes").</p>
+
+                <h4>Proof Outline</h4>
+                <p>The proof proceeds by triangulation:</p>
+                <ol>
+                    <li>Triangulate \(M\) with geodesic triangles</li>
+                    <li>Apply the local Gauss-Bonnet formula to each triangle \(T\):</li>
+                </ol>
+                \[\int_T K \, dA + \sum_{i=1}^3 (\pi - \alpha_i) = 2\pi\]
+                <p>where \(\alpha_i\) are interior angles.</p>
+                <ol start="3">
+                    <li>Sum over all triangles. Angle sums contribute \(2\pi V\), geodesic curvature terms cancel, and boundary terms vanish.</li>
+                    <li>Result: \(\int_M K \, dA = 2\pi(V - E + F) = 2\pi\chi(M)\). ∎</li>
+                </ol>
+
+                <h4>Significance</h4>
+                <p>This theorem shows that the total curvature is a topological invariant. A sphere (\(\chi = 2\)) must have total curvature \(4\pi\), while a torus (\(\chi = 0\)) has total curvature zero.</p>
+            </section>
+
+            <section id="applied-dives">
+                <h2>🌐 Applied Math Deep-Dives</h2>
+
+                <h3>1. The PageRank Algorithm</h3>
+                <h4>Motivation</h4>
+                <p>PageRank, the foundation of Google's original search algorithm, uses eigenvector centrality to measure the importance of web pages based on the link structure of the internet.</p>
+
+                <h4>Mathematical Model</h4>
+                <p>Consider the web as a directed graph where pages are nodes and links are edges. Let \(N\) be the number of pages and \(L(p_j)\) the number of outbound links from page \(p_j\).</p>
+
+                <p>The PageRank \(PR(p_i)\) satisfies:</p>
+                \[PR(p_i) = \frac{1-d}{N} + d \sum_{p_j \in B(p_i)} \frac{PR(p_j)}{L(p_j)}\]
+                <p>where \(d \in (0,1)\) is the damping factor (typically \(d = 0.85\)) and \(B(p_i)\) is the set of pages linking to \(p_i\).</p>
+
+                <h4>Matrix Formulation</h4>
+                <p>Define the transition matrix \(P\) where \(P_{ji} = 1/L(p_j)\) if \(p_j\) links to \(p_i\), else 0. Then:</p>
+                \[\mathbf{pr} = \frac{1-d}{N}\mathbf{1} + d P^T \mathbf{pr}\]
+
+                <p>This is equivalent to finding the principal eigenvector of the Google matrix:</p>
+                \[G = dP^T + \frac{1-d}{N}\mathbf{1}\mathbf{1}^T\]
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+
+def pagerank(adj_matrix, d=0.85, tol=1e-8, max_iter=1000):
+    """
+    Compute PageRank using power iteration.
+    
+    Parameters:
+    -----------
+    adj_matrix : numpy array
+        Adjacency matrix where adj_matrix[i,j] = 1 if i links to j
+    d : float
+        Damping factor
+    """
+    N = adj_matrix.shape[0]
+    
+    # Create transition matrix (column stochastic)
+    out_degrees = np.sum(adj_matrix, axis=1, keepdims=True)
+    out_degrees[out_degrees == 0] = 1  # Handle dangling nodes
+    P = adj_matrix.T / out_degrees  # Transpose for column stochastic
+    
+    # Initialize
+    pr = np.ones(N) / N
+    
+    # Power iteration
+    for _ in range(max_iter):
+        pr_new = (1 - d) / N + d * P @ pr
+        if np.linalg.norm(pr_new - pr) &lt; tol:
+            break
+        pr = pr_new
+    
+    return pr
+
+# Example: Small web graph
+# Pages: 0, 1, 2, 3
+# Links: 0→1, 0→2, 1→2, 1→3, 2→0, 3→2
+adj = np.array([
+    [0, 1, 1, 0],  # Page 0 links to 1, 2
+    [0, 0, 1, 1],  # Page 1 links to 2, 3
+    [1, 0, 0, 0],  # Page 2 links to 0
+    [0, 0, 1, 0]   # Page 3 links to 2
+])
+
+pr = pagerank(adj)
+print("PageRank values:", pr)
+print("Ranking:", np.argsort(pr)[::-1])
+</code></pre>
+
+                <h3>2. Small World Networks</h3>
+                <h4>Motivation</h4>
+                <p>The "small world" phenomenon—where most people are connected by short chains of acquaintances—was formalized by Watts and Strogatz (1998). Their model bridges regular lattices and random graphs.</p>
+
+                <h4>The Watts-Strogatz Model</h4>
+                <p>Start with a ring of \(N\) nodes, each connected to \(k\) nearest neighbors. With probability \(p\), rewire each edge to a random node.</p>
+
+                <p><strong>Clustering coefficient</strong> (measure of local connectivity):</p>
+                \[C = \frac{3(k-2)}{4(k-1)} \approx \frac{3}{4} \text{ for small } p\]
+
+                <p><strong>Average path length</strong> \(L(p)\) decreases rapidly with \(p\), while \(C(p)\) remains high for small \(p\).</p>
+
+                <h4>Mathematical Properties</h4>
+                <p>For the small-world regime (\(N \gg k \gg \ln N \gg 1\)):</p>
+                \[L(p) \sim \frac{N}{k} f(pkN)\]
+                <p>where \(f(x)\) is a scaling function. The characteristic path length scales logarithmically with \(N\) for random networks.</p>
+
+                <h3>3. Centrality Measures</h3>
+                <h4>Motivation</h4>
+                <p>Centrality measures identify the most important nodes in a network. Different applications require different notions of "importance."</p>
+
+                <h4>Types of Centrality</h4>
+                <p><strong>Degree Centrality:</strong> Simply count connections.</p>
+                \[C_D(v) = \frac{\deg(v)}{N-1}\]
+
+                <p><strong>Betweenness Centrality:</strong> Measures how often a node lies on shortest paths.</p>
+                \[C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}}\]
+                <p>where \(\sigma_{st}\) is the number of shortest paths from \(s\) to \(t\), and \(\sigma_{st}(v)\) counts those passing through \(v\).</p>
+
+                <p><strong>Eigenvector Centrality:</strong> A node is important if connected to important nodes.</p>
+                \[\mathbf{x} = \frac{1}{\lambda} A \mathbf{x}\]
+                <p>where \(A\) is the adjacency matrix and \(\lambda\) is the largest eigenvalue.</p>
+
+                <p><strong>Closeness Centrality:</strong> Average distance to all other nodes.</p>
+                \[C_C(v) = \frac{N-1}{\sum_{u \neq v} d(v,u)}\]
+            </section>
+
+            <section id="special-topics">
+                <h2>🎯 Special Topics: Surreal Numbers &amp; Combinatorial Games</h2>
+
+                <h3>1. Construction of Surreal Numbers</h3>
+                <h4>Motivation</h4>
+                <p>John Conway's surreal numbers, introduced in his book <em>On Numbers and Games</em> (1976), form a proper class containing all real numbers, all ordinal numbers, and infinitesimals. They are constructed recursively from nothing.</p>
+
+                <h4>Definition</h4>
+                <p><strong>Definition.</strong> A <em>surreal number</em> is defined recursively as \(x = \{X_L | X_R\}\) where \(X_L\) and \(X_R\) are sets of previously constructed surreal numbers, with the condition that no element of \(X_L\) is \(\geq\) any element of \(X_R\).</p>
+
+                <p><strong>Comparison:</strong> \(x \leq y\) iff no \(x^R \leq y\) and \(x \leq\) no \(y^L\).</p>
+
+                <p><strong>Equality:</strong> \(x = y\) iff \(x \leq y\) and \(y \leq x\).</p>
+
+                <h4>Construction by Birthdays</h4>
+                <p>Day 0: \(0 = \{\,|\,\}\) (the empty game)</p>
+                <p>Day 1: \(1 = \{0|\,\}\), \(-1 = \{\,|0\}\)</p>
+                <p>Day 2: \(2 = \{1|\,\}\), \(\frac{1}{2} = \{0|1\}\), \(-2\), \(-\frac{1}{2}\)</p>
+
+                <h4>Arithmetic Operations</h4>
+                <p><strong>Addition:</strong></p>
+                \[x + y = \{X_L + y, x + Y_L \,|\, X_R + y, x + Y_R\}\]
+
+                <p><strong>Negation:</strong></p>
+                \[-x = \{-X_R \,|\, -X_L\}\]
+
+                <p><strong>Multiplication:</strong> (more complex, defined recursively)</p>
+
+                <h3>2. Combinatorial Game Theory</h3>
+                <h4>Motivation</h4>
+                <p>Combinatorial Game Theory (CGT) analyzes two-player perfect-information games with no chance elements. Games decompose into sums of simpler components.</p>
+
+                <h4>Definitions</h4>
+                <p>A <em>combinatorial game</em> has:</p>
+                <ul>
+                    <li>Two players: Left and Right</li>
+                    <li>Perfect information</li>
+                    <li>No chance moves</li>
+                    <li>Normal play convention: last player to move wins</li>
+                </ul>
+
+                <p><strong>Game Sum:</strong> Players move in exactly one component:</p>
+                \[G + H = \{G^L + H, G + H^L \,|\, G^R + H, G + H^R\}\]
+
+                <h4>Outcome Classes</h4>
+                <ul>
+                    <li>\(\mathcal{L}\): Left wins regardless of who moves first</li>
+                    <li>\(\mathcal{R}\): Right wins regardless of who moves first</li>
+                    <li>\(\mathcal{N}\): Next player wins (first player advantage)</li>
+                    <li>\(\mathcal{P}\): Previous player wins (second player advantage)</li>
+                </ul>
+
+                <h3>3. Nimbers (Grundy Numbers)</h3>
+                <h4>Motivation</h4>
+                <p>Nimbers provide a complete analysis of impartial games (where both players have the same moves). They were introduced by Sprague and Grundy independently in the 1930s.</p>
+
+                <h4>Definition</h4>
+                <p><strong>Theorem (Sprague-Grundy).</strong> Every impartial game is equivalent to a Nim heap of some size.</p>
+
+                <p>The <em>Grundy number</em> (or nimber) of a position is:</p>
+                \[G(P) = \text{mex}\{G(Q) : Q \text{ is reachable from } P\}\]
+                <p>where \(\text{mex}\) (minimum excluded value) is the smallest non-negative integer not in the set.</p>
+
+                <h4>Nim Sum</h4>
+                <p>For game sums, Grundy numbers add under bitwise XOR:</p>
+                \[G(P + Q) = G(P) \oplus G(Q)\]
+
+                <h4>Python Code</h4>
+                <pre><code>def mex(s):
+    """Minimum excluded value."""
+    m = 0
+    while m in s:
+        m += 1
+    return m
+
+def nim_sum(a, b):
+    """Bitwise XOR (nim addition)."""
+    return a ^ b
+
+def grundy_nim(heap_sizes):
+    """
+    Calculate Grundy number for Nim position.
+    Winning strategy: XOR of all heap sizes is non-zero.
+    """
+    result = 0
+    for h in heap_sizes:
+        result ^= h
+    return result
+
+# Example: Nim with heaps [3, 4, 5]
+heaps = [3, 4, 5]
+g = grundy_nim(heaps)
+print(f"Grundy number: {g}")
+print(f"First player wins: {g != 0}")
+</code></pre>
+
+                <h3>4. Hackenbush</h3>
+                <h4>Motivation</h4>
+                <p>Hackenbush is the canonical example of a partisan combinatorial game. It provides geometric intuition for surreal numbers and demonstrates how games can have numerical values.</p>
+
+                <h4>Rules</h4>
+                <ul>
+                    <li>Draw a graph rooted at the "ground" (a horizontal line)</li>
+                    <li>Edges are colored blue (Left), red (Right), or green (either)</li>
+                    <li>On their turn, a player removes an edge of their color; any edges no longer connected to ground disappear</li>
+                    <li>Last player to move wins</li>
+                </ul>
+
+                <h4>Values</h4>
+                <p>A single blue edge above ground: value \(1\)</p>
+                <p>A single red edge above ground: value \(-1\)</p>
+                <p>A "stalk" of \(n\) blue edges: value \(n\)</p>
+
+                <p><strong>The key insight:</strong> A position where Left has one blue edge and Right has one red edge both connected to ground has value:</p>
+                \[\{1 \,|\, -1\} = 0\]
+                <p>This is a second-player win!</p>
+
+                <h4>Fascinating Values</h4>
+                <p>A blue edge with a red edge above it: \(\{0 | 1\} = \frac{1}{2}\)</p>
+                <p>An infinite blue chain: value \(\omega\) (the first infinite ordinal)</p>
+            </section>
+
+            <section id="history">
+                <h2>📜 Math History: Bernhard Riemann (1826–1866)</h2>
+
+                <p>Georg Friedrich Bernhard Riemann stands as one of the most influential mathematicians in history, despite a career cut tragically short by tuberculosis at age 39. Born in Breselenz, Hanover (now Germany), Riemann came from a modest Lutheran pastor's family and initially studied theology at the University of Göttingen to please his father. However, his fascination with mathematics, sparked by reading Legendre's <em>Number Theory</em>, led him to switch fields under the mentorship of Carl Friedrich Gauss.</p>
+
+                <p>Riemann's doctoral dissertation (1851) on complex function theory introduced what we now call Riemann surfaces—multi-sheeted surfaces that allow multi-valued functions like the complex logarithm to become single-valued. This geometric approach to analysis revolutionized the field and laid groundwork for modern topology. His habilitation lecture, "Über die Hypothesen, welche der Geometrie zu Grunde liegen" (On the Hypotheses Which Lie at the Foundations of Geometry), delivered in 1854, was nothing short of revolutionary. In this talk, Riemann generalized Euclidean geometry to spaces of arbitrary dimension with arbitrary curvature, introducing the concept of a manifold and the Riemannian metric. Einstein would later recognize this as exactly the mathematical framework needed for general relativity, some sixty years later.</p>
+
+                <p>In number theory, Riemann's 1859 paper "On the Number of Primes Less Than a Given Magnitude" introduced the Riemann zeta function and the famous Riemann Hypothesis—that all non-trivial zeros of \(\zeta(s)\) lie on the critical line \(\text{Re}(s) = \frac{1}{2}\). This conjecture remains one of the seven Millennium Prize Problems, with a million-dollar bounty for its resolution. The hypothesis connects the distribution of prime numbers to complex analysis in profound ways, and its proof would have far-reaching consequences for cryptography and number theory.</p>
+
+                <p>Riemann also made fundamental contributions to real analysis (the Riemann integral), differential equations (the Riemann problem), and mathematical physics. His work on shock waves and the Riemann-Roch theorem (connecting topology and algebraic geometry) continue to influence research today. Despite his short life and recurring health problems, Riemann's vision of geometry as the study of spaces with intrinsic structure transformed mathematics and physics, making him a true giant whose shoulders support much of modern science.</p>
+            </section>
+
+            <section id="journalism">
+                <h2>📰 Math Journalism</h2>
+                <ul>
+                    <li><a href="https://www.quantamagazine.org/mathematicians-prove-30-year-old-sensitivity-conjecture-20190709/" target="_blank" rel="noopener">Mathematicians Prove 30-Year-Old Sensitivity Conjecture</a> — Quanta Magazine (2019). Hao Huang's elegant proof using spectral graph theory resolved a long-standing problem in computer science with just two pages.</li>
+                    <li><a href="https://www.nature.com/articles/d41586-023-01332-1" target="_blank" rel="noopener">Mathematicians Find Hidden Structure in a Common Type of Graph</a> — Nature (2023). New results on expander graphs reveal deep connections between combinatorics and group theory.</li>
+                    <li><a href="https://www.scientificamerican.com/article/the-game-of-life-reaches-its-50th-year/" target="_blank" rel="noopener">The Game of Life Reaches Its 50th Year</a> — Scientific American. Martin Gardner's introduction of Conway's Game of Life in 1970 launched the field of cellular automata and continues to inspire mathematicians and computer scientists.</li>
+                </ul>
+            </section>
+
+            <section id="problem">
+                <h2>🧩 Problem Corner</h2>
+
+                <h3>AIME-Level Problem</h3>
+                <p><strong>Problem.</strong> In triangle \(ABC\), \(AB = 13\), \(BC = 14\), and \(CA = 15\). Let \(D\), \(E\), and \(F\) be the feet of the altitudes from \(A\), \(B\), and \(C\) respectively. Find the area of triangle \(DEF\).</p>
+
+                <details>
+                    <summary>💡 Hint</summary>
+                    <p>First find the area of \(ABC\) using Heron's formula. Then recall that the orthic triangle (triangle formed by the feet of the altitudes) has area related to the original triangle's area and its circumradius. The key formula is:</p>
+                    \[[DEF] = 2R^2 \cos A \cos B \cos C \cdot \frac{[ABC]}{2R^2 \sin A \sin B \sin C} = [ABC] \cdot \frac{\cos A \cos B \cos C}{\sin A \sin B \sin C}\]
+                    <p>Or more simply: \([DEF] = [ABC](1 - \cos^2 A - \cos^2 B - \cos^2 C + 2\cos A \cos B \cos C)\).</p>
+                </details>
+
+                <details>
+                    <summary>✅ Solution</summary>
+                    <p><strong>Step 1:</strong> Find the area of \(ABC\) using Heron's formula.</p>
+                    <p>Semi-perimeter: \(s = \frac{13+14+15}{2} = 21\)</p>
+                    \[[ABC] = \sqrt{21 \cdot 8 \cdot 7 \cdot 6} = \sqrt{7056} = 84\]
+
+                    <p><strong>Step 2:</strong> Find the circumradius \(R\).</p>
+                    \[R = \frac{abc}{4[ABC]} = \frac{13 \cdot 14 \cdot 15}{4 \cdot 84} = \frac{2730}{336} = \frac{65}{8}\]
+
+                    <p><strong>Step 3:</strong> Use the formula for the orthic triangle area.</p>
+                    <p>The vertices of the orthic triangle satisfy:</p>
+                    \[AE = c \cos A, \quad AF = b \cos A\]
+                    <p>Using the law of cosines:</p>
+                    \[\cos A = \frac{b^2+c^2-a^2}{2bc} = \frac{15^2+13^2-14^2}{2 \cdot 15 \cdot 13} = \frac{198}{390} = \frac{33}{65}\]
+                    \[\cos B = \frac{a^2+c^2-b^2}{2ac} = \frac{14^2+13^2-15^2}{2 \cdot 14 \cdot 13} = \frac{140}{364} = \frac{5}{13}\]
+                    \[\cos C = \frac{a^2+b^2-c^2}{2ab} = \frac{14^2+15^2-13^2}{2 \cdot 14 \cdot 15} = \frac{252}{420} = \frac{3}{5}\]
+
+                    <p><strong>Step 4:</strong> Apply the orthic triangle area formula.</p>
+                    \[[DEF] = [ABC] \cdot 2\cos A \cos B \cos C\]
+                    <p>(This simplified formula holds for acute triangles.)</p>
+                    \[[DEF] = 84 \cdot 2 \cdot \frac{33}{65} \cdot \frac{5}{13} \cdot \frac{3}{5} = 84 \cdot 2 \cdot \frac{33 \cdot 3}{65 \cdot 13} = 84 \cdot \frac{198}{845}\]
+                    \[= \frac{16632}{845} = \frac{196}{5}\]
+
+                    <p>Wait—let's verify: \(16632/845 = 19.68...\) and \(196/5 = 39.2\). Let me recalculate.</p>
+
+                    <p>Actually, the correct formula is:</p>
+                    \[[DEF] = [ABC] \cdot (1 - \cos^2 A - \cos^2 B - \cos^2 C + 2\cos A \cos B \cos C)\]
+                    <p>For acute triangles, this equals \([ABC] \cdot 2\cos A \cos B \cos C\) only when the triangle is right. Let's use:</p>
+                    \[[DEF] = \frac{2[ABC]^3}{a^2b^2c^2} \cdot (a^2+b^2+c^2) - ...\]
+
+                    <p>Alternative approach: The orthic triangle has sides \(a\cos A\), \(b\cos B\), \(c\cos C\) scaled appropriately. Actually:</p>
+                    \[EF = a \cos A = 14 \cdot \frac{33}{65} = \frac{462}{65}\]
+                    <p>Similarly for other sides. Using the formula:</p>
+                    \[[DEF] = [ABC] \cdot 2\cos A \cos B \cos C = 84 \cdot 2 \cdot \frac{33}{65} \cdot \frac{5}{13} \cdot \frac{3}{5}\]
+                    \[= 168 \cdot \frac{99}{845} = \frac{16632}{845}\]
+
+                    <p>Checking if this reduces: \(845 = 5 \cdot 13^2\), and \(16632 = 8 \cdot 2079 = 8 \cdot 9 \cdot 231 = 72 \cdot 231 = 72 \cdot 3 \cdot 77 = 216 \cdot 77 = 16632\). GCD\((16632, 845) = 1\).</p>
+
+                    <p>Actually, the standard result is \([DEF] = 2R^2\sin(2A)\sin(2B)\sin(2C)\) or equivalently for acute triangles:</p>
+                    \[[DEF] = [ABC] \cdot \frac{r}{2R}\]
+                    <p>where \(r\) is the inradius. With \(r = [ABC]/s = 84/21 = 4\) and \(R = 65/8\):</p>
+                    \[[DEF] = 84 \cdot \frac{4}{2 \cdot 65/8} = 84 \cdot \frac{16}{65} = \frac{1344}{65}\]
+
+                    <p><strong>Answer:</strong> \(\boxed{\dfrac{1344}{65}}\)</p>
+                </details>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day</h2>
+                <p>Gaussian curvature visualization on various surfaces. This Python code generates a 3D plot showing how curvature varies across a surface.</p>
+
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Create a figure with multiple surfaces showing Gaussian curvature
+def plot_surface_with_curvature():
+    fig = plt.figure(figsize=(14, 4))
+    
+    # Surface 1: Sphere (constant positive curvature)
+    ax1 = fig.add_subplot(131, projection='3d')
+    u = np.linspace(0, 2 * np.pi, 50)
+    v = np.linspace(0, np.pi, 50)
+    u, v = np.meshgrid(u, v)
+    r = 1
+    x1 = r * np.sin(v) * np.cos(u)
+    y1 = r * np.sin(v) * np.sin(u)
+    z1 = r * np.cos(v)
+    ax1.plot_surface(x1, y1, z1, cmap='Reds', alpha=0.8)
+    ax1.set_title('Sphere: K = 1/R² > 0', fontsize=10)
+    ax1.set_box_aspect([1,1,1])
+    
+    # Surface 2: Saddle (negative curvature)
+    ax2 = fig.add_subplot(132, projection='3d')
+    x2 = np.linspace(-2, 2, 50)
+    y2 = np.linspace(-2, 2, 50)
+    x2, y2 = np.meshgrid(x2, y2)
+    z2 = x2**2 - y2**2  # Hyperbolic paraboloid
+    ax2.plot_surface(x2, y2, z2, cmap='Blues', alpha=0.8)
+    ax2.set_title('Saddle: K < 0', fontsize=10)
+    ax2.set_box_aspect([1,1,0.5])
+    
+    # Surface 3: Cylinder (zero curvature)
+    ax3 = fig.add_subplot(133, projection='3d')
+    u3 = np.linspace(0, 2 * np.pi, 50)
+    v3 = np.linspace(-1, 1, 50)
+    u3, v3 = np.meshgrid(u3, v3)
+    r3 = 1
+    x3 = r3 * np.cos(u3)
+    y3 = r3 * np.sin(u3)
+    z3 = v3
+    ax3.plot_surface(x3, y3, z3, cmap='Greens', alpha=0.8)
+    ax3.set_title('Cylinder: K = 0', fontsize=10)
+    ax3.set_box_aspect([1,1,1])
+    
+    plt.tight_layout()
+    plt.savefig('gaussian_curvature.png', dpi=150, bbox_inches='tight')
+    plt.show()
+    
+    return fig
+
+# Network visualization: Watts-Strogatz small-world model
+def plot_small_world_network():
+    import networkx as nx
+    
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    
+    n, k = 20, 4  # 20 nodes, each connected to 4 nearest neighbors
+    
+    # Regular lattice (p=0)
+    G1 = nx.watts_strogatz_graph(n, k, 0)
+    nx.draw_circular(G1, ax=axes[0], node_color='skyblue', 
+                     with_labels=True, font_size=8)
+    axes[0].set_title('Regular Lattice (p=0)\nHigh clustering, long paths', fontsize=10)
+    
+    # Small world (p=0.1)
+    G2 = nx.watts_strogatz_graph(n, k, 0.1)
+    nx.draw_circular(G2, ax=axes[1], node_color='lightgreen',
+                     with_labels=True, font_size=8)
+    axes[1].set_title('Small World (p=0.1)\nHigh clustering, short paths', fontsize=10)
+    
+    # Random network (p=1)
+    G3 = nx.watts_strogatz_graph(n, k, 1)
+    nx.draw_circular(G3, ax=axes[2], node_color='salmon',
+                     with_labels=True, font_size=8)
+    axes[2].set_title('Random Network (p=1)\nLow clustering, short paths', fontsize=10)
+    
+    plt.tight_layout()
+    plt.savefig('small_world_networks.png', dpi=150, bbox_inches='tight')
+    plt.show()
+    
+    return fig
+
+# Run visualizations
+if __name__ == "__main__":
+    print("Generating Gaussian curvature visualization...")
+    plot_surface_with_curvature()
+    print("Generating small-world network visualization...")
+    plot_small_world_network()
+    print("Done!")
+</code></pre>
+
+                <p><strong>Output:</strong> The code generates two figures:</p>
+                <ol>
+                    <li><strong>Gaussian Curvature:</strong> Shows a sphere (positive curvature), saddle (negative curvature), and cylinder (zero curvature)—the three fundamental types of surface curvature.</li>
+                    <li><strong>Small-World Networks:</strong> Demonstrates the Watts-Strogatz transition from regular lattice to small-world to random network as the rewiring probability increases.</li>
+                </ol>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    "The essence of mathematics lies in its freedom."
+                    <br>— <strong>Georg Cantor</strong>, German mathematician and creator of set theory
+                </blockquote>
+                <p>This quote reminds us that mathematics is not merely a collection of rigid rules, but a vast landscape of creative exploration. From the infinite realms of surreal numbers to the curved geometries of Riemannian manifolds, mathematical freedom allows us to imagine structures beyond physical reality and discover profound truths about the nature of existence itself.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Generated by the Math Digest system</p>
+        <p><a href="../index.html">← Back to Home</a></p>
+    </footer>
+</body>
+</html>

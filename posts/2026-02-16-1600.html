@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Mathematical insights and explorations">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 16, 2026 at 16:00</title>
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)')],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <p class="post-date">📅 2026-02-16 at 1600</p>
+            <div class="tags">
+                <a href="../tags/algebra.html" class="tag">algebra</a>
+                <a href="../tags/number-theory.html" class="tag">number-theory</a>
+                <a href="../tags/topology.html" class="tag">topology</a>
+                <a href="../tags/analysis.html" class="tag">analysis</a>
+                <a href="../tags/optimization.html" class="tag">optimization</a>
+            </div>
+
+            <section id="links">
+                <h2>🔗 Math Links</h2>
+                <ul>
+                    <li><a href="https://mathoverflow.net" target="_blank" rel="noopener">MathOverflow</a> — A Q&A site for professional mathematicians with deep discussions on research-level topics.</li>
+                    <li><a href="https://www.wolframalpha.com" target="_blank" rel="noopener">WolframAlpha</a> — Computational knowledge engine that solves equations, plots functions, and explores mathematical concepts.</li>
+                    <li><a href="https://arxiv.org/archive/math" target="_blank" rel="noopener">arXiv Mathematics</a> — Open access to thousands of preprints in pure and applied mathematics.</li>
+                </ul>
+            </section>
+
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                <h3><a href="https://abstract.ups.edu/" target="_blank" rel="noopener">Abstract Algebra: Theory and Applications</a></h3>
+                <p><strong>Author:</strong> Thomas W. Judson | <strong>Level:</strong> Undergraduate</p>
+                <p>This comprehensive textbook covers groups, rings, fields, and Galois theory with a computational approach using SageMath. It includes numerous examples, exercises, and applications to coding theory and cryptography.</p>
+            </section>
+
+            <section id="pure-dives">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <h3>1. Group Theory: The Isomorphism Theorems</h3>
+                <h4>Motivation</h4>
+                <p>Group theory studies symmetry in abstract form. The isomorphism theorems reveal the deep structure-preserving relationships between groups, allowing us to understand complex groups by studying simpler quotient structures.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>group</em> \((G, \cdot)\) is a set \(G\) with a binary operation satisfying: closure, associativity, identity element \(e\), and inverses for all elements.</p>
+                <p><strong>Definition.</strong> A <em>homomorphism</em> \(\varphi: G \to H\) satisfies \(\varphi(ab) = \varphi(a)\varphi(b)\).</p>
+                <p><strong>Definition.</strong> The <em>kernel</em> is \(\ker(\varphi) = \{g \in G : \varphi(g) = e_H\}\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>First Isomorphism Theorem.</strong> If \(\varphi: G \to H\) is a homomorphism, then \(G/\ker(\varphi) \cong \text{im}(\varphi)\).</p>
+                <p><strong>Proof.</strong> Define \(\bar{\varphi}: G/\ker(\varphi) \to \text{im}(\varphi)\) by \(\bar{\varphi}(gK) = \varphi(g)\) where \(K = \ker(\varphi)\).</p>
+                <p>Well-defined: If \(gK = hK\), then \(h^{-1}g \in K\), so \(\varphi(h^{-1}g) = e\), thus \(\varphi(g) = \varphi(h)\).</p>
+                <p>Homomorphism: \(\bar{\varphi}(gK \cdot hK) = \bar{\varphi}(ghK) = \varphi(gh) = \varphi(g)\varphi(h) = \bar{\varphi}(gK)\bar{\varphi}(h)\).</p>
+                <p>Injective: If \(\bar{\varphi}(gK) = e\), then \(\varphi(g) = e\), so \(g \in K\), meaning \(gK = K\).</p>
+                <p>Surjective: For any \(y \in \text{im}(\varphi)\), there exists \(g\) with \(\varphi(g) = y\), so \(\bar{\varphi}(gK) = y\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(G, H\) — groups</li>
+                    <li>\(\varphi\) — homomorphism</li>
+                    <li>\(\ker(\varphi)\) — kernel of homomorphism</li>
+                    <li>\(G/K\) — quotient group</li>
+                    <li>\(\cong\) — isomorphic</li>
+                    <li>\(\text{im}(\varphi)\) — image of homomorphism</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">from itertools import product
+
+class FiniteGroup:
+    def __init__(self, elements, operation_table):
+        self.elements = elements
+        self.op = operation_table
+        self.e = elements[0]
+    
+    def multiply(self, a, b):
+        i, j = self.elements.index(a), self.elements.index(b)
+        return self.op[i][j]
+    
+    def kernel(self, other_group, homomorphism):
+        """Find kernel of homomorphism to another group"""
+        return [g for g in self.elements if homomorphism(g) == other_group.e]
+
+# Example: Z_4 and Z_2
+Z4 = FiniteGroup([0, 1, 2, 3], [[(i+j)%4 for j in range(4)] for i in range(4)])
+Z2 = FiniteGroup([0, 1], [[0, 1], [1, 0]])
+
+# Homomorphism: phi(x) = x mod 2
+phi = lambda x: x % 2
+kernel_phi = Z4.kernel(Z2, phi)
+print(f"Kernel of phi: {kernel_phi}")  # [0, 2]</code></pre>
+
+                <h3>2. Number Theory: Quadratic Reciprocity</h3>
+                <h4>Motivation</h4>
+                <p>Determining whether a number is a perfect square modulo a prime is fundamental to cryptography and computational number theory. Gauss's law of quadratic reciprocity provides a beautiful symmetry relating these questions for different primes.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> For odd prime \(p\) and integer \(a\), the <em>Legendre symbol</em> is:</p>
+                \[
+                \left(\frac{a}{p}\right) = \begin{cases} 0 & p \mid a \\ 1 & a \text{ is QR mod } p \\ -1 & a \text{ is QNR mod } p \end{cases}
+                \]
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Law of Quadratic Reciprocity.</strong> For distinct odd primes \(p, q\):</p>
+                \[
+                \left(\frac{p}{q}\right)\left(\frac{q}{p}\right) = (-1)^{\frac{p-1}{2} \cdot \frac{q-1}{2}}
+                \]
+                <p><strong>Proof Sketch.</strong> Using Gauss's lemma and lattice point counting in the rectangle \([0, p/2] \times [0, q/2]\). The key insight is counting solutions to \(qx \equiv \pm py \pmod{pq}\) with appropriate bounds. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\left(\frac{a}{p}\right)\) — Legendre symbol</li>
+                    <li>QR — quadratic residue</li>
+                    <li>QNR — quadratic non-residue</li>
+                    <li>\(a \mid b\) — a divides b</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">def legendre_symbol(a, p):
+    """Compute Legendre symbol (a/p) using Euler's criterion"""
+    if a % p == 0:
+        return 0
+    result = pow(a, (p - 1) // 2, p)
+    return -1 if result == p - 1 else result
+
+def quadratic_reciprocity(p, q):
+    """Verify quadratic reciprocity for odd primes p, q"""
+    left = legendre_symbol(p, q) * legendre_symbol(q, p)
+    right = (-1) ** (((p - 1) // 2) * ((q - 1) // 2))
+    return left == right
+
+# Test
+print(legendre_symbol(3, 7))  # -1 (3 is not a square mod 7)
+print(quadratic_reciprocity(3, 7))  # True</code></pre>
+
+                <h3>3. Point-Set Topology: Compactness</h3>
+                <h4>Motivation</h4>
+                <p>Compactness generalizes the notion of "closed and bounded" to arbitrary topological spaces. It is arguably the most important concept in topology, ensuring that continuous functions achieve extrema and that sequences have convergent subsequences.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A space \(X\) is <em>compact</em> if every open cover has a finite subcover.</p>
+                <p><strong>Definition.</strong> A space is <em>Hausdorff</em> if distinct points have disjoint neighborhoods.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Heine-Borel Theorem.</strong> A subset of \(\mathbb{R}^n\) is compact iff it is closed and bounded.</p>
+                <p><strong>Proof.</strong> (\(\Rightarrow\)) Compact in Hausdorff implies closed. Boundedness follows from finite subcover of the cover by balls of radius \(n\).</p>
+                <p>(\(\Leftarrow\)) For \([a,b] \subset \mathbb{R}\): Suppose \(\mathcal{U}\) is an open cover with no finite subcover. Bisect: one half has no finite subcover. Iterate to get nested intervals \([a_n, b_n]\) with \(|b_n - a_n| \to 0\). By completeness, \(\cap [a_n, b_n] = \{x\}\). Some \(U \in \mathcal{U}\) contains \(x\), hence contains some \([a_n, b_n]\), contradiction. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\mathbb{R}^n\) — n-dimensional Euclidean space</li>
+                    <li>\(\mathcal{U}\) — open cover (collection of open sets)</li>
+                    <li>\(X\) — topological space</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+
+def is_closed_and_bounded(points, epsilon=1e-6):
+    """Check if a finite set of points in R^n is closed and bounded"""
+    if len(points) == 0:
+        return True
+    
+    # Bounded: check if all points fit in a ball
+    center = np.mean(points, axis=0)
+    distances = [np.linalg.norm(p - center) for p in points]
+    bounded = max(distances) < float('inf')
+    
+    # For finite sets, closed is automatic
+    return bounded
+
+# Example: points on a circle (compact)
+angles = np.linspace(0, 2*np.pi, 100)
+circle_points = np.array([[np.cos(a), np.sin(a)] for a in angles])
+print(f"Circle is closed and bounded: {is_closed_and_bounded(circle_points)}")</code></pre>
+            </section>
+
+            <section id="applied-dives">
+                <h2>🧮 Applied Math Deep-Dives</h2>
+
+                <h3>1. Numerical Analysis: Newton's Method</h3>
+                <h4>Motivation</h4>
+                <p>Finding roots of equations is ubiquitous in science and engineering. Newton's method provides quadratic convergence, making it one of the most efficient root-finding algorithms when it works.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> For differentiable \(f\), Newton's iteration is:</p>
+                \[
+                x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+                \]
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Quadratic Convergence.</strong> If \(f\) is \(C^2\), \(f(r) = 0\), \(f'(r) \neq 0\), and \(x_0\) is sufficiently close to \(r\), then \(|x_{n+1} - r| \leq C|x_n - r|^2\).</p>
+                <p><strong>Proof.</strong> Taylor expand: \(0 = f(r) = f(x_n) + f'(x_n)(r - x_n) + \frac{f''(\xi)}{2}(r - x_n)^2\).</p>
+                <p>Solving: \(r - x_{n+1} = r - x_n + \frac{f(x_n)}{f'(x_n)} = -\frac{f''(\xi)}{2f'(x_n)}(r - x_n)^2\).</p>
+                <p>Thus \(|r - x_{n+1}| \leq M|r - x_n|^2\) where \(M = \sup \frac{|f''|}{2|f'|}\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(f'(x)\) — derivative</li>
+                    <li>\(x_n\) — nth iterate</li>
+                    <li>\(r\) — true root</li>
+                    <li>\(C^2\) — twice continuously differentiable</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">def newtons_method(f, df, x0, tol=1e-10, max_iter=100):
+    """Newton's method for finding roots"""
+    x = x0
+    for i in range(max_iter):
+        fx = f(x)
+        if abs(fx) < tol:
+            return x, i
+        dfx = df(x)
+        if abs(dfx) < 1e-15:
+            raise ValueError("Derivative too small")
+        x = x - fx / dfx
+    return x, max_iter
+
+# Example: Find sqrt(2)
+f = lambda x: x**2 - 2
+df = lambda x: 2*x
+root, iterations = newtons_method(f, df, 1.5)
+print(f"sqrt(2) ≈ {root:.12f} in {iterations} iterations")</code></pre>
+
+                <h3>2. Optimization: Gradient Descent Convergence</h3>
+                <h4>Motivation</h4>
+                <p>Gradient descent powers modern machine learning. Understanding when and why it converges is essential for tuning learning rates and ensuring reliable training.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A function \(f: \mathbb{R}^n \to \mathbb{R}\) is <em>L-smooth</em> if \(\|\nabla f(x) - \nabla f(y)\| \leq L\|x - y\|\).</p>
+                <p><strong>Definition.</strong> \(f\) is <em>\(\mu\)-strongly convex</em> if \(f(y) \geq f(x) + \nabla f(x)^T(y-x) + \frac{\mu}{2}\|y-x\|^2\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Convergence Rate.</strong> For L-smooth, \(\mu\)-strongly convex \(f\), gradient descent with step size \(\eta = 1/L\) satisfies:</p>
+                \[
+                f(x_k) - f(x^*) \leq \left(1 - \frac{\mu}{L}\right)^k (f(x_0) - f(x^*))
+                \]
+                <p><strong>Proof.</strong> From L-smoothness: \(f(x_{k+1}) \leq f(x_k) - \frac{1}{2L}\|\nabla f(x_k)\|^2\).</p>
+                <p>From strong convexity: \(\|\nabla f(x_k)\|^2 \geq 2\mu(f(x_k) - f(x^*))\).</p>
+                <p>Combining: \(f(x_{k+1}) - f(x^*) \leq (1 - \frac{\mu}{L})(f(x_k) - f(x^*))\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\nabla f\) — gradient</li>
+                    <li>\(L\) — Lipschitz constant of gradient</li>
+                    <li>\(\mu\) — strong convexity parameter</li>
+                    <li>\(\kappa = L/\mu\) — condition number</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+
+def gradient_descent(f, grad_f, x0, step_size, n_iter):
+    """Simple gradient descent"""
+    x = x0.copy()
+    history = [f(x)]
+    for _ in range(n_iter):
+        x = x - step_size * grad_f(x)
+        history.append(f(x))
+    return x, history
+
+# Minimize f(x,y) = x^2 + 10y^2 (ill-conditioned)
+f = lambda v: v[0]**2 + 10*v[1]**2
+grad_f = lambda v: np.array([2*v[0], 20*v[1]])
+
+x0 = np.array([5.0, 5.0])
+x_opt, hist = gradient_descent(f, grad_f, x0, 0.05, 100)
+print(f"Optimal: {x_opt}")
+print(f"Final value: {hist[-1]:.2e}")</code></pre>
+
+                <h3>3. Probability: The Central Limit Theorem</h3>
+                <h4>Motivation</h4>
+                <p>The CLT explains why normal distributions appear everywhere in nature. It underpins statistical inference, allowing us to construct confidence intervals and perform hypothesis tests.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> Random variables \(X_1, X_2, \ldots\) are i.i.d. (independent and identically distributed) with mean \(\mu\) and variance \(\sigma^2\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Central Limit Theorem.</strong> Let \(S_n = X_1 + \cdots + X_n\). Then:</p>
+                \[
+                \frac{S_n - n\mu}{\sigma\sqrt{n}} \xrightarrow{d} \mathcal{N}(0,1)
+                \]
+                <p><strong>Proof Sketch.</strong> Using characteristic functions: \(\varphi_{X}(t) = \mathbb{E}[e^{itX}]\).</p>
+                <p>For the standardized sum: \(\varphi_{Z_n}(t) = \left[\varphi_X\left(\frac{t}{\sigma\sqrt{n}}\right)e^{-it\mu/(\sigma\sqrt{n})}\right]^n\).</p>
+                <p>Taylor expansion: \(\varphi_X(t) = 1 + it\mu - \frac{t^2(\sigma^2+\mu^2)}{2} + o(t^2)\).</p>
+                <p>After standardization and taking \(n \to \infty\): \(\varphi_{Z_n}(t) \to e^{-t^2/2}\), the characteristic function of \(\mathcal{N}(0,1)\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\xrightarrow{d}\) — convergence in distribution</li>
+                    <li>\(\mathcal{N}(0,1)\) — standard normal distribution</li>
+                    <li>\(\varphi_X\) — characteristic function</li>
+                    <li>\(\mathbb{E}\) — expected value</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def demonstrate_clt(n_samples=10000, n_sum=30):
+    """Demonstrate CLT by summing uniform random variables"""
+    # Sum of n_sum uniform(0,1) variables
+    sums = np.sum(np.random.uniform(0, 1, (n_samples, n_sum)), axis=1)
+    
+    # Standardize
+    mean = n_sum * 0.5
+    std = np.sqrt(n_sum / 12)
+    standardized = (sums - mean) / std
+    
+    return standardized
+
+# Generate and compare to standard normal
+samples = demonstrate_clt()
+print(f"Mean: {np.mean(samples):.4f} (should be ~0)")
+print(f"Std: {np.std(samples):.4f} (should be ~1)")</code></pre>
+            </section>
+
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+
+                <h3>1. Fractal Geometry: The Mandelbrot Set</h3>
+                <h4>Historical Context</h4>
+                <p>Benoit Mandelbrot introduced fractals in the 1970s, revolutionizing our understanding of complex shapes. The Mandelbrot set, discovered in 1980, became the iconic image of chaos theory and complex dynamics.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <em>Mandelbrot set</em> is:</p>
+                \[
+                M = \{c \in \mathbb{C} : \limsup_{n \to \infty} |f_c^n(0)| \lt \infty\}
+                \]
+                where \(f_c(z) = z^2 + c\) and \(f_c^n\) denotes n-fold iteration.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Escape Criterion.</strong> If \(|z| \gt 2\) and \(|z| \geq |c|\), then \(|f_c^n(z)| \to \infty\).</p>
+                <p><strong>Proof.</strong> By reverse triangle inequality: \(|z^2 + c| \geq |z|^2 - |c| \geq |z|^2 - |z| = |z|(|z|-1)\).</p>
+                <p>If \(|z| \gt 2\), then \(|z|-1 \gt 1\), so \(|f_c(z)| \gt |z|\). The sequence grows without bound. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\mathbb{C}\) — complex numbers</li>
+                    <li>\(f_c^n\) — n-fold iteration of \(f_c\)</li>
+                    <li>\(\limsup\) — limit superior</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+
+def mandelbrot(c, max_iter=100):
+    """Compute Mandelbrot iterations for complex c"""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+def mandelbrot_set(width=800, height=600, x_min=-2.5, x_max=1, y_min=-1.25, y_max=1.25):
+    """Generate Mandelbrot set image"""
+    x = np.linspace(x_min, x_max, width)
+    y = np.linspace(y_min, y_max, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    M = np.vectorize(mandelbrot)(C)
+    return M
+
+# Generate a small sample
+M = mandelbrot_set(200, 150)
+print(f"Mandelbrot set computed: shape {M.shape}")
+print(f"Points in set: {np.sum(M == 100)}")</code></pre>
+
+                <h3>2. Cryptography: RSA Encryption</h3>
+                <h4>Historical Context</h4>
+                <p>In 1977, Rivest, Shamir, and Adleman published the first practical public-key cryptosystem. RSA revolutionized secure communication, enabling e-commerce and private messaging over public channels.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> Choose primes \(p, q\), let \(n = pq\) and \(\phi(n) = (p-1)(q-1)\). Choose \(e\) with \(\gcd(e, \phi(n)) = 1\), compute \(d \equiv e^{-1} \pmod{\phi(n)}\).</p>
+                <p>Public key: \((n, e)\), Private key: \(d\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Correctness of RSA.</strong> For any message \(m\): \((m^e)^d \equiv m \pmod{n}\).</p>
+                <p><strong>Proof.</strong> Since \(ed \equiv 1 \pmod{\phi(n)}\), we have \(ed = 1 + k\phi(n)\).</p>
+                <p>By Euler's theorem: \(m^{\phi(n)} \equiv 1 \pmod{n}\) when \(\gcd(m,n)=1\).</p>
+                <p>Thus \(m^{ed} = m \cdot m^{k\phi(n)} \equiv m \cdot 1^k = m \pmod{n}\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\phi(n)\) — Euler's totient function</li>
+                    <li>\(\gcd\) — greatest common divisor</li>
+                    <li>\(a^{-1} \pmod{n}\) — modular multiplicative inverse</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import random
+from math import gcd
+
+def mod_inverse(a, m):
+    """Extended Euclidean algorithm"""
+    def extended_gcd(a, b):
+        if b == 0:
+            return a, 1, 0
+        g, x1, y1 = extended_gcd(b, a % b)
+        return g, y1, x1 - (a // b) * y1
+    
+    g, x, _ = extended_gcd(a % m, m)
+    if g != 1:
+        return None
+    return (x % m + m) % m
+
+def rsa_keygen(p, q):
+    """Generate RSA keys from primes p, q"""
+    n = p * q
+    phi = (p - 1) * (q - 1)
+    e = 65537  # Common choice
+    d = mod_inverse(e, phi)
+    return (n, e), d
+
+# Small example (insecure for real use!)
+p, q = 61, 53
+public, private = rsa_keygen(p, q)
+print(f"Public key: {public}")
+print(f"Private key: {private}")</code></pre>
+
+                <h3>3. Mathematical Art: String Art Curves</h3>
+                <h4>Historical Context</h4>
+                <p>String art emerged as a popular craft in the 1960s, but its mathematical foundations trace back to envelope theory. The curves formed by straight lines can approximate complex mathematical curves like parabolas and cardioids.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>string art curve</em> is the envelope of lines connecting points \(P_i\) on one curve to \(Q_i\) on another, parameterized by \(i\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Parabola from String Art.</strong> Lines connecting \((i, 0)\) to \((0, n-i)\) for \(i = 0, \ldots, n\) envelope the parabola \((\sqrt{x} + \sqrt{y})^2 = n\).</p>
+                <p><strong>Proof.</strong> The line from \((t, 0)\) to \((0, n-t)\) has equation \(\frac{x}{t} + \frac{y}{n-t} = 1\).</p>
+                <p>Differentiating implicitly with respect to \(t\): \(-\frac{x}{t^2} + \frac{y}{(n-t)^2} = 0\).</p>
+                <p>Solving: \(t = \frac{n\sqrt{x}}{\sqrt{x}+\sqrt{y}}\). Substituting back gives the envelope equation. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>Envelope — curve tangent to all members of a family</li>
+                    <li>\(P_i, Q_i\) — parameterized points</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def string_art_parabola(n=20):
+    """Generate string art parabola"""
+    fig, ax = plt.subplots(figsize=(8, 8))
+    
+    for i in range(n + 1):
+        x1, y1 = i, 0
+        x2, y2 = 0, n - i
+        ax.plot([x1, x2], [y1, y2], 'b-', alpha=0.6, linewidth=0.8)
+    
+    # The actual parabola
+    t = np.linspace(0, n, 200)
+    x_par = t**2 / n
+    y_par = (n - t)**2 / n
+    ax.plot(x_par, y_par, 'r-', linewidth=2, label='Envelope')
+    
+    ax.set_xlim(-1, n+1)
+    ax.set_ylim(-1, n+1)
+    ax.set_aspect('equal')
+    ax.legend()
+    return fig
+
+# Generate
+fig = string_art_parabola(20)
+plt.savefig('/tmp/string_art.png', dpi=150, bbox_inches='tight')
+print("String art parabola saved")</code></pre>
+
+                <h3>4. Unsolved Problems: The Collatz Conjecture</h3>
+                <h4>Historical Context</h4>
+                <p>Lothar Collatz posed this problem in 1937. Despite its simple statement, it has resisted proof for nearly 90 years. Paul Erdős said "Mathematics may not be ready for such problems."</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The Collatz function is:</p>
+                \[
+                f(n) = \begin{cases} n/2 & n \equiv 0 \pmod{2} \\ 3n + 1 & n \equiv 1 \pmod{2} \end{cases}
+                \]
+                <p><strong>Conjecture.</strong> For all \(n \geq 1\), iterating \(f\) eventually reaches 1.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Partial Result.</strong> The Collatz conjecture holds for all \(n \lt 2^{68}\).</p>
+                <p><strong>Proof Sketch.</strong> Extensive computer verification. No general proof is known. The problem connects to ergodic theory, dynamical systems, and undecidability results. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(n \equiv 0 \pmod{2}\) — n is even</li>
+                    <li>\(f^k(n)\) — k-fold iteration</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">def collatz(n):
+    """Generate Collatz sequence"""
+    sequence = [n]
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        sequence.append(n)
+    return sequence
+
+def collatz_stats(max_n=10000):
+    """Compute statistics for Collatz sequences"""
+    max_length = 0
+    max_start = 0
+    for i in range(1, max_n + 1):
+        seq = collatz(i)
+        if len(seq) > max_length:
+            max_length = len(seq)
+            max_start = i
+    return max_start, max_length
+
+# Example
+seq = collatz(27)
+print(f"Collatz(27) has {len(seq)} steps")
+print(f"First 10: {seq[:10]}")
+print(f"Last 10: {seq[-10:]}")
+
+start, length = collatz_stats(10000)
+print(f"Maximum length up to 10000: {length} (starting from {start})")</code></pre>
+            </section>
+
+            <section id="history">
+                <h2>📜 Math History</h2>
+                <h3>Evariste Galois: Revolution and Mathematics</h3>
+                <p>Born on October 25, 1811, in Bourg-la-Reine, France, Évariste Galois would revolutionize mathematics before dying in a duel at age 20. His short life reads like a tragic novel, yet his mathematical legacy endures as one of the most profound in history.</p>
+                <p>Galois grew up during a tumultuous period in French history. His father, a republican mayor, committed suicide in 1829 when Galois was just 17. This trauma, combined with his mathematical genius and political radicalism, shaped his brief, intense life.</p>
+                <p>His mathematical breakthrough came from studying polynomial equations. While Cardano had solved cubic equations in the 16th century and Ferrari the quartic, the quintic remained elusive. In 1799, Ruffini claimed the quintic couldn't be solved by radicals, but his proof had gaps. Abel provided a complete proof in 1824.</p>
+                <p>Galois went further. He developed group theory to understand <em>why</em> equations are solvable. His insight: associate a group (now called the Galois group) to each equation. The equation is solvable by radicals iff this group is solvable. This connected two seemingly unrelated fields—algebra and symmetry—creating modern abstract algebra.</p>
+                <p>Tragically, Galois's work was repeatedly rejected or lost. He submitted papers to Cauchy and Fourier; both were misplaced. The night before his fatal duel on May 30, 1832, he frantically wrote down his mathematical ideas, scribbling in the margins "I have no time."</p>
+                <p>Liouville published Galois's work in 1846, fourteen years after his death. The theory now bears his name and underpins modern algebra, number theory, and algebraic geometry. Every mathematics student learns about Galois groups and Galois extensions—a fitting memorial to a genius who died too young.</p>
+            </section>
+
+            <section id="journalism">
+                <h2>📰 Math in the News</h2>
+                <h3><a href="https://www.quantamagazine.org/mathematicians-prove-tetrahedron-inequality-20250120/" target="_blank" rel="noopener">Mathematicians Solve Tetrahedron Inequality</a> — <em>Quanta Magazine</em></h3>
+                <p>Researchers have proven a long-standing conjecture about the volumes of tetrahedra, establishing sharp inequalities that connect discrete geometry with optimization theory. The result has implications for computer graphics and mesh generation algorithms.</p>
+
+                <h3><a href="https://nautil.us/the-mathematician-who-solved-ai-1178892/" target="_blank" rel="noopener">The Mathematician Who Solved AI</a> — <em>Nautilus</em></h3>
+                <p>An exploration of how geometric deep learning draws from centuries-old mathematical insights about symmetry and invariance. The article traces connections between 19th-century invariant theory and modern neural network architectures.</p>
+
+                <h3><a href="https://www.ams.org/journals/notices/202501/rnoti-p1.pdf" target="_blank" rel="noopener">The Future of Mathematical Publishing</a> — <em>AMS Notices</em></h3>
+                <p>A thoughtful examination of how AI tools are changing mathematical research and publication. The authors discuss both opportunities for automated proof verification and concerns about maintaining rigor in an age of generative AI.</p>
+            </section>
+
+            <section id="problem">
+                <h2>🧩 Problem Corner</h2>
+                <p><strong>Problem (AIME 2023).</strong> Let \(S\) be the set of positive integers \(n\) such that \(n^2 - 2n + 3\) divides \(n^3 + 4\). Find the sum of all elements in \(S\).</p>
+                <details>
+                    <summary>💡 Hint</summary>
+                    <p>Use polynomial division to write \(n^3 + 4 = (n+2)(n^2-2n+3) - 2n + 4 - 6 + 4\). Simplify and find when the remainder is zero.</p>
+                </details>
+                <details>
+                    <summary>✅ Solution</summary>
+                    <p>Performing polynomial long division:</p>
+                    \[
+                    n^3 + 4 = (n+2)(n^2 - 2n + 3) + (2n - 2)
+                    \]
+                    <p>For divisibility, we need \(n^2 - 2n + 3 \mid 2n - 2\).</p>
+                    <p>For large \(n\), \(n^2 - 2n + 3 \gt 2n - 2\), so we need \(2n - 2 = 0\) or check small cases.</p>
+                    <p>If \(n = 1\): \(1 - 2 + 3 = 2\) divides \(1 + 4 = 5\)? No.</p>
+                    <p>If \(n = 2\): \(4 - 4 + 3 = 3\) divides \(8 + 4 = 12\). Yes!</p>
+                    <p>If \(n = 3\): \(9 - 6 + 3 = 6\) divides \(27 + 4 = 31\)? No.</p>
+                    <p>If \(n = 4\): \(16 - 8 + 3 = 11\) divides \(64 + 4 = 68\)? No.</p>
+                    <p>For \(n \geq 3\), we have \(n^2 - 2n + 3 \gt 2n - 2 \geq 0\), so divisibility requires \(2n - 2 = 0\), impossible for integer \(n \geq 2\).</p>
+                    <p>Thus \(S = \{2\}\) and the sum is <strong>2</strong>.</p>
+                </details>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day</h2>
+                <h3>Fourier Epicycles</h3>
+                <p>Fourier series decompose periodic functions into sums of rotating circles (epicycles). This visualization reveals how complex curves can be built from simple circular motions—a principle used in everything from signal processing to planetary motion models.</p>
+                <p>The visualization shows how adding more epicycles (higher frequency components) better approximates a target curve, demonstrating the convergence of Fourier series.</p>
+
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+def fourier_epicycles(t, coefficients):
+    """Compute position from Fourier coefficients"""
+    x, y = 0, 0
+    for n, (a, b) in enumerate(coefficients):
+        freq = n + 1
+        x += a * np.cos(freq * t) + b * np.sin(freq * t)
+        y += a * np.sin(freq * t) - b * np.cos(freq * t)
+    return x, y
+
+# Coefficients for a square-like shape
+coeffs = [(1, 0), (0, 0.5), (0.3, 0), (0, 0.25)]
+
+t = np.linspace(0, 2*np.pi, 1000)
+x, y = zip(*[fourier_epicycles(ti, coeffs) for ti in t])
+
+fig, ax = plt.subplots(figsize=(8, 8))
+ax.plot(x, y, 'b-', linewidth=2)
+ax.set_aspect('equal')
+ax.set_title('Fourier Epicycle Curve')
+plt.savefig('/tmp/epicycles.png', dpi=150)
+print("Epicycle visualization saved")</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"Mathematics is the language in which God has written the universe."</p>
+                    <footer>— Galileo Galilei</footer>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="../posts/index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
