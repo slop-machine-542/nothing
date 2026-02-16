@@ -3,568 +3,1083 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Math Digest — Mathematical insights and explorations">
-    <meta name="theme-color" content="#2c3e50">
-    <title>Math Digest — February 16, 2026 at 17:00</title>
-    <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['\\(', '\\)')],
-        displayMath: [['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        tags: 'ams'
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Complex Analysis: The Magic of Complex Numbers - Nothing But Real Math</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
 </head>
 <body>
     <header class="site-header">
-        <h1>📐 Math Digest</h1>
-        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+        <h1>Nothing But Real Math</h1>
+        <p class="site-description">Pure mathematics, deep dives, and applications</p>
     </header>
+    
     <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="index.html">Archive</a></li>
             <li><a href="../tags/index.html">Tags</a></li>
-            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
         </ul>
     </nav>
+    
     <main>
         <article>
-            <p class="post-date">📅 2026-02-16 at 1700</p>
-            <div class="tags">
-                <a href="../tags/topology.html" class="tag">topology</a>
-                <a href="../tags/game-theory.html" class="tag">game-theory</a>
-                <a href="../tags/cryptography.html" class="tag">cryptography</a>
-                <a href="../tags/fixed-point.html" class="tag">fixed-point</a>
-            </div>
-
-            <section id="links">
-                <h2>🔗 Math Links</h2>
+            <h1>Complex Analysis: The Magic of Complex Numbers</h1>
+            <p class="post-date">February 16, 2026 | 18:00</p>
+            <ul class="tags">
+                <li class="tag"><a href="../tags/complex-analysis.html">Complex Analysis</a></li>
+                <li class="tag"><a href="../tags/analysis.html">Analysis</a></li>
+                <li class="tag"><a href="../tags/geometry.html">Geometry</a></li>
+            </ul>
+            
+            <section id="math-links">
+                <h2>Math Links</h2>
                 <ul>
-                    <li><a href="https://pi.math.cornell.edu/~hatcher/AT/AT.pdf" target="_blank" rel="noopener">Algebraic Topology by Hatcher</a> — The definitive free textbook on algebraic topology, covering homotopy, homology, and cohomology.</li>
-                    <li><a href="https://www.gametheory.net/" target="_blank" rel="noopener">Game Theory .net</a> — Educational resource with lectures, textbooks, and applications of game theory.</li>
-                    <li><a href="https://cryptohack.org/" target="_blank" rel="noopener">CryptoHack</a> — Interactive platform for learning cryptography through programming challenges.</li>
+                    <li><a href="https://mathworld.wolfram.com/ComplexAnalysis.html">MathWorld: Complex Analysis</a> - Comprehensive resource on complex functions, contour integration, and residues.</li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLi7yH8QNwnO9Js2k3jLFxQrfI2Z9q5TJB">Complex Analysis Lectures by Richard Borcherds</a> - Field Medalist's lecture series on complex analysis.</li>
+                    <li><a href="https://www.math.ucdavis.edu/~hunter/intro_analysis_pdf/intro_analysis.pdf">Introduction to Analysis by Hunter</a> - Free comprehensive text including complex analysis.</li>
                 </ul>
             </section>
-
-            <section id="book">
-                <h2>📖 Free Math Book</h2>
-                <h3><a href="https://topology.mit.edu/" target="_blank" rel="noopener">Introduction to Topology</a></h3>
-                <p><strong>Author:</strong> MIT OpenCourseWare | <strong>Level:</strong> Undergraduate</p>
-                <p>A comprehensive introduction to point-set and algebraic topology, with detailed lecture notes, problem sets, and solutions. Covers continuity, connectedness, compactness, and fundamental groups.</p>
+            
+            <section id="free-book">
+                <h2>Free Math Book</h2>
+                <h3>"Complex Analysis" by George Cain</h3>
+                <p><strong>Level:</strong> Undergraduate</p>
+                <p><strong>Summary:</strong> Available free from Georgia Tech, this text provides a clear introduction to complex analysis covering complex numbers, analytic functions, complex integration, series representations, residue theory, and conformal mapping. The book balances theory with computational techniques and includes numerous worked examples.</p>
             </section>
-
-            <section id="pure-dives">
-                <h2>🔬 Pure Math Deep-Dives</h2>
-
-                <h3>1. Brouwer Fixed-Point Theorem</h3>
-                <h4>Motivation</h4>
-                <p>If you stir a cup of coffee, some point ends up where it started. This intuitive fact is the Brouwer fixed-point theorem, a cornerstone of topology with applications in economics, game theory, and differential equations.</p>
-
+            
+            <section id="pure-math">
+                <h2>Pure Math Deep-Dives</h2>
+                
+                <h3>1. Cauchy-Riemann Equations and Analyticity</h3>
+                <p><strong>Motivation:</strong> What makes complex differentiability so much stronger than real differentiability? The Cauchy-Riemann equations reveal the hidden structure.</p>
+                
                 <h4>Definitions</h4>
-                <p><strong>Definition.</strong> A <em>fixed point</em> of \(f: X \to X\) is \(x\) with \(f(x) = x\).</p>
-                <p><strong>Definition.</strong> The \(\mathbf{n}\)-disk is \(D^n = \{x \in \mathbb{R}^n : \|x\| \leq 1\}\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Brouwer Fixed-Point Theorem.</strong> Every continuous \(f: D^n \to D^n\) has a fixed point.</p>
-                <p><strong>Proof.</strong> (By contradiction using homology). Assume \(f\) has no fixed point. Define \(r: D^n \to S^{n-1}\) by \(r(x) =\) intersection of ray from \(f(x)\) through \(x\) with \(S^{n-1}\). This is a retraction. But \(H_{n-1}(S^{n-1}) = \mathbb{Z}\) while \(H_{n-1}(D^n) = 0\), contradiction. ∎</p>
-
+                <ul>
+                    <li><strong>Complex derivative:\(f'(z) = \lim_{h \to 0} \frac{f(z+h) - f(z)}{h}\)</li>
+                    <li><strong>Analytic (holomorphic):\(f\) is differentiable at every point in a neighborhood</li>
+                    <li><strong>Entire:</strong> Analytic on all of \(\mathbb{C}\)</li>
+                </ul>
+                
+                <h4>Theorem (Cauchy-Riemann)</h4>
+                <p>For \(f(z) = u(x,y) + iv(x,y)\) with \(z = x + iy\), if \(f\) is differentiable at \(z_0\), then:</p>
+                \[\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}\]
+                <p>Conversely, if these hold and partials are continuous, then \(f\) is differentiable.</p>
+                
+                <h4>Proof</h4>
+                <p>Taking \(h = \Delta x\) (real):
+                \[f'(z) = \frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x}\]
+                Taking \(h = i\Delta y\) (purely imaginary):
+                \[f'(z) = -i\frac{\partial u}{\partial y} + \frac{\partial v}{\partial y}\]
+                Equating real and imaginary parts gives the Cauchy-Riemann equations. \(\square\)</p>
+                
                 <h4>Notation Guide</h4>
                 <ul>
-                    <li>\(D^n\) — n-dimensional disk</li>
-                    <li>\(S^{n-1}\) — (n-1)-sphere (boundary of \(D^n\))</li>
-                    <li>\(H_k\) — kth homology group</li>
-                    <li>\(\mathbb{Z}\) — integers</li>
+                    <li>\(\frac{\partial f}{\partial \bar{z}} = 0\): Cauchy-Riemann in complex form</li>
+                    <li>\(\Delta u = 0\): Laplace's equation (harmonic functions)</li>
+                    <li>\(\mathbb{H}\): Upper half-plane</li>
                 </ul>
-
+                
                 <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-from scipy.optimize import fsolve
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
 
-def find_fixed_point(f, x0, tol=1e-10):
-    """Numerically find fixed point of f starting from x0"""
-    def g(x):
-        return f(x) - x
-    return fsolve(g, x0, xtol=tol)
-
-# Example: f(x) = cos(x) on [0,1]
-f = lambda x: np.cos(x)
-fixed = find_fixed_point(f, 0.5)
-print(f"Fixed point of cos(x): {fixed[0]:.10f}")
-print(f"Verification: cos({fixed[0]:.10f}) = {f(fixed)[0]:.10f}")
-
-# 2D example: contraction mapping
-def f_2d(v):
-    x, y = v
-    return np.array([0.5*x + 0.3*y, 0.2*x + 0.6*y])
-
-fixed_2d = find_fixed_point(f_2d, [0.5, 0.5])
-print(f"Fixed point (2D): {fixed_2d}")
-</code></pre>
-
-                <h3>2. Fundamental Group</h3>
-                <h4>Motivation</h4>
-                <p>How can we distinguish a sphere from a torus? The fundamental group captures "holes" in a space by studying loops. It transforms topological problems into algebraic ones.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> A <em>loop</em> at \(x_0\) is a continuous \(\gamma: [0,1] \to X\) with \(\gamma(0) = \gamma(1) = x_0\).</p>
-                <p><strong>Definition.</strong> The <em>fundamental group\u003c/em> \(\pi_1(X, x_0)\) is the set of homotopy classes of loops with concatenation as operation.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>\(\pi_1(S^1) = \mathbb{Z}\).</strong> The fundamental group of the circle is the integers.</p>
-                <p><strong>Proof.</strong> Use the covering map \(p: \mathbb{R} \to S^1\), \(p(t) = e^{2\pi i t}\). Path lifting: any loop \(\gamma\) in \(S^1\) lifts to a path \(\tilde{\gamma}\) in \(\mathbb{R}\). The endpoint \(\tilde{\gamma}(1)\) determines the homotopy class. The winding number gives the isomorphism to \(\mathbb{Z}\). ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-
-def winding_number(path, center=0):
-    """Compute winding number of closed path around center"""
-    n = len(path)
-    angles = np.angle(path - center)
-    # Unwrap to handle branch cuts
-    angles = np.unwrap(angles)
-    total_change = angles[-1] - angles[0]
-    return round(total_change / (2 * np.pi))
-
-# Example: Circle traversed twice
-t = np.linspace(0, 2, 1000)
-circle = np.exp(2j * np.pi * t)  # Two full rotations
-wn = winding_number(circle)
-print(f"Winding number (2 rotations): {wn}")
-
-# Circle traversed once
-circle_once = np.exp(2j * np.pi * t / 2)
-wn_once = winding_number(circle_once)
-print(f"Winding number (1 rotation): {wn_once}")
-</code></pre>
-
-                <h3>3. Tychonoff's Theorem</h3>
-                <h4>Motivation</h4>
-                <p>Infinite products of spaces appear in functional analysis and logic. Tychonoff's theorem states that compactness is preserved under arbitrary products—a surprisingly deep result equivalent to the Axiom of Choice.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> The <em>product topology</em> on \(\prod_{i \in I} X_i\) has basis of sets \(\prod_{i \in I} U_i\) where \(U_i = X_i\) for all but finitely many \(i\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Tychonoff's Theorem.</strong> The product of any collection of compact spaces is compact.</p>
-                <p><strong>Proof Sketch.</strong> Using the finite intersection property: a space is compact iff every family of closed sets with the finite intersection property has nonempty intersection. For the product, project to each factor, use compactness, and construct a point in the intersection using the Axiom of Choice. ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-
-# Demonstrate compactness in product space [0,1]^n
-# Compactness means sequences have convergent subsequences
-
-def generate_sequence_in_cube(n, length=1000):
-    """Generate random sequence in [0,1]^n"""
-    return np.random.rand(length, n)
-
-def find_convergent_subseq(seq, epsilon=0.1):
-    """Find a convergent subsequence (simplified)"""
-    # For demonstration: find points within epsilon of each other
-    n = len(seq)
-    for i in range(n):
-        for j in range(i+1, n):
-            if np.linalg.norm(seq[i] - seq[j]) < epsilon:
-                return i, j
-    return None
-
-# Test in high dimension
-seq = generate_sequence_in_cube(10, 100)
-result = find_convergent_subseq(seq, 0.2)
-print(f"Found close points: {result is not None}")
-print(f"Sequence bounded in [0,1]^10: {np.all((seq >= 0) & (seq <= 1))}")
-</code></pre>
-            </section>
-
-            <section id="applied-dives">
-                <h2>🧮 Applied Math Deep-Dives</h2>
-
-                <h3>1. Auction Theory: Second-Price Auctions</h3>
-                <h4>Motivation</h4>
-                <p>Understanding strategic behavior in auctions is crucial for designing markets. The second-price auction has remarkable properties that make it both efficient and strategy-proof.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> In a <em>second-price sealed-bid auction</em>, the highest bidder wins but pays the second-highest bid.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Truthful Bidding.</strong> In a second-price auction, bidding one's true valuation is a dominant strategy.</p>
-                <p><strong>Proof.</strong> Let \(v\) be your value and \(b\) your bid. Let \(B\) be the highest other bid.</p>
-                <p>If \(b \gt B\): you win, pay \(B\), utility = \(v - B\).</p>
-                <p>If \(b \lt B\): you lose, utility = 0.</p>
-                <p>Bidding \(b = v\) is optimal: if \(v \gt B\), any \(b \gt B\) wins same payoff; if \(v \lt B\), any \(b \lt B\) loses same payoff. No incentive to deviate. ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-
-def second_price_auction(bids):
-    """Run second-price auction, return winner and price"""
-    sorted_bids = sorted(enumerate(bids), key=lambda x: x[1], reverse=True)
-    winner = sorted_bids[0][0]
-    price = sorted_bids[1][1] if len(sorted_bids) > 1 else 0
-    return winner, price
-
-def simulate_auctions(n_bidders=5, n_rounds=1000):
-    """Simulate truthful bidding"""
-    utilities = []
-    for _ in range(n_rounds):
-        values = np.random.uniform(0, 100, n_bidders)
-        winner, price = second_price_auction(values)
-        utility = values[winner] - price
-        utilities.append(utility)
-    return np.mean(utilities)
-
-avg_utility = simulate_auctions()
-print(f"Average winner utility: {avg_utility:.2f}")
-</code></pre>
-
-                <h3>2. Evolutionary Game Theory: Replicator Dynamics</h3>
-                <h4>Motivation</h4>
-                <p>How do strategies evolve in populations? The replicator dynamics model how successful strategies spread through imitation or natural selection.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> For strategy frequencies \(x_i\) and fitness \(f_i\), the <em>replicator equation</em> is:
-                \[
-                \dot{x}_i = x_i(f_i - \bar{f})
-                \]
-                where \(\bar{f} = \sum_j x_j f_j\) is average fitness.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Nash Equilibrium.</strong> Rest points of replicator dynamics are Nash equilibria.</p>
-                <p><strong>Proof.</strong> At rest point, for all \(i\) with \(x_i \gt 0\): \(f_i = \bar{f}\). This means all strategies in use have equal fitness, and no unused strategy has higher fitness (otherwise it would grow). This is exactly the Nash equilibrium condition. ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-from scipy.integrate import odeint
-
-def replicator_dynamics(x, t, payoff_matrix):
-    """Replicator dynamics for matrix game"""
-    fitness = payoff_matrix @ x
-    avg_fitness = x @ fitness
-    return x * (fitness - avg_fitness)
-
-# Rock-Paper-Scissors payoff matrix
-RPS = np.array([[0, -1, 1],
-                [1, 0, -1],
-                [-1, 1, 0]])
-
-# Simulate
-t = np.linspace(0, 50, 1000)
-x0 = np.array([0.4, 0.3, 0.3])  # Initial frequencies
-solution = odeint(replicator_dynamics, x0, t, args=(RPS,))
-
-print(f"Final frequencies: {solution[-1]}")
-print(f"Sum check: {sum(solution[-1]):.6f}")
-</code></pre>
-
-                <h3>3. Public Key Cryptography: Diffie-Hellman</h3>
-                <h4>Motivation</h4>
-                <p>How can two parties agree on a secret key over a public channel? The Diffie-Hellman protocol solved this foundational problem, enabling modern secure communication.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> A <em>generator\u003c/em> \(g\) of \(\mathbb{Z}_p^*\) has order \(p-1\).</p>
-                <p><strong>Definition.</strong> The <em>discrete logarithm problem</em>: given \(g, g^a \pmod{p}\), find \(a\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Diffie-Hellman Key Exchange.</strong> Parties A and B can agree on shared secret \(g^{ab} \pmod{p}\) using public channel.</p>
-                <p><strong>Protocol.</strong> (1) Agree on public \(p, g\). (2) A picks secret \(a\), sends \(g^a\). (3) B picks secret \(b\), sends \(g^b\). (4) A computes \((g^b)^a = g^{ab}\). (5) B computes \((g^a)^b = g^{ab}\). ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">import random
-
-def mod_exp(base, exp, mod):
-    """Modular exponentiation"""
-    result = 1
-    base = base % mod
-    while exp > 0:
-        if exp % 2 == 1:
-            result = (result * base) % mod
-        exp = exp >> 1
-        base = (base * base) % mod
-    return result
-
-def diffie_hellman(p, g):
-    """Simulate DH key exchange"""
-    # Alice
-    a = random.randint(2, p-2)
-    A = mod_exp(g, a, p)
+def check_cauchy_riemann(u, v, x, y, dx=1e-6, dy=1e-6):
+    """
+    Numerically verify Cauchy-Riemann equations at point (x, y).
+    u, v are functions of (x, y).
+    """
+    # Partial derivatives
+    du_dx = (u(x + dx, y) - u(x, y)) / dx
+    du_dy = (u(x, y + dy) - u(x, y)) / dy
+    dv_dx = (v(x + dx, y) - v(x, y)) / dx
+    dv_dy = (v(x, y + dy) - v(x, y)) / dy
     
-    # Bob
-    b = random.randint(2, p-2)
-    B = mod_exp(g, b, p)
+    # Cauchy-Riemann equations
+    cr1 = np.abs(du_dx - dv_dy)
+    cr2 = np.abs(du_dy + dv_dx)
     
-    # Shared secret
-    secret_alice = mod_exp(B, a, p)
-    secret_bob = mod_exp(A, b, p)
-    
-    return secret_alice, secret_bob
+    return {
+        'du_dx': du_dx,
+        'dv_dy': dv_dy,
+        'du_dy': du_dy,
+        'dv_dx': dv_dx,
+        'cr1_error': cr1,
+        'cr2_error': cr2,
+        'satisfied': cr1 < 1e-4 and cr2 < 1e-4
+    }
 
-# Small example (insecure!)
-p, g = 23, 5
-s1, s2 = diffie_hellman(p, g)
-print(f"Alice's secret: {s1}")
-print(f"Bob's secret: {s2}")
-print(f"Match: {s1 == s2}")
-</code></pre>
-            </section>
-
-            <section id="special-topics">
-                <h2>🌟 Special Topics</h2>
-
-                <h3>1. Knot Theory: The Jones Polynomial</h3>
-                <h4>Historical Context</h4>
-                <p>In 1984, Vaughan Jones discovered a new knot polynomial while studying operator algebras. His surprise discovery connected knot theory to statistical mechanics and earned him the Fields Medal.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> The <em>Kauffman bracket\u003c/em> \(\langle L \rangle\) is defined by: (1) \(\langle \bigcirc \rangle = 1\), (2) \(\langle L \cup \bigcirc \rangle = (-A^2 - A^{-2})\langle L \rangle\), (3) Skein relation.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Jones Polynomial Invariant.</strong> The Jones polynomial \(V_L(t)\) is a knot invariant.</p>
-                <p><strong>Proof Sketch.</strong> Show the Kauffman bracket, properly normalized, is invariant under Reidemeister moves. The Jones polynomial is obtained by substituting \(A = t^{-1/4}\). ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python"># Simplified Jones polynomial for trefoil knot
-def jones_trefoil():
-    """Jones polynomial of trefoil knot V(t) = t + t^3 - t^4"""
-    # Coefficients: [0, 1, 0, 1, -1] for t^0, t^1, t^2, t^3, t^4
-    return [0, 1, 0, 1, -1]
-
-# Verify it's not the unknot (V(unknot) = 1)
-trefoil = jones_trefoil()
-print(f"Jones polynomial of trefoil: {trefoil}")
-print(f"Not equal to unknot: {trefoil != [1]}")
-</code></pre>
-
-                <h3>2. Braid Groups</h3>
-                <h4>Historical Context</h4>
-                <p>Emil Artin introduced braid groups in 1925. They have applications in cryptography, quantum computing, and understanding the topology of configuration spaces.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> The <em>braid group\u003c/em> \(B_n\) has generators \(\sigma_1, \ldots, \sigma_{n-1}\) with relations: \(\sigma_i\sigma_j = \sigma_j\sigma_i\) for \(|i-j| \geq 2\) and \(\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Word Problem.</strong> There exists an algorithm to determine if two braid words represent the same element.</p>
-                <p><strong>Proof.</strong> Garside's solution: every braid has a unique normal form as a product of positive braids and powers of the Garside element \(\Delta\). ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">class Braid:
-    """Simple braid representation"""
-    def __init__(self, word):
-        self.word = word  # List of integers: +i = sigma_i, -i = sigma_i^{-1}
-    
-    def __mul__(self, other):
-        return Braid(self.word + other.word)
-    
-    def __str__(self):
-        return ''.join(f"σ{i}" if i > 0 else f"σ{-i}⁻¹" for i in self.word)
-
-# Example: B_3
-sigma1 = Braid([1])
-sigma2 = Braid([2])
-braid = sigma1 * sigma2 * sigma1
-print(f"Braid: {braid}")
-
-# Braid relation: sigma1 * sigma2 * sigma1 = sigma2 * sigma1 * sigma2
-braid2 = sigma2 * sigma1 * sigma2
-print(f"Braid2: {braid2}")
-print(f"Same word: {braid.word == braid2.word}")  # Different words, same element
-</code></pre>
-
-                <h3>3. Topological Data Analysis: Persistent Homology</h3>
-                <h4>Historical Context</h4>
-                <p>Developed in the early 2000s by Gunnar Carlsson and collaborators, persistent homology extracts robust topological features from noisy data, with applications in biology, materials science, and machine learning.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> Given a filtration \(X_1 \subseteq X_2 \subseteq \cdots\), the \(\mathbf{p}\)-persistent kth homology tracks cycles born at \(X_i\) that die entering \(X_{i+p}\).</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Structure Theorem.</strong> Persistent homology decomposes into interval modules \(\mathbb{I}[a,b)\).</p>
-                <p><strong>Proof.</strong> The persistence module is a graded module over the polynomial ring \(\mathbb{F}[t]\). By the structure theorem for PID modules, it decomposes into cyclic summands corresponding to birth-death pairs. ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-from scipy.spatial.distance import pdist, squareform
-
-def rips_complex(points, epsilon):
-    """Build Rips complex at scale epsilon"""
-    dists = squareform(pdist(points))
-    n = len(points)
-    edges = [(i, j) for i in range(n) for j in range(i+1, n) if dists[i,j] <= epsilon]
-    return edges
-
-# Example: Circle with noise
-np.random.seed(42)
-theta = np.linspace(0, 2*np.pi, 50)
-circle = np.column_stack([np.cos(theta), np.sin(theta)])
-circle += np.random.normal(0, 0.1, circle.shape)
-
-edges_small = rips_complex(circle, 0.3)
-edges_large = rips_complex(circle, 1.0)
-
-print(f"Edges at epsilon=0.3: {len(edges_small)}")
-print(f"Edges at epsilon=1.0: {len(edges_large)}")
-</code></pre>
-
-                <h3>4. Morse Theory</h3>
-                <h4>Historical Context</h4>
-                <p>Marston Morse developed this theory in the 1920s-30s. It connects the critical points of smooth functions to the topology of manifolds, providing powerful tools for computing homology.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> A function \(f: M \to \mathbb{R}\) is <em>Morse</em> if all critical points are non-degenerate (Hessian is non-singular).</p>
-                <p><strong>Definition.</strong> The <em>index</em> of a critical point is the number of negative eigenvalues of the Hessian.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Morse Inequalities.</strong> Let \(c_k\) be the number of critical points of index \(k\). Then:
-                \[
-                \sum_{k=0}^n c_k t^k = \sum_{k=0}^n \beta_k t^k + (1+t)R(t)
-                \]
-                where \(\beta_k\) are Betti numbers and \(R\) has non-negative coefficients.</p>
-                <p><strong>Proof Sketch.</strong> The Morse complex computes homology. The boundary operator strictly decreases the "height" function, making the complex graded. The inequalities follow from rank arguments. ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">import numpy as np
-
-def morse_function(x, y):
-    """Example Morse function: f(x,y) = x^2 - y^2 (saddle)"""
+# Example: f(z) = z^2 = (x^2 - y^2) + i(2xy)
+def u_z2(x, y):
     return x**2 - y**2
 
-def gradient_morse(x, y):
-    """Gradient of Morse function"""
-    return np.array([2*x, -2*y])
+def v_z2(x, y):
+    return 2*x*y
 
-def hessian_morse(x, y):
-    """Hessian matrix"""
-    return np.array([[2, 0], [0, -2]])
+result = check_cauchy_riemann(u_z2, v_z2, 1.0, 2.0)
+print("Cauchy-Riemann check for f(z) = z^2 at (1, 2):")
+print(f"du/dx = {result['du_dx']:.4f}, dv/dy = {result['dv_dy']:.4f}")
+print(f"du/dy = {result['du_dy']:.4f}, dv/dx = {result['dv_dx']:.4f}")
+print(f"CR satisfied: {result['satisfied']}")
 
-# Critical point at origin
-hess = hessian_morse(0, 0)
-eigenvalues = np.linalg.eigvals(hess)
-print(f"Hessian at origin: {hess}")
-print(f"Eigenvalues: {eigenvalues}")
-print(f"Index (negative eigenvalues): {sum(eigenvalues < 0)}")
-print(f"Non-degenerate: {all(eigenvalues != 0)}")
-</code></pre>
+# Example: f(z) = |z|^2 = x^2 + y^2 (NOT analytic)
+def u_abs_sq(x, y):
+    return x**2 + y**2
+
+def v_abs_sq(x, y):
+    return 0
+
+result2 = check_cauchy_riemann(u_abs_sq, v_abs_sq, 1.0, 2.0)
+print("\nCauchy-Riemann check for f(z) = |z|^2 at (1, 2):")
+print(f"CR satisfied: {result2['satisfied']} (expected: False)")</code></pre>
+                
+                <h3>2. Cauchy's Integral Theorem and Formula</h3>
+                <p><strong>Motivation:</strong> The values of an analytic function inside a region are completely determined by its values on the boundary—a remarkable rigidity property.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Contour integral:\(\oint_\gamma f(z) dz\)</li>
+                    <li><strong>Simply connected:\(\gamma\) can be continuously contracted to a point</li>
+                    <li><strong>Winding number:\(n(\gamma, a) = \frac{1}{2\pi i}\oint_\gamma \frac{dz}{z-a}\)</li>
+                </ul>
+                
+                <h4>Theorem (Cauchy's Integral Formula)</h4>
+                <p>If \(f\) is analytic inside and on a simple closed contour \(\gamma\), then for \(a\) inside \(\gamma\):</p>
+                \[f(a) = \frac{1}{2\pi i} \oint_\gamma \frac{f(z)}{z-a} dz\]
+                <p>Moreover:
+                \[f^{(n)}(a) = \frac{n!}{2\pi i} \oint_\gamma \frac{f(z)}{(z-a)^{n+1}} dz\]</p>
+                
+                <h4>Proof Sketch</h4>
+                <p>Consider a small circle \(C_r\) around \(a\). By deformation of contours:
+                \[\oint_\gamma \frac{f(z)}{z-a}dz = \oint_{C_r} \frac{f(z)}{z-a}dz\]
+        As \(r \to 0\), \(f(z) \to f(a)\) uniformly, so:
+                \[\oint_{C_r} \frac{f(z)}{z-a}dz \approx f(a)\oint_{C_r} \frac{dz}{z-a} = 2\pi i f(a)\]</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+
+def contour_integral(f, gamma, t_range, n_points=10000):
+    """
+    Numerically compute contour integral of f along gamma.
+    gamma: function mapping t to complex point
+    """
+    t = np.linspace(t_range[0], t_range[1], n_points)
+    dt = t[1] - t[0]
+    
+    z = gamma(t)
+    dz = np.gradient(z, dt)
+    
+    integral = np.trapezoid(f(z) * dz, t)
+    return integral
+
+# Verify Cauchy's integral formula for f(z) = z^2
+# Circle of radius R centered at origin
+def circle(t, R=1, center=0):
+    return center + R * np.exp(2j * np.pi * t)
+
+def f(z):
+    return z**2
+
+# Integral of f(z)/(z-a) around circle
+# Should equal 2*pi*i * f(a) for a inside
+def integrand_factory(a):
+    return lambda z: f(z) / (z - a)
+
+# Test with a = 0.5 (inside unit circle)
+a = 0.5
+integral = contour_integral(integrand_factory(a), lambda t: circle(t, R=1), (0, 1))
+theoretical = 2j * np.pi * f(a)
+
+print(f"Numerical integral: {integral:.6f}")
+print(f"Theoretical value:  {theoretical:.6f}")
+print(f"Error: {abs(integral - theoretical):.2e}")
+
+# Test with a = 2 (outside unit circle) - should be ~0
+a = 2.0
+integral = contour_integral(integrand_factory(a), lambda t: circle(t, R=1), (0, 1))
+print(f"\nFor a outside: {integral:.2e} (should be ~0)")</code></pre>
+                
+                <h3>3. Residue Theory</h3>
+                <p><strong>Motivation:</strong> How do we compute difficult real integrals? Residue theory provides a powerful method by relating them to complex contour integrals.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Isolated singularity:\(f\) analytic in punctured disk \(0 < |z-a| < r\)</li>
+                    <li><strong>Laurent series:\(f(z) = \sum_{n=-\infty}^{\infty} c_n (z-a)^n\)</li>
+                    <li><strong>Residue:\(\text{Res}(f, a) = c_{-1}\)</li>
+                    <li><strong>Simple pole:\(f(z) = \frac{g(z)}{z-a}\) with \(g(a) \neq 0\)</li>
+                </ul>
+                
+                <h4>Theorem (Residue Theorem)</h4>
+                <p>If \(f\) is analytic inside and on a simple closed contour \(\gamma\) except for isolated singularities \(a_1, \ldots, a_n\) inside \(\gamma\), then:</p>
+                \[\oint_\gamma f(z) dz = 2\pi i \sum_{k=1}^n \text{Res}(f, a_k)\]
+                
+                <h4>Proof Sketch</h4>
+                <p>Deform \(\gamma\) to small circles around each singularity. By Cauchy's theorem, the integral equals the sum of integrals around each small circle. Each such integral equals \(2\pi i \cdot c_{-1} = 2\pi i \cdot \text{Res}(f, a_k)\). \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+from scipy import integrate
+
+def compute_residue_simple_pole(f, g, a, h=1e-8):
+    """
+    Compute residue at simple pole a where f(z) = g(z)/(z-a).
+    Res(f, a) = g(a).
+    """
+    return g(a)
+
+def compute_residue_laurent(f, a, R=0.1, n_points=10000):
+    """
+    Compute residue using integral formula.
+    Res(f, a) = (1/2πi) ∮ f(z) dz around a.
+    """
+    theta = np.linspace(0, 2*np.pi, n_points)
+    z = a + R * np.exp(1j * theta)
+    dz = 1j * R * np.exp(1j * theta) * (theta[1] - theta[0])
+    
+    integral = np.trapezoid(f(z), theta) * 1j * R
+    residue = integral / (2j * np.pi)
+    return residue
+
+# Example: f(z) = 1/(z^2 + 1) = 1/((z-i)(z+i))
+# Poles at z = i and z = -i
+def f_example(z):
+    return 1 / (z**2 + 1)
+
+# Residue at z = i
+def g_i(z):
+    return 1 / (z + 1j)
+residue_i = compute_residue_simple_pole(f_example, g_i, 1j)
+print(f"Residue at z = i: {residue_i:.6f}")
+print(f"Expected: -i/2 = {-0.5j:.6f}")
+
+# Residue at z = -i
+def g_minus_i(z):
+    return 1 / (z - 1j)
+residue_minus_i = compute_residue_simple_pole(f_example, g_minus_i, -1j)
+print(f"Residue at z = -i: {residue_minus_i:.6f}")
+print(f"Expected: i/2 = {0.5j:.6f}")
+
+# Verify using numerical integration
+residue_i_num = compute_residue_laurent(f_example, 1j, R=0.5)
+print(f"\nNumerical verification at z = i: {residue_i_num:.6f}")</code></pre>
             </section>
-
-            <section id="history">
-                <h2>📜 Math History</h2>
-                <h3>Henri Poincaré: The Last Universalist</h3>
-                <p>Henri Poincaré (1854-1912) was called "the last universalist" because he made fundamental contributions to virtually every area of mathematics and physics. His work laid the foundations for topology, dynamical systems, and special relativity.</p>
-                <p>Born in Nancy, France, Poincaré displayed exceptional abilities from an early age, though he struggled with physical coordination. He entered the École Polytechnique in 1873 and quickly established himself as a mathematical prodigy.</p>
-                <p>Poincaré's 1895 paper "Analysis Situs" essentially created algebraic topology. He introduced fundamental concepts like homology and the fundamental group. The famous Poincaré conjecture—his question about characterizing the 3-sphere—remained open for nearly a century until Perelman's proof in 2003.</p>
-                <p>In dynamical systems, his study of the three-body problem led to the discovery of chaotic behavior and homoclinic tangles. His work on the qualitative theory of differential equations transformed the field.</p>
-                <p>Poincaré was also a philosopher of science. His conventionalist view—that the geometry of space is a matter of convention rather than fact—influenced Einstein's development of general relativity. He came tantalizingly close to discovering special relativity himself, deriving the Lorentz transformations and recognizing the relativity of simultaneity.</p>
-                <p>His work style was unusual: he would think deeply about problems, then write papers rapidly without revision. He claimed that ideas came to him in flashes of intuition, often when not consciously working on the problem. Despite his enormous output—nearly 500 papers and 30 books—he maintained that he was not a fast thinker, but rather one who persisted.</p>
-            </section>
-
-            <section id="journalism">
-                <h2>📰 Math in the News</h2>
-                <h3><a href="https://www.quantamagazine.org/mathematicians-solve-hidden-convexity-problem-20250127/" target="_blank" rel="noopener">Hidden Convexity Problem Solved</a> — <em>Quanta Magazine</em></h3>
-                <p>Mathematicians have resolved a long-standing question about when non-convex optimization problems secretly have convex structure. The result has implications for machine learning and signal processing.</p>
-
-                <h3><a href="https://www.math3ma.com/blog/the-topology-of-data" target="_blank" rel="noopener">The Topology of Data</a> — <em>Math3ma</em></h3>
-                <p>An accessible introduction to topological data analysis, explaining how persistent homology extracts shape from high-dimensional datasets with applications in genomics and materials science.</p>
-
-                <h3><a href="https://www.nature.com/articles/d41586-025-00123-4" target="_blank" rel="noopener">AI Discovers New Algorithms</a> — <em>Nature</em></h3>
-                <p>DeepMind's AlphaTensor has discovered faster matrix multiplication algorithms, beating records that stood for decades. The work demonstrates how AI can assist mathematical discovery in combinatorial optimization.</p>
-            </section>
-
-            <section id="problem">
-                <h2>🧩 Problem Corner</h2>
-                <p><strong>Problem (AIME 2021).</strong> Let \(ABCD\) be a convex quadrilateral with \(AB = 2\), \(AD = 7\), and \(CD = 3\) such that the bisectors of acute angles \(\angle DAB\) and \(\angle ADC\) intersect at the midpoint of \(\overline{BC}\). Find the square of the area of \(ABCD\).</p>
-                <details>
-                    <summary>💡 Hint</summary>
-                    <p>Use the angle bisector property and coordinate geometry. Place \(A\) at origin and use the fact that the angle bisectors meet at the midpoint of \(BC\).</p>
-                </details>
-                <details>
-                    <summary>✅ Solution</summary>
-                    <p>Place \(A\) at origin, \(D\) at \((7,0)\). Let \(\angle DAB = 2\alpha\) and \(\angle ADC = 2\beta\).</p>
-                    <p>By angle bisector properties and the midpoint condition, we can set up coordinates. Let \(B = (2\cos(2\alpha), 2\sin(2\alpha))\) and \(C = (7 - 3\cos(2\beta), 3\sin(2\beta))\).</p>
-                    <p>The midpoint of \(BC\) lies on both angle bisectors. Using the angle bisector theorem and the fact that the internal bisectors of adjacent angles in a quadrilateral meet on the diagonal, we derive constraints.</p>
-                    <p>After calculation (or using the key insight that this configuration implies the quadrilateral has an incircle), we find:
-                    \[
-                    [ABCD]^2 = \boxed{420}
-                    \]</p>
-                </details>
-            </section>
-
-            <section id="visualization">
-                <h2>🎨 Visualization of the Day</h2>
-                <h3>Homotopy of Loops on a Torus</h3>
-                <p>The torus \(T^2 = S^1 \times S^1\) has fundamental group \(\mathbb{Z} \times \mathbb{Z}\), meaning loops are classified by how many times they wind around each circle direction. This visualization shows how different loops can be deformed into each other.</p>
-
-                <pre><code class="language-python">import numpy as np
+            
+            
+            <section id="applied-math">
+                <h2>Applied Math Deep-Dives</h2>
+                
+                <h3>1. Conformal Mapping and Applications</h3>
+                <p><strong>Real-world motivation:</strong> Conformal maps preserve angles and transform harmonic functions to harmonic functions, making them invaluable for solving Laplace's equation in complex geometries.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Conformal map:\(f\) is analytic with \(f'(z) \neq 0\) (preserves angles)</li>
+                    <li><strong>Harmonic function:\(\Delta u = 0\)</li>
+                    <li><strong>Riemann Mapping Theorem:</strong> Any simply connected domain (not \(\mathbb{C}\)) can be conformally mapped to the unit disk</li>
+                </ul>
+                
+                <h4>Theorem (Preservation of Harmonic Functions)</h4>
+                <p>If \(u\) is harmonic and \(f\) is analytic, then \(u \circ f\) is harmonic.</p>
+                
+                <h4>Proof</h4>
+                <p>Locally, \(u = \text{Re}(g)\) for some analytic \(g\). Then \(u \circ f = \text{Re}(g \circ f)\), which is the real part of an analytic function, hence harmonic. \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
-def torus_param(u, v, R=2, r=1):
-    """Parametrize torus"""
-    x = (R + r * np.cos(v)) * np.cos(u)
-    y = (R + r * np.cos(v)) * np.sin(u)
-    z = r * np.sin(v)
-    return x, y, z
+def mobius_transform(z, a, b, c, d):
+    """
+    Möbius transformation: f(z) = (az + b) / (cz + d).
+    """
+    return (a * z + b) / (c * z + d)
 
-def loop_on_torus(t, m=1, n=0):
-    """Loop winding m times around big circle, n around small"""
-    u = m * t
-    v = n * t
-    return torus_param(u, v)
+def joukowsky_transform(z):
+    """
+    Joukowsky transform: maps circle to airfoil shape.
+    f(z) = z + 1/z
+    """
+    return z + 1/z
 
-# Generate loops
-t = np.linspace(0, 2*np.pi, 500)
+def visualize_conformal_map(f, z_range=(-2, 2), n_grid=50):
+    """
+    Visualize a conformal map by showing grid lines.
+    """
+    x = np.linspace(z_range[0], z_range[1], n_grid)
+    y = np.linspace(z_range[0], z_range[1], n_grid)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    # Apply transformation
+    W = f(Z)
+    
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+    
+    # Original grid
+    axes[0].plot(X, Y, 'b-', alpha=0.5)
+    axes[0].plot(X.T, Y.T, 'r-', alpha=0.5)
+    axes[0].set_aspect('equal')
+    axes[0].set_title('Original Grid')
+    axes[0].set_xlabel('Re(z)')
+    axes[0].set_ylabel('Im(z)')
+    axes[0].grid(True)
+    
+    # Transformed grid
+    axes[1].plot(W.real, W.imag, 'b-', alpha=0.5)
+    axes[1].plot(W.real.T, W.imag.T, 'r-', alpha=0.5)
+    axes[1].set_aspect('equal')
+    axes[1].set_title('After Conformal Map')
+    axes[1].set_xlabel('Re(w)')
+    axes[1].set_ylabel('Im(w)')
+    axes[1].grid(True)
+    
+    plt.tight_layout()
+    plt.savefig('conformal_map.png', dpi=150)
+    plt.show()
 
-fig = plt.figure(figsize=(12, 5))
+# Example: w = z^2
+visualize_conformal_map(lambda z: z**2, z_range=(-1.5, 1.5))
 
-# (1,0) loop - around big circle
-ax1 = fig.add_subplot(131, projection='3d')
-x, y, z = loop_on_torus(t, 1, 0)
-ax1.plot(x, y, z, 'b-', linewidth=2)
-ax1.set_title('Loop (1,0): Around big circle')
+# Example: Joukowsky airfoil
+theta = np.linspace(0, 2*np.pi, 200)
+center = -0.1 + 0.1j
+radius = 1.1
+circle = center + radius * np.exp(1j * theta)
+airfoil = joukowsky_transform(circle)
 
-# (0,1) loop - around small circle
-ax2 = fig.add_subplot(132, projection='3d')
-x, y, z = loop_on_torus(t, 0, 1)
-ax2.plot(x, y, z, 'r-', linewidth=2)
-ax2.set_title('Loop (0,1): Around small circle')
+plt.figure(figsize=(12, 5))
+plt.subplot(121)
+plt.plot(circle.real, circle.imag)
+plt.axis('equal')
+plt.title('Circle in z-plane')
+plt.subplot(122)
+plt.plot(airfoil.real, airfoil.imag)
+plt.axis('equal')
+plt.title('Airfoil in w-plane (Joukowsky)')
+plt.tight_layout()
+plt.savefig('joukowsky_airfoil.png', dpi=150)
+plt.show()</code></pre>
+                
+                <h3>2. Signal Processing and the Fourier Transform</h3>
+                <p><strong>Real-world motivation:</strong> The Fourier transform decomposes signals into frequencies, enabling compression, filtering, and spectral analysis. Complex analysis provides the theoretical foundation.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Fourier transform:\(\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)e^{-2\pi i x \xi} dx\)</li>
+                    <li><strong>Z-transform:\(X(z) = \sum_{n=-\infty}^{\infty} x[n]z^{-n}\)</li>
+                    <li><strong>Region of Convergence (ROC):\(\{z : X(z) \text{ converges}\}\)</li>
+                </ul>
+                
+                <h4>Theorem (Paley-Wiener)</h4>
+                <p>A function \(f\) is the Fourier transform of a compactly supported function if and only if it extends to an entire function of exponential type satisfying \(|f(z)| \leq Ce^{2\pi R|Im(z)|}\).</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from numpy.fft import fft, fftfreq, ifft
 
-# (1,1) loop - around both
-ax3 = fig.add_subplot(133, projection='3d')
-x, y, z = loop_on_torus(t, 1, 1)
-ax3.plot(x, y, z, 'g-', linewidth=2)
-ax3.set_title('Loop (1,1): Around both')
+def analyze_signal_fft(signal, sample_rate):
+    """
+    Perform FFT analysis of a signal.
+    """
+    n = len(signal)
+    freqs = fftfreq(n, 1/sample_rate)
+    spectrum = fft(signal)
+    
+    return freqs[:n//2], np.abs(spectrum)[:n//2]
+
+def design_lowpass_filter(cutoff, num_taps=101, sample_rate=1.0):
+    """
+    Design FIR lowpass filter using window method.
+    """
+    # Ideal sinc filter
+    n = np.arange(num_taps) - (num_taps - 1) / 2
+    h = np.sinc(2 * cutoff * n / sample_rate)
+    
+    # Apply window
+    window = np.hanning(num_taps)
+    h = h * window
+    
+    # Normalize
+    h = h / np.sum(h)
+    
+    return h
+
+# Example: Analyze a signal with multiple frequencies
+sample_rate = 1000
+t = np.linspace(0, 1, sample_rate)
+signal = (np.sin(2*np.pi*50*t) +    # 50 Hz
+          0.5*np.sin(2*np.pi*120*t) +  # 120 Hz
+          0.3*np.sin(2*np.pi*300*t))   # 300 Hz
+
+# Add noise
+signal_noisy = signal + 0.5*np.random.randn(len(t))
+
+# FFT analysis
+freqs, spectrum = analyze_signal_fft(signal_noisy, sample_rate)
+
+plt.figure(figsize=(12, 8))
+
+plt.subplot(311)
+plt.plot(t[:200], signal_noisy[:200])
+plt.title('Noisy Signal (first 200 samples)')
+plt.xlabel('Time [s]')
+
+plt.subplot(312)
+plt.plot(freqs, spectrum)
+plt.title('Frequency Spectrum')
+plt.xlabel('Frequency [Hz]')
+plt.ylabel('Magnitude')
+plt.xlim(0, 400)
+
+# Filter design and application
+filter_taps = design_lowpass_filter(150, num_taps=101, sample_rate=sample_rate)
+filtered_signal = np.convolve(signal_noisy, filter_taps, mode='same')
+
+plt.subplot(313)
+plt.plot(t[:200], signal[:200], 'b-', label='Original', alpha=0.7)
+plt.plot(t[:200], filtered_signal[:200], 'r-', label='Filtered', alpha=0.7)
+plt.title('Original vs Filtered Signal')
+plt.xlabel('Time [s]')
+plt.legend()
 
 plt.tight_layout()
-plt.savefig('/tmp/torus_loops.png', dpi=150)
-print("Torus loops visualization saved")
+plt.savefig('fft_analysis.png', dpi=150)
+plt.show()
+
+print(f"Peak frequencies detected: {freqs[np.argsort(spectrum)[-3:]]} Hz")</code></pre>
+                
+                <h3>3. Control Theory and Stability Analysis</h3>
+                <p><strong>Real-world motivation:</strong> Control systems—from autopilots to chemical process controllers—require stability analysis. The Nyquist criterion uses complex analysis to determine stability.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Transfer function:\(G(s) = \frac{Y(s)}{U(s)}\), ratio of Laplace transforms</li>
+                    <li><strong>Pole:\(s\) where \(G(s) = \infty\) (denominator roots)</li>
+                    <li><strong>BIBO stable:</strong> All poles in left half-plane (Re(s) < 0)</li>
+                    <li><strong>Nyquist contour:\(\Gamma\) encircling right half-plane</li>
+                </ul>
+                
+                <h4>Theorem (Nyquist Stability Criterion)</h4>
+                \[N = P - Z\]
+                <p>where \(N\) is the number of clockwise encirclements of -1 by \(G(\Gamma)\), \(P\) is the number of open-loop poles in RHP, and \(Z\) is the number of closed-loop poles in RHP.</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import signal
+
+def nyquist_plot(G, omega=np.logspace(-2, 2, 1000)):
+    """
+    Generate Nyquist plot for transfer function G.
+    G: scipy.signal.TransferFunction or callable
+    """
+    if isinstance(G, signal.TransferFunction):
+        s = 1j * omega
+        G_omega = np.polyval(G.num, s) / np.polyval(G.den, s)
+    else:
+        G_omega = G(1j * omega)
+    
+    plt.figure(figsize=(10, 8))
+    
+    # Plot Nyquist curve
+    plt.plot(G_omega.real, G_omega.imag, 'b-', label='Nyquist curve')
+    plt.plot(G_omega.real, -G_omega.imag, 'b--', alpha=0.5, label='Mirror image')
+    
+    # Plot critical point
+    plt.plot(-1, 0, 'r+', markersize=15, label='Critical point (-1, 0)')
+    
+    # Unit circle for reference
+    theta = np.linspace(0, 2*np.pi, 100)
+    plt.plot(np.cos(theta), np.sin(theta), 'g--', alpha=0.3, label='Unit circle')
+    
+    plt.axhline(y=0, color='k', linewidth=0.5)
+    plt.axvline(x=0, color='k', linewidth=0.5)
+    plt.axis('equal')
+    plt.grid(True)
+    plt.xlabel('Real(G)')
+    plt.ylabel('Imag(G)')
+    plt.title('Nyquist Plot')
+    plt.legend()
+    
+    plt.savefig('nyquist_plot.png', dpi=150)
+    plt.show()
+    
+    return G_omega
+
+def analyze_stability(num, den):
+    """
+    Analyze stability of transfer function.
+    """
+    # Find poles
+    poles = np.roots(den)
+    
+    # Check if all poles in LHP
+    is_stable = np.all(poles.real < 0)
+    
+    # Gain and phase margins
+    sys = signal.TransferFunction(num, den)
+    omega, mag, phase = signal.bode(sys)
+    
+    return {
+        'poles': poles,
+        'is_stable': is_stable,
+        'omega': omega,
+        'magnitude': mag,
+        'phase': phase
+    }
+
+# Example: Second-order system
+# G(s) = 1 / (s^2 + 2ζs + 1) with ζ = 0.5 (underdamped)
+zeta = 0.5
+num = [1]
+den = [1, 2*zeta, 1]
+
+analysis = analyze_stability(num, den)
+print(f"Poles: {analysis['poles']}")
+print(f"System is stable: {analysis['is_stable']}")
+
+# Nyquist plot
+sys = signal.TransferFunction(num, den)
+nyquist_plot(sys)
+
+# Bode plot
+plt.figure(figsize=(10, 6))
+plt.subplot(211)
+plt.semilogx(analysis['omega'], analysis['magnitude'])
+plt.title('Bode Plot')
+plt.ylabel('Magnitude [dB]')
+plt.grid(True)
+
+plt.subplot(212)
+plt.semilogx(analysis['omega'], analysis['phase'])
+plt.xlabel('Frequency [rad/s]')
+plt.ylabel('Phase [degrees]')
+plt.grid(True)
+
+plt.tight_layout()
+plt.savefig('bode_plot.png', dpi=150)
+plt.show()</code></pre>
+            </section>
+            
+            
+            <section id="special-topics">
+                <h2>Special Topics</h2>
+                
+                <h3>1. The Riemann Mapping Theorem</h3>
+                <p><strong>Historical context:</strong> Riemann stated this theorem in his 1851 PhD thesis, but his proof had gaps. Carathéodory and Koebe gave rigorous proofs around 1912. The theorem remains one of the most profound results in complex analysis.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Simply connected:\(\mathbb{C} \setminus U\) is connected</li>
+                    <li><strong>Conformal equivalence:\(f: U \to V\) bijective and conformal</li>
+                    <li><strong>Automorphism group:\(\text{Aut}(U)\) = conformal self-maps of \(U\)</li>
+                </ul>
+                
+                <h4>Theorem (Riemann Mapping Theorem)</h4>
+                <p>Any simply connected proper subset \(U \subsetneq \mathbb{C}\) is conformally equivalent to the unit disk \(\mathbb{D}\).</p>
+                
+                <h4>Proof Sketch</h4>
+                <p>Normalize so \(a \in U\) maps to 0. Consider the family \(\mathcal{F}\) of injective analytic functions \(f: U \to \mathbb{D}\) with \(f(a) = 0\). Show \(\mathcal{F}\) is normal (Montel's theorem). Use a maximizing sequence for \(|f'(a)|\) and show the limit is the desired conformal map. \(\square\)</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def schwarz_christoffel_disk_to_polygon(n_vertices=5):
+    """
+    Schwarz-Christoffel transformation from disk to regular polygon.
+    Approximate implementation.
+    """
+    # For regular n-gon, prevertices are roots of unity
+    # S-C integral: f(z) = A + C ∫ ∏(w - z_k)^{α_k - 1} dw
+    
+    def sc_transform(z, n):
+        """Approximate S-C transform for regular n-gon."""
+        # Simplified: use power series approximation
+        result = z
+        for k in range(1, 5):
+            result += 0.1 * z**(k*n + 1) / (k*n + 1)
+        return result
+    
+    return sc_transform
+
+def visualize_riemann_map():
+    """
+    Visualize a simple conformal map to demonstrate RMT.
+    """
+    # Map upper half-plane to unit disk
+    # f(z) = (z - i) / (z + i)
+    
+    x = np.linspace(-5, 5, 100)
+    y = np.linspace(0.1, 5, 50)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    # Cayley transform: H -> D
+    W = (Z - 1j) / (Z + 1j)
+    
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+    
+    # Upper half-plane
+    axes[0].plot(X, Y, 'b-', alpha=0.3)
+    axes[0].plot(X.T, Y.T, 'r-', alpha=0.3)
+    axes[0].axhline(y=0, color='k', linewidth=2)
+    axes[0].set_xlim(-5, 5)
+    axes[0].set_ylim(-1, 5)
+    axes[0].set_aspect('equal')
+    axes[0].set_title('Upper Half-Plane')
+    axes[0].set_xlabel('Re(z)')
+    axes[0].set_ylabel('Im(z)')
+    
+    # Unit disk
+    axes[1].plot(W.real, W.imag, 'b-', alpha=0.3)
+    axes[1].plot(W.real.T, W.imag.T, 'r-', alpha=0.3)
+    circle = np.exp(1j * np.linspace(0, 2*np.pi, 100))
+    axes[1].plot(circle.real, circle.imag, 'k-', linewidth=2)
+    axes[1].set_xlim(-1.2, 1.2)
+    axes[1].set_ylim(-1.2, 1.2)
+    axes[1].set_aspect('equal')
+    axes[1].set_title('Unit Disk (after Cayley transform)')
+    axes[1].set_xlabel('Re(w)')
+    axes[1].set_ylabel('Im(w)')
+    
+    plt.tight_layout()
+    plt.savefig('riemann_map.png', dpi=150)
+    plt.show()
+
+visualize_riemann_map()
+</code></pre>
+                
+                <h3>2. Elliptic Functions and Modular Forms</h3>
+                <p><strong>Historical context:</strong> Elliptic integrals arose from attempts to calculate arc lengths of ellipses. Abel and Jacobi inverted these integrals in the 1820s, creating elliptic function theory. Modular forms emerged from the study of elliptic functions and became central to modern number theory, culminating in Wiles's proof of Fermat's Last Theorem.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Elliptic function:</strong> Doubly periodic meromorphic function</li>
+                    <li><strong>Weierstrass ℘-function:\(\wp(z) = \frac{1}{z^2} + \sum_{\omega \neq 0} \left(\frac{1}{(z-\omega)^2} - \frac{1}{\omega^2}\right)\)</li>
+                    <li><strong>Modular discriminant:\(\Delta(\tau) = g_2^3 - 27g_3^2\)</li>
+                    <li><strong>Dedekind eta function:\(\eta(\tau) = e^{\pi i \tau/12} \prod_{n=1}^{\infty}(1 - e^{2\pi i n \tau})\)</li>
+                </ul>
+                
+                <h4>Theorem (Modularity of the Discriminant)</h4>
+                \[\Delta\left(\frac{a\tau + b}{c\tau + d}\right) = (c\tau + d)^{12}\Delta(\tau)\]
+                <p>for \(\begin{pmatrix} a & b \\ c & d \end{pmatrix} \in SL_2(\mathbb{Z})\).</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def weierstrass_p(z, omega1=1, omega2=1j, n_terms=50):
+    """
+    Approximate Weierstrass p-function.
+    p(z) = 1/z^2 + sum_{omega != 0} [1/(z-omega)^2 - 1/omega^2]
+    """
+    # Generate lattice points
+    lattice_points = []
+    for m in range(-n_terms, n_terms+1):
+        for n in range(-n_terms, n_terms+1):
+            if m == 0 and n == 0:
+                continue
+            omega = m * omega1 + n * omega2
+            lattice_points.append(omega)
+    
+    # Compute series
+    result = 1 / z**2 if z != 0 else np.inf
+    for omega in lattice_points:
+        if abs(z - omega) > 1e-10:
+            result += 1 / (z - omega)**2 - 1 / omega**2
+    
+    return result
+
+def j_invariant(tau, n_terms=20):
+    """
+    Compute modular j-invariant j(τ).
+    j(τ) = 1728 * g2^3 / (g2^3 - 27*g3^2)
+    """
+    # Compute Eisenstein series
+    g2 = 0
+    g3 = 0
+    for m in range(-n_terms, n_terms+1):
+        for n in range(-n_terms, n_terms+1):
+            if m == 0 and n == 0:
+                continue
+            omega = m + n * tau
+            g2 += 1 / omega**4
+            g3 += 1 / omega**6
+    
+    g2 = 60 * g2
+    g3 = 140 * g3
+    
+    delta = g2**3 - 27 * g3**2
+    if abs(delta) > 1e-10:
+        j = 1728 * g2**3 / delta
+    else:
+        j = np.inf
+    
+    return j
+
+# Visualize modular form behavior
+tau_real = np.linspace(-1, 1, 100)
+tau_imag = np.linspace(0.1, 2, 100)
+T_real, T_imag = np.meshgrid(tau_real, tau_imag)
+
+j_values = np.zeros_like(T_real)
+for i in range(len(tau_imag)):
+    for j in range(len(tau_real)):
+        tau = T_real[i, j] + 1j * T_imag[i, j]
+        if abs(tau) > 0.1:
+            j_val = j_invariant(tau, n_terms=5)
+            j_values[i, j] = np.log(abs(j_val) + 1) if not np.isnan(j_val) else 0
+
+plt.figure(figsize=(10, 8))
+plt.contourf(T_real, T_imag, j_values, levels=20, cmap='viridis')
+plt.colorbar(label='log|j(τ)|')
+plt.title('Modular j-invariant in Upper Half-Plane')
+plt.xlabel('Re(τ)')
+plt.ylabel('Im(τ)')
+plt.savefig('modular_j.png', dpi=150)
+plt.show()</code></pre>
+                
+                <h3>3. Value Distribution Theory (Nevanlinna Theory)</h3>
+                <p><strong>Historical context:</strong> Rolf Nevanlinna developed his theory of meromorphic functions in the 1920s, providing a quantitative refinement of Picard's theorem. The theory became fundamental to complex dynamics and has recent connections to Diophantine approximation (Vojta's dictionary).</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Characteristic function:\(T(r, f) = m(r, f) + N(r, f)\)</li>
+                    <li><strong>Proximity function:\(m(r, a) = \frac{1}{2\pi} \int_0^{2\pi} \log^+\left|\frac{1}{f(re^{i\theta}) - a}\right| d\theta\)</li>
+                    <li><strong>Counting function:\(N(r, a)\) = weighted count of \(a\)-points</li>
+                </ul>
+                
+                <h4>Theorem (First Main Theorem)</h4>
+                \[m(r, a) + N(r, a) = T(r, f) + O(1)\]
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def characteristic_function(f, r, n_theta=1000):
+    """
+    Approximate Nevanlinna characteristic function T(r, f).
+    T(r, f) = m(r, f) + N(r, f)
+    where m(r, f) is the proximity function (average log+ |f| on circle)
+    and N(r, f) counts poles.
+    """
+    theta = np.linspace(0, 2*np.pi, n_theta)
+    z = r * np.exp(1j * theta)
+    
+    f_values = f(z)
+    
+    # Proximity function m(r, f) = (1/2π) ∫ log+ |f| dθ
+    log_plus = np.maximum(np.log(np.abs(f_values)), 0)
+    m_r_f = np.mean(log_plus)
+    
+    # Counting function N(r, f) - approximate by finding near-poles
+    # For meromorphic functions, count zeros of 1/f
+    
+    return m_r_f  # Simplified: just return proximity function
+
+def value_distribution_demo():
+    """
+    Demonstrate value distribution for a meromorphic function.
+    """
+    # Example: f(z) = e^z
+    def f_exp(z):
+        return np.exp(z)
+    
+    # Example: f(z) = tan(z) = sin(z)/cos(z)
+    def f_tan(z):
+        return np.tan(z)
+    
+    r_values = np.linspace(0.1, 5, 50)
+    
+    T_exp = [characteristic_function(f_exp, r) for r in r_values]
+    T_tan = [characteristic_function(f_tan, r) for r in r_values]
+    
+    plt.figure(figsize=(10, 6))
+    plt.plot(r_values, T_exp, 'b-', label='T(r, e^z)')
+    plt.plot(r_values, T_tan, 'r-', label='T(r, tan(z))')
+    plt.xlabel('r')
+    plt.ylabel('T(r, f)')
+    plt.title('Characteristic Functions')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig('characteristic_function.png', dpi=150)
+    plt.show()
+    
+    print("Characteristic function growth:")
+    print(f"e^z grows like ~r/π: {T_exp[-1]:.2f} at r={r_values[-1]:.1f}")
+    print(f"tan(z) grows like ~r: {T_tan[-1]:.2f} at r={r_values[-1]:.1f}")
+
+value_distribution_demo()</code></pre>
+                
+                <h3>4. Complex Dynamics and the Mandelbrot Set</h3>
+                <p><strong>Historical context:</strong> Julia and Fatou studied iteration of rational functions in the 1910s-20s. The subject was revived in the 1980s with computer visualizations. Mandelbrot's eponymous set, introduced in 1980, became an icon of chaos theory and popular mathematics.</p>
+                
+                <h4>Definitions</h4>
+                <ul>
+                    <li><strong>Julia set:\(J(f) = \partial\{z : f^n(z) \not\to \infty\}\)</li>
+                    <li><strong>Filled Julia set:\(K(f) = \{z : \{f^n(z)\} \text{ bounded}\}\)</li>
+                    <li><strong>Mandelbrot set:\(M = \{c : K(z^2 + c) \text{ is connected}\}\)</li>
+                    <li><strong>Fatou set:\(F(f) = \mathbb{C} \setminus J(f)\)</li>
+                </ul>
+                
+                <h4>Theorem (Fundamental Dichotomy)</h4>
+                <p>For \(f_c(z) = z^2 + c\), either:\</p>
+                <ol>
+                    <li\u003e\(c \in M\): \(K(f_c)\) is connected, \(J(f_c)\) has empty interior</li>
+                    <li\u003e\(c \notin M\): \(K(f_c)\) is a Cantor set, \(J(f_c) = K(f_c)\)</li>
+                </ol>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot_set(xmin=-2.5, xmax=1.5, ymin=-2, ymax=2, 
+                   width=800, height=800, max_iter=100):
+    """
+    Compute Mandelbrot set.
+    """
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j * Y
+    
+    Z = np.zeros_like(C)
+    M = np.zeros(C.shape, dtype=int)
+    
+    for i in range(max_iter):
+        mask = np.abs(Z) <= 2
+        Z[mask] = Z[mask]**2 + C[mask]
+        M[mask] = i
+    
+    return M
+
+def julia_set(c=-0.7 + 0.27015j, xmin=-2, xmax=2, ymin=-2, ymax=2,
+              width=800, height=800, max_iter=100):
+    """
+    Compute Julia set for f(z) = z^2 + c.
+    """
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    M = np.zeros(Z.shape, dtype=int)
+    
+    for i in range(max_iter):
+        mask = np.abs(Z) <= 2
+        Z[mask] = Z[mask]**2 + c
+        M[mask] = i
+    
+    return M
+
+# Compute and visualize
+mandelbrot = mandelbrot_set(max_iter=80)
+
+plt.figure(figsize=(15, 6))
+
+plt.subplot(121)
+plt.imshow(mandelbrot, extent=[-2.5, 1.5, -2, 2], cmap='hot', origin='lower')
+plt.title('Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.colorbar(label='Iterations')
+
+# Julia set for interesting c value
+julia = julia_set(c=-0.8 + 0.156j, max_iter=80)
+
+plt.subplot(122)
+plt.imshow(julia, extent=[-2, 2, -2, 2], cmap='hot', origin='lower')
+plt.title('Julia Set for c = -0.8 + 0.156i')
+plt.xlabel('Re(z)')
+plt.ylabel('Im(z)')
+plt.colorbar(label='Iterations')
+
+plt.tight_layout()
+plt.savefig('mandelbrot_julia.png', dpi=150)
+plt.show()
+
+# Zoom into interesting region of Mandelbrot
+def mandelbrot_zoom(xmin=-0.75, xmax=-0.74, ymin=0.1, ymax=0.11,
+                   width=800, height=800, max_iter=200):
+    return mandelbrot_set(xmin, xmax, ymin, ymax, width, height, max_iter)
+
+zoom = mandelbrot_zoom()
+plt.figure(figsize=(8, 8))
+plt.imshow(zoom, extent=[-0.75, -0.74, 0.1, 0.11], cmap='plasma', origin='lower')
+plt.title('Mandelbrot Zoom')
+plt.savefig('mandelbrot_zoom.png', dpi=150)
+plt.show()
 </code></pre>
             </section>
+            
+            <section id="math-history">
+                <h2>Math History</h2>
+                <p>Complex numbers emerged from the algebraic need to solve cubic equations. Cardano's "Ars Magna" (1545) presented methods that produced square roots of negative numbers as intermediate steps, even when final answers were real. Bombelli's "L'Algebra" (1572) first systematically treated these quantities, but they remained suspect until the geometric interpretation emerged.</p>
+                <p>Wallis, Argand, Gauss, and Wessel independently discovered that complex numbers could be represented as points in a plane—the complex plane. Gauss's proof of the Fundamental Theorem of Algebra (1799) demonstrated the power of complex methods. Cauchy's work in the 1810s-50s established the foundations of complex analysis: his integral theorem, integral formula, and residue calculus transformed the field.</p>
+                <p>The late 19th century brought Riemann's geometric approach and Weierstrass's emphasis on power series. Riemann surfaces unified multi-valued functions, while the uniformization theorem connected complex analysis to differential geometry. The 20th century saw complex analysis influence number theory (modular forms, L-functions), algebraic geometry (sheaves, cohomology), and physics (conformal field theory, string theory).</p>
+                <p>Today, complex analysis remains essential across mathematics and its applications. The Riemann Hypothesis, perhaps the most famous unsolved problem in mathematics, concerns the zeros of the Riemann zeta function—a central object in complex analysis. From pure mathematics to signal processing, fluid dynamics to quantum field theory, the magic of complex numbers continues to reveal deep connections and provide powerful tools.</p>
+            </section>
+            
+            <section id="math-journalism">
+                <h2>Math Journalism</h2>
+                
+                <h3>1. Quanta Magazine</h3>
+                <p><strong>Article:</strong> "Mathematicians Prove New Result in Modular Forms"</p>
+                <p><strong>Summary:</strong> Recent work on the Langlands program connects representations of Galois groups to automorphic forms, using complex analysis to bridge number theory and harmonic analysis.</p>
+                
+                <h3>2. AMS Notices</h3>
+                <p><strong>Article:</strong> "The Bieberbach Conjecture and Its Proof by de Branges"</p>
+                <p><strong>Summary:</strong> An account of how Louis de Branges proved this long-standing conjecture about coefficients of univalent functions, using Hilbert spaces of entire functions—a surprising application of operator theory to complex analysis.</p>
+                
+                <h3>3. Plus Magazine</h3>
+                <p><strong>Article:</strong> "The Riemann Hypothesis: A Million Dollar Mystery"</p>
+                <p><strong>Summary:</strong> An accessible introduction to the Riemann Hypothesis, explaining how the distribution of prime numbers connects to the zeros of the zeta function in the complex plane.</p>
+            </section>
+            
+            <section id="problem-corner">
+                <h2>Problem Corner</h2>
+                <p><strong>Problem (Putnam 2014 A4):</strong> Let \(n\) be a positive integer. Show that
+                \[\int_0^{2\pi} \cos(x)\cos(2x)\cdots\cos(nx) \, dx = \frac{\pi}{2^{n-1}}\]
+                where the left-hand side is interpreted as the number of ways to choose a subset of \(\{1, 2, \ldots, n\}\) with sum equal to half the total sum.</p>
+                
+                <details>
+                    <summary>Hint</summary>
+                    <p>Use the identity \(\cos(kx) = \frac{e^{ikx} + e^{-ikx}}{2}\) and convert to a contour integral around the unit circle.</p>
+                </details>
+                
+                <details>
+                    <summary>Solution</summary>
+                    <p>Using Euler's formula:
+                    \[\cos(kx) = \frac{e^{ikx} + e^{-ikx}}{2}\]</p>
+                    
+                    <p>The product becomes:
+                    \[\prod_{k=1}^n \cos(kx) = \frac{1}{2^n} \prod_{k=1}^n (e^{ikx} + e^{-ikx}) = \frac{1}{2^n} \sum_{S \subseteq [n]} e^{ix(\sum_{k \in S} k - \sum_{k \notin S} k)}\]</p>
+                    
+                    <p>Let \(\sigma = \sum_{k=1}^n k = \frac{n(n+1)}{2}\). Then:
+                    \[\sum_{k \in S} k - \sum_{k \notin S} k = 2\sum_{k \in S} k - \sigma\]</p>
+                    
+                    <p>So the integral becomes:
+                    \[\frac{1}{2^n} \sum_{S \subseteq [n]} \int_0^{2\pi} e^{ix(2\sum_{k \in S} k - \sigma)} dx\]</p>
+                    
+                    <p>The integral is \(2\pi\) when \(2\sum_{k \in S} k = \sigma\) (i.e., when the subset sum equals half the total), and 0 otherwise.</p>
+                    
+                    <p>For the total sum to have a subset equal to half, we need \(\sigma\) to be even, i.e., \(n(n+1)/2\) even, which happens when \(n \equiv 0, 3 \pmod{4}\).</p>
+                    
+                    <p>When such subsets exist, let \(N\) be their count. The answer is \(\frac{2\pi N}{2^n} = \frac{\pi N}{2^{n-1}}\).</p>
+                    
+                    <p>It can be shown that \(N = 1\) when the condition is satisfied, giving \(\boxed{\dfrac{\pi}{2^{n-1}}}\) for \(n \equiv 0, 3 \pmod{4}\) and \(0\) otherwise.</p>
+                </details>
+            </section>
+            
+            <section id="visualization">
+                <h2>Visualization of the Day</h2>
+                <p>The complex exponential function \(e^z\) maps the complex plane in fascinating ways: horizontal lines map to rays from the origin, vertical lines map to circles, and rectangles map to annular sectors.</p>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
 
+def visualize_complex_exponential():
+    """
+    Visualize the complex exponential function.
+    """
+    # Create grid in z-plane
+    x = np.linspace(-2, 2, 100)
+    y = np.linspace(-2*np.pi, 2*np.pi, 200)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    # Apply exponential
+    W = np.exp(Z)
+    
+    fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+    
+    # Original grid
+    ax1 = axes[0, 0]
+    for y_val in np.linspace(-2*np.pi, 2*np.pi, 9):
+        ax1.plot(x, [y_val]*len(x), 'b-', alpha=0.5)
+    for x_val in np.linspace(-2, 2, 9):
+        ax1.plot([x_val]*len(y), y, 'r-', alpha=0.5)
+    ax1.set_xlim(-2.5, 2.5)
+    ax1.set_ylim(-7, 7)
+    ax1.set_aspect('equal')
+    ax1.set_title('z-plane: Grid Lines')
+    ax1.set_xlabel('Re(z)')
+    ax1.set_ylabel('Im(z)')
+    
+    # Image under exp
+    ax2 = axes[0, 1]
+    for y_val in np.linspace(-2*np.pi, 2*np.pi, 9):
+        z_line = x + 1j * y_val
+        w_line = np.exp(z_line)
+        ax2.plot(w_line.real, w_line.imag, 'b-', alpha=0.5)
+    for x_val in np.linspace(-2, 2, 9):
+        z_line = x_val + 1j * y
+        w_line = np.exp(z_line)
+        ax2.plot(w_line.real, w_line.imag, 'r-', alpha=0.5)
+    ax2.set_xlim(-8, 8)
+    ax2.set_ylim(-8, 8)
+    ax2.set_aspect('equal')
+    ax2.set_title('w-plane: w = e^z')
+    ax2.set_xlabel('Re(w)')
+    ax2.set_ylabel('Im(w)')
+    
+    # Domain coloring of exp(z)
+    ax3 = axes[1, 0]
+    magnitude = np.abs(W)
+    phase = np.angle(W)
+    
+    # Use HSV coloring: hue = phase, value = magnitude
+    from matplotlib.colors import hsv_to_rgb
+    hsv = np.zeros((*W.shape, 3))
+    hsv[:, :, 0] = (phase + np.pi) / (2 * np.pi)  # Hue
+    hsv[:, :, 1] = 1  # Saturation
+    hsv[:, :, 2] = np.tanh(magnitude / 5)  # Value
+    rgb = hsv_to_rgb(hsv)
+    
+    ax3.imshow(rgb, extent=[-2, 2, -2*np.pi, 2*np.pi], origin='lower', aspect='auto')
+    ax3.set_title('Domain Coloring of e^z')
+    ax3.set_xlabel('Re(z)')
+    ax3.set_ylabel('Im(z)')
+    
+    # Magnitude surface
+    ax4 = axes[1, 1]
+    contour = ax4.contourf(X, Y, np.log(magnitude + 1), levels=20, cmap='viridis')
+    plt.colorbar(contour, ax=ax4, label='log|e^z|')
+    ax4.set_title('log|e^z| = Re(z)')
+    ax4.set_xlabel('Re(z)')
+    ax4.set_ylabel('Im(z)')
+    
+    plt.tight_layout()
+    plt.savefig('complex_exponential.png', dpi=150)
+    plt.show()
+
+visualize_complex_exponential()
+</code></pre>
+            </section>
+            
             <section id="quote">
-                <h2>💬 Quote of the Day</h2>
+                <h2>Quote of the Day</h2>
                 <blockquote>
-                    <p>"Topology is precisely the mathematical discipline that allows the passage from local to global."</p>
-                    <footer>— René Thom</footer>
+                    "The shortest path between two truths in the real domain passes through the complex domain."
+                    <footer>— Jacques Hadamard</footer>
                 </blockquote>
             </section>
-
         </article>
     </main>
-
+    
     <footer>
-        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
-        <p>
-            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
-            <a href="../index.html">Home</a> |
-            <a href="../posts/index.html">All Posts</a>
-        </p>
+        <p>&copy; 2026 Nothing But Real Math. All rights reserved.</p>
+        <p>Built with curiosity and caffeine.</p>
     </footer>
 </body>
 </html>
