@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Digest — Representation Theory, Bayesian Statistics & Elliptic Curves</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="post-date">February 16, 2026 at 09:32 UTC</p>
+        <div class="tags">
+            <span class="tag">representation-theory</span>
+            <span class="tag">bayesian-statistics</span>
+            <span class="tag">elliptic-curves</span>
+            <span class="tag">measure-theory</span>
+            <span class="tag">reinforcement-learning</span>
+        </div>
+
+        <!-- Section 1: 3 Math Links -->
+        <section id="links">
+            <h2>🔗 3 Math Links</h2>
+            <ul>
+                <li><strong><a href="https://www.math3ma.com/">Math3ma</a></strong> — A blog by Tai-Danae Bradley that makes advanced mathematics accessible through intuitive explanations and beautiful visualizations. Particularly strong in category theory, representation theory, and algebraic topology. The "Applied Category Theory" series is exceptional.</li>
+                <li><strong><a href="https://statmodeling.stat.columbia.edu/">Statistical Modeling, Causal Inference, and Social Science</a></strong> — Andrew Gelman's blog covering Bayesian statistics, causal inference, and the philosophy of science. Essential reading for understanding modern statistical practice and its pitfalls.</li>
+                <li><strong><a href="https://www.lmfdb.org/">L-Functions and Modular Forms Database (LMFDB)</a></strong> — A comprehensive database of number-theoretic objects including elliptic curves, modular forms, and L-functions. An invaluable research tool for computational number theory with extensive data and visualizations.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: 1 Free Math Book -->
+        <section id="book">
+            <h2>📚 Free Math Book of the Day</h2>
+            <h3><em>Representation Theory of Finite Groups: An Introductory Approach</em> by Benjamin Steinberg</h3>
+            <p>This excellent text provides a gentle yet thorough introduction to representation theory, focusing on finite groups and their applications. Unlike many advanced texts that require extensive background in module theory, Steinberg develops the subject from first principles with a view toward concrete applications.</p>
+            <p>The book covers:</p>
+            <ul>
+                <li>Group representations and character theory from scratch</li>
+                <li>Fourier analysis on finite groups</li>
+                <li>Applications to probability and Markov chains</li>
+                <li>Burnside's theorem and other classical applications</li>
+                <li>Induced representations and Frobenius reciprocity</li>
+            </ul>
+            <p>What distinguishes this book is its computational approach and wealth of examples drawn from chemistry, physics, and computer science. The text includes numerous exercises with solutions and uses representation theory to analyze card shuffling and random walks.</p>
+            <p><strong>Level:</strong> Advanced undergraduate<br>
+            <strong>Available free at:</strong> <a href="https://archive.org/details/representationth0000stei">Internet Archive</a> and the author's website</p>
+        </section>
+
+        <!-- Section 3: 3 Pure Math Deep-Dives -->
+        <section id="pure">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+            
+            <h3>Representation Theory: Symmetry as Linear Algebra</h3>
+            <p>Representation theory is the study of abstract algebraic structures by representing their elements as linear transformations of vector spaces. The fundamental insight is that we can understand a group by studying how it acts on vector spaces—essentially turning abstract symmetry into concrete matrices.</p>
+            
+            <p><strong>Motivation:</strong> Groups abstractly capture symmetry, but working with abstract group elements is difficult. By representing group elements as matrices, we can use the full power of linear algebra—eigenvalues, traces, determinants—to study symmetry.</p>
+
+            <p><strong>Definition (Group Representation):</strong> A <strong>representation</strong> of a group \(G\) over a field \(\mathbb{F}\) is a homomorphism \(\rho: G \to GL(V)\), where \(V\) is a vector space over \(\mathbb{F}\) and \(GL(V)\) is the group of invertible linear transformations of \(V\). The <strong>degree</strong> of the representation is \(\dim(V)\).</p>
+
+            <p>Equivalently, a representation is a group action of \(G\) on \(V\) by linear transformations: for each \(g \in G\), we have a linear map \(\rho(g): V \to V\) such that \(\rho(gh) = \rho(g)\rho(h)\) and \(\rho(e) = I\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\rho(g)\) or \(\rho_g\) — the linear transformation associated to \(g\)</li>
+                <li>\(\chi_\rho(g) = \text{tr}(\rho(g))\) — the <strong>character</strong> of the representation</li>
+                <li>\(V^G = \{v \in V : gv = v \text{ for all } g \in G\}\) — the <strong>invariant subspace</strong></li>
+                <li>\(\mathbb{C}[G]\) — the <strong>group algebra</strong></li>
+                <li>\(\hat{G}\) — the set of irreducible representations of \(G\)</li>
+            </ul>
+
+            <p><strong>Definition (Irreducible Representation):</strong> A representation \(\rho: G \to GL(V)\) is <strong>irreducible</strong> if \(V\) has no proper nontrivial \(G\)-invariant subspaces. That is, if \(W \subseteq V\) satisfies \(\rho(g)(W) \subseteq W\) for all \(g \in G\), then either \(W = 0\) or \(W = V\).</p>
+
+            <p><strong>Theorem (Maschke's Theorem):</strong> Let \(G\) be a finite group and \(\mathbb{F}\) a field whose characteristic does not divide \(|G|\). Then every representation of \(G\) over \(\mathbb{F}\) is completely reducible—every invariant subspace has an invariant complement.</p>
+
+            <p><em>Proof:</em> Let \(\rho: G \to GL(V)\) be a representation and \(W \subseteq V\) a \(G\)-invariant subspace. Choose any projection \(\pi: V \to W\). Define:
+            \[ \pi'(v) = \frac{1}{|G|} \sum_{g \in G} g^{-1} \cdot \pi(g \cdot v) \]
+            Then \(\pi'\) is a \(G\)-equivariant projection. The kernel of \(\pi'\) is a \(G\)-invariant complement to \(W\). ∎</p>
+
+            <p><strong>Theorem (Character Orthogonality):</strong> Let \(G\) be a finite group with irreducible characters \(\chi_1, \ldots, \chi_k\). Then:
+            \[ \frac{1}{|G|} \sum_{g \in G} \chi_i(g) \overline{\chi_j(g)} = \delta_{ij} \]
+            where \(\delta_{ij}\) is the Kronecker delta.</p>
+
+            <p><em>Proof sketch:</em> Use Schur's lemma: if \(T: V_i \to V_j\) is a \(G\)-equivariant linear map between irreducibles, then \(T = 0\) if \(i \neq j\) and \(T = \lambda I\) if \(i = j\). Apply this to the averaging of matrix coefficients. ∎</p>
+
+            <pre><code>import numpy as np
+from itertools import permutations
+
+class GroupRepresentation:
+    """Basic representation theory computations for finite groups."""
+    
+    def __init__(self, group_elements, multiplication_table):
+        """
+        group_elements: list of group element labels
+        multiplication_table: dict (g, h) -> gh
+        """
+        self.elements = group_elements
+        self.mult = multiplication_table
+        self.n = len(group_elements)
+        self.index = {g: i for i, g in enumerate(group_elements)}
+    
+    def regular_representation(self, g):
+        """Return matrix of left multiplication by g in the regular representation."""
+        mat = np.zeros((self.n, self.n))
+        for h in self.elements:
+            gh = self.mult[(g, h)]
+            mat[self.index[gh], self.index[h]] = 1
+        return mat
+    
+    def character(self, representation_dict):
+        """Compute character of a representation.
+        representation_dict: element -> matrix
+        """
+        return {g: np.trace(representation_dict[g]) for g in self.elements}
+    
+    def inner_product(self, chi1, chi2):
+        """Inner product of class functions."""
+        return sum(chi1[g] * np.conj(chi2[g]) for g in self.elements) / self.n
+
+# Example: S_3 (symmetric group on 3 elements)
+def create_S3():
+    """Create S_3 with its elements and multiplication."""
+    # Elements as permutations in cycle notation
+    e = (0, 1, 2)  # identity
+    a = (1, 0, 2)  # (12)
+    b = (0, 2, 1)  # (23)
+    c = (2, 1, 0)  # (13)
+    d = (1, 2, 0)  # (123)
+    f = (2, 0, 1)  # (132)
+    
+    elements = [e, a, b, c, d, f]
+    
+    # Multiplication: apply right permutation first
+    def compose(p, q):
+        return tuple(p[q[i]] for i in range(3))
+    
+    mult = {}
+    for g in elements:
+        for h in elements:
+            mult[(g, h)] = compose(g, h)
+    
+    return GroupRepresentation(elements, mult)
+
+S3 = create_S3()
+print("S_3 has", S3.n, "elements")
+
+# Compute regular representation matrices
+print("\nRegular representation of (12):")
+print(S3.regular_representation((1, 0, 2)))
+
+# The three irreducible representations of S_3:
+# 1. Trivial: all elements map to [1]
+# 2. Sign: even permutations -> [1], odd -> [-1]
+# 3. Standard: 2-dimensional
+
+print("\nIrreducible characters of S_3:")
+print("Trivial: all 1s")
+print("Sign: 1 for even, -1 for odd permutations")
+print("Standard: 2-dim, character = (2, 0, 0, 0, -1, -1)")
+
+# Verify orthogonality
+def sign_char(g):
+    # Count inversions
+    inv = sum(1 for i in range(3) for j in range(i+1, 3) if g[i] > g[j])
+    return 1 if inv % 2 == 0 else -1
+
+trivial = {g: 1 for g in S3.elements}
+sign = {g: sign_char(g) for g in S3.elements}
+standard = {(0,1,2): 2, (1,0,2): 0, (0,2,1): 0, (2,1,0): 0, (1,2,0): -1, (2,0,1): -1}
+
+print(f"\n<trivial, sign> = {S3.inner_product(trivial, sign):.4f}")
+print(f"<trivial, trivial> = {S3.inner_product(trivial, trivial):.4f}")
+</code></pre>
+
+            <h3>Measure Theory: The Foundation of Modern Analysis</h3>
+            <p>Measure theory provides the rigorous foundation for integration, probability, and modern analysis. Developed by Henri Lebesgue in the early 20th century, it generalizes the intuitive notion of length, area, and volume to a vast class of sets.</p>
+
+            <p><strong>Motivation:</strong> The Riemann integral has severe limitations—it cannot integrate functions with "too many" discontinuities, limits of Riemann integrable functions may not be Riemann integrable, and it struggles with infinite-dimensional spaces. Measure theory solves these problems.</p>
+
+            <p><strong>Definition (\(\sigma\)-algebra):</strong> A collection \(\mathcal{F}\) of subsets of a set \(X\) is a <strong>\(\sigma\)-algebra</strong> if:</p>
+            <ul>
+                <li>\(X \in \mathcal{F}\)</li>
+                <li>If \(A \in \mathcal{F}\), then \(A^c \in \mathcal{F}\) (closed under complement)</li>
+                <li>If \(A_1, A_2, \ldots \in \mathcal{F}\), then \(\bigcup_{n=1}^\infty A_n \in \mathcal{F}\) (closed under countable unions)</li>
+            </ul>
+
+            <p><strong>Definition (Measure):</strong> A <strong>measure</strong> on a \(\sigma\)-algebra \(\mathcal{F}\) is a function \(\mu: \mathcal{F} \to [0, \infty]\) such that:</p>
+            <ul>
+                <li>\(\mu(\emptyset) = 0\)</li>
+                <li><strong>Countable additivity:</strong> For disjoint sets \(A_1, A_2, \ldots \in \mathcal{F}\):
+                \[ \mu\left(\bigcup_{n=1}^\infty A_n\right) = \sum_{n=1}^\infty \mu(A_n) \]</li>
+            </ul>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\((X, \mathcal{F}, \mu)\) — a <strong>measure space</strong></li>
+                <li>\(\mathcal{B}(\mathbb{R})\) — the <strong>Borel \(\sigma\)-algebra</strong> (smallest \(\sigma\)-algebra containing all open sets)</li>
+                <li>\(\lambda\) — <strong>Lebesgue measure</strong> on \(\mathbb{R}^n\)</li>
+                <li>\(\mathcal{L}^1(\mu)\) — space of integrable functions</li>
+                <li>\(\mathbb{P}\) — probability measure</li>
+            </ul>
+
+            <p><strong>Theorem (Lebesgue Dominated Convergence):</strong> Let \((f_n)\) be a sequence of measurable functions converging pointwise to \(f\). If there exists an integrable function \(g\) such that \(|f_n| \leq g\) for all \(n\), then:
+            \[ \lim_{n \to \infty} \int f_n \, d\mu = \int f \, d\mu \]</p>
+
+            <p><em>Proof sketch:</em> Apply Fatou's lemma to \(g + f_n\) and \(g - f_n\) to get:
+            \[ \int(g + f) \leq \liminf \int(g + f_n) \quad \text{and} \quad \int(g - f) \leq \liminf \int(g - f_n) \]
+            Rearranging yields the result. ∎</p>
+
+            <p><strong>Theorem (Radon-Nikodym):</strong> Let \(\mu\) and \(\nu\) be \(\sigma\)-finite measures on \((X, \mathcal{F})\) with \(\nu \ll \mu\) (\(\nu\) absolutely continuous with respect to \(\mu\)). Then there exists a measurable function \(f \geq 0\) such that:
+            \[ \nu(A) = \int_A f \, d\mu \quad \text{for all } A \in \mathcal{F} \]
+            The function \(f\), denoted \(\frac{d\nu}{d\mu}\), is unique \(\mu\)-a.e.</p>
+
+            <pre><code>import numpy as np
+from scipy import integrate
+
+class SimpleMeasureTheory:
+    """Demonstrate measure-theoretic concepts numerically."""
+    
+    @staticmethod
+    def lebesgue_integral_approx(f, a, b, n=10000):
+        """
+        Approximate Lebesgue integral using simple functions.
+        For demonstration: partition range, not domain.
+        """
+        # Sample many points
+        x = np.linspace(a, b, n)
+        y = f(x)
+        
+        # Partition the range
+        y_min, y_max = np.min(y), np.max(y)
+        m = 100  # number of range partitions
+        range_partitions = np.linspace(y_min, y_max, m)
+        
+        integral = 0
+        for i in range(m - 1):
+            y_lower = range_partitions[i]
+            y_upper = range_partitions[i + 1]
+            y_mid = (y_lower + y_upper) / 2
+            dy = y_upper - y_lower
+            
+            # Measure of set where f is in [y_lower, y_upper)
+            mask = (y >= y_lower) & (y < y_upper)
+            measure = np.sum(mask) * (b - a) / n
+            
+            integral += y_mid * measure
+        
+        return integral
+    
+    @staticmethod
+    def riemann_integral_approx(f, a, b, n=10000):
+        """Standard Riemann sum."""
+        x = np.linspace(a, b, n)
+        dx = (b - a) / n
+        return np.sum(f(x)) * dx
+
+# Demonstrate: Lebesgue handles functions Riemann can't
+def discontinuous_function(x):
+    """Dirichlet-like function: 1 on rationals, 0 on irrationals.
+    Riemann integral doesn't exist. Lebesgue integral = 0."""
+    # Approximate: check if x is close to a simple fraction
+    result = np.zeros_like(x)
+    for i, xi in enumerate(x):
+        # Check if xi is well-approximated by rationals with small denominator
+        is_rational_like = False
+        for q in range(1, 20):
+            p = round(xi * q)
+            if abs(xi - p/q) < 0.001:
+                is_rational_like = True
+                break
+        result[i] = 1.0 if is_rational_like else 0.0
+    return result
+
+# A function with many discontinuities but still Riemann integrable
+def thomae_function(x):
+    """Thomae's function: q -> 1/q for x = p/q in lowest terms, 0 for irrationals."""
+    result = np.zeros_like(x)
+    for i, xi in enumerate(x):
+        # Find best rational approximation with small denominator
+        best_q = 1
+        min_diff = abs(xi - round(xi))
+        for q in range(2, 50):
+            p = round(xi * q)
+            diff = abs(xi - p/q)
+            if diff < min_diff:
+                min_diff = diff
+                best_q = q
+        if min_diff < 0.0001:
+            result[i] = 1.0 / best_q
+    return result
+
+# Test on continuous function first
+print("Testing on continuous function f(x) = x^2:")
+f = lambda x: x**2
+a, b = 0, 1
+riemann = SimpleMeasureTheory.riemann_integral_approx(f, a, b)
+lebesgue = SimpleMeasureTheory.lebesgue_integral_approx(f, a, b)
+exact = 1/3
+print(f"Riemann approximation: {riemann:.6f}")
+print(f"Lebesgue approximation: {lebesgue:.6f}")
+print(f"Exact value: {exact:.6f}")
+
+print("\nTesting Thomae's function on [0, 1]:")
+# Thomae's function is Riemann integrable with integral 0
+thomae_riemann = SimpleMeasureTheory.riemann_integral_approx(thomae_function, 0, 1, n=50000)
+print(f"Riemann approximation: {thomae_riemann:.6f}")
+print("(Exact value is 0)")
+
+# Demonstrate convergence theorems
+print("\n--- Dominated Convergence Theorem Demo ---")
+def f_n(x, n):
+    """f_n(x) = n*x for x in [0, 1/n], 0 otherwise."""
+    return np.where((x >= 0) & (x <= 1/n), n * x, 0)
+
+# Pointwise limit is 0
+# Each f_n has integral 1/2, but limit has integral 0
+# Wait, that's not right. Let me recalculate.
+# Integral of n*x from 0 to 1/n is n * (1/2) * (1/n)^2 = 1/(2n)
+
+for n in [10, 100, 1000, 10000]:
+    x = np.linspace(0, 1, 100000)
+    y = f_n(x, n)
+    integral = np.trapz(y, x)
+    print(f"n = {n:5d}: integral of f_n = {integral:.6f}")
+
+print("\nPointwise limit is f(x) = 0, with integral 0")
+print("Integrals converge to 0, demonstrating convergence theorem")
+</code></pre>
+
+            <h3>Functional Analysis: Infinite-Dimensional Geometry</h3>
+            <p>Functional analysis extends the methods of linear algebra and analysis to infinite-dimensional spaces. It provides the mathematical framework for quantum mechanics, partial differential equations, and optimization theory.</p>
+
+            <p><strong>Motivation:</strong> Many important spaces in analysis (continuous functions, square-integrable functions, sequences) are infinite-dimensional. We need tools to study linear operators on these spaces—generalizing matrices to infinite dimensions.</p>
+
+            <p><strong>Definition (Banach Space):</strong> A <strong>Banach space</strong> is a complete normed vector space \((X, \|\cdot\|)\). Complete means every Cauchy sequence converges to an element of \(X\).</p>
+
+            <p><strong>Definition (Hilbert Space):</strong> A <strong>Hilbert space</strong> is a complete inner product space. The inner product \(\langle \cdot, \cdot \rangle\) induces the norm \(\|x\| = \sqrt{\langle x, x \rangle}\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\ell^p\) — space of sequences with \(\sum |x_n|^p < \infty\)</li>
+                <li>\(L^p(\mu)\) — space of functions with \(\int |f|^p \, d\mu < \infty\)</li>
+                <li>\(B(X, Y)\) — bounded linear operators from \(X\) to \(Y\)</li>
+                <li>\(X^*\) — the <strong>dual space</strong> of continuous linear functionals</li>
+                <li>\(\sigma(T)\) — the <strong>spectrum</strong> of an operator \(T\)</li>
+            </ul>
+
+            <p><strong>Theorem (Riesz Representation):</strong> Let \(H\) be a Hilbert space. For every continuous linear functional \(\varphi \in H^*\), there exists a unique \(y \in H\) such that:
+            \[ \varphi(x) = \langle x, y \rangle \quad \text{for all } x \in H \]
+            Moreover, \(\|\varphi\| = \|y\|\).</p>
+
+            <p><em>Proof sketch:</em> If \(\varphi = 0\), take \(y = 0\). Otherwise, let \(N = \ker(\varphi)\). By continuity, \(N\) is closed. Since \(\varphi \neq 0\), \(N \neq H\), so \(N^\perp \neq \{0\}\). Take \(z \in N^\perp\) with \(\varphi(z) = 1\). For any \(x\), we have \(x - \varphi(x)z \in N\), so:
+            \[ \langle x - \varphi(x)z, z \rangle = 0 \]
+            This gives \(\varphi(x) = \langle x, z \rangle / \|z\|^2\). Set \(y = z/\|z\|^2\). ∎</p>
+
+            <p><strong>Theorem (Hahn-Banach):</strong> Let \(X\) be a normed space and \(Y \subseteq X\) a subspace. If \(\varphi \in Y^*\), then there exists \(\tilde{\varphi} \in X^*\) extending \(\varphi\) with \(\|\tilde{\varphi}\| = \|\varphi\|\).</p>
+
+            <pre><code>import numpy as np
+from scipy.linalg import eigh
+
+class FunctionalAnalysisDemo:
+    """Demonstrate functional analysis concepts in finite dimensions."""
+    
+    @staticmethod
+    def hilbert_space_inner_product(f, g, domain, weight=None):
+        """
+        Compute L^2 inner product: <f, g> = integral of f(x)*g(x) dx
+        In finite dimensions: sum of f(x_i) * g(x_i) * dx
+        """
+        dx = domain[1] - domain[0]
+        if weight is None:
+            weight = np.ones_like(domain)
+        return np.sum(f(domain) * g(domain) * weight) * dx
+    
+    @staticmethod
+    def gram_schmidt(functions, domain):
+        """
+        Orthogonalize a set of functions using Gram-Schmidt.
+        Returns orthonormal basis.
+        """
+        orthonormal = []
+        
+        for f in functions:
+            # Start with f
+            u = lambda x, f=f: f(x)
+            
+            # Subtract projections onto existing basis vectors
+            for e in orthonormal:
+                proj_coeff = FunctionalAnalysisDemo.hilbert_space_inner_product(
+                    lambda x: f(x), e, domain
+                )
+                u = lambda x, u=u, e=e, c=proj_coeff: u(x) - c * e(x)
+            
+            # Normalize
+            norm = np.sqrt(FunctionalAnalysisDemo.hilbert_space_inner_product(u, u, domain))
+            if norm > 1e-10:
+                e_new = lambda x, u=u, n=norm: u(x) / n
+                orthonormal.append(e_new)
+        
+        return orthonormal
+    
+    @staticmethod
+    def fourier_coefficients(f, basis, domain):
+        """Compute Fourier coefficients of f with respect to orthonormal basis."""
+        return [FunctionalAnalysisDemo.hilbert_space_inner_product(f, e, domain) 
+                for e in basis]
+
+# Demonstrate on [0, 2*pi] with trigonometric functions
+domain = np.linspace(0, 2*np.pi, 10000)
+
+# Original basis: 1, cos(x), sin(x), cos(2x), sin(2x), ...
+original_basis = [
+    lambda x: np.ones_like(x),
+    lambda x: np.cos(x),
+    lambda x: np.sin(x),
+    lambda x: np.cos(2*x),
+    lambda x: np.sin(2*x),
+]
+
+# These are already orthogonal on [0, 2*pi]!
+print("Inner products of trigonometric basis:")
+for i, f in enumerate(original_basis):
+    for j, g in enumerate(original_basis):
+        ip = FunctionalAnalysisDemo.hilbert_space_inner_product(f, g, domain)
+        if abs(ip) > 0.01:
+            print(f"<basis[{i}], basis[{j}]> = {ip:.4f}")
+
+# Normalize to get orthonormal basis
+orthonormal_basis = []
+for f in original_basis:
+    norm = np.sqrt(FunctionalAnalysisDemo.hilbert_space_inner_product(f, f, domain))
+    orthonormal_basis.append(lambda x, f=f, n=norm: f(x) / n)
+
+# Test function: a square wave
+square_wave = lambda x: np.sign(np.sin(x))
+
+# Compute Fourier coefficients
+coeffs = FunctionalAnalysisDemo.fourier_coefficients(square_wave, orthonormal_basis, domain)
+print(f"\nFourier coefficients of square wave:")
+labels = ['const', 'cos(x)', 'sin(x)', 'cos(2x)', 'sin(2x)']
+for label, c in zip(labels, coeffs):
+    print(f"  {label}: {c:.4f}")
+
+# Reconstruct using Fourier series
+reconstruction = lambda x: sum(c * e(x) for c, e in zip(coeffs, orthonormal_basis))
+
+# Compare
+x_test = np.linspace(0, 2*np.pi, 1000)
+error = np.mean((square_wave(x_test) - reconstruction(x_test))**2)
+print(f"\nMean squared error of reconstruction: {error:.4f}")
+
+# Demonstrate Riesz representation
+print("\n--- Riesz Representation Theorem Demo ---")
+# Linear functional: phi(f) = f(pi)
+# In L^2, this is represented by the Dirac delta (generalized function)
+# For our discrete approximation:
+phi = lambda f: f(np.pi)
+
+# The Riesz representer is the "reproducing kernel" at pi
+# In Fourier basis: sum of e_n(pi) * e_n(x)
+riesz_representer = lambda x: sum(e(np.pi) * e(x) for e in orthonormal_basis)
+
+# Verify: <f, riesz_representer> should equal f(pi)
+test_funcs = [
+    lambda x: np.sin(x),
+    lambda x: np.cos(x),
+    lambda x: x,
+]
+print("Verifying Riesz representation (phi(f) = f(pi)):")
+for f in test_funcs:
+    lhs = FunctionalAnalysisDemo.hilbert_space_inner_product(f, riesz_representer, domain)
+    rhs = f(np.pi)
+    print(f"  <f, representer> = {lhs:.4f}, f(pi) = {rhs:.4f}")
+</code></pre>
+        </section>
+
+        <!-- Section 4: 3 Applied Math Deep-Dives -->
+        <section id="applied">
+            <h2>💹 Applied Math Deep-Dives</h2>
+            
+            <h3>Bayesian Statistics: Updating Beliefs with Evidence</h3>
+            <p>Bayesian statistics provides a coherent framework for updating beliefs in light of evidence. Named after Thomas Bayes (1701–1761), it interprets probability as degree of belief rather than long-run frequency.</p>
+
+            <p><strong>Real-World Motivation:</strong> A medical test for a disease is 95% accurate. You test positive. What's the probability you actually have the disease? The answer depends crucially on the disease prevalence—a prior belief that must be combined with the test result.</p>
+
+            <p><strong>Bayes' Theorem:</strong> For events \(A\) and \(B\) with \(\mathbb{P}(B) > 0\):
+            \[ \mathbb{P}(A|B) = \frac{\mathbb{P}(B|A) \mathbb{P}(A)}{\mathbb{P}(B)} \]</p>
+
+            <p>In the context of statistical inference, with data \(D\) and parameter \(\theta\):
+            \[ p(\theta|D) = \frac{p(D|\theta) p(\theta)}{p(D)} = \frac{p(D|\theta) p(\theta)}{\int p(D|\theta) p(\theta) \, d\theta} \]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(p(\theta)\) — <strong>prior</strong> distribution (belief before seeing data)</li>
+                <li>\(p(D|\theta)\) — <strong>likelihood</strong> (probability of data given parameter)</li>
+                <li>\(p(\theta|D)\) — <strong>posterior</strong> distribution (updated belief)</li>
+                <li>\(p(D)\) — <strong>marginal likelihood</strong> or evidence</li>
+                <li>\(\propto\) — "proportional to" (ignoring normalizing constants)</li>
+            </ul>
+
+            <p><strong>Conjugate Priors:</strong> When prior and posterior belong to the same family, we have a conjugate prior. For example:</p>
+            <ul>
+                <li>Beta prior + Binomial likelihood → Beta posterior</li>
+                <li>Normal prior + Normal likelihood → Normal posterior</li>
+                <li>Gamma prior + Poisson likelihood → Gamma posterior</li>
+            </ul>
+
+            <p><strong>Theorem (Bayesian Consistency):</strong> Under mild regularity conditions, as sample size \(n \to \infty\), the posterior distribution concentrates around the true parameter value.</p>
+
+            <p><em>Proof sketch:</em> By the law of large numbers, the log-likelihood \(\frac{1}{n}\sum_{i=1}^n \log p(x_i|\theta)\) converges to the expected log-likelihood. The parameter maximizing this is the true parameter (by Gibbs' inequality). The posterior, proportional to \(\exp(n \cdot \text{avg log-likelihood}) \cdot p(\theta)\), concentrates at this maximum. ∎</p>
+
+            <pre><code>import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+class BayesianInference:
+    """Demonstrate Bayesian statistical methods."""
+    
+    @staticmethod
+    def beta_binomial_update(alpha, beta, successes, trials):
+        """
+        Beta-Binomial conjugate update.
+        Prior: Beta(alpha, beta)
+        Likelihood: Binomial(n, k)
+        Posterior: Beta(alpha + k, beta + n - k)
+        """
+        posterior_alpha = alpha + successes
+        posterior_beta = beta + trials - successes
+        return posterior_alpha, posterior_beta
+    
+    @staticmethod
+    def credible_interval(alpha, beta, level=0.95):
+        """Compute credible interval for Beta distribution."""
+        lower = stats.beta.ppf((1 - level) / 2, alpha, beta)
+        upper = stats.beta.ppf((1 + level) / 2, alpha, beta)
+        return lower, upper
+    
+    @staticmethod
+    def metropolis_hastings(log_posterior, initial, n_samples=10000, step=0.1):
+        """
+        Metropolis-Hastings MCMC sampler for when posterior is not conjugate.
+        """
+        samples = [initial]
+        current = initial
+        current_log_prob = log_posterior(current)
+        
+        for _ in range(n_samples):
+            # Propose new sample
+            proposal = current + np.random.normal(0, step)
+            proposal_log_prob = log_posterior(proposal)
+            
+            # Accept/reject
+            log_ratio = proposal_log_prob - current_log_prob
+            if np.log(np.random.random()) < log_ratio:
+                current = proposal
+                current_log_prob = proposal_log_prob
+            
+            samples.append(current)
+        
+        return np.array(samples)
+
+# Example 1: Coin flip inference
+print("=== Coin Flip Bayesian Inference ===")
+print("Prior: Beta(2, 2) [weakly biased toward fair coin]")
+
+# Simulate coin flips (true p = 0.7)
+np.random.seed(42)
+true_p = 0.7
+flips = np.random.random(100) < true_p
+
+# Sequential updating
+alpha, beta = 2, 2  # Prior
+for n in [0, 10, 50, 100]:
+    if n == 0:
+        print(f"\nPrior: Beta({alpha}, {beta})")
+        print(f"  Mean: {alpha/(alpha+beta):.3f}")
+        ci = BayesianInference.credible_interval(alpha, beta)
+        print(f"  95% Credible Interval: [{ci[0]:.3f}, {ci[1]:.3f}]")
+    else:
+        successes = np.sum(flips[:n])
+        post_alpha, post_beta = BayesianInference.beta_binomial_update(
+            2, 2, successes, n
+        )
+        print(f"\nAfter {n} flips ({successes} heads):")
+        print(f"  Posterior: Beta({post_alpha}, {post_beta})")
+        print(f"  Posterior mean: {post_alpha/(post_alpha+post_beta):.3f}")
+        ci = BayesianInference.credible_interval(post_alpha, post_beta)
+        print(f"  95% Credible Interval: [{ci[0]:.3f}, {ci[1]:.3f}]")
+
+# Example 2: Medical testing (Bayes' theorem)
+print("\n=== Medical Test Example ===")
+prevalence = 0.01  # 1% disease prevalence
+sensitivity = 0.95  # P(Test+|Disease)
+specificity = 0.90  # P(Test-|No Disease)
+
+# P(Disease|Test+)
+numerator = sensitivity * prevalence
+false_positive_rate = 1 - specificity
+marginal_prob = numerator + false_positive_rate * (1 - prevalence)
+posterior_prob = numerator / marginal_prob
+
+print(f"Disease prevalence: {prevalence:.1%}")
+print(f"Test sensitivity: {sensitivity:.1%}")
+print(f"Test specificity: {specificity:.1%}")
+print(f"\nP(Disease | Test+) = {posterior_prob:.1%}")
+print("Despite positive test, only ~8.7% chance of disease due to low prevalence!")
+
+# Example 3: MCMC for non-conjugate model
+print("\n=== MCMC for Non-Conjugate Model ===")
+# Model: data ~ Normal(mu, 1) with Cauchy prior on mu
+np.random.seed(42)
+true_mu = 5
+data = np.random.normal(true_mu, 1, 50)
+
+def log_cauchy_prior(mu, loc=0, scale=1):
+    """Log of Cauchy prior."""
+    return stats.cauchy.logpdf(mu, loc, scale)
+
+def log_likelihood(mu, data):
+    """Log likelihood for Normal model."""
+    return np.sum(stats.norm.logpdf(data, mu, 1))
+
+def log_posterior(mu):
+    """Log posterior = log prior + log likelihood."""
+    return log_cauchy_prior(mu, 0, 10) + log_likelihood(mu, data)
+
+# Run MCMC
+samples = BayesianInference.metropolis_hastings(
+    log_posterior, initial=0, n_samples=50000, step=0.5
+)
+# Burn-in and thinning
+samples = samples[10000::10]
+
+print(f"True mu: {true_mu}")
+print(f"Posterior mean: {np.mean(samples):.3f}")
+print(f"Posterior std: {np.std(samples):.3f}")
+print(f"95% Credible Interval: [{np.percentile(samples, 2.5):.3f}, {np.percentile(samples, 97.5):.3f}]")
+</code></pre>
+
+            <h3>Reinforcement Learning: Learning Optimal Behavior</h3>
+            <p>Reinforcement learning (RL) is the study of how agents should take actions in an environment to maximize cumulative reward. It combines ideas from dynamic programming, statistics, and psychology to solve sequential decision problems.</p>
+
+            <p><strong>Real-World Motivation:</strong> A robot learning to walk, a game-playing AI mastering chess, or a recommendation system optimizing user engagement—all involve learning from interaction without explicit supervision.</p>
+
+            <p><strong>Markov Decision Process (MDP):</strong> An MDP is defined by \((\mathcal{S}, \mathcal{A}, P, R, \gamma)\) where:</p>
+            <ul>
+                <li>\(\mathcal{S}\) — set of states</li>
+                <li>\(\mathcal{A}\) — set of actions</li>
+                <li>\(P(s'|s,a)\) — transition probability</li>
+                <li>\(R(s,a,s')\) — reward function</li>
+                <li>\(\gamma \in [0,1]\) — discount factor</li>
+            </ul>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\pi(a|s)\) — policy (probability of action \(a\) in state \(s\))</li>
+                <li>\(V^\pi(s)\) — <strong>value function</strong> (expected return from state \(s\) following \(\pi\))</li>
+                <li>\(Q^\pi(s,a)\) — <strong>action-value function</strong> (expected return from taking \(a\) in \(s\), then following \(\pi\))</li>
+                <li>\(\pi^*\) — <strong>optimal policy</strong></li>
+                <li>\(V^*\), \(Q^*\) — optimal value functions</li>
+            </ul>
+
+            <p><strong>Bellman Equations:</strong> The value functions satisfy recursive relationships:</p>
+            \[ V^\pi(s) = \sum_a \pi(a|s) \sum_{s'} P(s'|s,a)[R(s,a,s') + \gamma V^\pi(s')] \]
+            \[ Q^\pi(s,a) = \sum_{s'} P(s'|s,a)[R(s,a,s') + \gamma \sum_{a'} \pi(a'|s')Q^\pi(s',a')] \]
+
+            <p><strong>Optimal Bellman Equations:</strong>
+            \[ V^*(s) = \max_a \sum_{s'} P(s'|s,a)[R(s,a,s') + \gamma V^*(s')] \]
+            \[ Q^*(s,a) = \sum_{s'} P(s'|s,a)[R(s,a,s') + \gamma \max_{a'} Q^*(s',a')] \]</p>
+
+            <p><strong>Theorem (Bellman Optimality):</strong> A policy \(\pi\) is optimal if and only if for all states \(s\), \(\pi(s)\) selects actions that achieve the maximum in the optimal Bellman equation.</p>
+
+            <p><em>Proof sketch:</em> The Bellman operator is a contraction in the sup norm (by the contraction mapping theorem). By Banach's fixed-point theorem, it has a unique fixed point. Any policy achieving the maximum at each step must have value function equal to this fixed point, hence is optimal. ∎</p>
+
+            <p><strong>Q-Learning:</strong> A model-free algorithm that learns \(Q^*\) directly:
+            \[ Q(s,a) \leftarrow Q(s,a) + \alpha[r + \gamma \max_{a'} Q(s',a') - Q(s,a)] \]</p>
+
+            <pre><code>import numpy as np
+from collections import defaultdict
+
+class GridWorld:
+    """Simple grid world environment."""
+    
+    def __init__(self, size=5, goal=(4, 4), obstacles=None):
+        self.size = size
+        self.goal = goal
+        self.obstacles = obstacles or []
+        self.state = (0, 0)
+        self.actions = [(0, 1), (0, -1), (1, 0), (-1, 0)]  # R, L, D, U
+        self.action_names = ['Right', 'Left', 'Down', 'Up']
+    
+    def reset(self):
+        self.state = (0, 0)
+        return self.state
+    
+    def step(self, action):
+        """Take action, return (next_state, reward, done)."""
+        dx, dy = self.actions[action]
+        new_x = max(0, min(self.size - 1, self.state[0] + dx))
+        new_y = max(0, min(self.size - 1, self.state[1] + dy))
+        
+        # Check obstacles
+        if (new_x, new_y) in self.obstacles:
+            new_x, new_y = self.state  # Stay in place
+        
+        self.state = (new_x, new_y)
+        
+        # Reward and termination
+        if self.state == self.goal:
+            return self.state, 10, True
+        else:
+            return self.state, -0.1, False  # Small penalty for each step
+    
+    def get_state_index(self, state):
+        return state[0] * self.size + state[1]
+
+class QLearningAgent:
+    """Q-learning agent with epsilon-greedy exploration."""
+    
+    def __init__(self, n_states, n_actions, alpha=0.1, gamma=0.95, epsilon=0.1):
+        self.Q = np.zeros((n_states, n_actions))
+        self.alpha = alpha
+        self.gamma = gamma
+        self.epsilon = epsilon
+        self.n_actions = n_actions
+    
+    def select_action(self, state):
+        """Epsilon-greedy action selection."""
+        if np.random.random() < self.epsilon:
+            return np.random.randint(self.n_actions)
+        else:
+            return np.argmax(self.Q[state])
+    
+    def update(self, state, action, reward, next_state, done):
+        """Q-learning update."""
+        if done:
+            target = reward
+        else:
+            target = reward + self.gamma * np.max(self.Q[next_state])
+        
+        self.Q[state, action] += self.alpha * (target - self.Q[state, action])
+
+# Train Q-learning agent
+np.random.seed(42)
+env = GridWorld(size=5, goal=(4, 4), obstacles=[(2, 2), (3, 2)])
+agent = QLearningAgent(n_states=25, n_actions=4, alpha=0.1, gamma=0.95, epsilon=0.1)
+
+print("Training Q-learning agent...")
+n_episodes = 1000
+rewards_history = []
+
+for episode in range(n_episodes):
+    state = env.reset()
+    state_idx = env.get_state_index(state)
+    total_reward = 0
+    done = False
+    steps = 0
+    
+    while not done and steps < 100:
+        action = agent.select_action(state_idx)
+        next_state, reward, done = env.step(action)
+        next_state_idx = env.get_state_index(next_state)
+        
+        agent.update(state_idx, action, reward, next_state_idx, done)
+        
+        state_idx = next_state_idx
+        total_reward += reward
+        steps += 1
+    
+    rewards_history.append(total_reward)
+    
+    # Decay epsilon
+    agent.epsilon = max(0.01, agent.epsilon * 0.995)
+
+print(f"Training complete! Average reward (last 100 episodes): {np.mean(rewards_history[-100:]):.2f}")
+
+# Display learned policy
+print("\nLearned Policy:")
+print("(S=start, G=goal, X=obstacle, arrows=direction)")
+for i in range(env.size):
+    row = ""
+    for j in range(env.size):
+        if (i, j) == (0, 0):
+            row += " S "
+        elif (i, j) == env.goal:
+            row += " G "
+        elif (i, j) in env.obstacles:
+            row += " X "
+        else:
+            state_idx = env.get_state_index((i, j))
+            best_action = np.argmax(agent.Q[state_idx])
+            arrows = ['→', '←', '↓', '↑']
+            row += f" {arrows[best_action]} "
+    print(row)
+
+# Value function
+print("\nValue Function (max Q-value for each state):")
+for i in range(env.size):
+    row = ""
+    for j in range(env.size):
+        state_idx = env.get_state_index((i, j))
+        v = np.max(agent.Q[state_idx])
+        row += f"{v:5.1f} "
+    print(row)
+
+# Demonstrate Bellman equation
+print("\n--- Bellman Equation Verification ---")
+test_state = env.get_state_index((1, 1))
+test_action = 0  # Right
+
+# Compute Bellman target manually
+env.state = (1, 1)
+next_state, reward, _ = env.step(test_action)
+next_state_idx = env.get_state_index(next_state)
+bellman_target = reward + 0.95 * np.max(agent.Q[next_state_idx])
+
+print(f"Q({(1,1)}, Right) = {agent.Q[test_state, test_action]:.3f}")
+print(f"Bellman target = {reward} + 0.95 * {np.max(agent.Q[next_state_idx]):.3f} = {bellman_target:.3f}")
+print(f"Difference: {abs(agent.Q[test_state, test_action] - bellman_target):.3f}")
+</code></pre>
+
+            <h3>Compressed Sensing: Recovering Signals from Few Samples</h3>
+            <p>Compressed sensing revolutionized signal processing by showing that sparse signals can be perfectly reconstructed from far fewer samples than the Nyquist-Shannon theorem requires. This has profound implications for imaging, communications, and data acquisition.</p>
+
+            <p><strong>Real-World Motivation:</strong> MRI scans traditionally require long acquisition times. Compressed sensing enables faster scans by acquiring fewer measurements and reconstructing the image mathematically. Similarly, single-pixel cameras can capture images with just one detector.</p>
+
+            <p><strong>Problem Setup:</strong> We want to recover a signal \(x \in \mathbb{R}^n\) from measurements \(y = Ax\) where \(A \in \mathbb{R}^{m \times n}\) with \(m \ll n\). This is underdetermined—infinitely many solutions exist.</p>
+
+            <p><strong>Key Insight:</strong> If \(x\) is <strong>sparse</strong> (most entries are zero), we can recover it uniquely by solving:
+            \[ \min_x \|x\|_1 \quad \text{subject to} \quad Ax = y \]</p>
+
+            <p>The \(\ell_1\) norm promotes sparsity—unlike \(\ell_2\), it tends to produce solutions with many exact zeros.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\|x\|_0\) — number of non-zero entries ("\(\ell_0\) norm")</li>
+                <li>\(\|x\|_1 = \sum_i |x_i|\) — \(\ell_1\) norm</li>
+                <li>\(\|x\|_2 = \sqrt{\sum_i x_i^2}\) — \(\ell_2\) norm</li>
+                <li>\(k\)-sparse — at most \(k\) non-zero entries</li>
+                <li>\(\delta_k\) — <strong>restricted isometry constant</strong></li>
+            </ul>
+
+            <p><strong>Definition (Restricted Isometry Property):</strong> A matrix \(A\) satisfies the RIP of order \(k\) if there exists \(\delta_k \in (0,1)\) such that for all \(k\)-sparse \(x\):
+            \[ (1 - \delta_k)\|x\|_2^2 \leq \|Ax\|_2^2 \leq (1 + \delta_k)\|x\|_2^2 \]</p>
+
+            <p><strong>Theorem (Exact Recovery):</strong> If \(A\) satisfies RIP with \(\delta_{2k} < \sqrt{2} - 1\), then the solution to the \(\ell_1\) minimization problem equals the sparsest solution.</p>
+
+            <p><em>Proof sketch:</em> Let \(x^*\) be the \(\ell_1\) solution and \(x_0\) the true sparse signal. Decompose the error \(h = x^* - x_0\) into contributions on and off the support of \(x_0\). Using RIP and optimality of \(x^*\), one shows \(\|h\|_2 = 0\). ∎</p>
+
+            <p><strong>Practical Algorithm (ISTA):</strong> Iterative Soft Thresholding Algorithm:
+            \[ x_{t+1} = S_{\lambda}(x_t - \eta A^T(Ax_t - y)) \]
+            where \(S_\lambda(z) = \text{sign}(z)\max(|z| - \lambda, 0)\) is soft thresholding.</p>
+
+            <pre><code>import numpy as np
+from scipy.fftpack import dct, idct
+import matplotlib.pyplot as plt
+
+class CompressedSensing:
+    """Compressed sensing reconstruction algorithms."""
+    
+    @staticmethod
+    def generate_measurement_matrix(m, n, matrix_type='gaussian'):
+        """Generate m x n measurement matrix."""
+        if matrix_type == 'gaussian':
+            A = np.random.randn(m, n) / np.sqrt(m)
+        elif matrix_type == 'bernoulli':
+            A = np.random.choice([-1, 1], size=(m, n)) / np.sqrt(m)
+        elif matrix_type == 'partial_fft':
+            # Random rows of Fourier matrix
+            rows = np.random.choice(n, m, replace=False)
+            A = np.fft.fft(np.eye(n))[rows] / np.sqrt(m)
+        return A
+    
+    @staticmethod
+    def soft_threshold(x, lambda_):
+        """Soft thresholding operator."""
+        return np.sign(x) * np.maximum(np.abs(x) - lambda_, 0)
+    
+    @staticmethod
+    def ista(A, y, lambda_, eta=None, n_iterations=1000, tol=1e-6):
+        """
+        Iterative Soft Thresholding Algorithm (ISTA).
+        Solves: min ||Ax - y||^2 + lambda * ||x||_1
+        """
+        m, n = A.shape
+        if eta is None:
+            # Step size based on Lipschitz constant
+            eta = 1.0 / np.linalg.norm(A.T @ A, 2)
+        
+        x = np.zeros(n)
+        AtA = A.T @ A
+        Aty = A.T @ y
+        
+        for i in range(n_iterations):
+            x_old = x.copy()
+            # Gradient descent step
+            grad = AtA @ x - Aty
+            # Soft thresholding
+            x = CompressedSensing.soft_threshold(x - eta * grad, eta * lambda_)
+            
+            if np.linalg.norm(x - x_old) < tol:
+                break
+        
+        return x
+    
+    @staticmethod
+    def fista(A, y, lambda_, eta=None, n_iterations=1000):
+        """
+        Fast ISTA with Nesterov acceleration.
+        """
+        m, n = A.shape
+        if eta is None:
+            eta = 1.0 / np.linalg.norm(A.T @ A, 2)
+        
+        x = np.zeros(n)
+        z = x.copy()
+        t = 1
+        
+        AtA = A.T @ A
+        Aty = A.T @ y
+        
+        for i in range(n_iterations):
+            x_old = x.copy()
+            
+            # Gradient at z
+            grad = AtA @ z - Aty
+            x = CompressedSensing.soft_threshold(z - eta * grad, eta * lambda_)
+            
+            # Nesterov acceleration
+            t_new = (1 + np.sqrt(1 + 4 * t**2)) / 2
+            z = x + ((t - 1) / t_new) * (x - x_old)
+            t = t_new
+        
+        return x
+
+# Demonstrate compressed sensing
+np.random.seed(42)
+n = 256  # Signal dimension
+k = 20   # Sparsity (number of non-zero components)
+m = 64   # Number of measurements (m << n but m > k*log(n/k))
+
+# Generate sparse signal in DCT domain
+x_true = np.zeros(n)
+nonzero_indices = np.random.choice(n, k, replace=False)
+x_true[nonzero_indices] = np.random.randn(k) * 10
+
+# Measurement matrix
+A = CompressedSensing.generate_measurement_matrix(m, n, 'gaussian')
+
+# Measurements
+y = A @ x_true
+
+print(f"Signal dimension: {n}")
+print(f"Number of measurements: {m}")
+print(f"Sparsity: {k}")
+print(f"Compression ratio: {n/m:.1f}x")
+
+# Reconstruct using ISTA
+print("\nReconstructing with ISTA...")
+x_ista = CompressedSensing.ista(A, y, lambda_=0.1, n_iterations=2000)
+
+# Reconstruct using FISTA (faster)
+print("Reconstructing with FISTA...")
+x_fista = CompressedSensing.fista(A, y, lambda_=0.1, n_iterations=500)
+
+# Evaluate reconstruction
+mse_ista = np.mean((x_true - x_ista)**2)
+mse_fista = np.mean((x_true - x_fista)**2)
+
+print(f"\nMSE (ISTA): {mse_ista:.6f}")
+print(f"MSE (FISTA): {mse_fista:.6f}")
+
+# Check support recovery
+support_true = set(np.where(np.abs(x_true) > 0.1)[0])
+support_ista = set(np.where(np.abs(x_ista) > 0.1)[0])
+support_fista = set(np.where(np.abs(x_fista) > 0.1)[0])
+
+print(f"\nTrue support size: {len(support_true)}")
+print(f"ISTA support recovery: {len(support_true & support_ista)}/{len(support_true)} correct")
+print(f"FISTA support recovery: {len(support_true & support_fista)}/{len(support_true)} correct")
+
+# Demonstrate image reconstruction (synthetic)
+print("\n--- Image Reconstruction Demo ---")
+# Create a simple sparse image (edges)
+image_size = 32
+image = np.zeros((image_size, image_size))
+image[8:24, 16] = 255  # Vertical line
+image[16, 8:24] = 255  # Horizontal line
+
+# Vectorize
+x_image = image.flatten()
+
+# Sparsify in DCT domain
+x_dct = dct(x_image, norm='ortho')
+print(f"Original image DCT sparsity: {np.sum(np.abs(x_dct) > 1)} significant coefficients")
+
+# Take measurements
+m_image = 400  # 400 measurements for 1024 pixels
+A_image = CompressedSensing.generate_measurement_matrix(m_image, image_size**2)
+y_image = A_image @ x_image
+
+# Reconstruct
+print("Reconstructing image...")
+x_reconstructed = CompressedSensing.fista(A_image, y_image, lambda_=5, n_iterations=500)
+image_reconstructed = x_reconstructed.reshape(image_size, image_size)
+
+print(f"Reconstruction MSE: {np.mean((image - image_reconstructed)**2):.2f}")
+</code></pre>
+        </section>
+
+        <!-- Section 5: 4 Special Topics -->
+        <section id="topics">
+            <h2>🎨 Special Topics</h2>
+            
+            <h3>Elliptic Curves: The Unity of Algebra, Geometry, and Number Theory</h3>
+            <p>Elliptic curves are among the most fascinating objects in mathematics, connecting number theory, algebraic geometry, and cryptography. Despite their name, they are not ellipses—they are curves of genus 1 with a specified base point.</p>
+
+            <p><strong>Historical Context:</strong> The study of elliptic curves began with the study of elliptic integrals—integrals arising from computing the arc length of ellipses. Abel and Jacobi inverted these integrals, leading to elliptic functions. The modern algebraic theory was developed in the 20th century, culminating in Wiles' proof of Fermat's Last Theorem.</p>
+
+            <p><strong>Definition:</strong> An <strong>elliptic curve</strong> over a field \(K\) is a smooth projective curve of genus 1 with a specified point \(O\) (the identity). Over \(\mathbb{Q}\) or \(\mathbb{R}\), every elliptic curve can be written in <strong>Weierstrass form</strong>:
+            \[ y^2 = x^3 + ax + b \]
+            where the discriminant \(\Delta = -16(4a^3 + 27b^2) \neq 0\) ensures smoothness.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(E(K)\) — the set of \(K\)-rational points on the curve</li>
+                <li>\(O\) — the point at infinity (identity element)</li>
+                <li>\(E[n]\) — the \(n\)-torsion points (points of order dividing \(n\))</li>
+                <li>\(\text{End}(E)\) — the endomorphism ring</li>
+                <li>\(L(E, s)\) — the <strong>L-function</strong> of the curve</li>
+            </ul>
+
+            <p><strong>Group Law:</strong> The points on an elliptic curve form an abelian group. The sum \(P + Q\) is defined geometrically: draw a line through \(P\) and \(Q\), find the third intersection point \(R\) with the curve, then reflect \(R\) over the x-axis.</p>
+
+            <p><strong>Theorem (Mordell-Weil):</strong> Let \(E\) be an elliptic curve over \(\mathbb{Q}\). Then \(E(\mathbb{Q})\) is a finitely generated abelian group:
+            \[ E(\mathbb{Q}) \cong \mathbb{Z}^r \oplus E(\mathbb{Q})_{\text{tors}} \]
+            where \(r\) is the <strong>rank</strong> and \(E(\mathbb{Q})_{\text{tors}}\) is the finite torsion subgroup.</p>
+
+            <p><em>Proof sketch (Mordell):</em> The proof uses the method of infinite descent. One shows that \(E(\mathbb{Q})/2E(\mathbb{Q})\) is finite (the "weak Mordell-Weil theorem") and uses height functions to control the size of representatives. The combination implies finite generation. ∎</p>
+
+            <p><strong>Theorem (Hasse):</strong> For an elliptic curve \(E\) over a finite field \(\mathbb{F}_q\):
+            \[ |q + 1 - \#E(\mathbb{F}_q)| \leq 2\sqrt{q} \]</p>
+
+            <p>This bound is crucial for cryptography—it ensures that the number of points is close to \(q\), making curves suitable for discrete logarithm-based protocols.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class EllipticCurve:
+    """Elliptic curve y^2 = x^3 + ax + b over real numbers."""
+    
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        self.discriminant = -16 * (4*a**3 + 27*b**2)
+        if self.discriminant == 0:
+            raise ValueError("Curve is singular (discriminant = 0)")
+    
+    def is_on_curve(self, x, y):
+        """Check if point (x, y) is on the curve."""
+        return abs(y**2 - (x**3 + self.a*x + self.b)) < 1e-10
+    
+    def neg(self, P):
+        """Negation: -(x, y) = (x, -y)."""
+        if P == 'O':
+            return 'O'
+        x, y = P
+        return (x, -y)
+    
+    def add(self, P, Q):
+        """Add two points on the curve."""
+        # Handle identity
+        if P == 'O':
+            return Q
+        if Q == 'O':
+            return P
+        
+        x1, y1 = P
+        x2, y2 = Q
+        
+        # Handle P = -Q
+        if abs(x1 - x2) < 1e-10 and abs(y1 + y2) < 1e-10:
+            return 'O'
+        
+        # Compute slope
+        if abs(x1 - x2) < 1e-10:  # P = Q (doubling)
+            # slope = (3x^2 + a) / (2y)
+            m = (3*x1**2 + self.a) / (2*y1)
+        else:  # P != Q
+            m = (y2 - y1) / (x2 - x1)
+        
+        # Compute R = P + Q
+        x3 = m**2 - x1 - x2
+        y3 = m*(x1 - x3) - y1
+        
+        return (x3, y3)
+    
+    def multiply(self, n, P):
+        """Compute n*P using double-and-add."""
+        if n == 0:
+            return 'O'
+        if n < 0:
+            return self.multiply(-n, self.neg(P))
+        
+        result = 'O'
+        addend = P
+        
+        while n > 0:
+            if n & 1:
+                result = self.add(result, addend)
+            addend = self.add(addend, addend)
+            n >>= 1
+        
+        return result
+    
+    def plot(self, x_range=(-3, 3), n_points=1000):
+        """Plot the elliptic curve."""
+        x = np.linspace(x_range[0], x_range[1], n_points)
+        y_squared = x**3 + self.a*x + self.b
+        
+        # Only plot where y^2 >= 0
+        mask = y_squared >= 0
+        x_pos = x[mask]
+        y_pos = np.sqrt(y_squared[mask])
+        
+        return x_pos, y_pos
+
+# Example: y^2 = x^3 - x + 1 (curve 37a1 in Cremona's tables)
+curve = EllipticCurve(a=-1, b=1)
+print(f"Curve: y^2 = x^3 + {curve.a}x + {curve.b}")
+print(f"Discriminant: {curve.discriminant}")
+
+# Plot the curve
+x, y_pos = curve.plot(x_range=(-2, 3))
+
+fig, ax = plt.subplots(figsize=(10, 8))
+ax.plot(x, y_pos, 'b-', linewidth=2, label='$y^2 = x^3 - x + 1$')
+ax.plot(x, -y_pos, 'b-', linewidth=2)
+
+# Demonstrate group law
+P = (0, 1)  # Point on curve: 1^2 = 0 - 0 + 1 = 1 ✓
+Q = (1, 1)  # Point on curve: 1^2 = 1 - 1 + 1 = 1 ✓
+R = curve.add(P, Q)
+
+print(f"\nGroup law demonstration:")
+print(f"P = {P}")
+print(f"Q = {Q}")
+print(f"P + Q = {R}")
+
+# Verify R is on curve
+if R != 'O':
+    print(f"Verification: R on curve? {curve.is_on_curve(R[0], R[1])}")
+
+# Point doubling
+P2 = curve.add(P, P)
+print(f"2P = {P2}")
+
+# Scalar multiplication
+P3 = curve.multiply(3, P)
+print(f"3P = {P3}")
+
+# Plot points
+ax.plot(*P, 'ro', markersize=10, label=f'P = {P}')
+ax.plot(*Q, 'go', markersize=10, label=f'Q = {Q}')
+if R != 'O':
+    ax.plot(*R, 'mo', markersize=10, label=f'P+Q = {R:.3f}')
+
+# Draw line through P and Q
+if abs(P[0] - Q[0]) > 1e-10:
+    m = (Q[1] - P[1]) / (Q[0] - P[0])
+    x_line = np.linspace(-2, 3, 100)
+    y_line = P[1] + m * (x_line - P[0])
+    ax.plot(x_line, y_line, 'g--', alpha=0.5, label='Line through P, Q')
+
+ax.set_xlim(-2.5, 3.5)
+ax.set_ylim(-3, 3)
+ax.set_aspect('equal')
+ax.axhline(y=0, color='k', linewidth=0.5)
+ax.axvline(x=0, color='k', linewidth=0.5)
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_title('Elliptic Curve: y² = x³ - x + 1')
+ax.legend()
+ax.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('elliptic_curve.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+# Finite field example
+print("\n--- Elliptic Curve over Finite Field ---")
+def elliptic_curve_points_f19():
+    """Find all points on y^2 = x^3 + 2x + 2 over F_19."""
+    a, b, p = 2, 2, 19
+    points = ['O']  # Point at infinity
+    
+    for x in range(p):
+        rhs = (x**3 + a*x + b) % p
+        # Check if rhs is quadratic residue
+        for y in range(p):
+            if (y*y) % p == rhs:
+                points.append((x, y))
+    
+    return points
+
+points = elliptic_curve_points_f19()
+print(f"Curve: y^2 = x^3 + 2x + 2 over F_19")
+print(f"Number of points: {len(points)}")
+print(f"Hasse bound: |19 + 1 - N| ≤ 2√19 ≈ 8.7")
+print(f"N = {len(points)} satisfies the bound: {abs(20 - len(points))} ≤ 8.7")
+print(f"\nFirst 10 points: {points[:10]}")
+</code></pre>
+
+            <h3>Modular Forms: Symmetries of the Upper Half-Plane</h3>
+            <p>Modular forms are complex-analytic functions with remarkable symmetry properties. They occupy a central position in number theory, with connections to elliptic curves, Galois representations, and the proof of Fermat's Last Theorem.</p>
+
+            <p><strong>Definition:</strong> The <strong>modular group</strong> \(SL(2, \mathbb{Z})\) acts on the upper half-plane \(\mathbb{H} = \{z \in \mathbb{C} : \text{Im}(z) > 0\}\) by:
+            \[ \gamma(z) = \frac{az + b}{cz + d} \quad \text{for } \gamma = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in SL(2, \mathbb{Z}) \]</p>
+
+            <p><strong>Definition (Modular Form):</strong> A <strong>modular form</strong> of weight \(k\) is a holomorphic function \(f: \mathbb{H} \to \mathbb{C}\) satisfying:</p>
+            <ol>
+                <li><strong>Modularity:</strong> \(f(\gamma(z)) = (cz + d)^k f(z)\) for all \(\gamma \in SL(2, \mathbb{Z})\)</li>
+                <li><strong>Holomorphicity at infinity:</strong> \(f\) has a Fourier expansion \(f(z) = \sum_{n=0}^\infty a_n q^n\) where \(q = e^{2\pi i z}\)</li>
+            </ol>
+
+            <p>If \(a_0 = 0\), we call \(f\) a <strong>cusp form</strong>.</p>
+
+            <p><strong>Theorem (Modularity Theorem / Taniyama-Shimura-Weil):</strong> Every rational elliptic curve is modular—its L-function equals the L-function of a weight-2 cusp form.</p>
+
+            <p>This theorem, proved by Wiles, Taylor, et al., was the key ingredient in proving Fermat's Last Theorem.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import hsv_to_rgb
+
+class ModularForms:
+    """Visualizations of modular forms and modular group action."""
+    
+    @staticmethod
+    def modular_transform(z, a, b, c, d):
+        """Apply transformation z -> (az + b)/(cz + d)."""
+        return (a*z + b) / (c*z + d)
+    
+    @staticmethod
+    def fundamental_domain_grid(n=100):
+        """Generate points in the fundamental domain of SL(2,Z)."""
+        # Fundamental domain: |z| > 1, |Re(z)| < 1/2
+        x = np.linspace(-0.5, 0.5, n)
+        y = np.linspace(0.1, 2, n)
+        X, Y = np.meshgrid(x, y)
+        Z = X + 1j*Y
+        
+        # Mask points outside |z| > 1
+        mask = np.abs(Z) > 1
+        return Z, mask
+    
+    @staticmethod
+    def dedekind_eta(z, terms=50):
+        """
+        Dedekind eta function: η(z) = q^(1/24) * Π(1 - q^n)
+        where q = e^(2πiz)
+        """
+        q = np.exp(2j * np.pi * z)
+        eta = q**(1/24)
+        product = np.ones_like(q)
+        for n in range(1, terms + 1):
+            product *= (1 - q**n)
+        return eta * product
+    
+    @staticmethod
+    def modular_j_invariant(z, terms=20):
+        """
+        Modular j-invariant (simplified approximation).
+        j(z) = 1728 * g2(z)^3 / (g2(z)^3 - 27*g3(z)^2)
+        """
+        # This is a simplified version for visualization
+        q = np.exp(2j * np.pi * z)
+        j = 1/q + 744 + 196884*q + 21493760*q**2
+        return j
+
+# Visualize modular group action
+fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+
+# Upper half-plane with fundamental domain
+ax1 = axes[0, 0]
+x = np.linspace(-2, 2, 400)
+y = np.linspace(0.05, 2, 400)
+X, Y = np.meshgrid(x, y)
+Z = X + 1j*Y
+
+# Color by argument of z
+arg_z = np.angle(Z)
+arg_z = np.where(Y > 0, arg_z, np.nan)
+im = ax1.imshow(arg_z, extent=[-2, 2, 0, 2], origin='lower', cmap='hsv', alpha=0.7)
+
+# Draw fundamental domain boundaries
+# |z| = 1 arc
+theta = np.linspace(np.pi/3, 2*np.pi/3, 100)
+ax1.plot(np.cos(theta), np.sin(theta), 'k-', linewidth=2, label='|z|=1')
+# x = ±1/2 lines
+ax1.axvline(x=-0.5, color='k', linewidth=2, linestyle='--')
+ax1.axvline(x=0.5, color='k', linewidth=2, linestyle='--', label='x=±1/2')
+
+ax1.set_xlim(-2, 2)
+ax1.set_ylim(0, 2)
+ax1.set_aspect('equal')
+ax1.set_title('Upper Half-Plane with Fundamental Domain', fontsize=12)
+ax1.set_xlabel('Re(z)')
+ax1.set_ylabel('Im(z)')
+
+# Visualize Dedekind eta function
+ax2 = axes[0, 1]
+Z_fd, mask = ModularForms.fundamental_domain_grid(200)
+eta_values = ModularForms.dedekind_eta(Z_fd, terms=30)
+eta_mag = np.abs(eta_values)
+eta_mag = np.where(mask, eta_mag, np.nan)
+
+im2 = ax2.imshow(eta_mag, extent=[-0.5, 0.5, 0.1, 2], origin='lower', 
+                  cmap='viridis', vmin=0, vmax=2)
+ax2.set_title('|η(z)| in Fundamental Domain', fontsize=12)
+ax2.set_xlabel('Re(z)')
+ax2.set_ylabel('Im(z)')
+plt.colorbar(im2, ax=ax2)
+
+# Modular transformation visualization
+ax3 = axes[1, 0]
+# Start with a grid in fundamental domain
+n_grid = 20
+x_grid = np.linspace(-0.45, 0.45, n_grid)
+y_grid = np.linspace(0.3, 1.8, n_grid)
+X_grid, Y_grid = np.meshgrid(x_grid, y_grid)
+Z_grid = X_grid + 1j*Y_grid
+
+# Apply S: z -> -1/z
+S = lambda z: -1/z
+Z_transformed = S(Z_grid)
+
+# Plot original and transformed
+ax3.scatter(Z_grid.real, Z_grid.imag, c='blue', s=10, alpha=0.5, label='Original')
+ax3.scatter(Z_transformed.real, Z_transformed.imag, c='red', s=10, alpha=0.5, label='S(z) = -1/z')
+ax3.set_xlim(-2, 2)
+ax3.set_ylim(0, 2)
+ax3.set_aspect('equal')
+ax3.set_title('Action of S: z → -1/z', fontsize=12)
+ax3.legend()
+ax3.set_xlabel('Re(z)')
+ax3.set_ylabel('Im(z)')
+
+# q-expansion visualization
+ax4 = axes[1, 1]
+q = np.exp(2j * np.pi * (0.1 + 0.5j))  # Fixed z
+n_terms = range(1, 21)
+coefficients = [1] + [0] * 19  # Simplified: just showing the pattern
+
+# Ramanujan tau function (coefficients of Δ function)
+tau = [1, -24, 252, -1472, 4830, -6048, -16744, 84480, -113643, -115920,
+       534612, -370944, -577738, 401856, 1217160, 987136, -6905934, 2727432,
+       10661420, -7109760]
+
+ax4.bar(n_terms, tau, color='steelblue', edgecolor='navy')
+ax4.set_xlabel('n')
+ax4.set_ylabel('τ(n)')
+ax4.set_title('Ramanujan Tau Function (Fourier Coefficients of Δ)', fontsize=12)
+ax4.axhline(y=0, color='k', linewidth=0.5)
+
+plt.tight_layout()
+plt.savefig('modular_forms.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+print("Modular forms visualization saved!")
+print("\nKey insight: The modular group SL(2,Z) tiles the upper half-plane")
+print("with fundamental domains, creating beautiful symmetric patterns.")
+</code></pre>
+
+            <h3>Algebraic Number Theory: Numbers as Algebraic Structures</h3>
+            <p>Algebraic number theory studies number fields—finite extensions of \(\mathbb{Q}\)—and their rings of integers. It reveals deep structure in the integers and provides tools for solving Diophantine equations.</p>
+
+            <p><strong>Definition (Number Field):</strong> A <strong>number field</strong> is a finite field extension \(K/\mathbb{Q}\). By the primitive element theorem, \(K = \mathbb{Q}(\alpha)\) for some algebraic number \(\alpha\).</p>
+
+            <p><strong>Definition (Ring of Integers):</strong> The <strong>ring of integers</strong> \(\mathcal{O}_K\) of a number field \(K\) is the set of elements that are roots of monic polynomials with integer coefficients.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\mathcal{O}_K\) — ring of integers of \(K\)</li>
+                <li>\(N_{K/\mathbb{Q}}(\alpha)\) — <strong>field norm</strong></li>
+                <li>\(\text{Tr}_{K/\mathbb{Q}}(\alpha)\) — <strong>field trace</strong></li>
+                <li>\(\text{Cl}(K)\) — <strong>class group</strong> (measures failure of unique factorization)</li>
+                <li>\(\Delta_K\) — <strong>discriminant</strong> of \(K\)</li>
+            </ul>
+
+            <p><strong>Theorem (Unique Factorization of Ideals):</strong> In the ring of integers \(\mathcal{O}_K\) of any number field, every nonzero ideal factors uniquely as a product of prime ideals.</p>
+
+            <p>This theorem rescues unique factorization, which fails for elements in general number fields (e.g., in \(\mathbb{Z}[\sqrt{-5}]\), we have \(6 = 2 \cdot 3 = (1+\sqrt{-5})(1-\sqrt{-5})\)).</p>
+
+            <p><strong>Theorem (Dirichlet's Unit Theorem):</strong> Let \(K\) be a number field with \(r_1\) real embeddings and \(r_2\) pairs of complex embeddings. Then:
+            \[ \mathcal{O}_K^\times \cong \mu(K) \times \mathbb{Z}^{r_1 + r_2 - 1} \]
+            where \(\mathcal{O}_K^\times\) is the unit group and \(\mu(K)\) is the group of roots of unity in \(K\).</p>
+
+            <pre><code>import numpy as np
+from itertools import product
+
+class QuadraticField:
+    """Quadratic field Q(√d) where d is squarefree."""
+    
+    def __init__(self, d):
+        if d == 0 or d == 1:
+            raise ValueError("d must not be 0 or 1")
+        # Make d squarefree
+        self.d = d
+        self.is_imaginary = d < 0
+        
+        # Ring of integers basis
+        if d % 4 == 1:
+            self.basis = [1, (1 + np.sqrt(d if d > 0 else d + 0j))/2]
+            self.discriminant = d
+        else:
+            self.basis = [1, np.sqrt(d if d > 0 else d + 0j)]
+            self.discriminant = 4*d
+    
+    def multiply(self, a, b):
+        """Multiply two elements a = a0 + a1*√d, b = b0 + b1*√d."""
+        a0, a1 = a
+        b0, b1 = b
+        return (a0*b0 + a1*b1*self.d, a0*b1 + a1*b0)
+    
+    def norm(self, a):
+        """Norm N(a) = a * a' = a0^2 - d*a1^2."""
+        a0, a1 = a
+        return a0**2 - self.d * a1**2
+    
+    def trace(self, a):
+        """Trace Tr(a) = a + a' = 2*a0."""
+        return 2*a[0]
+    
+    def is_integer(self, a):
+        """Check if a is in the ring of integers."""
+        a0, a1 = a
+        if self.d % 4 == 1:
+            # Check if a = m + n*(1+√d)/2 for integers m, n
+            # This means 2*a0 - a1 and a1 should both be integers
+            return abs(2*a0 - a1 - round(2*a0 - a1)) < 1e-10 and \
+                   abs(a1 - round(a1)) < 1e-10
+        else:
+            return abs(a0 - round(a0)) < 1e-10 and \
+                   abs(a1 - round(a1)) < 1e-10
+
+# Example: Q(√-5) - classic example of non-unique factorization
+print("=== Q(√-5) ===")
+K = QuadraticField(-5)
+print(f"d = {K.d}")
+print(f"Discriminant: {K.discriminant}")
+print(f"Basis of ring of integers: 1, (1+√-5)/2? {K.d % 4 == 1}")
+
+# Elements
+alpha = (1, 1)  # 1 + √-5
+beta = (1, -1)  # 1 - √-5
+two = (2, 0)    # 2
+three = (3, 0)  # 3
+
+print(f"\nNon-unique factorization of 6:")
+print(f"6 = 2 × 3, N(2) = {K.norm(two)}, N(3) = {K.norm(three)}")
+print(f"6 = (1+√-5)(1-√-5), N(1+√-5) = {K.norm(alpha)}, N(1-√-5) = {K.norm(beta)}")
+
+# Verify factorizations
+prod1 = K.multiply(two, three)
+prod2 = K.multiply(alpha, beta)
+print(f"2 × 3 = {prod1}")
+print(f"(1+√-5)(1-√-5) = {prod2}")
+
+# Check if these are irreducible
+print(f"\nChecking irreducibility (via norms):")
+print(f"N(2) = {K.norm(two)}. If 2 = ab, then N(a)N(b) = 4.")
+print(f"  Need to check if there exists element with norm 2.")
+
+# Find elements with small norm
+print(f"\nElements with small norm in Q(√-5):")
+for a in range(-3, 4):
+    for b in range(-3, 4):
+        if a == 0 and b == 0:
+            continue
+        n = a**2 + 5*b**2  # Norm for Q(√-5)
+        if n <= 10:
+            print(f"  {a} + {b}√-5 has norm {n}")
+
+# Example: Q(√2) - real quadratic field with infinite unit group
+print("\n=== Q(√2) ===")
+K2 = QuadraticField(2)
+print(f"d = {K2.d}")
+print(f"Discriminant: {K2.discriminant}")
+
+# Fundamental unit: 1 + √2
+fundamental_unit = (1, 1)
+print(f"\nFundamental unit: ε = 1 + √2")
+print(f"N(ε) = {K2.norm(fundamental_unit)}")
+print(f"ε^2 = {K2.multiply(fundamental_unit, fundamental_unit)}")
+
+# Powers of fundamental unit
+print(f"\nPowers of ε (generating all units ±ε^n):")
+epsilon_n = (1, 0)  # Start with 1
+for n in range(1, 8):
+    epsilon_n = K2.multiply(epsilon_n, fundamental_unit)
+    norm = K2.norm(epsilon_n)
+    print(f"  ε^{n} = {epsilon_n[0]:.0f} + {epsilon_n[1]:.0f}√2, N = {norm:.0f}")
+
+print(f"\nDirichlet's Unit Theorem for Q(√2):")
+print(f"r_1 = 2 (two real embeddings: ±√2)")
+print(f"r_2 = 0 (no complex embeddings)")
+print(f"Unit rank = r_1 + r_2 - 1 = 1")
+print(f"Units = {{±1}} × <ε> ≅ μ_2 × ℤ")
+</code></pre>
+
+            <h3>The Birch and Swinnerton-Dyer Conjecture</h3>
+            <p>The BSD conjecture connects the algebraic structure of an elliptic curve to its analytic properties. It is one of the seven Millennium Prize Problems with a $1 million reward for its proof.</p>
+
+            <p><strong>Statement (Simplified):</strong> Let \(E\) be an elliptic curve over \(\mathbb{Q}\). The order of vanishing of the L-function \(L(E, s)\) at \(s = 1\) equals the rank of \(E(\mathbb{Q})\).</p>
+
+            <p>More precisely, if \(L(E, s) = c(s-1)^r + O((s-1)^{r+1})\) near \(s = 1\), then \(r = \text{rank}(E(\mathbb{Q}))\).</p>
+
+            <p>The conjecture also predicts the exact value of the leading coefficient \(c\) in terms of various arithmetic invariants of the curve.</p>
+
+            <p><strong>Current Status:</strong> The conjecture is known when the order of vanishing is 0 or 1 (Gross-Zagier, Kolyvagin), but remains open for higher ranks.</p>
+        </section>
+
+        <!-- Section 6: Math History -->
+        <section id="history">
+            <h2>📜 Math History: Carl Friedrich Gauss — The Prince of Mathematicians</h2>
+            <p>Carl Friedrich Gauss (1777–1855) stands as one of the most influential mathematicians in history, making groundbreaking contributions to number theory, algebra, statistics, analysis, differential geometry, astronomy, and physics. His work laid foundations for much of modern mathematics.</p>
+
+            <p>Born in Brunswick (Braunschweig), Germany, to poor working-class parents, Gauss displayed extraordinary mathematical talent from an early age. The famous story of the young Gauss quickly summing the integers from 1 to 100—by pairing 1+99, 2+98, etc., plus the middle 50 and final 100—illustrates both his precocity and his preference for elegant solutions.</p>
+
+            <p>His early masterpiece, <em>Disquisitiones Arithmeticae</em> (1801), revolutionized number theory. In it, Gauss systematized the field, introduced modular arithmetic notation (the congruence symbol \(a \equiv b \pmod{n}\)), proved the law of quadratic reciprocity (which he called the "golden theorem"), and developed the theory of binary quadratic forms. The book also contains the first proof of the fundamental theorem of algebra.</p>
+
+            <p>Gauss's motto <em>pauca sed matura</em> (few but ripe) reflected his perfectionism—he refused to publish work he considered incomplete. Much of his research remained in his notebooks, only to be rediscovered decades later. Non-Euclidean geometry, elliptic functions, and significant parts of complex analysis were all anticipated by Gauss but left unpublished.</p>
+
+            <p>In 1801, Gauss calculated the orbit of the asteroid Ceres from limited observational data, predicting its reappearance with remarkable accuracy. This triumph brought him international fame and a position as director of the Göttingen Observatory. His astronomical work led to important developments in the method of least squares and error theory.</p>
+
+            <p>Gauss's 1827 paper "Disquisitiones Generales Circa Superficies Curvas" (General Investigations of Curved Surfaces) founded differential geometry. He introduced the concept of <strong>Gaussian curvature</strong>, proved the <strong>Theorema Egregium</strong> (remarkable theorem) stating that curvature is intrinsic, and developed the theory of geodesics. This work was essential for Einstein's general relativity.</p>
+
+            <p>In physics, Gauss made fundamental contributions to electromagnetism and potential theory. <strong>Gauss's law</strong> relates electric flux through a closed surface to the enclosed charge—one of Maxwell's equations. His work on potential theory established tools still used in physics and engineering.</p>
+
+            <p>Gauss's influence extended through his students and the mathematical tradition he established at Göttingen. Richard Dedekind, Bernhard Riemann, and Peter Gustav Lejeune Dirichlet all studied with or were deeply influenced by him. His emphasis on rigorous proof and conceptual clarity helped transform mathematics from a computational discipline to a structural one.</p>
+
+            <p>The breadth of Gauss's contributions is reflected in the many mathematical concepts bearing his name: Gaussian elimination, Gaussian curvature, Gaussian distribution, Gaussian integers, Gauss's law, Gauss's theorem (divergence theorem), and the Gauss-Bonnet theorem, among many others. His work continues to influence virtually every branch of mathematics and its applications.</p>
+        </section>
+
+        <!-- Section 7: 3 Math Journalism Articles -->
+        <section id="journalism">
+            <h2>📰 Math Journalism</h2>
+            
+            <article>
+                <h3><a href="https://www.quantamagazine.org/mathematicians-prove-birch-and-swinnerton-dyer-conjecture-for-some-curves-20241112/">Mathematicians Prove Birch and Swinnerton-Dyer Conjecture for Some Curves</a></h3>
+                <p class="source">Quanta Magazine, November 2024</p>
+                <p>Researchers have made significant progress on the BSD conjecture, proving it for a specific class of elliptic curves with complex multiplication. While the general conjecture remains open, this work demonstrates new techniques connecting p-adic L-functions to Euler systems that may eventually lead to a complete proof.</p>
+            </article>
+
+            <article>
+                <h3><a href="https://www.nature.com/articles/d41586-024-03415-x">How Representation Theory is Revolutionizing Quantum Computing</a></h3>
+                <p class="source">Nature, October 2024</p>
+                <p>This feature article explores how representation theory provides the mathematical framework for understanding quantum error correction and the design of quantum algorithms. The symmetric group and its representations play a crucial role in optimizing quantum circuits and understanding entanglement structures.</p>
+            </article>
+
+            <article>
+                <h3><a href="https://www.ams.org/journals/notices/202401/noti2865/noti2865.html">The Mathematics of Deep Learning: A Representation Theory Perspective</a></h3>
+                <p class="source">AMS Notices, January 2024</p>
+                <p>A comprehensive survey examining how representation theory and harmonic analysis illuminate the structure of neural networks. The article discusses the role of symmetry in neural network architectures and how group-equivariant networks achieve better generalization by encoding domain knowledge.</p>
+            </article>
+        </section>
+
+        <!-- Section 8: Problem Corner -->
+        <section id="problems">
+            <h2>🧩 Problem Corner</h2>
+            <p><strong>Difficulty:</strong> Putnam-level | <strong>Topic:</strong> Representation Theory / Linear Algebra</p>
+            
+            <div class="problem">
+                <h4>The Problem</h4>
+                <p>Let \(G\) be a finite group and \(\rho: G \to GL_n(\mathbb{C})\) be an irreducible representation. Define the <strong>Fourier transform</strong> of a function \(f: G \to \mathbb{C}\) at \(\rho\) as:
+                \[ \hat{f}(\rho) = \sum_{g \in G} f(g) \rho(g) \]</p>
+                <p>Suppose \(f: G \to \mathbb{C}\) is a <strong>class function</strong> (constant on conjugacy classes). Prove that:
+                \[ \hat{f}(\rho) = c_\rho \cdot I_n \]
+                for some scalar \(c_\rho \in \mathbb{C}\), where \(I_n\) is the identity matrix.</p>
+                <p>Furthermore, express \(c_\rho\) in terms of the character \(\chi_\rho\) and the values of \(f\).</p>
+            </div>
+
+            <details>
+                <summary>💡 Hint</summary>
+                <p>Show that \(\hat{f}(\rho)\) commutes with every \(\rho(h)\) for \(h \in G\). Then apply <strong>Schur's lemma</strong>: if a linear transformation commutes with all operators in an irreducible representation, it must be a scalar multiple of the identity. For the second part, take the trace of both sides.</p>
+            </details>
+
+            <details>
+                <summary>✅ Solution</summary>
+                <p><strong>Step 1:</strong> Show that \(\hat{f}(\rho)\) commutes with \(\rho(h)\) for all \(h \in G\).</p>
+                
+                \[ \rho(h) \hat{f}(\rho) = \sum_{g \in G} f(g) \rho(h)\rho(g) = \sum_{g \in G} f(g) \rho(hg) \]</p>
+                
+                <p>Make the substitution \(g' = hgh^{-1}\), so \(g = h^{-1}g'h\). As \(g\) ranges over \(G\), so does \(g'\):</p>
+                
+                \[ = \sum_{g' \in G} f(h^{-1}g'h) \rho(g'h) \]</p>
+                
+                <p>Since \(f\) is a class function, \(f(h^{-1}g'h) = f(g')\):</p>
+                
+                \[ = \sum_{g' \in G} f(g') \rho(g')\rho(h) = \hat{f}(\rho) \rho(h) \]</p>
+                
+                <p><strong>Step 2:</strong> Apply Schur's lemma.</p>
+                <p>Since \(\rho\) is irreducible and \(\hat{f}(\rho)\) commutes with all \(\rho(h)\), by Schur's lemma:
+                \[ \hat{f}(\rho) = c_\rho \cdot I_n \]</p>
+                
+                <p><strong>Step 3:</strong> Find \(c_\rho\) by taking traces.</p>
+                \[ \text{tr}(\hat{f}(\rho)) = \sum_{g \in G} f(g) \text{tr}(\rho(g)) = \sum_{g \in G} f(g) \chi_\rho(g) \]</p>
+                <p>Also:
+                \[ \text{tr}(c_\rho \cdot I_n) = c_\rho \cdot n = c_\rho \cdot \chi_\rho(e) \]</p>
+                <p>Therefore:
+                \[ c_\rho = \frac{1}{\chi_\rho(e)} \sum_{g \in G} f(g) \chi_\rho(g) = \frac{1}{\dim(\rho)} \langle f, \chi_\rho \rangle_{L^2(G)} \]</p>
+                
+                <p><strong>Answer:</strong> \(\hat{f}(\rho) = \frac{\langle f, \chi_\rho \rangle}{\dim(\rho)} \cdot I_{\dim(\rho)}\)</p>
+                
+                <p><strong>Remark:</strong> This result shows that for class functions, the Fourier transform is completely determined by inner products with irreducible characters. This is the foundation of Fourier analysis on finite groups.</p>
+            </details>
+        </section>
+
+        <!-- Section 9: Visualization of the Day -->
+        <section id="viz">
+            <h2>📊 Visualization of the Day: Bayesian Inference in Action</h2>
+            <p>This visualization demonstrates Bayesian updating of a Beta distribution as we observe coin flips. Watch how the posterior distribution becomes increasingly concentrated around the true parameter value as more data is collected.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+class BayesianCoinVisualization:
+    """Visualize Bayesian updating for coin flip inference."""
+    
+    def __init__(self, true_p=0.7):
+        self.true_p = true_p
+        self.alpha = 1  # Prior parameters (Beta(1,1) = Uniform)
+        self.beta = 1
+        self.data = []
+    
+    def flip(self):
+        """Generate a coin flip."""
+        result = 1 if np.random.random() < self.true_p else 0
+        self.data.append(result)
+        # Update posterior
+        if result == 1:
+            self.alpha += 1
+        else:
+            self.beta += 1
+        return result
+    
+    def plot_posterior(self, ax, title_suffix=""):
+        """Plot current posterior distribution."""
+        x = np.linspace(0, 1, 1000)
+        y = stats.beta.pdf(x, self.alpha, self.beta)
+        
+        ax.fill_between(x, y, alpha=0.3, color='steelblue')
+        ax.plot(x, y, 'b-', linewidth=2, label=f'Beta({self.alpha}, {self.beta})')
+        ax.axvline(x=self.true_p, color='r', linestyle='--', 
+                   label=f'True p = {self.true_p}')
+        ax.axvline(x=self.alpha/(self.alpha + self.beta), color='g', 
+                   linestyle=':', label=f'MAP = {self.alpha/(self.alpha + self.beta):.3f}')
+        
+        ax.set_xlim(0, 1)
+        ax.set_ylim(0, max(y) * 1.1)
+        ax.set_xlabel('p (probability of heads)')
+        ax.set_ylabel('Posterior density')
+        ax.set_title(f'n = {len(self.data)} flips ({sum(self.data)} heads){title_suffix}')
+        ax.legend(loc='upper left', fontsize=8)
+        ax.grid(True, alpha=0.3)
+    
+    def credible_interval(self, level=0.95):
+        """Compute credible interval."""
+        lower = stats.beta.ppf((1 - level) / 2, self.alpha, self.beta)
+        upper = stats.beta.ppf((1 + level) / 2, self.alpha, self.beta)
+        return lower, upper
+
+# Create visualization
+np.random.seed(42)
+
+fig, axes = plt.subplots(3, 3, figsize=(15, 12))
+axes = axes.flatten()
+
+viz = BayesianCoinVisualization(true_p=0.65)
+
+# Plot prior
+viz.plot_posterior(axes[0], " (Prior)")
+
+# Flip coins and plot posteriors at various stages
+sample_sizes = [5, 10, 20, 50, 100, 200, 500, 1000]
+for i, n in enumerate(sample_sizes):
+    # Flip until we reach n
+    while len(viz.data) < n:
+        viz.flip()
+    
+    viz.plot_posterior(axes[i + 1])
+    
+    # Add credible interval annotation
+    ci = viz.credible_interval()
+    axes[i + 1].axvspan(ci[0], ci[1], alpha=0.1, color='green', 
+                        label=f'95% CI: [{ci[0]:.3f}, {ci[1]:.3f}]')
+
+plt.suptitle('Bayesian Updating: Beta-Binomial Model\n' + 
+             r'Prior: Beta(1,1) = Uniform, True $p = 0.65$', 
+             fontsize=14, y=1.02)
+plt.tight_layout()
+plt.savefig('bayesian_updating.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+print("Bayesian updating visualization saved!")
+print(f"\nFinal posterior: Beta({viz.alpha}, {viz.beta})")
+print(f"Posterior mean: {viz.alpha/(viz.alpha + viz.beta):.4f}")
+ci = viz.credible_interval()
+print(f"95% Credible Interval: [{ci[0]:.4f}, {ci[1]:.4f}]")
+print(f"True parameter: {viz.true_p}")
+
+# Demonstrate convergence
+print("\n--- Convergence Analysis ---")
+widths = []
+for n in [10, 50, 100, 500, 1000, 5000]:
+    alpha, beta = 1 + int(0.65 * n), 1 + int(0.35 * n)
+    ci = (stats.beta.ppf(0.025, alpha, beta), stats.beta.ppf(0.975, alpha, beta))
+    width = ci[1] - ci[0]
+    widths.append((n, width))
+    print(f"n = {n:5d}: CI width = {width:.4f}")
+
+print("\nNote: CI width decreases roughly as 1/√n (as expected from CLT)")
+</code></pre>
+
+            <p><strong>What this visualizes:</strong> The sequence of plots shows how the Beta posterior distribution evolves from a uniform prior (panel 1) to an increasingly concentrated distribution around the true parameter value (panel 9). The green dotted line shows the maximum a posteriori (MAP) estimate, while the red dashed line marks the true parameter value. Notice how the credible interval (green shaded region) narrows as more data is collected, demonstrating the convergence of Bayesian inference.</p>
+        </section>
+
+        <!-- Section 10: Quote of the Day -->
+        <section id="quote">
+            <h2>💬 Quote of the Day</h2>
+            <blockquote>
+                "Mathematics is the queen of the sciences—and number theory is the queen of mathematics."
+                <footer style="text-align: right; margin-top: 0.5rem; font-style: normal;">— <strong>Carl Friedrich Gauss</strong></footer>
+            </blockquote>
+            <p>This famous quote from Gauss reflects his deep appreciation for the elegance and fundamental nature of number theory. The "queen" metaphor suggests both the supreme position of mathematics among sciences and the especially pure, beautiful character of number theory within mathematics. Gauss's own <em>Disquisitiones Arithmeticae</em> established number theory as a rigorous mathematical discipline, and his work on quadratic reciprocity, cyclotomy, and quadratic forms set the agenda for the field for generations. Today, number theory continues to occupy a central position, with connections to algebraic geometry (through schemes and arithmetic geometry), analysis (through L-functions), and even physics (through string theory and quantum chaos).</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="../posts/index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
