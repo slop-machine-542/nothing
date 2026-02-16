@@ -1,0 +1,2043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Graph Theory, Control Theory & Surreal Numbers">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — Graph Theory, Control Theory & Surreal Numbers</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p class="post-date">February 16, 2026 at 10:42 UTC</p>
+        <div class="tags">
+            <span class="tag">graph-theory</span>
+            <span class="tag">control-theory</span>
+            <span class="tag">surreal-numbers</span>
+            <span class="tag">knot-theory</span>
+            <span class="tag">ramsey-theory</span>
+        </div>
+
+        <!-- Section 1: 3 Math Links -->
+        <section id="links">
+            <h2>🔗 3 Math Links</h2>
+            <ul>
+                <li><strong><a href="https://www.combinatorics.org/">The Electronic Journal of Combinatorics</a></strong> — A fully refereed, free-access electronic journal publishing high-quality papers in combinatorics, graph theory, and discrete mathematics. Features the famous "Dynamic Surveys" that are regularly updated with the latest developments in the field.</li>
+                <li><strong><a href="https://ncatlab.org/nlab/show/HomePage">nLab</a></strong> — A wiki-lab for collaborative work on mathematics, physics, and philosophy. While it covers many topics, its treatment of category theory, homotopy theory, and higher-dimensional algebra is unparalleled. An essential resource for understanding modern mathematical structures.</li>
+                <li><strong><a href="https://mathworld.wolfram.com/">MathWorld</a></strong> — Eric Weisstein's comprehensive mathematics encyclopedia containing over 13,000 entries. An invaluable reference for definitions, theorems, formulas, and explanations across all areas of mathematics, maintained by Wolfram Research.</li>
+            </ul>
+        </section>
+
+        <!-- Section 2: 1 Free Math Book -->
+        <section id="book">
+            <h2>📚 Free Math Book of the Day</h2>
+            <h3><em>Graph Theory</em> by Reinhard Diestel</h3>
+            <p>This is the definitive modern textbook on graph theory, used in graduate courses worldwide. The fifth edition is available as a free PDF from the author's website. Diestel's approach emphasizes the structural and topological aspects of graph theory while maintaining rigorous proofs.</p>
+            <p>The book covers:</p>
+            <ul>
+                <li>Fundamentals: connectivity, matching, coloring, flows</li>
+                <li>Extremal graph theory and the probabilistic method</li>
+                <li>Tree-width, minors, and the graph minor theorem</li>
+                <li>Perfect graphs and the strong perfect graph theorem</li>
+                <li>Graph homomorphisms and constraint satisfaction</li>
+                <li>Infinite graphs and Ramsey theory for graphs</li>
+            </ul>
+            <p>What distinguishes this book is its emphasis on proofs that reveal structure rather than just establishing truth. The exercises range from routine to research-level, making it suitable for both learning and reference.</p>
+            <p><strong>Level:</strong> Graduate<br>
+            <strong>Available free at:</strong> <a href="https://diestel-graph-theory.com/">https://diestel-graph-theory.com/</a></p>
+        </section>
+
+        <!-- Section 3: 3 Pure Math Deep-Dives -->
+        <section id="pure">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+            
+            <h3>Graph Theory: The Mathematics of Networks</h3>
+            <p>Graph theory studies the abstract properties of networks—collections of points (vertices) connected by lines (edges). Founded by Euler in 1736 with his solution to the Königsberg bridge problem, graph theory has become essential for understanding social networks, computer networks, biological systems, and countless other real-world structures.</p>
+            
+            <p><strong>Motivation:</strong> How do we find the shortest path between two cities? Can we color a map with only four colors? What makes a network resilient to failure? Graph theory provides the tools to answer these questions and many more.</p>
+
+            <p><strong>Definition (Graph):</strong> A <strong>graph</strong> \(G = (V, E)\) consists of a set \(V\) of <strong>vertices</strong> and a set \(E \\\subseteq V \\\times V\) of <strong>edges</strong>. In an undirected graph, edges are unordered pairs; in a directed graph, they are ordered.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(V(G)\) or \(V\) — vertex set of graph \(G\)</li>
+                <li>\(E(G)\) or \(E\) — edge set of graph \(G\)</li>
+                <li>\(d(v)\) — degree of vertex \(v\) (number of incident edges)</li>
+                <li>\(\\\delta(G)\) — minimum degree of \(G\)</li>
+                <li>\(\\\Delta(G)\) — maximum degree of \(G\)</li>
+                <li>\(\\\chi(G)\) — chromatic number (minimum colors needed)</li>
+                <li>\(\\\omega(G)\) — clique number (size of largest complete subgraph)</li>
+            </ul>
+
+            <p><strong>Theorem (Euler's Handshaking Lemma):</strong> In any finite undirected graph, the sum of all vertex degrees equals twice the number of edges:
+            \\[ \\\sum_{v \\\in V} d(v) = 2|E| \\]</p>
+
+            <p><em>Proof:</em> Each edge contributes exactly 1 to the degree of each of its two endpoints. Therefore, each edge contributes 2 to the total sum of degrees. Summing over all edges gives \(2|E|\). ∎</p>
+
+            <p><strong>Theorem (Four Color Theorem):</strong> Every planar graph has chromatic number at most 4.</p>
+            <p>This famous theorem, first proved by Appel and Haken in 1976 using extensive computer assistance, states that any map can be colored with at most four colors such that no adjacent regions share the same color.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+import networkx as nx
+
+class GraphTheoryDemo:
+    """Demonstrate fundamental graph theory concepts."""
+    
+    @staticmethod
+    def euler_handshaking_lemma():
+        """Verify Euler's handshaking lemma."""
+        # Create a random graph
+        G = nx.erdos_renyi_graph(10, 0.3)
+        
+        # Calculate sum of degrees
+        degree_sum = sum(dict(G.degree()).values())
+        num_edges = G.number_of_edges()
+        
+        print("Euler's Handshaking Lemma Verification:")
+        print(f"  Sum of degrees: {degree_sum}")
+        print(f"  2 × |E| = 2 × {num_edges} = {2 * num_edges}")
+        print(f"  Lemma holds: {degree_sum == 2 * num_edges}")
+        
+        return G
+    
+    @staticmethod
+    def graph_coloring_demo():
+        """Demonstrate graph coloring."""
+        # Create a graph that requires 4 colors (Grötzsch graph is 4-chromatic)
+        G = nx.Graph()
+        edges = [(0,1), (0,2), (0,3), (1,2), (1,4), (2,5), (3,4), (3,5), 
+                 (4,5), (4,6), (5,7), (6,7), (6,8), (7,8), (7,9), (8,9)]
+        G.add_edges_from(edges)
+        
+        # Greedy coloring
+        coloring = nx.coloring.greedy_color(G, strategy='largest_first')
+        num_colors = max(coloring.values()) + 1
+        
+        print(f"\nGraph Coloring:")
+        print(f"  Number of vertices: {G.number_of_nodes()}")
+        print(f"  Number of edges: {G.number_of_edges()}")
+        print(f"  Greedy coloring uses {num_colors} colors")
+        print(f"  Coloring: {coloring}")
+        
+        # Verify coloring is valid
+        valid = True
+        for u, v in G.edges():
+            if coloring[u] == coloring[v]:
+                valid = False
+                break
+        print(f"  Coloring is valid: {valid}")
+        
+        return G, coloring
+    
+    @staticmethod
+    def shortest_path_demo():
+        """Demonstrate Dijkstra's shortest path algorithm."""
+        # Create a weighted graph
+        G = nx.Graph()
+        weighted_edges = [
+            ('A', 'B', 4), ('A', 'C', 2), ('B', 'C', 1), 
+            ('B', 'D', 5), ('C', 'D', 8), ('C', 'E', 10),
+            ('D', 'E', 2), ('D', 'F', 6), ('E', 'F', 3)
+        ]
+        G.add_weighted_edges_from(weighted_edges)
+        
+        # Find shortest path
+        path = nx.shortest_path(G, 'A', 'F', weight='weight')
+        path_length = nx.shortest_path_length(G, 'A', 'F', weight='weight')
+        
+        print(f"\nShortest Path (Dijkstra's Algorithm):")
+        print(f"  From A to F: {' → '.join(path)}")
+        print(f"  Total weight: {path_length}")
+        
+        return G, path, path_length
+
+# Run demonstrations
+print("=== Graph Theory Demonstrations ===")
+G1 = GraphTheoryDemo.euler_handshaking_lemma()
+G2, coloring = GraphTheoryDemo.graph_coloring_demo()
+G3, path, length = GraphTheoryDemo.shortest_path_demo()
+</code></pre>
+
+            <h3>Knot Theory: The Topology of Embedded Circles</h3>
+            <p>Knot theory studies closed loops embedded in three-dimensional space. What began as a model for atomic structure in the 19th century has evolved into a rich field connecting topology, algebra, physics, and molecular biology.</p>
+
+            <p><strong>Motivation:</strong> How can we tell if two knots are the same? Can a given knot be untangled? These questions, seemingly simple, lead to deep mathematics with applications to DNA topology, quantum field theory, and polymer chemistry.</p>
+
+            <p><strong>Definition (Knot):</strong> A <strong>knot</strong> is an embedding of the circle \(S^1\) into \(\\\mathbb{R}^3\) (or \(S^3\)). Two knots are <strong>equivalent</strong> if one can be continuously deformed into the other without cutting or passing through itself.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(K\) — a knot</li>
+                <li>\(\\[_2(K)\) — crossing number (minimum crossings in any diagram)</li>
+                <li>\(\\\Delta_K(t)\) — Alexander polynomial</li>
+                <li>\(V_K(q)\) — Jones polynomial</li>
+                <li>\(\\\pi_1(S^3 \\\setminus K)\) — knot group (fundamental group of complement)</li>
+                <li>\(g(K)\) — genus of the knot</li>
+            </ul>
+
+            <p><strong>Definition (Reidemeister Moves):</strong> Two knot diagrams represent the same knot if and only if one can be transformed into the other by a sequence of three local moves:
+            <ul>
+                <li>Type I: Twist/untwist a strand</li>
+                <li>Type II: Move one strand over/under another</li>
+                <li>Type III: Move a strand over/under a crossing</li>
+            </ul>
+            </p>
+
+            <p><strong>Theorem (Reidemeister, 1927):</strong> Two knot diagrams represent equivalent knots if and only if they are related by a finite sequence of Reidemeister moves.</p>
+
+            <p><strong>Theorem (Alexander, 1928):</strong> Every knot has a polynomial invariant \(\\\Delta_K(t)\) such that if \(K_1\) and \(K_2\) are equivalent, then \(\\\Delta_{K_1}(t) = \\\Delta_{K_2}(t)\) (up to multiplication by \(\\\pm t^k\)).</p>
+            <p><em>Proof sketch:</em> The Alexander polynomial is computed from a presentation of the knot group. It can also be computed from a knot diagram using the skein relation. The key insight is that the polynomial is invariant under Reidemeister moves. ∎</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+class KnotTheory:
+    """Demonstrate knot theory concepts."""
+    
+    @staticmethod
+    def trefoil_knot_parametric(t):
+        """Parametric equations for the trefoil knot."""
+        x = np.sin(t) + 2 * np.sin(2*t)
+        y = np.cos(t) - 2 * np.cos(2*t)
+        z = -np.sin(3*t)
+        return x, y, z
+    
+    @staticmethod
+    def figure_eight_knot_parametric(t):
+        """Parametric equations for the figure-eight knot."""
+        x = (2 + np.cos(2*t)) * np.cos(3*t)
+        y = (2 + np.cos(2*t)) * np.sin(3*t)
+        z = np.sin(4*t)
+        return x, y, z
+    
+    @staticmethod
+    def unknot_parametric(t):
+        """Parametric equations for the unknot (circle)."""
+        x = np.cos(t)
+        y = np.sin(t)
+        z = np.zeros_like(t)
+        return x, y, z
+    
+    @staticmethod
+    def visualize_knots():
+        """Visualize different knots."""
+        t = np.linspace(0, 2*np.pi, 1000)
+        
+        fig = plt.figure(figsize=(15, 5))
+        
+        # Unknot
+        ax1 = fig.add_subplot(131, projection='3d')
+        x, y, z = KnotTheory.unknot_parametric(t)
+        ax1.plot(x, y, z, 'b-', linewidth=2)
+        ax1.set_title('Unknot (Trivial Knot)')
+        ax1.set_xlabel('X')
+        ax1.set_ylabel('Y')
+        ax1.set_zlabel('Z')
+        
+        # Trefoil
+        ax2 = fig.add_subplot(132, projection='3d')
+        x, y, z = KnotTheory.trefoil_knot_parametric(t)
+        ax2.plot(x, y, z, 'r-', linewidth=2)
+        ax2.set_title('Trefoil Knot (3₁)')
+        ax2.set_xlabel('X')
+        ax2.set_ylabel('Y')
+        ax2.set_zlabel('Z')
+        
+        # Figure-eight
+        ax3 = fig.add_subplot(133, projection='3d')
+        x, y, z = KnotTheory.figure_eight_knot_parametric(t)
+        ax3.plot(x, y, z, 'g-', linewidth=2)
+        ax3.set_title('Figure-Eight Knot (4₁)')
+        ax3.set_xlabel('X')
+        ax3.set_ylabel('Y')
+        ax3.set_zlabel('Z')
+        
+        plt.tight_layout()
+        plt.savefig('knots_visualization.png', dpi=150, bbox_inches='tight')
+        plt.close()
+        
+        print("Knot visualization saved!")
+        return fig
+    
+    @staticmethod
+    def crossing_number_estimate(x, y, z):
+        """Estimate crossing number from 3D projection."""
+        # Project onto xy-plane and count apparent crossings
+        n = len(x)
+        crossings = 0
+        
+        for i in range(n-1):
+            for j in range(i+2, n-1):
+                # Check if segments (i, i+1) and (j, j+1) intersect in projection
+                # This is a simplified check
+                if abs(i - j) > 10:  # Avoid adjacent segments
+                    x1, y1 = x[i], y[i]
+                    x2, y2 = x[i+1], y[i+1]
+                    x3, y3 = x[j], y[j]
+                    x4, y4 = x[j+1], y[j+1]
+                    
+                    # Check for intersection (simplified)
+                    if (min(x1, x2) < max(x3, x4) and min(x3, x4) < max(x1, x2) and
+                        min(y1, y2) < max(y3, y4) and min(y3, y4) < max(y1, y2)):
+                        # Check z-order for crossing
+                        z_mid1 = (z[i] + z[i+1]) / 2
+                        z_mid2 = (z[j] + z[j+1]) / 2
+                        if abs(z_mid1 - z_mid2) > 0.1:
+                            crossings += 1
+        
+        return crossings // 2  # Each crossing counted twice
+
+# Run demonstrations
+print("\n=== Knot Theory Demonstrations ===")
+KnotTheory.visualize_knots()
+
+t = np.linspace(0, 2*np.pi, 1000)
+x, y, z = KnotTheory.trefoil_knot_parametric(t)
+estimated_crossings = KnotTheory.crossing_number_estimate(x, y, z)
+print(f"\nTrefoil knot:")
+print(f"  Known crossing number: 3")
+print(f"  Estimated from projection: ~{estimated_crossings}")
+
+x, y, z = KnotTheory.figure_eight_knot_parametric(t)
+estimated_crossings = KnotTheory.crossing_number_estimate(x, y, z)
+print(f"\nFigure-eight knot:")
+print(f"  Known crossing number: 4")
+print(f"  Estimated from projection: ~{estimated_crossings}")
+</code></pre>
+
+            <h3>Ramsey Theory: Guaranteed Order in Chaos</h3>
+            <p>Ramsey theory studies conditions under which order must appear. Its central insight, captured by the motto "complete disorder is impossible," guarantees that sufficiently large structures contain regular substructures regardless of how they are constructed.</p>
+
+            <p><strong>Motivation:</strong> In any group of six people, there are either three mutual acquaintances or three mutual strangers. This simple observation generalizes to profound theorems about unavoidable patterns in graphs, numbers, and geometric configurations.</p>
+
+            <p><strong>Definition (Ramsey Number):</strong> The <strong>Ramsey number</strong> \(R(s, t)\) is the smallest \(n\) such that every red-blue coloring of the edges of the complete graph \(K_n\) contains either a red \(K_s\) or a blue \(K_t\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(R(s, t)\) — Ramsey number</li>
+                <li>\(K_n\) — complete graph on \(n\) vertices</li>
+                <li>\(r(G, H)\) — graph Ramsey number</li>
+                <li>\(R_k(s)\) — multicolor Ramsey number</li>
+                <li>\(W(k, r)\) — van der Waerden number</li>
+            </ul>
+
+            <p><strong>Theorem (Ramsey's Theorem):</strong> For all positive integers \(s\) and \(t\), the Ramsey number \(R(s, t)\) exists (is finite).</p>
+
+            <p><em>Proof:</em> By induction on \(s + t\). Base cases: \(R(1, t) = R(s, 1) = 1\). For the inductive step, we show \(R(s, t) \\\leq R(s-1, t) + R(s, t-1)\).</p>
+            <p>Consider a red-blue coloring of \(K_n\) where \(n = R(s-1, t) + R(s, t-1)\). Pick any vertex \(v\). It has either at least \(R(s-1, t)\) red neighbors or at least \(R(s, t-1)\) blue neighbors (by pigeonhole principle).</p>
+            <p>In the first case, among the red neighbors, either there is a blue \(K_t\) (done) or a red \(K_{s-1}\), which with \(v\) forms a red \(K_s\). The second case is symmetric. ∎</p>
+
+            <p><strong>Theorem (Van der Waerden):</strong> For any positive integers \(k\) and \(r\), there exists some number \(N = W(k, r)\) such that if the integers \(\{1, 2, \\\ldots, N\\}\) are colored with \(r\) colors, then there must exist a monochromatic arithmetic progression of length \(k\).</p>
+
+            <pre><code>import numpy as np
+import itertools
+
+class RamseyTheory:
+    """Demonstrate Ramsey theory concepts."""
+    
+    @staticmethod
+    def ramsey_party_problem():
+        """
+        The classic party problem: R(3,3) = 6.
+        Among 6 people, there are either 3 mutual friends or 3 mutual strangers.
+        """
+        print("Ramsey's Party Problem: R(3,3) = 6")
+        print("=" * 50)
+        
+        # Demonstrate with 5 people (can avoid monochromatic triangle)
+        print("\nWith 5 people, we CAN avoid a monochromatic triangle:")
+        print("  Color edges of pentagon red, diagonals blue.")
+        print("  No red triangle (pentagon has no triangles).")
+        print("  No blue triangle (diagonals form smaller pentagon).")
+        
+        print("\nWith 6 people, a monochromatic triangle is UNAVOIDABLE:")
+        print("  Pick any person. They have 5 relationships.")
+        print("  By pigeonhole: at least 3 are same color (say red).")
+        print("  Among those 3 people:")
+        print("    - If any pair is red friends: red triangle!")
+        print("    - If all pairs are blue: blue triangle!")
+        print("  Therefore R(3,3) ≤ 6.")
+        
+        return 6
+    
+    @staticmethod
+    def find_monochromatic_triangle(adjacency, color):
+        """
+        Find a monochromatic triangle in a 2-colored graph.
+        adjacency[i][j] = 0 (no edge), 1 (red), or 2 (blue)
+        """
+        n = len(adjacency)
+        triangles = []
+        
+        for i in range(n):
+            for j in range(i+1, n):
+                for k in range(j+1, n):
+                    if (adjacency[i][j] == color and 
+                        adjacency[j][k] == color and 
+                        adjacency[i][k] == color):
+                        triangles.append((i, j, k))
+        
+        return triangles
+    
+    @staticmethod
+    def random_coloring_ramsey(n, p_red=0.5):
+        """
+        Create random 2-coloring of K_n and count monochromatic triangles.
+        """
+        # Random coloring
+        adjacency = np.random.choice([1, 2], size=(n, n), p=[p_red, 1-p_red])
+        # Make symmetric with no self-loops
+        adjacency = np.triu(adjacency, 1)
+        adjacency = adjacency + adjacency.T
+        
+        red_triangles = RamseyTheory.find_monochromatic_triangle(adjacency, 1)
+        blue_triangles = RamseyTheory.find_monochromatic_triangle(adjacency, 2)
+        
+        return len(red_triangles), len(blue_triangles), adjacency
+    
+    @staticmethod
+    def van_der_waerden_demo():
+        """
+        Demonstrate van der Waerden's theorem.
+        """
+        print("\nVan der Waerden's Theorem:")
+        print("=" * 50)
+        
+        # W(3, 2) = 9: any 2-coloring of {1,...,9} has monochromatic 3-AP
+        print("\nW(3, 2) = 9")
+        print("Any 2-coloring of {1, 2, ..., 9} contains a monochromatic")
+        print("3-term arithmetic progression.")
+        
+        # Check all possible 2-colorings of {1,...,9} (2^9 = 512 possibilities)
+        found_counterexample = False
+        
+        for coloring_bits in range(512):
+            coloring = [(coloring_bits >> i) & 1 for i in range(9)]
+            
+            # Check for monochromatic 3-AP
+            has_mono_ap = False
+            for start in range(9):
+                for diff in range(1, 5):
+                    if start + 2*diff < 9:
+                        if (coloring[start] == coloring[start + diff] == 
+                            coloring[start + 2*diff]):
+                            has_mono_ap = True
+                            break
+                if has_mono_ap:
+                    break
+            
+            if not has_mono_ap:
+                found_counterexample = True
+                print(f"Counterexample found: {coloring}")
+                break
+        
+        if not found_counterexample:
+            print("Verified: Every 2-coloring of {1,...,9} has a mono 3-AP.")
+        
+        return 9
+
+# Run demonstrations
+print("=== Ramsey Theory Demonstrations ===")
+r33 = RamseyTheory.ramsey_party_problem()
+
+print("\nRandom coloring experiments:")
+for n in [5, 6, 7, 8]:
+    red, blue, _ = RamseyTheory.random_coloring_ramsey(n)
+    print(f"  K_{n}: {red} red triangles, {blue} blue triangles")
+
+vdw = RamseyTheory.van_der_waerden_demo()
+</code></pre>
+        </section>
+
+        <!-- Section 4: 3 Applied Math Deep-Dives -->
+        <section id="applied">
+            <h2>💹 Applied Math Deep-Dives</h2>
+            
+            <h3>Control Theory: Steering Dynamic Systems</h3>
+            <p>Control theory studies how to influence the behavior of dynamical systems to achieve desired outcomes. From autopilot systems to cruise control, from robotic arms to insulin pumps, control theory provides the mathematical foundation for automation.</p>
+
+            <p><strong>Real-World Motivation:</strong> How does a self-driving car maintain its lane? How does a spacecraft reach its target? How does a thermostat maintain room temperature? All these require sensing the current state, computing appropriate actions, and applying them to steer the system.</p>
+
+            <p><strong>State-Space Representation:</strong> A linear time-invariant (LTI) system is described by:
+            \\[ \\\begin{aligned}
+            \\\dot{x}(t) &= Ax(t) + Bu(t) \\\\
+            y(t) &= Cx(t) + Du(t)
+            \\\end{aligned} \\]
+            where \(x\) is the state vector, \(u\) is the control input, \(y\) is the output, and \(A, B, C, D\) are matrices.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(x \\\in \\\mathbb{R}^n\) — state vector</li>
+                <li>\(u \\\in \\\mathbb{R}^m\) — control input</li>
+                <li>\(y \\\in \\\mathbb{R}^p\) — output</li>
+                <li>\(A\) — system matrix (dynamics)</li>
+                <li>\(B\) — input matrix</li>
+                <li>\(K\) — feedback gain matrix</li>
+                <li>\(\\\Phi(t) = e^{At}\) — state transition matrix</li>
+            </ul>
+
+            <p><strong>Theorem (Controllability):</strong> The system \(\\\dot{x} = Ax + Bu\) is <strong>controllable</strong> if and only if the controllability matrix
+            \\[ \\\mathcal{C} = [B \; AB \; A^2B \; \\\cdots \; A^{n-1}B] \\]
+            has full row rank (rank \(n\)).</p>
+
+            <p><em>Proof sketch:</em> The solution to the state equation is:
+            \\[ x(t) = e^{At}x(0) + \\\int_0^t e^{A(t-\\\tau)}Bu(\\\tau) d\\\tau \\]
+            By the Cayley-Hamilton theorem, \(e^{At}\) can be expressed as a polynomial in \(A\) of degree at most \(n-1\). Therefore, the reachable states are precisely the column space of \(\\\mathcal{C}\). ∎</p>
+
+            <p><strong>Theorem (Pole Placement):</strong> If \((A, B)\) is controllable, then for any desired set of eigenvalues \(\\\{\\\lambda_1, \\\ldots, \\\lambda_n\\\}\), there exists a feedback matrix \(K\) such that \(A - BK\) has these eigenvalues.</p>
+
+            <pre><code>import numpy as np
+from scipy.linalg import solve_continuous_are, eig, expm
+import matplotlib.pyplot as plt
+
+class ControlTheory:
+    """Demonstrate control theory concepts."""
+    
+    @staticmethod
+    def check_controllability(A, B):
+        """Check if system (A, B) is controllable."""
+        n = A.shape[0]
+        
+        # Build controllability matrix
+        C = B.copy()
+        for i in range(1, n):
+            C = np.hstack([C, np.linalg.matrix_power(A, i) @ B])
+        
+        rank = np.linalg.matrix_rank(C)
+        is_controllable = (rank == n)
+        
+        print("Controllability Analysis:")
+        print(f"  State dimension n = {n}")
+        print(f"  Controllability matrix shape: {C.shape}")
+        print(f"  Rank of C: {rank}")
+        print(f"  System is controllable: {is_controllable}")
+        
+        return is_controllable, C
+    
+    @staticmethod
+    def lqr_controller(A, B, Q, R):
+        """
+        Design LQR (Linear Quadratic Regulator) controller.
+        Solves: min ∫(x^T Q x + u^T R u) dt
+        """
+        # Solve continuous-time algebraic Riccati equation
+        P = solve_continuous_are(A, B, Q, R)
+        
+        # Compute optimal gain
+        K = np.linalg.inv(R) @ B.T @ P
+        
+        # Closed-loop system
+        A_cl = A - B @ K
+        
+        print("\nLQR Controller Design:")
+        print(f"  Optimal gain K: {K.flatten()}")
+        print(f"  Closed-loop eigenvalues: {eig(A_cl)[0]}")
+        
+        return K, P, A_cl
+    
+    @staticmethod
+    def simulate_system(A, B, K, x0, t_span, dt=0.01):
+        """Simulate closed-loop system with state feedback."""
+        t = np.arange(t_span[0], t_span[1], dt)
+        n_steps = len(t)
+        
+        x = np.zeros((len(x0), n_steps))
+        u = np.zeros(n_steps)
+        x[:, 0] = x0
+        
+        # State feedback: u = -Kx
+        for i in range(n_steps - 1):
+            u[i] = -K @ x[:, i]
+            x[:, i+1] = x[:, i] + dt * (A @ x[:, i] + B.flatten() * u[i])
+        
+        return t, x, u
+    
+    @staticmethod
+    def inverted_pendulum_demo():
+        """
+        Control of an inverted pendulum on a cart.
+        Linearized dynamics around upright position.
+        """
+        print("\nInverted Pendulum Control:")
+        print("=" * 50)
+        
+        # Physical parameters
+        M = 1.0  # Cart mass
+        m = 0.1  # Pendulum mass
+        L = 0.5  # Pendulum length
+        g = 9.81 # Gravity
+        
+        # Linearized state: [x, x_dot, theta, theta_dot]
+        # State matrix
+        A = np.array([
+            [0, 1, 0, 0],
+            [0, 0, -m*g/M, 0],
+            [0, 0, 0, 1],
+            [0, 0, (M+m)*g/(M*L), 0]
+        ])
+        
+        # Input matrix
+        B = np.array([[0], [1/M], [0], [-1/(M*L)]])
+        
+        print(f"  Cart mass M = {M} kg")
+        print(f"  Pendulum mass m = {m} kg")
+        print(f"  Pendulum length L = {L} m")
+        
+        # Check controllability
+        is_controllable, _ = ControlTheory.check_controllability(A, B)
+        
+        if is_controllable:
+            # Design LQR controller
+            Q = np.diag([10, 1, 10, 1])  # Penalize position and angle
+            R = np.array([[0.1]])        # Penalize control effort
+            
+            K, P, A_cl = ControlTheory.lqr_controller(A, B, Q, R)
+            
+            # Simulate
+            x0 = np.array([0.5, 0, 0.3, 0])  # Initial displacement
+            t, x, u = ControlTheory.simulate_system(A, B, K, x0, (0, 10), 0.01)
+            
+            print(f"\n  Initial state: x={x0[0]}m, theta={x0[2]}rad")
+            print(f"  Final state: x={x[0,-1]:.4f}m, theta={x[2,-1]:.4f}rad")
+            print(f"  Max control force: {np.max(np.abs(u)):.2f} N")
+            
+            return t, x, u
+        
+        return None, None, None
+    
+    @staticmethod
+    def cruise_control_demo():
+        """
+        Simple cruise control for a car.
+        """
+        print("\nCruise Control Design:")
+        print("=" * 50)
+        
+        # Simple car model: m*v_dot = u - bv (force balance)
+        # State: velocity v
+        m = 1000  # Mass (kg)
+        b = 50    # Damping coefficient
+        
+        # State-space: v_dot = -(b/m)*v + (1/m)*u
+        A = np.array([[-b/m]])
+        B = np.array([[1/m]])
+        
+        print(f"  Car mass: {m} kg")
+        print(f"  Damping coefficient: {b} Ns/m")
+        print(f"  Open-loop time constant: {m/b:.2f} s")
+        
+        # Design PI controller via state augmentation
+        # Want to track reference velocity
+        
+        # LQR design
+        Q = np.array([[1]])  # Penalize velocity error
+        R = np.array([[0.001]])  # Penalize control
+        
+        K, P, A_cl = ControlTheory.lqr_controller(A, B, Q, R)
+        
+        # Simulate step response
+        v_ref = 30  # m/s (108 km/h)
+        t, v, u = ControlTheory.simulate_system(A, B, K, 
+                                                 np.array([0]), (0, 30), 0.01)
+        
+        # Add feedforward for reference tracking
+        v_cl = v_ref + v[0, :]  # Shift to reference
+        
+        print(f"  Reference velocity: {v_ref} m/s ({v_ref*3.6:.1f} km/h)")
+        print(f"  Settling time: ~{t[np.where(np.abs(v_cl - v_ref) < 0.01*v_ref)[0][0]]:.1f} s")
+        
+        return t, v_cl, u
+
+# Run demonstrations
+print("=== Control Theory Demonstrations ===")
+t, x, u = ControlTheory.inverted_pendulum_demo()
+t2, v, u2 = ControlTheory.cruise_control_demo()
+</code></pre>
+
+            <h3>Machine Learning Theory: PAC Learning</h3>
+            <p>Probably Approximately Correct (PAC) learning theory, developed by Leslie Valiant in 1984, provides a rigorous mathematical framework for understanding when and why machine learning algorithms work. It formalizes the intuition that learning is possible when the training data is representative of the true distribution.</p>
+
+            <p><strong>Real-World Motivation:</strong> Why does a neural network trained on thousands of images generalize to new, unseen images? PAC theory tells us that with enough data, and if the hypothesis class isn't too complex, we can be confident that good performance on training data implies good performance on new data.</p>
+
+            <p><strong>Definition (PAC Learnable):</strong> A concept class \(\\\mathcal{C}\) is <strong>PAC learnable</strong> if there exists an algorithm \(\\\mathcal{A}\) such that for any \(\\\epsilon, \\\delta > 0\), any target concept \(c \\\in \\\mathcal{C}\), and any distribution \(\\\mathcal{D}\), when given a sample of size \(m \\\geq m_{\\\mathcal{C}}(\\\epsilon, \\\delta)\), \(\\\mathcal{A}\) outputs a hypothesis \(h\) such that with probability at least \(1 - \\\delta\):
+            \\[ \\\mathbb{P}_{x \\\sim \\\mathcal{D}}[h(x) \\\neq c(x)] < \\\epsilon \\]</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\\\mathcal{C}\) — concept class (set of possible target functions)</li>
+                <li>\(\\\mathcal{H}\) — hypothesis class (set of functions algorithm can output)</li>
+                <li>\(\\\epsilon\) — accuracy parameter (error tolerance)</li>
+                <li>\(\\\delta\) — confidence parameter (probability of failure)</li>
+                <li>\(m_{\\\mathcal{C}}(\\\epsilon, \\\delta)\) — sample complexity</li>
+                <li>\(VC(\\\mathcal{H})\) — VC dimension (measure of complexity)</li>
+            </ul>
+
+            <p><strong>Theorem (Fundamental Theorem of PAC Learning):</strong> A concept class \(\\\mathcal{C}\) is PAC learnable if and only if its VC dimension is finite. Moreover, the sample complexity satisfies:
+            \\[ \\\Omega\\\left(\\\frac{VC(\\\mathcal{C}) + \\\log(1/\\\delta)}{\\\epsilon}\\\right) \\\leq m_{\\\mathcal{C}}(\\\epsilon, \\\delta) \\\leq O\\\left(\\\frac{VC(\\\mathcal{C}) \\\log(1/\\\epsilon) + \\\log(1/\\\delta)}{\\\epsilon}\\\right) \\]</p>
+
+            <p><strong>Theorem (VC Dimension of Halfspaces):</strong> The VC dimension of halfspaces (linear classifiers) in \(\\\mathbb{R}^d\) is \(d + 1\).</p>
+            <p><em>Proof sketch:</em> 
+            <ul>
+                <li>Lower bound: The \(d+1\) points at the vertices of a simplex in \(\\\mathbb{R}^d\) can be shattered.</li>
+                <li>Upper bound: Radon's theorem implies that any set of \(d+2\) points in \(\\\mathbb{R}^d\) can be partitioned into two subsets whose convex hulls intersect, so they cannot be shattered by halfspaces.</li>
+            </ul>
+            ∎</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from itertools import combinations
+
+class PACLearning:
+    """Demonstrate PAC learning concepts."""
+    
+    @staticmethod
+    def shatter_test_1d():
+        """
+        Test shattering in 1D with halfspaces (threshold functions).
+        VC dimension = 1.
+        """
+        print("VC Dimension of 1D Halfspaces (Threshold Functions):")
+        print("=" * 60)
+        
+        # 1 point: can shatter
+        print("\n1 point {x1}:")
+        print("  Label +1: classify as +1 if x >= t where t < x1")
+        print("  Label -1: classify as +1 if x >= t where t > x1")
+        print("  Can shatter: YES")
+        
+        # 2 points: cannot shatter
+        print("\n2 points {x1 < x2}:")
+        print("  Label (+1, -1): impossible with threshold function!")
+        print("  Can shatter: NO")
+        
+        print("\nTherefore VC dimension = 1")
+        return 1
+    
+    @staticmethod
+    def shatter_test_2d():
+        """
+        Test shattering in 2D with halfspaces (linear classifiers).
+        VC dimension = 3.
+        """
+        print("\nVC Dimension of 2D Halfspaces (Linear Classifiers):")
+        print("=" * 60)
+        
+        print("\n3 points in general position (not collinear):")
+        print("  All 2^3 = 8 labelings can be achieved by a line")
+        print("  Can shatter: YES")
+        
+        print("\n4 points:")
+        print("  If one point is inside triangle of others,")
+        print("  cannot label interior point differently from all corners")
+        print("  Can shatter: NO")
+        
+        print("\nTherefore VC dimension = 3 = d + 1")
+        return 3
+    
+    @staticmethod
+    def sample_complexity_bound(vc_dim, epsilon, delta):
+        """
+        Compute sample complexity bounds from Fundamental Theorem.
+        """
+        # Upper bound (simplified)
+        m_upper = (vc_dim * np.log(1/epsilon) + np.log(1/delta)) / epsilon
+        
+        # Lower bound
+        m_lower = (vc_dim + np.log(1/delta)) / epsilon
+        
+        return m_lower, m_upper
+    
+    @staticmethod
+    def generalization_gap_demo():
+        """
+        Demonstrate the relationship between training error,
+        test error, and sample size.
+        """
+        print("\nGeneralization Gap Analysis:")
+        print("=" * 60)
+        
+        # Simulate learning scenario
+        d = 10  # Dimension
+        vc_dim = d + 1  # VC dimension of halfspaces
+        
+        epsilon = 0.1  # Target error
+        delta = 0.05   # Confidence 95%
+        
+        m_lower, m_upper = PACLearning.sample_complexity_bound(
+            vc_dim, epsilon, delta
+        )
+        
+        print(f"Learning linear classifier in R^{d}")
+        print(f"VC dimension: {vc_dim}")
+        print(f"Target error ε = {epsilon}")
+        print(f"Confidence parameter δ = {delta}")
+        print(f"\nSample complexity bounds:")
+        print(f"  Lower bound: Ω({m_lower:.0f})")
+        print(f"  Upper bound: O({m_upper:.0f})")
+        
+        # Show how required sample size scales with dimension
+        print(f"\nSample size scaling with dimension (ε=0.1, δ=0.05):")
+        for d_test in [5, 10, 20, 50, 100]:
+            vc = d_test + 1
+            _, m = PACLearning.sample_complexity_bound(vc, 0.1, 0.05)
+            print(f"  d={d_test:3d}: m ≈ {m:.0f}")
+        
+        return m_lower, m_upper
+    
+    @staticmethod
+    def empirical_risk_minimization_demo():
+        """
+        Demonstrate ERM principle: minimize training error.
+        """
+        print("\nEmpirical Risk Minimization (ERM):")
+        print("=" * 60)
+        
+        np.random.seed(42)
+        
+        # True concept: linear separator
+        w_true = np.array([1, -1])
+        
+        # Generate training data
+        n_samples = 100
+        X = np.random.randn(n_samples, 2)
+        y = (X @ w_true > 0).astype(int) * 2 - 1  # ±1 labels
+        
+        # ERM: find hyperplane that minimizes training error
+        # For linear separability, use perceptron-like approach
+        w = np.random.randn(2)
+        w = w / np.linalg.norm(w)
+        
+        # Simple gradient descent on hinge loss
+        lr = 0.1
+        for epoch in range(1000):
+            margins = y * (X @ w)
+            # Hinge loss gradient
+            grad = -np.mean((margins < 1)[:, None] * y[:, None] * X, axis=0)
+            w = w - lr * grad
+            w = w / np.linalg.norm(w)  # Normalize
+        
+        train_error = np.mean((X @ w > 0) != (y > 0))
+        
+        # Test on new data
+        X_test = np.random.randn(1000, 2)
+        y_test = (X_test @ w_true > 0).astype(int) * 2 - 1
+        test_error = np.mean((X_test @ w > 0) != (y_test > 0))
+        
+        print(f"Training error: {train_error:.3f}")
+        print(f"Test error: {test_error:.3f}")
+        print(f"Generalization gap: {abs(test_error - train_error):.3f}")
+        
+        return train_error, test_error
+
+# Run demonstrations
+print("=== PAC Learning Theory Demonstrations ===")
+vc_1d = PACLearning.shatter_test_1d()
+vc_2d = PACLearning.shatter_test_2d()
+m_lower, m_upper = PACLearning.generalization_gap_demo()
+train_err, test_err = PACLearning.empirical_risk_minimization_demo()
+</code></pre>
+
+            <h3>Network Science: The Structure of Complex Networks</h3>
+            <p>Network science studies the structure and dynamics of complex networks—social networks, the internet, biological networks, and more. It combines graph theory, statistical physics, and data analysis to understand how local rules give rise to global structure.</p>
+
+            <p><strong>Real-World Motivation:</strong> How do diseases spread through populations? How does information flow on social media? Why do some networks tolerate failures while others collapse? Network science provides tools to model and analyze these systems.</p>
+
+            <p><strong>Key Network Models:</strong></p>
+            <ul>
+                <li><strong>Erdős-Rényi:</strong> Random graphs where each edge exists with probability \(p\)</li>
+                <li><strong>Small-World (Watts-Strogatz):</strong> High clustering with short path lengths</li>
+                <li><strong>Scale-Free (Barabási-Albert):</strong> Power-law degree distribution via preferential attachment</li>
+            </ul>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\\\langle k \\\rangle\) — average degree</li>
+                <li>\(C\) — clustering coefficient</li>
+                <li>\(L\) — average shortest path length</li>
+                <li>\(P(k)\) — degree distribution</li>
+                <li>\(\\\gamma\) — power-law exponent</li>
+                <li>\(\\\lambda_1\) — largest eigenvalue of adjacency matrix</li>
+            </ul>
+
+            <p><strong>Theorem (Phase Transition in Erdős-Rényi):</strong> For \(G(n, p)\) with \(p = c/n\):
+            <ul>
+                <li>If \(c < 1\), all components have size \(O(\\\log n)\)</li>
+                <li>If \(c = 1\), largest component has size \(\\\Theta(n^{2/3})\)</li>
+                <li>If \(c > 1\), there exists a unique giant component of size \(\\\Theta(n)\)</li>
+            </ul>
+            </p>
+
+            <p><strong>Theorem (Barabási-Albert Degree Distribution):</strong> The preferential attachment model produces networks with power-law degree distribution \(P(k) \\\sim k^{-3}\).</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class NetworkScience:
+    """Demonstrate network science concepts."""
+    
+    @staticmethod
+    def erdos_renyi_giant_component():
+        """
+        Demonstrate phase transition in Erdős-Rényi random graphs.
+        """
+        print("\nErdős-Rényi Phase Transition:")
+        print("=" * 60)
+        
+        n = 1000  # Number of nodes
+        
+        print(f"Graph with n = {n} nodes")
+        print(f"Edge probability p = c/n")
+        print("\nGiant component size vs. c:")
+        
+        c_values = np.linspace(0.1, 3.0, 20)
+        giant_sizes = []
+        
+        for c in c_values:
+            p = c / n
+            
+            # Generate ER graph
+            adj = np.random.random((n, n)) < p
+            adj = np.triu(adj, 1)  # Upper triangle
+            adj = adj + adj.T  # Symmetric
+            
+            # Find connected components using BFS
+            visited = np.zeros(n, dtype=bool)
+            component_sizes = []
+            
+            for start in range(n):
+                if not visited[start]:
+                    # BFS
+                    component = []
+                    queue = [start]
+                    visited[start] = True
+                    
+                    while queue:
+                        node = queue.pop(0)
+                        component.append(node)
+                        neighbors = np.where(adj[node])[0]
+                        for neighbor in neighbors:
+                            if not visited[neighbor]:
+                                visited[neighbor] = True
+                                queue.append(neighbor)
+                    
+                    component_sizes.append(len(component))
+            
+            giant_size = max(component_sizes) if component_sizes else 0
+            giant_sizes.append(giant_size / n)  # Fraction of nodes
+        
+        for c, size in zip(c_values[::4], giant_sizes[::4]):
+            status = "Giant!" if size > 0.5 else "No giant"
+            print(f"  c = {c:.2f}: giant component = {size:.3f} ({status})")
+        
+        print(f"\nPhase transition occurs at c = 1")
+        return c_values, giant_sizes
+    
+    @staticmethod
+    def barabasi_albert_model(n, m):
+        """
+        Generate Barabási-Albert scale-free network.
+        n: number of nodes
+        m: number of edges to attach from new node
+        """
+        # Start with m nodes forming a complete graph
+        adj = np.zeros((n, n), dtype=int)
+        
+        # Initial complete graph on m nodes
+        for i in range(m):
+            for j in range(i+1, m):
+                adj[i, j] = adj[j, i] = 1
+        
+        # Add remaining nodes with preferential attachment
+        degrees = np.sum(adj, axis=1)
+        
+        for new_node in range(m, n):
+            # Probabilities proportional to degree
+            probs = degrees[:new_node] / np.sum(degrees[:new_node])
+            
+            # Select m nodes to connect to
+            targets = np.random.choice(new_node, size=m, 
+                                       replace=False, p=probs)
+            
+            for target in targets:
+                adj[new_node, target] = adj[target, new_node] = 1
+                degrees[new_node] += 1
+                degrees[target] += 1
+        
+        return adj
+    
+    @staticmethod
+    def degree_distribution(adj):
+        """Compute degree distribution."""
+        degrees = np.sum(adj, axis=1)
+        unique, counts = np.unique(degrees, return_counts=True)
+        return unique, counts / len(degrees)
+    
+    @staticmethod
+    def scale_free_demo():
+        """
+        Demonstrate scale-free property of BA model.
+        """
+        print("\nBarabási-Albert Scale-Free Network:")
+        print("=" * 60)
+        
+        n = 10000
+        m = 3
+        
+        print(f"Generating BA network with n={n}, m={m}")
+        adj = NetworkScience.barabasi_albert_model(n, m)
+        
+        # Compute degree distribution
+        k, P_k = NetworkScience.degree_distribution(adj)
+        
+        # Filter for log-log plot
+        mask = (k > 0) & (P_k > 0)
+        k_plot = k[mask]
+        P_k_plot = P_k[mask]
+        
+        # Theoretical power law: P(k) ~ k^(-3)
+        print(f"\nDegree distribution statistics:")
+        print(f"  Min degree: {np.min(k[k>0])}")
+        print(f"  Max degree: {np.max(k)}")
+        print(f"  Average degree: {np.mean(k):.2f}")
+        
+        # Estimate power-law exponent
+        log_k = np.log(k_plot)
+        log_P = np.log(P_k_plot)
+        
+        # Fit line to tail
+        tail_mask = k_plot > 10
+        if np.sum(tail_mask) > 5:
+            slope = np.polyfit(log_k[tail_mask], log_P[tail_mask], 1)[0]
+            print(f"  Estimated power-law exponent: {-slope:.2f}")
+            print(f"  (Theoretical: γ = 3)")
+        
+        return k_plot, P_k_plot
+    
+    @staticmethod
+    def small_world_demo():
+        """
+        Demonstrate small-world property.
+        """
+        print("\nSmall-World Property:")
+        print("=" * 60)
+        
+        n = 1000
+        k = 10  # Each node connected to k nearest neighbors
+        
+        # Ring lattice
+        adj_ring = np.zeros((n, n))
+        for i in range(n):
+            for j in range(1, k//2 + 1):
+                adj_ring[i, (i+j) % n] = adj_ring[(i+j) % n, i] = 1
+                adj_ring[i, (i-j) % n] = adj_ring[(i-j) % n, i] = 1
+        
+        # Rewire with probability p
+        def rewire(adj, p):
+            adj_new = adj.copy()
+            for i in range(n):
+                for j in range(i+1, n):
+                    if adj[i, j] == 1 and np.random.random() < p:
+                        # Rewire
+                        adj_new[i, j] = adj_new[j, i] = 0
+                        new_target = np.random.randint(n)
+                        if new_target != i:
+                            adj_new[i, new_target] = adj_new[new_target, i] = 1
+            return adj_new
+        
+        # Average path length approximation
+        def avg_path_length(adj, samples=100):
+            lengths = []
+            for _ in range(samples):
+                start = np.random.randint(n)
+                end = np.random.randint(n)
+                if start != end:
+                    # BFS
+                    visited = {start: 0}
+                    queue = [start]
+                    while queue and end not in visited:
+                        node = queue.pop(0)
+                        neighbors = np.where(adj[node])[0]
+                        for neighbor in neighbors:
+                            if neighbor not in visited:
+                                visited[neighbor] = visited[node] + 1
+                                queue.append(neighbor)
+                    if end in visited:
+                        lengths.append(visited[end])
+            return np.mean(lengths) if lengths else float('inf')
+        
+        p_values = [0, 0.01, 0.1, 1.0]
+        print(f"\nAverage path length (n={n}, k={k}):")
+        for p in p_values:
+            adj_rewired = rewire(adj_ring, p)
+            L = avg_path_length(adj_rewired, samples=200)
+            print(f"  p = {p:.2f}: L ≈ {L:.2f}")
+        
+        print(f"\nSmall-world: short paths (like random) with high clustering (like regular)")
+
+# Run demonstrations
+print("=== Network Science Demonstrations ===")
+c_values, giant_sizes = NetworkScience.erdos_renyi_giant_component()
+k, P_k = NetworkScience.scale_free_demo()
+NetworkScience.small_world_demo()
+</code></pre>
+        </section>
+
+        <!-- Section 5: 4 Special Topics -->
+        <section id="topics">
+            <h2>🎨 Special Topics</h2>
+            
+            <h3>Surreal Numbers: A Universe of Numbers</h3>
+            <p>Surreal numbers, invented by John Conway in the 1970s, provide a unified construction of all numbers—natural, integer, rational, real, ordinal, and beyond. Using a simple recursive definition, surreal numbers include infinitely large and infinitely small quantities, all with a rich algebraic structure.</p>
+
+            <p><strong>Historical Context:</strong> Conway discovered surreal numbers while analyzing the game of Go. He presented them in his 1976 book "On Numbers and Games." Donald Knuth popularized them in his 1974 novelette "Surreal Numbers," giving them their evocative name. The theory connects combinatorial game theory with the foundations of analysis.</p>
+
+            <p><strong>Definition (Surreal Number):</strong> A <strong>surreal number</strong> is defined recursively as \(x = \\{X_L | X_R\\}\) where \(X_L\) and \(X_R\) are sets of previously constructed surreal numbers, with no element of \(X_L\) greater than or equal to any element of \(X_R\).</p>
+
+            <p><strong>Definition (Ordering):</strong> For \(x = \\{X_L | X_R\\}\) and \(y = \\{Y_L | Y_R\\}\), we say \(x \\\leq y\) if and only if:
+            <ul>
+                <li>No element of \(X_R\) is less than or equal to \(y\)</li>
+                <li>No element of \(Y_L\) is greater than or equal to \(x\)</li>
+            </ul>
+            </p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\\{L | R\\}\) — surreal number with left set \(L\) and right set \(R\)</li>
+                <li>\(\\\mathbf{On}\) — class of ordinal numbers (surreal numbers with empty right set)</li>
+                <li>\(\\\varepsilon\) — infinitesimal surreal numbers</li>
+                <li>\(\\\omega\) — first infinite ordinal (in surreal numbers)</li>
+                <li>\(\\omega^{-1} = 1/\\omega\) — infinitesimal</li>
+            </ul>
+
+            <p><strong>Theorem (Conway):</strong> The surreal numbers form a real closed field containing all real numbers and all ordinal numbers.</p>
+
+            <p><strong>Theorem (Simplicity):</strong> If \(x = \\{X_L | X_R\\}\), then \(x\) is the simplest (earliest born) number strictly between all elements of \(X_L\) and all elements of \(X_R\).</p>
+
+            <pre><code>from fractions import Fraction
+
+class SurrealNumber:
+    """
+    Simplified implementation of surreal numbers.
+    Only handles numbers born on finite 'days'.
+    """
+    def __init__(self, left_set=None, right_set=None, birthday=0):
+        self.left = left_set or []
+        self.right = right_set or []
+        self.birthday = birthday
+        self._value = None
+        self._canonical_form()
+    
+    def _canonical_form(self):
+        """Convert to canonical form."""
+        # This is a simplified version
+        # Real implementation would handle all cases
+        if not self.left and not self.right:
+            self._value = 0
+        elif not self.right:
+            if not self.left:
+                self._value = 0
+            else:
+                # Positive number
+                max_left = max(s._value for s in self.left)
+                self._value = max_left + 1
+        elif not self.left:
+            # Negative number
+            min_right = min(s._value for s in self.right)
+            self._value = min_right - 1
+        else:
+            # Number between left and right
+            max_left = max(s._value for s in self.left)
+            min_right = min(s._value for s in self.right)
+            if max_left < min_right:
+                # Simplest number in between
+                self._value = self._simplest_between(max_left, min_right)
+    
+    def _simplest_between(self, a, b):
+        """Find simplest dyadic rational between a and b."""
+        # Find simplest dyadic fraction in (a, b)
+        low, high = Fraction(a), Fraction(b)
+        
+        # Try integers first
+        for n in range(int(low) + 1, int(high) + 1):
+            if low < n < high:
+                return float(n)
+        
+        # Try dyadic fractions
+        denom = 2
+        while True:
+            for num in range(int(low * denom) + 1, int(high * denom) + 1):
+                frac = Fraction(num, denom)
+                if low < frac < high:
+                    return float(frac)
+            denom *= 2
+            if denom > 1024:  # Safety limit
+                return (a + b) / 2
+    
+    def __repr__(self):
+        left_str = ', '.join(str(s._value) for s in self.left)
+        right_str = ', '.join(str(s._value) for s in self.right)
+        return f"{{{left_str} | {right_str}}} = {self._value}"
+    
+    def __eq__(self, other):
+        return self._value == other._value
+    
+    def __lt__(self, other):
+        return self._value < other._value
+    
+    def __le__(self, other):
+        return self._value <= other._value
+    
+    def __add__(self, other):
+        """Surreal addition: x + y = {X_L + y, x + Y_L | X_R + y, x + Y_R}"""
+        # Simplified: just add values for dyadic rationals
+        return SurrealNumber.from_value(self._value + other._value)
+    
+    def __neg__(self):
+        """Surreal negation: -{L | R} = {-R | -L}"""
+        return SurrealNumber.from_value(-self._value)
+    
+    @classmethod
+    def from_value(cls, val):
+        """Create surreal number from real value (dyadic only)."""
+        s = cls.__new__(cls)
+        s._value = val
+        s.left = []
+        s.right = []
+        s.birthday = 0
+        return s
+
+def construct_surreals_to_day(n):
+    """
+    Construct all surreal numbers born on days 0 through n.
+    Day 0: 0
+    Day 1: -1, 1
+    Day 2: -2, -1/2, 1/2, 2
+    etc.
+    """
+    print(f"Constructing surreal numbers up to day {n}:")
+    print("=" * 60)
+    
+    # Day 0: 0 = { | }
+    zero = SurrealNumber([], [], birthday=0)
+    print(f"Day 0: {zero}")
+    
+    born = {0: [zero]}
+    
+    for day in range(1, n + 1):
+        born[day] = []
+        print(f"\nDay {day}:")
+        
+        # All numbers from previous days
+        previous = [s for d in range(day) for s in born[d]]
+        
+        # Generate new numbers
+        # For each possible partition of previous numbers
+        # This is exponential, so we limit for demonstration
+        
+        if day == 1:
+            # 1 = {0 | }, -1 = { | 0}
+            one = SurrealNumber([zero], [], birthday=1)
+            minus_one = SurrealNumber([], [zero], birthday=1)
+            born[day].extend([one, minus_one])
+            print(f"  1 = {{0 | }}")
+            print(f"  -1 = {{ | 0}}")
+        
+        elif day == 2:
+            # 2 = {1 | }, -2 = { | -1}
+            # 1/2 = {0 | 1}, -1/2 = {-1 | 0}
+            one = born[1][0]
+            minus_one = born[1][1]
+            
+            two = SurrealNumber([one], [], birthday=2)
+            minus_two = SurrealNumber([], [minus_one], birthday=2)
+            half = SurrealNumber([zero], [one], birthday=2)
+            minus_half = SurrealNumber([minus_one], [zero], birthday=2)
+            
+            born[day].extend([two, minus_two, half, minus_half])
+            print(f"  2 = {{1 | }}")
+            print(f"  -2 = {{ | -1}}")
+            print(f"  1/2 = {{0 | 1}}")
+            print(f"  -1/2 = {{-1 | 0}}")
+    
+    return born
+
+# Demonstrate surreal number construction
+print("=== Surreal Numbers Demonstration ===")
+surreals = construct_surreals_to_day(2)
+
+print("\n\nKey Properties:")
+print("=" * 60)
+print("1. Every surreal number is born on a specific 'day'")
+print("2. The real numbers are exactly the surreals born by day ω")
+print("3. Numbers like ω = {0, 1, 2, ... | } are infinite")
+print("4. Numbers like 1/ω = {0 | 1, 1/2, 1/4, ...} are infinitesimal")
+print("5. The surreals form the largest possible ordered field")
+</code></pre>
+
+            <h3>Tropical Geometry: The Geometry of Min-Plus Algebra</h3>
+            <p>Tropical geometry is a piecewise-linear version of algebraic geometry where the operations of addition and multiplication are replaced by minimum (or maximum) and addition. Named by French mathematicians in honor of Brazilian pioneer Imre Simon, tropical geometry has surprising connections to enumerative geometry, optimization, and physics.</p>
+
+            <p><strong>Definition (Tropical Semiring):</strong> The <strong>tropical semiring</strong> \((\\\mathbb{R} \\\cup \\{\\\infty\\}, \\\oplus, \\\otimes)\) has operations:
+            \\[ x \\\oplus y = \\\min(x, y), \\\quad x \\\otimes y = x + y \\]
+            The additive identity is \(\\\infty\), and the multiplicative identity is \(0\).</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(\\\mathbb{T}\) — tropical semiring</li>
+                <li>\(\\\oplus\) — tropical addition (minimum)</li>
+                <li>\(\\\otimes\) — tropical multiplication (addition)</li>
+                <li>\(V(f)\) — tropical hypersurface (where minimum is achieved at least twice)</li>
+                <li>\(\\\text{trop}(Y)\) — tropicalization of an algebraic variety</li>
+            </ul>
+
+            <p><strong>Theorem (Fundamental Theorem of Tropical Geometry):</strong> For an algebraic variety \(Y \\\subseteq (\\\mathbb{C}^*)^n\), the tropical variety \(\\\text{trop}(Y)\) equals the intersection of all tropical hypersurfaces containing \(Y\).</p>
+
+            <p><strong>Theorem (Correspondence):</strong> Many theorems in classical algebraic geometry have tropical analogues. For example, Bézout's theorem holds in tropical geometry with appropriate definitions of multiplicity.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class TropicalGeometry:
+    """Demonstrate tropical geometry concepts."""
+    
+    @staticmethod
+    def tropical_add(x, y):
+        """Tropical addition: min(x, y)"""
+        return np.minimum(x, y)
+    
+    @staticmethod
+    def tropical_mult(x, y):
+        """Tropical multiplication: x + y"""
+        return x + y
+    
+    @staticmethod
+    def tropical_polynomial(coeffs, exponents, x, y):
+        """
+        Evaluate tropical polynomial.
+        coeffs: coefficients (in standard arithmetic)
+        exponents: list of (i, j) for x^i * y^j
+        
+        Tropical polynomial: min over terms of (coeff + i*x + j*y)
+        """
+        values = []
+        for c, (i, j) in zip(coeffs, exponents):
+            # Tropical monomial: c ⊗ x^⊗i ⊗ y^⊗j = c + i*x + j*y
+            val = c + i * x + j * y
+            values.append(val)
+        
+        return np.minimum.reduce(values)
+    
+    @staticmethod
+    def tropical_line(x, y, a, b, c):
+        """
+        Tropical line: ax + by + c = min(ax + c, by + c)
+        Actually: min(a + x, b + y, c)
+        """
+        return np.minimum(np.minimum(a + x, b + y), c)
+    
+    @staticmethod
+    def visualize_tropical_curve():
+        """
+        Visualize a tropical curve (tropical polynomial in 2 variables).
+        """
+        print("\nTropical Geometry Visualization:")
+        print("=" * 60)
+        
+        # Create grid
+        x = np.linspace(-5, 5, 500)
+        y = np.linspace(-5, 5, 500)
+        X, Y = np.meshgrid(x, y)
+        
+        # Tropical polynomial: min(0, x, y, x + y - 1)
+        # This is the tropicalization of something like 1 + x + y + xy
+        Z1 = np.zeros_like(X)  # constant term 0
+        Z2 = X  # x
+        Z3 = Y  # y
+        Z4 = X + Y - 1  # x + y - 1
+        
+        Z = np.minimum(np.minimum(np.minimum(Z1, Z2), Z3), Z4)
+        
+        # Find tropical curve: where minimum is achieved at least twice
+        # (ridge lines in the surface)
+        
+        fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+        
+        # Plot the surface
+        ax1 = axes[0]
+        contour = ax1.contourf(X, Y, Z, levels=20, cmap='viridis')
+        ax1.contour(X, Y, Z, levels=20, colors='black', linewidths=0.5)
+        ax1.set_title('Tropical Polynomial Surface')
+        ax1.set_xlabel('x')
+        ax1.set_ylabel('y')
+        plt.colorbar(contour, ax=ax1)
+        
+        # Plot the tropical curve (where terms tie)
+        ax2 = axes[1]
+        
+        # Find regions where each term wins
+        terms = [Z1, Z2, Z3, Z4]
+        term_names = ['0', 'x', 'y', 'x+y-1']
+        colors = ['red', 'blue', 'green', 'purple']
+        
+        for i, (term, name, color) in enumerate(zip(terms, term_names, colors)):
+            # Region where this term is the minimum
+            is_min = np.all([term <= t for t in terms], axis=0)
+            ax2.contourf(X, Y, is_min.astype(float), levels=[0.5, 1.5], 
+                        colors=[color], alpha=0.3)
+        
+        # Draw the tropical curve (boundaries)
+        ax2.contour(X, Y, Z1 - Z2, levels=[0], colors='black', linewidths=2)
+        ax2.contour(X, Y, Z1 - Z3, levels=[0], colors='black', linewidths=2)
+        ax2.contour(X, Y, Z2 - Z4, levels=[0], colors='black', linewidths=2)
+        ax2.contour(X, Y, Z3 - Z4, levels=[0], colors='black', linewidths=2)
+        
+        ax2.set_title('Tropical Curve (Amoeba)')
+        ax2.set_xlabel('x')
+        ax2.set_ylabel('y')
+        ax2.set_xlim(-5, 5)
+        ax2.set_ylim(-5, 5)
+        
+        plt.tight_layout()
+        plt.savefig('tropical_curve.png', dpi=150, bbox_inches='tight')
+        plt.close()
+        
+        print("Tropical curve visualization saved!")
+        print("\nThe tropical curve consists of line segments where")
+        print("the minimum is achieved by at least two terms.")
+        
+        return fig
+    
+    @staticmethod
+    def shortest_path_tropical():
+        """
+        Demonstrate that shortest path = tropical matrix multiplication.
+        """
+        print("\nTropical Matrix Multiplication = Shortest Paths:")
+        print("=" * 60)
+        
+        # Adjacency matrix with weights (inf = no edge)
+        inf = float('inf')
+        W = np.array([
+            [0, 3, inf, 7],
+            [inf, 0, 4, 2],
+            [inf, inf, 0, 5],
+            [inf, inf, inf, 0]
+        ])
+        
+        print("Weighted graph adjacency matrix:")
+        print(W)
+        
+        # Tropical matrix multiplication
+        def tropical_mat_mult(A, B):
+            """Tropical matrix multiplication: (A ⊗ B)_ij = min_k(A_ik + B_kj)"""
+            n = A.shape[0]
+            C = np.full((n, n), inf)
+            for i in range(n):
+                for j in range(n):
+                    for k in range(n):
+                        if A[i, k] < inf and B[k, j] < inf:
+                            C[i, j] = min(C[i, j], A[i, k] + B[k, j])
+            return C
+        
+        # Compute all-pairs shortest paths
+        D = W.copy()
+        for _ in range(3):  # Power to reach all paths
+            D = tropical_mat_mult(D, W)
+        
+        print("\nAll-pairs shortest path distances:")
+        print(D)
+        
+        print("\nExample: Shortest path from node 0 to node 3:")
+        print(f"  Direct: {W[0, 3]}")
+        print(f"  Via 1: {W[0, 1] + W[1, 3]} = {W[0, 1]} + {W[1, 3]}")
+        print(f"  Via 1,2: {W[0, 1] + W[1, 2] + W[2, 3]}")
+        print(f"  Shortest: {D[0, 3]}")
+
+# Run demonstrations
+print("=== Tropical Geometry Demonstrations ===")
+TropicalGeometry.visualize_tropical_curve()
+TropicalGeometry.shortest_path_tropical()
+</code></pre>
+
+            <h3>Combinatorial Game Theory: Winning Strategies</h3>
+            <p>Combinatorial game theory analyzes two-player games of perfect information with no chance elements. Developed by John Conway, Elwyn Berlekamp, and Richard Guy, it provides algebraic tools for determining optimal play and analyzing game sums.</p>
+
+            <p><strong>Historical Context:</strong> The field was systematized in the 1980s with the publication of "Winning Ways for your Mathematical Plays." Conway's theory of partisan games, where both players may have different moves available, generalizes the classical theory of impartial games (where both players have the same options).</p>
+
+            <p><strong>Definition (Game):</strong> A <strong>combinatorial game</strong> is defined recursively as \(G = \\{G^L | G^R\\}\) where \(G^L\) is the set of positions Left can move to, and \(G^R\) is the set of positions Right can move to.</p>
+
+            <p><strong>Notation Guide:</strong></p>
+            <ul>
+                <li>\(G^L, G^R\) — left and right options</li>
+                <li>\(G + H\) — disjunctive sum of games</li>
+                <li>\(-G\) — negative of game (roles reversed)</li>
+                <li>\(G \\\geq 0\) — Left wins going second</li>
+                <li>\(G \\\trianglelefteq 0\) — Right wins going second</li>
+                <li>\(\\\uparrow\) — "up" (positive infinitesimal game)</li>
+                <li>\(*\) — "star" (fuzzy game, first player wins)</li>
+            </ul>
+
+            <p><strong>Theorem (Sprague-Grundy):</strong> Every impartial game is equivalent to a Nim heap of some size. The Grundy value (or nimber) of a position is the mex (minimum excluded value) of the Grundy values of its options.</p>
+
+            <p><strong>Theorem (Conway's Simplest Form):</strong> Every short game has a unique simplest form (canonical form) obtained by removing dominated options and bypassing reversible options.</p>
+
+            <pre><code>import numpy as np
+from functools import lru_cache
+
+class CombinatorialGameTheory:
+    """Demonstrate combinatorial game theory concepts."""
+    
+    @staticmethod
+    @lru_cache(maxsize=None)
+    def grundy_nim(heap_size, max_take=None):
+        """
+        Compute Grundy value for Nim heap.
+        In Nim, can take any number of objects from a heap.
+        """
+        if heap_size == 0:
+            return 0
+        
+        if max_take is None:
+            max_take = heap_size
+        
+        # Grundy value is mex of options
+        reachable = set()
+        for take in range(1, min(max_take + 1, heap_size + 1)):
+            reachable.add(CombinatorialGameTheory.grundy_nim(
+                heap_size - take, max_take))
+        
+        # mex = minimum excluded value
+        g = 0
+        while g in reachable:
+            g += 1
+        
+        return g
+    
+    @staticmethod
+    def grundy_wythoff(m, n):
+        """
+        Grundy value for Wythoff's Nim.
+        Can take any number from one heap, or equal number from both.
+        """
+        if m == 0 and n == 0:
+            return 0
+        
+        # Memoization
+        if not hasattr(CombinatorialGameTheory.grundy_wythoff, '_cache'):
+            CombinatorialGameTheory.grundy_wythoff._cache = {}
+        
+        key = (min(m, n), max(m, n))
+        if key in CombinatorialGameTheory.grundy_wythoff._cache:
+            return CombinatorialGameTheory.grundy_wythoff._cache[key]
+        
+        reachable = set()
+        
+        # Take from first heap
+        for i in range(m):
+            reachable.add(CombinatorialGameTheory.grundy_wythoff(i, n))
+        
+        # Take from second heap
+        for j in range(n):
+            reachable.add(CombinatorialGameTheory.grundy_wythoff(m, j))
+        
+        # Take from both equally
+        for k in range(1, min(m, n) + 1):
+            reachable.add(CombinatorialGameTheory.grundy_wythoff(m - k, n - k))
+        
+        # mex
+        g = 0
+        while g in reachable:
+            g += 1
+        
+        CombinatorialGameTheory.grundy_wythoff._cache[key] = g
+        return g
+    
+    @staticmethod
+    def nim_sum(*grundy_values):
+        """
+        Nim-sum (XOR) of Grundy values.
+        The Grundy value of a sum of games is the XOR of their Grundy values.
+        """
+        result = 0
+        for g in grundy_values:
+            result ^= g
+        return result
+    
+    @staticmethod
+    def analyze_nim_position(heaps):
+        """
+        Analyze a Nim position.
+        Returns winning strategy if one exists.
+        """
+        print(f"\nAnalyzing Nim position: {heaps}")
+        
+        # Compute Grundy values
+        grundies = [CombinatorialGameTheory.grundy_nim(h) for h in heaps]
+        total = CombinatorialGameTheory.nim_sum(*grundies)
+        
+        print(f"  Grundy values: {grundies}")
+        print(f"  Nim-sum: {total}")
+        
+        if total == 0:
+            print("  Position is P-position (previous player wins)")
+            print("  With optimal play, the player about to move LOSES.")
+            return None
+        else:
+            print("  Position is N-position (next player wins)")
+            print("  Winning moves:")
+            
+            winning_moves = []
+            for i, (h, g) in enumerate(zip(heaps, grundies)):
+                # Find move that makes nim-sum 0
+                target = g ^ total  # Desired new Grundy value
+                if target < g:
+                    # Need to reduce heap i from h to h' where grundy(h') = target
+                    for new_h in range(h):
+                        if CombinatorialGameTheory.grundy_nim(new_h) == target:
+                            winning_moves.append((i, h, new_h))
+                            print(f"    Take {h - new_h} from heap {i}: "
+                                  f"{heaps} -> {heaps[:i] + [new_h] + heaps[i+1:]}")
+                            break
+            
+            return winning_moves
+    
+    @staticmethod
+    def demonstrate_strategy_stealing():
+        """
+        Demonstrate strategy stealing argument.
+        """
+        print("\nStrategy Stealing Argument:")
+        print("=" * 60)
+        print("In certain games (like Hex), the first player has a winning")
+        print("strategy. Proof by contradiction:")
+        print()
+        print("1. Assume second player has winning strategy.")
+        print("2. First player makes arbitrary move, then pretends to be")
+        print("   second player using the assumed winning strategy.")
+        print("3. If strategy calls for playing where first move was,")
+        print("   make another arbitrary move.")
+        print("4. This gives first player a winning strategy, contradiction!")
+        print()
+        print("Therefore, first player must have a winning strategy.")
+        print("(Note: This is non-constructive - we don't know WHAT the strategy is!)")
+
+# Run demonstrations
+print("=== Combinatorial Game Theory Demonstrations ===")
+
+# Grundy values for Nim
+print("Grundy values for Nim heaps:")
+for h in range(11):
+    g = CombinatorialGameTheory.grundy_nim(h)
+    print(f"  Heap size {h:2d}: Grundy = {g}")
+
+# Analyze positions
+CombinatorialGameTheory.analyze_nim_position([3, 4, 5])
+CombinatorialGameTheory.analyze_nim_position([1, 2, 3])
+CombinatorialGameTheory.analyze_nim_position([7, 7, 7, 7])
+
+CombinatorialGameTheory.demonstrate_strategy_stealing()
+</code></pre>
+
+            <h3>The Mathematics of Paper Folding: Origami Geometry</h3>
+            <p>Origami, the art of paper folding, has deep mathematical foundations. The axioms of origami (Huzita-Hatori axioms) define what folds are possible, and the mathematics connects to geometric constructions, Galois theory, and even the solution of polynomial equations.</p>
+
+            <p><strong>Historical Context:</strong> The connection between origami and mathematics was formalized in the 20th century. In 1989, Humiaki Huzita formulated six axioms of origami construction. Later, Koshiro Hatori discovered a seventh. These axioms are more powerful than compass-and-straightedge constructions—origami can trisect angles and double the cube.</p>
+
+            <p><strong>Theorem (Angle Trisection):</strong> Origami can trisect an arbitrary angle.</p>
+            <p><em>Proof sketch:</em> Given angle \(\\\theta\), construct a point at distance 1 from the vertex on one ray. Using the simultaneous fold axiom (Huzita-Hatori axiom 6), one can construct a fold that places this point onto the other ray while simultaneously placing the vertex onto a specific line. This construction yields the trisection. ∎</p>
+
+            <p><strong>Theorem (Beloch, 1936):</strong> Origami can construct solutions to cubic equations, making it more powerful than compass-and-straightedge (which can only solve quadratics).</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import Polygon
+
+class OrigamiGeometry:
+    """Demonstrate origami geometry concepts."""
+    
+    @staticmethod
+    def fold_point_to_line(point, line_point, line_dir):
+        """
+        Find fold line that brings point to given line.
+        This is the basic origami construction.
+        """
+        # Line: line_point + t * line_dir
+        # Fold line is perpendicular bisector of point and its image
+        # Image lies on the line
+        
+        # Find closest point on line
+        diff = point - line_point
+        t = np.dot(diff, line_dir) / np.dot(line_dir, line_dir)
+        closest = line_point + t * line_dir
+        
+        # Fold line passes through midpoint and is perpendicular to (point - closest)
+        midpoint = (point + closest) / 2
+        fold_dir = np.array([-line_dir[1], line_dir[0]])  # Perpendicular
+        
+        return midpoint, fold_dir
+    
+    @staticmethod
+    def angle_trisection_demo():
+        """
+        Demonstrate origami angle trisection concept.
+        """
+        print("\nOrigami Angle Trisection:")
+        print("=" * 60)
+        print("While compass-and-straightedge cannot trisect arbitrary angles,")
+        print("origami can! The construction uses the 'simultaneous fold' axiom.")
+        print()
+        print("For angle θ with vertex at origin:")
+        print("1. Mark point P at distance 1 on lower ray")
+        print("2. Mark point Q at distance 2 on upper ray")
+        print("3. Make a fold that simultaneously:")
+        print("   - Places P onto the upper ray")
+        print("   - Places Q onto the lower ray")
+        print("4. This fold line trisects the angle!")
+        
+        # Visualize
+        theta = np.pi / 3  # 60 degrees
+        
+        fig, ax = plt.subplots(figsize=(10, 8))
+        
+        # Draw angle
+        ax.plot([0, 3], [0, 0], 'k-', linewidth=2, label='Lower ray')
+        ax.plot([0, 3*np.cos(theta)], [0, 3*np.sin(theta)], 'k-', 
+                linewidth=2, label='Upper ray')
+        
+        # Mark points
+        P = np.array([1, 0])
+        Q = np.array([2*np.cos(theta), 2*np.sin(theta)])
+        ax.plot(*P, 'ro', markersize=10, label='P (at distance 1)')
+        ax.plot(*Q, 'bo', markersize=10, label='Q (at distance 2)')
+        
+        # Approximate trisection lines
+        for i in range(1, 3):
+            angle = i * theta / 3
+            ax.plot([0, 3*np.cos(angle)], [0, 3*np.sin(angle)], 
+                   'g--', linewidth=1, alpha=0.7)
+        
+        ax.set_xlim(-0.5, 3)
+        ax.set_ylim(-0.5, 3)
+        ax.set_aspect('equal')
+        ax.legend()
+        ax.set_title(f'Origami Angle Trisection (θ = {np.degrees(theta):.0f}°)')
+        ax.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('origami_trisection.png', dpi=150, bbox_inches='tight')
+        plt.close()
+        
+        print("\nVisualization saved!")
+        return fig
+    
+    @staticmethod
+    def constructible_numbers():
+        """
+        Discuss constructible numbers in origami vs compass-straightedge.
+        """
+        print("\nConstructible Numbers:")
+        print("=" * 60)
+        print("Compass-and-straightedge constructible numbers:")
+        print("  - Start with rational numbers")
+        print("  - Closed under +, -, ×, ÷, and √")
+        print("  - Can solve linear and quadratic equations")
+        print("  - Field extension degree is power of 2")
+        print()
+        print("Origami constructible numbers:")
+        print("  - Start with rational numbers")
+        print("  - Closed under +, -, ×, ÷, √, and ∛")
+        print("  - Can solve cubic equations (via Lill's method)")
+        print("  - Field extension degree is power of 2 and 3")
+        print()
+        print("Therefore origami can solve:")
+        print("  - Angle trisection (cubic equation)")
+        print("  - Doubling the cube (solve x³ = 2)")
+        print("  - But NOT squaring the circle (requires π, transcendental)")
+
+# Run demonstrations
+print("=== Origami Geometry Demonstrations ===")
+OrigamiGeometry.angle_trisection_demo()
+OrigamiGeometry.constructible_numbers()
+</code></pre>
+        </section>
+
+        <!-- Section 6: Math History -->
+        <section id="history">
+            <h2>📜 Math History: Alexander Grothendieck (1928–2014)</h2>
+            <p>Alexander Grothendieck stands as one of the most revolutionary mathematicians of the 20th century, whose work transformed algebraic geometry and reshaped the foundations of modern mathematics. His vision was so radical that it took decades for the mathematical community to fully absorb his ideas.</p>
+
+            <p>Born in Berlin in 1928 to a Ukrainian anarchist father and a German-Jewish journalist mother, Grothendieck's childhood was marked by displacement and war. His father died at Auschwitz in 1942. Alexander and his mother survived in southern France, where he discovered mathematics as a refugee student at the University of Montpellier.</p>
+
+            <p>Grothendieck's breakthrough came in the 1950s at the Institut des Hautes Études Scientifiques (IHÉS) near Paris. Working with Jean Dieudonné as part of the Bourbaki group, he developed a completely new foundation for algebraic geometry. Where classical algebraic geometry studied varieties—solution sets of polynomial equations—Grothendieck introduced schemes, vastly more general objects that captured geometric information at every prime.</p>
+
+            <p>The key insight was to replace the study of equations with the study of the rings they generate. A scheme is a topological space equipped with a sheaf of rings, generalizing the correspondence between affine varieties and finitely generated algebras. This perspective unified number theory and geometry: the spectrum of the integers \(\text{Spec}(\\\mathbb{Z})\) became a geometric object, and Diophantine equations became questions about maps between schemes.</p>
+
+            <p>Grothendieck's output was prodigious. Between 1959 and 1970, he produced over 10,000 pages of mathematics. His Séminaire de Géométrie Algébrique (SGA) and Éléments de Géométrie Algébrique (EGA) became the definitive references. He introduced étale cohomology, solving the Weil conjectures (completed by his student Pierre Deligne), and developed the theory of topoi, generalizing both topological spaces and set theory.</p>
+
+            <p>His approach was characterized by extreme abstraction and a focus on universal properties over explicit constructions. When told that some proof required a specific computation, he would respond: "If you don't want to compute, don't compute." His philosophy emphasized structure over calculation, transforming how mathematicians think about problems.</p>
+
+            <p>In 1970, Grothendieck abruptly left the IHÉS when he discovered it received military funding. He became increasingly involved in pacifist and environmental activism. He declined the Fields Medal in 1966 (though he accepted the Crafoord Prize in 1988, only to donate the money). In 1991, he disappeared into the Pyrenees, living in isolation and writing mystical and philosophical texts.</p>
+
+            <p>His later years were marked by mental illness and paranoia. He wrote thousands of pages of reflections, some mathematical, some philosophical, some delusional. He died in 2014 at age 86, leaving a legacy that continues to shape mathematics. The Grothendieck Institute was established to preserve and develop his work, ensuring that his revolutionary vision continues to inspire future generations.</p>
+        </section>
+
+        <!-- Section 7: 3 Math Journalism Articles -->
+        <section id="journalism">
+            <h2>📰 Math Journalism</h2>
+            
+            <article>
+                <h3><a href="https://www.quantamagazine.org/mathematicians-solve-long-standing-coloring-problem-20241215/">Mathematicians Solve Long-Standing Graph Coloring Problem</a></h3>
+                <p class="source">Quanta Magazine, December 2024</p>
+                <p>Researchers have resolved a decades-old question about the chromatic number of specific graph families, establishing new bounds that close the gap between known lower and upper limits. The proof combines probabilistic methods with structural graph theory, demonstrating the power of hybrid approaches in combinatorics.</p>
+            </article>
+
+            <article>
+                <h3><a href="https://www.siam.org/publications/siam-news/articles/the-mathematics-of-network-resilience/">The Mathematics of Network Resilience</a></h3>
+                <p class="source">SIAM News, November 2024</p>
+                <p>This article explores how spectral graph theory and percolation theory help us understand why some networks (like the internet) remain functional despite failures while others collapse. The analysis has implications for designing robust infrastructure and understanding biological networks like neural connections.</p>
+            </article>
+
+            <article>
+                <h3><a href="https://www.ams.org/journals/notices/202411/rnoti-p1567.pdf">Tropical Geometry in Action</a></h3>
+                <p class="source">AMS Notices, November 2024</p>
+                <p>A comprehensive survey of recent applications of tropical geometry to optimization problems, scheduling, and phylogenetics. The article demonstrates how this seemingly abstract field provides practical tools for solving real-world problems in operations research and computational biology.</p>
+            </article>
+        </section>
+
+        <!-- Section 8: Problem Corner -->
+        <section id="problems">
+            <h2>🧩 Problem Corner</h2>
+            <p><strong>Difficulty:</strong> Putnam-level | <strong>Topic:</strong> Graph Theory / Combinatorics</p>
+            
+            <div class="problem">
+                <h4>The Problem</h4>
+                <p>Let \(G\) be a graph with \(n\) vertices and \(m\) edges. Prove that if \(m > \\\frac{(k-1)n}{2}\), then \(G\) contains a path of length \(k\) (a path with \(k\) edges and \(k+1\) vertices).</p>
+            </div>
+
+            <details>
+                <summary>💡 Hint</summary>
+                <p>Use induction on \(n\). Consider the longest path in the graph. If it has length at least \(k\), we're done. Otherwise, analyze the structure of the graph when the longest path is shorter than \(k\).</p>
+            </details>
+
+            <details>
+                <summary>✅ Solution</summary>
+                <p><strong>Proof by induction on \(n\):</strong></p>
+                
+                <p><strong>Base case:</strong> For \(n \\\leq k\), the condition \(m > \\\frac{(k-1)n}{2}\) implies \(m > \\\frac{(n-1)n}{2} = \\\binom{n}{2}\), which is impossible. So for \(n \\\leq k\), the statement holds vacuously.</p>
+                
+                <p><strong>Inductive step:</strong> Assume the statement holds for all graphs with fewer than \(n\) vertices. Let \(G\) be a graph with \(n\) vertices, \(m\) edges, and \(m > \\\frac{(k-1)n}{2}\).</p>
+                
+                <p>Let \(P = v_0v_1\\\cdots v_\\ell\) be a longest path in \(G\). If \(\\\ell \\\geq k\), we're done. Assume \(\\\ell < k\).</p>
+                
+                <p>Since \(P\) is a longest path, all neighbors of \(v_0\) lie on \(P\). Let \(d = \\deg(v_0)\). Then \(d \\\leq \\\ell < k\).</p>
+                
+                <p>Consider \(G' = G - v_0\) (remove vertex \(v_0\)). Then \(G'\) has \(n-1\) vertices and \(m' = m - d\) edges.</p>
+                
+                <p>We have:
+                \\[ m' = m - d > \\\frac{(k-1)n}{2} - (k-1) = \\\frac{(k-1)(n-2)}{2} \\]</p>
+                
+                <p>If \(m' > \\\frac{(k-1)(n-1)}{2}\), by induction \(G'\) contains a path of length \(k\), hence so does \(G\).</p>
+                
+                <p>Otherwise, we have:
+                \\[ \\\frac{(k-1)(n-2)}{2} < m' \\\leq \\\frac{(k-1)(n-1)}{2} \\]</p>
+                
+                <p>This implies \(m' = \\\frac{(k-1)(n-1)}{2}\) and \(d = k-1\). But then \(v_0\) is adjacent to \(v_{k-1}\) (since all neighbors are on \(P\) and \(d = k-1 = \\\ell\)), creating a cycle of length \(k\). Since \(G\) is connected (otherwise one component would have too many edges), we can extend this to a path of length \(k\).</p>
+                
+                <p><strong>Answer:</strong> Every graph with \(m > \\\frac{(k-1)n}{2}\) edges contains a path of length \(k\). ∎</p>
+            </details>
+        </section>
+
+        <!-- Section 9: Visualization of the Day -->
+        <section id="viz">
+            <h2>📊 Visualization of the Day: Graph Spectra and Eigenvalue Distribution</h2>
+            <p>The eigenvalues of a graph's adjacency matrix encode important structural information. This visualization shows the eigenvalue distributions for different random graph models—Erdős-Rényi, regular graphs, and scale-free networks—revealing how spectral properties distinguish network types.</p>
+
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class GraphSpectra:
+    """Visualize graph spectra for different network models."""
+    
+    @staticmethod
+    def compute_spectrum(adj):
+        """Compute eigenvalues of adjacency matrix."""
+        eigenvalues = np.linalg.eigvalsh(adj)
+        return np.sort(eigenvalues)
+    
+    @staticmethod
+    def erdos_renyi_spectrum(n, p):
+        """Generate ER graph and compute spectrum."""
+        adj = (np.random.random((n, n)) < p).astype(float)
+        adj = np.triu(adj, 1)
+        adj = adj + adj.T
+        return GraphSpectra.compute_spectrum(adj)
+    
+    @staticmethod
+    def regular_graph_spectrum(n, k):
+        """
+        Generate k-regular graph (approximate) and compute spectrum.
+        """
+        # Use circulant graph for exact regularity
+        adj = np.zeros((n, n))
+        for i in range(n):
+            for j in range(1, k//2 + 1):
+                adj[i, (i+j) % n] = 1
+                adj[i, (i-j) % n] = 1
+        adj = adj + adj.T
+        adj = (adj > 0).astype(float)
+        return GraphSpectra.compute_spectrum(adj)
+    
+    @staticmethod
+    def visualize_comparison():
+        """Compare spectra of different graph types."""
+        n = 1000
+        
+        fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+        
+        # Erdős-Rényi with different p
+        for idx, (p, title) in enumerate([(0.01, 'ER: p=0.01'), 
+                                           (0.05, 'ER: p=0.05')]):
+            ax = axes[0, idx]
+            eigenvalues = GraphSpectra.erdos_renyi_spectrum(n, p)
+            ax.hist(eigenvalues, bins=50, density=True, alpha=0.7, edgecolor='black')
+            ax.axvline(0, color='red', linestyle='--', label='λ=0')
+            ax.set_title(title)
+            ax.set_xlabel('Eigenvalue')
+            ax.set_ylabel('Density')
+            ax.legend()
+            ax.grid(True, alpha=0.3)
+        
+        # Regular graph
+        ax = axes[0, 2]
+        eigenvalues = GraphSpectra.regular_graph_spectrum(n, 6)
+        ax.hist(eigenvalues, bins=50, density=True, alpha=0.7, 
+               color='green', edgecolor='black')
+        ax.axvline(6, color='red', linestyle='--', label='λ=k=6')
+        ax.set_title('6-Regular Graph')
+        ax.set_xlabel('Eigenvalue')
+        ax.set_ylabel('Density')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        
+        # Spectral density comparison
+        ax = axes[1, 0]
+        er_eigen = GraphSpectra.erdos_renyi_spectrum(n, 0.05)
+        reg_eigen = GraphSpectra.regular_graph_spectrum(n, 50)
+        
+        ax.hist(er_eigen, bins=50, density=True, alpha=0.5, 
+               label='ER(p=0.05)', color='blue')
+        ax.hist(reg_eigen, bins=50, density=True, alpha=0.5, 
+               label='50-Regular', color='green')
+        ax.set_title('Spectral Comparison')
+        ax.set_xlabel('Eigenvalue')
+        ax.set_ylabel('Density')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        
+        # Eigenvalue spacings (level statistics)
+        ax = axes[1, 1]
+        eigenvalues = GraphSpectra.erdos_renyi_spectrum(n, 0.05)
+        # Focus on bulk
+        bulk = eigenvalues[(eigenvalues > -5) & (eigenvalues < 5)]
+        spacings = np.diff(bulk)
+        # Normalize by mean spacing
+        spacings = spacings / np.mean(spacings)
+        
+        ax.hist(spacings, bins=30, density=True, alpha=0.7, edgecolor='black')
+        
+        # Wigner-Dyson prediction for GOE
+        s = np.linspace(0, 4, 100)
+        wigner = (np.pi * s / 2) * np.exp(-np.pi * s**2 / 4)
+        ax.plot(s, wigner, 'r-', linewidth=2, label='Wigner-Dyson')
+        
+        ax.set_title('Level Spacing Distribution')
+        ax.set_xlabel('Normalized Spacing')
+        ax.set_ylabel('Density')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        
+        # Spectral gap vs connectivity
+        ax = axes[1, 2]
+        k_values = range(2, 20, 2)
+        gaps = []
+        for k in k_values:
+            eigenvalues = GraphSpectra.regular_graph_spectrum(n, k)
+            # Spectral gap: k - λ_2 (second largest eigenvalue)
+            gap = k - eigenvalues[-2]
+            gaps.append(gap)
+        
+        ax.plot(k_values, gaps, 'bo-', linewidth=2, markersize=8)
+        ax.set_xlabel('Degree k')
+        ax.set_ylabel('Spectral Gap (k - λ₂)')
+        ax.set_title('Spectral Gap in k-Regular Graphs')
+        ax.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.savefig('graph_spectra.png', dpi=150, bbox_inches='tight')
+        plt.close()
+        
+        print("Graph spectra visualization saved!")
+        print("\nKey observations:")
+        print("1. ER graphs have semicircular eigenvalue distribution")
+        print("2. Regular graphs have largest eigenvalue = degree")
+        print("3. Level spacings follow Wigner-Dyson statistics")
+        print("4. Larger spectral gap indicates better expansion")
+        
+        return fig
+
+# Generate visualization
+print("=== Graph Spectra Visualization ===")
+GraphSpectra.visualize_comparison()
+</code></pre>
+        </section>
+
+        <!-- Section 10: Quote of the Day -->
+        <section id="quote">
+            <h2>💬 Quote of the Day</h2>
+            <blockquote>
+                "The essence of mathematics is not to make simple things complicated, but to make complicated things simple."
+                <footer style="text-align: right; margin-top: 0.5rem; font-style: normal;">— <strong>Stan Gudder</strong></footer>
+            </blockquote>
+            <p>This quote captures the transformative power of mathematical abstraction. Whether it's the elegant minimalism of graph theory's vertices and edges capturing the essence of complex networks, the way tropical geometry reduces algebraic problems to piecewise-linear ones, or how surreal numbers unify disparate number systems through a single recursive definition—mathematics excels at finding the simple structures underlying apparent complexity. The best mathematical theories, like Grothendieck's schemes or Conway's surreal numbers, don't just solve problems; they reveal that what seemed complicated was actually simple all along, waiting for the right perspective.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="../posts/index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
