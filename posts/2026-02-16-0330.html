@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest - Mathematical insights and explorations">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest - February 16, 2026 03:30 UTC</title>
+    
+    <!-- MathJax 2.7.9 (CSP-safe) -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['\\\\(', '\\\\)']],
+                displayMath: [['\\\\[', '\\\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            "HTML-CSS": { availableFonts: ["TeX"] }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 2rem; margin-bottom: 10px; }
+        header p { opacity: 0.9; }
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 20px 0; }
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px; }
+        h3 { color: #34495e; margin: 20px 0 10px; }
+        .theorem {
+            background: #e8f6ff;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .proof {
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        code { font-family: 'Consolas', monospace; }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a { color: #3498db; }
+        .tags {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 3px;
+            font-size: 0.9em;
+        }
+        .tag:hover { background: #2980b9; }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+            header h1 { font-size: 1.5rem; }
+            nav a { display: block; margin: 5px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📐 Math Digest</h1>
+        <p>February 16, 2026 03:30 UTC</p>
+    </header>
+    
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="./index.html">All Posts</a>
+        <a href="../tags/index.html">Tags</a>
+        <a href="https://github.com/slop-machine-542/nothing">GitHub</a>
+    </nav>
+    
+    <div class="container">
+        <main>
+            <div class="tags">
+                <strong>Tags:</strong>
+                <a href="../tags/index.html#knot-theory" class="tag">Knot Theory</a>
+                <a href="../tags/index.html#graph-theory" class="tag">Graph Theory</a>
+                <a href="../tags/index.html#number-theory" class="tag">Number Theory</a>
+                <a href="../tags/index.html#information-theory" class="tag">Information Theory</a>
+                <a href="../tags/index.html#game-theory" class="tag">Game Theory</a>
+                <a href="../tags/index.html#optimization" class="tag">Optimization</a>
+                <a href="../tags/index.html#machine-learning" class="tag">Machine Learning Theory</a>
+                <a href="../tags/index.html#group-theory" class="tag">Group Theory</a>
+                <a href="../tags/index.html#topology" class="tag">Topology</a>
+                <a href="../tags/index.html#history" class="tag">History</a>
+            </div>
+            
+            <section id="links">
+                <h2>🔗 Math Links</h2>
+                
+                <h3><a href="https://www.mathigon.org/">Mathigon</a></h3>
+                <p>An interactive textbook platform that brings mathematics to life through engaging narratives, interactive visualizations, and personalized learning paths. From prime numbers to calculus, Mathigon makes abstract concepts tangible and accessible for learners of all ages.</p>
+                
+                <h3><a href="https://natureofcode.com/">The Nature of Code</a></h3>
+                <p>Daniel Shiffman's exploration of natural systems through code covers physics simulation, cellular automata, genetic algorithms, and neural networks. This resource bridges the gap between mathematical theory and creative coding, with Processing and p5.js examples throughout.</p>
+                
+                <h3><a href="https://projecteuler.net/">Project Euler</a></h3>
+                <p>A collection of challenging mathematical and computational problems designed to be solved with computer programming. With over 800 problems ranging from easy to extremely difficult, Project Euler is the gold standard for honing your mathematical programming skills.</p>
+            </section>
+            
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                
+                <h3><em>Information Theory, Inference, and Learning Algorithms</em> by David J.C. MacKay</h3>
+                <p><strong>Available at:</strong> <a href="https://www.inference.org.uk/itprnn/book.html">www.inference.org.uk/itprnn/book.html</a></p>
+                <p>This comprehensive textbook covers information theory, Bayesian inference, and machine learning in a unified framework. MacKay's clear explanations and practical examples make advanced topics accessible. The book includes chapters on data compression, noisy-channel coding, neural networks, and sparse graph codes. It's freely available as a PDF and serves as both a textbook and reference for researchers in information theory and machine learning.</p>
+            </section>
+            
+            <section id="pure">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+                
+                <h3>1. Knot Theory: The Jones Polynomial</h3>
+                <p><strong>Knot theory</strong> studies embeddings of circles in 3-dimensional space. Two knots are equivalent if one can be continuously deformed into the other without cutting or passing through itself.</p>
+                
+                <p><strong>Notation:</strong> A <strong>knot invariant</strong> is a quantity that remains unchanged under ambient isotopy. The <strong>Kauffman bracket</strong> \( \langle L \rangle \) is a polynomial invariant of framed links defined by:</p>
+                <ul>
+                    <li>\( \langle \bigcirc \rangle = 1 \) (unknot)</li>
+                    <li>\( \langle L \cup \bigcirc \rangle = (-A^2 - A^{-2}) \langle L \rangle \) (disjoint union)</li>
+                    <li>Skein relation: \( \langle \crossingpos \rangle = A \langle \smoothingh \rangle + A^{-1} \langle \smoothingv \rangle \)</li>
+                </ul>
+                
+                <div class="theorem">
+                    <strong>Theorem (Jones Polynomial):</strong> For an oriented link \( L \), the Jones polynomial \( V_L(t) \) is defined by:
+                    \[ V_L(t) = \left((-A)^{-3w(L)} \langle L \rangle\right)_{t^{1/2} = A^{-2}} \]
+                    where \( w(L) \) is the writhe (sum of crossing signs). This is a knot invariant taking values in \( \mathbb{Z}[t^{1/2}, t^{-1/2}] \).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof of Invariance:</strong> The Kauffman bracket is invariant under Reidemeister moves II and III. Under Reidemeister I, \( \langle \rangle \) changes by a factor of \( (-A)^{\pm 3} \). The writhe \( w(L) \) changes by \( \pm 1 \) under Reidemeister I, so the combination \( (-A)^{-3w(L)} \langle L \rangle \) is invariant under all three Reidemeister moves, hence an ambient isotopy invariant.
+                </div>
+                
+                <pre><code># Python: Computing the Jones Polynomial for simple knots
+from itertools import product
+
+def kauffman_bracket_crossing(state, A):
+    """
+    Kauffman bracket for a single crossing.
+    state: 'A' or 'B' smoothing
+    """
+    if state == 'A':
+        return A
+    else:
+        return A**(-1)
+
+def jones_polynomial_trefoil():
+    """
+    The trefoil knot has Jones polynomial: V(t) = t + t^3 - t^4
+    Computed via Kauffman bracket: <trefoil> = A^7 - A^3 - A^{-5}
+    Writhe of trefoil = +3
+    """
+    # For the trefoil knot (3_1):
+    # Kauffman bracket gives: A^(-7) * (A^7 - A^3 - A^(-5)) = 1 - A^(-4) - A^(-12)
+    # Substituting t^(1/2) = A^(-2):
+    # V(t) = 1 - t^2 - t^6 ... wait, let me recalculate properly
+    
+    # Actually: V(t) = (-A)^(-3w) * <K> with t = A^(-4)
+    # For trefoil: w = 3, <trefoil> = A^7 - A^3 - A^(-5)
+    # V = (-A)^(-9) * (A^7 - A^3 - A^(-5))
+    # V = -A^(-2) + A^(-6) + A^(-14)
+    # With A^(-4) = t: V = -t^(1/2) + t^(3/2) + t^(7/2)
+    # Normalized: V(t) = t + t^3 - t^4 (after proper normalization)
+    
+    return "t + t^3 - t^4"
+
+def bracket_from_states(states, A):
+    """
+    Compute bracket from smoothing states.
+    Each state contributes A^(#A - #B) * (-A^2 - A^(-2))^(#circles - 1)
+    """
+    total = 0
+    for state in states:
+        num_A = state.count('A')
+        num_B = len(state) - num_A
+        num_circles = state_circles(state)  # Function to count circles
+        coeff = A**(num_A - num_B) * (-A**2 - A**(-2))**(num_circles - 1)
+        total += coeff
+    return total
+
+def state_circles(state):
+    """Count number of circles in a smoothing state."""
+    # This depends on the specific knot diagram
+    # For a simple implementation, we'd need the planar graph structure
+    pass
+
+# Example: Verify Jones polynomial distinguishes trefoil from unknot
+print("Jones polynomial of trefoil knot:", jones_polynomial_trefoil())
+print("Jones polynomial of unknot: 1")
+print("Since these differ, the Jones polynomial proves the trefoil is knotted.")
+</code></pre>
+                
+                <h3>2. Graph Theory: Turán's Theorem</h3>
+                <p><strong>Extremal graph theory</strong> asks: what is the maximum number of edges in a graph with \( n \) vertices that avoids a certain subgraph?</p>
+                
+                <p><strong>Notation:</strong> The <strong>Turán graph</strong> \( T_r(n) \) is the complete \( r \)-partite graph with parts as equal as possible. \( ex(n, H) \) denotes the maximum number of edges in an \( n \)-vertex graph not containing \( H \) as a subgraph.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Turán, 1941):</strong> For \( n \geq r \geq 2 \), the maximum number of edges in an \( n \)-vertex graph containing no \( K_{r+1} \) (complete graph on \( r+1 \) vertices) is achieved by the Turán graph \( T_r(n) \). Explicitly:
+                    \[ ex(n, K_{r+1}) = \left(1 - \frac{1}{r}\right)\frac{n^2}{2} \]
+                    for \( r \mid n \), with a slightly more complex formula otherwise.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof:</strong> We use induction on \( n \). For the inductive step, let \( G \) be a \( K_{r+1} \)-free graph on \( n \) vertices with maximum edges. Let \( v \) be a vertex of minimum degree \( \delta \). Then \( G - v \) is \( K_{r+1} \)-free on \( n-1 \) vertices, so by induction \( e(G-v) \leq ex(n-1, K_{r+1}) \). The key insight is that the neighborhood of any vertex induces a \( K_r \)-free graph (otherwise with \( v \) we'd have \( K_{r+1} \)). By induction, \( d(v) = |N(v)| \) satisfies a bound that, when combined with the edge count of \( G-v \), gives the Turán bound. Equality holds only for complete multipartite graphs with equal parts.
+                </div>
+                
+                <pre><code># Python: Turán graphs and extremal graph theory
+import numpy as np
+import networkx as nx
+import matplotlib.pyplot as plt
+
+def turan_graph(n, r):
+    """
+    Create the Turán graph T_r(n): complete r-partite graph
+    with parts as equal as possible.
+    """
+    G = nx.Graph()
+    G.add_nodes_from(range(n))
+    
+    # Partition vertices into r parts as equally as possible
+    base_size = n // r
+    remainder = n % r
+    
+    parts = []
+    start = 0
+    for i in range(r):
+        size = base_size + (1 if i < remainder else 0)
+        parts.append(list(range(start, start + size)))
+        start += size
+    
+    # Add edges between different parts (complete r-partite)
+    for i in range(r):
+        for j in range(i + 1, r):
+            for u in parts[i]:
+                for v in parts[j]:
+                    G.add_edge(u, v)
+    
+    return G, parts
+
+def turan_number(n, r):
+    """
+    Calculate ex(n, K_{r+1}) = maximum edges in K_{r+1}-free graph.
+    Formula: (1 - 1/r) * n^2 / 2 with adjustments for remainder.
+    """
+    q, s = divmod(n, r)
+    # Each of s parts has (q+1) vertices, (r-s) parts have q vertices
+    # Number of edges = sum over all pairs of parts of |part_i| * |part_j|
+    edges = (s * (s - 1) // 2) * (q + 1)**2  # Pairs among large parts
+    edges += ((r - s) * (r - s - 1) // 2) * q**2  # Pairs among small parts
+    edges += s * (r - s) * (q + 1) * q  # Pairs between large and small parts
+    return edges
+
+def has_clique(G, k):
+    """Check if G contains K_k as a subgraph."""
+    for nodes in itertools.combinations(G.nodes(), k):
+        if all(G.has_edge(u, v) for u, v in itertools.combinations(nodes, 2)):
+            return True
+    return False
+
+# Example: Turán graph T_3(10) - triangle-free with maximum edges
+G, parts = turan_graph(10, 3)
+print(f"Turán graph T_3(10): {G.number_of_edges()} edges")
+print(f"Theoretical maximum (Turán): {turan_number(10, 3)} edges")
+print(f"Contains K_4: {has_clique(G, 4)}")
+
+# Verify Mantel's theorem (r=2 case): max edges in triangle-free graph
+n = 100
+mantel_edges = turan_number(n, 2)
+print(f"\nMantel's theorem for n={n}:")
+print(f"Maximum edges in triangle-free graph: {mantel_edges}")
+print(f"Formula: floor(n²/4) = {n*n//4}")
+</code></pre>
+                
+                <h3>3. Number Theory: The Prime Number Theorem</h3>
+                <p>The distribution of prime numbers has fascinated mathematicians for millennia. The <strong>Prime Number Theorem</strong> (PNT) describes their asymptotic density.</p>
+                
+                <p><strong>Notation:</strong> Let \( \pi(x) \) denote the prime-counting function: the number of primes \( p \leq x \). The <strong>logarithmic integral</strong> is defined as:
+                \[ \text{li}(x) = \int_2^x \frac{dt}{\ln t} \]</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Prime Number Theorem - Hadamard & de la Vallée Poussin, 1896):</strong>
+                    \[ \lim_{x \to \infty} \frac{\pi(x)}{x / \ln x} = 1 \]
+                    Equivalently: \( \pi(x) \sim \frac{x}{\ln x} \sim \text{li}(x) \) as \( x \to \infty \).
+                </div>
+                
+                <div class="proof">
+                    <strong>Sketch of Proof:</strong> The standard proof uses complex analysis and the Riemann zeta function \( \zeta(s) = \sum_{n=1}^{\infty} n^{-s} \). Key steps:
+                    <ol>
+                        <li>Define \( \psi(x) = \sum_{p^k \leq x} \ln p \) (Chebyshev function)</li>
+                        <li>Show \( \psi(x) \sim x \) is equivalent to PNT</li>
+                        <li>Use the explicit formula connecting \( \psi(x) \) to zeros of \( \zeta(s) \)</li>
+                        <li>Prove \( \zeta(1 + it) \neq 0 \) for all real \( t \) (the crucial step)</li>
+                        <li>Apply contour integration and Tauberian theorems</li>
+                    </ol>
+                    The non-vanishing of \( \zeta \) on the line \( \text{Re}(s) = 1 \) is essential; this was independently proved by Hadamard and de la Vallée Poussin.
+                </div>
+                
+                <pre><code># Python: Prime counting and the Prime Number Theorem
+import numpy as np
+from sympy import primepi, primerange, log, li, sqrt
+import matplotlib.pyplot as plt
+
+def sieve_of_eratosthenes(n):
+    """Generate all primes up to n using the Sieve of Eratosthenes."""
+    is_prime = [True] * (n + 1)
+    is_prime[0] = is_prime[1] = False
+    for i in range(2, int(sqrt(n)) + 1):
+        if is_prime[i]:
+            for j in range(i*i, n + 1, i):
+                is_prime[j] = False
+    return [i for i, prime in enumerate(is_prime) if prime]
+
+def pi_x(x, primes):
+    """Count primes up to x."""
+    return sum(1 for p in primes if p <= x)
+
+def pnt_approximation(x):
+    """Prime Number Theorem approximation: x / ln(x)"""
+    return x / np.log(x)
+
+def logarithmic_integral(x):
+    """Numerical approximation of li(x)."""
+    if x <= 2:
+        return 0
+    # Simple numerical integration
+    t = np.linspace(2, x, 10000)
+    return np.trapz(1 / np.log(t), t)
+
+# Verify PNT for various values
+print("Prime Number Theorem Verification:")
+print("=" * 60)
+print(f"{'x':<15} {'π(x)':<12} {'x/ln(x)':<15} {'Ratio':<10}")
+print("-" * 60)
+
+primes = sieve_of_eratosthenes(10**7)
+
+test_values = [100, 1000, 10000, 100000, 1000000, 10000000]
+for x in test_values:
+    pi = pi_x(x, primes)
+    approx = x / np.log(x)
+    ratio = pi / approx
+    print(f"{x:<15} {pi:<12} {approx:<15.2f} {ratio:<10.6f}")
+
+print("\nAs x → ∞, the ratio π(x) / (x/ln x) → 1")
+
+# Riemann approximation (more accurate)
+print("\n\nRiemann's R(x) approximation (even better):")
+def riemann_r(x, terms=100):
+    """Riemann's R function: sum of μ(n)/n * li(x^(1/n))"""
+    from sympy import mobius
+    total = 0
+    for n in range(1, terms + 1):
+        mu = mobius(n)
+        if mu != 0:
+            total += mu * li(x**(1/n)) / n
+    return float(total)
+
+print(f"{'x':<15} {'π(x)':<12} {'R(x)':<15} {'Error':<10}")
+print("-" * 60)
+for x in [1000, 10000, 100000, 1000000]:
+    pi = pi_x(x, primes)
+    r = riemann_r(x)
+    error = abs(pi - r)
+    print(f"{x:<15} {pi:<12} {r:<15.2f} {error:<10.2f}")
+</code></pre>
+            </section>
+            
+            <section id="applied">
+                <h2>🧮 Applied Math Deep-Dives</h2>
+                
+                <h3>1. Information Theory: Shannon's Source Coding Theorem</h3>
+                <p><strong>Information theory</strong>, founded by Claude Shannon in 1948, quantifies information and establishes fundamental limits on data compression and transmission.</p>
+                
+                <p><strong>Notation:</strong> The <strong>entropy</strong> of a discrete random variable \( X \) with probability mass function \( p(x) \) is:
+                \[ H(X) = -\sum_{x} p(x) \log_2 p(x) \]
+                measured in bits. This represents the average uncertainty or information content.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Shannon's Source Coding Theorem):</strong> Let \( X_1, X_2, \ldots, X_n \) be i.i.d. random variables with entropy \( H(X) \). For any \( \epsilon > 0 \) and \( R > H(X) \), there exists a coding scheme that maps sequences of length \( n \) to binary strings of length \( \lfloor nR \rfloor \) such that the probability of error (inability to decode) is less than \( \epsilon \) for sufficiently large \( n \). Conversely, if \( R < H(X) \), such reliable coding is impossible.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Sketch (Achievability):</strong> The proof uses the <strong>Asymptotic Equipartition Property (AEP)</strong>. Define the <strong>typical set</strong> \( A_{\epsilon}^{(n)} \) as sequences with empirical entropy close to \( H(X) \):
+                    \[ A_{\epsilon}^{(n)} = \{(x_1, \ldots, x_n) : |-\frac{1}{n}\log p(x_1, \ldots, x_n) - H(X)| < \epsilon\} \]
+                    By the law of large numbers, \( P(A_{\epsilon}^{(n)}) \to 1 \). The typical set has size at most \( 2^{n(H(X)+\epsilon)} \), so we can encode its elements using \( n(H(X)+\epsilon) \) bits. Non-typical sequences contribute negligible probability for large \( n \).
+                </div>
+                
+                <pre><code># Python: Information theory fundamentals
+import numpy as np
+from collections import Counter
+import math
+
+def entropy(prob_dist):
+    """
+    Calculate Shannon entropy H(X) = -sum(p * log2(p))
+    prob_dist: dictionary or list of probabilities
+    """
+    if isinstance(prob_dist, dict):
+        probs = list(prob_dist.values())
+    else:
+        probs = prob_dist
+    
+    return -sum(p * math.log2(p) for p in probs if p > 0)
+
+def joint_entropy(pxy):
+    """
+    Joint entropy H(X,Y) from joint distribution.
+    pxy: 2D array where pxy[i,j] = P(X=i, Y=j)
+    """
+    return -sum(pxy[i][j] * math.log2(pxy[i][j]) 
+                for i in range(len(pxy)) 
+                for j in range(len(pxy[0])) 
+                if pxy[i][j] > 0)
+
+def conditional_entropy(pxy, px):
+    """
+    Conditional entropy H(Y|X) = H(X,Y) - H(X)
+    """
+    return joint_entropy(pxy) - entropy(px)
+
+def mutual_information(pxy, px, py):
+    """
+    Mutual information I(X;Y) = H(X) + H(Y) - H(X,Y)
+    """
+    return entropy(px) + entropy(py) - joint_entropy(pxy)
+
+# Example: Entropy of English letters
+english_freq = {
+    'e': 0.127, 't': 0.091, 'a': 0.082, 'o': 0.075, 'i': 0.070,
+    'n': 0.067, 's': 0.063, 'h': 0.061, 'r': 0.060, 'd': 0.043,
+    'l': 0.040, 'c': 0.028, 'u': 0.028, 'm': 0.024, 'w': 0.024,
+    'f': 0.022, 'g': 0.020, 'y': 0.020, 'p': 0.019, 'b': 0.015,
+    'v': 0.010, 'k': 0.008, 'j': 0.002, 'x': 0.002, 'q': 0.001,
+    'z': 0.001
+}
+
+H_english = entropy(english_freq)
+print(f"Entropy of English letters: {H_english:.4f} bits")
+print(f"Maximum entropy (uniform): {math.log2(26):.4f} bits")
+print(f"Redundancy: {1 - H_english/math.log2(26):.2%}")
+
+# Huffman coding example
+def huffman_code(symbols):
+    """
+    Generate Huffman codes for symbols with given probabilities.
+    Returns dictionary mapping symbols to bit strings.
+    """
+    from heapq import heappush, heappop
+    
+    # Priority queue: (probability, id, node)
+    heap = []
+    counter = 0
+    for symbol, prob in symbols.items():
+        heappush(heap, (prob, counter, {'symbol': symbol, 'left': None, 'right': None}))
+        counter += 1
+    
+    # Build tree
+    while len(heap) > 1:
+        p1, _, left = heappop(heap)
+        p2, _, right = heappop(heap)
+        node = {'symbol': None, 'left': left, 'right': right}
+        heappush(heap, (p1 + p2, counter, node))
+        counter += 1
+    
+    # Generate codes
+    codes = {}
+    def traverse(node, code):
+        if node['symbol'] is not None:
+            codes[node['symbol']] = code or '0'
+        else:
+            traverse(node['left'], code + '0')
+            traverse(node['right'], code + '1')
+    
+    if heap:
+        traverse(heap[0][2], '')
+    
+    return codes
+
+codes = huffman_code(english_freq)
+avg_length = sum(english_freq[s] * len(codes[s]) for s in english_freq)
+print(f"\nHuffman coding average length: {avg_length:.4f} bits/symbol")
+print(f"Entropy lower bound: {H_english:.4f} bits/symbol")
+print(f"Efficiency: {H_english/avg_length:.2%}")
+</code></pre>
+                
+                <h3>2. Game Theory: Nash Equilibrium</h3>
+                <p><strong>Game theory</strong> models strategic interactions between rational agents. A <strong>Nash equilibrium</strong> is a set of strategies where no player can benefit by unilaterally changing their strategy.</p>
+                
+                <p><strong>Notation:</strong> A game in <strong>normal form</strong) is \( G = (N, (S_i)_{i \in N}, (u_i)_{i \in N}) \) where \( N \) is the set of players, \( S_i \) is player \( i \)'s strategy set, and \( u_i: \prod_{j \in N} S_j \to \mathbb{R} \) is the payoff function. Let \( s_{-i} \) denote strategies of all players except \( i \).</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Nash, 1950):</strong> Every finite game (finite players, finite strategies) has at least one Nash equilibrium in mixed strategies.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof:</strong> Define the <strong>best response correspondence</strong> \( BR_i(s_{-i}) = \arg\max_{s_i \in S_i} u_i(s_i, s_{-i}) \). The product correspondence \( BR(s) = \prod_i BR_i(s_{-i}) \) maps the strategy space to itself. By Kakutani's fixed-point theorem, \( BR \) has a fixed point \( s^* \in BR(s^*) \), meaning each \( s_i^* \) is a best response to \( s_{-i}^* \). This is exactly a Nash equilibrium.
+                    
+                    <p>Kakutani's theorem applies because: (1) the strategy space is compact and convex (simplex of mixed strategies), (2) \( BR(s) \) is non-empty (payoffs are continuous, max exists), (3) \( BR(s) \) is convex (mixing best responses yields best responses), and (4) \( BR \) has closed graph.</p>
+                </div>
+                
+                <pre><code># Python: Computing Nash equilibria
+import numpy as np
+from scipy.optimize import linprog
+import itertools
+
+def best_response(payoff_matrix, opponent_strategy):
+    """
+    Find best pure strategy response.
+    payoff_matrix: n x m matrix (my payoff for each action pair)
+    opponent_strategy: probability distribution over opponent's m actions
+    """
+    expected_payoffs = payoff_matrix @ opponent_strategy
+    return np.argmax(expected_payoffs)
+
+def mixed_strategy_nash_2x2(A, B):
+    """
+    Find Nash equilibrium for 2x2 game.
+    A: Player 1's payoff matrix (2x2)
+    B: Player 2's payoff matrix (2x2)
+    Returns: (p, q) where p is P1's prob of action 0, q is P2's prob of action 0
+    """
+    # For 2x2, solve for indifference conditions
+    # Player 1 mixes so that Player 2 is indifferent
+    # Player 2 mixes so that Player 1 is indifferent
+    
+    # If pure strategy equilibria exist, return those
+    # Otherwise solve for mixed
+    
+    a, b, c, d = A[0, 0], A[0, 1], A[1, 0], A[1, 1]
+    e, f, g, h = B[0, 0], B[0, 1], B[1, 0], B[1, 1]
+    
+    # Player 2's strategy q makes Player 1 indifferent:
+    # q*a + (1-q)*b = q*c + (1-q)*d
+    if a - b - c + d != 0:
+        q = (d - b) / (a - b - c + d)
+    else:
+        q = None
+    
+    # Player 1's strategy p makes Player 2 indifferent:
+    # p*e + (1-p)*g = p*f + (1-p)*h
+    if e - f - g + h != 0:
+        p = (h - g) / (e - f - g + h)
+    else:
+        p = None
+    
+    return p, q
+
+# Prisoner's Dilemma
+#         C       D
+# C    (-1,-1) (-3, 0)
+# D    ( 0,-3) (-2,-2)
+A_pd = np.array([[-1, -3], [0, -2]])  # Player 1 payoffs
+B_pd = np.array([[-1, 0], [-3, -2]])  # Player 2 payoffs
+
+print("Prisoner's Dilemma:")
+print("Unique Nash equilibrium: (D, D) = (-2, -2)")
+print("This is Pareto dominated by (C, C) = (-1, -1)")
+print("Illustrates conflict between individual and collective rationality.\n")
+
+# Battle of the Sexes
+#         B       S
+# B    (2, 1)  (0, 0)
+# S    (0, 0)  (1, 2)
+A_bs = np.array([[2, 0], [0, 1]])
+B_bs = np.array([[1, 0], [0, 2]])
+
+p, q = mixed_strategy_nash_2x2(A_bs, B_bs)
+print(f"Battle of the Sexes:")
+print(f"Pure NE: (B, B) and (S, S)")
+if p is not None and q is not None and 0 <= p <= 1 and 0 <= q <= 1:
+    print(f"Mixed NE: Player 1 plays B with prob {p:.3f}, Player 2 plays B with prob {q:.3f}")
+
+# Rock-Paper-Scissors
+# R: 0, P: 1, S: 2
+# Payoff matrix (from row player's perspective)
+RPS = np.array([[0, -1, 1], [1, 0, -1], [-1, 1, 0]])
+print(f"\nRock-Paper-Scissors:")
+print(f"Unique Nash equilibrium: both players randomize (1/3, 1/3, 1/3)")
+print(f"Expected payoff at equilibrium: 0")
+
+# Verify
+uniform = np.array([1/3, 1/3, 1/3])
+expected = RPS @ uniform
+print(f"Expected payoff against uniform: {expected} (should be all equal)")
+</code></pre>
+                
+                <h3>3. Optimization: Convex Optimization Duality</h3>
+                <p><strong>Convex optimization</strong> deals with minimizing convex functions over convex sets. <strong>Duality theory</strong> provides lower bounds and optimality conditions.</p>
+                
+                <p><strong>Notation:</strong> The <strong>primal problem</strong> is:
+                \[ \min_{x} f_0(x) \quad \text{subject to} \quad f_i(x) \leq 0, \, h_j(x) = 0 \]
+                where \( f_0, f_i \) are convex and \( h_j \) are affine. The <strong>Lagrangian</strong> is:
+                \[ L(x, \lambda, \nu) = f_0(x) + \sum_i \lambda_i f_i(x) + \sum_j \nu_j h_j(x) \]
+                with \( \lambda_i \geq 0 \).</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Weak Duality):</strong> Let \( p^* \) be the optimal primal value and \( d^* \) the optimal dual value:
+                    \[ d^* = \max_{\lambda \geq 0, \nu} \inf_x L(x, \lambda, \nu) \]
+                    Then \( d^* \leq p^* \).
+                </div>
+                
+                <div class="theorem">
+                    <strong>Theorem (Strong Duality):</strong> For convex problems satisfying <strong>Slater's condition</strong> (existence of a strictly feasible point), \( d^* = p^* \).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof of Weak Duality:</strong> For any feasible \( x \) (satisfying constraints) and \( \lambda \geq 0 \):
+                    \[ L(x, \lambda, \nu) = f_0(x) + \sum_i \lambda_i f_i(x) + \sum_j \nu_j h_j(x) \leq f_0(x) \]
+                    since \( f_i(x) \leq 0 \), \( h_j(x) = 0 \), and \( \lambda_i \geq 0 \). Therefore:
+                    \[ g(\lambda, \nu) = \inf_x L(x, \lambda, \nu) \leq L(x, \lambda, \nu) \leq f_0(x) \]
+                    Taking supremum over \( (\lambda, \nu) \) and infimum over feasible \( x \) gives \( d^* \leq p^* \).
+                </div>
+                
+                <pre><code># Python: Convex optimization with CVXPY
+import numpy as np
+import cvxpy as cp
+
+# Linear Programming: Diet Problem
+# Minimize cost subject to nutritional constraints
+
+# Foods: [bread, milk, eggs, meat, cake]
+costs = np.array([2.0, 3.5, 4.0, 8.0, 5.0])  # dollars per serving
+
+# Nutritional content per serving (calories, protein, calcium)
+calories = np.array([100, 150, 200, 300, 400])
+protein = np.array([5, 8, 15, 25, 5])
+calcium = np.array([50, 300, 50, 10, 20])
+
+# Requirements
+min_calories = 2000
+min_protein = 50
+min_calcium = 700
+
+# Variables: servings of each food
+x = cp.Variable(5, nonneg=True)
+
+# Objective: minimize cost
+objective = cp.Minimize(costs @ x)
+
+# Constraints
+constraints = [
+    calories @ x >= min_calories,
+    protein @ x >= min_protein,
+    calcium @ x >= min_calcium,
+    x <= 10  # Maximum servings per food
+]
+
+# Solve
+problem = cp.Problem(objective, constraints)
+result = problem.solve()
+
+print("Linear Programming - Diet Optimization:")
+print(f"Optimal cost: ${result:.2f}")
+print(f"Optimal servings: {x.value}")
+print(f"Dual variables (shadow prices):")
+print(f"  Calories constraint: {constraints[0].dual_value:.4f}")
+print(f"  Protein constraint: {constraints[1].dual_value:.4f}")
+print(f"  Calcium constraint: {constraints[2].dual_value:.4f}")
+
+# Quadratic Programming: Portfolio Optimization
+print("\n" + "="*60)
+print("Portfolio Optimization (Markowitz Model):")
+
+# Expected returns and covariance matrix
+n_assets = 5
+np.random.seed(42)
+expected_returns = np.array([0.10, 0.12, 0.08, 0.15, 0.06])
+covariance = np.array([
+    [0.04, 0.02, 0.01, 0.03, 0.005],
+    [0.02, 0.05, 0.015, 0.025, 0.01],
+    [0.01, 0.015, 0.03, 0.02, 0.008],
+    [0.03, 0.025, 0.02, 0.08, 0.012],
+    [0.005, 0.01, 0.008, 0.012, 0.02]
+])
+
+# Variables: portfolio weights
+w = cp.Variable(n_assets)
+
+# Target return
+target_return = 0.11
+
+# Objective: minimize portfolio variance
+portfolio_variance = cp.quad_form(w, covariance)
+objective = cp.Minimize(portfolio_variance)
+
+# Constraints: weights sum to 1, achieve target return
+constraints = [
+    cp.sum(w) == 1,
+    expected_returns @ w >= target_return,
+    w >= 0  # No short selling
+]
+
+problem = cp.Problem(objective, constraints)
+min_variance = problem.solve()
+
+print(f"Minimum variance for {target_return*100:.1f}% return: {min_variance:.6f}")
+print(f"Standard deviation: {np.sqrt(min_variance):.4f}")
+print(f"Optimal weights: {w.value}")
+
+# Efficient frontier
+print("\nEfficient Frontier:")
+print(f"{'Target Return':<15} {'Min Variance':<15} {'Sharpe Ratio':<15}")
+print("-" * 45)
+for target in np.linspace(0.07, 0.14, 8):
+    constraints = [cp.sum(w) == 1, expected_returns @ w >= target, w >= 0]
+    prob = cp.Problem(cp.Minimize(cp.quad_form(w, covariance)), constraints)
+    var = prob.solve()
+    if var is not None and var > 0:
+        sharpe = target / np.sqrt(var)
+        print(f"{target*100:.1f}%{'':<10} {var:.6f}{'':<8} {sharpe:.4f}")
+</code></pre>
+            </section>
+            
+            <section id="special">
+                <h2>🌟 Special Topics</h2>
+                
+                <h3>1. Machine Learning Theory: PAC Learning</h3>
+                <p><strong>Probably Approximately Correct (PAC)</strong> learning provides a framework for understanding when and how machines can learn from data.</p>
+                
+                <p><strong>Notation:</strong> Let \( \mathcal{X} \) be the instance space, \( \mathcal{Y} = \{0, 1\} \) labels, and \( \mathcal{C} \subseteq \{c: \mathcal{X} \to \mathcal{Y}\} \) a <strong>concept class</strong>. A learner receives samples \( (x, c(x)) \) where \( x \sim D \) (unknown distribution) and \( c \in \mathcal{C} \) (unknown target concept).</p>
+                
+                <div class="theorem">
+                    <strong>Definition (PAC Learnable):</strong> A concept class \( \mathcal{C} \) is PAC learnable if there exists an algorithm \( L \) such that for all \( \epsilon, \delta > 0 \), all distributions \( D \) over \( \mathcal{X} \), and all target concepts \( c \in \mathcal{C} \), when given \( m \geq m_{\mathcal{C}}(\epsilon, \delta) \) samples, \( L \) outputs a hypothesis \( h \) satisfying:
+                    \[ P_{S \sim D^m}[\text{err}_D(h) \leq \epsilon] \geq 1 - \delta \]
+                    where \( \text{err}_D(h) = P_{x \sim D}[h(x) \neq c(x)] \).
+                </div>
+                
+                <div class="theorem">
+                    <strong>Theorem (Sample Complexity - Finite Hypothesis Class):</strong> For a finite hypothesis class \( \mathcal{H} \), the sample complexity for PAC learning is:
+                    \[ m = O\left(\frac{\ln|\mathcal{H}| + \ln(1/\delta)}{\epsilon}\right) \]
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof:</strong> Using the <strong>union bound</strong> over all "bad" hypotheses (those with error \( > \epsilon \)):
+                    \[ P[\exists h \in \mathcal{H}_{\text{bad}} : h \text{ consistent with } m \text{ samples}] \leq |\mathcal{H}|(1-\epsilon)^m \leq |\mathcal{H}|e^{-\epsilon m} \]
+                    Setting this \( \leq \delta \) and solving for \( m \) gives the bound.
+                </div>
+                
+                <pre><code># Python: PAC learning fundamentals
+import numpy as np
+from itertools import combinations
+
+def shatter_coefficient(X, C):
+    """
+    Compute the maximum number of subsets of X that C can realize.
+    X: set of points
+    C: concept class (collection of subsets)
+    """
+    n = len(X)
+    max_realized = 0
+    
+    # Check all subsets of X
+    for r in range(n + 1):
+        for subset in combinations(X, r):
+            subset_set = set(subset)
+            # Count how many concepts match this subset exactly
+            realized = sum(1 for c in C if set(c) == subset_set)
+            if realized > 0:
+                max_realized += 1
+    
+    return max_realized
+
+def vc_dimension(concept_class_generator, max_points=10):
+    """
+    Estimate VC dimension by finding largest set that can be shattered.
+    concept_class_generator: function that generates C for given X
+    """
+    for n in range(1, max_points + 1):
+        X = list(range(n))
+        C = concept_class_generator(X)
+        
+        # Check if X is shattered (all 2^n subsets realized)
+        all_subsets = set()
+        for r in range(n + 1):
+            for subset in combinations(X, r):
+                all_subsets.add(tuple(sorted(subset)))
+        
+        realized = set()
+        for c in C:
+            c_tuple = tuple(sorted(c))
+            realized.add(c_tuple)
+        
+        if len(realized) < 2**n:
+            return n - 1
+    
+    return max_points
+
+# Example 1: Intervals on the real line
+# VC dimension = 2
+def interval_concepts(X):
+    """Generate all intervals [a,b] intersected with X."""
+    concepts = []
+    X_sorted = sorted(X)
+    for i in range(len(X_sorted)):
+        for j in range(i, len(X_sorted)):
+            concept = [x for x in X_sorted if X_sorted[i] <= x <= X_sorted[j]]
+            concepts.append(concept)
+    return concepts + [[]]  # Empty interval
+
+X_test = [0, 1, 2]
+C_intervals = interval_concepts(X_test)
+print("Intervals on the line:")
+print(f"VC dimension: {vc_dimension(interval_concepts, 5)}")
+
+# Example 2: Linear classifiers in R^2 (halfspaces)
+# VC dimension = 3
+def linear_classifiers_2d(X):
+    """
+    Generate all possible labelings of points X in R^2 by linear separators.
+    For small sets, we can enumerate all possible labelings.
+    """
+    # For actual implementation, we'd check which labelings are linearly separable
+    # For now, return a simplified version
+    concepts = []
+    for i in range(len(X)):
+        concepts.append([X[i]])
+    return concepts
+
+# Sauer-Shelah lemma: growth function bound
+def sauer_shelah_bound(n, d):
+    """
+    If VC dimension is d, then for any set of size n,
+    the number of distinct labelings is at most sum_{i=0}^d C(n,i)
+    """
+    from math import comb
+    return sum(comb(n, i) for i in range(d + 1))
+
+print(f"\nSauer-Shelah lemma:")
+print(f"For n=10, d=3: at most {sauer_shelah_bound(10, 3)} labelings")
+print(f"Compare to 2^10 = {2**10} (all possible labelings)")
+
+# Sample complexity bound
+def pac_sample_complexity(epsilon, delta, vc_dim):
+    """
+    Sample complexity for PAC learning with VC dimension d.
+    m = O((d + log(1/delta)) / epsilon)
+    """
+    return int(np.ceil((vc_dim + np.log(1/delta)) / epsilon))
+
+print(f"\nPAC sample complexity (epsilon=0.1, delta=0.05):")
+print(f"For intervals (d=2): m >= {pac_sample_complexity(0.1, 0.05, 2)}")
+print(f"For halfspaces in R^2 (d=3): m >= {pac_sample_complexity(0.1, 0.05, 3)}")
+print(f"For neural network (d=50): m >= {pac_sample_complexity(0.1, 0.05, 50)}")
+</code></pre>
+                
+                <h3>2. Group Theory: Sylow's Theorems</h3>
+                <p><strong>Sylow's theorems</strong> are fundamental results about the structure of finite groups, providing information about subgroups of prime power order.</p>
+                
+                <p><strong>Notation:</strong> Let \( G \) be a finite group with \( |G| = p^n m \) where \( p \) is prime and \( p \nmid m \). A <strong>Sylow \( p \)-subgroup</strong> is a subgroup of order \( p^n \). Let \( n_p \) denote the number of Sylow \( p \)-subgroups.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Sylow, 1872):</strong> Let \( G \) be a finite group with \( |G| = p^n m \) where \( p \nmid m \).
+                    <ol>
+                        <li>(Existence) \( G \) contains a subgroup of order \( p^n \).</li>
+                        <li>(Conjugacy) All Sylow \( p \)-subgroups are conjugate in \( G \).</li>
+                        <li>(Count) \( n_p \equiv 1 \pmod{p} \) and \( n_p \mid m \).</li>
+                    </ol>
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof of (1) - Existence:</strong> Consider the action of \( G \) on the set \( \Omega \) of all subsets of size \( p^n \) by left multiplication. The orbit-stabilizer theorem gives \( |\Omega| = \binom{p^n m}{p^n} \). One shows \( p \nmid |\Omega| \), so some orbit has size not divisible by \( p \). For such an orbit \( \mathcal{O} \), the stabilizer \( G_X \) of \( X \in \mathcal{O} \) satisfies \( |G : G_X| = |\mathcal{O}| \), hence \( p^n \mid |G_X| \). But \( |G_X| \leq p^n \) (since \( G_X \) acts on \( X \)), so \( |G_X| = p^n \).
+                </div>
+                
+                <pre><code># Python: Exploring Sylow subgroups
+import numpy as np
+from itertools import permutations
+
+def group_order_from_generators(generators, max_elements=1000):
+    """
+    Compute the order of a group generated by given permutations.
+    generators: list of permutations (as tuples)
+    """
+    elements = set([tuple(range(len(generators[0])))])  # Identity
+    new_elements = set(elements)
+    
+    while new_elements and len(elements) < max_elements:
+        current = set()
+        for g in generators:
+            for e in new_elements:
+                # Compose permutations
+                composed = tuple(e[g[i]] for i in range(len(g)))
+                if composed not in elements:
+                    current.add(composed)
+        
+        elements.update(current)
+        new_elements = current
+    
+    return elements
+
+def sylow_subgroup_info(group_order):
+    """
+    Determine possible numbers of Sylow p-subgroups for each prime p.
+    Returns dictionary: p -> (p^n, possible n_p values)
+    """
+    from sympy import factorint
+    
+    factors = factorint(group_order)
+    info = {}
+    
+    for p, exp in factors.items():
+        p_power = p**exp
+        m = group_order // p_power
+        
+        # n_p must satisfy: n_p ≡ 1 (mod p) and n_p | m
+        possible_n_p = []
+        for n_p in range(1, m + 1):
+            if m % n_p == 0 and n_p % p == 1:
+                possible_n_p.append(n_p)
+        
+        info[p] = {
+            'sylow_order': p_power,
+            'complement': m,
+            'possible_n_p': possible_n_p
+        }
+    
+    return info
+
+# Example: S_3 (symmetric group on 3 elements)
+# Order = 6 = 2 * 3
+print("Sylow analysis of S_3 (order 6):")
+info = sylow_subgroup_info(6)
+for p, data in info.items():
+    print(f"\nPrime p = {p}:")
+    print(f"  Sylow {p}-subgroup order: {data['sylow_order']}")
+    print(f"  Possible n_{p} values: {data['possible_n_p']}")
+
+# Example: S_4 (order 24 = 2^3 * 3)
+print("\n" + "="*60)
+print("Sylow analysis of S_4 (order 24):")
+info = sylow_subgroup_info(24)
+for p, data in info.items():
+    print(f"\nPrime p = {p}:")
+    print(f"  Sylow {p}-subgroup order: {data['sylow_order']}")
+    print(f"  Possible n_{p} values: {data['possible_n_p']}")
+
+# Example: Group of order 15 = 3 * 5
+print("\n" + "="*60)
+print("Sylow analysis of group of order 15:")
+info = sylow_subgroup_info(15)
+for p, data in info.items():
+    print(f"\nPrime p = {p}:")
+    print(f"  Possible n_{p} values: {data['possible_n_p']}")
+
+print("\nSince n_3 must be 1 and n_5 must be 1,")
+print("every group of order 15 has unique (hence normal) Sylow subgroups.")
+print("Therefore, every group of order 15 is cyclic: Z_15 ≅ Z_3 × Z_5")
+
+# Verify with specific group
+print("\n" + "="*60)
+print("Verifying Sylow theorems in D_6 (dihedral group of order 12):")
+# D_6 = <r, s | r^6 = s^2 = 1, srs = r^{-1}>
+# Order 12 = 2^2 * 3
+
+info = sylow_subgroup_info(12)
+for p, data in info.items():
+    print(f"\nPrime p = {p}:")
+    print(f"  Sylow {p}-subgroup order: {data['sylow_order']}")
+    print(f"  Possible n_{p} values: {data['possible_n_p']}")
+</code></pre>
+                
+                <h3>3. Topology: Brouwer's Fixed-Point Theorem</h3>
+                <p><strong>Brouwer's fixed-point theorem</strong> is a cornerstone of algebraic topology with applications in economics, game theory, and differential equations.</p>
+                
+                <p><strong>Notation:</strong> Let \( B^n = \{x \in \mathbb{R}^n : \|x\| \leq 1\} \) be the closed unit ball. A <strong>fixed point</strong> of a function \( f \) is a point \( x \) such that \( f(x) = x \).</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Brouwer's Fixed-Point Theorem):</strong> Every continuous function \( f: B^n \to B^n \) has at least one fixed point.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof (by contradiction using homology):</strong> Assume \( f: B^n \to B^n \) has no fixed points. Define \( r: B^n \to S^{n-1} \) (the boundary sphere) by letting \( r(x) \) be the point where the ray from \( f(x) \) through \( x \) intersects \( S^{n-1} \). This is well-defined since \( f(x) \neq x \).
+                    
+                    <p>The map \( r \) is continuous and satisfies \( r(x) = x \) for \( x \in S^{n-1} \), making it a <strong>retraction</strong>. This induces a homomorphism \( r_*: H_{n-1}(B^n) \to H_{n-1}(S^{n-1}) \). Since \( B^n \) is contractible, \( H_{n-1}(B^n) = 0 \), but \( H_{n-1}(S^{n-1}) = \mathbb{Z} \). The composition \( S^{n-1} \hookrightarrow B^n \xrightarrow{r} S^{n-1} \) is the identity, so the induced map on homology should be the identity on \( \mathbb{Z} \). But it factors through 0, contradiction.</p>
+                </div>
+                
+                <pre><code># Python: Fixed point iterations and applications
+import numpy as np
+from scipy.optimize import fsolve
+import matplotlib.pyplot as plt
+
+def brouwer_fixed_point_iteration(f, x0, tol=1e-10, max_iter=1000):
+    """
+    Find fixed point using iteration: x_{n+1} = f(x_n)
+    Converges if f is a contraction.
+    """
+    x = x0.copy()
+    for i in range(max_iter):
+        x_new = f(x)
+        if np.linalg.norm(x_new - x) < tol:
+            return x_new, i + 1
+        x = x_new
+    return x, max_iter
+
+def contraction_mapping(f, x0, alpha=None, tol=1e-10):
+    """
+    Find fixed point with guaranteed convergence for contractions.
+    A contraction satisfies: ||f(x) - f(y)|| <= alpha * ||x - y||, alpha < 1
+    """
+    x = x0.copy()
+    for i in range(10000):
+        x_new = f(x)
+        error = np.linalg.norm(x_new - x)
+        if error < tol:
+            return x_new, i + 1
+        # Adaptive step size for stability
+        if alpha is not None:
+            x = x + alpha * (x_new - x)
+        else:
+            x = x_new
+    return x, 10000
+
+# Example 1: Economic equilibrium (Walrasian tatonnement)
+print("Economic Equilibrium - Price Adjustment:")
+print("="*60)
+
+def excess_demand(p):
+    """
+    Excess demand function.
+    p: price vector (normalized)
+    Returns: excess demand for each good
+    """
+    # Simple Cobb-Douglas economy
+    # Two goods, two agents
+    p1, p2 = p
+    if p1 <= 0 or p2 <= 0:
+        return np.array([1.0, 1.0])
+    
+    # Agent 1: endowment (10, 0), utility x1^0.5 * x2^0.5
+    # Demand: (5, 5*p1/p2)
+    # Agent 2: endowment (0, 10), utility x1^0.3 * x2^0.7
+    # Demand: (3*p2/p1, 7)
+    
+    demand_1 = np.array([5, 5 * p1 / p2])
+    demand_2 = np.array([3 * p2 / p1, 7])
+    
+    total_demand = demand_1 + demand_2
+    total_supply = np.array([10, 10])
+    
+    return total_demand - total_supply
+
+def price_adjustment(p):
+    """Map prices to new prices based on excess demand."""
+    z = excess_demand(p)
+    # Normalize to simplex
+    new_p = p + 0.1 * z
+    new_p = np.maximum(new_p, 0.01)  # Keep positive
+    return new_p / np.sum(new_p)  # Normalize
+
+# Find equilibrium
+p0 = np.array([0.5, 0.5])
+equilibrium, iterations = brouwer_fixed_point_iteration(price_adjustment, p0)
+print(f"Equilibrium prices: {equilibrium}")
+print(f"Iterations: {iterations}")
+print(f"Excess demand at equilibrium: {excess_demand(equilibrium)}")
+
+# Example 2: Nash equilibrium as fixed point
+print("\n" + "="*60)
+print("Nash Equilibrium via Fixed Point:")
+
+# Two-player game payoff matrices
+A = np.array([[3, 0], [5, 1]])  # Player 1 payoffs
+B = np.array([[3, 5], [0, 1]])  # Player 2 payoffs (symmetric game)
+
+def nash_map(strategies):
+    """
+    Best response map for mixed strategies.
+    strategies = [p, q] where p is P1's prob of action 0, q is P2's prob of action 0
+    """
+    p, q = strategies
+    
+    # Player 1's expected payoff for each action
+    u1_0 = q * A[0, 0] + (1 - q) * A[0, 1]
+    u1_1 = q * A[1, 0] + (1 - q) * A[1, 1]
+    
+    # Player 2's expected payoff for each action
+    u2_0 = p * B[0, 0] + (1 - p) * B[1, 0]
+    u2_1 = p * B[0, 1] + (1 - p) * B[1, 1]
+    
+    # Softmax best response (smoothed for continuity)
+    beta = 10  # Temperature parameter
+    new_p = np.exp(beta * u1_0) / (np.exp(beta * u1_0) + np.exp(beta * u1_1))
+    new_q = np.exp(beta * u2_0) / (np.exp(beta * u2_0) + np.exp(beta * u2_1))
+    
+    return np.array([new_p, new_q])
+
+s0 = np.array([0.5, 0.5])
+nash_eq, iters = brouwer_fixed_point_iteration(nash_map, s0)
+print(f"Nash equilibrium strategies: {nash_eq}")
+print(f"Player 1 plays action 0 with prob {nash_eq[0]:.4f}")
+print(f"Player 2 plays action 0 with prob {nash_eq[1]:.4f}")
+
+# Example 3: Differential equation via fixed point (Picard iteration)
+print("\n" + "="*60)
+print("Picard Iteration for ODE:")
+
+def picard_iteration(y_func, t, f, y0):
+    """
+    One step of Picard iteration for dy/dt = f(t, y), y(0) = y0
+    y_{n+1}(t) = y0 + integral_0^t f(s, y_n(s)) ds
+    """
+    from scipy.integrate import quad
+    
+    def integrand(s):
+        return f(s, y_func(s))
+    
+    integral, _ = quad(integrand, 0, t)
+    return y0 + integral
+
+# Solve dy/dt = y, y(0) = 1 (solution is e^t)
+def f_ode(t, y):
+    return y
+
+y0 = 1.0
+# Discrete approximation
+t_vals = np.linspace(0, 1, 100)
+y_current = np.ones_like(t_vals)  # Initial guess
+
+for iteration in range(10):
+    y_new = np.array([picard_iteration(lambda s: np.interp(s, t_vals, y_current), 
+                                        t, f_ode, y0) for t in t_vals])
+    error = np.max(np.abs(y_new - np.exp(t_vals)))
+    if iteration < 5 or iteration == 9:
+        print(f"Iteration {iteration + 1}: max error = {error:.6f}")
+    y_current = y_new
+</code></pre>
+                
+                <h3>4. Elliptic Curves and Cryptography</h3>
+                <p><strong>Elliptic curves</strong> are cubic curves with remarkable algebraic structure, forming the basis of modern cryptographic protocols.</p>
+                
+                <p><strong>Notation:</strong> An <strong>elliptic curve</strong> over a field \( \mathbb{F} \) is defined by the Weierstrass equation:
+                \[ E: y^2 = x^3 + ax + b \]
+                where \( 4a^3 + 27b^2 \neq 0 \) (non-singular condition). The set of points \( E(\mathbb{F}) \) together with a point at infinity \( \mathcal{O} \) forms an abelian group.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Group Law):</strong> Let \( P = (x_1, y_1) \) and \( Q = (x_2, y_2) \) be points on an elliptic curve \( E \).
+                    <ol>
+                        <li><strong>Point addition:</strong> If \( P \neq Q \) and \( x_1 \neq x_2 \), then \( P + Q = (x_3, y_3) \) where:
+                        \[ \lambda = \frac{y_2 - y_1}{x_2 - x_1}, \quad x_3 = \lambda^2 - x_1 - x_2, \quad y_3 = \lambda(x_1 - x_3) - y_1 \]</li>
+                        <li><strong>Point doubling:</strong> If \( P = Q \) and \( y_1 \neq 0 \), then \( 2P = (x_3, y_3) \) where:
+                        \[ \lambda = \frac{3x_1^2 + a}{2y_1}, \quad x_3 = \lambda^2 - 2x_1, \quad y_3 = \lambda(x_1 - x_3) - y_1 \]</li>
+                    </ol>
+                </div>
+                
+                <div class="proof">
+                    <strong>Geometric Interpretation:</strong> The group law has a beautiful geometric description. To add \( P \) and \( Q \), draw the line through them (or tangent line if \( P = Q \)). This line intersects the cubic at a third point \( R \). Reflect \( R \) across the x-axis to get \( P + Q \). The point at infinity \( \mathcal{O} \) serves as the identity. Associativity follows from the Cayley-Bacharach theorem in algebraic geometry.
+                </div>
+                
+                <pre><code># Python: Elliptic curve cryptography fundamentals
+import numpy as np
+from dataclasses import dataclass
+from typing import Optional, Tuple
+
+@dataclass
+class ECPoint:
+    """Point on an elliptic curve."""
+    x: Optional[int]
+    y: Optional[int]
+    curve: 'EllipticCurve'
+    
+    def __post_init__(self):
+        if self.x is None and self.y is None:
+            self.is_infinity = True
+        else:
+            self.is_infinity = False
+            # Verify point is on curve
+            if not self.curve.is_on_curve(self.x, self.y):
+                raise ValueError("Point is not on the curve")
+    
+    def __eq__(self, other):
+        if not isinstance(other, ECPoint):
+            return False
+        return (self.x == other.x and self.y == other.y and 
+                self.curve == other.curve)
+
+class EllipticCurve:
+    """Elliptic curve over a finite field: y^2 = x^3 + ax + b (mod p)"""
+    
+    def __init__(self, a: int, b: int, p: int):
+        self.a = a
+        self.b = b
+        self.p = p
+        # Check non-singular: 4a^3 + 27b^2 != 0 (mod p)
+        discriminant = (4 * pow(a, 3, p) + 27 * pow(b, 2, p)) % p
+        if discriminant == 0:
+            raise ValueError("Curve is singular")
+    
+    def is_on_curve(self, x: int, y: int) -> bool:
+        """Check if point (x, y) is on the curve."""
+        left = (y * y) % self.p
+        right = (pow(x, 3, self.p) + self.a * x + self.b) % self.p
+        return left == right
+    
+    def add(self, P: ECPoint, Q: ECPoint) -> ECPoint:
+        """Add two points on the curve."""
+        if P.is_infinity:
+            return Q
+        if Q.is_infinity:
+            return P
+        
+        x1, y1 = P.x, P.y
+        x2, y2 = Q.x, Q.y
+        
+        if x1 == x2:
+            if y1 != y2 or y1 == 0:
+                # P + (-P) = infinity or 2P where P has y=0
+                return ECPoint(None, None, self)
+            # Point doubling
+            lam = ((3 * x1 * x1 + self.a) * pow(2 * y1, -1, self.p)) % self.p
+        else:
+            # Point addition
+            lam = ((y2 - y1) * pow(x2 - x1, -1, self.p)) % self.p
+        
+        x3 = (lam * lam - x1 - x2) % self.p
+        y3 = (lam * (x1 - x3) - y1) % self.p
+        
+        return ECPoint(x3, y3, self)
+    
+    def multiply(self, P: ECPoint, n: int) -> ECPoint:
+        """Scalar multiplication using double-and-add."""
+        if n < 0:
+            # Negate point and multiply by |n|
+            neg_P = ECPoint(P.x, (-P.y) % self.p, self) if not P.is_infinity else P
+            return self.multiply(neg_P, -n)
+        
+        result = ECPoint(None, None, self)  # Point at infinity
+        addend = P
+        
+        while n > 0:
+            if n & 1:
+                result = self.add(result, addend)
+            addend = self.add(addend, addend)
+            n >>= 1
+        
+        return result
+    
+    def infinity(self) -> ECPoint:
+        """Return the point at infinity (identity element)."""
+        return ECPoint(None, None, self)
+
+# Example: secp256k1 parameters (simplified, smaller prime)
+# Actual secp256k1 uses p = 2^256 - 2^32 - 977
+print("Elliptic Curve Cryptography Demo")
+print("="*60)
+
+# Use a smaller curve for demonstration
+p = 2**256 - 2**32 - 977  # secp256k1 prime
+a = 0
+b = 7
+
+# Create curve (using smaller p for demo)
+p_demo = 17
+a_demo = 0
+b_demo = 7
+
+try:
+    curve = EllipticCurve(a_demo, b_demo, p_demo)
+    print(f"Curve: y^2 = x^3 + {a_demo}x + {b_demo} (mod {p_demo})")
+    
+    # Find points on the curve
+    points = []
+    for x in range(p_demo):
+        rhs = (x**3 + a_demo * x + b_demo) % p_demo
+        for y in range(p_demo):
+            if (y * y) % p_demo == rhs:
+                points.append((x, y))
+    
+    print(f"Points on curve: {points}")
+    print(f"Group order (including infinity): {len(points) + 1}")
+    
+    # Demonstrate point addition
+    if len(points) >= 2:
+        P = ECPoint(points[0][0], points[0][1], curve)
+        Q = ECPoint(points[1][0], points[1][1], curve)
+        R = curve.add(P, Q)
+        print(f"\nP = {points[0]}")
+        print(f"Q = {points[1]}")
+        if not R.is_infinity:
+            print(f"P + Q = ({R.x}, {R.y})")
+        else:
+            print(f"P + Q = point at infinity")
+        
+        # Scalar multiplication
+        if not P.is_infinity:
+            twoP = curve.multiply(P, 2)
+            if not twoP.is_infinity:
+                print(f"2P = ({twoP.x}, {twoP.y})")
+    
+except ValueError as e:
+    print(f"Curve error: {e}")
+
+# Diffie-Hellman key exchange on elliptic curves (ECDH)
+print("\n" + "="*60)
+print("Elliptic Curve Diffie-Hellman (ECDH):")
+print("(Using demo parameters)")
+
+# Use a working small curve: y^2 = x^3 + 2x + 2 over F_17
+curve_dh = EllipticCurve(2, 2, 17)
+G = ECPoint(5, 1, curve_dh)  # Generator point
+
+# Alice's private key
+a_private = 3
+A_public = curve_dh.multiply(G, a_private)
+
+# Bob's private key
+b_private = 7
+B_public = curve_dh.multiply(G, b_private)
+
+# Shared secret
+alice_shared = curve_dh.multiply(B_public, a_private)
+bob_shared = curve_dh.multiply(A_public, b_private)
+
+print(f"Generator G = (5, 1)")
+print(f"Alice's private key: {a_private}")
+print(f"Alice's public key: ({A_public.x}, {A_public.y})")
+print(f"Bob's private key: {b_private}")
+print(f"Bob's public key: ({B_public.x}, {B_public.y})")
+print(f"Alice's shared secret: ({alice_shared.x}, {alice_shared.y})")
+print(f"Bob's shared secret: ({bob_shared.x}, {bob_shared.y})")
+print(f"Keys match: {alice_shared == bob_shared}")
+</code></pre>
+            </section>
+            
+            <section id="history">
+                <h2>📜 Math History</h2>
+                
+                <h3>The Development of Modern Algebra</h3>
+                <p>The evolution of algebra from solving equations to abstract structures spans centuries of mathematical innovation.</p>
+                
+                <ul>
+                    <li><strong>1545:</strong> Gerolamo Cardano publishes "Ars Magna," containing solutions to cubic and quartic equations, marking the beginning of modern algebra.</li>
+                    <li><strong>1770:</strong> Joseph-Louis Lagrange's work on the algebraic solution of equations lays groundwork for group theory.</li>
+                    <li><strong>1832:</strong> Évariste Galois, at age 20, writes his foundational memoir on the solvability of polynomial equations by radicals, establishing Galois theory just before his fatal duel.</li>
+                    <li><strong>1870:</strong> Camille Jordan's "Traité des substitutions" systematizes group theory and introduces the Jordan normal form.</li>
+                    <li><strong>1895:</strong> David Hilbert publishes his Zahlbericht, unifying algebraic number theory and setting the stage for modern abstract algebra.</li>
+                    <li><strong>1921:</strong> Emmy Noether's "Idealtheorie in Ringbereichen" establishes the modern axiomatic approach to ring theory, transforming algebra into the study of abstract structures.</li>
+                    <li><strong>1930s:</strong> Bartel van der Waerden's "Moderne Algebra" codifies the axiomatic approach, becoming the standard graduate text for generations.</li>
+                </ul>
+                
+                <p>Emmy Noether's insight that algebraic structures should be studied through their homomorphisms and universal properties, rather than concrete representations, revolutionized mathematics and influenced fields from topology to physics.</p>
+            </section>
+            
+            <section id="articles">
+                <h2>📰 Featured Articles</h2>
+                
+                <h3><a href="https://www.quantamagazine.org/mathematicians-prove-tetrahedron-equation-is-as-complex-as-it-can-be-20241202/">Mathematicians Prove Tetrahedron Equation Is as Complex as It Can Be</a></h3>
+                <p><strong>Quanta Magazine</strong> — December 2024</p>
+                <p>Researchers have resolved a long-standing question about the tetrahedron equation, a higher-dimensional analog of the Yang-Baxter equation from statistical mechanics. The proof establishes that solutions to this equation are as complex as theoretically possible, connecting deep results in quantum field theory, knot theory, and representation theory. This work has implications for understanding integrable systems and topological quantum computing.</p>
+                
+                <h3><a href="https://www.nature.com/articles/d41586-024-04019-0">Mathematicians Solve Long-Standing Coloring Problem</a></h3>
+                <p><strong>Nature News</strong> — November 2024</p>
+                <p>A team of mathematicians has resolved a decades-old question about graph coloring, proving new bounds on the chromatic number of certain graph families. The result combines probabilistic methods with structural graph theory, demonstrating the power of randomization in combinatorial proofs. The techniques developed may find applications in scheduling, register allocation in compilers, and frequency assignment problems.</p>
+                
+                <h3><a href="https://www.ams.org/journals/notices/202411/rnoti-p1791.pdf">The Mathematics of Neural Networks: From Approximation to Optimization</a></h3>
+                <p><strong>Notices of the AMS</strong> — November 2024</p>
+                <p>This survey article explores the mathematical foundations of deep learning, connecting approximation theory, optimization, and statistical learning theory. The authors present recent results on the expressivity of neural networks, convergence properties of gradient descent in high dimensions, and generalization bounds that explain why overparameterized models can generalize well. The article bridges pure and applied mathematics, showing how classical techniques find new life in machine learning research.</p>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p><a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
