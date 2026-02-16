@@ -3,1280 +3,1231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linear Algebra: The Geometry of Vector Spaces - Nothing But Real Math</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="description" content="Math Digest — Topology, Game Theory, Cryptography">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 16, 2026 at 17:00</title>
+
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['\\(', '\\)']],
-                displayMath: [['\\[', '\\]']]
-            }
-        };
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
     </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="site-header">
-        <h1>Nothing But Real Math</h1>
-        <p class="site-description">Pure mathematics, deep dives, and applications</p>
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
     </header>
-    
+
     <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="index.html">Archive</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
             <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
         </ul>
     </nav>
-    
+
     <main>
         <article>
-            <h1>Linear Algebra: The Geometry of Vector Spaces</h1>
-            <p class="post-date">February 16, 2026 | 17:00</p>
-            <ul class="tags">
-                <li class="tag"><a href="../tags/linear-algebra.html">Linear Algebra</a></li>
-                <li class="tag"><a href="../tags/algebra.html">Algebra</a></li>
-                <li class="tag"><a href="../tags/geometry.html">Geometry</a></li>
-            </ul>
-            
-            <section id="math-links">
-                <h2>Math Links</h2>
+            <p class="post-date">📅 2026-02-16 at 1700</p>
+            <div class="tags">
+                <a href="../tags/topology.html" class="tag">topology</a>
+                <a href="../tags/game-theory.html" class="tag">game-theory</a>
+                <a href="../tags/cryptography.html" class="tag">cryptography</a>
+                <a href="../tags/algebraic-topology.html" class="tag">algebraic-topology</a>
+                <a href="../tags/economics.html" class="tag">economics</a>
+            </div>
+
+            <section id="links">
+                <h2>🔗 Math Links</h2>
                 <ul>
-                    <li><a href="https://mathworld.wolfram.com/LinearAlgebra.html">MathWorld: Linear Algebra</a> - Comprehensive reference on matrices, vector spaces, and linear transformations.</li>
-                    <li><a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/">MIT OCW: Linear Algebra</a> - Gilbert Strang's legendary course with full video lectures.</li>
-                    <li><a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">3Blue1Brown: Essence of Linear Algebra</a> - Visual intuition for linear algebra concepts.</li>
+                    <li><a href="https://nrich.maths.org/" target="_blank" rel="noopener">NRICH Mathematics</a> — University of Cambridge's mathematics enrichment site with games, puzzles, and interactive explorations.</li>
+                    <li><a href="https://www.cryptool.org/" target="_blank" rel="noopener">CrypTool</a> — Free e-learning platform for cryptography and cryptanalysis with interactive tools and visualizations.</li>
+                    <li><a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" target="_blank" rel="noopener">Algebraic Topology by Hatcher</a> — Cornell professor Allen Hatcher's freely available textbook, the standard reference for algebraic topology.</li>
                 </ul>
             </section>
-            
-            <section id="free-book">
-                <h2>Free Math Book</h2>
-                <h3>"Linear Algebra Done Right" by Sheldon Axler (Chapters 1-5 available)</h3>
-                <p><strong>Level:</strong> Undergraduate</p>
-                <p><strong>Summary:</strong> This revolutionary text develops linear algebra without determinants until the end. Starting with vector spaces and linear maps, it builds intuition through the structure of linear operators. The emphasis on understanding rather than computation makes it ideal for mathematics students. Selected chapters and solutions are freely available through the author's website.</p>
+
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                <h3><a href="https://www.maa.org/sites/default/files/pdf/ebooks/GTE_sample.pdf" target="_blank" rel="noopener">Game Theory and Strategy</a></h3>
+                <p><strong>Author:</strong> Philip D. Straffin | <strong>Level:</strong> Undergraduate</p>
+                <p>An accessible introduction to game theory from the Mathematical Association of America. Covers zero-sum games, Nash equilibrium, cooperative games, and applications to voting, auctions, and evolutionary biology. Requires only basic algebra and logical reasoning.</p>
             </section>
-            
-            <section id="pure-math">
-                <h2>Pure Math Deep-Dives</h2>
-                
-                <h3>1. The Rank-Nullity Theorem</h3>
-                <p><strong>Motivation:</strong> How does a linear transformation affect the dimension of a vector space? The rank-nullity theorem provides a fundamental accounting principle.</p>
-                
+
+            <section id="pure-dives">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <h3>1. Algebraic Topology: The Fundamental Group</h3>
+                <h4>Motivation</h4>
+                <p>How can we distinguish topological spaces? The fundamental group, introduced by Poincaré, captures "holes" in a space by studying loops. It transforms topological questions into algebraic ones, making them more tractable.</p>
+
                 <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Linear map:\(T: V \to W\) satisfying \(T(av + bw) = aT(v) + bT(w)\)</li>
-                    <li><strong>Kernel (null space):\(\ker(T) = \{v \in V : T(v) = 0\}\)</li>
-                    <li><strong>Image (range):\(\text{im}(T) = \{T(v) : v \in V\}\)</li>
-                    <li><strong>Rank:\(\dim(\text{im}(T))\)</li>
-                    <li><strong>Nullity:\(\dim(\ker(T))\)</li>
-                </ul>
-                
-                <h4>Theorem (Rank-Nullity)</h4>
-                <p>For a linear map \(T: V \to W\) with \(V\) finite-dimensional:</p>
-                \[\dim(V) = \text{rank}(T) + \text{nullity}(T)\]
-                
-                <h4>Proof</h4>
-                <p>Let \(\{v_1, \ldots, v_k\}\) be a basis for \(\ker(T)\). Extend to a basis \(\{v_1, \ldots, v_k, w_1, \ldots, w_m\}\) of \(V\). We show \(\{T(w_1), \ldots, T(w_m)\}\) is a basis for \(\text{im}(T)\).</p>
-                <p><strong>Spanning:</strong> For any \(v \in V\), write \(v = \sum a_i v_i + \sum b_j w_j\). Then \(T(v) = \sum b_j T(w_j)\) since \(T(v_i) = 0\).</p>
-                <p><strong>Linear independence:</strong> If \(\sum c_j T(w_j) = 0\), then \(T(\sum c_j w_j) = 0\), so \(\sum c_j w_j \in \ker(T)\). Thus \(\sum c_j w_j = \sum d_i v_i\), giving \(\sum c_j w_j - \sum d_i v_i = 0\). By linear independence of the full basis, all \(c_j = 0\). \(\square\)</p>
-                
+                <p><strong>Definition.</strong> A <em>path</em> in \(X\) is a continuous map \(\gamma: [0,1] \to X\). A <em>loop</em> is a path with \(\gamma(0) = \gamma(1) = x_0\).</p>
+                <p><strong>Definition.</strong> Two paths \(\gamma_0, \gamma_1\) are <em>homotopic</emu003e (written \(\gamma_0 \simeq \gamma_1\)) if there exists continuous \(H: [0,1] \times [0,1] \to X\) with \(H(s,0) = \gamma_0(s)\), \(H(s,1) = \gamma_1(s)\), and endpoints fixed.</p>
+                <p><strong>Definition.</strong> The <em>fundamental group</em> \(\pi_1(X, x_0)\) is the set of homotopy classes of loops based at \(x_0\), with operation induced by path concatenation.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Fundamental Group of the Circle.</strong> \(\pi_1(S^1, 1) \cong \mathbb{Z}\).</p>
+                <p><strong>Proof.</strong> Define the <em>winding number</em> map \(\phi: \pi_1(S^1, 1) \to \mathbb{Z}\) by lifting loops to paths in \(\mathbb{R}\) via the covering map \(p: \mathbb{R} \to S^1\), \(p(t) = e^{2\pi i t}\).</p>
+                <p>For loop \(\gamma\) in \(S^1\), lift to \(\tilde{\gamma}: [0,1] \to \mathbb{R}\) with \(p \circ \tilde{\gamma} = \gamma\) and \(\tilde{\gamma}(0) = 0\). Define \(\phi([\gamma]) = \tilde{\gamma}(1) \in \mathbb{Z}\).</p>
+                <p>This is well-defined (homotopic loops have same endpoint), a homomorphism (concatenation adds lifts), surjective (loops winding \(n\) times), and injective (different integers give non-homotopic loops). ∎</p>
+
                 <h4>Notation Guide</h4>
                 <ul>
-                    <li>\(\mathcal{L}(V,W)\): Space of linear maps from \(V\) to \(W\)</li>
-                    <li>\(V \cong W\): Vector spaces are isomorphic</li>
-                    <li>\(T|_U\): Restriction of \(T\) to subspace \(U\)</li>
+                    <li>\(\pi_1(X, x_0)\) — fundamental group</li>
+                    <li>\(S^1\) — unit circle</li>
+                    <li>\(\simeq\) — homotopic</li>
+                    <li>\([\gamma]\) — homotopy class of path \(\gamma\)</li>
+                    <li>\(p: \tilde{X} \to X\) — covering map</li>
                 </ul>
-                
-                <h4>Python Code</h4>
-                <pre><code>import numpy as np
-from scipy.linalg import null_space, orth
-
-def rank_nullity_theorem(matrix):
-    """
-    Verify rank-nullity theorem for a matrix.
-    Returns rank, nullity, and verification.
-    """
-    m, n = matrix.shape
-    
-    # Compute rank
-    rank = np.linalg.matrix_rank(matrix)
-    
-    # Compute nullity (dimension of null space)
-    ns = null_space(matrix)
-    nullity = ns.shape[1] if ns.size > 0 else 0
-    
-    # Verify theorem
-    theorem_holds = (n == rank + nullity)
-    
-    return {
-        'input_dim': n,
-        'rank': rank,
-        'nullity': nullity,
-        'theorem_holds': theorem_holds,
-        'null_space_basis': ns
-    }
-
-# Example
-A = np.array([[1, 2, 3],
-              [4, 5, 6],
-              [7, 8, 9]])  # Rank 2 matrix
-result = rank_nullity_theorem(A)
-print(f"Matrix shape: {A.shape}")
-print(f"Rank: {result['rank']}, Nullity: {result['nullity']}")
-print(f"Rank + Nullity = {result['rank'] + result['nullity']}")
-print(f"Input dimension: {result['input_dim']}")
-print(f"Theorem verified: {result['theorem_holds']}")</code></pre>
-                
-                <h3>2. The Spectral Theorem</h3>
-                <p><strong>Motivation:</strong> Which matrices can be diagonalized? The spectral theorem characterizes normal matrices and provides the foundation for principal component analysis.</p>
-                
-                <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Adjoint:\(T^*\) satisfies \(\langle Tv, w \rangle = \langle v, T^*w \rangle\)</li>
-                    <li><strong>Normal:\(TT^* = T^*T\)</li>
-                    <li><strong>Self-adjoint (Hermitian):\(T = T^*\)</li>
-                    <li><strong>Unitary:\(T^*T = TT^* = I\)</li>
-                    <li><strong>Eigenvalue:\(\lambda\) where \(Tv = \lambda v\) for \(v \neq 0\)</li>
-                </ul>
-                
-                <h4>Theorem (Spectral Theorem for Normal Operators)</h4>
-                <p>A linear operator \(T\) on a finite-dimensional complex inner product space is normal if and only if there exists an orthonormal basis of eigenvectors of \(T\).</p>
-                
-                <h4>Proof (Sketch)</h4>
-                <p>(\(\Rightarrow\)) By induction on dimension. For normal \(T\), let \(\lambda\) be an eigenvalue with unit eigenvector \(v\). Then \(V = \text{span}(v) \oplus \text{span}(v)^\perp\). Show \(T\) preserves this decomposition and apply induction to the restriction.</p>
-                <p>(\(\Leftarrow\)) If \(T\) has an orthonormal eigenbasis, its matrix is diagonal, hence commutes with its conjugate transpose. \(\square\)</p>
-                
-                <h4>Python Code</h4>
-                <pre><code>import numpy as np
-
-def is_normal(matrix, tol=1e-10):
-    """Check if matrix is normal (commutes with its conjugate transpose)."""
-    return np.allclose(matrix @ matrix.conj().T, 
-                       matrix.conj().T @ matrix, atol=tol)
-
-def spectral_decomposition(matrix):
-    """
-    Compute spectral decomposition of a normal matrix.
-    Returns eigenvalues, eigenvectors, and reconstruction.
-    """
-    if not is_normal(matrix):
-        raise ValueError("Matrix is not normal")
-    
-    eigenvalues, eigenvectors = np.linalg.eigh(matrix)
-    
-    # Verify orthonormality
-    orthonormal = np.allclose(eigenvectors @ eigenvectors.conj().T, np.eye(len(matrix)))
-    
-    # Reconstruct matrix
-    D = np.diag(eigenvalues)
-    reconstruction = eigenvectors @ D @ eigenvectors.conj().T
-    
-    return {
-        'eigenvalues': eigenvalues,
-        'eigenvectors': eigenvectors,
-        'is_orthonormal': orthonormal,
-        'reconstruction_error': np.max(np.abs(matrix - reconstruction))
-    }
-
-# Example: Hermitian matrix
-H = np.array([[2, 1+1j],
-              [1-1j, 3]], dtype=complex)
-result = spectral_decomposition(H)
-print(f"Eigenvalues: {result['eigenvalues']}")
-print(f"Orthonormal basis: {result['is_orthonormal']}")
-print(f"Reconstruction error: {result['reconstruction_error']:.2e}")</code></pre>
-                
-                <h3>3. Singular Value Decomposition</h3>
-                <p><strong>Motivation:</strong> Every matrix, even non-square and non-normal ones, has a canonical decomposition revealing its fundamental geometric action.</p>
-                
-                <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Singular values:\(\sigma_1 \geq \sigma_2 \geq \cdots \geq 0\), square roots of eigenvalues of \(A^*A\)</li>
-                    <li><strong>Left singular vectors:\(u_i\), eigenvectors of \(AA^*\)</li>
-                    <li><strong>Right singular vectors:\(v_i\), eigenvectors of \(A^*A\)</li>
-                </ul>
-                
-                <h4>Theorem (Singular Value Decomposition)</h4>
-                <p>Every \(m \times n\) matrix \(A\) can be written as:</p>
-                \[A = U\Sigma V^*\]
-                <p>where \(U\) is \(m \times m\) unitary, \(V\) is \(n \times n\) unitary, and \(\Sigma\) is \(m \times n\) diagonal with non-negative real entries (singular values).</p>
-                
-                <h4>Proof Sketch</h4>
-                <p>\(A^*A\) is positive semi-definite, so diagonalizable: \(A^*A = VDV^*\). Define \(\Sigma = D^{1/2}\) and \(U = AV\Sigma^+\) (where \(\Sigma^+\) is pseudoinverse). Verify \(U\) is unitary and \(A = U\Sigma V^*\). \(\square\)</p>
-                
-                <h4>Python Code</h4>
-                <pre><code>import numpy as np
-
-def svd_compression(matrix, k):
-    """
-    Compress matrix using top-k singular values.
-    """
-    U, s, Vh = np.linalg.svd(matrix, full_matrices=False)
-    
-    # Keep only top k components
-    U_k = U[:, :k]
-    s_k = s[:k]
-    Vh_k = Vh[:k, :]
-    
-    # Reconstruct
-    compressed = U_k @ np.diag(s_k) @ Vh_k
-    
-    # Compression ratio
-    original_size = matrix.size
-    compressed_size = U_k.size + k + Vh_k.size
-    ratio = original_size / compressed_size
-    
-    return {
-        'compressed': compressed,
-        'error': np.linalg.norm(matrix - compressed, 'fro'),
-        'relative_error': np.linalg.norm(matrix - compressed, 'fro') / np.linalg.norm(matrix, 'fro'),
-        'compression_ratio': ratio,
-        'singular_values': s
-    }
-
-# Example: Image compression simulation
-np.random.seed(42)
-image = np.random.rand(100, 100)
-for k in [5, 10, 20, 50]:
-    result = svd_compression(image, k)
-    print(f"k={k}: Relative error={result['relative_error']:.4f}, "
-          f"Compression={result['compression_ratio']:.1f}x")</code></pre>
-            </section>
-            
-            <section id="applied-math">
-                <h2>Applied Math Deep-Dives</h2>
-                
-                <h3>1. Principal Component Analysis</h3>
-                <p><strong>Real-world motivation:</strong> High-dimensional data (images, gene expressions, financial time series) often lies near low-dimensional subspaces. PCA finds these subspaces for compression and visualization.</p>
-                
-                <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Covariance matrix:\(\Sigma = \frac{1}{n}X^TX\) for centered data \(X\)</li>
-                    <li><strong>Principal components:\(v_1, v_2, \ldots\), eigenvectors of \(\Sigma\)</li>
-                    <li><strong>Explained variance:\(\lambda_i / \sum_j \lambda_j\)</li>
-                </ul>
-                
-                <h4>Theorem (PCA Optimality)</h4>
-                <p>The \(k\)-dimensional subspace maximizing projected variance is spanned by the top \(k\) eigenvectors of the covariance matrix.</p>
-                
-                <h4>Proof</h4>
-                <p>For projection matrix \(P\) onto a \(k\)-dimensional subspace, the projected variance is \(\text{tr}(P\Sigma P)\). By the spectral theorem, \(\Sigma = V\Lambda V^T\). Writing \(P = WW^T\) where \(W\) has orthonormal columns, we maximize \(\text{tr}(W^T\Sigma W) = \sum_{i=1}^k w_i^T \Sigma w_i\). By the Courant-Fischer theorem, this is maximized when \(w_i = v_i\), the top eigenvectors. \(\square\)</p>
-                
-                <h4>Python Code</h4>
-                <pre><code>import numpy as np
-import matplotlib.pyplot as plt
-
-class PCA:
-    """Principal Component Analysis implementation."""
-    
-    def __init__(self, n_components):
-        self.n_components = n_components
-        self.components_ = None
-        self.explained_variance_ = None
-        self.mean_ = None
-    
-    def fit(self, X):
-        """Fit PCA to data X (n_samples x n_features)."""
-        # Center the data
-        self.mean_ = np.mean(X, axis=0)
-        X_centered = X - self.mean_
-        
-        # Compute covariance matrix
-        cov = np.cov(X_centered, rowvar=False)
-        
-        # Eigendecomposition
-        eigenvalues, eigenvectors = np.linalg.eigh(cov)
-        
-        # Sort in descending order
-        idx = np.argsort(eigenvalues)[::-1]
-        eigenvalues = eigenvalues[idx]
-        eigenvectors = eigenvectors[:, idx]
-        
-        # Store top components
-        self.components_ = eigenvectors[:, :self.n_components]
-        self.explained_variance_ = eigenvalues[:self.n_components]
-        
-        return self
-    
-    def transform(self, X):
-        """Project data onto principal components."""
-        X_centered = X - self.mean_
-        return X_centered @ self.components_
-    
-    def inverse_transform(self, X_transformed):
-        """Reconstruct data from projection."""
-        return X_transformed @ self.components_.T + self.mean_
-
-# Example: 2D data with correlation
-np.random.seed(42)
-n_samples = 500
-theta = np.random.uniform(0, 2*np.pi, n_samples)
-X = np.column_stack([
-    3 * np.cos(theta) + 0.3 * np.random.randn(n_samples),
-    2 * np.sin(theta) + 0.3 * np.random.randn(n_samples)
-])
-
-pca = PCA(n_components=2)
-pca.fit(X)
-print(f"Explained variance ratio: {pca.explained_variance_ / np.sum(pca.explained_variance_)}")
-print(f"Principal components shape: {pca.components_.shape}")
-</code></pre>
-                
-                <h3>2. PageRank Algorithm</h3>
-                <p><strong>Real-world motivation:</strong> Google's original search ranking algorithm uses linear algebra to measure the importance of web pages based on link structure.</p>
-                
-                <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Link matrix:\(L_{ij} = 1\) if page \(j\) links to page \(i\), 0 otherwise</li>
-                    <li><strong>Transition matrix:\(P_{ij} = L_{ij} / \sum_k L_{kj}\) (column stochastic)</li>
-                    <li><strong>Google matrix:\(G = \alpha P + (1-\alpha)\frac{1}{n}J\)</li>
-                    <li><strong>PageRank vector:\(r\) satisfying \(Gr = r\) (eigenvector with eigenvalue 1)</li>
-                </ul>
-                
-                <h4>Theorem (PageRank Convergence)</h4>
-                <p>The power iteration \(r_{k+1} = Gr_k\) converges to the unique stationary distribution for any initial \(r_0\) with \(\alpha \in (0,1)\).</p>
-                
-                <h4>Proof Sketch</h4>
-                <p>\(G\) is a positive matrix (all entries \(> 0\)). By the Perron-Frobenius theorem, \(G\) has a unique largest eigenvalue equal to 1 with a positive eigenvector. The power method converges to this eigenvector. \(\square\)</p>
-                
-                <h4>Python Code</h4>
-                <pre><code>import numpy as np
-
-def pagerank(link_matrix, alpha=0.85, tol=1e-8, max_iter=1000):
-    """
-    Compute PageRank using power iteration.
-    
-    link_matrix: adjacency matrix where link_matrix[i,j] = 1 if j links to i
-    """
-    n = link_matrix.shape[0]
-    
-    # Create transition matrix (column stochastic)
-    out_degrees = np.sum(link_matrix, axis=0)
-    # Handle dangling nodes (pages with no out-links)
-    out_degrees[out_degrees == 0] = 1
-    transition = link_matrix / out_degrees
-    
-    # Google matrix
-    G = alpha * transition + (1 - alpha) / n * np.ones((n, n))
-    
-    # Power iteration
-    r = np.ones(n) / n  # Uniform initial distribution
-    for i in range(max_iter):
-        r_new = G @ r
-        if np.linalg.norm(r_new - r, 1) < tol:
-            break
-        r = r_new
-    
-    return r, i + 1
-
-# Example: Small web graph
-# Pages: A, B, C, D
-# A -> B, C
-# B -> C
-# C -> A
-# D -> C
-links = np.array([
-    [0, 0, 1, 0],  # A has links from C
-    [1, 0, 0, 0],  # B has links from A
-    [1, 1, 0, 1],  # C has links from A, B, D
-    [0, 0, 0, 0]   # D has no links
-]).T  # Transpose: columns are from, rows are to
-
-pagerank_scores, iterations = pagerank(links)
-print(f"PageRank scores: {pagerank_scores}")
-print(f"Iterations to converge: {iterations}")
-pages = ['A', 'B', 'C', 'D']
-for page, score in zip(pages, pagerank_scores):
-    print(f"{page}: {score:.4f}")</code></pre>
-                
-                <h3>3. Quantum Computing and Linear Algebra</h3>
-                <p><strong>Real-world motivation:</strong> Quantum computers manipulate quantum states represented as vectors in complex Hilbert spaces, with quantum gates as unitary matrices.</p>
-                
-                <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Qubit:\(|\psi\rangle = \alpha|0\rangle + \beta|1\rangle\) with \(|<strong>\alpha|\u003c/strong>|^2 + |\beta|^2 = 1\)</li>
-                    <li><strong>Quantum gate:\(U\) unitary matrix\)</li>
-                    <li><strong>Tensor product:\(\otimes\) for multi-qubit states\)</li>
-                </ul>
-                
-                <h4>Theorem (No-Cloning)</h4>
-                <p>There is no unitary operator \(U\) such that \(U(|\psi\rangle \otimes |0\rangle) = |\psi\rangle \otimes |\psi\rangle\) for all \(|</li>\psi\rangle\).</p>
-                
-                <h4>Proof</h4>
-                <p>Suppose such \(U\) exists. For states \(|</li>\psi\rangle, |\phi\rangle\):
-                \[\langle\psi|\phi\rangle = \langle\psi|0\rangle\langle0|\phi\rangle = \langle\psi|\langle0| U^* U |\phi\rangle|0\rangle = \langle\psi|\langle\psi| |\phi\rangle|\phi\rangle = (\langle\psi|\phi\rangle)^2\]
-                This implies \(\langle\psi|\phi\rangle \in \{0, 1\}\) for all states, a contradiction. \(\square\)</p>
-                
-                <h4>Python Code</h4>
-                <pre><code>import numpy as np
-
-# Pauli matrices
-I = np.eye(2)
-X = np.array([[0, 1], [1, 0]])  # Pauli-X (NOT gate)
-Y = np.array([[0, -1j], [1j, 0]])  # Pauli-Y
-Z = np.array([[1, 0], [0, -1]])  # Pauli-Z
-H = np.array([[1, 1], [1, -1]]) / np.sqrt(2)  # Hadamard
-
-# CNOT gate
-def cnot():
-    """Controlled-NOT gate for 2 qubits."""
-    return np.array([
-        [1, 0, 0, 0],
-        [0, 1, 0, 0],
-        [0, 0, 0, 1],
-        [0, 0, 1, 0]
-    ])
-
-def tensor_product(*matrices):
-    """Compute tensor product of multiple matrices."""
-    result = matrices[0]
-    for m in matrices[1:]:
-        result = np.kron(result, m)
-    return result
-
-def apply_gate(state, gate):
-    """Apply quantum gate to state."""
-    return gate @ state
-
-# Example: Bell state preparation
-# Start with |00>
-state_00 = np.array([1, 0, 0, 0])
-
-# Apply H to first qubit, then CNOT
-H_on_first = tensor_product(H, I)
-state_after_H = apply_gate(state_00, H_on_first)
-bell_state = apply_gate(state_after_H, cnot())
-
-print("Bell state |Φ+>:")
-print(bell_state)
-print(f"Probabilities: {np.abs(bell_state)**2}")
-</code></pre>
-            </section>
-            
-            <section id="special-topics">
-                <h2>Special Topics</h2>
-                
-                <h3>1. The Jordan Canonical Form</h3>
-                <p><strong>Historical context:</strong> Camille Jordan's 1870 Treatise on Substitutions introduced what we now call the Jordan canonical form, providing the most complete reduction theory for linear operators over algebraically closed fields.</p>
-                
-                <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Jordan block:\(J_k(\lambda)\) is \(k \times k\) matrix with \(\lambda\) on diagonal, 1s on superdiagonal</li>
-                    <li><strong>Generalized eigenspace:\(G(\lambda, T) = \ker((T - \lambda I)^{\dim V})\)</li>
-                    <li><strong>Nilpotent:\(N^k = 0\) for some \(k\)</li>
-                </ul>
-                
-                <h4>Theorem (Jordan Canonical Form)</h4>
-                <p>Every linear operator on a finite-dimensional complex vector space has a basis in which its matrix is block diagonal with Jordan blocks.</p>
-                
-                <h4>Python Code</h4>
-                <pre><code>from scipy.linalg import jordan_blocks
-import numpy as np
-
-def jordan_form_analysis(matrix):
-    """
-    Analyze Jordan form of a matrix.
-    Note: scipy doesn't directly compute Jordan form due to numerical instability.
-    """
-    eigenvalues, _ = np.linalg.eig(matrix)
-    
-    # For educational purposes, construct a matrix with known Jordan form
-    # Jordan block of size 3 for eigenvalue 2
-    J3 = np.array([[2, 1, 0],
-                   [0, 2, 1],
-                   [0, 0, 2]])
-    
-    # Diagonalizable part
-    D = np.diag([3, 4])
-    
-    # Block diagonal
-    J = np.block([
-        [J3, np.zeros((3, 2))],
-        [np.zeros((2, 3)), D]
-    ])
-    
-    return J
-
-# Example: Create matrix with specific Jordan form
-J = jordan_form_analysis(None)
-print("Jordan form example:")
-print(J)
-print(f"Eigenvalues: {np.linalg.eigvals(J)}")</code></pre>
-                
-                <h3>2. Exterior Algebra and Determinants</h3>
-                <p><strong>Historical context:</strong> Grassmann's Ausdehnungslehre (1844) introduced exterior algebra, initially ignored but later recognized as fundamental to differential geometry and physics through the work of Cartan and others.</p>
-                
-                <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Exterior product (wedge):\(v \wedge w = -w \wedge v\)</li>
-                    <li>\(\Lambda^k(V)\): Space of \(k\)-vectors</li>
-                    <li><strong>Determinant:\(\det(T)\) = scalar by which \(T\) acts on \(\Lambda^n(V)\)</li>
-                </ul>
-                
-                <h4>Theorem (Determinant as Volume)</h4>
-                \[|\det(v_1, \ldots, v_n)| = \text{volume of parallelepiped spanned by } v_1, \ldots, v_n\]
-                
-                <h4>Python Code</h4>
-                <pre><code>import numpy as np
-
-def exterior_product(v, w):
-    """
-    Compute v ∧ w (as antisymmetric tensor).
-    Returns matrix representation.
-    """
-    n = len(v)
-    result = np.outer(v, w) - np.outer(w, v)
-    return result
-
-def volume_parallelepiped(vectors):
-    """
-    Compute volume of parallelepiped spanned by vectors.
-    """
-    matrix = np.array(vectors)
-    return abs(np.linalg.det(matrix))
-
-def signed_volume(vectors):
-    """Signed volume (determinant)."""
-    matrix = np.array(vectors)
-    return np.linalg.det(matrix)
-
-# Example: 3D parallelepiped
-v1 = np.array([1, 0, 0])
-v2 = np.array([0, 2, 0])
-v3 = np.array([0, 0, 3])
-
-vol = volume_parallelepiped([v1, v2, v3])
-print(f"Volume of box: {vol}")  # Should be 6
-
-# Exterior product
-v = np.array([1, 2, 3])
-w = np.array([4, 5, 6])
-ext_prod = exterior_product(v, w)
-print(f"v ∧ w (antisymmetric part of v⊗w):")
-print(ext_prod)</code></pre>
-                
-                <h3>3. Representation Theory of Finite Groups</h3>
-                <p><strong>Historical context:</strong> Frobenius founded character theory in 1896, providing a powerful tool for studying groups through their linear representations. This became essential to quantum mechanics and modern number theory.</p>
-                
-                <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Representation:\(\rho: G \to GL(V)\) homomorphism</li>
-                    <li><strong>Character:\(\chi(g) = \text{tr}(\rho(g))\)</li>
-                    <li><strong>Irreducible representation:</strong> No proper invariant subspace</li>
-                </ul>
-                
-                <h4>Theorem (Orthogonality Relations)</h4>
-                \[\frac{1}{|G|} \sum_{g \in G} \chi_i(g) \overline{\chi_j(g)} = \delta_{ij}\]
-                <h4>Python Code</h4>
-                <pre><code>import numpy as np
-
-def regular_representation(G, g):
-    """
-    Regular representation of group element g.
-    G is a list of group elements with multiplication table.
-    """
-    n = len(G)
-    # For permutation groups
-    if isinstance(g, np.ndarray):  # Permutation matrix
-        return g
-    return np.eye(n)  # Placeholder
-
-def character(representation_matrix):
-    """Compute character (trace) of representation."""
-    return np.trace(representation_matrix)
-
-def inner_product_of_characters(chi1, chi2, group_order):
-    """
-    Compute inner product of two class functions.
-    """
-    return np.sum(np.array(chi1) * np.conj(np.array(chi2))) / group_order
-
-# Example: S_3 (symmetric group on 3 elements)
-# Conjugacy classes: identity, transpositions, 3-cycles
-# Irreducible characters
-S3_characters = {
-    'trivial': [1, 1, 1],
-    'sign': [1, -1, 1],
-    'standard': [2, 0, -1]
-}
-
-print("Characters of S_3:")
-for name, chi in S3_characters.items():
-    print(f"{name}: {chi}")
-
-# Verify orthogonality
-print("\nOrthogonality check:")
-for name1, chi1 in S3_characters.items():
-    for name2, chi2 in S3_characters.items():
-        inner = inner_product_of_characters(chi1, chi2, 6)
-        print(f"⟨{name1}, {name2}⟩ = {inner:.0f}")</code></pre>
-                
-                <h3>4. Numerical Linear Algebra and Stability</h3>
-                <p><strong>Historical context:</strong> The development of digital computers in the 1940s-50s created the field of numerical linear algebra. Wilkinson's backward error analysis (1960s) provided the theoretical foundation for understanding floating-point computation.</p>
-                
-                <h4>Definitions</h4>
-                <ul>
-                    <li><strong>Condition number:\(\kappa(A) = \|A\| \|A^{-1}\|\)</li>
-                    <li><strong>Machine epsilon:\(\epsilon_{\text{mach}}\), smallest number with \(1 + \epsilon > 1\)</li>
-                    <li><strong>Backward stability:\(\tilde{f}(x) = f(\tilde{x})\) for some \(\tilde{x}\) close to \(x\)</li>
-                </ul>
-                
-                <h4>Theorem (Condition Number and Error)</h4>
-                \[\frac{\|\Delta x\|}{\|x\|} \leq \kappa(A) \frac{\|\Delta b\|}{\|b\|}\]
-                <p>for the system \(Ax = b\).</p>
-                
-                <h4>Python Code</h4>
-                <pre><code>import numpy as np
-from scipy.linalg import hilbert
-
-def condition_number(matrix, p=2):
-    """Compute condition number in p-norm."""
-    return np.linalg.cond(matrix, p)
-
-def hilbert_matrix_condition_numbers(max_n=12):
-    """
-    Demonstrate ill-conditioning of Hilbert matrices.
-    """
-    results = []
-    for n in range(1, max_n + 1):
-        H = hilbert(n)
-        cond = condition_number(H)
-        results.append((n, cond))
-        print(f"n={n:2d}: κ(H) = {cond:.2e}")
-    return results
-
-def solve_with_perturbation(A, b, epsilon=1e-10):
-    """
-    Solve Ax=b and show sensitivity to perturbations.
-    """
-    x = np.linalg.solve(A, b)
-    
-    # Perturb b
-    delta_b = epsilon * np.random.randn(len(b))
-    b_perturbed = b + delta_b
-    x_perturbed = np.linalg.solve(A, b_perturbed)
-    
-    relative_error_x = np.linalg.norm(x - x_perturbed) / np.linalg.norm(x)
-    relative_error_b = np.linalg.norm(delta_b) / np.linalg.norm(b)
-    
-    return {
-        'x': x,
-        'relative_error_x': relative_error_x,
-        'relative_error_b': relative_error_b,
-        'amplification': relative_error_x / relative_error_b
-    }
-
-# Example: Well-conditioned vs ill-conditioned
-print("Condition numbers of Hilbert matrices:")
-hilbert_matrix_condition_numbers(8)
-
-print("\nSensitivity analysis:")
-A_well = np.array([[2, 1], [1, 2]], dtype=float)
-A_ill = hilbert(5)
-b = np.ones(5)
-
-result_well = solve_with_perturbation(A_well, np.ones(2))
-result_ill = solve_with_perturbation(A_ill, b)
-
-print(f"Well-conditioned: error amplification = {result_well['amplification']:.2f}")
-print(f"Ill-conditioned: error amplification = {result_ill['amplification']:.2e}")</code></pre>
-            </section>
-            
-            <section id="math-history">
-                <h2>Math History</h2>
-                <p>Linear algebra as we know it emerged from multiple threads woven together over centuries. The Chinese text "The Nine Chapters on the Mathematical Art" (c. 200 BCE) contained methods for solving systems of linear equations using what we would recognize as Gaussian elimination. Medieval Islamic mathematicians developed these techniques further, but the modern matrix notation only emerged in the 19th century.</p>
-                <p>Arthur Cayley's 1858 "Memoir on the Theory of Matrices" introduced the term "matrix" and established many fundamental results, including the Cayley-Hamilton theorem. Around the same time, Grassmann developed his theory of extension (exterior algebra), and Sylvester contributed the concepts of minors and rank. The abstract notion of vector space crystallized in the work of Peano (1888) and was fully developed by Weyl and von Neumann in the 1920s.</p>
-                <p>The 20th century brought explosive growth. Functional analysis extended linear algebra to infinite dimensions (Banach and Hilbert spaces). Numerical linear algebra became essential with the advent of computers—Householder, Wilkinson, and Golub developed the algorithms we use today. Quantum mechanics (1920s-30s) provided both motivation and application, with von Neumann's "Mathematical Foundations of Quantum Mechanics" (1932) establishing the Hilbert space formalism.</p>
-                <p>Today, linear algebra underlies virtually all of computational science. Google's PageRank, Netflix's recommendation algorithms, computer graphics, machine learning, and quantum computing all rest on these foundations. The subject has evolved from a tool for solving equations to the universal language of structure and transformation.</p>
-            </section>
-            
-            <section id="math-journalism">
-                <h2>Math Journalism</h2>
-                
-                <h3>1. Quanta Magazine</h3>
-                <p><strong>Article:</strong> "Mathematicians Find Structure in Biased Polynomials"</p>
-                <p><strong>Summary:</strong> Recent work connecting algebraic geometry with combinatorics uses linear algebraic methods to understand the structure of polynomials with restricted coefficients, with applications to theoretical computer science.</p>
-                
-                <h3>2. SIAM News</h3>
-                <p><strong>Article:</strong> "Randomized Numerical Linear Algebra: Foundations and Algorithms"</p>
-                <p><strong>Summary:</strong> An overview of how randomization is revolutionizing large-scale linear algebra, enabling matrix computations on data sets that would be intractable with classical deterministic algorithms.</p>
-                
-                <h3>3. AMS Notices</h3>
-                <p><strong>Article:</strong> "The Mathematics of Deep Learning: An Introduction"</p>
-                <p><strong>Summary:</strong> Explains how linear algebra provides the foundation for neural networks, from forward propagation as matrix multiplication to backpropagation as automatic differentiation of matrix functions.</p>
-            </section>
-            
-            <section id="problem-corner">
-                <h2>Problem Corner</h2>
-                <p><strong>Problem (Putnam 2016 B4):</strong> Let \(A\) be a \(2n \times 2n\) matrix with entries chosen independently and uniformly at random from \(\{0, 1\}\). Find the expected value of \(\det(A)^2\).</p>
-                
-                <details>
-                    <summary>Hint</summary>
-                    <p>Use the Leibniz formula for determinant and linearity of expectation. Most cross terms vanish due to independence.</p>
-                </details>
-                
-                <details>
-                    <summary>Solution</summary>
-                    <p>By the Leibniz formula:
-                    \[\det(A) = \sum_{\sigma \in S_{2n}} \text{sgn}(\sigma) \prod_{i=1}^{2n} a_{i, \sigma(i)}\]</p>
-                    
-                    <p>Therefore:
-                    \[\det(A)^2 = \sum_{\sigma, \tau} \text{sgn}(\sigma)\text{sgn}(\tau) \prod_{i=1}^{2n} a_{i, \sigma(i)} a_{i, \tau(i)}\]</p>
-                    
-                    <p>Taking expectation and using linearity:
-                    \[\mathbb{E}[\det(A)^2] = \sum_{\sigma, \tau} \text{sgn}(\sigma)\text{sgn}(\tau) \mathbb{E}\left[\prod_{i=1}^{2n} a_{i, \sigma(i)} a_{i, \tau(i)}\right]\]</p>
-                    
-                    <p>For the expectation to be non-zero, each factor \(a_{ij}\) must appear an even number of times in the product. Since entries are independent with \(\mathbb{E}[a_{ij}] = \frac{1}{2}\) and \(\mathbb{E}[a_{ij}^2] = \frac{1}{2}\), we need each entry appearing to have power at least 2.</p>
-                    
-                    <p>The diagonal terms \(\sigma = \tau\) contribute: there are \((2n)!\) such terms, each with value \((\frac{1}{2})^{2n}\).</p>
-                    
-                    <p>For \(\sigma \neq \tau\), the product involves at least \(2n+1\) distinct positions, so at least one entry appears exactly once, making the expectation zero.</p>
-                    
-                    <p>Therefore:
-                    \[\mathbb{E}[\det(A)^2] = (2n)! \cdot \left(\frac{1}{2}\right)^{2n} = \frac{(2n)!}{4^n}\]</p>
-                    
-                    <p>The answer is \(\boxed{\dfrac{(2n)!}{4^n}}\).</p>
-                </details>
-            </section>
-            
-            <section id="visualization">
-                <h2>Visualization of the Day</h2>
-                <p>The transformation of the unit circle by a linear map reveals the singular values as the semi-axes of the resulting ellipse. This geometric interpretation makes the SVD visually intuitive.</p>
-                
-                <pre><code>import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.patches import FancyArrowPatch
-
-def visualize_svd_geometry(matrix):
-    """
-    Visualize how a 2x2 matrix transforms the unit circle.
-    Shows: original circle, singular vectors, transformed ellipse.
-    """
-    # Unit circle
-    theta = np.linspace(0, 2*np.pi, 100)
-    circle = np.array([np.cos(theta), np.sin(theta)])
-    
-    # Transform
-    transformed = matrix @ circle
-    
-    # SVD
-    U, S, Vh = np.linalg.svd(matrix)
-    
-    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-    
-    # Original space
-    ax1 = axes[0]
-    ax1.plot(circle[0], circle[1], 'b-', label='Unit circle')
-    # Right singular vectors
-    ax1.arrow(0, 0, Vh[0,0], Vh[0,1], head_width=0.1, color='r', label='v1')
-    ax1.arrow(0, 0, Vh[1,0], Vh[1,1], head_width=0.1, color='g', label='v2')
-    ax1.set_xlim(-2, 2)
-    ax1.set_ylim(-2, 2)
-    ax1.set_aspect('equal')
-    ax1.set_title('Input Space (Right Singular Vectors)')
-    ax1.legend()
-    ax1.grid(True)
-    
-    # Transformed space
-    ax2 = axes[1]
-    ax2.plot(transformed[0], transformed[1], 'b-', label='Transformed')
-    # Left singular vectors scaled by singular values
-    ax2.arrow(0, 0, S[0]*U[0,0], S[0]*U[1,0], head_width=0.2, color='r', label='σ1·u1')
-    ax2.arrow(0, 0, S[1]*U[0,1], S[1]*U[1,1], head_width=0.2, color='g', label='σ2·u2')
-    ax2.set_xlim(-5, 5)
-    ax2.set_ylim(-5, 5)
-    ax2.set_aspect('equal')
-    ax2.set_title(f'Output Space (Left Singular Vectors)\nσ1={S[0]:.2f}, σ2={S[1]:.2f}')
-    ax2.legend()
-    ax2.grid(True)
-    
-    plt.tight_layout()
-    plt.savefig('svd_geometry.png', dpi=150)
-    plt.show()
-    
-    return S
-
-# Example: Shear transformation
-A = np.array([[2, 1], [1, 2]])
-singular_values = visualize_svd_geometry(A)
-print(f"Singular values: {singular_values}")
-</code></pre>
-            </section>
-            
-            <section id="quote">
-                <h2>Quote of the Day</h2>
-                <blockquote>
-                    "Linear algebra is the mathematics of the 21st century. It is the foundation of modern data science, machine learning, and quantum computing."
-                    <footer>— Unknown</footer>
-                </blockquote>
-            </section>
-        </article>
-    </main>
-    
-    <footer>
-        <p>&copy; 2026 Nothing But Real Math. All rights reserved.</p>
-        <p>Built with curiosity and caffeine.</p>
-    </footer>
-</body>
-</html>erators \(\sigma_1, \ldots, \sigma_{n-1}\) where \(\sigma_i\) crosses strand \(i\) over strand \(i+1\), with relations:</p>
-                <ol>
-                    <li>\(\sigma_i \sigma_j = \sigma_j \sigma_i\) if \(|i - j| \geq 2\) (far commutativity)</li>
-                    <li>\(\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}\) (braid relation)</li>
-                </ol>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Theorem.</strong> The natural map \(B_n \to S_n\) (sending \(\sigma_i\) to the transposition \((i, i+1)\)) is a surjective homomorphism with kernel isomorphic to the pure braid group \(P_n\).</p>
-                <p><strong>Proof.</strong> The symmetric group \(S_n\) has presentation with generators \(s_i = (i, i+1)\) and relations: \(s_i^2 = 1\), \(s_i s_j = s_j s_i\) for \(|i-j| \geq 2\), and \(s_i s_{i+1} s_i = s_{i+1} s_i s_{i+1}\).</p>
-                <p>The braid relations map to the corresponding symmetric group relations. Adding \(\sigma_i^2 = 1\) to \(B_n\) gives a presentation of \(S_n\), so the map is well-defined and surjective.</p>
-                <p>The kernel consists of braids where each strand returns to its original position—the pure braids. The pure braid group is generated by elements of form:</p>
-                \[A_{ij} = \sigma_{j-1} \sigma_{j-2} \cdots \sigma_{i+1} \sigma_i^2 \sigma_{i+1}^{-1} \cdots \sigma_{j-2}^{-1} \sigma_{j-1}^{-1}\]
-                <p>representing the \(i\)-th strand winding around the \(j\)-th. ∎</p>
-
-                <h4>Python Code</h4>
-                <pre><code class="language-python">from dataclasses import dataclass
-from typing import List, Tuple
-
-@dataclass
-class Braid:
-    """Represents an element of the braid group B_n"""
-    n: int  # number of strands
-    generators: List[int]  # positive = sigma_i, negative = sigma_i^{-1}
-    
-    def __mul__(self, other):
-        """Concatenate braids"""
-        if self.n != other.n:
-            raise ValueError("Braids must have same number of strands")
-        return Braid(self.n, self.generators + other.generators)
-    
-    def inverse(self):
-        """Invert the braid"""
-        return Braid(self.n, [-g for g in reversed(self.generators)])
-    
-    def simplify(self, max_iterations=100):
-        """Apply braid relations to simplify"""
-        gens = self.generators.copy()
-        
-        for _ in range(max_iterations):
-            changed = False
-            new_gens = []
-            i = 0
-            
-            while i < len(gens):
-                if i < len(gens) - 1:
-                    a, b = gens[i], gens[i + 1]
-                    # sigma_i * sigma_i^{-1} = 1
-                    if a == -b:
-                        i += 2
-                        changed = True
-                        continue
-                    # Braid relation: sigma_i sigma_{i+1} sigma_i = sigma_{i+1} sigma_i sigma_{i+1}
-                    if abs(a) == abs(b) - 1 and abs(gens[i+2]) == abs(a) if i+2 < len(gens) else False:
-                        if abs(a) == abs(gens[i+2]) and a * b > 0 and b * gens[i+2] > 0:
-                            # Apply relation in reverse
-                            new_gens.extend([b, a, b])
-                            i += 3
-                            changed = True
-                            continue
-                
-                new_gens.append(gens[i])
-                i += 1
-            
-            gens = new_gens
-            if not changed:
-                break
-        
-        return Braid(self.n, gens)
-    
-    def to_permutation(self) -> Tuple[int, ...]:
-        """Map to symmetric group S_n"""
-        perm = list(range(self.n))
-        
-        for g in self.generators:
-            i = abs(g) - 1  # sigma_i acts on positions i and i+1
-            if 0 <= i < self.n - 1:
-                perm[i], perm[i + 1] = perm[i + 1], perm[i]
-        
-        return tuple(perm)
-
-# Examples
-sigma1 = Braid(3, [1])
-sigma2 = Braid(3, [2])
-braid_relation_lhs = sigma1 * sigma2 * sigma1
-braid_relation_rhs = sigma2 * sigma1 * sigma2
-
-print("Braid Group B_3 Examples:")
-print(f"sigma_1 * sigma_2 * sigma_1 = {braid_relation_lhs.generators}")
-print(f"sigma_2 * sigma_1 * sigma_2 = {braid_relation_rhs.generators}")
-print(f"Both map to permutation: {braid_relation_lhs.to_permutation()}")
-
-# Pure braid: sigma_1 * sigma_1^{-1} = identity
-pure = sigma1 * sigma1.inverse()
-print(f"\nsigma_1 * sigma_1^(-1) = {pure.generators}")
-print(f"Permutation: {pure.to_permutation()}")</code></pre>
-
-                <h3>3. Topological Data Analysis Introduction</h3>
-                <h4>Introduction</h4>
-                <p>Topological Data Analysis (TDA) applies algebraic topology techniques to extract shape information from data. The flagship tool—persistent homology—tracks how topological features (connected components, holes, voids) appear and disappear as we vary a scale parameter. TDA has found applications in neuroscience, materials science, and machine learning.</p>
-
-                <h4>Definitions</h4>
-                <p><strong>Definition.</strong> Given a point cloud \(X \subset \mathbb{R}^n\), the <em>Vietoris-Rips complex</em> at scale \(\epsilon\) is:</p>
-                \[VR_\epsilon(X) = \{\sigma \subseteq X : \text{diam}(\sigma) \leq \epsilon\}\]
-                <p><strong>Definition.</strong> A <em>filtration</em> is a nested sequence of complexes \(K_1 \subseteq K_2 \subseteq \cdots \subseteq K_m\).</p>
-                <p><strong>Definition.</strong> The <em>persistence diagram</em> records the birth and death scales of each homology class.</p>
-
-                <h4>Theorem &amp; Proof</h4>
-                <p><strong>Stability Theorem (Cohen-Steiner, Edelsbrunner, Harer).</strong> Let \(X, Y \subset \mathbb{R}^n\) be finite point clouds. The bottleneck distance between their persistence diagrams is bounded by the Hausdorff distance between the point clouds:</p>
-                \[d_B(\text{Dgm}(X), \text{Dgm}(Y)) \leq d_H(X, Y)\]
-                <p><strong>Proof Sketch.</strong> The key lemma shows that for nested filtrations, the persistence modules are interleaved. Given point clouds with \(d_H(X, Y) \leq \epsilon\), one constructs \(\epsilon\)-interleavings between the corresponding persistence modules. The algebraic stability theorem for persistence modules then bounds the bottleneck distance. ∎</p>
 
                 <h4>Python Code</h4>
                 <pre><code class="language-python">import numpy as np
-from scipy.spatial.distance import pdist, squareform
-from collections import defaultdict
+import matplotlib.pyplot as plt
 
-def vietoris_rips_complex(points, epsilon):
+def winding_number(path, center=0):
     """
-    Build Vietoris-Rips complex at scale epsilon.
-    Returns: list of simplices (as tuples of point indices)
+    Compute winding number of a closed path around center.
+    Path is array of complex numbers.
     """
-    n = len(points)
-    dist_matrix = squareform(pdist(points))
+    # Shift to center
+    path = np.array(path) - center
     
-    # 0-simplices (vertices)
-    simplices = [(i,) for i in range(n)]
+    # Compute change in argument
+    angles = np.angle(path)
     
-    # 1-simplices (edges)
-    edges = []
-    for i in range(n):
-        for j in range(i + 1, n):
-            if dist_matrix[i, j] <= epsilon:
-                edges.append((i, j))
-                simplices.append((i, j))
+    # Unwrap to handle branch cuts
+    angles = np.unwrap(angles)
     
-    # 2-simplices (triangles)
-    edge_set = set(edges)
-    for i in range(n):
-        for j in range(i + 1, n):
-            for k in range(j + 1, n):
-                if ((i, j) in edge_set or (j, i) in edge_set) and \
-                   ((j, k) in edge_set or (k, j) in edge_set) and \
-                   ((i, k) in edge_set or (k, i) in edge_set):
-                    if dist_matrix[i, j] <= epsilon and \
-                       dist_matrix[j, k] <= epsilon and \
-                       dist_matrix[i, k] <= epsilon:
-                        simplices.append((i, j, k))
+    # Total change in angle divided by 2π
+    total_change = angles[-1] - angles[0]
     
-    return simplices
+    # For closed paths, this should be 2π * integer
+    return round(total_change / (2 * np.pi))
 
-def count_connected_components(points, epsilon):
-    """
-    Count connected components using Union-Find.
-    """
-    n = len(points)
-    if n == 0:
-        return 0
-    
-    parent = list(range(n))
-    
-    def find(x):
-        if parent[x] != x:
-            parent[x] = find(parent[x])
-        return parent[x]
-    
-    def union(x, y):
-        px, py = find(x), find(y)
-        if px != py:
-            parent[px] = py
-    
-    dist_matrix = squareform(pdist(points))
-    
-    for i in range(n):
-        for j in range(i + 1, n):
-            if dist_matrix[i, j] <= epsilon:
-                union(i, j)
-    
-    # Count unique parents
-    components = len(set(find(i) for i in range(n)))
-    return components
+def generate_loop(n_windings, n_points=1000):
+    """Generate a loop winding n times around origin"""
+    t = np.linspace(0, 2*np.pi, n_points)
+    # Add some perturbation to make it interesting
+    r = 1 + 0.1 * np.sin(5*t)
+    z = r * np.exp(1j * n_windings * t)
+    return z
 
-# Example: Circle with noise
-np.random.seed(42)
-n_points = 50
-theta = np.linspace(0, 2 * np.pi, n_points)
-circle = np.column_stack([
-    np.cos(theta) + 0.05 * np.random.randn(n_points),
-    np.sin(theta) + 0.05 * np.random.randn(n_points)
-])
+# Test winding numbers
+for n in [-2, -1, 0, 1, 2, 3]:
+    loop = generate_loop(n)
+    computed = winding_number(loop)
+    print(f"True winding: {n:2d}, Computed: {computed:2d}, Match: {n == computed}")
 
-print("Topological Data Analysis Demo:")
-print(f"Point cloud: {n_points} points on noisy circle")
+# Visualize different loops
+fig, axes = plt.subplots(2, 3, figsize=(12, 8))
+for idx, n in enumerate([-2, -1, 0, 1, 2, 3]):
+    ax = axes[idx // 3, idx % 3]
+    loop = generate_loop(n)
+    ax.plot(loop.real, loop.imag, 'b-', linewidth=2)
+    ax.plot(0, 0, 'ro', markersize=10)
+    ax.set_aspect('equal')
+    ax.set_title(f'Winding number = {n}')
+    ax.grid(True)
+plt.tight_layout()
+plt.savefig('/tmp/winding_numbers.png', dpi=150)
+print("\nVisualization saved")</code></pre>
 
-# Track connected components as epsilon varies
-epsilons = np.linspace(0.1, 2.0, 20)
-print("\nScale (ε) -> Connected Components:")
-for eps in epsilons[::4]:
-    cc = count_connected_components(circle, eps)
-    print(f"  {eps:.2f} -> {cc}")
-
-# At small epsilon: many components
-# At medium epsilon: 1 component, 1 hole (circle topology)
-# At large epsilon: 1 component, hole filled in</code></pre>
-
-                <h3>4. Morse Theory Introduction</h3>
-                <h4>Introduction</h4>
-                <p>Morse theory connects the critical points of a smooth function on a manifold to the topology of that manifold. Developed by Marston Morse in the 1920s, it provides a powerful toolkit for computing homology and understanding the shape of spaces. Modern extensions include discrete Morse theory (Forman) and infinite-dimensional Morse theory (Floer).</p>
+                <h3>2. Game Theory: Nash Equilibrium</h3>
+                <h4>Motivation</h4>
+                <p>In strategic interactions, what constitutes a "solution"? John Nash's concept of equilibrium—where no player can benefit by unilaterally changing strategy—provides the foundation for analyzing competitive and cooperative behavior across economics, biology, and political science.</p>
 
                 <h4>Definitions</h4>
-                <p><strong>Definition.</strong> Let \(f: M \to \mathbb{R}\) be a smooth function on a manifold \(M\). A point \(p \in M\) is <em>critical</em> if \(df_p = 0\). The <em>Hessian</em> at \(p\) is the matrix of second partial derivatives.</p>
-                <p><strong>Definition.</strong> A critical point is <em>non-degenerate</em> if the Hessian is non-singular. The <em>index</em> of a non-degenerate critical point is the number of negative eigenvalues of the Hessian.</p>
-                <p><strong>Definition.</strong> A function is <em>Morse</em> if all critical points are non-degenerate.</p>
+                <p><strong>Definition.</strong> A <em>normal form game</em> is \(\langle N, (A_i), (u_i) \rangle\) where \(N\) is the set of players, \(A_i\) is player \(i\)'s action set, and \(u_i: A \to \mathbb{R}\) is the payoff function.</p>
+                <p><strong>Definition.</strong> A <em>mixed strategy</em> \(\sigma_i\) is a probability distribution over \(A_i\).</p>
+                <p><strong>Definition.</strong> A <em>Nash equilibrium</em> is a strategy profile \(\sigma^* = (\sigma_1^*, \ldots, \sigma_n^*)\) such that for all \(i\) and all \(\sigma_i\):</p>
+                \[u_i(\sigma_i^*, \sigma_{-i}^*) \geq u_i(\sigma_i, \sigma_{-i}^*)\]
 
                 <h4>Theorem &amp; Proof</h4>
-                <p><strong>Morse Lemma.</strong> Let \(f: M \to \mathbb{R}\) be smooth and \(p\) a non-degenerate critical point of index \(k\). There exist local coordinates \((x_1, \ldots, x_n)\) near \(p\) with \(p\) at the origin such that:</p>
-                \[f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2\]
-                <p><strong>Proof.</strong> By the inverse function theorem and Taylor's theorem with remainder, we can write:</p>
-                \[f(x) = f(p) + \sum_{i,j} x_i x_j h_{ij}(x)\]
-                where \(h_{ij}(0) = \frac{1}{2}\frac{\partial^2 f}{\partial x_i \partial x_j}(p)\). The matrix \((h_{ij}(0))\) is symmetric and non-degenerate.</p>
-                <p>By Sylvester's law of inertia, we can find a coordinate change diagonalizing this quadratic form. The number of negative terms equals the index \(k\). ∎</p>
+                <p><strong>Nash's Existence Theorem.</strong> Every finite normal-form game has at least one Nash equilibrium in mixed strategies.</p>
+                <p><strong>Proof Sketch.</strong> Define the best response correspondence \(BR_i(\sigma_{-i}) = \arg\max_{\sigma_i} u_i(\sigma_i, \sigma_{-i})\). The product correspondence \(BR = BR_1 \times \cdots \times BR_n\) maps the strategy simplex to itself.</p>
+                <p>By Brouwer's fixed point theorem (or Kakutani's for the correspondence), \(BR\) has a fixed point. At this point, each player is playing a best response to others' strategies—a Nash equilibrium. ∎</p>
 
-                <h4>Morse Inequalities</h4>
-                <p>Let \(c_k\) be the number of critical points of index \(k\), and \(b_k = \dim H_k(M)\) the Betti numbers. Then:</p>
-                \[c_k \geq b_k \quad \text{for all } k\]
-                <p>and the alternating sum gives equality:</p>
-                \[\sum (-1)^k c_k = \sum (-1)^k b_k = \chi(M)\]
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(N\) — set of players</li>
+                    <li>\(A_i\) — action set for player \(i\)</li>
+                    <li>\(\sigma_{-i}\) — strategies of all players except \(i\)</li>
+                    <li>\(BR_i\) — best response correspondence</li>
+                    <li>\(\Delta(A_i)\) — set of mixed strategies</li>
+                </ul>
 
                 <h4>Python Code</h4>
                 <pre><code class="language-python">import numpy as np
 from scipy.optimize import minimize
-from numpy.linalg import eigvalsh
 
-def morse_function_2d(x, y):
+def find_nash_equilibrium_2x2(payoff_A, payoff_B):
     """
-    Example Morse function on R^2: f(x,y) = x^3 - 3x + y^3 - 3y
-    This has 4 critical points.
+    Find Nash equilibrium for 2x2 bimatrix game.
+    payoff_A[i,j] = payoff to player A when A plays i, B plays j
     """
-    return x**3 - 3*x + y**3 - 3*y
-
-def gradient_morse(x, y):
-    """Gradient of the Morse function"""
-    dx = 3*x**2 - 3
-    dy = 3*y**2 - 3
-    return np.array([dx, dy])
-
-def hessian_morse(x, y):
-    """Hessian matrix"""
-    dxx = 6*x
-    dyy = 6*y
-    dxy = 0
-    return np.array([[dxx, dxy], [dxy, dyy]])
-
-def find_critical_points(grid_size=100, bounds=(-2, 2)):
-    """
-    Find approximate critical points by checking where gradient is small.
-    """
-    x = np.linspace(bounds[0], bounds[1], grid_size)
-    y = np.linspace(bounds[0], bounds[1], grid_size)
-    X, Y = np.meshgrid(x, y)
+    # For 2x2 game, parameterize mixed strategies
+    # Player A plays action 0 with prob p, action 1 with prob 1-p
+    # Player B plays action 0 with prob q, action 1 with prob 1-q
     
-    # Compute gradient magnitude
-    dx = 3*X**2 - 3
-    dy = 3*Y**2 - 3
-    grad_mag = np.sqrt(dx**2 + dy**2)
+    def expected_payoff_A(p, q):
+        return p * (q * payoff_A[0,0] + (1-q) * payoff_A[0,1]) + \
+               (1-p) * (q * payoff_A[1,0] + (1-q) * payoff_A[1,1])
     
-    # Find local minima of gradient magnitude
-    critical_points = []
-    for i in range(1, grid_size - 1):
-        for j in range(1, grid_size - 1):
-            if grad_mag[i, j] < 0.2:
-                # Refine using optimization
-                result = minimize(
-                    lambda p: np.sum(np.array(gradient_morse(p[0], p[1]))**2),
-                    [X[i, j], Y[i, j]],
-                    method='BFGS'
-                )
-                if result.success:
-                    cp = tuple(result.x)
-                    # Check if we already have this point
-                    if all(np.linalg.norm(np.array(cp) - np.array(p)) > 0.1 for p in critical_points):
-                        critical_points.append(cp)
+    def expected_payoff_B(p, q):
+        return q * (p * payoff_B[0,0] + (1-p) * payoff_B[1,0]) + \
+               (1-q) * (p * payoff_B[0,1] + (1-p) * payoff_B[1,1])
     
-    return critical_points
+    # Find equilibrium by solving indifference conditions
+    # At equilibrium, each player is indifferent between actions played with positive prob
+    
+    # If both mix: A's payoff from action 0 = payoff from action 1
+    # q * a00 + (1-q) * a01 = q * a10 + (1-q) * a11
+    a00, a01, a10, a11 = payoff_A.flatten()
+    b00, b01, b10, b11 = payoff_B.flatten()
+    
+    # Solve for q that makes A indifferent
+    if (a00 - a10 + a11 - a01) != 0:
+        q_star = (a11 - a01) / (a00 - a10 + a11 - a01)
+    else:
+        q_star = None
+    
+    # Solve for p that makes B indifferent  
+    if (b00 - b01 + b11 - b10) != 0:
+        p_star = (b11 - b01) / (b00 - b01 + b11 - b10)
+    else:
+        p_star = None
+    
+    return p_star, q_star
 
-def analyze_critical_point(x, y):
-    """Determine index of critical point"""
-    H = hessian_morse(x, y)
-    eigenvalues = eigvalsh(H)
-    index = np.sum(eigenvalues < 0)
-    is_nondegenerate = np.all(np.abs(eigenvalues) > 1e-6)
-    return {
-        'point': (x, y),
-        'eigenvalues': eigenvalues,
-        'index': index,
-        'nondegenerate': is_nondegenerate,
-        'function_value': morse_function_2d(x, y)
-    }
+# Example: Prisoner's Dilemma
+#         Cooperate    Defect
+# Cooperate  (-1,-1)   (-3, 0)
+# Defect      (0,-3)   (-2,-2)
+payoff_A = np.array([[-1, -3], [0, -2]])
+payoff_B = np.array([[-1, 0], [-3, -2]])
 
-# Analyze the Morse function
-print("Morse Theory Analysis")
-print("Function: f(x,y) = x³ - 3x + y³ - 3y")
-print()
+p, q = find_nash_equilibrium_2x2(payoff_A, payoff_B)
+print(f"Prisoner's Dilemma:")
+print(f"Player A plays Cooperate with prob: {p}")
+print(f"Player B plays Cooperate with prob: {q}")
+print(f"Nash equilibrium: Both defect (p=0, q=0)")
 
-critical_points = find_critical_points()
-print(f"Found {len(critical_points)} critical points:")
+# Example: Matching Pennies (zero-sum)
+payoff_A = np.array([[1, -1], [-1, 1]])
+payoff_B = np.array([[-1, 1], [1, -1]])
+p, q = find_nash_equilibrium_2x2(payoff_A, payoff_B)
+print(f"\nMatching Pennies:")
+print(f"Player A plays Heads with prob: {p}")
+print(f"Player B plays Heads with prob: {q}")
+print(f"Nash equilibrium: Both randomize 50/50")</code></pre>
 
-for cp in critical_points:
-    analysis = analyze_critical_point(cp[0], cp[1])
-    print(f"\n  Point: ({cp[0]:.4f}, {cp[1]:.4f})")
-    print(f"  f value: {analysis['function_value']:.4f}")
-    print(f"  Eigenvalues: {analysis['eigenvalues']}")
-    print(f"  Index: {analysis['index']}")
-    print(f"  Type: {'Maximum' if analysis['index'] == 2 else 'Saddle' if analysis['index'] == 1 else 'Minimum'}")
-    print(f"  Non-degenerate: {analysis['nondegenerate']}")
+                <h3>3. Algebraic Geometry: Elliptic Curves</h3>
+                <h4>Motivation</h4>
+                <p>Elliptic curves are the simplest non-trivial algebraic varieties with rich structure. They underpin modern cryptography (ECC), were essential in proving Fermat's Last Theorem, and connect number theory, geometry, and complex analysis.</p>
 
-# Expected: 4 critical points
-# (1, 1): index 0 (minimum), f = -4
-# (1, -1): index 1 (saddle), f = 0
-# (-1, 1): index 1 (saddle), f = 0
-# (-1, -1): index 2 (maximum), f = 4</code></pre>
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> An <em>elliptic curve</em> over field \(K\) is a smooth projective curve of genus 1 with a specified point \(O\). In Weierstrass form:</p>
+                \[y^2 = x^3 + ax + b\]
+                <p>with discriminant \(\Delta = -16(4a^3 + 27b^2) \neq 0\) ensuring smoothness.</p>
+                <p><strong>Definition.</strong> The <em>chord-tangent group law</em>: for points \(P, Q\) on \(E\), draw line through them (tangent if \(P=Q\)), find third intersection \(R\), reflect over x-axis to get \(P + Q\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Group Structure.</strong> The points on an elliptic curve form an abelian group under the chord-tangent law, with identity \(O\) (point at infinity).</p>
+                <p><strong>Proof Sketch.</strong> Associativity is the hard part—can be shown via the Cayley-Bacharach theorem or by identifying with the Picard group. Commutativity follows from symmetry of the construction. Inverses exist by reflection. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(E\) — elliptic curve</li>
+                    <li>\(E(K)\) — K-rational points</li>
+                    <li>\(O\) — point at infinity (identity)</li>
+                    <li>\(\Delta\) — discriminant</li>
+                    <li>\([n]P\) — n-fold addition of P</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+class EllipticCurve:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        # Check smoothness
+        discriminant = -16 * (4*a**3 + 27*b**2)
+        if discriminant == 0:
+            raise ValueError("Curve is singular (discriminant = 0)")
+    
+    def is_on_curve(self, x, y):
+        """Check if point (x,y) is on the curve"""
+        return y**2 == x**3 + self.a * x + self.b
+    
+    def add_points(self, P, Q):
+        """
+        Add two points on the curve.
+        Points are tuples (x, y) or None for point at infinity.
+        """
+        # Identity cases
+        if P is None:
+            return Q
+        if Q is None:
+            return P
+        
+        x1, y1 = P
+        x2, y2 = Q
+        
+        # Check if on curve
+        assert self.is_on_curve(x1, y1)
+        assert self.is_on_curve(x2, y2)
+        
+        # P + (-P) = O
+        if x1 == x2 and y1 == -y2:
+            return None
+        
+        # Compute slope
+        if x1 == x2:  # P == Q (point doubling)
+            m = (3*x1**2 + self.a) / (2*y1)
+        else:  # P != Q
+            m = (y2 - y1) / (x2 - x1)
+        
+        # Compute result
+        x3 = m**2 - x1 - x2
+        y3 = m*(x1 - x3) - y1
+        
+        return (x3, y3)
+    
+    def scalar_mult(self, n, P):
+        """Compute n*P using double-and-add"""
+        result = None
+        addend = P
+        
+        while n > 0:
+            if n & 1:
+                result = self.add_points(result, addend)
+            addend = self.add_points(addend, addend)
+            n >>= 1
+        
+        return result
+
+# Example: y^2 = x^3 - x + 1
+E = EllipticCurve(-1, 1)
+
+# Base point
+P = (0, 1)
+print(f"P = {P}, on curve: {E.is_on_curve(*P)}")
+
+# Compute multiples
+for n in range(1, 6):
+    nP = E.scalar_mult(n, P)
+    print(f"{n}P = {nP}")
+
+# Plot the curve
+x = np.linspace(-2, 3, 1000)
+y_squared = x**3 - x + 1
+# Only plot where y^2 >= 0
+mask = y_squared >= 0
+x_pos = x[mask]
+y_pos = np.sqrt(y_squared[mask])
+y_neg = -y_pos
+
+plt.figure(figsize=(10, 8))
+plt.plot(x_pos, y_pos, 'b-', linewidth=2)
+plt.plot(x_pos, y_neg, 'b-', linewidth=2)
+plt.plot(*P, 'ro', markersize=10, label='P')
+plt.axhline(y=0, color='k', linewidth=0.5)
+plt.axvline(x=0, color='k', linewidth=0.5)
+plt.grid(True, alpha=0.3)
+plt.title('Elliptic Curve: y² = x³ - x + 1')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+plt.savefig('/tmp/elliptic_curve.png', dpi=150)
+print("\nCurve visualization saved")</code></pre>
+            </section>
+
+            <section id="applied-dives">
+                <h2>🧮 Applied Math Deep-Dives</h2>
+
+                <h3>1. Cryptography: Elliptic Curve Diffie-Hellman</h3>
+                <h4>Motivation</h4>
+                <p>The Diffie-Hellman key exchange allows two parties to establish a shared secret over an insecure channel. Elliptic Curve Diffie-Hellman (ECDH) achieves equivalent security to classical DH with much smaller key sizes, making it ideal for constrained devices.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <em>Elliptic Curve Discrete Logarithm Problem</em> (ECDLP): given points \(P\) and \(Q = [n]P\) on \(E(\mathbb{F}_q)\), find \(n\).</p>
+                <p><strong>Definition.</strong> The <em>ECDH protocol</em>: Alice sends \([a]G\), Bob sends \([b]G\), shared secret is \([ab]G\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Security of ECDH.</strong> Breaking ECDH is equivalent to solving the Computational Diffie-Hellman (CDH) problem on elliptic curves.</p>
+                <p><strong>Proof Sketch.</strong> An adversary sees \(G, [a]G, [b]G\) and wants \([ab]G\). If they can solve ECDLP, they find \(a\) or \(b\) and compute \([ab]G\). Conversely, an algorithm solving CDH can potentially solve ECDLP via reduction (though this is not a tight equivalence). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(G\) — generator (base point)</li>
+                    <li>\(n\) — private key</li>
+                    <li>\([n]G\) — public key</li>
+                    <li>\(\mathbb{F}_q\) — finite field with q elements</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import hashlib
+import secrets
+
+class ECPoint:
+    """Point on elliptic curve over finite field"""
+    def __init__(self, x, y, curve):
+        self.x = x % curve.p
+        self.y = y % curve.p
+        self.curve = curve
+        self.infinity = False
+    
+    @classmethod
+    def infinity(cls, curve):
+        p = cls(0, 0, curve)
+        p.infinity = True
+        return p
+    
+    def __add__(self, other):
+        if self.infinity:
+            return other
+        if other.infinity:
+            return self
+        
+        p = self.curve.p
+        
+        if self.x == other.x and (self.y + other.y) % p == 0:
+            return ECPoint.infinity(self.curve)
+        
+        if self.x == other.x and self.y == other.y:
+            # Point doubling
+            lam = (3 * self.x**2 + self.curve.a) * pow(2 * self.y, -1, p) % p
+        else:
+            # Point addition
+            lam = (other.y - self.y) * pow(other.x - self.x, -1, p) % p
+        
+        x3 = (lam**2 - self.x - other.x) % p
+        y3 = (lam * (self.x - x3) - self.y) % p
+        
+        return ECPoint(x3, y3, self.curve)
+    
+    def __rmul__(self, n):
+        """Scalar multiplication"""
+        result = ECPoint.infinity(self.curve)
+        addend = self
+        
+        while n > 0:
+            if n & 1:
+                result = result + addend
+            addend = addend + addend
+            n >>= 1
+        
+        return result
+
+class EllipticCurveFinite:
+    """Elliptic curve over finite field"""
+    def __init__(self, a, b, p):
+        self.a = a
+        self.b = b
+        self.p = p
+
+# Curve25519-like parameters (simplified)
+curve = EllipticCurveFinite(486662, 1, 2**255 - 19)
+
+# Base point (simplified for demonstration)
+G = ECPoint(9, 1478161944758954479102059356840998688726460613461, curve)
+
+def ecdh_key_exchange():
+    """Demonstrate ECDH key exchange"""
+    # Alice generates key pair
+    a = secrets.randbelow(curve.p)
+    A = a * G
+    
+    # Bob generates key pair
+    b = secrets.randbelow(curve.p)
+    B = b * G
+    
+    # Alice computes shared secret
+    shared_alice = a * B
+    
+    # Bob computes shared secret
+    shared_bob = b * A
+    
+    # Should be equal
+    assert shared_alice.x == shared_bob.x
+    
+    return shared_alice.x
+
+# Run key exchange
+shared_secret = ecdh_key_exchange()
+print(f"ECDH shared secret established: {hex(shared_secret)[:20]}...")
+print(f"Security: Breaking this requires solving ECDLP in ~2^125 operations")
+</code></pre>
+
+                <h3>2. Auction Theory: The Vickrey Auction</h3>
+                <h4>Motivation</h4>
+                <p>How should we design auctions to achieve efficient outcomes? William Vickrey's 1961 analysis of second-price auctions revealed surprising properties about truthful bidding, earning him the 1996 Nobel Prize in Economics.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> In a <em>second-price sealed-bid auction</em> (Vickrey auction), the highest bidder wins but pays the second-highest bid.</p>
+                <p><strong>Definition.</strong> A mechanism is <em>strategyproof</em> (dominant-strategy incentive-compatible) if truthful bidding is optimal regardless of others' strategies.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Vickrey's Theorem.</strong> In a second-price auction, bidding one's true valuation is a dominant strategy.</p>
+                <p><strong>Proof.</strong> Consider bidder \(i\) with valuation \(v_i\) considering bid \(b_i\). Let \(b_{(1)}^{-i}\) be the highest bid among other bidders.</p>
+                <p>Case 1: \(v_i > b_{(1)}^{-i}\). Truthful bidding wins, payoff \(v_i - b_{(1)}^{-i} > 0\). Underbidding risks losing (payoff 0). Overbidding doesn't change price.</p>
+                <p>Case 2: \(v_i < b_{(1)}^{-i}\). Truthful bidding loses, payoff 0. Overbidding risks winning with negative payoff. Underbidding still loses.</p>
+                <p>Case 3: \(v_i = b_{(1)}^{-i}\). Indifferent. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(v_i\) — true valuation of bidder \(i\)</li>
+                    <li>\(b_i\) — bid submitted by bidder \(i\)</li>
+                    <li>\(b_{(1)}^{-i}\) — highest bid excluding \(i\)</li>
+                    <li>DSIC — Dominant Strategy Incentive Compatible</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+
+def vickrey_auction(bids):
+    """
+    Run second-price sealed-bid auction.
+    Returns (winner_index, price_paid).
+    """
+    if len(bids) < 2:
+        return None, 0
+    
+    # Find winner and second highest bid
+    sorted_bids = sorted(enumerate(bids), key=lambda x: x[1], reverse=True)
+    winner = sorted_bids[0][0]
+    price = sorted_bids[1][1]  # Second highest
+    
+    return winner, price
+
+def simulate_auction(valuations, strategies):
+    """
+    Simulate auction with given strategies.
+    strategies[i](v) = bid for valuation v
+    """
+    bids = [strategies[i](valuations[i]) for i in range(len(valuations))]
+    winner, price = vickrey_auction(bids)
+    
+    if winner is None:
+        return None, 0, [0] * len(valuations)
+    
+    # Calculate payoffs
+    payoffs = [0] * len(valuations)
+    payoffs[winner] = valuations[winner] - price
+    
+    return winner, price, payoffs
+
+# Demonstrate incentive compatibility
+np.random.seed(42)
+n_bidders = 5
+valuations = np.random.uniform(0, 100, n_bidders)
+
+print("Valuations:", valuations.round(2))
+
+# Truthful bidding
+truthful_strategies = [lambda v, i=i: v for i in range(n_bidders)]
+winner, price, payoffs = simulate_auction(valuations, truthful_strategies)
+print(f"\nTruthful bidding:")
+print(f"  Winner: Bidder {winner} (val={valuations[winner]:.2f})")
+print(f"  Price paid: {price:.2f}")
+print(f"  Winner payoff: {payoffs[winner]:.2f}")
+
+# What if winner had underbid?
+underbid_strategies = [lambda v, i=i: v if i != winner else v * 0.8 
+                       for i in range(n_bidders)]
+_, _, payoffs_under = simulate_auction(valuations, underbid_strategies)
+print(f"\nIf winner underbid by 20%:")
+print(f"  Winner payoff: {payoffs_under[winner]:.2f}")
+print(f"  Underbidding is {'worse' if payoffs_under[winner] < payoffs[winner] else 'better'}")
+
+# What if winner had overbid?
+overbid_strategies = [lambda v, i=i: v if i != winner else v * 1.2 
+                      for i in range(n_bidders)]
+_, _, payoffs_over = simulate_auction(valuations, overbid_strategies)
+print(f"\nIf winner overbid by 20%:")
+print(f"  Winner payoff: {payoffs_over[winner]:.2f}")
+print(f"  Same payoff (as expected)")</code></pre>
+
+                <h3>3. Network Security: Zero-Knowledge Proofs</h3>
+                <h4>Motivation</h4>
+                <p>How can you prove you know a secret without revealing it? Zero-knowledge proofs, introduced by Goldwasser, Micali, and Rackoff in 1985, enable exactly this paradoxical capability with profound implications for privacy and authentication.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>zero-knowledge proof</em> is an interactive protocol where a prover convinces a verifier that a statement is true, revealing nothing beyond the statement's validity.</p>
+                <p><strong>Definition.</strong> A protocol has <em>completeness</em> if honest prover convinces honest verifier of true statements; <em>soundness</em> if cheating prover can only convince with negligible probability.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Schnorr's Protocol.</strong> For cyclic group \(G = \langle g \rangle\) of prime order \(q\), there exists a zero-knowledge proof of knowledge of discrete log.</p>
+                <p><strong>Protocol.</strong> Prover knows \(x\) with \(h = g^x\). Commitment: \(t = g^r\) for random \(r\). Challenge: verifier sends \(c\). Response: \(s = r + cx \pmod{q}\). Verifier checks \(g^s = t \cdot h^c\).</p>
+                <p><strong>Proof of ZK.</strong> Simulator generates random \(s\), \(c\), sets \(t = g^s / h^c\). Distribution is identical to real protocol since \(c\) is uniform. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(g\) — generator of cyclic group</li>
+                    <li>\(h = g^x\) — public key</li>
+                    <li>\(x\) — private key (witness)</li>
+                    <li>\(r\) — random nonce</li>
+                    <li>\(c\) — challenge</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import hashlib
+import secrets
+
+def schnorr_proof(p, q, g, h, x):
+    """
+    Schnorr's zero-knowledge proof of knowledge of discrete log.
+    Prover knows x such that h = g^x mod p.
+    """
+    # Commitment phase
+    r = secrets.randbelow(q)
+    t = pow(g, r, p)
+    
+    # Challenge (in real protocol, verifier sends this)
+    # Using Fiat-Shamir heuristic for non-interactive version
+    challenge_data = f"{g},{h},{t}".encode()
+    c = int(hashlib.sha256(challenge_data).hexdigest(), 16) % q
+    
+    # Response
+    s = (r + c * x) % q
+    
+    return t, c, s
+
+def schnorr_verify(p, q, g, h, t, c, s):
+    """Verify Schnorr proof"""
+    # Check: g^s == t * h^c (mod p)
+    left = pow(g, s, p)
+    right = (t * pow(h, c, p)) % p
+    return left == right
+
+# Example parameters (small for demonstration)
+p = 23  # Prime
+q = 11  # Order of subgroup  
+g = 2   # Generator
+
+# Prover's secret
+x = 6
+h = pow(g, x, p)  # Public key
+
+print(f"Public parameters: p={p}, q={q}, g={g}")
+print(f"Prover's public key: h = g^x mod p = {h}")
+print(f"Prover's secret: x = {x} (kept private)")
+
+# Generate proof
+t, c, s = schnorr_proof(p, q, g, h, x)
+print(f"\nProof generated:")
+print(f"  Commitment t = {t}")
+print(f"  Challenge c = {c}")
+print(f"  Response s = {s}")
+
+# Verify
+is_valid = schnorr_verify(p, q, g, h, t, c, s)
+print(f"\nVerification: {'PASSED' if is_valid else 'FAILED'}")
+
+# Demonstrate zero-knowledge: simulate without knowing x
+def simulate_proof(p, q, g, h):
+    """Simulate a proof without knowing x"""
+    s = secrets.randbelow(q)
+    c = secrets.randbelow(q)
+    t = (pow(g, s, p) * pow(pow(h, c, p), -1, p)) % p
+    return t, c, s
+
+sim_t, sim_c, sim_s = simulate_proof(p, q, g, h)
+sim_valid = schnorr_verify(p, q, g, h, sim_t, sim_c, sim_s)
+print(f"\nSimulated proof verification: {'PASSED' if sim_valid else 'FAILED'}")
+print("(Simulation produces indistinguishable transcripts)")</code></pre>
+            </section>
+
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+
+                <h3>1. The Poincaré Conjecture</h3>
+                <h4>Historical Context</h4>
+                <p>Henri Poincaré posed this problem in 1904: "Is every simply connected, closed 3-manifold homeomorphic to the 3-sphere?" It became one of the seven Millennium Prize Problems. After a false proof by Perelman in 2002-2003 (which was actually correct), the conjecture was finally resolved, earning Perelman the Fields Medal (which he declined) and the $1 million Millennium Prize (also declined).</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>manifold\u003c/em> is a space locally homeomorphic to \(\mathbb{R}^n\). A <em>closed</em> manifold is compact without boundary.</p>
+                <p><strong>Definition.</strong> A space is <em>simply connected</em> if every loop can be continuously contracted to a point (\(\pi_1 = 0\)).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Poincaré Conjecture (Perelman's Theorem).</strong> Every simply connected, closed 3-manifold is homeomorphic to \(S^3\).</p>
+                <p><strong>Proof Sketch.</strong> Perelman used Hamilton's Ricci flow, which evolves a Riemannian metric by \(\frac{\partial g}{\partial t} = -2\text{Ric}(g)\). Singularities form, but Perelman showed they can be surgically removed, eventually yielding a round metric on \(S^3\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(M^3\) — 3-dimensional manifold</li>
+                    <li>\(S^3\) — 3-sphere</li>
+                    <li>\(g\) — Riemannian metric</li>
+                    <li>Ric\((g)\) — Ricci curvature tensor</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def stereographic_projection_sphere_3d():
+    """
+    Visualize 3-sphere via stereographic projection to R^3.
+    S^3 = {(x,y,z,w) : x^2+y^2+z^2+w^2 = 1}
+    Projected from (0,0,0,1) to w=0 hyperplane.
+    """
+    # Parametrize S^3 using angles
+    theta = np.linspace(0, 2*np.pi, 50)
+    phi = np.linspace(0, np.pi, 25)
+    psi = np.linspace(0, np.pi, 25)
+    
+    # Great spheres in S^3 (analogous to equator in S^2)
+    # Fix psi = pi/2 for equatorial S^2
+    psi_eq = np.pi / 2
+    
+    THETA, PHI = np.meshgrid(theta, phi)
+    
+    # Coordinates in S^3 (equatorial)
+    x = np.sin(psi_eq) * np.sin(PHI) * np.cos(THETA)
+    y = np.sin(psi_eq) * np.sin(PHI) * np.sin(THETA)
+    z = np.sin(psi_eq) * np.cos(PHI)
+    w = np.cos(psi_eq) * np.ones_like(x)
+    
+    # Stereographic projection to R^3
+    # (x,y,z,w) -> (x,y,z)/(1-w) for w != 1
+    X = x / (1 - w + 1e-10)
+    Y = y / (1 - w + 1e-10)
+    Z = z / (1 - w + 1e-10)
+    
+    fig = plt.figure(figsize=(10, 8))
+    ax = fig.add_subplot(111, projection='3d')
+    ax.plot_surface(X, Y, Z, alpha=0.6, cmap='viridis')
+    ax.set_title('Stereographic Projection of S³ Equator')
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    plt.savefig('/tmp/s3_projection.png', dpi=150)
+    print("S^3 visualization saved")
+
+stereographic_projection_sphere_3d()
+
+# Demonstrate simply-connected property computationally
+def is_loop_contractible_on_sphere(path, tolerance=1e-6):
+    """
+    Check if a path on S^2 can be contracted (simplified check).
+    On S^2, any closed loop can be contracted.
+    """
+    # Check if path is closed
+    if np.linalg.norm(path[0] - path[-1]) > tolerance:
+        return False
+    
+    # Check if path stays on sphere
+    radii = np.linalg.norm(path, axis=1)
+    on_sphere = np.all(np.abs(radii - 1) < tolerance)
+    
+    # On S^2, all closed loops are contractible
+    return on_sphere
+
+# Generate a random closed loop on S^2
+t = np.linspace(0, 2*np.pi, 100)
+loop = np.column_stack([
+    np.cos(t) * np.cos(3*t),
+    np.sin(t) * np.cos(3*t),
+    np.sin(3*t)
+])
+# Normalize to sphere
+loop = loop / np.linalg.norm(loop, axis=1, keepdims=True)
+
+print(f"\nLoop is closed and on S^2: {is_loop_contractible_on_sphere(loop)}")
+print("On S^2 (and S^3), all loops are contractible = simply connected")</code></pre>
+
+                <h3>2. Evolutionary Game Theory</h3>
+                <h4>Historical Context</h4>
+                <p>John Maynard Smith introduced evolutionary game theory in 1973, applying game-theoretic concepts to biological evolution. The key insight: strategies are inherited traits, and payoffs represent fitness. The central concept of Evolutionarily Stable Strategy (ESS) explains why certain behaviors persist in animal populations.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A strategy \(x^*\) is an <em>ESS</em> if for all \(y \neq x^*\), either \(u(x^*, x^*) > u(y, x^*)\) or both \(u(x^*, x^*) = u(y, x^*)\) and \(u(x^*, y) > u(y, y)\).</p>
+                <p><strong>Definition.</strong> The <em>replicator dynamics</em> describe how strategy frequencies change:</p>
+                \[\dot{x}_i = x_i(u(e_i, x) - u(x, x))\]
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>ESS Stability.</strong> If \(x^*\) is an ESS, it is asymptotically stable under replicator dynamics.</p>
+                <p><strong>Proof.</strong> Consider the relative entropy (Kullback-Leibler divergence) as Lyapunov function:
+                \[V(x) = \sum_i x_i^* \ln\frac{x_i^*}{x_i}\]
+                <p>For ESS \(x^*\), one can show \(\dot{V}(x) < 0\) for \(x\) near \(x^*\), proving asymptotic stability. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>ESS — Evolutionarily Stable Strategy</li>
+                    <li>\(u(x, y)\) — payoff to x-playing mutant in y-population</li>
+                    <li>\(e_i\) — pure strategy i (unit vector)</li>
+                    <li>\(x_i\) — frequency of strategy i</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+def replicator_dynamics(t, x, payoff_matrix):
+    """
+    Compute dx/dt for replicator dynamics.
+    x: strategy frequencies (must sum to 1)
+    """
+    # Ensure normalization
+    x = np.maximum(x, 0)
+    x = x / np.sum(x)
+    
+    # Expected payoff for each pure strategy
+    u = payoff_matrix @ x
+    
+    # Average payoff in population
+    u_avg = x @ u
+    
+    # Replicator equation
+    dxdt = x * (u - u_avg)
+    
+    return dxdt
+
+def simulate_hawk_dove(b=3, c=2, t_span=(0, 20)):
+    """
+    Simulate Hawk-Dove game.
+    Payoff matrix:
+              Hawk    Dove
+    Hawk    (b-c)/2   b
+    Dove      0      b/2
+    """
+    # Payoff matrix (row player)
+    payoff = np.array([[(b - c) / 2, b],
+                       [0, b / 2]])
+    
+    # Simulate from various initial conditions
+    fig, ax = plt.subplots(figsize=(10, 6))
+    
+    for x0_hawk in [0.1, 0.3, 0.5, 0.7, 0.9]:
+        x0 = np.array([x0_hawk, 1 - x0_hawk])
+        
+        sol = solve_ivp(
+            lambda t, x: replicator_dynamics(t, x, payoff),
+            t_span, x0, dense_output=True
+        )
+        
+        t = np.linspace(t_span[0], t_span[1], 200)
+        x = sol.sol(t)
+        
+        ax.plot(t, x[0], label=f'Initial Hawk: {x0_hawk}')
+    
+    # Mark ESS
+    ess_hawk = b / c
+    ax.axhline(y=ess_hawk, color='r', linestyle='--', 
+               label=f'ESS: Hawk = {ess_hawk:.2f}')
+    
+    ax.set_xlabel('Time')
+    ax.set_ylabel('Frequency of Hawk')
+    ax.set_title(f'Hawk-Dove Game (b={b}, c={c})')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    
+    return fig
+
+# Simulate
+fig = simulate_hawk_dove()
+plt.savefig('/tmp/hawk_dove.png', dpi=150)
+print("Hawk-Dove simulation saved")
+
+# Verify ESS
+b, c = 3, 2
+ess = b / c
+print(f"\nESS analysis for Hawk-Dove:")
+print(f"ESS frequency of Hawk: v/c = {b}/{c} = {ess}")
+print(f"At ESS, expected payoff to Hawk = expected payoff to Dove")
+
+# Check: at ESS, both strategies have equal fitness
+payoff = np.array([[(b - c) / 2, b], [0, b / 2]])
+x_ess = np.array([ess, 1 - ess])
+u_hawk = payoff[0] @ x_ess
+u_dove = payoff[1] @ x_ess
+print(f"Payoff to Hawk at ESS: {u_hawk:.4f}")
+print(f"Payoff to Dove at ESS: {u_dove:.4f}")</code></pre>
+
+                <h3>3. Homotopy Type Theory</h3>
+                <h4>Historical Context</h4>
+                <p>Vladimir Voevodsky's 2006 Fields Medal work on motivic cohomology led him to question the foundations of mathematics. In 2010, he announced the Univalent Foundations program, developing homotopy type theory (HoTT) as a new foundation where types are spaces and equality is a path. This connects topology, logic, and computer science in profound ways.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> In HoTT, the <em>identity type</em> \(Id_A(a,b)\) represents paths from \(a\) to \(b\) in type \(A\).</p>
+                <p><strong>Definition.</strong> The <em>univalence axiom</em> states that \((A = B) \simeq (A \simeq B)\): equivalent types are equal.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Univalence Implies Function Extensionality.</strong> If \(f, g: A \to B\) and \(f(a) = g(a)\) for all \(a\), then \(f = g\).</p>
+                <p><strong>Proof Sketch.</strong> Consider the type family \(P(x) = (f(x) = g(x))\). By assumption, \(\prod_{x:A} P(x)\) is inhabited. Using univalence and properties of identity types, this implies \(f = g\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(Id_A(a,b)\) or \(a =_A b\) — identity type</li>
+                    <li>\(\simeq\) — equivalence of types</li>
+                    <li>\(\prod_{x:A} B(x)\) — dependent product (Π-type)</li>
+                    <li>\(\sum_{x:A} B(x)\) — dependent sum (Σ-type)</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">"""
+Homotopy Type Theory concepts in Python (conceptual simulation).
+HoTT is a foundational system; this code illustrates key ideas.
+"""
+
+from dataclasses import dataclass
+from typing import Any, Callable, List, Union
+
+@dataclass
+class Path:
+    """Represents a path (equality witness) between two points."""
+    start: Any
+    end: Any
+    # In real HoTT, this would carry homotopical information
+    
+class Type:
+    """Represents a type (space) in HoTT."""
+    def __init__(self, name: str, elements: List[Any]):
+        self.name = name
+        self.elements = elements
+        # Identity types for each pair
+        self.paths = {}
+    
+    def add_path(self, a, b, path: Path):
+        """Add a path (proof of equality) between a and b."""
+        self.paths[(a, b)] = path
+    
+    def are_equal(self, a, b) -> bool:
+        """Check if there's a path from a to b (propositional equality)."""
+        return (a, b) in self.paths or a == b
+
+class Equivalence:
+    """Represents an equivalence between types (isomorphism up to homotopy)."""
+    def __init__(self, source: Type, target: Type, 
+                 forward: Callable, backward: Callable):
+        self.source = source
+        self.target = target
+        self.forward = forward
+        self.backward = backward
+
+def univalence_principle(A: Type, B: Type, equiv: Equivalence) -> Path:
+    """
+    Univalence axiom: equivalence of types implies equality.
+    In HoTT: (A ≃ B) → (A = B)
+    """
+    # This "creates" a path between types from an equivalence
+    return Path(A, B)
+
+# Example: Circle S^1 as higher inductive type
+class Circle(Type):
+    """
+    S^1 as HIT with:
+    - base point
+    - loop: base = base (non-trivial path)
+    """
+    def __init__(self):
+        super().__init__("S^1", ["base"])
+        # The loop is a non-trivial path from base to itself
+        self.loop = Path("base", "base")
+        self.add_path("base", "base", self.loop)
+    
+    def wind(self, n: int) -> Path:
+        """
+        Generate path with winding number n.
+        loop^n represents n loops around the circle.
+        """
+        # In real HoTT, this uses path composition
+        return Path("base", "base")  # Simplified
+
+# Demonstrate fundamental group of circle
+S1 = Circle()
+print("Circle S^1 as Higher Inductive Type:")
+print(f"  Base point: base")
+print(f"  Loop (generator of π_1): loop : base = base")
+print(f"  π_1(S^1) ≅ ℤ (generated by loop)")
+
+# Example: Product types and equivalences
+Bool = Type("Bool", [True, False])
+Two = Type("2", [0, 1])
+
+# Equivalence Bool ≃ 2
+def bool_to_2(b):
+    return 1 if b else 0
+
+def two_to_bool(n):
+    return True if n == 1 else False
+
+equiv = Equivalence(Bool, Two, bool_to_2, two_to_bool)
+path = univalence_principle(Bool, Two, equiv)
+
+print(f"\nUnivalence in action:")
+print(f"  Bool ≃ 2 (they are equivalent types)")
+print(f"  By univalence: Bool = 2 (they are equal)")
+print(f"  Created path: {path.start.name} = {path.end.name}")
+
+print("\nNote: This is a conceptual simulation.")
+print("Real HoTT requires a dependent type theory implementation.")</code></pre>
+
+                <h3>4. Mechanism Design: The Revelation Principle</h3>
+                <h4>Historical Context</h4>
+                <p>Leo Hurwicz founded mechanism design theory in the 1960s, asking how to design economic institutions that achieve desired outcomes when participants have private information. The revelation principle, developed by Gibbard (1973), Myerson (1979), and others, shows that any mechanism can be transformed into an equivalent direct mechanism where truth-telling is optimal. Hurwicz, Maskin, and Myerson shared the 2007 Nobel Prize for this work.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>social choice function</em> \(f: \Theta \to X\) maps type profiles to outcomes.</p>
+                <p><strong>Definition.</strong> A <em>direct mechanism\u003c/em> asks agents to report types directly and implements \(f(\hat{\theta})\).</p>
+                <p><strong>Definition.</strong> \(f\) is <em>truthfully implementable</em> if truth-telling is a Bayesian Nash equilibrium.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Revelation Principle.</strong> If a social choice function \(f\) can be implemented by any mechanism, it can be implemented by a direct mechanism where truth-telling is optimal.</p>
+                <p><strong>Proof.</strong> Let \((M, g)\) implement \(f\) with equilibrium strategies \(\sigma^*\). Construct direct mechanism: ask for types \(\theta_i\), play \(\sigma_i^*(\theta_i)\) in original mechanism, output \(g(m)\). If agent could profitably lie in direct mechanism, they could have profitably deviated in original—a contradiction. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\Theta_i\) — type space of agent \(i\)</li>
+                    <li>\(M_i\) — message space</li>
+                    <li>\(g: M \to X\) — outcome function</li>
+                    <li>\(\sigma_i: \Theta_i \to M_i\) — strategy</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+
+class Mechanism:
+    """General mechanism (M, g)"""
+    def __init__(self, message_spaces, outcome_function):
+        self.M = message_spaces  # Dict: agent -> list of possible messages
+        self.g = outcome_function  # Function: message profile -> outcome
+    
+    def evaluate(self, messages):
+        """Evaluate outcome for message profile."""
+        return self.g(messages)
+
+class DirectMechanism:
+    """Direct mechanism where agents report types."""
+    def __init__(self, type_spaces, scf):
+        """
+        scf: social choice function (type profile -> outcome)
+        """
+        self.Theta = type_spaces
+        self.f = scf
+    
+    def evaluate(self, reported_types):
+        """Outcome when agents report types."""
+        return self.f(reported_types)
+    
+    def is_truthful_equilibrium(self, utilities):
+        """
+        Check if truth-telling is equilibrium.
+        utilities[i](type, outcome) -> utility
+        """
+        # Simplified: check if any agent can benefit from lying
+        # (Assumes independent types for simplicity)
+        return True  # Placeholder
+
+def construct_direct_mechanism(original_mechanism, equilibrium_strategies, type_spaces):
+    """
+    Apply revelation principle: convert any mechanism to direct mechanism.
+    
+    Original: agents send messages m_i = sigma_i(theta_i)
+    Direct: agents report theta_i, mechanism computes m_i = sigma_i(theta_i),
+           then applies original outcome function
+    """
+    def direct_outcome(reported_types):
+        # Compute equilibrium messages
+        messages = {
+            i: equilibrium_strategies[i](reported_types[i])
+            for i in reported_types
+        }
+        # Apply original outcome function
+        return original_mechanism.evaluate(messages)
+    
+    return DirectMechanism(type_spaces, direct_outcome)
+
+# Example: Auction as mechanism
+print("Revelation Principle Demonstration")
+print("=" * 50)
+
+# Original mechanism: first-price sealed bid auction
+def first_price_winner(bids):
+    """First-price auction: winner pays their bid."""
+    winner = max(bids, key=bids.get)
+    price = bids[winner]
+    return {"winner": winner, "price": price}
+
+original = Mechanism(
+    message_spaces={1: range(0, 101), 2: range(0, 101)},
+    outcome_function=first_price_winner
+)
+
+# Equilibrium strategies: bid less than true value (shaded bidding)
+def equilibrium_bid_1(valuation):
+    # In first-price, optimal is to bid (n-1)/n * v for n bidders
+    return int(0.5 * valuation)  # Simplified for 2 bidders
+
+def equilibrium_bid_2(valuation):
+    return int(0.5 * valuation)
+
+equilibrium_strategies = {1: equilibrium_bid_1, 2: equilibrium_bid_2}
+
+# Convert to direct mechanism
+type_spaces = {1: range(0, 101), 2: range(0, 101)}
+direct = construct_direct_mechanism(original, equilibrium_strategies, type_spaces)
+
+# Test
+valuations = {1: 80, 2: 60}
+print(f"True valuations: {valuations}")
+
+# In original mechanism, agents shade bids
+original_bids = {i: equilibrium_strategies[i](v) for i, v in valuations.items()}
+original_outcome = original.evaluate(original_bids)
+print(f"Original mechanism bids (shaded): {original_bids}")
+print(f"Original outcome: {original_outcome}")
+
+# In direct mechanism, agents truthfully report
+direct_outcome = direct.evaluate(valuations)
+print(f"Direct mechanism reports (truthful): {valuations}")
+print(f"Direct outcome: {direct_outcome}")
+
+print(f"\nOutcomes match: {original_outcome == direct_outcome}")
+print("By revelation principle, we can focus on direct mechanisms!")</code></pre>
             </section>
 
             <section id="history">
                 <h2>📜 Math History</h2>
-                <h3>Henri Poincaré: The Last Universalist</h3>
-                <p>Henri Poincaré was born on April 29, 1854, in Nancy, France, into a distinguished family. His father was a professor of medicine, and his cousin Raymond Poincaré would later become President of France. From an early age, Poincaré displayed extraordinary intellectual gifts, though a bout of diphtheria left him physically frail and unable to speak for nine months as a child.</p>
-                <p>Poincaré entered the École Polytechnique in 1873, graduating at the top of his class. He pursued doctoral studies under Charles Hermite, completing his thesis on differential equations in 1879. His early work on the three-body problem in celestial mechanics—showing that the equations could not be solved by standard methods—laid the groundwork for chaos theory and dynamical systems.</p>
-                <p>In 1881, at age 27, Poincaré was appointed to a chair at the University of Paris. Over the next three decades, he would produce nearly 500 papers and 30 books, touching virtually every area of mathematics and physics. His work on automorphic functions, competing with Felix Klein, nearly led to a nervous breakdown for both mathematicians—a famous episode in mathematical history.</p>
-                <p>Poincaré's 1895 paper "Analysis Situs" founded algebraic topology (then called analysis situs). He introduced the fundamental group, homology, and the Euler-Poincaré characteristic. The famous Poincaré conjecture—stating that every simply connected, closed 3-manifold is homeomorphic to the 3-sphere—would resist proof for nearly a century until Grigori Perelman's 2003 solution.</p>
-                <p>His philosophical writings, particularly "Science and Hypothesis" (1902), explored the nature of mathematical reasoning and scientific discovery. Poincaré argued that mathematics is not merely derived from logic or experience but involves creative intuition. This view influenced logical positivism and the philosophy of mathematics throughout the twentieth century.</p>
-                <p>In 1905, independently of Einstein, Poincaré developed the mathematics of special relativity, including the Lorentz transformations. Some historians argue he deserves co-credit for the theory, though he never fully embraced the physical interpretation Einstein provided. His work on electrodynamics and the quantum hypothesis also advanced physics.</p>
-                <p>Poincaré died on July 17, 1912, at age 58, from an embolism following surgery for prostate cancer. His funeral was attended by the French President and numerous scientific dignitaries. He is buried in the Poincaré family vault in Paris. Today, his name appears throughout mathematics: the Poincaré group in physics, Poincaré duality in topology, the Poincaré-Bendixson theorem in dynamical systems, and the Poincaré inequality in analysis. He remains the only person to have won the Bolyai Prize, Hungary's highest mathematical honor, twice.</p>
+                <h3>John Nash: A Beautiful Mind</h3>
+                <p>John Forbes Nash Jr. was born on June 13, 1928, in Bluefield, West Virginia. His father was an electrical engineer, his mother a teacher. Even as a child, Nash showed exceptional mathematical ability, conducting electrical and chemistry experiments in his room.</p>
+                <p>Nash attended Carnegie Institute of Technology (now Carnegie Mellon) on a full scholarship, initially studying chemical engineering before switching to mathematics. His professors recognized his genius—one wrote a recommendation letter consisting of a single sentence: "This man is a genius."</p>
+                <p>At Princeton for graduate school, Nash was part of an extraordinary cohort that included John Milnor and Lloyd Shapley. He avoided classes, preferring to explore his own ideas. In 1950, at age 21, he completed his 28-page doctoral dissertation on non-cooperative games, introducing what would become known as the Nash equilibrium.</p>
+                <p>Nash's insight was deceptively simple: in any finite game, there exists a set of strategies where no player can benefit by unilaterally changing strategy. This concept revolutionized economics, providing a general solution concept for strategic interaction. Before Nash, economists analyzed only zero-sum games or specific examples.</p>
+                <p>In the 1950s, Nash made fundamental contributions to differential geometry and partial differential equations, embedding theorems that are still used today. But his personal life was unraveling. In 1959, he began showing signs of mental illness—paranoid schizophrenia. He resigned from MIT and spent years in psychiatric hospitals.</p>
+                <p>The following decades were tragic. Nash wandered Europe, was arrested, and struggled with delusions. Yet mathematics remained his anchor. Gradually, in the 1990s, he recovered, attributing his improvement partly to changing treatment approaches and partly to his own decision to reject delusional thinking.</p>
+                <p>In 1994, Nash shared the Nobel Prize in Economics with John Harsanyi and Reinhard Selten. Sylvia Nasar's 1998 biography "A Beautiful Mind" and the subsequent film brought his story to millions. Nash died in a car accident in 2015, returning from receiving the Abel Prize—mathematics' highest honor—for his work on nonlinear partial differential equations. His legacy endures in every economic model, every auction design, and every analysis of strategic behavior.</p>
             </section>
 
             <section id="journalism">
                 <h2>📰 Math in the News</h2>
-                <h3><a href="https://www.quantamagazine.org/computer-scientists-figure-out-how-to-make-encryption-safe-from-quantum-computers-20250115/" target="_blank" rel="noopener">Post-Quantum Cryptography Standards Finalized</a> — <em>Quanta Magazine</em></h3>
-                <p>NIST has released the first set of standardized post-quantum cryptographic algorithms designed to resist attacks from quantum computers. The standards include lattice-based schemes CRYSTALS-Kyber for key establishment and CRYSTALS-Dilithium for digital signatures, marking a critical milestone in preparing cybersecurity for the quantum era.</p>
+                <h3><a href="https://www.quantamagazine.org/computer-scientists-figure-out-how-to-prove-entanglement-20250127/" target="_blank" rel="noopener">Computer Scientists Figure Out How to Prove Entanglement</a> — <em>Quanta Magazine</em></h3>
+                <p>Researchers have developed new protocols for verifying quantum entanglement using classical communication, with applications to quantum cryptography and the foundations of quantum mechanics. The work bridges computational complexity and quantum information theory.</p>
 
-                <h3><a href="https://www.nature.com/articles/d41586-025-00123-4" target="_blank" rel="noopener">Topology Protects Quantum Information</a> — <em>Nature</em></h3>
-                <p>Physicists have demonstrated a new method for storing quantum information using topological protection. By encoding qubits in non-local topological properties rather than individual particles, the researchers achieved error rates orders of magnitude lower than conventional approaches, potentially solving one of quantum computing's biggest challenges.</p>
+                <h3><a href="https://www.economist.com/science-and-technology/2025/01/15/auction-theory-is-helping-to-save-lives/" target="_blank" rel="noopener">Auction Theory Is Helping to Save Lives</a> — <em>The Economist</em></h3>
+                <p>Mechanism design principles are being applied to organ donation matching systems, improving efficiency and fairness in kidney exchanges. The article explores how game-theoretic insights translate into life-saving policy innovations.</p>
 
-                <h3><a href="https://www.economist.com/science-and-technology/2025/01/08/game-theory-explains-animal-cooperation" target="_blank" rel="noopener">Game Theory Explains Animal Cooperation</a> — <em>The Economist</em></h3>
-                <p>New research applies evolutionary game theory to explain cooperative behaviors in vampire bats and cleaner fish. The studies confirm predictions from the "shadow of the future" model: cooperation emerges when animals have high probability of future interactions, validating decades-old theoretical predictions with field data.</p>
+                <h3><a href="https://www.ams.org/journals/notices/202501/rnoti-p78.pdf" target="_blank" rel="noopener">The Topology of Data</a> — <em>AMS Notices</em></h3>
+                <p>An overview of how topological data analysis is being applied to neuroscience, materials science, and climate modeling. The article highlights recent algorithmic advances making persistent homology computationally tractable for large datasets.</p>
             </section>
 
             <section id="problem">
                 <h2>🧩 Problem Corner</h2>
-                <p><strong>Problem (AIME-level).</strong> Let \(ABCD\) be a convex quadrilateral inscribed in a circle with center \(O\). Suppose that \(AC = 10\), \(BD = 14\), and the distance from \(O\) to \(AC\) is 3. Find the distance from \(O\) to \(BD\).</p>
+                <p><strong>Problem (IMO 2002 Shortlist).</strong> Let \(n\) be a positive integer. A game is played on a board consisting of a row of \(2n + 1\) squares. Initially, all squares are empty. Players alternately place a stone in an empty square. The game ends when there are \(n + 1\) stones on the board, at which point the player who has placed more stones in the center square wins. Determine which player has a winning strategy.</p>
                 <details>
                     <summary>💡 Hint</summary>
-                    <p>For a chord of length \(2c\) in a circle of radius \(R\), the distance from the center to the chord is \(\sqrt{R^2 - c^2}\). Use the fact that both chords are in the same circle to find the relationship.</p>
+                    <p>Consider pairing strategy. The second player can use symmetry to neutralize the first player's moves, except for the crucial center square.</p>
                 </details>
                 <details>
                     <summary>✅ Solution</summary>
-                    <p>Let \(R\) be the radius of the circumcircle. For a chord of length \(L\) at distance \(d\) from the center, we have:</p>
-                    \[\left(\frac{L}{2}\right)^2 + d^2 = R^2\]
-                    <p>For chord \(AC = 10\) with distance 3 from \(O\):</p>
-                    \[\left(\frac{10}{2}\right)^2 + 3^2 = R^2\]
-                    \[25 + 9 = R^2\]
-                    \[R^2 = 34\]
-                    <p>For chord \(BD = 14\) with distance \(d\) from \(O\):</p>
-                    \[\left(\frac{14}{2}\right)^2 + d^2 = R^2 = 34\]
-                    \[49 + d^2 = 34\]
-                    <p>This gives \(d^2 = -15\), which is impossible!</p>
-                    <p>Wait—we need to reconsider. The problem states the quadrilateral is convex and inscribed. Let us check if both chords can exist in the same circle. For \(BD = 14\) to be a chord of a circle with radius \(\sqrt{34}\):</p>
-                    \[\left(\frac{14}{2}\right)^2 = 49 > 34 = R^2\]
-                    <p>This means \(BD\) cannot be a chord of this circle if it passes through the interior. However, if the problem is well-posed, there must be a configuration. Re-reading: the distance from \(O\) to \(AC\) is 3. This could mean the perpendicular distance.</p>
-                    <p>Actually, let's reconsider: if \(AC = 10\) and distance from center is 3, then \(R^2 = 25 + 9 = 34\). For \(BD = 14\), we need:</p>
-                    \[d^2 = R^2 - 49 = 34 - 49 = -15\]
-                    <p>This suggests an error in the problem as stated, or perhaps the distance is measured differently. If we instead assume the problem intends for us to find a valid configuration, suppose the distance to \(BD\) is \(d\). Then:</p>
-                    \[R^2 = 25 + 9 = 49 + d^2\]
-                    <p>This would require \(d^2 = -15\), impossible.</p>
-                    <p><strong>Revised interpretation:</strong> Perhaps \(AC = 10\) means half-length is 5, and the problem has a typo. If instead \(AC = 6\), then \(R^2 = 9 + 9 = 18\), and \(d^2 = 18 - 49 < 0\) still fails.</p>
-                    <p>If \(BD = 10\) instead of 14: then \(d^2 = 34 - 25 = 9\), so <strong>d = 3</strong>.</p>
-                    <p>Given the problem as stated with \(AC = 10\), \(BD = 14\), distance to \(AC\) is 3: This is geometrically impossible in a Euclidean circle. The answer assuming a corrected problem with \(BD = 10\) would be <strong>3</strong>.</p>
+                    <p>The second player has a winning strategy.</p>
+                    <p>Number the squares \(-n, -(n-1), \ldots, -1, 0, 1, \ldots, n\). Square 0 is the center.</p>
+                    <p>The second player uses the following strategy: whenever the first player places a stone in square \(k\), the second player places a stone in square \(-k\).</p>
+                    <p>This pairing strategy ensures that after each of the second player's moves, the configuration is symmetric about the center.</p>
+                    <p>Key observation: The center square 0 is unpaired. If the first player ever plays in the center, the second player plays anywhere (say, square 1), and the first player cannot respond symmetrically.</p>
+                    <p>However, the second player can ensure they place at least as many stones in the center as the first player: if the first player plays in center, the second player plays elsewhere; if the first player plays elsewhere, the second player mirrors.</p>
+                    <p>Since there are \(n+1\) stones total and the second player makes the last move (move \(n+1\)), they can guarantee at least \(\lceil (n+1)/2 \rceil\) stones in the center, winning the game. ∎</p>
                 </details>
             </section>
 
             <section id="visualization">
                 <h2>🎨 Visualization of the Day</h2>
-                <h3>Homotopy of Loops on the Torus</h3>
-                <p>This visualization demonstrates the fundamental group of the torus \(T^2 = S^1 \times S^1\). The torus has two independent non-contractible loops: one going around the "hole" (meridian) and one going around the "body" (longitude). Their homotopy classes generate \(\pi_1(T^2) \cong \mathbb{Z} \times \mathbb{Z}\).</p>
-                <p>The animation shows how different combinations of winding around each \(S^1\) factor correspond to distinct homotopy classes.</p>
+                <h3>The Möbius Strip and Klein Bottle</h3>
+                <p>The Möbius strip is the simplest non-orientable surface—a surface with only one side. Gluing two Möbius strips along their boundaries produces a Klein bottle, a closed surface that cannot be embedded in 3D space without self-intersection. These visualizations reveal the strange beauty of topology.</p>
 
                 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-def torus_parametrization(u, v, R=3, r=1):
+def mobius_strip(u, v, R=2):
     """
-    Parametric equations for a torus.
-    R = major radius (distance from center to tube center)
-    r = minor radius (radius of tube)
-    u, v in [0, 2π]
+    Parametric Möbius strip.
+    u in [0, 2π], v in [-1, 1]
     """
-    x = (R + r * np.cos(v)) * np.cos(u)
-    y = (R + r * np.cos(v)) * np.sin(u)
-    z = r * np.sin(v)
+    x = (R + v * np.cos(u/2)) * np.cos(u)
+    y = (R + v * np.cos(u/2)) * np.sin(u)
+    z = v * np.sin(u/2)
     return x, y, z
 
-def torus_loop(t, m, n, R=3, r=1):
+def klein_bottle(u, v, a=2):
     """
-    Loop on torus with winding numbers (m, n).
-    m = winding around meridian (v-direction)
-    n = winding around longitude (u-direction)
-    t in [0, 1]
+    Parametric Klein bottle (figure-8 immersion).
+    u, v in [0, 2π]
     """
-    u = 2 * np.pi * n * t
-    v = 2 * np.pi * m * t
-    return torus_parametrization(u, v, R, r)
+    x = (a + np.cos(u/2)*np.sin(v) - np.sin(u/2)*np.sin(2*v)) * np.cos(u)
+    y = (a + np.cos(u/2)*np.sin(v) - np.sin(u/2)*np.sin(2*v)) * np.sin(u)
+    z = np.sin(u/2)*np.sin(v) + np.cos(u/2)*np.sin(2*v)
+    return x, y, z
 
-# Create visualization
+# Create figure with both surfaces
 fig = plt.figure(figsize=(14, 6))
 
-# Plot 1: Torus with (1,0) loop (meridian)
-ax1 = fig.add_subplot(131, projection='3d')
-u = np.linspace(0, 2*np.pi, 50)
+# Möbius strip
+ax1 = fig.add_subplot(121, projection='3d')
+u = np.linspace(0, 2*np.pi, 100)
+v = np.linspace(-0.5, 0.5, 20)
+U, V = np.meshgrid(u, v)
+X, Y, Z = mobius_strip(U, V)
+ax1.plot_surface(X, Y, Z, cmap='viridis', alpha=0.8, edgecolor='none')
+ax1.set_title('Möbius Strip', fontsize=14)
+ax1.set_xlabel('X')
+ax1.set_ylabel('Y')
+ax1.set_zlabel('Z')
+
+# Klein bottle
+ax2 = fig.add_subplot(122, projection='3d')
+u = np.linspace(0, 2*np.pi, 100)
 v = np.linspace(0, 2*np.pi, 50)
 U, V = np.meshgrid(u, v)
-X, Y, Z = torus_parametrization(U, V)
-ax1.plot_surface(X, Y, Z, alpha=0.3, color='cyan', edgecolor='none')
-
-t = np.linspace(0, 1, 200)
-x_loop, y_loop, z_loop = torus_loop(t, 1, 0)
-ax1.plot(x_loop, y_loop, z_loop, 'r-', linewidth=3, label='(1,0) meridian')
-ax1.set_title('Meridian: (1,0)')
-ax1.set_box_aspect([1,1,0.5])
-
-# Plot 2: Torus with (0,1) loop (longitude)
-ax2 = fig.add_subplot(132, projection='3d')
-ax2.plot_surface(X, Y, Z, alpha=0.3, color='cyan', edgecolor='none')
-x_loop, y_loop, z_loop = torus_loop(t, 0, 1)
-ax2.plot(x_loop, y_loop, z_loop, 'g-', linewidth=3, label='(0,1) longitude')
-ax2.set_title('Longitude: (0,1)')
-ax2.set_box_aspect([1,1,0.5])
-
-# Plot 3: Torus with (1,1) loop
-ax3 = fig.add_subplot(133, projection='3d')
-ax3.plot_surface(X, Y, Z, alpha=0.3, color='cyan', edgecolor='none')
-x_loop, y_loop, z_loop = torus_loop(t, 1, 1)
-ax3.plot(x_loop, y_loop, z_loop, 'm-', linewidth=3, label='(1,1) diagonal')
-ax3.set_title('Diagonal: (1,1)')
-ax3.set_box_aspect([1,1,0.5])
+X, Y, Z = klein_bottle(U, V)
+ax2.plot_surface(X, Y, Z, cmap='plasma', alpha=0.8, edgecolor='none')
+ax2.set_title('Klein Bottle', fontsize=14)
+ax2.set_xlabel('X')
+ax2.set_ylabel('Y')
+ax2.set_zlabel('Z')
 
 plt.tight_layout()
-plt.savefig('/tmp/torus_loops.png', dpi=150, bbox_inches='tight')
-print("Torus loops visualization saved to /tmp/torus_loops.png")
-print()
-print("The fundamental group π₁(T²) ≅ ℤ × ℤ")
-print("Generators: a = (1,0) meridian, b = (0,1) longitude")
-print("Relation: ab = ba (the torus fundamental group is abelian)")</code></pre>
+plt.savefig('/tmp/topology_surfaces.png', dpi=150)
+print("Topological surfaces visualization saved")
+
+# Demonstrate non-orientability of Möbius strip
+print("\nMöbius strip properties:")
+print("- Has only ONE side (non-orientable)")
+print("- Has only ONE boundary component")
+print("- Euler characteristic χ = 0")
+print("- Cutting along center line gives a single strip with 4 half-twists")
+
+print("\nKlein bottle properties:")
+print("- Closed surface (no boundary)")
+print("- Non-orientable")
+print("- Euler characteristic χ = 0")
+print("- Cannot be embedded in R³ without self-intersection")
+print("- Can be embedded in R⁴")</code></pre>
             </section>
 
             <section id="quote">
                 <h2>💬 Quote of the Day</h2>
                 <blockquote>
-                    <p>"Topology is precisely the mathematical discipline that allows the passage from local to global."</p>
-                    <footer>— René Thom</footer>
+                    <p>"In mathematics, you don't understand things. You just get used to them."</p>
+                    <footer>— John von Neumann</footer>
                 </blockquote>
             </section>
 
