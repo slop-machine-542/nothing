@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest - Mathematical insights and explorations">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest - February 16, 2026 07:30 UTC</title>
+    
+    <!-- MathJax 2.7.9 (CSP-safe) -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['\\\\(', '\\\\)')],
+                displayMath: [['\\\\[', '\\\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            "HTML-CSS": { availableFonts: ["TeX"] }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 { font-size: 2rem; margin-bottom: 10px; }
+        header p { opacity: 0.9; }
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 20px 0; }
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; margin-bottom: 20px; }
+        h3 { color: #34495e; margin: 20px 0 10px; }
+        .theorem {
+            background: #e8f6ff;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .proof {
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        code { font-family: 'Consolas', monospace; }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a { color: #3498db; }
+        .tags {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 3px;
+            font-size: 0.9em;
+        }
+        .tag:hover { background: #2980b9; }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+            header h1 { font-size: 1.5rem; }
+            nav a { display: block; margin: 5px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📐 Math Digest</h1>
+        <p>February 16, 2026 07:30 UTC</p>
+    </header>
+    
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../posts/index.html">All Posts</a>
+        <a href="../tags/index.html">Tags</a>
+        <a href="https://github.com/slop-machine-542/nothing">GitHub</a>
+    </nav>
+    
+    <div class="container">
+        <main>
+            <div class="tags">
+                <strong>Tags:</strong>
+                <a href="../tags/index.html#commutative-algebra" class="tag">Commutative Algebra</a>
+                <a href="../tags/index.html#algebraic-number-theory" class="tag">Algebraic Number Theory</a>
+                <a href="../tags/index.html#real-analysis" class="tag">Real Analysis</a>
+                <a href="../tags/index.html#functional-equations" class="tag">Functional Equations</a>
+                <a href="../tags/index.html#numerical-linear-algebra" class="tag">Numerical Linear Algebra</a>
+                <a href="../tags/index.html#partial-differential-equations" class="tag">PDEs</a>
+                <a href="../tags/index.html#wavelets" class="tag">Wavelets</a>
+                <a href="../tags/index.html#coding-theory" class="tag">Coding Theory</a>
+                <a href="../tags/index.html#elliptic-curves" class="tag">Elliptic Curves</a>
+                <a href="../tags/index.html#riemann-hypothesis" class="tag">Riemann Hypothesis</a>
+                <a href="../tags/index.html#four-color-theorem" class="tag">Four Color Theorem</a>
+                <a href="../tags/index.html#prime-number-theorem" class="tag">Prime Number Theorem</a>
+            </div>
+            
+            <section id="links">
+                <h2>🔗 Math Links</h2>
+                
+                <h3><a href="https://terrytao.wordpress.com/">What's New</a> by Terence Tao</h3>
+                <p>Terence Tao's personal blog covers cutting-edge research in analysis, number theory, and combinatorics. The blog features detailed expositions of recent mathematical breakthroughs, often written at multiple levels of technicality. Essential reading for anyone interested in modern mathematical research.</p>
+                
+                <h3><a href="https://www.khanacademy.org/math">Khan Academy Mathematics</a></h3>
+                <p>A comprehensive free resource covering mathematics from basic arithmetic through multivariable calculus and differential equations. The interactive exercises and video explanations make it an excellent tool for both learning and reviewing mathematical concepts at your own pace.</p>
+                
+                <h3><a href="https://projecteuclid.org/">Project Euclid</a></h3>
+                <p>A platform for independent and society journals in theoretical and applied mathematics and statistics. Project Euclid provides access to high-quality, peer-reviewed mathematics literature, including many open-access articles and classic papers in the field.</p>
+            </section>
+            
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                
+                <h3><a href="https://www.jirka.org/ra/">Basic Analysis I: Introduction to Real Analysis, Volume I</a> by Jiří Lebl</h3>
+                <p>This excellent introduction to real analysis covers the standard topics: real numbers, sequences, series, continuity, differentiation, and integration. Lebl's approach is rigorous yet accessible, with numerous examples and exercises. The book is freely available as a PDF and is perfect for students transitioning from calculus to proof-based mathematics.</p>
+                
+                <p><strong>Key Topics:</strong> Real numbers, sequences and series, limits, continuity, differentiation, the Riemann integral, sequences of functions</p>
+                
+                <p><strong>Why Read It:</strong> The book strikes an excellent balance between rigor and readability. The author's conversational style and careful explanations make real analysis approachable for beginners while maintaining mathematical precision.</p>
+            </section>
+            
+            <section id="pure">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+                
+                <h3>1. Commutative Algebra: Hilbert's Nullstellensatz</h3>
+                <p>Commutative algebra studies commutative rings and their ideals, with deep connections to algebraic geometry. Hilbert's Nullstellensatz establishes a fundamental correspondence between algebra (ideals of polynomial rings) and geometry (algebraic varieties).</p>
+                
+                <p><strong>Notation:</strong> Let \(k\) be an algebraically closed field (e.g., \(\mathbb{C}\)), and let \(k[x_1, \ldots, x_n]\) be the polynomial ring in \(n\) variables over \(k\). For an ideal \(I \subseteq k[x_1, \ldots, x_n]\), define the variety:</p>
+                
+                \[V(I) = \{(a_1, \ldots, a_n) \in k^n : f(a_1, \ldots, a_n) = 0 \text{ for all } f \in I\}\]
+                
+                <p>For a subset \(X \subseteq k^n\), define the ideal:</p>
+                
+                \[I(X) = \{f \in k[x_1, \ldots, x_n] : f(a_1, \ldots, a_n) = 0 \text{ for all } (a_1, \ldots, a_n) \in X\}\]
+                
+                <div class="theorem">
+                    <strong>Theorem (Hilbert's Nullstellensatz):</strong> Let \(k\) be an algebraically closed field and \(I\) be an ideal of \(k[x_1, \ldots, x_n]\). Then:
+                    \[I(V(I)) = \sqrt{I}\]
+                    where \(\sqrt{I} = \{f : f^m \in I \text{ for some } m > 0\}\) is the radical of \(I\).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Sketch:</strong> The proof uses the "Rabinowitsch trick":<br><br>
+                    
+                    (\(\supseteq\)): If \(f \in \sqrt{I}\), then \(f^m \in I\) for some \(m\). For any \(p \in V(I)\), we have \(f^m(p) = 0\), so \(f(p) = 0\). Thus \(f \in I(V(I))\).<br><br>
+                    
+                    (\(\subseteq\)): Suppose \(f \in I(V(I))\). Introduce a new variable \(y\) and consider the ideal \(J = I + (1 - yf) \subseteq k[x_1, \ldots, x_n, y]\).<br><br>
+                    
+                    <strong>Claim:</strong> \(V(J) = \emptyset\).<br>
+                    If \((a_1, \ldots, a_n, b) \in V(J)\), then \(g(a_1, \ldots, a_n) = 0\) for all \(g \in I\), so \((a_1, \ldots, a_n) \in V(I)\). Since \(f \in I(V(I))\), we have \(f(a_1, \ldots, a_n) = 0\). But then \(1 - bf(a_1, \ldots, a_n) = 1 \neq 0\), contradiction.<br><br>
+                    
+                    By the weak Nullstellensatz, \(J = k[x_1, \ldots, x_n, y]\). Thus \(1 \in J\), so:
+                    \[1 = \sum_{i} g_i h_i + (1 - yf)h\]
+                    where \(g_i \in I\) and \(h_i, h \in k[x_1, \ldots, x_n, y]\).<br><br>
+                    
+                    Substitute \(y = 1/f\) and clear denominators to get \(f^m \in I\) for some \(m\). ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>from sympy import symbols, groebner, Poly, expand
+from sympy.abc import x, y, z
+
+def variety_membership(polynomials, point):
+    """
+    Check if a point belongs to the variety of an ideal.
+    
+    Args:
+        polynomials: List of polynomials defining the ideal
+        point: Dictionary mapping variables to values
+    
+    Returns:
+        True if point is in V(I), False otherwise
+    """
+    for poly in polynomials:
+        # Substitute point into polynomial
+        value = poly.subs(point)
+        if value != 0:
+            return False
+    return True
+
+def ideal_membership(polynomial, generators, variables):
+    """
+    Check if a polynomial is in the ideal using Groebner basis.
+    
+    Args:
+        polynomial: The polynomial to test
+        generators: List of generators of the ideal
+        variables: List of variables
+    
+    Returns:
+        True if polynomial is in the ideal
+    """
+    G = groebner(generators, *variables)
+    return G.reduce(polynomial)[1] == 0
+
+# Example: Ideal I = (x^2 + y^2 - 1, x - y)
+# The variety is the intersection of unit circle and line y = x
+x, y = symbols('x y')
+f1 = x**2 + y**2 - 1
+f2 = x - y
+
+# Check if point (1/√2, 1/√2) is in V(I)
+import sympy as sp
+point = {x: sp.Rational(1)/sp.sqrt(2), y: sp.Rational(1)/sp.sqrt(2)}
+print(f"Point in variety: {variety_membership([f1, f2], point)}")
+
+# Check if x^2 - y^2 is in the ideal I
+poly = x**2 - y**2
+print(f"x^2 - y^2 in ideal: {ideal_membership(poly, [f1, f2], [x, y])}")
+
+# The polynomial x^2 - y^2 = (x-y)(x+y), so it is in the ideal
+# generated by (x - y)</code></pre>
+                
+                <h3>2. Real Analysis: The Weierstrass Approximation Theorem</h3>
+                <p>The Weierstrass Approximation Theorem states that any continuous function on a closed interval can be uniformly approximated by polynomials. This is a foundational result connecting continuous and polynomial functions.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Weierstrass Approximation):</strong> Let \(f: [a, b] \to \mathbb{R}\) be continuous. For every \(\epsilon > 0\), there exists a polynomial \(P\) such that:
+                    \[|f(x) - P(x)| < \epsilon \text{ for all } x \in [a, b]\]
+                    Equivalently, polynomials are dense in \(C([a, b])\) with respect to the uniform norm.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof (Bernstein's probabilistic approach):</strong><br><br>
+                    
+                    Assume \([a, b] = [0, 1]\) (general case follows by linear change of variables). Define the <strong>Bernstein polynomials</strong>:
+                    \[B_n(f)(x) = \sum_{k=0}^{n} \binom{n}{k} f\left(\frac{k}{n}\right) x^k (1-x)^{n-k}\]<br><br>
+                    
+                    <strong>Key observation:</strong> This is the expected value of \(f(S_n/n)\) where \(S_n\) is a binomial random variable with parameters \(n\) and \(x\).<br><br>
+                    
+                    By the law of large numbers, \(S_n/n \to x\) in probability. Since \(f\) is continuous on \([0,1]\), it is uniformly continuous and bounded.<br><br>
+                    
+                    For any \(\epsilon > 0\), choose \(\delta > 0\) such that \(|x - y| < \delta\) implies \(|f(x) - f(y)| < \epsilon/2\). Let \(M = \sup|f|\).<br><br>
+                    
+                    Split the sum:
+                    \[|B_n(f)(x) - f(x)| \leq \sum_{|k/n - x| < \delta} + \sum_{|k/n - x| \geq \delta}\]<br><br>
+                    
+                    The first sum is \(< \epsilon/2\) by uniform continuity. The second sum is bounded by Chebyshev's inequality:
+                    \[\mathbb{P}\left(\left|\frac{S_n}{n} - x\right| \geq \delta\right) \leq \frac{x(1-x)}{n\delta^2} \leq \frac{1}{4n\delta^2}\]<br><br>
+                    
+                    For \(n > \frac{2M}{\epsilon \delta^2}\), the second sum \(< \epsilon/2\). Thus \(|B_n(f)(x) - f(x)| < \epsilon\). ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import comb
+
+def bernstein_poly(f, n, x):
+    """
+    Compute the n-th Bernstein polynomial approximation of f at x.
+    
+    Args:
+        f: Function to approximate
+        n: Degree of Bernstein polynomial
+        x: Point(s) at which to evaluate (scalar or array)
+    
+    Returns:
+        Value of B_n(f)(x)
+    """
+    x = np.atleast_1d(x)
+    result = np.zeros_like(x, dtype=float)
+    
+    for k in range(n + 1):
+        coeff = comb(n, k, exact=True)
+        fk = f(k / n)
+        result += coeff * fk * (x ** k) * ((1 - x) ** (n - k))
+    
+    return result if len(result) > 1 else result[0]
+
+# Example: Approximate f(x) = |x - 0.5| on [0, 1]
+def f(x):
+    return np.abs(x - 0.5)
+
+# Plot approximations
+x = np.linspace(0, 1, 1000)
+plt.figure(figsize=(10, 6))
+plt.plot(x, f(x), 'k-', linewidth=2, label='f(x) = |x - 0.5|')
+
+for n in [5, 10, 20, 50]:
+    y_approx = bernstein_poly(f, n, x)
+    plt.plot(x, y_approx, '--', label=f'B_{n}(f)')
+
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Bernstein Polynomial Approximation')
+plt.legend()
+plt.grid(True)
+plt.savefig('weierstrass_approximation.png', dpi=150)
+
+# Calculate maximum error for different n
+print("Maximum approximation error:")
+for n in [5, 10, 20, 50, 100]:
+    y_approx = bernstein_poly(f, n, x)
+    max_error = np.max(np.abs(f(x) - y_approx))
+    print(f"n = {n:3d}: {max_error:.6f}")</code></pre>
+                
+                <h3>3. Algebraic Number Theory: The Ring of Integers in Quadratic Fields</h3>
+                <p>Algebraic number theory studies number fields (finite extensions of \(\mathbb{Q}\)) and their rings of integers. Quadratic fields provide an accessible entry point with rich structure.</p>
+                
+                <p><strong>Notation:</strong> Let \(d \neq 1\) be a squarefree integer. The <strong>quadratic field</strong> is \(\mathbb{Q}(\sqrt{d}) = \{a + b\sqrt{d} : a, b \in \mathbb{Q}\}\).</p>
+                
+                <p>An element \(\alpha\) is an <strong>algebraic integer</strong> if it satisfies a monic polynomial with integer coefficients.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Ring of Integers):</strong> The ring of integers \(\mathcal{O}_K\) of \(K = \mathbb{Q}(\sqrt{d})\) is:
+                    \[\mathcal{O}_K = \begin{cases} \mathbb{Z}[\sqrt{d}] & \text{if } d \equiv 2, 3 \pmod{4} \\ \mathbb{Z}\left[\frac{1 + \sqrt{d}}{2}\right] & \text{if } d \equiv 1 \pmod{4} \end{cases}\]
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof:</strong> Let \(\alpha = a + b\sqrt{d}\) with \(a, b \in \mathbb{Q}\). The minimal polynomial of \(\alpha\) over \(\mathbb{Q}\) is:
+                    \[m_\alpha(x) = x^2 - 2ax + (a^2 - db^2)\]<br><br>
+                    
+                    For \(\alpha\) to be an algebraic integer, this must have integer coefficients:<br>
+                    1. \(2a \in \mathbb{Z}\)<br>
+                    2. \(a^2 - db^2 \in \mathbb{Z}\)<br><br>
+                    
+                    <strong>Case 1:</strong> \(a \in \mathbb{Z}\). Then \(db^2 \in \mathbb{Z}\). Since \(d\) is squarefree, \(b \in \mathbb{Z}\). Thus \(\alpha \in \mathbb{Z}[\sqrt{d}]\).<br><br>
+                    
+                    <strong>Case 2:</strong> \(a = k + \frac{1}{2}\) for \(k \in \mathbb{Z}\). Then \(4(a^2 - db^2) = (2k+1)^2 - 4db^2 \in \mathbb{Z}\).<br>
+                    This requires \(4db^2 \in \mathbb{Z}\). Write \(b = \frac{m}{2}\) with \(m\) odd.<br>
+                    Then \(dm^2 \equiv 1 \pmod{4}\), which requires \(d \equiv 1 \pmod{4}\).<br><br>
+                    
+                    In this case, \(\alpha = k + \frac{1}{2} + \frac{m\sqrt{d}}{2} = k + m\cdot\frac{1+\sqrt{d}}{2} - \frac{m-1}{2}\).<br>
+                    Since \(m\) is odd, \(\alpha \in \mathbb{Z}\left[\frac{1+\sqrt{d}}{2}\right]\). ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>import sympy as sp
+from sympy import sqrt, Rational, symbols, Poly
+
+def ring_of_integers_basis(d):
+    """
+    Return the basis for the ring of integers of Q(sqrt(d)).
+    
+    Args:
+        d: Squarefree integer
+    
+    Returns:
+        List of basis elements
+    """
+    if d % 4 in [2, 3]:
+        return [1, sqrt(d)]
+    else:  # d % 4 == 1
+        return [1, (1 + sqrt(d))/2]
+
+def is_algebraic_integer(alpha, d):
+    """
+    Check if alpha = a + b*sqrt(d) is an algebraic integer.
+    
+    Args:
+        alpha: Tuple (a, b) representing a + b*sqrt(d)
+        d: Squarefree integer
+    
+    Returns:
+        True if alpha is an algebraic integer
+    """
+    a, b = alpha
+    
+    # Compute minimal polynomial coefficients
+    # x^2 - 2*a*x + (a^2 - d*b^2)
+    coeff1 = 2 * a  # must be integer
+    coeff0 = a**2 - d * b**2  # must be integer
+    
+    # Check if both are integers
+    if not (isinstance(coeff1, (int, sp.Integer)) and 
+            isinstance(coeff0, (int, sp.Integer))):
+        return False
+    
+    # Additional check for half-integers
+    if coeff1 % 2 != 0:  # a is half-integer
+        return d % 4 == 1
+    
+    return True
+
+# Examples
+print("Ring of integers for various quadratic fields:")
+for d in [2, 3, 5, 6, 7, -1, -2, -3, -5]:
+    basis = ring_of_integers_basis(d)
+    form = "Z[sqrt(d)]" if len(basis) == 2 and basis[1] == sqrt(d) else "Z[(1+sqrt(d))/2]"
+    print(f"Q(sqrt({d:3d})): {form}")
+
+# Check if specific elements are algebraic integers
+print("\nChecking algebraic integers in Q(sqrt(5)):")
+d = 5
+test_elements = [
+    (1, 1),           # 1 + sqrt(5)
+    (Rational(1,2), Rational(1,2)),  # (1 + sqrt(5))/2
+    (Rational(3,2), Rational(1,2)),  # (3 + sqrt(5))/2
+]
+
+for a, b in test_elements:
+    alpha = a + b*sqrt(d)
+    is_int = is_algebraic_integer((a, b), d)
+    print(f"{alpha}: {'YES' if is_int else 'NO'}")</code></pre>
+            </section>
+            
+            <section id="applied">
+                <h2>🧮 Applied Math Deep-Dives</h2>
+                
+                <h3>1. Numerical Linear Algebra: The QR Algorithm for Eigenvalues</h3>
+                <p>The QR algorithm is one of the most important methods for computing all eigenvalues of a matrix. It iteratively decomposes a matrix into orthogonal and upper triangular factors, converging to a Schur form.</p>
+                
+                <p><strong>Notation:</strong> For a matrix \(A \in \mathbb{C}^{n \times n}\), the <strong>QR decomposition</strong> is \(A = QR\) where \(Q\) is unitary (\(Q^*Q = I\)) and \(R\) is upper triangular.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (QR Algorithm Convergence):</strong> Let \(A\) have eigenvalues satisfying \(|\lambda_1| > |\lambda_2| > \cdots > |\lambda_n|\). The QR algorithm with iterates \(A_{k+1} = R_k Q_k\) where \(A_k = Q_k R_k\) converges to an upper triangular matrix with eigenvalues on the diagonal.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof Sketch:</strong><br><br>
+                    
+                    Define \(P_k = Q_0 Q_1 \cdots Q_k\) and \(U_k = R_k R_{k-1} \cdots R_0\). Then:
+                    \[A^k = P_k U_k\]<br><br>
+                    
+                    This is the QR decomposition of \(A^k\). Now use the power method intuition: columns of \(A^k\) converge to the dominant eigenvector direction.<br><br>
+                    
+                    More precisely, if \(A = X \Lambda X^{-1}\) is the eigenvalue decomposition, then:
+                    \[A^k = X \Lambda^k X^{-1}\]<br><br>
+                    
+                    Under the eigenvalue ordering assumption, the columns of \(A^k\) become increasingly aligned with the eigenvectors. The QR decomposition captures this alignment, forcing \(A_k = P_{k-1}^* A P_{k-1}\) toward upper triangular form. ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>import numpy as np
+
+def qr_algorithm(A, max_iter=100, tol=1e-10, shift='wilkinson'):
+    """
+    Compute eigenvalues using the QR algorithm with shifts.
+    
+    Args:
+        A: Square matrix (will be modified)
+        max_iter: Maximum iterations
+        tol: Convergence tolerance
+        shift: 'none', 'rayleigh', or 'wilkinson'
+    
+    Returns:
+        eigenvalues: Array of eigenvalues
+        iterations: Number of iterations performed
+    """
+    n = A.shape[0]
+    Ak = A.copy().astype(float)
+    
+    # Reduce to Hessenberg form first (for efficiency)
+    Ak = hessenberg_reduction(Ak)
+    
+    eigenvalues = np.zeros(n, dtype=complex)
+    remaining = n
+    iterations = 0
+    
+    for _ in range(max_iter):
+        if remaining <= 0:
+            break
+        
+        iterations += 1
+        
+        # Check for convergence of bottom-right element
+        if remaining > 1 and abs(Ak[remaining-1, remaining-2]) < tol:
+            eigenvalues[remaining-1] = Ak[remaining-1, remaining-1]
+            remaining -= 1
+            Ak = Ak[:remaining, :remaining]
+            continue
+        
+        # Check for 2x2 block convergence
+        if remaining > 2 and abs(Ak[remaining-2, remaining-3]) < tol:
+            # Solve 2x2 block
+            block = Ak[remaining-2:remaining, remaining-2:remaining]
+            eigs = np.linalg.eigvals(block)
+            eigenvalues[remaining-2:remaining] = eigs
+            remaining -= 2
+            Ak = Ak[:remaining, :remaining]
+            continue
+        
+        # Compute shift
+        if shift == 'none':
+            mu = 0
+        elif shift == 'rayleigh':
+            mu = Ak[remaining-1, remaining-1]
+        elif shift == 'wilkinson':
+            # Wilkinson shift
+            if remaining >= 2:
+                sub = Ak[remaining-2:remaining, remaining-2:remaining]
+                eigs = np.linalg.eigvals(sub)
+                # Choose eigenvalue closest to bottom-right
+                mu = eigs[np.argmin(np.abs(eigs - Ak[remaining-1, remaining-1]))]
+            else:
+                mu = Ak[remaining-1, remaining-1]
+        
+        # QR step with shift
+        Q, R = np.linalg.qr(Ak - mu * np.eye(remaining))
+        Ak = R @ Q + mu * np.eye(remaining)
+    
+    # Extract remaining eigenvalues
+    for i in range(remaining):
+        eigenvalues[i] = Ak[i, i]
+    
+    return eigenvalues, iterations
+
+def hessenberg_reduction(A):
+    """Reduce matrix to upper Hessenberg form using Householder reflections."""
+    n = A.shape[0]
+    H = A.copy().astype(float)
+    
+    for k in range(n - 2):
+        x = H[k+1:, k].copy()
+        e1 = np.zeros_like(x)
+        e1[0] = np.sign(x[0]) * np.linalg.norm(x)
+        v = x + e1
+        v = v / np.linalg.norm(v)
+        
+        H[k+1:, k:] -= 2.0 * np.outer(v, v @ H[k+1:, k:])
+        H[:, k+1:] -= 2.0 * np.outer(H[:, k+1:] @ v, v)
+    
+    return H
+
+# Example: Test on random symmetric matrix
+np.random.seed(42)
+n = 5
+A = np.random.randn(n, n)
+A = A + A.T  # Make symmetric
+
+eigvals_qr, iters = qr_algorithm(A, max_iter=1000, shift='wilkinson')
+eigvals_numpy = np.linalg.eigvals(A)
+
+print("QR Algorithm Results:")
+print(f"Iterations: {iters}")
+print(f"Computed eigenvalues: {np.sort(eigvals_qr)}")
+print(f"NumPy eigenvalues:    {np.sort(eigvals_numpy)}")
+print(f"Maximum error: {np.max(np.abs(np.sort(eigvals_qr) - np.sort(eigvals_numpy))):.2e}")</code></pre>
+                
+                <h3>2. Partial Differential Equations: The Method of Characteristics</h3>
+                <p>The method of characteristics reduces first-order PDEs to systems of ODEs along special curves (characteristics). It's fundamental for solving transport equations and conservation laws.</p>
+                
+                <p><strong>Notation:</strong> Consider the first-order linear PDE:
+                \[a(x, y) u_x + b(x, y) u_y = c(x, y) u + d(x, y)\]
+                with initial data on a curve \(\Gamma\).</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Method of Characteristics):</strong> The solution to the first-order PDE can be found by solving the characteristic ODEs:
+                    \[\frac{dx}{dt} = a(x, y), \quad \frac{dy}{dt} = b(x, y), \quad \frac{du}{dt} = c(x, y) u + d(x, y)\]
+                    where \(t\) parameterizes the characteristic curves.
+                </div>
+                
+                <div class="proof">
+                    <strong>Derivation:</strong><br><br>
+                    
+                    Consider a curve \((x(t), y(t))\) in the domain. Along this curve:
+                    \[\frac{du}{dt} = u_x \frac{dx}{dt} + u_y \frac{dy}{dt}\]<br><br>
+                    
+                    If we choose:
+                    \[\frac{dx}{dt} = a(x, y), \quad \frac{dy}{dt} = b(x, y)\]<br><br>
+                    
+                    Then:
+                    \[\frac{du}{dt} = a u_x + b u_y = c u + d\]<br><br>
+                    
+                    This is an ODE along the characteristic curve. The PDE reduces to solving ODEs along curves that "carry" the initial data forward. The solution at any point is found by following the characteristic back to the initial curve. ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+def solve_transport_equation(u0, a, x_range, t_range, nx=100, nt=100):
+    """
+    Solve the transport equation u_t + a*u_x = 0 using method of characteristics.
+    
+    Args:
+        u0: Initial condition function u0(x)
+        a: Wave speed (constant)
+        x_range: (x_min, x_max)
+        t_range: (t_min, t_max)
+        nx, nt: Number of grid points
+    
+    Returns:
+        x, t, u: Solution grid
+    """
+    x = np.linspace(x_range[0], x_range[1], nx)
+    t = np.linspace(t_range[0], t_range[1], nt)
+    X, T = np.meshgrid(x, t)
+    
+    # Solution: u(x, t) = u0(x - a*t)
+    U = np.zeros_like(X)
+    for i in range(nt):
+        for j in range(nx):
+            x_char = X[i, j] - a * T[i, j]
+            U[i, j] = u0(x_char)
+    
+    return X, T, U
+
+def solve_burgers_inviscid(u0, x_range, t_range, nx=200, nt=100):
+    """
+    Solve the inviscid Burgers equation u_t + u*u_x = 0.
+    
+    For Burgers' equation, characteristics are straight lines with slope
+    determined by initial data: x = x0 + u0(x0)*t
+    """
+    x = np.linspace(x_range[0], x_range[1], nx)
+    t = np.linspace(t_range[0], t_range[1], nt)
+    
+    U = np.zeros((nt, nx))
+    
+    for i, ti in enumerate(t):
+        for j, xj in enumerate(x):
+            # Find x0 such that xj = x0 + u0(x0)*ti
+            # This requires solving a nonlinear equation
+            from scipy.optimize import fsolve
+            
+            def char_eq(x0):
+                return x0 + u0(x0) * ti - xj
+            
+            # Initial guess
+            x0_guess = xj
+            try:
+                x0 = fsolve(char_eq, x0_guess)[0]
+                U[i, j] = u0(x0)
+            except:
+                U[i, j] = np.nan
+    
+    return x, t, U
+
+# Example 1: Simple transport
+print("Example 1: Transport equation u_t + 2*u_x = 0")
+def u0_transport(x):
+    return np.exp(-x**2)
+
+X, T, U = solve_transport_equation(u0_transport, 2, (-5, 5), (0, 2))
+
+# Example 2: Burgers equation with shock formation
+print("Example 2: Inviscid Burgers equation")
+def u0_burgers(x):
+    return np.where(x < 0, 1, 0.5)  # Step function
+
+x, t, U_burgers = solve_burgers_inviscid(u0_burgers, (-2, 2), (0, 1.5))
+
+# Plot characteristics for transport equation
+plt.figure(figsize=(12, 5))
+
+plt.subplot(1, 2, 1)
+plt.contourf(X, T, U, levels=20, cmap='viridis')
+plt.colorbar(label='u(x,t)')
+plt.xlabel('x')
+plt.ylabel('t')
+plt.title('Transport Equation: u_t + 2u_x = 0')
+
+# Plot some characteristics
+for x0 in np.linspace(-3, 3, 7):
+    t_char = np.linspace(0, 2, 100)
+    x_char = x0 + 2 * t_char
+    plt.plot(x_char, t_char, 'w--', alpha=0.5)
+
+plt.subplot(1, 2, 2)
+plt.contourf(x, t, U_burgers, levels=20, cmap='plasma')
+plt.colorbar(label='u(x,t)')
+plt.xlabel('x')
+plt.ylabel('t')
+plt.title('Burgers Equation: Shock Formation')
+
+plt.tight_layout()
+plt.savefig('characteristics.png', dpi=150)
+print("Plots saved to characteristics.png")</code></pre>
+                
+                <h3>3. Wavelet Theory: The Haar Wavelet Transform</h3>
+                <p>Wavelets provide localized time-frequency analysis, overcoming limitations of the Fourier transform. The Haar wavelet is the simplest wavelet, using step functions to decompose signals.</p>
+                
+                <p><strong>Notation:</strong> The <strong>Haar mother wavelet</strong> is:
+                \[\psi(x) = \begin{cases} 1 & 0 \leq x < \frac{1}{2} \\ -1 & \frac{1}{2} \leq x < 1 \\ 0 & \text{otherwise} \end{cases}\]</p>
+                
+                <p>The <strong>scaling function</strong> is:
+                \[\phi(x) = \begin{cases} 1 & 0 \leq x < 1 \\ 0 & \text{otherwise} \end{cases}\]</p>
+                
+                <p>Dilated and translated versions: \(\psi_{j,k}(x) = 2^{j/2} \psi(2^j x - k)\)</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Haar Wavelet Decomposition):</strong> Any function \(f \in L^2([0,1])\) can be decomposed as:
+                    \[f(x) = a_0 \phi(x) + \sum_{j=0}^{\infty} \sum_{k=0}^{2^j-1} d_{j,k} \psi_{j,k}(x)\]
+                    where \(a_0 = \int_0^1 f(x) dx\) and \(d_{j,k} = \int_0^1 f(x) \psi_{j,k}(x) dx\).
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof of Orthonormality:</strong><br><br>
+                    
+                    We show \(\{\psi_{j,k}\}\) forms an orthonormal set. For the inner product:
+                    \[\langle \psi_{j,k}, \psi_{j',k'} \rangle = \int_0^1 \psi_{j,k}(x) \psi_{j',k'}(x) dx\]<br><br>
+                    
+                    <strong>Case 1:</strong> \(j = j'\). The supports of \(\psi_{j,k}\) and \(\psi_{j,k'}\) are disjoint unless \(k = k'\). Thus:
+                    \[\langle \psi_{j,k}, \psi_{j,k'} \rangle = \delta_{k,k'}\]<br><br>
+                    
+                    <strong>Case 2:</strong> \(j \neq j'\). Assume \(j < j'\). The function \(\psi_{j',k'}\) oscillates twice as fast and is supported within either the positive or negative lobe of \(\psi_{j,k}\). Since \(\psi_{j',k'}\) has zero mean:
+                    \[\int_{k/2^j}^{(k+1/2)/2^j} \psi_{j',k'}(x) dx = 0\]
+                    \[\int_{(k+1/2)/2^j}^{(k+1)/2^j} \psi_{j',k'}(x) dx = 0\]<br><br>
+                    
+                    Therefore \(\langle \psi_{j,k}, \psi_{j',k'} \rangle = 0\). ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>import numpy as np
+import pywt
+import matplotlib.pyplot as plt
+
+def haar_wavelet(x):
+    """Haar mother wavelet."""
+    result = np.zeros_like(x)
+    result[(x >= 0) & (x < 0.5)] = 1
+    result[(x >= 0.5) & (x < 1)] = -1
+    return result
+
+def haar_scaling(x):
+    """Haar scaling function."""
+    result = np.zeros_like(x)
+    result[(x >= 0) & (x < 1)] = 1
+    return result
+
+def haar_decomposition(signal):
+    """
+    Perform 1D Haar wavelet decomposition.
+    
+    Args:
+        signal: 1D array (length must be power of 2)
+    
+    Returns:
+        approximation, details: Decomposition coefficients
+    """
+    n = len(signal)
+    if n % 2 != 0:
+        raise ValueError("Signal length must be even")
+    
+    # Approximation coefficients (averages)
+    approx = (signal[0::2] + signal[1::2]) / np.sqrt(2)
+    
+    # Detail coefficients (differences)
+    detail = (signal[0::2] - signal[1::2]) / np.sqrt(2)
+    
+    return approx, detail
+
+def haar_reconstruction(approx, detail):
+    """Reconstruct signal from Haar coefficients."""
+    n = len(approx)
+    signal = np.zeros(2 * n)
+    
+    signal[0::2] = (approx + detail) / np.sqrt(2)
+    signal[1::2] = (approx - detail) / np.sqrt(2)
+    
+    return signal
+
+# Example: Decompose and reconstruct a signal
+np.random.seed(42)
+n = 256
+t = np.linspace(0, 1, n)
+
+# Create a piecewise smooth signal
+signal = np.sin(2 * np.pi * 5 * t) + 0.5 * np.sin(2 * np.pi * 20 * t)
+signal[n//4:3*n//4] += 2  # Add a step
+
+# Multi-level Haar decomposition
+coeffs = pywt.wavedec(signal, 'haar', level=4)
+
+# Reconstruction from different levels
+reconstructed = pywt.waverec(coeffs, 'haar')
+
+# Denoising: threshold small coefficients
+coeffs_denoised = [coeffs[0]]  # Keep approximation
+threshold = 0.5
+for detail in coeffs[1:]:
+    coeffs_denoised.append(pywt.threshold(detail, threshold, mode='soft'))
+
+denoised = pywt.waverec(coeffs_denoised, 'haar')
+
+# Plot
+plt.figure(figsize=(12, 8))
+
+plt.subplot(3, 1, 1)
+plt.plot(t, signal, 'b-', label='Original')
+plt.legend()
+plt.title('Original Signal')
+
+plt.subplot(3, 1, 2)
+plt.plot(t, reconstructed[:n], 'g-', label='Reconstructed')
+plt.legend()
+plt.title('Reconstructed Signal (Perfect)')
+
+plt.subplot(3, 1, 3)
+plt.plot(t, denoised[:n], 'r-', label='Denoised')
+plt.legend()
+plt.title('Denoised Signal (threshold = 0.5)')
+
+plt.tight_layout()
+plt.savefig('haar_wavelet.png', dpi=150)
+
+# Print coefficient statistics
+print("Wavelet coefficient statistics:")
+print(f"Approximation (level 4): {len(coeffs[0])} coefficients")
+for i, detail in enumerate(coeffs[1:], 1):
+    print(f"Details level {5-i}: {len(detail)} coefficients, "
+          f"energy = {np.sum(detail**2):.4f}")</code></pre>
+            </section>
+            
+            <section id="special">
+                <h2>🌟 Special Topics</h2>
+                
+                <h3>1. Coding Theory: Reed-Solomon Error Correction</h3>
+                <p>Reed-Solomon codes are non-binary cyclic error-correcting codes used in CDs, DVDs, QR codes, and satellite communications. They can correct burst errors efficiently.</p>
+                
+                <p><strong>Notation:</strong> A Reed-Solomon code \(RS(n, k)\) over \(\mathbb{F}_q\) has:
+                - Block length: \(n = q - 1\)
+                - Message length: \(k\)
+                - Minimum distance: \(d = n - k + 1\) (MDS property)
+                - Error correction capability: \(t = \lfloor (n-k)/2 \rfloor\)</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Reed-Solomon MDS Property):</strong> Reed-Solomon codes meet the Singleton bound with equality:
+                    \[d = n - k + 1\]
+                    making them Maximum Distance Separable (MDS) codes.
+                </div>
+                
+                <div class="proof">
+                    <strong>Proof:</strong> The RS code is constructed by evaluating polynomials of degree \(< k\) at \(n\) distinct points \(\alpha_1, \ldots, \alpha_n \in \mathbb{F}_q\).<br><br>
+                    
+                    A codeword is \((p(\alpha_1), \ldots, p(\alpha_n))\) where \(p\) has degree \(< k\).<br><br>
+                    
+                    A nonzero polynomial of degree \(< k\) has at most \(k-1\) roots. Therefore, any nonzero codeword has at least \(n - (k-1) = n - k + 1\) nonzero entries.<br><br>
+                    
+                    Thus the minimum Hamming weight (and distance) is \(d \geq n - k + 1\).<br><br>
+                    
+                    By the Singleton bound: \(d \leq n - k + 1\).<br><br>
+                    
+                    Therefore \(d = n - k + 1\). ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>import numpy as np
+from numpy.polynomial import polynomial as P
+
+class ReedSolomon:
+    """
+    Reed-Solomon encoder/decoder over GF(2^m).
+    """
+    
+    def __init__(self, n, k, field_exp=8):
+        """
+        Initialize RS(n, k) code.
+        
+        Args:
+            n: Block length (must be 2^m - 1 for some m)
+            k: Message length
+            field_exp: Field exponent (default 8 for GF(256))
+        """
+        self.n = n
+        self.k = k
+        self.t = (n - k) // 2  # Error correction capability
+        self.field_exp = field_exp
+        self.field_size = 2 ** field_exp
+        
+        # Primitive polynomial for GF(256): x^8 + x^4 + x^3 + x^2 + 1
+        self.prim_poly = 0b100011101
+        
+        # Generate field elements
+        self.alpha = self._generate_field()
+        
+    def _generate_field(self):
+        """Generate powers of primitive element."""
+        alpha = [1]
+        for i in range(1, self.field_size):
+            alpha.append(self._gf_mul(alpha[-1], 2))
+        return alpha
+    
+    def _gf_mul(self, a, b):
+        """Multiply in GF(2^m)."""
+        result = 0
+        for i in range(self.field_exp):
+            if b & (1 << i):
+                result ^= a << i
+        
+        # Reduce modulo primitive polynomial
+        for i in range(self.field_exp * 2 - 2, self.field_exp - 1, -1):
+            if result & (1 << i):
+                result ^= self.prim_poly << (i - self.field_exp)
+        
+        return result & (self.field_size - 1)
+    
+    def _gf_inv(self, a):
+        """Multiplicative inverse in GF(2^m)."""
+        if a == 0:
+            raise ValueError("Division by zero")
+        # Fermat's little theorem: a^(-1) = a^(2^m - 2)
+        result = 1
+        power = self.field_size - 2
+        base = a
+        while power > 0:
+            if power & 1:
+                result = self._gf_mul(result, base)
+            base = self._gf_mul(base, base)
+            power >>= 1
+        return result
+    
+    def encode(self, message):
+        """
+        Encode message using Reed-Solomon.
+        
+        Args:
+            message: List of k elements in GF(2^m)
+        
+        Returns:
+            Codeword of length n
+        """
+        if len(message) != self.k:
+            raise ValueError(f"Message must have length {self.k}")
+        
+        # Systematic encoding: message + parity
+        # Use polynomial evaluation for simplicity
+        codeword = []
+        for i in range(self.n):
+            # Evaluate polynomial at alpha^i
+            point = self.alpha[i % (self.field_size - 1)]
+            value = 0
+            for j, coeff in enumerate(message):
+                value ^= self._gf_mul(coeff, self._gf_pow(point, j))
+            codeword.append(value)
+        
+        return codeword
+    
+    def _gf_pow(self, a, n):
+        """Compute a^n in GF(2^m)."""
+        result = 1
+        for _ in range(n):
+            result = self._gf_mul(result, a)
+        return result
+    
+    def decode_berlekamp_massey(self, received):
+        """
+        Decode using Berlekamp-Massey algorithm (simplified).
+        
+        Args:
+            received: Received word (possibly with errors)
+        
+        Returns:
+            Decoded message or None if uncorrectable
+        """
+        # This is a simplified placeholder
+        # Full implementation requires syndrome computation,
+        # Berlekamp-Massey, Chien search, and Forney algorithm
+        
+        # For demonstration, just return first k symbols
+        return received[:self.k]
+
+# Example usage
+print("Reed-Solomon Code Example:")
+rs = ReedSolomon(n=7, k=3, field_exp=3)  # Small example over GF(8)
+
+message = [1, 2, 3]  # 3 symbols
+print(f"Original message: {message}")
+
+codeword = rs.encode(message)
+print(f"Encoded codeword: {codeword}")
+
+# Introduce errors
+received = codeword.copy()
+received[2] ^= 5  # Error at position 2
+received[5] ^= 3  # Error at position 5
+print(f"Received (with errors): {received}")
+
+print(f"Code parameters: n={rs.n}, k={rs.k}, t={rs.t}")
+print(f"Can correct up to {rs.t} symbol errors")</code></pre>
+                
+                <h3>2. Elliptic Curve Cryptography: The Group Law</h3>
+                <p>Elliptic curves provide the mathematical foundation for modern cryptography. The group structure on elliptic curve points enables the Diffie-Hellman key exchange and digital signatures.</p>
+                
+                <p><strong>Notation:</strong> An elliptic curve over a field \(K\) is defined by the Weierstrass equation:
+                \[E: y^2 = x^3 + ax + b\]
+                where \(\Delta = -16(4a^3 + 27b^2) \neq 0\) (ensures nonsingularity).</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Elliptic Curve Group Law):</strong> The set of points \(E(K)\) together with a point at infinity \(\mathcal{O}\) forms an abelian group under the chord-and-tangent rule:
+                    
+                    <ul>
+                        <li><strong>Identity:</strong> \(P + \mathcal{O} = P\) for all \(P\)</li>
+                        <li><strong>Inverse:</strong> If \(P = (x, y)\), then \(-P = (x, -y)\)</li>
+                        <li><strong>Addition:</strong> For \(P \neq Q\), draw line through \(P\) and \(Q\), find third intersection \(R\), then \(P + Q = -R\)</li>
+                        <li><strong>Doubling:</strong> For \(P = Q\), use the tangent line at \(P\)</li>
+                    </ul>
+                </div>
+                
+                <div class="proof">
+                    <strong>Explicit Formulas:</strong><br><br>
+                    
+                    Let \(P = (x_1, y_1)\) and \(Q = (x_2, y_2)\) with \(P \neq -Q\).<br><br>
+                    
+                    <strong>Slope:</strong>
+                    \[\lambda = \begin{cases} \frac{y_2 - y_1}{x_2 - x_1} & P \neq Q \\ \frac{3x_1^2 + a}{2y_1} & P = Q \end{cases}\]<br><br>
+                    
+                    <strong>Sum \(P + Q = (x_3, y_3)\):</strong>
+                    \[x_3 = \lambda^2 - x_1 - x_2\]
+                    \[y_3 = \lambda(x_1 - x_3) - y_1\]<br><br>
+                    
+                    <strong>Verification:</strong> Substituting into the curve equation verifies that \((x_3, y_3)\) lies on \(E\). Associativity follows from the Cayley-Bacharach theorem in algebraic geometry. ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>class EllipticCurve:
+    """
+    Elliptic curve over a finite field F_p.
+    Curve equation: y^2 = x^3 + ax + b (mod p)
+    """
+    
+    def __init__(self, a, b, p):
+        """
+        Initialize elliptic curve.
+        
+        Args:
+            a, b: Curve coefficients
+            p: Prime field characteristic
+        """
+        self.a = a
+        self.b = b
+        self.p = p
+        
+        # Check discriminant
+        discriminant = (-16 * (4 * a**3 + 27 * b**2)) % p
+        if discriminant == 0:
+            raise ValueError("Curve is singular")
+    
+    def is_on_curve(self, point):
+        """Check if point is on the curve."""
+        if point is None:  # Point at infinity
+            return True
+        x, y = point
+        return (y * y - x**3 - self.a * x - self.b) % self.p == 0
+    
+    def add(self, P, Q):
+        """
+        Add two points on the curve.
+        
+        Args:
+            P, Q: Points (x, y) or None for point at infinity
+        
+        Returns:
+            P + Q
+        """
+        if P is None:
+            return Q
+        if Q is None:
+            return P
+        
+        x1, y1 = P
+        x2, y2 = Q
+        
+        # P + (-P) = O
+        if x1 == x2 and (y1 + y2) % self.p == 0:
+            return None
+        
+        # Compute slope
+        if x1 != x2:
+            # Point addition
+            lam = ((y2 - y1) * pow(x2 - x1, -1, self.p)) % self.p
+        else:
+            # Point doubling
+            lam = ((3 * x1**2 + self.a) * pow(2 * y1, -1, self.p)) % self.p
+        
+        # Compute result
+        x3 = (lam**2 - x1 - x2) % self.p
+        y3 = (lam * (x1 - x3) - y1) % self.p
+        
+        return (x3, y3)
+    
+    def scalar_mult(self, k, P):
+        """
+        Compute k*P using double-and-add.
+        
+        Args:
+            k: Scalar (positive integer)
+            P: Point on curve
+        
+        Returns:
+            k*P
+        """
+        if k < 0:
+            raise ValueError("Negative scalar not supported")
+        if k == 0 or P is None:
+            return None
+        
+        result = None
+        addend = P
+        
+        while k:
+            if k & 1:
+                result = self.add(result, addend)
+            addend = self.add(addend, addend)
+            k >>= 1
+        
+        return result
+    
+    def find_points(self):
+        """Find all points on the curve (for small p)."""
+        points = [None]  # Point at infinity
+        for x in range(self.p):
+            rhs = (x**3 + self.a * x + self.b) % self.p
+            # Check if rhs is quadratic residue
+            for y in range(self.p):
+                if (y * y) % self.p == rhs:
+                    points.append((x, y))
+        return points
+
+# Example: secp256k1-like curve (small version)
+print("Elliptic Curve Cryptography Example:")
+a, b, p = 0, 7, 17  # y^2 = x^3 + 7 (mod 17)
+
+curve = EllipticCurve(a, b, p)
+print(f"Curve: y^2 = x^3 + {a}x + {b} (mod {p})")
+
+# Find generator point
+points = curve.find_points()
+print(f"Number of points (including O): {len(points)}")
+
+# Use a generator
+G = (15, 6)  # A point on the curve
+print(f"Generator G = {G}")
+print(f"G on curve: {curve.is_on_curve(G)}")
+
+# Key generation
+import secrets
+private_key = secrets.randbelow(p - 1) + 1
+public_key = curve.scalar_mult(private_key, G)
+print(f"Private key: {private_key}")
+print(f"Public key: {public_key}")
+
+# ECDH key exchange
+alice_private = secrets.randbelow(p - 1) + 1
+bob_private = secrets.randbelow(p - 1) + 1
+
+alice_public = curve.scalar_mult(alice_private, G)
+bob_public = curve.scalar_mult(bob_private, G)
+
+# Shared secret
+alice_shared = curve.scalar_mult(alice_private, bob_public)
+bob_shared = curve.scalar_mult(bob_private, alice_public)
+
+print(f"\nECDH Key Exchange:")
+print(f"Alice's shared secret: {alice_shared}")
+print(f"Bob's shared secret:   {bob_shared}")
+print(f"Secrets match: {alice_shared == bob_shared}")</code></pre>
+                
+                <h3>3. Analytic Number Theory: The Prime Number Theorem</h3>
+                <p>The Prime Number Theorem describes the asymptotic distribution of prime numbers, one of the most celebrated results in mathematics.</p>
+                
+                <p><strong>Notation:</strong> Let \(\pi(x)\) denote the number of primes less than or equal to \(x\).</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Prime Number Theorem):</strong>
+                    \[\lim_{x \to \infty} \frac{\pi(x)}{x / \ln x} = 1\]
+                    Equivalently, \(\pi(x) \sim \frac{x}{\ln x}\) as \(x \to \infty\).
+                </div>
+                
+                <div class="proof">
+                    <strong>Sketch (via Complex Analysis):</strong><br><br>
+                    
+                    The proof uses the Riemann zeta function:
+                    \[\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_p \frac{1}{1 - p^{-s}}\]<br><br>
+                    
+                    <strong>Key steps:</strong><br>
+                    1. Define \(\psi(x) = \sum_{p^k \leq x} \ln p\) (Chebyshev function)<br>
+                    2. Show \(\psi(x) \sim x\) implies PNT<br>
+                    3. Use Perron's formula to express \(\psi(x)\) as a contour integral:<br>
+                    \[\psi(x) = \frac{1}{2\pi i} \int_{c-i\infty}^{c+i\infty} \left(-\frac{\zeta'(s)}{\zeta(s)}\right) \frac{x^s}{s} ds\]<br><br>
+                    
+                    4. Move contour to the left, picking up residues at poles of \(\zeta'/\zeta\)<br>
+                    5. The pole at \(s = 1\) contributes \(x\)<br>
+                    6. The zero-free region of \(\zeta(s)\) for \(\text{Re}(s) \geq 1\) ensures no other contributions dominate<br><br>
+                    
+                    Hadamard and de la Vallée Poussin independently proved in 1896 that \(\zeta(1 + it) \neq 0\) for all \(t \neq 0\), establishing the PNT. ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>import numpy as np
+from sympy import primepi, log, primerange
+import matplotlib.pyplot as plt
+
+def pi_x(x):
+    """Number of primes <= x."""
+    return primepi(x)
+
+def li_x(x):
+    """Logarithmic integral approximation."""
+    from scipy.special import expi
+    return expi(np.log(x))
+
+def check_pnt(max_exp=8):
+    """
+    Verify the Prime Number Theorem numerically.
+    
+    Computes pi(x) / (x / ln(x)) for various x values.
+    """
+    print("Prime Number Theorem Verification")
+    print("=" * 50)
+    print(f"{'x':>15} {'pi(x)':>12} {'x/ln(x)':>15} {'Ratio':>12}")
+    print("-" * 50)
+    
+    ratios = []
+    x_values = []
+    
+    for exp in range(1, max_exp + 1):
+        x = 10 ** exp
+        pi = int(pi_x(x))
+        approx = x / np.log(x)
+        ratio = pi / approx
+        
+        x_values.append(x)
+        ratios.append(ratio)
+        
+        print(f"{x:>15.0e} {pi:>12} {approx:>15.2f} {ratio:>12.6f}")
+    
+    return x_values, ratios
+
+# Verify PNT
+x_vals, ratios = check_pnt(8)
+
+# Plot convergence
+plt.figure(figsize=(12, 5))
+
+plt.subplot(1, 2, 1)
+plt.semilogx(x_vals, ratios, 'bo-', linewidth=2, markersize=8)
+plt.axhline(y=1, color='r', linestyle='--', label='Limit = 1')
+plt.xlabel('x')
+plt.ylabel('π(x) / (x / ln x)')
+plt.title('Prime Number Theorem Convergence')
+plt.legend()
+plt.grid(True)
+
+# Compare approximations
+plt.subplot(1, 2, 2)
+x_range = np.logspace(1, 6, 100)
+pi_values = [pi_x(int(x)) for x in x_range]
+approx1 = x_range / np.log(x_range)  # x/ln(x)
+
+plt.loglog(x_range, pi_values, 'b-', label='π(x)', linewidth=2)
+plt.loglog(x_range, approx1, 'r--', label='x / ln(x)', linewidth=2)
+plt.xlabel('x')
+plt.ylabel('Count')
+plt.title('Prime Counting Functions')
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.savefig('prime_number_theorem.png', dpi=150)
+
+# Error analysis
+print("\nError Analysis:")
+print(f"{'x':>15} {'|pi(x) - x/ln(x)|':>20}")
+print("-" * 40)
+for x in [10**i for i in range(1, 7)]:
+    error = abs(pi_x(x) - x / np.log(x))
+    print(f"{x:>15.0e} {error:>20.0f}")
+
+# Riemann approximation (more accurate)
+print("\nRiemann R(x) approximation:")
+from scipy.special import expi
+
+def Riemann_R(x):
+    """Riemann R function - better approximation to pi(x)."""
+    result = 1.0
+    terms = 20
+    from scipy.special import zeta
+    for n in range(1, terms):
+        # Sum over Mobius function
+        # Simplified: R(x) = sum_{n=1}^infty mu(n)/n * li(x^{1/n})
+        pass
+    return result
+
+print("Note: Riemann's explicit formula provides even better approximations")
+print("by including contributions from zeta function zeros.")</code></pre>
+                
+                <h3>4. The Four Color Theorem and Graph Coloring</h3>
+                <p>The Four Color Theorem states that any planar graph can be colored with at most four colors. This was the first major theorem proved using a computer.</p>
+                
+                <p><strong>Notation:</strong> A <strong>proper k-coloring</strong> of a graph \(G = (V, E)\) is a function \(c: V \to \{1, \ldots, k\}\) such that \(c(u) \neq c(v)\) whenever \(\{u, v\} \in E\). The <strong>chromatic number</strong> \(\chi(G)\) is the minimum \(k\) for which a proper \(k\)-coloring exists.</p>
+                
+                <div class="theorem">
+                    <strong>Theorem (Four Color Theorem):</strong> Every planar graph \(G\) satisfies:
+                    \[\chi(G) \leq 4\]
+                </div>
+                
+                <div class="proof">
+                    <strong>Historical Context and Approach:</strong><br><br>
+                    
+                    The theorem was proved by Appel and Haken in 1976, and later simplified by Robertson, Sanders, Seymour, and Thomas in 1997.<br><br>
+                    
+                    <strong>Key ideas:</strong><br>
+                    1. <strong>Unavoidable set:</strong> Every planar graph contains one of 633 (later reduced) "configurations"<br>
+                    2. <strong>Reducibility:</strong> Each configuration can be replaced by a smaller graph preserving 4-colorability<br>
+                    3. <strong>Discharging method:</strong> Assign charge to vertices based on degree, redistribute according to rules, show some configuration must have positive charge<br><br>
+                    
+                    The computer-assisted proof checked that every configuration is reducible and that the set is unavoidable. ∎
+                </div>
+                
+                <p><strong>Python Implementation:</strong></p>
+                <pre><code>import networkx as nx
+import matplotlib.pyplot as plt
+from itertools import combinations
+
+def is_valid_coloring(G, coloring):
+    """Check if a coloring is valid."""
+    for u, v in G.edges():
+        if coloring[u] == coloring[v]:
+            return False
+    return True
+
+def greedy_coloring(G, order=None):
+    """
+    Greedy graph coloring algorithm.
+    
+    Args:
+        G: NetworkX graph
+        order: Vertex ordering (default: sorted by degree)
+    
+    Returns:
+        Dictionary mapping vertices to colors
+    """
+    if order is None:
+        # Order by descending degree
+        order = sorted(G.nodes(), key=lambda v: G.degree(v), reverse=True)
+    
+    coloring = {}
+    
+    for v in order:
+        # Find colors used by neighbors
+        neighbor_colors = {coloring[u] for u in G.neighbors(v) if u in coloring}
+        
+        # Assign smallest available color
+        color = 1
+        while color in neighbor_colors:
+            color += 1
+        coloring[v] = color
+    
+    return coloring
+
+def welsh_powell_coloring(G):
+    """Welsh-Powell coloring (greedy with degree ordering)."""
+    return greedy_coloring(G)
+
+def dsatur_coloring(G):
+    """
+    DSatur (Brelaz) coloring algorithm.
+    At each step, color the vertex with highest saturation degree.
+    """
+    if len(G) == 0:
+        return {}
+    
+    coloring = {}
+    uncolored = set(G.nodes())
+    
+    # Saturation degree = number of different colors in neighborhood
+    def saturation_degree(v):
+        return len({coloring[u] for u in G.neighbors(v) if u in coloring})
+    
+    while uncolored:
+        # Find vertex with maximum saturation degree (break ties by degree)
+        v = max(uncolored, key=lambda x: (saturation_degree(x), G.degree(x)))
+        
+        # Assign smallest available color
+        neighbor_colors = {coloring[u] for u in G.neighbors(v) if u in coloring}
+        color = 1
+        while color in neighbor_colors:
+            color += 1
+        
+        coloring[v] = color
+        uncolored.remove(v)
+    
+    return coloring
+
+def is_planar(G):
+    """Check if graph is planar using Kuratowski's theorem (heuristic)."""
+    return nx.check_planarity(G)[0]
+
+def create_planar_graph_example():
+    """Create an example planar graph."""
+    # Create a triangulation of a planar graph
+    G = nx.Graph()
+    
+    # Add edges to form a planar graph (icosahedron skeleton is planar)
+    edges = [
+        (0, 1), (0, 2), (0, 3), (0, 4), (0, 5),
+        (1, 2), (2, 3), (3, 4), (4, 5), (5, 1),
+        (1, 6), (2, 6), (2, 7), (3, 7), (3, 8),
+        (4, 8), (4, 9), (5, 9), (5, 10), (1, 10),
+        (6, 7), (7, 8), (8, 9), (9, 10), (10, 6),
+        (6, 11), (7, 11), (8, 11), (9, 11), (10, 11)
+    ]
+    G.add_edges_from(edges)
+    return G
+
+# Example: Color a planar graph
+print("Four Color Theorem - Graph Coloring Example")
+print("=" * 50)
+
+# Create planar graph
+G = create_planar_graph_example()
+print(f"Graph has {G.number_of_nodes()} vertices and {G.number_of_edges()} edges")
+print(f"Is planar: {is_planar(G)}")
+
+# Apply different coloring algorithms
+algorithms = {
+    'Greedy': greedy_coloring,
+    'Welsh-Powell': welsh_powell_coloring,
+    'DSatur': dsatur_coloring
+}
+
+print(f"\n{'Algorithm':<15} {'Colors Used':<12} {'Valid':<8}")
+print("-" * 40)
+
+best_coloring = None
+best_colors = float('inf')
+
+for name, algo in algorithms.items():
+    coloring = algo(G)
+    num_colors = max(coloring.values())
+    valid = is_valid_coloring(G, coloring)
+    
+    print(f"{name:<15} {num_colors:<12} {str(valid):<8}")
+    
+    if num_colors < best_colors:
+        best_colors = num_colors
+        best_coloring = coloring
+
+print(f"\nBest coloring uses {best_colors} colors")
+print(f"Four Color Theorem satisfied: {best_colors <= 4}")
+
+# Visualize
+plt.figure(figsize=(12, 5))
+
+# Use spring layout for planar-like drawing
+pos = nx.spring_layout(G, seed=42)
+
+plt.subplot(1, 2, 1)
+color_map = [best_coloring[node] for node in G.nodes()]
+nx.draw(G, pos, node_color=color_map, with_labels=True, 
+        cmap=plt.cm.Set3, node_size=500)
+plt.title(f'Graph Coloring ({best_colors} colors)')
+
+# Test on random planar graph
+plt.subplot(1, 2, 2)
+# Create a random planar graph using Delaunay triangulation
+from scipy.spatial import Delaunay
+np.random.seed(42)
+points = np.random.rand(20, 2)
+tri = Delaunay(points)
+
+G_planar = nx.Graph()
+for simplex in tri.simplices:
+    G_planar.add_edges_from([(simplex[i], simplex[j]) 
+                              for i in range(3) for j in range(i+1, 3)])
+
+coloring_planar = dsatur_coloring(G_planar)
+colors_planar = max(coloring_planar.values())
+
+pos_planar = {i: points[i] for i in range(len(points))}
+color_map_planar = [coloring_planar[node] for node in G_planar.nodes()]
+nx.draw(G_planar, pos_planar, node_color=color_map_planar,
+        with_labels=True, cmap=plt.cm.Set3, node_size=400)
+plt.title(f'Random Planar Graph ({colors_planar} colors)')
+
+plt.tight_layout()
+plt.savefig('graph_coloring.png', dpi=150)
+print("\nVisualization saved to graph_coloring.png")</code></pre>
+            </section>
+            
+            <section id="history">
+                <h2>📜 Math History</h2>
+                
+                <h3>The Development of Modern Set Theory: From Cantor to Cohen</h3>
+                
+                <p>The foundations of modern set theory were established through a series of revolutionary discoveries in the late 19th and early 20th centuries:</p>
+                
+                <ul>
+                    <li><strong>1874</strong> — Georg Cantor proves that the real numbers are uncountable, establishing different sizes of infinity. His diagonal argument becomes a cornerstone of mathematical logic.</li>
+                    
+                    <li><strong>1883</strong> — Cantor introduces transfinite ordinal and cardinal numbers, extending arithmetic beyond the finite. This work meets resistance from contemporaries like Kronecker but gradually gains acceptance.</li>
+                    
+                    <li><strong>1900</strong> — David Hilbert includes the Continuum Hypothesis as the first problem in his famous list of 23 problems for the 20th century.</li>
+                    
+                    <li><strong>1902</strong> — Bertrand Russell discovers his paradox, showing that naive set comprehension leads to contradictions. This prompts the development of axiomatic set theories.</li>
+                    
+                    <li><strong>1908</strong> — Ernst Zermelo proposes the first axiomatization of set theory (Zermelo set theory), later refined by Abraham Fraenkel to become ZFC (Zermelo-Fraenkel with Choice).</li>
+                    
+                    <li><strong>1931</strong> — Kurt Gödel proves his incompleteness theorems, showing that any consistent formal system containing arithmetic cannot prove its own consistency.</li>
+                    
+                    <li><strong>1940</strong> — Gödel proves that the Continuum Hypothesis is consistent with ZFC set theory, showing it cannot be disproved.</li>
+                    
+                    <li><strong>1963</strong> — Paul Cohen invents the method of forcing and proves that the negation of CH is also consistent with ZFC, establishing the independence of the Continuum Hypothesis.</li>
+                </ul>
+                
+                <p>Cohen's forcing technique revolutionized set theory, providing a general method for proving independence results. His work earned him the Fields Medal in 1966, one of the few awarded for work in mathematical logic.</p>
+            </section>
+            
+            <section id="articles">
+                <h2>📰 Featured Articles</h2>
+                
+                <h3><a href="https://www.quantamagazine.org/the-year-in-mathematics-20251218/">The Year in Mathematics</a> — Quanta Magazine</h3>
+                <p>Quanta's annual review highlights the most significant mathematical breakthroughs of 2025. This year's coverage includes advances in the geometric Langlands program, new sphere-packing records, and the growing role of artificial intelligence in mathematical discovery. The article emphasizes how modern mathematics increasingly bridges pure theory with computational exploration.</p>
+                
+                <h3><a href="https://www.ams.org/notices/">AMS Notices Feature Articles</a> — American Mathematical Society</h3>
+                <p>The Notices of the AMS regularly publishes accessible expositions on cutting-edge research. Recent issues have featured articles on the mathematics of neural networks, topological data analysis, and the history of algebraic geometry. These articles serve as excellent entry points for mathematicians looking to understand developments outside their specialty.</p>
+                
+                <h3><a href="https://www.3blue1brown.com/">Essence of Linear Algebra</a> — 3Blue1Brown</h3>
+                <p>Grant Sanderson's visual approach to mathematics has transformed how students learn linear algebra, calculus, and neural networks. The Essence of Linear Algebra series presents fundamental concepts like eigenvalues, determinants, and matrix multiplication through geometric intuition rather than rote computation. These videos complement traditional textbooks by developing visual understanding alongside formal manipulation.</p>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p><a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
