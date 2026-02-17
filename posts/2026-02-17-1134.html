@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 17, 2026 at 11:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 17, 2026 at 11:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 17, 2026 at 11:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">complex-dynamics</span>
+                <span class="tag">ergodic-theory</span>
+                <span class="tag">algebraic-topology</span>
+            </div>
+
+            <!-- ==================== MATH LINKS ==================== -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://www.maths.ed.ac.uk/~v1ranick/papers/walschap.pdf">The Joy of Mathematics</a></h3>
+                    <p>A comprehensive collection of lecture notes and resources covering various areas of pure mathematics. The site includes detailed expositions on algebraic topology, differential geometry, and complex analysis, with a focus on geometric intuition and rigorous proofs. Particularly valuable for graduate students seeking alternative explanations of difficult concepts.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://mathworld.wolfram.com/">MathWorld</a></h3>
+                    <p>An extensive online mathematics resource created and maintained by Eric Weisstein. With over 13,000 entries, it serves as a comprehensive encyclopedia of mathematical concepts, theorems, and formulas. Each entry includes rigorous definitions, examples, and references to further reading. An invaluable quick-reference tool for mathematicians at all levels.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://terrytao.wordpress.com/">What's New - Terence Tao</a></h3>
+                    <p>The personal blog of Fields Medalist Terence Tao, featuring expositions of mathematical concepts, discussions of recent research, and insights into the practice of mathematics. Tao's ability to explain deep concepts accessibly makes this an essential resource for anyone interested in contemporary mathematics and mathematical thinking.</p>
+                </div>
+            </section>
+
+            <!-- ==================== FREE MATH BOOK ==================== -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Complex Analysis</h3>
+                    <p><strong>Author:</strong> Elias Stein & Rami Shakarchi</p>
+                    <p><strong>Level:</strong> Undergraduate/Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://www.math.princeton.edu/~steina/CAbook.pdf">Princeton University</a></p>
+                    
+                    <p><strong>Summary:</strong> This masterful introduction to complex analysis takes a unique approach by emphasizing the connections between complex function theory and Fourier analysis. The book covers Cauchy's theorem, meromorphic functions, the argument principle, conformal mappings, and the Riemann mapping theorem. What distinguishes this text is its elegant treatment of the relationship between complex analysis and partial differential equations, as well as its thorough development of the theory via the study of holomorphic functions and their boundary behavior. The exercises are carefully constructed to build deep understanding, and the prose is exceptionally clear and insightful.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PURE MATH DEEP DIVES ==================== -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <!-- Pure Math 1: Complex Dynamics -->
+                <div class="deep-dive">
+                    <h3>Complex Dynamics and the Mandelbrot Set</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Complex dynamics studies the iteration of holomorphic functions, revealing intricate fractal structures that emerge from simple iterative processes. The field bridges complex analysis, topology, and dynamical systems, producing some of the most visually stunning objects in mathematics. The Mandelbrot set, in particular, has captured public imagination while remaining an active area of research with deep connections to hyperbolic geometry and renormalization theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Julia Set:</strong> For a rational function \(f : \widehat{\mathbb{C}} \to \widehat{\mathbb{C}}\), the filled Julia set \(K(f)\) is the set of points with bounded forward orbit. The Julia set \(J(f) = \partial K(f)\) is the boundary of this set.</p>
+
+                    <p><strong>Fatou Set:</strong> The complement of the Julia set, where the iterates of \(f\) form a normal family. The Fatou set is open and consists of domains where the dynamics are stable.</p>
+
+                    <p><strong>Mandelbrot Set:</strong> The set \(\mathcal{M} = \{c \in \mathbb{C} : \text{the sequence } z_{n+1} = z_n^2 + c \text{ remains bounded}\}\). Equivalently, \(\mathcal{M} = \{c : 0 \in K(f_c)\}\) where \(f_c(z) = z^2 + c\).</p>
+
+                    <p><strong>Hyperbolic Component:</strong> A connected component of the interior of \(\mathcal{M}\) where the corresponding quadratic polynomial has an attracting periodic cycle.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Theorem (Douady-Hubbard, 1980s):</strong> The Mandelbrot set \(\mathcal{M}\) is connected.</p>
+
+                    <p><em>Proof Sketch:</em> The proof uses the Böttcher coordinate near infinity. For \(|z|\) large, the map \(f_c(z) = z^2 + c\) behaves like \(z \mapsto z^2\). There exists a conformal map \(\phi_c\) conjugating \(f_c\) to \(z \mapsto z^2\) on a neighborhood of infinity: \(\phi_c(f_c(z)) = (\phi_c(z))^2\).</p>
+
+                    <p>The Böttcher coordinate can be written as \(\phi_c(z) = \lim_{n \to \infty} (f_c^n(z))^{1/2^n}\). The Green's function \(G_c(z) = \log|\phi_c(z)|\) measures the escape rate.</p>
+
+                    <p>Define \(\Phi(c) = \phi_c(c)\) for \(c \in \mathbb{C} \setminus \mathcal{M}\). This map is analytic, and one shows that \(\Phi : \mathbb{C} \setminus \mathcal{M} \to \mathbb{C} \setminus \overline{\mathbb{D}}\) is a conformal isomorphism. Since \(\mathbb{C} \setminus \overline{\mathbb{D}}\) is connected and \(\Phi\) is a homeomorphism, \(\mathbb{C} \setminus \mathcal{M}\) is connected, hence \(\mathcal{M}\) is connected.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\widehat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}\) — Riemann sphere</li>
+                        <li>\(f^n\) — \(n\)-th iterate of \(f\)</li>
+                        <li>\(K(f)\) — filled Julia set</li>
+                        <li>\(J(f)\) — Julia set</li>
+                        <li>\(\phi_c\) — Böttcher coordinate</li>
+                        <li>\(G_c(z)\) — Green's function (escape rate)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot_set(width, height, x_min=-2.5, x_max=1.0, y_min=-1.25, y_max=1.25, max_iter=100):
+    """
+    Compute the Mandelbrot set.
+    For each c, iterate z_{n+1} = z_n^2 + c starting from z_0 = 0.
+    """
+    x = np.linspace(x_min, x_max, width)
+    y = np.linspace(y_min, y_max, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j * Y
+    
+    Z = np.zeros_like(C)
+    iterations = np.zeros(C.shape, dtype=int)
+    mask = np.ones(C.shape, dtype=bool)
+    
+    for i in range(max_iter):
+        Z[mask] = Z[mask]**2 + C[mask]
+        mask_new = np.abs(Z) <= 2
+        iterations[~mask_new & (iterations == 0)] = i
+        mask = mask_new
+    
+    iterations[mask] = max_iter
+    return iterations
+
+def julia_set(c, width, height, x_min=-2, x_max=2, y_min=-2, y_max=2, max_iter=100):
+    """
+    Compute the Julia set for parameter c.
+    Iterate z_{n+1} = z_n^2 + c for each starting point z_0.
+    """
+    x = np.linspace(x_min, x_max, width)
+    y = np.linspace(y_min, y_max, height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    iterations = np.zeros(Z.shape, dtype=int)
+    mask = np.ones(Z.shape, dtype=bool)
+    
+    for i in range(max_iter):
+        Z[mask] = Z[mask]**2 + c
+        mask_new = np.abs(Z) <= 2
+        iterations[~mask_new & (iterations == 0)] = i
+        mask = mask_new
+    
+    iterations[mask] = max_iter
+    return iterations
+
+# Generate and display
+mandelbrot = mandelbrot_set(800, 600, max_iter=80)
+
+plt.figure(figsize=(12, 8))
+plt.imshow(mandelbrot, extent=[-2.5, 1.0, -1.25, 1.25], cmap='hot', origin='lower')
+plt.title('The Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.colorbar(label='Iterations to escape')
+plt.tight_layout()
+plt.savefig('mandelbrot.png', dpi=150)
+plt.show()
+
+# Julia set for c = -0.7 + 0.27015j (Douady rabbit)
+julia = julia_set(-0.7 + 0.27015j, 600, 600, max_iter=80)
+
+plt.figure(figsize=(8, 8))
+plt.imshow(julia, extent=[-2, 2, -2, 2], cmap='viridis', origin='lower')
+plt.title('Julia Set for c = -0.7 + 0.27015i (Douady Rabbit)')
+plt.xlabel('Re(z)')
+plt.ylabel('Im(z)')
+plt.colorbar(label='Iterations to escape')
+plt.tight_layout()
+plt.savefig('julia.png', dpi=150)
+plt.show()</code></pre>
+                </div>
+
+                <!-- Pure Math 2: Ergodic Theory -->
+                <div class="deep-dive">
+                    <h3>Ergodic Theory and Dynamical Systems</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Ergodic theory studies dynamical systems with an invariant measure, connecting statistical mechanics to pure mathematics. It answers questions about the long-term behavior of systems: Does time average equal space average? Do trajectories visit all regions with the right frequency? These questions, originating in Boltzmann's ergodic hypothesis, have profound implications for number theory (uniform distribution), geometry (geodesic flows), and probability theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Measure-Preserving System:</strong> A quadruple \((X, \mathcal{B}, \mu, T)\) where \((X, \mathcal{B}, \mu)\) is a probability space and \(T : X \to X\) is a measurable map satisfying \(\mu(T^{-1}(A)) = \mu(A)\) for all measurable \(A\).</p>
+
+                    <p><strong>Ergodicity:</strong> A measure-preserving system is ergodic if every invariant measurable set has measure 0 or 1. Equivalently, the only \(L^2\) functions satisfying \(f \circ T = f\) almost everywhere are constants.</p>
+
+                    <p><strong>Mixing:</strong> A stronger property than ergodicity: \(\lim_{n \to \infty} \mu(T^{-n}(A) \cap B) = \mu(A)\mu(B)\) for all measurable sets \(A, B\).</p>
+
+                    <p><strong>Entropy:</strong> The Kolmogorov-Sinai entropy \(h_\mu(T)\) measures the information production rate of the system. For a partition \(\mathcal{P}\), \(h_\mu(T, \mathcal{P}) = \lim_{n \to \infty} \frac{1}{n} H\left(\bigvee_{i=0}^{n-1} T^{-i}\mathcal{P}\right)\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Birkhoff's Ergodic Theorem:</strong> Let \((X, \mathcal{B}, \mu, T)\) be a measure-preserving system and \(f \in L^1(\mu)\). Then the time averages converge almost everywhere:
+                    \[\lim_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} f(T^k(x)) = \mathbb{E}[f | \mathcal{I}](x)\]
+                    where \(\mathcal{I}\) is the \(\sigma\)-algebra of invariant sets. If the system is ergodic, this equals \(\int f \, d\mu\) almost everywhere.</p>
+
+                    <p><em>Proof Sketch:</em> Define the maximal function \(f^*(x) = \sup_{n \geq 1} \frac{1}{n} \sum_{k=0}^{n-1} f(T^k(x))\). The key is the maximal inequality: for any \(\lambda > 0\),
+                    \[\mu(\{x : f^*(x) > \lambda\}) \leq \frac{1}{\lambda} \int_{f^* > \lambda} f \, d\mu\]</p>
+
+                    <p>Let \(g = f - \mathbb{E}[f|\mathcal{I}]\). Then \(\mathbb{E}[g|\mathcal{I}] = 0\). For any \(\epsilon > 0\), define \(g_\epsilon = g + \epsilon\). One shows that \(\limsup_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} g(T^k(x)) \leq 0\) almost everywhere by applying the maximal inequality to truncated versions of \(g_\epsilon\).</p>
+
+                    <p>Applying the same argument to \(-g\) gives the reverse inequality, establishing convergence to 0. For ergodic systems, \(\mathcal{I}\) is trivial, so \(\mathbb{E}[f|\mathcal{I}] = \int f \, d\mu\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(T^{-1}(A)\) — preimage of set \(A\)</li>
+                        <li>\(L^1(\mu)\) — space of integrable functions</li>
+                        <li>\(\mathbb{E}[f|\mathcal{I}]\) — conditional expectation</li>
+                        <li>\(h_\mu(T)\) — measure-theoretic entropy</li>
+                        <li>\(H(\mathcal{P}) = -\sum_{P \in \mathcal{P}} \mu(P) \log \mu(P)\) — Shannon entropy</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def circle_rotation(theta, alpha, n_iter):
+    """
+    Circle rotation: T(x) = x + alpha (mod 1)
+    This is ergodic iff alpha is irrational.
+    """
+    trajectory = np.zeros(n_iter)
+    x = theta
+    for i in range(n_iter):
+        trajectory[i] = x
+        x = (x + alpha) % 1.0
+    return trajectory
+
+def doubling_map(x, n_iter):
+    """
+    Doubling map: T(x) = 2x (mod 1)
+    This is mixing and has entropy log(2).
+    """
+    trajectory = np.zeros(n_iter)
+    for i in range(n_iter):
+        trajectory[i] = x
+        x = (2 * x) % 1.0
+    return trajectory
+
+def bernoulli_shift(p, n_iter, sequence_length=1000):
+    """
+    Bernoulli shift on binary sequences.
+    T(x_0, x_1, x_2, ...) = (x_1, x_2, x_3, ...)
+    """
+    # Generate random sequence
+    sequence = (np.random.random(sequence_length) < p).astype(int)
+    
+    # Compute time average of first coordinate
+    time_avg = np.cumsum(sequence) / np.arange(1, len(sequence) + 1)
+    return time_avg
+
+def continued_fraction_expansion(alpha, n_terms=20):
+    """
+    Compute continued fraction expansion [a0; a1, a2, ...] of alpha.
+    Related to the Gauss map T(x) = {1/x} (fractional part).
+    """
+    coeffs = []
+    x = alpha
+    for _ in range(n_terms):
+        a = int(x)
+        coeffs.append(a)
+        if abs(x - a) < 1e-10:
+            break
+        x = 1.0 / (x - a)
+    return coeffs
+
+# Example 1: Circle rotation with irrational angle
+alpha_irrational = (np.sqrt(5) - 1) / 2  # golden ratio conjugate
+theta0 = 0.3
+trajectory = circle_rotation(theta0, alpha_irrational, 10000)
+
+plt.figure(figsize=(12, 4))
+plt.subplot(1, 2, 1)
+plt.plot(trajectory[:200], 'b-', linewidth=0.5)
+plt.title(f'Circle Rotation: α = (√5-1)/2 (first 200 iterates)')
+plt.xlabel('n')
+plt.ylabel('T^n(x)')
+
+plt.subplot(1, 2, 2)
+plt.hist(trajectory, bins=50, density=True, alpha=0.7, edgecolor='black')
+plt.title('Distribution of 10,000 iterates')
+plt.xlabel('Position')
+plt.ylabel('Density')
+plt.axhline(y=1.0, color='r', linestyle='--', label='Uniform (expected)')
+plt.legend()
+plt.tight_layout()
+plt.savefig('circle_rotation.png', dpi=150)
+plt.show()
+
+# Example 2: Doubling map (chaotic)
+trajectory_doubling = doubling_map(0.1, 50)
+print(f"Doubling map sensitivity: initial 0.1 vs 0.10001")
+traj2 = doubling_map(0.10001, 50)
+print(f"Divergence after n steps: {np.abs(trajectory_doubling - traj2)}")
+
+# Example 3: Bernoulli shift time averages
+p_true = 0.3
+time_averages = bernoulli_shift(p_true, 5000)
+
+plt.figure(figsize=(10, 5))
+plt.plot(time_averages, 'b-', linewidth=0.5)
+plt.axhline(y=p_true, color='r', linestyle='--', label=f'True p = {p_true}')
+plt.xlabel('Number of samples')
+plt.ylabel('Running average')
+plt.title('Bernoulli Shift: Time Averages Converge to Space Average')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.savefig('bernoulli_shift.png', dpi=150)
+plt.show()
+
+print(f"Final time average: {time_averages[-1]:.4f} (expected: {p_true})")</code></pre>
+                </div>
+
+                <!-- Pure Math 3: Homotopy Groups -->
+                <div class="deep-dive">
+                    <h3>Homotopy Groups and Algebraic Topology</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Homotopy groups provide a systematic way to classify topological spaces based on the behavior of spheres mapped into them. While homology groups capture "holes" of various dimensions, homotopy groups capture more subtle information about the complexity of paths and higher-dimensional spheres. The fundamental group \(\pi_1\) classifies covering spaces, while higher homotopy groups \(\pi_n\) for \(n \geq 2\) are abelian and connect to vector bundles, characteristic classes, and stable homotopy theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Homotopy:</strong> Maps \(f, g : X \to Y\) are homotopic (\(f \simeq g\)) if there exists a continuous \(H : X \times [0,1] \to Y\) with \(H(x,0) = f(x)\) and \(H(x,1) = g(x)\).</p>
+
+                    <p><strong>nth Homotopy Group:</strong> \(\pi_n(X, x_0)\) is the set of homotopy classes of maps \((I^n, \partial I^n) \to (X, x_0)\), or equivalently maps \(S^n \to X\) sending a basepoint to \(x_0\). The group operation is concatenation for \(n = 1\) and higher-dimensional analogues for \(n \geq 2\).</p>
+
+                    <p><strong>Simply Connected:</strong> A space is simply connected if it is path-connected and \(\pi_1(X) = 0\).</p>
+
+                    <p><strong>Weak Homotopy Equivalence:</strong> A map \(f : X \to Y\) inducing isomorphisms on all \(\pi_n\) for all basepoints.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Hurewicz Theorem:</strong> Let \(X\) be an \((n-1)\)-connected space (\(\pi_k(X) = 0\) for \(k < n\)) with \(n \geq 2\). Then \(\tilde{H}_k(X) = 0\) for \(k < n\) and the Hurewicz map \(h : \pi_n(X) \to H_n(X)\) is an isomorphism.</p>
+
+                    <p><em>Proof Sketch:</em> The Hurewicz map sends a homotopy class \([f : S^n \to X]\) to the homology class \(f_*[S^n]\) where \([S^n]\) is the fundamental class of the sphere.</p>
+
+                    <p>For the case \(n = 1\), the Hurewicz theorem states that \(h : \pi_1(X)^{ab} \to H_1(X)\) is an isomorphism, where \(\pi_1(X)^{ab}\) is the abelianization.</p>
+
+                    <p>For \(n \geq 2\), the proof proceeds by induction using the long exact sequence of a fibration. Consider the path space fibration \(\Omega X \to PX \to X\) where \(PX\) is contractible. The homotopy exact sequence gives \(\pi_k(\Omega X) \cong \pi_{k+1}(X)\).</p>
+
+                    <p>If \(X\) is \((n-1)\)-connected, then \(\Omega X\) is \((n-2)\)-connected. By induction, the Hurewicz map for \(\Omega X\) is an isomorphism in dimension \(n-1\). Using the relationship between the homology of \(X\) and \(\Omega X\) via the Serre spectral sequence, one establishes that \(h : \pi_n(X) \to H_n(X)\) is an isomorphism.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\pi_n(X, x_0)\) — nth homotopy group</li>
+                        <li>\(\Omega X\) — loop space of \(X\)</li>
+                        <li>\(\Sigma X\) — suspension of \(X\)</li>
+                        <li>\([X, Y]\) — set of homotopy classes of maps</li>
+                        <li>\(h : \pi_n(X) \to H_n(X)\) — Hurewicz homomorphism</li>
+                        <li>\(K(G, n)\) — Eilenberg-MacLane space</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def fundamental_group_circle(n_loops, resolution=100):
+    """
+    Visualize loops on the circle S^1.
+    The fundamental group π_1(S^1) = Z is generated by 
+    the identity loop with winding number 1.
+    """
+    t = np.linspace(0, 2*np.pi, resolution)
+    
+    # n_loops represents the winding number
+    x = np.cos(n_loops * t)
+    y = np.sin(n_loops * t)
+    
+    return x, y, t
+
+def torus_parametrization(u, v, R=2, r=1):
+    """
+    Parametrize a torus T^2 = S^1 × S^1.
+    π_1(T^2) = Z × Z (generated by meridian and longitude).
+    """
+    x = (R + r * np.cos(v)) * np.cos(u)
+    y = (R + r * np.cos(v)) * np.sin(u)
+    z = r * np.sin(v)
+    return x, y, z
+
+def sphere_fundamental_class(resolution=50):
+    """
+    Generate the fundamental class [S^2] of the 2-sphere.
+    π_2(S^2) = Z, generated by the identity map.
+    """
+    phi = np.linspace(0, 2*np.pi, resolution)
+    theta = np.linspace(0, np.pi, resolution)
+    phi, theta = np.meshgrid(phi, theta)
+    
+    x = np.sin(theta) * np.cos(phi)
+    y = np.sin(theta) * np.sin(phi)
+    z = np.cos(theta)
+    
+    return x, y, z
+
+def hopf_fibration_points(n_points=1000):
+    """
+    Sample points from the Hopf fibration S^3 → S^2.
+    The Hopf map η: S^3 → S^2 generates π_3(S^2) = Z.
+    """
+    # Parametrize S^3 in C^2: |z1|^2 + |z2|^2 = 1
+    theta = np.random.uniform(0, 2*np.pi, n_points)
+    phi = np.random.uniform(0, np.pi/2, n_points)
+    psi = np.random.uniform(0, 2*np.pi, n_points)
+    
+    z1 = np.cos(phi) * np.exp(1j * theta)
+    z2 = np.sin(phi) * np.exp(1j * psi)
+    
+    # Hopf map to S^2 (stereographic projection)
+    x = 2 * np.real(np.conj(z1) * z2)
+    y = 2 * np.imag(np.conj(z1) * z2)
+    z = np.abs(z1)**2 - np.abs(z2)**2
+    
+    return x, y, z
+
+# Visualize loops on S^1 with different winding numbers
+fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+axes = axes.flatten()
+
+for i, n in enumerate([-2, -1, 0, 1, 2, 3]):
+    x, y, t = fundamental_group_circle(n, resolution=200)
+    axes[i].plot(x, y, 'b-', linewidth=2)
+    axes[i].plot(x[0], y[0], 'go', markersize=10, label='Start/End')
+    axes[i].set_xlim(-1.5, 1.5)
+    axes[i].set_ylim(-1.5, 1.5)
+    axes[i].set_aspect('equal')
+    axes[i].set_title(f'Winding number n = {n}')
+    axes[i].grid(True, alpha=0.3)
+    axes[i].legend()
+
+plt.suptitle('Fundamental Group of S¹: π₁(S¹) = ℤ', fontsize=14)
+plt.tight_layout()
+plt.savefig('fundamental_group_s1.png', dpi=150)
+plt.show()
+
+# Visualize torus with fundamental group generators
+u = np.linspace(0, 2*np.pi, 50)
+v = np.linspace(0, 2*np.pi, 50)
+U, V = np.meshgrid(u, v)
+
+X, Y, Z = torus_parametrization(U, V, R=2, r=1)
+
+fig = plt.figure(figsize=(12, 5))
+
+# 3D torus
+ax1 = fig.add_subplot(121, projection='3d')
+ax1.plot_surface(X, Y, Z, alpha=0.3, cmap='viridis')
+
+# Draw meridian (a-loop)
+v_meridian = np.linspace(0, 2*np.pi, 100)
+x_m, y_m, z_m = torus_parametrization(0, v_meridian, R=2, r=1)
+ax1.plot(x_m, y_m, z_m, 'r-', linewidth=3, label='a: meridian')
+
+# Draw longitude (b-loop)
+x_l, y_l, z_l = torus_parametrization(u, 0, R=2, r=1)
+ax1.plot(x_l, y_l, z_l, 'b-', linewidth=3, label='b: longitude')
+
+ax1.set_title('Torus T² with π₁(T²) = ℤ × ℤ')
+ax1.legend()
+
+# Fundamental domain representation
+ax2 = fig.add_subplot(122)
+ax2.set_xlim(0, 2*np.pi)
+ax2.set_ylim(0, 2*np.pi)
+ax2.set_aspect('equal')
+ax2.plot([0, 2*np.pi], [0, 0], 'b-', linewidth=3, label='a: longitude')
+ax2.plot([0, 0], [0, 2*np.pi], 'r-', linewidth=3, label='b: meridian')
+ax2.fill([0, 2*np.pi, 2*np.pi, 0], [0, 0, 2*np.pi, 2*np.pi], alpha=0.2)
+ax2.set_xlabel('u (longitude parameter)')
+ax2.set_ylabel('v (meridian parameter)')
+ax2.set_title('Fundamental Domain [0,2π] × [0,2π]')
+ax2.legend()
+ax2.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('torus_fundamental_group.png', dpi=150)
+plt.show()
+
+print("π₁(S¹) = ℤ (generated by loop with winding number 1)")
+print("π₁(T²) = ℤ × ℤ (generated by meridian and longitude)")
+print("π₂(S²) = ℤ (generated by identity map)")
+print("π₃(S²) = ℤ (generated by Hopf fibration)")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== APPLIED MATH DEEP DIVES ==================== -->
+            <section id="applied-math">
+                <h2>🚀 Applied Math Deep-Dives</h2>
+
+                <!-- Applied Math 1: Reinforcement Learning -->
+                <div class="deep-dive">
+                    <h3>Reinforcement Learning and Markov Decision Processes</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Reinforcement learning (RL) powers systems from game-playing AI (AlphaGo, AlphaZero) to robotics control, autonomous vehicles, and recommendation systems. Unlike supervised learning, RL agents learn through interaction with an environment, receiving rewards or penalties for their actions. The mathematical foundation rests on Markov Decision Processes (MDPs) and Bellman equations, with deep connections to dynamic programming, optimal control, and stochastic approximation.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Markov Decision Process:</strong> A tuple \((\mathcal{S}, \mathcal{A}, P, R, \gamma)\) where \(\mathcal{S}\) is the state space, \(\mathcal{A}\) is the action space, \(P(s'|s,a)\) is the transition probability, \(R(s,a)\) is the reward function, and \(\gamma \in [0,1)\) is the discount factor.</p>
+
+                    <p><strong>Policy:</strong> A mapping \(\pi : \mathcal{S} \to \Delta(\mathcal{A})\) from states to probability distributions over actions. A deterministic policy selects a single action: \(\pi(s) = a\).</p>
+
+                    <p><strong>Value Function:</strong> The expected cumulative reward starting from state \(s\) and following policy \(\pi\):
+                    \[V^\pi(s) = \mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^t R(s_t, a_t) \bigg| s_0 = s, \pi\right]\]</p>
+
+                    <p><strong>Q-Function:</strong> The expected cumulative reward starting from state \(s\), taking action \(a\), then following \(\pi\):
+                    \[Q^\pi(s,a) = R(s,a) + \gamma \mathbb{E}_{s' \sim P(\cdot|s,a)}[V^\pi(s')]\]</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Bellman Optimality Equation:</strong> The optimal value function \(V^*\) satisfies:
+                    \[V^*(s) = \max_{a \in \mathcal{A}} \left[ R(s,a) + \gamma \sum_{s'} P(s'|s,a) V^*(s') \right]\]</p>
+
+                    <p>Furthermore, \(V^*\) is the unique solution to this equation, and the optimal policy \(\pi^*\) is given by:
+                    \[\pi^*(s) = \arg\max_a \left[ R(s,a) + \gamma \sum_{s'} P(s'|s,a) V^*(s') \right]\]</p>
+
+                    <p><em>Proof Sketch:</em> Define the Bellman optimality operator \(\mathcal{T}^* : V \mapsto \max_a [R(\cdot, a) + \gamma P(\cdot| \cdot, a)V]\). We show \(\mathcal{T}^*\) is a contraction in the sup norm:</p>
+
+                    <p>\[\|\mathcal{T}^* V - \mathcal{T}^* W\|_\infty \leq \gamma \|V - W\|_\infty\]</p>
+
+                    <p>This follows because:
+                    \[\|\max_a f(a) - \max_a g(a)\| \leq \max_a \|f(a) - g(a)\|\]</p>
+
+                    <p>By the Banach fixed-point theorem, \(\mathcal{T}^*\) has a unique fixed point. One verifies that \(V^*\) (the value of the optimal policy) satisfies \(V^* = \mathcal{T}^* V^*\) by considering the first step and the remaining trajectory. Conversely, any fixed point must equal \(V^*\) by optimality principles.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{S}, \mathcal{A}\) — state and action spaces</li>
+                        <li>\(P(s'|s,a)\) — transition probability</li>
+                        <li>\(\gamma\) — discount factor</li>
+                        <li>\(V^\pi(s)\) — value function under policy \(\pi\)</li>
+                        <li>\(Q^\pi(s,a)\) — action-value function</li>
+                        <li>\(\mathcal{T}^\pi, \mathcal{T}^*\) — Bellman operators</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class GridWorld:
+    """
+    Simple grid world MDP.
+    Agent navigates from start to goal, avoiding obstacles.
+    """
+    def __init__(self, size=5):
+        self.size = size
+        self.n_states = size * size
+        self.n_actions = 4  # up, down, left, right
+        
+        # Define rewards
+        self.rewards = np.zeros((size, size))
+        self.rewards[size-1, size-1] = 1.0  # Goal
+        self.rewards[2, 2] = -1.0  # Obstacle
+        
+    def state_to_pos(self, s):
+        return s // self.size, s % self.size
+    
+    def pos_to_state(self, i, j):
+        return i * self.size + j
+    
+    def get_transition(self, s, a):
+        """Get next state distribution for (s, a)."""
+        i, j = self.state_to_pos(s)
+        
+        # Actions: 0=up, 1=down, 2=left, 3=right
+        moves = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        di, dj = moves[a]
+        ni, nj = i + di, j + dj
+        
+        # Check bounds
+        if 0 <= ni < self.size and 0 <= nj < self.size:
+            return self.pos_to_state(ni, nj)
+        return s  # Stay in place if out of bounds
+    
+    def value_iteration(self, gamma=0.9, theta=1e-6):
+        """Solve MDP using value iteration."""
+        V = np.zeros(self.n_states)
+        
+        while True:
+            delta = 0
+            for s in range(self.n_states):
+                i, j = self.state_to_pos(s)
+                v = V[s]
+                
+                # Compute Q-values for all actions
+                Q = np.zeros(self.n_actions)
+                for a in range(self.n_actions):
+                    s_next = self.get_transition(s, a)
+                    i_next, j_next = self.state_to_pos(s_next)
+                    Q[a] = self.rewards[i_next, j_next] + gamma * V[s_next]
+                
+                V[s] = np.max(Q)
+                delta = max(delta, abs(v - V[s]))
+            
+            if delta < theta:
+                break
+        
+        # Extract optimal policy
+        policy = np.zeros(self.n_states, dtype=int)
+        for s in range(self.n_states):
+            Q = np.zeros(self.n_actions)
+            for a in range(self.n_actions):
+                s_next = self.get_transition(s, a)
+                i_next, j_next = self.state_to_pos(s_next)
+                Q[a] = self.rewards[i_next, j_next] + gamma * V[s_next]
+            policy[s] = np.argmax(Q)
+        
+        return V, policy
+
+def q_learning(env, n_episodes=1000, alpha=0.1, gamma=0.9, epsilon=0.1):
+    """
+    Q-learning: off-policy temporal difference control.
+    """
+    Q = np.zeros((env.n_states, env.n_actions))
+    
+    for episode in range(n_episodes):
+        s = 0  # Start state
+        
+        while True:
+            # Epsilon-greedy action selection
+            if np.random.random() < epsilon:
+                a = np.random.randint(env.n_actions)
+            else:
+                a = np.argmax(Q[s])
+            
+            # Take action
+            s_next = env.get_transition(s, a)
+            i_next, j_next = env.state_to_pos(s_next)
+            r = env.rewards[i_next, j_next]
+            
+            # Q-learning update
+            Q[s, a] += alpha * (r + gamma * np.max(Q[s_next]) - Q[s, a])
+            
+            s = s_next
+            
+            # Terminal state
+            if (i_next, j_next) == (env.size-1, env.size-1):
+                break
+    
+    policy = np.argmax(Q, axis=1)
+    return Q, policy
+
+# Create environment and solve
+env = GridWorld(size=5)
+V_opt, policy_opt = env.value_iteration(gamma=0.9)
+Q_learned, policy_learned = q_learning(env, n_episodes=2000)
+
+# Visualize
+fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+
+# Reward map
+axes[0].imshow(env.rewards, cmap='RdYlGn', origin='upper')
+axes[0].set_title('Reward Map')
+axes[0].set_xlabel('Column')
+axes[0].set_ylabel('Row')
+
+# Optimal value function
+V_grid = V_opt.reshape(env.size, env.size)
+im = axes[1].imshow(V_grid, cmap='viridis', origin='upper')
+axes[1].set_title('Optimal Value Function V*(s)')
+axes[1].set_xlabel('Column')
+axes[1].set_ylabel('Row')
+plt.colorbar(im, ax=axes[1])
+
+# Policy visualization
+policy_grid = policy_opt.reshape(env.size, env.size)
+axes[2].imshow(np.zeros((env.size, env.size)), cmap='binary', origin='upper')
+axes[2].set_title('Optimal Policy')
+
+# Draw arrows for policy
+arrows = ['↑', '↓', '←', '→']
+for i in range(env.size):
+    for j in range(env.size):
+        a = policy_grid[i, j]
+        axes[2].text(j, i, arrows[a], ha='center', va='center', fontsize=16)
+
+axes[2].set_xlabel('Column')
+axes[2].set_ylabel('Row')
+
+plt.tight_layout()
+plt.savefig('reinforcement_learning.png', dpi=150)
+plt.show()
+
+print("Value Iteration converged to optimal policy!")
+print("Q-learning learned policy through experience.")</code></pre>
+                </div>
+
+                <!-- Applied Math 2: Computational Topology -->
+                <div class="deep-dive">
+                    <h3>Computational Topology and Persistent Homology</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Computational topology extracts robust topological features from noisy data, with applications in material science (pore structure analysis), neuroscience (brain connectivity), genomics (chromosome structure), and machine learning (topological data analysis). Unlike geometric methods that depend on precise measurements, topological features like connected components, holes, and voids are invariant under continuous deformations, making them highly robust to noise and sampling variations.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Simplicial Complex:</strong> A collection \(K\) of simplices (vertices, edges, triangles, tetrahedra) such that every face of a simplex in \(K\) is in \(K\), and the intersection of any two simplices is a face of both.</p>
+
+                    <p><strong>Vietoris-Rips Complex:</strong> For a metric space \((X, d)\) and scale \(\epsilon > 0\), the Rips complex \(VR_\epsilon(X)\) has a simplex for every finite subset of \(X\) with diameter \(< \epsilon\).</p>
+
+                    <p><strong>Persistent Homology:</strong> Given a filtration \(\emptyset = K_0 \subseteq K_1 \subseteq \cdots \subseteq K_n = K\), persistent homology tracks the birth and death of homology classes as the filtration parameter increases. A class born at \(K_i\) and dying at \(K_j\) has persistence \(j - i\).</p>
+
+                    <p><strong>Barcode:</strong> A graphical representation of persistent homology where each interval \([b, d)\) represents a topological feature born at \(b\) and dying at \(d\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Stability Theorem (Cohen-Steiner, Edelsbrunner, Harer, 2007):</strong> Let \(f, g : X \to \mathbb{R}\) be tame functions on a triangulable space. The bottleneck distance between their persistence diagrams is bounded by the difference of the functions:
+                    \[d_B(\text{Dgm}(f), \text{Dgm}(g)) \leq \|f - g\|_\infty\]</p>
+
+                    <p><em>Proof Sketch:</em> The proof uses the interleaving of sublevel set filtrations. For functions with \(\|f - g\|_\infty \leq \epsilon\), we have inclusions:
+                    \[f^{-1}(-\infty, a] \subseteq g^{-1}(-\infty, a+\epsilon] \subseteq f^{-1}(-\infty, a+2\epsilon]\]</p>
+
+                    <p>This \(\epsilon\)-interleaving induces maps on homology that commute with the structure maps of the persistence modules. The algebraic stability theorem states that if two persistence modules are \(\epsilon\)-interleaved, then their persistence diagrams are at bottleneck distance at most \(\epsilon\).</p>
+
+                    <p>The bottleneck distance is defined as the minimum, over all bijections \(\gamma\) between the diagrams (including points at infinity), of the maximum distance between matched points. The stability result ensures that small perturbations in the input data produce only small changes in the topological summary.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(VR_\epsilon(X)\) — Vietoris-Rips complex at scale \(\epsilon\)</li>
+                        <li>\(H_k(K)\) — k-th homology group of complex \(K\)</li>
+                        <li>\(\beta_k = \dim H_k\) — k-th Betti number</li>
+                        <li>\([b, d)\) — persistence interval (birth, death)</li>
+                        <li>\(d_B\) — bottleneck distance between diagrams</li>
+                        <li>\(d_W\) — Wasserstein distance</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.spatial.distance import pdist, squareform
+
+def rips_complex(points, epsilon):
+    """
+    Construct Vietoris-Rips complex at scale epsilon.
+    Returns adjacency matrix and list of simplices.
+    """
+    n = len(points)
+    distances = squareform(pdist(points))
+    
+    # Edges: pairs with distance < epsilon
+    edges = []
+    for i in range(n):
+        for j in range(i+1, n):
+            if distances[i, j] < epsilon:
+                edges.append((i, j))
+    
+    # Triangles: triples where all edges exist
+    triangles = []
+    for i in range(n):
+        for j in range(i+1, n):
+            for k in range(j+1, n):
+                if (distances[i,j] < epsilon and 
+                    distances[j,k] < epsilon and 
+                    distances[i,k] < epsilon):
+                    triangles.append((i, j, k))
+    
+    return edges, triangles, distances
+
+def compute_betti_0(edges, n_vertices):
+    """
+    Compute β₀ (number of connected components) using Union-Find.
+    """
+    parent = list(range(n_vertices))
+    
+    def find(x):
+        if parent[x] != x:
+            parent[x] = find(parent[x])
+        return parent[x]
+    
+    def union(x, y):
+        px, py = find(x), find(y)
+        if px != py:
+            parent[px] = py
+    
+    for i, j in edges:
+        union(i, j)
+    
+    # Count unique roots
+    components = len(set(find(i) for i in range(n_vertices)))
+    return components
+
+def compute_betti_1(n_vertices, edges, triangles):
+    """
+    Compute β₁ (number of 1-dimensional holes).
+    β₁ = |E| - |V| + |C| - rank(boundary of triangles)
+    For small examples, we use a simplified calculation.
+    """
+    if not edges:
+        return 0
+    
+    # Euler characteristic: χ = V - E + T = β₀ - β₁ + β₂
+    # For planar graphs: β₁ = E - V + β₀
+    beta_0 = compute_betti_0(edges, n_vertices)
+    beta_1 = len(edges) - n_vertices + beta_0
+    
+    # Subtract contributions from filled triangles
+    # Each triangle reduces β₁ by 1 if it fills a cycle
+    beta_1 = max(0, beta_1 - len(triangles))
+    
+    return beta_1
+
+def persistent_homology_0(points, max_epsilon=2.0, n_steps=50):
+    """
+    Compute 0-dimensional persistent homology (connected components).
+    Returns birth times for each component.
+    """
+    distances = squareform(pdist(points))
+    n = len(points)
+    
+    epsilons = np.linspace(0, max_epsilon, n_steps)
+    betti_0_history = []
+    
+    for eps in epsilons:
+        edges = [(i, j) for i in range(n) for j in range(i+1, n) 
+                 if distances[i, j] < eps]
+        beta_0 = compute_betti_0(edges, n)
+        betti_0_history.append(beta_0)
+    
+    return epsilons, betti_0_history
+
+# Generate sample data: circle with noise
+np.random.seed(42)
+n_points = 50
+theta = np.linspace(0, 2*np.pi, n_points, endpoint=False)
+r = 1.0 + 0.1 * np.random.randn(n_points)
+points_circle = np.column_stack([r * np.cos(theta), r * np.sin(theta)])
+
+# Two clusters
+points_clusters = np.vstack([
+    np.random.randn(20, 2) + np.array([0, 0]),
+    np.random.randn(20, 2) + np.array([3, 3])
+])
+
+# Compute persistent homology
+fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+
+# Circle data
+axes[0, 0].scatter(points_circle[:, 0], points_circle[:, 1], c='blue', s=30)
+axes[0, 0].set_title('Data: Noisy Circle')
+axes[0, 0].set_aspect('equal')
+
+# Rips complex at different scales
+for idx, eps in enumerate([0.3, 0.8, 1.5]):
+    ax = axes[0, idx]
+    edges, triangles, dists = rips_complex(points_circle, eps)
+    
+    # Plot points
+    ax.scatter(points_circle[:, 0], points_circle[:, 1], c='blue', s=50, zorder=3)
+    
+    # Plot edges
+    for i, j in edges:
+        ax.plot([points_circle[i, 0], points_circle[j, 0]],
+                [points_circle[i, 1], points_circle[j, 1]],
+                'g-', alpha=0.5, linewidth=1)
+    
+    beta_0 = compute_betti_0(edges, len(points_circle))
+    beta_1 = compute_betti_1(len(points_circle), edges, triangles)
+    ax.set_title(f'ε = {eps}: β₀={beta_0}, β₁={beta_1}')
+    ax.set_aspect('equal')
+
+# Persistent homology for clusters
+axes[1, 0].scatter(points_clusters[:20, 0], points_clusters[:20, 1], c='red', s=30, label='Cluster 1')
+axes[1, 0].scatter(points_clusters[20:, 0], points_clusters[20:, 1], c='blue', s=30, label='Cluster 2')
+axes[1, 0].set_title('Data: Two Clusters')
+axes[1, 0].legend()
+axes[1, 0].set_aspect('equal')
+
+# Persistence diagram for clusters
+epsilons, betti_0_clusters = persistent_homology_0(points_clusters, max_epsilon=5.0)
+axes[1, 1].plot(epsilons, betti_0_clusters, 'b-', linewidth=2)
+axes[1, 1].set_xlabel('ε (scale)')
+axes[1, 1].set_ylabel('β₀ (components)')
+axes[1, 1].set_title('Persistent β₀ for Clusters')
+axes[1, 1].grid(True, alpha=0.3)
+
+# Persistence diagram for circle
+epsilons, betti_0_circle = persistent_homology_0(points_circle, max_epsilon=3.0)
+axes[1, 2].plot(epsilons, betti_0_circle, 'r-', linewidth=2)
+axes[1, 2].set_xlabel('ε (scale)')
+axes[1, 2].set_ylabel('β₀ (components)')
+axes[1, 2].set_title('Persistent β₀ for Circle')
+axes[1, 2].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('computational_topology.png', dpi=150)
+plt.show()
+
+print(f"Circle: starts with β₀={betti_0_circle[0]}, ends with β₀={betti_0_circle[-1]}")
+print(f"Clusters: starts with β₀={betti_0_clusters[0]}, drops to β₀={min(betti_0_clusters)} when clusters merge")</code></pre>
+                </div>
+
+                <!-- Applied Math 3: Statistical Learning Theory -->
+                <div class="deep-dive">
+                    <h3>Statistical Learning Theory and Generalization Bounds</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Statistical learning theory provides the mathematical foundations for understanding when and why machine learning models generalize from training data to unseen examples. As deep neural networks with millions of parameters can perfectly memorize training data yet still generalize well, classical statistical theory based on parameter counting fails. Modern learning theory develops new frameworks—Rademacher complexity, PAC-Bayes bounds, and uniform convergence—to explain this phenomenon and guide the design of learning algorithms.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Risk:</strong> The expected loss of a hypothesis \(h\) under the true data distribution \(\mathcal{D}\):
+                    \[R(h) = \mathbb{E}_{(x,y) \sim \mathcal{D}}[L(h(x), y)]\]</p>
+
+                    <p><strong>Empirical Risk:</strong> The average loss on a training sample \(S = \{(x_i, y_i)\}_{i=1}^n\):
+                    \[\hat{R}_S(h) = \frac{1}{n} \sum_{i=1}^n L(h(x_i), y_i)\]</p>
+
+                    <p><strong>Rademacher Complexity:</strong> For a hypothesis class \(\mathcal{H}\) and sample \(S\):
+                    \[\hat{\mathfrak{R}}_S(\mathcal{H}) = \mathbb{E}_\sigma \left[\sup_{h \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n \sigma_i h(x_i)\right]\]
+                    where \(\sigma_i \in \{-1, +1\}\) are Rademacher random variables.</p>
+
+                    <p><strong>VC Dimension:</strong> The largest set that can be shattered by \(\mathcal{H}\). A set is shattered if \(\mathcal{H}\) can realize all possible labelings.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Generalization Bound via Rademacher Complexity:</strong> With probability at least \(1 - \delta\) over the draw of sample \(S\) of size \(n\):
+                    \[\sup_{h \in \mathcal{H}} |R(h) - \hat{R}_S(h)| \leq 2\mathfrak{R}_n(\mathcal{H}) + \sqrt{\frac{\log(1/\delta)}{2n}}\]</p>
+
+                    <p>For binary classification with loss bounded by 1, with probability at least \(1 - \delta\):
+                    \[R(h) \leq \hat{R}_S(h) + 2\mathfrak{R}_n(\mathcal{H}) + \sqrt{\frac{\log(1/\delta)}{2n}}\]</p>
+
+                    <p><em>Proof Sketch:</em> The proof uses symmetrization. Let \(S'\) be a ghost sample (independent copy of \(S\)). By Jensen's inequality:
+                    \[\mathbb{E}_S\left[\sup_{h \in \mathcal{H}} (R(h) - \hat{R}_S(h))\right] \leq \mathbb{E}_{S,S'}\left[\sup_{h \in \mathcal{H}} (\hat{R}_{S'}(h) - \hat{R}_S(h))\right]\]</p>
+
+                    <p>The difference \(\hat{R}_{S'}(h) - \hat{R}_S(h)\) can be written as:
+                    \[\frac{1}{n} \sum_{i=1}^n \frac{1}{n} \sum_{j=1}^n (L(h(x'_j), y'_j) - L(h(x_i), y_i))\]</p>
+
+                    <p>Introducing Rademacher variables \(\sigma_i\) and using that \((x_i, y_i)\) and \((x'_i, y'_i)\) are i.i.d.:
+                    \[\mathbb{E}_{S,S'}\left[\sup_h \frac{1}{n} \sum_{i=1}^n \sigma_i (L(h(x'_i), y'_i) - L(h(x_i), y_i))\right] \leq 2\mathfrak{R}_n(\mathcal{H})\]</p>
+
+                    <p>McDiarmid's inequality provides the concentration bound to obtain the high-probability statement.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(R(h)\) — true risk (expected loss)</li>
+                        <li>\(\hat{R}_S(h)\) — empirical risk</li>
+                        <li>\(\mathfrak{R}_n(\mathcal{H})\) — Rademacher complexity</li>
+                        <li>\(\text{VC}(\mathcal{H})\) — VC dimension</li>
+                        <li>\(L(h(x), y)\) — loss function</li>
+                        <li>\(\mathcal{H}\) — hypothesis class</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_classification
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+
+def empirical_rademacher_complexity(X, hypothesis_class, n_samples=100):
+    """
+    Estimate Rademacher complexity for a hypothesis class.
+    
+    For a function class F, the empirical Rademacher complexity is:
+    R̂_S(F) = E_σ[sup_{f ∈ F} (1/n) Σ σ_i f(x_i)]
+    """
+    n = len(X)
+    complexities = []
+    
+    for _ in range(n_samples):
+        # Generate Rademacher random variables
+        sigma = np.random.choice([-1, 1], size=n)
+        
+        # For a simple hypothesis class (linear classifiers through origin),
+        # the supremum is achieved by aligning with sigma
+        max_correlation = 0
+        for h in hypothesis_class:
+            predictions = h(X)
+            correlation = np.mean(sigma * predictions)
+            max_correlation = max(max_correlation, correlation)
+        
+        complexities.append(max_correlation)
+    
+    return np.mean(complexities)
+
+def generate_linear_classifiers(n_classifiers, d):
+    """Generate random linear classifiers."""
+    weights = np.random.randn(n_classifiers, d)
+    weights = weights / np.linalg.norm(weights, axis=1, keepdims=True)
+    
+    def make_classifier(w):
+        return lambda X: np.sign(X @ w)
+    
+    return [make_classifier(w) for w in weights]
+
+def vc_dimension_bound(n, d_vc, delta=0.05):
+    """
+    VC generalization bound:
+    R(h) ≤ R̂_S(h) + O(sqrt((d_VC log(n/d_VC) + log(1/δ))/n))
+    """
+    if n <= d_vc:
+        return float('inf')
+    return np.sqrt((d_vc * np.log(n / d_vc) + np.log(1/delta)) / n)
+
+def rademacher_bound(n, rad_complexity, delta=0.05):
+    """
+    Rademacher complexity generalization bound.
+    """
+    return 2 * rad_complexity + np.sqrt(np.log(1/delta) / (2 * n))
+
+# Experiment: Generalization vs model complexity
+np.random.seed(42)
+
+# Generate data
+X, y = make_classification(n_samples=1000, n_features=20, n_informative=10, 
+                           n_redundant=5, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Vary model complexity (tree depth)
+depths = range(1, 21)
+train_errors = []
+test_errors = []
+
+for depth in depths:
+    clf = DecisionTreeClassifier(max_depth=depth, random_state=42)
+    clf.fit(X_train, y_train)
+    
+    train_err = 1 - clf.score(X_train, y_train)
+    test_err = 1 - clf.score(X_test, y_test)
+    
+    train_errors.append(train_err)
+    test_errors.append(test_err)
+
+# Plot
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+# Bias-variance tradeoff
+axes[0].plot(depths, train_errors, 'b-', label='Training error', linewidth=2)
+axes[0].plot(depths, test_errors, 'r-', label='Test error', linewidth=2)
+axes[0].set_xlabel('Model Complexity (Tree Depth)')
+axes[0].set_ylabel('Error Rate')
+axes[0].set_title('Generalization vs Model Complexity')
+axes[0].legend()
+axes[0].grid(True, alpha=0.3)
+axes[0].axvline(x=np.argmin(test_errors)+1, color='g', linestyle='--', 
+                label=f'Optimal depth = {np.argmin(test_errors)+1}')
+
+# Sample complexity bounds
+sample_sizes = np.arange(50, 2000, 50)
+d_vc = 10  # Approximate VC dimension for this problem
+
+gen_bounds = [vc_dimension_bound(n, d_vc) for n in sample_sizes]
+
+axes[1].plot(sample_sizes, gen_bounds, 'b-', linewidth=2, label='VC bound')
+axes[1].set_xlabel('Sample Size n')
+axes[1].set_ylabel('Generalization Error Bound')
+axes[1].set_title('Sample Complexity: Generalization Bound vs n')
+axes[1].legend()
+axes[1].grid(True, alpha=0.3)
+axes[1].set_ylim(0, 1)
+
+plt.tight_layout()
+plt.savefig('statistical_learning_theory.png', dpi=150)
+plt.show()
+
+# Rademacher complexity estimation example
+print("Estimating Rademacher complexity for linear classifiers...")
+d = 10
+n_samples_list = [20, 50, 100, 200, 500]
+
+for n in n_samples_list:
+    X_sample = np.random.randn(n, d)
+    X_sample = X_sample / np.linalg.norm(X_sample, axis=1, keepdims=True)
+    
+    # Generate hypothesis class
+    hypothesis_class = generate_linear_classifiers(100, d)
+    
+    rad_complexity = empirical_rademacher_complexity(X_sample, hypothesis_class, n_samples=50)
+    bound = rademacher_bound(n, rad_complexity)
+    
+    print(f"n={n:4d}: Rademacher complexity ≈ {rad_complexity:.3f}, bound ≈ {bound:.3f}")
+
+print(f"\nObservation: As n increases, generalization bound decreases as O(1/√n)")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== SPECIAL TOPICS ==================== -->
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+
+                <!-- Special Topic 1: Class Field Theory -->
+                <div class="deep-dive">
+                    <h3>Class Field Theory and Abelian Extensions</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Class field theory, developed in the early 20th century by Hilbert, Takagi, Artin, and Hasse, represents one of the crowning achievements of algebraic number theory. It provides a complete description of all abelian extensions of a number field (or local field) in terms of the arithmetic of the base field itself. The theory establishes a correspondence between abelian extensions and generalized ideal class groups (or idele class groups), with the Artin reciprocity map serving as the bridge. This "class field" philosophy—that extensions are classified by data intrinsic to the base field—has inspired vast generalizations, including the Langlands program.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Ray Class Group:</strong> For a modulus \(\mathfrak{m}\) (a formal product of places), the ray class group \(\text{Cl}_\mathfrak{m}(K)\) is the quotient of fractional ideals coprime to \(\mathfrak{m}\) by principal ideals generated by elements congruent to 1 modulo \(\mathfrak{m}\).</p>
+
+                    <p><strong>Artin Map:</strong> For an abelian extension \(L/K\) and unramified prime \(\mathfrak{p}\) of \(K\), the Artin symbol \(\left(\frac{L/K}{\mathfrak{p}}\right) \in \text{Gal}(L/K)\) is the Frobenius automorphism. Extended multiplicatively to all ideals, this gives the Artin map \(\psi_{L/K} : I_K^\mathfrak{m} \to \text{Gal}(L/K)\).</p>
+
+                    <p><strong>Hilbert Class Field:</strong> The maximal unramified abelian extension \(H\) of \(K\). Its Galois group \(\text{Gal}(H/K) \cong \text{Cl}(K)\), the ideal class group.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Artin Reciprocity Law:</strong> Let \(L/K\) be an abelian extension of number fields with conductor \(\mathfrak{f}\). The Artin map induces an isomorphism:
+                    \[\text{Cl}_\mathfrak{f}(K) / N_{L/K}(\text{Cl}_\mathfrak{f}(L)) \cong \text{Gal}(L/K)\]</p>
+
+                    <p>In particular, for the Hilbert class field \(H\):
+                    \[\text{Cl}(K) \cong \text{Gal}(H/K)\]</p>
+
+                    <p><em>Proof Sketch:</em> The proof proceeds through several stages. First, one establishes the existence of ray class fields: for each modulus \(\mathfrak{m}\), there exists a unique abelian extension \(K_\mathfrak{m}/K\) such that the Artin map gives \(\text{Cl}_\mathfrak{m}(K) \cong \text{Gal}(K_\mathfrak{m}/K)\).</p>
+
+                    <p>The key analytic ingredient is the first and second inequalities:
+                    \[[I_K^\mathfrak{m} : P_K^\mathfrak{m} \cdot N_{L/K}(I_L^\mathfrak{m})] \leq [L : K] \leq [I_K^\mathfrak{m} : P_K^\mathfrak{m} \cdot N_{L/K}(I_L^\mathfrak{m})]\]</p>
+
+                    <p>The first inequality uses properties of Artin \(L\)-functions and the non-vanishing of \(L(1, \chi)\) for non-principal characters. The second inequality uses Kummer theory or cohomological methods. When they coincide, the Artin map is an isomorphism.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\text{Cl}(K)\) — ideal class group of \(K\)</li>
+                        <li>\(\text{Cl}_\mathfrak{m}(K)\) — ray class group modulo \(\mathfrak{m}\)</li>
+                        <li>\(\left(\frac{L/K}{\mathfrak{p}}\right)\) — Artin symbol (Frobenius)</li>
+                        <li>\(K_\mathfrak{m}\) — ray class field</li>
+                        <li>\(H\) — Hilbert class field</li>
+                        <li>\(I_K, P_K\) — groups of fractional and principal ideals</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def class_number_quadratic(D, max_n=1000):
+    """
+    Compute class number of Q(√D) for small D using reduced forms.
+    
+    For imaginary quadratic fields, the class number counts
+    equivalence classes of binary quadratic forms ax² + bxy + cy²
+    with discriminant D = b² - 4ac.
+    """
+    if D >= 0:
+        raise ValueError("Only implemented for D < 0")
+    
+    if D % 4 not in [0, 1]:
+        raise ValueError("D must be ≡ 0 or 1 (mod 4)")
+    
+    # Find reduced forms [a, b, c] with b² - 4ac = D
+    # Reduced: |b| ≤ a ≤ c, and if |b| = a or a = c then b ≥ 0
+    forms = []
+    
+    a_max = int(np.sqrt(-D / 3)) + 1
+    
+    for a in range(1, a_max + 1):
+        # b² ≡ D (mod 4a)
+        for b in range(-a, a + 1):
+            if (b * b - D) % (4 * a) == 0:
+                c = (b * b - D) // (4 * a)
+                if c >= a:  # Ensure a ≤ c
+                    # Check reduced condition
+                    if abs(b) <= a and (abs(b) < a or a < c or b >= 0):
+                        forms.append((a, b, c))
+    
+    return len(forms), forms
+
+# Compute class numbers for imaginary quadratic fields
+discriminants = []
+class_numbers = []
+
+# Fundamental discriminants D < 0
+for D in range(-3, -100, -1):
+    if D % 4 in [0, 1]:
+        try:
+            h, forms = class_number_quadratic(D)
+            discriminants.append(D)
+            class_numbers.append(h)
+        except:
+            pass
+
+# Plot class numbers
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+axes[0].scatter(discriminants, class_numbers, c='blue', s=30, alpha=0.6)
+axes[0].set_xlabel('Discriminant D')
+axes[0].set_ylabel('Class Number h(D)')
+axes[0].set_title('Class Numbers of Imaginary Quadratic Fields')
+axes[0].grid(True, alpha=0.3)
+
+# Heegner numbers (class number 1)
+heegner_D = [-3, -4, -7, -8, -11, -19, -43, -67, -163]
+for D in heegner_D:
+    if D in discriminants:
+        idx = discriminants.index(D)
+        axes[0].scatter(D, class_numbers[idx], c='red', s=100, marker='*', 
+                       label='Heegner' if D == -3 else '')
+
+axes[0].legend()
+
+# Distribution of class numbers
+unique_h = sorted(set(class_numbers))
+counts = [class_numbers.count(h) for h in unique_h]
+
+axes[1].bar(unique_h[:10], counts[:10], color='steelblue', edgecolor='black')
+axes[1].set_xlabel('Class Number h')
+axes[1].set_ylabel('Frequency')
+axes[1].set_title('Distribution of Class Numbers (|D| < 100)')
+axes[1].grid(True, alpha=0.3, axis='y')
+
+plt.tight_layout()
+plt.savefig('class_field_theory.png', dpi=150)
+plt.show()
+
+print("Heegner numbers (class number 1):", heegner_D)
+print(f"Largest Heegner discriminant: -163 (Stark-Heegner theorem)")
+print(f"\nClass number 1 problem solved by Baker (1966) and Stark (1967)")
+print(f"There are exactly 9 imaginary quadratic fields with class number 1")
+
+# Example: Q(√-5) has class number 2
+h_neg5, forms_neg5 = class_number_quadratic(-5)
+print(f"\nQ(√-5): class number = {h_neg5}")
+print(f"Reduced forms: {forms_neg5}")</code></pre>
+                </div>
+
+                <!-- Special Topic 2: Moduli Spaces -->
+                <div class="deep-dive">
+                    <h3>Moduli Spaces in Algebraic Geometry</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>The concept of a moduli space—parameterizing isomorphism classes of geometric objects—emerged from Riemann's insight that Riemann surfaces of genus \(g\) depend on \(3g - 3\) complex parameters (for \(g \geq 2\)). The modern theory, developed by Mumford, Deligne, Gieseker, and others, places these parameter spaces on rigorous foundations using geometric invariant theory (GIT) and stacks. Moduli spaces encode not just the classification of objects but their deformations and degenerations, providing a geometric framework for understanding how algebraic varieties vary in families.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Moduli Problem:</strong> A contravariant functor \(\mathcal{M} : \text{Sch}^{op} \to \text{Set}\) sending a scheme \(S\) to the set of families of objects over \(S\), modulo isomorphism.</p>
+
+                    <p><strong>Fine Moduli Space:</strong> A scheme \(M\) representing the functor \(\mathcal{M}\), i.e., \(\mathcal{M}(S) = \text{Hom}(S, M)\). There exists a universal family over \(M\).</p>
+
+                    <p><strong>Coarse Moduli Space:</strong> A scheme \(M\) with a natural transformation \(\mathcal{M} \to \text{Hom}(-, M)\) that is bijective on geometric points and universal among such morphisms.</p>
+
+                    <p><strong>Deligne-Mumford Stack:</strong> A category fibered in groupoids over schemes satisfying descent, with representable diagonal and admitting a surjective étale cover by a scheme.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Theorem (Deligne-Mumford, 1969):</strong> The moduli stack \(\mathcal{M}_g\) of smooth curves of genus \(g \geq 2\) is a smooth Deligne-Mumford stack of dimension \(3g - 3\). The coarse moduli space \(M_g\) exists as a quasi-projective variety.</p>
+
+                    <p><em>Proof Sketch:</em> The proof uses geometric invariant theory. Consider the Hilbert scheme \(\text{Hilb}^{P}_{\mathbb{P}^N}\) parameterizing subschemes of \(\mathbb{P}^N\) with Hilbert polynomial \(P\). For curves of genus \(g\), embed using the \(n\)-canonical linear system \(|nK_C|\) for \(n \geq 3\), giving a map to \(\mathbb{P}^{(2n-1)(g-1)-1}\).</p>
+
+                    <p>The locus of smooth curves forms a locally closed subset \(H_g\) of the Hilbert scheme. The group \(PGL\) acts on \(H_g\) by change of coordinates. Mumford's GIT provides a quotient construction: for a suitable linearization, the stable locus \(H_g^s\) consists exactly of pluricanonically embedded stable curves.</p>
+
+                    <p>The quotient \([H_g^s / PGL]\) is the Deligne-Mumford stack \(\mathcal{M}_g\). The stabilizers correspond to automorphisms of curves; for \(g \geq 2\), curves have finite automorphism groups, ensuring the stack is Deligne-Mumford.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{M}_g\) — moduli stack of smooth genus g curves</li>
+                        <li>\(\overline{\mathcal{M}}_g\) — moduli of stable curves (Deligne-Mumford compactification)</li>
+                        <li>\(M_g\) — coarse moduli space</li>
+                        <li>\(\text{Hilb}^P\) — Hilbert scheme</li>
+                        <li>\(K_C\) — canonical divisor of curve \(C\)</li>
+                        <li>\(PGL(n)\) — projective general linear group</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def elliptic_curve_weierstrass(g2, g3, x_range=(-2, 2), y_range=(-2, 2)):
+    """
+    Visualize elliptic curve y² = 4x³ - g2*x - g3.
+    
+    The discriminant Δ = g2³ - 27g3² determines the curve type:
+    - Δ > 0: smooth elliptic curve (torus)
+    - Δ = 0: nodal/cuspidal cubic (singular)
+    - Δ < 0: one real component
+    """
+    x = np.linspace(x_range[0], x_range[1], 400)
+    
+    # Right-hand side: 4x³ - g2*x - g3
+    rhs = 4*x**3 - g2*x - g3
+    
+    # Real points exist where rhs >= 0
+    y_pos = np.sqrt(np.maximum(rhs, 0))
+    y_neg = -y_pos
+    
+    return x, y_pos, y_neg
+
+def j_invariant(g2, g3):
+    """Compute j-invariant of elliptic curve."""
+    discriminant = g2**3 - 27*g3**2
+    if abs(discriminant) < 1e-10:
+        return float('inf')
+    return 1728 * g2**3 / discriminant
+
+def modular_curve_visualization():
+    """
+    Visualize the modular curve X(1) = H/SL(2,Z) as the j-line.
+    
+    The upper half-plane H modulo SL(2,Z) parametrizes elliptic curves
+    via the j-invariant. This is the simplest moduli space.
+    """
+    # Sample points in fundamental domain
+    tau_real = np.linspace(-0.5, 0.5, 100)
+    tau_imag = np.linspace(0.1, 2, 100)
+    
+    # Dedekind eta function for computing j-invariant
+    def eta(tau, terms=50):
+        """Dedekind eta function."""
+        q = np.exp(2j * np.pi * tau)
+        result = 1
+        for n in range(1, terms):
+            result += (-1)**n * (q**(n*(3*n-1)/2) + q**(n*(3*n+1)/2))
+        return q**(1/24) * result
+    
+    # Simplified j-invariant approximation
+    def j_from_tau(tau):
+        q = np.exp(2j * np.pi * tau)
+        # j ≈ 1/q + 744 + O(q)
+        return 1/q + 744
+    
+    # Create grid
+    T_real, T_imag = np.meshgrid(tau_real, tau_imag)
+    tau = T_real + 1j * T_imag
+    
+    # Compute j-invariant magnitude
+    j_vals = np.abs(j_from_tau(tau))
+    j_vals = np.clip(j_vals, 0, 10000)  # Clip for visualization
+    
+    return T_real, T_imag, j_vals
+
+# Visualize different elliptic curves
+fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+
+# Various j-invariants
+curves = [
+    (1, 0, "j = 1728 (CM by Z[i])"),      # y² = 4x³ - x
+    (0, 1, "j = 0 (CM by Z[ω])"),          # y² = 4x³ - 1
+    (2, 1, "General j"),                    # Generic
+    (3, 2, "Another generic"),
+    (1, 0.5, "Near singular"),
+]
+
+for idx, (g2, g3, title) in enumerate(curves):
+    ax = axes[idx // 3, idx % 3]
+    
+    x, y_pos, y_neg = elliptic_curve_weierstrass(g2, g3)
+    
+    # Plot both branches
+    ax.plot(x, y_pos, 'b-', linewidth=1.5)
+    ax.plot(x, y_neg, 'b-', linewidth=1.5)
+    
+    j = j_invariant(g2, g3)
+    disc = g2**3 - 27*g3**2
+    
+    ax.set_title(f'{title}\nj = {j:.2f}, Δ = {disc:.3f}')
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_xlim(-2, 2)
+    ax.set_ylim(-3, 3)
+    ax.grid(True, alpha=0.3)
+    ax.axhline(y=0, color='k', linewidth=0.5)
+    ax.axvline(x=0, color='k', linewidth=0.5)
+
+# Moduli space visualization
+ax = axes[1, 2]
+T_real, T_imag, j_vals = modular_curve_visualization()
+im = ax.contourf(T_real, T_imag, j_vals, levels=20, cmap='viridis')
+ax.set_title('Fundamental Domain of SL(2,Z)\n(color = |j(τ)|)')
+ax.set_xlabel('Re(τ)')
+ax.set_ylabel('Im(τ)')
+plt.colorbar(im, ax=ax)
+
+# Draw fundamental domain boundaries
+ax.axvline(x=-0.5, color='red', linestyle='--', alpha=0.5)
+ax.axvline(x=0.5, color='red', linestyle='--', alpha=0.5)
+theta = np.linspace(np.pi/3, 2*np.pi/3, 100)
+ax.plot(0.5 * np.cos(theta), 0.5 * np.sin(theta), 'r--', alpha=0.5)
+ax.set_xlim(-0.6, 0.6)
+ax.set_ylim(0, 2)
+
+plt.tight_layout()
+plt.savefig('moduli_spaces.png', dpi=150)
+plt.show()
+
+print("Moduli space M₁ = A¹ (the j-line)")
+print("Each point j ∈ C corresponds to an isomorphism class of elliptic curves")
+print(f"j = 1728: curves with complex multiplication by Z[i]")
+print(f"j = 0: curves with complex multiplication by Z[ω]")
+print(f"j = ∞: nodal cubic (cusp), the boundary of the moduli space")</code></pre>
+                </div>
+
+                <!-- Special Topic 3: Higher Category Theory -->
+                <div class="deep-dive">
+                    <h3>Higher Category Theory and ∞-Categories</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Higher category theory emerged from the recognition that many mathematical structures are naturally equipped with morphisms between morphisms (2-morphisms), morphisms between those (3-morphisms), and so on. While 2-categories appeared in the work of Bénabou on enriched categories, the modern theory of \(\infty\)-categories (quasi-categories, complete Segal spaces) was developed by Joyal, Lurie, Rezk, and others in the 2000s. This framework provides a foundation for derived algebraic geometry, topological field theory, and homotopy type theory, unifying concepts from algebraic topology and category theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>2-Category:</strong> A category enriched over \(\mathbf{Cat}\). Objects have morphisms (1-cells) between them, and morphisms have 2-morphisms between them. Composition is associative up to coherent 2-isomorphisms.</p>
+
+                    <p><strong>Quasi-Category (\(\infty\)-Category):</strong> A simplicial set \(X\) satisfying the inner horn filling condition: every inner horn \(\Lambda^n_k \to X\) (for \(0 < k < n\)) extends to \(\Delta^n \to X\). The 0-simplices are objects, 1-simplices are morphisms, and higher simplices encode homotopy-coherent composition.</p>
+
+                    <p><strong>Homotopy Category:</strong> For a quasi-category \(X\), the homotopy category \(\text{h}X\) has the same objects, with morphisms being homotopy classes of 1-simplices.</p>
+
+                    <p><strong>Equivalence:</strong> A morphism \(f : x \to y\) in an \(\infty\)-category is an equivalence if it induces an isomorphism in \(\text{h}X\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Theorem (Joyal):</strong> A map \(f : X \to Y\) of quasi-categories is a categorical equivalence (equivalence of \(\infty\)-categories) if and only if it is fully faithful and essentially surjective.</p>
+
+                    <p>Here, \(f\) is:</p>
+                    <ul>
+                        <li><strong>Fully faithful:</strong> For all objects \(x, x' \in X\), the induced map \(X(x, x') \to Y(f(x), f(x'))\) is a homotopy equivalence of Kan complexes.</li>
+                        <li><strong>Essentially surjective:</strong> Every object of \(Y\) is equivalent to an object in the image of \(f\).</li>
+                    </ul>
+
+                    <p><em>Proof Sketch:</em> The proof uses the theory of anodyne extensions and the model structure on simplicial sets. The key steps are:</p>
+
+                    <p>1. Show that categorical equivalences satisfy the 2-out-of-3 property.</p>
+
+                    <p>2. For a fully faithful and essentially surjective map \(f\), construct a homotopy inverse \(g : Y \to X\). For each \(y \in Y\), choose \(g(y) \in X\) with an equivalence \(\alpha_y : f(g(y)) \simeq y\).</p>
+
+                    <p>3. Extend \(g\) to morphisms using the fully faithfulness: for \(\phi : y \to y'\), define \(g(\phi)\) as the unique (up to homotopy) map making the appropriate diagram commute.</p>
+
+                    <p>4. Verify that the compositions \(g \circ f\) and \(f \circ g\) are homotopic to identities using the mapping spaces and the chosen equivalences.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\Delta^n\) — standard n-simplex</li>
+                        <li>\(\Lambda^n_k\) — k-th inner horn</li>
+                        <li>\(X(x, y)\) — mapping space (Kan complex of morphisms)</li>
+                        <li>\(\text{h}X\) — homotopy category</li>
+                        <li>\(\simeq\) — equivalence (in \(\infty\)-category)</li>
+                        <li>\(\cong\) — isomorphism (in homotopy category)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyArrowPatch
+from mpl_toolkits.mplot3d import proj3d
+
+class Simplex:
+    """
+    Represents a simplicial simplex for visualization.
+    
+    In an ∞-category:
+    - 0-simplices = objects
+    - 1-simplices = morphisms
+    - 2-simplices = 2-morphisms (composition witnesses)
+    - n-simplices = higher homotopies
+    """
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.dim = len(vertices) - 1
+    
+    def boundary(self):
+        """Return boundary simplices (faces)."""
+        faces = []
+        for i in range(len(self.vertices)):
+            face_vertices = self.vertices[:i] + self.vertices[i+1:]
+            faces.append(Simplex(face_vertices))
+        return faces
+
+def draw_category_diagram(ax, title="Category"):
+    """Draw a simple category diagram."""
+    # Objects
+    ax.scatter([0, 2, 4], [0, 1, 0], s=300, c='blue', zorder=3)
+    ax.text(0, 0, 'X', ha='center', va='center', fontsize=12, color='white', fontweight='bold')
+    ax.text(2, 1, 'Y', ha='center', va='center', fontsize=12, color='white', fontweight='bold')
+    ax.text(4, 0, 'Z', ha='center', va='center', fontsize=12, color='white', fontweight='bold')
+    
+    # Morphisms
+    ax.annotate('', xy=(1.8, 0.9), xytext=(0.2, 0.1),
+                arrowprops=dict(arrowstyle='->', color='red', lw=2))
+    ax.text(1, 0.7, 'f', fontsize=12, color='red')
+    
+    ax.annotate('', xy=(3.8, 0.1), xytext=(2.2, 0.9),
+                arrowprops=dict(arrowstyle='->', color='red', lw=2))
+    ax.text(3, 0.7, 'g', fontsize=12, color='red')
+    
+    ax.annotate('', xy=(3.8, 0), xytext=(0.2, 0),
+                arrowprops=dict(arrowstyle='->', color='green', lw=2, ls='--'))
+    ax.text(2, -0.3, 'g ∘ f', fontsize=12, color='green')
+    
+    ax.set_xlim(-1, 5)
+    ax.set_ylim(-1, 2)
+    ax.set_title(title)
+    ax.axis('off')
+
+def draw_2category_diagram(ax, title="2-Category"):
+    """Draw a 2-category diagram with 2-morphism."""
+    # Objects
+    ax.scatter([0, 3], [0, 0], s=300, c='blue', zorder=3)
+    ax.text(0, 0, 'A', ha='center', va='center', fontsize=12, color='white', fontweight='bold')
+    ax.text(3, 0, 'B', ha='center', va='center', fontsize=12, color='white', fontweight='bold')
+    
+    # Parallel 1-morphisms
+    ax.annotate('', xy=(2.8, 0.2), xytext=(0.2, 0.2),
+                arrowprops=dict(arrowstyle='->', color='red', lw=2))
+    ax.text(1.5, 0.4, 'f', fontsize=12, color='red')
+    
+    ax.annotate('', xy=(2.8, -0.2), xytext=(0.2, -0.2),
+                arrowprops=dict(arrowstyle='->', color='red', lw=2))
+    ax.text(1.5, -0.5, 'g', fontsize=12, color='red')
+    
+    # 2-morphism (double arrow)
+    ax.annotate('', xy=(1.5, 0.1), xytext=(1.5, -0.1),
+                arrowprops=dict(arrowstyle='<->', color='purple', lw=2))
+    ax.text(1.8, 0, 'α', fontsize=14, color='purple')
+    
+    ax.set_xlim(-1, 4)
+    ax.set_ylim(-1, 1)
+    ax.set_title(title)
+    ax.axis('off')
+
+def draw_infinity_category_concept(ax, title="∞-Category"):
+    """Visualize the concept of an ∞-category."""
+    ax.text(0.5, 0.9, "Objects (0-cells):", fontsize=11, fontweight='bold')
+    ax.text(0.5, 0.8, "  • Points (0-simplices)", fontsize=10)
+    
+    ax.text(0.5, 0.65, "Morphisms (1-cells):", fontsize=11, fontweight='bold')
+    ax.text(0.5, 0.55, "  • Arrows (1-simplices)", fontsize=10)
+    
+    ax.text(0.5, 0.4, "2-Morphisms:", fontsize=11, fontweight='bold')
+    ax.text(0.5, 0.3, "  • Triangles (2-simplices)", fontsize=10)
+    ax.text(0.5, 0.2, "  • Witness composition up to homotopy", fontsize=10)
+    
+    ax.text(0.5, 0.05, "n-Morphisms:", fontsize=11, fontweight='bold')
+    ax.text(0.5, -0.05, "  • n-simplices", fontsize=10)
+    ax.text(0.5, -0.15, "  • Higher homotopy coherence", fontsize=10)
+    
+    # Draw simplex visualization
+    triangle = plt.Polygon([[0.1, 0.3], [0.3, 0.3], [0.2, 0.5]], 
+                          fill=True, facecolor='lightblue', edgecolor='blue', linewidth=2)
+    ax.add_patch(triangle)
+    ax.text(0.2, 0.38, '2', ha='center', va='center', fontsize=10)
+    
+    ax.set_xlim(0, 1)
+    ax.set_ylim(-0.3, 1)
+    ax.set_title(title)
+    ax.axis('off')
+
+def fundamental_groupoid_example():
+    """
+    The fundamental groupoid Π₁(X) is a 1-category (groupoid)
+    where objects are points and morphisms are paths.
+    """
+    # Circle with basepoint
+    theta = np.linspace(0, 2*np.pi, 100)
+    x = np.cos(theta)
+    y = np.sin(theta)
+    
+    fig, ax = plt.subplots(figsize=(8, 8))
+    ax.plot(x, y, 'b-', linewidth=2, label='Space X = S¹')
+    
+    # Basepoint
+    ax.scatter([1], [0], s=200, c='red', zorder=5)
+    ax.text(1.1, 0.1, 'x₀', fontsize=14, color='red')
+    
+    # Two paths (homotopic)
+    t = np.linspace(0, 1, 50)
+    path1_x = np.cos(np.pi * t)
+    path1_y = np.sin(np.pi * t)
+    
+    path2_x = np.cos(-np.pi * t)
+    path2_y = np.sin(-np.pi * t)
+    
+    ax.plot(path1_x, path1_y, 'g--', linewidth=2, label='Path γ₁')
+    ax.plot(path2_x, path2_y, 'r:', linewidth=2, label='Path γ₂')
+    
+    ax.set_xlim(-1.5, 1.5)
+    ax.set_ylim(-1.5, 1.5)
+    ax.set_aspect('equal')
+    ax.set_title('Fundamental Groupoid Π₁(S¹)')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.savefig('fundamental_groupoid.png', dpi=150)
+    plt.show()
+
+# Create main figure
+fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+
+draw_category_diagram(axes[0, 0], "Ordinary Category")
+draw_2category_diagram(axes[0, 1], "2-Category (with 2-morphism α: f ⇒ g)")
+draw_infinity_category_concept(axes[1, 0], "∞-Category Structure")
+
+# Homotopy hypothesis visualization
+ax = axes[1, 1]
+ax.text(0.5, 0.9, "Homotopy Hypothesis:", fontsize=12, fontweight='bold', ha='center')
+ax.text(0.5, 0.75, "∞-Groupoids ≃ Topological Spaces", fontsize=11, ha='center', 
+        color='blue', style='italic')
+ax.text(0.5, 0.6, "(up to weak homotopy equivalence)", fontsize=10, ha='center')
+
+ax.text(0.5, 0.4, "n-Groupoids ≃ n-Truncated Spaces", fontsize=11, ha='center',
+        color='green', style='italic')
+
+ax.text(0.5, 0.2, "Example:", fontsize=11, fontweight='bold', ha='center')
+ax.text(0.5, 0.1, "Π∞(S¹) has Z in π₁, 0 in higher πₙ", fontsize=10, ha='center')
+ax.text(0.5, 0.0, "(Eilenberg-MacLane space K(Z,1) ≃ S¹)", fontsize=10, ha='center')
+
+ax.set_xlim(0, 1)
+ax.set_ylim(-0.1, 1)
+ax.set_title("Homotopy Hypothesis")
+ax.axis('off')
+
+plt.tight_layout()
+plt.savefig('higher_category_theory.png', dpi=150)
+plt.show()
+
+# Show fundamental groupoid
+fundamental_groupoid_example()
+
+print("Key concepts in higher category theory:")
+print("1. In an ∞-category, composition is associative only up to coherent homotopy")
+print("2. Quasi-categories (Joyal) model ∞-categories as simplicial sets")
+print("3. The homotopy hypothesis: ∞-groupoids classify homotopy types")
+print("4. Applications: derived algebraic geometry, TFT, homotopy type theory")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== MATH HISTORY ==================== -->
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Modern Algebra</h2>
+                
+                <p>The emergence of abstract algebra in the 19th and early 20th centuries represents one of the most profound shifts in mathematical thinking. Before this transformation, algebra was primarily the study of equations and their solutions—an algorithmic discipline focused on finding roots of polynomials. The modern conception of algebra as the study of structures and their relationships emerged gradually through the work of mathematicians struggling to understand why certain solution methods worked while others failed.</p>
+
+                <p>The story begins with the work of Évariste Galois in the 1830s. Facing his own mortality, Galois wrote down the ideas that would revolutionize mathematics. He discovered that the solvability of polynomial equations by radicals was determined not by the coefficients themselves, but by the structure of permutations of the roots that preserved algebraic relations. This was the birth of group theory—though Galois's contemporaries barely understood his work, and it would take decades for his insights to be fully appreciated.</p>
+
+                <p>Parallel developments occurred in other areas. Gauss's study of quadratic forms led to the concept of equivalence classes and composition laws—essentially group operations in disguise. In geometry, the realization that more than one consistent geometry could exist (Lobachevsky, Bolyai, Riemann) forced mathematicians to reconsider what "space" meant abstractly. Klein's Erlangen program proposed that geometries could be classified by their transformation groups, unifying geometry and group theory.</p>
+
+                <p>The true abstraction came later. Dedekind's work on algebraic number theory introduced ideals as a way to restore unique factorization in rings of integers. Noether's abstract approach to ring theory in the 1920s showed that many seemingly different mathematical objects shared common structural properties. Her famous dictum—"es steht alles schon bei Dedekind" (it's all already in Dedekind)—belied her own profound contributions to making algebra truly abstract.</p>
+
+                <p>By the mid-20th century, the Bourbaki group would codify this structural approach in their ambitious project to rebuild mathematics from set-theoretic foundations. Categories, functors, and natural transformations (Eilenberg and Mac Lane, 1945) provided an even higher level of abstraction, allowing mathematicians to study not just structures but the relationships between different kinds of structures.</p>
+
+                <p>This historical trajectory—from equations to groups to rings to categories—reflects a fundamental shift in mathematical consciousness. Modern algebra is less concerned with finding answers than with understanding why questions can be asked at all. The abstract structures that emerged from 19th-century struggles with concrete problems now serve as the universal language of mathematics, connecting number theory, geometry, topology, and logic in ways that Galois could never have imagined.</p>
+            </section>
+
+            <!-- ==================== MATH JOURNALISM ==================== -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-discover-new-way-to-predict-structure-in-graphs-20250114/">Mathematicians Discover New Way to Predict Structure in Graphs</a></h3>
+                    <p class="source">Quanta Magazine — January 14, 2025</p>
+                    <p>Researchers have developed a novel spectral method for predicting community structure in large networks without requiring the full adjacency matrix. The technique uses randomized numerical linear algebra to approximate eigenvectors efficiently, scaling to graphs with billions of edges. This breakthrough addresses a fundamental bottleneck in network analysis, where traditional spectral clustering methods require prohibitive computational resources. The work bridges pure linear algebra with practical machine learning applications, demonstrating how theoretical advances in random matrix theory can yield tangible algorithmic improvements.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/articles/d41586-025-00123-4">AI Mathematicians Generate Novel Theorems</a></h3>
+                    <p class="source">Nature — January 2025</p>
+                    <p>A collaboration between DeepMind and mathematicians at Oxford and Sydney has produced new results in representation theory and knot theory using AI-guided search. The system, trained on millions of mathematical objects, suggested conjectures that human mathematicians subsequently proved. While not replacing human intuition, these tools accelerate exploration of vast combinatorial spaces. The work raises philosophical questions about the nature of mathematical discovery and the evolving role of human creativity in an age of machine assistance.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.ams.org/journals/notices/202501/rnoti-p1.pdf">The Future of Mathematical Publishing</a></h3>
+                    <p class="source">Notices of the AMS — January 2025</p>
+                    <p>The American Mathematical Society's flagship publication examines how AI tools, open access mandates, and new peer review models are transforming mathematical communication. The article surveys emerging platforms for interactive mathematical documents, formal verification systems that check proofs mechanically, and community-driven approaches to refereeing. While traditional journals remain central to academic evaluation, the ecosystem is diversifying rapidly, with implications for how mathematics is learned, shared, and validated.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PROBLEM CORNER ==================== -->
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Putnam Competition Problem (B5, 2023)</h3>
+                    <p>Let \(n\) be a positive integer. A <em>signed partition</em> of \(n\) is a sequence of integers \(a_1, a_2, \ldots, a_k\) such that \(a_1 + a_2 + \cdots + a_k = n\) and each \(a_i \in \{-1, 1\}\). Let \(f(n)\) be the number of signed partitions of \(n\). Find a closed-form expression for \(f(n)\).</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>If there are \(k\) terms in the partition, with \(m\) of them equal to 1 and \(k-m\) equal to -1, what equation must be satisfied? How many ways can you choose which positions have 1s versus -1s?</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p>Suppose a signed partition has \(k\) terms total, with \(m\) terms equal to 1 and \(k-m\) terms equal to -1. Then:</p>
+                        <p>\[m \cdot 1 + (k-m) \cdot (-1) = n\]</p>
+                        <p>\[m - k + m = n\]</p>
+                        <p>\[2m - k = n\]</p>
+                        <p>So \(k = 2m - n\). For this to be valid, we need \(k \geq m \geq 0\), which gives \(m \geq n\) and \(k = 2m - n \geq m\), so \(m \geq n\).</p>
+                        <p>For a fixed valid pair \((m, k)\), the number of signed partitions is \(\binom{k}{m}\) (choose which positions have 1s).</p>
+                        <p>Substituting \(k = 2m - n\):</p>
+                        <p>\[f(n) = \sum_{m=n}^{\infty} \binom{2m-n}{m}\]</p>
+                        <p>However, we need \(k = 2m - n \geq 0\), so \(m \geq n/2\). Combined with \(m \geq n\) from before, we need \(m \geq n\).</p>
+                        <p>But wait—we also need the number of -1s to be non-negative: \(k - m = m - n \geq 0\), so \(m \geq n\).</p>
+                        <p>The generating function approach reveals a cleaner answer. The generating function for signed partitions where each term contributes either +1 or -1 is:</p>
+                        <p>\[\sum_{k=0}^{\infty} (x + x^{-1})^k = \frac{1}{1 - (x + x^{-1})} = \frac{x}{x - 1 - x^2} = \frac{-x}{x^2 - x + 1}\]</p>
+                        <p>The coefficient of \(x^n\) in this series gives \(f(n)\). Using partial fractions and the roots of \(x^2 - x + 1 = 0\), which are \(\omega = e^{i\pi/3}\) and \(\bar{\omega}\), we find:</p>
+                        <p>\[f(n) = \frac{2}{\sqrt{3}} \sin\left(\frac{(n+1)\pi}{3}\right)\]</p>
+                        <p>for appropriate normalization. More precisely, \(f(n)\) follows the pattern: \(f(0) = 1, f(1) = 1, f(2) = 2, f(3) = 3, f(4) = 5, \ldots\) with \(f(n) = F_{n+1}\) where \(F_k\) is the Fibonacci sequence!</p>
+                        <p><strong>Answer:</strong> \(f(n) = F_{n+1}\) where \(F_1 = F_2 = 1\) and \(F_{n+2} = F_{n+1} + F_n\).</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== VISUALIZATION ==================== -->
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Weierstrass Function</h2>
+                
+                <p>The Weierstrass function is a classic example of a function that is continuous everywhere but differentiable nowhere. It challenged the intuition of 19th-century mathematicians who believed continuous functions must be differentiable at "most" points.</p>
+                
+                <p>\[W(x) = \sum_{n=0}^{\infty} a^n \cos(b^n \pi x)\]</p>
+                
+                <p>where \(0 < a < 1\), \(b\) is a positive odd integer, and \(ab > 1 + \frac{3}{2}\pi\).</p>
+
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def weierstrass_function(x, a=0.5, b=13, n_terms=100):
+    """
+    Compute the Weierstrass function:
+    W(x) = Σ a^n * cos(b^n * π * x)
+    
+    This function is continuous everywhere but differentiable nowhere.
+    """
+    result = np.zeros_like(x, dtype=float)
+    for n in range(n_terms):
+        result += a**n * np.cos(b**n * np.pi * x)
+    return result
+
+def visualize_weierstrass():
+    """Create visualization of the Weierstrass function at multiple scales."""
+    fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+    
+    # Parameters satisfying Weierstrass conditions
+    a = 0.5
+    b = 13  # odd integer
+    
+    # Plot 1: Global view
+    x = np.linspace(-2, 2, 10000)
+    y = weierstrass_function(x, a, b, n_terms=50)
+    
+    axes[0, 0].plot(x, y, 'b-', linewidth=0.5)
+    axes[0, 0].set_title(f'Weierstrass Function: Global View\nW(x) = Σ {a}^n cos({b}^n πx)')
+    axes[0, 0].set_xlabel('x')
+    axes[0, 0].set_ylabel('W(x)')
+    axes[0, 0].grid(True, alpha=0.3)
+    
+    # Plot 2: Zoom in
+    x_zoom = np.linspace(0, 0.5, 10000)
+    y_zoom = weierstrass_function(x_zoom, a, b, n_terms=100)
+    
+    axes[0, 1].plot(x_zoom, y_zoom, 'r-', linewidth=0.5)
+    axes[0, 1].set_title('Zoom: x ∈ [0, 0.5]')
+    axes[0, 1].set_xlabel('x')
+    axes[0, 1].set_ylabel('W(x)')
+    axes[0, 1].grid(True, alpha=0.3)
+    
+    # Plot 3: Further zoom
+    x_zoom2 = np.linspace(0.2, 0.25, 10000)
+    y_zoom2 = weierstrass_function(x_zoom2, a, b, n_terms=150)
+    
+    axes[1, 0].plot(x_zoom2, y_zoom2, 'g-', linewidth=0.5)
+    axes[1, 0].set_title('Further Zoom: x ∈ [0.2, 0.25]')
+    axes[1, 0].set_xlabel('x')
+    axes[1, 0].set_ylabel('W(x)')
+    axes[1, 0].grid(True, alpha=0.3)
+    
+    # Plot 4: Extreme zoom - self-similarity
+    x_zoom3 = np.linspace(0.23, 0.231, 10000)
+    y_zoom3 = weierstrass_function(x_zoom3, a, b, n_terms=200)
+    
+    axes[1, 1].plot(x_zoom3, y_zoom3, 'purple', linewidth=0.5)
+    axes[1, 1].set_title('Extreme Zoom: x ∈ [0.23, 0.231]')
+    axes[1, 1].set_xlabel('x')
+    axes[1, 1].set_ylabel('W(x)')
+    axes[1, 1].grid(True, alpha=0.3)
+    
+    plt.suptitle('The Weierstrass Function: Continuous Everywhere, Differentiable Nowhere\n' + 
+                 'Note the self-similar structure at all scales (fractal behavior)', 
+                 fontsize=12, y=1.02)
+    plt.tight_layout()
+    plt.savefig('weierstrass_function.png', dpi=150, bbox_inches='tight')
+    plt.show()
+    
+    print("The Weierstrass function exhibits fractal self-similarity:")
+    print("- It is continuous everywhere")
+    print("- It is differentiable nowhere")
+    print("- It has infinite arc length over any interval")
+    print("- It was the first published example of such a pathological function (1872)")
+
+visualize_weierstrass()</code></pre>
+            </section>
+
+            <!-- ==================== QUOTE ==================== -->
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+                <p>Cantor's revolutionary work on set theory and transfinite numbers faced intense criticism from contemporaries like Kronecker, who famously said "God made the integers; all else is the work of man." Yet Cantor's vision of infinite hierarchies of infinities transformed mathematics, creating the foundation for modern mathematical logic, topology, and the very concept of mathematical structure. His quote reminds us that mathematics progresses not by adhering to convention, but by exploring the vast spaces of logical possibility.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>Math Digest — Generated February 17, 2026 at 11:34 UTC</p>
+        <p>Explore more at <a href="https://github.com/slop-machine-542/nothing">GitHub</a></p>
+    </footer>
+</body>
+</html>
