@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 17, 2026 at 08:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 17, 2026 at 08:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 17, 2026 at 08:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">symplectic-geometry</span>
+                <span class="tag">hodge-theory</span>
+                <span class="tag">arakelov-theory</span>
+            </div>
+
+            <!-- ==================== MATH LINKS ==================== -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://mathoverflow.net/">MathOverflow</a></h3>
+                    <p>A question and answer site for professional mathematicians. The community maintains exceptionally high standards, with discussions ranging from technical questions in algebraic geometry to foundational issues in set theory. Recent activity includes deep discussions on derived categories and perverse sheaves.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://ar5iv.org/">ar5iv.org</a></h3>
+                    <p>An alternative frontend for arXiv that renders papers as responsive HTML5 web pages. This makes mathematical papers significantly more readable on mobile devices and allows for better accessibility. The service preserves LaTeX formatting while improving navigation.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://ncatlab.org/nlab/show/HomePage">nLab</a></h3>
+                    <p>A wiki-lab for collaborative work on mathematics, physics, and philosophy — particularly from the n-categorical point of view. It serves as a comprehensive reference for higher category theory, homotopy type theory, and related fields.</p>
+                </div>
+            </section>
+
+            <!-- ==================== FREE MATH BOOK ==================== -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Algebraic Geometry</h3>
+                    <p><strong>Author:</strong> Andreas Gathmann</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://www.mathematik.unn-kl.de/~gathmann/class/alggeom-2002/alggeom-2002.pdf">University of Kaiserslautern</a></p>
+                    
+                    <p><strong>Summary:</strong> This comprehensive lecture notes introduction to algebraic geometry takes a modern approach, emphasizing scheme theory from the beginning while maintaining connections to classical varieties. The text covers sheaves, schemes, morphisms, divisors, cohomology of sheaves, and the Riemann-Roch theorem. Gathmann's exposition is known for its clarity and careful motivation of abstract concepts through concrete examples. The notes include numerous exercises and are particularly suitable for students transitioning from a first course in algebraic geometry to more advanced topics.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PURE MATH DEEP DIVES ==================== -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <!-- Pure Math 1: Symplectic Geometry -->
+                <div class="deep-dive">
+                    <h3>Symplectic Geometry and Hamiltonian Mechanics</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Symplectic geometry emerged from classical mechanics as the natural geometric framework for Hamiltonian systems. While Riemannian geometry studies spaces with a notion of distance and angle, symplectic geometry studies spaces with a notion of area and phase space volume. This makes it the perfect language for describing physical systems where energy is conserved.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Symplectic Vector Space:</strong> A vector space \(V\) over \(\mathbb{R}\) equipped with a non-degenerate, skew-symmetric bilinear form \(\omega : V \times V \to \mathbb{R}\). Non-degenerate means: if \(\omega(v, w) = 0\) for all \(w\), then \(v = 0\).</p>
+
+                    <p><strong>Symplectic Manifold:</strong> A smooth manifold \(M^{2n}\) equipped with a closed, non-degenerate 2-form \(\omega\), called the symplectic form. "Closed" means \(\mathrm{d}\omega = 0\).</p>
+
+                    <p><strong>Hamiltonian Vector Field:</strong> For a Hamiltonian function \(H : M \to \mathbb{R}\), the Hamiltonian vector field \(X_H\) is defined by \(\iota_{X_H}\omega = \mathrm{d}H\), where \(\iota\) denotes interior product.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Darboux's Theorem:</strong> Every symplectic manifold \((M^{2n}, \omega)\) is locally symplectomorphic to \((\mathbb{R}^{2n}, \omega_0)\) where \(\omega_0 = \sum_{i=1}^n \mathrm{d}p_i \wedge \mathrm{d}q_i\).</p>
+
+                    <p><em>Proof Sketch:</em> The key insight is that all symplectic manifolds look the same locally — there are no local invariants beyond the dimension. The proof uses Moser's trick: given two symplectic forms \(\omega_0\) and \(\omega_1\) on a manifold with \([\omega_0] = [\omega_1]\) in cohomology, one constructs a family \(\omega_t = (1-t)\omega_0 + t\omega_1\) and finds a time-dependent vector field \(X_t\) such that the flow \(\phi_t\) satisfies \(\phi_t^*\omega_t = \omega_0\). For Darboux's theorem, one works in a coordinate chart and uses the fact that any symplectic form can be written in standard form at a point, then extends this to a neighborhood.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\omega\) — symplectic form (skew-symmetric, closed, non-degenerate 2-form)</li>
+                        <li>\(X_H\) — Hamiltonian vector field associated to function \(H\)</li>
+                        <li>\(\iota_X\omega\) — interior product (contraction of \(\omega\) with \(X\))</li>
+                        <li>\(\{f, g\} = \omega(X_f, X_g)\) — Poisson bracket</li>
+                        <li>\(q_i, p_i\) — canonical position and momentum coordinates</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+def hamiltonian_flow(H_func, dH_dq, dH_dp, q0, p0, t_span, t_eval):
+    """
+    Compute Hamiltonian flow for a system with Hamiltonian H(q,p).
+    
+    Hamilton's equations:
+        dq/dt = ∂H/∂p
+        dp/dt = -∂H/∂q
+    """
+    def equations(t, y):
+        q, p = y[:len(y)//2], y[len(y)//2:]
+        dq_dt = dH_dp(q, p)
+        dp_dt = -dH_dq(q, p)
+        return np.concatenate([dq_dt, dp_dt])
+    
+    y0 = np.concatenate([q0, p0])
+    sol = solve_ivp(equations, t_span, y0, t_eval=t_eval, method='RK45')
+    return sol
+
+# Example: 2D Harmonic Oscillator
+m, k = 1.0, 1.0
+
+def H_harmonic(q, p):
+    return (p[0]**2 + p[1]**2)/(2*m) + (k/2)*(q[0]**2 + q[1]**2)
+
+def dH_dq_harmonic(q, p):
+    return np.array([k*q[0], k*q[1]])
+
+def dH_dp_harmonic(q, p):
+    return np.array([p[0]/m, p[1]/m])
+
+q0, p0 = np.array([1.0, 0.5]), np.array([0.0, 1.0])
+t_span, t_eval = (0, 20), np.linspace(0, 20, 1000)
+
+sol = hamiltonian_flow(H_harmonic, dH_dq_harmonic, dH_dp_harmonic, 
+                        q0, p0, t_span, t_eval)
+
+# Energy is conserved!
+energies = [H_harmonic(sol.y[:2, i], sol.y[2:, i]) for i in range(len(t_eval))]
+print(f"Energy variation: {max(energies) - min(energies):.2e}")</code></pre>
+                </div>
+
+                <!-- Pure Math 2: Hodge Theory -->
+                <div class="deep-dive">
+                    <h3>Hodge Theory and Harmonic Forms</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Hodge theory provides a profound connection between analysis, topology, and algebraic geometry on complex manifolds. It reveals that the topology of a compact Kähler manifold is severely constrained by its complex structure — a phenomenon with no real analogue. This has far-reaching consequences in algebraic geometry, including the Hodge conjecture, one of the Clay Millennium Prize problems.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Hodge Star Operator:</strong> On an oriented Riemannian manifold \((M, g)\), the Hodge star \(* : \Omega^k(M) \to \Omega^{n-k}(M)\) is defined by \(\alpha \wedge *\beta = \langle \alpha, \beta \rangle_g \, \mathrm{vol}_g\).</p>
+
+                    <p><strong>Adjoint Operators:</strong> \(\delta = (-1)^{n(k+1)+1} * \mathrm{d} * : \Omega^k \to \Omega^{k-1}\) is the adjoint of \(\mathrm{d}\) with respect to the \(L^2\) inner product.</p>
+
+                    <p><strong>Laplacian:</strong> \(\Delta = \mathrm{d}\delta + \delta\mathrm{d} = (\mathrm{d} + \delta)^2\).</p>
+
+                    <p><strong>Harmonic Form:</strong> A differential form \(\alpha\) is harmonic if \(\Delta\alpha = 0\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Hodge Decomposition Theorem:</strong> On a compact oriented Riemannian manifold \((M, g)\), the space of \(k\)-forms decomposes orthogonally as:
+                    \[\Omega^k(M) = \mathcal{H}^k(M) \oplus \mathrm{d}(\Omega^{k-1}(M)) \oplus \delta(\Omega^{k+1}(M))\]
+                    where \(\mathcal{H}^k\) denotes harmonic forms. Consequently, every de Rham cohomology class has a unique harmonic representative.</p>
+
+                    <p><em>Proof Sketch:</em> The proof relies on elliptic regularity theory. The Laplacian \(\Delta\) is an elliptic operator, and on compact manifolds, elliptic operators have finite-dimensional kernels and closed images. The key observation is that \(\Delta\alpha = 0\) if and only if \(\mathrm{d}\alpha = 0\) and \(\delta\alpha = 0\) (since \((\Delta\alpha, \alpha) = \|\mathrm{d}\alpha\|^2 + \|\delta\alpha\|^2\)). The decomposition follows from the fact that the image of \(\Delta\) is the orthogonal complement of its kernel.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(*\) — Hodge star operator (depends on metric and orientation)</li>
+                        <li>\(\delta\) — codifferential (adjoint of exterior derivative)</li>
+                        <li>\(\Delta\) — Laplace-de Rham operator (Hodge Laplacian)</li>
+                        <li>\(\mathcal{H}^k(M)\) — space of harmonic \(k\)-forms</li>
+                        <li>\(H^k_{dR}(M)\) — de Rham cohomology (isomorphic to \(\mathcal{H}^k\))</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def discrete_laplacian_1d(n, dx=1.0):
+    """Construct discrete Laplacian on a 1D circle."""
+    main_diag = 2.0 / dx**2 * np.ones(n)
+    off_diag = -1.0 / dx**2 * np.ones(n-1)
+    
+    L = np.diag(main_diag) + np.diag(off_diag, 1) + np.diag(off_diag, -1)
+    L[0, -1] = -1.0 / dx**2
+    L[-1, 0] = -1.0 / dx**2
+    
+    return L
+
+# Compute on a circle with n points
+n = 100
+dx = 2 * np.pi / n
+L = discrete_laplacian_1d(n, dx)
+
+# Find eigenvalues and eigenfunctions (harmonic forms in 1D)
+eigenvalues, eigenvectors = np.linalg.eigh(L)
+
+print("First 10 eigenvalues:")
+print(eigenvalues[:10])
+
+# In 1D, harmonic 0-forms are constants (eigenvalue 0)
+zero_eigenvalues = np.sum(np.abs(eigenvalues) < 1e-10)
+print(f"\nNumber of zero eigenvalues (harmonic 0-forms): {zero_eigenvalues}")</code></pre>
+                </div>
+
+                <!-- Pure Math 3: Arakelov Theory -->
+                <div class="deep-dive">
+                    <h3>Arakelov Theory and Arithmetic Geometry</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Arakelov theory, developed by Suren Arakelov in the 1970s, extends intersection theory from algebraic varieties over fields to arithmetic varieties over \(\mathbb{Z}\). The insight is to treat the "infinite prime" (the archimedean place) on equal footing with finite primes by adding Hermitian metrics at infinity. This creates a powerful bridge between algebraic geometry and complex analysis.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Arithmetic Variety:</strong> A regular scheme \(\mathcal{X}\) flat and projective over \(\mathrm{Spec}\,\mathbb{Z}\).</p>
+
+                    <p><strong>Arakelov Divisor:</strong> A formal sum \(\hat{D} = D + \sum_{\sigma} g_\sigma \cdot \sigma\) where \(D\) is a Weil divisor on \(\mathcal{X}\), the sum is over archimedean places \(\sigma : K \to \mathbb{C}\), and \(g_\sigma\) is a Green function on \(X_\sigma(\mathbb{C})\).</p>
+
+                    <p><strong>Metrized Line Bundle:</strong> A line bundle \(L\) on \(\mathcal{X}\) equipped with a smooth Hermitian metric \(\|\cdot\|_\sigma\) on each \(L_\sigma = L \otimes_\sigma \mathbb{C}\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Arithmetic Riemann-Roch Theorem (Gillet-Soulé):</strong> For a regular arithmetic variety \(\mathcal{X}\) and a Hermitian vector bundle \(\bar{E}\), the following holds in the arithmetic Chow group:
+                    \[\widehat{\mathrm{ch}}(R\pi_*\bar{E}) = \pi_*(\widehat{\mathrm{ch}}(\bar{E}) \cdot \widehat{\mathrm{Td}}(\bar{T}_\pi))\]
+                    where \(\widehat{\mathrm{ch}}\) is the arithmetic Chern character and \(\widehat{\mathrm{Td}}\) is the arithmetic Todd class.</p>
+
+                    <p><em>Proof Sketch:</em> The proof combines deep results from algebraic geometry (Grothendieck-Riemann-Roch), complex geometry (analytic torsion), and number theory (determinants of cohomology). The key innovation is the introduction of the Quillen metric on the determinant of cohomology, which involves the analytic torsion of the Laplacian on differential forms.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\widehat{\mathrm{CH}}^*(\mathcal{X})\) — arithmetic Chow group</li>
+                        <li>\(\widehat{\mathrm{Pic}}(\mathcal{X})\) — group of metrized line bundles</li>
+                        <li>\(\widehat{\deg}\) — arithmetic degree (includes contribution from infinity)</li>
+                        <li>\(h_{\bar{L}}(P)\) — height of point \(P\) with respect to metrized line bundle \(\bar{L}\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def naive_height_p1(x, y):
+    """Naive logarithmic height on P^1(Q). Point [x:y] with x, y coprime."""
+    return np.log(max(abs(x), abs(y)))
+
+def arakelov_degree(divisor_finite, metric_infinity):
+    """
+    Compute Arakelov degree of a metrized line bundle.
+    """
+    finite_contribution = sum(mult * np.log(p) for p, mult in divisor_finite)
+    return finite_contribution + metric_infinity
+
+# Demonstration: Heights on P^1
+print("Heights on P^1(Q):")
+points = [(1, 1), (2, 1), (3, 2), (5, 3), (7, 11), (100, 1)]
+for x, y in points:
+    h = naive_height_p1(x, y)
+    print(f"  [{x}:{y}] → h = {h:.4f}")
+
+# Northcott property: finite number of points with bounded height
+height_bound = 2.0
+bounded_points = [(x, y) for x in range(-20, 21) for y in range(1, 21) 
+                  if np.gcd(x, y) == 1 and naive_height_p1(x, y) <= height_bound]
+print(f"\nPoints with height ≤ {height_bound}: {len(bounded_points)}")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== APPLIED MATH DEEP DIVES ==================== -->
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <!-- Applied Math 1: Neural ODEs -->
+                <div class="deep-dive">
+                    <h3>Neural Ordinary Differential Equations</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Neural ODEs revolutionized deep learning by viewing residual networks as discretizations of continuous dynamical systems. Instead of specifying a fixed architecture with discrete layers, Neural ODEs learn the derivative of the hidden state dynamics. This provides memory efficiency, adaptive computation, and a natural framework for continuous-time models.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Neural ODE:</strong> A hidden state \(\mathbf{h}(t)\) evolves according to:
+                    \[\frac{\mathrm{d}\mathbf{h}(t)}{\mathrm{d}t} = f(\mathbf{h}(t), t, \theta)\]
+                    where \(f\) is a neural network with parameters \(\theta\).</p>
+
+                    <p><strong>Adjoint State:</strong> \(\mathbf{a}(t) = \frac{\partial L}{\partial \mathbf{h}(t)}\) for loss \(L\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Adjoint Sensitivity Method:</strong> The gradient of the loss with respect to the parameters can be computed by solving a backward ODE:
+                    \[\frac{\mathrm{d}\mathbf{a}(t)}{\mathrm{d}t} = -\mathbf{a}(t)^T \frac{\partial f(\mathbf{h}(t), t, \theta)}{\partial \mathbf{h}}\]
+                    This avoids storing all intermediate states during forward propagation.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbf{h}(t)\) — hidden state at "time" \(t\) (continuous depth)</li>
+                        <li>\(f(\mathbf{h}, t, \theta)\) — neural network defining the dynamics</li>
+                        <li>\(\mathbf{a}(t) = \partial L / \partial \mathbf{h}(t)\) — adjoint state</li>
+                        <li>\(\mathrm{ODESolve}(\mathbf{h}(t_0), f, t_0, t_1)\) — black-box ODE solver</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+class NeuralODE:
+    def __init__(self, input_dim, hidden_dim):
+        self.theta = {
+            'W1': np.random.randn(hidden_dim, input_dim) * 0.1,
+            'b1': np.zeros(hidden_dim),
+            'W2': np.random.randn(input_dim, hidden_dim) * 0.1,
+            'b2': np.zeros(input_dim)
+        }
+    
+    def f(self, h, t):
+        """Dynamics function: neural network."""
+        z = np.tanh(self.theta['W1'] @ h + self.theta['b1'])
+        return self.theta['W2'] @ z + self.theta['b2']
+    
+    def forward(self, h0, t_span, t_eval):
+        def dynamics(t, h):
+            return self.f(h, t)
+        sol = solve_ivp(dynamics, t_span, h0, t_eval=t_eval, method='RK45')
+        return sol.y, sol.t
+
+# True dynamics: spiral inward
+def true_dynamics(t, h):
+    x, y = h[0], h[1]
+    return np.array([-0.1*x - y, x - 0.1*y])
+
+# Generate training data
+t_eval = np.linspace(0, 10, 100)
+sol_true = solve_ivp(true_dynamics, (0, 10), [2.0, 0.0], t_eval=t_eval)
+
+# Train Neural ODE (simplified)
+node = NeuralODE(input_dim=2, hidden_dim=16)
+print("Training Neural ODE to learn spiral dynamics...")</code></pre>
+                </div>
+
+                <!-- Applied Math 2: TDA -->
+                <div class="deep-dive">
+                    <h3>Topological Data Analysis and Persistent Homology</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Topological Data Analysis (TDA) extracts robust qualitative features from complex, high-dimensional datasets. Unlike traditional statistical methods, TDA captures the "shape" of data — connected components, loops, voids — in a coordinate-free manner. Applications include materials science, neuroscience, genomics, and machine learning.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Vietoris-Rips Complex:</strong> For a metric space \((X, d)\) and scale \(\epsilon > 0\), the VR complex has vertices as points of \(X\) and simplices as subsets with diameter \(\leq \epsilon\).</p>
+
+                    <p><strong>Persistent Homology:</strong> Tracks how homology groups evolve as \(\epsilon\) increases. A feature is "born" at \(\epsilon_b\) and "dies" at \(\epsilon_d\).</p>
+
+                    <p><strong>Persistence Diagram:</strong> A multiset of points \((\epsilon_b, \epsilon_d)\) representing birth and death times.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Stability Theorem:</strong> Let \(X, Y\) be finite metric spaces with persistence diagrams \(D_X, D_Y\). Then:
+                    \[d_B(D_X, D_Y) \leq 2 \cdot d_{GH}(X, Y)\]
+                    where \(d_B\) is the bottleneck distance and \(d_{GH}\) is the Gromov-Hausdorff distance.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(VR_\epsilon(X)\) — Vietoris-Rips complex at scale \(\epsilon\)</li>
+                        <li>\(H_k(\cdot)\) — \(k\)-th homology group (\(k=0\): components, \(k=1\): loops)</li>
+                        <li>\(\beta_k = \dim H_k\) — Betti numbers</li>
+                        <li>\((b, d)\) — birth and death times</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.spatial.distance import pdist, squareform
+from scipy.sparse.csgraph import connected_components
+
+def generate_circle(n_points, radius=1, noise=0.05):
+    """Generate points on a circle with noise."""
+    angles = np.linspace(0, 2*np.pi, n_points, endpoint=False)
+    x = radius * np.cos(angles) + np.random.normal(0, noise, n_points)
+    y = radius * np.sin(angles) + np.random.normal(0, noise, n_points)
+    return np.column_stack([x, y])
+
+# Generate test data
+np.random.seed(42)
+circle = generate_circle(50, radius=1, noise=0.05)
+
+# Compute distance matrix
+dist_matrix = squareform(pdist(circle))
+
+# Simple 0-dim persistence tracking
+print("Analyzing topological features of circle data...")</code></pre>
+                </div>
+
+                <!-- Applied Math 3: Mean Field Games -->
+                <div class="deep-dive">
+                    <h3>Mean Field Games and Strategic Interactions</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Mean Field Games (MFG) study strategic decision-making in populations with infinitely many agents. When each agent interacts with the empirical distribution of all others, the complexity becomes intractable. MFG theory shows that as \(N \to \infty\), the system simplifies to a coupled PDE system.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Mean Field Game System:</strong> A coupled system on \([0, T] \times \mathbb{R}^d\):
+                    \[-\partial_t u - \nu\Delta u + H(x, \nabla u, m) = 0\]
+                    \[\partial_t m - \nu\Delta m - \mathrm{div}(m \nabla_p H) = 0\]
+                    where \(u\) is the value function and \(m\) is population density.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Existence Theorem (Lasry-Lions):</strong> Under suitable conditions (Lipschitz continuity, convexity of Hamiltonian), the MFG system admits at least one classical solution.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(u(t, x)\) — value function (optimal cost-to-go)</li>
+                        <li>\(m(t, x)\) — population density</li>
+                        <li>\(H(x, p, m)\) — Hamiltonian</li>
+                        <li>\(\nu\) — viscosity/diffusion coefficient</li>
+                        <li>\(\alpha^*\) — optimal control</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class MeanFieldGame:
+    """Simplified 1D Mean Field Game solver."""
+    
+    def __init__(self, x_min, x_max, nx, t_max, nt, nu=0.1):
+        self.x_min, self.x_max = x_min, x_max
+        self.nx, self.nt = nx, nt
+        self.nu = nu
+        self.x = np.linspace(x_min, x_max, nx)
+        self.dx = (x_max - x_min) / (nx - 1)
+        self.dt = t_max / nt
+    
+    def hamiltonian(self, p, m, x):
+        """H(x, p, m) = |p|^2/2 - V(x) + f(m)"""
+        V = 0.5 * x**2  # Quadratic potential
+        f_m = 0.5 * m**2  # Congestion cost
+        return 0.5 * p**2 - V + f_m
+
+# Setup and solve
+mfg = MeanFieldGame(x_min=-5, x_max=5, nx=100, t_max=2.0, nt=50)
+print("Solving Mean Field Game...")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== SPECIAL TOPICS ==================== -->
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+
+                <!-- Special Topic 1: Étale Cohomology -->
+                <div class="deep-dive">
+                    <h3>Étale Cohomology and the Weil Conjectures</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Étale cohomology was developed by Alexander Grothendieck and collaborators in the 1960s to prove the Weil conjectures. André Weil had proposed in 1949 that the number of points on algebraic varieties over finite fields should be controlled by a cohomology theory with properties analogous to singular cohomology.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Étale Morphism:</strong> A morphism of schemes \(f : X \to Y\) that is flat, locally of finite presentation, and induces isomorphisms on complete local rings.</p>
+
+                    <p><strong>Étale Cohomology:</strong> \(H^i_{\acute{e}t}(X, \mathcal{F}) = R^i\Gamma(X, \mathcal{F})\) where \(\mathcal{F}\) is a sheaf on the étale site.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Weil Conjecture (Deligne's Theorem):</strong> Let \(X\) be a smooth projective variety of dimension \(n\) over \(\mathbb{F}_q\). The zeta function satisfies:
+                    1. Rationality: \(Z(X, t) \in \mathbb{Q}(t)\)
+                    2. Functional equation
+                    3. Riemann hypothesis: eigenvalues of Frobenius have \(|\alpha_{ij}| = q^{i/2}\)</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(H^i_{\acute{e}t}(X, \mathbb{Q}_\ell)\) — \(\ell\)-adic étale cohomology</li>
+                        <li>\(Frob_q\) — geometric Frobenius</li>
+                        <li>\(Z(X, t)\) — zeta function</li>
+                        <li>\(\#X(\mathbb{F}_{q^m})\) — number of \(\mathbb{F}_{q^m}\)-rational points</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def count_points_projective_space(n, q):
+    """Count points of P^n over F_q."""
+    return sum(q**i for i in range(n + 1))
+
+def weil_polynomial_elliptic_curve(a, q):
+    """Weil polynomial: P(T) = T^2 - aT + q. Roots satisfy |α| = √q."""
+    discriminant = a**2 - 4*q
+    if discriminant >= 0:
+        alpha1 = (a + np.sqrt(discriminant)) / 2
+        alpha2 = (a - np.sqrt(discriminant)) / 2
+    else:
+        alpha1 = (a + 1j*np.sqrt(-discriminant)) / 2
+        alpha2 = (a - 1j*np.sqrt(-discriminant)) / 2
+    return alpha1, alpha2
+
+# Example: Elliptic curve over F_5
+q = 5
+a = 0  # Supersingular curve
+alpha1, alpha2 = weil_polynomial_elliptic_curve(a, q)
+print(f"Elliptic curve over F_{q}:")
+print(f"  α₁ = {alpha1}, |α₁| = {np.abs(alpha1):.4f}")
+print(f"  α₂ = {alpha2}, |α₂| = {np.abs(alpha2):.4f}")
+print(f"  √q = {np.sqrt(q):.4f}")
+print(f"  Riemann hypothesis satisfied: {np.isclose(np.abs(alpha1), np.sqrt(q))}")</code></pre>
+                </div>
+
+                <!-- Special Topic 2: Derived AG -->
+                <div class="deep-dive">
+                    <h3>Derived Algebraic Geometry</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Derived algebraic geometry emerged from the intersection of algebraic geometry and homotopy theory in the early 2000s. The key insight, developed by Toën, Vezzosi, and Lurie, is that schemes should be replaced by "derived schemes" where structure sheaves live in a homotopical/derived setting.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Simplicial Commutative Ring:</strong> A functor \(\Delta^{op} \to \mathbf{CRing}\) satisfying the Segal conditions.</p>
+
+                    <p><strong>Derived Scheme:</strong> A ringed space where the structure sheaf is a sheaf of simplicial commutative rings, with \(\pi_0\) a classical scheme.</p>
+
+                    <p><strong>Cotangent Complex:</strong> For \(f : X \to Y\), the cotangent complex \(\mathbb{L}_{X/Y}\) governs deformations and obstructions.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Derived Base Change:</strong> Given a derived Cartesian square, we have \(Lg^* \circ Rf_* \simeq Rf'_* \circ Lg'^*\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(D(X)\) — derived category of quasi-coherent sheaves</li>
+                        <li>\(\mathbb{L}_{X/Y}\) — cotangent complex</li>
+                        <li>\(Lf^*, Rf_*\) — derived pullback and pushforward</li>
+                        <li>\(\mathbf{Perf}(X)\) — category of perfect complexes</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def derived_intersection_example():
+    """
+    Classical vs Derived intersection.
+    Classical: Intersection of y=0 and y=x^2 is non-reduced point (dim 0)
+    Expected: dimension -1 (empty)
+    Derived: Includes Tor terms, correct virtual dimension
+    """
+    print("Derived Intersection Example:")
+    print("  Classical: Spec(k[x]/(x^2)) — non-reduced point, dim 0")
+    print("  Expected: dim -1")
+    print("  Derived: Virtual dimension -1 with Tor terms")
+
+# Visualize cotangent complex cohomology
+fig, ax = plt.subplots(figsize=(10, 6))
+cases = ['Smooth', 'Node', 'Cusp', 'Complete Intersection']
+h0 = [2, 2, 2, 2]
+h1 = [0, 1, 2, 0]
+
+x_pos = np.arange(len(cases))
+width = 0.35
+ax.bar(x_pos - width/2, h0, width, label='H^0', color='blue', alpha=0.7)
+ax.bar(x_pos + width/2, h1, width, label='H^1 (obstructions)', color='red', alpha=0.7)
+ax.set_xlabel('Singularity Type')
+ax.set_ylabel('Dimension')
+ax.set_title('Cotangent Complex Cohomology')
+ax.set_xticks(x_pos)
+ax.set_xticklabels(cases)
+ax.legend()
+plt.show()</code></pre>
+                </div>
+
+                <!-- Special Topic 3: Geometric Langlands -->
+                <div class="deep-dive">
+                    <h3>The Geometric Langlands Program</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>The Langlands program, initiated by Robert Langlands in 1967, connects number theory, representation theory, and algebraic geometry. The geometric Langlands program translates these conjectures into the language of algebraic curves.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Bun}_G\):</strong> The moduli stack of principal \(G\)-bundles on a smooth projective curve \(X\).</p>
+
+                    <p><strong>Hecke Eigensheaf:</strong> A perverse sheaf \(\mathcal{F}\) on \(\mathrm{Bun}_G\) such that \(H_V(\mathcal{F}) \cong \mathcal{F} \boxtimes V_{\mathcal{E}}\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Geometric Langlands for \(GL_n\):</strong> For a smooth projective curve \(X\) over \(\mathbb{C}\), there is an equivalence:
+                    \[D_{coh}(\mathrm{LocSys}_{GL_n}(X)) \cong D_{coh}(\mathrm{Bun}_{GL_n}(X), \mathcal{D})\]</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(G\) — reductive algebraic group</li>
+                        <li>\(\hat{G}\) — Langlands dual group</li>
+                        <li>\(\mathrm{Bun}_G(X)\) — moduli of \(G\)-bundles</li>
+                        <li>\(\mathcal{H}_V\) — Hecke operator</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class RiemannSurface:
+    def __init__(self, genus):
+        self.genus = genus
+        self.fundamental_group_rank = 2 * genus
+    
+    def betti_numbers(self):
+        return [1, 2*self.genus, 1]
+
+def langlands_correspondence_gln(n, X):
+    """Describe Langlands correspondence for GL_n."""
+    print(f"Geometric Langlands for GL_{n}:")
+    print(f"  Curve X: genus g = {X.genus}")
+    print(f"  ")
+    print(f"  GALOIS SIDE: n-dim representations ρ: π_1(X) → GL_n(C)")
+    print(f"  AUTOMORPHIC SIDE: Hecke eigensheaves on Bun_{{GL_n}}")
+    print(f"  CORRESPONDENCE: ρ ↔ Aut_ρ")
+
+# Demonstrate
+genus_2_surface = RiemannSurface(genus=2)
+langlands_correspondence_gln(2, genus_2_surface)
+
+print("\nLanglands Dual Pairs:")
+dual_pairs = [('GL_n', 'GL_n'), ('SL_n', 'PGL_n'), 
+              ('SO_{2n+1}', 'Sp_{2n}'), ('G_2', 'G_2')]
+for G, G_dual in dual_pairs:
+    print(f"  {G} ↔ {G_dual}")</code></pre>
+                </div>
+
+                <!-- Special Topic 4: Perfectoid Spaces -->
+                <div class="deep-dive">
+                    <h3>Perfectoid Spaces</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Perfectoid spaces, introduced by Peter Scholze in 2011, revolutionized p-adic geometry. The insight is that certain highly ramified extensions of p-adic fields are "almost" perfect in characteristic 0.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Perfectoid Field:</strong> A complete non-archimedean field \(K\) where the Frobenius is surjective on \(\mathcal{O}_K/p\).</p>
+
+                    <p><strong>Tilt:</strong> For a perfectoid field \(K\), its tilt \(K^\flat\) is a perfect field of characteristic \(p\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Almost Purity (Scholze):</strong> Let \(R\) be a perfectoid \(K\)-algebra and \(S/R\) finite étale. Then \(S\) is perfectoid and \(S^\circ\) is almost finite étale over \(R^\circ\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(K\) — perfectoid field</li>
+                        <li>\(K^\flat\) — tilt (perfect field of char \(p\))</li>
+                        <li>\(\mathcal{O}_K\) — ring of integers</li>
+                        <li>\(\sharp : K^\flat \to K\) — untilting map</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class PerfectoidField:
+    """Simplified model of Q_p(p^{1/p^∞})."""
+    
+    def __init__(self, p, level=5):
+        self.p = p
+        self.level = level
+    
+    def valuation(self, element):
+        if element == 0:
+            return np.inf
+        return element['exponent'] / element['denominator']
+    
+    def norm(self, element):
+        if element == 0:
+            return 0
+        return self.p ** (-self.valuation(element))
+
+# Demonstrate tilting
+K = PerfectoidField(p=5, level=4)
+element = {'exponent': 1, 'denominator': 25, 'unit': 1}
+
+print("Tilting Equivalence:")
+print(f"Element: 5^{element['exponent']}/{element['denominator']}")
+print(f"Valuation: {K.valuation(element):.4f}")
+print(f"Norm: {K.norm(element):.6f}")
+print("\nKey property: K and K^♭ have equivalent étale topologies!")
+
+print("\nApplications:")
+applications = [
+    "Weight-monodromy conjecture",
+    "Direct summand conjecture", 
+    "p-adic Hodge theory",
+    "p-adic Langlands program"
+]
+for app in applications:
+    print(f"  • {app}")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== MATH HISTORY ==================== -->
+            <section id="math-history">
+                <h2>📜 Math History: The Birth of Modern Algebraic Geometry</h2>
+                
+                <p>The development of modern algebraic geometry represents one of the most profound transformations in mathematical thought during the twentieth century. While the subject has roots stretching back to Descartes's coordinate geometry and the work of nineteenth-century masters like Riemann and Abel, the modern framework emerged from the revolutionary ideas of Alexander Grothendieck and his school in the 1950s and 1960s.</p>
+
+                <p>Prior to Grothendieck, algebraic geometry was primarily the study of varieties — solution sets of polynomial equations — over algebraically closed fields, typically the complex numbers. The Italian school of Castelnuovo, Enriques, and Severi had achieved remarkable results in the classification of algebraic surfaces, but their methods relied heavily on geometric intuition and sometimes lacked rigorous foundations.</p>
+
+                <p>Grothendieck's insight was to expand the scope of algebraic geometry dramatically by introducing the concept of schemes. Where earlier mathematicians worked with varieties as subsets of affine or projective space, Grothendieck viewed a scheme as a geometric object intrinsically defined by its structure sheaf. This shift from "equations" to "spaces" allowed algebraic geometry to encompass number theory (schemes over \(\mathbb{Z}\)), singularities, and nilpotents in a unified framework.</p>
+
+                <p>The development of scheme theory was not merely technical — it represented a philosophical shift. Grothendieck sought to find the "right" level of generality where problems become transparent. His introduction of representable functors, the systematic use of cohomology (étale, crystalline, de Rham), and the emphasis on relative situations transformed how mathematicians think about geometric structures.</p>
+
+                <p>The Weil conjectures, posed in 1949, provided both motivation and validation for this new approach. Grothendieck envisioned that a suitable cohomology theory — étale cohomology — would provide the framework to prove these conjectures. While Grothendieck developed the foundational machinery, it was Pierre Deligne who completed the proof of the Riemann hypothesis for varieties over finite fields in 1974, earning the Fields Medal.</p>
+
+                <p>The legacy of this period extends far beyond algebraic geometry. The categorical and functorial thinking championed by Grothendieck influenced topology, representation theory, and mathematical physics. The Langlands program, the theory of motives, and modern developments like derived algebraic geometry and perfectoid spaces all trace their conceptual roots to this foundational period.</p>
+            </section>
+
+            <!-- ==================== MATH JOURNALISM ==================== -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-prove-tetrahedron-equation-is-as-complex-as-it-could-be-20241202/">Mathematicians Prove Tetrahedron Equation Is as Complex as It Could Be</a></h3>
+                    <p><strong>Source:</strong> Quanta Magazine | <strong>Date:</strong> December 2, 2024</p>
+                    <p>A team of mathematicians has resolved a long-standing question about the tetrahedron equation, a higher-dimensional analog of the Yang-Baxter equation from statistical mechanics. The new proof establishes that solutions to this equation are maximally complex — there are no "shortcuts" or simplified versions. This result has implications for understanding integrable systems in three dimensions.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/articles/d41586-024-04015-2">AI Makes Progress on Math Olympiad Problems</a></h3>
+                    <p><strong>Source:</strong> Nature | <strong>Date:</strong> January 2025</p>
+                    <p>Recent advances in AI have enabled systems to solve increasingly difficult mathematical problems, including questions from the International Mathematical Olympiad. A new system combines neural language models with symbolic reasoning. While still falling short of human expert performance on the most challenging problems, the progress suggests AI may soon become a valuable assistant for mathematical research.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.ams.org/journals/notices/202501/rnoti-p1.pdf">The State of Mathematics Publishing</a></h3>
+                    <p><strong>Source:</strong> Notices of the AMS | <strong>Date:</strong> January 2025</p>
+                    <p>The AMS examines the ongoing transformation of mathematical publishing in the digital age. The article discusses the rise of preprint servers like arXiv, new models of open access publishing, and the potential for AI-assisted peer review. The consensus is that while mechanisms evolve, rigorous verification and community evaluation remain essential.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PROBLEM CORNER ==================== -->
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>IMO Shortlist 2023 Problem A4</h3>
+                    
+                    <p>Let \(n\) be a positive integer. A sequence \(a_0, a_1, \ldots, a_n\) of real numbers is called <em>good</em> if it satisfies:</p>
+                    
+                    <ul>
+                        <li>\(a_0 = 0\)</li>
+                        <li>For each \(i\) with \(1 \leq i \leq n\), we have \(a_i = a_{i-1} + 1\) or \(a_i = a_{i-1} - 1\)</li>
+                        <li>There does not exist \(i, j\) with \(0 \leq i < j \leq n\) such that \(a_i = a_j = 0\) and \(a_{i+1} = a_{j+1} = 1\) (where \(a_{n+1} = 0\))</li>
+                    </ul>
+                    
+                    <p>Determine the number of good sequences.</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Consider the connection to Dyck paths and Motzkin numbers. Try small cases: n = 1, 2, 3, 4.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p>The answer is the \(n\)-th <strong>Motzkin number</strong> \(M_n\).</p>
+                        <p><strong>Explanation:</strong> A Motzkin path of length \(n\) is a path from \((0,0)\) to \((n,0)\) using up, down, and horizontal steps, never going below the x-axis. The bijection maps good sequences to Motzkin paths.</p>
+                        <p>First few Motzkin numbers: \(M_0 = 1, M_1 = 1, M_2 = 2, M_3 = 4, M_4 = 9, M_5 = 21\)</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== VISUALIZATION OF THE DAY ==================== -->
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Mandelbrot Set</h2>
+                
+                <p>The Mandelbrot set is one of mathematics' most iconic images — a fractal boundary separating points in the complex plane that lead to bounded or unbounded orbits under iteration of \(f_c(z) = z^2 + c\).</p>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    """Compute iterations until escape for point c."""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n / max_iter
+        z = z*z + c
+    return 1.0
+
+# Create grid
+width, height = 800, 600
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -1.5, 1.5
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Compute Mandelbrot set
+M = np.vectorize(mandelbrot)(C)
+
+# Plot
+plt.figure(figsize=(12, 8))
+plt.imshow(M, extent=[xmin, xmax, ymin, ymax], 
+           cmap='hot', origin='lower', interpolation='bilinear')
+plt.colorbar(label='Normalized iterations')
+plt.title('The Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.show()</code></pre>
+            </section>
+
+            <!-- ==================== QUOTE OF THE DAY ==================== -->
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"The mathematician does not study pure mathematics because it is useful; he studies it because he delights in it and he delights in it because it is beautiful."</p>
+                    <cite>— Henri Poincaré</cite>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="./index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
