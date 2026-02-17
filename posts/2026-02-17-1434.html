@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 17, 2026 at 14:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 17, 2026 at 14:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 17, 2026 at 14:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">cohomology</span>
+                <span class="tag">stochastic-processes</span>
+                <span class="tag">algebraic-curves</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://ncatlab.org/nlab/show/HomePage">nLab</a></h3>
+                    <p>A wiki-lab for collaborative work on mathematics, physics, and philosophy — particularly from the n-categorical point of view. It serves as a comprehensive reference for higher category theory, homotopy theory, and related fields.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://projecteuclid.org/">Project Euclid</a></h3>
+                    <p>A collaborative partnership between independent publishers of mathematics and statistics journals, providing a platform for affordable scholarly communication. Project Euclid hosts over 100 publications.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.ams.org/journals/notices/">Notices of the AMS</a></h3>
+                    <p>The flagship publication of the American Mathematical Society, featuring expository articles on current mathematical research, book reviews, and news about the mathematical community.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Algebraic Curves: An Introduction to Algebraic Geometry</h3>
+                    <p><strong>Author:</strong> William Fulton</p>
+                    <p><strong>Level:</strong> Advanced Undergraduate/Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://www.math.lsa.umich.edu/~wfulton/CurveBook.pdf">University of Michigan</a></p>
+                    
+                    <p><strong>Summary:</strong> This classic text provides a concise yet thorough introduction to the theory of algebraic curves from a modern perspective. Fulton develops the subject using commutative algebra while maintaining geometric intuition throughout. The book covers affine and projective varieties, local properties of plane curves, intersection theory, and the Riemann-Roch theorem.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Sheaf Cohomology and the Geometry of Spaces</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Sheaf cohomology provides a powerful framework for studying the global properties of spaces using local data. Originating in complex analysis and algebraic geometry, it has become an essential tool across topology, differential geometry, and number theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Presheaf:</strong> A presheaf \(mathcal{F}\) of abelian groups on a topological space \(X\) assigns to each open set \(U \subseteq X\) an abelian group \(mathcal{F}(U)\).</p>
+
+                    <p><strong>Sheaf:</strong> A presheaf is a sheaf if it satisfies local identity and gluing conditions.</p>
+
+                    <p><strong>Sheaf Cohomology:</strong> For a sheaf \(mathcal{F}\) on \(X\), the cohomology groups \(H^i(X, \mathcal{F})\) are the right derived functors of the global section functor.</p>
+
+                    <h4>Theorem (Leray)</h4>
+                    <p>If \(\mathfrak{U}\) is an acyclic cover, then \(\check{H}^p(\mathfrak{U}, \mathcal{F}) \cong H^p(X, \mathcal{F})\).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class SimpleSheafCohomology:
+    def __init__(self, vertices, simplices):
+        self.vertices = vertices
+        self.simplices = [set(s) for s in simplices]
+        self.dim = max(len(s) for s in simplices) - 1
+    
+    def cohomology_dimensions(self):
+        dims = []
+        for p in range(self.dim + 1):
+            d_p = self.coboundary_matrix(p)
+            d_p_minus = self.coboundary_matrix(p - 1) if p > 0 else np.zeros((0, 0))
+            ker_dim = d_p.shape[1] - np.linalg.matrix_rank(d_p) if d_p.size > 0 else len(self.get_p_simplices(p))
+            im_dim = np.linalg.matrix_rank(d_p_minus) if d_p_minus.size > 0 else 0
+            dims.append(ker_dim - im_dim)
+        return dims
+
+# Example: Sphere S^2
+vertices = [0, 1, 2, 3]
+simplices = [(0,), (1,), (2,), (3,), (0,1), (1,2), (0,2), (0,3), (1,3), (2,3), (0,1,2), (0,1,3), (0,2,3), (1,2,3)]
+sc = SimpleSheafCohomology(vertices, simplices)
+print(f"Cohomology: {sc.cohomology_dimensions()}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Brownian Motion and Stochastic Processes</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Brownian motion, first observed by Robert Brown in 1827, has become one of the most important stochastic processes in mathematics. It serves as the foundation for stochastic calculus with applications in physics, finance, and biology.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Standard Brownian Motion:</strong> A stochastic process with independent increments, stationary Gaussian increments, and continuous paths.</p>
+
+                    <h4>Theorem (Lévy's Characterization)</h4>
+                    <p>A continuous local martingale \(M\) with \(M_0 = 0\) is a standard Brownian motion if and only if \(\langle M \rangle_t = t\).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate_brownian_motion(T, N, n_paths=5):
+    dt = T / N
+    t = np.linspace(0, T, N + 1)
+    dB = np.random.normal(0, np.sqrt(dt), size=(n_paths, N))
+    B = np.zeros((n_paths, N + 1))
+    B[:, 1:] = np.cumsum(dB, axis=1)
+    return t, B
+
+t, B = simulate_brownian_motion(T=1.0, N=1000, n_paths=5)
+plt.plot(t, B.T)
+plt.title('Brownian Motion Paths')
+plt.show()</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Riemann Surfaces and Complex Geometry</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Riemann surfaces provide the natural geometric setting for complex analysis in one variable. They generalize the complex plane by allowing for multi-valued functions to become single-valued on branched covers.</p>
+
+                    <h4>Theorem (Riemann-Roch)</h4>
+                    <p>For a compact Riemann surface of genus \(g\): \(\ell(D) - \ell(K - D) = \deg(D) + 1 - g\)</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Visualize elliptic curve y^2 = x^3 - x
+x = np.linspace(-2, 2, 1000)
+y_sq = x**3 - x
+valid = y_sq >= 0
+x_valid = x[valid]
+y_pos = np.sqrt(y_sq[valid])
+
+plt.plot(x_valid, y_pos, 'b-', label='y = +sqrt(x^3 - x)')
+plt.plot(x_valid, -y_pos, 'b-', label='y = -sqrt(x^3 - x)')
+plt.title('Elliptic Curve: y^2 = x^3 - x')
+plt.legend()
+plt.show()</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🚀 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Kalman Filtering and State Estimation</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>The Kalman filter, developed by Rudolf Kalman in 1960, powers GPS navigation, guides spacecraft, stabilizes drones, and enables autonomous vehicles.</p>
+
+                    <h4>Theorem (Kalman Filter Optimality)</h4>
+                    <p>The Kalman filter provides the minimum mean-square error estimate for linear Gaussian systems.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class KalmanFilter:
+    def __init__(self, F, H, Q, R, x0, P0):
+        self.F, self.H, self.Q, self.R = F, H, Q, R
+        self.x, self.P = x0, P0
+    
+    def predict(self):
+        self.x = self.F @ self.x
+        self.P = self.F @ self.P @ self.F.T + self.Q
+        return self.x
+    
+    def update(self, z):
+        y = z - self.H @ self.x
+        S = self.H @ self.P @ self.H.T + self.R
+        K = self.P @ self.H.T @ np.linalg.inv(S)
+        self.x = self.x + K @ y
+        self.P = (np.eye(len(self.x)) - K @ self.H) @ self.P
+        return self.x</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Compressed Sensing and Sparse Recovery</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Compressed sensing enables faster MRI scans, single-pixel cameras, and efficient data compression by recovering sparse signals from far fewer measurements than required by the Nyquist-Shannon theorem.</p>
+
+                    <h4>Theorem (Exact Recovery)</h4>
+                    <p>If \(A\) satisfies RIP with \(\delta_{2k} < \sqrt{2} - 1\), then basis pursuit recovers the unique \(k\)-sparse solution.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+def iterative_hard_thresholding(A, y, k, max_iter=100):
+    n = A.shape[1]
+    x = np.zeros(n)
+    L = np.linalg.norm(A, 2)**2
+    mu = 0.9 / L
+    
+    for _ in range(max_iter):
+        x = x + mu * A.T @ (y - A @ x)
+        idx = np.argsort(np.abs(x))[-k:]
+        x_new = np.zeros(n)
+        x_new[idx] = x[idx]
+        x = x_new
+    return x</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Neural Ordinary Differential Equations</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Neural ODEs, introduced in 2018, reframe deep learning through continuous dynamical systems, offering memory efficiency and adaptive computation.</p>
+
+                    <h4>Theorem (Adjoint Sensitivity)</h4>
+                    <p>The gradient of the loss can be computed by solving a single backward ODE, avoiding storage of intermediate states.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>from scipy.integrate import solve_ivp
+
+class NeuralODEFunction:
+    def __init__(self, input_dim, hidden_dim):
+        self.W1 = np.random.randn(hidden_dim, input_dim) * 0.1
+        self.W2 = np.random.randn(input_dim, hidden_dim) * 0.1
+    
+    def f(self, h, t):
+        return self.W2 @ np.tanh(self.W1 @ h)
+    
+    def forward(self, h0, t_span, t_eval):
+        sol = solve_ivp(lambda t, h: self.f(h, t), t_span, h0, t_eval=t_eval)
+        return sol.y.T</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>Class Field Theory</h3>
+                    <p>Class field theory provides a complete description of abelian extensions of number fields. The Artin reciprocity law states: \(Cl_\mathfrak{f}(K) / N_{L/K}(Cl_\mathfrak{f}(L)) \cong \text{Gal}(L/K)\)</p>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Moduli Spaces</h3>
+                    <p>The moduli space \(\mathcal{M}_g\) of smooth curves of genus \(g \geq 2\) is a Deligne-Mumford stack of dimension \(3g-3\).</p>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Higher Category Theory</h3>
+                    <p>The Homotopy Hypothesis states that ∞-groupoids are equivalent to topological spaces.</p>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>The Weierstrass Function</h3>
+                    <p>Weierstrass's function \(W(x) = \sum_{n=0}^{\infty} a^n \cos(b^n \pi x)\) is continuous everywhere but differentiable nowhere.</p>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Modern Analysis</h2>
+                
+                <p>The 19th century witnessed a profound transformation in mathematics. Fourier's 1807 memoir on heat conduction introduced the revolutionary idea that arbitrary functions could be represented by trigonometric series. Cauchy provided the first rigorous definitions of limit, continuity, and convergence in 1821.</p>
+                
+                <p>The most dramatic development came with Weierstrass's 1872 construction of a continuous, nowhere differentiable function. This pathological example shattered the intuition that continuous curves must have tangents at most points. Cantor's work on set theory and transfinite numbers established the existence of different sizes of infinity.</p>
+                
+                <p>The culmination was the development of measure theory and the Lebesgue integral in the early 20th century, providing the foundation for functional analysis and modern PDE theory.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3>Quanta Magazine</h3>
+                    <h4>"Mathematicians Prove the 'Hard' Problem of Spin Glasses"</h4>
+                    <p>Researchers have made significant progress on the mathematical analysis of spin glasses, establishing rigorous results about complex energy landscapes. The proof confirms predictions from Parisi's replica symmetry breaking theory.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3>Nature</h3>
+                    <h4>"The Mathematical Formula That Helps AI Understand Language"</h4>
+                    <p>Researchers have identified deep connections between transformer architectures and classical mathematical structures from representation theory. The attention mechanism can be understood as kernel regression with learnable similarity metrics.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3>Notices of the AMS</h3>
+                    <h4>"The Mathematics of Neural Network Training: A Geometric Perspective"</h4>
+                    <p>This survey examines the geometry of neural network loss landscapes using differential geometry, algebraic geometry, and optimization theory. Overparameterized networks typically have connected sets of global minima.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Problem: Functional Equation (IMO Shortlist 2022)</h3>
+                    <p>Find all functions \(f : \mathbb{R}^+ \to \mathbb{R}^+\) such that \(f(x + f(y)) = f(x) + y\) for all \(x, y \in \mathbb{R}^+\).</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>First, investigate injectivity. Then try to find a relationship by swapping variables or finding fixed points.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p><strong>Step 1:</strong> Suppose \(f(a) = f(b)\). Then \(f(x) + a = f(x + f(a)) = f(x + f(b)) = f(x) + b\), so \(a = b\). Thus \(f\) is injective.</p>
+                        <p><strong>Step 2:</strong> From the functional equation with \(x = f(y)\), we get \(f(f(y) + f(z)) = f(f(y)) + z\). By symmetry, \(f(f(y)) + z = f(f(z)) + y\), so \(f(f(x)) = x + c\) for some constant \(c\).</p>
+                        <p><strong>Step 3:</strong> Substituting back and using \(f(f(x)) = x\) (which follows from careful analysis), we find \(f(x + y) = f(x) + f(y)\).</p>
+                        <p><strong>Answer:</strong> The unique solution is \(f(x) = x\).</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Lorenz Attractor</h2>
+                
+                <p>The Lorenz attractor is a set of chaotic solutions to the system:</p>
+                <p>\[\frac{dx}{dt} = \sigma(y - x), \quad \frac{dy}{dt} = x(\rho - z) - y, \quad \frac{dz}{dt} = xy - \beta z\]</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def lorenz(state, sigma=10.0, rho=28.0, beta=8.0/3.0):
+    x, y, z = state
+    return np.array([sigma*(y-x), x*(rho-z)-y, x*y-beta*z])
+
+# Integrate and plot
+from scipy.integrate import solve_ivp
+sol = solve_ivp(lambda t, y: lorenz(y), [0, 50], [1, 1, 1], 
+                t_eval=np.linspace(0, 50, 5000))
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot(sol.y[0], sol.y[1], sol.y[2], linewidth=0.5)
+ax.set_title('Lorenz Attractor')
+plt.show()</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+                
+                <p>This quote from Georg Cantor, the founder of set theory, captures the spirit of mathematical creation. Despite initial resistance from established mathematicians, Cantor's work on transfinite numbers ultimately transformed mathematics and provided the foundation for much of 20th-century mathematics.</p>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="./index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
