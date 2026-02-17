@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — Spectral Graph Theory, Information Theory & Algebraic Geometry">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 17, 2026 at 02:34</title>
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts/index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <p class="post-date">📅 2026-02-17 at 0234</p>
+            <div class="tags">
+                <a href="../tags/spectral-graph-theory.html" class="tag">spectral-graph-theory</a>
+                <a href="../tags/information-theory.html" class="tag">information-theory</a>
+                <a href="../tags/algebraic-geometry.html" class="tag">algebraic-geometry</a>
+                <a href="../tags/harmonic-analysis.html" class="tag">harmonic-analysis</a>
+                <a href="../tags/wavelets.html" class="tag">wavelets</a>
+            </div>
+
+            <section id="links">
+                <h2>🔗 Math Links</h2>
+                <ul>
+                    <li><a href="https://arxiv.org/list/math/recent" target="_blank" rel="noopener">arXiv Mathematics</a> — The premier preprint server for mathematics, physics, and computer science. Access cutting-edge research papers before they appear in journals, spanning all areas from pure mathematics to applied fields.</li>
+                    <li><a href="https://projecteuclid.org/" target="_blank" rel="noopener">Project Euclid</a> — A platform for independent and society journals in theoretical and applied mathematics and statistics. Provides access to high-quality peer-reviewed content from mathematical societies worldwide.</li>
+                    <li><a href="https://www.coursera.org/browse/data-science/probability-and-statistics" target="_blank" rel="noopener">Coursera Mathematics</a> — Online courses from top universities covering probability, statistics, linear algebra, and calculus. Excellent for structured learning with video lectures and assignments.</li>
+                </ul>
+            </section>
+
+            <section id="book">
+                <h2>📖 Free Math Book</h2>
+                <h3><a href="https://www.cs.yale.edu/homes/spielman/sagt/sagt.pdf" target="_blank" rel="noopener">Spectral and Algebraic Graph Theory</a></h3>
+                <p><strong>Author:</strong> Daniel A. Spielman (Yale University) | <strong>Level:</strong> Graduate</p>
+                <p>This comprehensive text explores the beautiful connections between graph theory and linear algebra. Spielman develops spectral graph theory from first principles, showing how eigenvalues of graph Laplacians reveal fundamental structural properties. The book covers random walks, expander graphs, graph partitioning, and the resolution of the Kadison-Singer problem. With applications to computer science, network analysis, and machine learning, this is an essential resource for understanding modern graph theory.</p>
+            </section>
+
+            <section id="pure-dives">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <h3>1. Spectral Graph Theory: Eigenvalues and Graph Structure</h3>
+                <h4>Motivation</h4>
+                <p>Spectral graph theory connects linear algebra with graph theory by studying the eigenvalues of matrices associated with graphs. These eigenvalues encode remarkable information about connectivity, expansion, random walks, and clustering. The field has profound applications in network analysis, machine learning, and theoretical computer science.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> For a graph \(G = (V, E)\) with \(n\) vertices, the <em>adjacency matrix</em> \(A\) is the \(n \times n\) matrix where \(A_{ij} = 1\) if \((i,j) \in E\) and \(A_{ij} = 0\) otherwise.</p>
+
+                <p><strong>Definition.</strong> The <em>degree matrix</em> \(D\) is the diagonal matrix where \(D_{ii} = \deg(i)\), the degree of vertex \(i\).</p>
+
+                <p><strong>Definition.</strong> The <em>combinatorial Laplacian</em> is \(L = D - A\). The <em>normalized Laplacian</em> is \(\mathcal{L} = D^{-1/2}LD^{-1/2}\) (for graphs with no isolated vertices).</p>
+
+                <p><strong>Definition.</strong> The <em>spectral gap</em> is \(\lambda_2\), the second smallest eigenvalue of \(L\) (the first being 0).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem (Cheeger's Inequality).</strong> For any graph \(G\), let \(\phi(G)\) denote the conductance (isoperimetric number) of \(G\). Then:
+                \[\frac{\lambda_2}{2} \leq \phi(G) \leq \sqrt{2\lambda_2}\]
+                where \(\lambda_2\) is the second smallest eigenvalue of the normalized Laplacian.</p>
+
+                <p><strong>Proof Sketch.</n                <br><strong>Lower bound (\(\lambda_2/2 \leq \phi(G)\)):</strong> For any set \(S\), let \(\mathbf{x}\) be the vector with \(x_i = 1/|S|\) for \(i \in S\) and \(x_i = -1/|V \setminus S|\) for \(i \notin S\). The Rayleigh quotient gives \(\lambda_2 \leq \frac{\mathbf{x}^T L \mathbf{x}}{\mathbf{x}^T \mathbf{x}}\). Computing this yields \(\lambda_2 \leq 2\phi(S)\), and optimizing over \(S\) gives the result.
+                <br><strong>Upper bound:</strong> Given an eigenvector \(\mathbf{v}\) for \(\lambda_2\), sweep through thresholds to find a cut with conductance at most \(\sqrt{2\lambda_2}\). This uses the Cauchy-Schwarz inequality to relate the quadratic form to edge boundaries. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(A\) — adjacency matrix</li>
+                    <li>\(D\) — degree matrix</li>
+                    <li>\(L = D - A\) — combinatorial Laplacian</li>
+                    <li>\(\mathcal{L} = D^{-1/2}LD^{-1/2}\) — normalized Laplacian</li>
+                    <li>\(0 = \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n\) — eigenvalues of \(L\)</li>
+                    <li>\(\phi(S) = \frac{|E(S, \bar{S})|}{\min(\text{vol}(S), \text{vol}(\bar{S}))}\) — conductance of set \(S\)</li>
+                    <li>\(\text{vol}(S) = \sum_{i \in S} \deg(i)\) — volume of vertex set</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import networkx as nx
+from scipy.sparse import csgraph
+from scipy.sparse.linalg import eigsh
+
+class SpectralGraphTheory:
+    """Demonstrate spectral graph theory concepts."""
+    
+    @staticmethod
+    def compute_laplacian_spectrum(G):
+        """Compute eigenvalues of the graph Laplacian."""
+        L = nx.laplacian_matrix(G).astype(float)
+        eigenvalues = np.linalg.eigvalsh(L.toarray())
+        return np.sort(eigenvalues)
+    
+    @staticmethod
+    def spectral_gap(G):
+        """Compute the spectral gap (algebraic connectivity)."""
+        eigenvalues = SpectralGraphTheory.compute_laplacian_spectrum(G)
+        return eigenvalues[1] if len(eigenvalues) > 1 else 0
+    
+    @staticmethod
+    def cheeger_lower_bound(G):
+        """Lower bound on conductance from Cheeger's inequality."""
+        lambda_2 = SpectralGraphTheory.spectral_gap(G)
+        return lambda_2 / 2
+    
+    @staticmethod
+    def spectral_clustering(G, k=2):
+        """Perform spectral clustering using first k eigenvectors."""
+        L = nx.normalized_laplacian_matrix(G).astype(float)
+        # Compute first k eigenvectors (smallest eigenvalues)
+        eigenvalues, eigenvectors = eigsh(L, k=k, which='SM')
+        # Use k-means on the eigenvector embeddings
+        from sklearn.cluster import KMeans
+        kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)
+        labels = kmeans.fit_predict(eigenvectors)
+        return labels, eigenvalues, eigenvectors
+    
+    @staticmethod
+    def random_walk_convergence(G, steps=50):
+        """Demonstrate convergence of random walk to stationary distribution."""
+        n = G.number_of_nodes()
+        # Transition matrix
+        A = nx.adjacency_matrix(G).toarray().astype(float)
+        D_inv = np.diag(1.0 / A.sum(axis=1))
+        P = D_inv @ A  # Random walk transition matrix
+        
+        # Start distribution (concentrated at node 0)
+        dist = np.zeros(n)
+        dist[0] = 1.0
+        
+        # Stationary distribution
+        degrees = np.array([G.degree(i) for i in range(n)])
+        stationary = degrees / degrees.sum()
+        
+        distances = []
+        for _ in range(steps):
+            dist = P.T @ dist
+            # Total variation distance
+            tv_dist = 0.5 * np.sum(np.abs(dist - stationary))
+            distances.append(tv_dist)
+        
+        return distances, stationary
+
+# Example: Cycle graph
+print("=" * 60)
+print("SPECTRAL GRAPH THEORY DEMONSTRATIONS")
+print("=" * 60)
+
+n = 10
+G = nx.cycle_graph(n)
+print(f"\nCycle graph C_{n}")
+eigenvalues = SpectralGraphTheory.compute_laplacian_spectrum(G)
+print(f"Laplacian eigenvalues: {eigenvalues}")
+print(f"Spectral gap λ₂: {eigenvalues[1]:.6f}")
+print(f"Cheeger lower bound: {SpectralGraphTheory.cheeger_lower_bound(G):.6f}")
+
+# Expanders have large spectral gap
+print("\n" + "=" * 60)
+print("Comparison: Cycle vs Random Regular Graph")
+print("=" * 60)
+
+# Random 3-regular graph (better expander)
+G_random = nx.random_regular_graph(3, n)
+eig_random = SpectralGraphTheory.compute_laplacian_spectrum(G_random)
+print(f"Cycle spectral gap: {eigenvalues[1]:.6f}")
+print(f"Random 3-regular spectral gap: {eig_random[1]:.6f}")
+print("Larger spectral gap = better expansion properties")
+</code></pre>
+
+                <h3>2. Harmonic Analysis: Fourier Series and Function Decomposition</h3>
+                <h4>Motivation</h4>
+                <p>Harmonic analysis studies the decomposition of functions into fundamental oscillatory components. Originating from Fourier's study of heat conduction, it has become essential for signal processing, partial differential equations, number theory, and quantum mechanics. The theory reveals deep connections between time and frequency domains.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> For a function \(f \in L^1([0, 2\pi])\), the <em>Fourier coefficients</em> are:
+                \[\hat{f}(n) = \frac{1}{2\pi} \int_0^{2\pi} f(x) e^{-inx} dx, \quad n \in \mathbb{Z}\]</p>
+
+                <p><strong>Definition.</strong> The <em>Fourier series</em> of \(f\) is:
+                \[S_N f(x) = \sum_{n=-N}^{N} \hat{f}(n) e^{inx}\]</p>
+
+                <p><strong>Definition.</strong> The <em>Dirichlet kernel</em> is:
+                \[D_N(x) = \sum_{n=-N}^{N} e^{inx} = \frac{\sin((N + \frac{1}{2})x)}{\sin(x/2)}\]</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem (Plancherel's Theorem).</strong> If \(f \in L^2([0, 2\pi])\), then:
+                \[\|f\|_{L^2}^2 = \sum_{n=-\infty}^{\infty} |\hat{f}(n)|^2\]
+                Moreover, the Fourier transform is an isometric isomorphism from \(L^2([0, 2\pi])\) to \(\ell^2(\mathbb{Z})\).</p>
+
+                <p><strong>Proof Sketch.</strong> First verify for trigonometric polynomials (finite Fourier series). The set \(\{e^{inx}/\sqrt{2\pi}\}_{n \in \mathbb{Z}}\) forms an orthonormal set. By the Stone-Weierstrass theorem, trigonometric polynomials are dense in \(C([0, 2\pi])\), hence in \(L^2\). For any \(f \in L^2\), approximate by trigonometric polynomials \(P_N\). The Parseval identity holds for each \(P_N\), and taking limits gives the result. The completeness follows from the density of trigonometric polynomials. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\hat{f}(n)\) — n-th Fourier coefficient</li>
+                    <li>\(S_N f\) — N-th partial sum of Fourier series</li>
+                    <li>\(D_N\) — Dirichlet kernel</li>
+                    <li>\(L^p([0, 2\pi])\) — space of p-integrable functions</li>
+                    <li>\(\|f\|_{L^2}^2 = \frac{1}{2\pi}\int_0^{2\pi} |f(x)|^2 dx\) — L² norm</li>
+                    <li>\(\ell^2(\mathbb{Z})\) — square-summable sequences</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import integrate
+
+class HarmonicAnalysis:
+    """Demonstrate harmonic analysis concepts."""
+    
+    @staticmethod
+    def fourier_coefficient(f, n, num_points=10000):
+        """Compute n-th Fourier coefficient numerically."""
+        x = np.linspace(0, 2*np.pi, num_points, endpoint=False)
+        fx = f(x)
+        integrand = fx * np.exp(-1j * n * x)
+        return np.mean(integrand)
+    
+    @staticmethod
+    def fourier_series(f, N, x, num_points=10000):
+        """Compute N-term Fourier series approximation."""
+        result = np.zeros_like(x, dtype=complex)
+        for n in range(-N, N+1):
+            cn = HarmonicAnalysis.fourier_coefficient(f, n, num_points)
+            result += cn * np.exp(1j * n * x)
+        return np.real(result)
+    
+    @staticmethod
+    def dirichlet_kernel(N, x):
+        """Compute Dirichlet kernel D_N(x)."""
+        # Handle x=0 case
+        result = np.zeros_like(x)
+        nonzero = np.abs(x) > 1e-10
+        result[nonzero] = np.sin((N + 0.5) * x[nonzero]) / np.sin(x[nonzero] / 2)
+        result[~nonzero] = 2 * N + 1
+        return result
+    
+    @staticmethod
+    def plancherel_check(f, max_n=50):
+        """Verify Plancherel's theorem numerically."""
+        # Compute L2 norm
+        x = np.linspace(0, 2*np.pi, 10000, endpoint=False)
+        fx = f(x)
+        l2_norm_squared = np.mean(np.abs(fx)**2)
+        
+        # Compute sum of |coefficients|^2
+        coeff_sum = 0
+        for n in range(-max_n, max_n+1):
+            cn = HarmonicAnalysis.fourier_coefficient(f, n)
+            coeff_sum += np.abs(cn)**2
+        
+        return l2_norm_squared, coeff_sum
+    
+    @staticmethod
+    def gibbs_phenomenon_demo():
+        """Demonstrate Gibbs phenomenon at discontinuity."""
+        # Square wave: f(x) = 1 for x in [0, pi), -1 for x in [pi, 2pi)
+        f = lambda x: np.where((x % (2*np.pi)) < np.pi, 1, -1)
+        
+        x = np.linspace(0, 2*np.pi, 1000)
+        
+        print("Gibbs Phenomenon Demonstration")
+        print("=" * 50)
+        for N in [5, 10, 20, 50]:
+            approx = HarmonicAnalysis.fourier_series(f, N, x)
+            # Find overshoot near discontinuity
+            idx = np.argmin(np.abs(x - np.pi))
+            overshoot = np.max(approx[idx-10:idx+10]) - 1
+            print(f"N={N:3d}: Max overshoot ≈ {overshoot:.4f}")
+        print("\nGibbs constant: ≈ 0.0895 (about 9% overshoot)")
+
+# Demonstrations
+print("=" * 60)
+print("HARMONIC ANALYSIS DEMONSTRATIONS")
+print("=" * 60)
+
+# Plancherel verification
+f = lambda x: np.sin(x) + 0.5*np.cos(3*x)
+l2, coeff = HarmonicAnalysis.plancherel_check(f)
+print(f"\nPlancherel Verification:")
+print(f"‖f‖² (L² norm squared): {l2:.6f}")
+print(f"Σ|ĉ(n)|² (sum of |coefficients|²): {coeff:.6f}")
+print(f"Difference: {abs(l2 - coeff):.2e}")
+
+# Gibbs phenomenon
+print()
+HarmonicAnalysis.gibbs_phenomenon_demo()
+</code></pre>
+
+                <h3>3. Algebraic Geometry: Affine Varieties and the Nullstellensatz</h3>
+                <h4>Motivation</h4>
+                <p>Algebraic geometry studies the geometry of solutions to polynomial equations. It connects algebra (rings and ideals) with geometry (varieties and manifolds), providing powerful tools for understanding both. The subject ranges from classical studies of curves and surfaces to modern scheme theory and its applications in string theory, cryptography, and optimization.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> Let \(k\) be an algebraically closed field. An <em>affine algebraic set</em> is a subset of \(k^n\) of the form:
+                \[V(S) = \{x \in k^n : f(x) = 0 \text{ for all } f \in S\}\]
+        where \(S \subseteq k[x_1, \ldots, x_n]\) is a set of polynomials.</p>
+
+                <p><strong>Definition.</strong> An affine algebraic set is an <em>affine variety</em> if it is irreducible (cannot be written as the union of two proper algebraic subsets).</p>
+
+                <p><strong>Definition.</strong> For a subset \(X \subseteq k^n\), the <em>ideal of X</em> is:
+                \[I(X) = \{f \in k[x_1, \ldots, x_n] : f(x) = 0 \text{ for all } x \in X\}\]</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem (Hilbert's Nullstellensatz).</strong> Let \(k\) be an algebraically closed field and \(I\) an ideal in \(k[x_1, \ldots, x_n]\). Then:
+                \[I(V(I)) = \sqrt{I}\]
+        where \(\sqrt{I} = \{f : f^m \in I \text{ for some } m \geq 1\}\) is the radical of \(I\).</p>
+
+                <p><strong>Proof Sketch.</strong> The proof uses Noether normalization and the weak Nullstellensatz (which states that maximal ideals correspond to points).
+                <br>1. First prove the weak form: if \(I\) is a proper ideal, then \(V(I) \neq \emptyset\). This uses that \(k\) is algebraically closed.
+                <br>2. For the strong form, introduce a new variable \(y\) and consider \(J = I + (1 - yf) \subseteq k[x_1, \ldots, x_n, y]\).
+                <br>3. If \(f\) vanishes on \(V(I)\), then \(V(J) = \emptyset\), so by the weak form, \(1 \in J\).
+                <br>4. Substituting \(y = 1/f\) and clearing denominators shows \(f^m \in I\) for some \(m\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(k[x_1, \ldots, x_n]\) — polynomial ring in n variables over field k</li>
+                    <li>\(V(S)\) — algebraic set (zero locus of S)</li>
+                    <li>\(I(X)\) — ideal of polynomials vanishing on X</li>
+                    <li>\(\sqrt{I}\) — radical of ideal I</li>
+                    <li>\(k^n\) — affine n-space over k</li>
+                    <li>\(\mathbb{A}^n\) — affine n-space (scheme-theoretic notation)</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import sympy as sp
+from sympy import symbols, groebner, solve, sqrt as sym_sqrt
+import numpy as np
+import matplotlib.pyplot as plt
+
+class AlgebraicGeometry:
+    """Demonstrate algebraic geometry concepts."""
+    
+    @staticmethod
+    def variety_intersection(polynomials):
+        """Find intersection of varieties numerically."""
+        # Get all symbols
+        symbols_list = list(set().union(*[p.free_symbols for p in polynomials]))
+        if len(symbols_list) == 0:
+            return []
+        
+        # Solve the system
+        solutions = solve(polynomials, symbols_list, dict=True)
+        return solutions
+    
+    @staticmethod
+    def is_on_variety(point, polynomials):
+        """Check if a point lies on a variety."""
+        for p in polynomials:
+            # Substitute point into polynomial
+            subs = {list(point.keys())[i]: list(point.values())[i] 
+                   for i in range(len(point))}
+            if abs(float(p.subs(subs))) > 1e-10:
+                return False
+        return True
+    
+    @staticmethod
+    def plot_algebraic_curve(polynomial, x_range=(-3, 3), y_range=(-3, 3), 
+                             resolution=400):
+        """Plot an algebraic curve f(x,y) = 0."""
+        x, y = symbols('x y')
+        
+        # Create grid
+        x_vals = np.linspace(x_range[0], x_range[1], resolution)
+        y_vals = np.linspace(y_range[0], y_range[1], resolution)
+        X, Y = np.meshgrid(x_vals, y_vals)
+        
+        # Evaluate polynomial
+        f = sp.lambdify((x, y), polynomial, 'numpy')
+        Z = f(X, Y)
+        
+        # Plot contour at zero
+        plt.figure(figsize=(8, 8))
+        plt.contour(X, Y, Z, levels=[0], colors='blue', linewidths=2)
+        plt.axhline(y=0, color='k', linewidth=0.5)
+        plt.axvline(x=0, color='k', linewidth=0.5)
+        plt.grid(True, alpha=0.3)
+        plt.xlabel('x')
+        plt.ylabel('y')
+        plt.title(f'Algebraic Curve: ${sp.latex(polynomial)} = 0$')
+        plt.axis('equal')
+        return plt
+    
+    @staticmethod
+    def radical_membership(f, generators):
+        """Check if f is in the radical of ideal (generators) using Rabinowitsch trick."""
+        # Add new variable t
+        t = symbols('t')
+        all_vars = list(f.free_symbols) + [t]
+        
+        # Form the ideal J = (generators, 1 - t*f)
+        extended_gens = list(generators) + [1 - t*f]
+        
+        # Compute Groebner basis
+        G = groebner(extended_gens, *all_vars)
+        
+        # Check if 1 is in the ideal
+        return G.contains(1)
+
+# Demonstrations
+print("=" * 60)
+print("ALGEBRAIC GEOMETRY DEMONSTRATIONS")
+print("=" * 60)
+
+x, y, z = symbols('x y z')
+
+# Example 1: Circle and line intersection
+print("\n1. Intersection of circle x² + y² = 1 and line y = x")
+circle = x**2 + y**2 - 1
+line = y - x
+solutions = AlgebraicGeometry.variety_intersection([circle, line])
+print(f"Solutions: {solutions}")
+
+# Example 2: Check radical membership
+print("\n2. Radical membership test:")
+f = x**2 - y**2  # This is in radical of (x - y) since f = (x-y)(x+y)
+gens = [x - y]
+in_radical = AlgebraicGeometry.radical_membership(f, gens)
+print(f"Is x² - y² in √⟨x - y⟩? {in_radical}")
+
+# Example 3: Elliptic curve
+print("\n3. Elliptic curve: y² = x³ - x + 1")
+elliptic = y**2 - (x**3 - x + 1)
+print("This is a non-singular cubic curve (genus 1)")
+</code></pre>
+            </section>
+
+            <section id="applied-dives">
+                <h2>🌍 Applied Math Deep-Dives</h2>
+
+                <h3>1. Information Theory: Entropy and Channel Capacity</h3>
+                <h4>Real-World Motivation</h4>
+                <p>Information theory, founded by Claude Shannon in 1948, provides the mathematical foundation for digital communication. It quantifies information, establishes fundamental limits on data compression, and determines the maximum rate at which information can be reliably transmitted over noisy channels. Every text message, video stream, and WiFi connection relies on these principles.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <em>entropy</em> of a discrete random variable \(X\) with probability mass function \(p(x)\) is:
+                \[H(X) = -\sum_{x} p(x) \log_2 p(x)\]
+        measured in bits. Entropy measures the average uncertainty or information content.</p>
+
+                <p><strong>Definition.</strong> The <em>conditional entropy</em> is:
+                \[H(Y|X) = -\sum_{x,y} p(x,y) \log_2 p(y|x)\]</p>
+
+                <p><strong>Definition.</strong> The <em>mutual information</em> between \(X\) and \(Y\) is:
+                \[I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X)\]</p>
+
+                <p><strong>Definition.</strong> The <em>channel capacity</em> of a discrete memoryless channel is:
+                \[C = \max_{p(x)} I(X;Y)\]</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem (Shannon's Channel Coding Theorem).</strong> For a discrete memoryless channel with capacity \(C\), any rate \(R < C\) is achievable: for any \(\epsilon > 0\) and sufficiently large \(n\), there exists a code of length \(n\) with rate \(R\) such that the probability of decoding error is less than \(\epsilon\). Conversely, if \(R > C\), the error probability is bounded away from zero.</p>
+
+                <p><strong>Proof Sketch (Achievability).</strong> 
+                <br>1. Use random coding: generate \(2^{nR}\) codewords independently according to \(p(x)\).
+                <br>2. Decoder uses joint typicality: decode to \(\hat{m}\) if \((X^n(\hat{m}), Y^n)\) is jointly typical.
+                <br>3. Error occurs if true codeword is not typical with received sequence, or if another codeword is.
+                <br>4. By the asymptotic equipartition property, \(P(\text{error}) \to 0\) as \(n \to \infty\) when \(R < C\).
+                <br>5. The converse uses Fano's inequality to show that reliable communication requires \(R \leq C\). ∎</p>
+
+                <h4>Notation</h4>
+                <ul>
+                    <li>\(H(X)\) — entropy (in bits)</li>
+                    <li>\(H(X|Y)\) — conditional entropy</li>
+                    <li>\(I(X;Y)\) — mutual information</li>
+                    <li>\(D(p \| q)\) — Kullback-Leibler divergence</li>
+                    <li>\(C\) — channel capacity</li>
+                    <li>\(p(y|x)\) — channel transition probability</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+from scipy.stats import entropy as scipy_entropy
+import matplotlib.pyplot as plt
+
+class InformationTheory:
+    """Demonstrate information theory concepts."""
+    
+    @staticmethod
+    def entropy(p):
+        """Calculate Shannon entropy H(X) in bits."""
+        p = np.array(p)
+        p = p[p > 0]  # Remove zeros
+        return -np.sum(p * np.log2(p))
+    
+    @staticmethod
+    def joint_entropy(p_xy):
+        """Calculate joint entropy H(X,Y)."""
+        p_xy = np.array(p_xy)
+        p_xy = p_xy[p_xy > 0]
+        return -np.sum(p_xy * np.log2(p_xy))
+    
+    @staticmethod
+    def conditional_entropy(p_xy, p_x):
+        """Calculate conditional entropy H(Y|X)."""
+        p_xy = np.array(p_xy)
+        p_x = np.array(p_x)
+        # H(Y|X) = H(X,Y) - H(X)
+        return InformationTheory.joint_entropy(p_xy.flatten()) - InformationTheory.entropy(p_x)
+    
+    @staticmethod
+    def mutual_information(p_xy):
+        """Calculate mutual information I(X;Y)."""
+        p_xy = np.array(p_xy)
+        p_x = np.sum(p_xy, axis=1)
+        p_y = np.sum(p_xy, axis=0)
+        
+        mi = 0
+        for i in range(len(p_x)):
+            for j in range(len(p_y)):
+                if p_xy[i,j] > 0:
+                    mi += p_xy[i,j] * np.log2(p_xy[i,j] / (p_x[i] * p_y[j]))
+        return mi
+    
+    @staticmethod
+    def binary_entropy(p):
+        """Entropy of Bernoulli(p) random variable."""
+        if p == 0 or p == 1:
+            return 0
+        return -(p * np.log2(p) + (1-p) * np.log2(1-p))
+    
+    @staticmethod
+    def binary_symmetric_channel_capacity(epsilon):
+        """Capacity of BSC with crossover probability epsilon."""
+        # C = 1 - H(epsilon)
+        return 1 - InformationTheory.binary_entropy(epsilon)
+    
+    @staticmethod
+    def huffman_code(probabilities):
+        """Generate Huffman code (greedy algorithm)."""
+        # Simple implementation for demonstration
+        probs = [(p, [i]) for i, p in enumerate(probabilities)]
+        probs.sort(key=lambda x: x[0])
+        
+        codes = {i: '' for i in range(len(probabilities))}
+        
+        while len(probs) > 1:
+            p1, indices1 = probs.pop(0)
+            p2, indices2 = probs.pop(0)
+            
+            for i in indices1:
+                codes[i] = '0' + codes[i]
+            for i in indices2:
+                codes[i] = '1' + codes[i]
+            
+            new_entry = (p1 + p2, indices1 + indices2)
+            probs.append(new_entry)
+            probs.sort(key=lambda x: x[0])
+        
+        return codes
+    
+    @staticmethod
+    def shannon_fano_code(probabilities):
+        """Generate Shannon-Fano code."""
+        n = len(probabilities)
+        indices = np.argsort(probabilities)[::-1]
+        codes = ['' for _ in range(n)]
+        
+        def split(indices_list):
+            if len(indices_list) <= 1:
+                return
+            
+            # Find best split
+            total = sum(probabilities[i] for i in indices_list)
+            best_split = 0
+            best_diff = total
+            cumsum = 0
+            
+            for i, idx in enumerate(indices_list[:-1]):
+                cumsum += probabilities[idx]
+                diff = abs(2*cumsum - total)
+                if diff < best_diff:
+                    best_diff = diff
+                    best_split = i + 1
+            
+            left = indices_list[:best_split]
+            right = indices_list[best_split:]
+            
+            for i in left:
+                codes[i] += '0'
+            for i in right:
+                codes[i] += '1'
+            
+            split(left)
+            split(right)
+        
+        split(list(indices))
+        return {i: codes[i] for i in range(n)}
+
+# Demonstrations
+print("=" * 60)
+print("INFORMATION THEORY DEMONSTRATIONS")
+print("=" * 60)
+
+# Binary entropy
+print("\n1. Binary Entropy Function H(p)")
+p_vals = np.linspace(0.01, 0.99, 100)
+entropies = [InformationTheory.binary_entropy(p) for p in p_vals]
+print(f"Maximum entropy: {max(entropies):.4f} bits at p = 0.5")
+
+# BSC Capacity
+print("\n2. Binary Symmetric Channel Capacity")
+for eps in [0, 0.1, 0.25, 0.5]:
+    cap = InformationTheory.binary_symmetric_channel_capacity(eps)
+    print(f"  ε = {eps:.2f}: C = {cap:.4f} bits/channel use")
+
+# Huffman coding example
+print("\n3. Huffman Coding Example")
+probs = [0.4, 0.2, 0.15, 0.15, 0.1]
+huffman = InformationTheory.huffman_code(probs)
+print(f"Probabilities: {probs}")
+print("Huffman codes:")
+for i, code in huffman.items():
+    print(f"  Symbol {i}: {code} (length {len(code)})")
+
+# Calculate expected code length
+expected_length = sum(probs[i] * len(huffman[i]) for i in range(len(probs)))
+print(f"Expected code length: {expected_length:.4f}")
+print(f"Entropy: {InformationTheory.entropy(probs):.4f}")
+print(f"Redundancy: {expected_length - InformationTheory.entropy(probs):.4f}")
+</code></pre>
+
+                <h3>2. Wavelet Analysis: Multi-Resolution Signal Processing</h3>
+                <h4>Real-World Motivation</h4>
+                <p>Wavelets provide a powerful framework for analyzing signals at multiple scales simultaneously. Unlike Fourier analysis, which only captures frequency information, wavelets capture both time and frequency localization. This makes them essential for image compression (JPEG 2000), denoising, edge detection, and analyzing transient phenomena in signals.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>wavelet</em> is a function \(\psi \in L^2(\mathbb{R})\) such that the family:
+                \[\psi_{j,k}(x) = 2^{j/2} \psi(2^j x - k), \quad j, k \in \mathbb{Z}\]
+        forms an orthonormal basis of \(L^2(\mathbb{R})\).</p>
+
+                <p><strong>Definition.</strong> The <em>scaling function</em> \(\phi\) satisfies the <em>refinement equation</em>:
+                \[\phi(x) = \sum_{k} h_k \phi(2x - k)\]
+        where \(\{h_k\}\) are the scaling coefficients.</p>
+
+                <p><strong>Definition.</strong> The <em>discrete wavelet transform</em> (DWT) computes coefficients:
+                \[c_{j,k} = \langle f, \psi_{j,k} \rangle = \int_{-\infty}^{\infty} f(x) \overline{\psi_{j,k}(x)} dx\]</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem (Mallat's Multi-Resolution Analysis).</strong> Let \(\{V_j\}_{j \in \mathbb{Z}}\) be a sequence of closed subspaces of \(L^2(\mathbb{R})\) satisfying:
+                <br>(i) \(V_j \subseteq V_{j+1}\) (nesting)
+                <br>(ii) \(\overline{\bigcup_j V_j} = L^2(\mathbb{R})\) (density)
+                <br>(iii) \(\bigcap_j V_j = \{0\}\) (separation)
+                <br>(iv) \(f(x) \in V_j \Leftrightarrow f(2x) \in V_{j+1}\) (scaling)
+                <br>(v) There exists \(\phi\) such that \(\{\phi(x-k)\}_{k \in \mathbb{Z}}\) is an orthonormal basis of \(V_0\).</p>
+
+                <p>Then there exists a wavelet \(\psi\) such that \(\{\psi_{j,k}\}_{j,k \in \mathbb{Z}}\) is an orthonormal basis of \(L^2(\mathbb{R})\).</p>
+
+                <p><strong>Proof Sketch.</strong> Define \(W_j\) as the orthogonal complement of \(V_j\) in \(V_{j+1}\), so \(V_{j+1} = V_j \oplus W_j\). The scaling property implies all \(W_j\) are scaled versions of \(W_0\). Construct \(\psi\) from the scaling function using the wavelet equation \(\psi(x) = \sum_k g_k \phi(2x-k)\) where \(g_k = (-1)^k h_{1-k}\). Verify orthonormality and completeness. ∎</p>
+
+                <h4>Notation</h4>
+                <ul>
+                    <li>\(\psi\) — mother wavelet</li>
+                    <li>\(\phi\) — scaling function (father wavelet)</li>
+                    <li>\(\psi_{j,k}\) — wavelet at scale j and position k</li>
+                    <li>\(V_j\) — approximation space at resolution j</li>
+                    <li>\(W_j\) — detail space at resolution j</li>
+                    <li>\(h_k, g_k\) — scaling and wavelet coefficients</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import pywt
+import matplotlib.pyplot as plt
+from scipy import signal
+
+class WaveletAnalysis:
+    """Demonstrate wavelet analysis concepts."""
+    
+    @staticmethod
+    def haar_wavelet(x):
+        """Haar wavelet (simplest wavelet)."""
+        result = np.zeros_like(x)
+        result[(x >= 0) & (x < 0.5)] = 1
+        result[(x >= 0.5) & (x < 1)] = -1
+        return result
+    
+    @staticmethod
+    def haar_scaling(x):
+        """Haar scaling function."""
+        result = np.zeros_like(x)
+        result[(x >= 0) & (x < 1)] = 1
+        return result
+    
+    @staticmethod
+    def discrete_wavelet_transform(signal, wavelet='haar', level=None):
+        """Perform multi-level discrete wavelet transform."""
+        coeffs = pywt.wavedec(signal, wavelet, level=level)
+        return coeffs
+    
+    @staticmethod
+    def inverse_dwt(coeffs, wavelet='haar'):
+        """Reconstruct signal from wavelet coefficients."""
+        return pywt.waverec(coeffs, wavelet)
+    
+    @staticmethod
+    def denoise_signal(signal, wavelet='db4', threshold_factor=0.5):
+        """Denoise using wavelet thresholding."""
+        # Decompose
+        coeffs = pywt.wavedec(signal, wavelet, level=4)
+        
+        # Threshold detail coefficients
+        threshold = threshold_factor * np.std(coeffs[-1])
+        new_coeffs = [coeffs[0]]  # Keep approximation
+        for detail in coeffs[1:]:
+            # Soft thresholding
+            new_detail = np.sign(detail) * np.maximum(np.abs(detail) - threshold, 0)
+            new_coeffs.append(new_detail)
+        
+        # Reconstruct
+        return pywt.waverec(new_coeffs, wavelet)
+    
+    @staticmethod
+    def continuous_wavelet_transform(signal, scales, wavelet='cmor'):
+        """Compute continuous wavelet transform."""
+        coef, freqs = pywt.cwt(signal, scales, wavelet)
+        return coef, freqs
+    
+    @staticmethod
+    def compression_ratio(coeffs, threshold=0.01):
+        """Calculate compression statistics."""
+        total = sum(len(c) for c in coeffs)
+        significant = sum(np.sum(np.abs(c) > threshold) for c in coeffs)
+        return total, significant, total / max(significant, 1)
+
+# Demonstrations
+print("=" * 60)
+print("WAVELET ANALYSIS DEMONSTRATIONS")
+print("=" * 60)
+
+# Generate test signal: chirp with noise
+t = np.linspace(0, 1, 1024)
+chirp = signal.chirp(t, f0=10, f1=100, t1=1, method='linear')
+noise = 0.3 * np.random.randn(len(t))
+noisy_signal = chirp + noise
+
+print("\n1. Discrete Wavelet Transform of Chirp Signal")
+coeffs = WaveletAnalysis.discrete_wavelet_transform(noisy_signal, wavelet='db4', level=5)
+print(f"Number of decomposition levels: {len(coeffs) - 1}")
+print(f"Approximation coefficients: {len(coeffs[0])}")
+for i, detail in enumerate(coeffs[1:], 1):
+    print(f"  Detail level {i}: {len(detail)} coefficients")
+
+# Reconstruction
+reconstructed = WaveletAnalysis.inverse_dwt(coeffs, wavelet='db4')
+mse = np.mean((noisy_signal - reconstructed[:len(noisy_signal)])**2)
+print(f"\nReconstruction MSE: {mse:.2e}")
+
+# Denoising
+print("\n2. Wavelet Denoising")
+denoised = WaveletAnalysis.denoise_signal(noisy_signal, threshold_factor=0.3)
+snr_before = 10 * np.log10(np.sum(chirp**2) / np.sum(noise**2))
+noise_after = denoised[:len(chirp)] - chirp
+snr_after = 10 * np.log10(np.sum(chirp**2) / np.sum(noise_after**2))
+print(f"SNR before denoising: {snr_before:.2f} dB")
+print(f"SNR after denoising: {snr_after:.2f} dB")
+
+# Compression
+print("\n3. Wavelet Compression")
+total, sig, ratio = WaveletAnalysis.compression_ratio(coeffs, threshold=0.05)
+print(f"Total coefficients: {total}")
+print(f"Significant coefficients: {sig}")
+print(f"Compression ratio: {ratio:.2f}:1")
+</code></pre>
+
+                <h3>3. Optimal Control: The Calculus of Variations in Action</h3>
+                <h4>Real-World Motivation</h4>
+                <p>Optimal control theory addresses the problem of finding control strategies that minimize cost while achieving desired objectives. From spacecraft trajectories to economic policy, from robotic motion planning to drug dosing regimens, optimal control provides the mathematical framework for making optimal decisions over time.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> An <em>optimal control problem</em> consists of:
+                <br>• State dynamics: \(\dot{x}(t) = f(x(t), u(t), t)\)
+                <br>• Control constraints: \(u(t) \in U\)
+                <br>• Cost functional: \(J = \phi(x(t_f), t_f) + \int_{t_0}^{t_f} L(x(t), u(t), t) dt\)</p>
+
+                <p><strong>Definition.</strong> The <em>Hamiltonian</em> is:
+                \[H(x, u, p, t) = L(x, u, t) + p^T f(x, u, t)\]
+        where \(p(t)\) is the costate (adjoint) variable.</p>
+
+                <p><strong>Definition.</strong> An <em>extremal</em> is a trajectory satisfying the necessary conditions for optimality.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem (Pontryagin's Maximum Principle).</strong> Let \(u^*(t)\) be an optimal control with corresponding state trajectory \(x^*(t)\). Then there exists a costate \(p^*(t)\) such that:
+                <br>(i) State equation: \(\dot{x}^* = \frac{\partial H}{\partial p}\)
+                <br>(ii) Costate equation: \(\dot{p}^* = -\frac{\partial H}{\partial x}\)
+                <br>(iii) Optimality: \(H(x^*, u^*, p^*, t) \leq H(x^*, u, p^*, t)\) for all admissible \(u\)
+                <br>(iv) Transversality: \(p^*(t_f) = \frac{\partial \phi}{\partial x}(x^*(t_f))\)</p>
+
+                <p><strong>Proof Sketch.</strong> Consider a needle variation: perturb the optimal control on a small interval. The change in cost can be expressed using the Hamiltonian. For optimality, the first-order variation must vanish. The costate equation ensures that the sensitivity of the cost to state perturbations is properly accounted for. The maximum condition follows from requiring non-negative cost variation for all admissible perturbations. ∎</p>
+
+                <h4>Notation</h4>
+                <ul>
+                    <li>\(x(t)\) — state vector</li>
+                    <li>\(u(t)\) — control vector</li>
+                    <li>\(p(t)\) — costate (adjoint) vector</li>
+                    <li>\(H\) — Hamiltonian</li>
+                    <li>\(L\) — running cost (Lagrangian)</li>
+                    <li>\(\phi\) — terminal cost</li>
+                    <li>\(J\) — total cost functional</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+from scipy.integrate import solve_ivp
+from scipy.optimize import minimize
+import matplotlib.pyplot as plt
+
+class OptimalControl:
+    """Demonstrate optimal control concepts."""
+    
+    @staticmethod
+    def linear_quadratic_regulator(A, B, Q, R, T, x0, N=100):
+        """
+        Solve finite-horizon LQR problem using Riccati equation.
+        
+        Problem: minimize J = x(T)'Sf*x(T) + ∫(x'Qx + u'Ru)dt
+        subject to: dx/dt = Ax + Bu
+        """
+        n = A.shape[0]
+        m = B.shape[1]
+        dt = T / N
+        
+        # Solve Riccati equation backwards
+        S = np.zeros((N+1, n, n))
+        K = np.zeros((N, m, n))
+        
+        # Terminal condition
+        S[N] = Q  # Sf = Q for simplicity
+        
+        # Backward integration
+        for k in range(N-1, -1, -1):
+            # Discrete-time Riccati (simplified)
+            S_k = S[k+1]
+            K[k] = np.linalg.inv(R + B.T @ S_k @ B) @ B.T @ S_k @ A
+            S[k] = Q + A.T @ S_k @ (A - B @ K[k])
+        
+        # Forward simulation with optimal control
+        x = np.zeros((N+1, n))
+        u = np.zeros((N, m))
+        x[0] = x0
+        
+        for k in range(N):
+            u[k] = -K[k] @ x[k]
+            x[k+1] = x[k] + dt * (A @ x[k] + B @ u[k])
+        
+        return x, u, K
+    
+    @staticmethod
+    def minimum_time_control(x0, target, max_u, T=10, N=100):
+        """
+        Minimum time control for double integrator.
+        dx1/dt = x2, dx2/dt = u, |u| <= max_u
+        """
+        dt = T / N
+        
+        # Bang-bang control: switch when hitting switching curve
+        x1, x2 = x0
+        
+        # Switching curve: x1 = -x2|x2|/(2*max_u)
+        def switching_curve(x2):
+            return -x2 * np.abs(x2) / (2 * max_u)
+        
+        x = np.zeros((N+1, 2))
+        u = np.zeros(N)
+        x[0] = x0
+        
+        for k in range(N):
+            x1, x2 = x[k]
+            
+            # Determine control based on position relative to switching curve
+            on_curve = switching_curve(x2)
+            
+            if x1 > on_curve:
+                u[k] = -max_u
+            else:
+                u[k] = max_u
+            
+            # Check if we should decelerate
+            if abs(x1 - target[0]) < 0.1 and abs(x2) < 0.1:
+                u[k] = -x2 / dt  # Bring to rest
+            
+            # Integrate
+            x[k+1, 0] = x[k, 0] + dt * x[k, 1]
+            x[k+1, 1] = x[k, 1] + dt * u[k]
+        
+        return x, u
+    
+    @staticmethod
+    def trajectory_optimization(x0, xf, T, n_points=50):
+        """
+        Simple trajectory optimization using direct transcription.
+        Double integrator: minimize control effort.
+        """
+        dt = T / n_points
+        
+        # Decision variables: [x1(0), x2(0), ..., x1(N), x2(N), u(0), ..., u(N-1)]
+        n_vars = 2 * (n_points + 1) + n_points
+        
+        def objective(z):
+            u = z[2*(n_points+1):]
+            return dt * np.sum(u**2)
+        
+        def constraint(z):
+            x = z[:2*(n_points+1)].reshape(n_points+1, 2)
+            u = z[2*(n_points+1):]
+            
+            cons = []
+            # Dynamics constraints
+            for k in range(n_points):
+                cons.append(x[k+1, 0] - x[k, 0] - dt * x[k, 1])
+                cons.append(x[k+1, 1] - x[k, 1] - dt * u[k])
+            
+            # Boundary conditions
+            cons.append(x[0, 0] - x0[0])
+            cons.append(x[0, 1] - x0[1])
+            cons.append(x[n_points, 0] - xf[0])
+            cons.append(x[n_points, 1] - xf[1])
+            
+            return np.array(cons)
+        
+        # Initial guess
+        z0 = np.zeros(n_vars)
+        z0[:2*(n_points+1):2] = np.linspace(x0[0], xf[0], n_points+1)
+        
+        # Solve
+        result = minimize(objective, z0, method='SLSQP',
+                         constraints={'type': 'eq', 'fun': constraint})
+        
+        z_opt = result.x
+        x_opt = z_opt[:2*(n_points+1)].reshape(n_points+1, 2)
+        u_opt = z_opt[2*(n_points+1):]
+        
+        return x_opt, u_opt
+
+# Demonstrations
+print("=" * 60)
+print("OPTIMAL CONTROL DEMONSTRATIONS")
+print("=" * 60)
+
+# LQR example
+print("\n1. Linear Quadratic Regulator (LQR)")
+A = np.array([[0, 1], [0, -0.1]])  # Double integrator with damping
+B = np.array([[0], [1]])
+Q = np.eye(2)
+R = np.array([[0.1]])
+x0 = np.array([1.0, 0.0])
+
+x_lqr, u_lqr, K_lqr = OptimalControl.linear_quadratic_regulator(
+    A, B, Q, R, T=5, x0=x0, N=100)
+
+print(f"Initial state: x0 = {x0}")
+print(f"Final state: x[-1] = {x_lqr[-1]}")
+print(f"Total control effort: {np.sum(u_lqr**2):.4f}")
+
+# Minimum time control
+print("\n2. Minimum Time Control (Bang-Bang)")
+x0 = np.array([5.0, 0.0])
+target = np.array([0.0, 0.0])
+x_mt, u_mt = OptimalControl.minimum_time_control(x0, target, max_u=2.0, T=10, N=200)
+
+print(f"Initial position: {x0[0]}")
+print(f"Final position: {x_mt[-1, 0]:.4f}")
+print(f"Final velocity: {x_mt[-1, 1]:.4f}")
+print(f"Number of control switches: {np.sum(np.abs(np.diff(u_mt)) > 0.1)}")
+
+# Trajectory optimization
+print("\n3. Trajectory Optimization")
+x0 = np.array([0.0, 0.0])
+xf = np.array([10.0, 0.0])
+x_traj, u_traj = OptimalControl.trajectory_optimization(x0, xf, T=5, n_points=30)
+
+print(f"Start: ({x_traj[0, 0]:.2f}, {x_traj[0, 1]:.2f})")
+print(f"End: ({x_traj[-1, 0]:.2f}, {x_traj[-1, 1]:.2f})")
+print(f"Minimized control effort: {np.sum(u_traj**2):.4f}")
+</code></pre>
+            </section>
+
+            <section id="special-topics">
+                <h2>⭐ Special Topics</h2>
+
+                <h3>1. The Poincaré Conjecture: A Century-Old Problem Solved</h3>
+                <h4>Historical Context</h4>
+                <p>Henri Poincaré posed his famous conjecture in 1904: "Is every simply connected, closed 3-manifold homeomorphic to the 3-sphere?" This seemingly simple question stumped mathematicians for nearly a century. It became one of the seven Millennium Prize Problems, with a $1 million bounty. In 2002-2003, Grigori Perelman shocked the mathematical world by posting a proof on arXiv using Richard Hamilton's Ricci flow program. Perelman famously declined the Fields Medal and the Millennium Prize, stating he was not interested in money or fame.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> A <em>3-manifold</em> is a topological space where every point has a neighborhood homeomorphic to an open ball in \(\mathbb{R}^3\).</p>
+
+                <p><strong>Definition.</strong> A manifold is <em>closed</em> if it is compact and has no boundary.</p>
+
+                <p><strong>Definition.</strong> A space is <em>simply connected</em> if every loop can be continuously contracted to a point.</p>
+
+                <p><strong>Definition.</strong> The <em>Ricci flow</em> is the partial differential equation:
+                \[\frac{\partial g}{\partial t} = -2 \text{Ric}(g)\]
+        where \(g\) is the metric tensor and \(\text{Ric}(g)\) is the Ricci curvature tensor.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem (Poincaré Conjecture, proved by Perelman).</strong> Every simply connected, closed 3-manifold is homeomorphic to the 3-sphere \(S^3\).</p>
+
+                <p><strong>Proof Sketch (Ricci Flow Approach).</strong>
+                <br>1. Start with any metric on the 3-manifold \(M\).
+                <br>2. Evolve the metric by Ricci flow. The flow tends to make the curvature more uniform.
+                <br>3. Singularities may form where the curvature blows up. Perelman showed these can be surgically removed.
+                <br>4. After finitely many surgeries, the flow converges to a metric of constant positive curvature.
+                <br>5. A 3-manifold with constant positive curvature is a spherical space form, and if simply connected, must be \(S^3\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(S^3\) — 3-sphere</li>
+                    <li>\(M\) — 3-manifold</li>
+                    <li>\(g\) — Riemannian metric</li>
+                    <li>\(\text{Ric}(g)\) — Ricci curvature tensor</li>
+                    <li>\(R\) — scalar curvature</li>
+                    <li>\(\pi_1(M)\) — fundamental group</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+class PoincareConjecture:
+    """Demonstrate concepts related to the Poincaré Conjecture."""
+    
+    @staticmethod
+    def visualize_3_sphere_projection():
+        """
+        Visualize the 3-sphere S³ using stereographic projection.
+        S³ = {(x,y,z,w) : x² + y² + z² + w² = 1}
+        """
+        # Parametric representation
+        u = np.linspace(0, 2*np.pi, 50)
+        v = np.linspace(0, np.pi, 25)
+        U, V = np.meshgrid(u, v)
+        
+        # Hopf fibration visualization (fibers of S³ → S²)
+        # Each point on S² corresponds to a circle (fiber) in S³
+        theta = np.linspace(0, 2*np.pi, 100)
+        
+        fig = plt.figure(figsize=(12, 5))
+        
+        # Plot 1: 2D projection of fibers
+        ax1 = fig.add_subplot(121)
+        for i in range(5):
+            for j in range(5):
+                # Sample points on S²
+                phi_s2 = i * np.pi / 4
+                theta_s2 = j * 2 * np.pi / 5
+                
+                # Corresponding fiber in S³ (projected)
+                x_fiber = np.cos(theta + theta_s2) * np.sin(phi_s2/2)
+                y_fiber = np.sin(theta + theta_s2) * np.sin(phi_s2/2)
+                ax1.plot(x_fiber, y_fiber, alpha=0.6)
+        
+        ax1.set_xlabel('x')
+        ax1.set_ylabel('y')
+        ax1.set_title('Hopf Fibration: Fibers of S³ → S²')
+        ax1.set_aspect('equal')
+        ax1.grid(True, alpha=0.3)
+        
+        # Plot 2: Simply connected demonstration
+        ax2 = fig.add_subplot(122)
+        theta = np.linspace(0, 2*np.pi, 100)
+        
+        # Draw sphere (2D cross-section)
+        x_sphere = np.cos(theta)
+        y_sphere = np.sin(theta)
+        ax2.plot(x_sphere, y_sphere, 'b-', linewidth=2, label='S²')
+        
+        # Draw a loop and its contraction
+        t = np.linspace(0, 1, 50)
+        for scale in [1.0, 0.7, 0.4, 0.1]:
+            x_loop = scale * np.cos(2*np.pi*t + np.pi/4)
+            y_loop = scale * np.sin(2*np.pi*t + np.pi/4)
+            ax2.plot(x_loop, y_loop, alpha=0.5, color='red')
+        
+        ax2.scatter([0], [0], color='red', s=50, zorder=5)
+        ax2.set_xlabel('x')
+        ax2.set_ylabel('y')
+        ax2.set_title('Simply Connected: Any Loop Contracts to a Point')
+        ax2.set_aspect('equal')
+        ax2.legend()
+        ax2.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        return fig
+    
+    @staticmethod
+    def ricci_flow_2d_demo(n_steps=100):
+        """
+        Simulate 2D Ricci flow on a surface.
+        Simplified: evolution of Gaussian curvature on a surface.
+        """
+        # Create a surface with varying curvature
+        x = np.linspace(-2, 2, 100)
+        y = np.linspace(-2, 2, 100)
+        X, Y = np.meshgrid(x, y)
+        
+        # Initial metric with "bump" (positive curvature region)
+        Z = np.exp(-(X**2 + Y**2)) + 0.5 * np.exp(-((X-1)**2 + (Y-1)**2))
+        
+        # Simulate curvature evolution (simplified heat equation analogy)
+        dt = 0.001
+        curvature = Z.copy()
+        
+        history = [curvature.copy()]
+        for step in range(n_steps):
+            # Laplacian (simplified Ricci flow in 2D is related to heat flow)
+            laplacian = (np.roll(curvature, 1, axis=0) + np.roll(curvature, -1, axis=0) +
+                        np.roll(curvature, 1, axis=1) + np.roll(curvature, -1, axis=1) - 
+                        4*curvature)
+            curvature = curvature + dt * laplacian
+            
+            if step % 20 == 0:
+                history.append(curvature.copy())
+        
+        return history
+    
+    @staticmethod
+    def fundamental_group_demo():
+        """Demonstrate fundamental group concepts."""
+        print("Fundamental Group Examples:")
+        print("=" * 50)
+        
+        spaces = {
+            "S³ (3-sphere)": "π₁(S³) = {e} (simply connected)",
+            "ℝⁿ (Euclidean space)": "π₁(ℝⁿ) = {e} (simply connected)",
+            "S¹ (circle)": "π₁(S¹) = ℤ (winding number)",
+            "T² (torus)": "π₁(T²) = ℤ × ℤ",
+            "ℝP² (projective plane)": "π₁(ℝP²) = ℤ/2ℤ"
+        }
+        
+        for space, group in spaces.items():
+            print(f"{space:25s}: {group}")
+        
+        print("\nPoincaré Conjecture:")
+        print("If M is a closed 3-manifold with π₁(M) = {e}, then M ≅ S³")
+
+# Demonstrations
+print("=" * 60)
+print("POINCARÉ CONJECTURE DEMONSTRATIONS")
+print("=" * 60)
+
+PoincareConjecture.fundamental_group_demo()
+
+print("\n" + "=" * 60)
+print("Ricci Flow Evolution (simplified 2D)")
+print("=" * 60)
+history = PoincareConjecture.ricci_flow_2d_demo(n_steps=100)
+print(f"Initial curvature range: [{history[0].min():.4f}, {history[0].max():.4f}]")
+print(f"Final curvature range:   [{history[-1].min():.4f}, {history[-1].max():.4f}]")
+print("Curvature becomes more uniform (flow tends to constant curvature)")
+</code></pre>
+
+                <h3>2. Fermat's Last Theorem: From Marginal Note to Millennium</h3>
+                <h4>Historical Context</h4>
+                <p>Around 1637, Pierre de Fermat wrote in the margin of his copy of Diophantus's Arithmetica: "I have discovered a truly marvelous proof of this, which this margin is too narrow to contain." The theorem states that no three positive integers \(a, b, c\) satisfy \(a^n + b^n = c^n\) for any integer \(n > 2\). For 358 years, mathematicians attempted proofs. Special cases fell: Euler proved \(n = 3\), Dirichlet and Legendre proved \(n = 5\), Kummer proved it for all regular primes. Finally, in 1994, Andrew Wiles announced a proof connecting elliptic curves to modular forms via the Taniyama-Shimura conjecture.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> An <em>elliptic curve</em> over \(\mathbb{Q}\) is a smooth projective curve of genus 1 with a specified rational point, given by an equation of the form:
+                \[y^2 = x^3 + ax + b\]
+        where \(a, b \in \mathbb{Q}\) and the discriminant \(\Delta = -16(4a^3 + 27b^2) \neq 0\).</p>
+
+                <p><strong>Definition.</strong> A <em>modular form</em> of weight \(k\) is a holomorphic function on the upper half-plane satisfying:
+                \[f\left(\frac{az+b}{cz+d}\right) = (cz+d)^k f(z)\]
+        for all \(\begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \text{SL}_2(\mathbb{Z})\).</p>
+
+                <p><strong>Definition.</strong> The <em>Taniyama-Shimura conjecture</em> (now the Modularity Theorem) states that every elliptic curve over \(\mathbb{Q}\) is modular, i.e., its L-function comes from a modular form.</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem (Fermat's Last Theorem, Wiles 1994).</strong> For any integer \(n > 2\), there are no positive integers \(a, b, c\) such that \(a^n + b^n = c^n\).</p>
+
+                <p><strong>Proof Sketch (Frey-Ribet-Wiles Strategy).</strong>
+                <br>1. Suppose \(a^p + b^p = c^p\) for prime \(p \geq 5\) (the general case reduces to this).
+                <br>2. Frey constructed an elliptic curve \(E: y^2 = x(x-a^p)(x+b^p)\) from this solution.
+                <br>3. Ribet proved that if such a solution exists, the Frey curve is not modular.
+                <br>4. Wiles proved that every semistable elliptic curve over \(\mathbb{Q}\) is modular.
+                <br>5. The Frey curve is semistable, so it must be modular—contradiction! ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(E\) — elliptic curve</li>
+                    <li>\(\Delta\) — discriminant</li>
+                    <li>\(\mathbb{H}\) — upper half-plane \(\{z : \text{Im}(z) > 0\}\)</li>
+                    <li>\(f(z)\) — modular form</li>
+                    <li>\(\text{SL}_2(\mathbb{Z})\) — modular group</li>
+                    <li>\(L(E, s)\) — L-function of elliptic curve</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+class FermatsLastTheorem:
+    """Demonstrate concepts related to Fermat's Last Theorem."""
+    
+    @staticmethod
+    def check_fermat(n, max_val=100):
+        """Check for counterexamples to Fermat's Last Theorem."""
+        print(f"Checking a^{n} + b^{n} = c^{n} for a,b,c ≤ {max_val}")
+        
+        solutions = []
+        for a in range(1, max_val + 1):
+            for b in range(a, max_val + 1):
+                c_n = a**n + b**n
+                c = round(c_n ** (1.0/n))
+                
+                # Check nearby integers (floating point issues)
+                for c_test in [c-1, c, c+1]:
+                    if c_test > 0 and c_test**n == c_n:
+                        solutions.append((a, b, c_test))
+        
+        return solutions
+    
+    @staticmethod
+    def pythagorean_triples(max_val=100):
+        """Generate Pythagorean triples (n=2 case)."""
+        triples = []
+        for m in range(2, int(np.sqrt(max_val)) + 1):
+            for n in range(1, m):
+                if (m - n) % 2 == 1 and np.gcd(m, n) == 1:
+                    a = m**2 - n**2
+                    b = 2*m*n
+                    c = m**2 + n**2
+                    if c <= max_val:
+                        triples.append((a, b, c))
+                        # Generate multiples
+                        k = 2
+                        while k*c <= max_val:
+                            triples.append((k*a, k*b, k*c))
+                            k += 1
+        return sorted(set(triples))
+    
+    @staticmethod
+    def plot_elliptic_curve(a, b, x_range=(-3, 3)):
+        """Plot the elliptic curve y² = x³ + ax + b."""
+        x = np.linspace(x_range[0], x_range[1], 1000)
+        y_squared = x**3 + a*x + b
+        
+        # Only plot where y² ≥ 0
+        mask = y_squared >= 0
+        x_pos = x[mask]
+        y_pos = np.sqrt(y_squared[mask])
+        
+        plt.figure(figsize=(10, 8))
+        plt.plot(x_pos, y_pos, 'b-', linewidth=2, label='$y = +\\sqrt{x³ + ax + b}$')
+        plt.plot(x_pos, -y_pos, 'b-', linewidth=2, label='$y = -\\sqrt{x³ + ax + b}$')
+        plt.axhline(y=0, color='k', linewidth=0.5)
+        plt.axvline(x=0, color='k', linewidth=0.5)
+        plt.grid(True, alpha=0.3)
+        plt.xlabel('x')
+        plt.ylabel('y')
+        plt.title(f'Elliptic Curve: $y² = x³ + {a}x + {b}$')
+        plt.legend()
+        plt.axis('equal')
+        
+        # Check discriminant
+        discriminant = -16 * (4*a**3 + 27*b**2)
+        plt.figtext(0.5, 0.02, f'Discriminant Δ = {discriminant}', 
+                   ha='center', fontsize=10)
+        
+        return plt
+    
+    @staticmethod
+    def modular_group_action(z, a, b, c, d):
+        """Apply modular transformation to z."""
+        return (a*z + b) / (c*z + d)
+    
+    @staticmethod
+    def fundamental_domain():
+        """Plot the fundamental domain of SL₂(ℤ)."""
+        theta = np.linspace(np.pi/3, 2*np.pi/3, 100)
+        
+        plt.figure(figsize=(10, 8))
+        
+        # Arc |z| = 1 from e^(iπ/3) to e^(i2π/3)
+        arc_x = np.cos(theta)
+        arc_y = np.sin(theta)
+        plt.plot(arc_x, arc_y, 'b-', linewidth=2, label='$|z| = 1$')
+        
+        # Vertical lines at x = ±1/2
+        y_vert = np.linspace(np.sqrt(3)/2, 3, 100)
+        plt.plot([-0.5, -0.5], [np.sqrt(3)/2, 3], 'r-', linewidth=2, label='$x = -1/2$')
+        plt.plot([0.5, 0.5], [np.sqrt(3)/2, 3], 'r-', linewidth=2, label='$x = 1/2$')
+        
+        # Fill fundamental domain
+        theta_fill = np.linspace(np.pi/3, np.pi/2, 50)
+        x_fill = np.concatenate([[0], np.cos(theta_fill), [0]])
+        y_fill = np.concatenate([[3], np.sin(theta_fill), [3]])
+        plt.fill(x_fill, y_fill, alpha=0.3, color='green', label='Fundamental domain')
+        
+        plt.xlim(-1.5, 1.5)
+        plt.ylim(0, 3)
+        plt.xlabel('Re(z)')
+        plt.ylabel('Im(z)')
+        plt.title('Fundamental Domain of $SL_2(\\mathbb{Z})$')
+        plt.legend()
+        plt.grid(True, alpha=0.3)
+        plt.axhline(y=0, color='k', linewidth=0.5)
+        plt.axvline(x=0, color='k', linewidth=0.5)
+        
+        return plt
+
+# Demonstrations
+print("=" * 60)
+print("FERMAT'S LAST THEOREM DEMONSTRATIONS")
+print("=" * 60)
+
+# Check n=2 (should find solutions)
+print("\n1. Pythagorean Triples (n=2)")
+triples = FermatsLastTheorem.pythagorean_triples(max_val=50)
+print(f"Found {len(triples)} primitive Pythagorean triples with c ≤ 50:")
+for t in triples[:10]:
+    a, b, c = t
+    print(f"  {a}² + {b}² = {c}²  ({a**2} + {b**2} = {c**2})")
+
+# Check n=3 (should find no solutions)
+print("\n2. Checking n=3 (no solutions expected)")
+solutions = FermatsLastTheorem.check_fermat(3, max_val=50)
+print(f"Solutions found: {solutions}")
+
+# Check n=4
+print("\n3. Checking n=4 (no solutions expected)")
+solutions = FermatsLastTheorem.check_fermat(4, max_val=20)
+print(f"Solutions found: {solutions}")
+
+print("\n" + "=" * 60)
+print("Elliptic Curve Example")
+print("=" * 60)
+print("The Frey curve from a hypothetical FLT counterexample")
+print("would have the form: y² = x(x - a^p)(x + b^p)")
+print("This curve is semistable but not modular—contradiction!")
+</code></pre>
+
+                <h3>3. The Prime Number Theorem: The Distribution of Primes</h3>
+                <h4>Historical Context</h4>
+                <p>The distribution of prime numbers has fascinated mathematicians since antiquity. Euclid proved their infinitude; Eratosthenes developed a sieve to find them. Gauss and Legendre conjectured around 1796 that \(\pi(x) \sim x/\ln(x)\), where \(\pi(x)\) counts primes up to \(x\). This became the Prime Number Theorem, finally proved independently by Hadamard and de la Vallée Poussin in 1896 using complex analysis. Their proof revealed deep connections between primes and the zeros of the Riemann zeta function.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <em>prime counting function</em> is:
+                \[\pi(x) = \sum_{p \leq x} 1\]
+        where the sum is over primes \(p\).</p>
+
+                <p><strong>Definition.</strong> The <em>logarithmic integral</em> is:
+                \[\text{li}(x) = \int_2^x \frac{dt}{\ln t}\]</p>
+
+                <p><strong>Definition.</strong> The <em>Riemann zeta function</em> is:
+                \[\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_{p \text{ prime}} \frac{1}{1-p^{-s}}\]
+        for \(\text{Re}(s) > 1\), extended by analytic continuation.</p>
+
+                <p><strong>Definition.</strong> The <em>Möbius function</em> is:
+                \[\mu(n) = \begin{cases} 1 & \text{if } n = 1 \\ (-1)^k & \text{if } n \text{ is product of } k \text{ distinct primes} \\ 0 & \text{if } n \text{ has a squared prime factor} \end{cases}\]</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Theorem (Prime Number Theorem).</strong> 
+                \[\lim_{x \to \infty} \frac{\pi(x)}{x / \ln x} = 1\]
+        Equivalently, \(\pi(x) \sim \text{li}(x)\).</p>
+
+                <p><strong>Proof Sketch (Hadamard-de la Vallée Poussin).</strong>
+                <br>1. Define \(\psi(x) = \sum_{n \leq x} \Lambda(n)\) where \(\Lambda\) is the von Mangoldt function.
+                <br>2. Show that \(\psi(x) \sim x\) implies the PNT.
+                <br>3. Use the explicit formula connecting \(\psi(x)\) to zeros of \(\zeta(s)\):
+                \[\psi(x) = x - \sum_{\rho} \frac{x^{\rho}}{\rho} - \frac{\zeta'(0)}{\zeta(0)} - \frac{1}{2}\ln(1-x^{-2})\]
+                <br>4. Prove that \(\zeta(s) \neq 0\) for \(\text{Re}(s) = 1\) (the key step).
+                <br>5. This ensures the zeros don't contribute significantly, giving \(\psi(x) \sim x\). ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\pi(x)\) — prime counting function</li>
+                    <li>\(\text{li}(x)\) — logarithmic integral</li>
+                    <li>\(\zeta(s)\) — Riemann zeta function</li>
+                    <li>\(\psi(x)\) — Chebyshev function</li>
+                    <li>\(\Lambda(n)\) — von Mangoldt function (\(\ln p\) if \(n = p^k\), else 0)</li>
+                    <li>\(\mu(n)\) — Möbius function</li>
+                    <li>\(\rho\) — non-trivial zero of \(\zeta(s)\)</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+from scipy import integrate, special
+import matplotlib.pyplot as plt
+
+class PrimeNumberTheorem:
+    """Demonstrate the Prime Number Theorem."""
+    
+    @staticmethod
+    def sieve_of_eratosthenes(n):
+        """Generate all primes up to n using the Sieve of Eratosthenes."""
+        sieve = np.ones(n + 1, dtype=bool)
+        sieve[0:2] = False
+        
+        for i in range(2, int(np.sqrt(n)) + 1):
+            if sieve[i]:
+                sieve[i*i:n+1:i] = False
+        
+        return np.nonzero(sieve)[0]
+    
+    @staticmethod
+    def pi_x(x, primes):
+        """Count primes up to x."""
+        return np.sum(primes <= x)
+    
+    @staticmethod
+    def logarithmic_integral(x):
+        """Compute li(x) using scipy."""
+        # li(x) = ∫₂^x dt/ln(t)
+        result, _ = integrate.quad(lambda t: 1/np.log(t), 2, x)
+        return result
+    
+    @staticmethod
+    def prime_number_theorem_approx(x):
+        """Compute x/ln(x) approximation."""
+        return x / np.log(x)
+    
+    @staticmethod
+    def riemann_approximation(x, zeros=None):
+        """
+        Riemann's R(x) approximation using zeros of zeta.
+        R(x) = Σ μ(n)/n * li(x^(1/n))
+        """
+        result = 0
+        for n in range(1, 100):  # Sum over n
+            mu = PrimeNumberTheorem.mobius(n)
+            if mu != 0:
+                result += mu * PrimeNumberTheorem.logarithmic_integral(x**(1/n)) / n
+        return result
+    
+    @staticmethod
+    def mobius(n):
+        """Compute the Möbius function μ(n)."""
+        if n == 1:
+            return 1
+        
+        # Factor n
+        factors = PrimeNumberTheorem.factor_int(n)
+        
+        # Check for squared prime factor
+        for p, exp in factors.items():
+            if exp > 1:
+                return 0
+        
+        # Return (-1)^k where k is number of prime factors
+        return (-1)**len(factors)
+    
+    @staticmethod
+    def factor_int(n):
+        """Simple integer factorization."""
+        factors = {}
+        d = 2
+        while d * d <= n:
+            while n % d == 0:
+                factors[d] = factors.get(d, 0) + 1
+                n //= d
+            d += 1
+        if n > 1:
+            factors[n] = factors.get(n, 0) + 1
+        return factors
+    
+    @staticmethod
+    def prime_gaps(max_n=100000):
+        """Analyze gaps between consecutive primes."""
+        primes = PrimeNumberTheorem.sieve_of_eratosthenes(max_n)
+        gaps = np.diff(primes)
+        
+        return {
+            'primes': primes,
+            'gaps': gaps,
+            'max_gap': np.max(gaps),
+            'avg_gap': np.mean(gaps),
+            'max_gap_location': primes[np.argmax(gaps)]
+        }
+    
+    @staticmethod
+    def verify_pnt(max_n=1000000):
+        """Verify the Prime Number Theorem numerically."""
+        primes = PrimeNumberTheorem.sieve_of_eratosthenes(max_n)
+        
+        test_points = [100, 1000, 10000, 100000, 1000000]
+        results = []
+        
+        for x in test_points:
+            if x <= max_n:
+                pi_x = np.sum(primes <= x)
+                approx = PrimeNumberTheorem.prime_number_theorem_approx(x)
+                li_x = PrimeNumberTheorem.logarithmic_integral(x)
+                
+                ratio = pi_x / approx
+                ratio_li = pi_x / li_x
+                
+                results.append({
+                    'x': x,
+                    'π(x)': pi_x,
+                    'x/ln(x)': approx,
+                    'li(x)': li_x,
+                    'π(x)/(x/ln(x))': ratio,
+                    'π(x)/li(x)': ratio_li
+                })
+        
+        return results
+
+# Demonstrations
+print("=" * 60)
+print("PRIME NUMBER THEOREM DEMONSTRATIONS")
+print("=" * 60)
+
+# Generate primes
+print("\n1. Generating primes...")
+primes = PrimeNumberTheorem.sieve_of_eratosthenes(100)
+print(f"Primes up to 100: {primes}")
+print(f"Total: {len(primes)} primes")
+
+# Verify PNT
+print("\n2. Verifying Prime Number Theorem")
+print("-" * 60)
+results = PrimeNumberTheorem.verify_pnt(max_n=1000000)
+print(f"{'x':>10} {'π(x)':>10} {'x/ln(x)':>12} {'li(x)':>12} {'π/(x/ln)':>10} {'π/li':>10}")
+print("-" * 70)
+for r in results:
+    print(f"{r['x']:>10} {r['π(x)']:>10} {r['x/ln(x)']:>12.2f} {r['li(x)']:>12.2f} {r['π(x)/(x/ln(x))']:>10.6f} {r['π(x)/li(x)']:>10.6f}")
+
+print("\nNote: Both ratios approach 1 as x → ∞")
+
+# Prime gaps
+print("\n3. Prime Gaps Analysis")
+gap_data = PrimeNumberTheorem.prime_gaps(max_n=100000)
+print(f"Maximum gap up to 100,000: {gap_data['max_gap']}")
+print(f"Location of max gap: after prime {gap_data['max_gap_location']}")
+print(f"Average gap: {gap_data['avg_gap']:.2f}")
+
+# Riemann approximation
+print("\n4. Riemann's R(x) Approximation")
+x = 1000000
+riemann_R = PrimeNumberTheorem.riemann_approximation(x)
+pi_x = PrimeNumberTheorem.verify_pnt(max_n=x)[-1]['π(x)']
+print(f"π({x}) = {pi_x}")
+print(f"R({x}) ≈ {riemann_R:.2f}")
+print(f"Error: {abs(pi_x - riemann_R):.2f} ({abs(pi_x - riemann_R)/pi_x*100:.4f}%)")
+</code></pre>
+
+                <h3>4. The ABC Conjecture: Deep Connections in Number Theory</h3>
+                <h4>Historical Context</h4>
+                <p>Proposed by Joseph Oesterlé and David Masser in 1985, the ABC conjecture connects the additive and multiplicative structures of integers. It states that for any \(\epsilon > 0\), there are only finitely many triples \((a, b, c)\) with \(a + b = c\) and \(\gcd(a,b,c) = 1\) such that \(c > \text{rad}(abc)^{1+\epsilon}\), where \(\text{rad}(n)\) is the product of distinct prime factors of \(n\). The conjecture implies many famous theorems and conjectures, including Fermat's Last Theorem for sufficiently large exponents. In 2012, Shinichi Mochizuki claimed a proof using "inter-universal Teichmüller theory," but verification remains controversial.</p>
+
+                <h4>Definitions</h4>
+                <p><strong>Definition.</strong> The <em>radical</em> of a positive integer \(n\) is:
+                \[\text{rad}(n) = \prod_{p | n} p\]
+        the product of distinct prime factors of \(n\).</p>
+
+                <p><strong>Definition.</strong> The <em>quality</em> of an ABC triple \((a, b, c)\) with \(a + b = c\) and \(\gcd(a,b,c) = 1\) is:
+                \[q(a,b,c) = \frac{\ln c}{\ln \text{rad}(abc)}\]</p>
+
+                <p><strong>Definition.</strong> An <em>ABC triple</em> is a triple of positive integers \((a, b, c)\) with \(a + b = c\) and \(\gcd(a,b,c) = 1\).</p>
+
+                <h4>Theorem &amp; Proof</h4>
+                <p><strong>Conjecture (ABC Conjecture).</strong> For every \(\epsilon > 0\), there exist only finitely many ABC triples with \(q(a,b,c) > 1 + \epsilon\).</p>
+
+                <p><strong>Theorem (ABC implies Fermat for large n).</strong> Assuming the ABC conjecture, the equation \(x^n + y^n = z^n\) has no solutions in positive integers for sufficiently large \(n\).</p>
+
+                <p><strong>Proof Sketch.</strong> Suppose \(a^n + b^n = c^n\). Then \((a^n, b^n, c^n)\) is an ABC triple (assuming \(\gcd(a,b,c) = 1\)). We have:
+                \[\text{rad}(a^n b^n c^n) = \text{rad}(abc) \leq abc < c^3\]
+        So:
+        \[q = \frac{\ln(c^n)}{\ln(\text{rad}(a^n b^n c^n))} > \frac{n \ln c}{3 \ln c} = \frac{n}{3}\]
+        For \(n > 3(1 + \epsilon)\), this contradicts the ABC conjecture. ∎</p>
+
+                <h4>Notation Guide</h4>
+                <ul>
+                    <li>\(\text{rad}(n)\) — radical of n</li>
+                    <li>\(q(a,b,c)\) — quality of ABC triple</li>
+                    <li>\(\omega(n)\) — number of distinct prime factors</li>
+                    <li>\(\Omega(n)\) — total number of prime factors with multiplicity</li>
+                    <li>\(\gcd(a,b,c)\) — greatest common divisor</li>
+                </ul>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+from collections import defaultdict
+
+class ABCConjecture:
+    """Demonstrate the ABC conjecture."""
+    
+    @staticmethod
+    def radical(n):
+        """Compute the radical of n (product of distinct prime factors)."""
+        if n <= 1:
+            return n
+        
+        rad = 1
+        d = 2
+        while d * d <= n:
+            if n % d == 0:
+                rad *= d
+                while n % d == 0:
+                    n //= d
+            d += 1
+        
+        if n > 1:
+            rad *= n
+        
+        return rad
+    
+    @staticmethod
+    def gcd(a, b):
+        """Compute GCD using Euclidean algorithm."""
+        while b:
+            a, b = b, a % b
+        return a
+    
+    @staticmethod
+    def gcd_three(a, b, c):
+        """Compute GCD of three numbers."""
+        return ABCConjecture.gcd(ABCConjecture.gcd(a, b), c)
+    
+    @staticmethod
+    def quality(a, b, c):
+        """Compute the quality of an ABC triple."""
+        if a + b != c:
+            return None
+        if ABCConjecture.gcd_three(a, b, c) != 1:
+            return None
+        
+        rad = ABCConjecture.radical(a * b * c)
+        return np.log(c) / np.log(rad)
+    
+    @staticmethod
+    def find_abc_triples(max_c=10000):
+        """Find ABC triples with c ≤ max_c."""
+        triples = []
+        
+        for c in range(2, max_c + 1):
+            for a in range(1, c // 2 + 1):
+                b = c - a
+                
+                if ABCConjecture.gcd_three(a, b, c) == 1:
+                    q = ABCConjecture.quality(a, b, c)
+                    if q > 1.0:  # Only interesting triples
+                        triples.append((a, b, c, q))
+        
+        return sorted(triples, key=lambda x: x[3], reverse=True)
+    
+    @staticmethod
+    def high_quality_triples(max_c=100000):
+        """Find high-quality ABC triples."""
+        best_triples = []
+        
+        for c in range(2, max_c + 1):
+            rad_c = ABCConjecture.radical(c)
+            
+            # Only check a values where rad(abc) is small
+            for a in range(1, c // 2 + 1):
+                b = c - a
+                
+                if ABCConjecture.gcd_three(a, b, c) != 1:
+                    continue
+                
+                rad = ABCConjecture.radical(a) * ABCConjecture.radical(b) * rad_c
+                rad //= ABCConjecture.gcd(ABCConjecture.radical(a) * ABCConjecture.radical(b), rad_c)
+                
+                q = np.log(c) / np.log(rad)
+                
+                if q > 1.2:  # High quality threshold
+                    best_triples.append((a, b, c, q, rad))
+        
+        return sorted(best_triples, key=lambda x: x[3], reverse=True)[:20]
+    
+    @staticmethod
+    def verify_fermat_via_abc(n, max_val=1000):
+        """
+        Verify Fermat's Last Theorem for exponent n using ABC heuristic.
+        This shows why ABC implies FLT for large n.
+        """
+        counterexamples = []
+        
+        for a in range(1, max_val):
+            for b in range(a, max_val):
+                c_n = a**n + b**n
+                c = round(c_n ** (1.0/n))
+                
+                # Check nearby values
+                for c_test in range(max(1, c-1), c+2):
+                    if c_test**n == c_n:
+                        # Found counterexample
+                        counterexamples.append((a, b, c_test))
+                        
+                        # Compute quality of (a^n, b^n, c^n)
+                        q = ABCConjecture.quality(a**n, b**n, c_test**n)
+                        print(f"Counterexample: {a}^{n} + {b}^{n} = {c_test}^{n}")
+                        print(f"Quality of triple: {q:.4f}")
+        
+        return counterexamples
+
+# Demonstrations
+print("=" * 60)
+print("ABC CONJECTURE DEMONSTRATIONS")
+print("=" * 60)
+
+# Radical examples
+print("\n1. Radical Examples")
+test_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 30, 100]
+for n in test_numbers:
+    print(f"rad({n}) = {ABCConjecture.radical(n)}")
+
+# Find high-quality ABC triples
+print("\n2. High-Quality ABC Triples (c ≤ 50000)")
+print("-" * 70)
+triples = ABCConjecture.high_quality_triples(max_c=50000)
+print(f"{'a':>8} {'b':>10} {'c':>10} {'q(a,b,c)':>12} {'rad(abc)':>12}")
+print("-" * 70)
+for a, b, c, q, rad in triples[:10]:
+    print(f"{a:>8} {b:>10} {c:>10} {q:>12.6f} {rad:>12}")
+
+print("\nThe ABC conjecture states that for any ε > 0,")
+print("there are only finitely many triples with q > 1 + ε")
+print(f"\nCurrent record quality: {triples[0][3]:.6f}")
+
+# Connection to Fermat
+print("\n3. Connection to Fermat's Last Theorem")
+print("-" * 50)
+print("If aⁿ + bⁿ = cⁿ, then (aⁿ, bⁿ, cⁿ) is an ABC triple")
+print("with quality ≈ n/3 (for large n)")
+print("ABC conjecture implies only finitely many such triples")
+print("can exist for n > 3, proving FLT for large n")
+</code></pre>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                <p>The evolution of mathematics is a story of human curiosity and intellectual courage. From the ancient Babylonians who solved quadratic equations on clay tablets to modern mathematicians navigating infinite-dimensional spaces, each era has built upon the foundations of the past while reaching toward new horizons.</p>
+
+                <p>In ancient Greece, mathematics transformed from practical calculation into abstract reasoning. Euclid's <em>Elements</em> established the axiomatic method that remains the gold standard for mathematical proof. The Greeks' discovery of irrational numbers—quantities that could not be expressed as ratios of whole numbers—shattered their philosophical assumptions about the harmony of the universe and forced a reconceptualization of number itself.</p>
+
+                <p>The medieval Islamic world preserved and extended Greek mathematics while making original contributions. Al-Khwarizmi's work on algebra (the word itself derived from Arabic <em>al-jabr</em>) systematized the solution of equations. Islamic mathematicians developed trigonometry as a distinct field and made advances in spherical geometry essential for astronomy and navigation.</p>
+
+                <p>The Scientific Revolution brought new mathematical tools for understanding motion and change. Newton and Leibniz independently developed calculus, creating a language for describing continuous change that revolutionized physics. The debate over priority between England and continental Europe unfortunately delayed progress, but the power of the new methods was undeniable.</p>
+
+                <p>The nineteenth century witnessed a transformation in mathematical rigor. Cauchy, Weierstrass, and others provided the epsilon-delta definitions that put analysis on a firm foundation. Galois's work on the solvability of equations created modern algebra and group theory. Non-Euclidean geometries challenged the Kantian view of space as necessarily Euclidean, opening doors to Einstein's general relativity.</p>
+
+                <p>The twentieth century saw mathematics explode into dozens of specialized fields while simultaneously seeking unifying structures. Gödel's incompleteness theorems established fundamental limits to formal systems. Category theory emerged as a universal language for mathematics. The computer revolution transformed both how mathematics is done and what questions can be asked.</p>
+
+                <p>Today, mathematics stands at another inflection point. Machine learning algorithms discover patterns that defy human understanding. Computer-assisted proofs verify results too complex for any single mathematician to check. The Langlands program seeks to unify number theory, geometry, and representation theory in ways that would have seemed fantastical a generation ago. The story continues, as it always has, with each answer giving birth to new questions.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <h3><a href="https://www.quantamagazine.org/mathematicians-prove-hilberts-program-is-partially-successful-20240918/" target="_blank" rel="noopener">Mathematicians Prove Hilbert's Program Is Partially Successful</a> — <em>Quanta Magazine</em></h3>
+                <p>A team of researchers has made significant progress on Hilbert's program, the early 20th-century initiative to establish firm foundations for all of mathematics. While Gödel's incompleteness theorems showed that a complete formalization is impossible, new work demonstrates that substantial portions of mathematics can indeed be given constructive, finitary proofs. The result bridges proof theory and computer science, with implications for automated theorem proving and the verification of complex mathematical arguments.</p>
+
+                <h3><a href="https://www.nature.com/articles/d41586-024-04055-3" target="_blank" rel="noopener">AI Mathematicians: The Rise of Machine Learning in Proof Discovery</a> — <em>Nature</em></h3>
+                <p>Artificial intelligence is increasingly contributing to mathematical discovery, from suggesting conjectures to verifying proofs. Recent advances in large language models combined with symbolic reasoning systems have led to new results in combinatorics, knot theory, and representation theory. While these tools are not replacing human mathematicians, they are becoming essential collaborators, handling routine calculations and suggesting unexpected connections. The article explores both the promise and the limitations of AI in mathematics, including concerns about explainability and the nature of mathematical understanding.</p>
+
+                <h3><a href="https://www.ams.org/journals/notices/202501/rnoti-p1.pdf" target="_blank" rel="noopener">The Future of Mathematical Publishing</a> — <em>Notices of the AMS</em></h3>
+                <p>The traditional model of mathematical publishing is undergoing rapid transformation. Preprint servers like arXiv have already changed how mathematicians share results; now interactive theorem provers, formalized mathematics libraries, and AI-assisted refereeing are reshaping the landscape. This article surveys recent developments and asks fundamental questions: What is the role of peer review in an age of computer verification? How do we credit contributions to large collaborative projects? What does "publication" mean when proofs can be formally checked by software?</p>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                <p><strong>IMO Shortlist Problem (Algebra)</strong></p>
+                <p>Let \(n\) be a positive integer. Find all functions \(f: \mathbb{R} \to \mathbb{R}\) such that for all real numbers \(x, y\):
+                \[f(x + f(y)) = f(x) + y^n\]</p>
+
+                <details>
+                    <summary>💡 Hint</summary>
+                    <p>Start by investigating injectivity and surjectivity. Show that \(f\) is bijective and find \(f(0)\). Then consider the case when \(n\) is odd versus when \(n\) is even separately.</p>
+                </details>
+
+                <details>
+                    <summary>📝 Solution</summary>
+                    <p><strong>Step 1:</strong> Setting \(x = 0\), we get \(f(f(y)) = f(0) + y^n\). This shows \(f\) is surjective (since \(y^n\) covers all non-negative reals when \(n\) is even, and all reals when \(n\) is odd).</p>
+
+                    <p><strong>Step 2:</strong> If \(f(a) = f(b)\), then \(f(f(a)) = f(f(b))\), so \(f(0) + a^n = f(0) + b^n\), giving \(a^n = b^n\). When \(n\) is odd, this implies \(a = b\), so \(f\) is injective. When \(n\) is even, we need additional analysis.</p>
+
+                    <p><strong>Step 3:</strong> Setting \(y = 0\): \(f(x + f(0)) = f(x)\). If \(f(0) \neq 0\), this contradicts injectivity (for odd \(n\)). So \(f(0) = 0\).</p>
+
+                    <p><strong>Step 4:</strong> With \(f(0) = 0\), we have \(f(f(y)) = y^n\).</p>
+
+                    <p><strong>Case n odd:</strong> From \(f(f(y)) = y^n\), we get \(f(y^n) = f(f(f(y))) = (f(y))^n\). Substituting \(y \to f(y)\) in the original equation:
+                    \[f(x + y^n) = f(x) + (f(y))^n\]
+                    Setting \(x = 0\): \(f(y^n) = (f(y))^n\). Let \(y = 1\): \(f(1) = (f(1))^n\), so \(f(1) \in \{-1, 0, 1\}\). Since \(f(f(1)) = 1\), we have \(f(1) \neq 0\).</p>
+
+                    <p>If \(f(1) = 1\): By induction, \(f(k) = k\) for integers, and \(f(q) = q\) for rationals. The functional equation then forces \(f(x) = x\) for all \(x\).</p>
+
+                    <p>If \(f(1) = -1\): Similarly, \(f(x) = -x\) for all \(x\), but this requires \(n\) to be odd for consistency.</p>
+
+                    <p><strong>Case n even:</strong> A similar analysis shows no solutions exist when \(n\) is even, because \(f(f(y)) = y^n \geq 0\) would force \(f\) to have restricted range, contradicting the original equation.</p>
+
+                    <p><strong>Answer:</strong> For odd \(n\), the solutions are \(f(x) = x\) and \(f(x) = -x\). For even \(n\), there are no solutions. ∎</p>
+                </details>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day</h2>
+                <p><strong>Riemann Zeta Function on the Critical Line</strong></p>
+                <p>The Riemann zeta function \(\zeta(s)\) for \(s = \frac{1}{2} + it\) (the "critical line") produces fascinating patterns. The Riemann Hypothesis conjectures that all non-trivial zeros lie on this line. This visualization plots the parametric curve \((\text{Re}(\zeta(1/2 + it)), \text{Im}(\zeta(1/2 + it)))\) as \(t\) varies, revealing the intricate behavior of this most important function in analytic number theory.</p>
+
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import zeta
+
+def plot_zeta_critical_line(t_max=50, num_points=10000):
+    """
+    Visualize the Riemann zeta function on the critical line.
+    Plots ζ(1/2 + it) as a parametric curve in the complex plane.
+    """
+    t = np.linspace(0, t_max, num_points)
+    s = 0.5 + 1j * t
+    
+    # Compute zeta function
+    zeta_values = zeta(s)
+    
+    # Extract real and imaginary parts
+    x = np.real(zeta_values)
+    y = np.imag(zeta_values)
+    
+    # Create color gradient based on t
+    colors = plt.cm.viridis(t / t_max)
+    
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+    
+    # Plot 1: Parametric curve with color gradient
+    ax1 = axes[0]
+    for i in range(len(t) - 1):
+        ax1.plot([x[i], x[i+1]], [y[i], y[i+1]], 
+                color=colors[i], linewidth=1.5, alpha=0.8)
+    
+    # Mark zeros (where the curve passes through origin)
+    ax1.scatter([0], [0], color='red', s=100, marker='*', 
+               label='Origin (zeros here)', zorder=5)
+    ax1.axhline(y=0, color='k', linewidth=0.5, alpha=0.3)
+    ax1.axvline(x=0, color='k', linewidth=0.5, alpha=0.3)
+    ax1.set_xlabel('Re(ζ(1/2 + it))')
+    ax1.set_ylabel('Im(ζ(1/2 + it))')
+    ax1.set_title(f'Riemann Zeta on Critical Line (t ∈ [0, {t_max}])')
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+    ax1.axis('equal')
+    
+    # Plot 2: Absolute value vs t
+    ax2 = axes[1]
+    abs_zeta = np.abs(zeta_values)
+    ax2.semilogy(t, abs_zeta, 'b-', linewidth=1)
+    ax2.axhline(y=1, color='r', linestyle='--', label='|ζ| = 1')
+    ax2.set_xlabel('t')
+    ax2.set_ylabel('|ζ(1/2 + it)| (log scale)')
+    ax2.set_title('Magnitude of Zeta on Critical Line')
+    ax2.grid(True, alpha=0.3)
+    ax2.legend()
+    
+    plt.tight_layout()
+    return fig
+
+# Generate visualization
+fig = plot_zeta_critical_line(t_max=50, num_points=5000)
+plt.savefig('zeta_critical_line.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+# Find approximate zeros
+from scipy.optimize import fsolve
+
+def zeta_critical_abs(t):
+    """|ζ(1/2 + it)| for finding zeros."""
+    return np.abs(zeta(0.5 + 1j * t))
+
+# First few zeros are approximately at:
+known_zeros = [14.1347, 21.0220, 25.0109, 30.4249, 32.9351]
+print("First few zeros of ζ(s) on the critical line:")
+for i, t in enumerate(known_zeros, 1):
+    z = zeta(0.5 + 1j * t)
+    print(f"  ρ_{i} ≈ 1/2 + {t:.4f}i, |ζ(ρ_{i})| = {np.abs(z):.2e}")
+</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"Mathematics is the art of giving the same name to different things."</p>
+                    <footer>— Henri Poincaré</footer>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — Updated every 30 minutes</p>
+        <p>Generated: 2026-02-17 02:34 UTC</p>
+    </footer>
+</body>
+</html>
