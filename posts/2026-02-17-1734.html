@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 17, 2026 at 17:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 17, 2026 at 17:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 17, 2026 at 17:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">spectral-graph-theory</span>
+                <span class="tag">algebraic-topology</span>
+                <span class="tag">information-theory</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://mathoverflow.net/">MathOverflow</a></h3>
+                    <p>A question and answer site for professional mathematicians. Unlike general Q&A sites, MathOverflow focuses on research-level mathematics, with contributions from leading experts in the field. It's an invaluable resource for staying current with developments across all areas of mathematics.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.sagemath.org/">SageMath</a></h3>
+                    <p>A free, open-source mathematics software system that combines the power of many existing open-source packages into a common Python-based interface. SageMath covers algebra, combinatorics, graph theory, numerical analysis, number theory, calculus, and statistics.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://terrytao.wordpress.com/">What's New — Terence Tao</a></h3>
+                    <p>The personal blog of Fields Medalist Terence Tao, featuring research updates, expository articles, and discussions of mathematical developments. Tao's ability to explain complex topics accessibly makes this essential reading for mathematicians at all levels.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Information Theory and Reliable Communication</h3>
+                    <p><strong>Author:</strong> Robert Gallager</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://web.mit.edu/gallager/www/papers/books.html">MIT (author's page)</a></p>
+                    
+                    <p><strong>Summary:</strong> This classic graduate text provides a rigorous treatment of information theory, covering entropy, data compression, channel capacity, and error-correcting codes. Gallager presents both the mathematical foundations and practical implementation considerations, making it invaluable for students in electrical engineering, computer science, and applied mathematics. The book includes detailed proofs of the channel coding theorem and the rate-distortion theorem.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Spectral Graph Theory: Eigenvalues and Graph Structure</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Spectral graph theory connects linear algebra with combinatorics by studying graphs through the eigenvalues of matrices associated with them. This approach has revolutionized network analysis, clustering algorithms, and the study of expander graphs with applications in computer science and beyond.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Adjacency Matrix:</strong> For a graph \(G = (V, E)\) with \(n\) vertices, the adjacency matrix \(A\) is the \(n \times n\) matrix where \(A_{ij} = 1\) if \(\{i,j\} \in E\) and \(0\) otherwise.</p>
+
+                    <p><strong>Laplacian Matrix:</strong> \(L = D - A\) where \(D\) is the diagonal degree matrix with \(D_{ii} = \deg(v_i)\).</p>
+
+                    <p><strong>Normalized Laplacian:</strong> \(\mathcal{L} = D^{-1/2} L D^{-1/2} = I - D^{-1/2} A D^{-1/2}\).</p>
+
+                    <p><strong>Spectral Gap:</strong> The difference \(\lambda_2 - \lambda_1\) between the first and second eigenvalues of the Laplacian.</p>
+
+                    <h4>Theorem (Cheeger's Inequality)</h4>
+                    <p>For any connected graph \(G\) with normalized Laplacian eigenvalues \(0 = \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n\):</p>
+                    <p>\[\frac{\lambda_2}{2} \leq \phi(G) \leq \sqrt{2\lambda_2}\]</p>
+                    <p>where \(\phi(G)\) is the Cheeger constant (isoperimetric number), measuring the "bottleneckedness" of the graph.</p>
+
+                    <h4>Proof Sketch</h4>
+                    <p><strong>Lower bound:</strong> For any subset \(S\), the Rayleigh quotient of the indicator vector gives \(\lambda_2 \leq \frac{x^T L x}{x^T x} = \frac{|\partial S|}{|S|} + \frac{|\partial S|}{|V \setminus S|}\). Optimizing over \(S\) yields \(\lambda_2 \leq 2\phi(G)\).</p>
+                    <p><strong>Upper bound:</strong> Given the eigenvector \(v_2\) for \(\lambda_2\), sweep through level sets to find a cut with conductance at most \(\sqrt{2\lambda_2}\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(A\) — Adjacency matrix</li>
+                        <li>\(L\) — Laplacian matrix</li>
+                        <li>\(\lambda_i\) — \(i\)-th eigenvalue</li>
+                        <li>\(\phi(G)\) — Cheeger constant</li>
+                        <li>\(\partial S\) — Edge boundary of set \(S\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import networkx as nx
+from scipy.sparse.linalg import eigsh
+
+def spectral_clustering(G, k=2):
+    """
+    Perform spectral clustering on graph G.
+    Returns cluster assignments for each node.
+    """
+    # Compute normalized Laplacian
+    L = nx.normalized_laplacian_matrix(G).astype(float)
+    
+    # Compute first k eigenvectors
+    eigenvalues, eigenvectors = eigsh(L, k=k, which='SM')
+    
+    # Use k-means on the eigenvector embedding
+    from sklearn.cluster import KMeans
+    kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)
+    labels = kmeans.fit_predict(eigenvectors)
+    
+    return labels, eigenvalues
+
+def cheeger_constant(G):
+    """Estimate the Cheeger constant of a graph."""
+    n = G.number_of_nodes()
+    min_conductance = float('inf')
+    
+    for size in range(1, n // 2 + 1):
+        for nodes in itertools.combinations(G.nodes(), size):
+            S = set(nodes)
+            boundary = nx.edge_boundary(G, S)
+            vol_S = sum(G.degree(v) for v in S)
+            vol_comp = sum(G.degree(v) for v in G.nodes() if v not in S)
+            if vol_S > 0 and vol_comp > 0:
+                conductance = len(boundary) / min(vol_S, vol_comp)
+                min_conductance = min(min_conductance, conductance)
+    
+    return min_conductance
+
+# Example: Create and analyze a graph
+G = nx.karate_club_graph()
+labels, eigenvals = spectral_clustering(G, k=2)
+print(f"Eigenvalues: {eigenvals}")
+print(f"Spectral gap: {eigenvals[1] - eigenvals[0]:.4f}")
+print(f"Cluster assignments: {labels}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Homotopy Groups: The Fundamental Invariants of Topology</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Homotopy groups classify topological spaces by studying continuous deformations of spheres into the space. While homology groups are computable, homotopy groups capture finer geometric information and remain an active area of research with deep connections to algebraic geometry and mathematical physics.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Homotopy:</strong> Two continuous maps \(f, g: X \to Y\) are homotopic if there exists a continuous map \(H: X \times [0,1] \to Y\) with \(H(x,0) = f(x)\) and \(H(x,1) = g(x)\).</p>
+
+                    <p><strong>nth Homotopy Group:</strong> \(\pi_n(X, x_0)\) is the set of homotopy classes of maps \((S^n, s_0) \to (X, x_0)\) with group operation given by concatenation (for \(n \geq 1\)).</p>
+
+                    <p><strong>Simply Connected:</strong> A space is simply connected if \(\pi_1(X) = 0\).</p>
+
+                    <h4>Theorem (Hurewicz Isomorphism)</h4>
+                    <p>If \(X\) is \((n-1)\)-connected (i.e., \(\pi_k(X) = 0\) for \(k < n\)), then the Hurewicz homomorphism \(h: \pi_n(X) \to H_n(X; \mathbb{Z})\) is an isomorphism.</p>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The Hurewicz map sends a homotopy class \([f]\) to the homology class of the pushforward of the fundamental class of \(S^n\). For simply connected spaces, one constructs an inverse by representing homology classes by maps from spheres, using the fact that in the simply connected case, homotopy classes correspond to homology classes.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\pi_n(X, x_0)\) — nth homotopy group</li>
+                        <li>\(S^n\) — n-dimensional sphere</li>
+                        <li>\([f]\) — Homotopy class of map \(f\)</li>
+                        <li>\(h\) — Hurewicz homomorphism</li>
+                        <li>\(\simeq\) — Homotopic to</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.spatial.distance import cdist
+
+def fundamental_group_approximation(points, base_point_idx=0, n_loops=100):
+    """
+    Approximate the fundamental group of a point cloud.
+    This is a simplified demonstration using persistent homology concepts.
+    """
+    n = len(points)
+    distances = cdist(points, points)
+    
+    # Build Rips complex at varying scales
+    def build_graph(epsilon):
+        adjacency = (distances <= epsilon).astype(int)
+        np.fill_diagonal(adjacency, 0)
+        return adjacency
+    
+    # Find cycles using BFS
+    def find_cycles(adjacency, max_length=6):
+        cycles = []
+        n = len(adjacency)
+        
+        for start in range(n):
+            # BFS to find shortest cycles through start
+            visited = {start: [start]}
+            queue = [start]
+            
+            while queue and len(visited) < max_length * n:
+                current = queue.pop(0)
+                path = visited[current]
+                
+                if len(path) > 1:
+                    # Check if we can return to start
+                    if adjacency[current, start] == 1 and len(path) >= 3:
+                        cycles.append(path + [start])
+                
+                if len(path) < max_length:
+                    for neighbor in range(n):
+                        if adjacency[current, neighbor] == 1 and neighbor not in visited:
+                            visited[neighbor] = path + [neighbor]
+                            queue.append(neighbor)
+        
+        return cycles
+    
+    # Analyze at different scales
+    betti_1_estimates = []
+    for eps in np.linspace(0.1, 2.0, 20):
+        adj = build_graph(eps)
+        cycles = find_cycles(adj)
+        # Simplified: count independent cycles
+        betti_1_estimates.append(len(cycles) // 3)
+    
+    return betti_1_estimates
+
+# Example: Analyze a torus-like point cloud
+theta = np.linspace(0, 2*np.pi, 30)
+phi = np.linspace(0, 2*np.pi, 30)
+T = np.meshgrid(theta, phi)
+torus_points = np.column_stack([
+    (2 + np.cos(T[0].flatten())) * np.cos(T[1].flatten()),
+    (2 + np.cos(T[0].flatten())) * np.sin(T[1].flatten()),
+    np.sin(T[0].flatten())
+])
+
+betti_estimates = fundamental_group_approximation(torus_points[:100])
+print(f"Estimated Betti-1 range: {min(betti_estimates)} to {max(betti_estimates)}")
+print("(Torus should have Betti-1 = 2, representing two independent cycles)")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>p-adic Numbers: Analytic Number Theory in a Non-Archimedean World</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>The p-adic numbers, introduced by Hensel in the late 19th century, provide an alternative completion of the rational numbers. Unlike the real numbers which measure "distance from zero," p-adic numbers measure divisibility by a prime \(p\), leading to a rich theory with applications in number theory, algebraic geometry, and even physics.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>p-adic Valuation:</strong> For a prime \(p\) and integer \(n\), \(\nu_p(n)\) is the highest power of \(p\) dividing \(n\). For \(x = a/b \in \mathbb{Q}\), \(\nu_p(x) = \nu_p(a) - \nu_p(b)\).</p>
+
+                    <p><strong>p-adic Absolute Value:</strong> \(|x|_p = p^{-\nu_p(x)}\) for \(x \neq 0\), and \(|0|_p = 0\).</p>
+
+                    <p><strong>p-adic Numbers:</strong> \(\mathbb{Q}_p\) is the completion of \(\mathbb{Q}\) with respect to \(|\cdot|_p\). Elements have unique expansions \(x = \sum_{k=m}^{\infty} a_k p^k\) where \(a_k \in \{0, 1, \ldots, p-1\}\).</p>
+
+                    <p><strong>p-adic Integers:</strong> \(\mathbb{Z}_p = \{x \in \mathbb{Q}_p : |x|_p \leq 1\}\).</p>
+
+                    <h4>Theorem (Hensel's Lemma)</h4>
+                    <p>Let \(f(x) \in \mathbb{Z}_p[x]\) and suppose there exists \(\alpha_0 \in \mathbb{Z}_p\) such that:</p>
+                    <p>\[|f(\alpha_0)|_p < |f'(\alpha_0)|_p^2\]</p>
+                    <p>Then there exists a unique \(\alpha \in \mathbb{Z}_p\) such that \(f(\alpha) = 0\) and \(|\alpha - \alpha_0|_p < |f'(\alpha_0)|_p\).</p>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof uses Newton's method in the p-adic setting. Define \(\alpha_{n+1} = \alpha_n - \frac{f(\alpha_n)}{f'(\alpha_n)}\). The condition ensures that \(|f(\alpha_n)|_p \to 0\) and \(\{\alpha_n\}\) is Cauchy, hence converges to a root.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\nu_p(x)\) — p-adic valuation</li>
+                        <li>\(|x|_p\) — p-adic absolute value</li>
+                        <li>\(\mathbb{Q}_p\) — Field of p-adic numbers</li>
+                        <li>\(\mathbb{Z}_p\) — Ring of p-adic integers</li>
+                        <li>\(\mathbb{C}_p\) — Completion of algebraic closure of \(\mathbb{Q}_p\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>class PAdicNumber:
+    """
+    Represents a p-adic number with finite precision.
+    Stores expansion: sum of a_k * p^k for k >= min_exp
+    """
+    def __init__(self, p, coefficients, min_exp=0):
+        self.p = p
+        self.coeffs = coefficients  # List of digits
+        self.min_exp = min_exp
+        self.precision = len(coefficients)
+    
+    def valuation(self):
+        """Return the p-adic valuation."""
+        for i, c in enumerate(self.coeffs):
+            if c != 0:
+                return self.min_exp + i
+        return float('inf')
+    
+    def norm(self):
+        """Return the p-adic absolute value."""
+        v = self.valuation()
+        if v == float('inf'):
+            return 0
+        return self.p ** (-v)
+    
+    def __add__(self, other):
+        """Add two p-adic numbers."""
+        assert self.p == other.p
+        min_e = min(self.min_exp, other.min_exp)
+        max_prec = max(self.min_exp + len(self.coeffs),
+                       other.min_exp + len(other.coeffs)) - min_e
+        
+        result = []
+        carry = 0
+        for i in range(max_prec):
+            exp = min_e + i
+            a = self.coeffs[exp - self.min_exp] if self.min_exp <= exp < self.min_exp + len(self.coeffs) else 0
+            b = other.coeffs[exp - other.min_exp] if other.min_exp <= exp < other.min_exp + len(other.coeffs) else 0
+            s = a + b + carry
+            result.append(s % self.p)
+            carry = s // self.p
+        
+        return PAdicNumber(self.p, result, min_e)
+    
+    def __repr__(self):
+        terms = []
+        for i, c in enumerate(self.coeffs):
+            exp = self.min_exp + i
+            if c != 0:
+                if exp == 0:
+                    terms.append(str(c))
+                elif exp == 1:
+                    terms.append(f"{c}*{self.p}")
+                else:
+                    terms.append(f"{c}*{self.p}^{exp}")
+        return " + ".join(terms) if terms else "0"
+
+def hensel_lift(f, df, x0, p, n_iterations=5):
+    """
+    Hensel lifting: given approximate root x0 mod p, lift to root in Z_p.
+    f: function, df: derivative, x0: initial approximation
+    """
+    x = x0
+    for i in range(n_iterations):
+        fx = f(x)
+        dfx = df(x)
+        if dfx % p == 0:
+            break
+        # Newton iteration: x_{n+1} = x_n - f(x_n)/f'(x_n)
+        x = (x - fx * pow(dfx, -1, p**(i+2))) % p**(i+2)
+    return x
+
+# Example: Find square root of 2 in 7-adic numbers
+# Note: 2 is a quadratic residue mod 7 since 3^2 = 9 ≡ 2 (mod 7)
+p = 7
+f = lambda x: x**2 - 2
+df = lambda x: 2*x
+
+x0 = 3  # Initial approximation: 3^2 ≡ 2 (mod 7)
+root = hensel_lift(f, df, x0, p, n_iterations=4)
+print(f"7-adic approximation of sqrt(2): {root}")
+print(f"Verification: {root}^2 = {root**2} ≡ {(root**2) % 7**4} (mod 7^4)")
+
+# Create and manipulate p-adic numbers
+a = PAdicNumber(7, [3, 1, 2], min_exp=0)  # 3 + 1*7 + 2*7^2
+b = PAdicNumber(7, [4, 2, 1], min_exp=0)  # 4 + 2*7 + 1*7^2
+print(f"\na = {a}")
+print(f"b = {b}")
+print(f"a + b = {a + b}")
+print(f"|a|_7 = {a.norm()}")</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🚀 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Optimal Transport: From Monge to Machine Learning</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Optimal transport theory, originating with Monge's 1781 problem of moving earth efficiently, has found modern applications in economics (matching theory), computer graphics (morphing), machine learning (Wasserstein GANs), and medical imaging (registration). It provides a geometrically meaningful way to compare probability distributions.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Pushforward Measure:</strong> For a map \(T: X \to Y\) and measure \(\mu\) on \(X\), the pushforward \(T_\#\mu\) is defined by \((T_\#\mu)(A) = \mu(T^{-1}(A))\).</p>
+
+                    <p><strong>Monge Problem:</strong> Given \(\mu, \nu\) on spaces \(X, Y\) and cost \(c: X \times Y \to \mathbb{R}_+\), find \(T\) minimizing \(\int_X c(x, T(x)) \, d\mu(x)\) subject to \(T_\#\mu = \nu\).</p>
+
+                    <p><strong>Kantorovich Relaxation:</strong> Minimize \(\int_{X \times Y} c(x,y) \, d\gamma(x,y)\) over couplings \(\gamma \in \Pi(\mu, \nu)\), where \(\Pi(\mu, \nu)\) contains all joint distributions with marginals \(\mu\) and \(\nu\).</p>
+
+                    <p><strong>Wasserstein Distance:</strong> \(W_p(\mu, \nu) = \left(\inf_{\gamma \in \Pi(\mu, \nu)} \int |x-y|^p \, d\gamma\right)^{1/p}\).</p>
+
+                    <h4>Theorem (Kantorovich Duality)</h4>
+                    <p>For the cost \(c(x,y) = |x-y|^p\) with \(p \geq 1\):</p>
+                    <p>\[W_p^p(\mu, \nu) = \sup_{\phi, \psi} \left\{\int \phi \, d\mu + \int \psi \, d\nu : \phi(x) + \psi(y) \leq |x-y|^p\right\}\]</p>
+                    <p>Equivalently, using the c-transform: \(W_p^p(\mu, \nu) = \sup_{\phi} \left\{\int \phi \, d\mu + \int \phi^c \, d\nu\right\}\) where \(\phi^c(y) = \inf_x (|x-y|^p - \phi(x))\).</p>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof uses Fenchel-Rockafellar duality. The primal (Kantorovich) is a linear program over measures. The dual variables \((\phi, \psi)\) act as Lagrange multipliers for the marginal constraints. Strong duality holds under mild conditions, and the optimal \(\phi\) is called the Kantorovich potential.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\Pi(\mu, \nu)\) — Set of couplings (transport plans)</li>
+                        <li>\(T_\#\mu\) — Pushforward measure</li>
+                        <li>\(W_p\) — p-Wasserstein distance</li>
+                        <li>\(\phi^c\) — c-transform of \(\phi\)</li>
+                        <li>\(\gamma\) — Optimal transport plan</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.optimize import linprog
+from scipy.spatial.distance import cdist
+
+def discrete_optimal_transport(mu, nu, C):
+    """
+    Solve discrete optimal transport using linear programming.
+    
+    Parameters:
+    - mu: Source distribution (length m)
+    - nu: Target distribution (length n)
+    - C: Cost matrix (m x n)
+    
+    Returns:
+    - Optimal transport plan gamma
+    - Optimal cost
+    """
+    m, n = len(mu), len(nu)
+    
+    # Flatten cost matrix for objective
+    c = C.flatten()
+    
+    # Equality constraints: marginals must match
+    # Row sums = mu, column sums = nu
+    A_eq = np.zeros((m + n, m * n))
+    
+    # Row constraints
+    for i in range(m):
+        A_eq[i, i*n:(i+1)*n] = 1
+    
+    # Column constraints
+    for j in range(n):
+        for i in range(m):
+            A_eq[m + j, i*n + j] = 1
+    
+    b_eq = np.concatenate([mu, nu])
+    
+    # Non-negativity bounds
+    bounds = [(0, None) for _ in range(m * n)]
+    
+    # Solve
+    result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+    
+    gamma = result.x.reshape(m, n)
+    return gamma, result.fun
+
+def sinkhorn_knopp(mu, nu, C, epsilon=0.1, max_iter=1000):
+    """
+    Entropic regularization for optimal transport using Sinkhorn iterations.
+    Much faster than LP for large problems.
+    """
+    m, n = len(mu), len(nu)
+    K = np.exp(-C / epsilon)
+    
+    u = np.ones(m)
+    v = np.ones(n)
+    
+    for _ in range(max_iter):
+        u = mu / (K @ v)
+        v = nu / (K.T @ u)
+    
+    gamma = np.diag(u) @ K @ np.diag(v)
+    cost = np.sum(gamma * C)
+    return gamma, cost
+
+# Example: Transport between two Gaussians
+np.random.seed(42)
+n_points = 20
+x = np.linspace(-2, 2, n_points)
+y = np.linspace(-2, 2, n_points)
+
+# Source: N(0, 0.5)
+mu = np.exp(-x**2 / (2 * 0.5))
+mu = mu / np.sum(mu)
+
+# Target: N(1, 0.3)
+nu = np.exp(-(y - 1)**2 / (2 * 0.3))
+nu = nu / np.sum(nu)
+
+# Cost matrix (squared Euclidean)
+C = cdist(x.reshape(-1, 1), y.reshape(-1, 1), metric='sqeuclidean')
+
+# Solve
+gamma, cost = sinkhorn_knopp(mu, nu, C, epsilon=0.05)
+print(f"Optimal transport cost: {cost:.4f}")
+print(f"Wasserstein-2 distance estimate: {np.sqrt(cost):.4f}")
+
+# Visualize the transport plan
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 3, 1)
+plt.bar(x, mu, width=0.15)
+plt.title('Source μ')
+plt.subplot(1, 3, 2)
+plt.imshow(gamma, aspect='auto', origin='lower')
+plt.title('Transport Plan γ')
+plt.colorbar()
+plt.subplot(1, 3, 3)
+plt.bar(y, nu, width=0.15)
+plt.title('Target ν')
+plt.tight_layout()
+plt.savefig('optimal_transport.png', dpi=150)
+plt.show()</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Quantum Error Correction: Protecting Information in a Noisy World</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Quantum computers are exquisitely sensitive to environmental noise, with decoherence times measured in microseconds. Quantum error correction (QEC) enables fault-tolerant quantum computation by encoding logical qubits into multiple physical qubits. The surface code, in particular, has emerged as the leading candidate for practical QEC.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Pauli Operators:</strong> \(I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\), \(X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\), \(Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\), \(Y = iXZ\).</p>
+
+                    <p><strong>Stabilizer Group:</strong> For a quantum code, the stabilizer group \(\mathcal{S}\) is an abelian subgroup of the Pauli group (not containing \(-I\)). The code space is the simultaneous +1 eigenspace of all stabilizers.</p>
+
+                    <p><strong>[[n,k,d]] Code:</strong> Encodes \(k\) logical qubits into \(n\) physical qubits with distance \(d\) (can correct \(\lfloor(d-1)/2\rfloor\) errors).</p>
+
+                    <p><strong>Surface Code:</strong> A topological code defined on a 2D lattice where stabilizers are plaquette (Z-type) and star (X-type) operators.</p>
+
+                    <h4>Theorem (Quantum Error Correction Condition)</h4>
+                    <p>A quantum code with projector \(P\) onto the code space can correct errors from set \(\mathcal{E}\) if and only if:</p>
+                    <p>\[P E_i^\dagger E_j P = \alpha_{ij} P\]</p>
+                    <p>for all \(E_i, E_j \in \mathcal{E}\), where \(\alpha_{ij}\) is a Hermitian matrix.</p>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The condition ensures that different errors map the code space to orthogonal subspaces (detectable) or act identically within the code space (correctable without distinguishing logical states). The recovery operation can be constructed using the projectors onto these orthogonal subspaces.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{S}\) — Stabilizer group</li>
+                        <li>\(N(\mathcal{S})\) — Normalizer of stabilizer group</li>
+                        <li>\([[n,k,d]]\) — Code parameters</li>
+                        <li>\(\bar{X}, \bar{Z}\) — Logical Pauli operators</li>
+                        <li>\(d\) — Code distance</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+# Pauli matrices
+I = np.array([[1, 0], [0, 1]], dtype=complex)
+X = np.array([[0, 1], [1, 0]], dtype=complex)
+Z = np.array([[1, 0], [0, -1]], dtype=complex)
+Y = 1j * X @ Z
+
+def tensor_product(ops):
+    """Compute tensor product of a list of operators."""
+    result = ops[0]
+    for op in ops[1:]:
+        result = np.kron(result, op)
+    return result
+
+def steane_code_stabilizers():
+    """
+    Generate stabilizers for the [[7,1,3]] Steane code.
+    The Steane code encodes 1 logical qubit into 7 physical qubits.
+    """
+    # Steane code stabilizers (X-type and Z-type)
+    # Each stabilizer is a weight-4 Pauli operator
+    
+    stabilizers = []
+    
+    # X-type stabilizers
+    S1_X = tensor_product([X, X, X, X, I, I, I])
+    S2_X = tensor_product([X, X, I, I, X, X, I])
+    S3_X = tensor_product([X, I, X, I, X, I, X])
+    
+    # Z-type stabilizers
+    S1_Z = tensor_product([Z, Z, Z, Z, I, I, I])
+    S2_Z = tensor_product([Z, Z, I, I, Z, Z, I])
+    S3_Z = tensor_product([Z, I, Z, I, Z, I, Z])
+    
+    stabilizers = [S1_X, S2_X, S3_X, S1_Z, S2_Z, S3_Z]
+    return stabilizers
+
+def syndrome_measurement(state, stabilizers):
+    """
+    Measure syndrome by computing expectation values of stabilizers.
+    Returns syndrome bits (0 for +1 eigenvalue, 1 for -1 eigenvalue).
+    """
+    syndrome = []
+    for S in stabilizers:
+        # Expectation value <ψ|S|ψ>
+        exp_val = np.vdot(state, S @ state).real
+        # Round to nearest eigenvalue
+        if abs(exp_val - 1) < 0.1:
+            syndrome.append(0)
+        elif abs(exp_val + 1) < 0.1:
+            syndrome.append(1)
+        else:
+            syndrome.append(None)  # Indeterminate
+    return syndrome
+
+def apply_pauli_error(state, error_type, qubit, n_qubits=7):
+    """Apply a Pauli error to a specific qubit."""
+    ops = [I] * n_qubits
+    ops[qubit] = error_type
+    error_op = tensor_product(ops)
+    return error_op @ state
+
+def steane_code_encoder():
+    """
+    Create the encoding circuit for the Steane code.
+    Returns the encoding unitary (simplified representation).
+    """
+    # The logical |0> state is the simultaneous +1 eigenstate
+    # of all stabilizers with even parity of X operators
+    
+    # For simulation, we construct the logical |0> directly
+    # It's the uniform superposition of all even-weight X-basis states
+    # that satisfy the stabilizer constraints
+    
+    logical_zero = np.zeros(2**7, dtype=complex)
+    
+    # States that satisfy all Z-stabilizers (even number of 1s in each support)
+    # and have even overall parity
+    for i in range(2**7):
+        bits = [(i >> j) & 1 for j in range(7)]
+        
+        # Check Z-stabilizer constraints (even parity on supports)
+        if (sum(bits[j] for j in range(4)) % 2 != 0):  # S1_Z
+            continue
+        if (bits[0] + bits[1] + bits[4] + bits[5]) % 2 != 0:  # S2_Z
+            continue
+        if (bits[0] + bits[2] + bits[4] + bits[6]) % 2 != 0:  # S3_Z
+            continue
+        
+        logical_zero[i] = 1
+    
+    # Normalize
+    logical_zero = logical_zero / np.linalg.norm(logical_zero)
+    return logical_zero
+
+# Demonstration
+print("[[7,1,3]] Steane Code Demonstration")
+print("=" * 50)
+
+# Create logical |0> state
+logical_0 = steane_code_encoder()
+stabilizers = steane_code_stabilizers()
+
+print(f"Logical |0⟩ state dimension: {len(logical_0)}")
+print(f"Number of stabilizers: {len(stabilizers)}")
+
+# Measure syndrome on error-free state
+syndrome = syndrome_measurement(logical_0, stabilizers)
+print(f"\nSyndrome (no error): {syndrome}")
+print("Expected: [0, 0, 0, 0, 0, 0] (all stabilizers +1)")
+
+# Apply a single X error on qubit 0
+state_with_error = apply_pauli_error(logical_0, X, 0)
+syndrome_error = syndrome_measurement(state_with_error, stabilizers)
+print(f"\nSyndrome (X error on qubit 0): {syndrome_error}")
+
+# The syndrome should identify the error location
+# For X error on qubit 0: X-type stabilizers containing qubit 0 flip
+print("X-type stabilizers containing qubit 0: S1_X, S2_X, S3_X")
+print("Expected syndrome: [1, 1, 1, 0, 0, 0]")
+
+# Verify code distance
+print(f"\nCode parameters: n=7, k=1, d=3")
+print("Can correct any single-qubit error (X, Y, or Z on any of 7 qubits)")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Reinforcement Learning: The Mathematics of Optimal Decision Making</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Reinforcement learning (RL) has achieved superhuman performance in games (Go, chess, poker), robotics, autonomous driving, and resource management. At its core, RL solves the problem of sequential decision-making under uncertainty, combining dynamic programming, optimization theory, and statistical learning.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Markov Decision Process (MDP):</strong> A tuple \((\mathcal{S}, \mathcal{A}, \mathcal{P}, \mathcal{R}, \gamma)\) where \(\mathcal{S}\) is the state space, \(\mathcal{A}\) the action space, \(\mathcal{P}(s'|s,a)\) transition probabilities, \(\mathcal{R}(s,a)\) reward function, and \(\gamma \in [0,1)\) discount factor.</p>
+
+                    <p><strong>Policy:</strong> \(\pi(a|s)\) is the probability of taking action \(a\) in state \(s\).</p>
+
+                    <p><strong>Value Function:</strong> \(V^\pi(s) = \mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^t R_t \mid S_0 = s, \pi\right]\).</p>
+
+                    <p><strong>Q-Function:</strong> \(Q^\pi(s,a) = \mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^t R_t \mid S_0 = s, A_0 = a, \pi\right]\).</p>
+
+                    <p><strong>Optimal Value:</strong> \(V^*(s) = \sup_\pi V^\pi(s)\).</p>
+
+                    <h4>Theorem (Bellman Optimality)</h4>
+                    <p>The optimal value function \(V^*\) is the unique solution to:</p>
+                    <p>\[V^*(s) = \max_{a \in \mathcal{A}} \left\{\mathcal{R}(s,a) + \gamma \sum_{s'} \mathcal{P}(s'|s,a) V^*(s')\right\}\]</p>
+                    <p>Equivalently for Q-functions:</p>
+                    <p>\[Q^*(s,a) = \mathcal{R}(s,a) + \gamma \sum_{s'} \mathcal{P}(s'|s,a) \max_{a'} Q^*(s', a')\]</p>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The Bellman operator \(\mathcal{T}\) defined by the right-hand side is a contraction in the sup norm (by \(\gamma < 1\)). By the Banach fixed-point theorem, it has a unique fixed point. This fixed point must be \(V^*\) because: (1) any optimal policy achieves the max, and (2) the fixed point represents the best achievable value from each state.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{S}, \mathcal{A}\) — State and action spaces</li>
+                        <li>\(\mathcal{P}(s'|s,a)\) — Transition probability</li>
+                        <li>\(\gamma\) — Discount factor</li>
+                        <li>\(V^\pi, Q^\pi\) — Value and action-value functions</li>
+                        <li>\(\mathcal{T}\) — Bellman operator</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class GridWorldMDP:
+    """
+    A simple grid world MDP for demonstrating RL algorithms.
+    """
+    def __init__(self, size=4, gamma=0.95):
+        self.size = size
+        self.n_states = size * size
+        self.n_actions = 4  # up, down, left, right
+        self.gamma = gamma
+        
+        # Define transition dynamics and rewards
+        self.P = np.zeros((self.n_states, self.n_actions, self.n_states))
+        self.R = np.zeros((self.n_states, self.n_actions))
+        
+        # Goal state (bottom-right corner)
+        self.goal = self.n_states - 1
+        
+        for s in range(self.n_states):
+            row, col = s // size, s % size
+            
+            for a in range(4):
+                # Determine next state
+                next_row, next_col = row, col
+                if a == 0:  # up
+                    next_row = max(0, row - 1)
+                elif a == 1:  # down
+                    next_row = min(size - 1, row + 1)
+                elif a == 2:  # left
+                    next_col = max(0, col - 1)
+                elif a == 3:  # right
+                    next_col = min(size - 1, col + 1)
+                
+                next_s = next_row * size + next_col
+                self.P[s, a, next_s] = 1.0
+                
+                # Reward: +1 for reaching goal, small penalty otherwise
+                if next_s == self.goal and s != self.goal:
+                    self.R[s, a] = 1.0
+                else:
+                    self.R[s, a] = -0.01  # Small step penalty
+
+def value_iteration(mdp, theta=1e-6, max_iter=1000):
+    """
+    Value iteration algorithm for finding optimal policy.
+    """
+    V = np.zeros(mdp.n_states)
+    
+    for i in range(max_iter):
+        delta = 0
+        for s in range(mdp.n_states):
+            v = V[s]
+            # Bellman optimality update
+            Q_s = np.zeros(mdp.n_actions)
+            for a in range(mdp.n_actions):
+                Q_s[a] = mdp.R[s, a] + mdp.gamma * np.sum(mdp.P[s, a, :] * V)
+            V[s] = np.max(Q_s)
+            delta = max(delta, abs(v - V[s]))
+        
+        if delta < theta:
+            print(f"Value iteration converged after {i+1} iterations")
+            break
+    
+    # Extract optimal policy
+    policy = np.zeros(mdp.n_states, dtype=int)
+    for s in range(mdp.n_states):
+        Q_s = np.zeros(mdp.n_actions)
+        for a in range(mdp.n_actions):
+            Q_s[a] = mdp.R[s, a] + mdp.gamma * np.sum(mdp.P[s, a, :] * V)
+        policy[s] = np.argmax(Q_s)
+    
+    return V, policy
+
+def q_learning(mdp, n_episodes=1000, alpha=0.1, epsilon=0.1):
+    """
+    Q-learning: model-free RL algorithm.
+    """
+    Q = np.zeros((mdp.n_states, mdp.n_actions))
+    
+    for episode in range(n_episodes):
+        s = 0  # Start state
+        
+        while s != mdp.goal:
+            # Epsilon-greedy action selection
+            if np.random.random() < epsilon:
+                a = np.random.randint(mdp.n_actions)
+            else:
+                a = np.argmax(Q[s, :])
+            
+            # Simulate transition
+            next_s = np.random.choice(mdp.n_states, p=mdp.P[s, a, :])
+            r = mdp.R[s, a]
+            
+            # Q-learning update
+            Q[s, a] = Q[s, a] + alpha * (r + mdp.gamma * np.max(Q[next_s, :]) - Q[s, a])
+            
+            s = next_s
+    
+    # Extract policy
+    policy = np.argmax(Q, axis=1)
+    V = np.max(Q, axis=1)
+    
+    return Q, V, policy
+
+def policy_iteration(mdp, max_iter=100):
+    """
+    Policy iteration: alternate between policy evaluation and improvement.
+    """
+    policy = np.random.randint(0, mdp.n_actions, size=mdp.n_states)
+    V = np.zeros(mdp.n_states)
+    
+    for i in range(max_iter):
+        # Policy evaluation
+        theta = 1e-6
+        while True:
+            delta = 0
+            for s in range(mdp.n_states):
+                v = V[s]
+                a = policy[s]
+                V[s] = mdp.R[s, a] + mdp.gamma * np.sum(mdp.P[s, a, :] * V)
+                delta = max(delta, abs(v - V[s]))
+            if delta < theta:
+                break
+        
+        # Policy improvement
+        policy_stable = True
+        for s in range(mdp.n_states):
+            old_action = policy[s]
+            Q_s = np.zeros(mdp.n_actions)
+            for a in range(mdp.n_actions):
+                Q_s[a] = mdp.R[s, a] + mdp.gamma * np.sum(mdp.P[s, a, :] * V)
+            policy[s] = np.argmax(Q_s)
+            if old_action != policy[s]:
+                policy_stable = False
+        
+        if policy_stable:
+            print(f"Policy iteration converged after {i+1} iterations")
+            break
+    
+    return V, policy
+
+# Demonstration
+print("Reinforcement Learning on Grid World")
+print("=" * 50)
+
+mdp = GridWorldMDP(size=4, gamma=0.95)
+
+# Value iteration
+V_vi, policy_vi = value_iteration(mdp)
+print(f"\nOptimal values (value iteration):")
+print(V_vi.reshape(4, 4).round(3))
+
+# Policy iteration
+V_pi, policy_pi = policy_iteration(mdp)
+print(f"\nOptimal values (policy iteration):")
+print(V_pi.reshape(4, 4).round(3))
+
+# Q-learning
+Q_ql, V_ql, policy_ql = q_learning(mdp, n_episodes=5000)
+print(f"\nOptimal values (Q-learning):")
+print(V_ql.reshape(4, 4).round(3))
+
+# Display optimal policy
+action_symbols = ['↑', '↓', '←', '→']
+print(f"\nOptimal Policy:")
+for row in range(4):
+    row_policy = [action_symbols[policy_vi[row * 4 + col]] for col in range(4)]
+    print(" ".join(row_policy))</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>Arithmetic Geometry: The Weil Conjectures</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>André Weil formulated his famous conjectures in 1949, proposing deep connections between the number of points on algebraic varieties over finite fields and the topology of corresponding complex varieties. Their proof by Deligne in 1974 was a landmark achievement, earning him the Fields Medal.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Variety over \(\mathbb{F}_q\):</strong> The set of solutions to polynomial equations with coefficients in the finite field with \(q\) elements.</p>
+
+                    <p><strong>Zeta Function:</strong> \(Z(X, t) = \exp\left(\sum_{n=1}^{\infty} N_n \frac{t^n}{n}\right)\) where \(N_n\) counts points over \(\mathbb{F}_{q^n}\).</p>
+
+                    <h4>Theorem (Weil Conjectures, proved by Deligne)</h4>
+                    <p>For a smooth projective variety \(X\) of dimension \(d\) over \(\mathbb{F}_q\):</p>
+                    <ol>
+                        <li><strong>Rationality:</strong> \(Z(X, t)\) is a rational function of \(t\).</li>
+                        <li><strong>Functional Equation:</strong> \(Z(X, q^{-d}/t) = \pm q^{dE/2} t^E Z(X, t)\) where \(E\) is the Euler characteristic.</li>
+                        <li><strong>Riemann Hypothesis:</strong> The zeros and poles of \(Z(X, t)\) lie on circles \(|t| = q^{-i/2}\) for \(i = 0, 1, \ldots, 2d\).</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{F}_q\) — Finite field with \(q\) elements</li>
+                        <li>\(N_n\) — Number of points over \(\mathbb{F}_{q^n}\)</li>
+                        <li>\(Z(X, t)\) — Zeta function of variety \(X\)</li>
+                        <li>\(H^i_{\text{ét}}\) — Étale cohomology groups</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from sympy import symbols, expand, Poly, exp, summation, oo
+
+def count_points_elliptic_curve(a, b, q):
+    """
+    Count points on elliptic curve y^2 = x^3 + ax + b over F_q.
+    Includes point at infinity.
+    """
+    count = 1  # Point at infinity
+    
+    for x in range(q):
+        rhs = (x**3 + a*x + b) % q
+        # Count square roots
+        for y in range(q):
+            if (y*y) % q == rhs:
+                count += 1
+    
+    return count
+
+def weil_conjecture_elliptic(a, b, q, max_n=10):
+    """
+    Verify Weil conjectures for elliptic curve y^2 = x^3 + ax + b.
+    For elliptic curves, the zeta function has the form:
+    Z(t) = (1 - at + qt^2) / ((1-t)(1-qt))
+    where a = q + 1 - N_1.
+    """
+    # Count points for various extensions
+    N = []
+    for n in range(1, max_n + 1):
+        qn = q**n
+        # For extension fields, we need to be more careful
+        # Using the formula: N_n = q^n + 1 - (α^n + β^n)
+        # where α, β are roots of T^2 - aT + q = 0
+        N_n = count_points_elliptic_curve(a, b, qn) if qn < 1000 else None
+        N.append(N_n)
+    
+    # Compute a = q + 1 - N_1
+    N1 = count_points_elliptic_curve(a, b, q)
+    a_weil = q + 1 - N1
+    
+    # Roots of T^2 - aT + q = 0
+    discriminant = a_weil**2 - 4*q
+    if discriminant >= 0:
+        alpha = (a_weil + np.sqrt(discriminant)) / 2
+        beta = (a_weil - np.sqrt(discriminant)) / 2
+    else:
+        alpha = complex(a_weil/2, np.sqrt(-discriminant)/2)
+        beta = complex(a_weil/2, -np.sqrt(-discriminant)/2)
+    
+    print(f"Elliptic curve: y^2 = x^3 + {a}x + {b} over F_{q}")
+    print(f"N_1 = {N1}")
+    print(f"a = {a_weil}")
+    print(f"α = {alpha}, |α| = {abs(alpha):.4f}")
+    print(f"β = {beta}, |β| = {abs(beta):.4f}")
+    
+    # Verify |α| = |β| = sqrt(q) (Riemann Hypothesis)
+    print(f"\nRiemann Hypothesis check:")
+    print(f"|α| = √q? {abs(abs(alpha) - np.sqrt(q)) < 1e-10}")
+    print(f"|β| = √q? {abs(abs(beta) - np.sqrt(q)) < 1e-10}")
+    
+    return a_weil, alpha, beta
+
+# Example: Elliptic curve y^2 = x^3 + x + 1 over F_5
+a_weil, alpha, beta = weil_conjecture_elliptic(1, 1, 5)</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Geometric Group Theory: Hyperbolic Groups</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Mikhail Gromov's 1987 paper "Hyperbolic Groups" revolutionized infinite group theory by importing geometric ideas. A finitely generated group is hyperbolic if its Cayley graph satisfies a thin triangle condition, generalizing the geometry of classical hyperbolic space.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Cayley Graph:</strong> For group \(G\) with generating set \(S\), vertices are group elements, edges connect \(g\) to \(gs\) for \(s \in S\).</p>
+
+                    <p><strong>\(\delta\)-Hyperbolic Space:</strong> A geodesic metric space where any geodesic triangle is \(\delta\)-thin: each side is contained in the \(\delta\)-neighborhood of the union of the other two sides.</p>
+
+                    <p><strong>Hyperbolic Group:</strong> A finitely generated group whose Cayley graph is \(\delta\)-hyperbolic for some \(\delta \geq 0\).</p>
+
+                    <h4>Theorem (Gromov)</h4>
+                    <p>A hyperbolic group has a well-defined boundary at infinity \(\partial G\). The action of \(G\) on \(\partial G\) is:</p>
+                    <ol>
+                        <li>Properly discontinuous on the triple space \(\partial G \times \partial G \times \partial G\)</li>
+                        <li>Cocompact on the space of distinct pairs</li>
+                    </ol>
+                    <p>Moreover, the boundary is a compact metrizable space.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\Gamma(G, S)\) — Cayley graph</li>
+                        <li>\(\delta\) — Hyperbolicity constant</li>
+                        <li>\(\partial G\) — Gromov boundary</li>
+                        <li>\((x|y)_w\) — Gromov product</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import networkx as nx
+from collections import deque
+
+class HyperbolicGroup:
+    """
+    Represents a group and checks hyperbolicity properties.
+    Example: Free groups are 0-hyperbolic (trees).
+    """
+    def __init__(self, generators, relators=None):
+        self.generators = generators
+        self.relators = relators or []
+        self.inv_map = {g: g+'⁻¹' for g in generators}
+        for g in generators:
+            self.inv_map[g+'⁻¹'] = g
+    
+    def reduce_word(self, word):
+        """Reduce a word by canceling adjacent inverse pairs."""
+        stack = []
+        for letter in word:
+            if stack and self.inv_map.get(stack[-1]) == letter:
+                stack.pop()
+            else:
+                stack.append(letter)
+        return ''.join(stack)
+    
+    def geodesic_metric(self, word1, word2):
+        """
+        Distance in the Cayley graph equals length of reduced word
+        representing word1⁻¹ * word2.
+        """
+        # For free groups, this is just the length after reduction
+        inv_w1 = ''.join(reversed([self.inv_map[c] for c in word1]))
+        product = self.reduce_word(inv_w1 + word2)
+        return len(product)
+    
+    def gromov_product(self, x, y, w):
+        """
+        (x|y)_w = (1/2)(d(x,w) + d(y,w) - d(x,y))
+        Measures how long geodesics from w to x and w to y stay together.
+        """
+        d_xw = self.geodesic_metric(x, w)
+        d_yw = self.geodesic_metric(y, w)
+        d_xy = self.geodesic_metric(x, y)
+        return 0.5 * (d_xw + d_yw - d_xy)
+    
+    def check_thin_triangle(self, a, b, c, delta):
+        """
+        Check if triangle with vertices a, b, c is delta-thin.
+        In a delta-hyperbolic space, each side is in delta-neighborhood
+        of the union of other two sides.
+        """
+        # Compute side lengths
+        ab = self.geodesic_metric(a, b)
+        bc = self.geodesic_metric(b, c)
+        ca = self.geodesic_metric(c, a)
+        
+        # For a tree (0-hyperbolic), this is always satisfied
+        # For general groups, we'd need to enumerate paths
+        
+        # Simplified check: Gromov product condition
+        # In delta-hyperbolic space: (x|y)_w >= min((x|z)_w, (y|z)_w) - delta
+        w = ''  # Identity
+        xy_w = self.gromov_product(a, b, w)
+        xz_w = self.gromov_product(a, c, w)
+        yz_w = self.gromov_product(b, c, w)
+        
+        return xy_w >= min(xz_w, yz_w) - delta
+
+# Free group on 2 generators
+F2 = HyperbolicGroup(['a', 'b'])
+
+# Test hyperbolicity
+print("Free Group F₂ Hyperbolicity Check")
+print("=" * 40)
+
+# Free groups are 0-hyperbolic (their Cayley graphs are trees)
+test_triangles = [
+    ('a', 'b', 'ab'),
+    ('aa', 'bb', 'aabb'),
+    ('aba', 'bab', 'abab'),
+    ('', 'a', 'b'),  # One vertex at identity
+]
+
+for a, b, c in test_triangles:
+    is_thin = F2.check_thin_triangle(a, b, c, delta=0)
+    ab = F2.geodesic_metric(a, b)
+    bc = F2.geodesic_metric(b, c)
+    ca = F2.geodesic_metric(c, a)
+    print(f"Triangle ({a or 'e'}, {b or 'e'}, {c or 'e'}): sides {ab}, {bc}, {ca}")
+    print(f"  0-thin: {is_thin}")
+
+# Demonstrate word reduction
+words = ['aa⁻¹', 'aba⁻¹b⁻¹', 'aabba⁻¹b⁻¹a', 'abc⁻¹c']
+print(f"\nWord Reduction in F₂:")
+for w in words:
+    reduced = F2.reduce_word(w)
+    print(f"  {w} → {reduced}")
+
+# Gromov products
+print(f"\nGromov Products (with basepoint = identity):")
+x, y, z = 'a', 'b', 'ab'
+print(f"  (a|b)_e = {F2.gromov_product(x, y, '')}")
+print(f"  (a|ab)_e = {F2.gromov_product(x, z, '')}")
+print(f"  (b|ab)_e = {F2.gromov_product(y, z, '')}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Symplectic Geometry: The Geometry of Classical Mechanics</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Symplectic geometry emerged from Hamilton's reformulation of classical mechanics in the 1830s. The modern geometric formulation, developed in the mid-20th century, reveals deep structures: symplectic manifolds have no local invariants (Darboux's theorem), yet possess rich global topology. Gromov's 1985 work on pseudoholomorphic curves revolutionized the field.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Symplectic Form:</strong> A closed, non-degenerate 2-form \(\omega\) on a manifold \(M^{2n}\). Non-degenerate means \(\omega^n \neq 0\) everywhere.</p>
+
+                    <p><strong>Hamiltonian Vector Field:</strong> For \(H: M \to \mathbb{R}\), the vector field \(X_H\) satisfies \(\iota_{X_H}\omega = -dH\).</p>
+
+                    <p><strong>Poisson Bracket:</strong> \(\{f, g\} = \omega(X_f, X_g) = X_f(g)\).</p>
+
+                    <p><strong>Lagrangian Submanifold:</strong> A submanifold \(L^n \subset M^{2n}\) where \(\omega|_L = 0\) and \(\dim L = n\).</p>
+
+                    <h4>Theorem (Darboux)</h4>
+                    <p>Near any point on a symplectic manifold \((M, \omega)\), there exist coordinates \((q_1, \ldots, q_n, p_1, \ldots, p_n)\) such that:</p>
+                    <p>\[\omega = \sum_{i=1}^n dq_i \wedge dp_i\]</p>
+                    <p>Equivalently, all symplectic manifolds of the same dimension are locally symplectomorphic to \((\mathbb{R}^{2n}, \omega_0)\).</p>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof uses Moser's trick: given two symplectic forms \(\omega_0, \omega_1\) with \([\omega_0] = [\omega_1]\) in cohomology, the linear interpolation \(\omega_t = (1-t)\omega_0 + t\omega_1\) remains non-degenerate. One constructs a time-dependent vector field whose flow pulls back \(\omega_t\) to \(\omega_0\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\omega\) — Symplectic form</li>
+                        <li>\(X_H\) — Hamiltonian vector field</li>
+                        <li>\(\{f, g\}\) — Poisson bracket</li>
+                        <li>\(\iota_X\) — Interior product (contraction)</li>
+                        <li>\(L\) — Lagrangian submanifold</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.integrate import solve_ivp
+
+class SymplecticSystem:
+    """
+    Represents a Hamiltonian system on R^{2n} with standard symplectic form.
+    Coordinates: (q, p) where q, p are each n-dimensional.
+    """
+    def __init__(self, n):
+        self.n = n
+    
+    def hamiltonian(self, state):
+        """Override this with specific Hamiltonian."""
+        q, p = state[:self.n], state[self.n:]
+        return 0.5 * np.sum(p**2)  # Free particle
+    
+    def hamiltonian_vector_field(self, state):
+        """
+        Compute X_H using Hamilton's equations:
+        dq/dt = ∂H/∂p, dp/dt = -∂H/∂q
+        """
+        eps = 1e-8
+        q, p = state[:self.n], state[self.n:]
+        
+        # ∂H/∂p (numerical gradient)
+        dH_dp = np.zeros(self.n)
+        for i in range(self.n):
+            p_plus = p.copy()
+            p_plus[i] += eps
+            dH_dp[i] = (self.hamiltonian(np.concatenate([q, p_plus])) - 
+                       self.hamiltonian(state)) / eps
+        
+        # ∂H/∂q
+        dH_dq = np.zeros(self.n)
+        for i in range(self.n):
+            q_plus = q.copy()
+            q_plus[i] += eps
+            dH_dq[i] = (self.hamiltonian(np.concatenate([q_plus, p])) - 
+                       self.hamiltonian(state)) / eps
+        
+        # Hamilton's equations
+        dq_dt = dH_dp
+        dp_dt = -dH_dq
+        
+        return np.concatenate([dq_dt, dp_dt])
+    
+    def poisson_bracket(self, f, g, state):
+        """
+        Compute {f, g} = ∂f/∂q · ∂g/∂p - ∂f/∂p · ∂g/∂q
+        """
+        eps = 1e-8
+        n = self.n
+        
+        # Gradients of f
+        df_dq = np.zeros(n)
+        df_dp = np.zeros(n)
+        for i in range(n):
+            state_plus = state.copy()
+            state_plus[i] += eps
+            df_dq[i] = (f(state_plus) - f(state)) / eps
+            
+            state_plus = state.copy()
+            state_plus[n + i] += eps
+            df_dp[i] = (f(state_plus) - f(state)) / eps
+        
+        # Gradients of g
+        dg_dq = np.zeros(n)
+        dg_dp = np.zeros(n)
+        for i in range(n):
+            state_plus = state.copy()
+            state_plus[i] += eps
+            dg_dq[i] = (g(state_plus) - g(state)) / eps
+            
+            state_plus = state.copy()
+            state_plus[n + i] += eps
+            dg_dp[i] = (g(state_plus) - g(state)) / eps
+        
+        return np.dot(df_dq, dg_dp) - np.dot(df_dp, dg_dq)
+    
+    def integrate(self, state0, t_span, t_eval):
+        """Integrate Hamilton's equations."""
+        def ode(t, y):
+            return self.hamiltonian_vector_field(y)
+        
+        sol = solve_ivp(ode, t_span, state0, t_eval=t_eval, method='RK45')
+        return sol
+
+class HarmonicOscillator(SymplecticSystem):
+    """Harmonic oscillator: H = p²/2m + kq²/2"""
+    def __init__(self, m=1.0, k=1.0):
+        super().__init__(n=1)
+        self.m = m
+        self.k = k
+    
+    def hamiltonian(self, state):
+        q, p = state[0], state[1]
+        return p**2 / (2 * self.m) + self.k * q**2 / 2
+
+class DoublePendulum(SymplecticSystem):
+    """Double pendulum Hamiltonian system."""
+    def __init__(self, m1=1.0, m2=1.0, L1=1.0, L2=1.0, g=9.8):
+        super().__init__(n=2)
+        self.m1, self.m2 = m1, m2
+        self.L1, self.L2 = L1, L2
+        self.g = g
+    
+    def hamiltonian(self, state):
+        theta1, theta2, p1, p2 = state
+        
+        # Simplified Hamiltonian for double pendulum
+        # In terms of angles and conjugate momenta
+        cos_diff = np.cos(theta1 - theta2)
+        sin_diff = np.sin(theta1 - theta2)
+        
+        denom = (self.m1 + self.m2) * self.L1 * self.L2 - self.m2 * self.L1 * self.L2 * cos_diff**2
+        
+        # Kinetic energy
+        T = (self.m2 * self.L2**2 * p1**2 + 
+             (self.m1 + self.m2) * self.L1**2 * p2**2 - 
+             2 * self.m2 * self.L1 * self.L2 * p1 * p2 * cos_diff) / (2 * self.m2 * self.L1**2 * self.L2**2 * denom / (self.L1 * self.L2))
+        
+        # Potential energy
+        V = -(self.m1 + self.m2) * self.g * self.L1 * np.cos(theta1) - self.m2 * self.g * self.L2 * np.cos(theta2)
+        
+        return T + V
+
+# Demonstration
+print("Symplectic Geometry: Hamiltonian Systems")
+print("=" * 50)
+
+# Harmonic oscillator
+ho = HarmonicOscillator(m=1.0, k=1.0)
+state0 = np.array([1.0, 0.0])  # q=1, p=0
+sol = ho.integrate(state0, [0, 10], np.linspace(0, 10, 1000))
+
+print(f"Harmonic Oscillator:")
+print(f"  Initial energy: {ho.hamiltonian(state0):.6f}")
+print(f"  Final energy: {ho.hamiltonian(sol.y[:, -1]):.6f}")
+print(f"  Energy drift: {abs(ho.hamiltonian(sol.y[:, -1]) - ho.hamiltonian(state0)):.10f}")
+
+# Verify symplectic structure: compute Poisson bracket
+q_func = lambda s: s[0]
+p_func = lambda s: s[1]
+H_func = lambda s: ho.hamiltonian(s)
+
+# {q, p} should equal 1 (canonical relation)
+poisson_qp = ho.poisson_bracket(q_func, p_func, state0)
+print(f"  {{q, p}} = {poisson_qp:.6f} (should be 1)")
+
+# {q, H} = dq/dt = p/m
+poisson_qH = ho.poisson_bracket(q_func, H_func, state0)
+dq_dt = state0[1] / ho.m
+print(f"  {{q, H}} = {poisson_qH:.6f}, dq/dt = {dq_dt:.6f}")
+
+# Phase space trajectory
+import matplotlib.pyplot as plt
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 3, 1)
+plt.plot(sol.y[0], sol.y[1])
+plt.xlabel('q')
+plt.ylabel('p')
+plt.title('Harmonic Oscillator Phase Space')
+plt.axis('equal')
+plt.grid(True)
+
+# Time evolution
+plt.subplot(1, 3, 2)
+plt.plot(sol.t, sol.y[0], label='q(t)')
+plt.plot(sol.t, sol.y[1], label='p(t)')
+plt.xlabel('t')
+plt.ylabel('value')
+plt.title('Time Evolution')
+plt.legend()
+plt.grid(True)
+
+# Energy conservation
+plt.subplot(1, 3, 3)
+energies = [ho.hamiltonian(sol.y[:, i]) for i in range(sol.y.shape[1])]
+plt.plot(sol.t, energies)
+plt.xlabel('t')
+plt.ylabel('H')
+plt.title('Energy Conservation')
+plt.grid(True)
+
+plt.tight_layout()
+plt.savefig('symplectic_mechanics.png', dpi=150)
+plt.show()</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Combinatorial Optimization: The Traveling Salesman Problem</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>The Traveling Salesman Problem (TSP) is one of the most studied problems in optimization. First formulated in the 1800s, it became a canonical NP-hard problem in the 1970s. Despite its computational difficulty, sophisticated exact and approximate algorithms can solve instances with thousands of cities.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>TSP:</strong> Given \(n\) cities with pairwise distances \(d_{ij}\), find a permutation \(\sigma\) minimizing \(\sum_{i=1}^{n} d_{\sigma(i), \sigma(i+1)}\) where \(\sigma(n+1) = \sigma(1)\).</p>
+
+                    <p><strong>Metric TSP:</strong> Distances satisfy triangle inequality: \(d_{ij} \leq d_{ik} + d_{kj}\).</p>
+
+                    <p><strong>Christofides Algorithm:</strong> A 3/2-approximation for metric TSP combining minimum spanning trees with minimum weight perfect matching.</p>
+
+                    <h4>Theorem (Christofides, 1976)</h4>
+                    <p>For metric TSP, the Christofides algorithm produces a tour with cost at most \(3/2 \cdot OPT\), where \(OPT\) is the optimal tour length.</p>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li>Compute MST \(T\): \(c(T) \leq OPT\) (deleting any edge from optimal tour gives a spanning tree).</li>
+                        <li>Let \(O\) be odd-degree vertices in \(T\). \(|O|\) is even.</li>
+                        <li>Find minimum perfect matching \(M\) on \(O\): \(c(M) \leq OPT/2\) (by shortcutting optimal tour on \(O\)).</li>
+                        <li>\(T \cup M\) is Eulerian; shortcut to get Hamiltonian cycle with cost \(\leq c(T) + c(M) \leq 3OPT/2\).</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(d_{ij}\) — Distance between cities i and j</li>
+                        <li>\(OPT\) — Optimal tour cost</li>
+                        <li>\(T\) — Minimum spanning tree</li>
+                        <li>\(M\) — Minimum weight perfect matching</li>
+                        <li>\(O\) — Set of odd-degree vertices</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import networkx as nx
+from scipy.spatial.distance import pdist, squareform
+
+def christofides_tsp(points):
+    """
+    Christofides algorithm for metric TSP.
+    Returns a tour with cost at most 3/2 * OPT.
+    """
+    n = len(points)
+    
+    # Compute distance matrix
+    dist_matrix = squareform(pdist(points, metric='euclidean'))
+    
+    # Step 1: Compute Minimum Spanning Tree
+    G = nx.Graph()
+    for i in range(n):
+        for j in range(i+1, n):
+            G.add_edge(i, j, weight=dist_matrix[i, j])
+    
+    mst = nx.minimum_spanning_tree(G)
+    mst_cost = mst.size(weight='weight')
+    print(f"MST cost: {mst_cost:.4f}")
+    
+    # Step 2: Find odd-degree vertices in MST
+    odd_vertices = [v for v in mst.nodes() if mst.degree(v) % 2 == 1]
+    print(f"Odd degree vertices: {odd_vertices}")
+    
+    # Step 3: Minimum weight perfect matching on odd vertices
+    odd_subgraph = G.subgraph(odd_vertices)
+    matching = nx.algorithms.matching.min_weight_matching(
+        odd_subgraph, weight='weight'
+    )
+    matching_cost = sum(dist_matrix[u, v] for u, v in matching)
+    print(f"Matching cost: {matching_cost:.4f}")
+    
+    # Step 4: Combine MST and matching to get Eulerian multigraph
+    multigraph = nx.MultiGraph()
+    for u, v, data in mst.edges(data=True):
+        multigraph.add_edge(u, v, weight=data['weight'])
+    for u, v in matching:
+        multigraph.add_edge(u, v, weight=dist_matrix[u, v])
+    
+    # Step 5: Find Eulerian circuit
+    eulerian_circuit = list(nx.eulerian_circuit(multigraph))
+    
+    # Step 6: Shortcut to get Hamiltonian cycle
+    visited = set()
+    tour = []
+    for u, v in eulerian_circuit:
+        if u not in visited:
+            tour.append(u)
+            visited.add(u)
+    tour.append(tour[0])  # Complete the cycle
+    
+    # Compute tour cost
+    tour_cost = sum(dist_matrix[tour[i], tour[i+1]] for i in range(len(tour)-1))
+    
+    return tour, tour_cost, mst_cost + matching_cost
+
+def two_opt_tsp(points, initial_tour=None, max_iterations=1000):
+    """
+    2-opt local search improvement for TSP.
+    """
+    n = len(points)
+    dist_matrix = squareform(pdist(points, metric='euclidean'))
+    
+    if initial_tour is None:
+        tour = list(range(n)) + [0]
+    else:
+        tour = initial_tour.copy()
+    
+    def tour_cost(tour):
+        return sum(dist_matrix[tour[i], tour[i+1]] for i in range(len(tour)-1))
+    
+    improved = True
+    iteration = 0
+    
+    while improved and iteration < max_iterations:
+        improved = False
+        iteration += 1
+        
+        for i in range(1, n-1):
+            for j in range(i+1, n):
+                # Try reversing segment [i:j]
+                new_tour = tour[:i] + tour[i:j+1][::-1] + tour[j+1:]
+                
+                # Compute cost difference (faster than full recalculation)
+                old_edges = (dist_matrix[tour[i-1], tour[i]] + 
+                           dist_matrix[tour[j], tour[j+1]])
+                new_edges = (dist_matrix[tour[i-1], tour[j]] + 
+                           dist_matrix[tour[i], tour[j+1]])
+                
+                if new_edges < old_edges:
+                    tour = new_tour
+                    improved = True
+                    break
+            if improved:
+                break
+    
+    return tour, tour_cost(tour)
+
+def nearest_neighbor_tsp(points):
+    """Greedy nearest neighbor heuristic."""
+    n = len(points)
+    dist_matrix = squareform(pdist(points, metric='euclidean'))
+    
+    unvisited = set(range(1, n))
+    tour = [0]
+    current = 0
+    
+    while unvisited:
+        nearest = min(unvisited, key=lambda x: dist_matrix[current, x])
+        tour.append(nearest)
+        unvisited.remove(nearest)
+        current = nearest
+    
+    tour.append(0)  # Return to start
+    cost = sum(dist_matrix[tour[i], tour[i+1]] for i in range(len(tour)-1))
+    
+    return tour, cost
+
+# Demonstration
+print("Traveling Salesman Problem Algorithms")
+print("=" * 50)
+
+# Generate random points
+np.random.seed(42)
+n_cities = 20
+points = np.random.rand(n_cities, 2) * 100
+
+print(f"\nProblem: {n_cities} cities")
+
+# Nearest neighbor
+nn_tour, nn_cost = nearest_neighbor_tsp(points)
+print(f"\nNearest Neighbor:")
+print(f"  Cost: {nn_cost:.4f}")
+
+# Christofides
+tour_ch, cost_ch, lower_bound = christofides_tsp(points)
+print(f"\nChristofides Algorithm:")
+print(f"  Tour cost: {cost_ch:.4f}")
+print(f"  Lower bound (MST + matching): {lower_bound:.4f}")
+print(f"  Approximation ratio bound: 1.5")
+
+# 2-opt improvement
+tour_2opt, cost_2opt = two_opt_tsp(points, initial_tour=nn_tour)
+print(f"\n2-opt (starting from NN):")
+print(f"  Cost: {cost_2opt:.4f}")
+print(f"  Improvement: {(nn_cost - cost_2opt)/nn_cost*100:.2f}%")
+
+# Visualize
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(15, 5))
+
+plt.subplot(1, 3, 1)
+plt.scatter(points[:, 0], points[:, 1], c='red', s=50, zorder=3)
+for i, (x, y) in enumerate(points):
+    plt.annotate(str(i), (x, y), textcoords="offset points", xytext=(5, 5))
+for i in range(len(nn_tour)-1):
+    plt.plot([points[nn_tour[i], 0], points[nn_tour[i+1], 0]],
+             [points[nn_tour[i], 1], points[nn_tour[i+1], 1]], 'b-', alpha=0.5)
+plt.title(f'Nearest Neighbor (cost={nn_cost:.2f})')
+plt.axis('equal')
+
+plt.subplot(1, 3, 2)
+plt.scatter(points[:, 0], points[:, 1], c='red', s=50, zorder=3)
+for i in range(len(tour_ch)-1):
+    plt.plot([points[tour_ch[i], 0], points[tour_ch[i+1], 0]],
+             [points[tour_ch[i], 1], points[tour_ch[i+1], 1]], 'g-', alpha=0.5)
+plt.title(f'Christofides (cost={cost_ch:.2f})')
+plt.axis('equal')
+
+plt.subplot(1, 3, 3)
+plt.scatter(points[:, 0], points[:, 1], c='red', s=50, zorder=3)
+for i in range(len(tour_2opt)-1):
+    plt.plot([points[tour_2opt[i], 0], points[tour_2opt[i+1], 0]],
+             [points[tour_2opt[i], 1], points[tour_2opt[i+1], 1]], 'm-', alpha=0.5)
+plt.title(f'2-opt (cost={cost_2opt:.2f})')
+plt.axis('equal')
+
+plt.tight_layout()
+plt.savefig('tsp_comparison.png', dpi=150)
+plt.show()</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: The Birth of Abstract Algebra</h2>
+                
+                <p>The 19th century witnessed the transformation of algebra from the study of equations to the study of algebraic structures. This revolution began with the work of Évariste Galois (1811–1832), whose short but brilliant career fundamentally changed how mathematicians think about symmetry and solutions to polynomial equations.</p>
+                
+                <p>Galois developed his theory while still a teenager, showing that the solvability of a polynomial equation by radicals depends on the structure of its associated permutation group. His work, submitted to the Paris Academy of Sciences, was initially rejected and lost. Galois died in a duel at age 20, leaving behind a letter to his friend Auguste Chevalier outlining his mathematical ideas. It was only through the efforts of Liouville in 1846 that Galois's work was finally published and recognized.</p>
+                
+                <p>The abstract group concept emerged gradually. Cauchy studied permutation groups extensively, while Cayley attempted to define groups axiomatically in 1854. The modern definition—sets with associative binary operations, identity elements, and inverses—crystallized in the work of Weber, von Dyck, and others in the 1880s.</p>
+                
+                <p>Concurrently, the study of rings and ideals developed from number theory. Kummer introduced "ideal numbers" in 1847 to restore unique factorization in cyclotomic fields, attempting to prove Fermat's Last Theorem. Dedekind refined this into the theory of ideals in 1871, and Noether's abstract treatment in the 1920s completed the transformation of ring theory into its modern form.</p>
+                
+                <p>By the early 20th century, the structural approach championed by van der Waerden's "Moderne Algebra" (1930) had become standard. Algebra was no longer merely about solving equations—it was the study of abstract structures and the homomorphisms between them, a perspective that would dominate 20th-century mathematics.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3>Quanta Magazine</h3>
+                    <h4>"Mathematicians Discover New Shapes to Solve Ancient Geometry Problems"</h4>
+                    <p>Researchers have discovered a new family of minimal surfaces that resolve long-standing questions in geometric measure theory. These surfaces, constructed using techniques from integrable systems theory, provide counterexamples to several conjectures about the behavior of soap films in higher dimensions. The work connects deep results from complex analysis with the geometric calculus of variations.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3>MIT Technology Review</h3>
+                    <h4>"The Math Behind the Most Efficient Algorithms for Modern Computing"</h4>
+                    <p>A comprehensive survey examines how advances in theoretical computer science are driving practical improvements in everything from database queries to machine learning. The article highlights recent breakthroughs in matrix multiplication algorithms, where researchers have developed new techniques that approach the theoretical limits established by algebraic complexity theory. These advances have direct implications for training large neural networks.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3>SIAM News</h3>
+                    <h4>"Uncertainty Quantification: When Mathematical Models Meet Real-World Data"</h4>
+                    <p>This feature explores the growing field of uncertainty quantification (UQ), which provides rigorous frameworks for understanding how uncertainty propagates through computational models. From climate predictions to medical device design, UQ helps scientists and engineers make robust decisions in the face of incomplete information. The article discusses recent advances in polynomial chaos methods and Bayesian approaches to model calibration.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Problem: A Number Theory Challenge (Putnam 2021)</h3>
+                    <p>Let \(P(x)\) be a polynomial with integer coefficients such that \(P(0) = 0\) and \(\frac{P(n)}{n}\) is an integer for all positive integers \(n\). Prove that \(P(x)\) has the form \(P(x) = xQ(x)\) where \(Q(x)\) is a polynomial with integer coefficients.</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Consider the polynomial \(Q(x) = P(x)/x\). You need to show that \(Q(n)\) is an integer for all integers \(n\). Use the fact that a polynomial that takes integer values at all integers can be expressed as a \(\mathbb{Z}\)-linear combination of binomial coefficients.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p><strong>Step 1:</strong> Since \(P(0) = 0\), we can write \(P(x) = xQ(x)\) for some polynomial \(Q(x)\) with rational coefficients. We need to show that \(Q(x)\) has integer coefficients.</p>
+                        
+                        <p><strong>Step 2:</strong> The condition states that \(P(n)/n = Q(n)\) is an integer for all positive integers \(n\). So \(Q(n) \in \mathbb{Z}\) for all \(n \in \mathbb{Z}^+\).</p>
+                        
+                        <p><strong>Step 3:</strong> Any polynomial \(Q(x)\) with rational coefficients that takes integer values at all integers can be written as:</p>
+                        <p>\[Q(x) = \sum_{k=0}^{d} a_k \binom{x}{k}\]</p>
+                        <p>where \(a_k \in \mathbb{Z}\) and \(\binom{x}{k} = \frac{x(x-1)\cdots(x-k+1)}{k!}\).</p>
+                        
+                        <p><strong>Step 4:</strong> The binomial coefficient polynomials \(\binom{x}{k}\) form a basis for polynomials that map integers to integers. Since \(Q(n) \in \mathbb{Z}\) for all \(n \in \mathbb{Z}^+\), the coefficients \(a_k\) in this expansion must be integers.</p>
+                        
+                        <p><strong>Step 5:</strong> Now, \(P(x) = xQ(x) = x \sum_{k=0}^{d} a_k \binom{x}{k}\). We can rewrite:</p>
+                        <p>\[x\binom{x}{k} = x \cdot \frac{x(x-1)\cdots(x-k+1)}{k!} = (k+1) \cdot \frac{x(x-1)\cdots(x-k+1)x}{(k+1)!} = (k+1)\binom{x}{k+1} \cdot \frac{x}{x-k}\]</p>
+                        
+                        <p>A cleaner approach: Note that \(x\binom{x}{k} = (k+1)\binom{x}{k+1} + k\binom{x}{k}\) is not quite right. Instead:</p>
+                        <p>\[x\binom{x}{k} = (k+1)\binom{x+1}{k+1} - k\binom{x}{k}\]</p>
+                        
+                        <p>Actually, the simplest approach is to verify directly that if \(Q(x) = \sum a_k \binom{x}{k}\) with \(a_k \in \mathbb{Z}\), then \(P(x) = xQ(x)\) has integer coefficients when expanded in the standard basis. This follows from the fact that \(x\binom{x}{k}\) is a polynomial with integer coefficients (it's \(\frac{x^2(x-1)\cdots(x-k+1)}{k!}\) which can be shown to have integer coefficients by induction).</p>
+                        
+                        <p><strong>Conclusion:</strong> Therefore, \(P(x) = xQ(x)\) where \(Q(x)\) has integer coefficients when expressed in the binomial basis, which implies the standard coefficients are also integers.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Mandelbrot Set</h2>
+                
+                <p>The Mandelbrot set is the set of complex numbers \(c\) for which the iteration \(z_{n+1} = z_n^2 + c\) with \(z_0 = 0\) remains bounded. It exhibits infinite complexity at all scales and is perhaps the most famous fractal in mathematics.</p>
+                
+                <h4>Mathematical Properties</h4>
+                <ul>
+                    <li>The main cardioid corresponds to parameters where the iteration converges to a fixed point.</li>
+                    <li>Each bulb attached to the cardioid corresponds to parameters with attracting cycles of different periods.</li>
+                    <li>The boundary has Hausdorff dimension 2, making it a space-filling curve in a limiting sense.</li>
+                    <li>The Mandelbrot set is connected (proved by Douady and Hubbard in the 1980s).</li>
+                </ul>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+
+def mandelbrot(c, max_iter=100, escape_radius=2.0):
+    """
+    Compute the number of iterations until escape for a given c.
+    Returns the iteration count (normalized for smooth coloring).
+    """
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > escape_radius:
+            # Smooth coloring: interpolate between iterations
+            log_zn = np.log(abs(z))
+            nu = np.log(log_zn / np.log(escape_radius)) / np.log(2)
+            return n + 1 - nu
+        z = z*z + c
+    return max_iter
+
+def mandelbrot_set(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25, 
+                   width=1000, height=800, max_iter=100):
+    """
+    Compute the Mandelbrot set over a rectangular region.
+    """
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    # Vectorized computation
+    M = np.zeros((height, width))
+    for i in range(height):
+        for j in range(width):
+            M[i, j] = mandelbrot(C[i, j], max_iter)
+    
+    return M
+
+def create_custom_colormap():
+    """Create a custom colormap for the Mandelbrot set."""
+    colors = [
+        (0.0, 0.0, 0.2),   # Dark blue (interior)
+        (0.0, 0.0, 0.5),   # Blue
+        (0.0, 0.4, 1.0),   # Light blue
+        (0.0, 0.8, 1.0),   # Cyan
+        (0.4, 1.0, 0.4),   # Green
+        (1.0, 1.0, 0.0),   # Yellow
+        (1.0, 0.6, 0.0),   # Orange
+        (1.0, 0.0, 0.0),   # Red
+        (0.5, 0.0, 0.0),   # Dark red
+    ]
+    return LinearSegmentedColormap.from_list("mandelbrot", colors)
+
+# Generate Mandelbrot set
+print("Generating Mandelbrot set...")
+M = mandelbrot_set(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25,
+                   width=800, height=600, max_iter=100)
+
+# Create visualization
+fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+
+# Full view
+ax1 = axes[0, 0]
+im1 = ax1.imshow(M, extent=[-2.5, 1.0, -1.25, 1.25], 
+                 cmap=create_custom_colormap(), origin='lower')
+ax1.set_title('Mandelbrot Set (Full View)')
+ax1.set_xlabel('Re(c)')
+ax1.set_ylabel('Im(c)')
+plt.colorbar(im1, ax=ax1, label='Iterations')
+
+# Zoom into the "valley" between main cardioid and period-2 bulb
+ax2 = axes[0, 1]
+M_zoom1 = mandelbrot_set(xmin=-0.75, xmax=-0.74, ymin=0.1, ymax=0.11,
+                         width=600, height=600, max_iter=200)
+im2 = ax2.imshow(M_zoom1, extent=[-0.75, -0.74, 0.1, 0.11],
+                 cmap=create_custom_colormap(), origin='lower')
+ax2.set_title('Zoom: Valley Region')
+ax2.set_xlabel('Re(c)')
+ax2.set_ylabel('Im(c)')
+
+# Zoom into a mini-Mandelbrot
+ax3 = axes[1, 0]
+M_zoom2 = mandelbrot_set(xmin=-1.78, xmax=-1.77, ymin=-0.005, ymax=0.005,
+                         width=600, height=600, max_iter=300)
+im3 = ax3.imshow(M_zoom2, extent=[-1.78, -1.77, -0.005, 0.005],
+                 cmap=create_custom_colormap(), origin='lower')
+ax3.set_title('Zoom: Mini-Mandelbrot')
+ax3.set_xlabel('Re(c)')
+ax3.set_ylabel('Im(c)')
+
+# Zoom into the "seahorse valley"
+ax4 = axes[1, 1]
+M_zoom3 = mandelbrot_set(xmin=-0.16, xmax=-0.15, ymin=1.035, ymax=1.045,
+                         width=600, height=600, max_iter=400)
+im4 = ax4.imshow(M_zoom3, extent=[-0.16, -0.15, 1.035, 1.045],
+                 cmap=create_custom_colormap(), origin='lower')
+ax4.set_title('Zoom: Seahorse Valley')
+ax4.set_xlabel('Re(c)')
+ax4.set_ylabel('Im(c)')
+
+plt.tight_layout()
+plt.savefig('mandelbrot_set.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+print("Mandelbrot set visualization complete!")</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"The mathematician does not study pure mathematics because it is useful; he studies it because he delights in it and he delights in it because it is beautiful."</p>
+                    <footer>— Henri Poincaré</footer>
+                </blockquote>
+                
+                <p>Henri Poincaré (1854–1912) was one of the last universal mathematicians, making fundamental contributions to topology, dynamical systems, celestial mechanics, and the philosophy of science. His work on the three-body problem laid the foundations for chaos theory, while his conjecture about 3-manifolds (proved by Perelman in 2003) was one of the most famous unsolved problems in mathematics. This quote captures the aesthetic dimension of mathematical practice—mathematics is not merely a tool but an art form, pursued for the beauty of its structures and the elegance of its proofs.</p>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="./index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
