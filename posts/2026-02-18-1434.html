@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 18, 2026 at 14:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 18, 2026 at 14:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 18, 2026 at 14:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-18 at 14:34 UTC</p>
+            <div class="tags">
+                <span class="tag">category-theory</span>
+                <span class="tag">numerical-analysis</span>
+                <span class="tag">mathematical-logic</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://stacks.math.columbia.edu/">The Stacks Project</a></h3>
+                    <p>An open-source textbook and reference work on algebraic geometry, maintained by a community of mathematicians led by Aise Johan de Jong. The Stacks Project aims to build up the foundations of algebraic geometry from scratch, with complete proofs and a rigorous approach.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://terrytao.wordpress.com/">What's New — Terence Tao's Blog</a></h3>
+                    <p>Terence Tao, Fields Medalist and one of the most prolific mathematicians of our time, shares insights on his research, expositions of mathematical topics, and commentary on the mathematics community.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www3.nd.edu/~andyp/notes/">Notes on Diffy Qs</a></h3>
+                    <p>A free, open-source textbook by Jiří Lebl that provides an accessible introduction to ordinary differential equations for engineers.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book</h2>
+                <div class="book-card">
+                    <h3>"Category Theory in Context"</h3>
+                    <p><strong>Author:</strong> Emily Riehl</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> This modern introduction to category theory emphasizes the utility of universal properties and categorical thinking across mathematics. Riehl develops the theory with a focus on examples from algebra, topology, and homotopy theory.</p>
+                    <p><a href="https://math.jhu.edu/~eriehl/context.pdf">Download PDF</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Category Theory: The Mathematics of Structure</h3>
+                    <p class="tag">category-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Category theory, founded by Samuel Eilenberg and Saunders Mac Lane in the 1940s, provides a unified language for mathematics. Rather than studying mathematical objects in isolation, category theory studies the relationships (morphisms) between them.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Category:</strong> A category \(\mathcal{C}\) consists of a class of objects, morphisms between them, composition, and identity morphisms satisfying associativity and identity laws.</li>
+                        <li><strong>Functor:</strong> A map \(F: \mathcal{C} \to \mathcal{D}\) preserving composition and identities.</li>
+                        <li><strong>Natural Transformation:</strong> A morphism between functors satisfying the naturality condition.</li>
+                    </ul>
+
+                    <h4>Theorem: Yoneda's Lemma</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Yoneda):</strong> For any functor \(F: \mathcal{C}^{\text{op}} \to \mathbf{Set}\) and any object \(X \in \mathcal{C}\), there is a natural bijection: \(\text{Hom}(\text{Hom}(-, X), F) \cong F(X)\)</p>
+                    </div>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python"># Category Theory in Python
+class Category:
+    def objects(self): raise NotImplementedError
+    def hom(self, X, Y): raise NotImplementedError
+    def compose(self, f, g): raise NotImplementedError
+
+class SetCategory(Category):
+    def objects(self): return [frozenset(range(n)) for n in range(10)]
+    def compose(self, f, g): return {x: g.get(f[x]) for x in f}</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Numerical Linear Algebra: The Science of Matrix Computations</h3>
+                    <p class="tag">numerical-linear-algebra</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>From Google's PageRank algorithm to weather prediction, numerical linear algebra underlies modern scientific computing. The challenge is solving systems accurately and efficiently when matrices have millions of entries.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Condition Number:</strong> \(\kappa(A) = \|A\| \cdot \|A^{-1}\|\). Large \(\kappa(A)\) means ill-conditioned.</li>
+                        <li><strong>LU Decomposition:</strong> Factorization \(A = LU\) where \(L\) is lower triangular and \(U\) is upper triangular.</li>
+                        <li><strong>Spectral Radius:</strong> \(\rho(A) = \max\{|
+lambda| : \lambda \text{ eigenvalue of } A\}\)</li>
+                    </ul>
+
+                    <h4>Theorem: Convergence of Iterative Methods</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For \(Ax = b\), the iteration \(x^{(k+1)} = M^{-1}(Nx^{(k)} + b)\) converges iff \(\rho(M^{-1}N) \lt 1\).</p>
+                    </div>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+def jacobi_iteration(A, b, max_iter=1000, tol=1e-8):
+    n = len(b)
+    x = np.zeros(n)
+    D = np.diag(np.diag(A))
+    L_plus_U = D - A
+    
+    for i in range(max_iter):
+        x_new = (b - L_plus_U @ x) / np.diag(A)
+        if np.linalg.norm(A @ x_new - b) < tol:
+            return x_new, i+1
+        x = x_new
+    return x, max_iter</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Gödel's Incompleteness Theorems</h3>
+                    <p class="tag">mathematical-logic</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1931, Kurt Gödel published his incompleteness theorems, showing that any sufficiently powerful formal system cannot be both consistent and complete.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Formal System:</strong> A set of axioms and inference rules for deriving theorems.</li>
+                        <li><strong>Consistent:</strong> Cannot prove both a statement and its negation.</li>
+                        <li><strong>Gödel Numbering:</strong> Encoding formulas and proofs as natural numbers.</li>
+                    </ul>
+
+                    <h4>Theorem: Gödel's First Incompleteness Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Gödel I):</strong> Any consistent formal system \(F\) strong enough to encode basic arithmetic contains statements that are true but unprovable in \(F\).</p>
+                    </div>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python"># Demonstrating incompleteness concepts
+def demonstrate_liar_paradox():
+    print('Liar Paradox: "This statement is false."')
+    print("If L is true, then L is false (contradiction).")
+    print("If L is false, then L is true (contradiction).")
+
+def demonstrate_godel_sentence():
+    print('Gödel Sentence: "This statement is not provable."')
+    print("If provable, then false (system is unsound).")
+    print("If unprovable, then true (system is incomplete).")</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Black-Scholes Model: Financial Derivatives</h3>
+                    <p class="tag">financial-mathematics</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>The Black-Scholes model revolutionized finance by providing a theoretical framework for pricing options. Developed in the 1970s, it introduced rigorous mathematical methods to finance.</p>
+
+                    <h4>Theorem: Black-Scholes Formula</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For a European call option: \[C = S_0 N(d_1) - Ke^{-rT}N(d_2)\] where \(d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}\) and \(d_2 = d_1 - \sigma\sqrt{T}\).</p>
+                    </div>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">from scipy.stats import norm
+import numpy as np
+
+def black_scholes_call(S, K, T, r, sigma):
+    d1 = (np.log(S/K) + (r + 0.5*sigma**2)*T) / (sigma*np.sqrt(T))
+    d2 = d1 - sigma*np.sqrt(T)
+    return S*norm.cdf(d1) - K*np.exp(-r*T)*norm.cdf(d2)</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Computational Fluid Dynamics: Navier-Stokes</h3>
+                    <p class="tag">fluid-dynamics</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>The Navier-Stokes equations describe fluid motion and are central to weather prediction, aircraft design, and climate science. The Clay Mathematics Institute offers $1 million for proving existence and smoothness of solutions.</p>
+
+                    <h4>Theorem: Energy Dissipation</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For incompressible Navier-Stokes with no-slip boundaries: \[\frac{dE}{dt} = -\nu \int_\Omega |\nabla \mathbf{u}|^2 d\mathbf{x} \leq 0\]</p>
+                    </div>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+class NavierStokes2D:
+    def __init__(self, nx, ny, nu=0.01, dt=0.001):
+        self.nx, self.ny = nx, ny
+        self.nu, self.dt = nu, dt
+        self.u = np.zeros((ny, nx))
+        self.v = np.zeros((ny, nx))
+    
+    def laplacian_2d(self, f):
+        lap = np.zeros_like(f)
+        lap[1:-1,1:-1] = (f[1:-1,2:]-2*f[1:-1,1:-1]+f[1:-1,:-2]) + \
+                         (f[2:,1:-1]-2*f[1:-1,1:-1]+f[:-2,1:-1])
+        return lap</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Sheaf Theory: Local-to-Global Mathematics</h3>
+                    <p class="tag">sheaf-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Sheaf theory provides a systematic way to track data attached to open sets of a topological space and study how local information assembles into global structure.</p>
+
+                    <h4>Theorem: Exponential Sheaf Sequence</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> On a complex manifold \(X\): \[0 \to \underline{\mathbb{Z}} \to \mathcal{O}_X \xrightarrow{\exp} \mathcal{O}_X^* \to 0\]</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>Combinatorial Game Theory</h3>
+                    <p class="tag">combinatorial-game-theory</p>
+                    <h4>Theorem: Sprague-Grundy</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Every impartial game is equivalent to a Nim heap. \(g(G) = \text{mex}\{g(G') : G' \text{ option of } G\}\)</p>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Algebraic Combinatorics: Symmetric Functions</h3>
+                    <p class="tag">algebraic-combinatorics</p>
+                    <h4>Theorem: Cauchy Identity</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> \[\prod_{i,j} \frac{1}{1 - x_i y_j} = \sum_{\lambda} s_\lambda(x) s_\lambda(y)\]</p>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Spectral Theory</h3>
+                    <p class="tag">spectral-theory</p>
+                    <h4>Theorem: Spectral Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For compact self-adjoint \(T\): \(T = \sum_{n} \lambda_n \langle \cdot, e_n \rangle e_n\)</p>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Galois Cohomology</h3>
+                    <p class="tag">galois-cohomology</p>
+                    <h4>Theorem: Hilbert 90</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For finite Galois extension \(L/K\): \(H^1(\text{Gal}(L/K), L^*) = 0\)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Abstract Algebra</h2>
+                <p>The emergence of abstract algebra in the 19th and early 20th centuries represents one of the most profound shifts in mathematical thinking. Where earlier mathematicians had studied specific systems—particular groups of symmetries, specific polynomial equations, concrete number fields—the modern approach, pioneered by Richard Dedekind, Emmy Noether, and their successors, sought to understand the underlying structures common to diverse mathematical objects.</p>
+                <p>The story begins with the resolution of the classical problem of solving polynomial equations. Mathematicians had known since the Renaissance how to solve cubic and quartic equations using radicals, but the quintic resisted all attempts. In 1824, Niels Henrik Abel provided the first complete proof that the general quintic could not be solved by radicals. But it was Évariste Galois who transformed the problem entirely, seeing that solvability was determined by the structure of the group of permutations of roots.</p>
+                <p>Throughout the 19th century, group theory developed in parallel across different domains: in geometry through Klein and Lie; in number theory through Gauss, Dirichlet, and Dedekind; and in analysis through the study of differential equations. The true abstraction came with Emmy Noether, who transformed algebra from the study of particular systems to the study of general structures.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.quantamagazine.org/">Mathematicians Identify the Best Versions of Classic Gear Shapes</a></h3>
+                    <p class="source">Quanta Magazine — July 2025</p>
+                    <p>Researchers have solved a long-standing problem in mechanical engineering by determining the optimal shapes for gears using differential geometry and optimization theory.</p>
+                </div>
+
+                <div class="article-card">
+                    <h3><a href="https://www.nature.com/">The Mathematicians Working to Prove Themselves in AI Research</a></h3>
+                    <p class="source">Nature — August 2025</p>
+                    <p>As AI transforms scientific research, pure mathematicians are finding new ways to contribute by bringing rigor to machine learning theory.</p>
+                </div>
+
+                <div class="article-card">
+                    <h3><a href="https://www.ams.org/">The Renaissance of Combinatorics in the 21st Century</a></h3>
+                    <p class="source">Notices of the AMS — July 2025</p>
+                    <p>This survey traces the explosive growth of combinatorics over the past two decades, driven by connections to computer science and statistical physics.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                <div class="problem">
+                    <h3>Putnam-Style Problem: A Determinant Identity</h3>
+                    <p class="difficulty">Difficulty: ★★★☆☆</p>
+                    <p>Let \(A\) be an \(n \times n\) matrix with entries \(a_{ij} = \min(i, j)\). Prove that: \(\det(A) = 1\)</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <div class="hint">
+                            <p>Consider row reduction: subtract row \(n-1\) from row \(n\), then row \(n-2\) from row \(n-1\), and so on.</p>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Solution</summary>
+                        <div class="solution">
+                            <p><strong>Solution:</strong> After row operations, the matrix becomes upper triangular with all diagonal entries equal to 1. Therefore \(\det(A) = 1\).</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day: The Mandelbrot Set</h2>
+                <p>The Mandelbrot set is one of mathematics' most iconic visualizations—a fractal boundary in the complex plane defined by iterating the function \(f_c(z) = z^2 + c\).</p>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+# Generate the set
+width, height = 800, 600
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -1.5, 1.5
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Vectorized computation
+Z = np.zeros_like(C)
+M = np.zeros(C.shape)
+for i in range(100):
+    mask = np.abs(Z) <= 2
+    Z[mask] = Z[mask]**2 + C[mask]
+    M[~mask & (M == 0)] = i
+
+plt.imshow(M, extent=[xmin, xmax, ymin, ymax], cmap='hot')
+plt.title('The Mandelbrot Set')
+plt.colorbar(label='Iterations to escape')
+plt.show()</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"Mathematics is the art of giving the same name to different things."</p>
+                    <cite>— Henri Poincaré</cite>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — Curated mathematical insights</p>
+        <p><a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
