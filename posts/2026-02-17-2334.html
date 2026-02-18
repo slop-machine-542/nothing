@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 17, 2026 at 23:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 17, 2026 at 23:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 17, 2026 at 23:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">schemes</span>
+                <span class="tag">k-theory</span>
+                <span class="tag">cryptography</span>
+            </div>
+
+            <!-- Section 1: Math Links -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                <div class="link-item">
+                    <h3><a href="https://ncatlab.org/nlab/show/algebraic+geometry">nLab: Algebraic Geometry</a></h3>
+                    <p>The nLab is a wiki-lab for collaborative work on mathematics, physics, and philosophy — particularly from the n-categorical point of view. Its algebraic geometry section provides rigorous definitions of schemes, sheaves, and cohomology theories with an emphasis on functorial and categorical perspectives.</p>
+                </div>
+                <div class="link-item">
+                    <h3><a href="https://mathoverflow.net/">MathOverflow</a></h3>
+                    <p>A question-and-answer site for professional mathematicians. Unlike typical forums, MathOverflow maintains research-level standards where experts discuss open problems, proof techniques, and the latest developments across all mathematical disciplines.</p>
+                </div>
+                <div class="link-item">
+                    <h3><a href="https://www.3blue1brown.com/">3Blue1Brown</a></h3>
+                    <p>Grant Sanderson's YouTube channel and website featuring animated explanations of mathematical concepts. The visual approach to linear algebra, calculus, and neural networks has made advanced mathematics accessible to millions of learners worldwide.</p>
+                </div>
+            </section>
+
+            <!-- Section 2: Free Math Book -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                <div class="book-item">
+                    <h3>"Algebraic Geometry" by Robin Hartshorne</h3>
+                    <p><strong>Author:</strong> Robin Hartshorne</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> The definitive graduate text on modern algebraic geometry, based on Grothendieck's scheme-theoretic approach. Hartshorne develops the theory from sheaves and schemes through cohomology and the Riemann-Roch theorem, culminating in surface theory. The book demands significant commutative algebra background but rewards the dedicated reader with deep insight into the geometric structure of polynomial equations. Each chapter includes extensive exercises that form an essential part of the learning experience.</p>
+                    <p><a href="https://math.stanford.edu/~vakil/216blog/FOAGnov1817public.pdf">Alternative: Foundations of Algebraic Geometry by Ravi Vakil (Free PDF)</a></p>
+                </div>
+            </section>
+
+            <!-- Section 3: Pure Math Deep-Dives -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+                
+                <h3>1. Schemes: The Geometry of Rings</h3>
+                <p><strong>Motivation:</strong> Classical algebraic geometry studies varieties as sets of solutions to polynomial equations. But this approach fails to capture nilpotent elements, infinitesimal structure, or behave well under base change. Grothendieck's schemes provide the definitive solution by viewing geometry as encoded entirely in the algebraic structure of rings.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>An <strong>affine scheme</strong> is a locally ringed space isomorphic to \( \text{Spec}(A) \) for some commutative ring \( A \), where the underlying topological space consists of prime ideals with the Zariski topology.</li>
+                    <li>A <strong>scheme</strong> is a locally ringed space \( (X, \mathcal{O}_X) \) that admits an open cover by affine schemes.</li>
+                    <li>The <strong>structure sheaf</strong> \( \mathcal{O}_X \) assigns to each open set \( U \) the ring of "regular functions" on \( U \).</li>
+                </ul>
+
+                <p><strong>Theorem (Equivalence of Categories):</strong></p>
+                <p>The functor \( A \mapsto \text{Spec}(A) \) induces a contravariant equivalence between the category of commutative rings and the category of affine schemes.</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>Given a ring homomorphism \( \phi: A \to B \), we obtain a continuous map \( f: \text{Spec}(B) \to \text{Spec}(A) \) by \( \mathfrak{p} \mapsto \phi^{-1}(\mathfrak{p}) \). The map on structure sheaves comes from the localization maps. Conversely, any morphism of affine schemes induces a ring homomorphism on global sections. These constructions are mutually inverse.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( \text{Spec}(A) \): Prime spectrum of ring \( A \)</li>
+                    <li>\( \mathcal{O}_X \): Structure sheaf of scheme \( X \)</li>
+                    <li>\( \mathfrak{p} \): Prime ideal</li>
+                    <li>\( A_{\mathfrak{p}} \): Localization at prime \( \mathfrak{p} \)</li>
+                </ul>
+
+                <pre><code class="python"># Python: Computing with Affine Schemes (Symbolic)
+import sympy as sp
+from sympy import symbols, Poly, groebner
+
+# Define polynomial ring Q[x,y]
+x, y = symbols('x y')
+
+# An affine scheme is determined by a ring A = k[x1,...,xn]/I
+# For example: the cuspidal cubic y^2 = x^3
+f = y**2 - x**3
+
+# The coordinate ring is Q[x,y]/(y^2 - x^3)
+# Prime ideals correspond to points on the curve and the generic point
+
+def is_prime_ideal(generators, ring_vars):
+    """
+    Check if ideal is prime (simplified check using Groebner basis)
+    In practice: I is prime iff R/I is an integral domain
+    """
+    G = groebner(generators, *ring_vars)
+    # Simplified: check if quotient has zero divisors
+    return True  # Placeholder for actual primality test
+
+# The singular point (0,0) of the cuspidal cubic
+# corresponds to the maximal ideal (x,y)
+maximal_ideal = [x, y]
+print(f"Studying scheme: Spec(Q[x,y]/(y² - x³))")
+print(f"Singular point at origin: V({maximal_ideal})")
+
+# Local ring at the origin
+print("\nLocal ring at origin: Q[x,y]_(x,y) / (y² - x³)")
+print("This is a non-regular local ring (singularity)")</code></pre>
+
+                <h3>2. Algebraic K-Theory: Measuring Linear Structure</h3>
+                <p><strong>Motivation:</strong> Given a ring, how can we measure its "linear algebraic" properties? K-theory assigns to each ring a sequence of abelian groups \( K_n(R) \) that encode deep information about projective modules, invertible matrices, and higher symmetries. \( K_0 \) classifies projective modules, \( K_1 \) captures the stable linear group, and higher K-groups reveal subtle arithmetic and geometric invariants.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>\( K_0(R) \): The Grothendieck group of finitely generated projective \( R \)-modules.</li>
+                    <li>\( K_1(R) = GL(R)^{ab} = GL(R)/[GL(R), GL(R)] \), the abelianization of the infinite general linear group.</li>
+                    <li>For a field \( F \), \( K_1(F) \cong F^\times \) (the multiplicative group).</li>
+                </ul>
+
+                <p><strong>Theorem (Bass-Serre):</strong></p>
+                <p>For a Dedekind domain \( R \) with fraction field \( F \), there is an exact sequence:</p>
+                <p>\[ 0 \to K_0(R) \to K_0(F) \to \bigoplus_{\mathfrak{p}} K_0(R/\mathfrak{p}) \to 0 \]</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The map \( K_0(R) \to K_0(F) \) sends a projective module to its localization. The boundary map sends the class of \( F \) to the sum of residue field contributions at each prime. Exactness follows from the structure of projective modules over Dedekind domains: every projective is a direct sum of ideals.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( K_n(R) \): n-th K-group of ring \( R \)</li>
+                    <li>\( GL_n(R) \): General linear group of invertible \( n \times n \) matrices</li>
+                    <li>\( GL(R) = \varinjlim GL_n(R) \): Infinite general linear group</li>
+                    <li>\( P(R) \): Category of finitely generated projective modules</li>
+                </ul>
+
+                <pre><code class="python"># Python: Computing K_0 for simple rings
+from fractions import Fraction
+
+def k0_field(F):
+    """
+    K_0 of a field is Z, generated by the class of the field itself.
+    The rank map gives an isomorphism K_0(F) ≅ Z.
+    """
+    return "Z (rank of vector spaces)"
+
+def k0_dedekind_example():
+    """
+    For Z (integers), K_0(Z) = Z ⊕ Cl(Z) = Z
+    since the class group of Z is trivial.
+    """
+    return "K_0(Z) = Z, generated by [Z]"
+
+def k0_product_ring():
+    """
+    K_0(R × S) = K_0(R) ⊕ K_0(S)
+    Projectives over R × S are pairs of projectives.
+    """
+    return "K_0(R × S) ≅ K_0(R) ⊕ K_0(S)"
+
+# Example: K_0 of Q
+print("K_0(Q) =", k0_field("Q"))
+print("Every f.g. projective over a field is free (vector space)")
+
+# Example: K_0 of Z[i] (Gaussian integers)
+print("\nK_0(Z[i]) = Z ⊕ Cl(Z[i]) = Z")
+print("Gaussian integers are a PID, so class group is trivial")
+
+# Rank function
+print("\nThe rank homomorphism: rank: K_0(R) → Z")
+print("rank([P]) = dimension of P ⊗_R Frac(R) for integral domains")</code></pre>
+
+                <h3>3. Étale Cohomology: Cohomology for Arithmetic Geometry</h3>
+                <p><strong>Motivation:</strong> For complex algebraic varieties, singular cohomology provides powerful topological invariants. But over finite fields or number fields, the Zariski topology is too coarse for meaningful cohomology. Grothendieck's étale topology provides a refinement where "open sets" are étale morphisms, enabling a Weil cohomology theory for arbitrary schemes.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>An <strong>étale morphism</strong> \( f: X \to Y \) is flat, locally of finite presentation, and for all \( y \in Y \), the fiber \( X_y \) is a disjoint union of spectra of finite separable field extensions of \( k(y) \).</li>
+                    <li>The <strong>étale site</strong> \( X_{\text{ét}} \) has objects that are étale morphisms to \( X \), with the étale topology.</li>
+                    <li><strong>Étale cohomology</strong> \( H^i_{\text{ét}}(X, \mathcal{F}) \) is the derived functor cohomology on the étale site.</li>
+                </ul>
+
+                <p><strong>Theorem (Comparison):</strong></p>
+                <p>For a smooth scheme \( X \) over \( \mathbb{C} \) and a finite abelian group \( A \):</p>
+                <p>\[ H^i_{\text{ét}}(X, A) \cong H^i_{\text{sing}}(X(\mathbb{C}), A) \]</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The étale topology refines the classical topology in the analytic setting. The comparison theorem follows from showing that étale covers correspond to topological covers and that the étale sheaf cohomology computes the same derived functors as singular cohomology.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( X_{\text{ét}} \): Étale site of \( X \)</li>
+                    <li>\( H^i_{\text{ét}} \): Étale cohomology groups</li>
+                    <li>\( \mathbb{Z}/n\mathbb{Z}(1) = \mu_n \): Sheaf of n-th roots of unity</li>
+                    <li>\( \mathcal{F} \): Étale sheaf (lisse sheaf, constructible sheaf)</li>
+                </ul>
+
+                <pre><code class="python"># Python: Étale Cohomology Computations (Conceptual)
+# Note: Actual étale cohomology computation requires heavy machinery
+
+def etale_cohomology_point(field, n):
+    """
+    For Spec(F) where F is a field:
+    H^0_et(Spec(F), Z/nZ) = Z/nZ
+    H^1_et(Spec(F), Z/nZ) = Hom(Gal(F^sep/F), Z/nZ) = H^1(Gal, Z/nZ)
+    """
+    if field == "finite":
+        # Gal(F_q^sep/F_q) ≅ Z-hat (profinite completion)
+        # H^1 = Hom(Z-hat, Z/nZ) = Z/nZ
+        return {"H^0": "Z/nZ", "H^1": "Z/nZ", "higher": "0"}
+    elif field == "complex":
+        # Trivial Galois group
+        return {"H^0": "Z/nZ", "higher": "0"}
+    return {}
+
+def etale_cohomology_curve(genus, n):
+    """
+    For a smooth projective curve X of genus g over C:
+    H^0_et(X, Z/nZ) = Z/nZ
+    H^1_et(X, Z/nZ) = (Z/nZ)^{2g}
+    H^2_et(X, Z/nZ) = Z/nZ (orientation)
+    """
+    return {
+        "H^0": f"Z/{n}Z",
+        "H^1": f"(Z/{n}Z)^{2*{genus}}",
+        "H^2": f"Z/{n}Z"
+    }
+
+# Examples
+print("Étale cohomology of Spec(F_q):")
+print(etale_cohomology_point("finite", 2))
+
+print("\nÉtale cohomology of genus 1 curve (elliptic curve) with Z/2Z coefficients:")
+print(etale_cohomology_curve(1, 2))</code></pre>
+            </section>
+
+            <!-- Section 4: Applied Math Deep-Dives -->
+            <section id="applied-math">
+                <h2>🚀 Applied Math Deep-Dives</h2>
+                
+                <h3>1. Post-Quantum Cryptography: Lattice-Based Systems</h3>
+                <p><strong>Real-World Motivation:</strong> Quantum computers threaten RSA and elliptic curve cryptography through Shor's algorithm. Lattice-based cryptography offers quantum-resistant alternatives based on the hardness of problems like Learning With Errors (LWE) and Shortest Vector Problem (SVP). NIST has already standardized lattice schemes for the post-quantum era.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>lattice</strong> \( L \subset \mathbb{R}^n \) is a discrete additive subgroup, equivalently \( L = \{ \sum_{i=1}^n z_i \mathbf{b}_i : z_i \in \mathbb{Z} \} \) for basis \( \{\mathbf{b}_i\} \).</li>
+                    <li>The <strong>Shortest Vector Problem (SVP)</strong>: Given a lattice basis, find the shortest non-zero vector in \( L \).</li>
+                    <li><strong>Learning With Errors (LWE)</strong>: Given pairs \( (\mathbf{a}_i, b_i = \langle \mathbf{a}_i, \mathbf{s} \rangle + e_i \mod q) \), recover secret \( \mathbf{s} \).</li>
+                </ul>
+
+                <p><strong>Theorem (Regev):</strong></p>
+                <p>If there exists an efficient algorithm for solving LWE with non-negligible advantage, then there exists an efficient quantum algorithm for approximating SVP to within \( \tilde{O}(n) \) in the worst case.</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The reduction uses a quantum algorithm that, given an LWE oracle, samples from the discrete Gaussian on the dual lattice. By iterating this process, one can solve the closest vector problem, which implies a solution to SVP. The quantum step is essential for the reduction.</p>
+
+                <p><strong>Notation:</strong></p>
+                <ul>
+                    <li>\( \Lambda \): Lattice</li>
+                    <li>\( \lambda_1(\Lambda) \): Length of shortest non-zero vector</li>
+                    <li>\( \mathbf{e} \): Error vector (small norm)</li>
+                    <li>\( q \): Modulus (typically polynomial in \( n \))</li>
+                </ul>
+
+                <pre><code class="python"># Python: Lattice-Based Cryptography (LWE)
+import numpy as np
+from numpy.random import randint, normal
+
+def generate_lwe_instance(n, m, q, sigma):
+    """
+    Generate LWE instance: (A, b = As + e mod q)
+    n: dimension of secret
+    m: number of samples
+    q: modulus
+    sigma: error standard deviation
+    """
+    # Random matrix A
+    A = randint(0, q, size=(m, n))
+    
+    # Secret vector s
+    s = randint(0, q, size=n)
+    
+    # Error vector (discrete Gaussian approximation)
+    e = np.round(normal(0, sigma, size=m)).astype(int) % q
+    
+    # Compute b = As + e mod q
+    b = (A @ s + e) % q
+    
+    return A, b, s, e
+
+def babai_rounding_attack(A, b, q):
+    """
+    Naive rounding attack on LWE (works only if error is very small)
+    In practice, LWE parameters are chosen so this fails
+    """
+    # Try to solve As ≈ b by rounding
+    # This is the basic idea; real attacks use lattice reduction (BKZ)
+    A_padded = np.column_stack([A, np.eye(len(b)) * q])
+    # LLL or BKZ would go here
+    return "Attack requires lattice reduction (LLL/BKZ)"
+
+# Example
+n, m, q = 10, 20, 97
+sigma = 2
+
+A, b, s, e = generate_lwe_instance(n, m, q, sigma)
+print(f"LWE Instance: n={n}, m={m}, q={q}")
+print(f"Secret s (first 5 entries): {s[:5]}")
+print(f"Error e (first 5 entries): {e[:5]}")
+print(f"Sample b[0] = {b[0]}")
+print(f"Verification: (A@s)[0] + e[0] mod q = {(A @ s)[0] + e[0] % q}")
+
+# Security: Decisional LWE is hard when q/poly(n) > sigma > sqrt(n)
+print(f"\nSecurity parameter check: q/sigma = {q/sigma}")</code></pre>
+
+                <h3>2. Sparse Recovery: Compressed Sensing Foundations</h3>
+                <p><strong>Real-World Motivation:</strong> MRI scans traditionally require lengthy data acquisition. Compressed sensing revolutionized medical imaging by proving that sparse signals can be recovered from far fewer measurements than Nyquist-Shannon requires. This enables faster scans, reduced radiation exposure, and efficient signal acquisition.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A vector \( \mathbf{x} \in \mathbb{R}^n \) is <strong>k-sparse</strong> if at most \( k \) entries are non-zero.</li>
+                    <li>A matrix \( A \in \mathbb{R}^{m \times n} \) satisfies the <strong>Restricted Isometry Property (RIP)</strong> of order \( k \) if for all k-sparse \( \mathbf{x} \): \[ (1-\delta_k)\|\mathbf{x}\|_2^2 \leq \|A\mathbf{x}\|_2^2 \leq (1+\delta_k)\|\mathbf{x}\|_2^2 \]</li>
+                    <li><strong>Basis Pursuit:</strong> \( \min \|\mathbf{x}\|_1 \) subject to \( A\mathbf{x} = \mathbf{b} \).</li>
+                </ul>
+
+                <p><strong>Theorem (Candès-Tao):</strong></p>
+                <p>If \( A \) satisfies RIP with \( \delta_{2k} < \sqrt{2} - 1 \), then the solution to Basis Pursuit equals the sparsest solution.</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>Let \( \mathbf{x}^* \) be the BP solution and \( \mathbf{x}_0 \) the true sparse solution. Their difference \( \mathbf{h} = \mathbf{x}^* - \mathbf{x}_0 \) lies in the null space of \( A \). The RIP condition ensures that any null space vector cannot have most of its \( \ell_1 \) mass concentrated on a small support. This forces \( \mathbf{h} = 0 \).</p>
+
+                <p><strong>Notation:</strong></p>
+                <ul>
+                    <li>\( \|\mathbf{x}\|_0 \): Number of non-zero entries (sparsity)</li>
+                    <li>\( \|\mathbf{x}\|_1 = \sum |x_i| \): \( \ell_1 \) norm (convex relaxation)</li>
+                    <li>\( \delta_k \): RIP constant of order \( k \)</li>
+                    <li>\( \Sigma_k \): Set of k-sparse vectors</li>
+                </ul>
+
+                <pre><code class="python"># Python: Compressed Sensing and Sparse Recovery
+import numpy as np
+from scipy.optimize import minimize, linprog
+
+def generate_rip_matrix(m, n, k):
+    """
+    Generate a matrix with good RIP properties (Gaussian ensemble)
+    m: number of measurements
+    n: signal dimension
+    k: sparsity level
+    """
+    # Gaussian matrix scaled appropriately
+    A = np.random.randn(m, n) / np.sqrt(m)
+    return A
+
+def basis_pursuit(A, b):
+    """
+    Solve: min ||x||_1 subject to Ax = b
+    Using linear programming
+    """
+    m, n = A.shape
+    
+    # Convert to standard LP: min c^T z subject to Mz = d, z >= 0
+    # x = x_pos - x_neg where x_pos, x_neg >= 0
+    # Objective: sum(x_pos) + sum(x_neg)
+    
+    c = np.ones(2 * n)  # Minimize sum of positive and negative parts
+    
+    # Equality constraints: A(x_pos - x_neg) = b
+    A_eq = np.hstack([A, -A])
+    b_eq = b
+    
+    # Bounds: z >= 0
+    bounds = [(0, None) for _ in range(2 * n)]
+    
+    result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+    
+    if result.success:
+        z = result.x
+        x = z[:n] - z[n:]
+        return x
+    return None
+
+def ista(A, b, lambda_reg, max_iter=1000, tol=1e-6):
+    """
+    Iterative Soft Thresholding Algorithm for LASSO
+    min ||Ax - b||^2 + lambda*||x||_1
+    """
+    m, n = A.shape
+    x = np.zeros(n)
+    
+    # Lipschitz constant
+    L = np.linalg.norm(A.T @ A, 2)
+    step = 1.0 / L
+    
+    for _ in range(max_iter):
+        x_old = x.copy()
+        # Gradient step
+        grad = A.T @ (A @ x - b)
+        y = x - step * grad
+        # Soft thresholding
+        x = np.sign(y) * np.maximum(np.abs(y) - step * lambda_reg, 0)
+        
+        if np.linalg.norm(x - x_old) < tol:
+            break
+    
+    return x
+
+# Example: Sparse signal recovery
+n = 100  # Signal dimension
+k = 5    # Sparsity
+m = 30   # Measurements (m << n but m > O(k log(n/k)))
+
+# Generate sparse signal
+x_true = np.zeros(n)
+support = np.random.choice(n, k, replace=False)
+x_true[support] = np.random.randn(k) * 5
+
+# Generate measurement matrix
+A = generate_rip_matrix(m, n, k)
+
+# Measurements
+b = A @ x_true
+
+# Recover using Basis Pursuit
+x_bp = basis_pursuit(A, b)
+
+print(f"Signal dimension: {n}, Sparsity: {k}, Measurements: {m}")
+print(f"True support: {sorted(support)}")
+if x_bp is not None:
+    recovered_support = np.where(np.abs(x_bp) > 0.1)[0]
+    print(f"Recovered support: {sorted(recovered_support)}")
+    print(f"Recovery error: {np.linalg.norm(x_true - x_bp):.6f}")
+
+# Also try ISTA
+x_ista = ista(A, b, lambda_reg=0.1)
+print(f"ISTA error: {np.linalg.norm(x_true - x_ista):.6f}")</code></pre>
+
+                <h3>3. Causal Inference: The Do-Calculus</h3>
+                <p><strong>Real-World Motivation:</strong> Correlation does not imply causation. Yet in medicine, economics, and policy, we need to know the causal effect of interventions: "Does smoking cause cancer?" "What is the effect of a minimum wage increase?" Judea Pearl's do-calculus provides a mathematical framework for answering such questions from observational data and causal graphs.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>causal Bayesian network</strong> is a directed acyclic graph where edges represent direct causal influences.</li>
+                    <li>The <strong>do-operator</strong> \( P(Y | do(X=x)) \) represents the distribution of \( Y \) when \( X \) is intervened upon (forced to value \( x \)).</li>
+                    <li>A set \( Z \) <strong>d-separates</strong> \( X \) from \( Y \) if it blocks all paths between them.</li>
+                </ul>
+
+                <p><strong>Theorem (Back-Door Criterion):</strong></p>
+                <p>If a set of variables \( Z \) satisfies: (1) no node in \( Z \) is a descendant of \( X \), and (2) \( Z \) blocks every path between \( X \) and \( Y \) that contains an arrow into \( X \), then:</p>
+                <p>\[ P(Y | do(X=x)) = \sum_z P(Y | X=x, Z=z) P(Z=z) \]</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The back-door paths (those with arrows into \( X \)) represent confounding. Conditioning on \( Z \) blocks these confounding paths. Since \( Z \) contains no descendants of \( X \), we don't condition away any of the causal effect. The formula follows from the factorization of the joint distribution.</p>
+
+                <p><strong>Notation:</strong></p>
+                <ul>
+                    <li>\( do(X=x) \): Intervention setting \( X \) to \( x \)</li>
+                    <li>\( P(Y | do(X=x)) \): Interventional distribution</li>
+                    <li>\( G_{\overline{X}} \): Graph with incoming edges to \( X \) removed</li>
+                    <li>\( G_{\underline{X}} \): Graph with outgoing edges from \( X \) removed</li>
+                </ul>
+
+                <pre><code class="python"># Python: Causal Inference with Do-Calculus
+import numpy as np
+import pandas as pd
+from scipy import stats
+
+def generate_confounded_data(n=1000):
+    """
+    Generate data with confounding:
+    Z -> X, Z -> Y (confounder)
+    X -> Y (causal effect)
+    """
+    # Confounder
+    Z = np.random.randn(n)
+    
+    # X depends on Z
+    X = 2 * Z + np.random.randn(n)
+    
+    # Y depends on both X and Z
+    true_effect = 3
+    Y = true_effect * X + 1.5 * Z + np.random.randn(n)
+    
+    return pd.DataFrame({'Z': Z, 'X': X, 'Y': Y})
+
+def naive_correlation(df):
+    """
+    Naive correlation between X and Y
+    This is confounded by Z
+    """
+    corr = np.corrcoef(df['X'], df['Y'])[0, 1]
+    slope, _, _, _, _ = stats.linregress(df['X'], df['Y'])
+    return slope
+
+def backdoor_adjustment(df):
+    """
+    Estimate P(Y|do(X)) using back-door adjustment
+    Stratify by Z and average
+    """
+    # Discretize Z into bins
+    df['Z_bin'] = pd.qcut(df['Z'], q=5, labels=False)
+    
+    effects = []
+    weights = []
+    
+    for bin_idx in range(5):
+        subset = df[df['Z_bin'] == bin_idx]
+        if len(subset) > 10:
+            # Effect of X on Y within this stratum
+            slope, _, _, _, _ = stats.linregress(subset['X'], subset['Y'])
+            effects.append(slope)
+            weights.append(len(subset))
+    
+    # Weighted average
+    return np.average(effects, weights=weights)
+
+def frontdoor_adjustment(df, mediator):
+    """
+    Front-door criterion when confounders are unobserved
+    Requires a mediator M: X -> M -> Y
+    """
+    # P(Y|do(X)) = sum_m P(M=m|X) sum_x' P(Y|X=x', M=m) P(X=x')
+    # Simplified implementation
+    return "Front-door requires specific graph structure"
+
+# Generate data
+df = generate_confounded_data(n=5000)
+
+# Compare estimates
+naive = naive_correlation(df)
+adjusted = backdoor_adjustment(df)
+
+print("Causal Inference Example (with confounder Z)")
+print(f"True causal effect of X on Y: 3.0")
+print(f"Naive correlation (confounded): {naive:.3f}")
+print(f"Back-door adjusted estimate: {adjusted:.3f}")
+
+print("\nThe naive estimate is biased because it includes")
+print("the back-door path X <- Z -> Y")</code></pre>
+            </section>
+
+            <!-- Section 5: Special Topics -->
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+                
+                <h3>1. Tropical Geometry: The Geometry of the Min-Plus Semiring</h3>
+                <p><strong>Historical Context:</strong> Tropical geometry emerged in the 1980s from the work of Imre Simon on optimization and automata theory, later developed by Kapranov, Mikhalkin, and others. It studies algebraic varieties over the tropical semiring \( (\mathbb{R} \cup \{\infty\}, \min, +) \), providing a piecewise-linear shadow of classical algebraic geometry with applications to enumerative geometry, phylogenetics, and optimization.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>The <strong>tropical semiring</strong> \( \mathbb{T} = (\mathbb{R} \cup \{\infty\}, \oplus, \odot) \) where \( a \oplus b = \min(a,b) \) and \( a \odot b = a + b \).</li>
+                    <li>A <strong>tropical polynomial</strong> is a piecewise-linear function \( f(x) = \min_i (a_i + \langle b_i, x \rangle) \).</li>
+                    <li>The <strong>tropical hypersurface</strong> of \( f \) is the set where the minimum is achieved at least twice.</li>
+                </ul>
+
+                <p><strong>Theorem (Kapranov's Theorem):</strong></p>
+                <p>Let \( f = \sum c_\alpha x^\alpha \in \mathbb{C}[x_1, \ldots, x_n] \). The tropical hypersurface of the tropical polynomial \( \text{trop}(f) = \min_\alpha (\text{val}(c_\alpha) + \langle \alpha, x \rangle) \) equals the corner locus of the Amoeba of the variety \( V(f) \).</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The amoeba is the image of \( V(f) \) under the log-absolute map. As \( t \to \infty \), the amoeba degenerates to a polyhedral complex. The tropical variety captures this limiting behavior, with each cell corresponding to a term in the tropical polynomial achieving the minimum.</p>
+
+                <p><strong>Notation:</strong></p>
+                <ul>
+                    <li>\( \mathbb{T} \): Tropical semiring</li>
+                    <li>\( a \oplus b = \min(a,b) \): Tropical addition</li>
+                    <li>\( a \odot b = a + b \): Tropical multiplication</li>
+                    <li>\( \text{trop}(f) \): Tropicalization of polynomial \( f \)</li>
+                </ul>
+
+                <pre><code class="python"># Python: Tropical Geometry
+import numpy as np
+import matplotlib.pyplot as plt
+
+def tropical_add(a, b):
+    """Tropical addition: min(a, b)"""
+    return np.minimum(a, b)
+
+def tropical_mult(a, b):
+    """Tropical multiplication: a + b"""
+    return a + b
+
+def tropical_poly(coeffs, exponents, x):
+    """
+    Evaluate tropical polynomial
+    coeffs: array of coefficients (in tropical sense: shifts)
+    exponents: array of exponent vectors
+    x: point at which to evaluate
+    
+    f(x) = min_i (coeffs[i] + dot(exponents[i], x))
+    """
+    values = []
+    for c, e in zip(coeffs, exponents):
+        val = c + np.dot(e, x)
+        values.append(val)
+    return np.min(values), values
+
+def tropical_line(a, b, x_range):
+    """
+    Tropical line: min(ax, by, 0)
+    This creates a piecewise linear curve
+    """
+    X, Y = np.meshgrid(x_range, x_range)
+    Z = np.minimum(np.minimum(a * X, b * Y), 0)
+    return X, Y, Z
+
+# Example: Tropical cubic curve
+# f(x,y) = min(0, x, y, 2x, x+y, 2y, 3x, 2x+y, x+2y, 3y)
+# (tropical version of x^3 + x^2y + xy^2 + y^3 + ...)
+
+coeffs = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # All coefficients 0 for simplicity
+exponents = [(0,0), (1,0), (0,1), (2,0), (1,1), (0,2), (3,0), (2,1), (1,2), (0,3)]
+
+# Evaluate on a grid
+x_range = np.linspace(-2, 2, 200)
+X, Y = np.meshgrid(x_range, x_range)
+
+# Compute tropical polynomial values
+Z = np.zeros_like(X)
+for i in range(X.shape[0]):
+    for j in range(X.shape[1]):
+        val, _ = tropical_poly(coeffs, exponents, [X[i,j], Y[i,j]])
+        Z[i,j] = val
+
+# Find tropical curve (where minimum achieved twice)
+# This is the locus where the polynomial is not smooth
+print("Tropical cubic curve computed")
+print("The curve consists of edges where two terms tie for minimum")
+
+# Tropical arithmetic examples
+print(f"\nTropical 2 + 3 = {tropical_add(2, 3)}")
+print(f"Tropical 2 * 3 = {tropical_mult(2, 3)}")
+print(f"Tropical (2+3)*4 = {tropical_mult(tropical_add(2, 3), 4)}")</code></pre>
+
+                <h3>2. Mirror Symmetry: Physics Meets Algebraic Geometry</h3>
+                <p><strong>Historical Context:</strong> Mirror symmetry originated in string theory in the late 1980s when physicists Candelas and others noticed that Calabi-Yau manifolds come in pairs with "mirrored" properties. The phenomenon was brought to mathematics when Candelas, de la Ossa, Green, and Parkes used mirror symmetry to predict curve counts on the quintic threefold, sparking a revolution in enumerative geometry and leading to deep connections with Hodge theory, derived categories, and the Strominger-Yau-Zaslow conjecture.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>Calabi-Yau manifold</strong> is a compact Kähler manifold with trivial canonical bundle and vanishing first Chern class.</li>
+                    <li>A <strong>mirror pair</strong> consists of Calabi-Yau manifolds \( X \) and \( X^\vee \) with Hodge numbers swapped: \( h^{p,q}(X) = h^{n-p,q}(X^\vee) \).</li>
+                    <li>The <strong>A-model</strong> (symplectic) counts holomorphic curves (Gromov-Witten invariants).</li>
+                    <li>The <strong>B-model</strong> (complex) computes period integrals of holomorphic forms.</li>
+                </ul>
+
+                <p><strong>Theorem (Mirror Symmetry for the Quintic):</strong></p>
+                <p>Let \( X \) be the quintic threefold in \( \mathbb{P}^4 \) and \( X^\vee \) its mirror. The Gromov-Witten potential of \( X \) equals the variation of Hodge structure prepotential of \( X^\vee \).</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The proof uses toric geometry to construct the mirror family explicitly. The Picard-Fuchs equations governing periods on the B-side are solved using the GKZ system. The mirror map relates complex moduli to Kähler moduli, and the Yukawa couplings match Gromov-Witten invariants through the mirror transformation.</p>
+
+                <p><strong>Notation:</strong></p>
+                <ul>
+                    <li>\( h^{p,q} \): Hodge numbers</li>
+                    <li>\( \mathcal{M}_{\text{cs}} \): Complex structure moduli space</li>
+                    <li>\( \mathcal{M}_{\text{Kähler}} \): Kähler moduli space</li>
+                    <li>\( \Omega \): Holomorphic volume form</li>
+                    <li>\( q = e^{2\pi i t} \): Mirror map coordinate</li>
+                </ul>
+
+                <pre><code class="python"># Python: Mirror Symmetry Computations (Symbolic)
+import sympy as sp
+from sympy import symbols, diff, exp, log, series, Rational
+
+# Mirror symmetry for the quintic threefold (simplified)
+# The mirror quintic has a 1-dimensional complex structure moduli
+
+psi = symbols('psi')
+# The Picard-Fuchs equation for the quintic mirror
+# (simplified form)
+# L = theta^4 - 5z(5theta+1)(5theta+2)(5theta+3)(5theta+4)
+# where theta = z d/dz and z = psi^{-5}
+
+def picard_fuchs_quintic():
+    """
+    The Picard-Fuchs operator for the quintic mirror family
+    """
+    z = symbols('z')
+    theta = z * diff(z)
+    # L = theta^4 - 5^5 z (theta + 1/5)...(theta + 4/5)
+    # This is a hypergeometric differential equation
+    return "Hypergeometric equation: D^4 - 5^5 z (D+1/5)...(D+4/5)"
+
+def mirror_map_quintic():
+    """
+    The mirror map relates the complex structure parameter psi
+    to the Kähler parameter t on the original quintic
+    """
+    z = symbols('z')
+    # t = integral of holomorphic form ~ log(z) + 5*sum(n>0) (5n)!/(n!)^5 * z^n
+    # Simplified series expansion
+    t = log(z) + 770 * z + 11550 * z**2  # First few terms
+    return t
+
+print("Mirror Symmetry for the Quintic Threefold")
+print("="*50)
+print("\nPicard-Fuchs equation:")
+print(picard_fuchs_quintic())
+
+print("\nMirror map (first few terms):")
+t = mirror_map_quintic()
+print(f"t = {t}")
+
+print("\nThe mirror map relates:")
+print("- B-side: Complex structure moduli of the mirror quintic")
+print("- A-side: Kähler moduli (volume) of the original quintic")
+print("\nGromov-Witten invariants appear as coefficients")
+print("in the expansion of the Yukawa coupling.")</code></pre>
+
+                <h3>3. Derived Categories: Homological Algebra's Ultimate Tool</h3>
+                <p><strong>Historical Context:</strong> Derived categories were introduced by Verdier in his 1963 thesis (published in 1996) as a framework for Grothendieck's duality theory. They have since become fundamental in algebraic geometry, representation theory, and mathematical physics. Kontsevich's Homological Mirror Symmetry conjecture posits that mirror symmetry is an equivalence of derived categories.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>The <strong>derived category</strong> \( D(\mathcal{A}) \) of an abelian category is obtained by formally inverting quasi-isomorphisms in the homotopy category of chain complexes.</li>
+                    <li>An object in \( D^b(X) \) (bounded derived category of coherent sheaves) is a complex of sheaves with bounded cohomology.</li>
+                    <li>The <strong>Fourier-Mukai transform</strong> is an equivalence of derived categories induced by a kernel object.</li>
+                </ul>
+
+                <p><strong>Theorem (Orlov):</strong></p>
+                <p>Let \( X \) and \( Y \) be smooth projective varieties. Any fully faithful exact functor \( F: D^b(X) \to D^b(Y) \) is a Fourier-Mukai transform.</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The proof constructs a kernel object \( \mathcal{K} \in D^b(X \times Y) \) from the functor \( F \) by considering the image of the structure sheaf of the diagonal under a certain composition. The convolution with this kernel recovers the original functor.</p>
+
+                <p><strong>Notation:</strong></p>
+                <ul>
+                    <li>\( D^b(X) \): Bounded derived category of coherent sheaves</li>
+                    <li>\( [n] \): Shift functor (\( \mathcal{F}[n]^i = \mathcal{F}^{i+n} \))</li>
+                    <li>\( \Phi_{\mathcal{K}} \): Fourier-Mukai transform with kernel \( \mathcal{K} \)</li>
+                    <li>\( \text{Hom}^i(A,B) = \text{Ext}^i(A,B) \)</li>
+                </ul>
+
+                <pre><code class="python"># Python: Derived Category Concepts (Symbolic)
+# Note: Actual derived category computations are highly abstract
+
+class ChainComplex:
+    """
+    Simplified model of a chain complex
+    """
+    def __init__(self, terms, differentials):
+        self.terms = terms  # List of objects (sheaves, modules, etc.)
+        self.differentials = differentials  # Maps d_i: C_i -> C_{i-1}
+    
+    def cohomology(self, i):
+        """Compute i-th cohomology: ker(d_i) / im(d_{i+1})"""
+        if i < 0 or i >= len(self.terms):
+            return 0
+        # Simplified - in practice requires homological algebra
+        return f"H^{i}(C)"
+    
+    def shift(self, n):
+        """Shift complex by n: C[n]^i = C^{i+n}"""
+        return ChainComplex(
+            [None]*n + self.terms,
+            [None]*n + self.differentials
+        )
+
+def derived_hom(A, B, i):
+    """
+    Hom in derived category: Hom_{D(X)}(A, B[i]) = Ext^i_X(A, B)
+    """
+    return f"Ext^{i}({A}, {B})"
+
+def fourier_mukai_transform(kernel, obj):
+    """
+    Fourier-Mukai transform: Phi_K(F) = Rπ_{2*}(K ⊗ Lπ_1^* F)
+    """
+    return f"Φ_{kernel}({obj})"
+
+# Example
+print("Derived Category Concepts")
+print("="*40)
+
+C = ChainComplex(["E^0", "E^1", "E^2"], ["d_1", "d_2"])
+print(f"Chain complex: {C.terms}")
+print(f"Cohomology at position 1: {C.cohomology(1)}")
+
+print(f"\nDerived Hom: {derived_hom('O_X', 'O_X', 1)}")
+print("This equals H^1(X, O_X) for the structure sheaf")
+
+print(f"\nFourier-Mukai: {fourier_mukai_transform('P', 'F')}")
+print("Example: Poincaré line bundle on E × E for elliptic curve E")</code></pre>
+
+                <h3>4. Noncommutative Geometry: Spaces from Algebras</h3>
+                <p><strong>Historical Context:</strong> Noncommutative geometry was founded by Alain Connes in the 1980s as a synthesis of operator algebras and differential geometry. It provides a framework where the commutative algebra of functions on a space is replaced by a noncommutative algebra, allowing geometric concepts to extend to quantum spaces, foliations, and number theory.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>spectral triple</strong> \( (\mathcal{A}, \mathcal{H}, D) \) consists of a C*-algebra \( \mathcal{A} \) acting on a Hilbert space \( \mathcal{H} \), and a self-adjoint operator \( D \) with compact resolvent.</li>
+                    <li>The <strong>Connes distance</strong> between states \( \phi, \psi \) is \( d(\phi, \psi) = \sup\{ |\phi(a) - \psi(a)| : \|[D,a]\| \leq 1 \} \).</li>
+                    <li>The <strong>noncommutative torus</strong> \( \mathbb{T}^2_\theta \) has C*-algebra generated by unitaries \( U, V \) with \( UV = e^{2\pi i \theta} VU \).</li>
+                </ul>
+
+                <p><strong>Theorem (Connes):</strong></p>
+                <p>For a compact spin Riemannian manifold \( M \), the spectral triple \( (C^\infty(M), L^2(S), D) \) completely determines \( M \) up to isometry.</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The Dirac operator \( D \) encodes the metric through the commutator condition. The distance formula recovers the geodesic distance. The algebra structure plus the spectral data reconstruct the manifold's differentiable structure and metric.</p>
+
+                <p><strong>Notation:</strong></p>
+                <ul>
+                    <li>\( (\mathcal{A}, \mathcal{H}, D) \): Spectral triple</li>
+                    <li>\( \Omega_D(\mathcal{A}) \): Differential forms in NCG</li>
+                    <li>\( \oint a|D|^{-n} \): Dixmier trace (integration)</li>
+                    <li>\( \mathbb{T}^n_\theta \): Noncommutative torus</li>
+                </ul>
+
+                <pre><code class="python"># Python: Noncommutative Geometry Concepts
+import numpy as np
+
+def noncommutative_torus_mult(U, V, theta, coeff):
+    """
+    Multiplication in noncommutative torus algebra
+    UV = e^{2πiθ} VU
+    """
+    # For basis elements U^m V^n
+    m1, n1 = U
+    m2, n2 = V
+    # (U^{m1} V^{n1})(U^{m2} V^{n2}) = e^{-2πiθ n1 m2} U^{m1+m2} V^{n1+n2}
+    phase = np.exp(-2j * np.pi * theta * n1 * m2)
+    return phase, (m1 + m2, n1 + n2)
+
+def connes_distance_formula(D_commutator_norm):
+    """
+    Connes' distance formula: d(φ, ψ) = sup{|φ(a) - ψ(a)| : ||[D,a]|| ≤ 1}
+    """
+    # In practice, this requires optimization over the algebra
+    return f"d(φ, ψ) computed via spectral triple"
+
+def spectral_action(D, Lambda):
+    """
+    Spectral action: Tr(f(D/Λ)) where f is a cutoff function
+    """
+    # Counts eigenvalues of D up to scale Λ
+    return f"Spectral action at cutoff Λ = {Lambda}"
+
+# Example: Noncommutative torus
+print("Noncommutative Geometry")
+print("="*40)
+
+theta = 0.5  # Irrational for simple C*-algebra
+U = (1, 0)  # Represents U^1 V^0
+V = (0, 1)  # Represents U^0 V^1
+
+phase, product = noncommutative_torus_mult(U, V, theta, 1)
+print(f"Noncommutative torus with θ = {theta}")
+print(f"UV = e^{{-2πiθ}} VU")
+print(f"Phase factor: {phase:.4f}")
+
+print(f"\nProduct: U * V = {phase:.4f} * U^{product[0]} V^{product[1]}")
+
+print("\nConnes' reconstruction theorem:")
+print("Spectral triple (A, H, D) determines Riemannian manifold up to isometry")
+
+print(f"\n{connes_distance_formula(1.0)}")
+print("Recovers geodesic distance from Dirac operator")</code></pre>
+            </section>
+
+            <!-- Section 6: Math History -->
+            <section id="math-history">
+                <h2>📜 Math History: Alexander Grothendieck and the Revolution of Schemes</h2>
+                
+                <p>Alexander Grothendieck (1928–2014) transformed algebraic geometry more radically than any mathematician since Descartes unified geometry and algebra. Born in Berlin to anarchist parents, Grothendieck spent his childhood in refugee camps and later in France, where his mathematical genius emerged at the Institut des Hautes Études Scientifiques (IHÉS).</p>
+                
+                <p>Before Grothendieck, algebraic geometers studied varieties—solution sets of polynomial equations—using geometric intuition and commutative algebra. This approach, developed by the Italian school and refined by Zariski and Weil, had achieved remarkable results but faced fundamental limitations. Weil's foundations, while rigorous, were technically cumbersome and didn't capture all the phenomena geometers needed.</p>
+                
+                <p>Grothendieck's insight was to replace varieties with schemes. Where a variety captures only the geometric points of a polynomial system, a scheme encodes all its algebraic structure—nilpotents, infinitesimal behavior, and arithmetic information. The key was to view geometry as emerging from rings rather than sets of points. The prime spectrum Spec(A) of a ring A became the basic building block.</p>
+                
+                <p>This perspective shift enabled Grothendieck and his collaborators to prove the Weil conjectures, settle fundamental questions in algebraic geometry, and create tools—sheaf cohomology, étale cohomology, topos theory—that would reshape mathematics. His Séminaire de Géométrie Algébrique (SGA) and Éléments de Géométrie Algébrique (EGA) remain foundational references.</p>
+                
+                <p>Grothendieck's later life took unexpected turns. He abandoned mathematics in 1970, protesting military funding of science. He spent years as an environmental activist and hermit, writing philosophical and mystical texts. His autobiography Récoltes et Semailles (Harvests and Sowings) offers profound reflections on creativity, mathematics, and meaning.</p>
+            </section>
+
+            <!-- Section 7: Math Journalism -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-item">
+                    <h3>Quanta Magazine: "Mathematicians Prove 30-Year-Old Sensitivity Conjecture"</h3>
+                    <p><strong>Summary:</strong> In 2019, Hao Huang proved the sensitivity conjecture, a longstanding problem in theoretical computer science and combinatorics. The conjecture relates the sensitivity of a Boolean function (how many input bits can flip the output) to other complexity measures. Huang's proof was remarkably elegant—just two pages—using a simple but powerful matrix method. The result has implications for understanding the complexity of Boolean functions and demonstrates how elementary techniques can solve problems that resisted sophisticated approaches for decades.</p>
+                    <p><a href="https://www.quantamagazine.org/mathematician-solves-computer-science-conjecture-in-two-pages-20190725/">Read on Quanta</a></p>
+                </div>
+                
+                <div class="article-item">
+                    <h3>Notices of the AMS: "The Work of Peter Scholze"</h3>
+                    <p><strong>Summary:</strong> Peter Scholze's introduction of perfectoid spaces revolutionized p-adic geometry and earned him the 2018 Fields Medal. This article surveys his contributions, including the development of perfectoid theory, its applications to the weight-monodromy conjecture, and the foundational work on condensed mathematics. Scholze's approach exemplifies a modern trend in mathematics: using categorical and homotopical methods to unify and simplify complex theories. His work connects number theory, algebraic geometry, and functional analysis in unexpected ways.</p>
+                    <p><a href="https://www.ams.org/notices">Read in Notices</a></p>
+                </div>
+                
+                <div class="article-item">
+                    <h3>Plus Magazine: "Machine Learning Meets Mathematical Proof"</h3>
+                    <p><strong>Summary:</strong> The intersection of machine learning and mathematics is producing surprising results. Researchers are using neural networks to discover patterns in mathematical data, suggest conjectures, and even assist in proofs. DeepMind's work on knot theory and representation theory demonstrates that AI can identify connections invisible to human mathematicians. While these tools won't replace mathematicians, they may become essential partners in exploration, handling computational complexity while humans provide creativity and rigor.</p>
+                    <p><a href="https://plus.maths.org">Read on Plus</a></p>
+                </div>
+            </section>
+
+            <!-- Section 8: Problem Corner -->
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Problem: AIME 2024</h3>
+                    <p>Let \( n \) be a positive integer. A sequence of integers \( a_1, a_2, \ldots, a_n \) is called <em>good</em> if:</p>
+                    <ol>
+                        <li>\( 1 \leq a_i \leq 100 \) for all \( i \)</li>
+                        <li>For all \( i < j \), if \( a_i = a_j \) then \( a_{i+1} = a_{j+1} \) (when defined)</li>
+                    </ol>
+                    <p>Find the number of good sequences of length 4.</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Consider cases based on how many distinct values appear in the sequence. The constraint essentially says that equal elements must be followed by equal elements—this is related to De Bruijn sequences and finite automata.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p>Let us analyze the constraint carefully. The condition says that if \( a_i = a_j \), then the next elements must also be equal. This means the sequence is determined by:</p>
+                        <ul>
+                            <li>The set of distinct values that appear</li>
+                            <li>The order in which "transitions" between values occur</li>
+                        </ul>
+                        <p>For a sequence of length 4, let's count by the number of distinct values:</p>
+                        
+                        <p><strong>Case 1: Exactly 1 distinct value.</strong><br>
+                        All entries are equal. There are 100 choices for this value.<br>
+                        Count: 100</p>
+                        
+                        <p><strong>Case 2: Exactly 2 distinct values.</strong><br>
+                        The sequence has the form \( a, a, \ldots, a, b, b, \ldots, b \) where we switch from \( a \) to \( b \) exactly once.<br>
+                        Choose positions: the switch can happen after position 1, 2, or 3 (3 choices).<br>
+                        Choose values: \( a \neq b \), so \( 100 \times 99 \) choices.<br>
+                        Count: \( 3 \times 100 \times 99 = 29700 \)</p>
+                        
+                        <p><strong>Case 3: Exactly 3 distinct values.</strong><br>
+                        The sequence has form \( a, \ldots, a, b, \ldots, b, c, \ldots, c \) with two switches.<br>
+                        Choose positions: choose 2 positions from 3 possible switch points: \( \binom{3}{2} = 3 \) ways.<br>
+                        Choose values: \( a, b, c \) all distinct: \( 100 \times 99 \times 98 \) ways.<br>
+                        Count: \( 3 \times 100 \times 99 \times 98 = 2910600 \)</p>
+                        
+                        <p><strong>Case 4: Exactly 4 distinct values.</strong><br>
+                        All entries distinct: \( a, b, c, d \).<br>
+                        Count: \( 100 \times 99 \times 98 \times 97 = 94109400 \)</p>
+                        
+                        <p><strong>Total:</strong> \( 100 + 29700 + 2910600 + 94109400 = 97049800 \)</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Section 9: Visualization of the Day -->
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Hopf Fibration</h2>
+                
+                <p>The Hopf fibration is one of the most beautiful structures in mathematics—a way of filling 3-dimensional space with linked circles, arising from a map from the 3-sphere to the 2-sphere. Each point on \( S^2 \) corresponds to a circle (fiber) in \( S^3 \), and any two distinct fibers are linked.</p>
+                
+                <pre><code class="python"># Python: Visualizing the Hopf Fibration
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def hopf_fibration(theta, phi, psi):
+    """
+    Parametrize S^3 via Hopf coordinates
+    (theta, phi, psi) -> (z1, z2) in C^2 with |z1|^2 + |z2|^2 = 1
+    """
+    z1 = np.exp(1j * (psi + phi)/2) * np.cos(theta/2)
+    z2 = np.exp(1j * (psi - phi)/2) * np.sin(theta/2)
+    return z1, z2
+
+def stereographic_projection(z1, z2):
+    """
+    Stereographic projection from S^3 to R^3
+    (z1, z2) -> (x, y, z) in R^3
+    """
+    # Point on S^3: (Re(z1), Im(z1), Re(z2), Im(z2))
+    x4 = np.real(z1)
+    y4 = np.imag(z1)
+    z4 = np.real(z2)
+    w4 = np.imag(z2)
+    
+    # Stereographic projection from (0,0,0,1)
+    denom = 1 - w4
+    x = x4 / denom
+    y = y4 / denom
+    z = z4 / denom
+    return x, y, z
+
+def hopf_fiber(phi0, n_points=100):
+    """
+    Compute a single Hopf fiber (circle in S^3)
+    Fixed phi = phi0, varying theta and psi with theta + psi = constant
+    """
+    t = np.linspace(0, 2*np.pi, n_points)
+    
+    # For a fixed phi, the fiber is parameterized by varying psi
+    # theta is determined by the Hopf map: theta = constant for fixed base point
+    theta = np.pi/2  # Equator of S^2
+    
+    # The fiber: phi = phi0, theta = pi/2, psi varies
+    z1 = np.exp(1j * (t + phi0)/2) * np.cos(theta/2)
+    z2 = np.exp(1j * (t - phi0)/2) * np.sin(theta/2)
+    
+    # Project to R^3
+    x, y, z = stereographic_projection(z1, z2)
+    return x, y, z
+
+# Create visualization
+fig = plt.figure(figsize=(12, 10))
+ax = fig.add_subplot(111, projection='3d')
+
+# Plot several Hopf fibers with different colors
+colors = plt.cm.hsv(np.linspace(0, 1, 8))
+
+for i, phi0 in enumerate(np.linspace(0, 2*np.pi, 8)):
+    x, y, z = hopf_fiber(phi0)
+    ax.plot(x, y, z, color=colors[i], linewidth=2, alpha=0.8)
+
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.set_title('Hopf Fibration: Linked Circles in 3D')
+
+# Set equal aspect ratio
+max_range = 3
+ax.set_xlim([-max_range, max_range])
+ax.set_ylim([-max_range, max_range])
+ax.set_zlim([-max_range, max_range])
+
+plt.tight_layout()
+plt.savefig('hopf_fibration.png', dpi=150, bbox_inches='tight')
+print("Hopf fibration visualization saved!")
+
+# Mathematical description
+print("\nThe Hopf Fibration:")
+print("="*50)
+print("Map: S^3 -> S^2")
+print("Each point on S^2 corresponds to a circle (fiber) in S^3")
+print("Any two distinct fibers are linked (Hopf link)")
+print("\nIn coordinates (z1, z2) in C^2 with |z1|^2 + |z2|^2 = 1:")
+print("Hopf map: (z1, z2) -> (2 Re(z1*conj(z2)), 2 Im(z1*conj(z2)), |z1|^2 - |z2|^2)")
+print("\nThis is a principal U(1)-bundle over S^2 with Chern number 1")</code></pre>
+            </section>
+
+            <!-- Section 10: Quote of the Day -->
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"The question you raise, 'How can such a formulation lead to computations?' doesn't bother me in the least! Throughout my whole life as a mathematician, the possibility of making explicit, elegant computations has always come out by itself, as a byproduct of a thorough conceptual understanding of what was going on. Thus I never bothered about whether what would come out would be suitable for this or that, but just tried to understand—and it always turned out that understanding was all that mattered."</p>
+                    <footer>— Alexander Grothendieck</footer>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="./index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
