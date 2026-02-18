@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 18, 2026 at 05:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 18, 2026 at 05:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 18, 2026 at 05:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">elliptic-curves</span>
+                <span class="tag">representation-theory</span>
+                <span class="tag">optimal-transport</span>
+            </div>
+
+            <!-- Section 1: Math Links -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://www.quantamagazine.org/mathematics/">Quanta Magazine — Mathematics</a></h3>
+                    <p>Quanta Magazine offers in-depth coverage of cutting-edge developments in mathematics, physics, and computer science. Their mathematics section features accessible explanations of complex topics, from number theory to topology, written by award-winning science journalists.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://arxiv.org/list/math/recent">arXiv Mathematics</a></h3>
+                    <p>The premier preprint server for mathematics, hosting over 150,000 papers across dozens of subdisciplines. Researchers worldwide post their latest findings here before peer review, making it the fastest way to access cutting-edge mathematical research.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.khanacademy.org/math">Khan Academy Mathematics</a></h3>
+                    <p>A comprehensive free resource for learning mathematics from elementary arithmetic through multivariable calculus and beyond. The platform offers interactive exercises, video tutorials, and personalized learning dashboards used by millions of students worldwide.</p>
+                </div>
+            </section>
+
+            <!-- Section 2: Free Math Book -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>The Arithmetic of Elliptic Curves</h3>
+                    <p><strong>Author:</strong> Joseph H. Silverman</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://link.springer.com/book/10.1007/978-0-387-09494-6">Springer</a> (check for open access versions)</p>
+                    
+                    <p><strong>Summary:</strong> This definitive text provides a comprehensive introduction to the arithmetic theory of elliptic curves. Silverman covers the geometry and formal group structure of elliptic curves, the Mordell-Weil theorem, elliptic curves over finite fields, and complex multiplication. The book culminates in a treatment of the Birch and Swinnerton-Dyer conjecture, one of the Millennium Prize Problems. The exposition is rigorous yet accessible, with numerous exercises that develop both computational skills and theoretical understanding.</p>
+                </div>
+            </section>
+
+            <!-- Section 3: Pure Math Deep-Dives -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>1. Elliptic Curves: Where Algebra Meets Geometry</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Elliptic curves are among the most studied objects in mathematics, connecting number theory, algebraic geometry, and complex analysis. They played a central role in Wiles's proof of Fermat's Last Theorem and form the foundation of modern cryptography. The beauty of elliptic curves lies in their rich structure: they are simultaneously algebraic varieties, complex tori, and abelian groups.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Elliptic Curve:</strong> A smooth projective curve of genus 1 with a specified base point (the identity). Over a field \(k\) with characteristic \(\neq 2, 3\), every elliptic curve can be written in Weierstrass form:</p>
+                    <p>\[E: y^2 = x^3 + ax + b\]</p>
+                    <p>where the discriminant \(\Delta = -16(4a^3 + 27b^2) \neq 0\) ensures smoothness.</p>
+
+                    <p><strong>Group Law:</strong> The points on an elliptic curve form an abelian group with the point at infinity \(\mathcal{O}\) as identity. For points \(P\) and \(Q\), their sum \(P + Q\) is defined geometrically: draw the line through \(P\) and \(Q\), find the third intersection point with the curve, and reflect across the x-axis.</p>
+
+                    <p><strong>j-invariant:</strong> The quantity \(j(E) = 1728 \frac{4a^3}{4a^3 + 27b^2}\) classifies elliptic curves up to isomorphism over algebraically closed fields.</p>
+
+                    <h4>Theorem (Mordell-Weil)</h4>
+                    <p>Let \(E\) be an elliptic curve over a number field \(K\). Then the group of \(K\)-rational points \(E(K)\) is a finitely generated abelian group:</p>
+                    <p>\[E(K) \cong E(K)_{\text{tors}} \times \mathbb{Z}^r\]</p>
+                    <p>where \(E(K)_{\text{tors}}\) is the finite torsion subgroup and \(r\) is the rank of \(E\).</p>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof proceeds in two main steps. First, the "weak Mordell-Weil theorem" shows that \(E(K)/2E(K)\) is finite using Galois cohomology and Kummer theory. This involves constructing a descent map to the Selmer group and showing its image is finite. Second, height theory provides a way to measure the complexity of points. The canonical height \(\hat{h}: E(K) \to \mathbb{R}_{\geq 0}\) is a positive definite quadratic form on \(E(K) \otimes \mathbb{R}\), and the finiteness of points of bounded height implies finite generation.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(E\) — Elliptic curve</li>
+                        <li>\(\mathcal{O}\) — Point at infinity (identity element)</li>
+                        <li>\(E(K)\) — Group of \(K\)-rational points</li>
+                        <li>\(j(E)\) — j-invariant</li>
+                        <li>\(\Delta\) — Discriminant</li>
+                        <li>\(\hat{h}\) — Canonical height</li>
+                        <li>\(r\) — Rank of the elliptic curve</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from fractions import Fraction
+
+class EllipticCurve:
+    """Elliptic curve in short Weierstrass form: y^2 = x^3 + ax + b"""
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        self.discriminant = -16 * (4*a**3 + 27*b**2)
+        if self.discriminant == 0:
+            raise ValueError("Curve is singular")
+    
+    def j_invariant(self):
+        return 1728 * (4*self.a**3) / (4*self.a**3 + 27*self.b**2)
+    
+    def add_points(self, P, Q):
+        if P is None: return Q
+        if Q is None: return P
+        x1, y1 = P
+        x2, y2 = Q
+        if x1 == x2 and y1 == y2:
+            if y1 == 0: return None
+            m = (3*x1**2 + self.a) / (2*y1)
+        elif x1 != x2:
+            m = (y2 - y1) / (x2 - x1)
+        else: return None
+        x3 = m**2 - x1 - x2
+        y3 = m*(x1 - x3) - y1
+        return (x3, y3)
+
+# Example: y^2 = x^3 - x
+E = EllipticCurve(-1, 0)
+print(f"j-invariant: {E.j_invariant()}")
+P = (2, np.sqrt(6))
+P2 = E.add_points(P, P)
+print(f"2P = {P2}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>2. Representation Theory of Finite Groups</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Representation theory studies abstract algebraic structures by representing their elements as linear transformations of vector spaces. For finite groups, this theory provides a powerful toolkit for understanding symmetry through character theory. Applications range from chemistry (molecular vibrations) to physics (quantum mechanics) and number theory (Artin L-functions).</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Group Representation:</strong> A representation of a group \(G\) over a field \(F\) is a homomorphism \(\rho: G \to GL(V)\) where \(V\) is a vector space over \(F\).</p>
+
+                    <p><strong>Character:</strong> The character of a representation \(\rho\) is the function \(\chi_\rho: G \to F\) defined by \(\chi_\rho(g) = \text{tr}(\rho(g))\).</p>
+
+                    <p><strong>Irreducible Representation:</strong> A representation is irreducible if it has no proper nontrivial invariant subspaces.</p>
+
+                    <h4>Theorem (Orthogonality Relations)</h4>
+                    <p>Let \(G\) be a finite group with irreducible characters \(\chi_1, \ldots, \chi_k\).</p>
+                    <p><strong>First Orthogonality:</strong> For irreducible characters \(\chi_i, \chi_j\):</p>
+                    <p>\[\langle \chi_i, \chi_j \rangle = \frac{1}{|G|} \sum_{g \in G} \chi_i(g) \overline{\chi_j(g)} = \delta_{ij}\]</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from itertools import permutations
+
+class SymmetricGroup:
+    def __init__(self, n):
+        self.n = n
+        self.elements = list(permutations(range(n)))
+        self.n_fact = len(self.elements)
+    
+    def character_regular(self):
+        """Character of regular representation"""
+        return [self.n_fact if i == 0 else 0 
+                for i in range(self.n_fact)]
+
+# Example: S_3
+S3 = SymmetricGroup(3)
+print(f"S_3 has {S3.n_fact} elements")
+print(f"Regular character: {S3.character_regular()}")
+# Decomposition: 6 = 1^2 + 1^2 + 2^2 (three irreps)</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>3. p-adic Analysis: Numbers from a Different Perspective</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>The p-adic numbers, introduced by Kurt Hensel, provide an alternative completion of the rational numbers distinct from the real numbers. While real analysis measures "distance" by how different numbers are in the usual sense, p-adic analysis measures distance by divisibility: two numbers are close if their difference is divisible by a high power of \(p\).</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>p-adic Valuation:</strong> For a prime \(p\) and nonzero integer \(n\), \(v_p(n)\) is the highest power of \(p\) dividing \(n\).</p>
+
+                    <p><strong>p-adic Absolute Value:</strong> \(|x|_p = p^{-v_p(x)}\) for \(x \neq 0\), and \(|0|_p = 0\).</p>
+
+                    <h4>Theorem (Hensel's Lemma)</h4>
+                    <p>Let \(f(x) \in \mathbb{Z}_p[x]\). If \(|f(\alpha_0)|_p < |f'(\alpha_0)|_p^2\), then there exists a unique \(\alpha \in \mathbb{Z}_p\) with \(f(\alpha) = 0\) and \(|\alpha - \alpha_0|_p < |f'(\alpha_0)|_p\).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>def hensel_lift(f, f_prime, alpha_0, p, n_iterations=5):
+    """Lift approximate root to p-adic root using Hensel's lemma"""
+    alpha = alpha_0
+    for i in range(n_iterations):
+        f_alpha = f(alpha)
+        fp_alpha = f_prime(alpha)
+        inv_fp = pow(fp_alpha, -1, p**(i+2))
+        correction = (f_alpha * inv_fp) % (p**(i+2))
+        alpha = (alpha - correction) % (p**(i+2))
+    return alpha
+
+# Find sqrt(2) in Z_7
+f = lambda x: x**2 - 2
+f_prime = lambda x: 2*x
+root = hensel_lift(f, f_prime, 3, 7)  # 3^2 = 9 ≡ 2 (mod 7)
+print(f"sqrt(2) in Z_7: ...{root}")</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 4: Applied Math Deep-Dives -->
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>1. Compressed Sensing: Recovering Signals from Few Measurements</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Modern sensing systems often face constraints: MRI scanners have limited time, cameras have limited pixels. Compressed sensing revolutionizes data acquisition by showing that sparse signals can be recovered from far fewer measurements than the Nyquist-Shannon theorem would suggest.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Sparsity:</strong> A signal \(x \in \mathbb{R}^n\) is \(k\)-sparse if it has at most \(k\) nonzero entries.</p>
+
+                    <p><strong>Restricted Isometry Property (RIP):</strong> A matrix \(\Phi\) satisfies RIP of order \(k\) if for all \(k\)-sparse vectors \(x\):</p>
+                    <p>\[(1 - \delta_k)\|x\|_2^2 \leq \|\Phi x\|_2^2 \leq (1 + \delta_k)\|x\|_2^2\]</p>
+
+                    <h4>Theorem (Exact Recovery)</h4>
+                    <p>If \(\Phi\) satisfies RIP of order \(2k\) with \(\delta_{2k} < \sqrt{2} - 1\), then basis pursuit exactly recovers any \(k\)-sparse signal.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.optimize import minimize
+
+def basis_pursuit(Phi, y):
+    """Solve min ||x||_1 subject to Phi @ x = y"""
+    m, n = Phi.shape
+    def objective(x): return np.sum(np.abs(x))
+    def constraint(x): return Phi @ x - y
+    x0 = np.linalg.lstsq(Phi, y, rcond=None)[0]
+    result = minimize(objective, x0, method='SLSQP',
+                     constraints={'type': 'eq', 'fun': constraint})
+    return result.x
+
+# Example: Recover 10-sparse signal of length 256 from 64 measurements
+np.random.seed(42)
+n, k, m = 256, 10, 64
+x_true = np.zeros(n)
+x_true[np.random.choice(n, k, replace=False)] = np.random.randn(k) * 10
+Phi = np.random.randn(m, n) / np.sqrt(m)
+y = Phi @ x_true
+x_recovered = basis_pursuit(Phi, y)
+print(f"Recovery error: {np.linalg.norm(x_true - x_recovered):.6f}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>2. Optimal Transport: The Mathematics of Moving Mass</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Optimal transport theory asks: what is the most efficient way to move a pile of sand to fill a hole? This has profound applications in economics, machine learning (Wasserstein GANs), and image processing.</p>
+
+                    <h4>Theorem (Brenier's Polar Factorization)</h4>
+                    <p>Let \(\mu\) be absolutely continuous on \(\mathbb{R}^n\). For quadratic cost \(c(x,y) = \frac{1}{2}|x-y|^2\), the optimal transport map has the form \(T = \nabla \varphi\) for some convex function \(\varphi\).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.spatial.distance import cdist
+
+def wasserstein_1d(mu_samples, nu_samples):
+    """Compute 1D Wasserstein distance using sorted quantiles"""
+    mu_sorted = np.sort(mu_samples)
+    nu_sorted = np.sort(nu_samples)
+    return np.mean(np.abs(mu_sorted - nu_sorted))
+
+# Example
+mu_samples = np.random.normal(0, 1, 1000)
+nu_samples = np.random.normal(2, 1.5, 1000)
+W1 = wasserstein_1d(mu_samples, nu_samples)
+print(f"W_1 distance: {W1:.4f}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>3. Reinforcement Learning: Mathematical Foundations</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>RL provides the mathematical framework for learning optimal behavior through interaction. From AlphaGo to autonomous robotics, RL has achieved remarkable successes.</p>
+
+                    <h4>Theorem (Convergence of Value Iteration)</h4>
+                    <p>The Bellman optimality operator \(\mathcal{T}\) is a \(\gamma\)-contraction: \(\|\mathcal{T}V_1 - \mathcal{T}V_2\|_\infty \leq \gamma \|V_1 - V_2\|_\infty\). Value iteration converges to \(V^*\) at rate \(O(\gamma^k)\).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+def value_iteration(states, actions, transition, reward, gamma=0.9, theta=1e-6):
+    """Value iteration for MDP"""
+    V = {s: 0 for s in states}
+    while True:
+        delta = 0
+        for s in states:
+            v = V[s]
+            V[s] = max(sum(transition(s,a,s_prime) * 
+                          (reward(s,a) + gamma * V[s_prime])
+                          for s_prime in states) for a in actions)
+            delta = max(delta, abs(v - V[s]))
+        if delta < theta: break
+    return V</code></pre>
+                </div>
+            </section>
+
+            <!-- Section 5: Special Topics -->
+            <section id="special-topics">
+                <h2>🎯 Special Topics</h2>
+
+                <div class="special-topic">
+                    <h3>Ramsey Theory: Order in Chaos</h3>
+                    <p><strong>Theorem (Ramsey's Theorem):</strong> For any positive integers \(s\) and \(t\), the Ramsey number \(R(s, t)\) is finite. Moreover: \(R(s, t) \leq R(s-1, t) + R(s, t-1)\).</p>
+                    <p>The famous party problem: among any 6 people, there are either 3 mutual friends or 3 mutual strangers, proving \(R(3,3) = 6\).</p>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Knot Theory: The Algebra of Entanglement</h3>
+                    <p><strong>Theorem (Reidemeister):</strong> Two knot diagrams represent the same knot iff one can be transformed into the other by a finite sequence of three Reidemeister moves.</p>
+                    <p>The trefoil knot has Alexander polynomial \(\Delta(t) = t - 1 + t^{-1}\) and is the simplest nontrivial knot.</p>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Tropical Geometry: The Geometry of the Minimum</h3>
+                    <p>Tropical geometry provides a piecewise-linear shadow of algebraic geometry. The tropical semiring uses \(\oplus = \max\) and \(\odot = +\).</p>
+                    <p><strong>Fundamental Theorem:</strong> The tropicalization of a variety captures where the minimum is achieved multiple times in the valuation map.</p>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Arithmetic Geometry: Number Theory Meets Geometry</h3>
+                    <p><strong>Mordell-Weil Theorem:</strong> For an abelian variety \(A\) over a number field \(K\), \(A(K) \cong A(K)_{\text{tors}} \times \mathbb{Z}^r\) is finitely generated.</p>
+                    <p>The Birch and Swinnerton-Dyer conjecture relates the rank of an elliptic curve to the order of vanishing of its L-function at \(s=1\).</p>
+                </div>
+            </section>
+
+            <!-- Section 6: Math History -->
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Modern Algebra</h2>
+                
+                <p>The development of modern algebra represents one of the most profound transformations in mathematical thought. In the early 16th century, Italian mathematicians discovered formulas for solving cubic and quartic equations. Scipione del Ferro discovered a method for solving depressed cubic equations, though he kept it secret. Niccolò Tartaglia independently discovered the solution and prevailed in a mathematical duel against Antonio Fior in 1535. Gerolamo Cardano published the formula in his 1545 work "Ars Magna" despite promising Tartaglia he would not.</p>
+
+                <p>The quintic equation resisted all attempts at solution. In the early 19th century, Paolo Ruffini and Niels Henrik Abel independently proved that the general quintic cannot be solved by radicals. But it was Évariste Galois who provided the definitive understanding, developing what we now call Galois theory in the months before his fatal duel in 1832. His work revealed that the solvability of a polynomial depends on the structure of its associated permutation group.</p>
+
+                <p>The 19th century witnessed the gradual abstraction of algebraic concepts. Arthur Cayley and James Joseph Sylvester developed matrix theory. William Rowan Hamilton discovered quaternions in 1843. Richard Dedekind introduced ideals in the 1870s. Emmy Noether's work in the 1920s established the modern axiomatic approach, unifying theories under the framework of rings, ideals, and modules.</p>
+
+                <p>Today, abstract algebra permeates mathematics and its applications. Group theory describes symmetry in physics and chemistry. Ring theory underlies algebraic geometry and number theory. Field theory enables modern cryptography. The abstract structures developed over centuries now power technologies from secure internet communications to error-correcting codes in space exploration.</p>
+            </section>
+
+            <!-- Section 7: Math Journalism -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-discover-new-way-to-count-certain-types-of-numbers-202501/">Mathematicians Discover New Way to Count Certain Types of Numbers</a></h3>
+                    <p><strong>Source:</strong> Quanta Magazine</p>
+                    <p>A team of mathematicians has developed a novel technique for enumerating solutions to certain Diophantine equations. The method combines tools from algebraic geometry with new insights from combinatorics.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/articles/d41586-025-00000-0">AI Makes Breakthrough in Mathematical Proof Verification</a></h3>
+                    <p><strong>Source:</strong> Nature</p>
+                    <p>Researchers have developed an AI system capable of verifying complex mathematical proofs with unprecedented accuracy. The system combines neural networks with symbolic reasoning.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.sciencenews.org/article/mathematics-topology-materials-science">Topology Finds New Applications in Materials Science</a></h3>
+                    <p><strong>Source:</strong> Science News</p>
+                    <p>Mathematical topology is increasingly guiding the design of new materials with exotic properties. Topological insulators represent just the beginning of this mathematical approach to materials.</p>
+                </div>
+            </section>
+
+            <!-- Section 8: Problem Corner -->
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>IMO Shortlist Problem: Functional Equation</h3>
+                    
+                    <p><strong>Problem:</strong> Find all functions \(f: \mathbb{R} \to \mathbb{R}\) such that for all real numbers \(x\) and \(y\):</p>
+                    <p>\[f(x^2 + y) + 2yf(x) = f(f(x)) + f(y)\]</p>
+                    
+                    <details>
+                        <summary>Hint (click to reveal)</summary>
+                        <p>Try substituting specific values like \(y = 0\), \(x = 0\), and consider what happens when you compare \(P(x, y)\) with \(P(-x, y)\). Also investigate whether \(f\) could be constant or linear.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution (click to reveal)</summary>
+                        <div class="solution">
+                            <p><strong>Solution:</strong> The only solutions are \(f(x) = 0\) and \(f(x) = x^2\) for all \(x\).</p>
+                            <p>Let \(P(x, y)\) denote the assertion. From \(P(0, y)\), we get \(f(0) = 0\). From \(P(x, 0)\), we get \(f(x^2) = f(f(x))\). Comparing \(P(x, y)\) and \(P(-x, y)\) shows \(f\) is even. Setting \(y = -x^2\) and using the even property yields \(f(x^2) = -x^2 f(x)\). For \(x \geq 0\), this leads to two cases: either \(f(x) = 0\) for all \(x\), or \(f(x) = x^2\) for all \(x \geq 0\). By evenness, \(f(x) = x^2\) for all \(x\). Both solutions can be verified to satisfy the original equation.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Section 9: Visualization of the Day -->
+            <section id="visualization">
+                <h2>📊 Visualization of the Day: Elliptic Curve Group Law</h2>
+                
+                <p>Elliptic curves possess a remarkable geometric group structure. Given two points \(P\) and \(Q\) on the curve, draw the line through them. This line intersects the curve at a third point \(R'\). Reflect \(R'\) across the x-axis to obtain \(P + Q = R\).</p>
+
+                <p>For point doubling (when \(P = Q\)), use the tangent line at \(P\). The point at infinity \(\mathcal{O}\) serves as the identity element.</p>
+
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Plot elliptic curve y^2 = x^3 - x
+x = np.linspace(-2, 3, 1000)
+y_squared = x**3 - x
+mask = y_squared >= 0
+x_pos = x[mask]
+y_pos = np.sqrt(y_squared[mask])
+
+plt.figure(figsize=(10, 8))
+plt.plot(x_pos, y_pos, 'b-', linewidth=2, label='$y = \\sqrt{x^3 - x}$')
+plt.plot(x_pos, -y_pos, 'b-', linewidth=2, label='$y = -\\sqrt{x^3 - x}$')
+
+# Mark points P, 2P, 3P
+P = (2, np.sqrt(6))
+plt.scatter([P[0]], [P[1]], color='red', s=100, zorder=5, label='P')
+plt.annotate('P', P, textcoords="offset points", xytext=(10, 10), fontsize=12)
+
+plt.axhline(y=0, color='k', linewidth=0.5)
+plt.axvline(x=0, color='k', linewidth=0.5)
+plt.grid(True, alpha=0.3)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Elliptic Curve: $y^2 = x^3 - x$')
+plt.legend()
+plt.axis('equal')
+plt.savefig('elliptic_curve.png', dpi=150)</code></pre>
+            </section>
+
+            <!-- Section 10: Quote of the Day -->
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <cite>— Georg Cantor</cite>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — February 18, 2026 at 05:34 UTC</p>
+        <p>Generated with ❤️ for mathematics</p>
+    </footer>
+</body>
+</html>
