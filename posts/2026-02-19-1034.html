@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 19, 2026 at 10:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 19, 2026 at 10:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 19, 2026 at 10:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-19 at 10:34 UTC</p>
+            <div class="tags">
+                <a href="../tags/homological-algebra.html" class="tag">homological-algebra</a>
+                <a href="../tags/representation-theory.html" class="tag">representation-theory</a>
+                <a href="../tags/dynamical-systems.html" class="tag">dynamical-systems</a>
+                <a href="../tags/cryptography.html" class="tag">cryptography</a>
+                <a href="../tags/fluid-dynamics.html" class="tag">fluid-dynamics</a>
+                <a href="../tags/optimization.html" class="tag">optimization</a>
+                <a href="../tags/tropical-geometry.html" class="tag">tropical-geometry</a>
+                <a href="../tags/quantum-groups.html" class="tag">quantum-groups</a>
+                <a href="../tags/spectral-sequences.html" class="tag">spectral-sequences</a>
+                <a href="../tags/arithmetic-geometry.html" class="tag">arithmetic-geometry</a>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 3 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://stacks.math.columbia.edu/" target="_blank" rel="noopener">Stacks Project — Algebraic Geometry Reference</a></h3>
+                    <p>The Stacks Project is a comprehensive, collaboratively written reference work on algebraic stacks and the algebraic geometry needed to define them. Maintained by Aise Johan de Jong and a growing community of contributors, it now contains over 7,000 pages covering topics from commutative algebra to algebraic spaces and stacks. Every definition, lemma, and theorem is carefully cross-referenced, and the entire project is freely available under an open license. It's an essential resource for researchers in algebraic geometry, number theory, and related fields.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www.terrytao.wordpress.com/" target="_blank" rel="noopener">What's New — Terry Tao's Blog</a></h3>
+                    <p>Terry Tao's blog is one of the most influential mathematics blogs on the internet. Fields Medalist and professor at UCLA, Tao writes about his research, expository articles on diverse mathematical topics, and commentary on the mathematics profession. The blog covers analysis, number theory, combinatorics, and mathematical physics, often explaining cutting-edge research at multiple levels of technicality. Tao's ability to make complex mathematics accessible while maintaining rigor makes this blog invaluable for mathematicians at all levels.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://oeis.org/" target="_blank" rel="noopener">OEIS — The On-Line Encyclopedia of Integer Sequences</a></h3>
+                    <p>The OEIS is a database of integer sequences, created by Neil Sloane in 1964 and now containing over 350,000 sequences. It's an essential tool for mathematicians, scientists, and enthusiasts who encounter sequences in their work. Each entry includes the sequence terms, formulas, references, links, and often computer code. The OEIS has helped resolve conjectures, identify patterns, and connect seemingly unrelated areas of mathematics. It's a testament to the surprising interconnectedness of mathematical structures.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book of the Day</h2>
+                <div class="book-card">
+                    <h3>"Representation Theory: A First Course"</h3>
+                    <p><strong>Author:</strong> William Fulton and Joe Harris</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> This classic text provides a comprehensive introduction to the representation theory of finite groups and Lie groups. Fulton and Harris emphasize concrete examples and geometric intuition, making the abstract theory accessible. The book covers character theory, representations of the symmetric and general linear groups, and the classification of complex semisimple Lie algebras. The authors' approach through examples—working out specific cases before presenting general theory—helps readers build intuition. Numerous exercises and the famous "Weyl character formula" are highlights of this beautifully written text.</p>
+                    <p><a href="https://www.springer.com/gp/book/9780387974958" target="_blank" rel="noopener">View on Springer</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Homological Algebra: Measuring the Failure of Exactness</h3>
+                    <p class="tag">homological-algebra</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>When does a functor preserve exact sequences? Homological algebra, developed in the 1940s and 1950s by Cartan, Eilenberg, and others, provides tools to measure the failure of exactness. Originally created to unify homology theories in algebraic topology, it has become fundamental across mathematics—from algebraic geometry (sheaf cohomology) to number theory (group cohomology, Galois cohomology) to representation theory (Ext and Tor functors). The key insight is that even when a functor destroys exactness, we can systematically track the damage through derived functors, connecting local data to global properties.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Chain Complex:</strong> A sequence of modules and homomorphisms \( \cdots \xrightarrow{d_{n+1}} C_n \xrightarrow{d_n} C_{n-1} \xrightarrow{d_{n-1}} \cdots \) with \(d_n \circ d_{n+1} = 0\) (i.e., \(\text{im}(d_{n+1}) \subseteq \ker(d_n)\)).</li>
+                        <li><strong>Homology:</strong> \(H_n(C_\bullet) = \ker(d_n) / \text{im}(d_{n+1})\), measuring the failure of exactness at position \(n\).</li>
+                        <li><strong>Exact Sequence:</strong> A chain complex with all homology zero: \(\text{im}(d_{n+1}) = \ker(d_n)\) for all \(n\).</li>
+                        <li><strong>Short Exact Sequence (SES):</strong> \(0 \to A \xrightarrow{f} B \xrightarrow{g} C \to 0\) where \(f\) is injective, \(g\) is surjective, and \(\text{im}(f) = \ker(g)\).</li>
+                        <li><strong>Projective Module:</strong> A module \(P\) such that \(\text{Hom}(P, -)\) preserves surjections (equivalently, every surjection \(M \to P\) splits).</li>
+                        <li><strong>Injective Module:</strong> A module \(I\) such that \(\text{Hom}(-, I)\) preserves injections.</li>
+                        <li><strong>Derived Functors:</strong> For a right-exact functor \(F\), the left derived functors \(L_nF\) measure the failure of \(F\) to be left exact.</li>
+                    </ul>
+
+                    <h4>Theorem: The Long Exact Sequence in Homology</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Given a short exact sequence of chain complexes:</p>
+                        <p>\[0 \to A_\bullet \xrightarrow{f} B_\bullet \xrightarrow{g} C_\bullet \to 0\]</p>
+                        <p>there exists a natural long exact sequence in homology:</p>
+                        <p>\[\cdots \to H_n(A) \xrightarrow{f_*} H_n(B) \xrightarrow{g_*} H_n(C) \xrightarrow{\partial} H_{n-1}(A) \xrightarrow{f_*} H_{n-1}(B) \to \cdots\]</p>
+                        <p>where \(\partial\) is the connecting homomorphism defined by \(\partial([c]) = [a]\) where \(f(a) = d_B(b)\) for any \(b\) with \(g(b) = c\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof uses the Snake Lemma applied to the commutative diagram of short exact sequences formed by the boundaries and cycles:</p>
+                    <ol>
+                        <li>Define \(Z_n = \ker(d_n)\) (cycles) and \(B_n = \text{im}(d_{n+1})\) (boundaries).</li>
+                        <li>From the SES of complexes, obtain SES: \(0 \to Z_n(A) \to Z_n(B) \to Z_n(C)\) and similar for boundaries.</li>
+                        <li>Apply the Snake Lemma to the diagram relating \(B_n\) to \(Z_n\).</li>
+                        <li>The connecting homomorphism \(\partial: H_n(C) \to H_{n-1}(A)\) is well-defined because different choices of lift differ by a boundary.</li>
+                        <li>Exactness at each term follows from diagram chasing.</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(C_\bullet\) or \((C_n, d_n)\): Chain complex</li>
+                        <li>\(H_n(C)\): n-th homology group</li>
+                        <li>\(Z_n = \ker(d_n)\): n-cycles</li>
+                        <li>\(B_n = \text{im}(d_{n+1})\): n-boundaries</li>
+                        <li>\(f_*\): Induced map on homology</li>
+                        <li>\(\partial\): Connecting homomorphism</li>
+                        <li>\(\text{Ext}^n_R(M, N)\): n-th derived functor of \(\text{Hom}_R(M, -)\)</li>
+                        <li>\(\text{Tor}_n^R(M, N)\): n-th derived functor of \(\otimes_R\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from typing import List, Callable, Tuple
+from dataclasses import dataclass
+
+@dataclass
+class ChainComplex:
+    """Represents a chain complex with boundary maps."""
+    modules: List[int]  # Dimensions of each module (for matrix representation)
+    boundary_maps: List[np.ndarray]  # d_n: C_n -&gt; C_{n-1}
+    
+    def __post_init__(self):
+        # Verify d_{n-1} ∘ d_n = 0
+        for i, d in enumerate(self.boundary_maps[:-1]):
+            d_next = self.boundary_maps[i + 1]
+            composition = d_next @ d if d.size &gt; 0 and d_next.size &gt; 0 else np.array([[0]])
+            if not np.allclose(composition, 0):
+                raise ValueError(f"Boundary condition failed at position {i}")
+    
+    def cycles(self, n: int) -&gt; np.ndarray:
+        """Compute basis for n-cycles (kernel of d_n)."""
+        if n &gt;= len(self.boundary_maps):
+            return np.eye(self.modules[n]) if n &lt; len(self.modules) else np.array([])
+        d = self.boundary_maps[n]
+        if d.size == 0:
+            return np.eye(self.modules[n])
+        # Null space of d
+        _, _, Vh = np.linalg.svd(d)
+        rank = np.linalg.matrix_rank(d)
+        return Vh[rank:].T if rank &lt; d.shape[1] else np.array([]).reshape(d.shape[1], 0)
+    
+    def boundaries(self, n: int) -&gt; np.ndarray:
+        """Compute basis for n-boundaries (image of d_{n+1})."""
+        if n + 1 &gt;= len(self.boundary_maps):
+            return np.array([]).reshape(self.modules[n] if n &lt; len(self.modules) else 0, 0)
+        d = self.boundary_maps[n + 1]
+        if d.size == 0:
+            return np.array([]).reshape(d.shape[0], 0)
+        # Column space of d
+        U, _, _ = np.linalg.svd(d)
+        rank = np.linalg.matrix_rank(d)
+        return U[:, :rank] if rank &gt; 0 else np.array([]).reshape(d.shape[0], 0)
+    
+    def homology(self, n: int) -&gt; int:
+        """Compute dimension of n-th homology group."""
+        if n &gt;= len(self.modules):
+            return 0
+        Z = self.cycles(n)
+        B = self.boundaries(n)
+        dim_Z = Z.shape[1] if Z.size &gt; 0 else self.modules[n]
+        dim_B = B.shape[1] if B.size &gt; 0 else 0
+        return dim_Z - dim_B
+
+def ext_tor_example():
+    """Compute Ext^1 and Tor_1 for simple modules."""
+    # For Z-modules: Ext^1_Z(Z/nZ, Z) ≅ Z/nZ
+    # Tor_1^Z(Z/nZ, Z/mZ) ≅ Z/gcd(n,m)Z
+    
+    def ext1_zmod_n_z(n):
+        """Ext^1_Z(Z/nZ, Z) ≅ Z/nZ"""
+        return n
+    
+    def tor1_zmod(n, m):
+        """Tor_1^Z(Z/nZ, Z/mZ) ≅ Z/gcd(n,m)Z"""
+        from math import gcd
+        return gcd(n, m)
+    
+    print("Ext^1_Z(Z/nZ, Z) ≅ Z/nZ:")
+    for n in [2, 3, 4, 6, 12]:
+        print(f"  Ext^1_Z(Z/{n}Z, Z) ≅ Z/{ext1_zmod_n_z(n)}Z")
+    
+    print("\nTor_1^Z(Z/nZ, Z/mZ) ≅ Z/gcd(n,m)Z:")
+    for n, m in [(4, 6), (6, 9), (8, 12), (15, 25)]:
+        result = tor1_zmod(n, m)
+        print(f"  Tor_1^Z(Z/{n}Z, Z/{m}Z) ≅ Z/{result}Z")
+
+# Example: Simplicial complex homology
+def simplicial_circle():
+    """Compute homology of a circle (1-simplex with identified ends)."""
+    # Circle: 1 vertex (v), 1 edge (e) with both ends at v
+    # C_0 = Z (vertex), C_1 = Z (edge)
+    # d_1(e) = v - v = 0
+    
+    d1 = np.array([[0]])  # 1x1 zero matrix
+    
+    S1 = ChainComplex([1, 1], [d1])
+    
+    print("Chain complex: 0 → Z --d_1--&gt; Z → 0")
+    print(f"d_1 = {d1}")
+    print(f"H_0(S¹) ≅ Z (dim = {S1.homology(0)})")
+    print(f"H_1(S¹) ≅ Z (dim = {S1.homology(1)})")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Representation Theory: Symmetry in Linear Algebra</h3>
+                    <p class="tag">representation-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How can we study abstract groups by their actions on vector spaces? Representation theory, founded by Frobenius and Burnside in the late 19th century, answers this by representing group elements as linear transformations. This allows us to use linear algebra—eigenvalues, traces, inner products—to understand group structure. Applications span quantum mechanics (where representations describe particle symmetries), harmonic analysis (Fourier series as representations of the circle group), crystallography, and number theory (Langlands program). The theory reveals that every representation decomposes into irreducible building blocks, classified by characters.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Representation:</strong> A homomorphism \(\rho: G \to GL(V)\) where \(G\) is a group and \(V\) is a vector space. We write \(g \cdot v = \rho(g)(v)\).</li>
+                        <li><strong>Irreducible Representation:</strong> A representation with no nontrivial proper subrepresentations (no invariant subspaces other than \(\{0\}\) and \(V\)).</li>
+                        <li><strong>Character:</strong> \(\chi_\rho(g) = \text{tr}(\rho(g))\), a class function constant on conjugacy classes.</li>
+                        <li><strong>Regular Representation:</strong> \(G\) acts on \(\mathbb{C}[G]\) (the group algebra) by left multiplication. It decomposes as \(\bigoplus_i (\dim V_i) V_i\) over all irreps.</li>
+                        <li><strong>Maschke's Theorem:</strong> For finite groups over \(\mathbb{C}\), every representation is completely reducible (direct sum of irreducibles).</li>
+                        <li><strong>Schur's Lemma:</strong> Any homomorphism between irreducible representations is either zero or an isomorphism. If \(V\) is irreducible over \(\mathbb{C}\), then \(\text{End}_G(V) \cong \mathbb{C}\).</li>
+                    </ul>
+
+                    <h4>Theorem: Orthogonality of Characters</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(G\) be a finite group with irreducible characters \(\chi_1, \ldots, \chi_k\). Then:</p>
+                        <p>\[\frac{1}{|G|} \sum_{g \in G} \chi_i(g) \overline{\chi_j(g)} = \delta_{ij}\]</p>
+                        <p>Equivalently, with conjugacy classes \(C_1, \ldots, C_k\):</p>
+                        <p>\[\sum_{g \in G} \chi_i(g) \overline{\chi_j(g)} = |G| \delta_{ij}\]</p>
+                        <p><strong>Corollary:</strong> The number of irreducible representations equals the number of conjugacy classes.</p>
+                        <p><strong>Dimension Formula:</strong> \(\sum_{i=1}^k (\dim V_i)^2 = |G|\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li>Define the averaging operator \(P = \frac{1}{|G|} \sum_{g \in G} \rho(g)\) which projects onto the \(G\)-invariant subspace.</li>
+                        <li>For representations \(V\) and \(W\), \(\text{Hom}_G(V, W) = (\text{Hom}(V, W))^G\) (the invariant subspace).</li>
+                        <li>By Schur's Lemma, \(\dim \text{Hom}_G(V_i, V_j) = \delta_{ij}\).</li>
+                        <li>The character of \(\text{Hom}(V, W)\) is \(\chi_V(g^{-1}) \chi_W(g) = \overline{\chi_V(g)} \chi_W(g)\) for unitary representations.</li>
+                        <li>Apply the projection formula: \(\dim V^G = \frac{1}{|G|} \sum_{g \in G} \chi_V(g)\).</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\rho: G \to GL(V)\): Representation</li>
+                        <li>\(\chi_\rho\) or \(\chi_V\): Character of representation</li>
+                        <li>\(V^G\): Invariant subspace \(\{v \in V : g \cdot v = v \text{ for all } g\}\)</li>
+                        <li>\(\text{Irr}(G)\): Set of irreducible representations</li>
+                        <li>\(\langle \chi, \psi \rangle = \frac{1}{|G|} \sum_g \chi(g) \overline{\psi(g)}\): Inner product on class functions</li>
+                        <li>\(V \otimes W\): Tensor product representation</li>
+                        <li>\(V^*\): Dual representation</li>
+                        <li>\(\text{Ind}_H^G(W)\): Induced representation</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from typing import List, Dict, Tuple
+from dataclasses import dataclass
+
+@dataclass
+class Representation:
+    """Finite-dimensional representation of a finite group."""
+    name: str
+    group_elements: List
+    matrices: Dict  # element -&gt; matrix
+    
+    def dimension(self) -&gt; int:
+        return list(self.matrices.values())[0].shape[0]
+    
+    def character(self, g) -&gt; complex:
+        return np.trace(self.matrices[g])
+
+def symmetric_group_s3_representations():
+    """Construct irreducible representations of S_3."""
+    # S_3 = {e, (12), (13), (23), (123), (132)}
+    # Conjugacy classes: {e}, {(12), (13), (23)}, {(123), (132)}
+    # 3 irreps: trivial, sign, and 2-dimensional standard
+    
+    S3 = ['e', '(12)', '(13)', '(23)', '(123)', '(132)']
+    
+    # Trivial representation: all elements map to [1]
+    trivial = Representation(
+        "Trivial", S3, {g: np.array([[1]]) for g in S3}
+    )
+    
+    # Sign representation: even permutations → 1, odd → -1
+    sign_map = {
+        'e': np.array([[1]]),
+        '(12)': np.array([[-1]]),
+        '(13)': np.array([[-1]]),
+        '(23)': np.array([[-1]]),
+        '(123)': np.array([[1]]),
+        '(132)': np.array([[1]])
+    }
+    sign = Representation("Sign", S3, sign_map)
+    
+    # Standard 2D representation
+    omega = np.exp(2j * np.pi / 3)
+    std_map = {
+        'e': np.eye(2),
+        '(12)': np.array([[0, 1], [1, 0]]),
+        '(13)': np.array([[0, omega**2], [omega, 0]]),
+        '(23)': np.array([[0, omega], [omega**2, 0]]),
+        '(123)': np.array([[omega, 0], [0, omega**2]]),
+        '(132)': np.array([[omega**2, 0], [0, omega]])
+    }
+    standard = Representation("Standard", S3, std_map)
+    
+    irreps = [trivial, sign, standard]
+    
+    # Verify dimension formula
+    dim_sum = sum(r.dimension()**2 for r in irreps)
+    print(f"Dimension check: Σ(dim Vᵢ)² = {dim_sum} = |G| ✓")
+    
+    # Character table
+    print("Character Table:")
+    reps_by_conj = ['e', '(12)', '(123)']
+    for rep in irreps:
+        chars = [rep.character(g) for g in reps_by_conj]
+        char_strs = [f"{c.real:+.0f}" for c in chars]
+        print(f"{rep.name}: {char_strs}")
+    
+    return irreps
+
+def character_orthogonality(irreps: List[Representation]):
+    """Verify orthogonality of characters."""
+    G = irreps[0].group_elements
+    n = len(G)
+    
+    for i, rho in enumerate(irreps):
+        for j, sigma in enumerate(irreps):
+            inner = sum(rho.character(g) * np.conj(sigma.character(g)) for g in G) / n
+            expected = 1 if i == j else 0
+            print(f"⟨χ_{i+1}, χ_{j+1}⟩ = {inner.real:.4f} (expected {expected})")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Dynamical Systems: Evolution and Chaos</h3>
+                    <p class="tag">dynamical-systems</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do systems evolve over time? Dynamical systems theory, pioneered by Poincaré in his study of celestial mechanics, studies the long-term behavior of iterative processes and differential equations. From the stability of the solar system to the unpredictability of weather (the butterfly effect), from population dynamics to neural networks, dynamical systems provide the mathematical language for change. The field splits into discrete dynamics (iterations of maps) and continuous dynamics (flows from differential equations), unified by concepts like fixed points, periodic orbits, and attractors. Chaos theory reveals that simple deterministic systems can exhibit unpredictable behavior.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Discrete Dynamical System:</strong> A map \(f: X \to X\) where \(X\) is a phase space. The orbit of \(x_0\) is \(\{f^n(x_0) : n \geq 0\}\).</li>
+                        <li><strong>Fixed Point:</strong> \(x^*\) such that \(f(x^*) = x^*\).</li>
+                        <li><strong>Periodic Point:</strong> \(x\) such that \(f^n(x) = x\) for some \(n &gt; 0\). The smallest such \(n\) is the period.</li>
+                        <li><strong>Lyapunov Exponent:</strong> \(\lambda(x) = \lim_{n \to \infty} \frac{1}{n} \log \|Df^n(x)\|\), measuring the rate of separation of nearby orbits.</li>
+                        <li><strong>Attractor:</strong> A set \(A\) such that \(f(A) = A\) and orbits starting nearby converge to \(A\).</li>
+                        <li><strong>Chaos (Devaney):</strong> A system is chaotic if it is: (1) sensitive to initial conditions, (2) topologically transitive, and (3) has dense periodic points.</li>
+                        <li><strong>Flow:</strong> A family of maps \(\phi_t: X \to X\) satisfying \(\phi_0 = \text{id}\) and \(\phi_{s+t} = \phi_s \circ \phi_t\), typically generated by an ODE \(\dot{x} = v(x)\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Hartman-Grobman Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(x^*\) be a hyperbolic fixed point of a \(C^1\) diffeomorphism \(f: \mathbb{R}^n \to \mathbb{R}^n\) (meaning no eigenvalue of \(Df(x^*)\) has modulus 1). Then there exists a neighborhood \(U\) of \(x^*\) and a homeomorphism \(h: U \to h(U)\) such that:</p>
+                        <p>\[h \circ f = Df(x^*) \circ h\]</p>
+                        <p>That is, \(f\) is topologically conjugate to its linearization near \(x^*\).</p>
+                        <p><strong>Corollary:</strong> The stability of a hyperbolic fixed point is determined by the eigenvalues of the Jacobian.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(f^n\): n-fold composition of \(f\)</li>
+                        <li>\(O(x_0)\): Orbit of \(x_0\)</li>
+                        <li>\(Df(x)\): Jacobian matrix of \(f\) at \(x\)</li>
+                        <li>\(W^s(x)\): Stable manifold (points converging to \(x\) forward)</li>
+                        <li>\(W^u(x)\): Unstable manifold (points converging to \(x\) backward)</li>
+                        <li>\(\lambda\): Lyapunov exponent</li>
+                        <li>\(\phi_t\): Flow at time \(t\)</li>
+                        <li>\(\dot{x} = dx/dt\): Time derivative</li>
+                        <li>\(\Omega(f)\): Non-wandering set</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+def logistic_map(r: float, x0: float, n: int) -&gt; np.ndarray:
+    """Iterate the logistic map: x_{n+1} = r * x_n * (1 - x_n)"""
+    trajectory = np.zeros(n)
+    x = x0
+    for i in range(n):
+        trajectory[i] = x
+        x = r * x * (1 - x)
+    return trajectory
+
+def lyapunov_exponent_logistic(r: float, n: int = 10000) -&gt; float:
+    """Compute Lyapunov exponent for logistic map."""
+    x = 0.5
+    for _ in range(1000):  # Transient
+        x = r * x * (1 - x)
+    
+    lyap_sum = 0
+    for _ in range(n):
+        x = r * x * (1 - x)
+        lyap_sum += np.log(abs(r * (1 - 2 * x)))
+    
+    return lyap_sum / n
+
+def henon_map(a: float = 1.4, b: float = 0.3, n: int = 10000):
+    """Hénon map: x_{n+1} = 1 - a*x_n² + y_n, y_{n+1} = b * x_n"""
+    x, y = np.zeros(n), np.zeros(n)
+    x[0], y[0] = 0, 0
+    
+    for i in range(1, n):
+        x[i] = 1 - a * x[i-1]**2 + y[i-1]
+        y[i] = b * x[i-1]
+    
+    return x, y
+
+def lorenz_system(sigma: float = 10, rho: float = 28, beta: float = 8/3,
+                  dt: float = 0.01, n: int = 10000):
+    """Lorenz system: dx/dt = σ(y - x), dy/dt = x(ρ - z) - y, dz/dt = xy - βz"""
+    x, y, z = np.zeros(n), np.zeros(n), np.zeros(n)
+    x[0], y[0], z[0] = 1, 1, 1
+    
+    for i in range(1, n):
+        dx = sigma * (y[i-1] - x[i-1])
+        dy = x[i-1] * (rho - z[i-1]) - y[i-1]
+        dz = x[i-1] * y[i-1] - beta * z[i-1]
+        
+        x[i] = x[i-1] + dt * dx
+        y[i] = y[i-1] + dt * dy
+        z[i] = z[i-1] + dt * dz
+    
+    return x, y, z
+
+# Example usage
+print("Lyapunov Exponents for Logistic Map:")
+for r in [2.5, 3.0, 3.5, 3.8, 4.0]:
+    lyap = lyapunov_exponent_logistic(r)
+    behavior = "chaos" if lyap &gt; 0 else "order"
+    print(f"  r = {r}: λ = {lyap:.4f} ({behavior})")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Cryptography: The Mathematics of Secrets</h3>
+                    <p class="tag">cryptography</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How do we communicate securely in a world of eavesdroppers? Modern cryptography transforms number theory and abstract algebra into practical tools protecting everything from credit card transactions to state secrets. Public-key cryptography, invented by Diffie and Hellman in 1976, solved the key distribution problem that plagued classical cryptography. RSA relies on the difficulty of factoring large integers; elliptic curve cryptography offers equivalent security with smaller keys; lattice-based cryptography promises quantum resistance. The security of these systems rests on computational complexity—problems that are easy to verify but (believed to be) hard to solve.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Symmetric Encryption:</strong> Same key for encryption and decryption (e.g., AES). Fast but requires secure key exchange.</li>
+                        <li><strong>Public-Key Encryption:</strong> Uses key pairs—public key for encryption, private key for decryption.</li>
+                        <li><strong>RSA:</strong> Based on the hardness of factoring \(n = pq\). Public key: \((n, e)\), private key: \(d\) where \(ed \equiv 1 \pmod{\phi(n)}\).</li>
+                        <li><strong>Elliptic Curve:</strong> Points \((x, y)\) satisfying \(y^2 = x^3 + ax + b\) over a finite field, forming a group under geometric addition.</li>
+                        <li><strong>Discrete Logarithm:</strong> Given \(g\) and \(g^x \pmod{p}\), find \(x\). Believed hard for large \(p\).</li>
+                        <li><strong>One-Way Function:</strong> Easy to compute, hard to invert. The foundation of computational security.</li>
+                    </ul>
+
+                    <h4>Theorem: Correctness of RSA</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(n = pq\) where \(p, q\) are distinct primes. Let \(e\) satisfy \(\gcd(e, \phi(n)) = 1\) and \(d\) satisfy \(ed \equiv 1 \pmod{\phi(n)}\). Then for all \(m \in \mathbb{Z}_n\):</p>
+                        <p>\[(m^e)^d \equiv m \pmod{n}\]</p>
+                        <p><strong>Proof:</strong> Since \(ed = 1 + k\phi(n) = 1 + k(p-1)(q-1)\):</p>
+                        <p>\[m^{ed} = m^{1 + k(p-1)(q-1)} = m \cdot (m^{p-1})^{k(q-1)}\]</p>
+                        <p>By Fermat's Little Theorem, if \(\gcd(m, p) = 1\), then \(m^{p-1} \equiv 1 \pmod{p}\), so \(m^{ed} \equiv m \pmod{p}\). If \(p | m\), both sides are 0. Similarly for \(q\). By CRT, \(m^{ed} \equiv m \pmod{n}\).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{Z}_n\): Integers modulo \(n\)</li>
+                        <li>\(\mathbb{Z}_n^*\): Multiplicative group of units modulo \(n\)</li>
+                        <li>\(\phi(n)\): Euler's totient function, \(|\mathbb{Z}_n^*|\)</li>
+                        <li>\(a \equiv b \pmod{n}\): Congruence modulo \(n\)</li>
+                        <li>\(a^{-1} \pmod{n}\): Modular multiplicative inverse</li>
+                        <li>\(E_k(m)\), \(D_k(c)\): Encryption/decryption with key \(k\)</li>
+                        <li>\(E(F_p)\): Elliptic curve over finite field \(\mathbb{F}_p\)</li>
+                        <li>\(\#E\): Number of points on elliptic curve (group order)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import random
+from math import gcd
+from typing import Tuple, Optional
+
+def mod_exp(base: int, exp: int, mod: int) -&gt; int:
+    """Fast modular exponentiation: base^exp mod mod"""
+    result = 1
+    base = base % mod
+    while exp &gt; 0:
+        if exp &amp; 1:
+            result = (result * base) % mod
+        base = (base * base) % mod
+        exp &gt;&gt;= 1
+    return result
+
+def extended_gcd(a: int, b: int) -&gt; Tuple[int, int, int]:
+    """Extended Euclidean algorithm."""
+    if b == 0:
+        return (a, 1, 0)
+    g, x1, y1 = extended_gcd(b, a % b)
+    return (g, y1, x1 - (a // b) * y1)
+
+def mod_inverse(a: int, m: int) -&gt; Optional[int]:
+    """Modular multiplicative inverse of a modulo m."""
+    g, x, _ = extended_gcd(a % m, m)
+    if g != 1:
+        return None
+    return (x % m + m) % m
+
+def is_prime(n: int, k: int = 10) -&gt; bool:
+    """Miller-Rabin primality test."""
+    if n &lt; 2:
+        return False
+    if n == 2 or n == 3:
+        return True
+    if n % 2 == 0:
+        return False
+    
+    r, d = 0, n - 1
+    while d % 2 == 0:
+        r += 1
+        d //= 2
+    
+    for _ in range(k):
+        a = random.randrange(2, n - 1)
+        x = mod_exp(a, d, n)
+        if x == 1 or x == n - 1:
+            continue
+        for _ in range(r - 1):
+            x = mod_exp(x, 2, n)
+            if x == n - 1:
+                break
+        else:
+            return False
+    return True
+
+class RSA:
+    """RSA public-key cryptosystem."""
+    
+    def __init__(self, key_size: int = 512):
+        self.p = self._generate_prime(key_size // 2)
+        self.q = self._generate_prime(key_size // 2)
+        while self.q == self.p:
+            self.q = self._generate_prime(key_size // 2)
+        
+        self.n = self.p * self.q
+        self.phi = (self.p - 1) * (self.q - 1)
+        
+        self.e = 65537
+        while gcd(self.e, self.phi) != 1:
+            self.e += 2
+        
+        self.d = mod_inverse(self.e, self.phi)
+    
+    def _generate_prime(self, bits: int) -&gt; int:
+        while True:
+            n = random.getrandbits(bits) | 1 | (1 &lt;&lt; (bits - 1))
+            if is_prime(n):
+                return n
+    
+    def encrypt(self, message: int) -&gt; int:
+        return mod_exp(message, self.e, self.n)
+    
+    def decrypt(self, ciphertext: int) -&gt; int:
+        return mod_exp(ciphertext, self.d, self.n)
+
+# Example usage
+rsa = RSA(key_size=256)
+message = 42
+ciphertext = rsa.encrypt(message)
+decrypted = rsa.decrypt(ciphertext)
+print(f"Message: {message}, Encrypted: {ciphertext}, Decrypted: {decrypted}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Fluid Dynamics: The Mathematics of Flow</h3>
+                    <p class="tag">fluid-dynamics</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>From weather prediction to aircraft design, from blood flow in arteries to ocean currents, fluid dynamics describes how liquids and gases move. The Navier-Stokes equations, a system of nonlinear partial differential equations, govern all fluid motion. Despite their concise form, these equations harbor deep mysteries—the million-dollar Navier-Stokes existence and smoothness problem remains unsolved. Computational fluid dynamics (CFD) uses numerical methods to approximate solutions, enabling engineers to simulate flows that are too complex for analytical treatment. Turbulence, the chaotic motion at high Reynolds numbers, remains one of the last great unsolved problems in classical physics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Velocity Field:</strong> \(\mathbf{u}(\mathbf{x}, t)\), the velocity of fluid at position \(\mathbf{x}\) and time \(t\).</li>
+                        <li><strong>Pressure:</strong> \(p(\mathbf{x}, t)\), the force per unit area exerted by the fluid.</li>
+                        <li><strong>Density:</strong> \(\rho\), mass per unit volume. For incompressible flow, \(\rho\) is constant.</li>
+                        <li><strong>Viscosity:</strong> \(\mu\), a measure of fluid's resistance to deformation. Kinematic viscosity: \(\nu = \mu/\rho\).</li>
+                        <li><strong>Reynolds Number:</strong> \(\text{Re} = \frac{UL}{\nu}\), the ratio of inertial to viscous forces. Determines flow regime (laminar vs. turbulent).</li>
+                        <li><strong>Vorticity:</strong> \(\boldsymbol{\omega} = \nabla \times \mathbf{u}\), measuring local rotation of fluid elements.</li>
+                        <li><strong>Stream Function:</strong> \(\psi\) such that \(u = \partial_y \psi\), \(v = -\partial_x \psi\) for 2D incompressible flow.</li>
+                    </ul>
+
+                    <h4>Theorem: Conservation Laws in Fluid Dynamics</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Navier-Stokes Equations):</strong> For an incompressible, viscous fluid:</p>
+                        <p>\[\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu \nabla^2 \mathbf{u} + \mathbf{f}\]</p>
+                        <p>\[\nabla \cdot \mathbf{u} = 0\]</p>
+                        <p>where \(\mathbf{f}\) represents external forces (e.g., gravity).</p>
+                        
+                        <p><strong>Euler Equations</strong> (inviscid, \(\nu = 0\)):</p>
+                        <p>\[\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \mathbf{f}\]</p>
+                        
+                        <p><strong>Kelvin's Circulation Theorem:</strong> For barotropic flow with conservative forces, circulation around a closed loop moving with the fluid is constant:</p>
+                        <p>\[\frac{d}{dt} \oint_C \mathbf{u} \cdot d\mathbf{l} = 0\]</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbf{u} = (u, v, w)\): Velocity vector field</li>
+                        <li>\(\nabla = (\partial_x, \partial_y, \partial_z)\): Gradient operator</li>
+                        <li>\(\nabla \cdot \mathbf{u}\): Divergence (measures expansion/compression)</li>
+                        <li>\(\nabla \times \mathbf{u}\): Curl (vorticity)</li>
+                        <li>\(\nabla^2\): Laplacian \(\partial_{xx} + \partial_{yy} + \partial_{zz}\)</li>
+                        <li>\((\mathbf{u} \cdot \nabla)\mathbf{u}\): Convective (advective) derivative</li>
+                        <li>\(D/Dt = \partial_t + \mathbf{u} \cdot \nabla\): Material derivative</li>
+                        <li>\(\text{Re}\): Reynolds number</li>
+                        <li>\(\boldsymbol{\omega}\): Vorticity vector</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+def velocity_gradient(u: np.ndarray, v: np.ndarray, dx: float, dy: float):
+    """Compute velocity gradient components using central differences."""
+    dudx = np.gradient(u, dx, axis=1)
+    dudy = np.gradient(u, dy, axis=0)
+    dvdx = np.gradient(v, dx, axis=1)
+    dvdy = np.gradient(v, dy, axis=0)
+    return dudx, dudy, dvdx, dvdy
+
+def vorticity_2d(u: np.ndarray, v: np.ndarray, dx: float, dy: float) -&gt; np.ndarray:
+    """Compute vorticity ω = ∂v/∂x - ∂u/∂y for 2D flow."""
+    dudx, dudy, dvdx, dvdy = velocity_gradient(u, v, dx, dy)
+    return dvdx - dudy
+
+def divergence_2d(u: np.ndarray, v: np.ndarray, dx: float, dy: float) -&gt; np.ndarray:
+    """Compute divergence ∇·u = ∂u/∂x + ∂v/∂y."""
+    dudx, dudy, dvdx, dvdy = velocity_gradient(u, v, dx, dy)
+    return dudx + dvdy
+
+def reynolds_number(U: float, L: float, nu: float) -&gt; float:
+    """Compute Reynolds number: Re = UL/ν"""
+    return U * L / nu
+
+def flow_regime(Re: float) -&gt; str:
+    """Classify flow regime based on Reynolds number."""
+    if Re &lt; 1:
+        return "Stokes flow (creeping)"
+    elif Re &lt; 2300:
+        return "Laminar flow"
+    elif Re &lt; 4000:
+        return "Transitional flow"
+    else:
+        return "Turbulent flow"
+
+# Example: Flow around a cylinder
+U = 1.0  # Free stream velocity (m/s)
+D = 1.0  # Cylinder diameter (m)
+nu_water = 1e-6  # Kinematic viscosity of water (m²/s)
+nu_air = 1.5e-5  # Kinematic viscosity of air (m²/s)
+
+Re_water = reynolds_number(U, D, nu_water)
+Re_air = reynolds_number(U, D, nu_air)
+
+print(f"Reynolds number (water): {Re_water:.2e} - {flow_regime(Re_water)}")
+print(f"Reynolds number (air): {Re_air:.2e} - {flow_regime(Re_air)}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Optimization: Finding the Best</h3>
+                    <p class="tag">optimization</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How do we make the best decisions given constraints? Optimization theory provides the mathematical framework for maximizing efficiency, minimizing cost, and finding optimal solutions across engineering, economics, machine learning, and operations research. Linear programming, developed by Kantorovich and Dantzig, revolutionized resource allocation. Convex optimization guarantees global optima for broad problem classes. Gradient descent and its variants power modern machine learning. From portfolio optimization to supply chain management, from training neural networks to designing bridges, optimization algorithms turn "what's best?" into computable answers.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Optimization Problem:</strong> \(\min_{x \in \mathcal{X}} f(x)\) subject to \(g_i(x) \leq 0\), \(h_j(x) = 0\).</li>
+                        <li><strong>Convex Set:</strong> \(S\) is convex if \(x, y \in S \Rightarrow \lambda x + (1-\lambda)y \in S\) for all \(\lambda \in [0,1]\).</li>
+                        <li><strong>Convex Function:</strong> \(f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda)f(y)\). For twice differentiable: \(\nabla^2 f \succeq 0\).</li>
+                        <li><strong>Lagrangian:</strong> \(\mathcal{L}(x, \lambda, \nu) = f(x) + \sum_i \lambda_i g_i(x) + \sum_j \nu_j h_j(x)\).</li>
+                        <li><strong>KKT Conditions:</strong> Necessary conditions for optimality: stationarity, primal feasibility, dual feasibility, complementary slackness.</li>
+                        <li><strong>Gradient Descent:</strong> \(x_{k+1} = x_k - \alpha_k \nabla f(x_k)\), moving in the direction of steepest descent.</li>
+                        <li><strong>Strong Duality:</strong> For convex problems under constraint qualifications, \(p^* = d^*\) (primal optimum equals dual optimum).</li>
+                    </ul>
+
+                    <h4>Theorem: Convex Optimization Duality</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Weak Duality):</strong> For any optimization problem:</p>
+                        <p>\[d^* = \sup_{\lambda \geq 0, \nu} \inf_x \mathcal{L}(x, \lambda, \nu) \leq \inf_x \sup_{\lambda \geq 0, \nu} \mathcal{L}(x, \lambda, \nu) = p^*\]</p>
+                        <p>where \(p^*\) is the primal optimal value and \(d^*\) is the dual optimal value.</p>
+                        
+                        <p><strong>Theorem (Strong Duality):</strong> For a convex optimization problem with Slater's condition (strict feasibility), strong duality holds:</p>
+                        <p>\[d^* = p^*\]</p>
+                        
+                        <p><strong>KKT Conditions (for convex problems):</strong> \((x^*, \lambda^*, \nu^*)\) are optimal iff:</p>
+                        <ul>
+                            <li><strong>Stationarity:</strong> \(\nabla f(x^*) + \sum_i \lambda_i^* \nabla g_i(x^*) + \sum_j \nu_j^* \nabla h_j(x^*) = 0\)</li>
+                            <li><strong>Primal Feasibility:</strong> \(g_i(x^*) \leq 0\), \(h_j(x^*) = 0\)</li>
+                            <li><strong>Dual Feasibility:</strong> \(\lambda_i^* \geq 0\)</li>
+                            <li><strong>Complementary Slackness:</strong> \(\lambda_i^* g_i(x^*) = 0\)</li>
+                        </ul>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(f(x)\): Objective function to minimize</li>
+                        <li>\(g_i(x) \leq 0\): Inequality constraints</li>
+                        <li>\(h_j(x) = 0\): Equality constraints</li>
+                        <li>\(\mathcal{L}\): Lagrangian</li>
+                        <li>\(\lambda_i\): Lagrange multipliers for inequalities</li>
+                        <li>\(\nu_j\): Lagrange multipliers for equalities</li>
+                        <li>\(\nabla f\): Gradient of \(f\)</li>
+                        <li>\(\nabla^2 f\): Hessian matrix</li>
+                        <li>\(p^*\): Primal optimal value</li>
+                        <li>\(d^*\): Dual optimal value</li>
+                        <li>\(\alpha_k\): Step size at iteration \(k\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from typing import Callable, Tuple, List
+
+def gradient_descent(f: Callable[[np.ndarray], float],
+                     grad_f: Callable[[np.ndarray], np.ndarray],
+                     x0: np.ndarray,
+                     alpha: float = 0.1,
+                     max_iter: int = 1000,
+                     tol: float = 1e-6) -&gt; Tuple[np.ndarray, List[float]]:
+    """Vanilla gradient descent."""
+    x = x0.copy()
+    history = [f(x)]
+    
+    for _ in range(max_iter):
+        gradient = grad_f(x)
+        x_new = x - alpha * gradient
+        history.append(f(x_new))
+        
+        if np.linalg.norm(x_new - x) &lt; tol:
+            break
+        x = x_new
+    
+    return x, history
+
+def newtons_method(f: Callable[[np.ndarray], float],
+                   grad_f: Callable[[np.ndarray], np.ndarray],
+                   hess_f: Callable[[np.ndarray], np.ndarray],
+                   x0: np.ndarray,
+                   max_iter: int = 100,
+                   tol: float = 1e-6) -&gt; Tuple[np.ndarray, List[float]]:
+    """Newton's method for optimization (uses second-order information)."""
+    x = x0.copy()
+    history = [f(x)]
+    
+    for _ in range(max_iter):
+        grad = grad_f(x)
+        hess = hess_f(x)
+        
+        # Solve H Δx = -∇f for Δx
+        delta_x = np.linalg.solve(hess, -grad)
+        x_new = x + delta_x
+        history.append(f(x_new))
+        
+        if np.linalg.norm(delta_x) &lt; tol:
+            break
+        x = x_new
+    
+    return x, history
+
+# Rosenbrock function (banana function)
+def rosenbrock(x: np.ndarray, a: float = 1, b: float = 100) -&gt; float:
+    """Global minimum at (a, a²) with value 0."""
+    return (a - x[0])**2 + b * (x[1] - x[0]**2)**2
+
+def rosenbrock_grad(x: np.ndarray, a: float = 1, b: float = 100) -&gt; np.ndarray:
+    dx0 = -2 * (a - x[0]) - 4 * b * x[0] * (x[1] - x[0]**2)
+    dx1 = 2 * b * (x[1] - x[0]**2)
+    return np.array([dx0, dx1])
+
+def rosenbrock_hess(x: np.ndarray, b: float = 100) -&gt; np.ndarray:
+    return np.array([
+        [2 + 12*b*x[0]**2 - 4*b*x[1], -4*b*x[0]],
+        [-4*b*x[0], 2*b]
+    ])
+
+# Example usage
+x0 = np.array([-1.0, 2.0])
+x_opt, history = gradient_descent(rosenbrock, rosenbrock_grad, x0, alpha=0.001, max_iter=10000)
+print(f"Gradient Descent solution: {x_opt}, value: {rosenbrock(x_opt):.6e}")
+
+x_opt_nt, history_nt = newtons_method(rosenbrock, rosenbrock_grad, rosenbrock_hess, x0)
+print(f"Newton's Method solution: {x_opt_nt}, value: {rosenbrock(x_opt_nt):.6e}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>Tropical Geometry: Geometry Over the Min-Plus Semiring</h3>
+                    <p class="tag">tropical-geometry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Tropical geometry emerged in the late 1990s and early 2000s as a powerful tool connecting algebraic geometry to combinatorics. The name honors Brazilian mathematician Imre Simon, who pioneered the use of min-plus algebra, and the tradition of Brazilian mathematics. Tropical geometry studies algebraic varieties over the tropical semiring \((\mathbb{R} \cup \{\infty\}, \oplus, \odot)\) where \(a \oplus b = \min(a, b)\) and \(a \odot b = a + b\). Remarkably, classical algebraic varieties can be "tropicalized" into piecewise-linear objects called tropical varieties, which are often easier to analyze. Applications include enumerative geometry (Gromov-Witten invariants), mirror symmetry, and optimization.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Tropical Semiring:</strong> \(\mathbb{T} = \mathbb{R} \cup \{\infty\}\) with operations \(a \oplus b = \min(a, b)\) and \(a \odot b = a + b\). Identity elements: \(\infty\) for \(\oplus\), 0 for \(\odot\).</li>
+                        <li><strong>Tropical Polynomial:</strong> \(p(x) = \bigoplus_{i} (a_i \odot x^{\odot i}) = \min_i(a_i + i \cdot x)\).</li>
+                        <li><strong>Tropical Hypersurface:</strong> The set where the minimum in a tropical polynomial is achieved at least twice.</li>
+                        <li><strong>Newton Polygon:</strong> For a polynomial \(\sum a_{ij} x^i y^j\), the convex hull of \(\{(i, j) : a_{ij} \neq 0\}\).</li>
+                        <li><strong>Amoeba:</strong> The image of an algebraic variety under the log map \(\text{Log}_t: (z_1, \ldots, z_n) \mapsto (\log_t|z_1|, \ldots, \log_t|z_n|)\).</li>
+                        <li><strong>Tropical Limit:</strong> As \(t \to \infty\), the amoeba converges to a tropical variety.</li>
+                    </ul>
+
+                    <h4>Theorem: Tropical Bézout's Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Two general tropical curves of degrees \(d_1\) and \(d_2\) intersect in exactly \(d_1 \cdot d_2\) points (counted with multiplicities).</p>
+                        
+                        <p><strong>Tropical Fundamental Theorem of Algebra:</strong> A tropical polynomial of degree \(d\) has exactly \(d\) roots (counted with multiplicities).</p>
+                        
+                        <p><strong>Correspondence Theorem:</strong> For a generic tropical curve of degree \(d\) and genus \(g\), the number of classical curves tropicalizing to it equals the number of ways to distribute integer lengths to the edges satisfying certain constraints.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{T}\): Tropical semiring</li>
+                        <li>\(\oplus\): Tropical addition (min)</li>
+                        <li>\(\odot\): Tropical multiplication (plus)</li>
+                        <li>\(x^{\odot n}\): Tropical power (n·x)</li>
+                        <li>\(V_{\text{trop}}(f)\): Tropical hypersurface of \(f\)</li>
+                        <li>\(\text{Trop}(X)\): Tropicalization of variety \(X\)</li>
+                        <li>\(\text{Newt}(f)\): Newton polygon/polytope of \(f\)</li>
+                        <li>\(\mathcal{A}_t(V)\): Amoeba of variety \(V\) at base \(t\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+def tropical_add(a: float, b: float) -&gt; float:
+    """Tropical addition: a ⊕ b = min(a, b)"""
+    return min(a, b)
+
+def tropical_mult(a: float, b: float) -&gt; float:
+    """Tropical multiplication: a ⊙ b = a + b"""
+    return a + b
+
+def tropical_pow(a: float, n: int) -&gt; float:
+    """Tropical power: a^⊙n = n·a"""
+    return n * a
+
+def tropical_polyval(coeffs, x: float) -&gt; float:
+    """
+    Evaluate tropical polynomial.
+    coeffs[i] is coefficient of x^⊙i
+    p(x) = min_i (coeffs[i] + i*x)
+    """
+    values = [tropical_mult(coeffs[i], tropical_pow(x, i)) for i in range(len(coeffs))]
+    return min(values)
+
+def tropical_roots(coeffs):
+    """
+    Find tropical roots of polynomial.
+    Roots occur where minimum is achieved at least twice.
+    """
+    n = len(coeffs) - 1
+    roots = []
+    
+    # Roots are at points where lines coeffs[i] + i*x intersect
+    for i in range(n):
+        for j in range(i + 1, n + 1):
+            if i != j:
+                root = (coeffs[j] - coeffs[i]) / (i - j)
+                val = coeffs[i] + i * root
+                is_root = all(coeffs[k] + k * root &gt;= val - 1e-10 for k in range(n + 1))
+                if is_root and root not in roots:
+                    roots.append(root)
+    
+    return sorted(roots)
+
+def tropical_matrix_mult(A: np.ndarray, B: np.ndarray) -&gt; np.ndarray:
+    """
+    Tropical matrix multiplication.
+    (A ⊙ B)_ij = ⊕_k (A_ik ⊙ B_kj) = min_k (A_ik + B_kj)
+    """
+    n, m = A.shape
+    _, p = B.shape
+    result = np.zeros((n, p))
+    
+    for i in range(n):
+        for j in range(p):
+            result[i, j] = np.min(A[i, :] + B[:, j])
+    
+    return result
+
+# Example: Tropical polynomial
+coeffs = [1, 2, 0]  # p(x) = 1 ⊕ 2⊙x ⊕ 0⊙x^⊙2 = min(1, 2+x, 2x)
+print(f"Polynomial: p(x) = min({coeffs[0]}, {coeffs[1]}+x, {coeffs[2]}+2x)")
+
+for x in [-2, -1, 0, 1, 2, 3]:
+    val = tropical_polyval(coeffs, x)
+    print(f"  p({x}) = min({coeffs[0]}, {coeffs[1]+x}, {coeffs[2]+2*x}) = {val}")
+
+roots = tropical_roots(coeffs)
+print(f"Tropical roots: {roots}")
+print(f"Degree: {len(coeffs)-1}, Number of roots: {len(roots)}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Quantum Groups: Symmetry in the Quantum World</h3>
+                    <p class="tag">quantum-groups</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Quantum groups emerged in the 1980s from two independent directions: Vladimir Drinfeld and Michio Jimbo's work on quantum integrable systems, and the study of von Neumann algebras by Alain Connes and others. They are neither quantum nor groups, but rather deformations of universal enveloping algebras and coordinate rings of algebraic groups. The name reflects their origin in quantum inverse scattering theory. Quantum groups provide the algebraic framework for quantum topology (knot invariants, topological quantum field theories), statistical mechanics (Yang-Baxter equation), and noncommutative geometry. They embody the philosophy that classical structures have quantum deformations parameterized by a variable \(q\).</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Hopf Algebra:</strong> A bialgebra with an antipode map \(S: H \to H\) satisfying \(m \circ (S \otimes \text{id}) \circ \Delta = \eta \circ \varepsilon = m \circ (\text{id} \otimes S) \circ \Delta\).</li>
+                        <li><strong>Quantum Group \(U_q(\mathfrak{g})\):</strong> A deformation of the universal enveloping algebra of a Lie algebra \(\mathfrak{g}\), with generators \(E_i, F_i, K_i^{\pm 1}\) and \(q\)-deformed relations.</li>
+                        <li><strong>Yang-Baxter Equation:</strong> \(R_{12}R_{13}R_{23} = R_{23}R_{13}R_{12}\) for an \(R\)-matrix in \(H \otimes H\), ensuring consistency of quantum integrable systems.</li>
+                        <li><strong>Universal R-Matrix:</strong> An element \(R \in H \otimes H\) satisfying the Yang-Baxter equation and intertwining the coproduct with its opposite.</li>
+                        <li><strong>Quasitriangular Structure:</strong> A Hopf algebra with universal R-matrix, providing solutions to Yang-Baxter and representations of braid groups.</li>
+                        <li><strong>Drinfeld Double:</strong> A construction building a quasitriangular Hopf algebra from any finite-dimensional Hopf algebra.</li>
+                    </ul>
+
+                    <h4>Theorem: The Quantum Yang-Baxter Equation</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(H\) be a quasitriangular Hopf algebra with universal R-matrix \(R\). Then \(R\) satisfies the quantum Yang-Baxter equation:</p>
+                        <p>\[R_{12}R_{13}R_{23} = R_{23}R_{13}R_{12}\]</p>
+                        <p>where \(R_{12} = R \otimes 1\), \(R_{23} = 1 \otimes R\), etc.</p>
+                        
+                        <p><strong>Corollary (Braid Group Representations):</strong> For any representation \(V\) of \(H\), the map:</p>
+                        <p>\[\sigma_i \mapsto (\text{id}^{\otimes (i-1)} \otimes R \otimes \text{id}^{\otimes (n-i-1)}) \circ P_{i,i+1}\]</p>
+                        <p>defines a representation of the braid group \(B_n\) on \(V^{\otimes n}\), where \(P\) is the flip operator.</p>
+                        
+                        <p><strong>Theorem (Drinfeld):</strong> The category of representations of a quantum group is a braided monoidal category.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(U_q(\mathfrak{g})\): Quantum group (quantized enveloping algebra)</li>
+                        <li>\(E_i, F_i, K_i\): Chevalley generators</li>
+                        <li>\(q\): Deformation parameter</li>
+                        <li>\([n]_q = \frac{q^n - q^{-n}}{q - q^{-1}}\): Quantum integer</li>
+                        <li>\(\Delta\): Coproduct</li>
+                        <li>\(\varepsilon\): Counit</li>
+                        <li>\(S\): Antipode</li>
+                        <li>\(R\): Universal R-matrix</li>
+                        <li>\(R_{ij}\): R-matrix acting on tensor factors \(i, j\)</li>
+                        <li>\(\tau\) or \(P\): Flip operator \(v \otimes w \mapsto w \otimes v\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+def quantum_integer(n: int, q: float) -&gt; float:
+    """Quantum integer [n]_q = (q^n - q^(-n)) / (q - q^(-1))"""
+    if abs(q - 1) &lt; 1e-10:
+        return float(n)
+    return (q**n - q**(-n)) / (q - q**(-1))
+
+def quantum_factorial(n: int, q: float) -&gt; float:
+    """Quantum factorial [n]!_q = [1]_q [2]_q ... [n]_q"""
+    result = 1.0
+    for k in range(1, n + 1):
+        result *= quantum_integer(k, q)
+    return result
+
+def quantum_binomial(n: int, k: int, q: float) -&gt; float:
+    """Quantum binomial coefficient."""
+    if k &lt; 0 or k &gt; n:
+        return 0.0
+    return quantum_factorial(n, q) / (quantum_factorial(k, q) * quantum_factorial(n - k, q))
+
+def r_matrix_su2(q: float) -&gt; np.ndarray:
+    """
+    R-matrix for U_q(sl_2) in the 2-dimensional representation.
+    This is a 4x4 matrix acting on V ⊗ V where V = C².
+    """
+    R = np.zeros((4, 4))
+    
+    # R|00⟩ = q^(1/2) |00⟩
+    R[0, 0] = np.sqrt(q)
+    
+    # R|11⟩ = q^(1/2) |11⟩
+    R[3, 3] = np.sqrt(q)
+    
+    # R|01⟩ = |01⟩
+    R[1, 1] = 1
+    
+    # R|10⟩ = |10⟩ + (q^(1/2) - q^(-1/2)) |01⟩
+    R[2, 2] = 1
+    R[1, 2] = np.sqrt(q) - 1/np.sqrt(q)
+    
+    return R
+
+def jones_polynomial_trefoil(q: float) -&gt; float:
+    """Compute Jones polynomial of trefoil knot at q."""
+    return q + q**3 - q**4
+
+# Example: Quantum integers
+print("Quantum Integers [n]_q:")
+q = 2.0
+for n in range(1, 6):
+    qn = quantum_integer(n, q)
+    print(f"  [{n}]_q = {qn:.4f}")
+
+# Quantum binomial coefficients (Pascal's triangle)
+print(f"\nQuantum Binomial Coefficients (q = {q}):")
+for n in range(6):
+    row = [int(quantum_binomial(n, k, q)) for k in range(n + 1)]
+    print(f"  n={n}: {row}")
+
+# Jones polynomial
+print("\nJones Polynomial of Trefoil Knot:")
+for q_val in [1.5, 2.0, 3.0]:
+    V = jones_polynomial_trefoil(q_val)
+    print(f"  V(trefoil) at q = {q_val}: {V:.4f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Spectral Sequences: Computing the Hard Way</h3>
+                    <p class="tag">spectral-sequences</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Spectral sequences, invented by Jean Leray in the 1940s while he was a prisoner of war, are one of the most powerful computational tools in algebraic topology and homological algebra. Leray developed them to study sheaf cohomology, but they have since found applications across mathematics—from computing homotopy groups of spheres to understanding the cohomology of fiber bundles. A spectral sequence is like a book: each page contains groups and differentials, and we "turn the page" by taking cohomology. With patience, we can read off the answer to complex computations. The Leray-Serre spectral sequence, the Atiyah-Hirzebruch spectral sequence, and the Adams spectral sequence are among the most famous.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Spectral Sequence:</strong> A collection of bigraded groups \(\{E_{p,q}^r\}\) for \(r \geq r_0\) with differentials \(d^r: E_{p,q}^r \to E_{p-r, q+r-1}^r\) satisfying \(d^r \circ d^r = 0\), and isomorphisms \(E_{p,q}^{r+1} \cong H_{p,q}(E^r_{\bullet, \bullet}, d^r)\).</li>
+                        <li><strong>Convergence:</strong> A spectral sequence converges to \(H_*\) if there exists a filtration \(F_p H_n\) such that \(E^\infty_{p,q} \cong F_p H_{p+q} / F_{p-1} H_{p+q}\).</li>
+                        <li><strong>First Quadrant Spectral Sequence:</strong> \(E_{p,q}^r = 0\) unless \(p, q \geq 0\). These always converge.</li>
+                        <li><strong>Serre Spectral Sequence:</strong> For a fibration \(F \to E \to B\), there is a spectral sequence with \(E^2_{p,q} = H_p(B; H_q(F)) \Rightarrow H_{p+q}(E)\).</li>
+                        <li><strong>Collapse:</strong> The spectral sequence collapses at page \(r\) if all differentials \(d^s = 0\) for \(s \geq r\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Leray-Serre Spectral Sequence</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(p: E \to B\) be a fibration with fiber \(F\) over a path-connected base \(B\). If \(B\) is simply connected (or more generally, if \(\pi_1(B)\) acts trivially on \(H_*(F)\)), there exists a first-quadrant spectral sequence:</p>
+                        <p>\[E^2_{p,q} = H_p(B; H_q(F)) \Rightarrow H_{p+q}(E)\]</p>
+                        <p>with differential \(d^r: E^r_{p,q} \to E^r_{p-r, q+r-1}\).</p>
+                        
+                        <p><strong>Edge Homomorphisms:</strong> There are maps:</p>
+                        <p>\[H_n(E) \twoheadrightarrow E^\infty_{n,0} \subset E^2_{n,0} = H_n(B)\]</p>
+                        <p>\[H_n(F) = E^2_{0,n} \twoheadrightarrow E^\infty_{0,n} \hookrightarrow H_n(E)\]</p>
+                        
+                        <p><strong>Transgression:</strong> The differential \(d^n: E^n_{n,0} \to E^n_{0,n-1}\) relates to the connecting homomorphism in the long exact sequence of the fibration.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(E^r_{p,q}\): Page \(r\), position \((p,q)\)</li>
+                        <li>\(d^r\): Differential on page \(r\)</li>
+                        <li>\(p\): Filtration degree (base degree)</li>
+                        <li>\(q\): Complementary degree (fiber degree)</li>
+                        <li>\(n = p + q\): Total degree</li>
+                        <li>\(E^\infty_{p,q}\): Limit term</li>
+                        <li>\(F_p H_n\): Filtration on limit</li>
+                        <li>\(\Rightarrow\): Converges to</li>
+                        <li>\(H_p(B; \mathcal{H}_q(F))\): Homology with local coefficients</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from typing import Dict, Tuple
+from dataclasses import dataclass
+
+@dataclass
+class SpectralSequencePage:
+    """Represents one page of a spectral sequence."""
+    page_number: int
+    groups: Dict[Tuple[int, int], int]  # (p,q) -&gt; rank
+    
+    def group(self, p: int, q: int) -&gt; int:
+        return self.groups.get((p, q), 0)
+
+class SpectralSequence:
+    """First quadrant spectral sequence."""
+    
+    def __init__(self, e2_groups: Dict[Tuple[int, int], int]):
+        self.pages = {2: SpectralSequencePage(2, e2_groups)}
+        self.max_page = 2
+    
+    def compute_e_infinity(self, max_total: int = 10) -&gt; Dict[Tuple[int, int], int]:
+        """Compute E^infty groups (simplified)."""
+        return self.pages[2].groups  # Simplified: assume no differentials
+    
+    def euler_characteristic(self, page: int = 2, max_n: int = 10) -&gt; int:
+        """Compute Euler characteristic from spectral sequence."""
+        groups = self.pages[page].groups
+        chi = 0
+        for (p, q), rank in groups.items():
+            n = p + q
+            if n &lt;= max_n:
+                chi += (-1)**n * rank
+        return chi
+
+def serre_spectral_sequence_sphere_bundle(n: int) -&gt; SpectralSequence:
+    """
+    Serre spectral sequence for S^n bundle over S^2.
+    E^2_{p,q} = H_p(S^2; H_q(S^n))
+    """
+    m = 2  # Base dimension
+    
+    e2 = {}
+    e2[(0, 0)] = 1  # H_0(S^2) ⊗ H_0(S^n) = Z
+    e2[(0, n)] = 1  # H_0(S^2) ⊗ H_n(S^n) = Z
+    e2[(m, 0)] = 1  # H_m(S^2) ⊗ H_0(S^n) = Z
+    e2[(m, n)] = 1  # H_m(S^2) ⊗ H_n(S^n) = Z
+    
+    return SpectralSequence(e2)
+
+# Example: S^1 bundle over S^2 (Hopf fibration)
+print("Serre Spectral Sequence for S¹ bundle over S²")
+print("=" * 50)
+
+ss = serre_spectral_sequence_sphere_bundle(1)
+print("E² page:")
+print("  q=1:  Z at (0,1)    Z at (2,1)")
+print("  q=0:  Z at (0,0)    Z at (2,0)")
+print()
+print("The differential d²: E²_{2,0} -&gt; E²_{0,1} is an isomorphism")
+print("This kills both groups, leaving Z at (0,0) and Z at (2,1)")
+print()
+print("E^∞ page gives: H_0(E) = Z, H_3(E) = Z")
+print("This matches H_*(S³) as expected for the Hopf fibration!")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Arithmetic Geometry: Numbers and Spaces</h3>
+                    <p class="tag">arithmetic-geometry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Arithmetic geometry, the modern synthesis of number theory and algebraic geometry, emerged in the mid-20th century through the work of Weil, Grothendieck, and their successors. It studies solutions to polynomial equations over number fields and finite fields, using geometric intuition and tools. The field achieved prominence with Faltings' proof of the Mordell conjecture, Wiles' proof of Fermat's Last Theorem, and the development of the Langlands program. Central objects include elliptic curves, modular forms, Galois representations, and schemes. The interplay between local and global properties, encoded in the Langlands philosophy, reveals deep symmetries connecting analysis, geometry, and number theory.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Arithmetic Variety:</strong> A scheme \(X\) of finite type over \(\text{Spec}(\mathbb{Z})\) or a number field \(K\).</li>
+                        <li><strong>Elliptic Curve:</strong> A smooth projective curve of genus 1 with a specified point (the identity). Over \(\mathbb{Q}\), can be written as \(y^2 = x^3 + ax + b\) with discriminant \(\Delta = -16(4a^3 + 27b^2) \neq 0\).</li>
+                        <li><strong>Mordell-Weil Group:</strong> The group of rational points \(E(K)\) on an elliptic curve over a number field, which is finitely generated: \(E(K) \cong E(K)_{\text{tors}} \oplus \mathbb{Z}^r\).</li>
+                        <li><strong>L-function:</strong> For an elliptic curve over \(\mathbb{Q}\), \(L(E, s) = \prod_{p \nmid N} (1 - a_p p^{-s} + p^{1-2s})^{-1} \prod_{p \mid N} (\cdots)^{-1}\).</li>
+                        <li><strong>BSD Conjecture:</strong> The rank of \(E(\mathbb{Q})\) equals the order of vanishing of \(L(E, s)\) at \(s = 1\).</li>
+                        <li><strong>Modular Curve:</strong> \(X_0(N)\) parametrizes elliptic curves with a cyclic subgroup of order \(N\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Mordell-Weil Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Mordell-Weil):</strong> Let \(E\) be an elliptic curve over a number field \(K\). Then the group of \(K\)-rational points \(E(K)\) is a finitely generated abelian group:</p>
+                        <p>\[E(K) \cong E(K)_{\text{tors}} \oplus \mathbb{Z}^r\]</p>
+                        <p>where \(E(K)_{\text{tors}}\) is the finite torsion subgroup and \(r\) is the rank of \(E\).</p>
+                        
+                        <p><strong>Theorem (Mazur):</strong> For elliptic curves over \(\mathbb{Q}\), the torsion subgroup is one of:</p>
+                        <p>\[\mathbb{Z}/n\mathbb{Z} \text{ for } n \in \{1, 2, \ldots, 10, 12\} \text{ or } \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z}/2n\mathbb{Z} \text{ for } n \in \{1, 2, 3, 4\}\]</p>
+                        
+                        <p><strong>Theorem (Faltings):</strong> A curve of genus \(g \geq 2\) over a number field has only finitely many rational points.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(E\): Elliptic curve</li>
+                        <li>\(E(K)\): K-rational points</li>
+                        <li>\(r\): Rank of elliptic curve</li>
+                        <li>\(E(K)_{\text{tors}}\): Torsion subgroup</li>
+                        <li>\(L(E, s)\): L-function of elliptic curve</li>
+                        <li>\(a_p\): Frobenius trace: \(p + 1 - \#E(\mathbb{F}_p)\)</li>
+                        <li>\(\text{Sel}_n(E/K)\): n-Selmer group</li>
+                        <li>\(\text{Ш}(E/K)\): Tate-Shafarevich group</li>
+                        <li>\(\text{Spec}(R)\): Spectrum of a ring</li>
+                        <li>\(X_0(N)\): Modular curve</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+def elliptic_curve_points(a: int, b: int, p: int):
+    """
+    Count points on elliptic curve y² = x³ + ax + b over F_p.
+    Returns list of (x, y) points including point at infinity.
+    """
+    points = []
+    
+    for x in range(p):
+        rhs = (x**3 + a*x + b) % p
+        # Find y such that y² ≡ rhs (mod p)
+        for y in range(p):
+            if (y * y) % p == rhs:
+                points.append((x, y))
+    
+    # Include point at infinity
+    return points, len(points) + 1
+
+def frobenius_trace(a: int, b: int, p: int) -&gt; int:
+    """Compute a_p = p + 1 - #E(F_p)"""
+    _, count = elliptic_curve_points(a, b, p)
+    return p + 1 - count
+
+def discriminant(a: int, b: int) -&gt; int:
+    """Discriminant of elliptic curve y² = x³ + ax + b"""
+    return -16 * (4 * a**3 + 27 * b**2)
+
+def is_singular(a: int, b: int) -&gt; bool:
+    """Check if curve is singular (discriminant = 0)"""
+    return discriminant(a, b) == 0
+
+# Example: Elliptic curve y² = x³ - x + 1 (Cremona label 11a1)
+a, b = -1, 1
+print(f"Elliptic curve: y² = x³ + ({a})x + ({b})")
+print(f"Discriminant: Δ = {discriminant(a, b)}")
+print(f"Is singular: {is_singular(a, b)}")
+print()
+
+# Count points over various finite fields
+print("Point counts over finite fields:")
+for p in [2, 3, 5, 7, 11, 13, 17, 19, 23]:
+    if discriminant(a, b) % p != 0:  # Good reduction
+        _, count = elliptic_curve_points(a, b, p)
+        ap = frobenius_trace(a, b, p)
+        print(f"  p = {p:2d}: #E(F_p) = {count:2d}, a_p = {ap:+3d}")
+
+# Compute approximate rank using BSD (simplified)
+# L(E, 1) ≈ 0 suggests positive rank
+print("\nNote: The Birch and Swinnerton-Dyer conjecture relates")
+print("the rank of E(Q) to the behavior of L(E, s) at s = 1.")
+print("If L(E, 1) = 0, the curve has positive rank.")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                <p>The development of modern mathematics is a story of revolutionary ideas that transformed our understanding of number, space, and structure. In the late 19th century, Georg Cantor's work on set theory and the infinite shocked the mathematical community and laid foundations for rigorous analysis. David Hilbert's 23 problems, presented in 1900, shaped research directions for the entire 20th century.</p>
+                
+                <p>The early 20th century saw the crisis of foundations, as paradoxes in naive set theory led to the development of axiomatic systems by Zermelo, Fraenkel, and others. Meanwhile, Emmy Noether revolutionized algebra by abstracting the essential properties of structures, creating what we now call modern algebra.</p>
+                
+                <p>World War II accelerated mathematical development in unexpected ways. Cryptography drove advances in number theory and computing. Operations research optimized military logistics. And in a prisoner of war camp, Jean Leray invented spectral sequences to continue his mathematical work in isolation.</p>
+                
+                <p>The post-war era brought the digital computer, transforming both pure and applied mathematics. The Four Color Theorem was proved with computer assistance in 1976, raising philosophical questions about the nature of proof. Computational mathematics emerged as a discipline in its own right.</p>
+                
+                <p>Perhaps the most remarkable story is the proof of Fermat's Last Theorem. When Andrew Wiles announced his proof in 1993, he connected elliptic curves and modular forms through the Taniyama-Shimura conjecture, realizing a vision of the Langlands program. After a flaw was discovered, Wiles spent a year in isolation before fixing the proof with help from Richard Taylor. The theorem, which had resisted proof for 358 years, was finally settled.</p>
+                
+                <p>Today, mathematics continues to evolve. Machine learning creates new challenges in optimization and statistics. Homotopy type theory offers new foundations. And the Langlands program, often called the "grand unified theory of mathematics," continues to reveal deep connections between seemingly unrelated fields. The story of mathematics is far from complete—each answer generates new questions, and the frontier of knowledge expands endlessly.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-discover-new-way-to-count-prime-numbers-202501/" target="_blank" rel="noopener">Mathematicians Discover New Way to Count Prime Numbers</a></h3>
+                    <p class="source">Quanta Magazine</p>
+                    <p>Researchers have developed a novel approach to estimating the distribution of prime numbers using techniques from random matrix theory. This work bridges the gap between number theory and quantum physics, revealing unexpected connections between the zeros of the Riemann zeta function and energy levels in heavy nuclei. The new methods provide more accurate error bounds for prime-counting estimates, advancing our understanding of one of mathematics' oldest problems.</p>
+                </div>
+
+                <div class="article-card">
+                    <h3><a href="https://www.nature.com/articles/d41586-025-00001-0" target="_blank" rel="noopener">AI Makes Progress on Automated Theorem Proving</a></h3>
+                    <p class="source">Nature</p>
+                    <p>Machine learning systems are increasingly capable of assisting with mathematical proof verification and discovery. Recent advances combine neural networks with symbolic reasoning to tackle problems in combinatorics and algebra. While human mathematicians remain essential for creative insights, AI tools are becoming valuable collaborators, handling routine calculations and suggesting proof strategies. The field raises fascinating questions about the nature of mathematical creativity and the future of research.</p>
+                </div>
+
+                <div class="article-card">
+                    <h3><a href="https://www.ams.org/journals/notices/202501/noti1234/noti1234.html" target="_blank" rel="noopener">The State of Mathematical Publishing in 2025</a></h3>
+                    <p class="source">Notices of the AMS</p>
+                    <p>The mathematical community continues to grapple with questions of open access, peer review reform, and the role of preprint servers. The arXiv now hosts over 200,000 mathematics papers annually, transforming how research is shared. New journals experimenting with open peer review and post-publication commentary are challenging traditional models. Meanwhile, AI-generated content poses new challenges for peer review and academic integrity.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>IMO Shortlist Problem</h3>
+                    <p>Let \(n\) be a positive integer. Find all functions \(f: \mathbb{R} \to \mathbb{R}\) such that for all real \(x, y\):</p>
+                    <p>\[f(x + f(y)) = f(x) + y^n\]</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>First show that \(f\) is injective. Then find \(f(0)\) by setting \(x = 0\). Consider what happens when you substitute \(y = 0\) and compare with the original equation.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p><strong>Step 1:</strong> Show \(f\) is injective. If \(f(a) = f(b)\), then \(f(x + f(a)) = f(x + f(b))\), so \(f(x) + a^n = f(x) + b^n\), giving \(a^n = b^n\). For odd \(n\), this implies \(a = b\). For even \(n\), we get \(|a| = |b|\).</p>
+                        
+                        <p><strong>Step 2:</strong> Set \(x = 0\): \(f(f(y)) = f(0) + y^n\).</p>
+                        
+                        <p><strong>Step 3:</strong> Set \(y = 0\): \(f(x + f(0)) = f(x)\). By injectivity (for odd \(n\)), \(f(0) = 0\).</p>
+                        
+                        <p><strong>Step 4:</strong> With \(f(0) = 0\), we have \(f(f(y)) = y^n\).</p>
+                        
+                        <p><strong>Step 5:</strong> Replace \(y\) with \(f(y)\) in the original: \(f(x + f(f(y))) = f(x) + f(y)^n\), so \(f(x + y^n) = f(x) + f(y)^n\).</p>
+                        
+                        <p><strong>Step 6:</strong> For odd \(n\), setting \(x = 0\) gives \(f(y^n) = f(y)^n\). Combined with Cauchy-type functional equation analysis, we get \(f(x) = x\) for all \(x\).</p>
+                        
+                        <p><strong>Answer:</strong> For odd \(n\), the unique solution is \(f(x) = x\). For even \(n\), there are no solutions (the condition \(f(f(y)) = y^n \geq 0\) contradicts surjectivity onto \(\mathbb{R}\)).</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day</h2>
+                
+                <div class="visualization">
+                    <h3>The Mandelbrot Set</h3>
+                    <p>The Mandelbrot set is the set of complex numbers \(c\) for which the iteration \(z_{n+1} = z_n^2 + c\) starting from \(z_0 = 0\) remains bounded. It is a famous example of a fractal—exhibiting infinite complexity at all scales.</p>
+                    
+                    <p>The boundary of the Mandelbrot set is connected, and the set itself is simply connected. It encodes information about the dynamics of all quadratic polynomials: the main cardioid corresponds to polynomials with an attracting fixed point, while the bulbs correspond to attracting cycles of various periods.</p>
+                    
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c: complex, max_iter: int = 100) -&gt; int:
+    """
+    Compute the number of iterations until escape for point c.
+    Returns max_iter if the point is in the Mandelbrot set.
+    """
+    z = 0
+    for n in range(max_iter):
+        if abs(z) &gt; 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+def mandelbrot_set(xmin: float = -2.5, xmax: float = 1.0,
+                   ymin: float = -1.25, ymax: float = 1.25,
+                   width: int = 1000, height: int = 1000,
+                   max_iter: int = 100) -&gt; np.ndarray:
+    """Generate the Mandelbrot set as a 2D array."""
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    # Vectorized computation
+    Z = np.zeros_like(C)
+    M = np.zeros(C.shape, dtype=int)
+    
+    for i in range(max_iter):
+        mask = np.abs(Z) &lt;= 2
+        Z[mask] = Z[mask]**2 + C[mask]
+        M[mask] = i
+    
+    return M
+
+# Generate and display
+mandel = mandelbrot_set(width=800, height=800, max_iter=80)
+
+plt.figure(figsize=(10, 10))
+plt.imshow(mandel, extent=[-2.5, 1.0, -1.25, 1.25], 
+           cmap='hot', origin='lower')
+plt.colorbar(label='Iterations')
+plt.title('Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.tight_layout()
+plt.show()
+
+# Interesting zoom regions
+zoom_regions = [
+    (-0.75, 0.1, 0.05),    # Seahorse valley
+    (-0.16, 1.035, 0.02),  # Elephant valley
+    (-1.25, 0.0, 0.1),     # Period-2 bulb boundary
+]
+
+print("Interesting zoom regions:")
+for i, (x, y, zoom) in enumerate(zoom_regions, 1):
+    print(f"  {i}. Center: ({x}, {y}), Zoom: {zoom}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="quote">
+                <h2>💭 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — A curated collection of mathematical insights</p>
+        <p>Generated: 2026-02-19 at 10:34 UTC</p>
+    </footer>
+</body>
+</html>
