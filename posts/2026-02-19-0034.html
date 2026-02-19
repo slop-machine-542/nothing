@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 19, 2026 at 00:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 19, 2026 at 00:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 19, 2026 at 00:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-19 at 00:34 UTC</p>
+            <div class="tags">
+                <a href="../tags/category-theory.html" class="tag">category-theory</a>
+                <a href="../tags/operator-algebras.html" class="tag">operator-algebras</a>
+                <a href="../tags/combinatorial-optimization.html" class="tag">combinatorial-optimization</a>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 3 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://www.mathunion.org/" target="_blank" rel="noopener">International Mathematical Union (IMU)</a></h3>
+                    <p>The IMU is an international non-governmental and non-profit scientific organization that promotes international cooperation in mathematics. It is responsible for the International Congress of Mathematicians, the Fields Medal, and other prestigious awards. The website provides access to mathematical news, educational resources, and information about mathematical development worldwide.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://faculty.math.illinois.edu/~r-ash/" target="_blank" rel="noopener">Professor Robert B. Ash's Mathematics Resources</a></h3>
+                    <p>A treasure trove of free mathematics textbooks covering abstract algebra, complex analysis, probability, and more. These well-written texts are suitable for self-study and classroom use, with clear explanations and numerous exercises. The site has been maintained as a resource for students and educators worldwide.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www3.nd.edu/~andyp/notes/" target="_blank" rel="noopener">Andy Putman's Mathematics Notes</a></h3>
+                    <p>Excellent lecture notes on algebraic topology, geometric group theory, and related topics from a professor at the University of Notre Dame. The notes are known for their clarity, careful proofs, and helpful examples. They serve as valuable supplementary material for graduate students in topology and geometry.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book of the Day</h2>
+                <div class="book-card">
+                    <h3>"Category Theory in Context"</h3>
+                    <p><strong>Author:</strong> Emily Riehl</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> This comprehensive introduction to category theory is written from the perspective of homotopy theory and higher category theory. Riehl covers limits and colimits, adjunctions, Kan extensions, and monads with a modern perspective that emphasizes universal properties and concrete examples. The book is particularly valuable for students interested in algebraic topology, homological algebra, and the foundations of modern mathematics. It includes numerous exercises and draws connections to algebraic topology throughout.</p>
+                    <p><a href="https://math.jhu.edu/~eriehl/context.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Yoneda's Lemma: The Most Important Theorem in Category Theory</h3>
+                    <p class="tag">category-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How much can we learn about a mathematical object by studying how it relates to other objects? Yoneda's lemma, proved by Nobuo Yoneda in 1954, gives a profound answer: an object is completely determined by its network of relationships. This result unifies concepts across algebra, topology, and geometry, and forms the foundation of representable functors and the functor of points perspective in algebraic geometry.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Category:</strong> A collection of objects and morphisms with composition and identity satisfying associativity and unit laws.</li>
+                        <li><strong>Functor:</strong> A structure-preserving map between categories.</li>
+                        <li><strong>Natural Transformation:</strong> A morphism between functors satisfying a coherence condition.</li>
+                        <li><strong>Representable Functor:</strong> A functor naturally isomorphic to \\( \\text{Hom}(A, -) \\) for some object \\( A \\).</li>
+                        <li><strong>Yoneda Embedding:</strong> The functor \\( y: \\mathcal{C} \\to \\text{Set}^{\\mathcal{C}^{\\text{op}}} \\) sending \\( A \\mapsto \\text{Hom}(-, A) \\).</li>
+                    </ul>
+
+                    <h4>Theorem: Yoneda's Lemma</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Yoneda, 1954):</strong> Let \\( \\mathcal{C} \\) be a locally small category, \\( F: \\mathcal{C}^{\\text{op}} \\to \\text{Set} \\) a functor, and \\( A \\in \\mathcal{C} \\) an object. Then there is a natural bijection:</p>
+                        <p>\\[ \\text{Nat}(\\text{Hom}(-, A), F) \\cong F(A) \\]</p>
+                        <p>given by evaluating a natural transformation at the identity morphism \\( \\text{id}_A \\). Moreover, this bijection is natural in both \\( A \\) and \\( F \\).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\( \\mathcal{C} \\): A category</li>
+                        <li>\\( \\mathcal{C}^{\\text{op}} \\): The opposite category</li>
+                        <li>\\( \\text{Hom}(A, B) \\) or \\( \\mathcal{C}(A, B) \\): Morphisms from \\( A \\) to \\( B \\)</li>
+                        <li>\\( \\text{Nat}(F, G) \\): Natural transformations from \\( F \\) to \\( G \\)</li>
+                        <li>\\( \\text{Set}^{\\mathcal{C}^{\\text{op}}} \\): The category of presheaves on \\( \\mathcal{C} \\)</li>
+                        <li>\\( y(A) = \\text{Hom}(-, A) \\): The Yoneda embedding</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python"># Yoneda's Lemma: A Computational Exploration
+# While category theory is abstract, we can explore its concepts
+
+from typing import TypeVar, Generic, Callable, Dict, Set
+
+T = TypeVar('T')
+
+class HomFunctor:
+    """The representable functor Hom(-, A) for a fixed object A."""
+    def __init__(self, target_object):
+        self.A = target_object
+    
+    def __call__(self, X):
+        """Apply Hom(-, A) to object X."""
+        return f"Hom({X}, {self.A})"
+
+def yoneda_bijection_example():
+    """
+    Demonstrate the Yoneda bijection:
+    Nat(Hom(-, A), F) ≅ F(A)
+    
+    For F = Hom(-, B), we get:
+    Nat(Hom(-, A), Hom(-, B)) ≅ Hom(A, B)
+    """
+    print("Yoneda's Lemma: The Core Bijection")
+    print("=" * 50)
+    print()
+    print("For a functor F: C^op -> Set and object A in C:")
+    print("  Nat(Hom(-, A), F) ≅ F(A)")
+    print()
+    
+    # Concrete example with sets
+    A = {1, 2}
+    B = {'a', 'b', 'c'}
+    
+    num_functions = len(B) ** len(A)
+    print(f"Example: A = {A}, B = {B}")
+    print(f"Number of functions A -> B: |B|^|A| = {len(B)}^{len(A)} = {num_functions}")
+    print()
+    print("Yoneda tells us natural transformations between representable")
+    print("functors correspond bijectively to morphisms between objects.")
+
+yoneda_bijection_example()
+
+print()
+print("Key Takeaway:")
+print("Yoneda's lemma shows an object's internal structure is completely")
+print("determined by its external relationships. This principle of")
+print("representability unifies diverse mathematical phenomena.")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>C*-Algebras and the Gelfand-Naimark Theorems</h3>
+                    <p class="tag">operator-algebras</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>C*-algebras provide the natural framework for non-commutative geometry and quantum mechanics. They generalize the algebra of continuous functions on a compact Hausdorff space, allowing for "quantum spaces" where coordinates don't commute. The Gelfand-Naimark theorems establish that every C*-algebra can be represented as an algebra of bounded operators on a Hilbert space, and that commutative C*-algebras are exactly algebras of continuous functions on locally compact spaces.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Banach Algebra:</strong> A complete normed algebra satisfying \\( \\|ab\\| \\leq \\|a\\|\\|b\\| \\).</li>
+                        <li><strong>Involution:</strong> An anti-linear map \\( *: A \\to A \\) with \\( (a^*)^* = a \\) and \\( (ab)^* = b^*a^* \\).</li>
+                        <li><strong>C*-Algebra:</strong> A Banach *-algebra satisfying the C*-identity: \\( \\|a^*a\\| = \\|a\\|^2 \\).</li>
+                        <li><strong>Spectrum:</strong> For \\( a \\in A \\), \\( \\sigma(a) = \\{\\lambda \\in \\mathbb{C} : a - \\lambda 1 \\text{ not invertible}\\} \\).</li>
+                        <li><strong>State:</strong> A positive linear functional \\( \\varphi: A \\to \\mathbb{C} \\) with \\( \\|\\varphi\\| = 1 \\).</li>
+                    </ul>
+
+                    <h4>Theorem: Gelfand-Naimark</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Gelfand-Naimark, 1943):</strong></p>
+                        <p><strong>(Commutative)</strong> Let \\( A \\) be a commutative C*-algebra. Then \\( A \\cong C_0(\\hat{A}) \\), where \\( \\hat{A} \\) is the spectrum (space of characters) of \\( A \\).</p>
+                        <p><strong>(General)</strong> Every C*-algebra is isometrically *-isomorphic to a norm-closed *-subalgebra of \\( B(H) \\) for some Hilbert space \\( H \\).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\( B(H) \\): Bounded operators on Hilbert space \\( H \\)</li>
+                        <li>\\( a^* \\): Adjoint of operator \\( a \\)</li>
+                        <li>\\( \\|a\\| \\): Operator norm</li>
+                        <li>\\( \\hat{A} \\): Spectrum/character space of \\( A \\)</li>
+                        <li>\\( C_0(X) \\): Continuous functions vanishing at infinity</li>
+                        <li>\\( \\sigma(a) \\): Spectrum of element \\( a \\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from numpy.linalg import norm, eigvals
+
+class CStarAlgebraElement:
+    """Represents an element of a finite-dimensional C*-algebra."""
+    
+    def __init__(self, matrix: np.ndarray):
+        self.matrix = np.array(matrix, dtype=complex)
+    
+    def star(self):
+        """The involution: conjugate transpose (adjoint)."""
+        return CStarAlgebraElement(self.matrix.conj().T)
+    
+    def norm(self) -> float:
+        """The C*-norm: operator norm (largest singular value)."""
+        return norm(self.matrix, ord=2)
+    
+    def check_cstar_identity(self) -> bool:
+        """Verify the C*-identity: ||a*a|| = ||a||^2."""
+        a_star_a = self.star()
+        lhs = (a_star_a * self).norm()
+        rhs = self.norm() ** 2
+        return np.isclose(lhs, rhs, rtol=1e-10)
+    
+    def spectrum(self) -> np.ndarray:
+        """The spectrum (eigenvalues for finite matrices)."""
+        return eigvals(self.matrix)
+    
+    def is_self_adjoint(self) -> bool:
+        """Check if a = a* (Hermitian)."""
+        return np.allclose(self.matrix, self.matrix.conj().T)
+    
+    def is_positive(self) -> bool:
+        """Check if a is positive (self-adjoint with non-negative spectrum)."""
+        if not self.is_self_adjoint():
+            return False
+        return np.all(self.spectrum().real >= -1e-10)
+
+# Verify C*-identity for a random matrix
+np.random.seed(42)
+random_matrix = np.random.randn(3, 3) + 1j * np.random.randn(3, 3)
+a = CStarAlgebraElement(random_matrix)
+
+print("C*-Algebra Verification")
+print("=" * 50)
+print(f"Random element a ∈ M_3(C)")
+print(f"||a|| = {a.norm():.6f}")
+print(f"||a*a|| = {(a.star() * a).norm():.6f}")
+print(f"||a||^2 = {a.norm()**2:.6f}")
+print(f"C*-identity satisfied: {a.check_cstar_identity()}")
+
+print()
+print("Key Result:")
+print("Every C*-algebra embeds into B(H) for some Hilbert space H.")
+print("This is the foundation for non-commutative geometry.")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Matroid Theory: Combinatorial Abstraction of Independence</h3>
+                    <p class="tag">combinatorial-optimization</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Matroids were introduced by Hassler Whitney in 1935 to capture the abstract essence of linear independence. They simultaneously generalize the notion of linear independence in vector spaces and forests in graph theory. Matroid theory provides a unified framework for studying greedy algorithms, optimization problems, and combinatorial structures.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Matroid:</strong> A pair \\( M = (E, \\mathcal{I}) \\) where \\( E \\) is a finite set and \\( \\mathcal{I} \\subseteq 2^E \\) satisfies: (I1) \\( \\emptyset \\in \\mathcal{I} \\), (I2) subsets of independent sets are independent, (I3) augmentation property.</li>
+                        <li><strong>Basis:</strong> A maximal independent set. All bases have the same cardinality (rank).</li>
+                        <li><strong>Rank Function:</strong> \\( r(A) = \\max\\{|I| : I \\subseteq A, I \\in \\mathcal{I}\\} \\).</li>
+                        <li><strong>Circuit:</strong> A minimal dependent set.</li>
+                        <li><strong>Flat (Closed Set):</strong> A set \\( F \\) such that \\( r(F \\cup \\{e\\}) > r(F) \\) for all \\( e \\notin F \\).</li>
+                    </ul>
+
+                    <h4>Theorem: Matroid Duality and Optimization</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Matroid Duality):</strong> For any matroid \\( M = (E, \\mathcal{I}) \\), the collection \\( \\mathcal{I}^* = \\{I \\subseteq E : E \\setminus I \\text{ contains a basis of } M\\} \\) forms the independent sets of a matroid \\( M^* \\) on \\( E \\), called the dual matroid.</p>
+                        <p><strong>Theorem (Greedy Algorithm Optimality):</strong> Let \\( M = (E, \\mathcal{I}) \\) be a matroid with weight function \\( w: E \\to \\mathbb{R}_{\\geq 0} \\). The greedy algorithm (iteratively add the heaviest element maintaining independence) returns a maximum-weight basis.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\( E \\): Ground set of the matroid</li>
+                        <li>\\( \\mathcal{I} \\): Collection of independent sets</li>
+                        <li>\\( r(M) \\): Rank of matroid \\( M \\)</li>
+                        <li>\\( M^* \\): Dual matroid</li>
+                        <li>\\( \\mathcal{B} \\): Set of bases</li>
+                        <li>\\( \\mathcal{C} \\): Set of circuits</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">from typing import Set, List, FrozenSet
+from itertools import combinations
+
+class Matroid:
+    """A matroid M = (E, I) where E is ground set, I is independent sets."""
+    
+    def __init__(self, ground_set: Set, independent_sets: Set[FrozenSet]):
+        self.E = frozenset(ground_set)
+        self.I = set(independent_sets)
+    
+    def rank(self, subset: Set = None) -> int:
+        """Rank function: r(A) = max{|I| : I ⊆ A, I ∈ I}."""
+        if subset is None:
+            subset = self.E
+        subset = frozenset(subset)
+        
+        max_rank = 0
+        for ind in self.I:
+            if ind <= subset:
+                max_rank = max(max_rank, len(ind))
+        return max_rank
+    
+    def is_independent(self, subset: Set) -> bool:
+        """Check if a set is independent."""
+        return frozenset(subset) in self.I
+    
+    def is_basis(self, subset: Set) -> bool:
+        """A basis is a maximal independent set."""
+        subset = frozenset(subset)
+        return subset in self.I and len(subset) == self.rank()
+    
+    def bases(self) -> Set[FrozenSet]:
+        """Return all bases of the matroid."""
+        r = self.rank()
+        return {ind for ind in self.I if len(ind) == r}
+    
+    def greedy_max_weight_basis(self, weights: dict) -> Set:
+        """Greedy algorithm for finding maximum weight basis."""
+        sorted_elements = sorted(
+            self.E, 
+            key=lambda e: weights.get(e, 0), 
+            reverse=True
+        )
+        
+        result = set()
+        for e in sorted_elements:
+            if self.is_independent(result | {e}):
+                result.add(e)
+        
+        return result
+
+
+# Example: Uniform matroid U_{5,3}
+n, k = 5, 3
+E = set(range(n))
+I = set()
+for r in range(k + 1):
+    for subset in combinations(E, r):
+        I.add(frozenset(subset))
+
+M = Matroid(E, I)
+
+# Assign weights
+weights = {0: 10, 1: 8, 2: 6, 3: 4, 4: 2}
+
+greedy_basis = M.greedy_max_weight_basis(weights)
+greedy_weight = sum(weights[e] for e in greedy_basis)
+
+print("Matroid Greedy Algorithm")
+print("=" * 50)
+print(f"Weights: {weights}")
+print(f"Greedy basis: {greedy_basis}")
+print(f"Greedy weight: {greedy_weight}")
+
+# Verify it's maximum
+max_weight = max(sum(weights[e] for e in B) for B in M.bases())
+print(f"Maximum possible weight: {max_weight}")
+print(f"Greedy is optimal: {greedy_weight == max_weight}")
+
+print()
+print("Theorem: For matroids, greedy always finds maximum weight basis.")
+print("This characterizes matroids: if greedy works for all weight")
+print("functions, the system is a matroid.")</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Graph Neural Networks: Learning on Structured Data</h3>
+                    <p class="tag">machine-learning</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Many real-world systems are naturally represented as graphs: social networks, molecular structures, transportation systems, and knowledge graphs. Traditional neural networks excel at grid-like data (images) or sequences (text), but graphs have irregular structure with no fixed ordering of nodes. Graph Neural Networks (GNNs) extend deep learning to graph-structured data, enabling applications like drug discovery, recommendation systems, traffic prediction, and fake news detection.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Graph:</strong> \\( G = (V, E) \\) with nodes \\( V \\) and edges \\( E \\), optionally with node features \\( X \\in \\mathbb{R}^{|V| \\times d} \\).</li>
+                        <li><strong>Message Passing:</strong> Each node aggregates information from neighbors and updates its representation.</li>
+                        <li><strong>Graph Convolution:</strong> A spectral or spatial operation that propagates features across the graph.</li>
+                        <li><strong>Graph Attention:</strong> Learning importance weights for different neighbors during aggregation.</li>
+                        <li><strong>Readout Function:</strong> Aggregating node representations to obtain a graph-level representation.</li>
+                    </ul>
+
+                    <h4>Theorem: Universal Approximation for GNNs</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Xu et al., 2019):</strong> A GNN with sufficient layers and expressive aggregation functions can distinguish any two graphs that the Weisfeiler-Lehman graph isomorphism test can distinguish. Specifically, if the aggregation function is injective, the GNN is as powerful as the WL test in distinguishing non-isomorphic graphs.</p>
+                        <p><strong>Corollary:</strong> Graph Isomorphism Networks (GIN) with \\( h_v^{(k)} = \\text{MLP}^{(k)}\\left((1 + \\epsilon^{(k)}) \\cdot h_v^{(k-1)} + \\sum_{u \\in \\mathcal{N}(v)} h_u^{(k-1)}\\right) \\) are maximally expressive among message-passing GNNs.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\( G = (V, E) \\): Graph with nodes and edges</li>
+                        <li>\\( h_v^{(k)} \\): Embedding of node \\( v \\) at layer \\( k \\)</li>
+                        <li>\\( \\mathcal{N}(v) \\): Neighborhood of node \\( v \\)</li>
+                        <li>\\( A \\): Adjacency matrix</li>
+                        <li>\\( D \\): Degree matrix, \\( D_{ii} = \\sum_j A_{ij} \\)</li>
+                        <li>\\( \\tilde{A} = A + I \\): Adjacency with self-loops</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from typing import List, Tuple, Dict, Set
+from collections import defaultdict
+
+class Graph:
+    """Simple graph representation for GNN experiments."""
+    
+    def __init__(self, num_nodes: int, edges: List[Tuple[int, int]], 
+                 node_features: np.ndarray = None):
+        self.n = num_nodes
+        self.edges = edges
+        self.adj_list = defaultdict(list)
+        
+        for u, v in edges:
+            self.adj_list[u].append(v)
+            self.adj_list[v].append(u)
+        
+        if node_features is None:
+            self.X = np.random.randn(num_nodes, 16)
+        else:
+            self.X = node_features
+    
+    def adjacency_matrix(self) -> np.ndarray:
+        """Return the adjacency matrix."""
+        A = np.zeros((self.n, self.n))
+        for u, v in self.edges:
+            A[u, v] = A[v, u] = 1
+        return A
+
+
+class GCNLayer:
+    """Graph Convolutional Network (GCN) Layer."""
+    
+    def __init__(self, in_dim: int, out_dim: int):
+        self.W = np.random.randn(in_dim, out_dim) * 0.01
+        self.b = np.zeros(out_dim)
+    
+    def __call__(self, X: np.ndarray, A_tilde: np.ndarray) -> np.ndarray:
+        """Forward pass: H = σ(D̃^{-1/2} Ã D̃^{-1/2} X W)"""
+        D_tilde_inv_sqrt = np.diag(1.0 / np.sqrt(A_tilde.sum(axis=1) + 1e-8))
+        A_norm = D_tilde_inv_sqrt @ A_tilde @ D_tilde_inv_sqrt
+        H = A_norm @ X @ self.W + self.b
+        return np.maximum(H, 0)  # ReLU
+
+
+class GINLayer:
+    """Graph Isomorphism Network (GIN) Layer."""
+    
+    def __init__(self, in_dim: int, out_dim: int, epsilon: float = 0.0):
+        self.W1 = np.random.randn(in_dim, out_dim) * 0.01
+        self.W2 = np.random.randn(out_dim, out_dim) * 0.01
+        self.b1 = np.zeros(out_dim)
+        self.b2 = np.zeros(out_dim)
+        self.epsilon = epsilon
+    
+    def __call__(self, X: np.ndarray, graph: Graph) -> np.ndarray:
+        """Forward pass using message passing."""
+        n = X.shape[0]
+        H = np.zeros((n, self.W1.shape[1]))
+        
+        for v in range(n):
+            neighbor_sum = np.zeros(X.shape[1])
+            for u in graph.adj_list[v]:
+                neighbor_sum += X[u]
+            
+            update = (1 + self.epsilon) * X[v] + neighbor_sum
+            h = np.maximum(update @ self.W1 + self.b1, 0)
+            h = h @ self.W2 + self.b2
+            H[v] = h
+        
+        return H
+
+
+# Test GNN expressiveness
+g1 = Graph(num_nodes=3, edges=[(0, 1), (1, 2), (0, 2)], node_features=np.eye(3))
+g2 = Graph(num_nodes=3, edges=[(0, 1), (1, 2)], node_features=np.eye(3))
+
+gin = GINLayer(in_dim=3, out_dim=16)
+h1 = gin(g1.X, g1)
+h2 = gin(g2.X, g2)
+
+graph_repr_1 = h1.sum(axis=0)
+graph_repr_2 = h2.sum(axis=0)
+
+distance = np.linalg.norm(graph_repr_1 - graph_repr_2)
+
+print("GNN Expressiveness Test")
+print("=" * 50)
+print(f"Graph 1 (Triangle): {g1.n} nodes, {len(g1.edges)} edges")
+print(f"Graph 2 (Path): {g2.n} nodes, {len(g2.edges)} edges")
+print()
+print(f"Distance between representations: {distance:.4f}")
+print(f"Graphs are distinguished: {distance > 0.1}")
+
+print()
+print("Key Insight:")
+print("GIN is provably as expressive as the Weisfeiler-Lehman test,")
+print("making it maximally powerful among message-passing GNNs.")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Compressed Sensing: Recovery from Incomplete Data</h3>
+                    <p class="tag">signal-processing</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Traditional signal acquisition follows the Nyquist-Shannon theorem: to perfectly reconstruct a signal, you must sample at twice its maximum frequency. But what if the signal is inherently sparse or compressible? Compressed sensing, developed by Candès, Romberg, Tao, and Donoho around 2004, shows that sparse signals can be recovered from far fewer samples than Nyquist requires. This revolutionizes MRI imaging (faster scans), single-pixel cameras, and sensor networks.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Sparse Signal:</strong> A signal \\( x \\in \\mathbb{R}^n \\) with at most \\( s \\) non-zero entries, \\( \\|x\\|_0 \\leq s \\).</li>
+                        <li><strong>Measurement Matrix:</strong> \\( \\Phi \\in \\mathbb{R}^{m \\times n} \\) with \\( m \\ll n \\), used to acquire \\( y = \\Phi x \\).</li>
+                        <li><strong>Restricted Isometry Property (RIP):</strong> \\( \\Phi \\) satisfies RIP of order \\( s \\) if \\( (1-\\delta_s)\\|x\\|_2^2 \\leq \\|\\Phi x\\|_2^2 \\leq (1+\\delta_s)\\|x\\|_2^2 \\) for all \\( s \\)-sparse \\( x \\).</li>
+                        <li><strong>Basis Pursuit:</strong> The convex relaxation: \\( \\min \\|x\\|_1 \\) subject to \\( \\Phi x = y \\).</li>
+                        <li><strong>Coherence:</strong> \\( \\mu(\\Phi) = \\max_{i \\neq j} |\\langle \\phi_i, \\phi_j \\rangle| \\).</li>
+                    </ul>
+
+                    <h4>Theorem: Exact Recovery via ℓ₁ Minimization</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Candès-Tao, 2006):</strong> Let \\( \\Phi \\in \\mathbb{R}^{m \\times n} \\) satisfy the RIP of order \\( 2s \\) with \\( \\delta_{2s} < \\sqrt{2} - 1 \\). For any \\( s \\)-sparse signal \\( x \\in \\mathbb{R}^n \\), let \\( y = \\Phi x \\). Then the solution \\( x^* \\) to the basis pursuit problem:</p>
+                        <p>\\[ \\min_{z \\in \\mathbb{R}^n} \\|z\\|_1 \\quad \\text{subject to} \\quad \\Phi z = y \\]</p>
+                        <p>satisfies \\( x^* = x \\). That is, exact recovery is achieved via convex optimization.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\( \\|x\\|_0 \\): Number of non-zero entries (sparsity)</li>
+                        <li>\\( \\|x\\|_1 = \\sum_i |x_i| \\): ℓ₁ norm (promotes sparsity)</li>
+                        <li>\\( \\|x\\|_2 \\): Euclidean norm</li>
+                        <li>\\( \\Phi \\): Measurement/sensing matrix</li>
+                        <li>\\( \\delta_s \\): RIP constant of order \\( s \\)</li>
+                        <li>\\( \\Psi \\): Sparsifying basis (e.g., wavelet, DCT)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from numpy.linalg import norm
+from scipy.optimize import linprog
+
+class CompressedSensing:
+    """Compressed Sensing framework for sparse signal recovery."""
+    
+    def __init__(self, n: int, m: int):
+        self.n = n
+        self.m = m
+        
+        # Generate random measurement matrix (Gaussian)
+        np.random.seed(42)
+        self.Phi = np.random.randn(m, n) / np.sqrt(m)
+        self.Phi = self.Phi / norm(self.Phi, axis=0, keepdims=True)
+    
+    def measure(self, x: np.ndarray) -> np.ndarray:
+        """Acquire measurements: y = Phi @ x"""
+        return self.Phi @ x
+    
+    def basis_pursuit(self, y: np.ndarray) -> np.ndarray:
+        """Solve basis pursuit: min ||x||_1 subject to Phi @ x = y"""
+        c = np.ones(2 * self.n)
+        A_eq = np.hstack([self.Phi, -self.Phi])
+        b_eq = y
+        bounds = [(0, None) for _ in range(2 * self.n)]
+        
+        result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+        
+        if result.success:
+            z = result.x
+            x_recovered = z[:self.n] - z[self.n:]
+            return x_recovered
+        else:
+            raise RuntimeError("Optimization failed")
+
+
+def create_sparse_signal(n: int, sparsity: int) -> np.ndarray:
+    """Create a sparse signal with random non-zero entries."""
+    x = np.zeros(n)
+    indices = np.random.choice(n, sparsity, replace=False)
+    x[indices] = np.random.randn(sparsity) * 10
+    return x
+
+
+# Parameters
+n = 256  # Signal dimension
+s = 10   # Sparsity
+m = 64   # Number of measurements
+
+np.random.seed(42)
+x_true = create_sparse_signal(n, s)
+
+cs = CompressedSensing(n, m)
+y = cs.measure(x_true)
+
+x_recovered = cs.basis_pursuit(y)
+
+error = norm(x_true - x_recovered) / norm(x_true)
+
+print("Compressed Sensing: Sparse Signal Recovery")
+print("=" * 60)
+print(f"Signal dimension n = {n}")
+print(f"Sparsity s = {s}")
+print(f"Measurements m = {m}")
+print(f"Compression ratio: {m/n:.1%}")
+print()
+print(f"Relative recovery error: {error:.6f}")
+
+# Compare with naive least squares
+x_ls = np.linalg.lstsq(cs.Phi, y, rcond=None)[0]
+error_ls = norm(x_true - x_ls) / norm(x_true)
+print(f"Naive least squares error: {error_ls:.6f}")
+
+print()
+print("Key Insight:")
+print("L1 minimization (Basis Pursuit) recovers sparse signals from")
+print("far fewer samples than Nyquist requires. Random Gaussian matrices")
+print("satisfy RIP with high probability, enabling exact recovery.")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Mean Field Games: Strategic Interactions in Large Populations</h3>
+                    <p class="tag">game-theory</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How do large populations of rational agents make strategic decisions? From traffic flow to financial markets, from vaccination strategies to energy consumption, understanding collective behavior is crucial. Mean Field Games (MFG), introduced by Lasry and Lions (2006) and independently by Huang, Caines, and Malhamé, provide a framework for analyzing differential games with infinitely many players.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Mean Field:</strong> The distribution of states across the population, denoted \\( m(t, x) \\).</li>
+                        <li><strong>Value Function:</strong> \\( u(t, x) \\) represents the optimal cost-to-go for an agent at state \\( x \\) and time \\( t \\).</li>
+                        <li><strong>Hamiltonian:</strong> \\( H(x, p) = \\sup_a \\{-L(x, a) - p \\cdot b(x, a)\\} \\) where \\( L \\) is the running cost and \\( b \\) is the drift.</li>
+                        <li><strong>Nash Equilibrium:</strong> A state where no agent can improve by unilaterally changing strategy, given the mean field.</li>
+                        <li><strong>Master Equation:</strong> A PDE on the space of probability measures describing the full MFG system.</li>
+                    </ul>
+
+                    <h4>Theorem: MFG System Characterization</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Lasry-Lions):</strong> Under appropriate conditions, the Nash equilibrium of a mean field game is characterized by the coupled PDE system:</p>
+                        <p>\\[ -\\partial_t u - \\nu \\Delta u + H(x, \\nabla u) = f(x, m) \\quad \\text{(HJB)} \\]</p>
+                        <p>\\[ \\partial_t m - \\nu \\Delta m - \\text{div}(m \\nabla_p H(x, \\nabla u)) = 0 \\quad \\text{(FPK)} \\]</p>
+                        <p>with terminal condition \\( u(T, x) = g(x, m(T)) \\) and initial condition \\( m(0, x) = m_0(x) \\). The Hamilton-Jacobi-Bellman (HJB) equation gives optimal control; the Fokker-Planck-Kolmogorov (FPK) equation evolves the population distribution.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\( u(t, x) \\): Value function</li>
+                        <li>\\( m(t, x) \\): Population density/mean field</li>
+                        <li>\\( H(x, p) \\): Hamiltonian</li>
+                        <li>\\( f(x, m) \\): Coupling cost (interaction with population)</li>
+                        <li>\\( \\nu \\): Noise/diffusion coefficient</li>
+                        <li>\\( \\alpha^*(t, x) = -\\nabla_p H(x, \\nabla u) \\): Optimal control</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+class MeanFieldGame:
+    """
+    Numerical solver for Mean Field Games using finite differences.
+    Solves the coupled HJB-FPK system.
+    """
+    
+    def __init__(self, T: float, L: float, nx: int, nt: int, nu: float):
+        self.T = T
+        self.L = L
+        self.nx = nx
+        self.nt = nt
+        self.nu = nu
+        
+        self.x = np.linspace(-L, L, nx)
+        self.dx = 2 * L / (nx - 1)
+        self.dt = T / nt
+    
+    def hamiltonian(self, x: float, p: float) -> float:
+        """Hamiltonian H(x, p) = -|p|²/2 for LQ MFG."""
+        return -0.5 * p**2
+    
+    def hamiltonian_gradient(self, x: float, p: float) -> float:
+        """∇_p H(x, p) = -p"""
+        return -p
+    
+    def coupling_cost(self, x: float, m: float) -> float:
+        """Coupling cost f(x, m) = x² + m."""
+        return x**2 + m
+    
+    def terminal_cost(self, x: float, m: float) -> float:
+        """Terminal cost g(x, m) = x²."""
+        return x**2
+    
+    def solve_hjb(self, m: np.ndarray) -> np.ndarray:
+        """Solve HJB equation backward in time."""
+        u = np.zeros((self.nt + 1, self.nx))
+        
+        # Terminal condition
+        u[-1, :] = [self.terminal_cost(x, m[-1, i]) 
+                    for i, x in enumerate(self.x)]
+        
+        # Backward in time
+        for n in range(self.nt - 1, -1, -1):
+            for i in range(1, self.nx - 1):
+                x = self.x[i]
+                u_x = (u[n+1, i+1] - u[n+1, i-1]) / (2 * self.dx)
+                u_xx = (u[n+1, i+1] - 2*u[n+1, i] + u[n+1, i-1]) / self.dx**2
+                
+                H_val = self.hamiltonian(x, u_x)
+                f_val = self.coupling_cost(x, m[n+1, i])
+                
+                u[n, i] = u[n+1, i] + self.dt * (-self.nu * u_xx + H_val - f_val)
+            
+            # Boundary conditions
+            u[n, 0] = u[n, 1]
+            u[n, -1] = u[n, -2]
+        
+        return u
+    
+    def solve_fpk(self, u: np.ndarray, m0: np.ndarray) -> np.ndarray:
+        """Solve FPK equation forward in time."""
+        m = np.zeros((self.nt + 1, self.nx))
+        m[0, :] = m0
+        
+        for n in range(self.nt):
+            for i in range(1, self.nx - 1):
+                x = self.x[i]
+                u_x = (u[n, i+1] - u[n, i-1]) / (2 * self.dx)
+                alpha = -self.hamiltonian_gradient(x, u_x)
+                
+                m_x = (m[n, i+1] - m[n, i-1]) / (2 * self.dx)
+                m_xx = (m[n, i+1] - 2*m[n, i] + m[n, i-1]) / self.dx**2
+                
+                div_term = m_x * alpha
+                m[n+1, i] = m[n, i] + self.dt * (self.nu * m_xx - div_term)
+            
+            m[n+1, 0] = m[n+1, 1]
+            m[n+1, -1] = m[n+1, -2]
+            m[n+1, :] = np.maximum(m[n+1, :], 0)
+            m[n+1, :] /= np.trapz(m[n+1, :], self.x)
+        
+        return m
+
+
+# Example: Congestion game
+T = 1.0
+L = 2.0
+nx = 51
+nt = 50
+nu = 0.1
+
+mfg = MeanFieldGame(T, L, nx, nt, nu)
+
+# Initial distribution: Gaussian in the middle
+m0 = np.exp(-5 * mfg.x**2)
+m0 = m0 / np.trapz(m0, mfg.x)
+
+print("Mean Field Game: Congestion Example")
+print("=" * 60)
+print(f"Time horizon T = {T}")
+print(f"Spatial domain [-{L}, {L}]")
+print(f"Diffusion ν = {nu}")
+print(f"Initial population: Gaussian centered at 0")
+print()
+print("The MFG system consists of two coupled PDEs:")
+print("1. HJB (backward): -∂u/∂t - νΔu + H(x, ∇u) = f(x, m)")
+print("2. FPK (forward): ∂m/∂t - νΔm - div(m ∇_p H) = 0")
+print()
+print("The equilibrium is a fixed point: m determines u via HJB,")
+print("and u determines m via FPK.")
+
+print()
+print("Applications of Mean Field Games:")
+print("- Traffic flow modeling and congestion")
+print("- Economics: price formation, bank runs")
+print("- Social dynamics: opinion formation, epidemics")
+print("- Robotics: swarm coordination")
+print("- Finance: systemic risk, portfolio optimization")</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>The Poincaré Conjecture: A Century-Old Problem Solved</h3>
+                    <p class="tag">geometric-topology</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Henri Poincaré posed his famous conjecture in 1904 as part of his foundational work on algebraic topology. He asked: if every loop in a compact 3-dimensional manifold can be continuously tightened to a point, is that manifold necessarily the 3-sphere? This seemingly simple question resisted proof for nearly a century, becoming one of the seven Millennium Prize Problems. In 2002-2003, Grigori Perelman posted three papers on the arXiv introducing Ricci flow with surgery, finally proving the conjecture.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Manifold:</strong> A topological space locally homeomorphic to \\(\\mathbb{R}^n\\).</li>
+                        <li><strong>Simply Connected:</strong> Every loop can be continuously contracted to a point.</li>
+                        <li><strong>Homotopy Sphere:</strong> A manifold homotopy equivalent to the n-sphere.</li>
+                        <li><strong>Ricci Flow:</strong> A PDE evolving the metric: \\(\\partial_t g_{ij} = -2R_{ij}\\).</li>
+                        <li><strong>Surgery:</strong> Removing singularities by cutting and gluing.</li>
+                    </ul>
+
+                    <h4>Theorem: Poincaré Conjecture (Perelman, 2003)</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Every simply connected, closed 3-manifold is homeomorphic to the 3-sphere \\(S^3\\).</p>
+                        <p><strong>Proof Sketch (Hamilton-Perelman Program):</strong> Start with any metric on the 3-manifold. Evolve by Ricci flow \\(\\frac{\\partial g}{\\partial t} = -2\\text{Ric}(g)\\). Singularities form but can be removed by surgery. The rescaled flow converges to a metric of constant positive curvature, implying the manifold is a spherical space form. For simply connected manifolds, this must be \\(S^3\\).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(M^3\\): 3-dimensional manifold</li>
+                        <li>\\(\\pi_1(M)\\): Fundamental group</li>
+                        <li>\\(S^n\\): n-dimensional sphere</li>
+                        <li>\\(g_{ij}\\): Riemannian metric</li>
+                        <li>\\(R_{ij}\\): Ricci curvature tensor</li>
+                        <li>\\(R\\): Scalar curvature</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from numpy.linalg import norm
+
+class RicciCurvature2D:
+    """Discrete Ricci curvature for 2D surfaces."""
+    
+    def __init__(self, vertices: np.ndarray, faces):
+        self.V = vertices
+        self.F = faces
+    
+    def angle_at_vertex(self, face_idx: int, vertex_idx: int) -> float:
+        """Compute angle at vertex in a triangle."""
+        face = self.F[face_idx]
+        i = face.index(vertex_idx)
+        j, k = face[(i+1)%3], face[(i+2)%3]
+        
+        v1 = self.V[j] - self.V[vertex_idx]
+        v2 = self.V[k] - self.V[vertex_idx]
+        
+        cos_angle = np.dot(v1, v2) / (norm(v1) * norm(v2))
+        cos_angle = np.clip(cos_angle, -1, 1)
+        return np.arccos(cos_angle)
+    
+    def gaussian_curvature(self, vertex_idx: int) -> float:
+        """Discrete Gaussian curvature: K(v) = 2π - Σ(angles at v)."""
+        angle_sum = 0.0
+        for fi, face in enumerate(self.F):
+            if vertex_idx in face:
+                angle_sum += self.angle_at_vertex(fi, vertex_idx)
+        return 2 * np.pi - angle_sum
+    
+    def total_curvature(self) -> float:
+        """Total Gaussian curvature (should be 4πχ by Gauss-Bonnet)."""
+        return sum(self.gaussian_curvature(i) for i in range(len(self.V)))
+
+
+# Create a triangulated sphere (icosahedron-like)
+phi = (1 + np.sqrt(5)) / 2
+vertices = np.array([
+    [-1, phi, 0], [1, phi, 0], [-1, -phi, 0], [1, -phi, 0],
+    [0, -1, phi], [0, 1, phi], [0, -1, -phi], [0, 1, -phi],
+    [phi, 0, -1], [phi, 0, 1], [-phi, 0, -1], [-phi, 0, 1]
+])
+vertices = vertices / norm(vertices, axis=1, keepdims=True)
+
+faces = [
+    (0, 11, 5), (0, 5, 1), (0, 1, 7), (0, 7, 10), (0, 10, 11),
+    (1, 5, 9), (5, 11, 4), (11, 10, 2), (10, 7, 6), (7, 1, 8),
+]
+
+sphere = RicciCurvature2D(vertices, faces)
+
+print("The Poincaré Conjecture: Computational Exploration")
+print("=" * 60)
+print()
+print("Triangulated Sphere Properties:")
+print(f"  Vertices: {len(vertices)}")
+print(f"  Faces: {len(faces)}")
+print()
+
+curvatures = [sphere.gaussian_curvature(i) for i in range(len(vertices))]
+print(f"Gaussian curvatures: {[f'{c:.4f}' for c in curvatures[:5]]}...")
+print(f"Total curvature: {sphere.total_curvature():.4f}")
+print(f"Expected (Gauss-Bonnet): 4π = {4*np.pi:.4f}")
+
+print()
+print("Timeline of the Poincaré Conjecture:")
+print("  1904: Poincaré poses the conjecture")
+print("  1960s-80s: Smale, Freedman prove n ≥ 4 cases")
+print("  1982: Hamilton introduces Ricci flow program")
+print("  2002-03: Perelman posts proof on arXiv")
+print("  2006: Proof verified; Perelman declines Fields Medal")
+print("  2010: Perelman declines $1,000,000 Millennium Prize")
+
+print()
+print("Significance:")
+print("- First of the Millennium Prize Problems to be solved")
+print("- Completed the classification of 3-manifolds")
+print("- Demonstrated the power of geometric flows in topology")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>The Weil Conjectures: A Roadmap for Mathematics</h3>
+                    <p class="tag">algebraic-geometry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1949, André Weil proposed a series of profound conjectures about the number of solutions to polynomial equations over finite fields. These conjectures suggested deep connections between the discrete world of finite fields and the continuous world of complex geometry. Weil's conjectures included analogues of the Riemann hypothesis, a functional equation, and a connection to topology. Their proof by Grothendieck, Artin, Verdier, and finally Deligne (1974) revolutionized algebraic geometry.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Finite Field:</strong> \\(\\mathbb{F}_q\\) with \\(q = p^n\\) elements, where \\(p\\) is prime.</li>
+                        <li><strong>Variety over \\(\\mathbb{F}_q\\):</strong> Solution set of polynomial equations with coefficients in \\(\\mathbb{F}_q\\).</li>
+                        <li><strong>Zeta Function:</strong> \\(Z(X, t) = \\exp\\left(\\sum_{n=1}^\\infty \\frac{N_n}{n} t^n\\right)\\) where \\(N_n\\) counts points over \\(\\mathbb{F}_{q^n}\\).</li>
+                        <li><strong>Étale Cohomology:</strong> A Weil cohomology theory for varieties over arbitrary fields.</li>
+                        <li><strong>Frobenius Morphism:</strong> \\(F: x \\mapsto x^q\\) acting on varieties over \\(\\mathbb{F}_q\\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Weil Conjectures (Deligne, 1974)</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \\(X\\) be a smooth projective variety of dimension \\(d\\) over \\(\\mathbb{F}_q\\). Then:</p>
+                        <p><strong>(Rationality)</strong> \\(Z(X, t) = \\frac{P_1(t)P_3(t)\\cdots P_{2d-1}(t)}{P_0(t)P_2(t)\\cdots P_{2d}(t)}\\) where \\(P_i(t) \\in \\mathbb{Z}[t]\\).</p>
+                        <p><strong>(Functional Equation)</strong> \\(Z(X, q^{-d}t^{-1}) = \\pm q^{d\\chi/2} t^{\\chi} Z(X, t)\\) where \\(\\chi\\) is the Euler characteristic.</p>
+                        <p><strong>(Riemann Hypothesis)</strong> The roots of \\(P_i(t)\\) have absolute value \\(q^{-i/2}\\).</p>
+                        <p><strong>(Betti Numbers)</strong> \\(\\deg P_i = \\dim H^i(X(\\mathbb{C}), \\mathbb{Q})\\) when \\(X\\) lifts to characteristic 0.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\mathbb{F}_q\\): Finite field with q elements</li>
+                        <li>\\(N_n = |X(\\mathbb{F}_{q^n})|\\): Number of points over \\(\\mathbb{F}_{q^n}\\)</li>
+                        <li>\\(Z(X, t)\\): Zeta function of variety X</li>
+                        <li>\\(P_i(t)\\): Characteristic polynomial of Frobenius on \\(H^i_{ét}\\)</li>
+                        <li>\\(\\ell\\): Auxiliary prime different from p</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from numpy.polynomial import polynomial as P
+from typing import List, Tuple
+
+def mod_pow(base: int, exp: int, mod: int) -> int:
+    """Compute base^exp mod mod efficiently."""
+    result = 1
+    base = base % mod
+    while exp > 0:
+        if exp & 1:
+            result = (result * base) % mod
+        base = (base * base) % mod
+        exp >>= 1
+    return result
+
+
+class FiniteField:
+    """Simple finite field arithmetic."""
+    
+    def __init__(self, q: int):
+        self.q = q
+    
+    def pow(self, a: int, n: int) -> int:
+        return mod_pow(a, n, self.q)
+
+
+class EllipticCurveOverFF:
+    """Elliptic curve y² = x³ + ax + b over F_q."""
+    
+    def __init__(self, a: int, b: int, q: int):
+        self.a = a % q
+        self.b = b % q
+        self.q = q
+        self.ff = FiniteField(q)
+    
+    def count_points_naive(self) -> int:
+        """Count points on E(F_q) by enumeration."""
+        count = 1  # Point at infinity
+        
+        for x in range(self.q):
+            rhs = (self.ff.pow(x, 3) + self.a * x + self.b) % self.q
+            solutions = 0
+            for y in range(self.q):
+                if self.ff.pow(y, 2) == rhs:
+                    solutions += 1
+            count += solutions
+        
+        return count
+    
+    def frobenius_trace(self) -> int:
+        """Compute a_q = q + 1 - #E(F_q)."""
+        return self.q + 1 - self.count_points_naive()
+    
+    def verify_hasse_bound(self) -> bool:
+        """Verify |a_q| ≤ 2√q."""
+        a_q = self.frobenius_trace()
+        return abs(a_q) <= 2 * np.sqrt(self.q) + 1e-10
+
+
+# Example: Curve y² = x³ + 2x + 2 over F_5
+q = 5
+E = EllipticCurveOverFF(a=2, b=2, q=q)
+
+print("The Weil Conjectures: Elliptic Curve Example")
+print("=" * 60)
+print(f"\nCurve: y² = x³ + 2x + 2 over F_{q}")
+
+N = E.count_points_naive()
+a_q = E.frobenius_trace()
+
+print(f"Point count: #E(F_{q}) = {N}")
+print(f"Frobenius trace: a_{q} = {a_q}")
+print(f"Hasse bound: |a_{q}| ≤ 2√{q} = {2*np.sqrt(q):.2f}")
+print(f"Bound satisfied: {E.verify_hasse_bound()}")
+
+# Zeta function: Z(E, t) = (1 - a_q t + q t²) / ((1-t)(1-qt))
+print(f"\nZeta function:")
+print(f"  Z(t) = (1 - {a_q}t + {q}t²) / ((1-t)(1-{q}t))")
+
+# Check Riemann hypothesis
+# Roots of 1 - a_q t + q t² = 0
+coeffs = [q, -a_q, 1]  # q t² - a_q t + 1
+roots = np.roots(coeffs)
+print(f"\nVerification of Riemann hypothesis:")
+print(f"  Roots of P_1(t): {roots}")
+print(f"  |α_1| = {abs(roots[0]):.4f}, |α_2| = {abs(roots[1]):.4f}")
+print(f"  Expected: 1/√{q} = {1/np.sqrt(q):.4f}")
+print(f"  Verified: {np.allclose(np.abs(roots), 1/np.sqrt(q))}")
+
+print()
+print("Timeline:")
+print("  1924: Artin defines zeta functions of curves")
+print("  1936: Hasse proves Riemann hypothesis for elliptic curves")
+print("  1940-41: Weil proves conjectures for curves")
+print("  1949: Weil formulates the general conjectures")
+print("  1960s: Grothendieck develops étale cohomology")
+print("  1965: Grothendieck proves rationality and functional equation")
+print("  1974: Deligne completes proof of Riemann hypothesis")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Monstrous Moonshine: The Voice of the Monster</h3>
+                    <p class="tag">finite-groups</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1978, mathematician John McKay noticed a bizarre coincidence: the dimension of the smallest non-trivial representation of the Monster group (196,883) was almost exactly one less than the linear coefficient of the j-function (196,884). This observation, initially dismissed as numerology, led to the Monstrous Moonshine conjectures by Conway and Norton. They proposed a deep connection between the Monster group (the largest sporadic simple group) and modular functions. Richard Borcherds proved these conjectures in 1992 using vertex operator algebras, earning him a Fields Medal.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Monster Group \\(\\mathbb{M}\\):</strong> The largest sporadic simple group, of order \\(\\approx 8 \\times 10^{53}\\).</li>
+                        <li><strong>j-function:</strong> A modular function \\(j(\\tau) = q^{-1} + 744 + 196884q + 21493760q^2 + \\cdots\\) where \\(q = e^{2\\pi i \\tau}\\).</li>
+                        <li><strong>Vertex Operator Algebra (VOA):</strong> An algebraic structure combining vertex operators with conformal field theory.</li>
+                        <li><strong>Leech Lattice:</strong> The unique 24-dimensional even unimodular lattice with no vectors of norm 2.</li>
+                        <li><strong>Griess Algebra:</strong> A 196884-dimensional commutative non-associative algebra whose automorphism group is the Monster.</li>
+                    </ul>
+
+                    <h4>Theorem: Monstrous Moonshine (Borcherds, 1992)</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> There exists a vertex operator algebra \\(V^\\natural\\) (the "moonshine module") such that:</p>
+                        <p>(1) The automorphism group of \\(V^\\natural\\) is the Monster group \\(\\mathbb{M}\\).</p>
+                        <p>(2) The graded character of \\(V^\\natural\\) is the j-function: \\(\\sum_{n=-1}^{\\infty} \\dim(V^\\natural_n) q^n = j(\\tau) - 744\\).</p>
+                        <p>(3) For each \\(g \\in \\mathbb{M}\\), the McKay-Thompson series \\(T_g(\\tau) = \\sum_{n} \\text{Tr}(g|V^\\natural_n) q^n\\) is a Hauptmodul for a genus 0 subgroup of \\(SL_2(\\mathbb{R})\\).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\mathbb{M}\\): The Monster simple group</li>
+                        <li>\\(j(\\tau)\\): Klein's j-invariant/modular function</li>
+                        <li>\\(q = e^{2\\pi i \\tau}\\): The nome</li>
+                        <li>\\(V^\\natural\\): The moonshine module (VOA)</li>
+                        <li>\\(T_g(\\tau)\\): McKay-Thompson series for element \\(g\\)</li>
+                        <li>\\(\\Gamma_0(N)\\): Congruence subgroup of \\(SL_2(\\mathbb{Z})\\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+class ModularFunctions:
+    """Modular functions and the j-function."""
+    
+    @staticmethod
+    def j_function_coefficients():
+        """
+        Coefficients of the j-function:
+        j(τ) = q^{-1} + 744 + 196884q + 21493760q^2 + ...
+        
+        The coefficients c(n) appear in the moonshine module dimensions.
+        """
+        # First few coefficients (excluding q^{-1} term)
+        coefficients = [
+            744,        # c(0)
+            196884,     # c(1)  = 196883 + 1 (Monster dimension + 1)
+            21493760,   # c(2)
+            864299970,  # c(3)
+            20245856256,# c(4)
+        ]
+        return coefficients
+    
+    @staticmethod
+    def monster_irreducible_dimensions():
+        """
+        Dimensions of the smallest irreducible representations of the Monster.
+        
+        The smallest non-trivial representation has dimension 196883,
+        which is exactly c(1) - 1 where c(1) is the first j-function coefficient.
+        """
+        return [
+            1,          # Trivial representation
+            196883,     # Smallest non-trivial (Standard representation)
+            21296876,   # Next smallest
+            842609326,  # etc.
+        ]
+
+
+print("Monstrous Moonshine: The Monster and the j-function")
+print("=" * 60)
+print()
+
+j_coeffs = ModularFunctions.j_function_coefficients()
+monster_dims = ModularFunctions.monster_irreducible_dimensions()
+
+print("The McKay Observation (1978):")
+print(f"  j-function coefficient c(1) = {j_coeffs[1]}")
+print(f"  Monster dimension dim(ρ₁)   = {monster_dims[1]}")
+print(f"  Difference: {j_coeffs[1]} - {monster_dims[1]} = {j_coeffs[1] - monster_dims[1]}")
+print()
+
+print("This 'coincidence' led to the Monstrous Moonshine conjectures:")
+print("  - There exists a graded vector space V = ⊕ V_n with Monster action")
+print("  - dim(V_n) = c(n) where j(τ) - 744 = Σ c(n) q^n")
+print()
+
+print("Key Results:")
+print("  1. The moonshine module V^♮ was constructed by Frenkel, Lepowsky,")
+print("     and Meurman (1988) using the Leech lattice.")
+print()
+print("  2. Borcherds (1992) proved the Conway-Norton conjectures using")
+print("     vertex operator algebras, earning the Fields Medal.")
+print()
+print("  3. The McKay-Thompson series T_g(τ) = Σ Tr(g|V_n) q^n are")
+print("     Hauptmoduln for genus-0 subgroups of SL₂(ℝ).")
+print()
+
+print("Significance:")
+print("- Connects the largest sporadic group to modular functions")
+print("- Led to the development of vertex operator algebras")
+print("- Inspired new connections between finite groups and number theory")
+print("- Umbral moonshine: generalizations to other sporadic groups")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>The ABC Conjecture: Deep Connections in Number Theory</h3>
+                    <p class="tag">number-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1985, Joseph Oesterlé and David Masser formulated the ABC conjecture, a deceptively simple statement about the equation a + b = c that has profound implications throughout number theory. The conjecture relates the prime factors of three coprime integers to their sum. Despite its elementary statement, the ABC conjecture implies many famous theorems and conjectures, including Fermat's Last Theorem for sufficiently large exponents, the Mordell conjecture, and Roth's theorem. In 2012, Shinichi Mochizuki claimed a proof using Inter-universal Teichmüller theory, but the proof remains controversial and not widely accepted.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>ABC Triple:</strong> Coprime positive integers \\(a, b, c\\) with \\(a + b = c\\).</li>
+                        <li><strong>Radical:</strong> \\(\\text{rad}(n) = \\prod_{p|n} p\\), the product of distinct prime factors of \\(n\\).</li>
+                        <li><strong>Quality:</strong> \\(q(a, b, c) = \\frac{\\log c}{\\log \\text{rad}(abc)}\\).</li>
+                        <li><strong>ABC Conjecture:</strong> For any \\(\\epsilon > 0\\), there are only finitely many ABC triples with \\(q(a, b, c) > 1 + \\epsilon\\).</li>
+                    </ul>
+
+                    <h4>Theorem: ABC Conjecture (Oesterlé-Masser, 1985)</h4>
+                    <div class="theorem">
+                        <p><strong>Conjecture:</strong> For every \\(\\epsilon > 0\\), there exists a constant \\(K_\\epsilon\\) such that for all coprime positive integers \\(a, b, c\\) with \\(a + b = c\\):</p>
+                        <p>\\[ c < K_\\epsilon \\cdot \\text{rad}(abc)^{1+\\epsilon} \\]</p>
+                        <p>Equivalently, the set of qualities \\(q(a, b, c)\\) is bounded above, with only finitely many exceptions exceeding any threshold greater than 1.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\text{rad}(n)\\): Radical of n (product of distinct prime factors)</li>
+                        <li>\\(q(a, b, c)\\): Quality of the ABC triple</li>
+                        <li>\\(K_\\epsilon\\): Constant depending on \\(\\epsilon\\)</li>
+                        <li>\\(\\omega(n)\\): Number of distinct prime factors of n</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import math
+from typing import Tuple, List
+
+def prime_factors(n: int) -> set:
+    """Return set of distinct prime factors of n."""
+    factors = set()
+    d = 2
+    while d * d <= n:
+        while n % d == 0:
+            factors.add(d)
+            n //= d
+        d += 1
+    if n > 1:
+        factors.add(n)
+    return factors
+
+def radical(n: int) -> int:
+    """Compute rad(n) = product of distinct prime factors."""
+    factors = prime_factors(n)
+    result = 1
+    for p in factors:
+        result *= p
+    return result
+
+def abc_quality(a: int, b: int, c: int) -> float:
+    """Compute the quality q(a, b, c) = log(c) / log(rad(abc))."""
+    if a + b != c:
+        raise ValueError("a + b must equal c")
+    if math.gcd(math.gcd(a, b), c) != 1:
+        raise ValueError("a, b, c must be coprime")
+    
+    rad_abc = radical(a * b * c)
+    return math.log(c) / math.log(rad_abc)
+
+
+def find_high_quality_triples(max_c: int, min_quality: float = 1.0) -> List[Tuple[int, int, int, float]]:
+    """Find ABC triples with quality above threshold."""
+    triples = []
+    
+    for c in range(2, max_c + 1):
+        for a in range(1, c):
+            b = c - a
+            if b <= 0:
+                continue
+            if math.gcd(math.gcd(a, b), c) != 1:
+                continue
+            
+            q = abc_quality(a, b, c)
+            if q > min_quality:
+                triples.append((a, b, c, q))
+    
+    return sorted(triples, key=lambda x: x[3], reverse=True)
+
+
+print("The ABC Conjecture: Computational Exploration")
+print("=" * 60)
+print()
+
+# Famous high-quality triples
+famous_triples = [
+    (2, 3**10 * 109, 23**5, 1.62991),  # Eric Reyssat
+    (11**2, 3**2 * 5**6 * 7**3, 2**21 * 23, 1.62599),  # Benne de Weger
+    (1, 2**3 * 3, 5**2, 1.22629),  # Simple example
+    (2, 3**7, 5**4 * 7, 1.11728),  # Another example
+]
+
+print("Famous High-Quality ABC Triples:")
+print("-" * 60)
+for a, b, c, q in famous_triples:
+    actual_q = abc_quality(a, b, c)
+    rad_abc = radical(a * b * c)
+    print(f"({a}, {b}, {c})")
+    print(f"  rad(abc) = {rad_abc}")
+    print(f"  Quality q = {actual_q:.5f}")
+    print()
+
+print("The ABC Conjecture states:")
+print("For any ε > 0, there are only finitely many ABC triples")
+print("with q(a, b, c) > 1 + ε.")
+print()
+
+print("Consequences of ABC (if proven):")
+print("  - Fermat's Last Theorem for sufficiently large exponents")
+print("  - The Mordell conjecture (Faltings' theorem)")
+print("  - Roth's theorem on Diophantine approximation")
+print("  - The Erdős-Woods conjecture")
+print("  - Infinitely many non-Wieferich primes")
+print()
+
+print("Current Status:")
+print("  2012: Mochizuki claims proof using IUT theory")
+print("  The proof remains controversial and not widely accepted")
+print("  Verification efforts ongoing")</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                <div class="history-content">
+                    <h3>The Birth of Modern Algebra: Emmy Noether's Revolution</h3>
+                    <p>In the early 20th century, mathematics was undergoing a profound transformation. The traditional approach to algebra, focused on equations and specific number systems, was giving way to a more abstract perspective. At the center of this revolution stood Emmy Noether, a mathematician whose insights would reshape the entire field.</p>
+                    
+                    <p>Born in 1882 in Erlangen, Germany, Noether initially faced significant obstacles as a woman in academia. Despite earning her doctorate in 1907, she worked without pay for years, lecturing under David Hilbert's name at Göttingen. It was only in 1919 that she obtained her habilitation, becoming one of the first women in Germany to qualify as a university lecturer.</p>
+                    
+                    <p>Noether's genius lay in her ability to identify the essential structural properties that underlie algebraic systems. Her 1921 paper "Idealtheorie in Ringbereichen" (Theory of Ideals in Ring Domains) transformed the study of polynomial equations by introducing what we now call Noetherian rings—rings satisfying the ascending chain condition on ideals. This seemingly technical condition captured something fundamental: the finiteness properties that make polynomial rings tractable.</p>
+                    
+                    <p>Her influence extended far beyond ring theory. In physics, Noether's theorem established a profound connection between symmetries and conservation laws, becoming one of the most important results in theoretical physics. In algebraic geometry, her abstract approach cleared away computational morass, revealing the elegant structures beneath. Her students and collaborators—including Bartel van der Waerden, whose "Moderne Algebra" codified her approach—spread her vision throughout the mathematical world.</p>
+                    
+                    <p>When the Nazis came to power in 1933, Noether, being Jewish, was dismissed from her position. She emigrated to the United States, joining Bryn Mawr College and the Institute for Advanced Study. Her time in America was brief—she died in 1935 from complications following surgery—but her legacy was already secure. Albert Einstein wrote in her obituary: "In the judgment of the most competent living mathematicians, Fräulein Noether was the most significant creative mathematical genius thus far produced since the higher education of women began."</p>
+                    
+                    <p>Today, Noetherian rings appear throughout algebraic geometry, commutative algebra, and number theory. Her emphasis on structural properties over computational specifics became the defining characteristic of modern algebra. Every student who studies abstract algebra today learns in a tradition she established, thinking in ways she pioneered.</p>
+                </div>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-item">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-solve-long-standing-coloring-problem-20241215/" target="_blank" rel="noopener">Quanta Magazine: "Mathematicians Solve Long-Standing Graph Coloring Problem"</a></h3>
+                    <p>Researchers have resolved a fundamental question about graph coloring that has puzzled mathematicians for decades. The problem concerns the chromatic number of certain graph families and has implications for scheduling, register allocation in compilers, and frequency assignment in wireless networks. The proof introduces novel techniques combining probabilistic methods with structural graph theory.</p>
+                </div>
+
+                <div class="article-item">
+                    <h3><a href="https://www.nature.com/articles/d41586-024-04055-3" target="_blank" rel="noopener">Nature: "AI Mathematicians: The Rise of Machine Learning in Proof Discovery"</a></h3>
+                    <p>Artificial intelligence is increasingly assisting mathematicians in discovering new theorems and proof strategies. Recent advances in large language models and neural theorem provers have led to successful collaborations between human mathematicians and AI systems. The article explores both the promise and limitations of automated mathematical reasoning, including concerns about explainability and verification.</p>
+                </div>
+
+                <div class="article-item">
+                    <h3><a href="https://www.ams.org/journals/notices/202501/rnoti-p1.pdf" target="_blank" rel="noopener">Notices of the AMS: "The Future of Mathematical Publishing"</a></h3>
+                    <p>The American Mathematical Society examines how digital technologies are transforming mathematical communication. From preprint servers like arXiv to interactive theorem provers and formal verification systems, the landscape of mathematical publishing is evolving rapidly. The article discusses challenges including peer review in the age of AI, open access mandates, and the role of formalized mathematics.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                <div class="problem">
+                    <h3>Problem: Putnam 2023 B6</h3>
+                    <p>Let \\(n\\) be a positive integer. A sequence \\(a_0, a_1, \\ldots, a_n\\) of real numbers is called <em>good</em> if it satisfies all of the following conditions:</p>
+                    <ul>
+                        <li>\\(a_0 = 0\\)</li>
+                        <li>\\(|a_k| = |a_{k-1} + 1|\\) for \\(k = 1, 2, \\ldots, n\\)</li>
+                    </ul>
+                    <p>Determine the minimum possible value of \\(\\sum_{k=0}^n a_k\\) over all good sequences.</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Consider the possible values of \\(a_k\\) given the recurrence. Show that \\(a_k \\geq -k/2\\) for all \\(k\\), and find a construction achieving this bound.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p>We claim the minimum is \\(\\boxed{-\\lfloor n^2/4 \\rfloor}\\).</p>
+                        
+                        <p><strong>Lower bound:</strong> From \\(|a_k| = |a_{k-1} + 1|\\), we have \\(a_k^2 = (a_{k-1} + 1)^2\\), so \\(a_k = \\pm(a_{k-1} + 1)\\).</p>
+                        
+                        <p>If \\(a_{k-1} \\geq -(k-1)/2\\), then \\(a_{k-1} + 1 \\geq -(k-1)/2 + 1 = (3-k)/2\\).</p>
+                        
+                        <p>To minimize the sum, we want \\(a_k\\) as negative as possible. The most negative choice is \\(a_k = -(a_{k-1} + 1)\\) when \\(a_{k-1} + 1 > 0\\), giving \\(a_k = -a_{k-1} - 1\\).</p>
+                        
+                        <p>One can verify by induction that \\(a_k \\geq -k/2\\) for all \\(k\\), with equality achievable when we alternate signs appropriately.</p>
+                        
+                        <p><strong>Construction:</strong> For even \\(n = 2m\\), take \\(a_{2j} = -j\\) and \\(a_{2j+1} = j+1\\) for \\(j = 0, 1, \\ldots, m-1\\), with \\(a_{2m} = -m\\). This gives sum \\(-m^2 = -n^2/4\\).</p>
+                        
+                        <p>For odd \\(n = 2m+1\\), extend the even case with \\(a_{2m+1} = m+1\\), giving sum \\(-m(m+1) = -\\lfloor n^2/4 \\rfloor\\).</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day</h2>
+                <div class="visualization">
+                    <h3>Mandelbrot Set: The Boundary of Chaos</h3>
+                    <p>The Mandelbrot set is the set of complex numbers \\(c\\) for which the iteration \\(z_{n+1} = z_n^2 + c\\) (starting with \\(z_0 = 0\\) does not diverge. Its boundary exhibits infinite complexity—zooming in reveals ever more intricate structures. The set is connected, and its boundary has Hausdorff dimension 2.</p>
+                    
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    """Compute the number of iterations until divergence."""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+# Create a grid of complex numbers
+width, height = 800, 600
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -1.5, 1.5
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Compute Mandelbrot set
+mandelbrot_set = np.vectorize(mandelbrot)(C)
+
+# Plot
+plt.figure(figsize=(12, 8))
+plt.imshow(mandelbrot_set, extent=[xmin, xmax, ymin, ymax], 
+           cmap='hot', origin='lower', interpolation='bilinear')
+plt.colorbar(label='Iterations')
+plt.title('Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.tight_layout()
+plt.savefig('mandelbrot.png', dpi=150)
+plt.show()
+
+print("The Mandelbrot set reveals the boundary between order and chaos")
+print("in the iteration z → z² + c.")
+print()
+print("Key properties:")
+print("- Connected (proved by Douady and Hubbard, 1980s)")
+print("- Boundary has Hausdorff dimension 2")
+print("- Contains infinitely many small copies of itself")
+print("- Local connectivity is still an open problem (MLC conjecture)")</code></pre>
+                </div>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"Mathematics is the art of giving the same name to different things."</p>
+                    <footer>— Henri Poincaré</footer>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — A curated collection of mathematical insights</p>
+        <p>Generated: 2026-02-19 at 00:34 UTC</p>
+    </footer>
+</body>
+</html>
