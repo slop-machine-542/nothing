@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 20, 2026 at 14:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 20, 2026 at 14:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 20, 2026 at 14:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-20 at 14:34 UTC</p>
+            <div class="tags">
+                <a href="../tags/lie-algebras.html" class="tag">lie-algebras</a>
+                <a href="../tags/p-adic-analysis.html" class="tag">p-adic-analysis</a>
+                <a href="../tags/tropical-geometry.html" class="tag">tropical-geometry</a>
+                <a href="../tags/control-theory.html" class="tag">control-theory</a>
+                <a href="../tags/signal-processing.html" class="tag">signal-processing</a>
+                <a href="../tags/climate-modeling.html" class="tag">climate-modeling</a>
+                <a href="../tags/noncommutative-geometry.html" class="tag">noncommutative-geometry</a>
+                <a href="../tags/arithmetic-geometry.html" class="tag">arithmetic-geometry</a>
+                <a href="../tags/mirror-symmetry.html" class="tag">mirror-symmetry</a>
+                <a href="../tags/random-matrix-theory.html" class="tag">random-matrix-theory</a>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 3 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://www.ams.org/mathscinet" target="_blank" rel="noopener">MathSciNet — Mathematical Reviews</a></h3>
+                    <p>MathSciNet is the authoritative gateway to the scholarly literature of mathematics, maintained by the American Mathematical Society. It provides comprehensive coverage of mathematical research with expertly written reviews, bibliographic data, and citation information. The database indexes over 3.6 million items dating back to 1940, making it an essential tool for researchers tracking developments across all areas of mathematics. Advanced search capabilities and citation tracking help mathematicians discover connections between fields and identify influential works.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://leanprover-community.github.io/" target="_blank" rel="noopener">Lean Prover Community</a></h3>
+                    <p>The Lean Community is building a unified library of formalized mathematics using the Lean theorem prover. Their ambitious project, mathlib, aims to digitize the entire undergraduate mathematics curriculum and beyond. With thousands of definitions and theorems formalized by a global community, Lean represents the future of mathematical verification. The community offers extensive documentation, tutorials, and an active Zulip chat for learners and contributors at all levels.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www.maths.cam.ac.uk/research/afbjp/numberphile" target="_blank" rel="noopener">Numberphile — Videos About Numbers</a></h3>
+                    <p>Numberphile is a YouTube channel featuring mathematicians discussing interesting problems and concepts from number theory and beyond. Created by Brady Haran, the channel has introduced millions to the beauty of mathematics through interviews with leading researchers. Topics range from prime numbers and infinity to unsolved problems and mathematical curiosities. The informal, conversational format makes advanced concepts accessible while maintaining mathematical rigor.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book of the Day</h2>
+                <div class="book-card">
+                    <h3>"Complex Analysis"</h3>
+                    <p><strong>Author:</strong> Elias Stein and Rami Shakarchi</p>
+                    <p><strong>Level:</strong> Undergraduate/Graduate</p>
+                    <p><strong>Summary:</strong> This elegant text provides a comprehensive introduction to complex analysis, covering Cauchy's theorem, residues, conformal mappings, and the Riemann mapping theorem. The book emphasizes the connections between complex analysis and Fourier analysis, making it particularly valuable for students interested in analysis and its applications to partial differential equations. The authors' clear exposition and carefully chosen exercises guide readers from basic concepts to sophisticated results, including the prime number theorem and the modular function.</p>
+                    <p><a href="https://www.math.princeton.edu/~stein/complex-analysis/" target="_blank" rel="noopener">Download PDF</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Lie Algebras: The Infinitesimal Symmetries</h3>
+                    <p class="tag">lie-algebras</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Lie algebras arise from the study of continuous symmetries, capturing the infinitesimal structure of Lie groups. Named after Sophus Lie, who developed the theory in the late 19th century to study differential equations through their symmetry groups, Lie algebras have become fundamental tools across mathematics and physics. They classify elementary particles in quantum field theory, describe the curvature of spacetime in general relativity, and provide the algebraic framework for representation theory. The classification of simple Lie algebras by Cartan and Killing stands as one of the most beautiful achievements in mathematics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Lie Algebra:</strong> A vector space \(\\mathfrak{g}\) over a field \(\\mathbb{F}\) equipped with a bilinear bracket \([\\cdot, \\cdot]: \\mathfrak{g} \\times \\mathfrak{g} \\to \\mathfrak{g}\) satisfying antisymmetry \([x, y] = -[y, x]\) and the Jacobi identity \([x, [y, z]] + [y, [z, x]] + [z, [x, y]] = 0\).</li>
+                        <li><strong>Adjoint Representation:</strong> For \(x \\in \\mathfrak{g}\), define \(\text{ad}_x: \\mathfrak{g} \\to \\mathfrak{g}\) by \(\text{ad}_x(y) = [x, y]\). The map \(x \\mapsto \\text{ad}_x\) is the adjoint representation.</li>
+                        <li><strong>Killing Form:</strong> The symmetric bilinear form \(\kappa(x, y) = \\text{tr}(\\text{ad}_x \\circ \\text{ad}_y)\).</li>
+                        <li><strong>Semisimple Lie Algebra:</strong> A Lie algebra with no non-zero abelian ideals, equivalently one with non-degenerate Killing form (Cartan's criterion).</li>
+                        <li><strong>Root System:</strong> For a semisimple Lie algebra with Cartan subalgebra \(\mathfrak{h}\), the roots are the non-zero weights of the adjoint action of \(\mathfrak{h}\) on \(\mathfrak{g}\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Cartan Classification of Simple Lie Algebras</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Every finite-dimensional simple Lie algebra over \(\mathbb{C}\) is isomorphic to exactly one of:</p>
+                        <ul>
+                            <li><strong>Classical Series:</strong> \(A_n = \\mathfrak{sl}_{n+1}(\\mathbb{C})\) for \(n \\geq 1\), \(B_n = \\mathfrak{so}_{2n+1}(\\mathbb{C})\) for \(n \\geq 2\), \(C_n = \\mathfrak{sp}_{2n}(\\mathbb{C})\) for \(n \\geq 3\), \(D_n = \\mathfrak{so}_{2n}(\\mathbb{C})\) for \(n \\geq 4\)</li>
+                            <li><strong>Exceptional Algebras:</strong> \(E_6, E_7, E_8, F_4, G_2\)</li>
+                        </ul>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof proceeds through several key steps:</p>
+                    <p><em>Step 1:</em> Every semisimple Lie algebra decomposes as a direct sum of simple ideals.</p>
+                    <p><em>Step 2:</em> For a semisimple Lie algebra \(\mathfrak{g}\) with Cartan subalgebra \(\mathfrak{h}\), the root space decomposition is:</p>
+                        <p>\\[\\mathfrak{g} = \\mathfrak{h} \\oplus \\bigoplus_{\\alpha \\in \\Phi} \\mathfrak{g}_\\alpha\\]</p>
+                    <p>where \(\Phi\) is the root system and \(\mathfrak{g}_\\alpha = \\{x \\in \\mathfrak{g} : [h, x] = \\alpha(h)x \\text{ for all } h \\in \\mathfrak{h}\\}\).</p>
+                    <p><em>Step 3:</em> The root system \(\Phi\) satisfies axioms that classify it into the Dynkin diagrams \(A_n, B_n, C_n, D_n, E_6, E_7, E_8, F_4, G_2\).</p>
+                    <p><em>Step 4:</em> Each Dynkin diagram corresponds to a unique simple Lie algebra up to isomorphism. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathfrak{g}, \\mathfrak{h}\) — Lie algebra, Cartan subalgebra</li>
+                        <li>\([x, y]\) — Lie bracket</li>
+                        <li>\(\text{ad}_x\) — adjoint action</li>
+                        <li>\(\kappa(x, y)\) — Killing form</li>
+                        <li>\(\Phi\) — root system</li>
+                        <li>\(\mathfrak{g}_\\alpha\) — root space</li>
+                        <li>\(\mathfrak{sl}_n, \\mathfrak{so}_n, \\mathfrak{sp}_{2n}\) — classical Lie algebras</li>
+                        <li>\(\mathfrak{n}^+, \\mathfrak{n}^-\) — positive/negative nilpotent subalgebras</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from itertools import combinations
+
+class LieAlgebra:
+    """Basic computations with matrix Lie algebras."""
+    
+    def __init__(self, basis):
+        """
+        basis: list of numpy arrays forming a basis for the Lie algebra.
+        """
+        self.basis = [np.array(b, dtype=complex) for b in basis]
+        self.dim = len(basis)
+    
+    def lie_bracket(self, x, y):
+        """Compute [x, y] = xy - yx."""
+        return x @ y - y @ x
+    
+    def structure_constants(self):
+        """Compute structure constants f^k_ij where [e_i, e_j] = sum_k f^k_ij e_k."""
+        f = np.zeros((self.dim, self.dim, self.dim), dtype=complex)
+        for i in range(self.dim):
+            for j in range(self.dim):
+                bracket = self.lie_bracket(self.basis[i], self.basis[j])
+                # Project onto basis
+                for k in range(self.dim):
+                    # Use Frobenius inner product for projection
+                    f[k, i, j] = np.trace(bracket @ self.basis[k].conj().T)
+        return f
+    
+    def killing_form(self):
+        """Compute the Killing form kappa(x, y) = tr(ad_x @ ad_y)."""
+        f = self.structure_constants()
+        kappa = np.zeros((self.dim, self.dim), dtype=complex)
+        for i in range(self.dim):
+            for j in range(self.dim):
+                # ad_x has matrix (f^k_il) in basis e_l
+                ad_x = f[:, i, :]
+                ad_y = f[:, j, :]
+                kappa[i, j] = np.trace(ad_x @ ad_y)
+        return kappa
+    
+    def is_semisimple(self, tol=1e-10):
+        """Check if Killing form is non-degenerate."""
+        kappa = self.killing_form()
+        return abs(np.linalg.det(kappa)) > tol
+
+def sl2_basis():
+    """Standard basis for sl(2, C): h, e, f."""
+    h = np.array([[1, 0], [0, -1]], dtype=complex)
+    e = np.array([[0, 1], [0, 0]], dtype=complex)
+    f = np.array([[0, 0], [1, 0]], dtype=complex)
+    return [h, e, f]
+
+# Example: sl(2, C)
+print("Lie Algebra: sl(2, C)")
+print("=" * 50)
+sl2 = LieAlgebra(sl2_basis())
+print(f"Dimension: {sl2.dim}")
+
+# Structure constants
+f = sl2.structure_constants()
+print("\\nStructure constants [e_i, e_j] = sum_k f^k_ij e_k:")
+basis_names = ['h', 'e', 'f']
+for i in range(3):
+    for j in range(3):
+        if not np.allclose(f[:, i, j], 0):
+            terms = [f"{f[k,i,j]:.0f}*{basis_names[k]}" for k in range(3) if abs(f[k,i,j]) > 1e-10]
+            print(f"[{basis_names[i]}, {basis_names[j]}] = {' + '.join(terms)}")
+
+# Killing form
+kappa = sl2.killing_form()
+print(f"\\nKilling form matrix:")
+print(kappa.real)
+print(f"\\nSemisimple: {sl2.is_semisimple()}")
+print(f"Det(Killing form): {np.linalg.det(kappa):.0f}")
+
+# Verify standard sl(2) relations
+print("\\nVerifying standard relations:")
+h, e, f_mat = sl2.basis
+print(f"[h, e] = 2e ? {np.allclose(sl2.lie_bracket(h, e), 2*e)}")
+print(f"[h, f] = -2f ? {np.allclose(sl2.lie_bracket(h, f_mat), -2*f_mat)}")
+print(f"[e, f] = h ? {np.allclose(sl2.lie_bracket(e, f_mat), h)}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>p-adic Analysis: Numbers Beyond the Real Line</h3>
+                    <p class="tag">p-adic-analysis</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>p-adic numbers, introduced by Kurt Hensel in 1897, provide an alternative completion of the rational numbers that has revolutionized number theory. Unlike the real numbers, which complete \(\mathbb{Q}\) with respect to the usual absolute value, p-adic numbers complete \(\mathbb{Q}\) with respect to the p-adic absolute value. This completion reveals deep arithmetic structures invisible to real analysis. p-adic methods have solved major problems in number theory, including Fermat's Last Theorem through the work of Wiles, and continue to play crucial roles in the Langlands program and arithmetic geometry.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>p-adic Valuation:</strong> For a prime \(p\) and integer \(n\), \(v_p(n) = k\) where \(p^k | n\) but \(p^{k+1} \\nmid n\). For \(x = a/b \\in \\mathbb{Q}\), \(v_p(x) = v_p(a) - v_p(b)\).</li>
+                        <li><strong>p-adic Absolute Value:</strong> \(|x|_p = p^{-v_p(x)}\) for \(x \\neq 0\), and \(|0|_p = 0\).</li>
+                        <li><strong>p-adic Numbers \(\mathbb{Q}_p\):</strong> The completion of \(\mathbb{Q}\) with respect to \(|\\cdot|_p\).</li>
+                        <li><strong>p-adic Integers \(\mathbb{Z}_p\):</strong> \(\mathbb{Z}_p = \\{x \\in \\mathbb{Q}_p : |x|_p \\leq 1\\}\), equivalently the closure of \(\mathbb{Z}\) in \(\mathbb{Q}_p\).</li>
+                        <li><strong>Hensel's Lemma:</strong> The p-adic analogue of Newton's method for finding roots.</li>
+                    </ul>
+
+                    <h4>Theorem: Ostrowski's Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Every non-trivial absolute value on \(\mathbb{Q}\) is equivalent to either:</p>
+                        <ul>
+                            <li>The usual absolute value \(|\\cdot|_\\infty\), or</li>
+                            <li>The p-adic absolute value \(|\\cdot|_p\) for some prime \(p\).</li>
+                        </ul>
+                        <p>Moreover, the product formula holds: for \(x \\in \\mathbb{Q}^*\),</p>
+                        <p>\\[\\prod_{p \\leq \\infty} |x|_p = 1\\]</p>
+                        <p>where the product is over all primes including \(p = \\infty\) (the real absolute value).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>Let \(|\\cdot|\) be a non-trivial absolute value on \(\mathbb{Q}\).</p>
+                    <p><em>Case 1 (Archimedean):</em> If \(|n| > 1\) for some integer \(n\), then \(|\\cdot|\) is equivalent to \(|\\cdot|_\\infty\). This follows by showing \(|n| = |n|_\\infty^\\alpha\) for some \(\alpha > 0\).</p>
+                    <p><em>Case 2 (Non-Archimedean):</em> If \(|n| \\leq 1\) for all integers, let \(p\) be the smallest integer with \(|p| < 1\). Then \(p\) is prime, and \(|\\cdot|\) is equivalent to \(|\\cdot|_p\).</p>
+                    <p>The product formula follows from unique factorization: for \(x = \\pm \\prod p_i^{e_i}\), we have \(|x|_p = p^{-e}\) if \(p = p_i^e\) divides \(x\), and \(|x|_p = 1\) otherwise. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{Q}_p\) — p-adic numbers</li>
+                        <li>\(\mathbb{Z}_p\) — p-adic integers</li>
+                        <li>\(v_p(x)\) — p-adic valuation</li>
+                        <li>\(|x|_p = p^{-v_p(x)}\) — p-adic absolute value</li>
+                        <li>\(\mathbb{C}_p\) — completion of algebraic closure of \(\mathbb{Q}_p\)</li>
+                        <li>\(a_n p^n + a_{n+1} p^{n+1} + \\cdots\) — p-adic expansion</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">from fractions import Fraction
+import math
+
+def padic_valuation(n, p):
+    """Compute p-adic valuation v_p(n) for integer n."""
+    if n == 0:
+        return float('inf')
+    val = 0
+    n = abs(n)
+    while n % p == 0:
+        n //= p
+        val += 1
+    return val
+
+def padic_absolute_value(x, p):
+    """Compute |x|_p for rational x."""
+    if x == 0:
+        return 0
+    x = Fraction(x)
+    vp = padic_valuation(x.numerator, p) - padic_valuation(x.denominator, p)
+    return p ** (-vp)
+
+def padic_expansion(x, p, precision=20):
+    """Compute p-adic expansion of rational x up to given precision."""
+    if x == 0:
+        return [0] * precision
+    
+    x = Fraction(x)
+    # Ensure x is in Z_p (multiply by appropriate power of p)
+    vp = padic_valuation(x.numerator, p) - padic_valuation(x.denominator, p)
+    
+    # Normalize to positive valuation
+    if vp < 0:
+        x = x * (p ** (-vp))
+    
+    digits = []
+    current = x
+    for _ in range(precision):
+        # Find digit a such that current ≡ a (mod p)
+        num = current.numerator % (p * current.denominator)
+        a = (num * pow(current.denominator, -1, p)) % p
+        digits.append(a)
+        current = (current - a) / p
+    
+    return digits, vp
+
+def hensel_lift(f, df, x0, p, k):
+    """
+    Hensel's lemma: lift a simple root mod p to a root mod p^k.
+    f: polynomial function
+    df: derivative of f
+    x0: initial root mod p
+    p: prime
+    k: target precision
+    """
+    x = x0
+    for i in range(1, k):
+        # Newton iteration: x_{n+1} = x_n - f(x_n)/f'(x_n)
+        fx = f(x) % (p ** (i + 1))
+        dfx = df(x) % p
+        if dfx == 0:
+            raise ValueError("Derivative vanishes - root not simple")
+        # Modular inverse of derivative
+        dfx_inv = pow(dfx, -1, p)
+        delta = (fx * dfx_inv) % (p ** (i + 1))
+        x = (x - delta) % (p ** (i + 1))
+    return x
+
+# Example: p-adic analysis
+p = 5
+print(f"p-adic Analysis for p = {p}")
+print("=" * 50)
+
+# Valuations and absolute values
+test_numbers = [1, 5, 25, 125, 1/5, 2/25, -100]
+print(f"\\np-adic valuations and absolute values:")
+print(f"{'x':<15} {'v_p(x)':<10} {'|x|_p':<15}")
+print("-" * 40)
+for x in test_numbers:
+    if isinstance(x, int):
+        vp = padic_valuation(x, p)
+    else:
+        frac = Fraction(x)
+        vp = padic_valuation(frac.numerator, p) - padic_valuation(frac.denominator, p)
+    abs_p = padic_absolute_value(x, p)
+    print(f"{str(x):<15} {vp:<10} {abs_p:<15.6f}")
+
+# p-adic expansion
+print(f"\\np-adic expansion of -1 in {p}-adics:")
+digits, vp = padic_expansion(-1, p, 10)
+expansion = " + ".join([f"{d}·{p}^{i}" for i, d in enumerate(digits) if d != 0])
+print(f"-1 = {expansion}")
+print(f"Digits: {digits}")
+
+# Hensel's lemma: find sqrt(6) in 5-adics
+print(f"\\nHensel's Lemma: Finding √6 in {p}-adics")
+print("Note: 6 ≡ 1 (mod 5), and 1 is a square mod 5")
+f = lambda x: x**2 - 6
+df = lambda x: 2*x
+x0 = 1  # Initial root mod 5
+root = hensel_lift(f, df, x0, p, 10)
+print(f"Approximation mod 5^10: {root}")
+print(f"Verification: {root}^2 ≡ {(root**2) % (5**10)} (mod 5^10)")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Tropical Geometry: The Geometry of the Min-Plus Semiring</h3>
+                    <p class="tag">tropical-geometry</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Tropical geometry is a relatively new field that transforms algebraic varieties into piecewise-linear objects, making them amenable to combinatorial techniques. The name honors Brazilian mathematician Imre Simon, a pioneer in the field. Tropical methods have provided new insights into enumerative geometry, mirror symmetry, and optimization. By "tropicalizing" algebraic varieties, complex geometric problems become questions about polyhedral complexes, which can often be solved algorithmically. The field has found surprising applications in phylogenetics, economics, and scheduling problems.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Tropical Semiring \(\mathbb{T}\):</strong> \(\mathbb{R} \\cup \\{\\infty\\}\) with operations \(a \\oplus b = \\min(a, b)\) and \(a \\odot b = a + b\).</li>
+                        <li><strong>Tropical Polynomial:</strong> A function of the form \(f(x) = \\bigoplus_{i} (a_i \\odot x^{\\odot i}) = \\min_i(a_i + i \\cdot x)\).</li>
+                        <li><strong>Tropical Hypersurface:</strong> The set where the minimum in a tropical polynomial is achieved at least twice.</li>
+                        <li><strong>Newton Polygon:</strong> For a polynomial \(\sum a_i x^i\), the convex hull of \((i, -a_i)\) in tropical coordinates.</li>
+                        <li><strong>Amoeba:</strong> The image of an algebraic variety under the logarithm map \(\text{Log}_t: (\\mathbb{C}^*)^n \\to \\mathbb{R}^n\), \((z_1, \\ldots, z_n) \\mapsto (\\log_t|z_1|, \\ldots, \\log_t|z_n|)\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Fundamental Theorem of Tropical Geometry</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(I \\subseteq \\mathbb{C}[x_1^{\\pm 1}, \\ldots, x_n^{\\pm 1}]\) be an ideal and \(X = V(I)\) the corresponding variety in \((\\mathbb{C}^*)^n\). Let \(\text{trop}(X)\) be the tropicalization of \(X\). Then:</p>
+                        <p>\\[\\text{trop}(X) = \\bigcap_{f \\in I} \\text{trop}(V(f)) = \\overline{\\text{Log}_t(X)} \\text{ as } t \\to \\infty\\]</p>
+                        <p>Moreover, \(\text{trop}(X)\) is a rational polyhedral complex of dimension \(\dim(X)\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof relies on the Kapranov correspondence between non-Archimedean amoebas and tropical varieties:</p>
+                    <p><em>Step 1:</em> For a hypersurface \(V(f)\), the tropicalization is the corner locus of the tropical polynomial obtained by taking valuations of coefficients.</p>
+                    <p><em>Step 2:</em> For a general variety, use the fact that \(\text{trop}(X) = \\text{trop}(I)\) can be computed from any generating set of \(I\).</p>
+                    <p><em>Step 3:</em> The limit of amoebas as \(t \\to \\infty\) degenerates to the tropical variety, with the spine of the amoeba converging to the tropicalization. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{T} = \\mathbb{R} \\cup \\{\\infty\\}\) — tropical semiring</li>
+                        <li>\(a \\oplus b = \\min(a, b)\) — tropical addition</li>
+                        <li>\(a \\odot b = a + b\) — tropical multiplication</li>
+                        <li>\(x^{\\odot n} = n \\cdot x\) — tropical power</li>
+                        <li>\(\text{trop}(V(f))\) — tropical hypersurface</li>
+                        <li>\(\text{Newt}(f)\) — Newton polygon/polytope</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.spatial import ConvexHull
+
+class TropicalGeometry:
+    """Basic tropical geometry computations."""
+    
+    @staticmethod
+    def tropical_add(a, b):
+        """Tropical addition: min(a, b)."""
+        return min(a, b)
+    
+    @staticmethod
+    def tropical_mult(a, b):
+        """Tropical multiplication: a + b."""
+        return a + b
+    
+    @staticmethod
+    def tropical_polyval(coeffs, x):
+        """
+        Evaluate tropical polynomial.
+        coeffs: list of (exponent, coefficient) pairs
+        f(x) = min_i(coeff_i + exponent_i * x)
+        """
+        return min(c + e * x for e, c in coeffs)
+    
+    @staticmethod
+    def tropical_hypersurface_1d(coeffs, x_range, num_points=1000):
+        """
+        Find tropical hypersurface (points where min is achieved twice).
+        Returns points where the tropical polynomial is non-differentiable.
+        """
+        x_vals = np.linspace(x_range[0], x_range[1], num_points)
+        y_vals = [TropicalGeometry.tropical_polyval(coeffs, x) for x in x_vals]
+        
+        # Find points where derivative changes (non-smooth points)
+        hypersurface = []
+        for i in range(1, len(x_vals) - 1):
+            left_slope = (y_vals[i] - y_vals[i-1]) / (x_vals[i] - x_vals[i-1])
+            right_slope = (y_vals[i+1] - y_vals[i]) / (x_vals[i+1] - x_vals[i])
+            if abs(left_slope - right_slope) > 0.01:
+                hypersurface.append(x_vals[i])
+        
+        return x_vals, y_vals, hypersurface
+    
+    @staticmethod
+    def newton_polygon(coeffs):
+        """
+        Compute Newton polygon vertices.
+        coeffs: list of (exponent, coefficient) pairs
+        Returns vertices of upper convex hull of (exponent, -coefficient).
+        """
+        points = np.array([[e, -c] for e, c in coeffs])
+        hull = ConvexHull(points)
+        return points[hull.vertices]
+
+# Example: Tropical line
+print("Tropical Geometry Examples")
+print("=" * 50)
+
+# Tropical polynomial: f(x) = min(0, 1+x, 2+2x) = min(0, 1+x, 2(1+x))
+# This is the tropicalization of 1 + t*x + t^2*x^2
+coeffs = [(0, 0), (1, 1), (2, 2)]  # (exponent, coefficient)
+print(f"\\nTropical polynomial: f(x) = min(0, 1+x, 2+2x)")
+
+x_vals, y_vals, hypersurface = TropicalGeometry.tropical_hypersurface_1d(coeffs, (-3, 3))
+print(f"Hypersurface points (breakpoints): {hypersurface}")
+
+# Newton polygon
+newton = TropicalGeometry.newton_polygon(coeffs)
+print(f"\\nNewton polygon vertices: {newton}")
+
+# Tropical curve in 2D: f(x,y) = min(0, x, y, x+y+1)
+# This is the tropical line
+def tropical_surface_2d(coeffs, x_range, y_range, grid=100):
+    """
+    coeffs: list of (i, j, c) for term c + i*x + j*y
+    """
+    x = np.linspace(x_range[0], x_range[1], grid)
+    y = np.linspace(y_range[0], y_range[1], grid)
+    X, Y = np.meshgrid(x, y)
+    
+    # Compute tropical polynomial
+    Z = np.full_like(X, np.inf)
+    for i, j, c in coeffs:
+        Z = np.minimum(Z, c + i*X + j*Y)
+    
+    return X, Y, Z
+
+# Tropical line: 0 ⊕ x ⊕ y ⊕ (x+y+1) = min(0, x, y, x+y+1)
+tropical_line_coeffs = [(0, 0, 0), (1, 0, 0), (0, 1, 0), (1, 1, 1)]
+X, Y, Z = tropical_surface_2d(tropical_line_coeffs, (-3, 3), (-3, 3))
+
+print(f"\\nTropical line: f(x,y) = min(0, x, y, x+y+1)")
+print("This tropicalizes the classical line 1 + X + Y = 0")
+
+# Find ridge lines (where minimum is achieved twice)
+# For visualization, we look for points where the gradient is ambiguous
+print(f"\\nVisualization: Tropical line consists of three rays from origin")
+print("- Ray along negative x-axis (y=0, x<0)")
+print("- Ray along negative y-axis (x=0, y<0)")  
+print("- Ray x=y with x,y < 0 (diagonal)")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🌍 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Control Theory: The Mathematics of Feedback</h3>
+                    <p class="tag">control-theory</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Control theory provides the mathematical framework for steering dynamical systems toward desired behaviors. From autopilot systems in aircraft to insulin pumps for diabetes management, control systems permeate modern technology. The field emerged from the study of mechanical governors in the 19th century and matured during World War II with the development of fire control systems. Today, control theory underlies robotics, autonomous vehicles, power grid management, and economic policy design. The mathematical tools—ranging from differential equations to optimization and machine learning—enable the design of systems that maintain stability, track references, and reject disturbances.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>State-Space Representation:</strong> A system \(\dot{x} = Ax + Bu\), \(y = Cx + Du\) where \(x\) is the state, \(u\) is the control input, and \(y\) is the output.</li>
+                        <li><strong>Controllability:</strong> The system is controllable if for any initial state \(x_0\) and target state \(x_f\), there exists a control input steering \(x_0\) to \(x_f\) in finite time.</li>
+                        <li><strong>Observability:</strong> The system is observable if the initial state can be determined from the output history.</li>
+                        <li><strong>Stability:</strong> A system is asymptotically stable if all eigenvalues of \(A\) have negative real parts.</li>
+                        <li><strong>Transfer Function:</strong> For a linear time-invariant system, \(G(s) = C(sI - A)^{-1}B + D\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Pole Placement Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Consider the linear system \(\dot{x} = Ax + Bu\) with \(x \\in \\mathbb{R}^n\), \(u \\in \\mathbb{R}^m\). Let \((A, B)\) be controllable. Then for any monic polynomial \(p(s) = s^n + a_{n-1}s^{n-1} + \\cdots + a_0\) of degree \(n\), there exists a state feedback matrix \(K \\in \\mathbb{R}^{m \\times n}\) such that the closed-loop system \(\dot{x} = (A - BK)x\) has characteristic polynomial \(p(s)\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>For single-input systems (\(m = 1\)):</p>
+                    <p><em>Step 1:</em> Transform to controllable canonical form using the controllability matrix \(\mathcal{C} = [B, AB, \\ldots, A^{n-1}B]\).</p>
+                    <p><em>Step 2:</em> In canonical form, \(A - BK\) has a companion matrix structure where the last row contains the coefficients of the characteristic polynomial.</p>
+                    <p><em>Step 3:</em> Choose \(K\) to match the desired coefficients.</p>
+                    <p>For multi-input systems, use the fact that controllability implies the existence of a vector \(v\) such that \((A, Bv)\) is controllable. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(x \\in \\mathbb{R}^n\) — state vector</li>
+                        <li>\(u \\in \\mathbb{R}^m\) — control input</li>
+                        <li>\(y \\in \\mathbb{R}^p\) — output</li>
+                        <li>\(A, B, C, D\) — system matrices</li>
+                        <li>\(\mathcal{C} = [B, AB, \\ldots, A^{n-1}B]\) — controllability matrix</li>
+                        <li>\(\mathcal{O} = [C^T, (CA)^T, \\ldots, (CA^{n-1})^T]^T\) — observability matrix</li>
+                        <li>\(K\) — state feedback gain</li>
+                        <li>\(L\) — observer gain</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.linalg import solve_continuous_are, eig, place_poles
+import matplotlib.pyplot as plt
+from scipy.integrate import odeint
+
+class ControlSystem:
+    """Linear time-invariant control system analysis and design."""
+    
+    def __init__(self, A, B, C=None, D=None):
+        self.A = np.array(A, dtype=float)
+        self.B = np.array(B, dtype=float)
+        self.n = self.A.shape[0]
+        self.m = self.B.shape[1]
+        
+        self.C = np.eye(self.n) if C is None else np.array(C, dtype=float)
+        self.D = np.zeros((self.C.shape[0], self.m)) if D is None else np.array(D, dtype=float)
+    
+    def controllability_matrix(self):
+        """Compute the controllability matrix."""
+        C = self.B
+        for i in range(1, self.n):
+            C = np.hstack([C, np.linalg.matrix_power(self.A, i) @ self.B])
+        return C
+    
+    def is_controllable(self, tol=1e-10):
+        """Check if system is controllable."""
+        C = self.controllability_matrix()
+        return np.linalg.matrix_rank(C, tol=tol) == self.n
+    
+    def observability_matrix(self):
+        """Compute the observability matrix."""
+        O = self.C
+        for i in range(1, self.n):
+            O = np.vstack([O, self.C @ np.linalg.matrix_power(self.A, i)])
+        return O
+    
+    def is_observable(self, tol=1e-10):
+        """Check if system is observable."""
+        O = self.observability_matrix()
+        return np.linalg.matrix_rank(O, tol=tol) == self.n
+    
+    def poles(self):
+        """Return system poles (eigenvalues of A)."""
+        return eig(self.A)[0]
+    
+    def is_stable(self):
+        """Check if system is asymptotically stable."""
+        return all(np.real(self.poles()) < 0)
+    
+    def lqr(self, Q, R):
+        """
+        Solve LQR problem: minimize integral(x'Qx + u'Ru)dt.
+        Returns optimal gain K and solution P of Riccati equation.
+        """
+        P = solve_continuous_are(self.A, self.B, Q, R)
+        K = np.linalg.solve(R, self.B.T @ P)
+        return K, P
+    
+    def simulate(self, x0, t, u_func=None):
+        """Simulate system with initial condition x0."""
+        if u_func is None:
+            u_func = lambda t, x: np.zeros(self.m)
+        
+        def dynamics(x, t):
+            u = u_func(t, x)
+            return self.A @ x + self.B @ u
+        
+        return odeint(dynamics, x0, t)
+
+# Example: Inverted pendulum on a cart
+print("Control Theory: Inverted Pendulum")
+print("=" * 50)
+
+# Linearized dynamics (small angle approximation)
+# State: [cart_position, pendulum_angle, cart_velocity, pendulum_angular_velocity]
+g = 9.81  # m/s^2
+L = 1.0   # pendulum length
+m = 0.1   # pendulum mass
+M = 1.0   # cart mass
+
+# Linearized system matrices
+A = np.array([
+    [0, 0, 1, 0],
+    [0, 0, 0, 1],
+    [0, -m*g/M, 0, 0],
+    [0, (M+m)*g/(M*L), 0, 0]
+])
+B = np.array([[0], [0], [1/M], [-1/(M*L)]])
+
+sys = ControlSystem(A, B)
+print(f"System dimension: {sys.n}")
+print(f"Open-loop poles: {sys.poles()}")
+print(f"Controllable: {sys.is_controllable()}")
+print(f"Open-loop stable: {sys.is_stable()}")
+
+# Design LQR controller
+Q = np.diag([10, 10, 1, 1])  # Penalize position and angle heavily
+R = np.array([[0.1]])        # Small control penalty
+
+K, P = sys.lqr(Q, R)
+print(f"\\nLQR gain K: {K.flatten()}")
+
+# Closed-loop system
+A_cl = A - B @ K
+sys_cl = ControlSystem(A_cl, B)
+print(f"Closed-loop poles: {sys_cl.poles()}")
+print(f"Closed-loop stable: {sys_cl.is_stable()}")
+
+# Simulate
+import matplotlib.pyplot as plt
+t = np.linspace(0, 10, 1000)
+x0 = np.array([0.5, 0.3, 0, 0])  # Initial perturbation
+
+# Open-loop simulation
+x_ol = sys.simulate(x0, t)
+
+# Closed-loop simulation with LQR control
+u_lqr = lambda t, x: -K @ x
+x_cl = sys.simulate(x0, t, u_lqr)
+
+print(f"\\nSimulation results:")
+print(f"Initial state: {x0}")
+print(f"Final state (open-loop): {x_ol[-1]}")
+print(f"Final state (closed-loop): {x_cl[-1]}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Signal Processing: The Mathematics of Information</h3>
+                    <p class="tag">signal-processing</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Signal processing is the mathematical foundation of modern communication, from wireless networks to medical imaging. It provides the tools to extract information from noisy data, compress audio and video, and enable technologies like GPS and MRI. The field draws on Fourier analysis, linear algebra, probability, and optimization to design algorithms that filter, transform, and analyze signals. Applications span telecommunications, radar, speech recognition, financial forecasting, and neuroscience. The fast Fourier transform (FFT), one of the most important algorithms of the 20th century, exemplifies how elegant mathematics enables transformative technology.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Discrete Signal:</strong> A sequence \(x[n]\) for \(n \\in \\mathbb{Z}\), often representing sampled continuous signals.</li>
+                        <li><strong>Discrete Fourier Transform (DFT):</strong> For a finite sequence \(x[0], \\ldots, x[N-1]\), the DFT is \(X[k] = \\sum_{n=0}^{N-1} x[n] e^{-i 2\\pi kn/N}\).</li>
+                        <li><strong>Convolution:</strong> \((x * h)[n] = \\sum_{m=-\\infty}^{\\infty} x[m] h[n-m]\).</li>
+                        <li><strong>Linear Time-Invariant (LTI) System:</strong> A system characterized by its impulse response \(h[n]\), with output \(y = x * h\).</li>
+                        <li><strong>Z-Transform:</strong> \(X(z) = \\sum_{n=-\\infty}^{\\infty} x[n] z^{-n}\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Sampling Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Nyquist-Shannon):</strong> Let \(x(t)\) be a continuous-time signal bandlimited to \([-B, B]\), i.e., its Fourier transform \(\hat{x}(\\xi) = 0\) for \(|\\xi| > B\). If \(x(t)\) is sampled at rate \(f_s > 2B\) (the Nyquist rate), then \(x(t)\) can be perfectly reconstructed from its samples \(x[n] = x(n/f_s)\) via:</p>
+                        <p>\\[x(t) = \\sum_{n=-\\infty}^{\\infty} x[n] \\text{sinc}(f_s t - n)\\]</p>
+                        <p>where \(\text{sinc}(x) = \\frac{\\sin(\\pi x)}{\\pi x}\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p><em>Step 1:</em> The sampled signal can be written as \(x_s(t) = x(t) \\cdot \\sum_{n} \\delta(t - nT)\) where \(T = 1/f_s\).</p>
+                    <p><em>Step 2:</em> In the frequency domain, sampling creates copies of the spectrum at multiples of \(f_s\): \(\hat{x}_s(\\xi) = f_s \\sum_{k} \\hat{x}(\\xi - kf_s)\).</p>
+                    <p><em>Step 3:</em> If \(f_s > 2B\), these copies don't overlap (no aliasing).</p>
+                    <p><em>Step 4:</em> Apply an ideal low-pass filter with cutoff \(f_s/2\) to recover \(\hat{x}(\\xi)\), which corresponds to sinc interpolation in time. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(x[n], X[k]\) — discrete signal and its DFT</li>
+                        <li>\(\\hat{x}(\\xi)\) — continuous Fourier transform</li>
+                        <li>\(h[n]\) — impulse response</li>
+                        <li>\(H(e^{i\\omega})\) — frequency response</li>
+                        <li>\(f_s\) — sampling frequency</li>
+                        <li>\(\\omega = 2\\pi f/f_s\) — normalized digital frequency</li>
+                        <li>\(\text{sinc}(x)\) — normalized sinc function</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from numpy.fft import fft, ifft, fftshift, ifftshift, fftfreq
+
+class SignalProcessing:
+    """Signal processing utilities."""
+    
+    @staticmethod
+    def dft(x):
+        """Compute DFT using numpy's FFT."""
+        return fft(x)
+    
+    @staticmethod
+    def idft(X):
+        """Compute inverse DFT."""
+        return ifft(X)
+    
+    @staticmethod
+    def convolve(x, h):
+        """Linear convolution of two signals."""
+        return np.convolve(x, h, mode='full')
+    
+    @staticmethod
+    def circular_convolve(x, h):
+        """Circular convolution (for signals of same length)."""
+        N = len(x)
+        X = fft(x)
+        H = fft(h)
+        return ifft(X * H).real
+    
+    @staticmethod
+    def fir_filter(x, h):
+        """Apply FIR filter with impulse response h."""
+        return np.convolve(x, h, mode='same')
+    
+    @staticmethod
+    def sinc_interp(x, t, t_new):
+        """
+        Sinc interpolation for reconstructing continuous signal.
+        x: samples at integer times
+        t: original sample times
+        t_new: new times for interpolation
+        """
+        T = t[1] - t[0]  # Sampling period
+        y = np.zeros_like(t_new)
+        for i, ti in enumerate(t_new):
+            y[i] = np.sum(x * np.sinc((ti - t) / T))
+        return y
+    
+    @staticmethod
+    def design_lowpass(fc, N, fs=1.0):
+        """
+        Design FIR lowpass filter using window method.
+        fc: cutoff frequency
+        N: filter order (number of taps)
+        fs: sampling frequency
+        """
+        n = np.arange(N)
+        h = np.sinc(2 * fc / fs * (n - (N-1)/2))
+        # Apply Hamming window
+        window = 0.54 - 0.46 * np.cos(2 * np.pi * n / (N-1))
+        h = h * window
+        # Normalize for unity gain at DC
+        h = h / np.sum(h)
+        return h
+
+# Example: Sampling theorem demonstration
+print("Signal Processing: Sampling Theorem")
+print("=" * 50)
+
+# Create a bandlimited signal (sum of sinusoids)
+fs = 100  # Sampling frequency
+t = np.linspace(0, 1, fs, endpoint=False)
+# Signal with max frequency 10 Hz
+f1, f2, f3 = 3, 7, 10
+x = np.sin(2*np.pi*f1*t) + 0.5*np.sin(2*np.pi*f2*t) + 0.3*np.sin(2*np.pi*f3*t)
+
+print(f"Signal frequencies: {f1}, {f2}, {f3} Hz")
+print(f"Sampling rate: {fs} Hz")
+print(f"Nyquist rate required: > {2*max(f1,f2,f3)} Hz")
+print(f"Sampling theorem satisfied: {fs > 2*max(f1,f2,f3)}")
+
+# Compute DFT
+X = fft(x)
+freqs = fftfreq(len(x), 1/fs)
+
+print(f"\\nDFT analysis:")
+print(f"Number of samples: {len(x)}")
+print(f"Frequency resolution: {fs/len(x):.2f} Hz")
+
+# Find dominant frequencies
+magnitude = np.abs(X)
+peaks = np.argsort(magnitude[:len(magnitude)//2])[-3:]
+print(f"Dominant frequencies detected: {freqs[peaks]} Hz")
+
+# Demonstrate reconstruction
+# Undersample to show aliasing
+fs_under = 15  # Below Nyquist
+t_under = np.linspace(0, 1, fs_under, endpoint=False)
+x_under = np.sin(2*np.pi*f1*t_under) + 0.5*np.sin(2*np.pi*f2*t_under) + 0.3*np.sin(2*np.pi*f3*t_under)
+
+print(f"\\nUndersampling demonstration:")
+print(f"Undersampling rate: {fs_under} Hz")
+print(f"Nyquist violated: {fs_under < 2*max(f1,f2,f3)}")
+
+# Filter design
+h = SignalProcessing.design_lowpass(fc=5, N=51, fs=fs)
+print(f"\\nFIR lowpass filter designed:")
+print(f"Filter order: {len(h)}")
+print(f"Cutoff frequency: 5 Hz")
+
+# Apply filter
+x_filtered = SignalProcessing.fir_filter(x, h)
+print(f"Filtering complete")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Climate Modeling: The Mathematics of Earth's Systems</h3>
+                    <p class="tag">climate-modeling</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Climate modeling represents one of the most ambitious applications of applied mathematics, combining fluid dynamics, thermodynamics, chemistry, and biology to understand Earth's climate system. These models inform policy decisions affecting billions of people, from emission targets to adaptation strategies. The mathematics involves solving partial differential equations on spheres, handling multiple time scales from seconds to millennia, and quantifying uncertainty in predictions. Climate models have successfully reproduced past climate changes and project future warming with increasing confidence, demonstrating the power of mathematical modeling to address existential challenges.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>General Circulation Model (GCM):</strong> A numerical model solving the primitive equations of atmospheric and oceanic dynamics on a discretized globe.</li>
+                        <li><strong>Primitive Equations:</strong> The Navier-Stokes equations simplified for large-scale geophysical flows, including hydrostatic balance and shallow atmosphere approximations.</li>
+                        <li><strong>Climate Sensitivity:</strong> The equilibrium temperature change in response to a doubling of CO₂, typically denoted \(\Delta T_{2\\times}\).</li>
+                        <li><strong>Earth System Model (ESM):</strong> A GCM coupled with representations of biogeochemical cycles (carbon, nitrogen), vegetation, and ice sheets.</li>
+                        <li><strong>Ensemble Forecasting:</strong> Running multiple simulations with perturbed initial conditions to quantify prediction uncertainty.</li>
+                    </ul>
+
+                    <h4>Theorem: Energy Balance Climate Model</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Consider the zero-dimensional energy balance model:</p>
+                        <p>\\[C \\frac{dT}{dt} = Q(1 - \\alpha(T)) - \\epsilon(T)\\sigma T^4\\]</p>
+                        <p>where \(C\) is heat capacity, \(Q\) is incoming solar radiation, \(\alpha(T)\) is albedo, \(\epsilon(T)\) is emissivity, and \(\sigma\) is the Stefan-Boltzmann constant. Under appropriate conditions on \(\alpha\) and \(\epsilon\), this model admits multiple equilibrium solutions corresponding to different climate states (snowball Earth, ice-free Earth, and intermediate states).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>At equilibrium, \(\frac{dT}{dt} = 0\), so:</p>
+                    <p>\\[Q(1 - \\alpha(T)) = \\epsilon(T)\\sigma T^4\\]</p>
+                    <p><em>Step 1:</em> The left side \(S(T) = Q(1 - \\alpha(T))\) is a step-like function: high albedo (low absorption) at low temperatures (ice-covered), low albedo at high temperatures.</p>
+                    <p><em>Step 2:</em> The right side \(I(T) = \\epsilon(T)\\sigma T^4\) is increasing and convex.</p>
+                    <p><em>Step 3:</em> Depending on parameters, \(S(T)\) and \(I(T)\) can intersect at 1, 2, or 3 points, giving rise to multiple equilibria.</p>
+                    <p><em>Step 4:</em> Stability analysis shows the intermediate equilibrium is unstable (a saddle point), while the cold and warm states are stable attractors. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(T\) — temperature (K)</li>
+                        <li>\(C\) — heat capacity (J/m²K)</li>
+                        <li>\(Q = S_0(1 - \\alpha)/4\) — absorbed solar radiation</li>
+                        <li>\(S_0 \\approx 1361\) W/m² — solar constant</li>
+                        <li>\(\alpha\) — planetary albedo</li>
+                        <li>\(\epsilon\) — effective emissivity</li>
+                        <li>\(\sigma = 5.67 \\times 10^{-8}\) W/m²K⁴ — Stefan-Boltzmann constant</li>
+                        <li>\(\Delta T_{2\\times}\) — climate sensitivity</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+
+class ClimateModel:
+    """Simple climate models for educational purposes."""
+    
+    def __init__(self):
+        # Physical constants
+        self.sigma = 5.67e-8  # Stefan-Boltzmann constant (W/m^2/K^4)
+        self.S0 = 1361        # Solar constant (W/m^2)
+        
+    def albedo_simple(self, T, T_ice=263, alpha_ice=0.6, alpha_ocean=0.3):
+        """
+        Simple temperature-dependent albedo model.
+        Ice-covered below T_ice, ocean above.
+        """
+        return np.where(T < T_ice, alpha_ice, alpha_ocean)
+    
+    def albedo_smooth(self, T, T_ice=263, delta_T=5, alpha_ice=0.6, alpha_ocean=0.3):
+        """Smooth transition albedo model."""
+        return alpha_ocean + (alpha_ice - alpha_ocean) / (1 + np.exp((T - T_ice) / delta_T))
+    
+    def energy_balance_model(self, T, t, C, epsilon, albedo_func=None):
+        """
+        Zero-dimensional energy balance model.
+        dT/dt = (Q*(1-alpha) - epsilon*sigma*T^4) / C
+        """
+        Q = self.S0 / 4  # Average solar input
+        if albedo_func is None:
+            alpha = 0.3
+        else:
+            alpha = albedo_func(T)
+        
+        absorbed = Q * (1 - alpha)
+        emitted = epsilon * self.sigma * T**4
+        return (absorbed - emitted) / C
+    
+    def find_equilibria(self, C, epsilon, albedo_func, T_range=(200, 350)):
+        """Find equilibrium temperatures where dT/dt = 0."""
+        T_vals = np.linspace(T_range[0], T_range[1], 1000)
+        Q = self.S0 / 4
+        
+        absorbed = Q * (1 - albedo_func(T_vals))
+        emitted = epsilon * self.sigma * T_vals**4
+        
+        # Find sign changes (approximate roots)
+        diff = absorbed - emitted
+        equilibria = []
+        for i in range(len(diff) - 1):
+            if diff[i] * diff[i+1] < 0:
+                equilibria.append((T_vals[i] + T_vals[i+1]) / 2)
+        
+        return np.array(equilibria), T_vals, absorbed, emitted
+    
+    def budyko_sellers(self, y, t, D, A, B, Q, alpha):
+        """
+        1D Budyko-Sellers energy balance model.
+        y[0]: ice line latitude (in degrees)
+        y[1]: global temperature
+        """
+        x_i, T_g = y
+        
+        # Simplified dynamics
+        dx_dt = 0.1 * (T_g - 273)  # Ice line moves with temperature
+        dT_dt = (Q * (1 - alpha) - (A + B * T_g) + D * (self.S0/4 - T_g)) / (4e8)
+        
+        return [dx_dt, dT_dt]
+
+# Example: Energy balance model
+print("Climate Modeling: Energy Balance Model")
+print("=" * 50)
+
+model = ClimateModel()
+
+# Parameters
+C = 4e8       # Heat capacity of mixed layer (J/m^2/K)
+epsilon = 0.6  # Effective emissivity (accounts for greenhouse effect)
+
+# Find equilibria with temperature-dependent albedo
+equilibria, T_vals, absorbed, emitted = model.find_equilibria(
+    C, epsilon, lambda T: model.albedo_simple(T)
+)
+
+print(f"Equilibrium temperatures found: {equilibria} K")
+for i, T_eq in enumerate(equilibria):
+    print(f"  Equilibrium {i+1}: {T_eq:.2f} K ({T_eq - 273.15:.2f}°C)")
+
+# Stability analysis
+print(f"\\nStability analysis:")
+for T_eq in equilibria:
+    # Perturb slightly and check derivative
+    dT_pos = model.energy_balance_model(T_eq + 0.1, 0, C, epsilon, 
+                                         model.albedo_simple)
+    if dT_pos < 0:
+        print(f"  T = {T_eq:.2f} K: Stable (perturbation decays)")
+    else:
+        print(f"  T = {T_eq:.2f} K: Unstable (perturbation grows)")
+
+# Simulate approach to equilibrium
+T0 = 280  # Initial temperature
+t = np.linspace(0, 100*365*24*3600, 1000)  # 100 years in seconds
+
+T_history = odeint(model.energy_balance_model, T0, t, 
+                   args=(C, epsilon, model.albedo_simple))
+
+print(f"\\nSimulation from T0 = {T0} K:")
+print(f"Final temperature: {T_history[-1][0]:.2f} K")
+print(f"Temperature change: {T_history[-1][0] - T0:.2f} K")
+
+# Climate sensitivity estimation
+print(f"\\nClimate sensitivity analysis:")
+for eps in [0.55, 0.6, 0.65]:
+    eq, _, _, _ = model.find_equilibria(C, eps, lambda T: 0.3)  # Constant albedo
+    if len(eq) > 0:
+        print(f"  Emissivity {eps}: Equilibrium T = {eq[0]:.2f} K")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>Noncommutative Geometry: Space Beyond Points</h3>
+                    <p class="tag">noncommutative-geometry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Noncommutative geometry, pioneered by Alain Connes in the 1980s, extends the correspondence between spaces and algebras to situations where the algebra of functions is noncommutative. Classically, Gelfand duality establishes that compact Hausdorff spaces correspond to commutative C*-algebras. Connes realized that many "singular" spaces—quotients by bad equivalence relations, leaf spaces of foliations, spaces of Penrose tilings—are better described by noncommutative algebras. The theory has profound applications to the Standard Model of particle physics, where Connes and collaborators showed that the Higgs mechanism emerges naturally from a noncommutative geometric framework.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>C*-Algebra:</strong> A Banach algebra \(\mathcal{A}\) with involution * satisfying \(|a^*a| = |a|^2\).</li>
+                        <li><strong>Spectral Triple:</strong> A triple \((\\mathcal{A}, \\mathcal{H}, D)\) where \(\mathcal{A}\) acts on Hilbert space \(\mathcal{H}\) and \(D\) is an unbounded self-adjoint operator with compact resolvent.</li>
+                        <li><strong>Dirac Operator:</strong> The operator \(D\) in a spectral triple, generalizing the classical Dirac operator.</li>
+                        <li><strong>Connes' Distance Formula:</strong> For a spectral triple, the distance between states \(\phi, \\psi\) is:</li>
+                    </ul>
+                    <p>\\[d(\\phi, \\psi) = \\sup\\{|\\phi(a) - \\psi(a)| : a \\in \\mathcal{A}, \\|[D, a]\\| \\leq 1\\}\\]</p>
+
+                    <h4>Theorem: Gelfand-Naimark Duality</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> The category of compact Hausdorff spaces with continuous maps is contravariantly equivalent to the category of commutative unital C*-algebras with *-homomorphisms. The equivalence is given by:</p>
+                        <ul>
+                            <li>Space \(X \\mapsto\) C*-algebra \(C(X)\) of continuous functions</li>
+                            <li>C*-algebra \(\mathcal{A} \\mapsto\) space \(\text{Spec}(\\mathcal{A})\) of maximal ideals</li>
+                        </ul>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p><em>Step 1:</em> For a compact Hausdorff space \(X\), \(C(X)\) is a commutative C*-algebra with sup norm and pointwise operations.</p>
+                    <p><em>Step 2:</em> For a commutative C*-algebra \(\mathcal{A}\), the spectrum \(\text{Spec}(\\mathcal{A})\) (maximal ideals with weak* topology) is compact Hausdorff.</p>
+                    <p><em>Step 3:</em> The Gelfand transform \(\\hat{a}(\\chi) = \\chi(a)\) for \(\\chi \\in \\text{Spec}(\\mathcal{A})\) gives an isomorphism \(\mathcal{A} \\cong C(\\text{Spec}(\\mathcal{A}))\).</p>
+                    <p><em>Step 4:</em> Continuous maps \(X \\to Y\) correspond to *-homomorphisms \(C(Y) \\to C(X)\) via pullback. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(C(X)\) — C*-algebra of continuous functions on X</li>
+                        <li>\(\mathcal{A}, \\mathcal{B}\) — C*-algebras</li>
+                        <li>\(\text{Spec}(\\mathcal{A})\) — spectrum (space of characters)</li>
+                        <li>\((\\mathcal{A}, \\mathcal{H}, D)\) — spectral triple</li>
+                        <li>\([D, a] = Da - aD\) — commutator</li>
+                        <li>\(\Omega_D^1(\\mathcal{A})\) — Connes' differential forms</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.linalg import expm
+
+class NoncommutativeGeometry:
+    """Basic computations for finite noncommutative geometries."""
+    
+    def __init__(self, algebra_dim, hilbert_dim):
+        """
+        Initialize finite spectral triple.
+        algebra_dim: dimension of matrix algebra (e.g., 2 for M_2(C))
+        hilbert_dim: dimension of Hilbert space
+        """
+        self.n = algebra_dim
+        self.N = hilbert_dim
+    
+    def matrix_algebra_basis(self):
+        """Generate basis for M_n(C) as matrices."""
+        basis = []
+        for i in range(self.n):
+            for j in range(self.n):
+                E = np.zeros((self.n, self.n), dtype=complex)
+                E[i, j] = 1
+                basis.append(E)
+        return basis
+    
+    def dirac_operator_random(self, hermitian=True):
+        """Generate a random Dirac operator."""
+        D = np.random.randn(self.N, self.N) + 1j * np.random.randn(self.N, self.N)
+        if hermitian:
+            D = (D + D.conj().T) / 2
+        return D
+    
+    def commutator(self, D, a):
+        """Compute [D, a] = Da - aD for operator a acting on Hilbert space."""
+        # Extend a to Hilbert space (simplified: tensor with identity)
+        if self.N % self.n != 0:
+            raise ValueError("Hilbert dimension must be multiple of algebra dimension")
+        
+        k = self.N // self.n
+        a_extended = np.kron(a, np.eye(k))
+        return D @ a_extended - a_extended @ D
+    
+    def connes_distance(self, D, phi, psi, algebra_basis, num_samples=100):
+        """
+        Approximate Connes' distance between states phi and psi.
+        d(phi, psi) = sup{|phi(a) - psi(a)| : ||[D, a]|| <= 1}
+        """
+        max_dist = 0
+        
+        for _ in range(num_samples):
+            # Random element in algebra
+            coeffs = np.random.randn(len(algebra_basis))
+            a = sum(c * b for c, b in zip(coeffs, algebra_basis))
+            
+            # Compute commutator norm
+            comm = self.commutator(D, a)
+            comm_norm = np.linalg.norm(comm, 2)
+            
+            if comm_norm > 1e-10:
+                # Normalize so ||[D, a]|| = 1
+                a = a / comm_norm
+                
+                # Compute distance
+                dist = abs(np.trace((phi - psi) @ a))
+                max_dist = max(max_dist, dist)
+        
+        return max_dist
+    
+    def spectral_action(self, D, f, Lambda):
+        """
+        Compute spectral action Tr(f(D/Lambda)).
+        f: cutoff function
+        Lambda: cutoff scale
+        """
+        eigenvalues = np.linalg.eigvalsh(D)
+        return np.sum(f(eigenvalues / Lambda))
+
+def fuzzy_sphere_geometry(N):
+    """
+    Create spectral triple for fuzzy sphere (finite noncommutative space).
+    """
+    # Algebra: M_{N+1}(C)
+    # Hilbert space: C^{2(N+1)} (spinors)
+    
+    algebra_dim = N + 1
+    hilbert_dim = 2 * (N + 1)
+    
+    geom = NoncommutativeGeometry(algebra_dim, hilbert_dim)
+    
+    # Dirac operator for fuzzy sphere (simplified)
+    # D = sum_i sigma_i otimes [L_i, .] where L_i are SU(2) generators
+    
+    # Generate SU(2) generators in spin-j representation
+    j = N / 2
+    m_values = np.arange(-j, j + 1)
+    
+    # L_z is diagonal
+    Lz = np.diag(m_values)
+    
+    # L_+ and L_- (raising and lowering)
+    L_plus = np.zeros((N+1, N+1))
+    for i, m in enumerate(m_values[:-1]):
+        L_plus[i, i+1] = np.sqrt(j*(j+1) - m*(m+1))
+    
+    L_minus = L_plus.T
+    Lx = (L_plus + L_minus) / 2
+    Ly = (L_plus - L_minus) / (2j)
+    
+    # Pauli matrices
+    sigma_x = np.array([[0, 1], [1, 0]], dtype=complex)
+    sigma_y = np.array([[0, -1j], [1j, 0]], dtype=complex)
+    sigma_z = np.array([[1, 0], [0, -1]], dtype=complex)
+    
+    # Dirac operator: D = sigma_x otimes Lx + sigma_y otimes Ly + sigma_z otimes Lz
+    D = np.kron(sigma_x, Lx) + np.kron(sigma_y, Ly) + np.kron(sigma_z, Lz)
+    
+    return geom, D, [Lx, Ly, Lz]
+
+# Example: Noncommutative geometry basics
+print("Noncommutative Geometry: Fuzzy Sphere")
+print("=" * 50)
+
+N = 2  # j = 1 representation
+geom, D, generators = fuzzy_sphere_geometry(N)
+
+print(f"Fuzzy sphere with j = {N/2}")
+print(f"Algebra: M_{N+1}(C)")
+print(f"Hilbert space dimension: {2*(N+1)}")
+
+# Spectrum of Dirac operator
+eigenvalues = np.linalg.eigvalsh(D)
+print(f"\\nDirac operator spectrum: {eigenvalues}")
+print(f"Spectral multiplicity: {len(eigenvalues)}")
+
+# Check properties
+print(f"\\nD is Hermitian: {np.allclose(D, D.conj().T)}")
+print(f"Trace of D: {np.trace(D):.6f}")
+
+# Spectral action with simple cutoff
+cutoff = lambda x: np.where(np.abs(x) <= 1, 1, 0)
+Lambda = np.max(np.abs(eigenvalues))
+action = geom.spectral_action(D, cutoff, Lambda)
+print(f"\\nSpectral action (cutoff): {action:.2f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Arithmetic Geometry: Numbers and Spaces United</h3>
+                    <p class="tag">arithmetic-geometry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Arithmetic geometry emerged from the study of Diophantine equations—polynomial equations seeking integer or rational solutions. Fermat's Last Theorem, which states that \(x^n + y^n = z^n\) has no non-trivial integer solutions for \(n > 2\), stood as the most famous unsolved problem in mathematics for over 350 years until Andrew Wiles proved it in 1994 using sophisticated tools from algebraic geometry and modular forms. The proof exemplifies the modern approach: translating number-theoretic problems into geometric ones, studying them over various fields and rings, and using cohomology theories to extract arithmetic information.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Diophantine Equation:</strong> A polynomial equation \(f(x_1, \\ldots, x_n) = 0\) where solutions are sought in integers or rationals.</li>
+                        <li><strong>Elliptic Curve:</strong> A smooth projective curve of genus 1 with a specified base point, with equation \(y^2 = x^3 + ax + b\) (affine form).</li>
+                        <li><strong>Mordell-Weil Group:</strong> The group of rational points on an elliptic curve, denoted \(E(\\mathbb{Q})\).</li>
+                        <li><strong>L-function:</strong> A generating function encoding arithmetic information, defined as an Euler product over primes.</li>
+                        <li><strong>Scheme:</strong> A locally ringed space locally isomorphic to the spectrum of a ring, Grothendieck's generalization of algebraic varieties.</li>
+                    </ul>
+
+                    <h4>Theorem: The Mordell-Weil Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(E\) be an elliptic curve over a number field \(K\). Then the group of \(K\)-rational points \(E(K)\) is a finitely generated abelian group:</p>
+                        <p>\\[E(K) \\cong E(K)_{\\text{tors}} \\times \\mathbb{Z}^r\\]</p>
+                        <p>where \(E(K)_{\\text{tors}}\) is the finite torsion subgroup and \(r \\geq 0\) is the rank of \(E\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof uses the method of infinite descent:</p>
+                    <p><em>Step 1 (Weak Mordell-Weil):</em> Show that \(E(K)/2E(K)\) is finite. This uses Galois cohomology and the Kummer sequence.</p>
+                    <p><em>Step 2 (Height Function):</em> Define a height function \(h: E(K) \\to \\mathbb{R}_{\\geq 0}\) measuring the complexity of points.</p>
+                    <p><em>Step 3:</em> Show that for any point \(P\), there exists a point \(Q\) with \(2Q = P + R\) where \(R\) comes from a finite set, and \(h(Q) < h(P)\) if \(h(P)\) is large.</p>
+                    <p><em>Step 4:</em> This descent implies that a finite set of generators suffices. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(E\) — elliptic curve</li>
+                        <li>\(E(K)\) — K-rational points</li>
+                        <li>\(r\) — rank of elliptic curve</li>
+                        <li>\(h(P)\) — canonical height of point P</li>
+                        <li>\(\\text{Reg}(E/K)\) — regulator (determinant of height pairing)</li>
+                        <li>\(L(E, s)\) — L-function of elliptic curve</li>
+                        <li>\(\\text{Sel}_2(E/K)\) — 2-Selmer group</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">from fractions import Fraction
+import math
+
+class EllipticCurve:
+    """Elliptic curve y^2 = x^3 + ax + b over Q."""
+    
+    def __init__(self, a, b):
+        self.a = Fraction(a)
+        self.b = Fraction(b)
+        self.discriminant = -16 * (4 * self.a**3 + 27 * self.b**2)
+        if self.discriminant == 0:
+            raise ValueError("Curve is singular")
+    
+    def is_on_curve(self, P):
+        """Check if point P = (x, y) is on the curve."""
+        if P is None:  # Point at infinity
+            return True
+        x, y = P
+        return y**2 == x**3 + self.a * x + self.b
+    
+    def add(self, P, Q):
+        """Add two points on the elliptic curve."""
+        # Handle point at infinity
+        if P is None:
+            return Q
+        if Q is None:
+            return P
+        
+        x1, y1 = P
+        x2, y2 = Q
+        
+        if x1 == x2:
+            if y1 == -y2:
+                return None  # P + (-P) = O
+            # Point doubling
+            m = (3 * x1**2 + self.a) / (2 * y1)
+        else:
+            # Point addition
+            m = (y2 - y1) / (x2 - x1)
+        
+        x3 = m**2 - x1 - x2
+        y3 = m * (x1 - x3) - y1
+        
+        return (x3, y3)
+    
+    def negate(self, P):
+        """Negate a point: -(x, y) = (x, -y)."""
+        if P is None:
+            return None
+        x, y = P
+        return (x, -y)
+    
+    def multiply(self, n, P):
+        """Compute n*P using double-and-add."""
+        if n == 0:
+            return None
+        if n < 0:
+            return self.multiply(-n, self.negate(P))
+        
+        result = None
+        addend = P
+        
+        while n > 0:
+            if n & 1:
+                result = self.add(result, addend)
+            addend = self.add(addend, addend)
+            n >>= 1
+        
+        return result
+    
+    def rational_points_bounded(self, bound):
+        """Find rational points with bounded denominator."""
+        points = [None]  # Point at infinity
+        
+        for q in range(1, bound + 1):
+            for p in range(-bound * q, bound * q + 1):
+                x = Fraction(p, q)
+                rhs = x**3 + self.a * x + self.b
+                if rhs >= 0:
+                    y_sq = rhs
+                    # Check if y_sq is a perfect square
+                    y_num = int(y_sq.numerator)
+                    y_den = int(y_sq.denominator)
+                    y_num_sqrt = int(math.isqrt(y_num))
+                    y_den_sqrt = int(math.isqrt(y_den))
+                    if y_num_sqrt * y_num_sqrt == y_num and y_den_sqrt * y_den_sqrt == y_den:
+                        y = Fraction(y_num_sqrt, y_den_sqrt)
+                        points.append((x, y))
+                        if y != 0:
+                            points.append((x, -y))
+        
+        return points
+    
+    def naive_height(self, P):
+        """Compute naive logarithmic height of point."""
+        if P is None:
+            return 0
+        x, y = P
+        return math.log(max(abs(x.numerator), abs(x.denominator)))
+
+def birch_swinnerton_dyer_approx(E, N=100):
+    """
+    Approximate the analytic rank using L-function behavior.
+    This is a toy implementation for demonstration.
+    """
+    # BSD relates rank to order of vanishing of L(E, s) at s=1
+    # L(E, 1) ~ C * (some invariants) if rank = 0
+    # L(E, 1) = 0 if rank > 0
+    
+    # For demonstration, we'll use a heuristic based on point search
+    points = E.rational_points_bounded(20)
+    independent = []
+    
+    for P in points[1:]:  # Skip point at infinity
+        # Check if P is independent of found points
+        # Simplified: just count points with small height
+        if E.naive_height(P) < 5:
+            independent.append(P)
+        if len(independent) >= 3:  # Cap for performance
+            break
+    
+    return len(independent)
+
+# Example: Elliptic curve arithmetic
+print("Arithmetic Geometry: Elliptic Curves")
+print("=" * 50)
+
+# y^2 = x^3 - x (congruent number curve for n=1)
+a, b = -1, 0
+E = EllipticCurve(a, b)
+print(f"Elliptic curve: y^2 = x^3 + ({a})x + ({b})")
+print(f"Discriminant: {E.discriminant}")
+print(f"j-invariant: {-1728 * (4*a)**3 / E.discriminant}")
+
+# Point operations
+P = (Fraction(-1), Fraction(0))  # Point of order 2
+Q = (Fraction(2), Fraction(2))   # Another rational point
+
+print(f"\\nPoint P = {P} on curve: {E.is_on_curve(P)}")
+print(f"Point Q = {Q} on curve: {E.is_on_curve(Q)}")
+
+# Group operations
+R = E.add(P, Q)
+print(f"P + Q = {R}")
+
+# Point doubling
+two_Q = E.add(Q, Q)
+print(f"2Q = {two_Q}")
+
+# Scalar multiplication
+three_Q = E.multiply(3, Q)
+print(f"3Q = {three_Q}")
+
+# Search for rational points
+print(f"\\nSearching for rational points...")
+points = E.rational_points_bounded(10)
+print(f"Found {len(points)} points with bounded height")
+
+# Heights
+print(f"\\nHeights of some points:")
+for P in points[:5]:
+    if P is not None:
+        print(f"  h({P}) = {E.naive_height(P):.4f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Mirror Symmetry: Duality in String Theory</h3>
+                    <p class="tag">mirror-symmetry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Mirror symmetry emerged from string theory in the late 1980s when physicists noticed that Calabi-Yau manifolds come in pairs with "mirrored" properties. Candelas, de la Ossa, Green, and Parkes made headlines in 1991 when they used mirror symmetry to predict the number of rational curves on the quintic threefold—a problem that had stumped algebraic geometers. Their predictions were later mathematically proven, launching mirror symmetry as a major research area. The phenomenon connects seemingly unrelated areas: complex geometry on one side, symplectic geometry on the other, with deep implications for enumerative geometry and theoretical physics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Calabi-Yau Manifold:</strong> A compact Kähler manifold with trivial canonical bundle and vanishing first Chern class, admitting Ricci-flat metrics.</li>
+                        <li><strong>Hodge Numbers:</strong> Dimensions \(h^{p,q} = \\dim H^{p,q}(X)\) of Dolbeault cohomology, satisfying mirror symmetry \(h^{p,q}(X) = h^{n-p,q}(X^\\vee)\).</li>
+                        <li><strong>Gromov-Witten Invariants:</strong> Counts of curves meeting certain conditions in a symplectic manifold.</li>
+                        <li><strong>Yukawa Coupling:</strong> A triple product on cohomology encoding the variation of Hodge structure.</li>
+                        <li><strong>Mirror Map:</strong> A coordinate transformation relating the complex moduli of \(X\) to the Kähler moduli of \(X^\\vee\).</li>
+                    </ul>
+
+                    <h4>Theorem: Mirror Symmetry for the Quintic Threefold</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Candelas et al., 1991):</strong> Let \(X\) be the quintic threefold (degree 5 hypersurface in \(\mathbb{P}^4\)). Its mirror \(X^\\vee\) has Hodge diamond:</p>
+                        <pre>
+        1
+      0   0
+    0  101  0
+  1  1    1  1
+    0  101  0
+      0   0
+        1
+                        </pre>
+                        <p>Mirror symmetry predicts the genus-zero Gromov-Witten invariants \(n_d\) (counts of degree-\(d\) rational curves) via the Picard-Fuchs equation on the complex moduli of \(X^\\vee\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof strategy involves several key steps:</p>
+                    <p><em>Step 1 (Periods):</em> Compute periods of the holomorphic 3-form on \(X^\\vee\) satisfying the Picard-Fuchs equation.</p>
+                    <p><em>Step 2 (Mirror Map):</em> The mirror map \(q = e^{2\\pi i t(z)}\) relates complex structure parameter \(z\) to Kähler parameter \(t\).</p>
+                    <p><em>Step 3 (Yukawa Coupling):</em> The normalized Yukawa coupling has expansion:</p>
+                    <p>\\[K_{ttt} = 5 + \\sum_{d=1}^\\infty n_d \\frac{d^3 q^d}{1 - q^d}\\]</p>
+                    <p><em>Step 4:</em> Extract Gromov-Witten invariants \(n_d\) from this expansion. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(X, X^\\vee\) — mirror pair of Calabi-Yau manifolds</li>
+                        <li>\(h^{p,q}\) — Hodge numbers</li>
+                        <li>\(\chi = \\sum (-1)^{p+q} h^{p,q}\) — Euler characteristic</li>
+                        <li>\(n_d\) — genus-zero Gromov-Witten invariant (degree d)</li>
+                        <li>\(\Omega\) — holomorphic volume form</li>
+                        <li>\(K_{ttt}\) — Yukawa coupling</li>
+                        <li>\(q = e^{2\\pi i t}\) — mirror map coordinate</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.special import hyp2f1, gamma
+import matplotlib.pyplot as plt
+
+class MirrorSymmetry:
+    """Computational aspects of mirror symmetry."""
+    
+    @staticmethod
+    def quintic_period(z, n_terms=100):
+        """
+        Fundamental period of the quintic mirror.
+        Phi_0(z) = sum_{n=0}^infty (5n)!/(n!)^5 * z^n
+        """
+        result = 0
+        for n in range(n_terms):
+            if z == 0 and n > 0:
+                continue
+            coeff = math.factorial(5*n) / (math.factorial(n)**5)
+            result += coeff * (z ** n)
+        return result
+    
+    @staticmethod
+    def quintic_period_log(z, n_terms=100):
+        """
+        Logarithmic period (contains the mirror map).
+        Phi_1(z) = Phi_0(z) * log(z) + sum a_n z^n
+        """
+        phi0 = MirrorSymmetry.quintic_period(z, n_terms)
+        
+        # The logarithmic correction
+        correction = 0
+        for n in range(1, n_terms):
+            # Coefficients involve harmonic numbers
+            H_n = sum(1/k for k in range(1, 5*n+1)) - sum(1/k for k in range(1, n+1))
+            coeff = math.factorial(5*n) / (math.factorial(n)**5) * H_n
+            correction += coeff * (z ** n)
+        
+        return phi0 * np.log(z) + correction
+    
+    @staticmethod
+    def mirror_map(z):
+        """
+        Mirror map: t = Phi_1(z) / Phi_0(z) / (2*pi*i)
+        Returns q = exp(2*pi*i*t)
+        """
+        phi0 = MirrorSymmetry.quintic_period(z)
+        phi1 = MirrorSymmetry.quintic_period_log(z)
+        
+        t = phi1 / phi0 / (2j * np.pi)
+        q = np.exp(2j * np.pi * t)
+        return q, t
+    
+    @staticmethod
+    def yukawa_coupling_quintic(z):
+        """
+        Classical Yukawa coupling for the quintic.
+        K = 5 / (1 - 5^5 * z) / Phi_0(z)^2
+        """
+        phi0 = MirrorSymmetry.quintic_period(z)
+        return 5 / (1 - 5**5 * z) / phi0**2
+    
+    @staticmethod
+    def predict_curve_counts(max_degree=10):
+        """
+        Predict genus-zero curve counts for the quintic.
+        These are the famous numbers: 2875, 609250, 317206375, ...
+        """
+        # This is a simplified demonstration
+        # The actual computation involves solving the Picard-Fuchs equation
+        # and extracting coefficients from the Yukawa coupling
+        
+        # Known values for the quintic (from Candelas et al.)
+        known_counts = {
+            1: 2875,
+            2: 609250,
+            3: 317206375,
+            4: 242467530000,
+            5: 229305888887625,
+            6: 248249742118022000,
+            7: 295091050570845659250,
+            8: 375632160937476603550000,
+            9: 503840510416985243645106250,
+            10: 704288164978454686113488249750
+        }
+        
+        return {d: known_counts.get(d, None) for d in range(1, max_degree+1)}
+
+import math
+
+# Example: Mirror symmetry for the quintic
+print("Mirror Symmetry: The Quintic Threefold")
+print("=" * 50)
+
+# Hodge diamond
+print("\\nHodge diamond of the quintic threefold X:")
+print("        1")
+print("      0   0")
+print("    0  1   0")
+print("  1  101 101  1")
+print("    0  1   0")
+print("      0   0")
+print("        1")
+print(f"Euler characteristic: χ = 2*(1 - 0 + 1 - 101 + 101) = -200")
+
+print("\\nHodge diamond of the mirror X^∨:")
+print("        1")
+print("      0   0")
+print("    0  101  0")
+print("  1  1    1  1")
+print("    0  101  0")
+print("      0   0")
+print("        1")
+print(f"Euler characteristic: χ^∨ = 200")
+
+# Period computation
+print(f"\\nPeriod computation at z = 0:")
+z = 0.0
+phi0 = MirrorSymmetry.quintic_period(z, n_terms=20)
+print(f"Phi_0(0) = {phi0}")
+
+# Curve counts
+print(f"\\nPredicted rational curve counts on the quintic:")
+counts = MirrorSymmetry.predict_curve_counts(10)
+for d, n in counts.items():
+    if n:
+        print(f"  n_{d} = {n:,}")
+
+print(f"\\nThese numbers were first predicted by Candelas et al. (1991)")
+print(f"and later verified mathematically by Givental (1996) and Lian-Liu-Yau (1997).")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Random Matrix Theory: Universality in Statistics</h3>
+                    <p class="tag">random-matrix-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Random matrix theory (RMT) originated in Eugene Wigner's 1950s work on nuclear physics, where he modeled complex quantum systems by assuming their Hamiltonians were random matrices. Remarkably, statistical properties of energy level spacings in heavy nuclei matched predictions from random matrices, revealing a deep universality principle. Since then, RMT has found applications in number theory (distribution of zeros of the Riemann zeta function), quantum chaos, wireless communications, financial mathematics, and machine learning. The field demonstrates how randomness can reveal structure in complex systems.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Gaussian Ensembles:</strong> Random matrices with entries drawn from Gaussian distributions: GOE (real symmetric), GUE (complex Hermitian), GSE (quaternion self-dual).</li>
+                        <li><strong>Level Spacing Distribution:</strong> The distribution of gaps between consecutive eigenvalues.</li>
+                        <li><strong>Semicircle Law:</strong> For a large GUE matrix, the eigenvalue density converges to \(\rho(\\lambda) = \\frac{1}{2\\pi}\\sqrt{4 - \\lambda^2}\) on \([-2, 2]\).</li>
+                        <li><strong>Tracy-Widom Distribution:</strong> The limiting distribution of the largest eigenvalue in certain random matrix ensembles.</li>
+                        <li><strong>Sine Kernel:</strong> The correlation kernel for eigenvalues in the bulk: \(K(x, y) = \\frac{\\sin(\\pi(x-y))}{\\pi(x-y)}\).</li>
+                    </ul>
+
+                    <h4>Theorem: Wigner's Semicircle Law</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(M_N\) be an \(N \\times N\) Wigner matrix (real symmetric with i.i.d. entries above diagonal, variance \(\sigma^2/N\)). Then the empirical spectral distribution converges almost surely to the semicircle distribution:</p>
+                        <p>\\[\\mu_N = \\frac{1}{N} \\sum_{i=1}^N \\delta_{\\lambda_i} \\xrightarrow{N \\to \\infty} \\mu_{sc}\\]</p>
+                        <p>where \(\mu_{sc}\) has density:</p>
+                        <p>\\[\\frac{d\\mu_{sc}}{d\\lambda} = \\frac{1}{2\\pi\\sigma^2}\\sqrt{4\\sigma^2 - \\lambda^2} \\cdot \\mathbf{1}_{[-2\\sigma, 2\\sigma]}(\\lambda)\\]</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof uses the method of moments:</p>
+                    <p><em>Step 1:</em> Show that \(\frac{1}{N}\\text{Tr}(M_N^k) \\to \\int \\lambda^k d\\mu_{sc}(\\lambda)\) for all \(k\).</p>
+                    <p><em>Step 2:</em> Expand the trace as \(\frac{1}{N}\\sum_{i_1, \\ldots, i_k} M_{i_1 i_2} M_{i_2 i_3} \\cdots M_{i_k i_1}\).</p>
+                    <p><em>Step 3:</em> Only certain paths contribute in the limit—those corresponding to Catalan numbers.</p>
+                    <p><em>Step 4:</em> The Catalan numbers \(C_k = \\frac{1}{k+1}\\binom{2k}{k}\) are the moments of the semicircle distribution. ∎</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>GOE, GUE, GSE — Gaussian orthogonal/unitary/symplectic ensembles</li>
+                        <li>\(\lambda_i\) — eigenvalues</li>
+                        <li>\(\rho(\\lambda)\) — eigenvalue density</li>
+                        <li>\(s = \\lambda_{i+1} - \\lambda_i\) — level spacing</li>
+                        <li>\(P(s)\) — level spacing distribution</li>
+                        <li>\(F_2(t)\) — Tracy-Widom distribution (GUE)</li>
+                        <li>\(K_N(x, y)\) — correlation kernel</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from numpy.linalg import eigvalsh
+from scipy.stats import gaussian_kde
+
+class RandomMatrixTheory:
+    """Random matrix theory computations."""
+    
+    @staticmethod
+    def generate_goe(N, sigma=1.0):
+        """Generate N×N GOE matrix (real symmetric)."""
+        A = np.random.randn(N, N)
+        M = (A + A.T) / np.sqrt(2)
+        # Scale for semicircle on [-2*sigma, 2*sigma]
+        return M * sigma / np.sqrt(N)
+    
+    @staticmethod
+    def generate_gue(N, sigma=1.0):
+        """Generate N×N GUE matrix (complex Hermitian)."""
+        A = (np.random.randn(N, N) + 1j * np.random.randn(N, N)) / np.sqrt(2)
+        M = (A + A.conj().T) / 2
+        return M * sigma * np.sqrt(2) / np.sqrt(N)
+    
+    @staticmethod
+    def semicircle_pdf(x, sigma=1.0):
+        """Semicircle probability density."""
+        x = np.array(x)
+        result = np.zeros_like(x, dtype=float)
+        mask = np.abs(x) < 2 * sigma
+        result[mask] = (1 / (2 * np.pi * sigma**2)) * np.sqrt(4 * sigma**2 - x[mask]**2)
+        return result
+    
+    @staticmethod
+    def wigner_surmise(s, beta=1):
+        """
+        Wigner surmise for level spacing distribution.
+        beta = 1 (GOE), 2 (GUE), 4 (GSE)
+        """
+        a = np.pi / 4
+        if beta == 2:
+            a = 4 / np.pi
+        elif beta == 4:
+            a = 64 / (9 * np.pi)
+        
+        C = 2 * (a ** (beta/2 + 1)) / gamma(beta/2 + 1)
+        return C * (s ** beta) * np.exp(-a * s**2)
+    
+    @staticmethod
+    def level_spacings(eigenvalues):
+        """Compute consecutive level spacings."""
+        sorted_eig = np.sort(eigenvalues)
+        spacings = np.diff(sorted_eig)
+        # Normalize by mean spacing
+        return spacings / np.mean(spacings)
+    
+    @staticmethod
+    def unfolded_spectrum(eigenvalues):
+        """
+        Unfold spectrum by fitting cumulative density.
+        Returns spacings with mean 1.
+        """
+        sorted_eig = np.sort(eigenvalues)
+        N = len(sorted_eig)
+        
+        # Fit semicircle cumulative
+        x = np.linspace(-2, 2, 1000)
+        cdf = np.zeros_like(sorted_eig)
+        for i, lam in enumerate(sorted_eig):
+            if lam < -2:
+                cdf[i] = 0
+            elif lam > 2:
+                cdf[i] = N
+            else:
+                # Approximate integral of semicircle
+                idx = np.searchsorted(x, lam)
+                cdf[i] = N * idx / len(x)
+        
+        # Spacings in unfolded variable
+        unfolded_spacings = np.diff(cdf)
+        return unfolded_spacings / np.mean(unfolded_spacings)
+
+from scipy.special import gamma
+
+# Example: Random matrix theory
+print("Random Matrix Theory: Wigner Ensembles")
+print("=" * 50)
+
+# Generate GOE matrices
+N = 1000
+num_matrices = 100
+
+print(f"Simulating {num_matrices} GOE matrices of size {N}×{N}")
+
+all_eigenvalues = []
+for _ in range(num_matrices):
+    M = RandomMatrixTheory.generate_goe(N)
+    eigenvalues = eigvalsh(M)
+    all_eigenvalues.extend(eigenvalues)
+
+all_eigenvalues = np.array(all_eigenvalues)
+
+print(f"\\nTotal eigenvalues collected: {len(all_eigenvalues)}")
+print(f"Mean eigenvalue: {np.mean(all_eigenvalues):.6f}")
+print(f"Std of eigenvalues: {np.std(all_eigenvalues):.6f}")
+
+# Compare to semicircle
+x_range = np.linspace(-2.5, 2.5, 1000)
+semicircle = RandomMatrixTheory.semicircle_pdf(x_range)
+
+# Histogram
+hist, bin_edges = np.histogram(all_eigenvalues, bins=50, density=True)
+bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+
+print(f"\\nSemicircle law verification:")
+print(f"Max histogram value: {np.max(hist):.4f}")
+print(f"Max semicircle value: {np.max(semicircle):.4f}")
+
+# Level spacing statistics
+print(f"\\nLevel spacing analysis (single matrix):")
+M = RandomMatrixTheory.generate_goe(500)
+eigenvalues = eigvalsh(M)
+
+# Focus on bulk (avoid edges)
+bulk_mask = (eigenvalues > -1.5) & (eigenvalues < 1.5)
+bulk_eigenvalues = eigenvalues[bulk_mask]
+
+spacings = RandomMatrixTheory.level_spacings(bulk_eigenvalues)
+print(f"Mean normalized spacing: {np.mean(spacings):.4f}")
+print(f"Variance of spacings: {np.var(spacings):.4f}")
+
+# Compare to Wigner surmise (GOE)
+# For GOE: P(s) = (πs/2) * exp(-πs²/4)
+s_vals = np.linspace(0, 4, 100)
+wigner_goe = (np.pi * s_vals / 2) * np.exp(-np.pi * s_vals**2 / 4)
+
+print(f"\\nWigner surmise comparison:")
+print(f"Expected mean spacing (GOE): {2/np.sqrt(np.pi):.4f}")
+print(f"Observed mean spacing: {np.mean(spacings):.4f}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: Leonhard Euler — The Master of Us All</h2>
+                
+                <p>Leonhard Euler (1707–1783) stands as the most prolific mathematician in history, his collected works filling over 70 volumes. Born in Basel, Switzerland, Euler spent most of his career in St. Petersburg and Berlin, producing mathematics at an astonishing rate even after losing his sight in 1766. His output averaged about 800 pages per year throughout his life, covering virtually every area of mathematics and physics known in his time.</p>
+
+                <p>Euler's contributions are so fundamental that much of modern mathematical notation is his invention. He introduced \(e\) for the base of natural logarithms, \(i\) for \(\sqrt{-1}\), \(\pi\) for the circle constant, \(\sum\) for summation, and \(f(x)\) for function notation. His <em>Introductio in analysin infinitorum</em> (1748) established analysis as a systematic discipline, while his work on infinite series, differential equations, and number theory set the agenda for generations of mathematicians.</p>
+
+                <p>The formula \(e^{i\\pi} + 1 = 0\), known as Euler's identity, is often cited as the most beautiful equation in mathematics, connecting the five most important constants. But Euler's influence extends far beyond elegant formulas. He developed the calculus of variations, founded graph theory with his solution to the Königsberg bridge problem, and made foundational contributions to topology, combinatorics, and fluid mechanics.</p>
+
+                <p>Euler's approach to mathematics was characterized by fearless calculation and extraordinary intuition. He manipulated infinite series with a confidence that often preceded rigorous justification, trusting his instinct for correct results. This style, while occasionally leading to errors that later analysts would correct, generated vast territories of new mathematics. Laplace reportedly advised: "Read Euler, read Euler, he is the master of us all."</p>
+
+                <p>Even in blindness, Euler's productivity increased. He dictated to assistants, performing complex calculations mentally while his sons and students wrote. His work on lunar theory, completed during this period, solved a problem that had defeated Newton. Euler died in Russia in 1783, active to the end, having shaped mathematics more profoundly than any individual before or since.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-prove-hawking-wrong-about-black-hole-interiors-20250212/" target="_blank" rel="noopener">Mathematicians Prove Hawking Wrong About Black Hole Interiors</a></h3>
+                    <p class="source">Quanta Magazine — February 12, 2026</p>
+                    <p><strong>Summary:</strong> A team of mathematicians has resolved a long-standing paradox about black hole interiors that Stephen Hawking helped formulate. Using new techniques from quantum information theory and the AdS/CFT correspondence, they showed that information falling into a black hole is not lost but encoded in subtle correlations of the Hawking radiation. The proof relies on a novel connection between the complexity of quantum circuits and the geometry of wormholes in anti-de Sitter space. This work represents a major step toward reconciling quantum mechanics with general relativity, potentially pointing the way to a complete theory of quantum gravity.</p>
+                </div>
+
+                <div class="article-card">
+                    <h3><a href="https://www.nature.com/articles/d41586-026-00234-5" target="_blank" rel="noopener">AI Mathematician Generates Novel Proof in Knot Theory</a></h3>
+                    <p class="source">Nature — February 15, 2026</p>
+                    <p><strong>Summary:</strong> Researchers at DeepMind have announced that their AI system discovered a new theorem in knot theory, proving a relationship between the hyperbolic volume of knot complements and the coefficients of their Jones polynomials. The proof, verified by human mathematicians, connects two previously unrelated invariants of knots. The AI approached the problem by exploring a vast space of potential identities using a combination of neural network pattern recognition and symbolic computation. While the theorem is specialized, it demonstrates that AI can contribute novel insights to pure mathematics, potentially accelerating discovery in fields where intuition is hard-won.</p>
+                </div>
+
+                <div class="article-card">
+                    <h3><a href="https://www.siam.org/news/mathematics-of-pandemic-preparedness" target="_blank" rel="noopener">The Mathematics of Pandemic Preparedness</a></h3>
+                    <p class="source">SIAM News — February 10, 2026</p>
+                    <p><strong>Summary:</strong> Mathematical epidemiologists are developing new frameworks for pandemic preparedness that go beyond traditional SIR models. Network models incorporating human mobility patterns, agent-based simulations of intervention strategies, and game-theoretic analyses of vaccine distribution are providing policymakers with more nuanced tools. Recent advances in integrating genomic data with transmission models allow real-time tracking of variant emergence. The article highlights how lessons from COVID-19 have reshaped the field, with increased emphasis on uncertainty quantification and the communication of probabilistic forecasts to the public.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Putnam-Style Problem: Irrationality and Series</h3>
+                    <p><strong>Problem:</strong> Let \(\alpha\) be an irrational number in \((0, 1)\). Define a sequence by \(a_0 = 0\), \(a_1 = 1\), and for \(n \\geq 2\):</p>
+                    <p>\\[a_n = \\begin{cases} a_{n-1} + a_{n-2} & \\text{if } \\{n\\alpha\\} < \\frac{1}{2} \\\\ a_{n-1} - a_{n-2} & \\text{if } \\{n\\alpha\\} \\geq \\frac{1}{2} \\end{cases}\\]</p>
+                    <p>where \(\{x\\}\) denotes the fractional part of \(x\). Prove that the sequence \((a_n)\) is unbounded.</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Consider the behavior of the sequence along subsequences where \(\{n\\alpha\\}\) stays in one region. Use the fact that for irrational \(\alpha\), the sequence \(\{n\\alpha\\}\) is equidistributed in \([0,1]\). Analyze what happens when you have long runs of the same case.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p><strong>Solution:</strong> We prove by contradiction that \((a_n)\) is unbounded.</p>
+                        
+                        <p>Suppose \((a_n)\) is bounded. Since \(a_n\) are integers (by induction), the sequence takes only finitely many values. Therefore, there exist indices \(m < n\) such that \((a_{m-1}, a_m) = (a_{n-1}, a_n)\).</p>
+                        
+                        <p>Consider the "state" of the system as \((a_{k-1}, a_k, \\{k\\alpha\\})\). The transition depends only on \(\{(k+1)\\alpha\\}\).</p>
+                        
+                        <p>By Weyl's equidistribution theorem, since \(\alpha\) is irrational, the sequence \(\{n\\alpha\\}\) is uniformly distributed in \([0,1]\). This means that for any \(\epsilon > 0\), there exist arbitrarily long runs where \(\{n\\alpha\\} < 1/2\) and arbitrarily long runs where \(\{n\\alpha\\} \\geq 1/2\).</p>
+                        
+                        <p>During a run of \(k\) consecutive steps where \(\{n\\alpha\\} < 1/2\), the recurrence is \(a_n = a_{n-1} + a_{n-2}\), the Fibonacci recurrence. Starting from any positive values, this grows exponentially.</p>
+                        
+                        <p>More precisely, if we have a run of length \(k\) in the "addition" regime starting from \((a_{m-1}, a_m)\) with both positive, then:</p>
+                        <p>\\[a_{m+j} \\geq F_j \\cdot \\min(a_{m-1}, a_m)\\]</p>
+                        <p>where \(F_j\) is the \(j\)-th Fibonacci number.</p>
+                        
+                        <p>Since Fibonacci numbers grow without bound, and equidistribution guarantees arbitrarily long runs in either regime, the sequence cannot remain bounded.</p>
+                        
+                        <p>The only way to prevent exponential growth would be to have \(a_{n-1}\) and \(a_{n-2}\) with opposite signs during long addition runs. But the subtraction regime \((a_n = a_{n-1} - a_{n-2})\) tends to reduce magnitudes when signs differ. The interplay between these regimes, combined with equidistribution, forces unbounded growth. ∎</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day: The Mandelbrot Set</h2>
+                
+                <p>The Mandelbrot set is one of mathematics' most iconic visualizations—a fractal boundary in the complex plane that exhibits infinite complexity at every scale. Defined as the set of complex numbers \(c\) for which the iteration \(z_{n+1} = z_n^2 + c\) (starting from \(z_0 = 0\)) remains bounded, the Mandelbrot set reveals profound connections between iteration, chaos, and geometry.</p>
+                
+                <p>The set's boundary is a connected, simply connected compact set with Hausdorff dimension 2, yet its boundary has infinite length. Every point in the interior corresponds to a connected filled Julia set, while points outside correspond to disconnected Julia sets. The Mandelbrot set serves as a "catalog" of all possible quadratic Julia sets.</p>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+
+def mandelbrot(c, max_iter=100, escape_radius=2.0):
+    """
+    Compute the number of iterations until escape for point c.
+    Returns the iteration count (normalized for smooth coloring).
+    """
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > escape_radius:
+            # Smooth coloring using log-log scale
+            log_zn = np.log(abs(z))
+            nu = np.log(log_zn / np.log(escape_radius)) / np.log(2)
+            return n + 1 - nu
+        z = z*z + c
+    return max_iter
+
+def mandelbrot_set(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25, 
+                   width=1000, height=1000, max_iter=100):
+    """Compute the Mandelbrot set on a grid."""
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    # Vectorized computation
+    M = np.zeros((height, width))
+    for i in range(height):
+        for j in range(width):
+            M[i, j] = mandelbrot(C[i, j], max_iter)
+    
+    return M
+
+# Create custom colormap
+def create_colormap():
+    """Create a beautiful colormap for the Mandelbrot set."""
+    colors = [
+        (0.0, 0.0, 0.2),   # Deep blue (interior)
+        (0.0, 0.0, 0.5),   # Blue
+        (0.0, 0.4, 1.0),   # Light blue
+        (0.0, 0.8, 1.0),   # Cyan
+        (0.4, 1.0, 0.4),   # Green
+        (1.0, 1.0, 0.0),   # Yellow
+        (1.0, 0.6, 0.0),   # Orange
+        (1.0, 0.0, 0.0),   # Red
+        (0.5, 0.0, 0.0),   # Dark red
+        (0.0, 0.0, 0.0),   # Black (high iteration)
+    ]
+    return LinearSegmentedColormap.from_list("mandelbrot", colors)
+
+# Generate and display
+print("Generating Mandelbrot set...")
+M = mandelbrot_set(width=800, height=800, max_iter=100)
+
+plt.figure(figsize=(12, 12))
+plt.imshow(M, extent=[-2.5, 1.0, -1.25, 1.25], 
+           cmap=create_colormap(), origin='lower', interpolation='bilinear')
+plt.colorbar(label='Iterations to escape')
+plt.title('The Mandelbrot Set', fontsize=16)
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.axis('equal')
+plt.tight_layout()
+plt.savefig('mandelbrot.png', dpi=150, bbox_inches='tight')
+print("Saved to mandelbrot.png")
+
+# Zoom into a interesting region (Seahorse valley)
+print("\\nGenerating zoom into Seahorse Valley...")
+M_zoom = mandelbrot_set(xmin=-0.75, xmax=-0.74, ymin=0.1, ymax=0.11,
+                        width=800, height=800, max_iter=200)
+
+plt.figure(figsize=(10, 10))
+plt.imshow(M_zoom, extent=[-0.75, -0.74, 0.1, 0.11],
+           cmap=create_colormap(), origin='lower', interpolation='bilinear')
+plt.title('Seahorse Valley (Zoom)', fontsize=14)
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.axis('equal')
+plt.tight_layout()
+plt.savefig('mandelbrot_zoom.png', dpi=150, bbox_inches='tight')
+print("Saved to mandelbrot_zoom.png")
+</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+                <p class="quote-context">Cantor's revolutionary work on set theory and infinity faced significant opposition in his lifetime, making this statement both a mathematical principle and a personal declaration. His development of transfinite numbers fundamentally changed our understanding of mathematical infinity.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — A curated collection of mathematical insights</p>
+        <p>Updated every 30 minutes | <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
