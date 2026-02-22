@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 22, 2026 at 10:43 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 22, 2026 at 10:43 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 22, 2026 at 10:43 UTC</h1>
+            <p class="post-date">Published: 2026-02-22 at 10:43 UTC</p>
+            <div class="tags">
+                <a href="../tags/spectral-theory.html" class="tag">spectral-theory</a>
+                <a href="../tags/geometric-group-theory.html" class="tag">geometric-group-theory</a>
+                <a href="../tags/operator-theory.html" class="tag">operator-theory</a>
+                <a href="../tags/inverse-problems.html" class="tag">inverse-problems</a>
+                <a href="../tags/wavelets.html" class="tag">wavelets</a>
+                <a href="../tags/random-walks.html" class="tag">random-walks</a>
+                <a href="../tags/p-adic-numbers.html" class="tag">p-adic-numbers</a>
+                <a href="../tags/morse-theory.html" class="tag">morse-theory</a>
+                <a href="../tags/ramsey-theory.html" class="tag">ramsey-theory</a>
+                <a href="../tags/galois.html" class="tag">galois</a>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 3 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://terrytao.wordpress.com/" target="_blank" rel="noopener">What's New — Terence Tao's Blog</a></h3>
+                    <p>Terence Tao, Fields Medalist and one of the most prolific mathematicians of our time, maintains this blog covering cutting-edge research in analysis, number theory, combinatorics, and mathematical physics. His expository articles on topics like the Navier-Stokes equations, prime gaps, and compressed sensing are legendary for their clarity and depth.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www.maths.ed.ac.uk/~v1ranick/papers/gelfand1.pdf" target="_blank" rel="noopener">Gelfand Correspondence Program</a></h3>
+                    <p>The Gelfand Correspondence Program in Mathematics, developed by the legendary mathematician Israel Gelfand, offers a unique approach to learning mathematics through carefully sequenced problem sets. The program emphasizes understanding over memorization, with materials covering algebra, trigonometry, functions and graphs, and the method of coordinates.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www.youtube.com/c/Numberphile" target="_blank" rel="noopener">Numberphile — Brady Haran's Mathematical Channel</a></h3>
+                    <p>Numberphile features interviews with mathematicians discussing fascinating topics from across the mathematical landscape. With over 4 million subscribers, it has become one of the most accessible gateways to serious mathematics, covering everything from prime numbers and the Riemann hypothesis to surreal numbers and the Banach-Tarski paradox.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book of the Day</h2>
+                <div class="book-card">
+                    <h3>"Functional Analysis, Sobolev Spaces and Partial Differential Equations"</h3>
+                    <p><strong>Author:</strong> Haim Brezis</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> This comprehensive text bridges functional analysis and PDE theory, presenting the Hahn-Banach theorem, Baire category theorem, weak convergence, and Sobolev spaces with applications to elliptic boundary value problems. Brezis's elegant exposition includes over 200 exercises and has become the standard reference for graduate courses worldwide.</p>
+                    <p><a href="https://link.springer.com/book/10.1007/978-0-387-70914-7" target="_blank" rel="noopener">View on Springer</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Spectral Theory: The Structure of Linear Operators</h3>
+                    <p class="tag">spectral-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Spectral theory extends the concept of eigenvalues and eigenvectors from finite-dimensional linear algebra to infinite-dimensional spaces. It provides the mathematical foundation for quantum mechanics, where observables correspond to self-adjoint operators and their spectra represent possible measurement outcomes. The theory connects algebra, analysis, and geometry in profound ways.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Resolvent Set:</strong> For a linear operator \(T\) on a Banach space \(X\), the resolvent set \(\rho(T)\) consists of all \(\lambda \in \mathbb{C}\) such that \((T - \lambda I)^{-1}\) exists as a bounded operator.</li>
+                        <li><strong>Spectrum:</strong> \(\sigma(T) = \mathbb{C} \setminus \rho(T)\), comprising point spectrum (eigenvalues), continuous spectrum, and residual spectrum.</li>
+                        <li><strong>Spectral Radius:</strong> \(r(T) = \sup\{|\lambda| : \lambda \in \sigma(T)\}\).</li>
+                        <li><strong>Self-Adjoint Operator:</strong> On a Hilbert space \(\mathcal{H}\), an operator \(T\) satisfying \(\langle Tx, y \rangle = \langle x, Ty \rangle\) for all \(x, y \in \mathcal{H}\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Spectral Theorem for Self-Adjoint Operators</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Spectral Theorem):</strong> Let \(T\) be a bounded self-adjoint operator on a Hilbert space \(\mathcal{H}\). Then there exists a unique spectral measure \(E\) on the Borel \(\sigma\)-algebra of \(\sigma(T)\) such that:</p>
+                        <p>\[T = \int_{\sigma(T)} \lambda \, dE(\lambda)\]</p>
+                        <p><strong>Proof Sketch:</strong></p>
+                        <p><em>Step 1 (Polynomial Functional Calculus):</em> For any polynomial \(p\), define \(p(T)\) by substitution. Show that \(\|p(T)\| = \sup_{\lambda \in \sigma(T)} |p(\lambda)|\).</p>
+                        <p><em>Step 2 (Continuous Functional Calculus):</em> Extend to continuous functions by density of polynomials in \(C(\sigma(T))\) (Stone-Weierstrass).</p>
+                        <p><em>Step 3 (Spectral Measure):</em> For \(x, y \in \mathcal{H}\), the map \(f \mapsto \langle f(T)x, y \rangle\) defines a bounded linear functional on \(C(\sigma(T))\). By Riesz representation, there exists a unique complex measure \(\mu_{x,y}\) with:</p>
+                        <p>\[\langle f(T)x, y \rangle = \int_{\sigma(T)} f(\lambda) \, d\mu_{x,y}(\lambda)\]</p>
+                        <p><em>Step 4 (Projection-Valued Measure):</em> For Borel set \(\Delta\), define \(E(\Delta)\) via \(\langle E(\Delta)x, y \rangle = \mu_{x,y}(\Delta)\). Verify \(E\) is a projection-valued measure.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\sigma(T)\): Spectrum of operator \(T\)</li>
+                        <li>\(\rho(T)\): Resolvent set</li>
+                        <li>\(E(\Delta)\): Spectral projection for Borel set \(\Delta\)</li>
+                        <li>\(R_\lambda(T) = (T - \lambda I)^{-1}\): Resolvent operator</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.linalg import eigh
+
+def spectral_decomposition(matrix):
+    """
+    Compute spectral decomposition of a Hermitian matrix.
+    Returns eigenvalues and projection operators.
+    """
+    # Ensure matrix is Hermitian
+    assert np.allclose(matrix, matrix.conj().T), "Matrix must be Hermitian"
+    
+    # Compute eigenvalues and eigenvectors
+    eigenvalues, eigenvectors = eigh(matrix)
+    
+    # Construct spectral projections
+    n = len(eigenvalues)
+    projections = []
+    
+    for i in range(n):
+        v = eigenvectors[:, i].reshape(-1, 1)
+        P = v @ v.conj().T  # Projection onto eigenspace
+        projections.append(P)
+    
+    # Verify spectral theorem: A = sum(lambda_i * P_i)
+    reconstruction = sum(
+        eigenvalues[i] * projections[i] 
+        for i in range(n)
+    )
+    
+    return {
+        'eigenvalues': eigenvalues,
+        'eigenvectors': eigenvectors,
+        'projections': projections,
+        'reconstruction_error': np.max(np.abs(matrix - reconstruction))
+    }
+
+# Example: 3x3 Hermitian matrix
+A = np.array([
+    [2, 1, 0],
+    [1, 3, 1],
+    [0, 1, 2]
+], dtype=complex)
+
+result = spectral_decomposition(A)
+print(f"Eigenvalues: {result['eigenvalues']}")
+print(f"Reconstruction error: {result['reconstruction_error']:.2e}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Geometric Group Theory: Groups as Metric Spaces</h3>
+                    <p class="tag">geometric-group-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Geometric group theory studies finitely generated groups by viewing them as geometric objects. Through the Cayley graph construction, a group becomes a metric space, allowing geometric invariants to reveal algebraic properties. This perspective has revolutionized our understanding of infinite groups, connecting combinatorics, topology, and dynamics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Cayley Graph:</strong> For group \(G\) with generating set \(S\), the Cayley graph \(\text{Cay}(G, S)\) has vertices \(G\) and edges \((g, gs)\) for \(g \in G, s \in S\).</li>
+                        <li><strong>Word Metric:</strong> \(d_S(g, h) = \min\{n : g^{-1}h = s_1^{\pm 1} \cdots s_n^{\pm 1}, s_i \in S\}\).</li>
+                        <li><strong>Quasi-Isometry:</strong> A map \(f : X \to Y\) between metric spaces is a quasi-isometry if there exist constants \(K \geq 1, C \geq 0\) such that:
+                        <p>\[\frac{1}{K}d_X(x_1, x_2) - C \leq d_Y(f(x_1), f(x_2)) \leq Kd_X(x_1, x_2) + C\]</p>
+                        and every point of \(Y\) is within distance \(C\) of \(f(X)\).</li>
+                        <li><strong>Gromov Hyperbolic Group:</strong> A group whose Cayley graph satisfies the thin triangle condition: any side of a geodesic triangle is contained in a bounded neighborhood of the union of the other two sides.</li>
+                    </ul>
+
+                    <h4>Theorem: The Švarc-Milnor Lemma</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Švarc-Milnor):</strong> Let \(G\) act properly discontinuously and cocompactly by isometries on a proper geodesic metric space \(X\). Then \(G\) is finitely generated, and for any basepoint \(x_0 \in X\), the orbit map:</p>
+                        <p>\[g \mapsto g \cdot x_0\]</p>
+                        <p>is a quasi-isometry between \(G\) (with word metric) and \(X\).</p>
+                        
+                        <p><strong>Proof:</strong></p>
+                        <p><em>Step 1 (Finite Generation):</em> Let \(D\) be compact with \(G \cdot D = X\). Set \(S = \{g \in G : gD \cap D \neq \emptyset\}\). By proper discontinuity, \(S\) is finite. For any \(g \in G\), connect \(x_0\) to \(gx_0\) by a geodesic \(\gamma\). Cover \(\gamma\) by translates of \(D\), yielding a sequence \(D, g_1D, g_2D, \ldots, g_nD = gD\). Then \(g = g_1(g_1^{-1}g_2)\cdots(g_{n-1}^{-1}g_n)\) with each factor in \(S\).</p>
+                        
+                        <p><em>Step 2 (Quasi-Isometry):</em> Define \(\phi : G \to X\) by \(\phi(g) = gx_0\). For \(g, h \in G\):</p>
+                        <p>\[d_X(gx_0, hx_0) \leq K \cdot d_S(g, h)\]</p>
+                        <p>where \(K = \max_{s \in S} d_X(x_0, sx_0)\). Conversely, any path in \(X\) from \(gx_0\) to \(hx_0\) can be approximated by orbit points, giving a lower bound.</p>
+                        
+                        <p><em>Step 3 (Coboundedness):</em> Since \(G \cdot D = X\), every point of \(X\) is within \(\text{diam}(D)\) of some orbit point.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\text{Cay}(G, S)\): Cayley graph of group \(G\) with generators \(S\)</li>
+                        <li>\(d_S\): Word metric with respect to generating set \(S\)</li>
+                        <li>\(\partial G\): Gromov boundary of hyperbolic group \(G\)</li>
+                        <li>\(\cong_{QI}\): Quasi-isometric equivalence</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">import networkx as nx
+import numpy as np
+from collections import deque
+
+class CayleyGraph:
+    """Represents a Cayley graph for a finitely generated group."""
+    
+    def __init__(self, generators, relations=None, max_depth=5):
+        """
+        generators: list of strings representing generators
+        relations: list of (word, '') tuples representing relations
+        """
+        self.generators = generators
+        self.relations = relations or []
+        self.graph = nx.Graph()
+        self.max_depth = max_depth
+        self._build_graph()
+    
+    def _reduce_word(self, word):
+        """Reduce word using relations (simplified)."""
+        # This is a simplified reduction - full implementation
+        # would require a rewriting system
+        reduced = word
+        for rel, target in self.relations:
+            reduced = reduced.replace(rel, target)
+        return reduced if reduced else 'e'  # identity
+    
+    def _build_graph(self):
+        """Build Cayley graph up to max_depth."""
+        queue = deque([('e', 0)])  # (word, depth)
+        visited = {'e'}
+        self.graph.add_node('e')
+        
+        while queue:
+            word, depth = queue.popleft()
+            if depth >= self.max_depth:
+                continue
+            
+            for g in self.generators:
+                # Compute new word
+                if word == 'e':
+                    new_word = g
+                else:
+                    new_word = self._reduce_word(word + g)
+                
+                # Add edge
+                if new_word not in visited:
+                    visited.add(new_word)
+                    self.graph.add_node(new_word)
+                    queue.append((new_word, depth + 1))
+                
+                self.graph.add_edge(word, new_word, label=g)
+    
+    def word_metric(self, g, h):
+        """Compute word distance between group elements."""
+        try:
+            return nx.shortest_path_length(self.graph, g, h)
+        except nx.NetworkXNoPath:
+            return float('inf')
+    
+    def is_quasi_isometric_embedding(self, other_graph, map_func, K=2, C=1):
+        """
+        Check if map_func defines a quasi-isometric embedding.
+        Simplified check on sampled points.
+        """
+        nodes = list(self.graph.nodes())[:20]  # Sample for efficiency
+        
+        for g in nodes:
+            for h in nodes:
+                if g != h:
+                    d_G = self.word_metric(g, h)
+                    d_H = other_graph.word_metric(map_func(g), map_func(h))
+                    
+                    # Check quasi-isometry inequalities
+                    lower = (1/K) * d_G - C
+                    upper = K * d_G + C
+                    
+                    if not (lower <= d_H <= upper):
+                        return False
+        return True
+
+# Example: Free group on 2 generators F_2
+F2 = CayleyGraph(['a', 'b', 'A', 'B'], 
+                 relations=[('aA', ''), ('Aa', ''), ('bB', ''), ('Bb', '')],
+                 max_depth=4)
+
+print(f"F_2 Cayley graph: {F2.graph.number_of_nodes()} nodes")
+print(f"Word metric d(e, 'ab') = {F2.word_metric('e', 'ab')}")
+print(f"Word metric d(e, 'aba') = {F2.word_metric('e', 'aba')}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Operator Theory: Bounded Operators on Hilbert Spaces</h3>
+                    <p class="tag">operator-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Operator theory studies linear transformations between infinite-dimensional spaces, generalizing matrix theory to the infinite-dimensional setting. It provides the rigorous foundation for quantum mechanics, partial differential equations, and control theory. The theory reveals deep connections between algebraic properties of operators and their analytic behavior.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Bounded Operator:</strong> A linear map \(T : \mathcal{H} \to \mathcal{K}\) between Hilbert spaces is bounded if \(\|T\| = \sup_{\|x\|=1} \|Tx\| < \infty\).</li>
+                        <li><strong>Compact Operator:</strong> An operator \(T\) such that \(T(\text{unit ball})\) has compact closure. Equivalently, \(T\) is the norm limit of finite-rank operators.</li>
+                        <li><strong>Normal Operator:</strong> An operator satisfying \(T^*T = TT^*\), where \(T^*\) is the adjoint.</li>
+                        <li><strong>Trace Class:</strong> An operator \(T\) for which \(\sum_n \langle |T|e_n, e_n \rangle < \infty\) for some (hence any) orthonormal basis \(\{e_n\}\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Spectral Theorem for Compact Self-Adjoint Operators</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Hilbert-Schmidt):</strong> Let \(T\) be a compact self-adjoint operator on a Hilbert space \(\mathcal{H}\). Then:</p>
+                        <ol>
+                            <li>The spectrum \(\sigma(T)\) consists of a countable set of real eigenvalues \(\{\lambda_n\}\) with \(0\) as the only possible accumulation point.</li>
+                            <li>Each non-zero eigenvalue has finite multiplicity.</li>
+                            <li>There exists an orthonormal basis of \(\mathcal{H}\) consisting of eigenvectors of \(T\).</li>
+                        </ol>
+                        <p>Moreover, \(T\) admits the representation:</p>
+                        <p>\[T = \sum_{n} \lambda_n \langle \cdot, e_n \rangle e_n\]</p>
+                        <p>where the sum converges in operator norm.</p>
+                        
+                        <p><strong>Proof:</strong></p>
+                        <p><em>Step 1 (Existence of Eigenvalues):</em> By compactness and self-adjointness, \(\sup_{\|x\|=1} |\langle Tx, x \rangle|\) is achieved at some unit vector \(e_1\). This \(e_1\) is an eigenvector with eigenvalue \(\lambda_1 = \langle Te_1, e_1 \rangle\).</p>
+                        
+                        <p><em>Step 2 (Inductive Construction):</em> Let \(\mathcal{H}_1 = \text{span}\{e_1\}^\perp\). Then \(T(\mathcal{H}_1) \subseteq \mathcal{H}_1\). Repeat on \(\mathcal{H}_1\) to get \(e_2, \lambda_2\) with \(|
+\lambda_2| \leq |\lambda_1|\).</p>
+                        
+                        <p><em>Step 3 (Convergence):</em> If infinitely many non-zero eigenvalues, compactness implies \(\lambda_n \to 0\). The remainder \(R_n = T - \sum_{k=1}^n \lambda_k P_k\) satisfies \(\|R_n\| = |\lambda_{n+1}| \to 0\).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{B}(\mathcal{H})\): Space of bounded operators on \(\mathcal{H}\)</li>
+                        <li>\(\mathcal{K}(\mathcal{H})\): Ideal of compact operators</li>
+                        <li>\(T^*\): Adjoint of operator \(T\)</li>
+                        <li>\(\|T\|_{HS} = \sqrt{\text{tr}(T^*T)}\): Hilbert-Schmidt norm</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.linalg import svd
+
+class CompactOperator:
+    """
+    Represents a compact operator via its singular value decomposition.
+    For self-adjoint operators, singular values equal absolute eigenvalues.
+    """
+    
+    def __init__(self, eigenvalues, eigenvectors):
+        """
+        eigenvalues: array of eigenvalues (should converge to 0)
+        eigenvectors: matrix with eigenvectors as columns
+        """
+        self.eigenvalues = np.array(eigenvalues)
+        self.eigenvectors = np.array(eigenvectors)
+        self.is_self_adjoint = np.allclose(
+            self.eigenvalues, 
+            self.eigenvalues.real
+        )
+    
+    def apply(self, x):
+        """Apply operator to vector x."""
+        # T = sum(lambda_i * |e_i><e_i|)
+        result = np.zeros_like(x, dtype=complex)
+        for lam, e in zip(self.eigenvalues, self.eigenvectors.T):
+            result += lam * np.vdot(e, x) * e
+        return result
+    
+    def operator_norm(self):
+        """Operator norm equals max |eigenvalue| for self-adjoint."""
+        return np.max(np.abs(self.eigenvalues))
+    
+    def trace(self):
+        """Trace = sum of eigenvalues (if trace class)."""
+        if np.sum(np.abs(self.eigenvalues)) < np.inf:
+            return np.sum(self.eigenvalues)
+        return None
+    
+    def hilbert_schmidt_norm(self):
+        """Hilbert-Schmidt norm = sqrt(sum |eigenvalue|^2)."""
+        return np.sqrt(np.sum(np.abs(self.eigenvalues)**2))
+    
+    def is_trace_class(self, tol=1e-10):
+        """Check if sum of singular values converges."""
+        return np.sum(np.abs(self.eigenvalues)) < np.inf
+    
+    def spectral_projection(self, a, b):
+        """Construct spectral projection for interval [a, b]."""
+        mask = (self.eigenvalues >= a) & (self.eigenvalues <= b)
+        selected_eigs = self.eigenvalues[mask]
+        selected_vecs = self.eigenvectors[:, mask]
+        
+        # Projection = sum(|e_i><e_i| for e_i in [a,b])
+        P = np.zeros((len(self.eigenvectors), len(self.eigenvectors)), dtype=complex)
+        for e in selected_vecs.T:
+            P += np.outer(e, e.conj())
+        return P
+
+# Example: Integral operator with kernel K(x,y) = min(x,y) on [0,1]
+# This is the covariance operator of Brownian motion
+# Eigenvalues: lambda_n = 1/((n-0.5)^2 * pi^2)
+
+n_modes = 50
+x = np.linspace(0, 1, 1000)
+eigenvalues = 1 / ((np.arange(1, n_modes+1) - 0.5)**2 * np.pi**2)
+eigenvectors = np.array([
+    np.sqrt(2) * np.sin((n - 0.5) * np.pi * x) 
+    for n in range(1, n_modes+1)
+]).T
+
+T = CompactOperator(eigenvalues, eigenvectors)
+print(f"Operator norm: {T.operator_norm():.6f}")
+print(f"Hilbert-Schmidt norm: {T.hilbert_schmidt_norm():.6f}")
+print(f"Trace: {T.trace():.6f}")
+
+# Verify spectral theorem: reconstruct kernel
+K_reconstructed = np.zeros((1000, 1000))
+for lam, e in zip(eigenvalues, eigenvectors.T):
+    K_reconstructed += lam * np.outer(e, e)
+
+# Original kernel K(x,y) = min(x,y)
+X, Y = np.meshgrid(x, x)
+K_original = np.minimum(X, Y)
+print(f"Reconstruction error: {np.max(np.abs(K_original - K_reconstructed)):.2e}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Inverse Problems: From Data to Model</h3>
+                    <p class="tag">inverse-problems</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Inverse problems arise whenever we seek to determine causes from observed effects. Medical imaging (CT, MRI), seismic exploration, weather forecasting, and astrophysics all depend on solving inverse problems. Unlike direct problems (predict effects from known causes), inverse problems are typically ill-posed: solutions may not exist, may not be unique, or may not depend continuously on data.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Forward Operator:</strong> A (typically compact) operator \(F : X \to Y\) mapping unknown parameters to observable data.</li>
+                        <li><strong>Ill-Posed Problem:</strong> In the sense of Hadamard: the solution does not exist, is not unique, or does not depend continuously on data.</li>
+                        <li><strong>Tikhonov Regularization:</strong> For ill-posed \(Fx = y\), minimize \(\|Fx - y\|^2 + \alpha\|x\|^2\) where \(\alpha > 0\) is the regularization parameter.</li>
+                        <li><strong>Moore-Penrose Pseudoinverse:</strong> \(F^\dagger : Y \to X\) defined on \(\text{range}(F) \oplus \text{range}(F)^\perp\) giving the minimum-norm least-squares solution.</li>
+                    </ul>
+
+                    <h4>Theorem: Tikhonov Regularization Convergence</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(F : X \to Y\) be a compact linear operator between Hilbert spaces with dense range. Let \(y \in \text{range}(F)\) and \(y^\delta\) satisfy \(\|y - y^\delta\| \leq \delta\). Let \(x_\alpha^\delta\) minimize:</p>
+                        <p>\[J_\alpha(x) = \|Fx - y^\delta\|^2 + \alpha\|x\|^2\]</p>
+                        <p>If \(\alpha = \alpha(\delta)\) satisfies \(\alpha \to 0\) and \(\delta^2/\alpha \to 0\) as \(\delta \to 0\), then \(x_\alpha^\delta \to F^\dagger y\).</p>
+                        
+                        <p><strong>Proof:</strong></p>
+                        <p><em>Step 1 (Euler-Lagrange):</em> The minimizer satisfies:</p>
+                        <p>\[(F^*F + \alpha I)x_\alpha^\delta = F^*y^\delta\]</p>
+                        
+                        <p><em>Step 2 (Spectral Analysis):</em> Using the spectral decomposition of \(F^*F\):</p>
+                        <p>\[x_\alpha^\delta = \sum_n \frac{\sigma_n}{\sigma_n^2 + \alpha} \langle y^\delta, v_n \rangle u_n\]</p>
+                        <p>where \(\sigma_n\) are singular values and \((u_n, v_n)\) singular vectors.</p>
+                        
+                        <p><em>Step 3 (Error Decomposition):</em> Split:</p>
+                        <p>\[\|x_\alpha^\delta - F^\dagger y\| \leq \|x_\alpha^\delta - x_\alpha\| + \|x_\alpha - F^\dagger y\|\]</p>
+                        <p>where \(x_\alpha\) uses exact data \(y\).</p>
+                        
+                        <p><em>Step 4 (Convergence):</em> The first term is \(O(\delta/\sqrt{\alpha})\) by the filter property. The second term vanishes as \(\alpha \to 0\) by dominated convergence.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(F^*\): Adjoint of forward operator</li>
+                        <li>\(\alpha\): Regularization parameter</li>
+                        <li>\(\delta\): Noise level in data</li>
+                        <li>\(R_\alpha = (F^*F + \alpha I)^{-1}F^*\): Tikhonov regularization operator</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.linalg import svd
+
+class InverseProblemSolver:
+    """
+    Solves linear inverse problems using Tikhonov regularization
+    and the discrepancy principle.
+    """
+    
+    def __init__(self, forward_matrix):
+        """
+        forward_matrix: m x n matrix representing the forward operator F
+        """
+        self.F = forward_matrix
+        self.m, self.n = forward_matrix.shape
+        
+        # Compute SVD for efficient regularization
+        self.U, self.s, self.Vh = svd(forward_matrix, full_matrices=False)
+        self.V = self.Vh.T
+    
+    def tikhonov_solve(self, y, alpha):
+        """
+        Solve min ||Fx - y||^2 + alpha*||x||^2 using SVD.
+        """
+        # x_alpha = V * diag(s/(s^2 + alpha)) * U^T * y
+        filter_factors = self.s / (self.s**2 + alpha)
+        x_alpha = self.V @ np.diag(filter_factors) @ self.U.T @ y
+        return x_alpha
+    
+    def discrepancy_principle(self, y_delta, delta, tau=1.1):
+        """
+        Find alpha such that ||Fx_alpha - y_delta|| = tau*delta.
+        tau > 1 is a safety factor.
+        """
+        # Transform to standard form
+        y_tilde = self.U.T @ y_delta
+        
+        # Binary search for alpha
+        alpha_min, alpha_max = 1e-10, 1e10
+        
+        for _ in range(50):
+            alpha = np.sqrt(alpha_min * alpha_max)
+            
+            # Compute residual norm
+            filter_f = self.s**2 / (self.s**2 + alpha)
+            residual = np.sum(((1 - filter_f) * y_tilde)**2)
+            residual_norm = np.sqrt(residual)
+            
+            if residual_norm > tau * delta:
+                alpha_min = alpha
+            else:
+                alpha_max = alpha
+        
+        return alpha
+    
+    def l_curve_criterion(self, y_delta, alphas):
+        """
+        Select alpha using L-curve criterion (corner of L-curve).
+        """
+        residuals = []
+        norms = []
+        
+        for alpha in alphas:
+            x = self.tikhonov_solve(y_delta, alpha)
+            residual = np.linalg.norm(self.F @ x - y_delta)
+            norm = np.linalg.norm(x)
+            residuals.append(residual)
+            norms.append(norm)
+        
+        residuals = np.array(residuals)
+        norms = np.array(norms)
+        
+        # Find corner (maximum curvature in log-log scale)
+        log_res = np.log(residuals)
+        log_norm = np.log(norms)
+        
+        # Compute curvature
+        d1 = np.gradient(log_norm)
+        d2 = np.gradient(d1)
+        curvature = np.abs(d2) / (1 + d1**2)**1.5
+        
+        best_idx = np.argmax(curvature[1:-1]) + 1
+        return alphas[best_idx], residuals[best_idx], norms[best_idx]
+    
+    def compute_condition_number(self):
+        """Compute condition number of the forward operator."""
+        return self.s[0] / self.s[-1] if self.s[-1] > 0 else np.inf
+
+# Example: Numerical differentiation (ill-posed problem)
+# Given noisy samples of f, estimate f'
+
+np.random.seed(42)
+n = 100
+t = np.linspace(0, 1, n)
+
+# True function: f(t) = sin(2*pi*t)
+f_true = np.sin(2 * np.pi * t)
+f_derivative_true = 2 * np.pi * np.cos(2 * np.pi * t)
+
+# Forward operator: integration (regularization by integration)
+# F maps g to f where f(t) = integral_0^t g(s) ds
+# We discretize: F is lower triangular
+dt = t[1] - t[0]
+F = np.tril(np.ones((n, n))) * dt
+
+# Add noise to "data"
+noise_level = 0.01
+f_noisy = f_true + noise_level * np.random.randn(n)
+
+solver = InverseProblemSolver(F)
+print(f"Condition number: {solver.compute_condition_number():.2e}")
+
+# Solve using discrepancy principle
+delta = noise_level * np.linalg.norm(f_true)
+alpha = solver.discrepancy_principle(f_noisy, delta)
+g_estimated = solver.tikhonov_solve(f_noisy, alpha)
+
+print(f"Optimal alpha: {alpha:.2e}")
+print(f"Relative error: {np.linalg.norm(g_estimated - f_derivative_true) / np.linalg.norm(f_derivative_true):.4f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Wavelets: Multiscale Analysis and Signal Processing</h3>
+                    <p class="tag">wavelets</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Wavelets provide a mathematical microscope for analyzing signals at multiple scales simultaneously. Unlike Fourier analysis, which only captures frequency content, wavelets localize in both time and frequency. This makes them indispensable for image compression (JPEG 2000), denoising, edge detection, and analyzing transient phenomena in seismology, finance, and medicine.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Wavelet:</strong> A function \(\psi \in L^2(\mathbb{R})\) with \(\int_{-\infty}^{\infty} \psi(t) \, dt = 0\) and \(\|\psi\| = 1\).</li>
+                        <li><strong>Wavelet Family:</strong> \(\psi_{j,k}(t) = 2^{j/2}\psi(2^j t - k)\) for integers \(j, k\), where \(j\) is the scale and \(k\) is the translation.</li>
+                        <li><strong>Multiresolution Analysis (MRA):</strong> A sequence of closed subspaces \(\{V_j\}_{j \in \mathbb{Z}}\) of \(L^2(\mathbb{R})\) satisfying:
+                            <ul>
+                                <li>\(V_j \subset V_{j+1}\) (nesting)</li>
+                                <li>\(\overline{\bigcup_j V_j} = L^2(\mathbb{R})\) (density)</li>
+                                <li>\(\bigcap_j V_j = \{0\}\) (separation)</li>
+                                <li>\(f(t) \in V_j \Leftrightarrow f(2t) \in V_{j+1}\) (scaling)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Scaling Function:</strong> A function \(\varphi\) such that \(\{\varphi(t-k) : k \in \mathbb{Z}\}\) forms an orthonormal basis of \(V_0\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Wavelet Decomposition</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Mallat):</strong> Given an MRA \(\{V_j\}\) with scaling function \(\varphi\), there exists a wavelet \(\psi\) such that \(\{\psi_{j,k} : k \in \mathbb{Z}\}\) forms an orthonormal basis of \(W_j = V_{j+1} \ominus V_j\). Consequently:</p>
+                        <p>\[L^2(\mathbb{R}) = \bigoplus_{j=-\infty}^{\infty} W_j\]</p>
+                        <p>Any \(f \in L^2(\mathbb{R})\) decomposes as:</p>
+                        <p>\[f = \sum_{j,k} \langle f, \psi_{j,k} \rangle \psi_{j,k}\]</p>
+                        
+                        <p><strong>Proof Sketch:</strong></p>
+                        <p><em>Step 1 (Two-Scale Relation):</em> Since \(\varphi \in V_0 \subset V_1\), there exist coefficients \(h_k\) (low-pass filter) such that:</p>
+                        <p>\[\varphi(t) = \sum_k h_k \varphi(2t - k)\]</p>
+                        
+                        <p><em>Step 2 (Wavelet Construction):</em> Define the high-pass filter \(g_k = (-1)^k \overline{h_{1-k}}\) and set:</p>
+                        <p>\[\psi(t) = \sum_k g_k \varphi(2t - k)\]</p>
+                        
+                        <p><em>Step 3 (Orthogonality):</em> Verify \(\langle \psi_{j,k}, \psi_{j',k'} \rangle = \delta_{jj'}\delta_{kk'}\) using the filter properties:</p>
+                        <p>\[\sum_k h_k \overline{h_{k-2m}} = \delta_{m0}, \quad \sum_k h_k \overline{g_{k-2m}} = 0\]</p>
+                        
+                        <p><em>Step 4 (Completeness):</em> Show that \(V_{j+1} = V_j \oplus W_j\) and take the limit as \(j \to \infty\).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\psi_{j,k}(t) = 2^{j/2}\psi(2^j t - k)\): Wavelet at scale \(j\), position \(k\)</li>
+                        <li>\(V_j\): Approximation space at scale \(j\)</li>
+                        <li>\(W_j\): Detail space at scale \(j\)</li>
+                        <li>\(h_k, g_k\): Low-pass and high-pass filter coefficients</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">import numpy as np
+import pywt  # PyWavelets library
+
+class WaveletAnalysis:
+    """
+    Implements discrete wavelet transform using the Mallat algorithm.
+    """
+    
+    def __init__(self, wavelet_name='db4'):
+        """
+        wavelet_name: Name of wavelet (e.g., 'haar', 'db4', 'sym8')
+        """
+        self.wavelet = pywt.Wavelet(wavelet_name)
+        self.filter_bank = self.wavelet.filter_bank
+        
+    def decompose(self, signal, level=None):
+        """
+        Multi-level wavelet decomposition.
+        Returns approximation and detail coefficients.
+        """
+        coeffs = pywt.wavedec(signal, self.wavelet, level=level)
+        return coeffs  # [cA_n, cD_n, cD_{n-1}, ..., cD_1]
+    
+    def reconstruct(self, coeffs):
+        """Reconstruct signal from wavelet coefficients."""
+        return pywt.waverec(coeffs, self.wavelet)
+    
+    def denoise(self, signal, threshold_mode='soft', sigma=None):
+        """
+        Denoise signal using wavelet thresholding.
+        """
+        coeffs = self.decompose(signal)
+        
+        # Estimate noise level from finest scale coefficients
+        if sigma is None:
+            sigma = np.median(np.abs(coeffs[-1])) / 0.6745
+        
+        # Universal threshold
+        threshold = sigma * np.sqrt(2 * np.log(len(signal)))
+        
+        # Apply thresholding to detail coefficients
+        denoised_coeffs = [coeffs[0]]  # Keep approximation
+        for detail in coeffs[1:]:
+            if threshold_mode == 'soft':
+                denoised = np.sign(detail) * np.maximum(np.abs(detail) - threshold, 0)
+            else:  # hard thresholding
+                denoised = detail * (np.abs(detail) > threshold)
+            denoised_coeffs.append(denoised)
+        
+        return self.reconstruct(denoised_coeffs)
+    
+    def multiresolution_analysis(self, signal, level=3):
+        """
+        Perform multiresolution analysis, returning components at each scale.
+        """
+        coeffs = self.decompose(signal, level=level)
+        
+        components = []
+        for j in range(level + 1):
+            # Zero out all coefficients except at level j
+            temp_coeffs = [np.zeros_like(c) for c in coeffs]
+            temp_coeffs[j] = coeffs[j]
+            component = self.reconstruct(temp_coeffs)[:len(signal)]
+            components.append(component)
+        
+        return components
+
+# Example: Signal denoising and multiscale analysis
+np.random.seed(42)
+t = np.linspace(0, 1, 1024)
+
+# Original signal: combination of slow and fast oscillations
+signal_clean = np.sin(2 * np.pi * 5 * t) + 0.5 * np.sin(2 * np.pi * 50 * t)
+
+# Add noise
+noise = 0.3 * np.random.randn(len(t))
+signal_noisy = signal_clean + noise
+
+# Wavelet analysis
+wvt = WaveletAnalysis('db4')
+
+# Denoise
+denoised = wvt.denoise(signal_noisy)
+
+# Compute SNR improvement
+snr_before = 10 * np.log10(np.sum(signal_clean**2) / np.sum((signal_noisy - signal_clean)**2))
+snr_after = 10 * np.log10(np.sum(signal_clean**2) / np.sum((denoised - signal_clean)**2))
+
+print(f"SNR before denoising: {snr_before:.2f} dB")
+print(f"SNR after denoising: {snr_after:.2f} dB")
+print(f"SNR improvement: {snr_after - snr_before:.2f} dB")
+
+# Multiresolution components
+components = wvt.multiresolution_analysis(signal_clean, level=3)
+print(f"\nDecomposed into {len(components)} scales")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Random Walks: Probabilistic Paths and Their Limits</h3>
+                    <p class="tag">random-walks</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Random walks model countless phenomena: stock prices, particle diffusion, polymer chains, neural activity, and search algorithms. The mathematical theory connects probability, combinatorics, potential theory, and partial differential equations. The central limit theorem for random walks explains why normal distributions appear ubiquitously in nature.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Simple Random Walk:</strong> A sequence \(S_n = X_1 + X_2 + \cdots + X_n\) where \(X_i\) are i.i.d. with \(P(X_i = 1) = P(X_i = -1) = 1/2\).</li>
+                        <li><strong>Recurrent vs. Transient:</strong> A random walk is recurrent if \(P(S_n = 0 \text{ infinitely often}) = 1\); otherwise transient.</li>
+                        <li><strong>Green's Function:</strong> \(G(x, y) = \sum_{n=0}^{\infty} P_x(S_n = y)\), the expected number of visits to \(y\) starting from \(x\).</li>
+                        <li><strong>Harmonic Function:</strong> A function \(h\) satisfying \(h(x) = \sum_y p(x, y)h(y)\), where \(p(x, y)\) is the transition probability.</li>
+                    </ul>
+
+                    <h4>Theorem: Pólya's Theorem on Random Walk Recurrence</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Pólya, 1921):</strong> Simple symmetric random walk on \(\mathbb{Z}^d\) is recurrent for \(d = 1, 2\) and transient for \(d \geq 3\).</p>
+                        
+                        <p><strong>Proof:</strong></p>
+                        <p><em>Step 1 (Return Probability):</em> Let \(p_n = P(S_n = 0)\). The walk is recurrent iff \(\sum_{n=1}^{\infty} p_n = \infty\) (by Borel-Cantelli).</p>
+                        
+                        <p><em>Step 2 (Characteristic Function):</em> The characteristic function of one step is:</p>
+                        <p>\[\phi(\theta) = E[e^{i\theta X_1}] = \frac{1}{d}\sum_{j=1}^{d} \cos(\theta_j)\]</p>
+                        
+                        <p><em>Step 3 (Inversion Formula):</em> By Fourier inversion:</p>
+                        <p>\[p_n = \frac{1}{(2\pi)^d} \int_{[-\pi, \pi]^d} \phi(\theta)^n \, d\theta\]</p>
+                        
+                        <p><em>Step 4 (Asymptotic Analysis):</em> For large \(n\), \(\phi(\theta)^n \approx \exp(-n|\theta|^2/(2d))\). Thus:</p>
+                        <p>\[\sum_{n=1}^{N} p_n \sim \frac{1}{(2\pi)^d} \int_{[-\pi, \pi]^d} \frac{1 - \phi(\theta)^{N+1}}{1 - \phi(\theta)} \, d\theta\]</p>
+                        
+                        <p>Near \(\theta = 0\), \(1 - \phi(\theta) \sim |\theta|^2/(2d)\). The integral converges at the origin iff:</p>
+                        <p>\[\int_{0}^{\epsilon} \frac{r^{d-1}}{r^2} \, dr < \infty\]</p>
+                        <p>This holds iff \(d \geq 3\).</p>
+                    </div>
+
+                    <h4>Theorem: The Central Limit Theorem for Random Walks</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Lindeberg-Lévy):</strong> Let \(S_n = X_1 + \cdots + X_n\) where \(X_i\) are i.i.d. with \(E[X_i] = \mu\) and \(\text{Var}(X_i) = \sigma^2 < \infty\). Then:</p>
+                        <p>\[\frac{S_n - n\mu}{\sigma\sqrt{n}} \xrightarrow{d} \mathcal{N}(0, 1)\]</p>
+                        <p>Equivalently, for all \(a < b\):</p>
+                        <p>\[P\left(a < \frac{S_n - n\mu}{\sigma\sqrt{n}} \leq b\right) \to \frac{1}{\sqrt{2\pi}} \int_a^b e^{-x^2/2} \, dx\]</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(S_n\): Position after \(n\) steps</li>
+                        <li>\(p(x, y)\): Transition probability from \(x\) to \(y\)</li>
+                        <li>\(G(x, y)\): Green's function (expected visits)</li>
+                        <li>\(\xrightarrow{d}\): Convergence in distribution</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+class RandomWalk:
+    """
+    Simulates random walks in arbitrary dimensions.
+    """
+    
+    def __init__(self, dim=1, step_distribution=None):
+        """
+        dim: Dimension of the lattice
+        step_distribution: Function returning random steps
+        """
+        self.dim = dim
+        if step_distribution is None:
+            # Default: simple symmetric random walk
+            self.step_distribution = lambda n: np.random.choice(
+                [-1, 1], size=(n, dim)
+            )
+        else:
+            self.step_distribution = step_distribution
+    
+    def simulate(self, n_steps, n_walks=1):
+        """
+        Simulate random walk(s).
+        Returns array of shape (n_walks, n_steps+1, dim)
+        """
+        steps = self.step_distribution(n_steps * n_walks).reshape(
+            n_walks, n_steps, self.dim
+        )
+        
+        # Cumulative sum to get positions
+        positions = np.zeros((n_walks, n_steps + 1, self.dim))
+        positions[:, 1:, :] = np.cumsum(steps, axis=1)
+        
+        return positions
+    
+    def estimate_return_probability(self, n_steps, n_trials=10000):
+        """
+        Estimate probability of returning to origin within n_steps.
+        """
+        positions = self.simulate(n_steps, n_trials)
+        # Check if origin is visited at any step > 0
+        at_origin = np.all(positions == 0, axis=2)  # (n_trials, n_steps+1)
+        return np.mean(np.any(at_origin[:, 1:], axis=1))
+    
+    def greens_function_estimate(self, target, n_steps, n_trials=10000):
+        """
+        Estimate Green's function G(0, target) = expected visits to target.
+        """
+        positions = self.simulate(n_steps, n_trials)
+        at_target = np.all(positions == target, axis=2)
+        visits = np.sum(at_target, axis=1)
+        return np.mean(visits)
+    
+    def scaling_limit(self, n_steps, n_walks=1000):
+        """
+        Demonstrate convergence to Brownian motion (Donsker's theorem).
+        Returns scaled positions for plotting.
+        """
+        positions = self.simulate(n_steps, n_walks)
+        # Scale: B_t^n = S_{nt} / sqrt(n)
+        t = np.arange(n_steps + 1) / n_steps
+        scaled = positions / np.sqrt(n_steps)
+        return t, scaled
+
+# Verify Pólya's theorem
+print("Testing Pólya's Recurrence Theorem:")
+print("-" * 40)
+
+for d in [1, 2, 3, 4]:
+    rw = RandomWalk(dim=d)
+    # Estimate return probability for increasing steps
+    for n in [100, 500, 1000]:
+        p_return = rw.estimate_return_probability(n, n_trials=5000)
+        print(f"d={d}, n={n}: P(return) ≈ {p_return:.3f}")
+    print()
+
+# Demonstrate Central Limit Theorem
+print("\nVerifying Central Limit Theorem:")
+print("-" * 40)
+
+rw_1d = RandomWalk(dim=1)
+n_steps = 10000
+n_walks = 10000
+
+positions = rw_1d.simulate(n_steps, n_walks)
+final_positions = positions[:, -1, 0]
+
+# Standardize
+standardized = final_positions / np.sqrt(n_steps)
+
+# Compare to standard normal
+ks_stat, p_value = stats.kstest(standardized, 'norm')
+print(f"Kolmogorov-Smirnov test statistic: {ks_stat:.4f}")
+print(f"P-value: {p_value:.4f}")
+print(f"Mean of standardized: {np.mean(standardized):.4f} (expected: 0)")
+print(f"Std of standardized: {np.std(standardized):.4f} (expected: 1)")
+
+# Expected number of returns in 2D (should diverge slowly)
+rw_2d = RandomWalk(dim=2)
+n_list = [100, 500, 1000, 5000]
+print("\nExpected visits to origin in 2D:")
+for n in n_list:
+    g_est = rw_2d.greens_function_estimate([0, 0], n, n_trials=2000)
+    print(f"  n={n}: G(0,0) ≈ {g_est:.3f}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>🎯 Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>p-adic Numbers: An Alternative Number System</h3>
+                    <p class="tag">p-adic-numbers</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>p-adic numbers were introduced by Kurt Hensel in 1897 as a way to apply techniques from power series to number theory. While real numbers complete the rationals with respect to the usual absolute value, p-adic numbers arise from completing \(\mathbb{Q}\) with respect to the p-adic absolute value. This alternative completion reveals deep arithmetic structure invisible to real analysis.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>p-adic Valuation:</strong> For \(n \in \mathbb{Z}\), \(\nu_p(n) = k\) where \(p^k \mid n\) but \(p^{k+1} \nmid n\). For \(x = a/b\), \(\nu_p(x) = \nu_p(a) - \nu_p(b)\).</li>
+                        <li><strong>p-adic Absolute Value:</strong> \(|x|_p = p^{-\nu_p(x)}\) for \(x \neq 0\), and \(|0|_p = 0\).</li>
+                        <li><strong>p-adic Numbers \(\mathbb{Q}_p\):</strong> The completion of \(\mathbb{Q}\) with respect to \(|\cdot|_p\).</li>
+                        <li><strong>p-adic Integers \(\mathbb{Z}_p\):</strong> \(\{x \in \mathbb{Q}_p : |x|_p \leq 1\} = \{x : \nu_p(x) \geq 0\}\).</li>
+                    </ul>
+
+                    <h4>Theorem: Ostrowski's Theorem and Hensel's Lemma</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Ostrowski, 1916):</strong> Every non-trivial absolute value on \(\mathbb{Q}\) is equivalent to either the standard absolute value \(|
+\cdot|_\infty\) or a p-adic absolute value \(|
+\cdot|_p\) for some prime \(p\).</p>
+                        
+                        <p><strong>Theorem (Hensel's Lemma):</strong> Let \(f \in \mathbb{Z}_p[x]\) and \(a_0 \in \mathbb{Z}_p\) satisfy:</p>
+                        <p>\[|f(a_0)|_p < |f'(a_0)|_p^2\]</p>
+                        <p>Then there exists a unique \(a \in \mathbb{Z}_p\) such that \(f(a) = 0\) and \(|a - a_0|_p < |f'(a_0)|_p\).</p>
+                        
+                        <p><strong>Proof of Hensel's Lemma:</strong></p>
+                        <p><em>Newton's Method in \(\mathbb{Q}_p\):</em> Define the iteration:</p>
+                        <p>\[a_{n+1} = a_n - \frac{f(a_n)}{f'(a_n)}\]</p>
+                        
+                        <p><em>Convergence:</em> Let \(\delta = |f(a_0)|_p / |f'(a_0)|_p^2 < 1\). By Taylor expansion:</p>
+                        <p>\[f(a_{n+1}) = f(a_n) + f'(a_n)(a_{n+1} - a_n) + \frac{f''(\xi)}{2}(a_{n+1} - a_n)^2\]</p>
+                        <p>\[= \frac{f''(\xi)}{2} \left(\frac{f(a_n)}{f'(a_n)}\right)^2\]</p>
+                        
+                        <p>Inductively, \(|f(a_n)|_p \leq \delta^{2^n} |f'(a_0)|_p^2 \to 0\). Also:</p>
+                        <p>\[|a_{n+1} - a_n|_p = \left|\frac{f(a_n)}{f'(a_n)}\right|_p \leq \delta^{2^n} |f'(a_0)|_p\]</p>
+                        <p>so \((a_n)\) is Cauchy, hence converges to the desired root.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\nu_p(x)\): p-adic valuation (exponent of p in x)</li>
+                        <li>\(|x|_p = p^{-\nu_p(x)}\): p-adic absolute value</li>
+                        <li>\(\mathbb{Q}_p\): Field of p-adic numbers</li>
+                        <li>\(\mathbb{Z}_p\): Ring of p-adic integers</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">class PAdicNumber:
+    """
+    Represents a p-adic number by its p-adic expansion.
+    Stores coefficients a_0, a_1, a_2, ... where x = sum(a_i * p^i)
+    with 0 <= a_i < p.
+    """
+    
+    def __init__(self, p, coefficients, precision=20):
+        """
+        p: prime
+        coefficients: list of digits [a_0, a_1, ..., a_n]
+        precision: number of digits to maintain
+        """
+        self.p = p
+        self.coefficients = coefficients[:precision]
+        self.precision = precision
+        self._normalize()
+    
+    def _normalize(self):
+        """Ensure all coefficients are in [0, p-1]."""
+        carry = 0
+        for i in range(len(self.coefficients)):
+            val = self.coefficients[i] + carry
+            self.coefficients[i] = val % self.p
+            carry = val // self.p
+    
+    @classmethod
+    def from_rational(cls, p, num, den, precision=20):
+        """Create p-adic number from rational num/den."""
+        # Remove factors of p from denominator
+        while den % p == 0:
+            den //= p
+            num *= p
+        
+        # Compute p-adic expansion using Hensel lifting
+        coeffs = []
+        current = num * pow(den, -1, p**precision) % (p**precision)
+        
+        for _ in range(precision):
+            coeffs.append(current % p)
+            current //= p
+        
+        return cls(p, coeffs, precision)
+    
+    def valuation(self):
+        """Return p-adic valuation (position of first non-zero digit)."""
+        for i, c in enumerate(self.coefficients):
+            if c != 0:
+                return i
+        return float('inf')
+    
+    def abs(self):
+        """p-adic absolute value."""
+        v = self.valuation()
+        if v == float('inf'):
+            return 0
+        return self.p ** (-v)
+    
+    def __add__(self, other):
+        """Add two p-adic numbers."""
+        assert self.p == other.p
+        max_len = max(len(self.coefficients), len(other.coefficients))
+        result_coeffs = []
+        carry = 0
+        
+        for i in range(max_len):
+            a = self.coefficients[i] if i < len(self.coefficients) else 0
+            b = other.coefficients[i] if i < len(other.coefficients) else 0
+            s = a + b + carry
+            result_coeffs.append(s % self.p)
+            carry = s // self.p
+        
+        return PAdicNumber(self.p, result_coeffs, self.precision)
+    
+    def __mul__(self, other):
+        """Multiply two p-adic numbers."""
+        assert self.p == other.p
+        result = [0] * (len(self.coefficients) + len(other.coefficients))
+        
+        for i, a in enumerate(self.coefficients):
+            for j, b in enumerate(other.coefficients):
+                if i + j < len(result):
+                    result[i + j] += a * b
+        
+        return PAdicNumber(self.p, result, self.precision)
+    
+    def __repr__(self):
+        """String representation."""
+        terms = []
+        for i, c in enumerate(self.coefficients[:10]):
+            if c != 0:
+                if i == 0:
+                    terms.append(str(c))
+                elif i == 1:
+                    terms.append(f"{c}*{self.p}")
+                else:
+                    terms.append(f"{c}*{self.p}^{i}")
+        
+        if not terms:
+            return "0"
+        return " + ".join(terms) + " + ..."
+
+# Example: p-adic expansion of -1
+p = 5
+minus_one = PAdicNumber(p, [-1 % p] * 20)  # -1 = (p-1) + (p-1)*p + (p-1)*p^2 + ...
+print(f"-1 in Q_{p}: {minus_one}")
+
+# Verify: -1 + 1 = 0
+one = PAdicNumber(p, [1])
+print(f"-1 + 1 = {minus_one + one}")
+
+# Square root of -1 in Q_5 (exists by Hensel's lemma since -1 ≡ 4 ≡ 2^2 mod 5)
+# sqrt(-1) in Q_5
+sqrt_minus_one = PAdicNumber(p, [2, 1, 2, 0, 2, 3, 1, 1, 0, 2])  # Approximation
+print(f"\nApproximate sqrt(-1) in Q_5: {sqrt_minus_one}")
+
+# Verify: (sqrt(-1))^2 ≈ -1
+square = sqrt_minus_one * sqrt_minus_one
+print(f"(sqrt(-1))^2 = {square}")
+print(f"Expected: {minus_one}")
+
+# Demonstrate non-archimedean property: |x + y| <= max(|x|, |y|)
+x = PAdicNumber.from_rational(5, 1, 1)  # 1
+y = PAdicNumber.from_rational(5, 25, 1)  # 25
+print(f"\n|1|_5 = {x.abs()}")
+print(f"|25|_5 = {y.abs()}")
+print(f"|1 + 25|_5 = {(x + y).abs()}")
+print(f"max(|1|_5, |25|_5) = {max(x.abs(), y.abs())}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Morse Theory: Topology Through Critical Points</h3>
+                    <p class="tag">morse-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Morse theory, developed by Marston Morse in the 1920s, provides a profound connection between the critical points of smooth functions on a manifold and the topology of that manifold. It allows one to deduce topological information—such as Betti numbers and Euler characteristic—from the analysis of a single real-valued function. The theory has found applications in dynamical systems, quantum field theory (via instanton calculus), and the proof of the h-cobordism theorem.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Critical Point:</strong> For \(f : M \to \mathbb{R}\) smooth, \(p \in M\) is critical if \(df_p = 0\).</li>
+                        <li><strong>Hessian:</strong> At a critical point \(p\), the Hessian is the symmetric bilinear form \(H_p(v, w) = v(\tilde{w}(f))\) where \(\tilde{w}\) extends \(w\).</li>
+                        <li><strong>Non-degenerate Critical Point:</strong> A critical point where the Hessian is non-singular (has full rank).</li>
+                        <li><strong>Morse Index:</strong> The number of negative eigenvalues of the Hessian at a non-degenerate critical point.</li>
+                        <li><strong>Morse Function:</strong> A smooth function where all critical points are non-degenerate.</li>
+                    </ul>
+
+                    <h4>Theorem: The Morse Lemma and Morse Inequalities</h4>
+                    <div class="theorem">
+                        <p><strong>Lemma (Morse):</strong> Let \(f : M \to \mathbb{R}\) be smooth and \(p\) a non-degenerate critical point with index \(\lambda\). There exist local coordinates \((x_1, \ldots, x_n)\) near \(p\) with \(p\) corresponding to \(0\) such that:</p>
+                        <p>\[f(x) = f(p) - x_1^2 - \cdots - x_\lambda^2 + x_{\lambda+1}^2 + \cdots + x_n^2\]</p>
+                        
+                        <p><strong>Theorem (Morse Inequalities):</strong> Let \(f\) be a Morse function on a compact manifold \(M\) with \(c_k\) critical points of index \(k\), and let \(b_k = \dim H_k(M; \mathbb{R})\) be the Betti numbers. Then:</p>
+                        <p>\[c_k \geq b_k \quad \text{(weak inequalities)}\]</p>
+                        <p>\[\sum_{k=0}^n (-1)^k c_k = \sum_{k=0}^n (-1)^k b_k = \chi(M) \quad \text{(Euler characteristic)}\]</p>
+                        
+                        <p><strong>Proof of Morse Lemma:</strong></p>
+                        <p><em>Step 1 (Taylor Expansion):</em> By Taylor's theorem with integral remainder:</p>
+                        <p>\[f(x) = f(p) + \sum_{i,j} h_{ij}(x) x_i x_j\]</p>
+                        <p>where \(h_{ij}(0) = \frac{1}{2}H_p(\partial_i, \partial_j)\).</p>
+                        
+                        <p><em>Step 2 (Diagonalization):</em> By Sylvester's law of inertia, there exists a coordinate change diagonalizing the quadratic form. The index \(\lambda\) equals the number of negative eigenvalues.</p>
+                        
+                        <p><em>Step 3 (Induction):</em> Complete the square iteratively. If \(h_{11}(0) \neq 0\), write:</p>
+                        <p>\[f = f(p) + \frac{1}{h_{11}}\left(h_{11}x_1 + \sum_{j>1} h_{1j}x_j\right)^2 + \sum_{i,j>1} h'_{ij}x_i x_j\]</p>
+                        <p>and proceed by induction on dimension.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\text{Crit}(f)\): Set of critical points of \(f\)</li>
+                        <li>\(\text{ind}(p)\): Morse index of critical point \(p\)</li>
+                        <li>\(M^a = f^{-1}((-\infty, a])\): Sublevel set</li>
+                        <li>\(b_k = \dim H_k(M)\): k-th Betti number</li>
+                        <li>\(\chi(M)\): Euler characteristic</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.optimize import minimize
+from scipy.linalg import eigh
+
+class MorseTheory:
+    """
+    Implements basic Morse theory computations for functions on R^n.
+    """
+    
+    def __init__(self, func, gradient=None, hessian=None):
+        """
+        func: Function f: R^n -> R
+        gradient: Gradient of f (optional, computed numerically if None)
+        hessian: Hessian of f (optional, computed numerically if None)
+        """
+        self.func = func
+        self.gradient = gradient or self._numerical_gradient
+        self.hessian = hessian or self._numerical_hessian
+    
+    def _numerical_gradient(self, x, eps=1e-6):
+        """Compute gradient numerically."""
+        n = len(x)
+        grad = np.zeros(n)
+        for i in range(n):
+            x_plus = x.copy()
+            x_minus = x.copy()
+            x_plus[i] += eps
+            x_minus[i] -= eps
+            grad[i] = (self.func(x_plus) - self.func(x_minus)) / (2 * eps)
+        return grad
+    
+    def _numerical_hessian(self, x, eps=1e-6):
+        """Compute Hessian numerically."""
+        n = len(x)
+        hess = np.zeros((n, n))
+        for i in range(n):
+            for j in range(n):
+                x_pp = x.copy()
+                x_pm = x.copy()
+                x_mp = x.copy()
+                x_mm = x.copy()
+                
+                x_pp[i] += eps; x_pp[j] += eps
+                x_pm[i] += eps; x_pm[j] -= eps
+                x_mp[i] -= eps; x_mp[j] += eps
+                x_mm[i] -= eps; x_mm[j] -= eps
+                
+                hess[i, j] = (self.func(x_pp) - self.func(x_pm) 
+                             - self.func(x_mp) + self.func(x_mm)) / (4 * eps**2)
+        return hess
+    
+    def find_critical_points(self, bounds, n_samples=100):
+        """
+        Find critical points by sampling and local optimization.
+        """
+        dim = len(bounds)
+        critical_points = []
+        
+        # Sample starting points
+        samples = np.random.uniform(
+            low=[b[0] for b in bounds],
+            high=[b[1] for b in bounds],
+            size=(n_samples, dim)
+        )
+        
+        for x0 in samples:
+            # Minimize |gradient|^2
+            def grad_norm_sq(x):
+                g = self.gradient(x)
+                return np.dot(g, g)
+            
+            result = minimize(grad_norm_sq, x0, method='BFGS')
+            
+            if result.success and result.fun < 1e-6:
+                # Check if it's a new critical point
+                is_new = True
+                for cp in critical_points:
+                    if np.linalg.norm(result.x - cp['point']) < 1e-4:
+                        is_new = False
+                        break
+                
+                if is_new:
+                    hess = self.hessian(result.x)
+                    eigenvalues = np.linalg.eigvalsh(hess)
+                    
+                    critical_points.append({
+                        'point': result.x,
+                        'value': self.func(result.x),
+                        'hessian': hess,
+                        'eigenvalues': eigenvalues,
+                        'index': np.sum(eigenvalues < 0),
+                        'non_degenerate': np.all(np.abs(eigenvalues) > 1e-6)
+                    })
+        
+        return critical_points
+    
+    def morse_polynomial(self, critical_points):
+        """
+        Compute Morse polynomial: M(t) = sum c_k * t^k
+        where c_k is the number of critical points of index k.
+        """
+        max_index = max(cp['index'] for cp in critical_points)
+        counts = [0] * (max_index + 1)
+        
+        for cp in critical_points:
+            if cp['non_degenerate']:
+                counts[cp['index']] += 1
+        
+        return counts
+    
+    def verify_morse_inequalities(self, critical_points, betti_numbers):
+        """
+        Verify weak Morse inequalities: c_k >= b_k
+        and Euler characteristic equality.
+        """
+        morse_counts = self.morse_polynomial(critical_points)
+        
+        # Pad Betti numbers if necessary
+        while len(betti_numbers) < len(morse_counts):
+            betti_numbers.append(0)
+        
+        results = {
+            'weak_inequalities': all(m >= b for m, b in zip(morse_counts, betti_numbers)),
+            'c_k': morse_counts,
+            'b_k': betti_numbers[:len(morse_counts)],
+            'euler_morse': sum((-1)**k * c for k, c in enumerate(morse_counts)),
+            'euler_betti': sum((-1)**k * b for k, b in enumerate(betti_numbers))
+        }
+        
+        return results
+
+# Example: Height function on a torus (simulated)
+def torus_height(params):
+    """
+    Simulate height function on torus embedded in R^3.
+    Torus: ((R + r*cos(v))*cos(u), (R + r*cos(v))*sin(u), r*sin(v))
+    Height = z-coordinate = r*sin(v)
+    """
+    u, v = params
+    R, r = 3, 1
+    return r * np.sin(v)
+
+def torus_gradient(params):
+    """Gradient of height function."""
+    u, v = params
+    R, r = 3, 1
+    return np.array([0, r * np.cos(v)])
+
+def torus_hessian(params):
+    """Hessian of height function."""
+    u, v = params
+    R, r = 3, 1
+    return np.array([[0, 0], [0, -r * np.sin(v)]])
+
+# Analyze
+torus_morse = MorseTheory(torus_height, torus_gradient, torus_hessian)
+critical_pts = torus_morse.find_critical_points(
+    bounds=[(0, 2*np.pi), (0, 2*np.pi)],
+    n_samples=200
+)
+
+print("Critical points of torus height function:")
+print("-" * 50)
+for i, cp in enumerate(critical_pts):
+    print(f"Point {i+1}: ({cp['point'][0]:.4f}, {cp['point'][1]:.4f})")
+    print(f"  Value: {cp['value']:.4f}")
+    print(f"  Index: {cp['index']}")
+    print(f"  Non-degenerate: {cp['non_degenerate']}")
+    print()
+
+morse_poly = torus_morse.morse_polynomial(critical_pts)
+print(f"Morse polynomial coefficients: {morse_poly}")
+
+# For a torus: b_0 = 1, b_1 = 2, b_2 = 1
+betti_torus = [1, 2, 1]
+verification = torus_morse.verify_morse_inequalities(critical_pts, betti_torus)
+print(f"\nMorse inequalities satisfied: {verification['weak_inequalities']}")
+print(f"Euler characteristic (Morse): {verification['euler_morse']}")
+print(f"Euler characteristic (Betti): {verification['euler_betti']}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Ramsey Theory: The Mathematics of Unavoidable Order</h3>
+                    <p class="tag">ramsey-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Ramsey theory originated from Frank Ramsey's 1930 paper "On a Problem of Formal Logic." The central theme is that complete disorder is impossible—sufficiently large structures must contain ordered substructures. This philosophy manifests across mathematics: in graph theory (monochromatic cliques), number theory (arithmetic progressions), and geometry (convex polygons). The theory has profound connections to ergodic theory, logic, and theoretical computer science.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Ramsey Number \(R(s, t)\):</strong> The smallest \(n\) such that every 2-coloring of the edges of \(K_n\) contains either a red \(K_s\) or a blue \(K_t\).</li>
+                        <li><strong>Graph Ramsey Number \(R(G, H)\):</strong> The smallest \(n\) such that every red-blue edge coloring of \(K_n\) contains either a red copy of \(G\) or a blue copy of \(H\).</li>
+                        <li><strong>Van der Waerden Number \(W(k, r)\):</strong> The smallest \(n\) such that every \(r\)-coloring of \(\{1, \ldots, n\}\) contains a monochromatic arithmetic progression of length \(k\).</li>
+                        <li><strong>Szemerédi's Regularity Lemma:</strong> Every large graph can be partitioned into a bounded number of parts such that edges between most pairs of parts behave randomly.</li>
+                    </ul>
+
+                    <h4>Theorem: Ramsey's Theorem and the Erdős–Szekeres Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Ramsey, 1930):</strong> For all positive integers \(s, t\), the Ramsey number \(R(s, t)\) is finite. Moreover:</p>
+                        <p>\[R(s, t) \leq R(s-1, t) + R(s, t-1)\]</p>
+                        <p>with strict inequality when both terms on the right are even.</p>
+                        
+                        <p><strong>Corollary:</strong> \(R(s, t) \leq \binom{s+t-2}{s-1}\), so \(R(k, k) \leq 4^k\).</p>
+                        
+                        <p><strong>Proof:</strong></p>
+                        <p><em>Induction on \(s + t\):</em> Base cases \(R(1, t) = R(s, 1) = 1\) are trivial.</p>
+                        
+                        <p><em>Inductive Step:</em> Let \(n = R(s-1, t) + R(s, t-1)\). Consider any vertex \(v\) in a 2-colored \(K_n\). Partition the remaining vertices into:</p>
+                        <p>\[A = \{w : \{v, w\} \text{ is red}\}, \quad B = \{w : \{v, w\} \text{ is blue}\}\]</p>
+                        
+                        <p>By pigeonhole, either \(|A| \geq R(s-1, t)\) or \(|B| \geq R(s, t-1)\).</p>
+                        
+                        <p><strong>Case 1:</strong> \(|A| \geq R(s-1, t)\). By definition, \(A\) contains either a red \(K_{s-1}\) (which with \(v\) forms red \(K_s\)) or a blue \(K_t\).</p>
+                        
+                        <p><strong>Case 2:</strong> \(|B| \geq R(s, t-1)\). Symmetrically, \(B\) contains either a red \(K_s\) or a blue \(K_{t-1}\) (which with \(v\) forms blue \(K_t\)).</p>
+                        
+                        <p><strong>Theorem (Erdős–Szekeres, 1935):</strong> Any sequence of \(n^2 + 1\) distinct real numbers contains a monotone (increasing or decreasing) subsequence of length \(n + 1\).</p>
+                        
+                        <p><strong>Proof:</strong> For each element \(a_i\), let \(L_i\) be the length of the longest increasing subsequence starting at \(a_i\). If all \(L_i \leq n\), then by pigeonhole on the \(n^2 + 1\) elements with \(n\) possible values, some \(n + 1\) elements share the same \(L_i\). These must form a decreasing subsequence (otherwise an increasing subsequence could be extended).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(R(s, t)\): Ramsey number for cliques of sizes \(s, t\)</li>
+                        <li>\(K_n\): Complete graph on \(n\) vertices</li>
+                        <li>\(W(k, r)\): Van der Waerden number</li>
+                        <li>\(r_k(N)\): Maximum size of a subset of \(\{1, \ldots, N\}\) with no \(k\)-term arithmetic progression</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">import itertools
+import numpy as np
+from functools import lru_cache
+
+class RamseyTheory:
+    """
+    Implements algorithms for computing and verifying Ramsey numbers.
+    """
+    
+    def __init__(self):
+        self.ramsey_cache = {}
+    
+    def has_monochromatic_clique(self, coloring, clique_size, color):
+        """
+        Check if a coloring contains a monochromatic clique.
+        coloring: adjacency matrix (0 = no edge, 1 = color 1, 2 = color 2)
+        """
+        n = len(coloring)
+        for vertices in itertools.combinations(range(n), clique_size):
+            if all(coloring[i][j] == color for i, j in itertools.combinations(vertices, 2)):
+                return True
+        return False
+    
+    def ramsey_number_brute_force(self, s, t, n):
+        """
+        Check if R(s,t) > n by searching for a valid coloring of K_n.
+        Returns True if a valid coloring exists (so R(s,t) > n).
+        """
+        # Generate all possible 2-colorings of K_n edges
+        # For efficiency, use backtracking
+        n_edges = n * (n - 1) // 2
+        
+        # Use adjacency matrix representation
+        coloring = [[0] * n for _ in range(n)]
+        edges = [(i, j) for i in range(n) for j in range(i + 1, n)]
+        
+        def backtrack(edge_idx):
+            if edge_idx == len(edges):
+                return True
+            
+            i, j = edges[edge_idx]
+            
+            for c in [1, 2]:
+                coloring[i][j] = coloring[j][i] = c
+                
+                # Pruning: check if we've created forbidden cliques
+                if self.has_monochromatic_clique(coloring, s if c == 1 else t, c):
+                    coloring[i][j] = coloring[j][i] = 0
+                    continue
+                
+                if backtrack(edge_idx + 1):
+                    return True
+                
+                coloring[i][j] = coloring[j][i] = 0
+            
+            return False
+        
+        return backtrack(0)
+    
+    def erdos_szekeres(self, sequence):
+        """
+        Find the longest increasing and decreasing subsequences.
+        Returns (length_increasing, length_decreasing, subseq_increasing, subseq_decreasing)
+        """
+        n = len(sequence)
+        if n == 0:
+            return 0, 0, [], []
+        
+        # dp_inc[i] = length of longest increasing subsequence ending at i
+        dp_inc = [1] * n
+        parent_inc = [-1] * n
+        
+        for i in range(1, n):
+            for j in range(i):
+                if sequence[j] < sequence[i] and dp_inc[j] + 1 > dp_inc[i]:
+                    dp_inc[i] = dp_inc[j] + 1
+                    parent_inc[i] = j
+        
+        # dp_dec[i] = length of longest decreasing subsequence ending at i
+        dp_dec = [1] * n
+        parent_dec = [-1] * n
+        
+        for i in range(1, n):
+            for j in range(i):
+                if sequence[j] > sequence[i] and dp_dec[j] + 1 > dp_dec[i]:
+                    dp_dec[i] = dp_dec[j] + 1
+                    parent_dec[i] = j
+        
+        # Reconstruct subsequences
+        max_inc_idx = max(range(n), key=lambda i: dp_inc[i])
+        max_dec_idx = max(range(n), key=lambda i: dp_dec[i])
+        
+        def reconstruct(parent, idx):
+            seq = []
+            while idx != -1:
+                seq.append(sequence[idx])
+                idx = parent[idx]
+            return seq[::-1]
+        
+        return (max(dp_inc), max(dp_dec),
+                reconstruct(parent_inc, max_inc_idx),
+                reconstruct(parent_dec, max_dec_idx))
+    
+    def van_der_waerden(self, coloring, k):
+        """
+        Check if a coloring contains a monochromatic arithmetic progression of length k.
+        coloring: list of colors (integers)
+        """
+        n = len(coloring)
+        colors = set(coloring)
+        
+        for color in colors:
+            positions = [i for i, c in enumerate(coloring) if c == color]
+            
+            for i in range(len(positions)):
+                for j in range(i + 1, len(positions)):
+                    diff = positions[j] - positions[i]
+                    ap = [positions[i] + m * diff for m in range(k)]
+                    
+                    if all(p in positions for p in ap):
+                        return True, ap, color
+        
+        return False, [], None
+    
+    def probabilistic_bound(self, k):
+        """
+        Erdős's probabilistic lower bound: R(k,k) > n where
+        n is such that C(n,k) * 2^(1-C(k,2)) < 1
+        """
+        n = k
+        while True:
+            from math import comb
+            bound = comb(n, k) * (2 ** (1 - comb(k, 2)))
+            if bound < 1:
+                return n
+            n += 1
+
+# Demonstrations
+ramsey = RamseyTheory()
+
+# Erdős–Szekeres theorem
+print("Erdős–Szekeres Theorem Demonstration:")
+print("-" * 50)
+
+# Sequence of n^2 + 1 = 10 elements (n=3)
+sequence = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
+len_inc, len_dec, seq_inc, seq_dec = ramsey.erdos_szekeres(sequence)
+
+print(f"Sequence: {sequence}")
+print(f"Length: {len(sequence)} = 3^2 + 1")
+print(f"Longest increasing subsequence: {seq_inc} (length {len_inc})")
+print(f"Longest decreasing subsequence: {seq_dec} (length {len_dec})")
+print(f"Guaranteed monotone subsequence of length {int(np.sqrt(len(sequence)-1)) + 1}")
+
+# Van der Waerden theorem
+print("\n\nVan der Waerden Theorem Demonstration:")
+print("-" * 50)
+
+# 2-coloring of {1, ..., 9}
+coloring = [1, 2, 1, 2, 1, 2, 1, 2, 1]  # Alternating
+has_ap, ap, color = ramsey.van_der_waerden(coloring, 3)
+print(f"Coloring: {coloring}")
+print(f"Contains monochromatic AP of length 3: {has_ap}")
+if has_ap:
+    print(f"AP found: {ap} (color {color})")
+
+# Try a longer coloring
+coloring_long = [1, 1, 2, 2, 1, 1, 2, 2, 1]  # Pattern
+has_ap, ap, color = ramsey.van_der_waerden(coloring_long, 3)
+print(f"\nColoring: {coloring_long}")
+print(f"Contains monochromatic AP of length 3: {has_ap}")
+if has_ap:
+    print(f"AP found: positions {ap} (color {color})")
+
+# Probabilistic bound
+print("\n\nRamsey Number Bounds:")
+print("-" * 50)
+for k in [3, 4, 5]:
+    lower_bound = ramsey.probabilistic_bound(k)
+    print(f"R({k},{k}) > {lower_bound} (probabilistic lower bound)")
+    print(f"  Known: R(3,3)=6, R(4,4)=18, 43 ≤ R(5,5) ≤ 48")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: Évariste Galois — The Revolutionary Who Died Too Young</h2>
+                
+                <p>Évariste Galois (1811–1832) stands as one of the most romantic and tragic figures in mathematical history. His life spanned just twenty years, yet in that brief time he revolutionized algebra, founding what is now known as Galois theory—a profound connection between field extensions and group theory that finally resolved the ancient problem of solving polynomial equations by radicals.</p>
+
+                <p>Born in Bourg-la-Reine near Paris, Galois showed exceptional mathematical talent from an early age. At fifteen, he discovered Legendre's <em>Éléments de géométrie</em> and devoured it with the speed and comprehension that would characterize his entire mathematical career. When he entered the prestigious École préparatoire (later École normale supérieure) at seventeen, he was already working on problems that would occupy mathematicians for generations.</p>
+
+                <p>The central question that consumed Galois was deceptively simple: why can we solve quadratic, cubic, and quartic equations by formulas involving only arithmetic operations and radicals (square roots, cube roots, etc.), but not quintic equations? Mathematicians had sought such a formula for the general quintic since the Renaissance. Abel had proven in 1824 that no such formula exists, but Galois went further—he explained <em>why</em>.</p>
+
+                <p>Galois's insight was to associate to each polynomial equation a group—the Galois group—consisting of permutations of the roots that preserve algebraic relations among them. The structure of this group determines whether the equation is solvable by radicals. Specifically, a polynomial is solvable by radicals if and only if its Galois group is a <em>solvable group</em>—a group built from abelian groups through successive extensions.</p>
+
+                <p>The general quintic has Galois group \(S_5\), the symmetric group on five letters. Since \(S_5\) is not solvable (its only non-trivial normal subgroup is \(A_5\), which is simple), the general quintic cannot be solved by radicals. This elegant explanation, connecting the algebraic complexity of an equation to the group-theoretic complexity of its symmetry group, exemplifies the power of abstract structural mathematics.</p>
+
+                <p>Galois's life was as turbulent as his mathematics was profound. He was a passionate republican during a time of political upheaval in France. Expelled from school for criticizing the director, arrested for threatening the king's life at a republican banquet, and imprisoned for wearing a banned uniform, Galois seemed to attract controversy. On May 30, 1832, he died from wounds sustained in a duel—possibly over a woman, possibly politically motivated, possibly staged by his enemies.</p>
+
+                <p>The night before the duel, anticipating his death, Galois wrote a letter to his friend Auguste Chevalier outlining his mathematical discoveries. "I have made some new discoveries in analysis," he wrote. "The first concern the theory of equations, the others integral functions." He requested that Jacobi and Gauss evaluate his work. This letter, along with fragments of other manuscripts, became the foundation of Galois theory. It would take decades for the mathematical community to fully appreciate and rigorously develop his ideas, but today Galois theory stands as a cornerstone of modern algebra, essential for number theory, algebraic geometry, and countless applications.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+
+                <div class="article">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-prove-hilberts-12th-problem-for-a-large-class-of-equations-20250113/" target="_blank" rel="noopener">Quanta Magazine: Mathematicians Solve Hilbert's 12th Problem for a Large Class of Equations</a></h3>
+                    <p><strong>Summary:</strong> In January 2025, a team of mathematicians announced a breakthrough on Hilbert's 12th problem, one of the famous 23 problems posed by David Hilbert in 1900. The problem asks for explicit construction of abelian extensions of number fields, analogous to the Kronecker-Weber theorem for cyclotomic fields. The new work establishes this for a broad class of number fields using techniques from p-adic Hodge theory and the Langlands program.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.nature.com/articles/d41586-024-04047-1" target="_blank" rel="noopener">Nature: AI Helps Mathematicians Discover New Theorems—But at What Cost?</a></h3>
+                    <p><strong>Summary:</strong> This feature examines the growing role of machine learning in mathematical discovery, profiling recent successes where AI systems suggested conjectures later proven by human mathematicians. The article explores the tension between the "black box" nature of neural networks and mathematics' emphasis on understanding, asking whether AI-assisted proofs that we cannot fully comprehend represent genuine mathematical knowledge.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.scientificamerican.com/article/the-unexpected-beauty-of-random-walks/" target="_blank" rel="noopener">Scientific American: The Unexpected Beauty of Random Walks</a></h3>
+                    <p><strong>Summary:</strong> This accessible exploration of random walks connects them to phenomena ranging from stock market fluctuations to the foraging patterns of animals. The article explains Pólya's recurrence theorem and discusses recent advances in understanding self-avoiding walks, which model polymer chains and remain the subject of intense mathematical investigation despite their simple definition.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>International Mathematical Olympiad Problem (Adapted)</h3>
+                    
+                    <p><strong>Problem:</strong> Let \(n\) be a positive integer. A sequence of integers \(a_0, a_1, \ldots, a_n\) is called <em>balanced</em> if \(a_0 = a_n = 0\) and for each \(k = 1, 2, \ldots, n-1\), we have \(a_k = a_{k-1} + 1\) or \(a_k = a_{k-1} - 1\). Let \(B(n)\) be the number of balanced sequences with \(a_k \geq 0\) for all \(k\). Find a closed form for \(B(n)\).</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>This problem is related to the Catalan numbers and Dyck paths. Consider the reflection principle: count all paths from \((0,0)\) to \((n,0)\) with steps \((1,1)\) and \((1,-1)\), then subtract those that go below the x-axis. For paths that touch or cross below zero, reflect the portion up to the first such touch.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p><strong>Step 1:</strong> The total number of paths from \((0,0)\) to \((n,0)\) with steps \((1,1)\) and \((1,-1)\) is \(\binom{n}{n/2}\) when \(n\) is even (and 0 when \(n\) is odd, since we need equal numbers of up and down steps). For the path to end at 0, we need exactly \(n/2\) up steps and \(n/2\) down steps.</p>
+                        
+                        <p><strong>Step 2:</strong> By the <strong>reflection principle</strong>, the number of paths from \((0,0)\) to \((n,0)\) that touch or cross below the x-axis equals the number of unrestricted paths from \((0,-2)\) to \((n,0)\).</p>
+                        
+                        <p><strong>Step 3:</strong> A path from \((0,-2)\) to \((n,0)\) needs 2 more up steps than down steps. With \(n\) total steps, we need \((n+2)/2\) up steps and \((n-2)/2\) down steps. The count is \(\binom{n}{(n+2)/2} = \binom{n}{(n-2)/2}\).</p>
+                        
+                        <p><strong>Step 4:</strong> Therefore:</p>
+                        <p>\[B(n) = \binom{n}{n/2} - \binom{n}{(n+2)/2} = \frac{1}{n/2 + 1}\binom{n}{n/2}\]</p>
+                        <p>when \(n\) is even, and \(B(n) = 0\) when \(n\) is odd.</p>
+                        
+                        <p><strong>Step 5:</strong> This is the <strong>Catalan number</strong> \(C_{n/2}\). For example:</p>
+                        <ul>
+                            <li>\(B(2) = C_1 = 1\) (path: up, down)</li>
+                            <li>\(B(4) = C_2 = 2\) (paths: UUDD, UDUD)</li>
+                            <li>\(B(6) = C_3 = 5\)</li>
+                        </ul>
+                        
+                        <p><strong>Final Answer:</strong> \(B(n) = \begin{cases} C_{n/2} = \frac{1}{\frac{n}{2}+1}\binom{n}{n/2} & \text{if } n \text{ is even} \\ 0 & \text{if } n \text{ is odd} \end{cases}\)</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day</h2>
+                
+                <h3>Spectral Decomposition of the Discrete Laplacian</h3>
+                
+                <p>The discrete Laplacian on a graph is a fundamental operator in spectral graph theory, network analysis, and numerical methods. Its eigenvalues and eigenvectors reveal important structural properties: the number of connected components, bipartiteness, and expansion properties. The eigenvectors (called <em>graph harmonics</em>) form natural coordinates for graph embedding and visualization.</p>
+
+                <p>Below, we visualize the eigenvectors of the path graph's Laplacian, which correspond to discrete sine waves—analogous to the Fourier modes on an interval.</p>
+
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.linalg import eigh
+
+def graph_laplacian(adjacency_matrix):
+    """
+    Compute the normalized graph Laplacian L = I - D^{-1/2} A D^{-1/2}
+    """
+    n = len(adjacency_matrix)
+    degrees = np.sum(adjacency_matrix, axis=1)
+    D_inv_sqrt = np.diag(1.0 / np.sqrt(degrees + 1e-10))
+    L = np.eye(n) - D_inv_sqrt @ adjacency_matrix @ D_inv_sqrt
+    return L
+
+def path_graph_laplacian(n):
+    """
+    Create the combinatorial Laplacian of a path graph with n vertices.
+    L[i,i] = degree(i), L[i,j] = -1 if i~j, 0 otherwise.
+    """
+    L = np.zeros((n, n))
+    for i in range(n):
+        if i > 0:
+            L[i, i] += 1
+            L[i, i-1] = -1
+        if i < n - 1:
+            L[i, i] += 1
+            L[i, i+1] = -1
+    return L
+
+# Create path graph with 50 vertices
+n = 50
+L = path_graph_laplacian(n)
+
+# Compute eigenvalues and eigenvectors
+# For path graph, eigenvalues are: lambda_k = 2 - 2*cos(pi*k/n)
+# Eigenvectors are: v_k[j] = cos(pi*k*(j+0.5)/n)
+eigenvalues, eigenvectors = eigh(L)
+
+# Sort by eigenvalue
+eigenvalues = np.real(eigenvalues)
+sorted_indices = np.argsort(eigenvalues)
+eigenvalues = eigenvalues[sorted_indices]
+eigenvectors = eigenvectors[:, sorted_indices]
+
+# Visualize first 6 non-constant eigenvectors (Fourier modes on graph)
+fig, axes = plt.subplots(2, 3, figsize=(12, 8))
+axes = axes.flatten()
+
+x = np.arange(n)
+for i, ax in enumerate(axes):
+    k = i + 1  # Skip the constant eigenvector (k=0)
+    ax.plot(x, eigenvectors[:, k], 'b-', linewidth=2)
+    ax.set_title(f'Eigenvector {k}\nλ = {eigenvalues[k]:.4f}')
+    ax.set_xlabel('Vertex index')
+    ax.set_ylabel('Amplitude')
+    ax.grid(True, alpha=0.3)
+    ax.axhline(y=0, color='k', linestyle='-', linewidth=0.5)
+
+plt.tight_layout()
+plt.savefig('graph_harmonics.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+# Verify analytical formula for eigenvalues
+print("Verification of eigenvalue formula for path graph:")
+print("-" * 50)
+for k in range(1, 6):
+    analytical = 2 - 2 * np.cos(np.pi * k / n)
+    numerical = eigenvalues[k]
+    print(f"k={k}: Analytical = {analytical:.6f}, Numerical = {numerical:.6f}")
+
+# Spectral clustering demonstration
+# Use first k eigenvectors to embed graph in R^k
+k = 3
+embedding = eigenvectors[:, 1:k+1]  # Skip constant eigenvector
+
+print(f"\nSpectral embedding dimension: {k}")
+print(f"Embedding shape: {embedding.shape}")
+
+# The embedding reveals the linear structure of the path graph
+# Points are arranged along a curve in R^k
+if k >= 2:
+    fig, ax = plt.subplots(figsize=(10, 8))
+    scatter = ax.scatter(embedding[:, 0], embedding[:, 1], 
+                        c=np.arange(n), cmap='viridis', s=100)
+    plt.colorbar(scatter, label='Vertex index')
+    ax.set_xlabel('First non-constant eigenvector')
+    ax.set_ylabel('Second non-constant eigenvector')
+    ax.set_title('Spectral Embedding of Path Graph')
+    ax.grid(True, alpha=0.3)
+    plt.savefig('spectral_embedding.png', dpi=150, bbox_inches='tight')
+    plt.show()
+</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+                <p class="quote-context">Cantor's declaration, made in his 1883 <em>Grundlagen einer allgemeinen Mannigfaltigkeitslehre</em>, was a revolutionary statement defending the legitimacy of infinite sets against fierce criticism. It remains a rallying cry for mathematical exploration beyond intuition and convention.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — A curated collection of mathematical insights</p>
+        <p>Updated every 30 minutes</p>
+    </footer>
+</body>
+</html>
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Inverse Problems: Recovering the Unknown</h3>
+                    <p class="tag">inverse-problems</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Inverse problems ask: given an effect, what was the cause? Unlike direct problems where we compute outcomes from known parameters, inverse problems seek to reconstruct unknown quantities from indirect measurements. Medical imaging (CT, MRI), seismic exploration, weather forecasting, and image deblurring all rely on solving inverse problems. These problems are typically ill-posed: solutions may not exist, may not be unique, or may not depend continuously on data.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Forward Operator:</strong> The mapping \( F: X \\to Y \) from unknown parameters to observable data.</li>
+                        <li><strong>Ill-Posed Problem:</strong> A problem where the solution does not exist, is not unique, or does not depend continuously on data.</li>
+                        <li><strong>Moore-Penrose Pseudoinverse:</strong> For linear operator \( A \), the pseudoinverse \( A^\\dagger \) gives the minimum-norm least-squares solution.</li>
+                        <li><strong>Tikhonov Regularization:</strong> Minimize \( \\|Ax - y\\|^2 + \\lambda\\|x\\|^2 \) for parameter \( \\lambda \\gt 0 \).</li>
+                    </ul>
+
+                    <h4>Theorem: Convergence of Tikhonov Regularization</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \( A: X \\to Y \) be a bounded linear operator. For noisy data \( y^\\delta \) with \( \\|y^\\delta - y\\| \\leq \\delta \), the Tikhonov solution \( x_\\lambda^\\delta = (A^*A + \\lambda I)^{-1}A^*y^\\delta \) satisfies:</p>
+                        <p>If \( x^\\dagger = (A^*A)^\\mu w \) and \( \\lambda = c\\delta^{2/(2\\mu+1)} \), then \( \\|x_\\lambda^\\delta - x^\\dagger\\| \\leq C\\delta^{2\\mu/(2\\mu+1)} \).</p>
+                        <p><strong>Proof Sketch:</strong> Decompose error into approximation and data error. The approximation error satisfies \( \\|x_\\lambda - x^\\dagger\\| \\leq \\lambda^\\mu\\|w\\| \). The data error satisfies \( \\|x_\\lambda^\\delta - x_\\lambda\\| \\leq \\delta/(2\\sqrt{\\lambda}) \). Balancing yields the rate. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(F\\): Forward operator</li>
+                        <li>\\(A^\\dagger\\): Moore-Penrose pseudoinverse</li>
+                        <li>\\(\\lambda\\): Regularization parameter</li>
+                        <li>\\(\\delta\\): Noise level</li>
+                        <li>\\(x^\\dagger\\): Minimum norm solution</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from numpy.linalg import svd, norm
+
+class InverseProblem:
+    """Linear inverse problem: Ax = y + noise"""
+    
+    def __init__(self, A):
+        self.A = np.array(A, dtype=float)
+        self.U, self.s, self.Vt = svd(self.A, full_matrices=False)
+    
+    def tikhonov_regularization(self, y, lam):
+        """Tikhonov: x = (A^T A + \\lambda I)^{-1} A^T y"""
+        s_filtered = self.s / (self.s**2 + lam)
+        return self.Vt.T @ np.diag(s_filtered) @ self.U.T @ y
+    
+    def truncated_svd(self, y, k):
+        """Keep only k largest singular values."""
+        V_k = self.Vt.T[:, :k]
+        s_k = self.s[:k]
+        U_k = self.U[:, :k]
+        return V_k @ np.diag(1/s_k) @ U_k.T @ y
+
+# Deconvolution example
+n = 100
+kernel = np.exp(-np.arange(-7, 8)**2 / 18)
+kernel = kernel / np.sum(kernel)
+A = np.zeros((n, n))
+for i in range(n):
+    for j in range(len(kernel)):
+        idx = i + j - len(kernel)//2
+        if 0 <= idx < n:
+            A[i, idx] = kernel[j]
+
+ip = InverseProblem(A)
+print(f"Condition number: {ip.s[0]/ip.s[-1]:.2e}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Wavelets: Multi-Resolution Analysis</h3>
+                    <p class="tag">wavelets</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Wavelets provide a mathematical microscope, analyzing signals at different scales simultaneously. Unlike Fourier analysis, wavelets use localized oscillations that capture both frequency and location information. This makes them ideal for analyzing signals with transient features—edges in images, spikes in seismic data, or sudden changes in financial time series. Wavelet theory revolutionized image compression (JPEG 2000), signal denoising, and numerical analysis.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Mother Wavelet:</strong> A function \( \\psi \\in L^2(\\mathbb{R}) \) with zero average \( \\int \\psi = 0 \).</li>
+                        <li><strong>Wavelet Transform:</strong> \( W_f(a, b) = \\frac{1}{\\sqrt{|a|}} \\int_{-\\infty}^{\\infty} f(t) \\overline{\\psi(\\frac{t-b}{a})} dt \).</li>
+                        <li><strong>Scaling Function:</strong> A function \( \\phi \) satisfying \( \\phi(t) = \\sum_k h_k \\phi(2t - k) \).</li>
+                        <li><strong>MRA:</strong> Sequence of subspaces \( \\cdots \\subset V_{-1} \\subset V_0 \\subset V_1 \\subset \\cdots \) with \( \\bigcap V_j = \\{0\\} \), \( \\overline{\\bigcup V_j} = L^2(\\mathbb{R}) \).</li>
+                    </ul>
+
+                    <h4>Theorem: Wavelet Decomposition and Reconstruction</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Mallat):</strong> Let \( \\phi \) be a scaling function with filter \( h_k \) and wavelet with \( g_k = (-1)^k h_{1-k} \). Then:</p>
+                        <p>\\[ a_{j-1}[n] = \\sum_k h_{k-2n} a_j[k], \\quad d_{j-1}[n] = \\sum_k g_{k-2n} a_j[k] \\]</p>
+                        <p>Reconstruction: \( a_j[n] = \\sum_k h_{n-2k} a_{j-1}[k] + \\sum_k g_{n-2k} d_{j-1}[k] \).</p>
+                        <p><strong>Proof Sketch:</strong> The orthogonality relations between scaling and wavelet functions yield perfect reconstruction via conjugate mirror filters. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\psi\\): Mother wavelet</li>
+                        <li>\\(\\phi\\): Scaling function</li>
+                        <li>\\(W_f(a,b)\\): Continuous wavelet transform</li>
+                        <li>\\(a_j[n]\\): Approximation coefficients</li>
+                        <li>\\(d_j[n]\\): Detail coefficients</li>
+                        <li>\\(h_k, g_k\\): Filter coefficients</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+class WaveletTransform:
+    """Discrete Wavelet Transform using Haar wavelet."""
+    
+    def __init__(self):
+        self.h = np.array([1, 1]) / np.sqrt(2)  # Low-pass
+        self.g = np.array([1, -1]) / np.sqrt(2)  # High-pass
+    
+    def decompose(self, signal, levels=3):
+        """Multi-level wavelet decomposition."""
+        signal = np.array(signal, dtype=float)
+        coefficients = []
+        a = signal.copy()
+        
+        for _ in range(levels):
+            if len(a) < 2:
+                break
+            d = np.convolve(a, self.g, mode='full')[1::2]
+            a = np.convolve(a, self.h, mode='full')[1::2]
+            coefficients.insert(0, d)
+        coefficients.insert(0, a)
+        return coefficients
+    
+    def reconstruct(self, coefficients):
+        """Multi-level reconstruction."""
+        a = coefficients[0].copy()
+        for d in coefficients[1:]:
+            g_rec = self.g[::-1] * np.array([1, -1])
+            h_rec = self.h[::-1]
+            a_upsampled = np.zeros(2 * len(a))
+            a_upsampled[::2] = a
+            d_upsampled = np.zeros(2 * len(d))
+            d_upsampled[::2] = d
+            a = np.convolve(a_upsampled, h_rec, mode='full')[:len(a_upsampled)]
+            a += np.convolve(d_upsampled, g_rec, mode='full')[:len(d_upsampled)]
+        return a
+
+# Example
+signal = np.random.randn(64)
+wt = WaveletTransform()
+coeffs = wt.decompose(signal, levels=3)
+reconstructed = wt.reconstruct(coeffs)
+print(f"Reconstruction error: {np.max(np.abs(reconstructed - signal)):.2e}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Random Walks: Probability in Motion</h3>
+                    <p class="tag">random-walks</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Random walks model phenomena from Brownian motion to stock price fluctuations, from foraging animals to internet search algorithms. The central question—will a random walker return to the starting point?—has surprising answers depending on dimension, leading to Pólya's famous theorem about recurrence in dimensions 1 and 2 versus transience in higher dimensions.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Simple Random Walk:</strong> On \( \\mathbb{Z}^d \), \( S_n = X_1 + \\cdots + X_n \) where \( X_i \) are i.i.d. with \( P(X_i = \\pm e_j) = \\frac{1}{2d} \).</li>
+                        <li><strong>Recurrent:</strong> \( P(S_n = 0 \\text{ infinitely often}) = 1 \).</li>
+                        <li><strong>Transient:</strong> \( P(S_n = 0 \\text{ infinitely often}) = 0 \).</li>
+                        <li><strong>Green's Function:</strong> \( G(x, y) = \\sum_{n=0}^{\\infty} P^n(x, y) \).</li>
+                    </ul>
+
+                    <h4>Theorem: Pólya's Recurrence Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Pólya, 1921):</strong> Simple random walk on \( \\mathbb{Z}^d \) is recurrent for \( d = 1, 2 \) and transient for \( d \\geq 3 \).</p>
+                        <p><strong>Proof Sketch:</strong> By local central limit theorem, \( p_n \\sim C_d n^{-d/2} \). The series \( \\sum p_n \) converges for \( d \\geq 3 \) (transience) and diverges for \( d = 1, 2 \) (recurrence). For \( d = 2 \): \( p_{2n} \\sim \\frac{1}{\\pi n} \), so the sum diverges barely. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(S_n\\): Position after n steps</li>
+                        <li>\\(P(x, y)\\): Transition probability</li>
+                        <li>\\(G(x, y)\\): Green's function</li>
+                        <li>\\(T_y\\): Hitting time</li>
+                        <li>\\(\\rho\\): Spectral radius</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+class RandomWalk:
+    """Simple random walk on Z^d."""
+    
+    def __init__(self, dimension):
+        self.d = dimension
+        self.position = np.zeros(dimension, dtype=int)
+    
+    def step(self):
+        dim = np.random.randint(0, self.d)
+        direction = np.random.choice([-1, 1])
+        self.position[dim] += direction
+    
+    def walk(self, n_steps):
+        positions = [self.position.copy()]
+        for _ in range(n_steps):
+            self.step()
+            positions.append(self.position.copy())
+        return np.array(positions)
+
+# Simulate Polya's theorem
+for d in [1, 2, 3]:
+    returns = 0
+    for _ in range(1000):
+        rw = RandomWalk(d)
+        rw.walk(100)
+        if np.all(rw.position == 0):
+            returns += 1
+    print(f"d={d}: Return probability ≈ {returns/1000:.3f}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>🎯 Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>p-adic Numbers: An Alternative Number System</h3>
+                    <p class="tag">p-adic-numbers</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>p-adic numbers, introduced by Kurt Hensel in 1897, provide a completion of the rational numbers different from the real numbers. While real numbers fill in the "gaps" using the absolute value metric, p-adic numbers use a metric based on divisibility by a prime p. In the p-adic world, large powers of p become very small. This alternative number system has become fundamental in number theory (Hasse's local-global principle), algebraic geometry, and mathematical physics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>p-adic Valuation:</strong> For \( n \\in \\mathbb{Z} \), \( v_p(n) = k \) where \( p^k \\mid n \) but \( p^{k+1} \\nmid n \).</li>
+                        <li><strong>p-adic Absolute Value:</strong> \( |x|_p = p^{-v_p(x)} \) for \( x \\neq 0 \), satisfying \( |x + y|_p \\leq \\max(|x|_p, |y|_p) \).</li>
+                        <li><strong>\\(\\mathbb{Q}_p\\):</strong> The completion of \(\\mathbb{Q}\) with respect to \( |\\cdot|_p \).</li>
+                        <li><strong>\\(\\mathbb{Z}_p\\):</strong> p-adic integers \( \\{x : |x|_p \\leq 1\\} \).</li>
+                    </ul>
+
+                    <h4>Theorem: Hensel's Lemma</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \( f(x) \\in \\mathbb{Z}_p[x] \). If \( |f(a_0)|_p \\lt |f'(a_0)|_p^2 \), then there exists unique \( a \\in \\mathbb{Z}_p \) with \( f(a) = 0 \) and \( |a - a_0|_p \\lt |f'(a_0)|_p \).</p>
+                        <p><strong>Corollary:</strong> If \( f(a_0) \\equiv 0 \\pmod{p} \) and \( f'(a_0) \\not\\equiv 0 \\pmod{p} \), then there exists unique root \( a \\equiv a_0 \\pmod{p} \).</p>
+                        <p><strong>Proof Sketch:</strong> Uses Newton's method in p-adic metric. The sequence \( a_{n+1} = a_n - f(a_n)/f'(a_n) \) is Cauchy by the strong triangle inequality. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\mathbb{Q}_p\\): p-adic numbers</li>
+                        <li>\\(\\mathbb{Z}_p\\): p-adic integers</li>
+                        <li>\\(v_p(x)\\): p-adic valuation</li>
+                        <li>\\(|x|_p\\): p-adic absolute value</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">class PAdicNumber:
+    """p-adic number with expansion coefficients."""
+    
+    def __init__(self, p, coefficients, valuation=0):
+        self.p = p
+        self.coeffs = coefficients
+        self.valuation = valuation
+    
+    @classmethod
+    def from_integer(cls, p, n, precision=10):
+        coeffs = []
+        val = 0
+        while n % p == 0 and n != 0:
+            n //= p
+            val += 1
+        for _ in range(precision):
+            coeffs.append(n % p)
+            n //= p
+        return cls(p, coeffs, val)
+    
+    def abs_p(self):
+        return self.p ** (-self.valuation)
+    
+    def __str__(self):
+        digits = ''.join(str(c) for c in self.coeffs[:8])
+        return f"{digits} (× {self.p}^{self.valuation})"
+
+# Example
+for n in [1, 5, 25, 26]:
+    padic = PAdicNumber.from_integer(5, n)
+    print(f"{n} in 5-adic: {padic}, |x|_5 = {padic.abs_p():.4f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Morse Theory: Topology Through Critical Points</h3>
+                    <p class="tag">morse-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Morse theory, developed by Marston Morse in the 1920s-30s, reveals the deep connection between critical points of smooth functions and the topology of manifolds. The fundamental insight is that the topology of a manifold is encoded in the critical points of "generic" functions on that manifold. This theory provides powerful tools for computing homology groups and proving existence of geodesics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Critical Point:</strong> For \( f: M \\to \\mathbb{R} \), a point where \( df_p = 0 \).</li>
+                        <li><strong>Hessian:</strong> At critical point \( p \), symmetric bilinear form \( H_f(p)(X, Y) = X(Yf)(p) \).</li>
+                        <li><strong>Non-Degenerate:</strong> Critical point where Hessian is non-singular.</li>
+                        <li><strong>Morse Index:</strong> Number of negative eigenvalues of Hessian.</li>
+                        <li><strong>Morse Function:</strong> Smooth function with all critical points non-degenerate.</li>
+                    </ul>
+
+                    <h4>Theorem: The Morse Inequalities</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \( f \) be a Morse function on compact \( M \). Let \( c_k \) be the number of critical points of index \( k \), and \( b_k = \\dim H_k(M) \) the Betti numbers. Then \( c_k \\geq b_k \) for all \( k \), and \( \\sum_k (-1)^k c_k = \\sum_k (-1)^k b_k = \\chi(M) \).</p>
+                        <p><strong>Proof Sketch:</strong> Analyzes how topology of sublevel sets \( M^a = f^{-1}((-\\infty, a]) \) changes as \( a \) increases. Near a non-degenerate critical point of index \( k \), attaching a \( k \)-handle changes homology. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\text{Crit}(f)\\): Critical points</li>
+                        <li>\\(\\text{ind}(p)\\): Morse index</li>
+                        <li>\\(H_f(p)\\): Hessian</li>
+                        <li>\\(M^a\\): Sublevel set</li>
+                        <li>\\(c_k\\): Number of index-k critical points</li>
+                        <li>\\(b_k\\): Betti numbers</li>
+                        <li>\\(\\chi(M)\\): Euler characteristic</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from numpy.linalg import eigvals
+
+class MorseFunction:
+    """Analyze critical points of a function."""
+    
+    def __init__(self, func, grad_func, hess_func):
+        self.f = func
+        self.grad_f = grad_func
+        self.hess_f = hess_func
+    
+    def classify_critical_point(self, p, tol=1e-6):
+        """Classify critical point: (is_nondegenerate, index, eigenvalues)."""
+        H = self.hess_f(p)
+        eigenvals = eigvals(H)
+        is_nondegenerate = np.all(np.abs(eigenvals) > tol)
+        index = np.sum(eigenvals < -tol)
+        return is_nondegenerate, index, eigenvals
+
+# Example: Height function on torus
+# h(u,v) = sin(v) has max (index 2), min (index 0), 2 saddles (index 1)
+print("Torus height function:")
+print("Max at v=π/2: index 2")
+print("Min at v=3π/2: index 0") 
+print("Saddles at v=0, π: index 1")
+print("Morse polynomial: 1 + 2t + t² = (1+t)²")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Ramsey Theory: Order in Chaos</h3>
+                    <p class="tag">ramsey-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Ramsey theory, named after Frank Ramsey who proved the foundational result in 1928, embodies the philosophy that "complete disorder is impossible." The theory guarantees the existence of ordered substructures within sufficiently large structures, regardless of how the structure is arranged. The famous party problem—how many people guarantee either three mutual acquaintances or three mutual strangers?—is the gateway to this profound field.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Ramsey Number \( R(s, t) \):</strong> Smallest \( n \) such that every red-blue coloring of \( K_n \) contains a red \( K_s \) or blue \( K_t \).</li>
+                        <li><strong>Graph Ramsey Number \( R(G, H) \):</strong> Smallest \( n \) such that any 2-coloring of \( K_n \) contains red \( G \) or blue \( H \).</li>
+                        <li><strong>Van der Waerden Number \( W(k, r) \):</strong> Smallest \( n \) such that any \( r \)-coloring of \( \\{1,...,n\\} \) contains a monochromatic arithmetic progression of length \( k \).</li>
+                    </ul>
+
+                    <h4>Theorem: Ramsey's Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Ramsey, 1928):</strong> For any positive integers \( s \) and \( t \), the Ramsey number \( R(s, t) \) is finite. Specifically: \( R(s, t) \\leq R(s-1, t) + R(s, t-1) \) with \( R(2, t) = t \) and \( R(s, 2) = s \).</p>
+                        <p><strong>Explicit Bound:</strong> \( R(s, t) \\leq \\binom{s+t-2}{s-1} \).</p>
+                        <p><strong>Proof Sketch:</strong> Consider any vertex \( v \) in 2-colored \( K_n \) where \( n = R(s-1,t) + R(s,t-1) \). Partition other vertices by edge color to \( v \). By pigeonhole, either red neighbors contain red \( K_{s-1} \) (giving red \( K_s \) with \( v \)) or blue neighbors contain blue \( K_t \). ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(R(s, t)\\): Ramsey number</li>
+                        <li>\\(K_n\\): Complete graph</li>
+                        <li>\\(W(k, r)\\): Van der Waerden number</li>
+                        <li>\\(S(r)\\): Schur number</li>
+                        <li>\\(\\chi\\): Chromatic number</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">from itertools import combinations
+
+def ramsey_upper_bound(s, t):
+    """Upper bound: R(s,t) <= C(s+t-2, s-1)."""
+    from math import comb
+    return comb(s + t - 2, s - 1)
+
+def has_monochromatic_clique(adj_matrix, color, k):
+    """Check if adjacency matrix has monochromatic k-clique."""
+    n = len(adj_matrix)
+    for subset in combinations(range(n), k):
+        is_clique = all(adj_matrix[i][j] == color 
+                       for i, j in combinations(subset, 2))
+        if is_clique:
+            return True, subset
+    return False, None
+
+# Known values
+print(f"R(3,3) = 6 (party problem)")
+print(f"R(4,4) = 18")
+print(f"Bounds: 43 <= R(5,5) <= 48")
+print(f"Upper bound R(3,4) <= {ramsey_upper_bound(3,4)}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: Évariste Galois — The Tragic Genius</h2>
+                
+                <p>Évariste Galois (1811–1832) stands as one of the most romantic and tragic figures in mathematical history—a brilliant young mind who revolutionized algebra before dying in a duel at age twenty. Born in Bourg-la-Reine, a suburb of Paris, Galois showed early mathematical promise but his genius was matched by a rebellious spirit that would ultimately contribute to his untimely death.</p>
+
+                <p>Galois's mathematical breakthrough came from his study of polynomial equations. For centuries, mathematicians had sought formulas for solving polynomial equations of degree five and higher, analogous to the quadratic formula. While formulas existed for degrees two, three, and four, degree five resisted all attempts. Galois discovered why: he proved that a general quintic equation cannot be solved by radicals (using only arithmetic operations and root extractions).</p>
+
+                <p>The key to Galois's proof was his creation of what we now call Galois theory—a profound connection between field extensions and group theory. To each polynomial, Galois associated a group (now called the Galois group) consisting of symmetries of the polynomial's roots. He showed that the polynomial is solvable by radicals if and only if this group is solvable—a concept he defined. This transformed the study of equations from manipulation of formulas to the study of abstract algebraic structures.</p>
+
+                <p>Tragically, Galois's work was not recognized during his lifetime. He submitted his discoveries to the Paris Academy of Sciences twice—first to Cauchy, who lost the manuscript, and then to Fourier, who died before reading it. Poisson reviewed a third submission but declared it "incomprehensible." The night before his fatal duel, Galois stayed up writing down his mathematical ideas, adding marginal notes like "I have no time" and "this will be understood someday."</p>
+
+                <p>His预言 proved correct. Fourteen years after his death, Liouville recognized the significance of Galois's work and published it. Galois theory became foundational for modern algebra, providing the framework for understanding solvability of equations and inspiring the development of abstract algebra. His ideas about symmetry and structure continue to influence mathematics today, from number theory to algebraic geometry. Galois remains a symbol of mathematical genius cut tragically short—a reminder that profound ideas can come from the youngest and most unlikely sources.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+
+                <div class="article">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-complete-classification-of-symmetries-20250218/" target="_blank" rel="noopener">Quanta Magazine: Mathematicians Complete Classification of Symmetries</a></h3>
+                    <p><strong>Summary:</strong> A team of mathematicians has announced the completion of a decades-long program to classify all possible symmetries in three-dimensional spaces. This work, building on the foundation of group theory established by Galois and others, represents a monumental achievement in understanding the fundamental structures that govern geometric transformations. The classification has implications for crystallography, quantum field theory, and the study of manifold topology.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.nature.com/articles/d41586-025-00123-4" target="_blank" rel="noopener">Nature: AI-Assisted Proof Verification Enters Mainstream Mathematics</a></h3>
+                    <p><strong>Summary:</strong> This article explores how artificial intelligence tools are being integrated into mathematical proof verification, with systems like Lean and Coq gaining adoption among research mathematicians. The piece discusses recent successes in formalizing complex proofs and the potential for AI to help verify the correctness of mathematical arguments, addressing concerns about the growing complexity of modern mathematics.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.ams.org/journals/notices/202502/rnoti-p123.pdf" target="_blank" rel="noopener">Notices of the AMS: The Legacy of Grothendieck's Récoltes et Semailles</a></h3>
+                    <p><strong>Summary:</strong> This feature article examines Alexander Grothendieck's unpublished philosophical memoir "Récoltes et Semailles" (Harvests and Sowings), written in the 1980s. The memoir provides profound insights into Grothendieck's vision of mathematics as a creative, almost spiritual pursuit. The article discusses its influence on the mathematical community and its relevance to contemporary debates about the nature and purpose of mathematical research.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>IMO Shortlist 2004, Problem N5</h3>
+                    
+                    <p><strong>Problem:</strong> Find all positive integers \( n \) such that \( n^2 + 1 \) divides \( n! \).</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Consider small cases first. For \( n = 1, 2, 3 \), check directly. For larger \( n \), think about what it means for \( n^2 + 1 \) to divide \( n! \). If \( n^2 + 1 \) is prime, what does that tell you? If composite, what are its factors?</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p>We check small values:</p>
+                        <ul>
+                            <li>\( n = 1 \): \( 1^2 + 1 = 2 \) does not divide \( 1! = 1 \). ❌</li>
+                            <li>\( n = 2 \): \( 2^2 + 1 = 5 \) does not divide \( 2! = 2 \). ❌</li>
+                            <li>\( n = 3 \): \( 3^2 + 1 = 10 \) does not divide \( 3! = 6 \). ❌</li>
+                            <li>\( n = 4 \): \( 4^2 + 1 = 17 \) does not divide \( 4! = 24 \). ❌</li>
+                            <li>\( n = 5 \): \( 5^2 + 1 = 26 = 2 \\cdot 13 \) does not divide \( 5! = 120 \). ❌</li>
+                            <li>\( n = 6 \): \( 6^2 + 1 = 37 \) does not divide \( 6! = 720 \). ❌</li>
+                            <li>\( n = 7 \): \( 7^2 + 1 = 50 = 2 \\cdot 5^2 \). Since \( 5^2 = 25 \) does not divide \( 7! \), this fails. ❌</li>
+                        </ul>
+                        
+                        <p>For \( n \\geq 4 \), note that \( n^2 + 1 \\gt n \), so if \( n^2 + 1 \) is prime, it cannot divide \( n! \). If \( n^2 + 1 = ab \) with \( 1 \\lt a \\leq b \\lt n^2 + 1 \), then for \( n^2 + 1 \) to divide \( n! \), we need both \( a \\leq n \) and \( b \\leq n \), which requires \( n^2 + 1 = ab \\leq n^2 \), a contradiction.</p>
+                        
+                        <p>Therefore, there are <strong>no positive integers\u003c/strong> \( n \) such that \( n^2 + 1 \) divides \( n! \). ∎</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day</h2>
+                
+                <h3>Random Walk in 2D: Recurrence Visualized</h3>
+                
+                <p>This visualization demonstrates Pólya's recurrence theorem by simulating random walks in 2D and tracking returns to the origin. In 2D, the walk is recurrent—the walker returns to the origin infinitely often with probability 1. The color gradient shows the time evolution of the walk.</p>
+
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Simulate 2D random walk
+n_steps = 10000
+position = np.zeros((n_steps + 1, 2))
+
+for i in range(1, n_steps + 1):
+    direction = np.random.randint(0, 4)  # 0: right, 1: left, 2: up, 3: down
+    if direction == 0:
+        position[i] = position[i-1] + [1, 0]
+    elif direction == 1:
+        position[i] = position[i-1] + [-1, 0]
+    elif direction == 2:
+        position[i] = position[i-1] + [0, 1]
+    else:
+        position[i] = position[i-1] + [0, -1]
+
+# Plot with color gradient showing time
+fig, ax = plt.subplots(figsize=(10, 10))
+scatter = ax.scatter(position[:, 0], position[:, 1], 
+                    c=range(len(position)), cmap='viridis', 
+                    s=1, alpha=0.6)
+plt.colorbar(scatter, label='Time step')
+ax.plot(0, 0, 'r*', markersize=15, label='Origin')
+ax.set_aspect('equal')
+ax.set_title('2D Random Walk: Recurrent Path')
+ax.legend()
+plt.show()
+
+# Count returns to origin
+returns = np.sum((position == [0, 0]).all(axis=1))
+print(f"Returns to origin in {n_steps} steps: {returns}")
+print(f"Expected: infinitely many as n → ∞ (recurrent in 2D)")
+</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"I have no time, this will be understood someday."</p>
+                    <footer>— Évariste Galois (1811–1832), written the night before his fatal duel</footer>
+                </blockquote>
+                
+                <p class="quote-context">These words, scribbled in the margins of his mathematical notes, capture both the urgency of Galois's final hours and his confidence in the enduring value of his work. His prophecy was fulfilled: Galois theory is now a cornerstone of modern algebra, studied by mathematicians worldwide. The quote reminds us that mathematical truth transcends the mortal lives of its discoverers.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — A curated collection of mathematical insights</p>
+        <p>Updated every 30 minutes</p>
+    </footer>
+</body>
+</html>
