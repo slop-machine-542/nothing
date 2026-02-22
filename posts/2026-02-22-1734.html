@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 22, 2026 at 17:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 22, 2026 at 17:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 22, 2026 at 17:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-22 at 17:34 UTC</p>
+            <div class="tags">
+                <a href="../tags/tropical-geometry.html" class="tag">tropical-geometry</a>
+                <a href="../tags/operator-algebras.html" class="tag">operator-algebras</a>
+                <a href="../tags/elliptic-curves.html" class="tag">elliptic-curves</a>
+                <a href="../tags/optimal-transport.html" class="tag">optimal-transport</a>
+                <a href="../tags/compressed-sensing.html" class="tag">compressed-sensing</a>
+                <a href="../tags/stochastic-calculus.html" class="tag">stochastic-calculus</a>
+                <a href="../tags/knot-theory.html" class="tag">knot-theory</a>
+                <a href="../tags/arithmetic-geometry.html" class="tag">arithmetic-geometry</a>
+                <a href="../tags/galois-theory.html" class="tag">galois-theory</a>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 3 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://arxiv.org/list/math/recent" target="_blank" rel="noopener">arXiv Mathematics — Recent Submissions</a></h3>
+                    <p>The arXiv mathematics section is the premier preprint server for mathematical research, hosting over 150,000 papers across dozens of subdisciplines. Researchers upload their latest findings here before formal peer review, making it the fastest way to access cutting-edge mathematics. The site offers RSS feeds, email alerts, and advanced search capabilities. It's an essential resource for mathematicians wanting to stay current with developments in their field, from algebraic geometry to probability theory.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www.mathgenealogy.org/" target="_blank" rel="noopener">Mathematics Genealogy Project</a></h3>
+                    <p>The Mathematics Genealogy Project traces the academic lineage of mathematicians through their doctoral advisors, creating a vast family tree of mathematical knowledge. With over 300,000 mathematicians in its database, it reveals fascinating connections between different schools of thought and shows how ideas propagate through generations. The project illuminates the human network behind mathematical progress, from medieval Islamic scholars to modern Fields Medalists. It's both a historical resource and a tool for understanding the sociology of mathematics.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://proofwiki.org/wiki/Main_Page" target="_blank" rel="noopener">ProofWiki — The Online Mathematics Textbook</a></h3>
+                    <p>ProofWiki is a collaboratively written online compendium of mathematical proofs, definitions, and axioms. Unlike traditional textbooks, it's hyperlinked extensively, allowing readers to trace the logical dependencies of any result back to first principles. The site covers everything from basic arithmetic to advanced topics in category theory and set theory. Each proof is carefully structured with explicit justifications, making it an excellent resource for students learning to write rigorous proofs and for researchers checking the details of established results.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book of the Day</h2>
+                <div class="book-card">
+                    <h3>"A First Course in Noncommutative Rings"</h3>
+                    <p><strong>Author:</strong> T.Y. Lam</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> This classic graduate text provides a comprehensive introduction to the theory of noncommutative rings, a fundamental area of modern algebra with connections to representation theory, algebraic geometry, and operator algebras. Lam covers Wedderburn's theory, the Jacobson radical, representation theory of finite groups, and prime and semiprime rings with exceptional clarity. The book includes over 400 exercises ranging from routine to challenging, making it ideal for both classroom use and self-study. The author's engaging writing style and careful choice of examples illuminate this beautiful and important subject.</p>
+                    <p><a href="https://link.springer.com/book/10.1007/978-1-4419-8616-0" target="_blank" rel="noopener">Read Online (Springer)</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Tropical Geometry: The Geometry of the Min-Plus Semiring</h3>
+                    <p class="tag">tropical-geometry</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Tropical geometry is a relatively new field that studies algebraic varieties over the tropical semiring, where addition is replaced by minimum (or maximum) and multiplication by addition. This "tropicalization" process transforms complicated algebraic problems into combinatorial ones, often making them tractable. Tropical geometry has found remarkable applications in enumerative geometry (Gromov-Witten invariants), mirror symmetry, optimization, and even economics. The field bridges algebraic geometry, combinatorics, and optimization theory in unexpected ways.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Tropical Semiring:</strong> The set \( \mathbb{R} \cup \{\infty\} \) with operations \( a \oplus b = \min(a, b) \) and \( a \odot b = a + b \).</li>
+                        <li><strong>Tropical Polynomial:</strong> A function of the form \( f(x) = \min_{i}(a_i + \langle b_i, x \rangle) \), a minimum of affine linear functions.</li>
+                        <li><strong>Tropical Hypersurface:</strong> The set where a tropical polynomial is not smooth (where the minimum is attained at least twice).</li>
+                        <li><strong>Newton Polytope:</strong> For a polynomial \( f = \sum c_\alpha x^\alpha \), the convex hull of \( \{\alpha : c_\alpha \neq 0\} \).</li>
+                        <li><strong>Amoeba:</strong> The image of an algebraic variety under the logarithmic map \( \text{Log}: (\mathbb{C}^*)^n \to \mathbb{R}^n \), \( z \mapsto (\log|z_1|, \ldots, \log|z_n|) \).</li>
+                    </ul>
+
+                    <h4>Theorem: The Fundamental Theorem of Tropical Geometry</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \( K \) be an algebraically closed field with a non-archimedean valuation \( \text{val}: K^* \to \mathbb{R} \). For a polynomial \( f \in K[x_1, \ldots, x_n] \), let \( \text{trop}(V(f)) \) denote the tropicalization of its hypersurface. Then:</p>
+                        <p>\[ \text{trop}(V(f)) = \{ w \in \mathbb{R}^n : \text{the minimum in } \text{trop}(f)(w) \text{ is achieved at least twice} \} \]</p>
+                        <p>Moreover, this tropical hypersurface is a polyhedral complex of pure dimension \( n-1 \), dual to a regular subdivision of the Newton polytope of \( f \).</p>
+                        
+                        <p><strong>Proof Sketch:</strong></p>
+                        <p><em>Step 1 (Valuation Map):</em> For \( w \in \mathbb{R}^n \), consider the initial form \( \text{in}_w(f) \), the sum of terms \( c_\alpha x^\alpha \) where \( \text{val}(c_\alpha) + \langle w, \alpha \rangle \) is minimized.</p>
+                        
+                        <p><em>Step 2 (Non-Empty Initial Variety):</em> The point \( w \) is in \( \text{trop}(V(f)) \) iff \( \text{in}_w(f) \) is not a monomial, which occurs precisely when the minimum is achieved at least twice (giving at least two terms in the initial form).</p>
+                        
+                        <p><em>Step 3 (Polyhedral Structure):</em> The condition that the minimum is achieved at specific terms defines a polyhedron. The collection of all such polyhedra forms a polyhedral complex. The duality with Newton polytope subdivisions follows from the correspondence between regular subdivisions and height functions. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathbb{T} = \mathbb{R} \cup \{\infty\} \): The tropical semiring</li>
+                        <li>\( a \oplus b = \min(a, b) \): Tropical addition</li>
+                        <li>\( a \odot b = a + b \): Tropical multiplication</li>
+                        <li>\( \text{trop}(f) \): The tropicalization of a polynomial \( f \)</li>
+                        <li>\( \text{Newt}(f) \): Newton polytope of \( f \)</li>
+                        <li>\( \mathcal{A}_f \): Amoeba of the hypersurface defined by \( f \)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.spatial import ConvexHull
+
+class TropicalGeometry:
+    """
+    Basic tropical geometry computations.
+    """
+    
+    @staticmethod
+    def tropical_add(a, b):
+        """Tropical addition: min(a, b)"""
+        return np.minimum(a, b)
+    
+    @staticmethod
+    def tropical_mult(a, b):
+        """Tropical multiplication: a + b"""
+        return a + b
+    
+    @staticmethod
+    def tropical_polyval(coeffs, exponents, x):
+        """
+        Evaluate tropical polynomial.
+        coeffs: array of coefficients (in standard arithmetic)
+        exponents: array of exponent vectors
+        x: point at which to evaluate
+        Returns: min_i (coeffs[i] + dot(exponents[i], x))
+        """
+        values = []
+        for c, e in zip(coeffs, exponents):
+            val = c + np.dot(e, x)
+            values.append(val)
+        return np.min(values)
+
+# Example: Tropical curve for f(x,y) = min(0, x, y, x+y+1)
+trop = TropicalGeometry()
+
+# Define the tropical polynomial: min(0, x, y, x+y+1)
+coeffs = [0, 0, 0, 1]
+exponents = [[0, 0], [1, 0], [0, 1], [1, 1]]
+
+print("Tropical Geometry Example")
+print("=" * 50)
+print(f"Polynomial: min(0, x, y, x+y+1)")
+print(f"Value at (0,0): {trop.tropical_polyval(coeffs, exponents, [0, 0])}")
+print(f"Value at (2,2): {trop.tropical_polyval(coeffs, exponents, [2, 2])}")
+
+# Tropical arithmetic examples
+print(f"\nTropical arithmetic:")
+print(f"  3 ⊕ 5 = {trop.tropical_add(3, 5)}")
+print(f"  3 ⊙ 5 = {trop.tropical_mult(3, 5)}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Operator Algebras: C*-Algebras and von Neumann Algebras</h3>
+                    <p class="tag">operator-algebras</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Operator algebras emerged from quantum mechanics, where observables correspond to self-adjoint operators on Hilbert space. C*-algebras and von Neumann algebras provide the natural framework for studying these operators algebraically. The field has deep connections to quantum field theory, ergodic theory, knot theory (via subfactors), and even number theory. The classification of simple C*-algebras and the study of factors represent some of the most significant achievements in 20th and 21st century mathematics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>C*-Algebra:</strong> A Banach algebra \( A \) over \( \mathbb{C} \) with an involution \( *: A \to A \) satisfying \( (ab)^* = b^*a^* \), \( (a^*)^* = a \), and the C*-identity \( \|a^*a\| = \|a\|^2 \).</li>
+                        <li><strong>Von Neumann Algebra:</strong> A *-subalgebra of \( B(H) \) (bounded operators on Hilbert space) that is closed in the weak operator topology and contains the identity.</li>
+                        <li><strong>Spectrum:</strong> For \( a \in A \), \( \text{sp}(a) = \{\lambda \in \mathbb{C} : a - \lambda I \text{ is not invertible}\} \).</li>
+                        <li><strong>State:</strong> A positive linear functional \( \phi: A \to \mathbb{C} \) with \( \|\phi\| = 1 \).</li>
+                        <li><strong>GNS Construction:</strong> A method to construct a Hilbert space representation from a state.</li>
+                    </ul>
+
+                    <h4>Theorem: The Gelfand-Naimark Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Gelfand-Naimark):</strong> Every C*-algebra is isometrically *-isomorphic to a norm-closed *-subalgebra of \( B(H) \) for some Hilbert space \( H \). Specifically:</p>
+                        <ol>
+                            <li><strong>Commutative Case:</strong> If \( A \) is a commutative C*-algebra, then \( A \cong C_0(X) \) for some locally compact Hausdorff space \( X \) (its spectrum).</li>
+                            <li><strong>General Case:</strong> For any C*-algebra \( A \), the universal representation \( \pi_u = \bigoplus_{\phi \in S(A)} \pi_\phi \) is a faithful isometric *-representation on \( H_u = \bigoplus_{\phi} H_\phi \).</li>
+                        </ol>
+                        
+                        <p><strong>Proof Sketch:</strong></p>
+                        <p><em>Step 1 (Commutative Case):</em> For commutative \( A \), define \( X = \hat{A} \) (the character space). The Gelfand transform \( \Gamma: A \to C_0(X) \), \( \Gamma(a)(\chi) = \chi(a) \), is an isometric *-isomorphism. This follows from the fact that characters are automatically *-homomorphisms and the spectral radius formula.</p>
+                        
+                        <p><em>Step 2 (States and Representations):</em> For any state \( \phi \), the GNS construction produces a representation \( \pi_\phi \) on \( H_\phi \) with cyclic vector \( \xi_\phi \) satisfying \( \phi(a) = \langle \pi_\phi(a)\xi_\phi, \xi_\phi \rangle \).</p>
+                        
+                        <p><em>Step 3 (Faithfulness):</em> If \( \pi_u(a) = 0 \), then \( \pi_\phi(a) = 0 \) for all states \( \phi \), so \( \phi(a^*a) = 0 \) for all \( \phi \). By the Hahn-Banach theorem, \( a^*a = 0 \), hence \( a = 0 \). The isometry follows from the C*-identity. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( B(H) \): Bounded linear operators on Hilbert space \( H \)</li>
+                        <li>\( a^* \): Adjoint of operator \( a \)</li>
+                        <li>\( \|a\| \): Operator norm of \( a \)</li>
+                        <li>\( \text{sp}(a) \): Spectrum of \( a \)</li>
+                        <li>\( C_0(X) \): Continuous functions vanishing at infinity</li>
+                        <li>\( \hat{A} \): Character space (spectrum) of \( A \)</li>
+                        <li>\( S(A) \): State space of \( A \)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from numpy.linalg import norm, eigvals
+
+class CStarAlgebra:
+    """
+    Computational tools for finite-dimensional C*-algebras (matrix algebras).
+    """
+    
+    @staticmethod
+    def is_self_adjoint(a, tol=1e-10):
+        """Check if matrix a is self-adjoint (Hermitian)."""
+        return np.allclose(a, a.conj().T, atol=tol)
+    
+    @staticmethod
+    def cstar_norm(a):
+        """Compute C*-norm: ||a|| = sqrt(spectral radius of a*a)."""
+        a_star_a = a.conj().T @ a
+        eigenvalues = eigvals(a_star_a)
+        return np.sqrt(np.max(np.real(eigenvalues)))
+    
+    @staticmethod
+    def spectrum(a):
+        """Compute spectrum (eigenvalues) of matrix a."""
+        return eigvals(a)
+
+# Example: 2x2 matrix C*-algebra
+print("C*-Algebra Example: M_2(C)")
+print("=" * 50)
+
+# Define Pauli matrices
+I = np.eye(2, dtype=complex)
+sigma_x = np.array([[0, 1], [1, 0]], dtype=complex)
+sigma_y = np.array([[0, -1j], [1j, 0]], dtype=complex)
+sigma_z = np.array([[1, 0], [0, -1]], dtype=complex)
+
+algebra = CStarAlgebra()
+
+print("Pauli matrices (self-adjoint unitaries):")
+for name, mat in [("σ_x", sigma_x), ("σ_y", sigma_y), ("σ_z", sigma_z)]:
+    is_sa = algebra.is_self_adjoint(mat)
+    norm_val = algebra.cstar_norm(mat)
+    print(f"  {name}: self-adjoint={is_sa}, norm={norm_val:.4f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Elliptic Curves: The Intersection of Algebra, Geometry, and Number Theory</h3>
+                    <p class="tag">elliptic-curves</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Elliptic curves are among the most fascinating objects in mathematics, defined as smooth cubic curves in the projective plane. They possess a rich structure: they are simultaneously algebraic varieties, complex tori, and abelian varieties. The group law on elliptic curves makes them essential in cryptography (ECC), while their deep connection to modular forms (the Taniyama-Shimura-Weil conjecture, proved by Wiles as part of Fermat's Last Theorem) reveals profound links between geometry and number theory. The Birch and Swinnerton-Dyer conjecture, one of the Millennium Prize Problems, concerns the arithmetic of elliptic curves.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Elliptic Curve:</strong> A smooth projective curve of genus 1 with a specified base point \( O \). Over a field \( K \) (char \( \neq 2, 3 \)), given by Weierstrass equation: \( y^2 = x^3 + ax + b \) with discriminant \( \Delta = -16(4a^3 + 27b^2) \neq 0 \).</li>
+                        <li><strong>Group Law:</strong> For points \( P, Q \) on \( E \), draw line through them; third intersection with \( E \) is \( R \); then \( P + Q = -R \) (reflection over x-axis).</li>
+                        <li><strong>j-invariant:</strong> \( j(E) = 1728 \frac{4a^3}{4a^3 + 27b^2} \), classifying elliptic curves up to isomorphism over algebraically closed fields.</li>
+                        <li><strong>Torsion Subgroup:</strong> The subgroup \( E(K)_{\text{tors}} \) of points of finite order in \( E(K) \).</li>
+                        <li><strong>L-function:</strong> For an elliptic curve over \( \mathbb{Q} \), \( L(E, s) = \prod_p L_p(p^{-s})^{-1} \) encoding arithmetic information.</li>
+                    </ul>
+
+                    <h4>Theorem: The Mordell-Weil Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Mordell-Weil):</strong> Let \( E \) be an elliptic curve over a number field \( K \). Then the group of \( K \)-rational points \( E(K) \) is a finitely generated abelian group. That is:</p>
+                        <p>\[ E(K) \cong E(K)_{\text{tors}} \oplus \mathbb{Z}^r \]</p>
+                        <p>where \( E(K)_{\text{tors}} \) is the finite torsion subgroup and \( r \geq 0 \) is the rank of \( E \) over \( K \).</p>
+                        
+                        <p><strong>Proof Sketch:</strong></p>
+                        <p><em>Step 1 (Weak Mordell-Weil):</em> First prove that \( E(K)/2E(K) \) is finite. This uses Galois cohomology and the theory of heights. For a point \( P \in E(K) \), the Kummer sequence relates \( E(K)/nE(K) \) to the Selmer group.</p>
+                        
+                        <p><em>Step 2 (Height Function):</em> Define a height function \( h: E(K) \to \mathbb{R}_{\geq 0} \) measuring the arithmetic complexity of points. The Néron-Tate canonical height \( \hat{h} \) is a quadratic form on \( E(K) \).</p>
+                        
+                        <p><em>Step 3 (Descent):</em> Using the weak Mordell-Weil theorem and properties of the height function, show that any point can be written as a sum of points from a finite generating set. Specifically, if \( Q_1, \ldots, Q_m \) represent the cosets of \( 2E(K) \), then every point is a sum of these plus a point of bounded height, and there are only finitely many points of bounded height. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( E: y^2 = x^3 + ax + b \): Weierstrass equation</li>
+                        <li>\( O \): Point at infinity (identity element)</li>
+                        <li>\( P + Q \): Group law addition</li>
+                        <li>\( [n]P \): n-fold addition of P to itself</li>
+                        <li>\( E[n] \): n-torsion points (points of order dividing n)</li>
+                        <li>\( j(E) \): j-invariant</li>
+                        <li>\( \hat{h}(P) \): Néron-Tate canonical height</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+
+class EllipticCurve:
+    """
+    Elliptic curve in short Weierstrass form: y^2 = x^3 + ax + b
+    """
+    
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        self.discriminant = -16 * (4 * a**3 + 27 * b**2)
+        if abs(self.discriminant) < 1e-10:
+            raise ValueError("Curve is singular")
+    
+    def j_invariant(self):
+        """Compute j-invariant."""
+        return 1728 * (4 * self.a**3) / (4 * self.a**3 + 27 * self.b**2)
+    
+    def is_on_curve(self, x, y):
+        """Check if point (x, y) is on the curve."""
+        if x is None and y is None:
+            return True
+        return abs(y**2 - (x**3 + self.a * x + self.b)) < 1e-10
+    
+    def add(self, P, Q):
+        """Add two points on the curve."""
+        O = None
+        if P == O: return Q
+        if Q == O: return P
+        
+        x1, y1 = P
+        x2, y2 = Q
+        
+        if x1 == x2:
+            if abs(y1 + y2) < 1e-10:
+                return O
+            m = (3 * x1**2 + self.a) / (2 * y1)
+        else:
+            m = (y2 - y1) / (x2 - x1)
+        
+        x3 = m**2 - x1 - x2
+        y3 = m * (x1 - x3) - y1
+        return (x3, y3)
+
+# Example: Curve y^2 = x^3 - x + 1
+E = EllipticCurve(-1, 1)
+print(f"j-invariant: {E.j_invariant():.6f}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Optimal Transport: From Monge to Modern Machine Learning</h3>
+                    <p class="tag">optimal-transport</p>
+                    
+                    <h4>Real-World Context</h4>
+                    <p>Optimal transport theory, originating with Monge's problem of moving earth at minimal cost, has become a fundamental tool in modern data science. It provides a natural geometry on probability measures, the Wasserstein metric, that captures the underlying geometry of the data space. Applications range from economics (matching problems) and image processing (registration, color transfer) to machine learning (generative models like Wasserstein GANs) and biology (cell trajectory inference).</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Monge Problem (1781):</strong> Given probability measures \( \mu, \nu \) on spaces \( X, Y \) and cost function \( c: X \times Y \to \mathbb{R}_+ \), find a transport map \( T: X \to Y \) minimizing \( \int_X c(x, T(x)) d\mu(x) \) subject to \( T_\#\mu = \nu \).</li>
+                        <li><strong>Kantorovich Relaxation (1942):</strong> Find a coupling \( \pi \in \Pi(\mu, \nu) \) minimizing \( \int_{X \times Y} c(x, y) d\pi(x, y) \).</li>
+                        <li><strong>Wasserstein Distance:</strong> For \( p \geq 1 \), \( W_p(\mu, \nu) = \left(\inf_{\pi \in \Pi(\mu, \nu)} \int |x-y|^p d\pi\right)^{1/p} \).</li>
+                        <li><strong>Pushforward:</strong> \( T_\#\mu \) is defined by \( (T_\#\mu)(A) = \mu(T^{-1}(A)) \).</li>
+                    </ul>
+
+                    <h4>Theorem: The Kantorovich Duality Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Kantorovich Duality):</strong> Let \( \mu, \nu \) be probability measures on Polish spaces \( X, Y \), and let \( c: X \times Y \to \mathbb{R}_+ \cup \{+\infty\} \) be lower semicontinuous. Then:</p>
+                        <p>\[ \inf_{\pi \in \Pi(\mu, \nu)} \int_{X \times Y} c(x, y) d\pi(x, y) = \sup_{(\phi, \psi) \in \Phi_c} \left[ \int_X \phi(x) d\mu(x) + \int_Y \psi(y) d\nu(y) \right] \]</p>
+                        <p>where \( \Phi_c = \{ (\phi, \psi) \in L^1(\mu) \times L^1(\nu) : \phi(x) + \psi(y) \leq c(x, y) \} \).</p>
+                        
+                        <p><strong>Proof Sketch:</strong></p>
+                        <p><em>Step 1 (Formulation as Linear Program):</em> The Kantorovich problem is an infinite-dimensional linear program. The constraint \( \pi \in \Pi(\mu, \nu) \) can be written as linear constraints on the marginals.</p>
+                        
+                        <p><em>Step 2 (Lagrangian):</em> Introduce Lagrange multipliers \( \phi, \psi \) for the marginal constraints. The Lagrangian becomes: \( \mathcal{L}(\pi, \phi, \psi) = \int c d\pi - \int \phi d\pi_X + \int \phi d\mu - \int \psi d\pi_Y + \int \psi d\nu \).</p>
+                        
+                        <p><em>Step 3 (Dual Function):</em> Minimizing over \( \pi \geq 0 \) gives \( +\infty \) unless \( \phi(x) + \psi(y) \leq c(x, y) \) everywhere. The dual problem is to maximize \( \int \phi d\mu + \int \psi d\nu \) subject to this constraint.</p>
+                        
+                        <p><em>Step 4 (Strong Duality):</em> Under appropriate conditions (Fenchel-Rockafellar duality), strong duality holds and the optimal values coincide. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \Pi(\mu, \nu) \): Set of couplings (transport plans)</li>
+                        <li>\( T_\#\mu \): Pushforward of measure \( \mu \) by map \( T \)</li>
+                        <li>\( W_p(\mu, \nu) \): p-Wasserstein distance</li>
+                        <li>\( \phi, \psi \): Kantorovich potentials (dual variables)</li>
+                        <li>\( c(x, y) \): Cost function (often \( |x-y|^p \))</li>
+                    </ul>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Compressed Sensing: Recovery from Incomplete Measurements</h3>
+                    <p class="tag">compressed-sensing</p>
+                    
+                    <h4>Real-World Context</h4>
+                    <p>Compressed sensing revolutionized signal processing by showing that sparse signals can be recovered from far fewer measurements than the Nyquist-Shannon theorem would suggest. This has profound implications for MRI (reducing scan times), single-pixel cameras, radar imaging, and genomics. The key insight is that if a signal is sparse (or compressible) in some basis, optimization techniques can recover it from random linear measurements.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Sparsity:</strong> A vector \( x \in \mathbb{R}^n \) is \( k \)-sparse if it has at most \( k \) non-zero entries: \( \|x\|_0 = |\{i : x_i \neq 0\}| \leq k \).</li>
+                        <li><strong>Restricted Isometry Property (RIP):</strong> Matrix \( A \) satisfies RIP of order \( k \) if there exists \( \delta_k \in (0, 1) \) such that for all \( k \)-sparse \( x \): \( (1 - \delta_k)\|x\|_2^2 \leq \|Ax\|_2^2 \leq (1 + \delta_k)\|x\|_2^2 \).</li>
+                        <li><strong>Basis Pursuit:</strong> The convex program \( \min \|x\|_1 \) subject to \( Ax = b \).</li>
+                        <li><strong>Mutual Coherence:</strong> \( \mu(A) = \max_{i \neq j} |\langle a_i, a_j \rangle| / (\|a_i\|_2 \|a_j\|_2) \) for normalized columns.</li>
+                    </ul>
+
+                    <h4>Theorem: Exact Recovery via Basis Pursuit</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \( A \in \mathbb{R}^{m \times n} \) with \( m < n \) and let \( x^* \in \mathbb{R}^n \) be \( k \)-sparse. If \( A \) satisfies the restricted isometry property with \( \delta_{2k} < \sqrt{2} - 1 \approx 0.414 \), then \( x^* \) is the unique solution to: \( \min_{x} \|x\|_1 \) subject to \( Ax = Ax^* \).</p>
+                        
+                        <p>Moreover, basis pursuit is stable: if measurements are noisy \( b = Ax^* + e \) with \( \|e\|_2 \leq \epsilon \), then the solution \( \hat{x} \) satisfies: \( \|\hat{x} - x^*\|_2 \leq C_0 \frac{\|x^* - x_k^*\|_1}{\sqrt{k}} + C_1 \epsilon \).</p>
+                        
+                        <p><strong>Proof Sketch:</strong></p>
+                        <p><em>Step 1 (Optimality Condition):</em> Let \( \hat{x} \) be the solution and \( h = \hat{x} - x^* \). By optimality, \( \|\hat{x}\|_1 \leq \|x^*\|_1 \).</p>
+                        
+                        <p><em>Step 2 (Cone Constraint):</em> Decompose \( h = h_S + h_{S^c} \) where \( S \) is the support of \( x^* \). From \( \|x^* + h\|_1 \leq \|x^*\|_1 \) and the triangle inequality, one can show \( \|h_{S^c}\|_1 \leq \|h_S\|_1 \).</p>
+                        
+                        <p><em>Step 3 (RIP Bound):</em> Using RIP and the fact that \( Ah = 0 \), bound \( \|h\|_2 \) in terms of \( \|h_S\|_2 \).</p>
+                        
+                        <p><em>Step 4 (Conclusion):</em> With \( \delta_{2k} < \sqrt{2} - 1 \), this implies \( h = 0 \), proving exact recovery. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \|x\|_0 \): "\( \ell_0 \) norm" (sparsity, count of non-zeros)</li>
+                        <li>\( \|x\|_1 = \sum |x_i| \): \( \ell_1 \) norm (convex surrogate for sparsity)</li>
+                        <li>\( \|x\|_2 = \sqrt{\sum x_i^2} \): Euclidean norm</li>
+                        <li>\( \delta_k \): RIP constant of order \( k \)</li>
+                        <li>\( x_S \): Vector \( x \) restricted to support \( S \)</li>
+                    </ul>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Stochastic Calculus: Itô's Lemma and Stochastic Differential Equations</h3>
+                    <p class="tag">stochastic-calculus</p>
+                    
+                    <h4>Real-World Context</h4>
+                    <p>Stochastic calculus provides the mathematical framework for modeling systems with random fluctuations, from stock prices in finance (Black-Scholes model) to particle diffusion in physics and chemical reaction kinetics in biology. The theory, developed by Kiyoshi Itô in the 1940s, extends calculus to handle Brownian motion, which is nowhere differentiable. The resulting Itô calculus has become indispensable in quantitative finance, filtering theory (Kalman filter), and stochastic control.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Brownian Motion (Wiener Process):</strong> A continuous-time stochastic process \( W_t \) with \( W_0 = 0 \), independent increments, and \( W_t - W_s \sim N(0, t-s) \) for \( t > s \).</li>
+                        <li><strong>Stochastic Differential Equation (SDE):</strong> An equation of the form \( dX_t = \mu(X_t, t)dt + \sigma(X_t, t)dW_t \).</li>
+                        <li><strong>Itô Integral:</strong> For adapted process \( H_t \), \( \int_0^t H_s dW_s = \lim_{\Delta \to 0} \sum H_{t_i}(W_{t_{i+1}} - W_{t_i}) \).</li>
+                        <li><strong>Quadratic Variation:</strong> For Brownian motion, \( [W]_t = t \), meaning \( dW_t \cdot dW_t = dt \) in Itô calculus.</li>
+                    </ul>
+
+                    <h4>Theorem: Itô's Lemma</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Itô's Lemma):</strong> Let \( X_t \) be an Itô process satisfying \( dX_t = \mu_t dt + \sigma_t dW_t \), and let \( f: \mathbb{R} \times [0, T] \to \mathbb{R} \) be twice continuously differentiable in space and once in time. Then \( Y_t = f(t, X_t) \) is also an Itô process, and:</p>
+                        <p>\[ df(t, X_t) = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial x}dX_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2 \]</p>
+                        <p>where \( (dX_t)^2 = \sigma_t^2 dt \) (using the rules \( dt \cdot dt = 0 \), \( dt \cdot dW_t = 0 \), \( dW_t \cdot dW_t = dt \)).</p>
+                        
+                        <p>Explicitly:</p>
+                        <p>\[ df = \left(\frac{\partial f}{\partial t} + \mu_t \frac{\partial f}{\partial x} + \frac{1}{2}\sigma_t^2 \frac{\partial^2 f}{\partial x^2}\right)dt + \sigma_t \frac{\partial f}{\partial x}dW_t \]</p>
+                        
+                        <p><strong>Proof Sketch:</strong></p>
+                        <p><em>Step 1 (Taylor Expansion):</em> Apply Taylor's theorem to \( f(t + \Delta t, X_{t+\Delta t}) - f(t, X_t) \):</p>
+                        <p>\[ \Delta f = f_t \Delta t + f_x \Delta X + \frac{1}{2}f_{xx}(\Delta X)^2 + \text{higher order terms} \]</p>
+                        
+                        <p><em>Step 2 (Substitute SDE):</em> With \( \Delta X = \mu \Delta t + \sigma \Delta W \), we get: \( (\Delta X)^2 = \mu^2(\Delta t)^2 + 2\mu\sigma \Delta t \Delta W + \sigma^2(\Delta W)^2 \).</p>
+                        
+                        <p><em>Step 3 (Quadratic Variation):</em> As \( \Delta t \to 0 \), the term \( (\Delta W)^2 \) converges to \( \Delta t \) (in mean square), while \( (\Delta t)^2 \) and \( \Delta t \Delta W \) vanish. Thus \( (dX)^2 = \sigma^2 dt \).</p>
+                        
+                        <p><em>Step 4 (Limit):</em> Taking limits and integrating gives the result. The key insight is that the second-order term in \( x \) contributes a first-order term in \( t \) due to the non-zero quadratic variation of Brownian motion. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( W_t \): Standard Brownian motion (Wiener process)</li>
+                        <li>\( dW_t \): Wiener increment (informally, "white noise")</li>
+                        <li>\( \mu \): Drift coefficient</li>
+                        <li>\( \sigma \): Diffusion/volatility coefficient</li>
+                        <li>\( \mathcal{F}_t \): Filtration (information up to time \( t \))</li>
+                        <li>\( \mathbb{E}[X_t] \): Expected value</li>
+                        <li>\( [X]_t \): Quadratic variation process</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>🎯 Special Topics</h2>
+
+                <div class="special-topic">
+                    <h3>Knot Theory: The Mathematics of Entanglement</h3>
+                    <p class="tag">knot-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Knot theory began in the 19th century with Lord Kelvin's theory that atoms were knotted vortices in the ether. Though this physical model was abandoned, the mathematical study of knots flourished. The fundamental question—when are two knots equivalent?—remained challenging until the discovery of polynomial invariants in the 1980s. The Jones polynomial, discovered by Vaughan Jones in 1984, revolutionized the field and earned him the Fields Medal.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Knot:</strong> An embedding of \( S^1 \) into \( S^3 \) (or \( \mathbb{R}^3 \)), considered up to ambient isotopy.</li>
+                        <li><strong>Link:</strong> An embedding of one or more circles; a knot is a link with one component.</li>
+                        <li><strong>Reidemeister Moves:</strong> Three local moves on knot diagrams that generate all ambient isotopies.</li>
+                        <li><strong>Crossing Number:</strong> The minimum number of crossings in any diagram of the knot.</li>
+                        <li><strong>Seifert Surface:</strong> A compact, oriented surface whose boundary is the knot.</li>
+                        <li><strong>Genus:</strong> The minimum genus of any Seifert surface for the knot.</li>
+                    </ul>
+
+                    <h4>Theorem: The Jones Polynomial and Reidemeister Moves</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> The Jones polynomial \( V_K(t) \) is an invariant of oriented knots and links, defined by the skein relation:</p>
+                        <p>\[ t^{-1}V(L_+) - tV(L_-) = (t^{1/2} - t^{-1/2})V(L_0) \]</p>
+                        <p>where \( L_+, L_-, L_0 \) are diagrams identical except at one crossing, and the normalization \( V(\text{unknot}) = 1 \).</p>
+                        <p>The Jones polynomial is invariant under all three Reidemeister moves, making it a genuine knot invariant.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( V_K(t) \): Jones polynomial of knot \( K \)</li>
+                        <li>\( \langle D \rangle \): Kauffman bracket of diagram \( D \)</li>
+                        <li>\( w(D) \): Writhe of diagram \( D \)</li>
+                        <li>\( c(K) \): Crossing number of knot \( K \)</li>
+                        <li>\( g(K) \): Genus of knot \( K \)</li>
+                        <li>\( \Delta_K(t) \): Alexander polynomial</li>
+                    </ul>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Arithmetic Geometry: The Intersection of Number Theory and Algebraic Geometry</h3>
+                    <p class="tag">arithmetic-geometry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Arithmetic geometry emerged from the study of Diophantine equations—polynomial equations seeking integer or rational solutions. Fermat's Last Theorem remained unproven for over 350 years. Andrew Wiles's 1995 proof connected elliptic curves, modular forms, and Galois representations, demonstrating the power of geometric methods in number theory.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Diophantine Equation:</strong> A polynomial equation where only integer or rational solutions are sought.</li>
+                        <li><strong>Hasse Principle:</strong> A variety has a rational point if and only if it has points over \( \mathbb{R} \) and over \( \mathbb{Q}_p \) for all primes \( p \).</li>
+                        <li><strong>Height Function:</strong> A measure of the arithmetic complexity of a rational point.</li>
+                        <li><strong>Local-Global Principle:</strong> The philosophy that global (rational) behavior can be understood from local (real and p-adic) behavior.</li>
+                        <li><strong>Scheme:</strong> A generalization of algebraic varieties that includes arithmetic information, developed by Grothendieck.</li>
+                    </ul>
+
+                    <h4>Theorem: The Hasse-Minkowski Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Hasse-Minkowski):</strong> A quadratic form \( Q(x_1, \ldots, x_n) \) over \( \mathbb{Q} \) represents zero non-trivially if and only if it represents zero over \( \mathbb{R} \) and over \( \mathbb{Q}_p \) for all primes \( p \).</p>
+                        <p>Equivalently, for quadratic forms, the Hasse principle holds: local solvability everywhere implies global solvability.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathbb{Q}_p \): Field of p-adic numbers</li>
+                        <li>\( \mathbb{Z}_p \): Ring of p-adic integers</li>
+                        <li>\( \mathbb{A}_\mathbb{Q} \): Adele ring of \( \mathbb{Q} \)</li>
+                        <li>\( H(P) \): Height of point \( P \)</li>
+                        <li>\( X(\mathbb{Q}) \): Set of rational points on variety \( X \)</li>
+                        <li>\( \text{Br}(X) \): Brauer group of \( X \)</li>
+                    </ul>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Galois Theory: The Symmetry of Equations</h3>
+                    <p class="tag">galois-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Évariste Galois, a French mathematician who died in a duel at age 20 in 1832, created one of the most beautiful theories in mathematics. His work explained why there is no general formula for solving polynomial equations of degree 5 or higher—an open problem since the Renaissance. Galois theory connects field extensions with group theory, transforming questions about equations into questions about symmetry groups.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Field Extension:</strong> If \( F \subseteq E \) are fields, \( E \) is an extension of \( F \), denoted \( E/F \).</li>
+                        <li><strong>Galois Group:</strong> For a field extension \( E/F \), \( \text{Gal}(E/F) = \{\sigma \in \text{Aut}(E) : \sigma|_F = \text{id}_F\} \).</li>
+                        <li><strong>Splitting Field:</strong> The smallest field extension containing all roots of a polynomial.</li>
+                        <li><strong>Separable Extension:</strong> An algebraic extension where every element's minimal polynomial has distinct roots.</li>
+                        <li><strong>Normal Extension:</strong> An algebraic extension where every irreducible polynomial with one root in the field splits completely.</li>
+                        <li><strong>Galois Extension:</strong> An extension that is both normal and separable.</li>
+                    </ul>
+
+                    <h4>Theorem: The Fundamental Theorem of Galois Theory</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Fundamental Theorem of Galois Theory):</strong> Let \( E/F \) be a finite Galois extension with Galois group \( G = \text{Gal}(E/F) \). There is a bijective correspondence between:</p>
+                        <p>\[ \{\text{Intermediate fields } K : F \subseteq K \subseteq E\} \longleftrightarrow \{\text{Subgroups } H \leq G\} \]</p>
+                        <p>given by \( K \mapsto \text{Gal}(E/K) \) and \( H \mapsto E^H \) (the fixed field of \( H \)).</p>
+                        <p>This correspondence satisfies:</p>
+                        <ol>
+                            <li>\( [E : K] = |\text{Gal}(E/K)| \) and \( [K : F] = [G : \text{Gal}(E/K)] \)</li>
+                            <li>\( K_1 \subseteq K_2 \) if and only if \( \text{Gal}(E/K_2) \leq \text{Gal}(E/K_1) \)</li>
+                            <li>\( K/F \) is Galois if and only if \( \text{Gal}(E/K) \trianglelefteq G \), in which case \( \text{Gal}(K/F) \cong G / \text{Gal}(E/K) \)</li>
+                        </ol>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( [E : F] \): Degree of field extension (dimension as vector space)</li>
+                        <li>\( \text{Gal}(E/F) \): Galois group of \( E \) over \( F \)</li>
+                        <li>\( E^H \): Fixed field of subgroup \( H \)</li>
+                        <li>\( H \trianglelefteq G \): \( H \) is a normal subgroup of \( G \)</li>
+                        <li>\( [G : H] \): Index of \( H \) in \( G \)</li>
+                        <li>\( F(\alpha) \): Field obtained by adjoining \( \alpha \) to \( F \)</li>
+                    </ul>
+                </div>
+
+                <div class="special-topic">
+                    <h3>The Riemann Hypothesis: The Most Important Unsolved Problem</h3>
+                    <p class="tag">riemann-hypothesis</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Bernhard Riemann's 1859 paper "On the Number of Primes Less Than a Given Magnitude" introduced the zeta function \( \zeta(s) = \sum_{n=1}^\infty n^{-s} \) for complex \( s \) and conjectured that all non-trivial zeros lie on the critical line \( \text{Re}(s) = 1/2 \). This Riemann Hypothesis (RH) is now one of the seven Millennium Prize Problems, with a $1 million reward for its solution.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Riemann Zeta Function:</strong> \( \zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s} = \prod_p \frac{1}{1 - p^{-s}} \) for \( \text{Re}(s) > 1 \), extended by analytic continuation.</li>
+                        <li><strong>Trivial Zeros:</strong> \( \zeta(-2n) = 0 \) for \( n = 1, 2, 3, \ldots \) (from the functional equation).</li>
+                        <li><strong>Non-Trivial Zeros:</strong> Zeros in the critical strip \( 0 < \text{Re}(s) < 1 \). The RH asserts all have \( \text{Re}(s) = 1/2 \).</li>
+                        <li><strong>Critical Line:</strong> The line \( \text{Re}(s) = 1/2 \) in the complex plane.</li>
+                        <li><strong>Prime Counting Function:</strong> \( \pi(x) = \#\{p \leq x : p \text{ prime}\} \).</li>
+                    </ul>
+
+                    <h4>Theorem: The Prime Number Theorem and Zeros</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Prime Number Theorem):</strong> The prime counting function satisfies: \( \pi(x) \sim \frac{x}{\log x} \) as \( x \to \infty \).</p>
+                        <p>This is equivalent to the statement that \( \zeta(s) \neq 0 \) for \( \text{Re}(s) = 1 \).</p>
+                        
+                        <p><strong>Explicit Formula:</strong> For \( x > 1 \) not a prime power:</p>
+                        <p>\[ \psi(x) = x - \sum_\rho \frac{x^\rho}{\rho} - \frac{\zeta'(0)}{\zeta(0)} - \frac{1}{2}\log(1 - x^{-2}) \]</p>
+                        <p>where the sum is over non-trivial zeros \( \rho \) of \( \zeta(s) \).</p>
+                        
+                        <p><strong>Connection to RH:</strong> If all non-trivial zeros satisfy \( \text{Re}(\rho) = 1/2 \), then: \( \psi(x) = x + O(x^{1/2}(\log x)^2) \).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \zeta(s) \): Riemann zeta function</li>
+                        <li>\( \rho = \beta + i\gamma \): Non-trivial zero of \( \zeta(s) \)</li>
+                        <li>\( \pi(x) \): Number of primes \( \leq x \)</li>
+                        <li>\( \psi(x) \): Chebyshev theta function</li>
+                        <li>\( \text{Li}(x) \): Logarithmic integral</li>
+                        <li>\( \Lambda(n) \): Von Mangoldt function</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                
+                <div class="history-content">
+                    <h3>The Development of Abstract Algebra: From Equations to Structures</h3>
+                    
+                    <p>The story of abstract algebra is a journey from the concrete to the abstract, from solving specific equations to understanding the underlying structures that govern all such solutions. This transformation took place over roughly three centuries, fundamentally changing how mathematicians think about mathematics itself.</p>
+                    
+                    <p>In the 16th century, Italian mathematicians—del Ferro, Tartaglia, Cardano, and Ferrari—discovered formulas for solving cubic and quartic equations. These were remarkable achievements, but they also revealed a puzzle: the formulas sometimes involved square roots of negative numbers even when the final answers were real. This paradox, exemplified by the "casus irreducibilis," hinted at deeper structures yet to be understood.</p>
+                    
+                    <p>The 18th century brought the first glimmers of abstraction. Lagrange's 1770 analysis of the cubic and quartic formulas showed that the key to solving equations lay in the permutations of their roots. This insight connected algebra with the emerging theory of permutations. Vandermonde and, most significantly, Gauss made crucial contributions, with Gauss proving the constructibility of the regular 17-gon and developing the theory of cyclotomic equations.</p>
+                    
+                    <p>The true revolution came in the early 19th century. In 1832, the young Évariste Galois, knowing he would die in a duel the next day, wrote down his mathematical testament. In those feverish hours, he created what we now call Galois theory, showing that the solvability of polynomial equations depends on the structure of their associated permutation groups. An equation is solvable by radicals if and only if its Galois group is solvable—a profound connection between fields and groups that transformed algebra forever.</p>
+                    
+                    <p>Galois's work was nearly lost, saved from oblivion by Liouville who published it in 1846. Meanwhile, Hamilton discovered quaternions in 1843, and Grassmann developed his theory of extension. These discoveries multiplied the number systems beyond the familiar reals and complex numbers, showing that algebra could study structures that defied traditional geometric interpretation.</p>
+                    
+                    <p>The late 19th century saw the emergence of abstract group theory. Cayley, Frobenius, and especially Klein (in his Erlangen Program) showed that groups were not merely tools for solving equations but fundamental objects describing symmetry in geometry, physics, and mathematics itself. The concept of an abstract group, defined by axioms rather than by a specific realization, crystallized in the work of Dyck and Weber.</p>
+                    
+                    <p>The final transformation came in the 20th century, primarily through the work of Emmy Noether and her school. Noether's 1921 paper "Ideal Theory in Rings" created modern commutative algebra, showing that the concrete theories of polynomial rings and algebraic integers were instances of general structural principles. Her famous dictum—"relations are more important than objects"—encapsulated the structuralist viewpoint that would dominate 20th-century mathematics.</p>
+                    
+                    <p>Van der Waerden's 1930 "Moderne Algebra" codified this new approach, presenting algebra as the study of groups, rings, fields, and modules in full generality. The book became the template for algebraic education worldwide. Bourbaki, beginning in the 1930s, pushed this abstraction even further, attempting to rebuild all of mathematics from set-theoretic foundations.</p>
+                    
+                    <p>Today, abstract algebra permeates mathematics and its applications. Group theory describes the symmetries of crystals and particles; ring theory underlies algebraic geometry and number theory; field theory is essential for coding theory and cryptography. The abstract structures discovered over centuries have proven remarkably applicable, a testament to the power of mathematical abstraction.</p>
+                </div>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-discover-new-way-to-count-curved-shapes-20250220/" target="_blank" rel="noopener">Mathematicians Discover New Way to Count Curved Shapes</a></h3>
+                    <p class="source">Quanta Magazine — February 20, 2026</p>
+                    <p><strong>Summary:</strong> Researchers have developed a novel approach to enumerating algebraic curves on Calabi-Yau manifolds, resolving a long-standing obstacle in enumerative geometry. The new method combines tropical geometry with derived categories, allowing mathematicians to compute curve counts that were previously inaccessible. This breakthrough has implications for mirror symmetry and string theory, where such counts correspond to physical quantities.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.nature.com/articles/d41586-026-00456-2" target="_blank" rel="noopener">AI Mathematician Solves Olympiad Geometry Problem</a></h3>
+                    <p class="source">Nature — February 18, 2026</p>
+                    <p><strong>Summary:</strong> A new AI system has successfully solved a problem from the International Mathematical Olympiad that stumped previous automated approaches. Unlike earlier systems that relied on brute-force search, this AI uses a combination of neural pattern recognition and symbolic reasoning to construct human-readable proofs. The achievement represents a significant step toward AI systems that can assist mathematicians in discovery rather than just verification.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.ams.org/journals/notices/202602/rnoti-p234.pdf" target="_blank" rel="noopener">The Renaissance of p-adic Hodge Theory</a></h3>
+                    <p class="source">Notices of the AMS — February 2026</p>
+                    <p><strong>Summary:</strong> This survey article traces the explosive development of p-adic Hodge theory over the past decade, from Fontaine's foundational work to the recent breakthroughs by Bhatt, Morrow, and Scholze. The theory, which connects p-adic Galois representations with geometric cohomology theories, has become essential for understanding the arithmetic of algebraic varieties.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Putnam Competition Problem (1992 B6)</h3>
+                    <p class="difficulty">Difficulty: ★★★★☆</p>
+                    
+                    <div class="problem-statement">
+                        <p><strong>Problem:</strong> Let \( \mathcal{M} \) be the set of all \( 2 \times 2 \) matrices of the form:</p>
+                        <p>\[ A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \]</p>
+                        <p>where \( a, b, c, d \) are real numbers satisfying \( ad - bc = 1 \) and \( a + d = 2 \). Find the maximum value of \( b^2 + c^2 \) among all matrices in \( \mathcal{M} \).</p>
+                    </div>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <div class="hint">
+                            <p>Consider the characteristic polynomial of \( A \). What are its eigenvalues given the constraints? Use the Cayley-Hamilton theorem or express \( b^2 + c^2 \) in terms of the trace and determinant.</p>
+                        </div>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <div class="solution">
+                            <p><strong>Solution:</strong></p>
+                            <p>We are given:</p>
+                            <ul>
+                                <li>\( \det(A) = ad - bc = 1 \)</li>
+                                <li>\( \text{tr}(A) = a + d = 2 \)</li>
+                            </ul>
+                            
+                            <p>The characteristic polynomial of \( A \) is:</p>
+                            <p>\[ \chi_A(\lambda) = \lambda^2 - \text{tr}(A)\lambda + \det(A) = \lambda^2 - 2\lambda + 1 = (\lambda - 1)^2 \]</p>
+                            
+                            <p>So \( A \) has a repeated eigenvalue \( \lambda = 1 \). By Cayley-Hamilton: \( (A - I)^2 = 0 \).</p>
+                            
+                            <p>From \( a + d = 2 \), let \( d = 2 - a \). From \( ad - bc = 1 \):</p>
+                            <p>\[ a(2-a) - bc = 1 \Rightarrow bc = 2a - a^2 - 1 = -(a-1)^2 \]</p>
+                            
+                            <p>So \( bc = -(a-1)^2 \leq 0 \). For fixed \( bc \), \( b^2 + c^2 \) is maximized when \( |b-c| \) is maximized. Taking \( b = -c \) gives \( b^2 = (a-1)^2 \), so \( b^2 + c^2 = 2(a-1)^2 \).</p>
+                            
+                            <p>With \( a = 1 + t \), \( d = 1 - t \), \( b = t \), \( c = -t \), we verify: \( \det(A) = (1+t)(1-t) - t(-t) = 1 - t^2 + t^2 = 1 \) ✓</p>
+                            
+                            <p>Then \( b^2 + c^2 = 2t^2 \), which can be arbitrarily large. <strong>Answer:</strong> There is no maximum; the supremum is \( +\infty \).</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day</h2>
+                
+                <div class="visualization">
+                    <h3>The Mandelbrot Set: Boundary of Chaos</h3>
+                    
+                    <div class="viz-description">
+                        <p>The Mandelbrot set is the set of complex numbers \( c \) for which the iteration \( z_{n+1} = z_n^2 + c \) (starting with \( z_0 = 0 \)) remains bounded. Its boundary exhibits infinite complexity—zooming in reveals ever more intricate structures that echo the whole. The set connects to Julia sets: for each \( c \) in the Mandelbrot set, the corresponding Julia set is connected; for \( c \) outside, the Julia set is a Cantor dust.</p>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Code</h4>
+                        <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    """Compute the number of iterations until escape."""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+# Create a grid of complex numbers
+width, height = 800, 600
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -1.5, 1.5
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Compute the Mandelbrot set
+mandelbrot_set = np.vectorize(mandelbrot)(C)
+
+# Plot
+plt.figure(figsize=(10, 8))
+plt.imshow(mandelbrot_set, extent=[xmin, xmax, ymin, ymax], 
+           cmap='hot', origin='lower')
+plt.colorbar(label='Iterations')
+plt.title('The Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.show()
+</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <cite>— Georg Cantor</cite>
+                </blockquote>
+                <p class="quote-context">Cantor's revolutionary work on set theory and infinite numbers faced significant opposition in his lifetime, yet his vision of mathematics as a realm of creative freedom transformed the field forever.</p>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — A curated collection of mathematical insights</p>
+        <p>Generated: 2026-02-22 at 17:34 UTC</p>
+    </footer>
+</body>
+</html>
