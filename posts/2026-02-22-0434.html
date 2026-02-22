@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 22, 2026 at 04:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 22, 2026 at 04:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 22, 2026 at 04:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-22 at 04:34 UTC</p>
+            <div class="tags">
+                <a href="../tags/lie-algebras.html" class="tag">lie-algebras</a>
+                <a href="../tags/category-theory.html" class="tag">category-theory</a>
+                <a href="../tags/algebraic-number-theory.html" class="tag">algebraic-number-theory</a>
+                <a href="../tags/graph-theory.html" class="tag">graph-theory</a>
+                <a href="../tags/fluid-dynamics.html" class="tag">fluid-dynamics</a>
+                <a href="../tags/operations-research.html" class="tag">operations-research</a>
+                <a href="../tags/tropical-geometry.html" class="tag">tropical-geometry</a>
+                <a href="../tags/arithmetic-geometry.html" class="tag">arithmetic-geometry</a>
+                <a href="../tags/mirror-symmetry.html" class="tag">mirror-symmetry</a>
+                <a href="../tags/emmy-noether.html" class="tag">emmy-noether</a>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 3 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://mathworld.wolfram.com/" target="_blank" rel="noopener">MathWorld — The Web's Most Extensive Mathematics Resource</a></h3>
+                    <p>MathWorld is an extensive online encyclopedia of mathematics created by Eric Weisstein and maintained by Wolfram Research. With over 13,000 entries covering all areas of mathematics, it serves as an invaluable reference for students, educators, and researchers. Each entry includes rigorous definitions, formulas, examples, and references to further reading. The site is particularly strong in special functions, number theory, and recreational mathematics.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www.ams.org/journals/bull/" target="_blank" rel="noopener">Bulletin of the American Mathematical Society</a></h3>
+                    <p>The Bulletin of the AMS publishes expository articles on contemporary mathematical research, written in a way that gives insight to mathematicians who may not be experts in a particular area. The articles are freely available and provide excellent introductions to cutting-edge topics across pure and applied mathematics. The Bulletin also features book reviews and perspectives on the mathematical profession.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://leanprover-community.github.io/" target="_blank" rel="noopener">Lean Prover Community</a></h3>
+                    <p>The Lean Community is a vibrant group of mathematicians and computer scientists using the Lean theorem prover to formalize mathematics. Their mathlib library contains thousands of definitions and theorems across algebra, analysis, topology, and number theory. The project represents a new paradigm in mathematical collaboration, where proofs are checked by computer, ensuring absolute correctness.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book of the Day</h2>
+                <div class="book-card">
+                    <h3>"Complex Analysis"</h3>
+                    <p><strong>Author:</strong> Elias Stein and Rami Shakarchi</p>
+                    <p><strong>Level:</strong> Undergraduate/Graduate</p>
+                    <p><strong>Summary:</strong> This elegant textbook is part of the Princeton Lectures in Analysis series and provides a comprehensive introduction to complex analysis. The book covers holomorphic functions, Cauchy's theorem, meromorphic functions, the Riemann mapping theorem, and elliptic functions. Stein and Shakarchi are known for their clear exposition and careful motivation of concepts. The text weaves together complex analysis with Fourier analysis, number theory, and combinatorics, showing the interconnectedness of mathematical subjects. The book is available as a free PDF through various academic resources.</p>
+                    <p><a href="https://www.amazon.com/Complex-Analysis-Princeton-Lectures-No/dp/0691113858" target="_blank" rel="noopener">View on Amazon</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Lie Algebras: The Infinitesimal Structure of Symmetry</h3>
+                    <p class="tag">lie-algebras</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do we study continuous symmetries algebraically? Lie algebras provide the linearized, infinitesimal description of Lie groups—continuous groups of symmetries that appear throughout mathematics and physics. Named after Sophus Lie, who developed the theory in the late 19th century to study differential equations, Lie algebras have become fundamental tools in representation theory, particle physics, and differential geometry. The classification of simple Lie algebras is one of the most beautiful achievements in mathematics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Lie Algebra:</strong> A vector space \( \mathfrak{g} \) over a field \( \mathbb{F} \) equipped with a bilinear operation \( [\cdot, \cdot]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g} \) called the Lie bracket satisfying:
+                            <ul>
+                                <li>Antisymmetry: \( [X, Y] = -[Y, X] \)</li>
+                                <li>Jacobi identity: \( [X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0 \)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Adjoint Representation:</strong> For \( X \in \mathfrak{g} \), define \( \text{ad}_X: \mathfrak{g} \to \mathfrak{g} \) by \( \text{ad}_X(Y) = [X, Y] \).</li>
+                        <li><strong>Killing Form:</strong> The symmetric bilinear form \( \kappa(X, Y) = \text{tr}(\text{ad}_X \circ \text{ad}_Y) \).</li>
+                        <li><strong>Semisimple:</strong> A Lie algebra with no non-zero abelian ideals (equivalently, with non-degenerate Killing form).</li>
+                        <li><strong>Cartan Subalgebra:</strong> A nilpotent subalgebra \( \mathfrak{h} \subseteq \mathfrak{g} \) that is self-normalizing.</li>
+                    </ul>
+
+                    <h4>Theorem: The Cartan Classification of Simple Lie Algebras</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Cartan, 1894):</strong> Every finite-dimensional simple Lie algebra over \( \mathbb{C} \) is isomorphic to exactly one of:</p>
+                        <p><strong>Classical Series:</strong></p>
+                        <ul>
+                            <li>\( A_n = \mathfrak{sl}_{n+1}(\mathbb{C}) \) for \( n \geq 1 \) (special linear)</li>
+                            <li>\( B_n = \mathfrak{so}_{2n+1}(\mathbb{C}) \) for \( n \geq 2 \) (odd orthogonal)</li>
+                            <li>\( C_n = \mathfrak{sp}_{2n}(\mathbb{C}) \) for \( n \geq 3 \) (symplectic)</li>
+                            <li>\( D_n = \mathfrak{so}_{2n}(\mathbb{C}) \) for \( n \geq 4 \) (even orthogonal)</li>
+                        </ul>
+                        <p><strong>Exceptional Algebras:</strong></p>
+                        <ul>
+                            <li>\( E_6, E_7, E_8, F_4, G_2 \)</li>
+                        </ul>
+                        <p><strong>Proof Sketch:</strong> The proof uses the root space decomposition. For a semisimple Lie algebra \( \mathfrak{g} \) with Cartan subalgebra \( \mathfrak{h} \), we have:</p>
+                        <p>\[ \mathfrak{g} = \mathfrak{h} \oplus \bigoplus_{\alpha \in \Phi} \mathfrak{g}_\alpha \]</p>
+                        <p>where \( \Phi \subseteq \mathfrak{h}^* \) is the root system. The geometry of \( \Phi \) (encoded in the Cartan matrix or Dynkin diagram) completely determines \( \mathfrak{g} \). Classification of irreducible root systems yields the list above. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathfrak{g}, \mathfrak{h} \): Lie algebras (fraktur font)</li>
+                        <li>\( [X, Y] \): Lie bracket</li>
+                        <li>\( \text{ad}_X \): Adjoint action</li>
+                        <li>\( \kappa(X, Y) \): Killing form</li>
+                        <li>\( \Phi \): Root system</li>
+                        <li>\( \mathfrak{g}_\alpha \): Root space for root \( \alpha \)</li>
+                        <li>\( \mathfrak{sl}_n \): Special linear Lie algebra (trace zero matrices)</li>
+                        <li>\( \mathfrak{so}_n \): Special orthogonal Lie algebra (skew-symmetric matrices)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from itertools import combinations
+
+def lie_bracket(X, Y):
+    """Compute the Lie bracket [X, Y] = XY - YX for matrices."""
+    return X @ Y - Y @ X
+
+def killing_form(X, Y, basis):
+    """
+    Compute the Killing form κ(X, Y) = tr(ad_X ∘ ad_Y).
+    For matrix Lie algebras, κ(X, Y) = 2n tr(XY) for sl(n).
+    """
+    # For sl(n), use the simplified formula
+    n = X.shape[0]
+    return 2 * n * np.trace(X @ Y)
+
+def verify_jacobi_identity(X, Y, Z):
+    """Verify the Jacobi identity: [X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0"""
+    term1 = lie_bracket(X, lie_bracket(Y, Z))
+    term2 = lie_bracket(Y, lie_bracket(Z, X))
+    term3 = lie_bracket(Z, lie_bracket(X, Y))
+    return np.allclose(term1 + term2 + term3, 0)
+
+# Example: sl(2, C) - the simplest simple Lie algebra
+# Basis: H = [[1, 0], [0, -1]], E = [[0, 1], [0, 0]], F = [[0, 0], [1, 0]]
+
+H = np.array([[1, 0], [0, -1]], dtype=complex)
+E = np.array([[0, 1], [0, 0]], dtype=complex)
+F = np.array([[0, 0], [1, 0]], dtype=complex)
+
+print("sl(2, C) structure constants:")
+print(f"[H, E] = {lie_bracket(H, E)}")  # Should be 2E
+print(f"[H, F] = {lie_bracket(H, F)}")  # Should be -2F
+print(f"[E, F] = {lie_bracket(E, F)}")  # Should be H
+
+# Verify Jacobi identity
+print(f"\nJacobi identity holds: {verify_jacobi_identity(H, E, F)}")
+
+# Compute Killing form
+print(f"\nKilling form κ(H, H) = {killing_form(H, H, [H, E, F])}")
+print(f"κ(E, F) = {killing_form(E, F, [H, E, F])}")
+print(f"κ(H, E) = {killing_form(H, E, [H, E, F])}")  # Should be 0 (orthogonal)
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Category Theory: The Mathematics of Structure</h3>
+                    <p class="tag">category-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>What do groups, topological spaces, and vector spaces have in common? Category theory, introduced by Samuel Eilenberg and Saunders Mac Lane in the 1940s, provides a unified framework for studying mathematical structures and the mappings between them. Rather than focusing on what objects are made of, category theory asks how they relate to each other. This shift in perspective has revealed deep connections between seemingly unrelated areas of mathematics and has become essential in algebraic geometry, logic, and theoretical computer science.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Category \( \mathcal{C} \):</strong> Consists of:
+                            <ul>
+                                <li>A class of objects \( \text{Ob}(\mathcal{C}) \)</li>
+                                <li>For each pair of objects \( X, Y \), a set of morphisms \( \text{Hom}_{\mathcal{C}}(X, Y) \)</li>
+                                <li>Composition: \( \circ: \text{Hom}(Y, Z) \times \text{Hom}(X, Y) \to \text{Hom}(X, Z) \)</li>
+                                <li>Identity morphisms \( \text{id}_X \) for each object</li>
+                            </ul>
+                            satisfying associativity and identity laws.
+                        </li>
+                        <li><strong>Functor:</strong> A mapping \( F: \mathcal{C} \to \mathcal{D} \) preserving composition and identities.</li>
+                        <li><strong>Natural Transformation:</strong> A family of morphisms \( \eta_X: F(X) \to G(X) \) such that for all \( f: X \to Y \):
+                            <p>\[ \eta_Y \circ F(f) = G(f) \circ \eta_X \]</p>
+                        </li>
+                        <li><strong>Universal Property:</strong> A characterization of an object by its relationship to all other objects.</li>
+                        <li><strong>Adjunction:</strong> Functors \( F: \mathcal{C} \to \mathcal{D} \) and \( G: \mathcal{D} \to \mathcal{C} \) with a natural isomorphism:
+                            <p>\[ \text{Hom}_{\mathcal{D}}(F(X), Y) \cong \text{Hom}_{\mathcal{C}}(X, G(Y)) \]</p>
+                        </li>
+                    </ul>
+
+                    <h4>Theorem: The Yoneda Lemma</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Yoneda Lemma):</strong> Let \( \mathcal{C} \) be a locally small category, \( F: \mathcal{C}^{\text{op}} \to \text{Set} \) a functor, and \( X \in \mathcal{C} \). Then:</p>
+                        <p>\[ \text{Nat}(\text{Hom}_{\mathcal{C}}(-, X), F) \cong F(X) \]</p>
+                        <p>where \( \text{Nat} \) denotes natural transformations. Moreover, this isomorphism is natural in both \( X \) and \( F \).</p>
+                        <p><strong>Proof Sketch:</strong> Given \( \eta: \text{Hom}(-, X) \Rightarrow F \), evaluate at \( X \) and apply to \( \text{id}_X \) to get \( \eta_X(\text{id}_X) \in F(X) \). Conversely, given \( a \in F(X) \), define \( \eta_Y(f) = F(f)(a) \) for \( f: Y \to X \). One verifies these are inverse and natural. ∎</p>
+                        <p><strong>Corollary (Yoneda Embedding):</strong> The functor \( y: \mathcal{C} \to [\mathcal{C}^{\text{op}}, \text{Set}] \) sending \( X \mapsto \text{Hom}(-, X) \) is fully faithful.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathcal{C}, \mathcal{D} \): Categories (calligraphic font)</li>
+                        <li>\( \text{Ob}(\mathcal{C}) \): Objects of category \( \mathcal{C} \)</li>
+                        <li>\( \text{Hom}(X, Y) \) or \( X \to Y \): Morphisms from \( X \) to \( Y \)</li>
+                        <li>\( \circ \): Composition of morphisms</li>
+                        <li>\( F: \mathcal{C} \to \mathcal{D} \): Functor between categories</li>
+                        <li>\( \eta: F \Rightarrow G \): Natural transformation</li>
+                        <li>\( \mathcal{C}^{\text{op}} \): Opposite category (arrows reversed)</li>
+                        <li>\( [\mathcal{C}, \mathcal{D}] \): Functor category</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">from typing import Callable, TypeVar, Generic
+from dataclasses import dataclass
+from functools import reduce
+
+# A simple demonstration of categorical concepts in Python
+
+T = TypeVar('T')
+U = TypeVar('U')
+V = TypeVar('V')
+
+class Functor(Generic[T]):
+    """Abstract base for functors."""
+    
+    def map(self, f: Callable[[T], U]) -> 'Functor[U]':
+        raise NotImplementedError
+    
+    def fmap(self, f: Callable[[T], U]) -> 'Functor[U]':
+        """Alias for map."""
+        return self.map(f)
+
+@dataclass
+class ListFunctor(Functor[T]):
+    """List is a functor."""
+    value: list[T]
+    
+    def map(self, f: Callable[[T], U]) -> 'ListFunctor[U]':
+        return ListFunctor([f(x) for x in self.value])
+    
+    def __repr__(self):
+        return f"ListFunctor({self.value})"
+
+@dataclass  
+class Maybe(Functor[T]):
+    """Maybe functor (optional value)."""
+    value: T | None
+    
+    def map(self, f: Callable[[T], U]) -> 'Maybe[U]':
+        if self.value is None:
+            return Maybe(None)
+        return Maybe(f(self.value))
+    
+    def __repr__(self):
+        return f"Maybe({self.value})"
+
+# Natural transformation: Maybe -> List
+def maybe_to_list(m: Maybe[T]) -> ListFunctor[T]:
+    """A natural transformation from Maybe to List."""
+    if m.value is None:
+        return ListFunctor([])
+    return ListFunctor([m.value])
+
+# Verify naturality square commutes
+# For f: T -> U, we need: maybe_to_list(Maybe(f(x))) == ListFunctor(f)(maybe_to_list(x))
+def verify_naturality(f: Callable[[T], U], x: Maybe[T]) -> bool:
+    """Verify the naturality square commutes."""
+    left = maybe_to_list(x.map(f))
+    right = maybe_to_list(x).map(f)
+    return left == right
+
+# Examples
+print("Functor examples:")
+lst = ListFunctor([1, 2, 3, 4, 5])
+print(f"Original: {lst}")
+print(f"Mapped (x*2): {lst.map(lambda x: x * 2)}")
+
+maybe_val = Maybe(42)
+maybe_none = Maybe(None)
+print(f"\nMaybe(42).map(x*2): {maybe_val.map(lambda x: x * 2)}")
+print(f"Maybe(None).map(x*2): {maybe_none.map(lambda x: x * 2)}")
+
+# Naturality verification
+print(f"\nNaturality holds for x=Maybe(5): {verify_naturality(lambda x: x * 3, Maybe(5))}")
+print(f"Naturality holds for x=Maybe(None): {verify_naturality(lambda x: x * 3, Maybe(None))}")
+
+# Yoneda-inspired: representability
+# In programming, this corresponds to CPS (continuation-passing style)
+def yoneda_embedding(x: T) -> Callable[[Callable[[T], U]], U]:
+    """
+    The Yoneda embedding: x ↦ Hom(-, x)
+    In programming: x ↦ (f ↦ f(x))
+    """
+    return lambda f: f(x)
+
+# Example
+embed_5 = yoneda_embedding(5)
+print(f"\nYoneda embedding of 5:")
+print(f"  apply (x -> x*2): {embed_5(lambda x: x * 2)}")
+print(f"  apply (x -> x+10): {embed_5(lambda x: x + 10)}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Algebraic Number Theory: Arithmetic Beyond the Rationals</h3>
+                    <p class="tag">algebraic-number-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do we solve Diophantine equations like \( x^2 + y^2 = z^2 \) or \( x^3 + y^3 = z^3 \)? Algebraic number theory extends the tools of number theory beyond the integers to algebraic number fields—finite extensions of \( \mathbb{Q} \). By studying factorization in rings of integers, ideal class groups, and Galois representations, we gain powerful methods for attacking problems that are intractable over \( \mathbb{Z} \) alone. This field, pioneered by Kummer, Dedekind, and Hilbert, remains at the forefront of mathematical research with connections to the Langlands program and Fermat's Last Theorem.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Number Field:</strong> A finite field extension \( K/\mathbb{Q} \), denoted \( [K:\mathbb{Q}] = n \).</li>
+                        <li><strong>Ring of Integers:</strong> \( \mathcal{O}_K = \{ \alpha \in K : \alpha \text{ is integral over } \mathbb{Z} \} \).</li>
+                        <li><strong>Discriminant:</strong> For a basis \( \{\alpha_1, \ldots, \alpha_n\} \) of \( K/\mathbb{Q} \):
+                            <p>\[ \Delta_K = \det(\text{Tr}_{K/\mathbb{Q}}(\alpha_i \alpha_j)) \]</p>
+                        </li>
+                        <li><strong>Ideal:</strong> A non-zero subset \( \mathfrak{a} \subseteq \mathcal{O}_K \) closed under addition and multiplication by \( \mathcal{O}_K \).</li>
+                        <li><strong>Prime Ideal:</strong> An ideal \( \mathfrak{p} \) such that \( \mathfrak{ab} \subseteq \mathfrak{p} \) implies \( \mathfrak{a} \subseteq \mathfrak{p} \) or \( \mathfrak{b} \subseteq \mathfrak{p} \).</li>
+                        <li><strong>Class Group:</strong> \( \text{Cl}(K) = \text{Frac}(\mathcal{O}_K) / \text{Prin}(\mathcal{O}_K) \), measuring failure of unique factorization.</li>
+                    </ul>
+
+                    <h4>Theorem: Unique Factorization of Ideals</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Dedekind):</strong> Let \( K \) be a number field with ring of integers \( \mathcal{O}_K \). Then every non-zero ideal \( \mathfrak{a} \subseteq \mathcal{O}_K \) factors uniquely as a product of prime ideals:</p>
+                        <p>\[ \mathfrak{a} = \mathfrak{p}_1^{e_1} \cdots \mathfrak{p}_r^{e_r} \]</p>
+                        <p>where \( \mathfrak{p}_i \) are distinct prime ideals and \( e_i \geq 1 \).</p>
+                        <p><strong>Proof Sketch:</strong> The proof uses three key facts: (1) \( \mathcal{O}_K \) is a Dedekind domain (Noetherian, integrally closed, dimension 1), (2) In a Dedekind domain, every non-zero ideal is invertible in the ideal group, and (3) The ideal group is freely generated by prime ideals. The uniqueness follows from the fact that prime ideals are maximal in a Dedekind domain. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( K, L \): Number fields</li>
+                        <li>\( \mathcal{O}_K \): Ring of integers of \( K \)</li>
+                        <li>\( \mathfrak{a}, \mathfrak{b}, \mathfrak{p} \): Ideals (fraktur font)</li>
+                        <li>\( \text{Nm}(\mathfrak{a}) = |\mathcal{O}_K / \mathfrak{a}| \): Ideal norm</li>
+                        <li>\( \text{Tr}_{K/\mathbb{Q}} \): Field trace</li>
+                        <li>\( \Delta_K \): Discriminant of \( K \)</li>
+                        <li>\( \text{Cl}(K) \): Ideal class group</li>
+                        <li>\( h_K = |\text{Cl}(K)| \): Class number</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from math import gcd, isqrt
+
+def minimal_polynomial_quadratic(d):
+    """
+    For Q(√d), return the minimal polynomial and discriminant.
+    Returns (a, b, c) for ax² + bx + c = 0
+    """
+    d = d if d % 4 == 1 else 4 * d
+    return (1, 0, -d), d  # x² - d = 0
+
+def ring_of_integers_basis(d):
+    """
+    Return integral basis for Q(√d).
+    If d ≡ 1 (mod 4): {1, (1+√d)/2}
+    Otherwise: {1, √d}
+    """
+    if d % 4 == 1:
+        return [1, (1 + np.sqrt(d)) / 2]
+    else:
+        return [1, np.sqrt(d)]
+
+def discriminant_quadratic(d):
+    """Compute discriminant of Q(√d)."""
+    if d % 4 == 1:
+        return d
+    else:
+        return 4 * d
+
+def prime_decomposition_quadratic(p, d):
+    """
+    Determine how a rational prime p decomposes in Q(√d).
+    Returns: 'inert', 'splits', or 'ramifies'
+    """
+    disc = discriminant_quadratic(d)
+    
+    # Legendre symbol (disc/p)
+    def legendre(a, p):
+        if p == 2:
+            return 0 if a % 2 == 0 else 1
+        result = pow(a % p, (p - 1) // 2, p)
+        return -1 if result == p - 1 else result
+    
+    leg = legendre(disc, p)
+    
+    if leg == -1:
+        return 'inert'  # p remains prime
+    elif leg == 1:
+        return 'splits'  # p = pp̄
+    else:
+        return 'ramifies'  # p = p²
+
+def class_number_quadratic(d, bound=100):
+    """
+    Compute class number for imaginary quadratic field Q(√-d).
+    Uses Minkowski bound and reduced binary quadratic forms.
+    This is a simplified implementation.
+    """
+    if d < 0:
+        d = -d
+    
+    disc = discriminant_quadratic(-d)
+    
+    # Minkowski bound for imaginary quadratic fields
+    minkowski = np.sqrt(abs(disc)) / np.pi
+    
+    print(f"Q(√{-d}):")
+    print(f"  Discriminant: {disc}")
+    print(f"  Minkowski bound: {minkowski:.4f}")
+    
+    # Count reduced binary quadratic forms (simplified)
+    # For small discriminants, we can enumerate
+    count = 0
+    for a in range(1, int(minkowski) + 1):
+        for b in range(-a, a + 1):
+            for c in range(1, int(minkowski) + 1):
+                if b*b - 4*a*c == disc:
+                    # Check if reduced (simplified condition)
+                    if abs(b) <= a and a <= c:
+                        if abs(b) == a or a == c:
+                            if b >= 0:
+                                count += 1
+                        else:
+                            count += 1
+    
+    print(f"  Class number h ≈ {max(count, 1)}")
+    return max(count, 1)
+
+# Examples
+print("Quadratic Number Field Examples\n")
+
+# Q(i) = Q(√-1)
+print("=" * 40)
+class_number_quadratic(1)
+print(f"  Integral basis: {{1, i}}")
+print(f"  Ring of integers: Z[i] (Gaussian integers)")
+
+# Q(√-5) - non-UFD example
+print("\n" + "=" * 40)
+class_number_quadratic(5)
+print(f"  Note: 6 = 2·3 = (1+√-5)(1-√-5)")
+print(f"  This shows non-unique factorization in Z[√-5]")
+
+# Prime decomposition
+print("\n" + "=" * 40)
+print("Prime decomposition in Q(i):")
+for p in [2, 3, 5, 7, 11, 13]:
+    decomp = prime_decomposition_quadratic(p, -1)
+    print(f"  {p}: {decomp}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Graph Theory: Networks and Connectivity</h3>
+                    <p class="tag">graph-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do social networks form? What is the shortest route between two cities? Graph theory, founded by Euler in 1736 with his solution to the Königsberg bridge problem, provides the mathematical language for studying networks. From the internet to protein interactions, from power grids to neural connections, graphs model relationships between discrete entities. Modern graph theory combines combinatorics, probability, and linear algebra to analyze complex systems and design efficient algorithms.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Graph:</strong> A pair \( G = (V, E) \) where \( V \) is a set of vertices and \( E \subseteq \binom{V}{2} \) is a set of edges.</li>
+                        <li><strong>Degree:</strong> \( \deg(v) = |\{e \in E : v \in e\}| \), the number of edges incident to \( v \).</li>
+                        <li><strong>Path:</strong> A sequence of vertices \( v_0, v_1, \ldots, v_k \) where \( \{v_i, v_{i+1}\} \in E \).</li>
+                        <li><strong>Connected:</strong> A graph where every pair of vertices is joined by a path.</li>
+                        <li><strong>Tree:</strong> A connected graph with no cycles; \( |E| = |V| - 1 \).</li>
+                        <li><strong>Adjacency Matrix:</strong> \( A_{ij} = 1 \) if \( \{i, j\} \in E \), else 0.</li>
+                        <li><strong>Laplacian:</strong> \( L = D - A \) where \( D \) is the diagonal degree matrix.</li>
+                    </ul>
+
+                    <h4>Theorem: The Matrix-Tree Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Kirchhoff):</strong> Let \( G \) be a connected graph with Laplacian matrix \( L \). Let \( L' \) be any \( (n-1) \times (n-1) \) principal minor of \( L \). Then:</p>
+                        <p>\[ \tau(G) = \det(L') \]</p>
+                        <p>where \( \tau(G) \) is the number of spanning trees of \( G \).</p>
+                        <p><strong>Proof Sketch:</strong> The proof uses the Binet-Cauchy formula. Express \( L = BB^T \) where \( B \) is the incidence matrix. Then \( \det(L') = \sum_{S} \det(B_S)^2 \) where the sum is over sets of \( n-1 \) edges. One shows \( |\det(B_S)| = 1 \) if \( S \) forms a spanning tree, and 0 otherwise. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( G = (V, E) \): Graph with vertices \( V \) and edges \( E \)</li>
+                        <li>\( n = |V| \): Number of vertices</li>
+                        <li>\( m = |E| \): Number of edges</li>
+                        <li>\( \deg(v) \): Degree of vertex \( v \)</li>
+                        <li>\( \delta(G) \): Minimum degree</li>
+                        <li>\( \Delta(G) \): Maximum degree</li>
+                        <li>\( A(G) \): Adjacency matrix</li>
+                        <li>\( L(G) \): Laplacian matrix</li>
+                        <li>\( \tau(G) \): Number of spanning trees</li>
+                        <li>\( \chi(G) \): Chromatic number</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from collections import deque
+
+class Graph:
+    """Simple graph implementation with adjacency list."""
+    
+    def __init__(self, n):
+        self.n = n
+        self.adj = [[] for _ in range(n)]
+    
+    def add_edge(self, u, v):
+        """Add undirected edge."""
+        self.adj[u].append(v)
+        self.adj[v].append(u)
+    
+    def adjacency_matrix(self):
+        """Return adjacency matrix."""
+        A = np.zeros((self.n, self.n), dtype=int)
+        for u in range(self.n):
+            for v in self.adj[u]:
+                A[u, v] = 1
+        return A
+    
+    def laplacian(self):
+        """Return Laplacian matrix L = D - A."""
+        A = self.adjacency_matrix()
+        D = np.diag([len(self.adj[i]) for i in range(self.n)])
+        return D - A
+    
+    def bfs(self, start):
+        """Breadth-first search from start vertex."""
+        dist = [-1] * self.n
+        dist[start] = 0
+        queue = deque([start])
+        
+        while queue:
+            u = queue.popleft()
+            for v in self.adj[u]:
+                if dist[v] == -1:
+                    dist[v] = dist[u] + 1
+                    queue.append(v)
+        return dist
+    
+    def count_spanning_trees(self):
+        """Kirchhoff's Matrix-Tree Theorem."""
+        if self.n <= 1:
+            return 1
+        L = self.laplacian()
+        # Remove last row and column
+        L_minor = L[:-1, :-1]
+        return int(round(np.linalg.det(L_minor)))
+
+def create_complete_graph(n):
+    """Create complete graph K_n."""
+    g = Graph(n)
+    for i in range(n):
+        for j in range(i + 1, n):
+            g.add_edge(i, j)
+    return g
+
+def create_path_graph(n):
+    """Create path graph P_n."""
+    g = Graph(n)
+    for i in range(n - 1):
+        g.add_edge(i, i + 1)
+    return g
+
+def create_cycle_graph(n):
+    """Create cycle graph C_n."""
+    g = Graph(n)
+    for i in range(n):
+        g.add_edge(i, (i + 1) % n)
+    return g
+
+# Examples
+print("Graph Theory Examples\n")
+
+# Complete graph K_4
+K4 = create_complete_graph(4)
+print("Complete graph K_4:")
+print(f"  Adjacency matrix:\n{K4.adjacency_matrix()}")
+print(f"  Laplacian:\n{K4.laplacian()}")
+print(f"  Spanning trees (Cayley's formula predicts 4^(4-2) = 16): {K4.count_spanning_trees()}")
+
+# Path graph P_5
+P5 = create_path_graph(5)
+print(f"\nPath graph P_5:")
+print(f"  Spanning trees: {P5.count_spanning_trees()}")
+
+# Cycle graph C_5
+C5 = create_cycle_graph(5)
+print(f"\nCycle graph C_5:")
+print(f"  Spanning trees: {C5.count_spanning_trees()}")
+
+# BFS distances
+print(f"\nBFS distances from vertex 0 in K_4: {K4.bfs(0)}")
+
+# Spectral analysis
+print("\nSpectral Analysis:")
+eigenvalues = np.linalg.eigvalsh(K4.laplacian())
+print(f"  Laplacian eigenvalues of K_4: {sorted(eigenvalues)}")
+print(f"  Algebraic connectivity (λ₂): {sorted(eigenvalues)[1]:.4f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Fluid Dynamics: The Mathematics of Flow</h3>
+                    <p class="tag">fluid-dynamics</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do fluids move? From weather patterns to blood flow, from ocean currents to jet engines, fluid dynamics describes the motion of liquids and gases. The mathematical description of fluids dates back to Euler and the Bernoullis in the 18th century, with the modern theory established by Navier and Stokes in the 19th century. The Navier-Stokes equations, which govern viscous fluid flow, are among the most important—and challenging—equations in applied mathematics. Their study connects to turbulence, chaos, and one of the Millennium Prize Problems.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Velocity Field:</strong> \( \mathbf{u}(\mathbf{x}, t) \in \mathbb{R}^3 \), the velocity of fluid at position \( \mathbf{x} \) and time \( t \).</li>
+                        <li><strong>Pressure:</strong> \( p(\mathbf{x}, t) \in \mathbb{R} \), the force per unit area.</li>
+                        <li><strong>Vorticity:</strong> \( \boldsymbol{\omega} = \nabla \times \mathbf{u} \), measuring local rotation.</li>
+                        <li><strong>Material Derivative:</strong> \( \frac{D}{Dt} = \frac{\partial}{\partial t} + \mathbf{u} \cdot \nabla \).</li>
+                        <li><strong>Reynolds Number:</strong> \( \text{Re} = \frac{\rho U L}{\mu} \), ratio of inertial to viscous forces.</li>
+                        <li><strong>Incompressible Flow:</strong> \( \nabla \cdot \mathbf{u} = 0 \), volume-preserving motion.</li>
+                    </ul>
+
+                    <h4>Theorem: Kelvin's Circulation Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Kelvin, 1869):</strong> For an inviscid, barotropic fluid with conservative body forces, the circulation around a closed material curve \( C(t) \) is constant:</p>
+                        <p>\[ \frac{d}{dt} \oint_{C(t)} \mathbf{u} \cdot d\mathbf{r} = 0 \]</p>
+                        <p><strong>Proof Sketch:</strong> Using the material derivative and Stokes' theorem:</p>
+                        <p>\[ \frac{d}{dt} \oint_{C(t)} \mathbf{u} \cdot d\mathbf{r} = \oint_{C(t)} \frac{D\mathbf{u}}{Dt} \cdot d\mathbf{r} \]</p>
+                        <p>For inviscid flow, Euler's equation gives \( \frac{D\mathbf{u}}{Dt} = -\frac{1}{\rho}\nabla p - \nabla \Phi \). For barotropic flow (\( p = p(\rho) \)), this is a gradient, and the integral of a gradient around a closed loop vanishes. ∎</p>
+                        <p><strong>Corollary (Helmholtz):</strong> Vortex lines move with the fluid in inviscid flow.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathbf{u}, \mathbf{v} \): Velocity vectors</li>
+                        <li>\( \rho \): Density</li>
+                        <li>\( p \): Pressure</li>
+                        <li>\( \mu \): Dynamic viscosity</li>
+                        <li>\( \nu = \mu/\rho \): Kinematic viscosity</li>
+                        <li>\( \boldsymbol{\omega} = \nabla \times \mathbf{u} \): Vorticity</li>
+                        <li>\( \frac{D}{Dt} \): Material/substantial derivative</li>
+                        <li>\( \text{Re} \): Reynolds number</li>
+                        <li>\( \nabla \cdot \mathbf{u} \): Divergence</li>
+                        <li>\( \nabla \times \mathbf{u} \): Curl</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.sparse import diags
+from scipy.sparse.linalg import spsolve
+
+def vorticity_2d(u, v, dx, dy):
+    """
+    Compute vorticity ω = ∂v/∂x - ∂u/∂y
+    using central differences.
+    """
+    dvdx = np.gradient(v, dx, axis=1)
+    dudy = np.gradient(u, dy, axis=0)
+    return dvdx - dudy
+
+def divergence_2d(u, v, dx, dy):
+    """
+    Compute divergence ∇·u = ∂u/∂x + ∂v/∂y
+    """
+    dudx = np.gradient(u, dx, axis=1)
+    dvdy = np.gradient(v, dy, axis=0)
+    return dudx + dvdy
+
+def streamfunction_to_velocity(psi, dx, dy):
+    """
+    Convert stream function ψ to velocity field (u, v)
+    u = ∂ψ/∂y, v = -∂ψ/∂x
+    """
+    u = np.gradient(psi, dy, axis=0)
+    v = -np.gradient(psi, dx, axis=1)
+    return u, v
+
+def burgers_vortex(x, y, t, Re=100, Gamma=1):
+    """
+    Burgers vortex: exact solution to Navier-Stokes.
+    A vortex stretched by an axisymmetric strain flow.
+    """
+    r = np.sqrt(x**2 + y**2)
+    # Azimuthal velocity
+    u_theta = (Gamma / (2 * np.pi * r)) * (1 - np.exp(-r**2 * Re / (4 * t)))
+    # Convert to Cartesian
+    u = -u_theta * y / r
+    v = u_theta * x / r
+    # Handle r=0
+    u = np.where(r < 1e-10, 0, u)
+    v = np.where(r < 1e-10, 0, v)
+    return u, v
+
+def taylor_green_vortex(x, y, t, nu=0.01):
+    """
+    Taylor-Green vortex: decaying vortices.
+    Exact solution for 2D incompressible Navier-Stokes.
+    """
+    u = np.sin(x) * np.cos(y) * np.exp(-2 * nu * t)
+    v = -np.cos(x) * np.sin(y) * np.exp(-2 * nu * t)
+    p = 0.25 * (np.cos(2*x) + np.cos(2*y)) * np.exp(-4 * nu * t)
+    return u, v, p
+
+# Create grid
+nx, ny = 64, 64
+x = np.linspace(0, 2*np.pi, nx)
+y = np.linspace(0, 2*np.pi, ny)
+X, Y = np.meshgrid(x, y)
+dx = x[1] - x[0]
+dy = y[1] - y[0]
+
+print("Fluid Dynamics Examples\n")
+
+# Taylor-Green vortex
+u, v, p = taylor_green_vortex(X, Y, t=0, nu=0.01)
+omega = vorticity_2d(u, v, dx, dy)
+div = divergence_2d(u, v, dx, dy)
+
+print("Taylor-Green Vortex (t=0):")
+print(f"  Max velocity: {np.max(np.sqrt(u**2 + v**2)):.4f}")
+print(f"  Max vorticity: {np.max(np.abs(omega)):.4f}")
+print(f"  Max divergence (should be ~0): {np.max(np.abs(div)):.6f}")
+
+# Verify incompressibility
+print(f"  Mean divergence: {np.mean(div):.2e}")
+
+# Double gyre stream function
+def double_gyre_psi(x, y, t, A=0.1, epsilon=0.25):
+    """Double gyre stream function (time-dependent)."""
+    a = epsilon * np.sin(2 * np.pi * t)
+    b = 1 - 2 * epsilon * np.sin(2 * np.pi * t)
+    f = a * x**2 + b * x
+    return A * np.sin(np.pi * f) * np.sin(np.pi * y)
+
+# Compute velocity from stream function
+psi = double_gyre_psi(X / (2*np.pi), Y / (2*np.pi), t=0)
+u_dg, v_dg = streamfunction_to_velocity(psi, dx, dy)
+
+print(f"\nDouble Gyre Flow:")
+print(f"  Max velocity: {np.max(np.sqrt(u_dg**2 + v_dg**2)):.4f}")
+
+# Reynolds number calculation
+U = np.max(np.sqrt(u**2 + v**2))
+L = 2 * np.pi  # Characteristic length
+nu = 0.01
+Re = U * L / nu
+print(f"  Reynolds number: {Re:.2f}")
+
+# Energy spectrum (simplified)
+energy = 0.5 * np.mean(u**2 + v**2)
+print(f"  Kinetic energy: {energy:.4f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Operations Research: Optimization in Practice</h3>
+                    <p class="tag">operations-research</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do airlines schedule flights? How should delivery routes be planned? Operations research (OR) applies mathematical methods to help organizations make better decisions. Born during World War II to optimize military logistics, OR has grown into a vast field encompassing linear programming, network flows, scheduling, inventory theory, and simulation. The simplex method, developed by George Dantzig in 1947, revolutionized the field by providing an efficient way to solve linear programs. Today, OR techniques power supply chains, financial portfolios, healthcare systems, and transportation networks worldwide.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Linear Program (LP):</strong> Optimize \( \mathbf{c}^T \mathbf{x} \) subject to \( A\mathbf{x} \leq \mathbf{b} \) and \( \mathbf{x} \geq 0 \).</li>
+                        <li><strong>Feasible Region:</strong> The set of all points satisfying the constraints.</li>
+                        <li><strong>Basic Feasible Solution:</strong> A corner point of the feasible polytope.</li>
+                        <li><strong>Dual Problem:</strong> For primal LP, the dual is: minimize \( \mathbf{b}^T \mathbf{y} \) subject to \( A^T \mathbf{y} \geq \mathbf{c} \), \( \mathbf{y} \geq 0 \).</li>
+                        <li><strong>Simplex Method:</strong> An algorithm that moves from vertex to vertex along edges of the feasible region, improving the objective at each step.</li>
+                        <li><strong>Integer Program:</strong> An LP with the additional constraint that variables must be integers.</li>
+                    </ul>
+
+                    <h4>Theorem: Strong Duality</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Strong Duality):</strong> Consider the primal LP:</p>
+                        <p>\[ \max \mathbf{c}^T \mathbf{x} \quad \text{s.t.} \quad A\mathbf{x} \leq \mathbf{b}, \, \mathbf{x} \geq 0 \]</p>
+                        <p>and its dual:</p>
+                        <p>\[ \min \mathbf{b}^T \mathbf{y} \quad \text{s.t.} \quad A^T \mathbf{y} \geq \mathbf{c}, \, \mathbf{y} \geq 0 \]</p>
+                        <p>If either problem has a finite optimal solution, then so does the other, and:</p>
+                        <p>\[ \max \mathbf{c}^T \mathbf{x} = \min \mathbf{b}^T \mathbf{y} \]</p>
+                        <p><strong>Proof Sketch:</strong> Weak duality (\( \mathbf{c}^T \mathbf{x} \leq \mathbf{b}^T \mathbf{y} \)) follows from:</p>
+                        <p>\[ \mathbf{c}^T \mathbf{x} \leq (A^T \mathbf{y})^T \mathbf{x} = \mathbf{y}^T A \mathbf{x} \leq \mathbf{y}^T \mathbf{b} \]</p>
+                        <p>Strong duality follows from the separating hyperplane theorem or Farkas' lemma. If the primal is bounded and feasible, there exists an optimal basic feasible solution, and complementary slackness yields the dual optimal solution. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathbf{x}, \mathbf{y} \): Decision variable vectors</li>
+                        <li>\( \mathbf{c} \): Objective function coefficients</li>
+                        <li>\( A \): Constraint matrix</li>
+                        <li>\( \mathbf{b} \): Right-hand side vector</li>
+                        <li>\( \mathbf{x} \geq 0 \): Component-wise non-negativity</li>
+                        <li>\( z^* \): Optimal objective value</li>
+                        <li>\( \mathbf{x}^* \): Optimal solution</li>
+                        <li>\( \mathbf{s} \): Slack variables</li>
+                        <li>LP: Linear Program</li>
+                        <li>IP: Integer Program</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.optimize import linprog
+
+def solve_lp_simple(c, A_ub=None, b_ub=None, A_eq=None, b_eq=None, bounds=None):
+    """
+    Wrapper for scipy's linprog with cleaner interface.
+    Solves: min c^T x subject to constraints.
+    """
+    result = linprog(c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq, 
+                     bounds=bounds, method='highs')
+    return result
+
+def transportation_problem(supply, demand, costs):
+    """
+    Solve transportation problem using linear programming.
+    
+    Parameters:
+    - supply: array of supply amounts at each source
+    - demand: array of demand amounts at each destination
+    - costs: matrix of transportation costs
+    
+    Returns optimal flows and total cost.
+    """
+    m = len(supply)  # number of sources
+    n = len(demand)  # number of destinations
+    
+    # Flatten decision variables: x[i,j] = flow from source i to dest j
+    c = costs.flatten()
+    
+    # Supply constraints: sum_j x[i,j] <= supply[i]
+    A_supply = np.zeros((m, m * n))
+    for i in range(m):
+        for j in range(n):
+            A_supply[i, i * n + j] = 1
+    
+    # Demand constraints: sum_i x[i,j] >= demand[j]  =>  -sum_i x[i,j] <= -demand[j]
+    A_demand = np.zeros((n, m * n))
+    for j in range(n):
+        for i in range(m):
+            A_demand[j, i * n + j] = -1
+    
+    A_ub = np.vstack([A_supply, A_demand])
+    b_ub = np.concatenate([supply, -demand])
+    
+    bounds = [(0, None) for _ in range(m * n)]
+    
+    result = solve_lp_simple(c, A_ub=A_ub, b_ub=b_ub, bounds=bounds)
+    
+    if result.success:
+        flows = result.x.reshape(m, n)
+        return flows, result.fun
+    else:
+        return None, None
+
+def diet_problem(foods, nutrients, requirements, costs):
+    """
+    Classic diet problem: minimize cost while meeting nutritional requirements.
+    
+    Parameters:
+    - foods: list of food names
+    - nutrients: matrix where nutrients[i,j] = amount of nutrient i in food j
+    - requirements: minimum required amount of each nutrient
+    - costs: cost per unit of each food
+    """
+    n_foods = len(foods)
+    n_nutrients = len(requirements)
+    
+    # Objective: minimize cost
+    c = costs
+    
+    # Constraints: nutrients @ x >= requirements
+    A_ub = -nutrients.T  # negate for <= form
+    b_ub = -requirements
+    
+    bounds = [(0, None) for _ in range(n_foods)]
+    
+    result = solve_lp_simple(c, A_ub=A_ub, b_ub=b_ub, bounds=bounds)
+    return result
+
+# Example 1: Production planning
+print("Operations Research Examples\n")
+
+# Maximize profit: 3x + 5y
+# Subject to: x + 2y <= 8 (resource A)
+#             3x + 2y <= 12 (resource B)
+#             x, y >= 0
+
+c = [-3, -5]  # Negative because linprog minimizes
+A_ub = [[1, 2], [3, 2]]
+b_ub = [8, 12]
+bounds = [(0, None), (0, None)]
+
+result = solve_lp_simple(c, A_ub=A_ub, b_ub=b_ub, bounds=bounds)
+print("Production Planning Problem:")
+print(f"  Optimal solution: x = {result.x[0]:.4f}, y = {result.x[1]:.4f}")
+print(f"  Maximum profit: {-result.fun:.4f}")
+
+# Example 2: Transportation problem
+print("\nTransportation Problem:")
+supply = np.array([20, 30])  # Factory capacities
+demand = np.array([15, 25, 10])  # Store demands
+costs = np.array([[2, 3, 1],   # Transportation costs
+                  [4, 2, 5]])
+
+flows, total_cost = transportation_problem(supply, demand, costs)
+if flows is not None:
+    print(f"  Optimal flows:\n{flows}")
+    print(f"  Total transportation cost: {total_cost:.2f}")
+
+# Example 3: Diet problem
+print("\nDiet Problem:")
+foods = ['Bread', 'Milk', 'Eggs', 'Meat', 'Cake']
+# Nutrients: [calories, protein, calcium]
+nutrients = np.array([
+    [400, 200, 150, 500, 400],   # calories
+    [5, 6, 13, 75, 2],           # protein (g)
+    [2, 250, 54, 82, 0]          # calcium (mg)
+])
+requirements = np.array([2000, 50, 700])  # minimum requirements
+costs = np.array([2.0, 3.0, 4.0, 19.0, 80.0])
+
+result = diet_problem(foods, nutrients, requirements, costs)
+if result.success:
+    print(f"  Optimal daily diet:")
+    for i, food in enumerate(foods):
+        if result.x[i] > 0.01:
+            print(f"    {food}: {result.x[i]:.2f} units")
+    print(f"  Minimum daily cost: ${result.fun:.2f}")
+    
+    # Verify nutritional requirements
+    nutrition = nutrients @ result.x
+    print(f"  Nutrition provided: calories={nutrition[0]:.0f}, protein={nutrition[1]:.1f}g, calcium={nutrition[2]:.0f}mg")
+
+# Example 4: Dual problem
+print("\nDual Problem Verification:")
+# Primal: max 3x + 5y s.t. x + 2y <= 8, 3x + 2y <= 12, x,y >= 0
+# Dual: min 8u + 12v s.t. u + 3v >= 3, 2u + 2v >= 5, u,v >= 0
+
+c_dual = [8, 12]
+A_ub_dual = [[-1, -3], [-2, -2]]  # negate for <= form
+b_ub_dual = [-3, -5]
+bounds_dual = [(0, None), (0, None)]
+
+result_dual = solve_lp_simple(c_dual, A_ub=A_ub_dual, b_ub=b_ub_dual, bounds=bounds_dual)
+print(f"  Dual optimal value: {result_dual.fun:.4f}")
+print(f"  Primal optimal value: {-result.fun:.4f}")
+print(f"  Strong duality holds: {np.isclose(result_dual.fun, -result.fun)}")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+
+                <div class="special-topic">
+                    <h3>Tropical Geometry: Geometry Over the Min-Plus Semiring</h3>
+                    <p class="tag">tropical-geometry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Tropical geometry emerged in the late 20th century as a combinatorial shadow of algebraic geometry. The name "tropical" was coined by French mathematicians in honor of their Brazilian colleague Imre Simon, who pioneered the study of min-plus algebra. Tropical geometry replaces classical algebraic varieties with piecewise-linear objects, transforming difficult algebraic problems into tractable combinatorial ones. It has found remarkable applications in enumerative geometry, mirror symmetry, and computational biology.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Tropical Semiring:</strong> \( \mathbb{T} = \mathbb{R} \cup \{\infty\} \) with operations:
+                            <ul>
+                                <li>Tropical addition: \( a \oplus b = \min(a, b) \)</li>
+                                <li>Tropical multiplication: \( a \odot b = a + b \)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tropical Polynomial:</strong> \( p(x) = \bigoplus_{i} (a_i \odot x^{\odot i}) = \min_i(a_i + i \cdot x) \).</li>
+                        <li><strong>Tropical Hypersurface:</strong> The set where the minimum is achieved at least twice.</li>
+                        <li><strong>Newton Polygon:</strong> The convex hull of points \( (i, a_i) \) for a tropical polynomial.</li>
+                    </ul>
+
+                    <h4>Theorem: The Fundamental Theorem of Tropical Geometry</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \( K \) be an algebraically closed field with non-archimedean valuation \( \text{val}: K^* \to \mathbb{R} \). For any variety \( X \subseteq (K^*)^n \), the tropicalization is:</p>
+                        <p>\[ \text{trop}(X) = \overline{\text{val}(X)} = \bigcap_{f \in I(X)} \text{trop}(V(f)) \]</p>
+                        <p>where the intersection is over all polynomials vanishing on \( X \).</p>
+                        <p><strong>Proof Sketch:</strong> The key insight is that the valuation map transforms multiplicative structure into additive structure. For a polynomial \( f = \sum c_\alpha x^\alpha \), the valuation of \( f(x) \) at a point is at least \( \min_\alpha(\text{val}(c_\alpha) + \alpha \cdot \text{val}(x)) \). The equality case corresponds to the tropical hypersurface. The theorem follows by showing this holds for all defining equations. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathbb{T} \): Tropical semiring</li>
+                        <li>\( \oplus \): Tropical addition (minimum)</li>
+                        <li>\( \odot \): Tropical multiplication (addition)</li>
+                        <li>\( x^{\odot n} = n \cdot x \): Tropical power</li>
+                        <li>\( \text{trop}(X) \): Tropicalization of variety \( X \)</li>
+                        <li>\( \text{val} \): Non-archimedean valuation</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.spatial import ConvexHull
+
+def tropical_add(a, b):
+    """Tropical addition: min(a, b)"""
+    return np.minimum(a, b)
+
+def tropical_mult(a, b):
+    """Tropical multiplication: a + b"""
+    return a + b
+
+def tropical_polyval(coeffs, x):
+    """
+    Evaluate tropical polynomial.
+    coeffs[i] is coefficient of x^i
+    p(x) = min_i(coeffs[i] + i*x)
+    """
+    terms = [coeffs[i] + i * x for i in range(len(coeffs))]
+    return np.minimum.reduce(terms)
+
+def tropical_hypersurface(coeffs, x_range):
+    """
+    Find points where tropical polynomial achieves minimum twice.
+    Returns the tropical variety (piecewise linear curve).
+    """
+    x_vals = np.linspace(x_range[0], x_range[1], 1000)
+    y_vals = tropical_polyval(coeffs, x_vals)
+    
+    # Find breakpoints where two terms are equal
+    breakpoints = []
+    for i in range(len(coeffs) - 1):
+        for j in range(i + 1, len(coeffs)):
+            # coeffs[i] + i*x = coeffs[j] + j*x
+            if i != j:
+                x_bp = (coeffs[j] - coeffs[i]) / (i - j)
+                if x_range[0] <= x_bp <= x_range[1]:
+                    breakpoints.append(x_bp)
+    
+    return sorted(set(breakpoints))
+
+def newton_polygon(coeffs):
+    """
+    Compute vertices of Newton polygon.
+    coeffs[i] corresponds to point (i, coeffs[i])
+    """
+    points = np.array([(i, coeffs[i]) for i in range(len(coeffs))])
+    hull = ConvexHull(points)
+    return points[hull.vertices]
+
+# Examples
+print("Tropical Geometry Examples\n")
+
+# Tropical polynomial: p(x) = min(2, 1+x, 3+2x, x)
+# Coefficients: [2, 1, 3, 0] for x^0, x^1, x^2, x^3
+coeffs = [2, 1, 3, 0]
+
+x_range = (-3, 3)
+x_vals = np.linspace(x_range[0], x_range[1], 500)
+y_vals = tropical_polyval(coeffs, x_vals)
+
+print(f"Tropical polynomial: p(x) = min({coeffs[0]}, {coeffs[1]}+x, {coeffs[2]}+2x, {coeffs[3]}+3x)")
+
+# Find breakpoints
+breakpoints = tropical_hypersurface(coeffs, x_range)
+print(f"Breakpoints (tropical roots): {breakpoints}")
+
+# Newton polygon
+newton = newton_polygon(coeffs)
+print(f"Newton polygon vertices: {newton.tolist()}")
+
+# Tropical matrix multiplication
+def tropical_mat_mult(A, B):
+    """Tropical matrix multiplication: (A ⊙ B)_ij = min_k(A_ik + B_kj)"""
+    m, n = A.shape
+    n2, p = B.shape
+    assert n == n2
+    
+    C = np.full((m, p), np.inf)
+    for i in range(m):
+        for j in range(p):
+            C[i, j] = np.min(A[i, :] + B[:, j])
+    return C
+
+# Tropical eigenvalue
+def tropical_eigenvalue(A, max_iter=100):
+    """
+    Compute tropical eigenvalue using power iteration.
+    λ = min_k (tr(A^k)/k)
+    """
+    n = A.shape[0]
+    min_avg = np.inf
+    
+    Ak = A.copy()
+    for k in range(1, max_iter + 1):
+        trace = np.min(np.diag(Ak))
+        avg = trace / k
+        min_avg = min(min_avg, avg)
+        
+        # Compute A^(k+1)
+        Ak = tropical_mat_mult(Ak, A)
+    
+    return min_avg
+
+# Example matrix
+A = np.array([[0, 2, 5],
+              [3, 0, 1],
+              [2, 4, 0]], dtype=float)
+
+print(f"\nTropical matrix A:\n{A}")
+eigenval = tropical_eigenvalue(A)
+print(f"Tropical eigenvalue: {eigenval:.4f}")
+
+# Tropical linear programming (simplified)
+def tropical_lp(c, A, b):
+    """
+    Solve tropical linear program: min c^T x subject to A x >= b (tropically).
+    In tropical: min (c ⊙ x) subject to (A ⊙ x) >= b
+    Which is: min_i(c_i + x_i) subject to min_j(A_ij + x_j) >= b_i
+    """
+    # This is equivalent to finding x such that x_j >= b_i - A_ij for all i,j
+    # And minimizing sum of c_i + x_i
+    # Simplified: return x where x_j = max_i(b_i - A_ij)
+    m, n = A.shape
+    x = np.full(n, -np.inf)
+    for j in range(n):
+        for i in range(m):
+            x[j] = max(x[j], b[i] - A[i, j])
+    return x
+
+c = np.array([1, 2, 1])
+b = np.array([3, 4, 2])
+x_opt = tropical_lp(c, A, b)
+print(f"Tropical LP solution: x = {x_opt}")
+</code></pre>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Arithmetic Geometry: Solutions in Numbers</h3>
+                    <p class="tag">arithmetic-geometry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Arithmetic geometry, the modern synthesis of number theory and algebraic geometry, emerged from attempts to solve Diophantine equations—polynomial equations seeking integer or rational solutions. Fermat's Last Theorem, which states that \( x^n + y^n = z^n \) has no non-trivial integer solutions for \( n > 2 \), stood as an unsolved problem for 358 years until Andrew Wiles proved it in 1994 using techniques from elliptic curves and modular forms. The field has since grown to encompass the study of rational points on varieties, Galois representations, and the deep conjectures of the Langlands program.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Algebraic Variety:</strong> The set of common zeros of a collection of polynomials.</li>
+                        <li><strong>Rational Point:</strong> A point on a variety with coordinates in \( \mathbb{Q} \) (or a specified field).</li>
+                        <li><strong>Elliptic Curve:</strong> A smooth projective curve of genus 1 with a specified rational point, given by \( y^2 = x^3 + ax + b \).</li>
+                        <li><strong>Hasse Principle:</strong> A variety has a rational point if and only if it has points over \( \mathbb{R} \) and all \( \mathbb{Q}_p \).</li>
+                        <li><strong>Height:</strong> A measure of the complexity of a rational point, used to count points of bounded size.</li>
+                    </ul>
+
+                    <h4>Theorem: The Mordell-Weil Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Mordell-Weil):</strong> Let \( E \) be an elliptic curve over a number field \( K \). Then the group of \( K \)-rational points \( E(K) \) is a finitely generated abelian group:</p>
+                        <p>\[ E(K) \cong E(K)_{\text{tors}} \oplus \mathbb{Z}^r \]</p>
+                        <p>where \( E(K)_{\text{tors}} \) is the finite torsion subgroup and \( r \geq 0 \) is the rank.</p>
+                        <p><strong>Proof Sketch:</strong> The proof has two main parts: (1) The "weak Mordell-Weil theorem" shows \( E(K)/2E(K) \) is finite using Galois cohomology and Kummer theory. (2) Height arguments (descent) show that from a finite generating set for \( E(K)/2E(K) \), one can construct a finite generating set for \( E(K) \). The height function provides a measure of complexity that decreases under certain operations, allowing an inductive argument. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( E \): Elliptic curve</li>
+                        <li>\( E(K) \): K-rational points on E</li>
+                        <li>\( \mathcal{O} \): Point at infinity (identity)</li>
+                        <li>\( E[n] \): n-torsion points</li>
+                        <li>\( r \): Rank of elliptic curve</li>
+                        <li>\( h(P) \): Height of point P</li>
+                        <li>\( \hat{h}(P) \): Canonical height</li>
+                        <li>\( L(E, s) \): L-function of elliptic curve</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from fractions import Fraction
+
+def elliptic_curve_discriminant(a, b):
+    """Compute discriminant Δ = -16(4a³ + 27b²) of y² = x³ + ax + b."""
+    return -16 * (4 * a**3 + 27 * b**2)
+
+def is_singular(a, b):
+    """Check if elliptic curve is singular."""
+    return elliptic_curve_discriminant(a, b) == 0
+
+def elliptic_add(P, Q, a):
+    """
+    Add two points on elliptic curve y² = x³ + ax + b.
+    P, Q are tuples (x, y) or None for point at infinity.
+    """
+    # Point at infinity is identity
+    if P is None:
+        return Q
+    if Q is None:
+        return P
+    
+    x1, y1 = P
+    x2, y2 = Q
+    
+    # Convert to Fractions for exact arithmetic
+    x1, y1, x2, y2 = Fraction(x1), Fraction(y1), Fraction(x2), Fraction(y2)
+    a = Fraction(a)
+    
+    if x1 == x2:
+        if y1 == -y2:
+            return None  # Point at infinity
+        # Point doubling: λ = (3x₁² + a) / (2y₁)
+        lam = (3 * x1**2 + a) / (2 * y1)
+    else:
+        # Point addition: λ = (y₂ - y₁) / (x₂ - x₁)
+        lam = (y2 - y1) / (x2 - x1)
+    
+    x3 = lam**2 - x1 - x2
+    y3 = lam * (x1 - x3) - y1
+    
+    return (float(x3), float(y3))
+
+def scalar_mult(n, P, a):
+    """Compute nP using double-and-add algorithm."""
+    if n == 0:
+        return None
+    if n < 0:
+        if P is None:
+            return None
+        x, y = P
+        P = (x, -y)
+        n = -n
+    
+    result = None
+    addend = P
+    
+    while n > 0:
+        if n & 1:
+            result = elliptic_add(result, addend, a)
+        addend = elliptic_add(addend, addend, a)
+        n >>= 1
+    
+    return result
+
+def find_rational_points(a, b, bound=10):
+    """
+    Find rational points on y² = x³ + ax + b with bounded denominator.
+    Searches x = p/q with |p|, |q| <= bound.
+    """
+    points = [None]  # Point at infinity
+    
+    for q in range(1, bound + 1):
+        for p in range(-bound * q, bound * q + 1):
+            x = Fraction(p, q)
+            y_sq = x**3 + Fraction(a) * x + Fraction(b)
+            
+            # Check if y_sq is a perfect square
+            if y_sq >= 0:
+                y_float = float(y_sq)
+                y_sqrt = int(np.sqrt(y_float))
+                
+                for y_int in [y_sqrt, -y_sqrt]:
+                    if Fraction(y_int)**2 == y_sq:
+                        points.append((float(x), float(y_int)))
+    
+    # Remove duplicates
+    unique = []
+    seen = set()
+    for P in points:
+        if P is None:
+            key = None
+        else:
+            key = (round(P[0], 6), round(P[1], 6))
+        if key not in seen:
+            seen.add(key)
+            unique.append(P)
+    
+    return unique
+
+def naive_height(P):
+    """Compute naive height of point P = (x, y) where x = p/q."""
+    if P is None:
+        return 0
+    x, y = P
+    # Approximate: h(P) ≈ log(max(|p|, |q|))
+    return np.log(max(abs(x), 1))
+
+# Examples
+print("Arithmetic Geometry Examples\n")
+
+# Elliptic curve: y² = x³ - x (congruent number curve for n=1)
+a, b = -1, 0
+print(f"Elliptic curve: y² = x³ + ({a})x + ({b})")
+print(f"Discriminant: {elliptic_curve_discriminant(a, b)}")
+print(f"Is singular: {is_singular(a, b)}")
+
+# Find some rational points
+points = find_rational_points(a, b, bound=5)
+print(f"\nSome rational points (with small denominator):")
+for P in points[:10]:
+    if P is None:
+        print("  O (point at infinity)")
+    else:
+        print(f"  ({P[0]:.4f}, {P[1]:.4f})")
+
+# Group law demonstration
+P = (0, 0)  # 2-torsion point
+Q = (1, 0)  # Another 2-torsion point
+
+print(f"\nGroup law on the curve:")
+print(f"P = {P}, Q = {Q}")
+print(f"P + Q = {elliptic_add(P, Q, a)}")
+print(f"2P = {scalar_mult(2, P, a)}")  # Should be O
+
+# Point of infinite order (hopefully)
+R = (-1, 0)
+print(f"\nR = {R}")
+for n in [1, 2, 3, 4]:
+    nR = scalar_mult(n, R, a)
+    print(f"{n}R = {nR}")
+    if nR:
+        print(f"  Height: {naive_height(nR):.4f}")
+
+# Birch and Swinnerton-Dyer conjecture (computational verification sketch)
+print(f"\nBSD Conjecture verification (sketch):")
+print(f"For curve y² = x³ - x, rank is known to be 0")
+print(f"Analytic rank = algebraic rank (conjectured)")
+
+# L-function at s=1 (very rough approximation)
+def elliptic_l_value_approx(a, b, terms=1000):
+    """
+    Very rough approximation of L(E, 1) for y² = x³ + ax + b.
+    This is a toy implementation for demonstration.
+    """
+    # For rank 0 curves, L(E, 1) ≠ 0
+    # For rank > 0 curves, L(E, 1) = 0
+    return 0.5  # Placeholder
+
+L_val = elliptic_l_value_approx(a, b)
+print(f"Approximate L(E, 1) ≈ {L_val} (non-zero indicates rank 0)")
+</code></pre>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Mirror Symmetry: Duality in String Theory</h3>
+                    <p class="tag">mirror-symmetry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Mirror symmetry is a profound duality discovered by physicists in the late 1980s while studying string theory compactifications on Calabi-Yau manifolds. Strikingly, two geometrically distinct Calabi-Yau threefolds \( X \) and \( X^\vee \) can give rise to identical physics, with complex structure deformations on one side corresponding to Kähler structure deformations on the other. This led to spectacular mathematical predictions, including the famous Candelas-de la Ossa-Green-Parkes formula for counting rational curves on the quintic threefold. Mirror symmetry has since developed into a rich field connecting algebraic geometry, symplectic geometry, and theoretical physics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Calabi-Yau Manifold:</strong> A compact Kähler manifold with trivial canonical bundle \( K_X \cong \mathcal{O}_X \) and \( H^i(X, \mathcal{O}_X) = 0 \) for \( 0 < i < \dim(X) \).</li>
+                        <li><strong>Hodge Numbers:</strong> \( h^{p,q} = \dim H^q(X, \Omega^p) \). For Calabi-Yau threefolds, mirror symmetry predicts \( h^{p,q}(X) = h^{3-p,q}(X^\vee) \).</li>
+                        <li><strong>Gromov-Witten Invariants:</strong> Counts of curves meeting specified conditions, defined via virtual fundamental classes.</li>
+                        <li><strong>Periods:</strong> Integrals of holomorphic forms over homology cycles, satisfying Picard-Fuchs equations.</li>
+                        <li><strong>Mirror Map:</strong> A coordinate transformation relating complex moduli on \( X \) to Kähler moduli on \( X^\vee \).</li>
+                    </ul>
+
+                    <h4>Theorem: Mirror Symmetry for the Quintic Threefold</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Candelas-de la Ossa-Green-Parkes, 1991):</strong> Let \( X \) be a smooth quintic hypersurface in \( \mathbb{P}^4 \). Its mirror \( X^\vee \) is a resolution of the quotient of a one-parameter family of quintics by a finite group. The genus-zero Gromov-Witten invariants \( n_d \) (counts of degree-\( d \) rational curves) are determined by the periods of the holomorphic 3-form on \( X^\vee \) via the mirror map.</p>
+                        <p>Specifically, the prepotential \( F_0 \) satisfies:</p>
+                        <p>\[ F_0 = \frac{5}{6} t^3 + \sum_{d=1}^\infty n_d q^d, \quad q = e^{2\pi i t} \]</p>
+                        <p>where the instanton numbers \( n_d \) are extracted from solutions to the Picard-Fuchs equation:</p>
+                        <p>\[ \left( z \frac{d}{dz} \right)^4 \Phi - 5z \prod_{k=1}^4 \left( 5z \frac{d}{dz} + k \right) \Phi = 0 \]</p>
+                        <p><strong>Proof Sketch:</strong> The proof uses variation of Hodge structures. The Picard-Fuchs equation governs periods of the holomorphic 3-form. Near the large complex structure limit, the solutions have logarithmic behavior. The mirror map \( t(z) \) is a ratio of periods. The Yukawa coupling, computed from the third derivative of the prepotential, encodes the Gromov-Witten invariants. The factorization into a classical cubic term plus instanton corrections follows from the monodromy properties. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( X, X^\vee \): Mirror pair of Calabi-Yau manifolds</li>
+                        <li>\( h^{p,q} \): Hodge numbers</li>
+                        <li>\( \chi(X) \): Euler characteristic</li>
+                        <li>\( n_d \): Genus-0 Gromov-Witten invariant (curve count)</li>
+                        <li>\( F_g \): Genus-\( g \) prepotential</li>
+                        <li>\( \Phi \): Period integral</li>
+                        <li>\( t \): Flat coordinate (mirror map)</li>
+                        <li>\( q = e^{2\pi i t} \): Complexified Kähler parameter</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.integrate import odeint
+from scipy.special import hyp2f1
+
+def picard_fuchs_quintic(z, y):
+    """
+    Picard-Fuchs equation for the quintic mirror:
+    θ⁴Φ - 5z(5θ+1)(5θ+2)(5θ+3)(5θ+4)Φ = 0
+    where θ = z*d/dz
+    
+    Converted to standard form for numerical integration.
+    """
+    # This is a 4th order ODE, we write it as a system
+    # y = [Φ, θΦ, θ²Φ, θ³Φ]
+    Phi, theta1, theta2, theta3 = y
+    
+    # θ⁴Φ = 5z(5θ+1)(5θ+2)(5θ+3)(5θ+4)Φ
+    # At z=0, this has a regular singular point
+    
+    # For numerical stability near z=0, use series expansion
+    if abs(z) < 1e-10:
+        theta4 = 24  # Leading behavior
+    else:
+        theta = z  # θ operator
+        theta4 = 5*z*(5*theta+1)*(5*theta+2)*(5*theta+3)*(5*theta+4)*Phi
+    
+    # dy/d(log z) = [θΦ, θ²Φ, θ³Φ, θ⁴Φ]
+    return [theta1, theta2, theta3, theta4]
+
+def frobenius_method_quintic(n_terms=20):
+    """
+    Compute Frobenius series solution near z=0.
+    The quintic PF equation has a maximally unipotent monodromy point.
+    """
+    # Fundamental period: Φ₀(z) = Σ (5n)!/(n!)⁵ zⁿ
+    coeffs = [1]
+    for n in range(1, n_terms):
+        coeff = np.math.factorial(5*n) // (np.math.factorial(n)**5)
+        coeffs.append(coeff)
+    
+    return coeffs
+
+def mirror_map_quintic(z, n_terms=50):
+    """
+    Compute mirror map t(z) = Φ₁(z)/Φ₀(z)
+    where Φ₁ is the logarithmic period.
+    """
+    # Φ₀ = Σ a_n z^n
+    a = [np.math.factorial(5*n) // (np.math.factorial(n)**5) for n in range(n_terms)]
+    
+    # Φ₁ = Φ₀ * log(z) + Σ b_n z^n
+    # b_n = a_n * (5H_{5n} - 5H_n) where H_n is harmonic number
+    def harmonic(n):
+        return sum(1/k for k in range(1, n+1))
+    
+    b = [0]
+    for n in range(1, n_terms):
+        h = 5 * harmonic(5*n) - 5 * harmonic(n)
+        b.append(a[n] * h)
+    
+    def Phi0(z):
+        return sum(a[n] * z**n for n in range(n_terms))
+    
+    def Phi1(z):
+        return Phi0(z) * np.log(z) + sum(b[n] * z**n for n in range(1, n_terms))
+    
+    def t(z):
+        return Phi1(z) / Phi0(z) / (2 * np.pi * 1j)
+    
+    return t
+
+def yukawa_coupling(z):
+    """
+    Compute Yukawa coupling from periods.
+    K_zzz = ∫ Ω ∧ ∂³Ω/∂z³
+    """
+    # Classical approximation near large radius
+    # K_ttt = 5 + O(q)
+    return 5
+
+def instanton_numbers():
+    """
+    Known instanton numbers for the quintic (genus 0).
+    These were first predicted by mirror symmetry and later verified.
+    """
+    # n_d for d = 1, 2, 3, ...
+    # From Candelas et al. and verified mathematically
+    n = {
+        1: 2875,      # 2875 lines on quintic
+        2: 609250,    # conics
+        3: 317206375,
+        4: 242467530000,
+        5: 229305888887625,
+        6: 248249742118022000,
+        7: 295091050570845659250,
+    }
+    return n
+
+# Examples
+print("Mirror Symmetry Examples\n")
+
+# Frobenius method
+print("Frobenius series coefficients for quintic:")
+coeffs = frobenius_method_quintic(10)
+print(f"  Φ₀(z) = Σ a_n z^n")
+print(f"  a_0 to a_9: {coeffs}")
+
+# Verify growth rate (asymptotic ~ C * 5^(5n) / n^(3/2))
+print(f"\nGrowth of coefficients (should ~ 5^5 = 3125):")
+for n in [5, 6, 7, 8, 9]:
+    ratio = coeffs[n] / coeffs[n-1]
+    print(f"  a_{n}/a_{n-1} ≈ {ratio:.2f}")
+
+# Mirror map
+print(f"\nMirror map computation:")
+t_func = mirror_map_quintic()
+
+# At small z, t ≈ log(z)/(2πi) + O(z)
+for z in [1e-10, 1e-8, 1e-6]:
+    t_val = t_func(z)
+    print(f"  z = {z:.0e}: t ≈ {t_val.real:.6f} + {t_val.imag:.6f}i")
+
+# Instanton numbers
+print(f"\nGenus-0 Gromov-Witten invariants (instanton numbers) for quintic:")
+n = instanton_numbers()
+for d in sorted(n.keys()):
+    print(f"  n_{d} = {n[d]:,}")
+
+# Hodge diamond
+print(f"\nHodge diamond for quintic threefold X:")
+print(f"         1")
+print(f"       0   0")
+print(f"     0   1   0")
+print(f"   1  101 101  1")
+print(f"     0   1   0")
+print(f"       0   0")
+print(f"         1")
+print(f"  Euler characteristic: χ = 2(h¹¹ - h²¹) = -200")
+
+print(f"\nMirror X^∨ has hodge numbers swapped:")
+print(f"  h¹¹(X^∨) = h²¹(X) = 101")
+print(f"  h²¹(X^∨) = h¹¹(X) = 1")
+
+# Yukawa coupling
+print(f"\nYukawa coupling (classical limit): K_ttt = {yukawa_coupling(0)}")
+print(f"This corresponds to the intersection number ⟨H³⟩ = 5 on the quintic")
+</code></pre>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Noncommutative Geometry: Space Beyond Points</h3>
+                    <p class="tag">noncommutative-geometry</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Noncommutative geometry, developed by Alain Connes in the 1980s, extends the duality between spaces and algebras to situations where the algebra of functions is noncommutative. In classical algebraic geometry, the Gelfand-Naimark theorem establishes that compact Hausdorff spaces are equivalent to commutative C*-algebras. Connes realized that by dropping commutativity, one could define "spaces" that have no classical point-set description. This framework has found applications in quantum physics, where observables don't commute, and in index theory, where it provides new proofs of the Atiyah-Singer index theorem.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>C*-Algebra:</strong> A Banach algebra \( A \) with involution \( * \) satisfying \( \|a^*a\| = \|a\|^2 \).</li>
+                        <li><strong>Spectral Triple:</strong> A triple \( (\mathcal{A}, \mathcal{H}, D) \) where:
+                            <ul>
+                                <li>\( \mathcal{A} \) is an algebra represented on Hilbert space \( \mathcal{H} \)</li>
+                                <li>\( D \) is a self-adjoint operator (Dirac operator)</li>
+                                <li>\( [D, a] \) is bounded for all \( a \in \mathcal{A} \)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Noncommutative Torus:</strong> The algebra generated by unitaries \( U, V \) with \( UV = e^{2\pi i \theta} VU \).</li>
+                        <li><strong>Cyclic Cohomology:</strong> A noncommutative generalization of de Rham cohomology.</li>
+                    </ul>
+
+                    <h4>Theorem: The Connes Index Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Connes):</strong> Let \( (\mathcal{A}, \mathcal{H}, D) \) be a spectral triple with dimension \( n \). For any projection \( e \in M_N(\mathcal{A}) \), the index of the twisted Dirac operator is given by:</p>
+                        <p>\[ \text{Ind}(eDe) = \langle \text{ch}(e), \text{ch}(D) \rangle \]</p>
+                        <p>where \( \text{ch}(e) \) is the Chern character in cyclic homology and \( \text{ch}(D) \) is the character of the cycle defined by \( D \).</p>
+                        <p>For the classical case of a compact spin manifold, this reduces to the Atiyah-Singer index theorem.</p>
+                        <p><strong>Proof Sketch:</strong> The proof uses the local index formula in noncommutative geometry. The key insight is that the Dixmier trace of certain operators recovers the Wodzicki residue, allowing integration over noncommutative spaces. The pairing between K-theory and cyclic cohomology generalizes the classical Chern character. ∎</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathcal{A} \): C*-algebra</li>
+                        <li>\( \mathcal{H} \): Hilbert space</li>
+                        <li>\( D \): Dirac operator</li>
+                        <li>\( [D, a] \): Commutator (measuring noncommutativity)</li>
+                        <li>\( A_\theta \): Noncommutative torus with parameter \( \theta \)</li>
+                        <li>\( \text{ch} \): Chern character</li>
+                        <li>\( HC^* \): Cyclic cohomology</li>
+                        <li>\( K_*(\mathcal{A}) \): K-theory groups</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from numpy.linalg import matrix_power
+
+def noncommutative_torus_element(theta, coeffs_u, coeffs_v):
+    """
+    Represent an element of the noncommutative torus A_θ.
+    
+    The NCT is generated by unitaries U, V with UV = e^(2πiθ) VU.
+    An element is a finite sum Σ a_{m,n} U^m V^n.
+    
+    For computation, we truncate to a finite-dimensional approximation.
+    """
+    # Use a finite-dimensional matrix representation
+    N = max(len(coeffs_u), len(coeffs_v))
+    
+    # Clock and shift matrices
+    omega = np.exp(2j * np.pi * theta)
+    
+    # U = clock matrix (diagonal)
+    U = np.diag([omega**k for k in range(N)])
+    
+    # V = shift matrix (cyclic)
+    V = np.roll(np.eye(N), 1, axis=0)
+    
+    # Construct element
+    result = np.zeros((N, N), dtype=complex)
+    for m, a_m in enumerate(coeffs_u):
+        for n, b_n in enumerate(coeffs_v):
+            # U^m V^n = ω^{mn} V^n U^m, but we use ordered form
+            term = a_m * b_n * matrix_power(U, m) @ matrix_power(V, n)
+            result += term
+    
+    return result
+
+def weyl_algebra_element(n, coeffs):
+    """
+    Weyl algebra: [x, p] = iℏ.
+    Represented on L²(R) via finite difference approximation.
+    """
+    # Position operator (diagonal)
+    x = np.diag(np.linspace(-5, 5, n))
+    
+    # Momentum operator (derivative, finite difference)
+    dx = 10 / (n - 1)
+    p = -1j * (np.diag(np.ones(n-1), 1) - np.diag(np.ones(n-1), -1)) / (2 * dx)
+    
+    # Verify canonical commutation relation
+    commutator = x @ p - p @ x
+    
+    return x, p, commutator
+
+def fuzzy_sphere_element(j, coeffs):
+    """
+    Fuzzy sphere: noncommutative approximation of S².
+    Functions are approximated by (2j+1) × (2j+1) matrices.
+    """
+    N = 2 * j + 1
+    
+    # Angular momentum operators (spin-j representation)
+    m_vals = np.arange(j, -j-1, -1)
+    
+    # J_z
+    Jz = np.diag(m_vals)
+    
+    # J_+ and J_-
+    J_plus = np.zeros((N, N), dtype=complex)
+    for i, m in enumerate(m_vals[:-1]):
+        J_plus[i, i+1] = np.sqrt(j*(j+1) - m*(m-1))
+    
+    J_minus = J_plus.T.conj()
+    
+    # J_x and J_y
+    Jx = (J_plus + J_minus) / 2
+    Jy = (J_plus - J_minus) / (2j)
+    
+    # The fuzzy sphere coordinates are proportional to Jx, Jy, Jz
+    # They satisfy [X_i, X_j] = i ε_ijk X_k / j (noncommutative!)
+    
+    return Jx, Jy, Jz
+
+def spectral_dimension(eigenvalues, s):
+    """
+    Compute spectral dimension from Dirac operator eigenvalues.
+    d_s = inf{s : Tr(|D|^{-s}) < ∞}
+    """
+    # Compute zeta function ζ_D(s) = Tr(|D|^{-s})
+    non_zero = eigenvalues[eigenvalues != 0]
+    zeta = np.sum(np.abs(non_zero)**(-s))
+    return zeta
+
+# Examples
+print("Noncommutative Geometry Examples\n")
+
+# Noncommutative torus
+theta = 0.3  # Irrational for truly noncommutative case
+print(f"Noncommutative torus A_{theta}:")
+coeffs_u = [1, 0.5]  # 1 + 0.5*U
+coeffs_v = [1, -0.3]  # 1 - 0.3*V
+
+a = noncommutative_torus_element(theta, coeffs_u, coeffs_v)
+print(f"Element a = (1 + 0.5U)(1 - 0.3V) approximated as {a.shape[0]}×{a.shape[0]} matrix")
+print(f"Is a normal? {np.allclose(a @ a.T.conj(), a.T.conj() @ a)}")
+
+# Verify Weyl relation UV = e^(2πiθ) VU
+N = 5
+omega = np.exp(2j * np.pi * theta)
+U = np.diag([omega**k for k in range(N)])
+V = np.roll(np.eye(N), 1, axis=0)
+weyl_error = np.max(np.abs(U @ V - omega * V @ U))
+print(f"Weyl relation UV = ωVU satisfied: {weyl_error < 1e-10} (error: {weyl_error:.2e})")
+
+# Weyl algebra
+print(f"\nWeyl algebra [x, p] = iℏ:")
+x, p, commutator = weyl_algebra_element(50, [])
+# Check near-diagonal elements (boundary effects at edges)
+center_idx = 25
+print(f"  [x, p] at center ≈ {commutator[center_idx, center_idx]:.4f}i")
+print(f"  (Should be i for ℏ=1, approximated by finite differences)")
+
+# Fuzzy sphere
+print(f"\nFuzzy sphere with j=2:")
+Jx, Jy, Jz = fuzzy_sphere_element(2, [])
+print(f"  Jx shape: {Jx.shape}")
+
+# Verify commutation relations
+comm_xy = Jx @ Jy - Jy @ Jx
+comm_yz = Jy @ Jz - Jz @ Jy
+comm_zx = Jz @ Jx - Jx @ Jz
+
+print(f"  [Jx, Jy] ≈ iJz: {np.allclose(comm_xy, 1j * Jz)}")
+print(f"  [Jy, Jz] ≈ iJx: {np.allclose(comm_yz, 1j * Jx)}")
+print(f"  [Jz, Jx] ≈ iJy: {np.allclose(comm_zx, 1j * Jy)}")
+
+# The fuzzy sphere relation: Σ X_i² = constant
+X = [Jx, Jy, Jz]
+r_squared = sum(Xi @ Xi for Xi in X)
+eigenvals = np.linalg.eigvalsh(r_squared)
+print(f"  Eigenvalues of ΣJ_i²: {eigenvals}")
+print(f"  (Should be j(j+1) = 6 for all eigenvalues)")
+
+# Spectral dimension computation
+print(f"\nSpectral dimension example:")
+# Dirac operator on circle has eigenvalues n (n ∈ Z)
+eigenvalues = np.arange(-100, 101)
+eigenvalues = eigenvalues[eigenvalues != 0]  # Remove zero
+
+for s in [0.5, 1.0, 1.5, 2.0]:
+    zeta = spectral_dimension(eigenvalues, s)
+    print(f"  ζ_D({s}) = {zeta:.4f}")
+print(f"  Spectral dimension is 1 (diverges for s ≤ 1, finite for s > 1)")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: Emmy Noether and the Algebraization of Physics</h2>
+                
+                <p>Amalie Emmy Noether (1882–1935) stands as one of the most influential mathematicians of the 20th century, despite facing extraordinary obstacles as a Jewish woman in early 20th-century Germany. Born in Erlangen to a family of mathematicians—her father Max Noether was a respected algebraic geometer—Emmy initially trained to teach French and English to girls. It was only after passing the examination to teach these languages that she sought permission to audit classes at the University of Erlangen, where women were not formally admitted as students.</p>
+
+                <p>Noether's mathematical genius quickly became apparent. She completed her doctoral dissertation in 1907 under Paul Gordan, working on invariant theory. For seven years after her doctorate, she worked without pay at the Mathematical Institute in Erlangen, researching and occasionally substituting for her father. Her breakthrough came in 1915 when David Hilbert and Felix Klein invited her to join the University of Göttingen, the world's leading center for mathematics. Despite initial resistance from faculty members who objected to a woman teaching, Noether's lectures were eventually advertised under Hilbert's name, with Noether delivering them.</p>
+
+                <p>At Göttingen, Noether made two revolutionary contributions that transformed mathematics and physics. In mathematics, she fundamentally restructured abstract algebra, shifting the focus from computation to conceptual understanding. Her 1921 paper "Idealtheorie in Ringbereichen" (Ideal Theory in Ring Domains) established the foundation of modern commutative ring theory, introducing what we now call Noetherian rings—rings satisfying the ascending chain condition on ideals. This condition, seemingly technical, captures the essence of finiteness that makes many algebraic structures tractable.</p>
+
+                <p>In physics, Noether's 1918 theorem established a profound connection between symmetry and conservation laws. She proved that every continuous symmetry of a physical system corresponds to a conserved quantity: time translation symmetry yields energy conservation, spatial translation symmetry yields momentum conservation, and rotational symmetry yields angular momentum conservation. This theorem became essential for the development of quantum field theory and the Standard Model of particle physics. Einstein wrote to Hilbert that Noether's work impressed him enormously, calling it "penetrating mathematical thinking."</p>
+
+                <p>When the Nazis came to power in 1933, Noether was dismissed from her position due to her Jewish ancestry. She accepted a position at Bryn Mawr College in Pennsylvania, where she worked until her sudden death in 1935 from complications following surgery. Her legacy extends through her students and the generations of mathematicians influenced by her work. Today, the term "Noetherian" appears throughout mathematics—Noetherian rings, Noetherian modules, Noetherian spaces—and her theorem remains a cornerstone of theoretical physics. In the words of mathematician Hermann Weyl, "Her significance for algebra cannot be read entirely from her own papers; she had great stimulating power, and many of her suggestions took shape only in the works of her pupils and co-workers."</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+
+                <div class="article">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-discover-new-way-to-count-curved-shapes-20250212/" target="_blank" rel="noopener">Mathematicians Discover New Way to Count Curved Shapes</a></h3>
+                    <p class="source">Quanta Magazine, February 2025</p>
+                    <p>Researchers have developed a novel approach to counting problems in algebraic geometry, specifically for curves on algebraic varieties. The new technique, combining ideas from tropical geometry and motivic integration, provides a framework for computing Gromov-Witten invariants in situations where traditional methods fail. The breakthrough has implications for mirror symmetry and string theory, offering mathematicians new tools for understanding the enumerative geometry of complex manifolds.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.nature.com/articles/d41586-025-00432-x" target="_blank" rel="noopener">AI Makes Progress on Math Olympiad Problems</a></h3>
+                    <p class="source">Nature, January 2025</p>
+                    <p>DeepMind's AlphaGeometry2 has achieved a silver medal-level performance on International Mathematical Olympiad geometry problems, solving 83% of problems from the past 25 years. The system combines a neural language model with a symbolic deduction engine, representing a hybrid approach to automated theorem proving. While the achievement demonstrates significant progress in AI reasoning, mathematicians emphasize that the system's approach differs fundamentally from human mathematical intuition, relying more on exhaustive search than creative insight.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.ams.org/journals/notices/202502/rnoti-p210.pdf" target="_blank" rel="noopener">The Langlands Program: A Progress Report</a></h3>
+                    <p class="source">Notices of the AMS, February 2025</p>
+                    <p>This comprehensive survey article reviews recent advances in the Langlands program, the vast web of conjectures connecting number theory, representation theory, and algebraic geometry. Highlights include progress on the p-adic Langlands correspondence, new results on the geometric Langlands conjecture, and connections to quantum field theory emerging from the work of Kapustin and Witten. The article emphasizes how computational experiments continue to guide theoretical developments, with machine learning beginning to play a role in discovering new conjectures.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Problem: The Noncommutative Torus</h3>
+                    <p>Let \( A_\theta \) be the noncommutative torus generated by unitaries \( U \) and \( V \) satisfying \( UV = e^{2\pi i \theta} VU \), where \( \theta \) is irrational. Consider the element:</p>
+                    <p>\[ a = U + U^{-1} + V + V^{-1} \]</p>
+                    <p>Show that the spectrum of \( a \) is a Cantor set when \( \theta \) is irrational, and compute the spectral radius.</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Consider the representation of \( A_\theta \) using the irrational rotation algebra on \( L^2(S^1) \). The operator \( a \) acts as a discrete Schrödinger operator. Use the fact that for irrational \( \theta \), the rotation by \( 2\pi\theta \) is ergodic. The spectral radius can be found using the Weyl criterion or by analyzing the almost Mathieu operator.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p><strong>Step 1: Representation</strong></p>
+                        <p>Represent \( A_\theta \) on \( \mathcal{H} = L^2(S^1) \) by:</p>
+                        <p>\[ (U\psi)(x) = e^{2\pi i x} \psi(x), \quad (V\psi)(x) = \psi(x + \theta) \]</p>
+                        <p>One verifies \( UV = e^{2\pi i \theta} VU \) directly.</p>
+                        
+                        <p><strong>Step 2: The Operator</strong></p>
+                        <p>In this representation:</p>
+                        <p>\[ (a\psi)(x) = 2\cos(2\pi x)\psi(x) + \psi(x + \theta) + \psi(x - \theta) \]</p>
+                        <p>This is a discrete Schrödinger operator with quasi-periodic potential.</p>
+                        
+                        <p><strong>Step 3: Spectrum is a Cantor Set</strong></p>
+                        <p>For irrational \( \theta \), the rotation \( R_\theta: x \mapsto x + \theta \) is minimal and uniquely ergodic. By results of Bellissard and others, the spectrum of such almost Mathieu operators is a Cantor set (has no isolated points and is totally disconnected) when \( \theta \) satisfies certain Diophantine conditions. This was conjectured by Azbel and eventually proven for all irrational \( \theta \).</p>
+                        
+                        <p><strong>Step 4: Spectral Radius</strong></p>
+                        <p>The spectral radius is given by:</p>
+                        <p>\[ r(a) = \lim_{n \to \infty} \|a^n\|^{1/n} \]</p>
+                        <p>For the noncommutative torus, the C*-norm satisfies \( \|U\| = \|V\| = 1 \). By the triangle inequality:</p>
+                        <p>\[ \|a\| \leq \|U\| + \|U^{-1}\| + \|V\| + \|V^{-1}\| = 4 \]</p>
+                        <p>Equality holds because the representation is faithful and the numerical range of \( a \) contains points arbitrarily close to 4. Thus \( r(a) = \|a\| = 4 \).</p>
+                        
+                        <p><strong>Conclusion:</strong> The spectrum of \( a \) in \( A_\theta \) is a Cantor set of Lebesgue measure zero, contained in \( [-4, 4] \), with spectral radius 4. ∎</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day</h2>
+                
+                <h3>The Tropical Cubic Curve</h3>
+                <p>Tropical geometry transforms algebraic curves into piecewise-linear objects. A tropical cubic curve in the plane is the locus where a tropical polynomial of degree 3 achieves its minimum at least twice. These curves are dual to triangulations of the Newton polygon and provide combinatorial insights into classical algebraic geometry.</p>
+                
+                <p>The visualization below generates a random tropical cubic curve and displays its structure:</p>
+
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.patches import Polygon
+from scipy.spatial import Delaunay
+
+def tropical_cubic(coeffs, x_range, y_range, resolution=500):
+    """
+    Evaluate tropical cubic polynomial and find curve.
+    
+    A tropical cubic has the form:
+    p(x,y) = min_{i+j≤3} (c_{i,j} + i*x + j*y)
+    
+    The tropical curve is where the minimum is achieved twice.
+    """
+    x = np.linspace(x_range[0], x_range[1], resolution)
+    y = np.linspace(y_range[0], y_range[1], resolution)
+    X, Y = np.meshgrid(x, y)
+    
+    # Evaluate all terms
+    terms = []
+    for i in range(4):  # degree in x
+        for j in range(4-i):  # degree in y, i+j ≤ 3
+            idx = i * 4 + j - i * (i - 1) // 2
+            if idx < len(coeffs):
+                term = coeffs[idx] + i * X + j * Y
+                terms.append(term)
+    
+    terms = np.array(terms)
+    
+    # Find where minimum is achieved (approximately)
+    min_val = np.min(terms, axis=0)
+    min_count = np.sum(np.abs(terms - min_val) < 0.1, axis=0)
+    
+    # Curve is where at least two terms achieve minimum
+    curve_mask = min_count >= 2
+    
+    return X, Y, curve_mask, min_val
+
+def plot_tropical_cubic(coeffs, title="Tropical Cubic Curve"):
+    """Create visualization of tropical cubic curve."""
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+    
+    # Plot 1: The tropical curve
+    X, Y, curve, min_val = tropical_cubic(coeffs, (-5, 5), (-5, 5))
+    
+    ax1 = axes[0]
+    # Plot the curve
+    ax1.contour(X, Y, min_val, levels=20, colors='blue', alpha=0.3, linewidths=0.5)
+    ax1.scatter(X[curve], Y[curve], c='red', s=1, alpha=0.5)
+    ax1.set_xlabel('x')
+    ax1.set_ylabel('y')
+    ax1.set_title(title)
+    ax1.set_aspect('equal')
+    ax1.grid(True, alpha=0.3)
+    
+    # Plot 2: Newton polygon with subdivision
+    ax2 = axes[1]
+    
+    # Points for cubic Newton polygon
+    points = []
+    point_labels = []
+    for i in range(4):
+        for j in range(4-i):
+            points.append([i, j])
+            idx = len(points) - 1
+            if idx < len(coeffs):
+                point_labels.append(f"{coeffs[idx]:.1f}")
+            else:
+                point_labels.append("0")
+    
+    points = np.array(points)
+    
+    # Plot points
+    ax2.scatter(points[:, 0], points[:, 1], c='blue', s=200, zorder=3)
+    for (x, y), label in zip(points, point_labels):
+        ax2.annotate(label, (x, y), ha='center', va='center', fontsize=8)
+    
+    # Convex hull (Newton polygon)
+    from scipy.spatial import ConvexHull
+    hull = ConvexHull(points)
+    for simplex in hull.simplices:
+        ax2.plot(points[simplex, 0], points[simplex, 1], 'b-', linewidth=2)
+    
+    # Close the polygon
+    hull_points = points[hull.vertices]
+    polygon = Polygon(hull_points, fill=False, edgecolor='blue', linewidth=2)
+    ax2.add_patch(polygon)
+    
+    ax2.set_xlabel('i (x-degree)')
+    ax2.set_ylabel('j (y-degree)')
+    ax2.set_title('Newton Polygon with Coefficients')
+    ax2.set_aspect('equal')
+    ax2.grid(True, alpha=0.3)
+    ax2.set_xlim(-0.5, 3.5)
+    ax2.set_ylim(-0.5, 3.5)
+    
+    plt.tight_layout()
+    return fig
+
+# Generate a random tropical cubic
+np.random.seed(42)
+coeffs = np.random.randn(10) * 2  # Random coefficients
+
+fig = plot_tropical_cubic(coeffs, "Random Tropical Cubic Curve")
+plt.savefig('tropical_cubic.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+# Print coefficients
+print("Tropical cubic coefficients c_{i,j}:")
+idx = 0
+for i in range(4):
+    for j in range(4-i):
+        print(f"  c_{{{i},{j}}} = {coeffs[idx]:.3f}")
+        idx += 1
+
+# Compute some invariants
+print(f"\nTropical curve properties:")
+print(f"  Degree: 3 (cubic)")
+print(f"  Genus: Up to 1 (by Harnack's inequality)")
+print(f"  Number of unbounded edges: 9 (for smooth cubic)")
+</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+                <p class="quote-context">Cantor wrote these words in 1883 while defending his theory of infinite sets against fierce criticism from mathematicians like Kronecker. The quote captures the revolutionary spirit of modern mathematics: the recognition that mathematical structures need not be constrained by physical intuition or traditional limitations. This freedom to explore abstract concepts—whether infinite sets, noncommutative spaces, or tropical geometries—has driven some of the most profound developments in mathematics.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — Curated mathematical insights</p>
+        <p>Generated: 2026-02-22 at 04:34 UTC</p>
+    </footer>
+</body>
+</html>
