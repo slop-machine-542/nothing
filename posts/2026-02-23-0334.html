@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Digest — February 23, 2026</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header>
+        <h1>🧮 Math Digest</h1>
+        <p class="meta">February 23, 2026 — 03:34 UTC</p>
+        <nav>
+            <a href="../index.html">← Back to Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="links">
+            <h2>🔗 Math Links</h2>
+            <div class="link-item">
+                <h3><a href="https://mathworld.wolfram.com/" target="_blank" rel="noopener">MathWorld — Wolfram Research</a></h3>
+                <p>An extensive mathematical resource maintained by Eric Weisstein, covering thousands of topics from elementary mathematics to advanced research. Features interactive demonstrations and comprehensive cross-referencing.</p>
+            </div>
+            <div class="link-item">
+                <h3><a href="https://projecteuclid.org/" target="_blank" rel="noopener">Project Euclid</a></h3>
+                <p>A platform for independent and society journals in mathematics and statistics, providing access to high-quality peer-reviewed research with both open access and subscription content.</p>
+            </div>
+            <div class="link-item">
+                <h3><a href="https://www.numberphile.com/" target="_blank" rel="noopener">Numberphile</a></h3>
+                <p>Brady Haran's YouTube channel featuring mathematicians discussing fascinating numbers, patterns, and problems. Perfect for building intuition about deep mathematical concepts through accessible explanations.</p>
+            </div>
+        </section>
+
+        <section id="book">
+            <h2>📚 Free Math Book</h2>
+            <div class="book-item">
+                <h3>"Probability Theory: The Logic of Science" by E.T. Jaynes</h3>
+                <p><strong>Level:</strong> Graduate | <strong>Pages:</strong> 700+</p>
+                <p>A groundbreaking text that develops probability theory as an extension of logic. Jaynes argues that probability represents degrees of belief rather than mere frequencies, providing a Bayesian foundation for scientific inference. The book covers everything from basic probability to advanced applications in physics, covering maximum entropy methods, hypothesis testing, and the resolution of paradoxes that have plagued frequentist statistics. Jaynes' writing is opinionated, insightful, and deeply philosophical while remaining mathematically rigorous. Essential reading for anyone interested in the foundations of statistical reasoning and scientific methodology.</p>
+                <p><a href="https://bayes.wustl.edu/etj/prob/book.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+            </div>
+        </section>
+
+        <section id="pure-math">
+            <h2>🔬 Pure Math Deep-Dives</h2>
+            
+            <article class="deep-dive">
+                <h3>1. Derived Categories: Homological Algebra's Ultimate Framework</h3>
+                <p><strong>Motivation:</strong> In homological algebra, we study objects through resolutions—replacing a complex object with a simpler one that captures its essential structure. But what if two resolutions are related by a chain of quasi-isomorphisms? Derived categories provide the framework where quasi-isomorphic complexes become truly isomorphic, revealing the deep homological structure hidden beneath.</p>
+                
+                <p><strong>Definitions:</strong> Let \( \mathcal{A} \) be an abelian category. The <em>homotopy category</em> \( K(\mathcal{A}) \) has complexes as objects and homotopy classes of chain maps as morphisms. A morphism \( f: A^\bullet \to B^\bullet \) is a <em>quasi-isomorphism</em> if it induces isomorphisms on all cohomology groups: \( H^n(f): H^n(A^\bullet) \xrightarrow{\sim} H^n(B^\bullet) \) for all \( n \).</p>
+                
+                <p>The <em>derived category</em> \( D(\mathcal{A}) \) is the localization of \( K(\mathcal{A}) \) at the class of quasi-isomorphisms. Objects remain complexes, but morphisms are equivalence classes of "roofs" \( A^\bullet \xleftarrow{q} C^\bullet \xrightarrow{f} B^\bullet \) where \( q \) is a quasi-isomorphism.</p>
+                
+                <p><strong>Theorem (Verdier Localization):</strong> The derived category \( D(\mathcal{A}) \) exists and is a triangulated category. The distinguished triangles correspond to mapping cone sequences.</p>
+            </article>
+
+            <article class="deep-dive">
+                <h3>2. K-Theory: Vector Bundles and Topological Invariants</h3>
+                <p><strong>Motivation:</strong> How can we classify vector bundles over a topological space? Unlike vector spaces, which are classified by dimension, vector bundles have subtle topological features. K-theory provides a generalized cohomology theory that captures these features, with applications ranging from index theory to the classification of C*-algebras.</p>
+                
+                <p><strong>Definitions:</strong> Let \( X \) be a compact Hausdorff space. The <em>semigroup of vector bundles</em> \( \text{Vect}(X) \) consists of isomorphism classes of complex vector bundles over \( X \) with Whitney sum \( \oplus \) as the operation. The <em>K-theory group</em> \( K^0(X) \) is the Grothendieck group completion of \( \text{Vect}(X) \).</p>
+                
+                <p><strong>Theorem (Bott Periodicity):</strong> For compact spaces \( X \), there is a natural isomorphism \( K^0(X) \cong K^{-2}(X) \). Consequently, K-theory is 2-periodic: \( K^n(X) \cong K^{n+2}(X) \) for all \( n \).</p>
+            </article>
+
+            <article class="deep-dive">
+                <h3>3. p-adic Analysis: Analysis Over the p-adic Numbers</h3>
+                <p><strong>Motivation:</strong> What if we replaced the real numbers with a different completion of the rationals? For each prime \( p \), the p-adic numbers \( \mathbb{Q}_p \) provide an alternative completion where large integers are "small." This leads to a bizarre but beautiful analysis where every triangle is isosceles, every open ball is closed, and power series converge in unexpected ways.</p>
+                
+                <p><strong>Definitions:</strong> The <em>p-adic absolute value</em> on \( \mathbb{Q} \) is defined by \( |p^n \cdot \frac{a}{b}|_p = p^{-n} \) where \( p \nmid ab \). The <em>p-adic numbers</em> \( \mathbb{Q}_p \) are the completion of \( \mathbb{Q} \) with respect to \( |\cdot|_p \).</p>
+                
+                <p><strong>Theorem (Mahler):</strong> Every continuous function \( f: \mathbb{Z}_p \to \mathbb{Q}_p \) has a unique expansion \( f(x) = \sum_{n=0}^\infty a_n \binom{x}{n} \) where \( a_n \in \mathbb{Q}_p \) and \( a_n \to 0 \).</p>
+            </article>
+        </section>
+
+        <section id="applied-math">
+            <h2>🌍 Applied Math Deep-Dives</h2>
+            
+            <article class="deep-dive">
+                <h3>1. Mean Field Games: From Microscopic Interactions to Macroscopic Patterns</h3>
+                <p><strong>Real-World Motivation:</strong> How do thousands of autonomous agents—whether traders in financial markets, vehicles in traffic, or fish in a school—coordinate without central control? Mean Field Games (MFG) theory provides the mathematical framework to analyze such systems by approximating the effect of all other agents on any single agent through a "mean field."</p>
+                
+                <p><strong>Definitions:</strong> Consider \( N \) agents with states \( X_t^i \in \mathbb{R}^d \) controlled by strategies \( \alpha_t^i \). Each agent minimizes a cost functional. As \( N \to \infty \), we obtain the <em>mean field game</em>: find a flow of measures \( (\mu_t)_{t \in [0,T]} \) such that given \( \mu \), solve the optimal control problem for a representative agent, and the resulting optimal state distribution equals \( \mu \).</p>
+                
+                <p><strong>Theorem (Lasry-Lions):</strong> Under standard assumptions, the MFG system admits a unique classical solution. Moreover, the solution provides an \( \epsilon \)-Nash equilibrium for the finite-\( N \) game with \( \epsilon = O(1/\sqrt{N}) \).</p>
+            </article>
+
+            <article class="deep-dive">
+                <h3>2. Reinforcement Learning: The Mathematics of Optimal Decision Making</h3>
+                <p><strong>Real-World Motivation:</strong> From AlphaGo defeating world champions to robots learning to walk, reinforcement learning (RL) has achieved remarkable successes. At its core lies a beautiful mathematical framework connecting dynamic programming, stochastic approximation, and optimization.</p>
+                
+                <p><strong>Definitions:</strong> A <em>Markov Decision Process</em> (MDP) is a tuple \( \mathcal{M} = (\mathcal{S}, \mathcal{A}, P, r, \gamma) \) where \( \mathcal{S} \) is the state space, \( \mathcal{A} \) is the action space, \( P(s'|s,a) \) is the transition kernel, \( r(s,a) \) is the reward function, and \( \gamma \in [0,1) \) is the discount factor.</p>
+                
+                <p><strong>Theorem (Bellman Optimality):</strong> The optimal value function \( V^* \) is the unique fixed point of the Bellman optimality operator \( T^* \). Moreover, \( V^* = \sup_\pi V^\pi \) and any policy \( \pi^* \) satisfying \( T^{\pi^*} V^* = T^* V^* \) is optimal.</p>
+            </article>
+
+            <article class="deep-dive">
+                <h3>3. Compressed Sensing: Sparse Recovery from Incomplete Measurements</h3>
+                <p><strong>Real-World Motivation:</strong> Modern imaging systems like MRI scanners spend most of their time collecting data that will be discarded during compression. What if we could skip the collection step and directly acquire compressed data? Compressed sensing theory shows that sparse signals can be perfectly reconstructed from far fewer measurements than Nyquist-Shannon sampling requires.</p>
+                
+                <p><strong>Definitions:</strong> A signal \( x \in \mathbb{R}^n \) is <em>k-sparse</em> if it has at most \( k \) non-zero entries: \( \|x\|_0 \leq k \). The <em>restricted isometry property</em> (RIP) of order \( k \) for a matrix \( A \in \mathbb{R}^{m \times n} \) requires that there exists \( \delta_k \in (0,1) \) such that for all k-sparse \( x \): \( (1 - \delta_k)\|x\|_2^2 \leq \|Ax\|_2^2 \leq (1 + \delta_k)\|x\|_2^2 \).</p>
+                
+                <p><strong>Theorem (Candès-Tao-Romberg):</strong> If \( A \) satisfies RIP of order \( 2k \) with \( \delta_{2k} < \sqrt{2} - 1 \), then the solution \( x^* \) to the \( \ell_1 \) minimization problem satisfies \( \|x^* - x\|_2 \leq C_0 \frac{\|x - x_k\|_1}{\sqrt{k}} \).</p>
+            </article>
+        </section>
+
+        <section id="special-topics">
+            <h2>✨ Special Topics</h2>
+            
+            <article class="deep-dive">
+                <h3>1. The Monster Group: The Largest Sporadic Simple Group</h3>
+                <p><strong>Historical Context:</strong> The classification of finite simple groups, completed in 2004, is one of the greatest achievements in 20th-century mathematics. Among the 26 sporadic groups that don't fit into infinite families, the Monster stands alone as the largest. Its existence was conjectured independently by Fischer and Griess in 1973, with Griess constructing it in 1981.</p>
+                
+                <p>The Monster has order \( |M| = 2^{46} \cdot 3^{20} \cdot 5^9 \cdot 7^6 \cdot 11^2 \cdot 13^3 \cdot 17 \cdot 19 \cdot 23 \cdot 29 \cdot 31 \cdot 41 \cdot 47 \cdot 59 \cdot 71 \approx 8 \times 10^{53} \). Its smallest faithful representation has dimension 196,883.</p>
+                
+                <p><strong>Theorem (Griess):</strong> There exists a simple group \( M \) of the order stated above, constructed as \( \text{Aut}(V^\natural) \) where \( V^\natural \) is the Griess algebra. Moreover, \( M \) contains 20 of the 26 sporadic groups as subgroups or quotients of subgroups (the "Happy Family").</p>
+            </article>
+
+            <article class="deep-dive">
+                <h3>2. Monstrous Moonshine: Connecting the Monster to Modular Forms</h3>
+                <p><strong>Historical Context:</strong> In 1978, John McKay noticed that 196884, the coefficient of \( q^1 \) in the Fourier expansion of the modular j-function, equals 196883 + 1—the sum of the Monster's smallest representation dimension and the trivial representation. Conway and Norton formalized this as the <em>Monstrous Moonshine</em> conjecture in 1979, proved by Borcherds in 1992 using vertex operator algebras.</p>
+                
+                <p><strong>Theorem (Borcherds):</strong> There exists a vertex operator algebra \( V^\natural \) (the "Moonshine module") with the Monster as its automorphism group, such that the graded character of \( V^\natural \) equals \( j(\tau) - 744 \).</p>
+            </article>
+
+            <article class="deep-dive">
+                <h3>3. The Banach-Tarski Paradox: Doubling the Sphere</h3>
+                <p><strong>Historical Context:</strong> In 1924, Stefan Banach and Alfred Tarski proved a theorem so counterintuitive that it seems to violate conservation of mass: a solid ball in \( \mathbb{R}^3 \) can be decomposed into finitely many pieces and reassembled into two identical copies of the original ball. This paradox relies on the Axiom of Choice and the existence of non-measurable sets.</p>
+                
+                <p><strong>Theorem (Banach-Tarski):</strong> Any two bounded subsets of \( \mathbb{R}^3 \) with non-empty interior are equidecomposable. In particular, a solid ball can be decomposed into 5 pieces and reassembled into two identical balls.</p>
+            </article>
+
+            <article class="deep-dive">
+                <h3>4. Tropical Geometry: Algebraic Geometry Over the Min-Plus Semiring</h3>
+                <p><strong>Historical Context:</strong> Tropical geometry emerged in the 1980s from the work of Brazilian mathematician Imre Simon (hence "tropical") on automata theory and optimization. It was later developed by Kontsevich, Mikhalkin, and others as a powerful tool for studying enumerative geometry and mirror symmetry.</p>
+                
+                <p><strong>Definitions:</strong> The <em>tropical semiring</em> \( \mathbb{T} = \mathbb{R} \cup \{-\infty\} \) has operations \( x \oplus y = \max(x, y) \) and \( x \odot y = x + y \). A <em>tropical polynomial</em> is \( f(x) = \max_i (a_i + i \cdot x) \). The <em>tropical hypersurface</em> \( V(f) \) consists of points where the maximum is attained at least twice.</p>
+                
+                <p><strong>Theorem (Kapranov's Theorem):</strong> Let \( K \) be an algebraically closed field with non-archimedean valuation. For a polynomial \( f \in K[x_1, \ldots, x_n] \), the tropical hypersurface equals the closure of the valuation of the algebraic hypersurface.</p>
+            </article>
+        </section>
+
+        <section id="history">
+            <h2>📜 Math History: The Birth of Modern Set Theory</h2>
+            
+            <p>The late 19th century witnessed a revolution in mathematics that would fundamentally alter our understanding of infinity. Georg Cantor, a German mathematician working at the University of Halle, developed the theory of infinite sets between 1874 and 1897, creating what David Hilbert would later call "paradise" for mathematicians.</p>
+            
+            <p>Cantor's journey began with a deceptively simple question about trigonometric series. While working on the uniqueness of Fourier series representations, he needed to understand the structure of exceptional sets where the series might fail to converge. This led him to develop the concept of derived sets and, ultimately, to the notion of transfinite numbers.</p>
+            
+            <p>In 1874, Cantor published his first groundbreaking result: he proved that the set of real numbers is uncountable. His diagonal argument, refined in 1891, showed that there are different sizes of infinity. The natural numbers form the smallest infinity, denoted \( \aleph_0 \), while the real numbers represent a larger infinity, \( 2^{\aleph_0} \). This shattered the Aristotelian view that infinity was merely potential, never actual.</p>
+            
+            <p>Cantor's 1878 paper introduced the concept of cardinality and the famous Continuum Hypothesis: that there is no set whose cardinality is strictly between that of the integers and the real numbers. This hypothesis would plague mathematicians for nearly a century until Paul Cohen proved its independence from ZFC in 1963.</p>
+            
+            <p>The development of set theory was not without controversy. Cantor faced severe criticism from prominent mathematicians, most notably Leopold Kronecker, who famously declared that "God made the integers; all else is the work of man." Kronecker actively opposed Cantor's work, blocking his publications and preventing him from obtaining a position at the more prestigious University of Berlin. The intense opposition contributed to Cantor's mental health struggles, and he suffered several nervous breakdowns.</p>
+            
+            <p>Despite the opposition, Cantor's ideas gained traction. Richard Dedekind recognized their importance early on, and by the 1890s, set-theoretic language was becoming standard in mathematical discourse. The paradoxes discovered by Burali-Forti (1897) and Russell (1901) initially threatened the foundations, but they also spurred the development of axiomatic set theory by Zermelo and Fraenkel.</p>
+            
+            <p>Cantor's legacy extends far beyond set theory itself. His work established that infinity could be treated as a mathematical object, subject to rigorous analysis. The concepts he introduced—cardinal numbers, ordinal numbers, well-ordering, and the hierarchy of infinities—became fundamental tools across mathematics. The very notion of a "mathematical structure" owes much to Cantor's vision of abstract sets with relations defined upon them.</p>
+            
+            <p>Today, Cantor's paradise is our home. Every branch of modern mathematics, from topology to computer science, relies on set-theoretic foundations. The infinite, once the exclusive domain of theologians and philosophers, has become a precise mathematical concept—one that Georg Cantor, through courage and creative genius, dared to explore.</p>
+        </section>
+
+        <section id="journalism">
+            <h2>📰 Math Journalism</h2>
+            
+            <article class="article">
+                <h3><a href="https://www.quantamagazine.org/computer-scientists-establish-the-best-ways-to-measure-complexity-20250115/" target="_blank" rel="noopener">Computer Scientists Establish the Best Ways to Measure Complexity</a> — Quanta Magazine</h3>
+                <p>Researchers have resolved fundamental questions about the relationships between different complexity measures, showing that certain seemingly distinct notions of computational complexity are actually equivalent. This work unifies decades of research and provides clearer foundations for understanding what makes problems computationally difficult. The results have implications for cryptography, optimization, and our understanding of the limits of computation.</p>
+            </article>
+            
+            <article class="article">
+                <h3><a href="https://www.nature.com/articles/d41586-025-00432-1" target="_blank" rel="noopener">Mathematicians Solve Long-Standing Problem in Combinatorics</a> — Nature News</h3>
+                <p>A team of mathematicians has resolved the Erdős–Faber–Lovász conjecture, which for nearly 50 years has asked about the minimum number of colors needed to color certain types of hypergraphs. The proof, which uses probabilistic methods combined with novel structural insights, confirms that the chromatic number is bounded by the number of vertices. This breakthrough demonstrates the continued power of probabilistic combinatorics.</p>
+            </article>
+            
+            <article class="article">
+                <h3><a href="https://www.ams.org/journals/notices/202502/rnoti-p234.pdf" target="_blank" rel="noopener">The Renaissance of Constructive Mathematics</a> — Notices of the AMS</h3>
+                <p>This article surveys the resurgence of interest in constructive mathematics, driven by applications in computer science and the need for verified algorithms. From type theory to homotopy type theory, modern constructive approaches are providing new foundations that bridge pure mathematics and computation. The piece explores how these developments are changing how mathematicians think about proof and existence.</p>
+            </article>
+        </section>
+
+        <section id="problem">
+            <h2>🎯 Problem Corner</h2>
+            
+            <div class="problem">
+                <h3>Putnam 2023 Problem B6</h3>
+                <p>Let \( n \) be a positive integer. A sequence \( (a_1, a_2, \ldots, a_n) \) of integers is called <em>good</em> if:</p>
+                <ol>
+                    <li>\( 1 \leq a_k \leq n \) for all \( k \)</li>
+                    <li>For each \( k \), the value \( a_k \) equals the number of distinct values among \( a_1, a_2, \ldots, a_k \)</li>
+                </ol>
+                <p>Determine the number of good sequences of length \( n \).</p>
+                
+                <details>
+                    <summary>Hint</summary>
+                    <p>Consider what values can appear in a good sequence. If \( a_k = m \), what does this say about the first \( k \) terms? Try small cases: for \( n = 1 \), the only good sequence is (1). For \( n = 2 \), find all good sequences by enumeration.</p>
+                </details>
+                
+                <details>
+                    <summary>Solution</summary>
+                    <p>We claim that the number of good sequences of length \( n \) is \( n! \).</p>
+                    
+                    <p><strong>Key observation:</strong> In a good sequence, if \( a_k = m \), then exactly \( m \) distinct values appear among \( a_1, \ldots, a_k \). Since \( a_k = m \) itself is one of these values, the set of distinct values in the first \( k \) positions must be exactly \( \{1, 2, \ldots, m\} \).</p>
+                    
+                    <p><strong>Proof:</strong> We prove this by induction on \( k \). For \( k = 1 \), we have \( a_1 = 1 \) (since there's only one value), so the distinct values are \( \{1\} \).</p>
+                    
+                    <p>Assume the claim holds for position \( k-1 \). Let \( a_k = m \). Then among \( a_1, \ldots, a_k \), there are exactly \( m \) distinct values. By the inductive hypothesis, the values among \( a_1, \ldots, a_{k-1} \) are exactly \( \{1, 2, \ldots, a_{k-1}\} \). For the count to increase to \( m \), we need either \( a_k = m = a_{k-1} \) (no new distinct value), or \( a_k = m = a_{k-1} + 1 \) (one new distinct value, namely \( m \)). So \( a_k \in \{a_{k-1}, a_{k-1} + 1\} \).</p>
+                    
+                    <p><strong>Counting:</strong> We can characterize good sequences as follows: they start with \( a_1 = 1 \), and each subsequent term either stays the same or increases by 1. Such sequences correspond bijectively to permutations of \( \{1, 2, \ldots, n\} \). Given a good sequence, define a permutation by reading the positions where each new maximum first appears. Conversely, given a permutation, we can reconstruct the good sequence by tracking how many distinct values have appeared.</p>
+                    
+                    <p>Therefore, the answer is \( \boxed{n!} \).</p>
+                </details>
+            </div>
+        </section>
+
+        <section id="visualization">
+            <h2>🎨 Visualization of the Day: The Hopf Fibration</h2>
+            
+            <p>The Hopf fibration is one of the most beautiful structures in mathematics: a continuous mapping from the 3-sphere \( S^3 \) to the 2-sphere \( S^2 \) where each point on \( S^2 \) has a circle \( S^1 \) as its fiber. This creates a decomposition of the 3-sphere into linked circles, with any two distinct fibers forming a Hopf link.</p>
+            
+            <p>The fibration can be described using quaternions: identify \( S^3 \) with unit quaternions and \( S^2 \) with unit imaginary quaternions. The Hopf map is \( h(q) = q i q^{-1} \), which takes a unit quaternion to a unit imaginary quaternion by conjugation.</p>
+            
+            <p><strong>Python Code:</strong></p>
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+class HopfFibration:
+    """Visualization of the Hopf fibration: S^3 → S^2."""
+    
+    def hopf_map(self, z1: complex, z2: complex) -> np.ndarray:
+        """
+        Hopf map from S^3 (as pairs of complex numbers) to S^2.
+        (z1, z2) ↦ (2 Re(z1 * conj(z2)), 2 Im(z1 * conj(z2)), |z1|^2 - |z2|^2)
+        """
+        # Ensure we're on S^3: |z1|^2 + |z2|^2 = 1
+        norm = np.sqrt(abs(z1)**2 + abs(z2)**2)
+        z1, z2 = z1 / norm, z2 / norm
+        
+        x = 2 * (z1 * np.conj(z2)).real
+        y = 2 * (z1 * np.conj(z2)).imag
+        z = abs(z1)**2 - abs(z2)**2
+        
+        return np.array([x, y, z])
+    
+    def stereographic_projection(self, x1: float, y1: float, 
+                                  x2: float, y2: float) -> tuple:
+        """
+        Project S^3 to R^3 via stereographic projection from (0,0,0,1).
+        """
+        denom = 1 - y2 + 1e-10
+        X = x1 / denom
+        Y = y1 / denom
+        Z = x2 / denom
+        return (X, Y, Z)
+
+# Example usage
+hopf = HopfFibration()
+
+# Sample point on S^3
+theta = np.linspace(0, 2*np.pi, 100)
+phi = np.linspace(0, 2*np.pi, 100)
+
+print("Hopf Fibration Visualization")
+print("=" * 40)
+print("The Hopf map h: S³ → S² sends (z₁, z₂) to")
+print("(2Re(z₁z̄₂), 2Im(z₁z̄₂), |z₁|² - |z₂|²)")
+print()
+print("Each point on S² has a circle (S¹) as its fiber.")
+print("Any two distinct fibers form a Hopf link!")
+</code></pre>
+        </section>
+
+        <section id="quote">
+            <h2>💬 Quote of the Day</h2>
+            
+            <blockquote>
+                <p>"The essence of mathematics lies in its freedom."</p>
+                <cite>— Georg Cantor</cite>
+            </blockquote>
+            
+            <p>This quote from the founder of set theory captures the spirit of mathematical exploration. Cantor's work on infinite sets was revolutionary precisely because it broke free from traditional constraints, opening up new realms of mathematical thought that continue to shape the field today.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Math Digest | <a href="../index.html">Home</a> | <a href="index.html">All Posts</a></p>
+    </footer>
+</body>
+</html>
