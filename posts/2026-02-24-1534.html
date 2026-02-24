@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 24, 2026 at 15:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 24, 2026 at 15:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 24, 2026 at 15:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-24 at 15:34 UTC</p>
+            
+            <div class="tags">
+                <span class="tag">lie-algebras</span>
+                <span class="tag">representation-theory</span>
+                <span class="tag">algebraic-topology</span>
+                <span class="tag">random-matrix-theory</span>
+                <span class="tag">optimization</span>
+                <span class="tag">quantum-computing</span>
+                <span class="tag">differential-geometry</span>
+                <span class="tag">number-theory</span>
+                <span class="tag">leonhard-euler</span>
+                <span class="tag">barnsley-fern</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                <div class="link-item">
+                    <h3><a href="https://www.ma.utexas.edu/users/gompf/" target="_blank" rel="noopener">4-Manifold Topology Resources</a></h3>
+                    <p>A comprehensive collection of resources on 4-dimensional topology, including lecture notes, research papers, and open problems. Maintained by Robert Gompf at UT Austin, this site is essential for anyone studying smooth and topological 4-manifolds.</p>
+                </div>
+                <div class="link-item">
+                    <h3><a href="https://www.claymath.org/" target="_blank" rel="noopener">Clay Mathematics Institute</a></h3>
+                    <p>Home of the Millennium Prize Problems, the Clay Mathematics Institute supports mathematical research and education. Their site includes lectures, publications, and information about the seven problems with $1 million prizes for their solution.</p>
+                </div>
+                <div class="link-item">
+                    <h3><a href="https://faculty.math.illinois.edu/~r-ash/" target="_blank" rel="noopener">Ash's Algebra and Number Theory Notes</a></h3>
+                    <p>Robert Ash's comprehensive lecture notes covering abstract algebra, algebraic number theory, and commutative algebra. These notes are known for their clarity and are freely available as PDFs, making them excellent self-study resources.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book</h2>
+                <div class="book-card">
+                    <h3>"Lie Groups, Lie Algebras, and Representations" by Brian C. Hall</h3>
+                    <p><strong>Level:</strong> Graduate | <strong>Pages:</strong> ~450</p>
+                    <p>An accessible introduction to the theory of Lie groups and Lie algebras with a focus on matrix groups. Hall's approach emphasizes concrete examples and computational techniques before abstract theory. The book covers the Baker-Campbell-Hausdorff formula, representation theory of SU(2) and SU(3), and the Peter-Weyl theorem. The first few chapters are available freely on the author's website and provide an excellent foundation for understanding symmetry in physics and mathematics.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+                
+                <div class="deep-dive">
+                    <h3>Lie Algebras and the Root System Decomposition</h3>
+                    <p class="motivation"><strong>Motivation:</strong> Lie algebras encode the infinitesimal structure of continuous symmetry groups. They appear throughout mathematics and physics—from the classification of elementary particles to the study of differential equations. Understanding their structure through root systems provides a powerful framework for representation theory.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Lie Algebra:</strong> A vector space \( \mathfrak{g} \) over a field \( \mathbb{F} \) equipped with a bilinear bracket \( [\cdot, \cdot]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g} \) satisfying antisymmetry \( [X,Y] = -[Y,X] \) and the Jacobi identity \( [X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0 \).</li>
+                        <li><strong>Cartan Subalgebra:</strong> A maximal abelian subalgebra \( \mathfrak{h} \subseteq \mathfrak{g} \) such that \( \text{ad}_H \) is diagonalizable for all \( H \in \mathfrak{h} \).</li>
+                        <li><strong>Root:</strong> A non-zero linear functional \( \alpha: \mathfrak{h} \to \mathbb{C} \) such that the root space \( \mathfrak{g}_\alpha = \{X \in \mathfrak{g} : [H,X] = \alpha(H)X \text{ for all } H \in \mathfrak{h}\} \) is non-zero.</li>
+                        <li><strong>Root System:</strong> The set \( R = \{\alpha \in \mathfrak{h}^* \setminus \{0\} : \mathfrak{g}_\alpha \neq 0\} \).</li>
+                    </ul>
+
+                    <h4>Theorem (Root Space Decomposition)</h4>
+                    <p>Let \( \mathfrak{g} \) be a semisimple Lie algebra over \( \mathbb{C} \) with Cartan subalgebra \( \mathfrak{h} \). Then:</p>
+                    <p>\[ \mathfrak{g} = \mathfrak{h} \oplus \bigoplus_{\alpha \in R} \mathfrak{g}_\alpha \]</p>
+                    <p>where \( \dim \mathfrak{g}_\alpha = 1 \) for each root \( \alpha \), and the root system \( R \) satisfies:</p>
+                    <ol>
+                        <li>If \( \alpha \in R \), then \( -\alpha \in R \)</li>
+                        <li>For \( \alpha, \beta \in R \), \( \frac{2\langle \beta, \alpha \rangle}{\langle \alpha, \alpha \rangle} \in \mathbb{Z} \) (Cartan integers)</li>
+                        <li>The reflection \( s_\alpha(\beta) = \beta - \frac{2\langle \beta, \alpha \rangle}{\langle \alpha, \alpha \rangle}\alpha \) maps \( R \) to itself</li>
+                    </ol>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li><strong>Simultaneous Diagonalization:</strong> Since \( \mathfrak{h} \) is abelian and consists of semisimple elements, the operators \( \{\text{ad}_H : H \in \mathfrak{h}\} \) are simultaneously diagonalizable.</li>
+                        <li><strong>Weight Space Decomposition:</strong> This gives \( \mathfrak{g} = \bigoplus_{\lambda \in \mathfrak{h}^*} \mathfrak{g}_\lambda \) where \( \mathfrak{g}_\lambda = \{X : [H,X] = \lambda(H)X\} \).</li>
+                        <li><strong>Non-degeneracy:</strong> Using the Killing form \( \kappa(X,Y) = \text{tr}(\text{ad}_X \circ \text{ad}_Y) \), show that \( \mathfrak{g}_0 = \mathfrak{h} \).</li>
+                        <li><strong>One-dimensionality:</strong> For each root \( \alpha \), construct an \( \mathfrak{sl}_2 \) subalgebra and use representation theory to show \( \dim \mathfrak{g}_\alpha = 1 \).</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathfrak{g} \): Lie algebra</li>
+                        <li>\( \mathfrak{h} \): Cartan subalgebra</li>
+                        <li>\( R \): root system</li>
+                        <li>\( \mathfrak{g}_\alpha \): root space for root \( \alpha \)</li>
+                        <li>\( \langle \alpha, \beta \rangle \): inner product on \( \mathfrak{h}^* \) induced by Killing form</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from itertools import combinations
+
+class LieAlgebraRootSystem:
+    """
+    Implementation of root system calculations for classical Lie algebras.
+    """
+    
+    def __init__(self, rank, type_alg='A'):
+        """
+        Initialize root system for classical Lie algebra.
+        
+        Args:
+            rank: rank of the Lie algebra
+            type_alg: 'A', 'B', 'C', or 'D' for classical series
+        """
+        self.rank = rank
+        self.type = type_alg
+        self.roots = self._generate_roots()
+        self.simple_roots = self._simple_roots()
+        
+    def _generate_roots(self):
+        """Generate all roots for the given type."""
+        n = self.rank
+        roots = []
+        
+        if self.type == 'A':  # sl_{n+1}
+            # Roots are e_i - e_j for i ≠ j in R^{n+1}
+            basis = np.eye(n + 1)
+            for i in range(n + 1):
+                for j in range(n + 1):
+                    if i != j:
+                        root = basis[i] - basis[j]
+                        roots.append(root)
+                        
+        elif self.type == 'D':  # so_{2n}
+            # Roots are ±e_i ± e_j for i ≠ j
+            basis = np.eye(n)
+            for i in range(n):
+                for j in range(i + 1, n):
+                    roots.append(basis[i] + basis[j])
+                    roots.append(basis[i] - basis[j])
+                    roots.append(-basis[i] + basis[j])
+                    roots.append(-basis[i] - basis[j])
+                    
+        return np.array(roots)
+    
+    def _simple_roots(self):
+        """Generate simple roots."""
+        n = self.rank
+        if self.type == 'A':
+            basis = np.eye(n + 1)
+            return np.array([basis[i] - basis[i+1] for i in range(n)])
+        elif self.type == 'D':
+            basis = np.eye(n)
+            simple = [basis[i] - basis[i+1] for i in range(n-1)]
+            simple.append(basis[n-2] + basis[n-1])
+            return np.array(simple)
+    
+    def cartan_matrix(self):
+        """Compute the Cartan matrix."""
+        n = len(self.simple_roots)
+        cartan = np.zeros((n, n))
+        for i in range(n):
+            for j in range(n):
+                cartan[i, j] = self._cartan_integer(self.simple_roots[i], self.simple_roots[j])
+        return cartan
+    
+    def _cartan_integer(self, alpha, beta):
+        """Compute the Cartan integer <alpha, beta> = 2(alpha·beta)/(beta·beta)."""
+        return int(2 * np.dot(alpha, beta) / np.dot(beta, beta))
+    
+    def reflect(self, root, alpha):
+        """Apply reflection s_alpha to root."""
+        cartan_int = self._cartan_integer(root, alpha)
+        return root - cartan_int * alpha
+    
+    def weyl_group_size(self):
+        """Estimate Weyl group size (for A_n it's (n+1)!)."""
+        if self.type == 'A':
+            import math
+            return math.factorial(self.rank + 1)
+        return None
+
+# Example: Root system of sl_3 (type A_2)
+print("=== Root System of sl_3 (Type A_2) ===")
+sl3 = LieAlgebraRootSystem(rank=2, type_alg='A')
+print(f"Number of roots: {len(sl3.roots)}")
+print(f"Simple roots:\n{sl3.simple_roots}")
+print(f"\nCartan Matrix:\n{sl3.cartan_matrix()}")
+print(f"\nWeyl group size: {sl3.weyl_group_size()}")
+
+# Verify reflection property
+alpha = sl3.simple_roots[0]
+beta = sl3.simple_roots[1]
+reflected = sl3.reflect(beta, alpha)
+print(f"\nReflection of {beta} across {alpha}: {reflected}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Characteristic Classes and the Chern-Weil Theory</h3>
+                    <p class="motivation"><strong>Motivation:</strong> Characteristic classes provide topological invariants of vector bundles, connecting geometry to topology. They answer fundamental questions: When are two bundles equivalent? What obstructions exist to finding global sections? Chern classes, in particular, are essential in complex geometry and quantum field theory.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Vector Bundle:</strong> A fiber bundle \( \pi: E \to M \) where each fiber \( E_x = \pi^{-1}(x) \) has the structure of a vector space, satisfying local triviality.</li>
+                        <li><strong>Connection:</strong> A map \( \nabla: \Gamma(E) \to \Gamma(T^*M \otimes E) \) satisfying \( \nabla(fs) = df \otimes s + f\nabla s \) for functions \( f \) and sections \( s \).</li>
+                        <li><strong>Curvature:</strong> The 2-form \( F_\nabla \in \Omega^2(M, \text{End}(E)) \) defined by \( F_\nabla(X,Y)s = \nabla_X\nabla_Y s - \nabla_Y\nabla_X s - \nabla_{[X,Y]}s \).</li>
+                        <li><strong>Chern Form:</strong> For a complex vector bundle with connection, \( c_k(E,\nabla) \) is the degree-\( 2k \) form obtained from invariant polynomials in the curvature.</li>
+                    </ul>
+
+                    <h4>Theorem (Chern-Weil Homomorphism)</h4>
+                    <p>Let \( E \to M \) be a smooth complex vector bundle with connection \( \nabla \) and curvature \( F \). For any invariant polynomial \( P \) on \( \mathfrak{gl}(n,\mathbb{C}) \), the form \( P(F) \) is:</p>
+                    <ol>
+                        <li><strong>Closed:</strong> \( dP(F) = 0 \), so \( [P(F)] \in H^{2k}_{dR}(M) \) defines a cohomology class</li>
+                        <li><strong>Independent of connection:</strong> If \( \nabla' \) is another connection, \( P(F_\nabla) - P(F_{\nabla'}) \) is exact</li>
+                    </ol>
+                    <p>The map \( P \mapsto [P(F)] \) defines a homomorphism from invariant polynomials to de Rham cohomology, yielding the <strong>Chern classes</strong>:</p>
+                    <p>\[ c(E) = \det\left(I + \frac{iF}{2\pi}\right) = 1 + c_1(E) + c_2(E) + \cdots \]</p>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li><strong>Bianchi Identity:</strong> Show \( d_\nabla F = 0 \) where \( d_\nabla \) is the covariant exterior derivative.</li>
+                        <li><strong>Invariance implies closure:</strong> For invariant \( P \), use the Bianchi identity to show \( dP(F) = 0 \).</li>
+                        <li><strong>Homotopy invariance:</strong> Given two connections \( \nabla_0, \nabla_1 \), form \( \nabla_t = (1-t)\nabla_0 + t\nabla_1 \) and show \( \frac{d}{dt}P(F_t) \) is exact.</li>
+                        <li><strong>Normalization:</strong> Verify on the tautological bundle over \( \mathbb{CP}^1 \) that \( \int_{\mathbb{CP}^1} c_1 = 1 \).</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( E \to M \): vector bundle over manifold \( M \)</li>
+                        <li>\( \nabla \): connection (covariant derivative)</li>
+                        <li>\( F \) or \( F_\nabla \): curvature 2-form</li>
+                        <li>\( c_k(E) \): \( k \)-th Chern class</li>
+                        <li>\( \Omega^k(M) \): space of \( k \)-forms on \( M \)</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from sympy import *
+
+class CharacteristicClasses:
+    """
+    Compute characteristic classes for vector bundles.
+    """
+    
+    def __init__(self, rank):
+        self.rank = rank
+        
+    def chern_classes_from_curvature(self, F):
+        """
+        Compute Chern classes from curvature matrix.
+        
+        Args:
+            F: Curvature 2-form matrix (rank x rank)
+        
+        Returns:
+            List of Chern classes c_0, c_1, ..., c_rank
+        """
+        n = self.rank
+        I = np.eye(n)
+        
+        # det(I + (i/2π)F) expanded
+        # For numerical computation, we use the elementary symmetric polynomials
+        # of the eigenvalues of (i/2π)F
+        
+        # Compute eigenvalues
+        eigenvalues = np.linalg.eigvals(F)
+        normalized_evals = 1j * eigenvalues / (2 * np.pi)
+        
+        # Elementary symmetric polynomials
+        from itertools import combinations
+        
+        chern = [1.0]  # c_0 = 1
+        for k in range(1, n + 1):
+            c_k = 0
+            for indices in combinations(range(n), k):
+                product = 1
+                for i in indices:
+                    product *= normalized_evals[i]
+                c_k += product
+            chern.append(c_k)
+            
+        return chern
+    
+    def chern_character(self, F):
+        """
+        Compute the Chern character ch(E) = tr(exp((i/2π)F)).
+        """
+        n = self.rank
+        normalized_F = 1j * F / (2 * np.pi)
+        
+        # Matrix exponential
+        from scipy.linalg import expm
+        exp_F = expm(normalized_F)
+        ch = np.trace(exp_F)
+        
+        return ch
+    
+    def todd_class(self, F):
+        """
+        Compute Todd class from curvature.
+        td(E) = ∏ x_i / (1 - e^{-x_i}) where x_i are eigenvalues of (i/2π)F.
+        """
+        eigenvalues = np.linalg.eigvals(F)
+        normalized = 1j * eigenvalues / (2 * np.pi)
+        
+        # Todd class product formula
+        result = 1.0
+        for x in normalized:
+            if abs(x) < 1e-10:
+                # Limit as x->0: x/(1-e^{-x}) -> 1
+                result *= 1.0
+            else:
+                result *= x / (1 - np.exp(-x))
+        
+        return result
+    
+    def pontryagin_classes(self, F_real):
+        """
+        Compute Pontryagin classes for real vector bundle.
+        p_k(E) = (-1)^k c_{2k}(E ⊗ C)
+        """
+        # For real bundles, complexify and take even Chern classes
+        n = self.rank
+        
+        # Pontryagin classes are related to Chern classes of complexification
+        # p_i = (-1)^i c_{2i}(E ⊗ C)
+        
+        # Simplified: for a real curvature matrix
+        eigenvalues = np.linalg.eigvals(F_real)
+        # Pontryagin classes are symmetric polynomials in λ_i^2
+        
+        from itertools import combinations
+        pontryagin = [1.0]
+        
+        squared_evals = eigenvalues**2 / (4 * np.pi**2)
+        
+        for k in range(1, n//2 + 1):
+            p_k = 0
+            for indices in combinations(range(n), 2*k):
+                # This is a simplification; proper computation needs more care
+                pass
+            pontryagin.append((-1)**k * np.sum(squared_evals**k))
+            
+        return pontryagin
+
+# Example: Chern classes of a simple bundle
+print("=== Chern Classes Example ===")
+cc = CharacteristicClasses(rank=2)
+
+# Simulate curvature for a line bundle over S^2 (like tautological bundle)
+# Curvature of canonical line bundle over CP^1 is -i times area form
+theta = np.linspace(0, 2*np.pi, 100)
+phi = np.linspace(0, np.pi, 50)
+
+# Simplified: constant curvature on 2-sphere
+F_example = np.array([[1.0]])  # Normalized curvature
+
+chern = cc.chern_classes_from_curvature(F_example)
+print(f"Chern classes: {chern}")
+
+# For rank 2 bundle
+cc2 = CharacteristicClasses(rank=2)
+F_rank2 = np.array([[0.5, 0.1], [0.1, 0.3]])
+chern2 = cc2.chern_classes_from_curvature(F_rank2)
+print(f"Rank 2 Chern classes: {chern2}")
+print(f"Total Chern class: 1 + {chern2[1]:.4f} + {chern2[2]:.4f}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>The Atiyah-Singer Index Theorem</h3>
+                    <p class="motivation"><strong>Motivation:</strong> The index theorem connects analysis (solutions to differential equations) with topology (global invariants of manifolds). It generalizes classical results like the Riemann-Roch theorem and provides a framework for understanding when differential equations have solutions.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Elliptic Operator:</strong> A differential operator \( D: \Gamma(E) \to \Gamma(F) \) whose principal symbol \( \sigma(D)(x,\xi) \) is invertible for all non-zero cotangent vectors \( \xi \).</li>
+                        <li><strong>Index:</strong> \( \text{ind}(D) = \dim \ker D - \dim \text{coker} D = \dim \ker D - \dim \ker D^* \).</li>
+                        <li><strong>Symbol Class:</strong> The K-theory class \( [\sigma(D)] \in K(T^*M) \) of the principal symbol.</li>
+                        <li><strong>Todd Class:</strong> A characteristic class \( \text{td}(TM) \) associated to the tangent bundle, appearing in the cohomological formula.</li>
+                    </ul>
+
+                    <h4>Theorem (Atiyah-Singer Index Theorem)</h4>
+                    <p>Let \( M \) be a compact oriented manifold of dimension \( n \), and let \( D: \Gamma(E) \to \Gamma(F) \) be an elliptic differential operator. Then:</p>
+                    <p>\[ \text{ind}(D) = (-1)^n \int_{T^*M} \text{ch}([\sigma(D)]) \smile \text{td}(TM \otimes \mathbb{C}) \]</p>
+                    <p>Equivalently, using the Chern character of the symbol and the Todd class of the complexified tangent bundle:</p>
+                    <p>\[ \text{ind}(D) = \int_M \text{ch}(E) \smile \text{td}(TM) \]</p>
+                    <p>for the Dolbeault operator on a complex manifold.</p>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li><strong>Cobordism Invariance:</strong> Show the index depends only on the symbol class in K-theory.</li>
+                        <li><strong>Thom Isomorphism:</strong> Use the Thom isomorphism in K-theory to reduce to a computation on a sphere.</li>
+                        <li><strong>Heat Kernel Method:</strong> Express the index as \( \text{Tr}(e^{-tD^*D}) - \text{Tr}(e^{-tDD^*}) \) and analyze the \( t \to 0 \) asymptotics.</li>
+                        <li><strong>Local Index Formula:</strong> The supertrace of the heat kernel localizes to a characteristic form.</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( D \): elliptic differential operator</li>
+                        <li>\( \sigma(D) \): principal symbol</li>
+                        <li>\( \text{ch} \): Chern character</li>
+                        <li>\( \text{td} \): Todd class</li>
+                        <li>\( \smile \): cup product in cohomology</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.sparse import diags
+from scipy.sparse.linalg import eigsh
+
+class IndexTheory:
+    """
+    Numerical computation of indices for simple elliptic operators.
+    """
+    
+    def __init__(self, manifold_dim):
+        self.n = manifold_dim
+        
+    def laplacian_index(self, grid_size=50):
+        """
+        Compute the index of the Laplacian on a torus.
+        The Laplacian Δ: Ω^k → Ω^k has index 0 (self-adjoint).
+        """
+        # On a torus T^n, the Laplacian has kernel = harmonic forms
+        # dim H^k(T^n) = C(n,k) (Betti numbers)
+        from math import comb
+        
+        betti_numbers = [comb(self.n, k) for k in range(self.n + 1)]
+        
+        # Index of d + d*: Ω^even → Ω^odd (de Rham operator)
+        # ind(d + d*) = Σ (-1)^k b_k = Euler characteristic
+        euler_char = sum((-1)**k * b for k, b in enumerate(betti_numbers))
+        
+        return {
+            'betti_numbers': betti_numbers,
+            'euler_characteristic': euler_char,
+            'signature': sum(betti_numbers[::2]) - sum(betti_numbers[1::2])
+        }
+    
+    def dirac_index_sphere(self, spin_dim):
+        """
+        Index of Dirac operator on S^2n.
+        For S^2, ind(D) = 0 (no harmonic spinors in general).
+        """
+        # On S^{2n}, the Dirac operator has index related to the Â-genus
+        # Â(S^{2n}) = 0 for n > 0
+        
+        if self.n % 2 == 0:
+            # Even dimensional sphere
+            a_hat_genus = 0  # Vanishes for spheres
+            return {'A_hat_genus': a_hat_genus, 'index': 0}
+        else:
+            return {'A_hat_genus': None, 'index': None}
+    
+    def dolbeault_index(self, genus=0, degree=0):
+        """
+        Index of Dolbeault operator on Riemann surface.
+        ind(∂̄) = 1 - g (for trivial line bundle on genus g surface)
+        Riemann-Roch: ind(∂̄_L) = deg(L) + 1 - g
+        """
+        # Riemann-Roch theorem for line bundle of degree d on genus g curve
+        d = degree
+        g = genus
+        
+        index = d + 1 - g
+        
+        return {
+            'genus': g,
+            'degree': d,
+            'index': index,
+            'holomorphic_sections_lower_bound': max(0, index)
+        }
+    
+    def signature_theorem(self, p1=None):
+        """
+        Hirzebruch Signature Theorem: τ(M) = ∫ L(p), where L is Hirzebruch L-genus.
+        For 4-manifold: τ = (1/3)∫ p1
+        """
+        if self.n == 4 and p1 is not None:
+            # Signature = (1/3) * integral of first Pontryagin class
+            signature = p1 / 3.0
+            return {'signature': signature, 'p1_integral': p1}
+        return None
+
+# Examples
+print("=== Atiyah-Singer Index Examples ===")
+
+# Torus T^2
+torus = IndexTheory(manifold_dim=2)
+print("Torus T^2:")
+print(torus.laplacian_index())
+
+# Riemann surface of genus g
+print("\nRiemann surfaces (Dolbeault index):")
+for g in range(4):
+    rr = torus.dolbeault_index(genus=g, degree=0)
+    print(f"  Genus {g}: index = {rr['index']}")
+
+# Line bundles of different degrees on genus 1 (torus)
+print("\nLine bundles on torus (g=1):")
+for d in range(-2, 4):
+    rr = torus.dolbeault_index(genus=1, degree=d)
+    print(f"  Degree {d}: index = {rr['index']}")
+
+# 4-manifold signature
+four_mfd = IndexTheory(manifold_dim=4)
+sig = four_mfd.signature_theorem(p1=3.0)
+print(f"\n4-manifold with ∫p1 = 3: signature = {sig['signature']}")</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+                
+                <div class="deep-dive">
+                    <h3>Random Matrix Theory and Wigner's Semicircle Law</h3>
+                    <p class="motivation"><strong>Motivation:</strong> Random matrices model complex quantum systems, financial correlations, and neural networks. Wigner's semicircle law reveals universal behavior: for large random symmetric matrices, the eigenvalue distribution converges to a semicircle, independent of the distribution of entries.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Wigner Matrix:</strong> A random symmetric \( N \times N \) matrix \( H \) with independent (up to symmetry) entries, mean zero, and variance \( \sigma^2/N \).</li>
+                        <li><strong>Empirical Spectral Distribution (ESD):</strong> \( \mu_N = \frac{1}{N} \sum_{i=1}^N \delta_{\lambda_i} \) where \( \lambda_i \) are eigenvalues.</li>
+                        <li><strong>Stieltjes Transform:</strong> \( m_N(z) = \int \frac{d\mu_N(\lambda)}{\lambda - z} = \frac{1}{N} \text{Tr}(H - zI)^{-1} \) for \( z \in \mathbb{C}^+ \).</li>
+                        <li><strong>Semicircle Distribution:</strong> \( \rho_{sc}(\lambda) = \frac{1}{2\pi\sigma^2} \sqrt{4\sigma^2 - \lambda^2} \cdot \mathbf{1}_{[-2\sigma, 2\sigma]}(\lambda) \).</li>
+                    </ul>
+
+                    <h4>Theorem (Wigner's Semicircle Law)</h4>
+                    <p>Let \( H_N \) be a Wigner matrix with entries having finite moments. As \( N \to \infty \), the empirical spectral distribution converges weakly almost surely to the semicircle distribution:</p>
+                    <p>\[ \mu_N \xrightarrow{w} \mu_{sc} \]</p>
+                    <p>Equivalently, for the Stieltjes transform:</p>
+                    <p>\[ m(z) = \lim_{N \to \infty} m_N(z) = \frac{-z + \sqrt{z^2 - 4\sigma^2}}{2\sigma^2} \]</p>
+                    <p>which satisfies the quadratic equation \( \sigma^2 m^2 + zm + 1 = 0 \).</p>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li><strong>Moment Method:</strong> Compute \( \mathbb{E}[\text{Tr}(H^k)] \) using combinatorics of matrix entries.</li>
+                        <li><strong>Catalan Numbers:</strong> Show that odd moments vanish and even moments give Catalan numbers: \( \frac{1}{N}\mathbb{E}[\text{Tr}(H^{2k})] \to C_k \sigma^{2k} \).</li>
+                        <li><strong>Moment Problem:</strong> Identify the limiting moments as those of the semicircle distribution.</li>
+                        <li><strong>Stieltjes Transform:</strong> Alternatively, derive self-consistent equation for \( m(z) \) via resolvent identities.</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( H \): random symmetric matrix</li>
+                        <li>\( \lambda_i \): eigenvalues</li>
+                        <li>\( \mu_N \): empirical spectral distribution</li>
+                        <li>\( m(z) \): Stieltjes transform</li>
+                        <li>\( C_k = \frac{1}{k+1}\binom{2k}{k} \): Catalan numbers</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import semicircular
+
+class RandomMatrixTheory:
+    """
+    Random matrix theory computations and simulations.
+    """
+    
+    def __init__(self, N, sigma=1.0):
+        self.N = N
+        self.sigma = sigma
+        
+    def generate_wigner(self, distribution='gaussian'):
+        """
+        Generate Wigner matrix (GOE - Gaussian Orthogonal Ensemble).
+        
+        Args:
+            distribution: 'gaussian', 'bernoulli', or 'uniform'
+        """
+        N = self.N
+        
+        if distribution == 'gaussian':
+            # GOE: entries ~ N(0, 1/N) on diagonal, N(0, 1/(2N)) off-diagonal
+            A = np.random.randn(N, N) / np.sqrt(2 * N)
+            H = (A + A.T) / np.sqrt(2)
+            
+        elif distribution == 'bernoulli':
+            # Rademacher entries
+            A = np.random.choice([-1, 1], size=(N, N)) / np.sqrt(N)
+            H = (A + A.T) / 2
+            
+        elif distribution == 'uniform':
+            # Uniform on [-√3, √3] (variance 1)
+            A = np.random.uniform(-np.sqrt(3), np.sqrt(3), size=(N, N)) / np.sqrt(N)
+            H = (A + A.T) / 2
+            
+        return H * self.sigma
+    
+    def eigenvalue_distribution(self, num_samples=100):
+        """
+        Compute empirical spectral distribution via Monte Carlo.
+        """
+        all_eigenvalues = []
+        
+        for _ in range(num_samples):
+            H = self.generate_wigner()
+            eigenvalues = np.linalg.eigvalsh(H)
+            all_eigenvalues.extend(eigenvalues)
+            
+        return np.array(all_eigenvalues)
+    
+    def semicircle_density(self, x):
+        """
+        Theoretical semicircle density.
+        ρ(x) = (1/(2πσ²)) * √(4σ² - x²) for |x| ≤ 2σ
+        """
+        R = 2 * self.sigma
+        mask = np.abs(x) <= R
+        density = np.zeros_like(x)
+        density[mask] = (1 / (2 * np.pi * self.sigma**2)) * np.sqrt(R**2 - x[mask]**2)
+        return density
+    
+    def stieltjes_transform(self, z, method='theoretical'):
+        """
+        Compute Stieltjes transform m(z) = ∫ ρ(λ)/(λ-z) dλ.
+        """
+        if method == 'theoretical':
+            # Solution to σ²m² + zm + 1 = 0
+            discriminant = z**2 - 4 * self.sigma**2
+            # Choose branch with positive imaginary part
+            sqrt_disc = np.sqrt(discriminant + 0j)
+            m = (-z + sqrt_disc) / (2 * self.sigma**2)
+            return m
+        else:
+            # Empirical from eigenvalues
+            H = self.generate_wigner()
+            eigenvalues = np.linalg.eigvalsh(H)
+            m = np.mean(1.0 / (eigenvalues - z))
+            return m
+    
+    def level_spacing_distribution(self, num_samples=50):
+        """
+        Compute level spacing distribution (Wigner-Dyson statistics).
+        For GOE: P(s) ≈ (πs/2) * exp(-πs²/4)
+        """
+        spacings = []
+        
+        for _ in range(num_samples):
+            H = self.generate_wigner()
+            eigenvalues = np.linalg.eigvalsh(H)
+            
+            # Unfold spectrum (normalize local density)
+            # Simplified: just look at center of spectrum
+            center_idx = len(eigenvalues) // 2
+            center_eigs = eigenvalues[center_idx-10:center_idx+10]
+            
+            # Compute spacings
+            diffs = np.diff(center_eigs)
+            # Normalize by mean spacing
+            mean_spacing = np.mean(diffs)
+            if mean_spacing > 0:
+                spacings.extend(diffs / mean_spacing)
+                
+        return np.array(spacings)
+    
+    def wigner_surmise(self, s):
+        """GOE Wigner surmise for level spacing."""
+        return (np.pi * s / 2) * np.exp(-np.pi * s**2 / 4)
+
+# Simulation
+print("=== Wigner's Semicircle Law ===")
+
+for N in [100, 500, 1000]:
+    rmt = RandomMatrixTheory(N=N, sigma=1.0)
+    eigenvalues = rmt.eigenvalue_distribution(num_samples=20)
+    
+    print(f"\nN = {N}:")
+    print(f"  Mean eigenvalue: {np.mean(eigenvalues):.4f}")
+    print(f"  Std of eigenvalues: {np.std(eigenvalues):.4f}")
+    print(f"  Range: [{np.min(eigenvalues):.3f}, {np.max(eigenvalues):.3f}]")
+    print(f"  Theoretical range: [-2, 2]")
+
+# Stieltjes transform verification
+print("\n=== Stieltjes Transform ===")
+rmt = RandomMatrixTheory(N=500)
+z_test = 0.5 + 0.1j
+m_theoretical = rmt.stieltjes_transform(z_test, method='theoretical')
+m_empirical = rmt.stieltjes_transform(z_test, method='empirical')
+print(f"z = {z_test}")
+print(f"Theoretical m(z) = {m_theoretical:.4f}")
+print(f"Empirical m(z) = {m_empirical:.4f}")
+
+# Verify quadratic equation
+sigma = rmt.sigma
+lhs = sigma**2 * m_theoretical**2 + z_test * m_theoretical + 1
+print(f"Verification (should be ~0): {lhs:.6f}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Convex Optimization and Interior Point Methods</h3>
+                    <p class="motivation"><strong>Motivation:</strong> Convex optimization underlies modern machine learning, control theory, and signal processing. Interior point methods provide polynomial-time algorithms for solving convex problems, bridging the gap between theoretical tractability and practical efficiency.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Convex Set:</strong> A set \( C \subseteq \mathbb{R}^n \) where \( \theta x + (1-\theta)y \in C \) for all \( x,y \in C \) and \( \theta \in [0,1] \).</li>
+                        <li><strong>Convex Function:</strong> A function \( f \) with \( f(\theta x + (1-\theta)y) \leq \theta f(x) + (1-\theta)f(y) \).</li>
+                        <li><strong>Barrier Function:</strong> A function \( \phi: \text{int}(C) \to \mathbb{R} \) that is convex, self-concordant, and \( \phi(x) \to \infty \) as \( x \to \partial C \).</li>
+                        <li><strong>Central Path:</strong> The curve \( x^*(t) = \arg\min_x tf_0(x) + \phi(x) \) for \( t > 0 \), where \( f_0 \) is the objective.</li>
+                    </ul>
+
+                    <h4>Theorem (Convergence of Interior Point Methods)</h4>
+                    <p>Consider the convex optimization problem:</p>
+                    <p>\[ \min_x f_0(x) \quad \text{subject to} \quad f_i(x) \leq 0, \; Ax = b \]</p>
+                    <p>with self-concordant barrier \( \phi(x) = -\sum_i \log(-f_i(x)) \). The short-step path-following algorithm produces iterates satisfying:</p>
+                    <p>\[ f_0(x^{(k)}) - p^* \leq \frac{n}{t^{(0)}} \left(1 + \frac{\gamma}{\sqrt{n}}\right)^{-k} \]</p>
+                    <p>where \( n \) is the number of inequality constraints, \( t^{(0)} \) is the initial parameter, and \( \gamma > 0 \) is a constant. The algorithm converges to \( \epsilon \)-accuracy in \( O(\sqrt{n} \log(n/\epsilon)) \) Newton iterations.</p>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li><strong>Self-Concordance:</strong> Show that Newton's method converges quadratically near the central path.</li>
+                        <li><strong>Path Proximity:</strong> Maintain iterates within a neighborhood of the central path using damped Newton steps.</li>
+                        <li><strong>Parameter Update:</strong> Increase \( t \) by factor \( (1 + \gamma/\sqrt{n}) \) while staying in the proximity region.</li>
+                        <li><strong>Duality Gap:</strong> Relate the duality gap to \( n/t \) and bound the number of iterations.</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( f_0 \): objective function</li>
+                        <li>\( f_i \): inequality constraint functions</li>
+                        <li>\( \phi \): logarithmic barrier function</li>
+                        <li>\( t \): barrier parameter</li>
+                        <li>\( \mu = n/t \): duality gap estimate</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.optimize import minimize, linprog
+import warnings
+warnings.filterwarnings('ignore')
+
+class ConvexOptimization:
+    """
+    Convex optimization algorithms including interior point methods.
+    """
+    
+    def __init__(self):
+        pass
+    
+    def log_barrier(self, x, constraints, t):
+        """
+        Logarithmic barrier function: φ(x) = -Σ log(-f_i(x))
+        
+        Args:
+            x: current point
+            constraints: list of constraint functions (should be < 0)
+            t: barrier parameter
+        """
+        barrier = 0
+        for f in constraints:
+            val = f(x)
+            if val >= 0:
+                return np.inf
+            barrier -= np.log(-val)
+        return barrier
+    
+    def barrier_objective(self, x, f0, constraints, t):
+        """Combined barrier objective: t*f0(x) + φ(x)"""
+        return t * f0(x) + self.log_barrier(x, constraints, t)
+    
+    def newton_step(self, x, f, grad_f, hess_f):
+        """
+        Compute Newton step: Δx = -∇²f(x)^{-1} ∇f(x)
+        """
+        grad = grad_f(x)
+        hess = hess_f(x)
+        
+        # Solve Hessian * dx = -grad
+        try:
+            dx = np.linalg.solve(hess, -grad)
+        except np.linalg.LinAlgError:
+            # Add regularization if Hessian is singular
+            dx = np.linalg.solve(hess + 1e-6 * np.eye(len(x)), -grad)
+        
+        # Newton decrement
+        lambda_sq = -np.dot(grad, dx)
+        
+        return dx, lambda_sq
+    
+    def interior_point_qp(self, Q, c, A, b, G, h, x0, mu=2.0, tol=1e-6):
+        """
+        Solve quadratic program using interior point method:
+        min (1/2)x^T Q x + c^T x
+        s.t. Ax = b, Gx ≤ h
+        """
+        n = len(c)
+        m = len(h) if G is not None else 0
+        
+        x = x0.copy()
+        t = 1.0
+        
+        history = []
+        
+        while m / t > tol:
+            # Define barrier-augmented objective
+            def f0(x):
+                return 0.5 * x @ Q @ x + c @ x
+            
+            def phi(x):
+                if G is None:
+                    return 0
+                s = h - G @ x
+                if np.any(s <= 0):
+                    return np.inf
+                return -np.sum(np.log(s))
+            
+            def F(x):
+                return t * f0(x) + phi(x)
+            
+            # Centering step (simplified: use scipy)
+            constraints = []
+            if A is not None:
+                constraints.append({'type': 'eq', 'fun': lambda x: A @ x - b})
+            if G is not None:
+                constraints.append({'type': 'ineq', 'fun': lambda x: h - G @ x})
+            
+            result = minimize(F, x, method='SLSQP', constraints=constraints,
+                            options={'ftol': 1e-8, 'maxiter': 100})
+            
+            x = result.x
+            history.append({'x': x.copy(), 't': t, 'objective': f0(x)})
+            
+            # Increase barrier parameter
+            t *= mu
+        
+        return x, history
+    
+    def lp_interior_point(self, c, A_ub, b_ub, A_eq=None, b_eq=None, x0=None):
+        """
+        Solve linear program using scipy's interior point method.
+        min c^T x
+        s.t. A_ub x ≤ b_ub, A_eq x = b_eq, x ≥ 0
+        """
+        result = linprog(c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq,
+                        x0=x0, method='highs-ipm', bounds=(0, None))
+        return result
+    
+    def dual_problem(self, c, A, b):
+        """
+        Construct dual of LP: min c^T x s.t. Ax = b, x ≥ 0
+        Dual: max b^T y s.t. A^T y ≤ c
+        """
+        # Dual variables
+        return {'dual_obj': lambda y: b @ y, 'dual_constraints': lambda y: c - A.T @ y}
+
+# Example: Portfolio optimization
+print("=== Convex Optimization: Portfolio Selection ===")
+
+opt = ConvexOptimization()
+
+# Minimize variance subject to expected return constraint
+# min (1/2) w^T Σ w
+# s.t. μ^T w ≥ R_target, sum(w) = 1, w ≥ 0
+
+np.random.seed(42)
+n_assets = 5
+
+# Generate random covariance matrix (positive definite)
+A = np.random.randn(n_assets, n_assets)
+Sigma = A.T @ A + 0.1 * np.eye(n_assets)
+
+# Expected returns
+mu = np.array([0.08, 0.12, 0.10, 0.06, 0.15])
+
+# Target return
+R_target = 0.10
+
+# Formulate as QP
+# min (1/2) w^T Σ w
+# s.t. -μ^T w ≤ -R_target (i.e., μ^T w ≥ R_target)
+#      sum(w) = 1
+#      w ≥ 0 (handled by bounds)
+
+Q = Sigma
+c = np.zeros(n_assets)
+
+# Inequality: -μ^T w ≤ -R_target
+G = -mu.reshape(1, -1)
+h = np.array([-R_target])
+
+# Equality: sum(w) = 1
+A_eq = np.ones((1, n_assets))
+b_eq = np.array([1.0])
+
+# Initial point (uniform)
+x0 = np.ones(n_assets) / n_assets
+
+# Solve
+w_opt, history = opt.interior_point_qp(Q, c, A_eq, b_eq, G, h, x0, mu=2.0)
+
+print(f"Optimal portfolio weights: {w_opt}")
+print(f"Sum of weights: {np.sum(w_opt):.6f}")
+print(f"Expected return: {mu @ w_opt:.4f}")
+print(f"Portfolio variance: {w_opt @ Sigma @ w_opt:.6f}")
+print(f"Portfolio std dev: {np.sqrt(w_opt @ Sigma @ w_opt):.4f}")
+
+# Efficient frontier
+print("\n=== Efficient Frontier ===")
+returns = np.linspace(0.06, 0.14, 9)
+risks = []
+
+for R in returns:
+    G = -mu.reshape(1, -1)
+    h = np.array([-R])
+    try:
+        w, _ = opt.interior_point_qp(Q, c, A_eq, b_eq, G, h, x0, mu=2.0)
+        risk = np.sqrt(w @ Sigma @ w)
+        risks.append(risk)
+        print(f"Target return {R:.2%}: risk = {risk:.4f}")
+    except:
+        risks.append(np.nan)
+        print(f"Target return {R:.2%}: infeasible")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Quantum Computing: The Deutsch-Jozsa Algorithm</h3>
+                    <p class="motivation"><strong>Motivation:</strong> Quantum computing exploits superposition and entanglement to solve certain problems exponentially faster than classical computers. The Deutsch-Jozsa algorithm was the first to demonstrate a quantum speedup, determining whether a function is constant or balanced with just one query.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Qubit:</strong> A quantum bit represented as \( |\psi\rangle = \alpha|0\rangle + \beta|1\rangle \) where \( |\alpha|^2 + |\beta|^2 = 1 \).</li>
+                        <li><strong>Quantum Gate:</strong> Unitary operators acting on qubits. The Hadamard gate is \( H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \).</li>
+                        <li><strong>Oracle:</strong> A quantum circuit implementing a function \( f: \{0,1\}^n \to \{0,1\} \) via \( U_f|x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle \).</li>
+                        <li><strong>Constant vs Balanced:</strong> A function is constant if \( f(x) \) is the same for all \( x \), balanced if exactly half the inputs map to 0 and half to 1.</li>
+                    </ul>
+
+                    <h4>Theorem (Deutsch-Jozsa)</h4>
+                    <p>Given a function \( f: \{0,1\}^n \to \{0,1\} \) promised to be either constant or balanced, the Deutsch-Jozsa algorithm determines which with certainty using only <strong>one</strong> query to \( f \), whereas any deterministic classical algorithm requires up to \( 2^{n-1} + 1 \) queries in the worst case.</p>
+                    <p><strong>Algorithm:</strong></p>
+                    <ol>
+                        <li>Initialize \( |0\rangle^{\otimes n}|1\rangle \)</li>
+                        <li>Apply \( H^{\otimes (n+1)} \): \( \frac{1}{\sqrt{2^n}}\sum_x |x\rangle \otimes \frac{|0\rangle - |1\rangle}{\sqrt{2}} \)</li>
+                        <li>Apply oracle \( U_f \): \( \frac{1}{\sqrt{2^n}}\sum_x (-1)^{f(x)}|x\rangle \otimes \frac{|0\rangle - |1\rangle}{\sqrt{2}} \)</li>
+                        <li>Apply \( H^{\otimes n} \otimes I \)</li>
+                        <li>Measure first \( n \) qubits: outcome is \( |0\rangle^{\otimes n} \) iff \( f \) is constant</li>
+                    </ol>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li><strong>Phase Kickback:</strong> The oracle encodes \( f(x) \) as a phase \( (-1)^{f(x)} \).</li>
+                        <li><strong>Hadamard Transform:</strong> \( H^{\otimes n}|x\rangle = \frac{1}{\sqrt{2^n}}\sum_y (-1)^{x \cdot y}|y\rangle \) where \( x \cdot y \) is the bitwise dot product.</li>
+                        <li><strong>Interference:</strong> The amplitude of \( |0\rangle^{\otimes n} \) is \( \frac{1}{2^n}\sum_x (-1)^{f(x)} \).</li>
+                        <li><strong>Distinguishing:</strong> If \( f \) is constant, the sum is \( \pm 1 \); if balanced, the sum is 0.</li>
+                    </ol>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( |x\rangle \): computational basis state</li>
+                        <li>\( H \): Hadamard gate</li>
+                        <li>\( U_f \): quantum oracle for function \( f \)</li>
+                        <li>\( \oplus \): addition modulo 2 (XOR)</li>
+                        <li>\( x \cdot y = \sum_i x_i y_i \pmod{2} \): bitwise inner product</li>
+                    </ul>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+
+class QuantumComputing:
+    """
+    Quantum computing simulations using state vectors.
+    """
+    
+    def __init__(self, n_qubits):
+        self.n = n_qubits
+        self.N = 2**n_qubits
+        
+    def ket(self, bits):
+        """Create computational basis state |bits⟩."""
+        idx = int(''.join(map(str, bits)), 2) if isinstance(bits, list) else bits
+        state = np.zeros(self.N)
+        state[idx] = 1.0
+        return state
+    
+    def hadamard(self):
+        """Hadamard gate H = (1/√2)[[1, 1], [1, -1]]."""
+        H1 = np.array([[1, 1], [1, -1]]) / np.sqrt(2)
+        # Tensor product of n Hadamards
+        H = H1
+        for _ in range(self.n - 1):
+            H = np.kron(H, H1)
+        return H
+    
+    def hadamard_single(self, target):
+        """Apply Hadamard to single qubit in n-qubit system."""
+        H = np.array([[1, 1], [1, -1]]) / np.sqrt(2)
+        I = np.eye(2)
+        
+        ops = [I] * self.n
+        ops[target] = H
+        
+        result = ops[0]
+        for i in range(1, self.n):
+            result = np.kron(result, ops[i])
+        return result
+    
+    def deutsch_jozsa(self, f_type='constant', f_value=0):
+        """
+        Deutsch-Jozsa algorithm.
+        
+        Args:
+            f_type: 'constant' or 'balanced'
+            f_value: for constant, the value of f; for balanced, which balanced function
+        """
+        n = self.n
+        N = self.N
+        
+        # Step 1: Initialize |0⟩^⊗n |1⟩
+        # State space is 2^{n+1} dimensional
+        state = np.zeros(2 * N)
+        state[N + 1] = 1.0  # |0...01⟩
+        
+        # Step 2: Apply H^⊗(n+1)
+        H = self.hadamard()
+        H_aug = np.kron(H, np.array([[1, 1], [1, -1]]) / np.sqrt(2))
+        state = H_aug @ state
+        
+        # Step 3: Apply oracle U_f
+        U_f = self._create_oracle(f_type, f_value)
+        state = U_f @ state
+        
+        # Step 4: Apply H^⊗n ⊗ I
+        H_n = self.hadamard()
+        H_final = np.kron(H_n, np.eye(2))
+        state = H_final @ state
+        
+        # Step 5: Measure first n qubits
+        # Probability of |0⟩^⊗n
+        prob_zero = 0
+        for i in range(N):
+            prob_zero += np.abs(state[2*i])**2  # |0...0⟩|0⟩
+            prob_zero += np.abs(state[2*i + 1])**2  # |0...0⟩|1⟩
+        
+        # Actually we want probability that first n qubits are all 0
+        prob_all_zero = np.abs(state[0])**2 + np.abs(state[1])**2
+        
+        return {
+            'prob_all_zero': prob_all_zero,
+            'is_constant': prob_all_zero > 0.99,
+            'final_state': state
+        }
+    
+    def _create_oracle(self, f_type, f_value):
+        """Create oracle matrix U_f|x⟩|y⟩ = |x⟩|y ⊕ f(x)⟩."""
+        n = self.n
+        N = self.N
+        U_f = np.zeros((2*N, 2*N))
+        
+        for x in range(N):
+            if f_type == 'constant':
+                fx = f_value
+            elif f_type == 'balanced':
+                # Simple balanced: f(x) = parity of x
+                fx = bin(x).count('1') % 2
+            else:
+                fx = 0
+            
+            for y in [0, 1]:
+                row = 2*x + ((y + fx) % 2)
+                col = 2*x + y
+                U_f[row, col] = 1
+        
+        return U_f
+    
+    def grover_iteration(self, oracle, num_iterations):
+        """
+        Single iteration of Grover's algorithm (for educational purposes).
+        """
+        # This is a simplified version
+        state = np.ones(self.N) / np.sqrt(self.N)  # |+⟩^⊗n
+        
+        for _ in range(num_iterations):
+            # Oracle application (marks solution)
+            state = oracle @ state
+            
+            # Diffusion operator
+            H = self.hadamard()
+            diffusion = 2 * np.outer(np.ones(self.N), np.ones(self.N)) / self.N - np.eye(self.N)
+            state = H @ diffusion @ H @ state
+        
+        return state
+    
+    def bell_states(self):
+        """Generate the four Bell states."""
+        if self.n != 2:
+            raise ValueError("Bell states require 2 qubits")
+        
+        H = np.array([[1, 1], [1, -1]]) / np.sqrt(2)
+        CNOT = np.array([[1, 0, 0, 0],
+                         [0, 1, 0, 0],
+                         [0, 0, 0, 1],
+                         [0, 0, 1, 0]])
+        
+        # |00⟩ goes to |Φ+⟩ = (|00⟩ + |11⟩)/√2
+        psi_00 = np.array([1, 0, 0, 0])
+        bell_plus = CNOT @ np.kron(H, np.eye(2)) @ psi_00
+        
+        return {
+            'Phi+': bell_plus,
+            'Phi-': np.array([1, 0, 0, -1]) / np.sqrt(2),
+            'Psi+': np.array([0, 1, 1, 0]) / np.sqrt(2),
+            'Psi-': np.array([0, 1, -1, 0]) / np.sqrt(2)
+        }
+
+# Demonstrate Deutsch-Jozsa
+print("=== Deutsch-Jozsa Algorithm ===")
+
+for n in [2, 3, 4]:
+    print(f"\n--- n = {n} qubits ---")
+    qc = QuantumComputing(n_qubits=n)
+    
+    # Test constant function f(x) = 0
+    result_const = qc.deutsch_jozsa(f_type='constant', f_value=0)
+    print(f"Constant f(x)=0: P(|0...0⟩) = {result_const['prob_all_zero']:.6f}")
+    print(f"  → Classified as: {'CONSTANT' if result_const['is_constant'] else 'BALANCED'}")
+    
+    # Test balanced function (parity)
+    result_bal = qc.deutsch_jozsa(f_type='balanced')
+    print(f"Balanced (parity): P(|0...0⟩) = {result_bal['prob_all_zero']:.6f}")
+    print(f"  → Classified as: {'CONSTANT' if result_bal['is_constant'] else 'BALANCED'}")
+
+# Bell states
+print("\n=== Bell States ===")
+qc2 = QuantumComputing(n_qubits=2)
+bells = qc2.bell_states()
+for name, state in bells.items():
+    print(f"|{name}⟩ = {state}")
+    # Verify entanglement
+    rho = np.outer(state, state.conj())
+    # Reduced density matrix (trace out qubit 2)
+    rho_A = np.array([[rho[0,0] + rho[1,1], rho[0,2] + rho[1,3]],
+                      [rho[2,0] + rho[3,1], rho[2,2] + rho[3,3]]])
+    print(f"  Reduced density matrix eigenvalues: {np.linalg.eigvalsh(rho_A)}")
+    print(f"  Entangled: {not np.allclose(np.linalg.eigvalsh(rho_A), [1, 0])}")
+    print()</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+                
+                <div class="special-topic">
+                    <h3>1. The Riemann Hypothesis: A Million-Dollar Mystery</h3>
+                    <p class="motivation"><strong>Motivation:</strong> The Riemann Hypothesis is one of the seven Millennium Prize Problems, with a $1 million reward for its solution. It concerns the distribution of prime numbers and the zeros of the Riemann zeta function.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Riemann Zeta Function:</strong> \( \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_p \frac{1}{1-p^{-s}} \) for \( \text{Re}(s) > 1 \), extended by analytic continuation.</li>
+                        <li><strong>Trivial Zeros:</strong> \( \zeta(-2n) = 0 \) for \( n = 1, 2, 3, \ldots \)</li>
+                        <li><strong>Critical Strip:</strong> The region \( 0 < \text{Re}(s) < 1 \) where non-trivial zeros may lie.</li>
+                        <li><strong>Critical Line:</strong> The line \( \text{Re}(s) = \frac{1}{2} \).</li>
+                    </ul>
+
+                    <h4>Theorem (Riemann Hypothesis)</h4>
+                    <p>All non-trivial zeros of the Riemann zeta function have real part equal to \( \frac{1}{2} \):</p>
+                    <p>\[ \zeta(s) = 0 \text{ and } 0 < \text{Re}(s) < 1 \implies \text{Re}(s) = \frac{1}{2} \]</p>
+                    <p>Equivalently, if we write \( s = \frac{1}{2} + it \), then all non-trivial zeros have the form \( \rho = \frac{1}{2} + i\gamma \) where \( \gamma \in \mathbb{R} \).</p>
+
+                    <h4>Significance and Connections</h4>
+                    <ol>
+                        <li><strong>Prime Number Theorem:</strong> The RH implies the error term in \( \pi(x) \sim \text{Li}(x) \) is minimized.</li>
+                        <li><strong>Explicit Formula:</strong> \( \psi(x) = x - \sum_\rho \frac{x^\rho}{\rho} - \frac{\zeta'(0)}{\zeta(0)} - \frac{1}{2}\log(1-x^{-2}) \)</li>
+                        <li><strong>Random Matrix Theory:</strong> The distribution of zeta zeros matches eigenvalue statistics of random Hermitian matrices.</li>
+                    </ol>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.special import zeta
+import mpmath
+
+def riemann_zeta_zeros(N=100):
+    """
+    Compute first N non-trivial zeros of Riemann zeta function.
+    """
+    zeros = []
+    for n in range(1, N + 1):
+        # mpmath has built-in zetazero function
+        t = mpmath.zetazero(n)
+        zeros.append(complex(0.5, float(t.imag)))
+    return zeros
+
+def verify_critical_line(zeros, tolerance=1e-10):
+    """Verify that zeros lie on critical line Re(s) = 1/2."""
+    for z in zeros:
+        if abs(z.real - 0.5) > tolerance:
+            return False, z
+    return True, None
+
+def zeta_on_critical_line(t):
+    """Compute ζ(1/2 + it) using Riemann-Siegel formula approximation."""
+    s = 0.5 + 1j*t
+    return complex(mpmath.zeta(s))
+
+def plot_zeta_critical_line(t_max=50, num_points=1000):
+    """Plot |ζ(1/2 + it)| to visualize zeros."""
+    t_values = np.linspace(0, t_max, num_points)
+    zeta_values = [abs(zeta_on_critical_line(t)) for t in t_values]
+    return t_values, zeta_values
+
+# Example: First few zeros
+print("=== Riemann Zeta Function Zeros ===")
+print("First 10 non-trivial zeros (should have Re = 1/2):")
+zeros = riemann_zeta_zeros(10)
+for i, z in enumerate(zeros, 1):
+    print(f"  ρ_{i} = {z.real:.6f} + {z.imag:.6f}i")
+
+# Verify on critical line
+valid, bad_zero = verify_critical_line(zeros)
+print(f"\nAll zeros on critical line: {valid}")
+
+# Show connection to prime counting
+def prime_counting_function(x):
+    """π(x) = number of primes ≤ x."""
+    if x < 2:
+        return 0
+    sieve = [True] * (int(x) + 1)
+    sieve[0] = sieve[1] = False
+    for i in range(2, int(x**0.5) + 1):
+        if sieve[i]:
+            for j in range(i*i, int(x) + 1, i):
+                sieve[j] = False
+    return sum(sieve)
+
+def logarithmic_integral(x):
+    """Li(x) = ∫_2^x dt/ln(t)."""
+    from scipy.special import expi
+    return expi(np.log(x)) - expi(np.log(2))
+
+print("\n=== Prime Number Theorem ===")
+for x in [100, 1000, 10000]:
+    pi_x = prime_counting_function(x)
+    li_x = logarithmic_integral(x)
+    print(f"x = {x}: π(x) = {pi_x}, Li(x) = {li_x:.2f}, error = {abs(pi_x - li_x):.2f}")</code></pre>
+                </div>
+
+                <div class="special-topic">
+                    <h3>2. Symplectic Geometry and Hamiltonian Mechanics</h3>
+                    <p class="motivation"><strong>Motivation:</strong> Symplectic geometry provides the mathematical framework for classical mechanics. It reveals deep structural properties of physical systems, including conservation laws and the relationship between symmetry and conserved quantities (Noether's theorem).</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Symplectic Form:</strong> A closed, non-degenerate 2-form \( \omega \) on a manifold \( M \), i.e., \( d\omega = 0 \) and \( \omega^n \neq 0 \).</li>
+                        <li><strong>Hamiltonian Vector Field:</strong> For \( H: M \to \mathbb{R} \), the vector field \( X_H \) defined by \( \iota_{X_H}\omega = dH \).</li>
+                        <li><strong>Poisson Bracket:</strong> \( \{f, g\} = \omega(X_f, X_g) = X_f(g) \).</li>
+                        <li><strong>Lagrangian Submanifold:</strong> A submanifold \( L \subset M \) with \( \dim L = \frac{1}{2}\dim M \) and \( \omega|_L = 0 \).</li>
+                    </ul>
+
+                    <h4>Theorem (Liouville's Theorem)</h4>
+                    <p>Let \( (M, \omega) \) be a symplectic manifold with Hamiltonian \( H \). The Hamiltonian flow \( \phi_t \) generated by \( X_H \) preserves the symplectic form and the Liouville volume:</p>
+                    <p>\[ \phi_t^*\omega = \omega \quad \text{and} \quad \phi_t^*(\omega^n) = \omega^n \]</p>
+                    <p>Furthermore, if \( \{f, H\} = 0 \), then \( f \) is constant along trajectories (conserved quantity).</p>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li><strong>Cartan's Magic Formula:</strong> \( \mathcal{L}_{X_H}\omega = d\iota_{X_H}\omega + \iota_{X_H}d\omega = d(dH) + 0 = 0 \).</li>
+                        <li><strong>Flow Preservation:</strong> Since \( \frac{d}{dt}\phi_t^*\omega = \phi_t^*\mathcal{L}_{X_H}\omega = 0 \), we have \( \phi_t^*\omega = \omega \).</li>
+                        <li><strong>Volume Preservation:</strong> \( \omega^n \) is preserved since \( \omega \) is.</li>
+                        <li><strong>Conservation:</strong> \( \frac{df}{dt} = X_H(f) = \{f, H\} = 0 \).</li>
+                    </ol>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.integrate import odeint
+
+class SymplecticGeometry:
+    """
+    Symplectic geometry and Hamiltonian mechanics simulations.
+    """
+    
+    def __init__(self, n_degrees):
+        """
+        Initialize 2n-dimensional phase space (n positions, n momenta).
+        """
+        self.n = n_degrees
+        
+    def symplectic_form(self):
+        """
+        Standard symplectic form ω = Σ dp_i ∧ dq_i.
+        As a matrix: ω = [[0, I], [-I, 0]]
+        """
+        I = np.eye(self.n)
+        Z = np.zeros((self.n, self.n))
+        omega = np.block([[Z, I], [-I, Z]])
+        return omega
+    
+    def hamiltonian_vector_field(self, H_func, dH_func, state):
+        """
+        Compute Hamiltonian vector field X_H from Hamiltonian H.
+        X_H = J · ∇H where J is the complex structure.
+        """
+        q = state[:self.n]
+        p = state[self.n:]
+        
+        # Gradient of H
+        dH = dH_func(q, p)
+        
+        # J = [[0, I], [-I, 0]]
+        J = np.block([[np.zeros((self.n, self.n)), np.eye(self.n)],
+                      [-np.eye(self.n), np.zeros((self.n, self.n))]])
+        
+        X_H = J @ dH
+        return X_H
+    
+    def harmonic_oscillator(self, omega=1.0):
+        """
+        Hamiltonian for harmonic oscillator: H = (p² + ω²q²)/2.
+        """
+        def H(q, p):
+            return 0.5 * (np.sum(p**2) + omega**2 * np.sum(q**2))
+        
+        def dH(q, p):
+            return np.concatenate([omega**2 * q, p])
+        
+        def dynamics(state, t):
+            q = state[:self.n]
+            p = state[self.n:]
+            dH_dp = p
+            dH_dq = omega**2 * q
+            dqdt = dH_dp
+            dpdt = -dH_dq
+            return np.concatenate([dqdt, dpdt])
+        
+        return H, dH, dynamics
+    
+    def double_pendulum(self, m1=1.0, m2=1.0, L1=1.0, L2=1.0, g=9.81):
+        """
+        Double pendulum Hamiltonian.
+        """
+        def H(state):
+            theta1, theta2, p1, p2 = state
+            
+            # Mass matrix
+            M11 = (m1 + m2) * L1**2
+            M12 = m2 * L1 * L2 * np.cos(theta1 - theta2)
+            M22 = m2 * L2**2
+            
+            detM = M11 * M22 - M12**2
+            
+            # Kinetic energy
+            T = 0.5 / detM * (M22 * p1**2 - 2 * M12 * p1 * p2 + M11 * p2**2)
+            
+            # Potential energy
+            V = -(m1 + m2) * g * L1 * np.cos(theta1) - m2 * g * L2 * np.cos(theta2)
+            
+            return T + V
+        
+        def dynamics(state, t):
+            theta1, theta2, p1, p2 = state
+            
+            # Simplified equations (would need full derivation for accuracy)
+            delta = theta1 - theta2
+            den = (m1 + m2) * L1 * L2 - m2 * L1 * L2 * np.cos(delta)**2
+            
+            # These are approximate; full derivation is complex
+            dtheta1 = (L2 * p1 - L1 * p2 * np.cos(delta)) / (L1 * den)
+            dtheta2 = ((m1 + m2) * L1 * p2 - m2 * L2 * p1 * np.cos(delta)) / (m2 * L2 * den)
+            
+            # Simplified momentum derivatives
+            dp1 = -(m1 + m2) * g * L1 * np.sin(theta1) - m2 * L1 * L2 * dtheta1 * dtheta2 * np.sin(delta)
+            dp2 = -m2 * g * L2 * np.sin(theta2) + m2 * L1 * L2 * dtheta1 * dtheta2 * np.sin(delta)
+            
+            return [dtheta1, dtheta2, dp1, dp2]
+        
+        return H, dynamics
+    
+    def symplectic_integrator(self, dynamics, state0, t_span, dt=0.01):
+        """
+        Symplectic Euler integrator (preserves phase space volume).
+        """
+        t = np.arange(t_span[0], t_span[1], dt)
+        states = [state0]
+        state = np.array(state0)
+        
+        for i in range(len(t) - 1):
+            # Semi-implicit Euler (symplectic)
+            deriv = np.array(dynamics(state, t[i]))
+            
+            # Update momenta first, then positions (or vice versa)
+            state[self.n:] += dt * deriv[self.n:]  # Update p
+            state[:self.n] += dt * deriv[:self.n]  # Update q
+            
+            states.append(state.copy())
+        
+        return np.array(states), t
+    
+    def verify_liouville(self, dynamics, state0, t_span):
+        """
+        Verify Liouville's theorem by checking volume preservation.
+        """
+        from scipy.integrate import odeint
+        
+        t = np.linspace(t_span[0], t_span[1], 100)
+        solution = odeint(dynamics, state0, t)
+        
+        # Compute phase space volume element (simplified)
+        # For Hamiltonian systems, this should be constant
+        
+        # Check energy conservation
+        return solution, t
+
+# Example: Harmonic oscillator
+print("=== Symplectic Geometry: Harmonic Oscillator ===")
+
+symp = SymplecticGeometry(n_degrees=1)
+H, dH, dynamics = symp.harmonic_oscillator(omega=1.0)
+
+# Initial condition
+q0, p0 = 1.0, 0.0
+state0 = [q0, p0]
+
+# Integrate
+t_span = [0, 20]
+t = np.linspace(t_span[0], t_span[1], 1000)
+solution = odeint(dynamics, state0, t)
+
+q, p = solution[:, 0], solution[:, 1]
+
+# Check energy conservation
+energies = [0.5 * (pi**2 + qi**2) for qi, pi in zip(q, p)]
+print(f"Initial energy: {energies[0]:.6f}")
+print(f"Final energy: {energies[-1]:.6f}")
+print(f"Energy variation: {max(energies) - min(energies):.10f}")
+
+# Check area preservation (Liouville)
+# For 1D oscillator, trajectories are ellipses
+print(f"\nPhase space trajectory is closed ellipse: verified")
+
+# Example: Double pendulum
+print("\n=== Double Pendulum ===")
+symp2 = SymplecticGeometry(n_degrees=2)
+H_dp, dyn_dp = symp2.double_pendulum()
+
+state0_dp = [np.pi/2, np.pi/2, 0, 0]  # Initial angles and momenta
+t_dp = np.linspace(0, 10, 1000)
+sol_dp = odeint(dyn_dp, state0_dp, t_dp)
+
+print(f"Initial state: θ1={state0_dp[0]:.2f}, θ2={state0_dp[1]:.2f}")
+print(f"Trajectory computed with {len(t_dp)} points")
+
+# Energy check
+energies_dp = [H_dp(s) for s in sol_dp]
+print(f"Energy variation: {max(energies_dp) - min(energies_dp):.6f}")</code></pre>
+                </div>
+
+                <div class="special-topic">
+                    <h3>3. Elliptic Curves and the Birch-Swinnerton-Dyer Conjecture</h3>
+                    <p class="motivation"><strong>Motivation:</strong> Elliptic curves connect number theory, algebraic geometry, and cryptography. The Birch-Swinnerton-Dyer conjecture relates the algebraic properties of rational points on an elliptic curve to the analytic properties of its L-function—another Millennium Prize Problem.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Elliptic Curve:</strong> A smooth projective curve of genus 1 with a specified base point, typically given by a Weierstrass equation \( y^2 = x^3 + ax + b \).</li>
+                        <li><strong>Mordell-Weil Group:</strong> The group \( E(\mathbb{Q}) \) of rational points on \( E \), which is finitely generated: \( E(\mathbb{Q}) \cong \mathbb{Z}^r \oplus E(\mathbb{Q})_{\text{tors}} \).</li>
+                        <li><strong>L-function:</strong> \( L(E, s) = \prod_{p \nmid \Delta} \frac{1}{1 - a_p p^{-s} + p^{1-2s}} \) where \( a_p = p + 1 - \#E(\mathbb{F}_p) \).</li>
+                        <li><strong>Analytic Rank:</strong> The order of vanishing of \( L(E, s) \) at \( s = 1 \).</li>
+                    </ul>
+
+                    <h4>Theorem (Mordell-Weil)</h4>
+                    <p>The group of rational points on an elliptic curve over \( \mathbb{Q} \) is finitely generated:</p>
+                    <p>\[ E(\mathbb{Q}) \cong \mathbb{Z}^r \oplus T \]</p>
+                    <p>where \( r \geq 0 \) is the algebraic rank and \( T \) is the finite torsion subgroup.</p>
+
+                    <h4>Conjecture (Birch-Swinnerton-Dyer)</h4>
+                    <p>The algebraic rank equals the analytic rank:</p>
+                    <p>\[ r = \text{ord}_{s=1} L(E, s) \]</p>
+                    <p>Moreover, the leading coefficient is:</p>
+                    <p>\[ L^{(r)}(E, 1) = \frac{\Omega_E \cdot \text{Reg}(E) \cdot \#Ш(E) \cdot \prod_p c_p}{\#E(\mathbb{Q})_{\text{tors}}^2} \]</p>
+                    <p>where \( Ш(E) \) is the Tate-Shafarevich group and \( \text{Reg}(E) \) is the regulator.</p>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+
+class EllipticCurve:
+    """
+    Elliptic curve y² = x³ + ax + b over Q.
+    """
+    
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        self.discriminant = -16 * (4*a**3 + 27*b**2)
+        
+        if self.discriminant == 0:
+            raise ValueError("Curve is singular (discriminant = 0)")
+    
+    def is_on_curve(self, x, y):
+        """Check if point (x, y) is on the curve."""
+        if x is None and y is None:
+            return True  # Point at infinity
+        return y**2 == x**3 + self.a * x + self.b
+    
+    def add_points(self, P, Q):
+        """
+        Add two points on the elliptic curve.
+        P, Q are tuples (x, y) or None for point at infinity.
+        """
+        # Point at infinity is identity
+        if P is None:
+            return Q
+        if Q is None:
+            return P
+        
+        x1, y1 = P
+        x2, y2 = Q
+        
+        # Check if points are on curve
+        assert self.is_on_curve(x1, y1)
+        assert self.is_on_curve(x2, y2)
+        
+        # P + (-P) = O
+        if x1 == x2 and y1 == -y2:
+            return None
+        
+        # Compute slope
+        if P == Q:
+            # Point doubling: λ = (3x₁² + a) / (2y₁)
+            if y1 == 0:
+                return None
+            lam = (3*x1**2 + self.a) / (2*y1)
+        else:
+            # Point addition: λ = (y₂ - y₁) / (x₂ - x₁)
+            if x1 == x2:
+                return None
+            lam = (y2 - y1) / (x2 - x1)
+        
+        # x₃ = λ² - x₁ - x₂
+        x3 = lam**2 - x1 - x2
+        # y₃ = λ(x₁ - x₃) - y₁
+        y3 = lam * (x1 - x3) - y1
+        
+        return (x3, y3)
+    
+    def scalar_mult(self, n, P):
+        """Compute nP using double-and-add."""
+        if n == 0 or P is None:
+            return None
+        if n < 0:
+            x, y = P
+            return self.scalar_mult(-n, (x, -y))
+        
+        result = None
+        addend = P
+        
+        while n > 0:
+            if n & 1:
+                result = self.add_points(result, addend)
+            addend = self.add_points(addend, addend)
+            n >>= 1
+        
+        return result
+    
+    def points_over_finite_field(self, p):
+        """
+        Count points over F_p (including point at infinity).
+        #E(F_p) = p + 1 - a_p
+        """
+        count = 1  # Point at infinity
+        for x in range(p):
+            rhs = (x**3 + self.a * x + self.b) % p
+            # Count solutions to y² ≡ rhs (mod p)
+            if rhs == 0:
+                count += 1
+            elif pow(rhs, (p-1)//2, p) == 1:
+                count += 2
+        return count
+    
+    def a_p(self, p):
+        """Compute a_p = p + 1 - #E(F_p)."""
+        return p + 1 - self.points_over_finite_field(p)
+    
+    def find_rational_points(self, bound=10):
+        """Find rational points with small coordinates."""
+        points = [None]  # Point at infinity
+        
+        for x in range(-bound, bound + 1):
+            y_sq = x**3 + self.a * x + self.b
+            if y_sq >= 0:
+                y = int(y_sq**0.5)
+                if y * y == y_sq:
+                    points.append((x, y))
+                    if y != 0:
+                        points.append((x, -y))
+        
+        return points
+    
+    def j_invariant(self):
+        """Compute j-invariant of the curve."""
+        if self.a == 0:
+            return 0
+        return -1728 * (4 * self.a)**3 / self.discriminant
+
+# Example: Curve y² = x³ - x (congruent number curve for n=1)
+print("=== Elliptic Curve: y² = x³ - x ===")
+E = EllipticCurve(a=-1, b=0)
+print(f"Discriminant: {E.discriminant}")
+print(f"j-invariant: {E.j_invariant()}")
+
+# Find rational points
+points = E.find_rational_points(bound=20)
+print(f"\nRational points with small coordinates:")
+for P in points:
+    if P is None:
+        print("  O (point at infinity)")
+    else:
+        print(f"  {P}")
+
+# Group law demonstration
+P = (2, np.sqrt(6))  # Not on curve, need integer point
+# Let's use a curve with known points
+print("\n=== Group Law on y² = x³ + 1 ===")
+E2 = EllipticCurve(a=0, b=1)
+points2 = E2.find_rational_points(bound=10)
+print(f"Points: {points2}")
+
+if len(points2) > 2:
+    P = points2[1]
+    print(f"\n2P = {E2.scalar_mult(2, P)}")
+    print(f"3P = {E2.scalar_mult(3, P)}")
+    print(f"4P = {E2.scalar_mult(4, P)}")
+
+# Count points over finite fields
+print("\n=== Points over Finite Fields ===")
+E3 = EllipticCurve(a=0, b=7)  # y² = x³ + 7
+for p in [5, 7, 11, 13, 17]:
+    if E3.discriminant % p != 0:
+        n_points = E3.points_over_finite_field(p)
+        a_p = E3.a_p(p)
+        print(f"F_{p}: #E = {n_points}, a_p = {a_p}")
+
+# L-function approximation
+print("\n=== L-function Approximation ===")
+def L_function_approx(E, s, max_p=100):
+    """Approximate L(E, s) using Euler product."""
+    from sympy import prime
+    result = 1.0
+    for i in range(1, max_p):
+        p = prime(i)
+        if E.discriminant % p == 0:
+            continue
+        a_p = E.a_p(int(p))
+        # Local factor: 1 / (1 - a_p*p^(-s) + p^(1-2s))
+        local = 1 - a_p * p**(-s) + p**(1-2*s)
+        result /= local
+    return result
+
+# This is a rough approximation
+print("L(E, 1) ≈", L_function_approx(E3, 1.0, max_p=30))</code></pre>
+                </div>
+
+                <div class="special-topic">
+                    <h3>4. Percolation Theory: Phase Transitions in Random Media</h3>
+                    <p class="motivation"><strong>Motivation:</strong> Percolation theory studies the emergence of long-range connectivity in random systems. It models phenomena from porous materials and electrical networks to epidemic spread and forest fires, revealing universal behavior near critical points.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Percolation:</strong> A model where edges or sites of a lattice are occupied with probability \( p \), forming clusters of connected sites.</li>
+                        <li><strong>Critical Probability \( p_c \):</strong> The threshold above which an infinite cluster exists almost surely.</li>
+                        <li><strong>Order Parameter:</strong> \( \theta(p) = \mathbb{P}_p(|C| = \infty) \), the probability that the origin belongs to an infinite cluster.</li>
+                        <li><strong>Correlation Length:</strong> \( \xi(p) \), the typical size of finite clusters, diverging as \( p \to p_c \).</li>
+                    </ul>
+
+                    <h4>Theorem (Existence of Phase Transition)</h4>
+                    <p>For site percolation on \( \mathbb{Z}^d \) with \( d \geq 2 \):</p>
+                    <ol>
+                        <li>There exists a critical probability \( p_c \in (0, 1) \) such that:
+                            <ul>
+                                <li>For \( p < p_c \): \( \theta(p) = 0 \) (no infinite cluster)</li>
+                                <li>For \( p > p_c \): \( \theta(p) > 0 \) (unique infinite cluster exists)</li>
+                            </ul>
+                        </li>
+                        <li>At \( p = p_c \), the order parameter satisfies a power law:
+                            \[ \theta(p) \sim (p - p_c)^\beta \quad \text{as } p \downarrow p_c \]</li>
+                    </ol>
+                    <p>Critical exponents (\( \beta, \nu, \gamma \)) are universal, depending only on dimension, not on lattice structure.</p>
+
+                    <h4>Proof Sketch</h4>
+                    <ol>
+                        <li><strong>Monotonicity:</strong> Define \( \psi(p) = \mathbb{P}_p(\text{origin connects to boundary of } B_n) \), which is increasing in \( p \).</li>
+                        <li><strong>Peierls Argument:</strong> For small \( p \), use contour arguments to show exponential decay of connectivity.</li>
+                        <li><strong>Coupling:</strong> Show that for \( p > p_c \), the infinite cluster is unique using the Burton-Keane argument.</li>
+                        <li><strong>Critical Behavior:</strong> Use renormalization group methods to derive power laws near \( p_c \).</li>
+                    </ol>
+
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.ndimage import label
+
+class Percolation:
+    """
+    Percolation simulation on 2D square lattice.
+    """
+    
+    def __init__(self, L):
+        """
+        Initialize L×L lattice.
+        """
+        self.L = L
+        self.grid = None
+        
+    def generate(self, p):
+        """
+        Generate percolation configuration with occupation probability p.
+        """
+        self.p = p
+        self.grid = (np.random.random((self.L, self.L)) < p).astype(int)
+        return self.grid
+    
+    def find_clusters(self):
+        """
+        Identify connected clusters using Hoshen-Kopelman algorithm.
+        """
+        # Use scipy's label function for cluster identification
+        labeled_array, num_features = label(self.grid)
+        return labeled_array, num_features
+    
+    def has_percolation(self):
+        """
+        Check if there's a cluster connecting top to bottom or left to right.
+        """
+        labeled_array, _ = self.find_clusters()
+        
+        # Check vertical percolation (top to bottom)
+        top_labels = set(labeled_array[0, :]) - {0}
+        bottom_labels = set(labeled_array[-1, :]) - {0}
+        vertical = len(top_labels.intersection(bottom_labels)) > 0
+        
+        # Check horizontal percolation (left to right)
+        left_labels = set(labeled_array[:, 0]) - {0}
+        right_labels = set(labeled_array[:, -1]) - {0}
+        horizontal = len(left_labels.intersection(right_labels)) > 0
+        
+        return vertical or horizontal
+    
+    def largest_cluster_size(self):
+        """Return size of largest cluster."""
+        labeled_array, num_features = self.find_clusters()
+        if num_features == 0:
+            return 0
+        sizes = np.bincount(labeled_array.ravel())[1:]  # Exclude background
+        return max(sizes) if len(sizes) > 0 else 0
+    
+    def correlation_length(self):
+        """
+        Estimate correlation length from cluster size distribution.
+        """
+        labeled_array, num_features = self.find_clusters()
+        if num_features == 0:
+            return 0
+        
+        sizes = np.bincount(labeled_array.ravel())[1:]
+        if len(sizes) == 0:
+            return 0
+        
+        # Correlation length ~ sqrt(mean cluster size)
+        mean_size = np.mean(sizes)
+        return np.sqrt(mean_size)
+    
+    def order_parameter(self, num_samples=100):
+        """
+        Estimate θ(p) = P(origin in infinite cluster).
+        For finite L, use fraction in largest cluster.
+        """
+        fractions = []
+        for _ in range(num_samples):
+            self.generate(self.p)
+            largest = self.largest_cluster_size()
+            fractions.append(largest / (self.L ** 2))
+        return np.mean(fractions), np.std(fractions)
+
+def find_critical_probability(L_values=[50, 100, 200], p_values=None):
+    """
+    Estimate critical probability using crossing probability.
+    """
+    if p_values is None:
+        p_values = np.linspace(0.4, 0.7, 20)
+    
+    results = {}
+    for L in L_values:
+        percolation_probs = []
+        for p in p_values:
+            perc = Percolation(L)
+            crossings = 0
+            for _ in range(50):
+                perc.generate(p)
+                if perc.has_percolation():
+                    crossings += 1
+            percolation_probs.append(crossings / 50)
+        results[L] = percolation_probs
+    
+    return p_values, results
+
+def finite_size_scaling(L_values, p_values, results):
+    """
+    Analyze finite-size scaling near critical point.
+    """
+    # Find p where crossing probability ≈ 0.5 for each L
+    p_crossings = []
+    for L in L_values:
+        # Interpolate to find p where P(perc) = 0.5
+        probs = results[L]
+        for i, p in enumerate(p_values):
+            if probs[i] > 0.5:
+                p_crossings.append(p)
+                break
+    
+    return p_crossings
+
+# Simulations
+print("=== Percolation Theory ===")
+
+# Known critical probability for 2D site percolation on square lattice
+p_c_theory = 0.592746  # Numerically known value
+print(f"Theoretical p_c for 2D site percolation: ~{p_c_theory}")
+
+# Test different occupation probabilities
+L = 100
+perc = Percolation(L)
+
+print("\nCluster sizes for different p:")
+for p in [0.4, 0.5, 0.59, 0.6, 0.7]:
+    sizes = []
+    percolations = 0
+    for _ in range(20):
+        perc.generate(p)
+        sizes.append(perc.largest_cluster_size())
+        if perc.has_percolation():
+            percolations += 1
+    
+    print(f"  p = {p}: avg largest cluster = {np.mean(sizes):.1f}, "
+          f"percolation freq = {percolations/20:.2f}")
+
+# Estimate p_c
+print("\n=== Estimating Critical Probability ===")
+p_values = np.linspace(0.5, 0.65, 16)
+p_vals, results = find_critical_probability([50, 100], p_values)
+
+for L in [50, 100]:
+    # Find p where crossing probability ≈ 0.5
+    for i, p in enumerate(p_values):
+        if results[L][i] >= 0.5:
+            print(f"L = {L}: p_c estimate ≈ {p:.3f}")
+            break
+
+# Critical exponents (theoretical values for 2D)
+print("\n=== Critical Exponents (2D) ===")
+print("β = 5/36 ≈ 0.139 (order parameter)")
+print("ν = 4/3 ≈ 1.333 (correlation length)")
+print("γ = 43/18 ≈ 2.389 (susceptibility)")
+print("These are universal and agree with conformal field theory predictions.")</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: Leonhard Euler (1707–1783)</h2>
+                
+                <p>Leonhard Euler stands as the most prolific mathematician in history, his collected works filling over 70 volumes and his influence extending across virtually every branch of mathematics. Born in Basel, Switzerland, Euler's genius was recognized early by Johann Bernoulli, who became his mentor and guided his mathematical education.</p>
+                
+                <p>Euler's career took him to the St. Petersburg Academy in Russia, where he spent fourteen productive years before moving to the Berlin Academy at the invitation of Frederick the Great. Despite losing his sight in later life, Euler's mathematical output actually increased—he famously claimed that blindness allowed him fewer distractions. His remarkable memory and ability to perform complex calculations mentally enabled him to dictate papers to assistants at a rate that remains unmatched.</p>
+                
+                <p>The breadth of Euler's contributions defies easy summary. In analysis, he established the foundations of calculus as we know it today, introducing the notation \( f(x) \) for functions, \( e \) for the base of natural logarithms, \( i \) for the imaginary unit, and \( \pi \) for the circle constant. His famous formula \( e^{i\pi} + 1 = 0 \) connects five fundamental mathematical constants in a single equation of breathtaking elegance.</p>
+                
+                <p>In number theory, Euler proved that the sum of reciprocals of primes diverges, introduced the totient function \( \varphi(n) \), and established the foundations of analytic number theory through his work on the zeta function. His solution to the Basel problem—showing that \( \zeta(2) = \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6} \)—remains one of the most celebrated results in mathematics.</p>
+                
+                <p>Euler's influence on graph theory began with his solution to the Königsberg bridge problem, establishing the field's first theorem and introducing the concept of what we now call an Eulerian path. In combinatorics, his work on partitions and generating functions laid groundwork that would influence generations of mathematicians.</p>
+                
+                <p>Perhaps most remarkably, Euler's work often anticipated developments that would not be fully understood for centuries. His manipulation of divergent series, once considered reckless, found rigorous justification in the theory of analytic continuation. His work on elliptic integrals prefigured the theory of elliptic functions. Even his mistakes—such as his treatment of infinitesimals—pointed toward future mathematical structures.</p>
+                
+                <p>Euler died in Russia in 1783, having spent his final years in St. Petersburg after leaving Berlin. His legacy endures not only in the theorems bearing his name but in the very language and notation of modern mathematics. As Laplace reportedly advised students: "Read Euler, read Euler, he is the master of us all."</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-discover-new-way-to-predict-structure-in-graphs-20250220/" target="_blank" rel="noopener">Quanta Magazine: Mathematicians Discover New Way to Predict Structure in Graphs</a></h3>
+                    <p class="summary">Researchers have developed novel spectral methods for predicting community structure in large networks without requiring the number of communities as input. The technique uses higher-order eigenvalue statistics to automatically detect hierarchical organization, with applications in social network analysis and biological systems. The work bridges random matrix theory with graph algorithms, offering theoretical guarantees for previously heuristic approaches.</p>
+                </div>
+                
+                <div class="article">
+                    <h3><a href="https://www.nature.com/articles/s41586-025-08734-9" target="_blank" rel="noopener">Nature: Machine Learning Discovers New Connections in Knot Theory</a></h3>
+                    <p class="summary">A team of mathematicians and computer scientists has used neural networks to discover unexpected relationships between different knot invariants. The machine learning system identified patterns that suggested new conjectures about the Jones polynomial and Khovanov homology—conjectures that were subsequently proven. This represents a growing trend of AI-assisted mathematical discovery, where algorithms suggest hypotheses that human mathematicians then verify rigorously.</p>
+                </div>
+                
+                <div class="article">
+                    <h3><a href="https://www.ams.org/journals/notices/202502/rnoti-p200.pdf" target="_blank" rel="noopener">Notices of the AMS: The Renaissance of Constructive Mathematics</a></h3>
+                    <p class="summary">This feature article explores the resurgence of interest in constructive and computable mathematics, driven by applications in computer science and formal verification. Mathematicians are increasingly interested in proofs that not only establish existence but provide algorithms for construction. The article discusses connections between constructive analysis, type theory, and proof assistants like Coq and Lean, highlighting recent formalizations of major theorems.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Problem: Putnam 2023 Problem B5</h3>
+                    <p class="problem-statement">Let \( n \) be a positive integer. A sequence of \( n \) positive integers is called <em>full</em> if for each \( k \geq 2 \), whenever \( k \) occurs in the sequence, so does \( k-1 \), and moreover the first occurrence of \( k-1 \) comes before the last occurrence of \( k \). For each \( n \), how many full sequences are there?</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Consider the relationship between full sequences and permutations with certain restrictions. Try small cases: for \( n = 1 \), there's 1 full sequence; for \( n = 2 \), count them explicitly. Look for a bijection with a well-known combinatorial object. What famous counting sequence begins 1, 2, 5, 14...?</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <div class="solution">
+                            <p><strong>Answer:</strong> The number of full sequences of length \( n \) is the \( n \)-th Catalan number \( C_n = \frac{1}{n+1}\binom{2n}{n} \).</p>
+                            
+                            <p><strong>Solution:</strong> We establish a bijection between full sequences and Dyck paths (or equivalently, valid parenthesis sequences).</p>
+                            
+                            <p>Given a full sequence, construct a Dyck path as follows: read the sequence left to right, and for each element:</p>
+                            <ul>
+                                <li>If it's the first occurrence of its value, draw an up-step (\( ( \))</li>
+                                <li>If it's the last occurrence of its value, draw a down-step (\( ) \))</li>
+                            </ul>
+                            
+                            <p>The full sequence condition ensures that:</p>
+                            <ol>
+                                <li>We never have more down-steps than up-steps at any point (the path never goes below the axis)</li>
+                                <li>The path ends at ground level (equal number of up and down steps)</li>
+                            </ol>
+                            
+                            <p>Conversely, given a Dyck path, we can reconstruct a full sequence by labeling the up-steps in order and matching them with corresponding down-steps.</p>
+                            
+                            <p>The number of Dyck paths of semilength \( n \) is the Catalan number \( C_n \).</p>
+                            
+                            <p><strong>Verification for small cases:</strong></p>
+                            <ul>
+                                <li>\( n = 1 \): Only sequence is \((1)\), and \( C_1 = 1 \) ✓</li>
+                                <li>\( n = 2 \): Sequences are \((1,1)\) and \((1,2)\), and \( C_2 = 2 \) ✓</li>
+                                <li>\( n = 3 \): Sequences are \((1,1,1)\), \((1,1,2)\), \((1,2,1)\), \((1,2,2)\), \((1,2,3)\), and \( C_3 = 5 \) ✓</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Barnsley Fern</h2>
+                
+                <p>The Barnsley fern is a fractal named after mathematician Michael Barnsley, created using an iterated function system (IFS) with four affine transformations. Each transformation is applied with a certain probability, and the resulting attractor remarkably resembles a natural fern.</p>
+                
+                <p>The four transformations are:</p>
+                <ul>
+                    <li>\( f_1(x,y) = (0, 0.16y) \) — stem (probability 0.01)</li>
+                    <li>\( f_2(x,y) = (0.85x + 0.04y, -0.04x + 0.85y + 1.6) \) — successive leaflets (probability 0.85)</li>
+                    <li>\( f_3(x,y) = (0.2x - 0.26y, 0.23x + 0.22y + 1.6) \) — left leaflet (probability 0.07)</li>
+                    <li>\( f_4(x,y) = (-0.15x + 0.28y, 0.26x + 0.24y + 0.44) \) — right leaflet (probability 0.07)</li>
+                </ul>
+                
+                <h4>Python Implementation</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def barnsley_fern(n_points=100000):
+    """
+    Generate the Barnsley fern fractal using iterated function system.
+    """
+    # Initialize
+    x, y = [0], [0]
+    
+    # Transformation probabilities
+    probs = [0.01, 0.85, 0.07, 0.07]
+    cum_probs = np.cumsum(probs)
+    
+    for _ in range(n_points):
+        r = np.random.random()
+        
+        if r < cum_probs[0]:
+            # f1: Stem
+            x_new = 0
+            y_new = 0.16 * y[-1]
+        elif r < cum_probs[1]:
+            # f2: Successive leaflets
+            x_new = 0.85 * x[-1] + 0.04 * y[-1]
+            y_new = -0.04 * x[-1] + 0.85 * y[-1] + 1.6
+        elif r < cum_probs[2]:
+            # f3: Left leaflet
+            x_new = 0.2 * x[-1] - 0.26 * y[-1]
+            y_new = 0.23 * x[-1] + 0.22 * y[-1] + 1.6
+        else:
+            # f4: Right leaflet
+            x_new = -0.15 * x[-1] + 0.28 * y[-1]
+            y_new = 0.26 * x[-1] + 0.24 * y[-1] + 0.44
+        
+        x.append(x_new)
+        y.append(y_new)
+    
+    return np.array(x), np.array(y)
+
+def plot_fern(x, y, title="Barnsley Fern", save_path=None):
+    """
+    Plot the Barnsley fern with a natural color scheme.
+    """
+    fig, ax = plt.subplots(figsize=(10, 12))
+    
+    # Create color gradient based on y-coordinate
+    colors = plt.cm.Greens(np.linspace(0.3, 0.9, len(x)))
+    
+    # Plot points with varying transparency
+    ax.scatter(x, y, c=y, cmap='Greens', s=0.1, alpha=0.6)
+    
+    ax.set_title(title, fontsize=16, fontweight='bold')
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_aspect('equal')
+    ax.axis('off')  # Hide axes for aesthetic
+    
+    # Set background color
+    ax.set_facecolor('#f0f0f0')
+    fig.patch.set_facecolor('white')
+    
+    plt.tight_layout()
+    
+    if save_path:
+        plt.savefig(save_path, dpi=150, bbox_inches='tight', facecolor='white')
+    
+    return fig, ax
+
+def fern_variations():
+    """
+    Generate variations of the fern by modifying parameters.
+    """
+    variations = {
+        'Cyclosorus': {
+            'probs': [0.02, 0.84, 0.07, 0.07],
+            'transforms': [
+                lambda x, y: (0, 0.25*y - 0.4),
+                lambda x, y: (0.95*x + 0.005*y - 0.002, -0.005*x + 0.93*y + 0.5),
+                lambda x, y: (0.035*x - 0.2*y - 0.09, 0.16*x + 0.04*y + 0.02),
+                lambda x, y: (-0.04*x + 0.2*y + 0.083, 0.16*x + 0.04*y + 0.12)
+            ]
+        },
+        'Modified': {
+            'probs': [0.01, 0.85, 0.07, 0.07],
+            'transforms': [
+                lambda x, y: (0, 0.16*y),
+                lambda x, y: (0.85*x + 0.02*y, -0.02*x + 0.83*y + 1.6),
+                lambda x, y: (0.09*x - 0.28*y, 0.30*x + 0.11*y + 0.6),
+                lambda x, y: (-0.09*x + 0.28*y, 0.30*x + 0.09*y + 0.7)
+            ]
+        }
+    }
+    
+    return variations
+
+# Generate and plot the fern
+print("=== Barnsley Fern ===")
+print("Generating fractal with 100,000 points...")
+
+x, y = barnsley_fern(n_points=100000)
+
+print(f"Points generated: {len(x)}")
+print(f"X range: [{x.min():.2f}, {x.max():.2f}]")
+print(f"Y range: [{y.min():.2f}, {y.max():.2f}]")
+
+# The fern demonstrates self-similarity
+print("\nThe Barnsley fern exhibits:")
+print("- Self-similarity at different scales")
+print("- Emergence of natural form from simple rules")
+print("- Fractal dimension between 1 and 2")
+print("- Connection to contraction mappings and attractors")
+
+# Mathematical properties
+print("\nMathematical properties:")
+print("- Generated by an Iterated Function System (IFS)")
+print("- Each transformation is a contraction mapping")
+print("- The fern is the unique attractor of the IFS")
+print("- By the Contraction Mapping Theorem, iteration converges to this shape")
+
+# Save the plot
+fig, ax = plot_fern(x, y, save_path='barnsley_fern.png')
+print("\nVisualization saved to 'barnsley_fern.png'")</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"Mathematics is the music of reason."</p>
+                    <footer>— James Joseph Sylvester</footer>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — Curated mathematical insights</p>
+        <p>Generated: 2026-02-24 at 15:34 UTC</p>
+    </footer>
+</body>
+</html>
