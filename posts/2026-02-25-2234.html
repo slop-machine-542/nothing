@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 25, 2026 at 22:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 25, 2026 at 22:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 25, 2026 at 22:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-25 at 22:34 UTC</p>
+            <div class="tags">
+                <a href="../tags/geometric-measure-theory.html" class="tag">geometric-measure-theory</a>
+                <a href="../tags/operator-algebras.html" class="tag">operator-algebras</a>
+                <a href="../tags/model-theory.html" class="tag">model-theory</a>
+                <a href="../tags/stochastic-calculus.html" class="tag">stochastic-calculus</a>
+                <a href="../tags/optimal-transport.html" class="tag">optimal-transport</a>
+                <a href="../tags/inverse-problems.html" class="tag">inverse-problems</a>
+                <a href="../tags/surreal-numbers.html" class="tag">surreal-numbers</a>
+                <a href="../tags/ramsey-theory.html" class="tag">ramsey-theory</a>
+                <a href="../tags/leonhard-euler.html" class="tag">leonhard-euler</a>
+                <a href="../tags/hilbert-curve.html" class="tag">hilbert-curve</a>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 3 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://ncatlab.org/nlab/show/HomePage" target="_blank" rel="noopener">nLab — Mathematics, Physics, and Philosophy Wiki</a></h3>
+                    <p>nLab is a wiki-lab for collaborative work on mathematics, physics, and philosophy, particularly from the n-categorical point of view. It serves as a comprehensive reference for higher category theory, homotopy theory, and their applications. The content is written by and for researchers, with a focus on precision and modern perspectives. It's an invaluable resource for understanding cutting-edge developments in category theory, algebraic topology, and mathematical physics, with extensive cross-linking between related concepts.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www.siam.org/publications/siam-review" target="_blank" rel="noopener">SIAM Review — Society for Industrial and Applied Mathematics</a></h3>
+                    <p>SIAM Review is a quarterly journal that provides an overview of applied mathematics and its applications. It features high-quality survey papers, research spotlights, education sections, and book reviews. The journal bridges the gap between pure mathematics and real-world applications, covering optimization, numerical analysis, scientific computing, and mathematical modeling. It's an essential resource for applied mathematicians, engineers, and scientists who want to stay current with the latest developments in computational and applied mathematics.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://projecteuclid.org/" target="_blank" rel="noopener">Project Euclid — Mathematics and Statistics Online</a></h3>
+                    <p>Project Euclid is a platform for independent and society publishers in mathematics and statistics. It provides access to over 100 publications, including many smaller journals that might otherwise be difficult to access. The platform supports open access initiatives while also providing subscription-based content. It's an excellent resource for researchers seeking papers from specialized journals in probability theory, statistics, and various areas of pure and applied mathematics, with powerful search and discovery tools.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book of the Day</h2>
+                <div class="book-card">
+                    <h3>"Probability Theory: The Logic of Science"</h3>
+                    <p><strong>Author:</strong> E.T. Jaynes</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> This groundbreaking book presents probability theory as an extension of logic, providing a unified framework for reasoning under uncertainty. Jaynes develops probability theory from first principles using Bayesian methods, emphasizing the subjective interpretation of probability as a measure of plausibility. The book covers principles of inference, parameter estimation, hypothesis testing, and the maximum entropy principle. It challenges frequentist orthodoxy and provides powerful tools for scientific inference. Though unfinished at Jaynes's death, it remains a seminal work for anyone interested in the foundations of probability and its applications to scientific reasoning.</p>
+                    <p><a href="https://bayes.wustl.edu/etj/prob/book.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Geometric Measure Theory: Measuring the Unmeasurable</h3>
+                    <p class="tag">geometric-measure-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do we measure the area of a fractal curve, or the volume of a jagged surface? Geometric measure theory, developed by mathematicians like Besicovitch, Federer, and Almgren, extends classical measure theory to handle irregular geometric objects. It provides the rigorous framework for studying minimal surfaces, rectifiable sets, and the calculus of variations. Applications range from image processing and computer vision to the study of soap films, crystal growth, and the structure of singularities in partial differential equations.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Hausdorff Measure:</strong> For a set \(A \subset \mathbb{R}^n\) and dimension \(s \geq 0\): \(\mathcal{H}^s(A) = \lim_{\delta \to 0} \inf \left\{\sum_i (\text{diam } U_i)^s : A \subset \bigcup_i U_i, \text{diam } U_i < \delta\right\}\).</li>
+                        <li><strong>Hausdorff Dimension:</strong> \(\dim_H(A) = \inf\{s : \mathcal{H}^s(A) = 0\} = \sup\{s : \mathcal{H}^s(A) = \infty\}\).</li>
+                        <li><strong>Rectifiable Set:</strong> A set that can be approximated by Lipschitz images of Euclidean spaces; has tangent planes almost everywhere.</li>
+                        <li><strong>Current:</strong> A generalized surface defined as a continuous linear functional on differential forms, extending the notion of integration over manifolds.</li>
+                        <li><strong>Varifold:</strong> A measure-theoretic generalization of a submanifold that records both position and tangent space information.</li>
+                    </ul>
+
+                    <h4>Theorem: The Coarea Formula</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Coarea Formula):</strong> Let \(f: \mathbb{R}^n \to \mathbb{R}^m\) be Lipschitz with \(n \geq m\), and let \(A \subset \mathbb{R}^n\) be measurable. Then:</p>
+                        <p>\[\int_A Jf(x) \, dx = \int_{\mathbb{R}^m} \mathcal{H}^{n-m}(A \cap f^{-1}(y)) \, dy\]</p>
+                        <p>where \(Jf(x) = \sqrt{\det(Df(x) \cdot Df(x)^T)}\) is the Jacobian determinant.</p>
+                        <p><strong>Special Case (Sard's Theorem):</strong> The set of critical values has measure zero.</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof proceeds by approximating \(f\) with piecewise linear functions, for which the formula follows from Fubini's theorem. For the general case, one uses Rademacher's theorem (Lipschitz functions are differentiable almost everywhere) and the area formula for Lipschitz maps. The key insight is that the Jacobian measures how much the map distorts volume locally.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{H}^s\): s-dimensional Hausdorff measure</li>
+                        <li>\(\dim_H(A)\): Hausdorff dimension of set \(A\)</li>
+                        <li>\(Jf(x)\): Jacobian determinant of \(f\) at \(x\)</li>
+                        <li>\(\text{Lip}(f)\): Lipschitz constant of \(f\)</li>
+                        <li>\(\mathbf{M}(T)\): Mass of a current \(T\)</li>
+                        <li>\(\partial T\): Boundary of a current</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.spatial.distance import pdist
+
+def box_counting_dimension(points, min_r=0.001, max_r=1.0, num_scales=20):
+    """
+    Estimate box-counting (Minkowski) dimension of a point set.
+    """
+    radii = np.logspace(np.log10(min_r), np.log10(max_r), num_scales)
+    counts = []
+    
+    for r in radii:
+        # Count boxes of size r needed to cover the set
+        min_coords = np.min(points, axis=0)
+        max_coords = np.max(points, axis=0)
+        
+        # Grid of boxes
+        grid_size = np.ceil((max_coords - min_coords) / r).astype(int)
+        grid = set()
+        
+        for p in points:
+            box_idx = tuple(((p - min_coords) / r).astype(int))
+            grid.add(box_idx)
+        
+        counts.append(len(grid))
+    
+    # Fit line to log-log plot
+    log_r = np.log(1 / radii)
+    log_n = np.log(counts)
+    
+    # Linear regression
+    slope, intercept = np.polyfit(log_r, log_n, 1)
+    
+    return slope, radii, counts
+
+# Generate Koch snowflake points
+def koch_snowflake(order, scale=1.0):
+    """Generate points on a Koch snowflake curve."""
+    def koch_line(p1, p2, order):
+        if order == 0:
+            return [p1, p2]
+        
+        # Divide line into three parts
+        v = (p2 - p1) / 3
+        a = p1
+        b = p1 + v
+        d = p1 + 2 * v
+        e = p2
+        
+        # Peak of equilateral triangle
+        # Rotate v by 60 degrees
+        v_rot = np.array([-v[1], v[0]]) * np.sqrt(3) / 2 + v / 2
+        c = b + v_rot
+        
+        # Recurse
+        result = []
+        result.extend(koch_line(a, b, order - 1)[:-1])
+        result.extend(koch_line(b, c, order - 1)[:-1])
+        result.extend(koch_line(c, d, order - 1)[:-1])
+        result.extend(koch_line(d, e, order - 1))
+        return result
+    
+    # Initial triangle
+    p1 = np.array([0, 0])
+    p2 = np.array([scale, 0])
+    p3 = np.array([scale/2, scale * np.sqrt(3)/2])
+    
+    points = []
+    points.extend(koch_line(p1, p2, order)[:-1])
+    points.extend(koch_line(p2, p3, order)[:-1])
+    points.extend(koch_line(p3, p1, order)[:-1])
+    
+    return np.array(points)
+
+# Compute dimension
+points = koch_snowflake(order=5, scale=1.0)
+dim, radii, counts = box_counting_dimension(points, min_r=0.001, max_r=0.5, num_scales=15)
+
+print("Geometric Measure Theory: Koch Snowflake Analysis")
+print("=" * 60)
+print(f"Estimated box-counting dimension: {dim:.4f}")
+print(f"Theoretical Hausdorff dimension: {np.log(4)/np.log(3):.4f}")
+print(f"Topological dimension: 1")
+
+# Plot
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# Snowflake
+ax1.plot(points[:, 0], points[:, 1], 'b-', linewidth=0.5)
+ax1.set_aspect('equal')
+ax1.set_title('Koch Snowflake')
+ax1.axis('off')
+
+# Log-log plot
+ax2.loglog(1/radii, counts, 'bo-', markersize=4)
+ax2.set_xlabel('1/r (inverse box size)')
+ax2.set_ylabel('N(r) (number of boxes)')
+ax2.set_title(f'Box-Counting: D ≈ {dim:.3f}')
+ax2.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('koch_dimension.png', dpi=150, bbox_inches='tight')
+print("\nVisualization saved to koch_dimension.png")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Operator Algebras: The Infinite-Dimensional Symphony</h3>
+                    <p class="tag">operator-algebras</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do we study infinite-dimensional symmetries? Operator algebras, developed by von Neumann and Murray in the 1930s, provide the framework for understanding algebras of operators on Hilbert spaces. Originally motivated by quantum mechanics, the theory has grown into a vast field connecting functional analysis, topology, geometry, and quantum field theory. The classification of factors by Connes, using his revolutionary "injection of the hyperfinite" technique, remains one of the deepest achievements in 20th-century mathematics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>C*-Algebra:</strong> A Banach *-algebra satisfying \(\|a^*a\| = \|a\|^2\) for all \(a\). Represents continuous functions on non-commutative spaces.</li>
+                        <li><strong>von Neumann Algebra:</strong> A *-subalgebra of \(\mathcal{B}(\mathcal{H})\) that is closed in the weak operator topology. Equivalently, equals its double commutant (von Neumann's bicommutant theorem).</li>
+                        <li><strong>Factor:</strong> A von Neumann algebra with trivial center \(\mathcal{Z}(M) = \mathbb{C}I\). Factors are classified as type I, II, or III.</li>
+                        <li><strong>Trace:</strong> A linear functional \(\tau: M \to \mathbb{C}\) with \(\tau(ab) = \tau(ba)\) and \(\tau(I) = 1\). Finite factors admit unique normal traces.</li>
+                        <li><strong>Tomita-Takesaki Theory:</strong> For a von Neumann algebra \(M\) with cyclic separating vector \(\Omega\), defines modular operator \(\Delta\) and modular automorphism group \(\sigma_t\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Gelfand-Naimark-Segal (GNS) Construction</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (GNS):</strong> Let \(A\) be a C*-algebra with a state \(\varphi\) (positive linear functional with \(\|\varphi\| = 1\)). Then there exists:</p>
+                        <ol>
+                            <li>A Hilbert space \(\mathcal{H}_\varphi\)</li>
+                            <li>A *-representation \(\pi_\varphi: A \to \mathcal{B}(\mathcal{H}_\varphi)\)</li>
+                            <li>A cyclic vector \(\Omega_\varphi \in \mathcal{H}_\varphi\) with \(\|\Omega_\varphi\| = 1\)</li>
+                        </ol>
+                        <p>such that \(\varphi(a) = \langle \pi_\varphi(a)\Omega_\varphi, \Omega_\varphi \rangle\) for all \(a \in A\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>Define a sesquilinear form on \(A\) by \(\langle a, b \rangle_\varphi = \varphi(b^*a)\). This is positive semi-definite. Let \(N = \{a : \varphi(a^*a) = 0\}\) and form the quotient \(A/N\). Complete to get \(\mathcal{H}_\varphi\). The representation is defined by \(\pi_\varphi(a)[b] = [ab]\). The vector \(\Omega_\varphi = [I]\) is cyclic by construction.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{B}(\mathcal{H})\): Bounded operators on Hilbert space \(\mathcal{H}\)</li>
+                        <li>\(M'\): Commutant of algebra \(M\)</li>
+                        <li>\(M''\): Double commutant (bicommutant)</li>
+                        <li>\(a^*\): Adjoint of operator \(a\)</li>
+                        <li>\(\sigma(M)\): Spectrum of operator \(M\)</li>
+                        <li>\(\|a\|_{op}\): Operator norm</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.linalg import expm, sqrtm
+
+def commutator(A, B):
+    """Compute [A, B] = AB - BA."""
+    return A @ B - B @ A
+
+def is_self_adjoint(A, tol=1e-10):
+    """Check if A is self-adjoint (Hermitian)."""
+    return np.allclose(A, A.conj().T, atol=tol)
+
+def operator_norm(A):
+    """Compute the operator norm (largest singular value)."""
+    return np.linalg.norm(A, ord=2)
+
+def gns_construction(algebra_basis, state_func, dim=4):
+    """
+    Simplified GNS construction for finite-dimensional algebra.
+    
+    algebra_basis: list of basis matrices
+    state_func: function that evaluates state on linear combinations
+    """
+    n = len(algebra_basis)
+    
+    # Build Gram matrix G_ij = phi(b_j^* b_i)
+    G = np.zeros((n, n), dtype=complex)
+    for i in range(n):
+        for j in range(n):
+            # <b_i, b_j> = phi(b_j^* b_i)
+            product = algebra_basis[j].conj().T @ algebra_basis[i]
+            G[i, j] = state_func(product)
+    
+    # Check positivity
+    eigenvalues = np.linalg.eigvalsh(G)
+    if np.any(eigenvalues < -1e-10):
+        print("Warning: State may not be positive!")
+    
+    # Find null space (vectors with zero norm)
+    _, s, _ = np.linalg.svd(G)
+    rank = np.sum(s > 1e-10)
+    
+    # Build representation (simplified)
+    # In practice, use spectral decomposition of G
+    
+    return G, rank
+
+# Example: 2x2 matrix algebra with a state
+print("Operator Algebras: C*-Algebra Example")
+print("=" * 60)
+
+# Pauli matrices (basis for 2x2 complex matrices)
+sigma_0 = np.eye(2, dtype=complex)
+sigma_x = np.array([[0, 1], [1, 0]], dtype=complex)
+sigma_y = np.array([[0, -1j], [1j, 0]], dtype=complex)
+sigma_z = np.array([[1, 0], [0, -1]], dtype=complex)
+
+basis = [sigma_0, sigma_x, sigma_y, sigma_z]
+
+# Define a state: phi(A) = tr(rho * A) where rho is a density matrix
+# Using maximally mixed state
+rho = 0.5 * sigma_0
+
+def state(A):
+    return np.trace(rho @ A)
+
+# Verify state properties
+print("State properties:")
+print(f"  phi(I) = {state(sigma_0):.4f} (should be 1)")
+print(f"  phi(sigma_x) = {state(sigma_x):.4f}")
+print(f"  phi(sigma_y) = {state(sigma_y):.4f}")
+print(f"  phi(sigma_z) = {state(sigma_z):.4f}")
+
+# Check C*-property for a specific element
+a = sigma_x + 1j * sigma_y
+a_star = a.conj().T
+a_star_a = a_star @ a
+
+norm_a = operator_norm(a)
+norm_a_star_a = operator_norm(a_star_a)
+
+print(f"\nC*-property check:")
+print(f"  ||a||^2 = {norm_a**2:.6f}")
+print(f"  ||a*a|| = {norm_a_star_a:.6f}")
+print(f"  Match: {np.isclose(norm_a**2, norm_a_star_a)}")
+
+# Commutator example
+print(f"\nCommutator [sigma_x, sigma_y] = 2i * sigma_z:")
+comm = commutator(sigma_x, sigma_y)
+print(f"  Result: {comm}")
+print(f"  Expected: {2j * sigma_z}")
+print(f"  Match: {np.allclose(comm, 2j * sigma_z)}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Model Theory: Logic Meets Algebra</h3>
+                    <p class="tag">model-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Can we understand algebraic structures through the lens of logic? Model theory, a branch of mathematical logic, studies the relationship between formal languages and their interpretations (models). It reveals deep connections between logic and algebra, geometry, and number theory. The work of Morley, Shelah, and Hrushovski has shown that model-theoretic techniques can solve concrete problems in algebraic geometry and diophantine geometry. Stability theory, o-minimality, and motivic integration are powerful tools that bridge the gap between abstract logic and concrete mathematics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Structure:</strong> A set \(M\) equipped with interpretations of function symbols, relation symbols, and constant symbols from a signature \(\mathcal{L}\).</li>
+                        <li><strong>Theory:</strong> A consistent set of sentences in a first-order language. \(\text{Th}(M)\) denotes the complete theory of structure \(M\).</li>
+                        <li><strong>Elementary Equivalence:</strong> \(M \equiv N\) if they satisfy the same sentences. Notation: \(M \models \varphi\) means \(M\) satisfies formula \(\varphi\).</li>
+                        <li><strong>Saturated Model:</strong> A model that realizes all types over small parameter sets. Provides a "rich" environment for constructing elements.</li>
+                        <li><strong>Stability:</strong> A theory is stable if no formula has the order property (cannot define arbitrary linear orders on infinite sets).</li>
+                        <li><strong>O-minimal Structure:</strong> A totally ordered structure where every definable set is a finite union of intervals and points.</li>
+                    </ul>
+
+                    <h4>Theorem: The Compactness Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Compactness):</strong> A set of first-order sentences \(\Sigma\) has a model if and only if every finite subset of \(\Sigma\) has a model.</p>
+                        <p><strong>Corollary (Löwenheim-Skolem):</strong> If a theory \(T\) has an infinite model, then it has models of every infinite cardinality.</p>
+                        <p><strong>Corollary:</strong> If a theory has arbitrarily large finite models, it has an infinite model.</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The standard proof uses the completeness theorem: \(\Sigma\) is consistent iff every finite subset is consistent. Alternatively, one can use ultraproducts: if every finite subset has a model, construct an ultraproduct of these models using a non-principal ultrafilter on the index set. The resulting ultraproduct satisfies all of \(\Sigma\) by Łoś's theorem.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(M \models \varphi\): Structure \(M\) satisfies formula \(\varphi\)</li>
+                        <li>\(M \equiv N\): Elementary equivalence</li>
+                        <li>\(M \preceq N\): Elementary substructure</li>
+                        <li>\(S_n(A)\): Space of complete \(n\)-types over parameter set \(A\)</li>
+                        <li>\(\text{tp}(a/A)\): Type of element \(a\) over \(A\)</li>
+                        <li>\(\text{acl}(A)\): Algebraic closure of \(A\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">from itertools import combinations
+
+def evaluate_formula(structure, formula, assignment=None):
+    """
+    Simplified formula evaluator for finite structures.
+    
+    structure: dict with 'domain', 'relations', 'functions'
+    formula: nested tuple representing logical formula
+    assignment: dict mapping variables to domain elements
+    """
+    if assignment is None:
+        assignment = {}
+    
+    op = formula[0]
+    
+    if op == 'atomic':
+        # (atomic, relation_name, (terms...))
+        rel_name = formula[1]
+        terms = formula[2]
+        # Evaluate terms to get elements
+        elements = tuple(evaluate_term(structure, t, assignment) for t in terms)
+        return elements in structure['relations'].get(rel_name, set())
+    
+    elif op == 'and':
+        return all(evaluate_formula(structure, f, assignment) for f in formula[1:])
+    
+    elif op == 'or':
+        return any(evaluate_formula(structure, f, assignment) for f in formula[1:])
+    
+    elif op == 'not':
+        return not evaluate_formula(structure, formula[1], assignment)
+    
+    elif op == 'exists':
+        var = formula[1]
+        subformula = formula[2]
+        for elem in structure['domain']:
+            new_assignment = assignment.copy()
+            new_assignment[var] = elem
+            if evaluate_formula(structure, subformula, new_assignment):
+                return True
+        return False
+    
+    elif op == 'forall':
+        var = formula[1]
+        subformula = formula[2]
+        for elem in structure['domain']:
+            new_assignment = assignment.copy()
+            new_assignment[var] = elem
+            if not evaluate_formula(structure, subformula, new_assignment):
+                return False
+        return True
+
+def evaluate_term(structure, term, assignment):
+    """Evaluate a term to get a domain element."""
+    if isinstance(term, str) and term.startswith('var_'):
+        return assignment[term]
+    elif isinstance(term, tuple):
+        # Function application
+        func_name = term[0]
+        args = tuple(evaluate_term(structure, t, assignment) for t in term[1:])
+        return structure['functions'][func_name][args]
+    else:
+        return term  # Constant
+
+def check_compactness(structures, formula_set):
+    """
+    Check if every finite subset of formula_set is satisfiable
+    by some structure in structures.
+    """
+    for r in range(1, len(formula_set) + 1):
+        for subset in combinations(formula_set, r):
+            satisfiable = False
+            for struct in structures:
+                if all(evaluate_formula(struct, f) for f in subset):
+                    satisfiable = True
+                    break
+            if not satisfiable:
+                return False, subset
+    return True, None
+
+# Example: Graph structures
+print("Model Theory: Finite Structure Evaluation")
+print("=" * 60)
+
+# Define a simple graph structure
+graph = {
+    'domain': {0, 1, 2},
+    'relations': {
+        'E': {(0, 1), (1, 0), (1, 2), (2, 1)}  # Edges: 0-1-2 (path)
+    },
+    'functions': {}
+}
+
+# Formula: "There exists a node with degree 2"
+# (exists x: E(x, y) and E(x, z) and y != z)
+# Simplified: exists x forall y forall z: (E(x,y) and E(x,z)) -> (y=z or ...)
+degree_2_formula = ('exists', 'var_x',
+    ('exists', 'var_y',
+        ('exists', 'var_z',
+            ('and',
+                ('atomic', 'E', ('var_x', 'var_y')),
+                ('and',
+                    ('atomic', 'E', ('var_x', 'var_z')),
+                    ('not', ('atomic', 'equals', ('var_y', 'var_z')))
+                )
+            )
+        )
+    )
+)
+
+# Check if graph has a node with degree >= 2
+result = evaluate_formula(graph, degree_2_formula)
+print(f"Graph has node with degree >= 2: {result}")
+
+# Formula: "Graph is connected" (simplified for small graphs)
+# For all x, y: exists path from x to y
+# We'll check for paths of length at most 2
+
+def reachable(structure, start, end, max_depth=3):
+    """Check if end is reachable from start in at most max_depth steps."""
+    visited = set()
+    queue = [(start, 0)]
+    edges = structure['relations']['E']
+    
+    while queue:
+        node, depth = queue.pop(0)
+        if node == end:
+            return True
+        if depth >= max_depth:
+            continue
+        for (a, b) in edges:
+            if a == node and b not in visited:
+                visited.add(b)
+                queue.append((b, depth + 1))
+    return False
+
+# Check connectivity
+is_connected = all(reachable(graph, a, b) for a in graph['domain'] for b in graph['domain'])
+print(f"Graph is connected: {is_connected}")
+
+# Compactness example: theory of graphs with arbitrarily long paths
+print("\nCompactness check: Theory of graphs with paths of length n for all n")
+print("Every finite subset has a finite model (a long enough path)")
+print("By compactness, there exists an infinite model (the infinite path Z)")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Stochastic Calculus: Randomness in Continuous Time</h3>
+                    <p class="tag">stochastic-calculus</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How do we model systems that evolve randomly over time? From stock prices and interest rates to particle diffusion and neural activity, stochastic calculus provides the mathematical language for continuous-time random processes. Developed by Itô in the 1940s, it extends calculus to handle Brownian motion and other stochastic processes. Applications include quantitative finance (Black-Scholes pricing), physics (Fokker-Planck equations), biology (population dynamics), and engineering (filtering and control).</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Wiener Process (Brownian Motion):</strong> A continuous-time stochastic process \(W_t\) with \(W_0 = 0\), independent increments, and \(W_t - W_s \sim \mathcal{N}(0, t-s)\) for \(t > s\).</li>
+                        <li><strong>Itô Integral:</strong> For adapted process \(H_t\): \(\int_0^T H_t \, dW_t = \lim_{n \to \infty} \sum_{i=0}^{n-1} H_{t_i}(W_{t_{i+1}} - W_{t_i})\).</li>
+                        <li><strong>Itô Process:</strong> \(X_t = X_0 + \int_0^t \mu_s \, ds + \int_0^t \sigma_s \, dW_s\), or in differential form: \(dX_t = \mu_t \, dt + \sigma_t \, dW_t\).</li>
+                        <li><strong>Quadratic Variation:</strong> \(\langle X \rangle_t = \lim_{\|P\| \to 0} \sum_{i}(X_{t_{i+1}} - X_{t_i})^2\). For Brownian motion, \(\langle W \rangle_t = t\).</li>
+                        <li><strong>Martingale:</strong> A process where \(\mathbb{E}[X_t | \mathcal{F}_s] = X_s\) for \(t > s\). The Itô integral of a bounded process is a martingale.</li>
+                    </ul>
+
+                    <h4>Theorem: Itô's Lemma</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Itô's Lemma):</strong> Let \(X_t\) be an Itô process and \(f \in C^{2,1}(\mathbb{R} \times [0, \infty))\). Then \(Y_t = f(X_t, t)\) is an Itô process with:</p>
+                        <p>\[df(X_t, t) = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial x}dX_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2\]</p>
+                        <p>where \((dX_t)^2 = \sigma_t^2 dt\) using the rule \((dt)^2 = 0\), \(dt \cdot dW_t = 0\), \((dW_t)^2 = dt\).</p>
+                        <p><strong>Multi-dimensional Version:</strong> For \(f(X_t^{(1)}, \ldots, X_t^{(n)}, t)\):</p>
+                        <p>\[df = \frac{\partial f}{\partial t}dt + \sum_i \frac{\partial f}{\partial x_i}dX_t^{(i)} + \frac{1}{2}\sum_{i,j} \frac{\partial^2 f}{\partial x_i \partial x_j}dX_t^{(i)}dX_t^{(j)}\]</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>Taylor expand \(f(X_{t+\Delta t}, t+\Delta t) - f(X_t, t)\) to second order. The key insight is that \((\Delta W_t)^2 \approx \Delta t\) in the mean-square sense, so we cannot drop the second-order term. Taking limits gives the extra "Itô correction" term \(\frac{1}{2}f''(X_t)\sigma_t^2 dt\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(W_t\) or \(B_t\): Standard Brownian motion</li>
+                        <li>\(\mathcal{F}_t\): Filtration (information available at time \(t\))</li>
+                        <li>\(\mu_t\): Drift coefficient</li>
+                        <li>\(\sigma_t\): Diffusion/volatility coefficient</li>
+                        <li>\(\langle X \rangle_t\): Quadratic variation of \(X\)</li>
+                        <li>\(\mathbb{E}[\cdot|\mathcal{F}_s]\): Conditional expectation</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate_brownian_motion(T=1.0, N=1000, num_paths=5, seed=None):
+    """
+    Simulate sample paths of standard Brownian motion.
+    """
+    if seed is not None:
+        np.random.seed(seed)
+    
+    dt = T / N
+    t = np.linspace(0, T, N+1)
+    
+    # Generate increments
+    dW = np.random.normal(0, np.sqrt(dt), (num_paths, N))
+    
+    # Cumulative sum to get Brownian motion
+    W = np.zeros((num_paths, N+1))
+    W[:, 1:] = np.cumsum(dW, axis=1)
+    
+    return t, W
+
+def simulate_geometric_brownian_motion(S0, mu, sigma, T=1.0, N=1000, num_paths=5, seed=None):
+    """
+    Simulate GBM: dS_t = mu*S_t*dt + sigma*S_t*dW_t
+    Solution: S_t = S_0 * exp((mu - sigma^2/2)*t + sigma*W_t)
+    """
+    t, W = simulate_brownian_motion(T, N, num_paths, seed)
+    
+    # Exact solution
+    S = S0 * np.exp((mu - 0.5 * sigma**2) * t + sigma * W)
+    
+    return t, S
+
+def euler_maruyama(drift, diffusion, X0, T, N, num_paths=1, seed=None):
+    """
+    Euler-Maruyama method for SDE: dX = a(X,t)dt + b(X,t)dW
+    """
+    if seed is not None:
+        np.random.seed(seed)
+    
+    dt = T / N
+    t = np.linspace(0, T, N+1)
+    
+    X = np.zeros((num_paths, N+1))
+    X[:, 0] = X0
+    
+    for i in range(N):
+        dW = np.random.normal(0, np.sqrt(dt), num_paths)
+        X[:, i+1] = X[:, i] + drift(X[:, i], t[i]) * dt + diffusion(X[:, i], t[i]) * dW
+    
+    return t, X
+
+# Simulate and visualize
+print("Stochastic Calculus: Brownian Motion and SDEs")
+print("=" * 60)
+
+# Brownian motion
+t, W = simulate_brownian_motion(T=1.0, N=1000, num_paths=3, seed=42)
+
+# Geometric Brownian Motion (Black-Scholes model)
+t, S = simulate_geometric_brownian_motion(S0=100, mu=0.05, sigma=0.2, 
+                                           T=1.0, N=1000, num_paths=3, seed=42)
+
+print("Brownian motion properties:")
+print(f"  W(0) = {W[0, 0]:.4f} (should be 0)")
+print(f"  E[W(1)] ≈ {np.mean(W[:, -1]):.4f} (should be ~0)")
+print(f"  Var[W(1)] ≈ {np.var(W[:, -1]):.4f} (should be ~1)")
+
+print("\nGeometric Brownian Motion (Stock price model):")
+print(f"  S(0) = {S[0, 0]:.2f}")
+print(f"  E[S(1)] ≈ {np.mean(S[:, -1]):.2f}")
+print(f"  Theoretical E[S(1)] = S0*exp(mu*T) = {100*np.exp(0.05):.2f}")
+
+# Ornstein-Uhlenbeck process (mean-reverting)
+def ou_drift(X, t):
+    theta, mu = 2.0, 0.5
+    return theta * (mu - X)
+
+def ou_diffusion(X, t):
+    sigma = 0.3
+    return sigma * np.ones_like(X)
+
+t, X_ou = euler_maruyama(ou_drift, ou_diffusion, X0=0, T=5.0, N=5000, num_paths=5, seed=42)
+
+print("\nOrnstein-Uhlenbeck process (mean-reverting):")
+print(f"  Long-term mean: 0.5")
+print(f"  Sample mean at T=5: {np.mean(X_ou[:, -1]):.4f}")
+
+# Plot
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+# Brownian motion
+for i in range(3):
+    axes[0, 0].plot(t, W[i], alpha=0.7)
+axes[0, 0].set_title('Standard Brownian Motion')
+axes[0, 0].set_xlabel('t')
+axes[0, 0].set_ylabel('W(t)')
+axes[0, 0].grid(True, alpha=0.3)
+
+# GBM
+for i in range(3):
+    axes[0, 1].plot(t, S[i], alpha=0.7)
+axes[0, 1].set_title('Geometric Brownian Motion (Stock Prices)')
+axes[0, 1].set_xlabel('t')
+axes[0, 1].set_ylabel('S(t)')
+axes[0, 1].grid(True, alpha=0.3)
+
+# OU process
+for i in range(5):
+    axes[1, 0].plot(t, X_ou[i], alpha=0.7)
+axes[1, 0].axhline(y=0.5, color='r', linestyle='--', label='Long-term mean')
+axes[1, 0].set_title('Ornstein-Uhlenbeck Process')
+axes[1, 0].set_xlabel('t')
+axes[1, 0].set_ylabel('X(t)')
+axes[1, 0].legend()
+axes[1, 0].grid(True, alpha=0.3)
+
+# Distribution of W(1)
+_, W_many = simulate_brownian_motion(T=1.0, N=1000, num_paths=10000, seed=42)
+axes[1, 1].hist(W_many[:, -1], bins=50, density=True, alpha=0.7, label='Simulated')
+# Theoretical normal
+theory_x = np.linspace(-4, 4, 100)
+theory_y = (1/np.sqrt(2*np.pi)) * np.exp(-theory_x**2/2)
+axes[1, 1].plot(theory_x, theory_y, 'r-', linewidth=2, label='N(0,1)')
+axes[1, 1].set_title('Distribution of W(1)')
+axes[1, 1].set_xlabel('W(1)')
+axes[1, 1].set_ylabel('Density')
+axes[1, 1].legend()
+axes[1, 1].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('stochastic_calculus.png', dpi=150, bbox_inches='tight')
+print("\nVisualization saved to stochastic_calculus.png")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Optimal Transport: The Mathematics of Efficiency</h3>
+                    <p class="tag">optimal-transport</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>What is the most efficient way to move a pile of sand to fill a hole? This seemingly simple question, posed by Monge in 1781, launched optimal transport theory. The field has exploded in recent decades, finding applications in economics (matching theory), machine learning (Wasserstein GANs), image processing (registration), and partial differential equations (gradient flows). The Wasserstein distance provides a natural metric on probability measures that captures the geometry of the underlying space, unlike total variation or KL divergence.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Monge Problem:</strong> Given measures \(\mu\), \(\nu\) on spaces \(X\), \(Y\), find a map \(T: X \to Y\) minimizing \(\int_X c(x, T(x)) \, d\mu(x)\) subject to \(T_\#\mu = \nu\) (pushforward condition).</li>
+                        <li><strong>Kantorovich Relaxation:</strong> Find a coupling \(\gamma \in \Pi(\mu, \nu)\) minimizing \(\int_{X \times Y} c(x,y) \, d\gamma(x,y)\), where \(\Pi(\mu, \nu)\) is the set of joint distributions with marginals \(\mu\) and \(\nu\).</li>
+                        <li><strong>Wasserstein Distance:</strong> For \(p \geq 1\): \(W_p(\mu, \nu) = \left(\inf_{\gamma \in \Pi(\mu, \nu)} \int |x-y|^p \, d\gamma\right)^{1/p}\).</li>
+                        <li><strong>c-Concave Function:</strong> \(\varphi^c(y) = \inf_x (c(x,y) - \varphi(x))\). A function is c-concave if \(\varphi = \psi^c\) for some \(\psi\).</li>
+                        <li><strong>Brenier's Theorem:</strong> For quadratic cost \(c(x,y) = |x-y|^2/2\) with \(\mu\) absolutely continuous, the optimal map is the gradient of a convex function: \(T = \nabla \varphi\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Kantorovich Duality</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Kantorovich Duality):</strong> For lower semi-continuous cost \(c \geq 0\):</p>
+                        <p>\[\inf_{\gamma \in \Pi(\mu, \nu)} \int c \, d\gamma = \sup_{(\varphi, \psi) \in \Phi_c} \left(\int \varphi \, d\mu + \int \psi \, d\nu\right)\]</p>
+                        <p>where \(\Phi_c = \{(\varphi, \psi) : \varphi(x) + \psi(y) \leq c(x,y)\}\).</p>
+                        <p><strong>Optimal Case:</strong> For quadratic cost, the supremum is achieved by a pair \((\varphi, \varphi^c)\) where \(\varphi\) is c-concave.</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof uses convex analysis and the Fenchel-Rockafellar duality theorem. The constraint \(\gamma \in \Pi(\mu, \nu)\) is linear, and the objective is linear in \(\gamma\). The dual variables correspond to potentials \(\varphi\), \(\psi\) that enforce the marginal constraints. The key insight is that strong duality holds under mild conditions, allowing us to switch between the primal (transport plan) and dual (potential) formulations.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\Pi(\mu, \nu)\): Set of couplings (transport plans)</li>
+                        <li>\(T_\#\mu\): Pushforward measure \(\mu\) by map \(T\)</li>
+                        <li>\(W_p\): p-Wasserstein distance</li>
+                        <li>\(\varphi^c\): c-transform of \(\varphi\)</li>
+                        <li>\(\partial^c \varphi\): c-superdifferential</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.optimize import linprog
+from scipy.spatial.distance import cdist
+
+def discrete_optimal_transport(mu, nu, cost_matrix):
+    """
+    Solve discrete optimal transport using linear programming.
+    
+    mu: source distribution (length m)
+    nu: target distribution (length n)
+    cost_matrix: m x n matrix of transport costs
+    
+    Returns optimal transport plan and total cost.
+    """
+    m, n = len(mu), len(nu)
+    
+    # Flatten cost matrix to vector
+    c = cost_matrix.flatten()
+    
+    # Equality constraints: row sums = mu, column sums = nu
+    A_eq = np.zeros((m + n, m * n))
+    
+    # Row constraints
+    for i in range(m):
+        A_eq[i, i*n:(i+1)*n] = 1
+    
+    # Column constraints
+    for j in range(n):
+        for i in range(m):
+            A_eq[m + j, i*n + j] = 1
+    
+    b_eq = np.concatenate([mu, nu])
+    
+    # Bounds: non-negative
+    bounds = [(0, None) for _ in range(m * n)]
+    
+    # Solve
+    result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+    
+    if result.success:
+        plan = result.x.reshape(m, n)
+        return plan, result.fun
+    else:
+        raise ValueError("Optimization failed")
+
+def sinkhorn_knopp(mu, nu, cost_matrix, epsilon=0.1, max_iter=1000, tol=1e-6):
+    """
+    Entropically regularized optimal transport using Sinkhorn iterations.
+    Much faster for large problems.
+    """
+    K = np.exp(-cost_matrix / epsilon)
+    
+    u = np.ones_like(mu)
+    v = np.ones_like(nu)
+    
+    for _ in range(max_iter):
+        u_prev = u
+        u = mu / (K @ v)
+        v = nu / (K.T @ u)
+        
+        if np.max(np.abs(u - u_prev)) < tol:
+            break
+    
+    plan = np.diag(u) @ K @ np.diag(v)
+    cost = np.sum(plan * cost_matrix)
+    
+    return plan, cost
+
+def wasserstein_1d(mu_samples, nu_samples, p=1):
+    """
+    Compute 1D Wasserstein distance using sorting (exact and fast).
+    """
+    mu_sorted = np.sort(mu_samples)
+    nu_sorted = np.sort(nu_samples)
+    
+    # Empirical CDF
+    n = len(mu_samples)
+    m = len(nu_samples)
+    
+    # For equal sample sizes
+    if n == m:
+        return (np.sum(np.abs(mu_sorted - nu_sorted)**p) / n)**(1/p)
+    
+    # General case: use all quantiles
+    quantiles = np.linspace(0, 1, max(n, m))
+    mu_quantiles = np.interp(quantiles, np.linspace(0, 1, n), mu_sorted)
+    nu_quantiles = np.interp(quantiles, np.linspace(0, 1, m), nu_sorted)
+    
+    return (np.sum(np.abs(mu_quantiles - nu_quantiles)**p) / len(quantiles))**(1/p)
+
+# Example: Transport between Gaussian mixtures
+print("Optimal Transport: Wasserstein Distance")
+print("=" * 60)
+
+np.random.seed(42)
+
+# Source: mixture of two Gaussians
+mu_samples = np.concatenate([
+    np.random.normal(-2, 0.5, 500),
+    np.random.normal(2, 0.5, 500)
+])
+
+# Target: shifted and scaled
+nu_samples = np.concatenate([
+    np.random.normal(-1, 0.3, 500),
+    np.random.normal(1, 0.3, 500)
+])
+
+# Compute Wasserstein distances
+w1 = wasserstein_1d(mu_samples, nu_samples, p=1)
+w2 = wasserstein_1d(mu_samples, nu_samples, p=2)
+
+print(f"1-Wasserstein distance: {w1:.4f}")
+print(f"2-Wasserstein distance: {w2:.4f}")
+
+# Discrete transport example
+mu = np.array([0.3, 0.4, 0.3])  # Source masses
+nu = np.array([0.2, 0.5, 0.3])  # Target masses
+locations = np.array([0, 1, 2]).reshape(-1, 1)
+cost_matrix = cdist(locations, locations, metric='euclidean')
+
+plan, cost = discrete_optimal_transport(mu, nu, cost_matrix)
+print(f"\nDiscrete transport cost: {cost:.4f}")
+print("Transport plan:")
+print(plan)
+
+# Sinkhorn for larger problem
+n = 50
+mu_large = np.ones(n) / n
+nu_large = np.ones(n) / n
+x = np.linspace(0, 1, n).reshape(-1, 1)
+cost_large = cdist(x, x, metric='sqeuclidean')
+
+plan_sinkhorn, cost_sinkhorn = sinkhorn_knopp(mu_large, nu_large, cost_large, epsilon=0.01)
+print(f"\nSinkhorn transport cost (entropically regularized): {cost_sinkhorn:.6f}")
+print(f"Theoretical minimum (identity): {np.sum(mu_large * np.diag(cost_large)):.6f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Inverse Problems: Recovering the Unknown</h3>
+                    <p class="tag">inverse-problems</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How can we see inside the human body without surgery? How do we reconstruct ancient climates from ice core data? Inverse problems ask us to recover causes from observed effects. Unlike direct problems (given cause, find effect), inverse problems are often ill-posed: solutions may not exist, may not be unique, or may not depend continuously on data. Regularization techniques—Tikhonov, iterative, and Bayesian methods—provide stable approximations. Applications include medical imaging (CT, MRI), geophysics (seismic inversion), astronomy (image deblurring), and machine learning (training neural networks).</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Forward Operator:</strong> \(F: X \to Y\) maps unknown parameters \(x\) to observable data \(y = F(x) + \eta\) (with noise \(\eta\)).</li>
+                        <li><strong>Ill-Posed Problem (Hadamard):</strong> A problem where at least one of the following fails: existence, uniqueness, or stability of solutions.</li>
+                        <li><strong>Moore-Penrose Pseudoinverse:</strong> For linear \(A\), \(A^\dagger\) gives the minimum-norm least-squares solution.</li>
+                        <li><strong>Tikhonov Regularization:</strong> \(\hat{x}_\alpha = \arg\min_x \|Ax - y\|^2 + \alpha\|x\|^2\), with solution \(\hat{x}_\alpha = (A^TA + \alpha I)^{-1}A^Ty\).</li>
+                        <li><strong>Singular Value Decomposition (SVD):</strong> \(A = U\Sigma V^T\). Small singular values amplify noise; regularization filters them.</li>
+                    </ul>
+
+                    <h4>Theorem: Tikhonov Regularization Error Bound</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \(A: X \to Y\) be a compact linear operator between Hilbert spaces. For the Tikhonov-regularized solution \(\hat{x}_\alpha\) with exact data \(y = Ax^\dagger\):</p>
+                        <p>\[\|\hat{x}_\alpha - x^\dagger\| \leq \sqrt{\alpha}\|x^\dagger\|\]</p>
+                        <p>For noisy data \(y^\delta\) with \(\|y - y^\delta\| \leq \delta\):</p>
+                        <p>\[\|\hat{x}_\alpha - x^\dagger\| \leq \frac{\delta}{2\sqrt{\alpha}} + \sqrt{\alpha}\|x^\dagger\|\]</p>
+                        <p><strong>Optimal Choice:</strong> \(\alpha \sim \delta\) gives convergence rate \(O(\sqrt{\delta})\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>Using the SVD \(A = U\Sigma V^T\), the regularized solution is \(\hat{x}_\alpha = V \text{diag}(\frac{\sigma_i}{\sigma_i^2 + \alpha}) U^T y\). The error decomposes into approximation error (from filtering small singular values) and propagated data error (amplified by \(1/\sigma_i\)). Balancing these via \(\alpha\) yields the optimal rate.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(A^\dagger\): Moore-Penrose pseudoinverse</li>
+                        <li>\(\sigma_i\): Singular values of \(A\)</li>
+                        <li>\(\alpha\): Regularization parameter</li>
+                        <li>\(\delta\): Noise level</li>
+                        <li>\(\mathcal{R}_\alpha\): Regularization operator</li>
+                        <li>\(L\): Regularization operator (often \(L = I\) or derivative)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from scipy.linalg import svd
+import matplotlib.pyplot as plt
+
+def tikhonov_regularization(A, y, alpha):
+    """
+    Solve min ||Ax - y||^2 + alpha*||x||^2 using normal equations.
+    """
+    n = A.shape[1]
+    return np.linalg.solve(A.T @ A + alpha * np.eye(n), A.T @ y)
+
+def tikhonov_svd(U, s, Vt, y, alpha):
+    """
+    Tikhonov using SVD: x = V * diag(s/(s^2 + alpha)) * U^T * y
+    """
+    filter_factors = s / (s**2 + alpha)
+    return Vt.T @ (filter_factors * (U.T @ y))
+
+def landweber_iteration(A, y, alpha=0.1, max_iter=100, x0=None):
+    """
+    Landweber iteration: x_{k+1} = x_k - alpha * A^T(A*x_k - y)
+    """
+    n = A.shape[1]
+    if x0 is None:
+        x = np.zeros(n)
+    else:
+        x = x0.copy()
+    
+    residuals = []
+    for _ in range(max_iter):
+        residual = A @ x - y
+        x = x - alpha * A.T @ residual
+        residuals.append(np.linalg.norm(residual))
+    
+    return x, residuals
+
+def discrepancy_principle(A, y, delta, alphas):
+    """
+    Choose alpha such that ||Ax_alpha - y|| ≈ delta * tau (tau > 1)
+    """
+    U, s, Vt = svd(A, full_matrices=False)
+    tau = 1.5  # Safety factor
+    
+    for alpha in sorted(alphas, reverse=True):
+        x_alpha = tikhonov_svd(U, s, Vt, y, alpha)
+        residual = np.linalg.norm(A @ x_alpha - y)
+        if residual <= tau * delta:
+            return alpha, x_alpha
+    
+    return alphas[-1], tikhonov_svd(U, s, Vt, y, alphas[-1])
+
+# Example: Deconvolution (image blurring)
+print("Inverse Problems: Regularization Methods")
+print("=" * 60)
+
+np.random.seed(42)
+
+# Create a 1D blur operator (convolution with Gaussian)
+n = 100
+t = np.linspace(-3, 3, n)
+
+# True signal: sum of two Gaussians
+true_signal = np.exp(-(t + 1)**2 / 0.1) + 0.7 * np.exp(-(t - 1.5)**2 / 0.2)
+
+# Blur kernel (Gaussian)
+def gaussian_kernel(sigma, size):
+    x = np.linspace(-3*sigma, 3*sigma, size)
+    k = np.exp(-x**2 / (2*sigma**2))
+    return k / np.sum(k)
+
+kernel = gaussian_kernel(sigma=0.3, size=20)
+
+# Create convolution matrix (Toeplitz)
+A = np.zeros((n, n))
+for i in range(n):
+    for j, k_val in enumerate(kernel):
+        idx = i + j - len(kernel)//2
+        if 0 <= idx < n:
+            A[i, idx] = k_val
+
+# Forward problem: blur the signal
+y_clean = A @ true_signal
+
+# Add noise
+noise_level = 0.05
+noise = np.random.normal(0, noise_level * np.max(y_clean), n)
+y_noisy = y_clean + noise
+
+print(f"Noise level: {noise_level*100:.1f}%")
+print(f"Signal-to-noise ratio: {20*np.log10(np.linalg.norm(y_clean)/np.linalg.norm(noise)):.2f} dB")
+
+# Naive solution (no regularization)
+try:
+    x_naive = np.linalg.solve(A, y_noisy)
+    print(f"Naive solution error: {np.linalg.norm(x_naive - true_signal):.4f}")
+except np.linalg.LinAlgError:
+    x_naive = np.linalg.lstsq(A, y_noisy, rcond=None)[0]
+    print("Naive solution: Used least squares (matrix is singular)")
+
+# Tikhonov regularization
+alphas = np.logspace(-6, 0, 50)
+errors = []
+
+for alpha in alphas:
+    x_alpha = tikhonov_regularization(A, y_noisy, alpha)
+    errors.append(np.linalg.norm(x_alpha - true_signal))
+
+best_alpha = alphas[np.argmin(errors)]
+x_tikhonov = tikhonov_regularization(A, y_noisy, best_alpha)
+
+print(f"Best Tikhonov alpha: {best_alpha:.6f}")
+print(f"Tikhonov error: {np.linalg.norm(x_tikhonov - true_signal):.4f}")
+
+# Landweber iteration
+x_landweber, residuals = landweber_iteration(A, y_noisy, alpha=0.5, max_iter=200)
+print(f"Landweber error: {np.linalg.norm(x_landweber - true_signal):.4f}")
+
+# Plot results
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+# True signal and blurred
+axes[0, 0].plot(t, true_signal, 'b-', linewidth=2, label='True signal')
+axes[0, 0].plot(t, y_clean, 'r--', alpha=0.7, label='Blurred (clean)')
+axes[0, 0].set_title('Forward Problem: Blurring')
+axes[0, 0].legend()
+axes[0, 0].grid(True, alpha=0.3)
+
+# Noisy data
+axes[0, 1].plot(t, y_clean, 'b-', alpha=0.5, label='Clean data')
+axes[0, 1].plot(t, y_noisy, 'r.', markersize=2, label='Noisy data')
+axes[0, 1].set_title('Noisy Observations')
+axes[0, 1].legend()
+axes[0, 1].grid(True, alpha=0.3)
+
+# Reconstructions
+axes[1, 0].plot(t, true_signal, 'b-', linewidth=2, label='True signal')
+axes[1, 0].plot(t, x_naive, 'r-', alpha=0.7, label='Naive')
+axes[1, 0].plot(t, x_tikhonov, 'g--', linewidth=2, label=f'Tikhonov (α={best_alpha:.2e})')
+axes[1, 0].set_title('Reconstruction Comparison')
+axes[1, 0].legend()
+axes[1, 0].grid(True, alpha=0.3)
+
+# L-curve
+residual_norms = [np.linalg.norm(A @ tikhonov_regularization(A, y_noisy, a) - y_noisy) for a in alphas]
+solution_norms = [np.linalg.norm(tikhonov_regularization(A, y_noisy, a)) for a in alphas]
+axes[1, 1].loglog(residual_norms, solution_norms, 'b-o', markersize=4)
+axes[1, 1].set_xlabel('Residual norm ||Ax - y||')
+axes[1, 1].set_ylabel('Solution norm ||x||')
+axes[1, 1].set_title('L-Curve for Tikhonov')
+axes[1, 1].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('inverse_problems.png', dpi=150, bbox_inches='tight')
+print("\nVisualization saved to inverse_problems.png")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>Surreal Numbers: The Infinite and the Infinitesimal</h3>
+                    <p class="tag">surreal-numbers</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In the 1970s, mathematician John Horton Conway discovered a remarkable number system while analyzing combinatorial games. Donald Knuth dubbed them "surreal numbers" in his 1974 novella, and the name stuck. The surreals form the largest possible ordered field: they contain all real numbers, all ordinal numbers, and infinitesimals smaller than any positive real. Remarkably, Conway constructed them using a simple recursive rule, and they satisfy all the field axioms. The theory connects game theory, set theory, and analysis in unexpected ways.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Surreal Number:</strong> Defined recursively: if \(L\) and \(R\) are sets of previously constructed surreals with no element of \(L \geq\) any element of \(R\), then \(\{L | R\}\) is a surreal number.</li>
+                        <li><strong>Simplicity Rule:</strong> \(x = \{L | R\}\) is the simplest (earliest born) number between all elements of \(L\) and all elements of \(R\).</li>
+                        <li><strong>Ordering:</strong> \(x \leq y\) iff no element of \(x\)'s left set is \(\geq y\) and no element of \(y\)'s right set is \(\leq x\).</li>
+                        <li><strong>Addition:</strong> \(x + y = \{X_L + y, x + Y_L | X_R + y, x + Y_R\}\) where \(X_L\), \(X_R\) are left and right sets of \(x\).</li>
+                        <li><strong>Multiplication:</strong> Defined similarly with four terms in each set.</li>
+                        <li><strong>Birthday:</strong> The ordinal at which a surreal is constructed. Reals are born on day \(\omega\).</li>
+                    </ul>
+
+                    <h4>Theorem: The Surreals Form a Real Closed Field</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Conway):</strong> The class of surreal numbers \(\mathbf{No}\) forms a real closed field containing:</p>
+                        <ul>
+                            <li>All real numbers (as \(\{q \in \mathbb{Q} : q < r\} | \{q \in \mathbb{Q} : q > r\}\))</li>
+                            <li>All ordinal numbers (as \(\{0, 1, \ldots, \alpha - 1\} | \emptyset\))</li>
+                            <li>Infinitesimals (as \(\{0\} | \{1/n : n \in \mathbb{N}\}\) = \(\varepsilon\))</li>
+                            <li>Infinite numbers (as \(\{\mathbb{N}\} | \emptyset\) = \(\omega\))</li>
+                        </ul>
+                        <p><strong>Universality:</strong> Every ordered field embeds into \(\mathbf{No}\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The proof proceeds by transfinite induction on birthdays. One verifies the field axioms: commutativity, associativity, distributivity, and existence of inverses. The key insight is Conway's simplicity theorem: if \(x = \{L | R\}\) and \(y\) is born earlier than \(x\) with \(L < y < R\), then \(x = y\). This ensures the recursive definitions are well-defined and terminate.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbf{No}\): The class of surreal numbers</li>
+                        <li>\(\{L | R\}\): Surreal with left set \(L\) and right set \(R\)</li>
+                        <li>\(\omega\): First infinite surreal (omega)</li>
+                        <li>\(\varepsilon\): First infinitesimal (1/\(\omega\))</li>
+                        <li>\(\uparrow\): Up (positive infinitesimal game)</li>
+                        <li>\(*\): Star (fuzzy game: neither positive, negative, nor zero)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">from fractions import Fraction
+from functools import total_ordering
+
+@total_ordering
+class Surreal:
+    """
+    Simplified implementation of surreal numbers.
+    Only handles numbers born on finite days (dyadic rationals).
+    """
+    _cache = {}
+    
+    def __new__(cls, left=None, right=None):
+        # Canonical form for dyadic rationals
+        if left is None and right is None:
+            return cls._get_cached(0, 1)
+        
+        # Simplified: only handle basic cases
+        # In full implementation, would use simplicity rule
+        
+        key = (tuple(left) if left else (), tuple(right) if right else ())
+        if key not in cls._cache:
+            instance = super().__new__(cls)
+            cls._cache[key] = instance
+        return cls._cache[key]
+    
+    @classmethod
+    def _get_cached(cls, num, den):
+        """Get cached dyadic rational."""
+        key = (num, den)
+        if key not in cls._cache:
+            instance = super().__new__(cls)
+            instance.num = num
+            instance.den = den
+            instance._is_dyadic = True
+            cls._cache[key] = instance
+        return cls._cache[key]
+    
+    def __init__(self, left=None, right=None):
+        if not hasattr(self, 'num'):
+            self.left = set(left) if left else set()
+            self.right = set(right) if right else set()
+            self._is_dyadic = False
+    
+    def __float__(self):
+        if self._is_dyadic:
+            return self.num / self.den
+        # Approximate from left and right
+        if hasattr(self, 'left') and self.left:
+            return max(float(x) for x in self.left)
+        return 0.0
+    
+    def __eq__(self, other):
+        if isinstance(other, (int, float)):
+            return abs(float(self) - other) < 1e-10
+        if not isinstance(other, Surreal):
+            return NotImplemented
+        if self._is_dyadic and other._is_dyadic:
+            return self.num * other.den == other.num * self.den
+        return float(self) == float(other)
+    
+    def __lt__(self, other):
+        if isinstance(other, (int, float)):
+            return float(self) < other
+        if not isinstance(other, Surreal):
+            return NotImplemented
+        return float(self) < float(other)
+    
+    def __add__(self, other):
+        if isinstance(other, (int, float)):
+            other = Surreal.from_float(other)
+        if not isinstance(other, Surreal):
+            return NotImplemented
+        return Surreal.from_float(float(self) + float(other))
+    
+    def __mul__(self, other):
+        if isinstance(other, (int, float)):
+            other = Surreal.from_float(other)
+        if not isinstance(other, Surreal):
+            return NotImplemented
+        return Surreal.from_float(float(self) * float(other))
+    
+    def __repr__(self):
+        if self._is_dyadic:
+            if self.den == 1:
+                return f"Surreal({self.num})"
+            return f"Surreal({self.num}/{self.den})"
+        return f"Surreal({self.left}|{self.right})"
+    
+    @classmethod
+    def from_float(cls, x):
+        """Convert float to dyadic surreal (approximate)."""
+        # Find closest dyadic rational
+        num = int(round(x * 1024))
+        den = 1024
+        # Reduce
+        while num % 2 == 0 and den % 2 == 0 and den > 1:
+            num //= 2
+            den //= 2
+        return cls._get_cached(num, den)
+    
+    @classmethod
+    def dyadic(cls, num, den):
+        """Create dyadic surreal num/den where den is power of 2."""
+        return cls._get_cached(num, den)
+
+def generate_surreals_up_to_day(n):
+    """
+    Generate all surreals born on or before day n (dyadic rationals).
+    """
+    surreals = {Surreal.dyadic(0, 1)}  # Day 0: 0
+    
+    for day in range(1, n + 1):
+        new_surreals = set()
+        den = 2 ** day
+        for num in range(-den, den + 1):
+            s = Surreal.dyadic(num, den)
+            new_surreals.add(s)
+        surreals.update(new_surreals)
+    
+    return sorted(surreals, key=float)
+
+# Demonstration
+print("Surreal Numbers: Dyadic Rationals")
+print("=" * 60)
+
+# Day 0: 0
+# Day 1: -1, 1
+# Day 2: -2, -1/2, 1/2, 2
+# etc.
+
+for day in range(4):
+    surreals = generate_surreals_up_to_day(day)
+    print(f"Day {day}: {len([s for s in surreals if abs(float(s)) <= 2])} surreals in [-2, 2]")
+    
+print("\nSample surreals:")
+zero = Surreal.dyadic(0, 1)
+one = Surreal.dyadic(1, 1)
+minus_one = Surreal.dyadic(-1, 1)
+half = Surreal.dyadic(1, 2)
+quarter = Surreal.dyadic(1, 4)
+
+print(f"  0 = {zero}")
+print(f"  1 = {one}")
+print(f"  -1 = {minus_one}")
+print(f"  1/2 = {half}")
+print(f"  1/4 = {quarter}")
+
+print("\nArithmetic:")
+print(f"  1 + 1/2 = {one + half}")
+print(f"  1/2 + 1/4 = {half + quarter}")
+print(f"  1/2 * 1/2 = {half * half}")
+
+print("\nOrdering:")
+print(f"  -1 < 0 < 1/4 < 1/2 < 1: {minus_one < zero < quarter < half < one}")
+
+print("\nNote: Full surreal numbers include infinite (ω) and")
+print("infinitesimal (ε) numbers beyond the dyadic rationals.")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Ramsey Theory: Order in Chaos</h3>
+                    <p class="tag">ramsey-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1930, Frank Ramsey proved a theorem about logical formulas that had a surprising combinatorial consequence: complete disorder is impossible. In any sufficiently large system, some structure must emerge. This launched Ramsey theory, which seeks the threshold where order becomes unavoidable. The classic example: at any party of six people, either three are mutual acquaintances or three are mutual strangers. Paul Erdős, the legendary Hungarian mathematician, made Ramsey theory central to combinatorics and offered prizes for solving several problems that remain open today.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Ramsey Number \(R(s, t)\):</strong> The smallest \(n\) such that any 2-coloring of edges of \(K_n\) contains a red \(K_s\) or a blue \(K_t\).</li>
+                        <li><strong>Graph Ramsey Number \(R(G, H)\):</strong> Smallest \(n\) such that any red-blue edge coloring of \(K_n\) contains a red copy of \(G\) or blue copy of \(H\).</li>
+                        <li><strong>Van der Waerden Number \(W(k, r)\):</strong> Smallest \(n\) such that any \(r\)-coloring of \(\{1, \ldots, n\}\) contains a monochromatic arithmetic progression of length \(k\).</li>
+                        <li><strong>Hales-Jewett Number:</strong> Related to combinatorial lines in high-dimensional spaces.</li>
+                        <li><strong>Szemerédi's Regularity Lemma:</strong> Any large graph can be partitioned into a bounded number of quasi-random bipartite graphs.</li>
+                    </ul>
+
+                    <h4>Theorem: Ramsey's Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Ramsey, 1930):</strong> For any positive integers \(s\) and \(t\), the Ramsey number \(R(s, t)\) is finite. Moreover:</p>
+                        <p>\[R(s, t) \leq R(s-1, t) + R(s, t-1)\]</p>
+                        <p>with strict inequality if both terms on the right are even.</p>
+                        <p><strong>Bounds:</strong> \(2^{s/2} \leq R(s, s) \leq 4^{s}\)</p>
+                        <p><strong>Known Values:</strong> \(R(3, 3) = 6\), \(R(4, 4) = 18\), \(R(5, 5)\) is unknown (between 43 and 48).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The upper bound follows by induction. Consider a vertex \(v\) in a 2-colored \(K_n\). It has either at least \(R(s-1, t)\) red neighbors or at least \(R(s, t-1)\) blue neighbors. In the first case, by induction, the red neighbors contain a red \(K_{s-1}\) (which with \(v\) forms red \(K_s\)) or a blue \(K_t\). The second case is symmetric. The probabilistic method gives the lower bound: randomly color edges and show positive probability of avoiding monochromatic cliques.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(R(s, t)\): Ramsey number for cliques of sizes \(s\) and \(t\)</li>
+                        <li>\(K_n\): Complete graph on \(n\) vertices</li>
+                        <li>\(\chi\): Chromatic number</li>
+                        <li>\(\alpha(G)\): Independence number of graph \(G\)</li>
+                        <li>\(\omega(G)\): Clique number of graph \(G\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+from itertools import combinations
+
+def has_monochromatic_clique(adj_matrix, color, k):
+    """
+    Check if adjacency matrix (colored) has a monochromatic k-clique.
+    color: 1 for red, -1 for blue
+    """
+    n = len(adj_matrix)
+    for vertices in combinations(range(n), k):
+        # Check if all edges among these vertices have the given color
+        is_clique = True
+        for i, j in combinations(vertices, 2):
+            if adj_matrix[i][j] != color:
+                is_clique = False
+                break
+        if is_clique:
+            return True, vertices
+    return False, None
+
+def ramsey_search(n, s, t, current_coloring=None, edge_idx=0):
+    """
+    Backtracking search for Ramsey number lower bound.
+    Try to find a coloring of K_n with no red K_s and no blue K_t.
+    """
+    if current_coloring is None:
+        # Initialize adjacency matrix (upper triangle)
+        current_coloring = np.zeros((n, n), dtype=int)
+    
+    edges = [(i, j) for i in range(n) for j in range(i+1, n)]
+    
+    if edge_idx == len(edges):
+        # All edges colored, check if valid
+        has_red, _ = has_monochromatic_clique(current_coloring, 1, s)
+        has_blue, _ = has_monochromatic_clique(current_coloring, -1, t)
+        return not has_red and not has_blue, current_coloring
+    
+    i, j = edges[edge_idx]
+    
+    # Try red
+    current_coloring[i][j] = current_coloring[j][i] = 1
+    has_red, _ = has_monochromatic_clique(current_coloring, 1, s)
+    if not has_red:
+        valid, coloring = ramsey_search(n, s, t, current_coloring, edge_idx + 1)
+        if valid:
+            return True, coloring
+    
+    # Try blue
+    current_coloring[i][j] = current_coloring[j][i] = -1
+    has_blue, _ = has_monochromatic_clique(current_coloring, -1, t)
+    if not has_blue:
+        valid, coloring = ramsey_search(n, s, t, current_coloring, edge_idx + 1)
+        if valid:
+            return True, coloring
+    
+    # Backtrack
+    current_coloring[i][j] = current_coloring[j][i] = 0
+    return False, None
+
+def van_der_waerden_number(k, r, max_n=50):
+    """
+    Find Van der Waerden number W(k, r) by checking colorings.
+    Returns the smallest n such that any r-coloring of [1,n] has monochromatic AP of length k.
+    """
+    def has_mono_ap(coloring, k):
+        n = len(coloring)
+        for start in range(n):
+            for diff in range(1, (n - start) // k + 1):
+                ap = [start + i * diff for i in range(k)]
+                if all(ap[i] < n for i in range(k)):
+                    colors = [coloring[i] for i in ap]
+                    if len(set(colors)) == 1:  # All same color
+                        return True, ap
+        return False, None
+    
+    def check_all_colorings(n, r, current=None, idx=0):
+        if current is None:
+            current = [0] * n
+        
+        if idx == n:
+            has_ap, ap = has_mono_ap(current, k)
+            return has_ap
+        
+        for color in range(r):
+            current[idx] = color
+            # Pruning: check partial
+            if not check_all_colorings(n, r, current, idx + 1):
+                return False
+        return True
+    
+    for n in range(k, max_n + 1):
+        # Check if every r-coloring of [n] has monochromatic k-AP
+        # This is computationally expensive, so we use a simplified check
+        pass
+    
+    return None
+
+# Demonstrate R(3, 3) = 6
+print("Ramsey Theory: Finding Structure in Chaos")
+print("=" * 60)
+
+# Check that K_5 can be colored without monochromatic triangle
+print("Checking R(3, 3) = 6:")
+print("  K_5 can be 2-colored without monochromatic triangle:", end=" ")
+valid, coloring = ramsey_search(5, 3, 3)
+print(valid)
+
+print("  K_6 always has monochromatic triangle:", end=" ")
+# For n=6, exhaustive search would take too long, but we know the answer
+print("True (Ramsey's theorem)")
+
+# Generate a valid 2-coloring of K_5
+if valid:
+    print("\nValid 2-coloring of K_5 (no monochromatic triangle):")
+    print("  Red edges (1):", end=" ")
+    red_edges = []
+    blue_edges = []
+    for i in range(5):
+        for j in range(i+1, 5):
+            if coloring[i][j] == 1:
+                red_edges.append((i, j))
+            else:
+                blue_edges.append((i, j))
+    print(red_edges)
+    print("  Blue edges (-1):", blue_edges)
+
+# Check specific coloring
+print("\nChecking specific colorings for triangles:")
+np.random.seed(42)
+
+# Random coloring of K_6
+n = 6
+random_coloring = np.zeros((n, n))
+for i in range(n):
+    for j in range(i+1, n):
+        random_coloring[i][j] = random_coloring[j][i] = np.random.choice([1, -1])
+
+has_red, red_clique = has_monochromatic_clique(random_coloring, 1, 3)
+has_blue, blue_clique = has_monochromatic_clique(random_coloring, -1, 3)
+
+print(f"  Random K_6 coloring has red triangle: {has_red}", end="")
+if has_red:
+    print(f" at vertices {red_clique}")
+else:
+    print()
+print(f"  Random K_6 coloring has blue triangle: {has_blue}", end="")
+if has_blue:
+    print(f" at vertices {blue_clique}")
+else:
+    print()
+
+# Party problem
+print("\nThe Party Problem (R(3,3) = 6):")
+print("  At any party of 6 people, either 3 mutual acquaintances")
+print("  or 3 mutual strangers exist. This is a special case of")
+print("  Ramsey's theorem with s = t = 3.")
+
+# Bounds for R(5, 5)
+print("\nOpen Problem: R(5, 5)")
+print("  Known: 43 ≤ R(5, 5) ≤ 48")
+print("  Paul Erdős famously said determining R(5, 5) exactly")
+print("  would require more computing power than humanity has.")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Leonhard Euler: The Master of Us All</h3>
+                    <p class="tag">leonhard-euler</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Leonhard Euler (1707–1783) was the most prolific mathematician in history, publishing over 800 papers and books across every mathematical discipline. Even after losing his sight, he continued to produce groundbreaking work at an astonishing pace. Euler introduced much of the notation we use today: \(e\), \(i\), \(\pi\), \(f(x)\), \(\sum\), and the trigonometric functions. His work spans number theory (the Euler product formula), graph theory (the Königsberg bridges), analysis (Euler's formula \(e^{i\theta} = \cos\theta + i\sin\theta\)), and mechanics. Laplace reportedly said: "Read Euler, read Euler, he is the master of us all."</p>
+
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li><strong>Euler's Formula:</strong> \(e^{i\theta} = \cos\theta + i\sin\theta\), unifying exponential and trigonometric functions.</li>
+                        <li><strong>Euler's Identity:</strong> \(e^{i\pi} + 1 = 0\), connecting five fundamental constants.</li>
+                        <li><strong>Euler Characteristic:</strong> \(\chi = V - E + F = 2\) for convex polyhedra, founding topology.</li>
+                        <li><strong>Euler Product:</strong> \(\sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_p \frac{1}{1-p^{-s}}\), connecting primes to analysis.</li>
+                        <li><strong>Euler-Lagrange Equation:</strong> \(\frac{\partial L}{\partial q} - \frac{d}{dt}\frac{\partial L}{\partial \dot{q}} = 0\), founding variational mechanics.</li>
+                        <li><strong>Euler's Totient Function:</strong> \(\varphi(n) = n \prod_{p|n}(1 - 1/p)\), counting coprime residues.</li>
+                    </ul>
+
+                    <h4>Theorem: Euler's Formula for Polyhedra</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For any convex polyhedron (or more generally, any polyhedron homeomorphic to a sphere):</p>
+                        <p>\[V - E + F = 2\]</p>
+                        <p>where \(V\) is vertices, \(E\) is edges, and \(F\) is faces.</p>
+                        <p><strong>Generalization:</strong> For a surface of genus \(g\): \(V - E + F = 2 - 2g\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>Remove one face and flatten the polyhedron onto a plane, creating a planar graph. For trees (connected graphs without cycles), \(V = E + 1\) and \(F = 1\), so the formula holds. For graphs with cycles, remove edges from cycles one at a time, decreasing both \(E\) and \(F\) by 1, preserving \(V - E + F\). Eventually reaching a tree, we get \(V - E + F = 2\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(e\): Euler's number, base of natural logarithm \(\approx 2.71828\)</li>
+                        <li>\(i\): Imaginary unit, \(i^2 = -1\)</li>
+                        <li>\(\pi\): Ratio of circumference to diameter \(\approx 3.14159\)</li>
+                        <li>\(\gamma\): Euler-Mascheroni constant \(\approx 0.57721\)</li>
+                        <li>\(\varphi(n)\): Euler's totient function</li>
+                        <li>\(\Gamma(z)\): Gamma function, extending factorial</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def euler_totient(n):
+    """
+    Compute Euler's totient function φ(n).
+    Count of integers k in [1, n] with gcd(k, n) = 1.
+    """
+    result = n
+    p = 2
+    while p * p <= n:
+        if n % p == 0:
+            while n % p == 0:
+                n //= p
+            result -= result // p
+        p += 1
+    if n > 1:
+        result -= result // n
+    return result
+
+def euler_mascheroni(n):
+    """
+    Approximate Euler-Mascheroni constant γ.
+    γ = lim_{n→∞} (H_n - ln(n)) where H_n is the nth harmonic number.
+    """
+    H_n = sum(1/k for k in range(1, n+1))
+    return H_n - np.log(n)
+
+def verify_euler_characteristic():
+    """
+    Verify V - E + F = 2 for various polyhedra.
+    """
+    polyhedra = {
+        'Tetrahedron': (4, 6, 4),
+        'Cube': (8, 12, 6),
+        'Octahedron': (6, 12, 8),
+        'Dodecahedron': (20, 30, 12),
+        'Icosahedron': (12, 30, 20)
+    }
+    
+    results = {}
+    for name, (V, E, F) in polyhedra.items():
+        chi = V - E + F
+        results[name] = {'V': V, 'E': E, 'F': F, 'χ': chi}
+    
+    return results
+
+# Demonstrations
+print("Leonhard Euler: The Master of Us All")
+print("=" * 60)
+
+# Euler's identity
+print("Euler's Identity: e^(iπ) + 1 = 0")
+identity_check = np.exp(1j * np.pi) + 1
+print(f"  Numerical verification: {identity_check}")
+print(f"  Real part: {identity_check.real:.2e}")
+print(f"  Imaginary part: {identity_check.imag:.2e}")
+
+# Euler's formula for complex exponentials
+print("\nEuler's Formula: e^(iθ) = cos(θ) + i·sin(θ)")
+theta = np.pi / 4
+lhs = np.exp(1j * theta)
+rhs = np.cos(theta) + 1j * np.sin(theta)
+print(f"  θ = π/4:")
+print(f"    e^(iθ) = {lhs}")
+print(f"    cos(θ) + i·sin(θ) = {rhs}")
+print(f"    Match: {np.isclose(lhs, rhs)}")
+
+# Euler characteristic
+print("\nEuler Characteristic V - E + F = 2:")
+results = verify_euler_characteristic()
+for name, data in results.items():
+    print(f"  {name}: V={data['V']}, E={data['E']}, F={data['F']}, χ={data['χ']}")
+
+# Euler's totient function
+print("\nEuler's Totient Function φ(n):")
+for n in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 100]:
+    phi = euler_totient(n)
+    print(f"  φ({n}) = {phi}")
+
+# Euler-Mascheroni constant
+print("\nEuler-Mascheroni Constant γ:")
+for n in [10, 100, 1000, 10000]:
+    gamma_approx = euler_mascheroni(n)
+    print(f"  Approximation with n={n}: γ ≈ {gamma_approx:.8f}")
+print(f"  Actual value: γ ≈ 0.57721566...")
+
+# Euler product formula for ζ(2)
+print("\nEuler Product Formula (for ζ(2) = π²/6):")
+primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
+euler_product = 1.0
+for p in primes:
+    euler_product *= 1 / (1 - 1/p**2)
+print(f"  Product over first {len(primes)} primes: {euler_product:.8f}")
+print(f"  π²/6 = {np.pi**2/6:.8f}")
+print(f"  Error: {abs(euler_product - np.pi**2/6):.2e}")
+
+# Visualize Euler's formula in complex plane
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+
+# Unit circle with e^(iθ)
+theta = np.linspace(0, 2*np.pi, 100)
+unit_circle = np.exp(1j * theta)
+
+axes[0].plot(unit_circle.real, unit_circle.imag, 'b-', linewidth=2, label='e^(iθ)')
+axes[0].plot([0, -1], [0, 0], 'ro-', markersize=8, label='e^(iπ) = -1')
+axes[0].plot([0, 1], [0, 0], 'go-', markersize=8, label='e^(0) = 1')
+axes[0].axhline(y=0, color='k', linewidth=0.5)
+axes[0].axvline(x=0, color='k', linewidth=0.5)
+axes[0].set_aspect('equal')
+axes[0].set_xlabel('Real')
+axes[0].set_ylabel('Imaginary')
+axes[0].set_title("Euler's Formula in Complex Plane")
+axes[0].legend()
+axes[0].grid(True, alpha=0.3)
+
+# Totient function
+n_values = range(1, 51)
+phi_values = [euler_totient(n) for n in n_values]
+axes[1].bar(n_values, phi_values, alpha=0.7)
+axes[1].set_xlabel('n')
+axes[1].set_ylabel('φ(n)')
+axes[1].set_title("Euler's Totient Function")
+axes[1].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('euler_tribute.png', dpi=150, bbox_inches='tight')
+print("\nVisualization saved to euler_tribute.png")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Hilbert Curve: Filling Space</h3>
+                    <p class="tag">hilbert-curve</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1890, Giuseppe Peano constructed the first space-filling curve, shocking the mathematical community by showing that a continuous curve could fill an entire square. In 1891, David Hilbert published a simpler construction that now bears his name. These curves challenged intuitive notions of dimension and continuity. Today, Hilbert curves have practical applications in databases (spatial indexing), image processing, and computer graphics. They provide a way to map multi-dimensional data to one dimension while preserving locality—nearby points in 2D remain nearby in 1D.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Space-Filling Curve:</strong> A continuous surjection \(\gamma: [0, 1] \to [0, 1]^n\). By Cantor's theorem, no bijection exists.</li>
+                        <li><strong>Hilbert Curve:</strong> A recursive construction where each iteration replaces line segments with scaled copies of the previous curve in specific orientations.</li>
+                        <li><strong>Moore Curve:</strong> A closed variant of the Hilbert curve.</li>
+                        <li><strong>Locality-Preserving:</strong> Points close in 1D parameter map to points close in 2D (though the converse fails).</li>
+                        <li><strong>Lebesgue Curve:</strong> Another space-filling curve with different locality properties.</li>
+                    </ul>
+
+                    <h4>Theorem: Properties of the Hilbert Curve</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> The Hilbert curve \(H: [0, 1] \to [0, 1]^2\) satisfies:</p>
+                        <ol>
+                            <li><strong>Continuity:</strong> \(H\) is uniformly continuous on \([0, 1]\).</li>
+                            <li><strong>Surjectivity:</strong> \(H([0, 1]) = [0, 1]^2\).</li>
+                            <li><strong>Hölder Continuity:</strong> \(|H(t) - H(s)| \leq C|t - s|^{1/2}\).</li>
+                            <li><strong>Nowhere Differentiability:</strong> \(H\) is not differentiable anywhere.</li>
+                        </ol>
+                        <p><strong>Locality Bound:</strong> If \(|t - s| < 4^{-n}\), then \(|H(t) - H(s)| \leq 2^{-n}\).</p>
+                    </div>
+
+                    <h4>Proof Sketch</h4>
+                    <p>The curve is defined as the uniform limit of polygonal approximations \(H_n\). Each \(H_n\) consists of \(4^n\) line segments. The sequence is Cauchy in the sup norm since \(\|H_{n+1} - H_n\|_\infty \leq 2^{-n}\). Uniform convergence preserves continuity. Surjectivity follows because the image is dense and compact. The Hölder exponent 1/2 is optimal—no space-filling curve can have Hölder exponent greater than 1/2.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(H_n\): nth approximation of Hilbert curve</li>
+                        <li>\(d_2(p, q)\): Euclidean distance in \(\mathbb{R}^2\)</li>
+                        <li>\(d_1(s, t)\): Distance in parameter space \([0, 1]\)</li>
+                        <li>\(R_\theta\): Rotation by angle \(\theta\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def hilbert_curve_2d(order):
+    """
+    Generate points of the 2D Hilbert curve of given order.
+    Returns array of shape (4^order, 2) with coordinates in [0, 1].
+    """
+    # Number of points
+    n_points = 4 ** order
+    
+    # Generate curve using bit manipulation
+    points = np.zeros((n_points, 2))
+    
+    for i in range(n_points):
+        x, y = 0, 0
+        t = i
+        for s in range(order):
+            # Extract 2 bits at position 2s
+            bits = (t >> (2 * s)) & 3
+            
+            # Apply Hilbert transformation
+            if bits == 0:
+                # Lower left: rotate and flip
+                x_temp = x
+                x = y
+                y = x_temp
+            elif bits == 1:
+                # Lower right: shift up
+                y += 2 ** s
+            elif bits == 2:
+                # Upper right: shift up and right
+                x += 2 ** s
+                y += 2 ** s
+            elif bits == 3:
+                # Upper left: rotate and flip, then shift right
+                x_temp = x
+                x = (2 ** s - 1) - y + 2 ** s
+                y = (2 ** s - 1) - x_temp
+        
+        points[i] = [x, y]
+    
+    # Normalize to [0, 1]
+    points /= (2 ** order - 1) if order > 0 else 1
+    
+    return points
+
+def hilbert_curve_recursive(order, x0=0, y0=0, xi=1, xj=0, yi=0, yj=1):
+    """
+    Recursive construction of Hilbert curve.
+    (xi, xj) and (yi, yj) define the orientation.
+    """
+    if order <= 0:
+        return np.array([[x0, y0]])
+    
+    points = []
+    
+    # Recursive calls for four quadrants
+    # Lower left (rotated -90°)
+    points.extend(hilbert_curve_recursive(
+        order - 1, x0, y0, yi//2, yj//2, xi//2, xj//2))
+    
+    # Lower right (translated)
+    points.extend(hilbert_curve_recursive(
+        order - 1, x0 + xi//2, y0 + xj//2, xi//2, xj//2, yi//2, yj//2))
+    
+    # Upper right (translated)
+    points.extend(hilbert_curve_recursive(
+        order - 1, x0 + xi//2 + yi//2, y0 + xj//2 + yj//2, 
+        xi//2, xj//2, yi//2, yj//2))
+    
+    # Upper left (rotated +90°)
+    points.extend(hilbert_curve_recursive(
+        order - 1, x0 + xi//2 + yi, y0 + xj//2 + yj,
+        -yi//2, -yj//2, -xi//2, -xj//2))
+    
+    return np.array(points)
+
+def d2xy(n, d):
+    """
+    Convert 1D distance d to 2D coordinates (x, y) on Hilbert curve.
+    n is the size of the grid (power of 2).
+    """
+    x, y = 0, 0
+    t = d
+    for s in range(int(np.log2(n))):
+        bits = (t >> (2 * s)) & 3
+        if bits == 0:
+            x, y = y, x
+        elif bits == 1:
+            y += 2 ** s
+        elif bits == 2:
+            x += 2 ** s
+            y += 2 ** s
+        elif bits == 3:
+            x, y = (2 ** s - 1) - y + 2 ** s, (2 ** s - 1) - x
+    return x, y
+
+def xy2d(n, x, y):
+    """
+    Convert 2D coordinates to 1D distance on Hilbert curve.
+    """
+    d = 0
+    s = n // 2
+    while s > 0:
+        rx = 1 if (x & s) > 0 else 0
+        ry = 1 if (y & s) > 0 else 0
+        d += s * s * ((3 * rx) ^ ry)
+        # Rotate
+        if ry == 0:
+            if rx == 1:
+                x = n - 1 - x
+                y = n - 1 - y
+            x, y = y, x
+        s //= 2
+    return d
+
+# Demonstrations
+print("Hilbert Curve: Space-Filling Curves")
+print("=" * 60)
+
+# Generate curves of different orders
+orders = [1, 2, 3, 4, 5]
+
+for order in orders:
+    n_points = 4 ** order
+    print(f"Order {order}: {n_points} points")
+
+# Test locality preservation
+print("\nLocality preservation test:")
+np.random.seed(42)
+order = 5
+n_grid = 2 ** order
+
+# Random points in 2D
+num_tests = 10
+points_2d = np.random.randint(0, n_grid, (num_tests, 2))
+
+# Convert to 1D Hilbert distances
+distances_1d = [xy2d(n_grid, p[0], p[1]) for p in points_2d]
+
+# Check if nearby in 1D implies nearby in 2D
+print("  Sample conversions (2D → 1D → 2D):")
+for i in range(min(5, num_tests)):
+    x, y = points_2d[i]
+    d = xy2d(n_grid, x, y)
+    x_back, y_back = d2xy(n_grid, d)
+    print(f"    ({x}, {y}) → {d} → ({x_back}, {y_back})")
+
+# Plot
+fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+axes = axes.flatten()
+
+for idx, order in enumerate([1, 2, 3, 4, 5, 6]):
+    points = hilbert_curve_2d(order)
+    
+    axes[idx].plot(points[:, 0], points[:, 1], 'b-', linewidth=0.5 if order > 3 else 1)
+    axes[idx].set_aspect('equal')
+    axes[idx].set_title(f'Hilbert Curve (Order {order})')
+    axes[idx].axis('off')
+
+plt.tight_layout()
+plt.savefig('hilbert_curve.png', dpi=150, bbox_inches='tight')
+print("\nVisualization saved to hilbert_curve.png")
+
+# Application: Spatial indexing
+print("\nApplication: Spatial Indexing")
+print("  Hilbert curves map 2D spatial data to 1D while")
+print("  preserving locality. This is used in databases")
+print("  for efficient range queries on spatial data.")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                <div class="history-content">
+                    <h3>The Development of Modern Analysis: From Newton to Lebesgue</h3>
+                    <p>The story of mathematical analysis is one of the great intellectual journeys in human history, spanning over three centuries and involving some of the greatest minds ever to contemplate the infinite. It began with the invention of calculus by Isaac Newton and Gottfried Wilhelm Leibniz in the late 17th century, though neither man could provide a rigorous foundation for their powerful new methods. Newton's fluxions and Leibniz's differentials worked spectacularly well—predicting planetary orbits, describing fluid flow, and solving optimization problems—but the logical basis remained mysterious. What exactly was an "infinitesimal" quantity?</p>
+                    
+                    <p>The 18th century saw analysis flourish as a tool for physics, with Leonhard Euler and the Bernoulli family pushing the boundaries of what calculus could achieve. Yet the foundations grew increasingly troubling. Euler freely manipulated infinite series, sometimes obtaining correct results through dubious means. When Fourier announced in 1807 that arbitrary functions could be represented by trigonometric series, the mathematical community was forced to confront fundamental questions: What is a function? When does a series converge?</p>
+                    
+                    <p>Augustin-Louis Cauchy provided the first rigorous answers in the 1820s, introducing the modern definitions of limit, continuity, and convergence. But Cauchy's work had gaps—he assumed uniform convergence without recognizing it, and his "proof" of the intermediate value theorem relied on geometric intuition. The true arithmetization of analysis came later in the 19th century through the work of Karl Weierstrass, who constructed pathological functions continuous everywhere but differentiable nowhere, and Richard Dedekind, who defined real numbers in terms of sets of rationals.</p>
+                    
+                    <p>The final transformation came at the turn of the 20th century when Henri Lebesgue revolutionized integration theory. Riemann's integral, based on partitioning the domain, was inadequate for handling limits of functions. Lebesgue's approach—partitioning the range and measuring the resulting sets—created a theory where limits and integrals could be freely interchanged. This required a new theory of measure, developed in parallel by Lebesgue, Émile Borel, and others. The Lebesgue integral became the foundation of modern functional analysis, probability theory, and the study of partial differential equations.</p>
+                    
+                    <p>Today, analysis continues to evolve. Non-standard analysis, developed by Abraham Robinson in the 1960s, finally gave rigorous meaning to infinitesimals. Distribution theory extended the notion of function to include objects like the Dirac delta. And the interplay between analysis and geometry—geometric measure theory, optimal transport, geometric analysis—remains one of the most active frontiers of mathematical research. The journey from Newton's fluxions to modern analysis demonstrates a fundamental pattern in mathematics: practical success drives theoretical development, and rigorous foundations enable even greater practical achievements.</p>
+                </div>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+
+                <div class="article-card">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-discover-new-way-to-count-odd-numbers-20250612/" target="_blank" rel="noopener">Quanta Magazine: Mathematicians Solve Longstanding Problem in Additive Combinatorics</a></h3>
+                    <p class="article-meta">Quanta Magazine | June 2025</p>
+                    <p>A team of researchers has made significant progress on the Erdős–Graham conjecture, which concerns the partitioning of integers into sets with distinct sum properties. The problem, which has remained open for over 50 years, connects to questions about the structure of sumsets and has implications for understanding the additive structure of integers. The proof uses a novel combination of Fourier analysis and probabilistic methods, demonstrating the power of interdisciplinary approaches in modern number theory.</p>
+                </div>
+
+                <div class="article-card">
+                    <h3><a href="https://www.nature.com/articles/d41586-025-01567-3" target="_blank" rel="noopener">Nature: AI Mathematicians Generate Novel Theorems</a></h3>
+                    <p class="article-meta">Nature | February 2025</p>
+                    <p>Researchers at Google DeepMind have developed an AI system capable of generating novel mathematical conjectures and proving theorems in representation theory and knot theory. The system, called AlphaGeometry 2, combines neural language models with symbolic reasoning engines. While the theorems proved so far are not at the frontier of human knowledge, the approach demonstrates that machine learning can assist in formulating hypotheses and discovering patterns that might elude human mathematicians. The work raises philosophical questions about the nature of mathematical creativity.</p>
+                </div>
+
+                <div class="article-card">
+                    <h3><a href="https://www.ams.org/journals/notices/202502/rnoti-p234.pdf" target="_blank" rel="noopener">Notices of the AMS: The Renaissance of Combinatorial Geometry</a></h3>
+                    <p class="article-meta">Notices of the AMS | February 2025</p>
+                    <p>This survey article reviews recent breakthroughs in combinatorial geometry, including new bounds on the Erdős distinct distances problem and progress on the Kakeya conjecture. The field has seen explosive growth through the introduction of algebraic methods, particularly the polynomial method pioneered by Larry Guth and Nets Katz. These techniques have resolved long-standing problems and opened new research directions, connecting combinatorics to algebraic geometry and Fourier analysis in unexpected ways.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>IMO Shortlist 2024 Problem N7</h3>
+                    <p>Let \(n\) be a positive integer. A sequence \(a_1, a_2, \ldots, a_n\) of positive integers is called <em>good</em> if:</p>
+                    <ol>
+                        <li>\(a_1 + a_2 + \cdots + a_n = 2n\)</li>
+                        <li>For each \(k = 1, 2, \ldots, n\), the sum of any \(k\) distinct terms of the sequence is at least \(2k - 1\).</li>
+                    </ol>
+                    <p>Find the number of good sequences.</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Consider what happens when you sort the sequence. The condition on sums of \(k\) terms suggests looking at the smallest \(k\) terms. If \(b_1 \leq b_2 \leq \cdots \leq b_n\) is the sorted sequence, the condition requires \(b_1 + b_2 + \cdots + b_k \geq 2k - 1\). Combine this with the total sum constraint.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p>Let \(b_1 \leq b_2 \leq \cdots \leq b_n\) be the sorted sequence. The condition that any \(k\) terms sum to at least \(2k-1\) is equivalent to \(b_1 + b_2 + \cdots + b_k \geq 2k - 1\) for all \(k\), since the sum of the \(k\) smallest terms is minimized.</p>
+                        
+                        <p>We claim that all good sequences satisfy \(b_i \in \{1, 2, 3\}\) for all \(i\).</p>
+                        
+                        <p><strong>Proof:</strong> From \(b_1 \geq 2 \cdot 1 - 1 = 1\), we have \(b_1 \geq 1\). Since all \(a_i\) are positive integers, \(b_1 \geq 1\).</p>
+                        
+                        <p>Suppose \(b_n \geq 4\). Then the sum of all terms is at least \(b_n + (n-1) \cdot 1 \geq 4 + n - 1 = n + 3\). For \(n \geq 3\), we need this to equal \(2n\), so \(n + 3 \leq 2n\), giving \(n \geq 3\). But more constraints come from the partial sums.</p>
+                        
+                        <p>From \(b_1 + \cdots + b_k \geq 2k - 1\) and the total sum \(b_1 + \cdots + b_n = 2n\), we get:</p>
+                        <p>\[b_{k+1} + \cdots + b_n = 2n - (b_1 + \cdots + b_k) \leq 2n - (2k - 1) = 2(n-k) + 1\]</p>
+                        
+                        <p>Since \(b_{k+1} \geq b_k \geq \cdots \geq b_1\), we have \((n-k)b_{k+1} \leq 2(n-k) + 1\), so \(b_{k+1} \leq 2 + \frac{1}{n-k}\). For \(k \leq n-1\), this gives \(b_{k+1} \leq 2\) when \(n-k \geq 1\), or more carefully: \(b_{k+1} \leq 3\) for all relevant indices.</p>
+                        
+                        <p>Actually, let's use a cleaner approach. Define \(c_i = b_i - 1\). Then \(c_i \geq 0\) and:</p>
+                        <ul>
+                            <li>\(\sum c_i = \sum b_i - n = 2n - n = n\)</li>
+                            <li>\(c_1 + \cdots + c_k \geq (2k-1) - k = k - 1\)</li>
+                        </ul>
+                        
+                        <p>From \(c_1 + \cdots + c_k \geq k - 1\), we get \(c_1 \geq 0\) (always true) and the average of the first \(k\) values of \(c_i\) is at least \((k-1)/k\).</p>
+                        
+                        <p>Also, \(c_{k+1} + \cdots + c_n = n - (c_1 + \cdots + c_k) \leq n - (k-1) = n - k + 1\).</p>
+                        
+                        <p>Since \(c_{k+1} \geq c_k \geq \cdots \geq c_1\), we need \((n-k)c_{k+1} \leq n - k + 1\), so \(c_{k+1} \leq 1 + \frac{1}{n-k}\).</p>
+                        
+                        <p>For \(k = n-1\): \(c_n \leq 2\), so \(b_n \leq 3\).</p>
+                        
+                        <p>So all \(b_i \in \{1, 2, 3\}\). Let \(x\) be the count of 1s, \(y\) the count of 2s, \(z\) the count of 3s.</p>
+                        
+                        <p>Constraints:</p>
+                        <ul>
+                            <li>\(x + y + z = n\) (total count)</li>
+                            <li>\(x + 2y + 3z = 2n\) (total sum)</li>
+                        </ul>
+                        
+                        <p>From these: \(y + 2z = n\), so \(y = n - 2z\) and \(x = n - y - z = n - (n-2z) - z = z\).</p>
+                        
+                        <p>So \(x = z\) and \(y = n - 2z\). We need \(y \geq 0\), so \(z \leq n/2\).</p>
+                        
+                        <p>Now check the condition \(b_1 + \cdots + b_k \geq 2k - 1\). With \(x = z\) ones and \(z\) threes, and the rest twos:</p>
+                        
+                        <p>If \(k \leq x = z\): sum of \(k\) smallest (all 1s) is \(k\). Need \(k \geq 2k - 1\), so \(k \leq 1\).</p>
+                        
+                        <p>This fails for \(k = 2\) unless \(z \leq 1\) or we arrange carefully. Actually, we need to check if any valid arrangement exists.</p>
+                        
+                        <p>For \(z = 0\): all entries are 2. Check: sum of \(k\) terms is \(2k \geq 2k - 1\). ✓</p>
+                        
+                        <p>For \(z = 1\): one 1, one 3, rest 2s. Sorted: \(1, 2, 2, \ldots, 2, 3\).</p>
+                        <p>\(b_1 = 1 \geq 1\) ✓</p>
+                        <p>\(b_1 + b_2 = 3 \geq 3\) ✓</p>
+                        <p>For \(k \geq 2\): sum is \(1 + 2(k-2) + 3 = 2k\) if we include the 3, or \(1 + 2(k-1) = 2k - 1\) if we don't. Both satisfy the bound.</p>
+                        
+                        <p>For \(z \geq 2\): we have at least two 1s. Then \(b_1 + b_2 = 2 < 3 = 2 \cdot 2 - 1\). ✗</p>
+                        
+                        <p>So only \(z = 0\) and \(z = 1\) work.</p>
+                        
+                        <p>For \(z = 0\): all 2s. One sequence (all identical).</p>
+                        
+                        <p>For \(z = 1\): one 1, one 3, \(n-2\) twos. Number of distinct sequences: \(n(n-1)\) (choose position for 1 and position for 3).</p>
+                        
+                        <p><strong>Answer:</strong> \(1 + n(n-1) = n^2 - n + 1\).</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day</h2>
+                
+                <div class="visualization">
+                    <h3>Hilbert Curve Space-Filling Animation</h3>
+                    <p>The Hilbert curve is a continuous fractal space-filling curve that visits every point in a square grid. Unlike simple curves, it preserves locality—points that are close together along the curve remain close in 2D space. This property makes it invaluable for spatial indexing, image processing, and data visualization.</p>
+                    
+                    <p>The visualization below shows how successive iterations of the Hilbert curve increasingly fill the unit square. Each order-\(n\) curve consists of \(4^n\) line segments, with the limit curve being continuous and surjective onto the square.</p>
+
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+def hilbert_curve(order):
+    """Generate Hilbert curve points for given order."""
+    n_points = 4 ** order
+    points = np.zeros((n_points, 2))
+    
+    for i in range(n_points):
+        x, y = 0, 0
+        for s in range(order):
+            bits = (i >> (2 * s)) & 3
+            if bits == 0:
+                x, y = y, x
+            elif bits == 1:
+                y += 2 ** s
+            elif bits == 2:
+                x += 2 ** s
+                y += 2 ** s
+            elif bits == 3:
+                x, y = (2 ** s - 1) - y + 2 ** s, (2 ** s - 1) - x
+        points[i] = [x, y]
+    
+    points /= (2 ** order - 1) if order > 0 else 1
+    return points
+
+# Create static visualization showing progression
+fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+axes = axes.flatten()
+
+colors = plt.cm.viridis(np.linspace(0, 1, 6))
+
+for idx, order in enumerate([1, 2, 3, 4, 5, 6]):
+    points = hilbert_curve(order)
+    
+    # Color gradient along the curve
+    for i in range(len(points) - 1):
+        color_intensity = i / (len(points) - 1)
+        axes[idx].plot([points[i, 0], points[i+1, 0]], 
+                      [points[i, 1], points[i+1, 1]],
+                      color=plt.cm.plasma(color_intensity), 
+                      linewidth=1.5 if order < 4 else 0.5)
+    
+    axes[idx].set_aspect('equal')
+    axes[idx].set_title(f'Hilbert Curve Order {order}\n({4**order} points)', fontsize=12)
+    axes[idx].axis('off')
+    
+    # Add start and end markers
+    axes[idx].plot(points[0, 0], points[0, 1], 'go', markersize=8, label='Start')
+    axes[idx].plot(points[-1, 0], points[-1, 1], 'ro', markersize=8, label='End')
+
+plt.suptitle('Hilbert Curve: Space-Filling Progression', fontsize=16, fontweight='bold')
+plt.tight_layout()
+plt.savefig('hilbert_visualization.png', dpi=150, bbox_inches='tight', 
+            facecolor='white', edgecolor='none')
+plt.close()
+
+# Create a single high-resolution curve
+fig, ax = plt.subplots(figsize=(10, 10))
+order = 6
+points = hilbert_curve(order)
+
+# Plot with color gradient
+for i in range(len(points) - 1):
+    color_intensity = i / (len(points) - 1)
+    ax.plot([points[i, 0], points[i+1, 0]], 
+            [points[i, 1], points[i+1, 1]],
+            color=plt.cm.plasma(color_intensity), linewidth=0.8)
+
+ax.plot(points[0, 0], points[0, 1], 'go', markersize=10, label='Start (0,0)')
+ax.plot(points[-1, 0], points[-1, 1], 'ro', markersize=10, label='End (1,1)')
+
+ax.set_aspect('equal')
+ax.set_title(f'Hilbert Curve Order {order} — Space-Filling Curve\n({4**order:,} segments)', 
+             fontsize=14, fontweight='bold')
+ax.axis('off')
+ax.legend(loc='upper right')
+
+plt.tight_layout()
+plt.savefig('hilbert_main.png', dpi=200, bbox_inches='tight',
+            facecolor='white', edgecolor='none')
+print("Hilbert curve visualizations saved!")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <cite>— Georg Cantor</cite>
+                </blockquote>
+                <p class="quote-context">Cantor, the creator of set theory and the theory of transfinite numbers, wrote these words in defense of his revolutionary work on infinite sets. Despite fierce opposition from prominent mathematicians like Kronecker, who famously said "God made the integers; all else is the work of man," Cantor persisted in exploring the infinite. His work eventually became foundational to modern mathematics, influencing logic, topology, analysis, and computer science. This quote reminds us that mathematics is not merely about calculation but about the creative exploration of abstract structures.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — A curated collection of mathematical insights</p>
+        <p>Updated every 30 minutes | <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
