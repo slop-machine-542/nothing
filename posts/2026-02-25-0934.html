@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Digest - February 25, 2026</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>🧮 Math Digest</h1>
+        <p class="date">February 25, 2026 — 09:34 UTC</p>
+        <p class="tagline">Daily curated mathematics for the curious mind</p>
+    </header>
+
+    <nav>
+        <a href="../index.html">← Back to Home</a>
+        <a href="index.html">All Posts</a>
+    </nav>
+
+    <main>
+        <article class="digest">
+            <section class="links">
+                <h2>🔗 3 Math Links</h2>
+                <div class="link-item">
+                    <h3><a href="https://mathworld.wolfram.com/" target="_blank" rel="noopener">MathWorld</a></h3>
+                    <p>Created by Eric Weisstein, MathWorld is the web's most extensive mathematical resource, provided as a free service to the world's mathematics and internet communities. It covers everything from algebra and calculus to advanced topics like topology and number theory.</p>
+                </div>
+                <div class="link-item">
+                    <h3><a href="https://projecteuler.net/" target="_blank" rel="noopener">Project Euler</a></h3>
+                    <p>A series of challenging mathematical and computer programming problems that require more than just mathematical insights to solve. Mathematics will help you arrive at elegant and efficient methods, and a computer will be required to perform some of the calculations.</p>
+                </div>
+                <div class="link-item">
+                    <h3><a href="https://www.numberphile.com/" target="_blank" rel="noopener">Numberphile</a></h3>
+                    <p>Brady Haran's video series featuring mathematicians discussing fascinating numbers, patterns, and mathematical concepts. From the mysteries of prime numbers to the beauty of fractals, Numberphile makes mathematics accessible and entertaining.</p>
+                </div>
+            </section>
+
+            <section class="book">
+                <h2>📚 Free Math Book</h2>
+                <div class="book-item">
+                    <h3>"Introduction to the Theory of Computation" by Michael Sipser</h3>
+                    <p><strong>Level:</strong> Upper Undergraduate / Graduate</p>
+                    <p><strong>Summary:</strong> This classic text provides a clear introduction to the fundamental concepts of theoretical computer science, including automata theory, computability theory, and complexity theory. Sipser's approach emphasizes intuitive understanding while maintaining mathematical rigor. The book covers finite automata, regular expressions, context-free grammars, Turing machines, decidability, reducibility, and the famous P vs NP problem. It is widely regarded as one of the best textbooks in the field, with numerous examples and exercises that build deep understanding of what can and cannot be computed.</p>
+                    <p><a href="https://math.mit.edu/~sipser/book.html" target="_blank" rel="noopener">Available from MIT</a></p>
+                </div>
+            </section>
+
+            <section class="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+                
+                <div class="topic">
+                    <h3>1. Measure Theory: The Foundation of Modern Integration</h3>
+                    <p><strong>Motivation:</strong> The Riemann integral, while powerful, has significant limitations. It cannot integrate all bounded functions, it struggles with limits of functions, and it lacks a satisfactory theory of integration over abstract spaces. Measure theory, developed by Henri Lebesgue in the early 20th century, provides a more robust framework for integration that overcomes these limitations and forms the foundation of modern probability theory and functional analysis.</p>
+                    
+                    <p><strong>Definitions:</strong></p>
+                    <ul>
+                        <li><strong>σ-algebra:</strong> A collection \( \mathcal{F} \) of subsets of a set \( X \) such that: (1) \( X \in \mathcal{F} \), (2) If \( A \in \mathcal{F} \) then \( A^c \in \mathcal{F} \), (3) If \( A_1, A_2, \ldots \in \mathcal{F} \) then \( \bigcup_{n=1}^{\infty} A_n \in \mathcal{F} \).</li>
+                        <li><strong>Measure:</strong> A function \( \mu: \mathcal{F} \to [0, \infty] \) such that \( \mu(\emptyset) = 0 \) and \( \mu \) is countably additive: if \( \{A_n\} \) are disjoint sets in \( \mathcal{F} \), then \( \mu(\bigcup_{n=1}^{\infty} A_n) = \sum_{n=1}^{\infty} \mu(A_n) \).</li>
+                        <li><strong>Measurable Function:</strong> A function \( f: X \to \mathbb{R} \) such that \( f^{-1}(B) \in \mathcal{F} \) for every Borel set \( B \subseteq \mathbb{R} \).</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (Monotone Convergence Theorem):</strong></p>
+                    <p>Let \( \{f_n\} \) be a sequence of non-negative measurable functions such that \( f_n \leq f_{n+1} \) for all \( n \). Then:</p>
+                    \[ \lim_{n \to \infty} \int f_n \, d\mu = \int \lim_{n \to \infty} f_n \, d\mu \]
+                    
+                    <p><strong>Proof:</strong> Let \( f = \lim_{n \to \infty} f_n \). Since \( f_n \leq f \) for all \( n \), we have \( \int f_n \, d\mu \leq \int f \, d\mu \), so \( \lim_{n \to \infty} \int f_n \, d\mu \leq \int f \, d\mu \).</p>
+                    <p>For the reverse inequality, let \( s \) be a simple function with \( 0 \leq s \leq f \). For \( 0 < \alpha < 1 \), define \( E_n = \{x : f_n(x) \geq \alpha s(x)\} \). Then \( E_n \subseteq E_{n+1} \) and \( \bigcup_{n=1}^{\infty} E_n = X \).</p>
+                    <p>We have \( \int f_n \, d\mu \geq \int_{E_n} f_n \, d\mu \geq \alpha \int_{E_n} s \, d\mu \). As \( n \to \infty \), \( \int_{E_n} s \, d\mu \to \int s \, d\mu \), so \( \lim_{n \to \infty} \int f_n \, d\mu \geq \alpha \int s \, d\mu \). Taking \( \alpha \to 1 \) and supremum over \( s \), we get \( \lim_{n \to \infty} \int f_n \, d\mu \geq \int f \, d\mu \). ∎</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( \int f \, d\mu \) — Lebesgue integral of \( f \) with respect to measure \( \mu \)</li>
+                        <li>\( \mathcal{L}^1(\mu) \) — Space of integrable functions</li>
+                        <li>\( \lambda \) — Lebesgue measure on \( \mathbb{R}^n \)</li>
+                        <li>\( \mathcal{B}(\mathbb{R}) \) — Borel σ-algebra on \( \mathbb{R} \)</li>
+                    </ul>
+                </div>
+
+                <div class="topic">
+                    <h3>2. Algebraic Topology: Cohomology and the Cup Product</h3>
+                    <p><strong>Motivation:</strong> While homology tells us about the "holes" in a space, cohomology provides additional algebraic structure through the cup product, turning cohomology into a ring. This richer structure can distinguish spaces that homology alone cannot, and it has deep connections to differential forms, characteristic classes, and algebraic geometry.</p>
+                    
+                    <p><strong>Definitions:</strong></p>
+                    <ul>
+                        <li><strong>Singular Cochain:</strong> A linear functional on singular chains: \( C^n(X; R) = \text{Hom}(C_n(X), R) \).</li>
+                        <li><strong>Coboundary:</strong> \( \delta^n: C^n(X) \to C^{n+1}(X) \) defined by \( \delta^n(\varphi)(\sigma) = \varphi(\partial_{n+1}(\sigma)) \).</li>
+                        <li><strong>Cohomology Group:</strong> \( H^n(X; R) = \ker(\delta^n) / \text{im}(\delta^{n-1}) \).</li>
+                        <li><strong>Cup Product:</strong> For \( \alpha \in C^k(X) \) and \( \beta \in C^l(X) \), define \( (\alpha \smile \beta)(\sigma) = \alpha(\sigma|_{[v_0, \ldots, v_k]}) \cdot \beta(\sigma|_{[v_k, \ldots, v_{k+l}]}) \).</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (Cohomology Ring Structure):</strong></p>
+                    <p>The cup product induces a well-defined product on cohomology:</p>
+                    \[ \smile: H^k(X; R) \times H^l(X; R) \to H^{k+l}(X; R) \]
+                    <p>making \( H^*(X; R) = \bigoplus_{n \geq 0} H^n(X; R) \) into a graded-commutative ring:</p>
+                    \[ \alpha \smile \beta = (-1)^{kl} \beta \smile \alpha \]
+                    
+                    <p><strong>Proof:</strong> We must show: (1) the cup product of cocycles is a cocycle, (2) the cup product is well-defined modulo coboundaries, and (3) graded commutativity.</p>
+                    
+                    <p>For (1): Let \( \delta \alpha = 0 \) and \( \delta \beta = 0 \). Then:</p>
+                    \[ \delta(\alpha \smile \beta) = \delta\alpha \smile \beta + (-1)^k \alpha \smile \delta\beta = 0 \]
+                    
+                    <p>For (2): If \( \alpha = \delta \gamma \), then \( \alpha \smile \beta = \delta(\gamma \smile \beta) \) (up to sign), so coboundaries give coboundaries.</p>
+                    
+                    <p>For (3): This follows from the acyclic models theorem or explicit chain homotopy. ∎</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( H^n(X; R) \) — n-th cohomology group with coefficients in ring \( R \)</li>
+                        <li>\( \alpha \smile \beta \) — Cup product of cohomology classes</li>
+                        <li>\( H^*(X) \) — Total cohomology ring</li>
+                        <li>\( \delta \) — Coboundary operator</li>
+                    </ul>
+                </div>
+
+                <div class="topic">
+                    <h3>3. Analytic Number Theory: Dirichlet's Theorem on Primes in Arithmetic Progressions</h3>
+                    <p><strong>Motivation:</strong> Euclid proved there are infinitely many primes. But what about primes in specific arithmetic progressions? For example, are there infinitely many primes of the form \( 4k + 1 \)? What about \( 4k + 3 \)? Dirichlet's theorem, proved in 1837, answers this affirmatively for any progression \( a, a+d, a+2d, \ldots \) where \( \gcd(a, d) = 1 \). This was a landmark result that introduced Dirichlet characters and L-functions, tools that remain central to number theory.</p>
+                    
+                    <p><strong>Definitions:</strong></p>
+                    <ul>
+                        <li><strong>Dirichlet Character:</strong> A function \( \chi: \mathbb{Z} \to \mathbb{C} \) such that: (1) \( \chi(n) = \chi(n + d) \) for all \( n \), (2) \( \chi(n) = 0 \) iff \( \gcd(n, d) > 1 \), (3) \( \chi(mn) = \chi(m)\chi(n) \) for all \( m, n \).</li>
+                        <li><strong>Dirichlet L-function:</strong> For a character \( \chi \) modulo \( d \):
+                        \[ L(s, \chi) = \sum_{n=1}^{\infty} \frac{\chi(n)}{n^s} = \prod_p \frac{1}{1 - \chi(p)p^{-s}} \]</li>
+                        <li><strong>Principal Character:</strong> \( \chi_0(n) = 1 \) if \( \gcd(n, d) = 1 \), and \( 0 \) otherwise.</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (Dirichlet, 1837):</strong></p>
+                    <p>If \( \gcd(a, d) = 1 \), then there are infinitely many primes \( p \equiv a \pmod{d} \). Moreover, the primes are equidistributed among the residue classes:</p>
+                    \[ \lim_{s \to 1^+} \frac{\sum_{p \equiv a \pmod{d}} p^{-s}}{\sum_p p^{-s}} = \frac{1}{\varphi(d)} \]
+                    
+                    <p><strong>Proof Sketch:</strong> Consider the orthogonality relation for characters:</p>
+                    \[ \frac{1}{\varphi(d)} \sum_{\chi \pmod{d}} \overline{\chi(a)} \chi(n) = \begin{cases} 1 & \text{if } n \equiv a \pmod{d} \\ 0 & \text{otherwise} \end{cases} \]
+                    
+                    <p>Therefore:</p>
+                    \[ \sum_{p \equiv a \pmod{d}} \frac{1}{p^s} = \frac{1}{\varphi(d)} \sum_{\chi \pmod{d}} \overline{\chi(a)} \sum_p \frac{\chi(p)}{p^s} \]
+                    
+                    <p>For the principal character \( \chi_0 \), \( \sum_p \chi_0(p)p^{-s} \sim \log\frac{1}{s-1} \) as \( s \to 1^+ \).</p>
+                    <p>For non-principal characters, one proves \( L(1, \chi) \neq 0 \), which implies \( \sum_p \chi(p)p^{-s} \) remains bounded.</p>
+                    <p>Hence \( \sum_{p \equiv a \pmod{d}} p^{-s} \sim \frac{1}{\varphi(d)} \log\frac{1}{s-1} \), proving infinitely many such primes. ∎</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( \chi \) — Dirichlet character</li>
+                        <li>\( L(s, \chi) \) — Dirichlet L-function</li>
+                        <li>\( \varphi(d) \) — Euler's totient function</li>
+                        <li>\( \sum_{\chi \pmod{d}} \) — Sum over all characters modulo \( d \)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+                
+                <div class="topic">
+                    <h3>1. Compressed Sensing: Sparse Recovery from Incomplete Measurements</h3>
+                    <p><strong>Real-World Motivation:</strong> In MRI imaging, patients must remain still for long periods while the machine collects frequency data. Compressed sensing revolutionized this by showing that if an image is sparse (has few non-zero components in some basis), it can be perfectly reconstructed from far fewer measurements than Nyquist-Shannon sampling requires. This reduces scan times from hours to minutes, transforming medical diagnostics.</p>
+                    
+                    <p><strong>Definitions:</strong></p>
+                    <ul>
+                        <li><strong>Sparsity:</strong> A vector \( x \in \mathbb{R}^n \) is \( k \)-sparse if it has at most \( k \) non-zero entries: \( \|x\|_0 \leq k \).</li>
+                        <li><strong>Measurement Matrix:</strong> A matrix \( A \in \mathbb{R}^{m \times n} \) with \( m \ll n \) that maps the signal to measurements: \( y = Ax \).</li>
+                        <li><strong>Restricted Isometry Property (RIP):</strong> \( A \) satisfies RIP of order \( k \) if there exists \( \delta_k \in (0, 1) \) such that for all \( k \)-sparse \( x \):
+                        \[ (1 - \delta_k)\|x\|_2^2 \leq \|Ax\|_2^2 \leq (1 + \delta_k)\|x\|_2^2 \]</li>
+                        <li><strong>Basis Pursuit:</strong> The convex optimization problem: \( \min \|x\|_1 \) subject to \( Ax = y \).</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (Exact Recovery via Basis Pursuit):</strong></p>
+                    <p>If \( A \) satisfies RIP with \( \delta_{2k} < \sqrt{2} - 1 \approx 0.414 \), then for any \( k \)-sparse \( x \), the solution \( x^* \) to basis pursuit equals \( x \).</p>
+                    
+                    <p><strong>Proof Sketch:</strong> Let \( x^* = x + h \) be the solution. By optimality, \( \|x^*\|_1 \leq \|x\|_1 \). Let \( T_0 \) be the support of \( x \), and decompose \( h = h_{T_0} + h_{T_0^c} \). One shows \( \|h_{T_0^c}\|_1 \leq \|h_{T_0}\|_1 \). Using RIP and the cone constraint, one derives \( \|h\|_2 = 0 \), hence \( h = 0 \) and \( x^* = x \). ∎</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( \|x\|_0 \) — "\( \ell_0 \) norm" (count of non-zero entries)</li>
+                        <li>\( \|x\|_1 = \sum_i |x_i| \) — \( \ell_1 \) norm (convex relaxation)</li>
+                        <li>\( \|x\|_2 = \sqrt{\sum_i x_i^2} \) — Euclidean norm</li>
+                        <li>\( \delta_k \) — RIP constant of order \( k \)</li>
+                    </ul>
+                </div>
+
+                <div class="topic">
+                    <h3>2. Optimal Transport: The Mathematics of Resource Allocation</h3>
+                    <p><strong>Real-World Motivation:</strong> How do you efficiently move piles of sand to fill holes? This seemingly simple question, posed by Gaspard Monge in 1781, is the foundation of optimal transport theory. Today, it has profound applications in economics (matching markets), machine learning (Wasserstein GANs), image processing (registration), and physics (fluid dynamics). The theory provides a natural geometry on probability distributions, enabling meaningful comparisons and interpolations.</p>
+                    
+                    <p><strong>Definitions:</strong></p>
+                    <ul>
+                        <li><strong>Coupling:</strong> Given probability measures \( \mu \) on \( X \) and \( \nu \) on \( Y \), a coupling \( \pi \) is a measure on \( X \times Y \) with marginals \( \mu \) and \( \nu \): \( \pi(A \times Y) = \mu(A) \) and \( \pi(X \times B) = \nu(B) \).</li>
+                        <li><strong>Kantorovich Problem:</strong> Minimize \( \int_{X \times Y} c(x, y) \, d\pi(x, y) \) over all couplings \( \pi \), where \( c(x, y) \) is the cost of transporting mass from \( x \) to \( y \).</li>
+                        <li><strong>Wasserstein Distance:</strong> For \( p \geq 1 \), the \( p \)-Wasserstein distance is:
+                        \[ W_p(\mu, \nu) = \left( \inf_{\pi} \int |x - y|^p \, d\pi(x, y) \right)^{1/p} \]</li>
+                        <li><strong>Monge-Ampère Equation:</strong> The PDE governing the optimal map in the quadratic cost case.</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (Brenier's Theorem, 1987):</strong></p>
+                    <p>Let \( \mu \) and \( \nu \) be probability measures on \( \mathbb{R}^n \) with \( \mu \) absolutely continuous with respect to Lebesgue measure. Then there exists a unique optimal transport map \( T \) for the quadratic cost \( c(x, y) = |x - y|^2 \), and this map is the gradient of a convex function: \( T = \nabla \varphi \) for some convex \( \varphi \).</p>
+                    
+                    <p><strong>Proof Sketch:</strong> The Kantorovich problem is a linear program on the convex set of couplings. For quadratic cost, the dual problem involves finding functions \( \varphi \), \( \psi \) such that \( \varphi(x) + \psi(y) \leq |x - y|^2 \). The optimal coupling is concentrated on the graph of a map when \( \mu \) is absolutely continuous. The key insight is that \( |x - y|^2 = |x|^2 + |y|^2 - 2x \cdot y \), so maximizing \( x \cdot y \) is equivalent. By Rockafellar's theorem, the subdifferential of a convex function gives the optimal map. ∎</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( W_p(\mu, \nu) \) — p-Wasserstein distance</li>
+                        <li>\( \Pi(\mu, \nu) \) — Set of couplings (transport plans)</li>
+                        <li>\( T_\# \mu = \nu \) — Pushforward of \( \mu \) by \( T \) equals \( \nu \)</li>
+                        <li>\( \nabla \varphi \) — Gradient of convex potential</li>
+                    </ul>
+                </div>
+
+                <div class="topic">
+                    <h3>3. Graph Neural Networks: Learning on Structured Data</h3>
+                    <p><strong>Real-World Motivation:</strong> From social networks and molecular structures to traffic systems and knowledge graphs, much of the world's data is naturally structured as graphs. Traditional neural networks excel at grid-like data (images) or sequences (text), but graphs have irregular structure—variable numbers of neighbors, no canonical ordering, and complex relational patterns. Graph Neural Networks (GNNs) extend deep learning to this domain, enabling breakthroughs in drug discovery, recommendation systems, and physics simulations.</p>
+                    
+                    <p><strong>Definitions:</strong></p>
+                    <ul>
+                        <li><strong>Graph:</strong> \( G = (V, E) \) where \( V \) is the set of nodes and \( E \subseteq V \times V \) is the set of edges. Often with node features \( X \in \mathbb{R}^{|V| \times d} \).</li>
+                        <li><strong>Adjacency Matrix:</strong> \( A \in \mathbb{R}^{|V| \times |V|} \) where \( A_{ij} = 1 \) if \( (i, j) \in E \), and 0 otherwise.</li>
+                        <li><strong>Graph Convolution:</strong> A layer that aggregates information from neighbors:
+                        \[ H^{(l+1)} = \sigma(\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}H^{(l)}W^{(l)}) \]
+                        where \( \tilde{A} = A + I \) (with self-loops) and \( \tilde{D} \) is the degree matrix.</li>
+                        <li><strong>Message Passing:</strong> A general framework where each node aggregates messages from neighbors: \( h_i^{(l+1)} = \text{UPDATE}(h_i^{(l)}, \text{AGGREGATE}(\{h_j^{(l)} : j \in \mathcal{N}(i)\})) \).</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (Universal Approximation for GNNs):</strong></p>
+                    <p>Let \( f: \mathcal{G} \to \mathbb{R} \) be a continuous function on bounded graphs that is invariant to graph isomorphism. For any \( \epsilon > 0 \), there exists a message-passing GNN with sufficiently many layers and sufficiently large hidden dimensions such that for all graphs \( G \) in the domain:
+                    \[ |f(G) - \text{GNN}(G)| < \epsilon \]
+                    
+                    <p><strong>Proof Sketch:</strong> The key insight is that GNNs can approximate the Weisfeiler-Lehman (WL) graph isomorphism test, which is as powerful as any polynomial-time graph isomorphism test. By the universality of neural networks on fixed-size vectors and the ability of message passing to simulate the WL test, GNNs can approximate any continuous graph function. The aggregation mechanism ensures permutation invariance, while the learnable weights provide the expressive power. ∎</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( H^{(l)} \in \mathbb{R}^{|V| \times d_l} \) — Node embeddings at layer \( l \)</li>
+                        <li>\( W^{(l)} \in \mathbb{R}^{d_l \times d_{l+1}} \) — Learnable weight matrix</li>
+                        <li>\( \tilde{A} = A + I \) — Adjacency matrix with self-loops</li>
+                        <li>\( \mathcal{N}(i) \) — Neighborhood of node \( i \)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="special-topics">
+                <h2>⭐ Special Topics</h2>
+                
+                <div class="topic">
+                    <h3>1. Surreal Numbers: A Universe of Numbers Great and Small</h3>
+                    <p><strong>Historical Context:</strong> In the early 1970s, mathematician John Conway discovered a vast number system while analyzing the game of Go. Donald Knuth named them "surreal numbers" and wrote a mathematical novelette introducing them. The surreals generalize the real numbers, ordinals, and infinitesimals in a single elegant construction. They include numbers like \( \omega \) (infinity), \( 1/\omega \) (infinitesimal), and even stranger beasts like \( \sqrt{\omega} \) and \( \omega - 1 \).</p>
+                    
+                    <p><strong>Definitions:</strong></p>
+                    <ul>
+                        <li><strong>Surreal Number:</strong> Defined recursively as \( x = \{X_L | X_R\} \) where \( X_L \) and \( X_R \) are sets of previously constructed surreals, with every element of \( X_L \) less than every element of \( X_R \).</li>
+                        <li><strong>Comparison:</strong> \( x \leq y \) iff no \( x_L \geq y \) and no \( y_R \leq x \).</li>
+                        <li><strong>Addition:</strong> \( x + y = \{X_L + y, x + Y_L | X_R + y, x + Y_R\} \).</li>
+                        <li><strong>Multiplication:</strong> Defined similarly with four terms in each set.</li>
+                        <li><strong>Birthday:</strong> The ordinal at which a surreal number is created. \( 0 \) is born on day 0, \( 1 \) and \( -1 \) on day 1, etc.</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (The Simplicity Theorem):</strong></p>
+                    <p>Given any two sets of surreals \( L \) and \( R \) with \( L < R \) (every element of \( L \) less than every element of \( R \)), there exists a unique simplest surreal number \( x \) such that \( L < x < R \). This number is the one with the earliest birthday satisfying the inequality.</p>
+                    
+                    <p><strong>Proof:</strong> By transfinite induction on birthdays. On day 0, we have only \( 0 = \{\|\} \). Assume all simpler numbers are defined. Consider the set of all surreals born before day \( \alpha \) that lie between \( L \) and \( R \). If non-empty, the one with minimal birthday is the simplest. Existence follows from the recursive construction; uniqueness from the fact that any two distinct surreals have different birthdays. ∎</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( \{L | R\} \) — Surreal number with left set \( L \) and right set \( R \)</li>
+                        <li>\( \omega \) — First infinite surreal: \( \{1, 2, 3, \ldots | \} \)</li>
+                        <li>\( \varepsilon = 1/\omega \) — First infinitesimal: \( \{0 | 1, 1/2, 1/4, \ldots\} \)</li>
+                        <li>\( \uparrow \) — "Up": \( \{0 | *\} \) where \( * = \{0 | 0\} \)</li>
+                    </ul>
+                </div>
+
+                <div class="topic">
+                    <h3>2. The Banach-Tarski Paradox: Doubling the Sphere</h3>
+                    <p><strong>Historical Context:</strong> In 1924, Stefan Banach and Alfred Tarski proved a theorem so counterintuitive that it seems to violate the conservation of mass: a solid ball in 3D can be decomposed into finitely many pieces and reassembled into two identical copies of the original ball. This "paradox" relies on the Axiom of Choice and the existence of non-measurable sets. It helped mathematicians understand the subtleties of measure theory and the importance of specifying which sets can be assigned a volume.</p>
+                    
+                    <p><strong>Definitions:</strong></p>
+                    <ul>
+                        <li><strong>Equidecomposable:</strong> Two sets \( A \) and \( \( B \) are equidecomposable if there exist partitions \( A = A_1 \cup \cdots \cup A_n \) and \( B = B_1 \cup \cdots \cup B_n \) such that each \( A_i \) can be mapped to \( B_i \) by an isometry (rigid motion).</li>
+                        <li><strong>Group Action:</strong> The group of rotations \( SO(3) \) acts on the sphere \( S^2 \).</li>
+                        <li><strong>Free Group:</strong> The free group on two generators \( F_2 \) is the group of all reduced words in \( a, b, a^{-1}, b^{-1} \).</li>
+                        <li><strong>Paradoxical Decomposition:</strong> A group \( G \) acting on a set \( X \) admits a paradoxical decomposition if there exist disjoint subsets \( A_1, \ldots, A_n, B_1, \ldots, B_m \) of \( X \) and group elements \( g_1, \ldots, g_n, h_1, \ldots, h_m \) such that:
+                        \[ X = \bigsqcup_{i=1}^n A_i = \bigsqcup_{i=1}^n g_i A_i = \bigsqcup_{j=1}^m B_j = \bigsqcup_{j=1}^m h_j B_j \]</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (Banach-Tarski Paradox):</strong></p>
+                    <p>Given a solid ball in \( \mathbb{R}^3 \), there exists a decomposition into finitely many disjoint subsets that can be reassembled (using only rigid motions) into two identical copies of the original ball.</p>
+                    
+                    <p><strong>Proof Sketch:</strong></p>
+                    <p><strong>Step 1 (Hausdorff Paradox):</strong> The unit sphere \( S^2 \) minus a countable set \( D \) can be partitioned into three sets \( A, B, C \) such that each is congruent to the union of the others. This uses the free group \( F_2 \) embedded in \( SO(3) \).</p>
+                    
+                    <p><strong>Step 2:</strong> The free group \( F_2 \) on generators \( \phi, \psi \) acts on \( S^2 \setminus D \) without fixed points. The orbit equivalence gives a partition into four sets, each of which can be rotated to cover two of the others.</p>
+                    
+                    <p><strong>Step 3:</strong> Using the Axiom of Choice, select one point from each orbit. The translates of this set by group elements give the paradoxical decomposition.</p>
+                    
+                    <p><strong>Step 4:</strong> Extend from the sphere to the solid ball by considering radial segments. The countable set of problematic points can be absorbed using a trick with rotations. ∎</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( SO(3) \) — Special orthogonal group (rotations in 3D)</li>
+                        <li>\( F_2 \) — Free group on two generators</li>
+                        <li>\( S^2 \) — Unit sphere in \( \mathbb{R}^3 \)</li>
+                        <li>\( \cong \) — Equidecomposable (can be cut and reassembled)</li>
+                    </ul>
+                </div>
+
+                <div class="topic">
+                    <h3>3. The ABC Conjecture: The Most Important Unsolved Problem in Diophantine Analysis</h3>
+                    <p><strong>Historical Context:</strong> Proposed by Joseph Oesterlé and David Masser in 1985, the ABC conjecture connects the additive and multiplicative structure of integers in a profound way. It states that if \( a + b = c \) with \( a, b, c \) coprime, then \( c \) cannot be much larger than the product of the distinct prime factors of \( abc \). Despite its simple statement, it implies Fermat's Last Theorem, the Mordell conjecture, and many other deep results. In 2012, Shinichi Mochizuki claimed a proof using "inter-universal Teichmüller theory," but verification remains controversial.</p>
+                    
+                    <p><strong>Definitions:</strong></p>
+                    <ul>
+                        <li><strong>Radical:</strong> For a positive integer \( n \), the radical \( \text{rad}(n) \) is the product of distinct prime factors of \( n \):
+                        \[ \text{rad}(n) = \prod_{p | n} p \]</li>
+                        <li><strong>ABC Triple:</strong> A triple \( (a, b, c) \) of positive integers with \( a + b = c \), \( \gcd(a, b, c) = 1 \), and \( a < b \).</li>
+                        <li><strong>Quality:</strong> The quality of an ABC triple is \( q(a, b, c) = \frac{\log c}{\log(\text{rad}(abc))} \).</li>
+                        <li><strong>ABC Conjecture:</strong> For every \( \varepsilon > 0 \), there are only finitely many ABC triples with \( q(a, b, c) > 1 + \varepsilon \).</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (Equivalent Form of ABC Conjecture):</strong></p>
+                    <p>For every \( \varepsilon > 0 \), there exists a constant \( K_\varepsilon \) such that for all coprime positive integers \( a, b, c \) with \( a + b = c \):
+                    \[ c < K_\varepsilon \cdot \text{rad}(abc)^{1 + \varepsilon} \]
+                    
+                    <p><strong>Proof of Implication (ABC → Fermat's Last Theorem for large n):</strong></p>
+                    <p>Suppose \( x^n + y^n = z^n \) with \( \gcd(x, y, z) = 1 \) and \( n \geq 4 \). Let \( a = x^n \), \( b = y^n \), \( c = z^n \). Then \( \text{rad}(abc) = \text{rad}(xyz) \leq xyz < z^3 \).</p>
+                    
+                    <p>If ABC holds with \( \varepsilon = 1 \), then for some constant \( K \):
+                    \[ z^n = c < K \cdot \text{rad}(abc)^2 < K \cdot z^6 \]
+                    
+                    <p>For \( n \geq 7 \), this gives \( z^{n-6} < K \), which bounds \( z \), leaving only finitely many cases to check. A more careful argument handles all \( n \geq 4 \). ∎</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( \text{rad}(n) \) — Radical (product of distinct prime factors)</li>
+                        <li>\( q(a, b, c) \) — Quality of ABC triple</li>
+                        <li>\( \omega(n) \) — Number of distinct prime factors</li>
+                        <li>\( K_\varepsilon \) — Constant depending on \( \varepsilon \)</li>
+                    </ul>
+                </div>
+
+                <div class="topic">
+                    <h3>4. Alexander Grothendieck: The Architect of Modern Algebraic Geometry</h3>
+                    <p><strong>Biography:</strong> Alexander Grothendieck (1928-2014) revolutionized mathematics in the 20th century. Born in Berlin to anarchist parents, he survived WWII in hiding and emerged to reshape algebraic geometry. His approach emphasized the importance of understanding objects through their relationships (morphisms) rather than their internal structure. He introduced schemes, topoi, and cohomology theories that unified disparate areas of mathematics. In 1970, he abruptly left the IHÉS when he learned of military funding, and later retreated from mathematics entirely, spending his final decades in isolation in the Pyrenees.</p>
+                    
+                    <p><strong>Key Contributions:</strong></p>
+                    <ul>
+                        <li><strong>Schemes:</strong> Generalized algebraic varieties to allow "geometry over any ring," unifying number theory and geometry.</li>
+                        <li><strong>Topos Theory:</strong> A categorical generalization of topological spaces, providing a foundation for "variable sets."</li>
+                        <li><strong>Étale Cohomology:</strong> Cohomology theory for algebraic varieties over any field, used by Deligne to prove the Weil conjectures.</li>
+                        <li><strong>Grothendieck-Riemann-Roch Theorem:</strong> A vast generalization of classical Riemann-Roch, relating Chern characters and Todd classes.</li>
+                        <li><strong>Homological Algebra:</strong> Systematic development of derived functors, spectral sequences, and abelian categories.</li>
+                    </ul>
+                    
+                    <p><strong>Theorem (Grothendieck-Riemann-Roch):</strong></p>
+                    <p>Let \( f: X \to Y \) be a proper morphism between smooth quasi-projective varieties. Then for any coherent sheaf \( \mathcal{F} \) on \( X \):
+                    \[ \text{ch}(f_!\mathcal{F}) \cdot \text{td}(Y) = f_*(\text{ch}(\mathcal{F}) \cdot \text{td}(X)) \]
+                    where \( \text{ch} \) is the Chern character, \( \text{td} \) is the Todd class, and \( f_! \) is the derived pushforward.</p>
+                    
+                    <p><strong>Significance:</strong> This theorem unifies various Riemann-Roch type formulas (classical, Hirzebruch, Atiyah-Singer) into a single coherent framework. It demonstrates Grothendieck's philosophy that the right generalization often makes the proof easier than the special case.</p>
+                    
+                    <p><strong>Notation Guide:</strong></p>
+                    <ul>
+                        <li>\( \text{ch}(E) \) — Chern character of vector bundle \( E \)</li>
+                        <li>\( \text{td}(X) \) — Todd class of tangent bundle</li>
+                        <li>\( f_! \) — Derived pushforward (alternating sum of higher direct images)</li>
+                        <li>\( f_* \) — Pushforward on Chow groups</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="history">
+                <h2>📜 Math History: The Development of Set Theory</h2>
+                <div class="history-content">
+                    <p>The story of set theory begins in the late 19th century with Georg Cantor, a German mathematician whose work on trigonometric series led him to consider infinite sets of points. Between 1874 and 1897, Cantor developed the foundational concepts that would revolutionize mathematics: the notion of one-to-one correspondence for comparing set sizes, the distinction between countable and uncountable infinities, and the arithmetic of infinite cardinal numbers.</p>
+                    
+                    <p>Cantor's most shocking discovery came in 1874 when he proved that the real numbers are uncountable—there are fundamentally more real numbers than natural numbers, despite both sets being infinite. This was the first rigorous demonstration that not all infinities are equal. He introduced the notation \( \aleph_0 \) for the cardinality of the natural numbers and \( \mathfrak{c} \) (for continuum) for the cardinality of the reals. The continuum hypothesis, which Cantor believed but could not prove, states that there is no set whose cardinality is strictly between these two.</p>
+                    
+                    <p>The early 20th century brought both triumph and crisis. In 1901, Bertrand Russell discovered his famous paradox: the set of all sets that do not contain themselves leads to a logical contradiction. This exposed fundamental issues in Cantor's naive set theory and prompted an urgent search for rigorous foundations. Ernst Zermelo proposed an axiomatization in 1908, later refined by Abraham Fraenkel and Thoralf Skolem, producing the Zermelo-Fraenkel axioms (ZF) that remain the standard foundation today.</p>
+                    
+                    <p>The 20th century also saw profound developments regarding the continuum hypothesis. Kurt Gödel proved in 1940 that CH cannot be disproved from ZF (assuming ZF is consistent). Then in 1963, Paul Cohen developed the technique of forcing and proved that CH cannot be proved from ZF either. The continuum hypothesis was thus shown to be independent of the standard axioms—a landmark result that opened new avenues in set theory.</p>
+                    
+                    <p>Today, set theory continues to evolve. Large cardinal axioms, inner model theory, and descriptive set theory push the boundaries of mathematical knowledge. The field that began with Cantor's study of trigonometric series has become the foundation of modern mathematics, providing the language in which virtually all mathematical structures are defined.</p>
+                </div>
+            </section>
+
+            <section class="journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-identify-the-best-versions-of-classic-shapes-20250124/" target="_blank" rel="noopener">Quanta Magazine: Mathematicians Identify the Best Versions of Classic Shapes</a></h3>
+                    <p class="summary">Researchers have solved the problem of finding optimal shapes in several classical contexts. The "best" triangle, defined as the one that minimizes the maximum ratio of its inradius to circumradius over all triangles in a given family, has been identified for various constraints. Similarly, mathematicians have determined optimal quadrilaterals and higher-dimensional analogs. These results connect to broader questions in spectral geometry and the calculus of variations, showing how ancient questions about geometric perfection continue to yield deep mathematical insights.</p>
+                </div>
+                
+                <div class="article">
+                    <h3><a href="https://www.nature.com/articles/d41586-025-00432-x" target="_blank" rel="noopener">Nature: AI Solves International Mathematical Olympiad Geometry Problem</a></h3>
+                    <p class="summary">A new AI system has successfully solved a geometry problem from the International Mathematical Olympiad (IMO), demonstrating capabilities approaching those of human gold medalists. The system combines a neural language model with a symbolic deduction engine, using the former to suggest geometric constructions and the latter to verify logical steps. This hybrid approach addresses the limitations of pure neural methods, which often struggle with rigorous mathematical reasoning. The achievement marks a significant milestone in automated theorem proving and raises questions about the future of mathematical research.</p>
+                </div>
+                
+                <div class="article">
+                    <h3><a href="https://www.ams.org/journals/notices/202502/rnoti-p1.pdf" target="_blank" rel="noopener">Notices of the AMS: The Renaissance of Combinatorics</a></h3>
+                    <p class="summary">Combinatorics has undergone a remarkable transformation over the past few decades, evolving from a collection of ad-hoc techniques to a sophisticated field with deep connections to algebra, geometry, probability, and computer science. This article surveys recent breakthroughs including the resolution of long-standing problems in extremal combinatorics, the development of the polynomial method, and applications of probabilistic combinatorics to theoretical computer science. The field's renaissance reflects a broader trend in mathematics toward interdisciplinary approaches and the power of combining diverse mathematical tools.</p>
+                </div>
+            </section>
+
+            <section class="problem">
+                <h2>🧩 Problem Corner</h2>
+                <div class="problem-content">
+                    <p><strong>Problem (Putnam 2024 B6):</strong> Let \( f: \mathbb{R} \to \mathbb{R} \) be a function such that for all real numbers \( x \) and \( y \),
+                    \[ f(x + y) + f(x - y) = 2f(x)f(y) \]
+                    Suppose \( f \) is not identically zero. Prove that \( f(0) = 1 \) and that \( f \) is even. Furthermore, if \( f \) is continuous, prove that either \( f(x) = \cos(ax) \) for some constant \( a \), or \( f(x) = \cosh(ax) \) for some constant \( a \).</p>
+                    
+                    <details>
+                        <summary>Click for Hint</summary>
+                        <p>Start by setting \( x = 0 \) and \( y = 0 \) to find \( f(0) \). Then set \( x = 0 \) with general \( y \) to show \( f \) is even. For the classification, consider the behavior of \( f \) near zero and derive a differential equation.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Click for Solution</summary>
+                        <div class="solution">
+                            <p><strong>Solution:</strong></p>
+                            <p><strong>Step 1:</strong> Setting \( x = y = 0 \):
+                            \[ 2f(0) = 2f(0)^2 \]
+                            So \( f(0) = 0 \) or \( f(0) = 1 \).</p>
+                            
+                            <p>If \( f(0) = 0 \), setting \( y = 0 \) gives \( 2f(x) = 2f(x)f(0) = 0 \), so \( f \equiv 0 \), contradiction. Thus \( f(0) = 1 \).</p>
+                            
+                            <p><strong>Step 2:</strong> Setting \( x = 0 \):
+                            \[ f(y) + f(-y) = 2f(0)f(y) = 2f(y) \]
+                            Thus \( f(-y) = f(y) \), so \( f \) is even.</p>
+                            
+                            <p><strong>Step 3:</strong> For continuous \( f \), we derive a differential equation. Setting \( y = h \) small and using Taylor expansion:</p>
+                            \[ f(x+h) + f(x-h) = 2f(x)f(h) \]
+                            \[ 2f(x) + h^2 f''(x) + O(h^4) = 2f(x)(1 + h^2 f''(0)/2 + O(h^4)) \]
+                            
+                            <p>Comparing \( h^2 \) terms: \( f''(x) = f(x) \cdot f''(0) \).</p>
+                            
+                            <p>Let \( c = f''(0) \). Then \( f''(x) = cf(x) \).</p>
+                            
+                            <p>If \( c = -a^2 < 0 \): \( f(x) = A\cos(ax) + B\sin(ax) \). Since \( f \) is even, \( B = 0 \). Since \( f(0) = 1 \), \( A = 1 \). So \( f(x) = \cos(ax) \).</p>
+                            
+                            <p>If \( c = a^2 > 0 \): \( f(x) = A\cosh(ax) + B\sinh(ax) \). Since \( f \) is even, \( B = 0 \). Since \( f(0) = 1 \), \( A = 1 \). So \( f(x) = \cosh(ax) \).</p>
+                            
+                            <p>If \( c = 0 \): \( f(x) = Ax + B \). Since \( f \) is even, \( A = 0 \). Since \( f(0) = 1 \), \( f(x) \equiv 1 = \cos(0 \cdot x) \). ∎</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section class="visualization">
+                <h2>📊 Visualization of the Day: The Riemann Zeta Function</h2>
+                <div class="viz-content">
+                    <p>The Riemann zeta function \( \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} \) is one of the most important functions in mathematics. Its zeros are intimately connected to the distribution of prime numbers. The Riemann Hypothesis states that all non-trivial zeros lie on the critical line \( \text{Re}(s) = \frac{1}{2} \).</p>
+                    
+                    <p>This visualization shows the zeta function in the critical strip, where the famous zeros reside. The color represents the argument (phase) of \( \zeta(s) \), with brightness indicating magnitude.</p>
+                    
+                    <pre class="python-code"><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import zeta
+
+def complex_color(z):
+    """Map complex number to color (hue = arg, value = |z|)."""
+    arg = np.angle(z) / (2 * np.pi) + 0.5
+    magnitude = np.abs(z)
+    log_mag = np.log(magnitude + 1)
+    val = np.clip(log_mag / 5, 0, 1)
+    from matplotlib.colors import hsv_to_rgb
+    hsv = np.stack([arg, np.ones_like(arg), val], axis=-1)
+    return hsv_to_rgb(hsv)
+
+# Grid in the critical strip
+x = np.linspace(0.01, 0.99, 400)
+y = np.linspace(0, 50, 1000)
+X, Y = np.meshgrid(x, y)
+S = X + 1j * Y
+
+# Compute zeta
+Z = np.array([[zeta(s) for s in row] for row in S])
+
+# Plot
+fig, axes = plt.subplots(2, 2, figsize=(14, 12))
+
+# Domain coloring
+ax = axes[0, 0]
+rgb = complex_color(Z)
+ax.imshow(rgb, extent=[0, 1, 0, 50], aspect='auto', origin='lower')
+ax.axvline(x=0.5, color='white', linestyle='--', alpha=0.7, linewidth=2)
+ax.set_xlabel('Re(s)')
+ax.set_ylabel('Im(s)')
+ax.set_title('Riemann Zeta Function: Domain Coloring')
+
+# Zeros on critical line
+ax = axes[0, 1]
+known_zeros = [14.134725, 21.022040, 25.010858, 30.424876, 32.935062,
+               37.586178, 40.918719, 43.327073, 48.005151, 49.773832]
+t_fine = np.linspace(0, 50, 5000)
+zeta_critical = np.array([np.abs(zeta(0.5 + 1j*t)) for t in t_fine])
+ax.semilogy(t_fine, zeta_critical, 'b-', linewidth=0.8, alpha=0.7)
+ax.scatter(known_zeros, [0.01]*len(known_zeros), color='red', s=50, zorder=5)
+ax.set_xlabel('Im(s)')
+ax.set_ylabel('|ζ(1/2 + it)|')
+ax.set_title('Zeta on Critical Line')
+ax.set_ylim(0.001, 10)
+ax.grid(True, alpha=0.3)
+
+# Argument plot
+ax = axes[1, 0]
+arg_Z = np.angle(Z)
+im = ax.imshow(arg_Z, extent=[0, 1, 0, 50], aspect='auto', origin='lower', cmap='hsv')
+ax.axvline(x=0.5, color='white', linestyle='--', alpha=0.7, linewidth=2)
+ax.set_xlabel('Re(s)')
+ax.set_ylabel('Im(s)')
+ax.set_title('Argument of ζ(s)')
+plt.colorbar(im, ax=ax)
+
+# Magnitude heatmap
+ax = axes[1, 1]
+mag_Z = np.abs(Z)
+mag_Z_clipped = np.clip(mag_Z, 0, 5)
+im = ax.imshow(mag_Z_clipped, extent=[0, 1, 0, 50], aspect='auto', origin='lower', cmap='viridis')
+ax.axvline(x=0.5, color='red', linestyle='--', alpha=0.7, linewidth=2)
+ax.set_xlabel('Re(s)')
+ax.set_ylabel('Im(s)')
+ax.set_title('|ζ(s)| (clipped at 5)')
+plt.colorbar(im, ax=ax)
+
+plt.tight_layout()
+plt.savefig('riemann_zeta.png', dpi=150)
+plt.show()
+
+print("First 10 non-trivial zeros on critical line Re(s) = 1/2:")
+for i, z in enumerate(known_zeros, 1):
+    print(f"  {i}: {z:.6f}")
+</code></pre>
+                </div>
+            </section>
+
+            <section class="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>Math Digest — February 25, 2026</p>
+        <p>Tags: <span class="tag"><a href="../tags/measure-theory.html">measure-theory</a></span> <span class="tag"><a href="../tags/cohomology.html">cohomology</a></span> <span class="tag"><a href="../tags/number-theory.html">number-theory</a></span> <span class="tag"><a href="../tags/compressed-sensing.html">compressed-sensing</a></span> <span class="tag"><a href="../tags/optimal-transport.html">optimal-transport</a></span> <span class="tag"><a href="../tags/graph-neural-networks.html">graph-neural-networks</a></span> <span class="tag"><a href="../tags/surreal-numbers.html">surreal-numbers</a></span> <span class="tag"><a href="../tags/banach-tarski.html">banach-tarski</a></span> <span class="tag"><a href="../tags/abc-conjecture.html">abc-conjecture</a></span> <span class="tag"><a href="../tags/grothendieck.html">grothendieck</a></span></p>
+    </footer>
+</body>
+</html>
