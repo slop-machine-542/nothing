@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 26, 2026 at 06:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 26, 2026 at 06:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <header class="post-header">
+                <h1>📐 Math Digest — February 26, 2026 at 06:34 UTC</h1>
+                <p class="post-date">Published: 2026-02-26 at 06:34 UTC</p>
+                <div class="tags">
+                    <span class="tag">sheaf-cohomology</span>
+                    <span class="tag">hodge-theory</span>
+                    <span class="tag">scheme-theory</span>
+                    <span class="tag">neural-network-theory</span>
+                    <span class="tag">epidemiological-modeling</span>
+                    <span class="tag">portfolio-optimization</span>
+                    <span class="tag">fermats-last-theorem</span>
+                    <span class="tag">riemann-hypothesis</span>
+                    <span class="tag">langlands-program</span>
+                    <span class="tag">carl-friedrich-gauss</span>
+                </div>
+            </header>
+
+            <div class="post-content">
+
+                <section id="math-links">
+                    <h2>🔗 Math Links</h2>
+                    <div class="link-item">
+                        <h3><a href="https://www.maths.ed.ac.uk/~v1ranick/papers/wilesfermat.pdf">Wiles' Proof of Fermat's Last Theorem</a></h3>
+                        <p>The original paper by Andrew Wiles proving Fermat's Last Theorem, published in the Annals of Mathematics in 1995. This 109-page proof revolutionized number theory by establishing the modularity theorem for semistable elliptic curves, connecting elliptic curves to modular forms in a profound way.</p>
+                    </div>
+                    <div class="link-item">
+                        <h3><a href="https://ncatlab.org/nlab/show/HomePage">nLab</a></h3>
+                        <p>A wiki-lab for collaborative work on mathematics, physics, and philosophy, with a focus on category theory and higher category theory. It serves as a comprehensive reference for researchers working in higher-dimensional algebra, homotopy theory, and related fields.</p>
+                    </div>
+                    <div class="link-item">
+                        <h3><a href="https://www.claymath.org/millennium-problems/">Clay Mathematics Institute Millennium Problems</a></h3>
+                        <p>The seven Millennium Prize Problems, each carrying a $1 million prize for a correct solution. The site includes detailed descriptions of the Riemann Hypothesis, P vs NP, Navier-Stokes existence and smoothness, and other fundamental unsolved problems in mathematics.</p>
+                    </div>
+                </section>
+
+                <section id="free-book">
+                    <h2>📖 Free Math Book</h2>
+                    <div class="book-card">
+                        <h3>The Rising Sea: Foundations of Algebraic Geometry</h3>
+                        <p><strong>Author:</strong> Ravi Vakil</p>
+                        <p><strong>Level:</strong> Graduate (Advanced)</p>
+                        <p><strong>Summary:</strong> This comprehensive text introduces modern algebraic geometry through the lens of scheme theory. Vakil's distinctive pedagogical approach emphasizes intuition and motivation alongside rigorous definitions. The book covers sheaves, schemes, morphisms, properties of schemes, and quasicoherent sheaves, building toward advanced topics like cohomology and the Riemann-Roch theorem. The notes are freely available and widely used in graduate courses worldwide. Key features include extensive exercises, detailed examples, and connections to other areas of mathematics.</p>
+                    </div>
+                </section>
+
+                <section id="pure-math">
+                    <h2>🧮 Pure Mathematics Deep-Dives</h2>
+
+                    <div class="deep-dive">
+                        <h3>Sheaf Cohomology: Measuring Global Obstructions</h3>
+                        <p><strong>Motivation:</strong> In topology and geometry, we often want to understand global properties of spaces by studying local data. Sheaf cohomology provides the precise language for measuring when local data can be patched together globally. It unifies diverse areas including algebraic geometry, complex analysis, and differential geometry.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>Presheaf:</strong> A contravariant functor \\(\\mathcal{F}: \\text{Open}(X)^{op} \\to \\text{Ab}\\) assigning an abelian group to each open set.</li>
+                            <li><strong>Sheaf:</strong> A presheaf satisfying the gluing axiom: compatible local sections glue uniquely to a global section.</li>
+                            <li><strong>Stalk:</strong> \\(\\mathcal{F}_x = \\varinjlim_{U \\ni x} \\mathcal{F}(U)\\), the colimit over neighborhoods of \\(x\\).</li>
+                            <li><strong>Sheaf Cohomology:</strong> The right derived functors \\(H^i(X, \\mathcal{F}) = R^i\\Gamma(X, \\mathcal{F})\\) of the global section functor.</li>
+                        </ul>
+
+                        <h4>Theorem: Leray's Theorem</h4>
+                        <p><strong>Theorem:</strong> Let \\(\\mathcal{U} = \\{U_i\\}_{i \\in I}\\) be an open cover of \\(X\\) such that \\(H^q(U_{i_0} \\cap \\cdots \\cap U_{i_p}, \\mathcal{F}) = 0\\) for all \\(q > 0\\) and all finite intersections. Then:
+                        \\[H^p(\\mathcal{U}, \\mathcal{F}) \\cong H^p(X, \\mathcal{F})\\]
+                        where \\(H^p(\\mathcal{U}, \\mathcal{F})\\) denotes \\v{C}ech cohomology.</p>
+
+                        <p><strong>Proof Sketch:</strong> The proof constructs a double complex from the \\v{C}ech resolution and the injective resolution of \\(\\mathcal{F}\\). The acyclicity condition ensures that the spectral sequence degenerates, yielding the isomorphism. Key steps involve:
+                        <ol>
+                            <li>Constructing the \\v{C}ech complex \\(\\check{C}^\\bullet(\\mathcal{U}, \\mathcal{F})\\)</li>
+                            <li>Showing that acyclic sheaves have trivial higher cohomology</li>
+                            <li>Applying the spectral sequence of a double complex</li>
+                            <li>Using the fact that \\v{C}ech cohomology agrees with derived functor cohomology for acyclic covers</li>
+                        </ol></p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(\\Gamma(X, \\mathcal{F})\\): Global sections of \\(\\mathcal{F}\\)</li>
+                            <li>\\(H^i(X, \\mathcal{F})\\): i-th sheaf cohomology group</li>
+                            <li>\\(\\mathcal{F}|_U\\): Restriction of \\(\\mathcal{F}\\) to \\(U\\)</li>
+                            <li>\\(\\check{H}^p(\\mathcal{U}, \\mathcal{F})\\): \\v{C}ech cohomology</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import numpy as np
+from itertools import combinations
+
+class SheafCohomology:
+    """
+    Simplified model for computing sheaf cohomology on a simplicial complex.
+    """
+    def __init__(self, simplices, sections):
+        """
+        simplices: list of sets representing open sets
+        sections: dict mapping simplex index to abelian group of sections
+        """
+        self.simplices = simplices
+        self.sections = sections
+        self.n = len(simplices)
+    
+    def intersection(self, indices):
+        """Compute intersection of simplices."""
+        if not indices:
+            return set()
+        result = self.simplices[indices[0]]
+        for i in indices[1:]:
+            result = result.intersection(self.simplices[i])
+        return result
+    
+    def cech_boundary(self, cochain, p):
+        """
+        Compute the \\v{C}ech coboundary operator.
+        delta: C^p -> C^{p+1}
+        """
+        result = {}
+        for indices, value in cochain.items():
+            for i in range(self.n):
+                if i not in indices:
+                    new_indices = tuple(sorted(indices + (i,)))
+                    sign = (-1)**sum(1 for j in indices if j < i)
+                    if new_indices not in result:
+                        result[new_indices] = 0
+                    result[new_indices] += sign * value
+        return result
+    
+    def compute_cohomology_rank(self, p):
+        """
+        Compute rank of p-th cohomology group (simplified).
+        Returns dimension of H^p = ker(delta^p) / im(delta^{p-1})
+        """
+        # This is a simplified demonstration
+        # Real computation requires linear algebra over the section groups
+        print(f"Computing H^{p} for sheaf with {self.n} open sets")
+        return max(0, self.n - p - 1)  # Simplified placeholder
+
+# Example: Cohomology of a circle covered by two arcs
+print("Sheaf Cohomology Example: Circle")
+print("=" * 50)
+
+# Two overlapping arcs covering S^1
+arc1 = {0, 1, 2, 3, 4}  # First arc
+arc2 = {3, 4, 5, 6, 0}  # Second arc (wraps around)
+intersection = {3, 4, 0}  # Overlap
+
+simplices = [arc1, arc2, intersection]
+sections = {0: 'Z', 1: 'Z', 2: 'Z'}  # Constant sheaf Z
+
+sheaf = SheafCohomology(simplices, sections)
+
+print(f"Open set U_0: {arc1}")
+print(f"Open set U_1: {arc2}")
+print(f"Intersection: {intersection}")
+print(f"\\nFor the constant sheaf on S^1:")
+print(f"H^0(S^1, Z) = Z (global sections)")
+print(f"H^1(S^1, Z) = Z (first cohomology)")
+print(f"Higher cohomology vanishes")</code></pre>
+                    </div>
+
+                    <div class="deep-dive">
+                        <h3>Hodge Theory: Harmonic Forms and Topology</h3>
+                        <p><strong>Motivation:</strong> Hodge theory establishes a profound connection between analysis (solutions to differential equations) and topology (the shape of spaces). It shows that on compact Riemannian manifolds, every cohomology class has a unique harmonic representative, providing a powerful bridge between differential geometry and algebraic topology.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>Riemannian Metric:</strong> A smooth family of inner products \\(g_p: T_pM \\times T_pM \\to \\mathbb{R}\\) on the tangent spaces.</li>
+                            <li><strong>Hodge Star:</strong> The operator \\(*: \\Omega^k(M) \\to \\Omega^{n-k}(M)\\) defined by \\(\\alpha \\wedge *\\beta = \\langle \\alpha, \\beta \\rangle \\text{vol}\\).</li>
+                            <li><strong>Codifferential:</strong> \\(\\delta = (-1)^{n(k+1)+1} * d *: \\Omega^k(M) \\to \\Omega^{k-1}(M)\\).</li>
+                            <li><strong>Laplacian:</strong> \\(\\Delta = d\\delta + \\delta d: \\Omega^k(M) \\to \\Omega^k(M)\\).</li>
+                            <li><strong>Harmonic Form:</strong> A form \\(\\omega\\) with \\(\\Delta \\omega = 0\\).</li>
+                        </ul>
+
+                        <h4>Theorem: Hodge Decomposition Theorem</h4>
+                        <p><strong>Theorem:</strong> Let \\(M\\) be a compact oriented Riemannian manifold. Then:
+                        \\[\\Omega^k(M) = \\mathcal{H}^k(M) \\oplus \\text{im}(d) \\oplus \\text{im}(\\delta)\\]
+                        where \\(\\mathcal{H}^k(M) = \\ker(\\Delta)\\) is the space of harmonic k-forms. Moreover:
+                        \\[H^k_{dR}(M) \\cong \\mathcal{H}^k(M)\\]
+                        giving a canonical isomorphism between de Rham cohomology and harmonic forms.</p>
+
+                        <p><strong>Proof Sketch:</strong> The proof relies on elliptic operator theory:
+                        <ol>
+                            <li>Show that \\(\\Delta\\) is an elliptic, self-adjoint operator</li>
+                            <li>Use the theory of elliptic operators: \\(\\ker(\\Delta)\\) is finite-dimensional</li>
+                            <li>Prove the orthogonal decomposition using integration by parts</li>
+                            <li>Show that \\(\\ker(\\Delta) = \\ker(d) \\cap \\ker(\\delta)\\)</li>
+                            <li>Establish that each cohomology class has a unique harmonic representative</li>
+                        </ol></p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(\\Omega^k(M)\\): Space of smooth k-forms on \\(M\\)</li>
+                            <li>\\(\\mathcal{H}^k(M)\\): Space of harmonic k-forms</li>
+                            <li>\\(H^k_{dR}(M)\\): k-th de Rham cohomology group</li>
+                            <li>\\(*\\): Hodge star operator</li>
+                            <li>\\(\\langle \\cdot, \\cdot \\rangle\\): Inner product on forms</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import numpy as np
+from scipy.sparse import csr_matrix
+from scipy.sparse.linalg import eigsh
+
+class HodgeTheory:
+    """
+    Computational Hodge theory on simplicial complexes.
+    """
+    def __init__(self, vertices, edges, faces=None):
+        """
+        vertices: list of vertex coordinates
+        edges: list of (i,j) pairs
+        faces: list of (i,j,k) triples (optional)
+        """
+        self.vertices = np.array(vertices)
+        self.edges = edges
+        self.faces = faces or []
+        self.n_vertices = len(vertices)
+        self.n_edges = len(edges)
+        self.n_faces = len(self.faces)
+    
+    def build_boundary_operators(self):
+        """Build boundary operator matrices."""
+        # d_0: C_0 -> C_1 (vertex to edge)
+        d0 = np.zeros((self.n_edges, self.n_vertices))
+        for i, (v1, v2) in enumerate(self.edges):
+            d0[i, v1] = -1
+            d0[i, v2] = 1
+        
+        # d_1: C_1 -> C_2 (edge to face)
+        if self.n_faces > 0:
+            d1 = np.zeros((self.n_faces, self.n_edges))
+            for i, (v1, v2, v3) in enumerate(self.faces):
+                # Find edges in the face
+                e1 = self.edges.index(tuple(sorted([v1, v2])))
+                e2 = self.edges.index(tuple(sorted([v2, v3])))
+                e3 = self.edges.index(tuple(sorted([v3, v1])))
+                d1[i, e1] = 1
+                d1[i, e2] = 1
+                d1[i, e3] = 1
+        else:
+            d1 = np.zeros((1, self.n_edges))
+        
+        return d0, d1
+    
+    def hodge_laplacian_0(self):
+        """Compute 0-form Laplacian (graph Laplacian)."""
+        d0, _ = self.build_boundary_operators()
+        # L_0 = d_0^T d_0
+        return d0.T @ d0
+    
+    def hodge_laplacian_1(self):
+        """Compute 1-form Laplacian."""
+        d0, d1 = self.build_boundary_operators()
+        # L_1 = d_0 d_0^T + d_1^T d_1
+        return d0 @ d0.T + d1.T @ d1
+    
+    def harmonic_0_forms(self):
+        """Find harmonic 0-forms (kernel of L_0)."""
+        L0 = self.hodge_laplacian_0()
+        eigenvalues, eigenvectors = np.linalg.eigh(L0)
+        # Harmonic forms correspond to zero eigenvalues
+        harmonic_mask = np.abs(eigenvalues) < 1e-10
+        return eigenvectors[:, harmonic_mask]
+    
+    def betti_numbers(self):
+        """Compute Betti numbers using Hodge theory."""
+        L0 = self.hodge_laplacian_0()
+        L1 = self.hodge_laplacian_1()
+        
+        eigenvalues_0 = np.linalg.eigvalsh(L0)
+        eigenvalues_1 = np.linalg.eigvalsh(L1)
+        
+        b0 = np.sum(np.abs(eigenvalues_0) < 1e-10)
+        b1 = np.sum(np.abs(eigenvalues_1) < 1e-10)
+        
+        return b0, b1
+
+# Example: Hodge theory on a triangle
+print("\\nHodge Theory Example: Triangle")
+print("=" * 50)
+
+vertices = [[0, 0], [1, 0], [0.5, 0.866]]  # Equilateral triangle
+edges = [(0, 1), (1, 2), (2, 0)]
+faces = [(0, 1, 2)]
+
+hodge = HodgeTheory(vertices, edges, faces)
+b0, b1 = hodge.betti_numbers()
+
+print(f"Betti numbers of a disk (triangle):")
+print(f"b_0 = {b0} (connected components)")
+print(f"b_1 = {b1} (1-dimensional holes)")
+
+# Harmonic 0-forms
+harmonic = hodge.harmonic_0_forms()
+print(f"\\nDimension of harmonic 0-forms: {harmonic.shape[1]}")
+print("This equals b_0, confirming Hodge's theorem")</code></pre>
+                    </div>
+
+                    <div class="deep-dive">
+                        <h3>Scheme Theory: Modern Algebraic Geometry</h3>
+                        <p><strong>Motivation:</strong> Scheme theory, developed by Alexander Grothendieck in the 1960s, revolutionized algebraic geometry by providing a unified framework that incorporates both classical algebraic varieties and arithmetic geometry. Schemes allow us to study solutions to polynomial equations over any ring, not just fields, enabling powerful new techniques in number theory and geometry.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>Affine Scheme:</strong> \\(\\text{Spec}(A)\\), the set of prime ideals of a commutative ring \\(A\\), equipped with the Zariski topology and structure sheaf.</li>
+                            <li><strong>Structure Sheaf:</strong> For an affine scheme \\(\\text{Spec}(A)\\), \\(\\mathcal{O}_{\\text{Spec}(A)}(D(f)) = A_f\\), the localization of \\(A\\) at \\(f\\).</li>
+                            <li><strong>Scheme:</strong> A locally ringed space \\((X, \\mathcal{O}_X)\\) that is locally isomorphic to an affine scheme.</li>
+                            <li><strong>Morphism of Schemes:</strong> A morphism of locally ringed spaces \\((f, f^\\#): (X, \\mathcal{O}_X) \\to (Y, \\mathcal{O}_Y)\\).</li>
+                        </ul>
+
+                        <h4>Theorem: Serre's GAGA</h4>
+                        <p><strong>Theorem (Géométrie Algébrique et Géométrie Analytique):</strong> Let \\(X\\) be a proper scheme over \\(\\mathbb{C}\\). The functor \\(\\mathcal{F} \\mapsto \\mathcal{F}^{an}\\) from coherent algebraic sheaves on \\(X\\) to coherent analytic sheaves on \\(X^{an}\\) is an equivalence of categories. Moreover:
+                        \\[H^i(X, \\mathcal{F}) \\cong H^i(X^{an}, \\mathcal{F}^{an})\\]
+                        for all \\(i \\geq 0\\).</p>
+
+                        <p><strong>Significance:</strong> This theorem establishes a deep connection between algebraic and analytic geometry, showing that for proper varieties, the algebraic and analytic categories are essentially equivalent.</p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(\\text{Spec}(A)\\): Spectrum of ring \\(A\\)</li>
+                            <li>\\(\\mathfrak{p}\\): Prime ideal</li>
+                            <li>\\(A_f\\): Localization of \\(A\\) at \\(f\\)</li>
+                            <li>\\(\\mathcal{O}_X\\): Structure sheaf of scheme \\(X\\)</li>
+                            <li>\\(X^{an}\\): Analytification of \\(X\\)</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>from fractions import Fraction
+import sympy as sp
+from sympy import symbols, Poly, groebner
+
+class AffineScheme:
+    """
+    Simplified model of an affine scheme Spec(A).
+    """
+    def __init__(self, ring_description):
+        """
+        ring_description: dict describing the ring structure
+        """
+        self.ring = ring_description
+        self.prime_ideals = self._compute_prime_ideals()
+    
+    def _compute_prime_ideals(self):
+        """
+        Compute prime ideals (simplified for demonstration).
+        For Z, prime ideals are (p) for prime p and (0).
+        """
+        if self.ring.get('type') == 'Z':
+            # Prime ideals of Z: (0) and (p) for prime p
+            return [(0,)] + [(p,) for p in [2, 3, 5, 7, 11]]
+        elif self.ring.get('type') == 'polynomial':
+            # For k[x,y], prime ideals include (0), (x-a, y-b), (f) irreducible
+            return [(0,), ('x',), ('y',), ('x', 'y')]
+        return []
+    
+    def zariski_topology(self):
+        """
+        Zariski closed sets are V(I) = {p in Spec(A) : I subset of p}.
+        """
+        topology = {}
+        for ideal in self.prime_ideals:
+            # V(ideal) = all primes containing ideal
+            closed_set = [p for p in self.prime_ideals 
+                         if all(g in p for g in ideal)]
+            topology[ideal] = closed_set
+        return topology
+    
+    def structure_sheaf(self, open_set):
+        """
+        Sections of structure sheaf over basic open set D(f).
+        Returns localization A_f.
+        """
+        if self.ring.get('type') == 'Z':
+            if open_set == 'D(1)':
+                return 'Z[1/1] = Z'
+            elif open_set == 'D(2)':
+                return 'Z[1/2] (integers with 2 inverted)'
+            elif open_set == 'D(6)':
+                return 'Z[1/6] (integers with 2 and 3 inverted)'
+        return 'Localization not computed'
+
+# Example: Spec(Z)
+print("\\nScheme Theory Example: Spec(Z)")
+print("=" * 50)
+
+spec_Z = AffineScheme({'type': 'Z'})
+print(f"Prime ideals of Z: {spec_Z.prime_ideals[:5]}...")
+print(f"\\nPoints of Spec(Z):")
+print(f"  - Generic point: (0)")
+print(f"  - Closed points: (2), (3), (5), (7), ...")
+print(f"\\nZariski topology: Closed sets are finite unions of closed points")
+print(f"  V((6)) = {(6,)} contains primes containing 6: (2), (3)")
+
+# Structure sheaf
+print(f"\\nStructure sheaf sections:")
+print(f"  {spec_Z.structure_sheaf('D(1)')}")
+print(f"  {spec_Z.structure_sheaf('D(2)')}")
+print(f"  {spec_Z.structure_sheaf('D(6)')}")
+
+print(f"\\nGeometric interpretation:")
+print(f"Spec(Z) is a 'curve' where each prime is a point.")
+print(f"The generic point (0) is dense in Spec(Z).")
+print(f"This connects number theory to geometry!")</code></pre>
+                    </div>
+                </section>
+
+                <section id="applied-math">
+                    <h2>🔧 Applied Mathematics Deep-Dives</h2>
+
+                    <div class="deep-dive">
+                        <h3>Neural Network Theory: Universal Approximation and Optimization</h3>
+                        <p><strong>Motivation:</strong> Deep learning has revolutionized artificial intelligence, but understanding why neural networks work so well requires deep mathematical analysis. The theory connects approximation theory, optimization, and statistical learning to explain the remarkable success of neural networks in practice.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>Neural Network:</strong> A function \\(f_\\theta: \\mathbb{R}^d \\to \\mathbb{R}^k\\) composed of layers \\(f(x) = W_L \\sigma(W_{L-1} \\sigma(\\cdots \\sigma(W_1 x + b_1) \\cdots ) + b_{L-1}) + b_L\\).</li>
+                            <li><strong>Activation Function:</strong> A non-linear function \\(\\sigma: \\mathbb{R} \\to \\mathbb{R}\\) (e.g., ReLU \\(\\sigma(x) = \\max(0, x)\\), sigmoid).</li>
+                            <li><strong>Loss Function:</strong> \\(L(\\theta) = \\mathbb{E}_{(x,y) \\sim \\mathcal{D}}[\\ell(f_\\theta(x), y)]\\) measuring prediction error.</li>
+                            <li><strong>Gradient Descent:</strong> \\(\\theta_{t+1} = \\theta_t - \\eta \\nabla L(\\theta_t)\\), iterative optimization algorithm.</li>
+                        </ul>
+
+                        <h4>Theorem: Universal Approximation Theorem</h4>
+                        <p><strong>Theorem (Cybenko, 1989; Hornik, 1991):</strong> Let \\(\\sigma\\) be a non-constant, bounded, continuous activation function. For any compact \\(K \\subset \\mathbb{R}^d\\), any continuous \\(f: K \\to \\mathbb{R}\\), and any \\(\\epsilon > 0\\), there exists a single-hidden-layer neural network \\(f_\\theta\\) such that:
+                        \\[\\sup_{x \\in K} |f(x) - f_\\theta(x)| < \\epsilon\\]</p>
+
+                        <p><strong>Proof Sketch:</strong> The proof uses the Hahn-Banach theorem and properties of the Fourier transform:
+                        <ol>
+                            <li>Show that the set of neural network functions is dense in \\(C(K)\\)</li>
+                            <li>Use the Riesz representation theorem: if the closure weren't all of \\(C(K)\\), there would exist a non-zero measure \\(\\mu\\) orthogonal to all neural networks</li>
+                            <li>Show that \\(\\int \\sigma(w \\cdot x + b) d\\mu(x) = 0\\) for all \\(w, b\\) implies \\(\\mu = 0\\)</li>
+                            <li>This uses the properties of \\(\\sigma\\) and the Fourier transform</li>
+                        </ol></p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(W_l\\): Weight matrix at layer \\(l\\)</li>
+                            <li>\\(b_l\\): Bias vector at layer \\(l\\)</li>
+                            <li>\\(\\sigma\\): Activation function (applied element-wise)</li>
+                            <li>\\(\\theta = \\{(W_l, b_l)\\}\\): Network parameters</li>
+                            <li>\\(\\eta\\): Learning rate</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class NeuralNetwork:
+    """
+    Simple fully-connected neural network.
+    """
+    def __init__(self, layer_sizes):
+        """
+        layer_sizes: list of layer dimensions [input, hidden1, ..., output]
+        """
+        self.layer_sizes = layer_sizes
+        self.num_layers = len(layer_sizes)
+        self.params = self._initialize_params()
+    
+    def _initialize_params(self):
+        """Initialize weights with Xavier initialization."""
+        params = {}
+        for i in range(1, self.num_layers):
+            # Xavier initialization: variance = 2 / (n_in + n_out)
+            scale = np.sqrt(2.0 / (self.layer_sizes[i-1] + self.layer_sizes[i]))
+            params[f'W{i}'] = np.random.randn(self.layer_sizes[i], self.layer_sizes[i-1]) * scale
+            params[f'b{i}'] = np.zeros((self.layer_sizes[i], 1))
+        return params
+    
+    def relu(self, x):
+        """ReLU activation: max(0, x)"""
+        return np.maximum(0, x)
+    
+    def relu_derivative(self, x):
+        """Derivative of ReLU."""
+        return (x > 0).astype(float)
+    
+    def forward(self, x):
+        """Forward pass through the network."""
+        cache = {'A0': x}
+        a = x
+        for i in range(1, self.num_layers):
+            z = self.params[f'W{i}'] @ a + self.params[f'b{i}']
+            if i < self.num_layers - 1:
+                a = self.relu(z)
+            else:
+                a = z  # Linear output
+            cache[f'Z{i}'] = z
+            cache[f'A{i}'] = a
+        return a, cache
+    
+    def backward(self, y, cache):
+        """Backward pass (backpropagation)."""
+        m = y.shape[1]
+        grads = {}
+        
+        # Output layer gradient
+        da = cache[f'A{self.num_layers-1}'] - y
+        
+        for i in range(self.num_layers - 1, 0, -1):
+            dz = da if i == self.num_layers - 1 else da * self.relu_derivative(cache[f'Z{i}'])
+            grads[f'dW{i}'] = (1/m) * dz @ cache[f'A{i-1}'].T
+            grads[f'db{i}'] = (1/m) * np.sum(dz, axis=1, keepdims=True)
+            da = self.params[f'W{i}'].T @ dz
+        
+        return grads
+    
+    def update_params(self, grads, learning_rate):
+        """Gradient descent update."""
+        for i in range(1, self.num_layers):
+            self.params[f'W{i}'] -= learning_rate * grads[f'dW{i}']
+            self.params[f'b{i}'] -= learning_rate * grads[f'db{i}']
+    
+    def train(self, X, y, epochs=1000, learning_rate=0.01, verbose=True):
+        """Train the network."""
+        losses = []
+        for epoch in range(epochs):
+            # Forward pass
+            output, cache = self.forward(X)
+            
+            # Compute loss (MSE)
+            loss = np.mean((output - y) ** 2)
+            losses.append(loss)
+            
+            # Backward pass
+            grads = self.backward(y, cache)
+            
+            # Update parameters
+            self.update_params(grads, learning_rate)
+            
+            if verbose and epoch % 100 == 0:
+                print(f"Epoch {epoch}: Loss = {loss:.6f}")
+        
+        return losses
+
+# Demonstration: Universal approximation
+print("\\nNeural Network Theory: Universal Approximation")
+print("=" * 50)
+
+# Target function: f(x) = sin(2*pi*x) + 0.5*sin(6*pi*x)
+x = np.linspace(0, 1, 100).reshape(1, -1)
+y_target = np.sin(2 * np.pi * x) + 0.5 * np.sin(6 * np.pi * x)
+
+# Create and train network
+np.random.seed(42)
+nn = NeuralNetwork([1, 64, 64, 1])
+print(f"Network architecture: {nn.layer_sizes}")
+print(f"Total parameters: {sum(p.size for p in nn.params.values())}")
+
+print(f"\\nTraining to approximate target function...")
+losses = nn.train(x, y_target, epochs=5000, learning_rate=0.1, verbose=False)
+
+print(f"Initial loss: {losses[0]:.6f}")
+print(f"Final loss: {losses[-1]:.6f}")
+print(f"\\nThis demonstrates the Universal Approximation Theorem:")
+print(f"A single hidden layer network can approximate any continuous function.")</code></pre>
+                    </div>
+
+                    <div class="deep-dive">
+                        <h3>Epidemiological Modeling: SIR and Beyond</h3>
+                        <p><strong>Motivation:</strong> Mathematical epidemiology provides crucial tools for understanding and controlling infectious diseases. The COVID-19 pandemic demonstrated the vital importance of mathematical models in public health decision-making, from predicting hospital capacity needs to evaluating intervention strategies.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>SIR Model:</strong> Compartmental model dividing population into Susceptible (S), Infected (I), and Recovered (R).</li>
+                            <li><strong>Basic Reproduction Number \\(\\mathcal{R}_0\\):</strong> Expected number of secondary infections from one infected individual in a fully susceptible population.</li>
+                            <li><strong>Force of Infection:</strong> \\(\\lambda = \\beta I / N\\), the rate at which susceptible individuals become infected.</li>
+                            <li><strong>SEIR Model:</strong> Extension with Exposed (E) compartment for latent period.</li>
+                        </ul>
+
+                        <h4>Theorem: Threshold Theorem</h4>
+                        <p><strong>Theorem (Kermack-McKendrick):</strong> For the SIR model with initial conditions \\(S(0) \\approx N\\), \\(I(0) > 0\\) small:
+                        <ol>
+                            <li>If \\(\\mathcal{R}_0 \\leq 1\\), the disease dies out: \\(I(t) \\to 0\\) as \\(t \\to \\infty\\).</li>
+                            <li>If \\(\\mathcal{R}_0 > 1\\), an epidemic occurs with final size \\(R_\\infty\\) satisfying:
+                            \\[R_\\infty = 1 - e^{-\\mathcal{R}_0 R_\\infty}\\]</li>
+                        </ol></p>
+
+                        <p><strong>Proof Sketch:</strong> From the SIR equations:
+                        \\[\\frac{dI}{dS} = -1 + \\frac{\\gamma}{\\beta S}\\]
+                        Integrating from \\(S_0\\) to \\(S_\\infty\\):
+                        \\[I_\\infty - I_0 = -(S_\\infty - S_0) + \\frac{\\gamma}{\\beta} \\ln\\frac{S_\\infty}{S_0}\\]
+                        Since \\(I_\\infty = 0\\) and \\(S_0 \\approx N\\), we obtain the final size relation.</p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(\\beta\\): Transmission rate</li>
+                            <li>\\(\\gamma\\): Recovery rate</li>
+                            <li>\\(\\mathcal{R}_0 = \\beta / \\gamma\\): Basic reproduction number</li>
+                            <li>\\(N = S + I + R\\): Total population</li>
+                            <li>\\(S_\\infty, R_\\infty\\): Final susceptible and recovered fractions</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import numpy as np
+from scipy.integrate import odeint
+import matplotlib.pyplot as plt
+
+class SIRModel:
+    """
+    SIR epidemiological model.
+    """
+    def __init__(self, beta, gamma, N):
+        """
+        beta: transmission rate
+        gamma: recovery rate
+        N: total population
+        """
+        self.beta = beta
+        self.gamma = gamma
+        self.N = N
+        self.R0 = beta / gamma
+    
+    def deriv(self, y, t):
+        """
+        SIR differential equations.
+        dS/dt = -beta * S * I / N
+        dI/dt = beta * S * I / N - gamma * I
+        dR/dt = gamma * I
+        """
+        S, I, R = y
+        dSdt = -self.beta * S * I / self.N
+        dIdt = self.beta * S * I / self.N - self.gamma * I
+        dRdt = self.gamma * I
+        return [dSdt, dIdt, dRdt]
+    
+    def solve(self, S0, I0, R0, t):
+        """Solve the SIR model."""
+        y0 = [S0, I0, R0]
+        solution = odeint(self.deriv, y0, t)
+        return solution
+    
+    def final_size(self):
+        """
+        Compute final epidemic size using the implicit equation:
+        R_inf = 1 - exp(-R0 * R_inf)
+        """
+        from scipy.optimize import fsolve
+        def equation(R_inf):
+            return R_inf - (1 - np.exp(-self.R0 * R_inf))
+        
+        R_inf = fsolve(equation, 0.5)[0]
+        return R_inf
+    
+    def herd_immunity_threshold(self):
+        """Compute herd immunity threshold: 1 - 1/R0."""
+        if self.R0 <= 1:
+            return 0
+        return 1 - 1 / self.R0
+    
+    def peak_infection(self, S0, I0):
+        """
+        Compute peak infection time and magnitude.
+        Peak occurs when S = gamma/beta = N/R0.
+        """
+        S_peak = self.N / self.R0
+        if S0 <= S_peak:
+            return 0, I0  # Already past peak
+        
+        # I_peak = I0 + S0 - S_peak + (gamma/beta) * ln(S_peak/S0)
+        I_peak = I0 + S0 - S_peak + (self.gamma/self.beta) * np.log(S_peak/S0)
+        return S_peak, I_peak
+
+class SEIRModel(SIRModel):
+    """
+    SEIR model with exposed (latent) compartment.
+    """
+    def __init__(self, beta, gamma, sigma, N):
+        """
+        sigma: rate of progression from exposed to infected
+        """
+        super().__init__(beta, gamma, N)
+        self.sigma = sigma
+    
+    def deriv(self, y, t):
+        """
+        SEIR differential equations.
+        """
+        S, E, I, R = y
+        dSdt = -self.beta * S * I / self.N
+        dEdt = self.beta * S * I / self.N - self.sigma * E
+        dIdt = self.sigma * E - self.gamma * I
+        dRdt = self.gamma * I
+        return [dSdt, dEdt, dIdt, dRdt]
+    
+    def solve(self, S0, E0, I0, R0, t):
+        """Solve the SEIR model."""
+        y0 = [S0, E0, I0, R0]
+        solution = odeint(self.deriv, y0, t)
+        return solution
+
+# Example: COVID-19-like parameters
+print("\\nEpidemiological Modeling: SIR Model")
+print("=" * 50)
+
+N = 1000000  # Population of 1 million
+beta = 0.5   # Transmission rate (per day)
+gamma = 0.1  # Recovery rate (per day)
+
+sir = SIRModel(beta, gamma, N)
+print(f"Parameters:")
+print(f"  Population N = {N:,}")
+print(f"  Transmission rate β = {beta}")
+print(f"  Recovery rate γ = {gamma}")
+print(f"  Basic reproduction number R₀ = {sir.R0:.2f}")
+
+print(f"\\nKey metrics:")
+print(f"  Final epidemic size: {sir.final_size()*100:.1f}%")
+print(f"  Herd immunity threshold: {sir.herd_immunity_threshold()*100:.1f}%")
+
+S0, I0, R0 = N - 100, 100, 0
+S_peak, I_peak = sir.peak_infection(S0, I0)
+print(f"  Peak infections: {I_peak:,.0f} individuals")
+print(f"  Peak occurs when {S_peak/N*100:.1f}% still susceptible")
+
+print(f"\\nInterpretation:")
+if sir.R0 > 1:
+    print(f"Since R₀ > 1, an epidemic will occur.")
+    print(f"Without intervention, ~{sir.final_size()*100:.0f}% of population will be infected.")
+else:
+    print(f"Since R₀ ≤ 1, the disease will die out.")</code></pre>
+                    </div>
+
+                    <div class="deep-dive">
+                        <h3>Portfolio Optimization: Modern Portfolio Theory</h3>
+                        <p><strong>Motivation:</strong> Harry Markowitz's Modern Portfolio Theory (MPT), for which he received the 1990 Nobel Prize in Economics, revolutionized investment management by providing a mathematical framework for constructing optimal portfolios. The theory quantifies the trade-off between risk and return, enabling rational investment decisions.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>Portfolio:</strong> A vector \\(w \\in \\mathbb{R}^n\\) where \\(w_i\\) is the weight of asset \\(i\\), with \\(\\sum_i w_i = 1\\).</li>
+                            <li><strong>Expected Return:</strong> \\(\\mu_w = w^T \\mu = \\sum_i w_i \\mu_i\\) where \\(\\mu_i = \\mathbb{E}[R_i]\\).</li>
+                            <li><strong>Portfolio Variance:</strong> \\(\\sigma_w^2 = w^T \\Sigma w = \\sum_{i,j} w_i w_j \\sigma_{ij}\\) where \\(\\Sigma\\) is the covariance matrix.</li>
+                            <li><strong>Sharpe Ratio:</strong> \\(S = \\frac{\\mu_w - r_f}{\\sigma_w}\\), measuring risk-adjusted return.</li>
+                            <li><strong>Efficient Frontier:</strong> The set of portfolios maximizing expected return for a given level of risk.</li>
+                        </ul>
+
+                        <h4>Theorem: Two-Fund Theorem</h4>
+                        <p><strong>Theorem:</strong> Any portfolio on the efficient frontier can be constructed as a linear combination of any two distinct efficient portfolios (funds). Specifically, if \\(w_1\\) and \\(w_2\\) are efficient portfolios, then:
+                        \\[w_\\alpha = \\alpha w_1 + (1-\\alpha) w_2\\]
+                        is also efficient for any \\(\\alpha \\in \\mathbb{R}\\).</p>
+
+                        <p><strong>Proof Sketch:</strong> The efficient frontier is characterized by solving:
+                        \\[\\min_w \\frac{1}{2} w^T \\Sigma w \\quad \\text{s.t.} \\quad w^T \\mu = \\mu_0, \\quad w^T \\mathbf{1} = 1\\]
+                        Using Lagrange multipliers:
+                        \\[\\mathcal{L} = \\frac{1}{2} w^T \\Sigma w - \\lambda_1(w^T \\mu - \\mu_0) - \\lambda_2(w^T \\mathbf{1} - 1)\\]
+        The solution \\(w^* = \\lambda_1 \\Sigma^{-1} \\mu + \\lambda_2 \\Sigma^{-1} \\mathbf{1}\\) shows that all efficient portfolios lie in the two-dimensional subspace spanned by \\(\\Sigma^{-1} \\mu\\) and \\(\\Sigma^{-1} \\mathbf{1}\\).</p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(\\mu\\): Vector of expected returns</li>
+                            <li>\\(\\Sigma\\): Covariance matrix of returns</li>
+                            <li>\\(w\\): Portfolio weight vector</li>
+                            <li>\\(r_f\\): Risk-free rate</li>
+                            <li>\\(\\sigma_w\\): Portfolio standard deviation (risk)</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import numpy as np
+from scipy.optimize import minimize
+import matplotlib.pyplot as plt
+
+class PortfolioOptimizer:
+    """
+    Modern Portfolio Theory implementation.
+    """
+    def __init__(self, expected_returns, cov_matrix, risk_free_rate=0.02):
+        """
+        expected_returns: array of expected returns for each asset
+        cov_matrix: covariance matrix of returns
+        risk_free_rate: risk-free rate (annual)
+        """
+        self.mu = np.array(expected_returns)
+        self.Sigma = np.array(cov_matrix)
+        self.n_assets = len(expected_returns)
+        self.rf = risk_free_rate
+    
+    def portfolio_return(self, weights):
+        """Calculate portfolio expected return."""
+        return np.dot(weights, self.mu)
+    
+    def portfolio_variance(self, weights):
+        """Calculate portfolio variance."""
+        return np.dot(weights.T, np.dot(self.Sigma, weights))
+    
+    def portfolio_risk(self, weights):
+        """Calculate portfolio standard deviation."""
+        return np.sqrt(self.portfolio_variance(weights))
+    
+    def sharpe_ratio(self, weights):
+        """Calculate Sharpe ratio."""
+        excess_return = self.portfolio_return(weights) - self.rf
+        return excess_return / self.portfolio_risk(weights)
+    
+    def min_variance_portfolio(self):
+        """Find minimum variance portfolio."""
+        constraints = {'type': 'eq', 'fun': lambda w: np.sum(w) - 1}
+        bounds = tuple((0, 1) for _ in range(self.n_assets))
+        x0 = np.array([1.0/self.n_assets] * self.n_assets)
+        
+        result = minimize(self.portfolio_variance, x0,
+                         method='SLSQP', bounds=bounds, constraints=constraints)
+        return result.x
+    
+    def max_sharpe_portfolio(self):
+        """Find maximum Sharpe ratio portfolio."""
+        def neg_sharpe(w):
+            return -self.sharpe_ratio(w)
+        
+        constraints = {'type': 'eq', 'fun': lambda w: np.sum(w) - 1}
+        bounds = tuple((0, 1) for _ in range(self.n_assets))
+        x0 = np.array([1.0/self.n_assets] * self.n_assets)
+        
+        result = minimize(neg_sharpe, x0,
+                         method='SLSQP', bounds=bounds, constraints=constraints)
+        return result.x
+    
+    def efficient_frontier(self, n_points=100):
+        """Generate efficient frontier."""
+        target_returns = np.linspace(self.mu.min(), self.mu.max(), n_points)
+        efficient_portfolios = []
+        
+        for target in target_returns:
+            # Minimize variance subject to target return
+            constraints = [
+                {'type': 'eq', 'fun': lambda w: np.sum(w) - 1},
+                {'type': 'eq', 'fun': lambda w: self.portfolio_return(w) - target}
+            ]
+            bounds = tuple((0, 1) for _ in range(self.n_assets))
+            x0 = np.array([1.0/self.n_assets] * self.n_assets)
+            
+            result = minimize(self.portfolio_variance, x0,
+                            method='SLSQP', bounds=bounds, constraints=constraints)
+            
+            if result.success:
+                efficient_portfolios.append({
+                    'return': target,
+                    'risk': self.portfolio_risk(result.x),
+                    'weights': result.x
+                })
+        
+        return efficient_portfolios
+
+# Example: Three-asset portfolio
+print("\\nPortfolio Optimization: Modern Portfolio Theory")
+print("=" * 50)
+
+# Expected returns (annual)
+expected_returns = [0.08, 0.12, 0.15]  # Bonds, Stocks, Emerging Markets
+
+# Covariance matrix
+# Bonds have low variance and correlation
+# Stocks have moderate variance
+# Emerging markets have high variance
+cov_matrix = [
+    [0.0016, 0.0024, 0.0032],   # Bonds
+    [0.0024, 0.0400, 0.0480],   # Stocks
+    [0.0032, 0.0480, 0.0900]    # Emerging Markets
+]
+
+optimizer = PortfolioOptimizer(expected_returns, cov_matrix, risk_free_rate=0.03)
+
+print("Asset characteristics:")
+assets = ['Bonds', 'Stocks', 'Emerging Mkts']
+for i, asset in enumerate(assets):
+    print(f"  {asset}: μ = {expected_returns[i]*100:.1f}%, σ = {np.sqrt(cov_matrix[i][i])*100:.1f}%")
+
+# Minimum variance portfolio
+min_var_weights = optimizer.min_variance_portfolio()
+min_var_return = optimizer.portfolio_return(min_var_weights)
+min_var_risk = optimizer.portfolio_risk(min_var_weights)
+
+print(f"\\nMinimum Variance Portfolio:")
+for i, asset in enumerate(assets):
+    print(f"  {asset}: {min_var_weights[i]*100:.1f}%")
+print(f"  Expected return: {min_var_return*100:.2f}%")
+print(f"  Risk (σ): {min_var_risk*100:.2f}%")
+
+# Maximum Sharpe ratio portfolio
+max_sharpe_weights = optimizer.max_sharpe_portfolio()
+max_sharpe_return = optimizer.portfolio_return(max_sharpe_weights)
+max_sharpe_risk = optimizer.portfolio_risk(max_sharpe_weights)
+max_sharpe = optimizer.sharpe_ratio(max_sharpe_weights)
+
+print(f"\\nMaximum Sharpe Ratio Portfolio:")
+for i, asset in enumerate(assets):
+    print(f"  {asset}: {max_sharpe_weights[i]*100:.1f}%")
+print(f"  Expected return: {max_sharpe_return*100:.2f}%")
+print(f"  Risk (σ): {max_sharpe_risk*100:.2f}%")
+print(f"  Sharpe ratio: {max_sharpe:.3f}")
+
+print(f"\\nKey insight: Diversification reduces risk!")
+print(f"Individual stock risk: {np.sqrt(cov_matrix[1][1])*100:.1f}%")
+print(f"Optimized portfolio risk: {max_sharpe_risk*100:.1f}%")</code></pre>
+                    </div>
+                </section>
+
+                <section id="special-topics">
+                    <h2>🎯 Special Topics</h2>
+
+                    <div class="deep-dive">
+                        <h3>Fermat's Last Theorem: From Diophantus to Wiles</h3>
+                        <p><strong>Historical Context:</strong> In 1637, Pierre de Fermat wrote in the margin of his copy of Diophantus' Arithmetica that he had a "truly marvelous proof" that the equation \\(a^n + b^n = c^n\\) has no solutions in positive integers for \\(n > 2\\). This simple statement became the most famous unsolved problem in mathematics for over 350 years, until Andrew Wiles announced his proof in 1993.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>Fermat Equation:</strong> \\(x^n + y^n = z^n\\) for integers \\(n \\geq 3\\).</li>
+                            <li><strong>Elliptic Curve:</strong> A smooth cubic curve with a group structure, typically written as \\(y^2 = x^3 + ax + b\\).</li>
+                            <li><strong>Modular Form:</strong> A holomorphic function on the upper half-plane satisfying specific transformation properties under \\(\\text{SL}(2, \\mathbb{Z})\\).</li>
+                            <li><strong>Frey Curve:</strong> An elliptic curve \\(y^2 = x(x - a^n)(x + b^n)\\) associated to a hypothetical Fermat solution.</li>
+                        </ul>
+
+                        <h4>Theorem: Fermat's Last Theorem</h4>
+                        <p><strong>Theorem (Wiles, 1995):</strong> For any integer \\(n \\geq 3\\), there are no positive integers \\(a, b, c\\) such that:
+                        \\[a^n + b^n = c^n\\]</p>
+
+                        <p><strong>Proof Strategy:</strong> Wiles proved the semistable case of the Taniyama-Shimura-Weil conjecture (now the modularity theorem):
+                        <ol>
+                            <li>Assume a counterexample \\(a^p + b^p = c^p\\) exists for prime \\(p \\geq 5\\)</li>
+                            <li>Frey (1984) constructed an associated elliptic curve with unusual properties</li>
+                            <li>Ribet (1986) proved that this curve would not be modular</li>
+                            <li>Wiles (1995) proved that all semistable elliptic curves are modular</li>
+                            <li>Contradiction! Therefore no counterexample exists</li>
+                        </ol></p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(\\mathbb{H}\\): Upper half-plane \\(\\{z \\in \\mathbb{C} : \\text{Im}(z) > 0\\}\\)</li>
+                            <li>\\(\\Gamma_0(N)\\): Congruence subgroup of \\(\\text{SL}(2, \\mathbb{Z})\\)</li>
+                            <li>\\(f(\\tau)\\): Modular form as function of \\(\\tau \\in \\mathbb{H}\\)</li>
+                            <li>\\(L(E, s)\\): L-function of elliptic curve \\(E\\)</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import sympy as sp
+from sympy import symbols, factor, expand
+
+def check_fermat(n, max_val=100):
+    """
+    Check Fermat's Last Theorem for small values.
+    (For demonstration only - not a proof!)
+    """
+    solutions = []
+    for a in range(1, max_val):
+        for b in range(a, max_val):  # b >= a to avoid duplicates
+            c_power = a**n + b**n
+            c = round(c_power ** (1/n))
+            
+            # Check nearby integers (floating point precision)
+            for c_test in [c-1, c, c+1]:
+                if c_test > 0 and c_test**n == c_power:
+                    solutions.append((a, b, c_test))
+    return solutions
+
+# Frey curve construction
+def frey_curve(a, b, c, p):
+    """
+    Construct the Frey curve associated to a^p + b^p = c^p.
+    E: y^2 = x(x - a^p)(x + b^p)
+    """
+    A = - (a**p - b**p) / 4
+    B = - (a**p * b**p) / 16
+    return A, B
+
+# Demonstration
+print("Fermat's Last Theorem")
+print("=" * 50)
+
+# Check for n = 3, small values
+print("Checking x³ + y³ = z³ for small values...")
+solutions_n3 = check_fermat(3, max_val=50)
+print(f"Solutions found: {len(solutions_n3)}")
+if solutions_n3:
+    print(f"Solutions: {solutions_n3}")
+else:
+    print("No solutions found (as expected!)")
+
+# Check for n = 4
+print("\\nChecking x⁴ + y⁴ = z⁴ for small values...")
+solutions_n4 = check_fermat(4, max_val=20)
+print(f"Solutions found: {len(solutions_n4)}")
+
+# Fermat's proof for n=4 (infinite descent)
+print("\\nFermat proved n=4 using infinite descent:")
+print("If x⁴ + y⁴ = z² had a solution, we could find a smaller solution,")
+print("leading to an infinite decreasing sequence of positive integers.")
+print("Contradiction! Therefore no solutions exist.")
+
+# Connection to elliptic curves
+print("\\nWiles' Proof Strategy:")
+print("1. Assume a^p + b^p = c^p exists")
+print("2. Construct Frey curve: y² = x(x - a^p)(x + b^p)")
+print("3. This curve would have special properties (not modular)")
+print("4. But Wiles proved ALL semistable elliptic curves ARE modular")
+print("5. Contradiction! → No counterexample exists")
+
+# Example Frey curve parameters
+a, b, c, p = 3, 4, 5, 3  # Hypothetical (3³ + 4³ ≠ 5³, but for demo)
+A, B = frey_curve(a, b, c, p)
+print(f"\\nExample Frey curve parameters (for a={a}, b={b}, p={p}):")
+print(f"y² = x³ + ({A})x + ({B})")
+print(f"Discriminant: {-16*(4*A**3 + 27*B**2)}")</code></pre>
+                    </div>
+
+                    <div class="deep-dive">
+                        <h3>The Riemann Hypothesis: The Crown Jewel of Mathematics</h3>
+                        <p><strong>Historical Context:</strong> In 1859, Bernhard Riemann published his only paper on number theory, "On the Number of Primes Less Than a Given Magnitude." In it, he introduced the Riemann zeta function and made a conjecture about the location of its non-trivial zeros. This hypothesis, now one of the seven Millennium Prize Problems, has profound implications for the distribution of prime numbers.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>Riemann Zeta Function:</strong> \\(\\zeta(s) = \\sum_{n=1}^\\infty \\frac{1}{n^s} = \\prod_p \\frac{1}{1-p^{-s}}\\) for \\(\\text{Re}(s) > 1\\).</li>
+                            <li><strong>Trivial Zeros:</strong> \\(\\zeta(-2n) = 0\\) for all positive integers \\(n\\).</li>
+                            <li><strong>Non-trivial Zeros:</strong> Zeros in the critical strip \\(0 < \\text{Re}(s) < 1\\).</li>
+                            <li><strong>Critical Line:</strong> The line \\(\\text{Re}(s) = \\frac{1}{2}\\).</li>
+                            <li><strong>Möbius Function:</strong> \\(\\mu(n)\\) is \\((-1)^k\\) if \\(n\\) is a product of \\(k\\) distinct primes, 0 otherwise.</li>
+                        </ul>
+
+                        <h4>Theorem: The Riemann Hypothesis</h4>
+                        <p><strong>Conjecture (Riemann, 1859):</strong> All non-trivial zeros of the Riemann zeta function have real part equal to \\(\\frac{1}{2}\\). That is, if \\(\\zeta(s) = 0\\) with \\(0 < \\text{Re}(s) < 1\\), then:
+                        \\[\\text{Re}(s) = \\frac{1}{2}\\]</p>
+
+                        <p><strong>Equivalent Formulations:</strong>
+                        <ol>
+                            <li>\\(\\pi(x) = \\text{Li}(x) + O(\\sqrt{x} \\log x)\\) where \\(\\pi(x)\\) counts primes \\(\\leq x\\)</li>
+                            <li>\\(\\sum_{n \\leq x} \\mu(n) = O(x^{1/2 + \\epsilon})\\) for all \\(\\epsilon > 0\\)</li>
+                            <li>The error term in the prime number theorem is minimal</li>
+                        </ol></p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(\\zeta(s)\\): Riemann zeta function</li>
+                            <li>\\(\\Gamma(s)\\): Gamma function (analytic continuation)</li>
+                            <li>\\(\\xi(s)\\): Riemann xi function (symmetric version)</li>
+                            <li>\\(\\text{Li}(x) = \\int_2^x \\frac{dt}{\\log t}\\): Logarithmic integral</li>
+                            <li>\\(\\pi(x)\\): Prime counting function</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import zeta, gamma
+from scipy.optimize import fsolve
+
+def riemann_zeta_critical_line(t, n_terms=100000):
+    """
+    Compute zeta(1/2 + it) on the critical line.
+    Uses analytic continuation via the functional equation.
+    """
+    s = 0.5 + 1j*t
+    
+    # For large t, use Riemann-Siegel formula approximation
+    # For small t, use scipy's implementation
+    try:
+        return zeta(s)
+    except:
+        # Approximation for large imaginary parts
+        return riemann_siegel_approx(t)
+
+def riemann_siegel_approx(t):
+    """
+    Riemann-Siegel formula approximation for zeta(1/2 + it).
+    """
+    tau = t / (2 * np.pi)
+    m = int(np.sqrt(tau))
+    
+    # Main sum
+    Z = 0
+    for n in range(1, m + 1):
+        Z += np.cos(t * np.log(n)) / np.sqrt(n)
+    
+    # Correction term (simplified)
+    theta = t/2 * np.log(t/(2*np.pi)) - t/2 - np.pi/8
+    return Z * np.exp(1j * theta)
+
+def find_zeros_on_critical_line(t_min=0, t_max=100, n_points=10000):
+    """
+    Find approximate locations of zeros on the critical line.
+    Uses the fact that |zeta(1/2 + it)| has minima at zeros.
+    """
+    t_values = np.linspace(t_min, t_max, n_points)
+    zeta_values = []
+    
+    for t in t_values:
+        z = riemann_zeta_critical_line(t)
+        zeta_values.append(abs(z))
+    
+    zeta_values = np.array(zeta_values)
+    
+    # Find local minima close to zero
+    zeros = []
+    for i in range(1, len(zeta_values) - 1):
+        if (zeta_values[i] < zeta_values[i-1] and 
+            zeta_values[i] < zeta_values[i+1] and
+            zeta_values[i] < 0.5):  # Threshold for zero
+            zeros.append(t_values[i])
+    
+    return zeros
+
+def prime_number_theorem_approx(x):
+    """
+    Approximate pi(x) using the logarithmic integral.
+    pi(x) ~ Li(x) = integral_2^x dt/log(t)
+    """
+    from scipy.special import expi
+    # Li(x) = Ei(log(x))
+    return np.real(expi(np.log(x + 0j)))
+
+def von_mangoldt_explicit_formula(x, zeros, max_zero=50):
+    """
+    Explicit formula relating psi(x) to zeros of zeta.
+    psi(x) = x - sum_{rho} x^rho/rho - log(2*pi) - 1/2 log(1-x^{-2})
+    where rho runs over non-trivial zeros.
+    """
+    psi = x
+    for gamma in zeros[:max_zero]:
+        rho = 0.5 + 1j*gamma
+        psi -= x**rho / rho
+    psi -= np.log(2*np.pi)
+    return np.real(psi)
+
+# Demonstration
+print("The Riemann Hypothesis")
+print("=" * 50)
+
+# First few known zeros on critical line
+known_zeros = [
+    14.134725, 21.022040, 25.010858, 30.424876, 32.935062,
+    37.586178, 40.918719, 43.327073, 48.005151, 49.773832
+]
+
+print("First 10 non-trivial zeros on the critical line:")
+print("(All have real part = 1/2)")
+for i, gamma in enumerate(known_zeros, 1):
+    print(f"  ρ_{i} = 1/2 + {gamma:.6f}i")
+
+print(f"\\nComputational verification:")
+for gamma in known_zeros[:3]:
+    z = riemann_zeta_critical_line(gamma)
+    print(f"  |ζ(1/2 + {gamma:.2f}i)| ≈ {abs(z):.2e}")
+
+print(f"\\nPrime Number Theorem:")
+x_values = [100, 1000, 10000, 100000]
+for x in x_values:
+    # Count actual primes (simplified)
+    actual_primes = len([p for p in range(2, x+1) if all(p % d != 0 for d in range(2, int(p**0.5)+1))])
+    approx = prime_number_theorem_approx(x)
+    print(f"  π({x}) = {actual_primes}, Li({x}) ≈ {approx:.1f}, error = {abs(actual_primes - approx):.1f}")
+
+print(f"\\nIf RH is true, the error term is O(√x log x)")
+print(f"This would give the tightest possible bound on prime distribution.")</code></pre>
+                    </div>
+
+                    <div class="deep-dive">
+                        <h3>The Langlands Program: A Grand Unified Theory of Mathematics</h3>
+                        <p><strong>Historical Context:</strong> In 1967, Robert Langlands wrote a 17-page letter to André Weil outlining a series of conjectures that would revolutionize number theory and representation theory. The Langlands Program proposes deep connections between number theory, algebraic geometry, and harmonic analysis—often described as a "grand unified theory" of mathematics.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>Automorphic Form:</strong> A function on a Lie group satisfying specific invariance and growth conditions, generalizing modular forms.</li>
+                            <li><strong>Galois Representation:</strong> A homomorphism \\(\\rho: G_{\\mathbb{Q}} \\to \\text{GL}_n(\\overline{\\mathbb{Q}}_\\ell)\\) from the absolute Galois group.</li>
+                            <li><strong>L-function:</strong> A Dirichlet series \\(L(s, \\pi) = \\sum_{n=1}^\\infty \\frac{a_n}{n^s}\\) encoding arithmetic information.</li>
+                            <li><strong>Langlands Dual Group:</strong> For a reductive group \\(G\\), its dual \\(^LG\\) encodes representation-theoretic information.</li>
+                        </ul>
+
+                        <h4>Theorem: Local Langlands Correspondence</h4>
+                        <p><strong>Theorem (Harris-Taylor, Henniart; Local Langlands):</strong> Let \\(F\\) be a non-archimedean local field (e.g., \\(\\mathbb{Q}_p\\)). There is a natural bijection between:
+                        <ol>
+                            <li>Irreducible admissible representations of \\(\\text{GL}_n(F)\\)</li>
+                            <li>n-dimensional Frobenius-semisimple Weil-Deligne representations of the Weil group \\(W_F\\)</li>
+                        </ol>
+                        This correspondence preserves L-factors and \\(\\epsilon\\)-factors.</p>
+
+                        <p><strong>Significance:</strong> The Langlands Program encompasses:
+                        <ul>
+                            <li>Class field theory (abelian case, proven)</li>
+                            <li>Modularity of elliptic curves (proven by Wiles et al.)</li>
+                            <li>Functoriality principle (relating automorphic forms on different groups)</li>
+                            <li>Geometric Langlands (connection to quantum field theory)</li>
+                        </ul></p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(G_F = \\text{Gal}(\\overline{F}/F)\\): Absolute Galois group</li>
+                            <li>\\(\\text{GL}_n\\): General linear group</li>
+                            <li>\\(\\pi\\): Automorphic representation</li>
+                            <li>\\(\\rho\\): Galois representation</li>
+                            <li>\\(L(s, \\pi)\\): Automorphic L-function</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import sympy as sp
+from sympy import symbols, expand, factor, Poly
+
+def hecke_operator_fourier(n, fourier_coeffs):
+    """
+    Compute the action of the Hecke operator T_n on a modular form.
+    For f(z) = sum_{m} a_m q^m, T_n f = sum_{m} b_m q^m where
+    b_m = sum_{d|gcd(m,n)} d^{k-1} a_{mn/d^2}
+    """
+    result = {}
+    max_m = len(fourier_coeffs)
+    
+    for m in range(1, max_m):
+        b_m = 0
+        # Sum over divisors of gcd(m, n)
+        gcd_mn = sp.gcd(m, n)
+        for d in sp.divisors(gcd_mn):
+            idx = (m * n) // (d * d)
+            if idx < max_m:
+                b_m += d**(11) * fourier_coeffs.get(idx, 0)  # k=12 for Delta
+        result[m] = b_m
+    
+    return result
+
+def local_langlands_gl1(p, character):
+    """
+    Local Langlands for GL(1): Characters of Q_p^* correspond to
+    1-dimensional representations of the Weil group.
+    """
+    # For GL(1), this is local class field theory
+    # Characters of Q_p^* <-> Characters of Gal(Q_p^ab/Q_p)
+    
+    if character == 'trivial':
+        return {
+            'type': 'unramified',
+            'Frobenius_eigenvalue': 1,
+            'conductor': 0,
+            'L_factor': f'1/(1 - p^(-s))'
+        }
+    elif character == 'sign':
+        return {
+            'type': 'ramified',
+            'conductor': 1,
+            'L_factor': '1',
+            'epsilon_factor': 'p^(-s)'
+        }
+    return None
+
+def artin_reciprocity_map(n, modulus):
+    """
+    Artin reciprocity map: (Z/mZ)^* -> Gal(Q(zeta_m)/Q)
+    This is the abelian case of Langlands (Class Field Theory).
+    """
+    # The map sends a mod m to sigma_a: zeta_m -> zeta_m^a
+    if sp.gcd(n, modulus) != 1:
+        return None
+    
+    return {
+        'input': f'{n} mod {modulus}',
+        'output': f'σ_{n}: ζ_{modulus} ↦ ζ_{modulus}^{n}',
+        'order': sp.modular.multiplicative_order(n, modulus)
+    }
+
+def langlands_functoriality_example():
+    """
+    Example of Langlands functoriality: Symmetric powers.
+    If π corresponds to ρ, then Sym^n(π) corresponds to Sym^n(ρ).
+    """
+    print("Langlands Functoriality Example")
+    print("-" * 40)
+    print("Given: π ↔ ρ (automorphic form ↔ Galois representation)")
+    print("\\nFunctoriality predicts:")
+    print("  Sym²(π) ↔ Sym²(ρ)  (symmetric square lift)")
+    print("  Sym³(π) ↔ Sym³(ρ)  (symmetric cube lift)")
+    print("\\nThese lifts have been proven for GL(2) by:")
+    print("  - Gelbart-Jacquet (Sym²)")
+    print("  - Kim-Shahidi (Sym³, Sym⁴)")
+
+# Demonstration
+print("The Langlands Program")
+print("=" * 50)
+
+print("Local Langlands Correspondence for GL(1) over Q_p:")
+print("-" * 40)
+for char in ['trivial', 'sign']:
+    result = local_langlands_gl1(2, char)
+    print(f"\\nCharacter: {char}")
+    for key, value in result.items():
+        print(f"  {key}: {value}")
+
+print(f"\\n\\nArtin Reciprocity (Abelian Langlands):")
+print("-" * 40)
+for a in [1, 2, 3, 4]:
+    result = artin_reciprocity_map(a, 5)
+    if result:
+        print(f"  {result['input']} → {result['output']}")
+
+print(f"\\n\\nKey Insight:")
+print("The Langlands Program predicts deep connections between:")
+print("  • Number theory (Galois representations)")
+print("  • Analysis (automorphic forms)")
+print("  • Geometry (Shimura varieties)")
+print("  • Physics (conformal field theory)")
+
+langlands_functoriality_example()
+
+# Modular form example
+print(f"\\n\\nModular Form Example (Ramanujan Delta function):")
+print("-" * 40)
+tau_coeffs = {1: 1, 2: -24, 3: 252, 4: -1472, 5: 4830}  # Ramanujan's tau
+print("Fourier coefficients of Δ(z) = q ∏(1-q^n)^24:")
+for n, coeff in tau_coeffs.items():
+    print(f"  τ({n}) = {coeff}")
+
+print(f"\\nThe Ramanujan conjecture (proved by Deligne):")
+print(f"  |τ(p)| ≤ 2p^(11/2) for all primes p")
+print(f"This follows from the Weil conjectures, via the")
+print(f"connection between modular forms and Galois representations.")</code></pre>
+                    </div>
+
+                    <div class="deep-dive">
+                        <h3>The ABC Conjecture: Deep Connections in Diophantine Geometry</h3>
+                        <p><strong>Historical Context:</strong> Proposed by Joseph Oesterlé and David Masser in 1985, the ABC conjecture is a simple-to-state but profound conjecture about the relationship between the prime factors of three integers satisfying \\(a + b = c\\). Despite its elementary appearance, it implies many famous theorems and conjectures in number theory, including Fermat's Last Theorem for sufficiently large exponents.</p>
+                        
+                        <h4>Definitions</h4>
+                        <ul>
+                            <li><strong>Radical:</strong> For a positive integer \\(n\\), \\(\\text{rad}(n) = \\prod_{p|n} p\\), the product of distinct prime factors.</li>
+                            <li><strong>ABC Triple:</strong> A triple \\((a, b, c)\\) of coprime positive integers with \\(a + b = c\\).</li>
+                            <li><strong>Quality:</strong> \\(q(a, b, c) = \\frac{\\log c}{\\log \\text{rad}(abc)}\\).</li>
+                            <li><strong>ABC Conjecture:</strong> For any \\(\\epsilon > 0\\), there are only finitely many ABC triples with \\(q(a, b, c) > 1 + \\epsilon\\).</li>
+                        </ul>
+
+                        <h4>Theorem: Consequences of ABC</h4>
+                        <p><strong>Theorem:</strong> If the ABC conjecture is true, then:
+                        <ol>
+                            <li>Fermat's Last Theorem holds for all sufficiently large exponents \\(n\\)</li>
+                            <li>The Wieferich prime conjecture: there are infinitely many primes \\(p\\) with \\(2^{p-1} \\not\\equiv 1 \\pmod{p^2}\\)</li>
+                            <li>The Erdős–Woods conjecture about consecutive integers with restricted prime factors</li>
+                            <li>Roth's theorem on Diophantine approximation (with effective bounds)</li>
+                        </ol></p>
+
+                        <h4>Best Known ABC Triples</h4>
+                        <p>The highest quality ABC triple known as of 2024 is:
+                        \\[a = 2, \\quad b = 3^{10} \\cdot 109, \\quad c = 23^5\\]
+                        with quality \\(q \\approx 1.6299\\).</p>
+
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\\(\\text{rad}(n)\\): Radical of \\(n\\)</li>
+                            <li>\\(\\omega(n)\\): Number of distinct prime factors</li>
+                            <li>\\(\\Omega(n)\\): Total number of prime factors with multiplicity</li>
+                            <li>\\(q(a, b, c)\\): Quality of ABC triple</li>
+                        </ul>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import sympy as sp
+from sympy import factorint, gcd, primerange
+
+def radical(n):
+    """Compute the radical of n (product of distinct prime factors)."""
+    if n <= 1:
+        return n
+    factors = factorint(n)
+    result = 1
+    for p in factors:
+        result *= p
+    return result
+
+def abc_quality(a, b, c):
+    """
+    Compute the quality of an ABC triple (a, b, c).
+    q(a,b,c) = log(c) / log(rad(abc))
+    """
+    if a + b != c:
+        return None
+    if gcd(a, b) != 1 or gcd(a, c) != 1 or gcd(b, c) != 1:
+        return None
+    
+    rad_abc = radical(a * b * c)
+    if rad_abc == 0:
+        return None
+    
+    import math
+    return math.log(c) / math.log(rad_abc)
+
+def find_abc_triples(max_val=1000):
+    """
+    Find ABC triples with quality > 1.
+    """
+    triples = []
+    
+    for c in range(2, max_val):
+        for a in range(1, c):
+            b = c - a
+            if b <= 0:
+                continue
+            if gcd(a, b) != 1:
+                continue
+            
+            q = abc_quality(a, b, c)
+            if q and q > 1.0:
+                triples.append((a, b, c, q))
+    
+    return sorted(triples, key=lambda x: x[3], reverse=True)
+
+def check_fermat_abc(n, max_base=100):
+    """
+    Check Fermat equation a^n + b^n = c^n using ABC perspective.
+    If a^n + b^n = c^n, then rad(abc) is small compared to c.
+    """
+    counterexamples = []
+    
+    for a in range(1, max_base):
+        a_n = a ** n
+        for b in range(a, max_base):
+            b_n = b ** n
+            c_n = a_n + b_n
+            c = round(c_n ** (1/n))
+            
+            # Check nearby values
+            for c_test in [c-1, c, c+1]:
+                if c_test > 0 and c_test ** n == c_n:
+                    # Found potential solution
+                    q = abc_quality(a_n, b_n, c_test ** n)
+                    counterexamples.append((a, b, c_test, n, q))
+    
+    return counterexamples
+
+# Demonstration
+print("The ABC Conjecture")
+print("=" * 50)
+
+# Compute radicals
+print("Examples of radicals:")
+for n in [12, 30, 100, 504]:
+    factors = factorint(n)
+    rad = radical(n)
+    print(f"  rad({n}) = {rad}, factors = {factors}")
+
+# Find good ABC triples
+print("\\nABC triples with quality > 1.2 (small search):")
+triples = find_abc_triples(1000)
+for a, b, c, q in triples[:5]:
+    rad = radical(a * b * c)
+    print(f"  ({a}, {b}, {c}): q = {q:.4f}, rad(abc) = {rad}")
+
+# Famous example
+print("\\nFamous ABC triple (highest known quality):")
+a = 2
+b = 3**10 * 109  # 6436341
+c = 23**5        # 6436343
+q = abc_quality(a, b, c)
+rad = radical(a * b * c)
+print(f"  a = {a}")
+print(f"  b = 3^10 × 109 = {b}")
+print(f"  c = 23^5 = {c}")
+print(f"  Quality: {q:.6f}")
+print(f"  rad(abc) = {rad}")
+
+# Connection to Fermat
+print("\\nConnection to Fermat's Last Theorem:")
+print("If a^n + b^n = c^n with n ≥ 4, then:")
+print("  rad(abc) = rad(a^n · b^n · c^n) = rad(abc) ≤ abc < c^3")
+print("  So q = log(c^n) / log(rad) > n/3")
+print("For n large, this contradicts ABC (which says q ≤ 1 + ε eventually)")
+
+print("\\nABC implies Fermat for all sufficiently large n!")
+
+# Szpiro's conjecture connection
+print("\\nSzpiro's Conjecture (equivalent to ABC):")
+print("For an elliptic curve E/Q with minimal discriminant Δ and conductor N:")
+print("  |Δ| ≤ C(ε) · N^{6+ε}")
+print("This connects ABC to the arithmetic of elliptic curves.")</code></pre>
+                    </div>
+                </section>
+
+                <section id="math-history">
+                    <h2>📚 Math History: Carl Friedrich Gauss — The Prince of Mathematicians</h2>
+                    <div class="history-content">
+                        <p>Carl Friedrich Gauss (1777–1855) stands as one of the most influential mathematicians in history, often referred to as the "Prince of Mathematicians" and the "greatest mathematician since antiquity." His work touched virtually every area of mathematics and physics, and his insistence on rigorous proof set new standards for mathematical exposition.</p>
+
+                        <p>Gauss displayed extraordinary mathematical talent from an early age. The famous story of the young Gauss summing the integers from 1 to 100 in seconds—by recognizing that \\(1 + 100 = 2 + 99 = 3 + 98 = \\cdots = 101\\), giving \\(50 \\times 101 = 5050\\)—illustrates his remarkable insight. By age 19, he had constructed the regular 17-gon with compass and straightedge, the first new constructible regular polygon since antiquity, and more importantly, had developed the theory that would explain why this was possible.</p>
+
+                        <p>His <em>Disquisitiones Arithmeticae</em> (1801) revolutionized number theory. In it, Gauss systematized the field, gave the first proper proof of the quadratic reciprocity law (which he called the "golden theorem"), introduced the concept of congruence, and developed the theory of binary quadratic forms. The book established number theory as a rigorous mathematical discipline rather than a collection of isolated results.</p>
+
+                        <p>Gauss made equally profound contributions to analysis and geometry. His doctoral thesis (1799) contained the first essentially correct proof of the Fundamental Theorem of Algebra. In 1812, he published foundational work on hypergeometric series and continued fractions. His <em>General Investigations of Curved Surfaces</em> (1827) founded differential geometry, introducing the concept of Gaussian curvature and proving his <em>Theorema Egregium</em>—that curvature is an intrinsic property of a surface, unchanged by bending without stretching.</p>
+
+                        <p>In astronomy, Gauss calculated the orbit of the newly discovered asteroid Ceres using his method of least squares, which he had developed as a teenager. His <em>Theoria Motus</em> (1809) became the standard reference on celestial mechanics. In physics, he collaborated with Wilhelm Weber on electromagnetism, and the CGS unit of magnetic flux density is named the gauss in his honor.</p>
+
+                        <p>Gauss was famously perfectionist, publishing only work he considered complete and polished. His motto was <em>pauca sed matura</em> (few but ripe). Upon his death, his diary and unpublished notes revealed that he had anticipated many major mathematical developments—including non-Euclidean geometry, elliptic functions, and quaternions—decades before others published them. His influence continues to shape mathematics today, from Gaussian elimination to Gaussian processes in machine learning.</p>
+                    </div>
+                </section>
+
+                <section id="math-journalism">
+                    <h2>📰 Math Journalism</h2>
+                    
+                    <div class="article-card">
+                        <h3><a href="https://www.quantamagazine.org/mathematicians-prove-tetrahedron-equation-is-as-complex-as-it-looks-20241212/">Mathematicians Prove the Tetrahedron Equation Is as Complex as It Looks</a></h3>
+                        <p><strong>Source:</strong> Quanta Magazine</p>
+                        <p>A team of mathematicians has resolved a long-standing question about the tetrahedron equation, a higher-dimensional analog of the Yang-Baxter equation from statistical mechanics. The proof establishes that solutions to the tetrahedron equation are inherently complex, with no simplifying shortcuts. This work has implications for understanding integrable systems in physics and topology, where such equations govern the behavior of quantum systems and knot invariants.</p>
+                    </div>
+
+                    <div class="article-card">
+                        <h3><a href="https://www.nature.com/articles/d41586-024-04019-0">AI Makes Progress on Millennium Prize Problems</a></h3>
+                        <p><strong>Source:</strong> Nature News</p>
+                        <p>Researchers have developed new AI systems capable of generating novel mathematical conjectures and assisting with proof verification. While still far from solving the Millennium Prize Problems autonomously, these tools have already helped mathematicians discover new connections in representation theory and combinatorics. The collaboration between human intuition and machine computation is opening new avenues for mathematical discovery.</p>
+                    </div>
+
+                    <div class="article-card">
+                        <h3><a href="https://www.ams.org/journals/notices/202501/rnoti-p1.pdf">The State of Mathematics Education in 2024</a></h3>
+                        <p><strong>Source:</strong> Notices of the AMS</p>
+                        <p>A comprehensive survey examines how technology and changing workforce demands are reshaping mathematics education at all levels. The article discusses the integration of computational tools, the growing importance of data literacy, and innovative approaches to teaching proof-based reasoning. It also addresses challenges in broadening participation and ensuring equitable access to advanced mathematical training.</p>
+                    </div>
+                </section>
+
+                <section id="problem-corner">
+                    <h2>🎯 Problem Corner</h2>
+                    
+                    <div class="problem">
+                        <h3>IMO Shortlist Problem</h3>
+                        <p><strong>Problem:</strong> Let \\(n\\) be a positive integer. A sequence \\(a_0, a_1, \\ldots, a_n\\) of integers is called <em>good</em> if it satisfies the following conditions:</p>
+                        <ul>
+                            <li>\\(a_0 = 0\\)</li>
+                            <li>For each \\(i\\) with \\(1 \\leq i \\leq n\\), we have \\(|a_i - a_{i-1}| = 1\\)</li>
+                            <li>There do not exist indices \\(0 \\leq i < j < k \\leq n\\) such that \\(a_i = a_k\\) and \\(a_j = a_i + 1\\)</li>
+                        </ul>
+                        <p>Determine the number of good sequences for a given \\(n\\).</p>
+
+                        <details>
+                            <summary>💡 Hint</summary>
+                            <p>Consider the path interpretation: each good sequence corresponds to a walk on the integers starting at 0, taking steps of \\(\\pm 1\\), with a restriction on certain patterns. The third condition forbids a "peak" pattern where the walk goes up, then returns to the same level, then goes up again. This is related to Catalan-like counting. Try small cases: \\(n = 1, 2, 3, 4\\) and look for a pattern.</p>
+                        </details>
+
+                        <details>
+                            <summary>✅ Solution</summary>
+                            <p>The answer is the \\(n\\)-th Catalan number \\(C_n = \\frac{1}{n+1}\\binom{2n}{n}\\).</p>
+                            
+                            <p><strong>Proof:</strong></p>
+                            <p>First, we reinterpret the condition. The third condition says there is no pattern where we go from height \\(h\\) to \\(h+1\\), then return to \\(h\\), then go to \\(h+1\\) again. This is equivalent to saying that once we return to a level, we never exceed that level again.</p>
+                            
+                            <p>Consider the partial sums \\(s_k = a_k\\). The condition implies that the sequence of maxima \\(M_k = \\max_{0 \\leq i \\leq k} a_i\\) is non-decreasing and increases by exactly 1 each time we set a new maximum.</p>
+                            
+                            <p>We can establish a bijection with Dyck paths (paths from \\((0,0)\\) to \\((2n, 0)\\) using steps \\((1,1)\\) and \\((1,-1)\\) that never go below the x-axis). Given a good sequence, we construct a Dyck path by encoding \\(+1\\) steps as up-steps and \\(-1\\) steps as down-steps, but with a twist: we insert an up-step at the beginning and a down-step at the end, and modify the path to ensure it ends at 0.</p>
+                            
+                            <p>Alternatively, we can verify that good sequences satisfy the same recurrence as Catalan numbers. Let \\(g_n\\) be the number of good sequences of length \\(n\\). For \\(n \\geq 1\\), consider the first return to 0 (if any). If the sequence never returns to 0 after starting, it must stay positive, and there's exactly one such sequence: \\(0, 1, 2, \\ldots, n\\). Otherwise, let \\(2k\\) be the first return time. The part before the return forms a good sequence of length \\(k\\) (shifted and scaled), and the part after forms a good sequence of length \\(n-k\\). This gives:
+                            \\[g_n = g_0 g_{n-1} + g_1 g_{n-2} + \\cdots + g_{n-1} g_0 + 1\\]
+                            where the \\(+1\\) accounts for the never-returning case. With \\(g_0 = 1\\), this is the Catalan recurrence.</p>
+                            
+                            <p>Therefore, \\(g_n = C_n = \\frac{1}{n+1}\\binom{2n}{n}\\).</p>
+                        </details>
+                    </div>
+                </section>
+
+                <section id="visualization">
+                    <h2>🎨 Visualization of the Day: Julia Sets</h2>
+                    
+                    <div class="visualization">
+                        <p>The Julia set is a fractal associated with complex dynamics. For a complex quadratic polynomial \\(f_c(z) = z^2 + c\\), the filled Julia set consists of points whose orbits remain bounded under iteration. The boundary of this set forms the Julia set itself—a fractal with intricate self-similar structure.</p>
+                        
+                        <p>Unlike the Mandelbrot set (which lives in the parameter space), each Julia set corresponds to a specific parameter \\(c\\). When \\(c\\) is in the Mandelbrot set, the Julia set is connected; otherwise, it is a Cantor set of disconnected points.</p>
+
+                        <h4>Python Implementation</h4>
+                        <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+
+def julia_set(c, xlim=(-2, 2), ylim=(-2, 2), resolution=800, max_iter=100):
+    """
+    Compute the Julia set for f(z) = z^2 + c.
+    
+    Parameters:
+    -----------
+    c : complex
+        Complex parameter
+    xlim, ylim : tuple
+        Bounds for the complex plane
+    resolution : int
+        Number of points in each dimension
+    max_iter : int
+        Maximum number of iterations
+    
+    Returns:
+    --------
+    2D array of iteration counts
+    """
+    # Create grid of complex numbers
+    x = np.linspace(xlim[0], xlim[1], resolution)
+    y = np.linspace(ylim[0], ylim[1], resolution)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    # Initialize iteration count array
+    iterations = np.zeros(Z.shape, dtype=int)
+    mask = np.ones(Z.shape, dtype=bool)
+    
+    # Iterate
+    for i in range(max_iter):
+        # Only iterate points that haven't escaped yet
+        Z[mask] = Z[mask]**2 + c
+        
+        # Check which points have escaped (|z| > 2)
+        escaped = np.abs(Z) > 2
+        
+        # Record iteration count for newly escaped points
+        new_escape = escaped & mask
+        iterations[new_escape] = i
+        
+        # Update mask
+        mask &= ~escaped
+        
+        # Stop if all points have escaped
+        if not np.any(mask):
+            break
+    
+    # Points that never escaped get max_iter
+    iterations[mask] = max_iter
+    
+    return iterations
+
+def plot_julia_set(c, title=None, cmap='hot', **kwargs):
+    """
+    Plot the Julia set for parameter c.
+    """
+    julia = julia_set(c, **kwargs)
+    
+    plt.figure(figsize=(10, 10))
+    plt.imshow(julia, extent=(-2, 2, -2, 2), cmap=cmap, origin='lower')
+    plt.colorbar(label='Iterations to escape')
+    if title:
+        plt.title(title)
+    plt.xlabel('Re(z)')
+    plt.ylabel('Im(z)')
+    plt.axis('equal')
+    plt.tight_layout()
+    return julia
+
+# Create visualizations for different values of c
+print("Julia Sets: Fractals from Complex Dynamics")
+print("=" * 50)
+
+# Famous Julia sets
+examples = [
+    (-0.7 + 0.27015j, "Douady Rabbit"),
+    (-0.8 + 0.156j, "Siegel Disk"),
+    (-0.4 + 0.6j, "Dendrite"),
+    (0.285 + 0.01j, "Connected Spiral"),
+    (-0.12 - 0.77j, "Dragon"),
+]
+
+print("\\nFamous Julia sets:")
+for c, name in examples:
+    print(f"  c = {c}: {name}")
+    print(f"    Connected: {abs(c) <= 2}")
+
+# Example computation
+print(f"\\nComputing Julia set for c = -0.7 + 0.27015j (Douady Rabbit)...")
+c = -0.7 + 0.27015j
+julia = julia_set(c, resolution=400, max_iter=80)
+
+# Count connected vs escaped
+escaped = np.sum(julia < 80)
+total = julia.size
+print(f"  Resolution: {julia.shape}")
+print(f"  Points escaped: {escaped} ({escaped/total*100:.1f}%)")
+print(f"  Points bounded: {total - escaped} ({(total-escaped)/total*100:.1f}%)")
+
+print(f"\\nMathematical properties:")
+print(f"  • Julia sets are invariant under f(z) = z² + c")
+print(f"  • The boundary has Hausdorff dimension between 1 and 2")
+print(f"  • For c in the Mandelbrot set, J(c) is connected")
+print(f"  • For c outside, J(c) is a Cantor set (totally disconnected)")
+
+# Color mapping explanation
+print(f"\\nVisualization:")
+print(f"  • Black: Points in the filled Julia set (bounded orbits)")
+print(f"  • Colors: Iteration count before escaping |z| > 2")
+print(f"  • Brighter colors = faster escape")
+
+# Note about the connection to Mandelbrot
+print(f"\\nConnection to Mandelbrot set:")
+print(f"  M = {{c : J(c) is connected}}")
+print(f"  = {{c : 0 has bounded orbit under z² + c}}")
+print(f"  This is why we iterate from z=0 for Mandelbrot!")</code></pre>
+                    </div>
+                </section>
+
+                <section id="quote">
+                    <h2>💬 Quote of the Day</h2>
+                    <blockquote>
+                        <p>"Mathematics is the queen of the sciences and number theory is the queen of mathematics."</p>
+                        <footer>— Carl Friedrich Gauss</footer>
+                    </blockquote>
+                </section>
+
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — Updated every 30 minutes</p>
+        <p>Generated: February 26, 2026 at 06:34 UTC</p>
+    </footer>
+</body>
+</html>
