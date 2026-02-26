@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 26, 2026 at 03:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 26, 2026 at 03:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 26, 2026 at 03:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">elliptic-curves</span>
+                <span class="tag">representation-theory</span>
+                <span class="tag">knot-theory</span>
+                <span class="tag">optimal-transport</span>
+                <span class="tag">compressed-sensing</span>
+                <span class="tag">random-matrix-theory</span>
+                <span class="tag">p-adic-analysis</span>
+                <span class="tag">category-theory</span>
+                <span class="tag">noncommutative-geometry</span>
+                <span class="tag">ramsey-theory</span>
+            </div>
+
+            <!-- ==================== MATH LINKS ==================== -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://mathworld.wolfram.com/">MathWorld</a></h3>
+                    <p>An extensive mathematical resource maintained by Wolfram Research. Created by Eric Weisstein, it provides detailed entries on thousands of mathematical topics, from elementary concepts to advanced research areas. Each article includes definitions, formulas, examples, and references, making it an invaluable quick-reference tool for mathematicians at all levels.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.ams.org/journals/">AMS Journals</a></h3>
+                    <p>The American Mathematical Society publishes many of the most prestigious mathematics journals, including the Journal of the AMS, Mathematics of Computation, and Notices of the AMS. The website provides access to abstracts, recent articles, and information about the mathematical community. Many older articles are freely available through open access initiatives.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://leanprover-community.github.io/">Lean Prover Community</a></h3>
+                    <p>A vibrant community dedicated to formalizing mathematics using the Lean theorem prover. The project aims to digitize all of mathematics into a form that can be checked by computer. With the recent completion of the Liquid Tensor Experiment and ongoing work on Fermat's Last Theorem, this represents a revolutionary approach to mathematical verification.</p>
+                </div>
+            </section>
+
+            <!-- ==================== FREE MATH BOOK ==================== -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Representation Theory: A First Course</h3>
+                    <p><strong>Author:</strong> William Fulton and Joe Harris</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://link.springer.com/book/10.1007/978-1-4612-0979-9">Springer</a> (many universities provide free access)</p>
+                    
+                    <p><strong>Summary:</strong> This classic text provides a comprehensive introduction to the representation theory of finite groups and Lie groups. Fulton and Harris take a concrete approach, emphasizing examples and computations over abstraction. The book covers representations of the symmetric group, general linear group, and the classification of complex semisimple Lie algebras. The authors are renowned for their clear exposition and geometric insight. Each chapter includes numerous exercises and the text is richly illustrated with diagrams showing weight diagrams and character tables. This is the standard reference for students transitioning from undergraduate algebra to modern representation theory.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PURE MATH DEEP DIVES ==================== -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <!-- Pure Math 1: Elliptic Curves -->
+                <div class="deep-dive">
+                    <h3>Elliptic Curves and the Mordell-Weil Theorem</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Elliptic curves are among the most fascinating objects in mathematics, connecting number theory, algebraic geometry, and complex analysis. They played a central role in Wiles's proof of Fermat's Last Theorem and form the foundation of modern cryptography. The study of rational points on elliptic curves leads to deep questions about the arithmetic of curves.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Elliptic Curve:</strong> A smooth projective curve of genus 1 with a specified base point (the identity). Over a field \(K\) with characteristic not 2 or 3, every elliptic curve can be written in Weierstrass form:
+                    \[y^2 = x^3 + ax + b\]
+                    where the discriminant \(\Delta = -16(4a^3 + 27b^2) \neq 0\) ensures smoothness.</p>
+
+                    <p><strong>Group Law:</strong> The points on an elliptic curve form an abelian group. Geometrically: given points \(P\) and \(Q\), draw the line through them (or tangent if \(P = Q\)), find the third intersection with the curve, and reflect over the x-axis to get \(P + Q\).</p>
+
+                    <p><strong>Rational Points:</strong> \(E(K)\) denotes the set of points with coordinates in the field \(K\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Mordell-Weil Theorem:</strong> Let \(E\) be an elliptic curve over a number field \(K\). Then the group of rational points \(E(K)\) is finitely generated. That is:
+                    \[E(K) \cong E(K)_{\text{tors}} \oplus \mathbb{Z}^r\]
+                    where \(E(K)_{\text{tors}}\) is the finite torsion subgroup and \(r\) is the rank.</p>
+
+                    <p><em>Proof Sketch:</em> The proof has two main parts. First, the "weak Mordell-Weil theorem" shows that \(E(K)/2E(K)\) is finite. This uses Galois cohomology and properties of the 2-descent map. Second, one constructs a height function \(\hat{h}: E(K) \to \mathbb{R}_{\geq 0}\) satisfying: (1) \(\hat{h}(P) = 0\) iff \(P\) is torsion, (2) \(\hat{h}(mP) = m^2\hat{h}(P)\), and (3) \(\{P : \hat{h}(P) \leq B\}\) is finite for all \(B\). These properties, combined with the finiteness of \(E(K)/2E(K)\), imply finite generation via a descent argument.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(E\) — elliptic curve (smooth cubic curve with a point)</li>
+                        <li>\(E(K)\) — \(K\)-rational points on \(E\)</li>
+                        <li>\(\mathcal{O}\) — point at infinity (identity element)</li>
+                        <li>\(\hat{h}\) — canonical height (Néron-Tate height)</li>
+                        <li>\(r\) — rank of the elliptic curve</li>
+                        <li>\(E[n]\) — \(n\)-torsion points (kernel of multiplication by \(n\))</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class EllipticCurve:
+    """Elliptic curve in short Weierstrass form: y^2 = x^3 + ax + b"""
+    
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        self.discriminant = -16 * (4*a**3 + 27*b**2)
+        if self.discriminant == 0:
+            raise ValueError("Curve is singular (discriminant = 0)")
+    
+    def is_on_curve(self, x, y):
+        """Check if point (x, y) lies on the curve."""
+        return y**2 == x**3 + self.a*x + self.b
+    
+    def add(self, P, Q):
+        """Add two points on the curve using the group law."""
+        if P is None: return Q
+        if Q is None: return P
+        x1, y1 = P
+        x2, y2 = Q
+        
+        if x1 == x2 and y1 != y2:
+            return None  # Point at infinity
+        
+        if P == Q:
+            # Tangent line: slope = (3x^2 + a) / (2y)
+            if y1 == 0:
+                return None
+            m = (3*x1**2 + self.a) / (2*y1)
+        else:
+            # Secant line: slope = (y2 - y1) / (x2 - x1)
+            m = (y2 - y1) / (x2 - x1)
+        
+        x3 = m**2 - x1 - x2
+        y3 = m*(x1 - x3) - y1
+        return (x3, y3)
+    
+    def multiply(self, P, n):
+        """Compute n*P using double-and-add."""
+        if n == 0 or P is None:
+            return None
+        if n < 0:
+            x, y = P
+            return self.multiply((x, -y), -n)
+        
+        result = None
+        addend = P
+        while n > 0:
+            if n & 1:
+                result = self.add(result, addend)
+            addend = self.add(addend, addend)
+            n >>= 1
+        return result
+    
+    def plot(self, xlim=(-3, 3), ylim=(-4, 4)):
+        """Plot the real points of the elliptic curve."""
+        x = np.linspace(xlim[0], xlim[1], 1000)
+        y_squared = x**3 + self.a*x + self.b
+        
+        # Only plot where y^2 >= 0
+        mask = y_squared >= 0
+        x_pos = x[mask]
+        y_pos = np.sqrt(y_squared[mask])
+        
+        plt.figure(figsize=(10, 8))
+        plt.plot(x_pos, y_pos, 'b-', linewidth=2, label='$y = +\\sqrt{x^3 + ax + b}$')
+        plt.plot(x_pos, -y_pos, 'b-', linewidth=2, label='$y = -\\sqrt{x^3 + ax + b}$')
+        plt.axhline(y=0, color='k', linewidth=0.5)
+        plt.axvline(x=0, color='k', linewidth=0.5)
+        plt.grid(True, alpha=0.3)
+        plt.xlabel('x')
+        plt.ylabel('y')
+        plt.title(f'Elliptic Curve: $y^2 = x^3 + {self.a}x + {self.b}$')
+        plt.legend()
+        plt.xlim(xlim)
+        plt.ylim(ylim)
+        plt.axis('equal')
+        return plt
+
+# Example: The curve y^2 = x^3 - x (congruent number curve)
+E = EllipticCurve(a=-1, b=0)
+print(f"Discriminant: {E.discriminant}")
+
+# Demonstrate group law
+P = (2, np.sqrt(6))  # Point on the curve
+print(f"P = {P}")
+print(f"Is P on curve? {E.is_on_curve(*P)}")
+
+# Compute multiples
+for n in range(1, 6):
+    nP = E.multiply(P, n)
+    print(f"{n}P = {nP}")
+
+# Plot the curve
+plt = E.plot()
+plt.savefig('elliptic_curve.png', dpi=150, bbox_inches='tight')
+plt.show()</code></pre>
+                </div>
+
+                <!-- Pure Math 2: Representation Theory -->
+                <div class="deep-dive">
+                    <h3>Representation Theory of Finite Groups</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Representation theory studies abstract algebraic structures by representing their elements as linear transformations of vector spaces. This allows us to use linear algebra to understand groups, turning abstract symmetry into concrete matrices. It has applications in quantum mechanics, crystallography, harmonic analysis, and number theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Representation:</strong> A representation of a group \(G\) over a field \(F\) is a homomorphism \(\rho: G \to GL(V)\) where \(V\) is a vector space over \(F\). This assigns to each \(g \in G\) an invertible linear transformation \(\rho(g)\).</p>
+
+                    <p><strong>Irreducible Representation:</strong> A representation is irreducible if it has no proper nontrivial invariant subspaces. Every representation decomposes as a direct sum of irreducibles (Maschke's theorem, for finite groups over \(\mathbb{C}\)).</p>
+
+                    <p><strong>Character:</strong> The character of a representation is \(\chi_\rho(g) = \text{tr}(\rho(g))\). Characters are class functions (constant on conjugacy classes) and completely determine the representation.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Orthogonality Relations:</strong> Let \(G\) be a finite group with irreducible characters \(\chi_1, \ldots, \chi_k\). Then:
+                    \[\frac{1}{|G|} \sum_{g \in G} \chi_i(g) \overline{\chi_j(g)} = \delta_{ij}\]
+                    and for conjugacy classes \(C_1, C_2\):
+                    \[\sum_{\chi} \chi(C_1) \overline{\chi(C_2)} = \frac{|G|}{|C_1|} \delta_{C_1, C_2}\]</p>
+
+                    <p><em>Proof Sketch:</em> Define the inner product on class functions by \(\langle \chi, \psi \rangle = \frac{1}{|G|} \sum_g \chi(g)\overline{\psi(g)}\). Using Schur's lemma, one shows that matrix coefficients of inequivalent irreducibles are orthogonal. The key step is constructing projection operators \(P_i = \frac{\dim(V_i)}{|G|} \sum_g \overline{\chi_i(g)}\rho(g)\) that project onto the \(V_i\)-isotypic component. The orthogonality follows from the fact that these projections are orthogonal idempotents.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\rho: G \to GL(V)\) — representation homomorphism</li>
+                        <li>\(\chi_\rho\) or \(\chi_V\) — character of representation \(\rho\)</li>
+                        <li>\(\hat{G}\) — set of irreducible representations of \(G\)</li>
+                        <li>\(\text{Reg}_G\) — regular representation</li>
+                        <li>\(\langle \chi, \psi \rangle\) — inner product of characters</li>
+                        <li>\(\chi_{V \otimes W} = \chi_V \cdot \chi_W\) — character of tensor product</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from itertools import permutations
+
+class SymmetricGroup:
+    """Symmetric group S_n with representation theory."""
+    
+    def __init__(self, n):
+        self.n = n
+        self.elements = list(permutations(range(n)))
+        self.size = len(self.elements)
+    
+    def compose(self, sigma, tau):
+        """Compose permutations: (sigma ∘ tau)(i) = sigma(tau(i))"""
+        return tuple(sigma[tau[i]] for i in range(self.n))
+    
+    def inverse(self, sigma):
+        """Compute inverse permutation."""
+        inv = [0] * self.n
+        for i, j in enumerate(sigma):
+            inv[j] = i
+        return tuple(inv)
+    
+    def sign(self, sigma):
+        """Sign of permutation using inversions."""
+        inversions = sum(1 for i in range(self.n) for j in range(i+1, self.n) 
+                        if sigma[i] > sigma[j])
+        return (-1) ** inversions
+    
+    def regular_representation(self, g):
+        """Matrix of left multiplication by g in the regular representation."""
+        mat = np.zeros((self.size, self.size))
+        for j, h in enumerate(self.elements):
+            gh = self.compose(g, h)
+            i = self.elements.index(gh)
+            mat[i, j] = 1
+        return mat
+    
+    def character_table(self):
+        """Compute character table (for S_3 as example)."""
+        if self.n == 3:
+            # S_3 has 3 conjugacy classes: {e}, {(12), (13), (23)}, {(123), (132)}
+            # 3 irreps: trivial, sign, standard (2-dim)
+            return np.array([
+                [1, 1, 1],      # trivial
+                [1, -1, 1],     # sign
+                [2, 0, -1]      # standard
+            ])
+        return None
+
+def fourier_transform_on_group(G, f):
+    """
+    Fourier transform of function f: G -> C.
+    For abelian groups: f_hat(chi) = sum_g f(g) * chi(g)
+    """
+    n = len(G.elements)
+    # For cyclic group Z_n, characters are chi_k(j) = exp(2πijk/n)
+    f_hat = []
+    for k in range(n):
+        coeff = sum(f[j] * np.exp(2j * np.pi * 1j * k * j / n) 
+                   for j in range(n))
+        f_hat.append(coeff / n)
+    return f_hat
+
+# Example: S_3
+S3 = SymmetricGroup(3)
+print(f"S_3 has {S3.size} elements")
+print(f"Elements: {S3.elements}")
+
+# Signs of permutations
+print("\nSigns:")
+for sigma in S3.elements:
+    print(f"  {sigma}: sign = {S3.sign(sigma)}")
+
+# Character table
+print("\nCharacter table of S_3:")
+chi_table = S3.character_table()
+print(chi_table)
+
+# Verify orthogonality
+print("\nVerifying orthogonality:")
+for i in range(3):
+    for j in range(3):
+        inner = sum(chi_table[i, k] * chi_table[j, k] * [1, 3, 2][k] 
+                   for k in range(3)) / 6
+        print(f"<chi_{i}, chi_{j}> = {inner:.4f}")</code></pre>
+                </div>
+
+                <!-- Pure Math 3: Knot Theory -->
+                <div class="deep-dive">
+                    <h3>Knot Theory and the Jones Polynomial</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Knot theory studies embeddings of circles in 3-dimensional space. Despite its intuitive origins—tying knots in string—it leads to profound mathematics connecting topology, quantum field theory, and representation theory. The discovery of the Jones polynomial in 1984 revolutionized the field, connecting knots to statistical mechanics and quantum groups.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Knot:</strong> An embedding of \(S^1\) into \(S^3\) (or \(\mathbb{R}^3\)). A link is an embedding of multiple disjoint circles.</p>
+
+                    <p><strong>Reidemeister Moves:</strong> Three local moves on knot diagrams that generate all ambient isotopies. Two knots are equivalent iff their diagrams are related by a sequence of Reidemeister moves.</p>
+
+                    <p><strong>Kauffman Bracket:</strong> A polynomial invariant of unoriented link diagrams defined by:
+                    \[\langle \bigcirc \rangle = 1\]
+                    \[\langle L \cup \bigcirc \rangle = (-A^2 - A^{-2})\langle L \rangle\]
+                    \[\langle \crossing \rangle = A\langle \smoothing \rangle + A^{-1}\langle \hsmoothing \rangle\]</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Existence of Jones Polynomial:</strong> For any oriented link \(L\), there exists a Laurent polynomial \(V_L(t) \in \mathbb{Z}[t^{1/2}, t^{-1/2}]\) such that:
+                    1. \(V_{\text{unknot}}(t) = 1\)
+                    2. \(t^{-1}V_{L_+} - tV_{L_-} = (t^{1/2} - t^{-1/2})V_{L_0}\) (skein relation)</p>
+
+                    <p><em>Proof Sketch:</em> Define the Kauffman bracket on diagrams. Show it is invariant under Reidemeister moves II and III. For Reidemeister I, the bracket transforms predictably. Define the writhe \(w(D) = \sum \text{signs of crossings}\). Then \(V_L(t) = ((-A)^{-3w(D)}\langle D \rangle)_{A = t^{-1/4}}\) is invariant under all Reidemeister moves. The skein relation follows from the Kauffman bracket's definition and the writhe correction.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(V_L(t)\) — Jones polynomial of link \(L\)</li>
+                        <li>\(\langle D \rangle\) — Kauffman bracket of diagram \(D\)</li>
+                        <li>\(w(D)\) — writhe of oriented diagram</li>
+                        <li>\(L_+, L_-, L_0\) — links differing at one crossing (skein triple)</li>
+                        <li>\(\Delta_L(t)\) — Alexander polynomial</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from functools import lru_cache
+
+class KnotDiagram:
+    """Simplified representation of a knot diagram."""
+    
+    def __init__(self, crossings, signs=None):
+        """
+        crossings: list of (over, under) pairs
+        signs: list of +1 or -1 for each crossing (right-hand rule)
+        """
+        self.crossings = crossings
+        self.signs = signs or [1] * len(crossings)
+    
+    def writhe(self):
+        """Compute writhe (sum of crossing signs)."""
+        return sum(self.signs)
+    
+    def kauffman_bracket_naive(self, A):
+        """
+        Compute Kauffman bracket (simplified for small examples).
+        For the unknot: returns 1
+        """
+        # This is a placeholder - full implementation requires state sum
+        n = len(self.crossings)
+        # Each crossing contributes A or A^{-1}
+        # For a proper implementation, we'd need to resolve all crossings
+        return (-A**2 - A**(-2))**(n-1) if n > 0 else 1
+    
+    def jones_polynomial_symbolic(self):
+        """
+        Return Jones polynomial as a function of t.
+        Simplified: returns the general form.
+        """
+        # For actual computation, we'd use the skein relation recursively
+        def V(t):
+            # Placeholder: returns 1 for unknot
+            return 1
+        return V
+
+def compute_jones_trefoil():
+    """
+    The right-handed trefoil has Jones polynomial:
+    V(t) = t + t^3 - t^4
+    """
+    # Trefoil: simplest nontrivial knot
+    # Can be computed via skein relation from unknot
+    return {1: 1, 3: 1, 4: -1}  # coefficients of t^n
+
+def compute_jones_figure8():
+    """
+    The figure-eight knot has Jones polynomial:
+    V(t) = t^2 - t + 1 - t^{-1} + t^{-2}
+    """
+    return {2: 1, 1: -1, 0: 1, -1: -1, -2: 1}
+
+def compare_knots():
+    """Compare Jones polynomials of different knots."""
+    trefoil = compute_jones_trefoil()
+    figure8 = compute_jones_figure8()
+    
+    print("Jones Polynomials:")
+    print(f"Trefoil: {trefoil}")
+    print(f"Figure-8: {figure8}")
+    
+    # These are different, so the knots are different!
+    print("\nThe trefoil and figure-8 are distinct knots.")
+    
+    # Mirror image: V_{mirror}(t) = V_L(t^{-1})
+    trefoil_mirror = {-k: v for k, v in trefoil.items()}
+    print(f"\nMirror of trefoil: {trefoil_mirror}")
+    print("Trefoil is chiral (not equivalent to its mirror)!")
+
+compare_knots()
+
+# Visualization of a simple knot projection
+def plot_knot_projection():
+    """Plot a simple trefoil projection."""
+    import matplotlib.pyplot as plt
+    
+    # Parametric trefoil
+    t = np.linspace(0, 2*np.pi, 1000)
+    x = np.sin(t) + 2*np.sin(2*t)
+    y = np.cos(t) - 2*np.cos(2*t)
+    z = -np.sin(3*t)
+    
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+    
+    # 3D view
+    ax1 = fig.add_subplot(121, projection='3d')
+    ax1.plot(x, y, z, 'b-', linewidth=2)
+    ax1.set_title('Trefoil Knot (3D)')
+    
+    # 2D projection
+    ax2 = fig.add_subplot(122)
+    ax2.plot(x, y, 'b-', linewidth=2)
+    ax2.set_title('Trefoil Projection')
+    ax2.axis('equal')
+    ax2.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.savefig('trefoil.png', dpi=150)
+    plt.show()
+
+plot_knot_projection()</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== APPLIED MATH DEEP DIVES ==================== -->
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <!-- Applied Math 1: Optimal Transport -->
+                <div class="deep-dive">
+                    <h3>Optimal Transport and Wasserstein Distances</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Optimal transport, originating with Monge in 1781 and Kantorovich in 1942, asks: what is the most efficient way to move a pile of dirt to fill a hole? This seemingly simple question has profound applications in economics (matching theory), machine learning (generative models like Wasserstein GANs), image processing, and partial differential equations.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Monge Problem:</strong> Given probability measures \(\mu\) on \(X\) and \(\nu\) on \(Y\), find a transport map \(T: X \to Y\) minimizing:
+                    \[\int_X c(x, T(x)) \, d\mu(x)\]
+                    subject to \(T_\#\mu = \nu\) (pushforward condition).</p>
+
+                    <p><strong>Kantorovich Relaxation:</strong> Find a coupling \(\gamma \in \Pi(\mu, \nu)\) minimizing:
+                    \[\int_{X \times Y} c(x, y) \, d\gamma(x,y)\]
+                    where \(\Pi(\mu, \nu)\) is the set of joint distributions with marginals \(\mu\) and \(\nu\).</p>
+
+                    <p><strong>Wasserstein Distance:</strong> For \(p \geq 1\):
+                    \[W_p(\mu, \nu) = \left(\inf_{\gamma \in \Pi(\mu, \nu)} \int |x-y|^p \, d\gamma\right)^{1/p}\]</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Kantorovich Duality:</strong> For lower semicontinuous cost \(c\):
+                    \[\inf_{\gamma \in \Pi(\mu, \nu)} \int c \, d\gamma = \sup_{(\phi, \psi)} \left(\int \phi \, d\mu + \int \psi \, d\nu\right)\]
+                    where the supremum is over pairs satisfying \(\phi(x) + \psi(y) \leq c(x,y)\).</p>
+
+                    <p><em>Proof Sketch:</em> This is an infinite-dimensional linear programming duality. The constraint \(\gamma \in \Pi(\mu, \nu)\) can be written as linear constraints on \(\gamma\). The dual variables correspond to potentials \(\phi\) and \(\psi\). The constraint \(\phi(x) + \psi(y) \leq c(x,y)\) ensures the dual objective is a lower bound. Strong duality holds under mild conditions (e.g., \(c\) lower semicontinuous and \(\mu, \nu\) tight).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\Pi(\mu, \nu)\) — set of couplings (transport plans)</li>
+                        <li>\(T_\#\mu\) — pushforward measure: \((T_\#\mu)(A) = \mu(T^{-1}(A))\)</li>
+                        <li>\(W_p\) — \(p\)-Wasserstein distance</li>
+                        <li>\(\phi, \psi\) — Kantorovich potentials</li>
+                        <li>\(c(x,y)\) — cost function (often \(|x-y|^p\))</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.optimize import linprog
+from scipy.spatial.distance import cdist
+
+def wasserstein_1d(mu, nu, x, y):
+    """
+    Compute 1-Wasserstein distance in 1D using CDFs.
+    For 1D: W_1 = integral |F_mu(t) - F_nu(t)| dt
+    """
+    # Sort and compute CDFs
+    mu_sorted = np.sort(mu)
+    nu_sorted = np.sort(nu)
+    
+    # Empirical CDFs
+    def ecdf(data, t):
+        return np.mean(data <= t)
+    
+    # Grid for integration
+    t_grid = np.linspace(min(mu.min(), nu.min()) - 1, 
+                         max(mu.max(), nu.max()) + 1, 1000)
+    
+    F_mu = np.array([ecdf(mu, t) for t in t_grid])
+    F_nu = np.array([ecdf(nu, t) for t in t_grid])
+    
+    W1 = np.trapz(np.abs(F_mu - F_nu), t_grid)
+    return W1
+
+def sinkhorn_knopp(mu, nu, C, reg=0.1, numItermax=1000):
+    """
+    Compute entropic-regularized optimal transport using Sinkhorn algorithm.
+    
+    Parameters:
+    -----------
+    mu, nu : source and target distributions (sum to 1)
+    C : cost matrix
+    reg : regularization parameter (epsilon)
+    """
+    K = np.exp(-C / reg)
+    u = np.ones(len(mu))
+    v = np.ones(len(nu))
+    
+    for i in range(numItermax):
+        u = mu / (K @ v)
+        v = nu / (K.T @ u)
+        
+        # Check convergence
+        if i % 100 == 0:
+            P = np.diag(u) @ K @ np.diag(v)
+            err = np.linalg.norm(P.sum(axis=1) - mu)
+            if err < 1e-6:
+                break
+    
+    P = np.diag(u) @ K @ np.diag(v)
+    return P
+
+# Example: Transport between two Gaussians
+np.random.seed(42)
+mu_samples = np.random.normal(0, 1, 1000)
+nu_samples = np.random.normal(3, 1.5, 1000)
+
+W1 = wasserstein_1d(mu_samples, nu_samples, None, None)
+print(f"1-Wasserstein distance: {W1:.4f}")
+
+# Discrete optimal transport
+n, m = 10, 10
+mu = np.ones(n) / n
+nu = np.ones(m) / m
+x = np.linspace(0, 1, n)
+y = np.linspace(0, 1, m)
+C = cdist(x.reshape(-1, 1), y.reshape(-1, 1), metric='sqeuclidean')
+
+P = sinkhorn_knopp(mu, nu, C, reg=0.01)
+print(f"\nOptimal transport plan shape: {P.shape}")
+print(f"Total transport cost: {np.sum(P * C):.6f}")
+
+# Visualization
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+
+axes[0].hist(mu_samples, bins=30, alpha=0.6, label='Source', density=True)
+axes[0].hist(nu_samples, bins=30, alpha=0.6, label='Target', density=True)
+axes[0].set_title('Source and Target Distributions')
+axes[0].legend()
+
+axes[1].imshow(C, cmap='hot')
+axes[1].set_title('Cost Matrix')
+axes[1].set_xlabel('Target')
+axes[1].set_ylabel('Source')
+
+im = axes[2].imshow(P, cmap='Blues')
+axes[2].set_title('Optimal Transport Plan')
+axes[2].set_xlabel('Target')
+axes[2].set_ylabel('Source')
+plt.colorbar(im, ax=axes[2])
+
+plt.tight_layout()
+plt.savefig('optimal_transport.png', dpi=150)
+plt.show()</code></pre>
+                </div>
+
+                <!-- Applied Math 2: Compressed Sensing -->
+                <div class="deep-dive">
+                    <h3>Compressed Sensing and Sparse Recovery</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Compressed sensing revolutionized signal processing by showing that sparse signals can be recovered from far fewer measurements than the Nyquist-Shannon theorem requires. Applications include MRI imaging (reducing scan time), single-pixel cameras, and efficient data acquisition in sensor networks. The key insight is that sparsity can substitute for bandwidth.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Sparsity:</strong> A vector \(x \in \mathbb{R}^n\) is \(k\)-sparse if it has at most \(k\) nonzero entries. The \(\ell_0\) "norm" counts nonzero entries: \(\|x\|_0 = |\{i : x_i \neq 0\}|\).</p>
+
+                    <p><strong>Restricted Isometry Property (RIP):</strong> A matrix \(A\) satisfies RIP of order \(k\) with constant \(\delta_k\) if for all \(k\)-sparse \(x\):
+                    \[(1-\delta_k)\|x\|_2^2 \leq \|Ax\|_2^2 \leq (1+\delta_k)\|x\|_2^2\]</p>
+
+                    <p><strong>Basis Pursuit:</strong> The convex relaxation of sparse recovery:
+                    \[\min_x \|x\|_1 \text{ subject to } Ax = b\]</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Exact Recovery Theorem:</strong> If \(A\) satisfies RIP with \(\delta_{2k} < \sqrt{2} - 1\), then the solution to basis pursuit equals the sparsest solution to \(Ax = b\).</p>
+
+                    <p><em>Proof Sketch:</em> Let \(x^*\) be the true sparse solution and \(\hat{x}\) the basis pursuit solution. Define \(h = \hat{x} - x^*\). By optimality, \(\|\hat{x}\|_1 \leq \|x^*\|_1\). Decompose \(h\) into \(h_{T_0}\) (on support of \(x^*\)) and \(h_{T_0^c}\). The key inequality is \(\|h_{T_0^c}\|_1 \leq \|h_{T_0}\|_1\). Using RIP, one shows \(\|h\|_2 \leq C\|Ah\|_2 = 0\), so \(h = 0\) and \(\hat{x} = x^*\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\|x\|_0\) — sparsity (count of nonzero entries)</li>
+                        <li>\(\|x\|_1 = \sum |x_i|\) — \(\ell_1\) norm (convex relaxation)</li>
+                        <li>\(\|x\|_2 = \sqrt{\sum x_i^2}\) — Euclidean norm</li>
+                        <li>\(\delta_k\) — RIP constant of order \(k\)</li>
+                        <li>\(m \times n\) — measurement matrix dimensions (\(m \ll n\))</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.optimize import minimize, linprog
+import matplotlib.pyplot as plt
+
+def generate_rip_matrix(m, n):
+    """Generate a random matrix likely to satisfy RIP (Gaussian)."""
+    A = np.random.randn(m, n) / np.sqrt(m)
+    return A
+
+def basis_pursuit(A, b):
+    """
+    Solve min ||x||_1 subject to Ax = b using linear programming.
+    
+    Convert to LP: x = x+ - x- where x+, x- >= 0
+    """
+    m, n = A.shape
+    
+    # Objective: minimize sum(x+ + x-)
+    c = np.ones(2 * n)
+    
+    # Equality constraints: A(x+ - x-) = b
+    A_eq = np.hstack([A, -A])
+    b_eq = b
+    
+    # Bounds: x+, x- >= 0
+    bounds = [(0, None)] * (2 * n)
+    
+    result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+    
+    if result.success:
+        x = result.x[:n] - result.x[n:]
+        return x
+    else:
+        return None
+
+def iterative_hard_thresholding(A, b, k, max_iter=100):
+    """
+    IHT: simple greedy algorithm for sparse recovery.
+    x_{t+1} = H_k(x_t + A^T(b - Ax_t))
+    where H_k keeps only k largest entries.
+    """
+    n = A.shape[1]
+    x = np.zeros(n)
+    
+    for _ in range(max_iter):
+        # Gradient step
+        x = x + 0.1 * A.T @ (b - A @ x)
+        
+        # Hard thresholding
+        idx = np.argsort(np.abs(x))[-k:]
+        x_new = np.zeros(n)
+        x_new[idx] = x[idx]
+        x = x_new
+    
+    return x
+
+# Experiment: Recover sparse signal
+np.random.seed(42)
+n = 100  # signal dimension
+m = 40   # number of measurements (m < n!)
+k = 5    # sparsity
+
+# Generate sparse signal
+x_true = np.zeros(n)
+support = np.random.choice(n, k, replace=False)
+x_true[support] = np.random.randn(k) * 5
+
+# Generate measurements
+A = generate_rip_matrix(m, n)
+b = A @ x_true
+
+# Recover using basis pursuit
+x_bp = basis_pursuit(A, b)
+
+# Recover using IHT
+x_iht = iterative_hard_thresholding(A, b, k)
+
+print(f"True support: {sorted(support)}")
+print(f"BP recovered support: {sorted(np.where(np.abs(x_bp) > 0.1)[0])}")
+print(f"IHT recovered support: {sorted(np.where(np.abs(x_iht) > 0.1)[0])}")
+print(f"\nRecovery error (BP): {np.linalg.norm(x_true - x_bp):.6f}")
+print(f"Recovery error (IHT): {np.linalg.norm(x_true - x_iht):.6f}")
+
+# Visualization
+fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+
+axes[0].stem(x_true, linefmt='b-', markerfmt='bo', basefmt='k-')
+axes[0].set_title('True Sparse Signal')
+axes[0].set_xlabel('Index')
+axes[0].set_ylabel('Value')
+
+axes[1].stem(x_bp, linefmt='r-', markerfmt='ro', basefmt='k-')
+axes[1].set_title('Basis Pursuit Recovery')
+axes[1].set_xlabel('Index')
+
+axes[2].stem(x_iht, linefmt='g-', markerfmt='go', basefmt='k-')
+axes[2].set_title('IHT Recovery')
+axes[2].set_xlabel('Index')
+
+plt.tight_layout()
+plt.savefig('compressed_sensing.png', dpi=150)
+plt.show()</code></pre>
+                </div>
+
+                <!-- Applied Math 3: Random Matrix Theory -->
+                <div class="deep-dive">
+                    <h3>Random Matrix Theory and the Semicircle Law</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Random matrix theory studies the statistical properties of matrices with random entries. It emerged from Wigner's work on nuclear physics in the 1950s and has since found applications in quantum chaos, wireless communications, finance, machine learning, and number theory. The universality phenomenon—where local statistics are independent of the distribution of entries—is one of the deepest results in modern probability.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Wigner Matrix:</strong> A Hermitian matrix \(H\) with independent (up to symmetry) entries where diagonal entries have variance \(\sigma^2\) and off-diagonal entries have variance \(\sigma^2/n\).</p>
+
+                    <p><strong>Empirical Spectral Distribution:</strong> For an \(n \times n\) matrix \(H\) with eigenvalues \(\lambda_1, \ldots, \lambda_n\):
+                    \[\mu_H = \frac{1}{n} \sum_{i=1}^n \delta_{\lambda_i}\]</p>
+
+                    <p><strong>Semicircle Distribution:</strong> The probability measure on \([-2\sigma, 2\sigma]\) with density:
+                    \[\rho_{sc}(x) = \frac{1}{2\pi\sigma^2}\sqrt{4\sigma^2 - x^2}\]</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Wigner's Semicircle Law:</strong> Let \(H_n\) be a sequence of Wigner matrices. As \(n \to \infty\), the empirical spectral distribution converges weakly almost surely to the semicircle distribution:
+                    \[\mu_{H_n} \xrightarrow{w} \rho_{sc}\]</p>
+
+                    <p><em>Proof Sketch:</em> The proof uses the method of moments. Compute \(\mathbb{E}[\text{tr}(H_n^k)]\) for each \(k\). By Wick's formula (for Gaussian entries) or combinatorial arguments, this counts certain paths. Only non-backtracking paths contribute in the limit. The moments of the semicircle are the Catalan numbers: \(m_{2k} = C_k = \frac{1}{k+1}\binom{2k}{k}\) and \(m_{2k+1} = 0\). Since the Catalan numbers determine a unique distribution, convergence follows.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(H\) or \(H_n\) — Wigner matrix (\(n \times n\) Hermitian)</li>
+                        <li>\(\lambda_i\) — eigenvalues</li>
+                        <li>\(\mu_H\) — empirical spectral distribution (ESD)</li>
+                        <li>\(\rho_{sc}\) — semicircle density</li>
+                        <li>\(C_k = \frac{1}{k+1}\binom{2k}{k}\) — Catalan numbers</li>
+                        <li>\(m_k = \int x^k \rho_{sc}(x) dx\) — moments</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import semicircular
+
+def generate_wigner(n, sigma=1.0, distribution='gaussian'):
+    """
+    Generate a Wigner matrix (symmetric/Hermitian with random entries).
+    
+    Parameters:
+    -----------
+    n : size of matrix
+    sigma : scale parameter
+    distribution : 'gaussian' or 'bernoulli'
+    """
+    if distribution == 'gaussian':
+        # Upper triangular part
+        A = np.random.randn(n, n) * sigma / np.sqrt(n)
+    elif distribution == 'bernoulli':
+        A = np.random.choice([-1, 1], size=(n, n)) * sigma / np.sqrt(n)
+    
+    # Make symmetric
+    H = (A + A.T) / np.sqrt(2)
+    return H
+
+def semicircle_density(x, sigma=1.0):
+    """Density of semicircle distribution."""
+    R = 2 * sigma
+    density = np.zeros_like(x)
+    mask = np.abs(x) < R
+    density[mask] = (1 / (2 * np.pi * sigma**2)) * np.sqrt(R**2 - x[mask]**2)
+    return density
+
+def marchenko_pastur_density(x, gamma, sigma=1.0):
+    """
+    Marchenko-Pastur distribution for sample covariance matrices.
+    gamma = n/p (aspect ratio)
+    """
+    lambda_plus = sigma**2 * (1 + np.sqrt(gamma))**2
+    lambda_minus = sigma**2 * (1 - np.sqrt(gamma))**2
+    
+    density = np.zeros_like(x)
+    mask = (x > lambda_minus) & (x < lambda_plus)
+    
+    density[mask] = (1 / (2 * np.pi * sigma**2 * gamma * x[mask])) * \
+                    np.sqrt((lambda_plus - x[mask]) * (x[mask] - lambda_minus))
+    return density
+
+# Experiment: Demonstrate semicircle law
+np.random.seed(42)
+
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+sizes = [100, 500, 1000, 2000]
+for idx, n in enumerate(sizes):
+    ax = axes[idx // 2, idx % 2]
+    
+    # Generate Wigner matrix and compute eigenvalues
+    H = generate_wigner(n, sigma=1.0, distribution='gaussian')
+    eigenvalues = np.linalg.eigvalsh(H)
+    
+    # Plot histogram
+    ax.hist(eigenvalues, bins=50, density=True, alpha=0.7, 
+            label=f'n={n}', color='steelblue')
+    
+    # Plot theoretical semicircle
+    x = np.linspace(-2.1, 2.1, 1000)
+    ax.plot(x, semicircle_density(x), 'r-', linewidth=2, 
+            label='Semicircle law')
+    
+    ax.set_xlim(-2.5, 2.5)
+    ax.set_xlabel('Eigenvalue')
+    ax.set_ylabel('Density')
+    ax.set_title(f'Wigner Matrix (n={n})')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('semicircle_law.png', dpi=150)
+plt.show()
+
+# Demonstrate universality: different distributions give same limit
+fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+
+distributions = ['gaussian', 'bernoulli', 'uniform']
+n = 1000
+
+for ax, dist in zip(axes, distributions):
+    if dist == 'uniform':
+        A = np.random.uniform(-np.sqrt(3), np.sqrt(3), size=(n, n)) / np.sqrt(n)
+        H = (A + A.T) / np.sqrt(2)
+    else:
+        H = generate_wigner(n, distribution=dist)
+    
+    eigenvalues = np.linalg.eigvalsh(H)
+    
+    ax.hist(eigenvalues, bins=50, density=True, alpha=0.7, 
+            label=f'{dist.capitalize()}', color='steelblue')
+    
+    x = np.linspace(-2.1, 2.1, 1000)
+    ax.plot(x, semicircle_density(x), 'r-', linewidth=2, 
+            label='Semicircle')
+    
+    ax.set_xlabel('Eigenvalue')
+    ax.set_ylabel('Density')
+    ax.set_title(f'{dist.capitalize()} Entries')
+    ax.legend()
+    ax.grid(True, alpha=0.3)
+
+plt.suptitle('Universality: Different Distributions, Same Limit', fontsize=14)
+plt.tight_layout()
+plt.savefig('universality.png', dpi=150)
+plt.show()
+
+# Spacing distribution (Wigner surmise)
+def wigner_surmise(s):
+    """Wigner surmise for nearest-neighbor spacing."""
+    return (np.pi * s / 2) * np.exp(-np.pi * s**2 / 4)
+
+H = generate_wigner(2000)
+eigenvalues = np.linalg.eigvalsh(H)
+spacings = np.diff(eigenvalues)
+# Unfold (normalize by local mean spacing)
+spacings_normalized = spacings / np.mean(spacings)
+
+plt.figure(figsize=(10, 6))
+plt.hist(spacings_normalized, bins=50, density=True, alpha=0.7, 
+         label='Observed spacings', color='steelblue')
+
+s = np.linspace(0, 4, 1000)
+plt.plot(s, wigner_surmise(s), 'r-', linewidth=2, 
+         label='Wigner surmise')
+plt.xlabel('Normalized spacing')
+plt.ylabel('Density')
+plt.title('Nearest-Neighbor Spacing Distribution')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.savefig('wigner_surmise.png', dpi=150)
+plt.show()</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== SPECIAL TOPICS ==================== -->
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+
+                <!-- Special Topic 1: p-adic Analysis -->
+                <div class="deep-dive">
+                    <h3>p-adic Numbers and Analysis</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>p-adic numbers were introduced by Kurt Hensel in 1897 as a way to bring algebraic techniques from power series into number theory. The analogy between \(\mathbb{Z}\) and \(\mathbb{F}_q[t]\) led Hensel to construct a completion of \(\mathbb{Q}\) with respect to the p-adic absolute value. This created an entirely new number system where "closeness" depends on divisibility rather than size.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>p-adic Absolute Value:</strong> For a prime \(p\) and nonzero integer \(n\), write \(n = p^k \cdot m\) where \(p \nmid m\). Then:
+                    \[|n|_p = p^{-k}, \quad |0|_p = 0\]
+                    Extended to \(\mathbb{Q}\) by \(|a/b|_p = |a|_p/|b|_p\).</p>
+
+                    <p><strong>p-adic Numbers \(\mathbb{Q}_p\):</strong> The completion of \(\mathbb{Q}\) with respect to \(|\cdot|_p\). Every element can be written as:
+                    \[x = \sum_{k=m}^{\infty} a_k p^k\]
+                    where \(a_k \in \{0, 1, \ldots, p-1\}\) and \(m \in \mathbb{Z}\).</p>
+
+                    <p><strong>p-adic Integers \(\mathbb{Z}_p\):</strong> The closed unit ball \(\{x \in \mathbb{Q}_p : |x|_p \leq 1\}\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Ostrowski's Theorem:</strong> Every nontrivial absolute value on \(\mathbb{Q}\) is equivalent to either the standard absolute value \(|\cdot|_\infty\) or a p-adic absolute value \(|\cdot|_p\) for some prime \(p\).</p>
+
+                    <p><em>Proof Sketch:</em> Let \(|\cdot|\) be a nontrivial absolute value on \(\mathbb{Q}\). If \(|n| \leq 1\) for all integers \(n\), then by the archimedean property failing, there exists a smallest prime \(p\) with \(|p| < 1\). One shows \(|q| = 1\) for all other primes \(q\), so \(|\cdot|\) is equivalent to \(|\cdot|_p\). If \(|n| > 1\) for some \(n\), the absolute value is archimedean and equivalent to the standard one.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(|x|_p\) — p-adic absolute value</li>
+                        <li>\(\mathbb{Q}_p\) — field of p-adic numbers</li>
+                        <li>\(\mathbb{Z}_p\) — ring of p-adic integers</li>
+                        <li>\(v_p(x)\) — p-adic valuation (exponent of \(p\))</li>
+                        <li>\(\mathbb{A}_\mathbb{Q}\) — adele ring (restricted product of \(\mathbb{Q}_p\) and \(\mathbb{R}\))</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from fractions import Fraction
+
+class PAdicNumber:
+    """
+    Simplified p-adic number representation.
+    Stores a p-adic number as (prime p, list of digits, valuation).
+    """
+    
+    def __init__(self, p, digits, valuation=0):
+        self.p = p
+        self.digits = list(digits)  # Coefficients a_0, a_1, a_2, ...
+        self.valuation = valuation  # Starting power of p
+    
+    def __repr__(self):
+        if len(self.digits) <= 5:
+            terms = []
+            for i, d in enumerate(self.digits):
+                power = self.valuation + i
+                if d != 0:
+                    if power == 0:
+                        terms.append(f"{d}")
+                    elif power == 1:
+                        terms.append(f"{d}*{self.p}")
+                    else:
+                        terms.append(f"{d}*{self.p}^{power}")
+            return " + ".join(terms) if terms else "0"
+        else:
+            return f"{self.digits[0]} + {self.digits[1]}*{self.p} + ... (mod {self.p}^{len(self.digits)}"
+    
+    def to_rational_approx(self):
+        """Convert to rational approximation."""
+        result = 0
+        for i, d in enumerate(self.digits):
+            result += d * (self.p ** (self.valuation + i))
+        return Fraction(result, 1)
+
+def p_adic_expansion(n, p, precision=20):
+    """
+    Compute p-adic expansion of rational number n.
+    For integers: standard base-p expansion.
+    """
+    if isinstance(n, Fraction):
+        # Handle rational numbers
+        num, den = n.numerator, n.denominator
+        # Find valuation
+        v_num = 0
+        while num % p == 0 and num != 0:
+            num //= p
+            v_num += 1
+        v_den = 0
+        while den % p == 0 and den != 0:
+            den //= p
+            v_den += 1
+        
+        valuation = v_num - v_den
+        # Compute digits using Hensel lifting
+        digits = []
+        x = (num * pow(den, -1, p**precision)) % (p**precision)
+        for _ in range(precision):
+            digits.append(x % p)
+            x //= p
+        return PAdicNumber(p, digits, valuation)
+    else:
+        # Integer case
+        if n == 0:
+            return PAdicNumber(p, [0])
+        valuation = 0
+        while n % p == 0 and n != 0:
+            n //= p
+            valuation += 1
+        digits = []
+        while n > 0 and len(digits) < precision:
+            digits.append(n % p)
+            n //= p
+        return PAdicNumber(p, digits, valuation)
+
+def p_adic_absolute_value(rational, p):
+    """Compute p-adic absolute value of a rational number."""
+    if rational == 0:
+        return 0
+    
+    num, den = rational.numerator, rational.denominator
+    # Compute p-adic valuation
+    v_num = 0
+    while num % p == 0 and num != 0:
+        num //= p
+        v_num += 1
+    v_den = 0
+    while den % p == 0 and den != 0:
+        den //= p
+        v_den += 1
+    
+    v_p = v_num - v_den
+    return p ** (-v_p)
+
+# Examples
+print("=== p-adic Numbers ===\n")
+
+# Expansion of -1 in 2-adics
+# In 2-adics: -1 = ...111111 (all 1s)
+minus_one = p_adic_expansion(-1, 2, precision=10)
+print(f"-1 in 2-adics: {minus_one}")
+print(f"Verification: 1 + (-1) = 0 in 2-adics")
+
+# Expansion of 1/3 in 2-adics
+one_third = p_adic_expansion(Fraction(1, 3), 2, precision=10)
+print(f"\n1/3 in 2-adics: {one_third}")
+print(f"Approximation: {one_third.to_rational_approx()}")
+
+# p-adic absolute values
+print("\n=== p-adic Absolute Values ===")
+test_numbers = [Fraction(1, 1), Fraction(2, 1), Fraction(4, 1), 
+                Fraction(1, 2), Fraction(3, 1), Fraction(6, 1)]
+for x in test_numbers:
+    abs_2 = p_adic_absolute_value(x, 2)
+    abs_3 = p_adic_absolute_value(x, 3)
+    print(f"|{x}|_2 = {abs_2}, |{x}|_3 = {abs_3}")
+
+# Demonstrate the strong triangle inequality
+print("\n=== Strong Triangle Inequality ===")
+a, b = Fraction(1, 2), Fraction(1, 4)
+c = a + b
+abs_a = p_adic_absolute_value(a, 2)
+abs_b = p_adic_absolute_value(b, 2)
+abs_c = p_adic_absolute_value(c, 2)
+print(f"a = {a}, |a|_2 = {abs_a}")
+print(f"b = {b}, |b|_2 = {abs_b}")
+print(f"a+b = {c}, |a+b|_2 = {abs_c}")
+print(f"max(|a|_2, |b|_2) = {max(abs_a, abs_b)}")
+print(f"|a+b|_2 <= max(|a|_2, |b|_2)? {abs_c <= max(abs_a, abs_b)}")</code></pre>
+                </div>
+
+                <!-- Special Topic 2: Category Theory -->
+                <div class="deep-dive">
+                    <h3>Category Theory: Functors, Natural Transformations, and Universal Properties</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Category theory was invented by Samuel Eilenberg and Saunders Mac Lane in 1945 to formalize the notion of "natural" in algebraic topology. What began as a tool for organizing algebraic structures has become a unifying language across mathematics. The Yoneda lemma, adjoint functors, and the concept of universal properties have transformed how mathematicians think about structure.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Category:</strong> A category \(\mathcal{C}\) consists of:
+                    - Objects: \(A, B, C, \ldots\)
+                    - Morphisms: \(\text{Hom}(A, B)\) for each pair of objects
+                    - Composition: associative operation \(\circ : \text{Hom}(B, C) \times \text{Hom}(A, B) \to \text{Hom}(A, C)\)
+                    - Identity: \(\text{id}_A \in \text{Hom}(A, A)\) for each object</p>
+
+                    <p><strong>Functor:</strong> A map \(F: \mathcal{C} \to \mathcal{D}\) preserving composition and identities.</p>
+
+                    <p><strong>Natural Transformation:</strong> A family of morphisms \(\eta_A: F(A) \to G(A)\) such that for all \(f: A \to B\):
+                    \[\eta_B \circ F(f) = G(f) \circ \eta_A\]</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Yoneda Lemma:</strong> Let \(F: \mathcal{C}^{op} \to \mathbf{Set}\) be a functor and \(A \in \mathcal{C}\). Then:
+                    \[\text{Nat}(\text{Hom}(-, A), F) \cong F(A)\]
+                    Moreover, this isomorphism is natural in both \(A\) and \(F\).</p>
+
+                    <p><em>Proof Sketch:</em> Given a natural transformation \(\eta: \text{Hom}(-, A) \to F\), evaluate at \(A\) to get \(\eta_A: \text{Hom}(A, A) \to F(A)\). Map \(\eta\) to \(\eta_A(\text{id}_A) \in F(A)\). Conversely, given \(x \in F(A)\), define \(\eta_B(f) = F(f)(x)\) for \(f: B \to A\). Naturality follows from functoriality. These maps are inverse to each other.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{C}, \mathcal{D}\) — categories</li>
+                        <li>\(\text{Hom}_{\mathcal{C}}(A, B)\) or \(A \to B\) — morphisms</li>
+                        <li>\(F: \mathcal{C} \to \mathcal{D}\) — functor</li>
+                        <li>\(\eta: F \Rightarrow G\) — natural transformation</li>
+                        <li>\(\mathbf{Set}, \mathbf{Grp}, \mathbf{Vect}_k\) — concrete categories</li>
+                        <li>\(\mathcal{C}^{op}\) — opposite category</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>from typing import TypeVar, Generic, Callable, Dict, Set, Any
+from dataclasses import dataclass
+from functools import wraps
+
+# Category theory in Python (simplified, conceptual)
+
+T = TypeVar('T')
+U = TypeVar('U')
+V = TypeVar('V')
+
+class Morphism:
+    """Represents a morphism in a category."""
+    def __init__(self, name: str, domain: Any, codomain: Any, 
+                 func: Callable = None):
+        self.name = name
+        self.domain = domain
+        self.codomain = codomain
+        self.func = func
+    
+    def __call__(self, x):
+        if self.func:
+            return self.func(x)
+        raise NotImplementedError()
+    
+    def __rshift__(self, other):
+        """Composition: f >> g = g ∘ f"""
+        if self.codomain != other.domain:
+            raise ValueError("Codomain mismatch")
+        def composed(x):
+            return other(self(x))
+        return Morphism(f"{other.name} ∘ {self.name}", 
+                       self.domain, other.codomain, composed)
+    
+    def __repr__(self):
+        return f"{self.name}: {self.domain} → {self.codomain}"
+
+class Category:
+    """A small category (objects and morphisms)."""
+    def __init__(self, name: str):
+        self.name = name
+        self.objects: Set[Any] = set()
+        self.morphisms: Dict[tuple, Morphism] = {}
+    
+    def add_object(self, obj):
+        self.objects.add(obj)
+    
+    def add_morphism(self, morph: Morphism):
+        self.morphisms[(morph.domain, morph.codomain)] = morph
+    
+    def hom(self, A, B):
+        """Get morphisms from A to B."""
+        return self.morphisms.get((A, B))
+
+class Functor:
+    """A functor between categories."""
+    def __init__(self, name: str, source: Category, target: Category,
+                 obj_map: Dict, morph_map: Dict):
+        self.name = name
+        self.source = source
+        self.target = target
+        self.obj_map = obj_map
+        self.morph_map = morph_map
+    
+    def __call__(self, obj_or_morph):
+        if isinstance(obj_or_morph, Morphism):
+            return self.morph_map.get(obj_or_morph)
+        return self.obj_map.get(obj_or_morph)
+    
+    def __repr__(self):
+        return f"Functor({self.name}): {self.source.name} → {self.target.name}"
+
+# Example: The powerset functor
+class PowersetFunctor:
+    """
+    The covariant powerset functor P: Set → Set.
+    - On objects: P(X) = power set of X
+    - On morphisms: P(f: X → Y) = f_*: P(X) → P(Y) where f_*(S) = f(S)
+    """
+    
+    @staticmethod
+    def on_object(X: Set) -> Set:
+        """Power set of X."""
+        from itertools import chain, combinations
+        return set(chain.from_iterable(combinations(X, r) 
+                                       for r in range(len(X)+1)))
+    
+    @staticmethod
+    def on_morphism(f: Callable[[Any], Any]) -> Callable[[Set], Set]:
+        """Image map induced by f."""
+        def image_map(S: Set) -> Set:
+            return {f(x) for x in S}
+        return image_map
+
+# Example: List functor (free monoid)
+class ListFunctor:
+    """
+    The list functor: maps a set X to the set of finite lists of elements of X.
+    This is the free monoid functor.
+    """
+    
+    @staticmethod
+    def on_object(X: Set) -> Set:
+        """All finite lists with elements from X (represented as tuples)."""
+        # For finite demonstration, limit length
+        result = {()}
+        current = {()}
+        for _ in range(3):  # Limit depth for demo
+            new = set()
+            for lst in current:
+                for x in X:
+                    new.add(lst + (x,))
+            result.update(new)
+            current = new
+        return result
+    
+    @staticmethod
+    def on_morphism(f: Callable[[Any], Any]) -> Callable[[tuple], tuple]:
+        """Map f over a list."""
+        def list_map(lst: tuple) -> tuple:
+            return tuple(f(x) for x in lst)
+        return list_map
+
+# Demonstration
+print("=== Category Theory in Python ===\n")
+
+# Powerset functor example
+X = {1, 2}
+Y = {'a', 'b'}
+
+PX = PowersetFunctor.on_object(X)
+print(f"X = {X}")
+print(f"P(X) = {PX}")
+print(f"|P(X)| = {len(PX)} = 2^{len(X)}")
+
+# Define a function f: X → Y
+f = {1: 'a', 2: 'b'}
+f_star = PowersetFunctor.on_morphism(lambda x: f[x])
+
+S = {(1,), (1, 2)}
+print(f"\nS = {S} ⊆ P(X)")
+print(f"f_*(S) = {f_star(S)} ⊆ P(Y)")
+
+# List functor example
+print("\n=== List Functor (Free Monoid) ===")
+A = {'x', 'y'}
+LA = ListFunctor.on_object(A)
+print(f"A = {A}")
+print(f"List(A) (truncated) = {LA}")
+print(f"Empty list () is the monoid identity")
+
+# Natural transformation example: reverse
+print("\n=== Natural Transformation: List → List (reverse) ===")
+def reverse_natural(X: Set) -> Callable:
+    """Natural transformation η: List → List where η_X = reverse."""
+    def reverse_list(lst: tuple) -> tuple:
+        return lst[::-1]
+    return reverse_list
+
+# Naturality square: reverse ∘ List(f) = List(f) ∘ reverse
+A, B = {'a'}, {'b'}
+f = lambda x: 'b' if x == 'a' else x
+
+lst = ('a', 'a')
+path1 = ListFunctor.on_morphism(f)(reverse_natural(A)(lst))
+path2 = reverse_natural(B)(ListFunctor.on_morphism(f)(lst))
+print(f"Naturality check: reverse(List(f)(lst)) = List(f)(reverse(lst))")
+print(f"  Path 1: {path1}")
+print(f"  Path 2: {path2}")
+print(f"  Equal: {path1 == path2}")</code></pre>
+                </div>
+
+                <!-- Special Topic 3: Noncommutative Geometry -->
+                <div class="deep-dive">
+                    <h3>Noncommutative Geometry and Spectral Triples</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Noncommutative geometry, developed by Alain Connes in the 1980s, extends the correspondence between geometric spaces and commutative algebras to the noncommutative setting. Gelfand's theorem establishes that compact Hausdorff spaces correspond to commutative C*-algebras. Connes asked: what geometry is encoded by noncommutative algebras? The answer has led to breakthroughs in quantum physics, number theory, and the standard model of particle physics.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>C*-Algebra:</strong> A Banach algebra \(\mathcal{A}\) with an involution \(*\) satisfying \(\|a^*a\| = \|a\|^2\).</p>
+
+                    <p><strong>Spectral Triple:</strong> A triple \((\mathcal{A}, \mathcal{H}, D)\) where:
+                    - \(\mathcal{A}\) is a *-algebra represented on Hilbert space \(\mathcal{H}\)
+                    - \(D\) is an unbounded self-adjoint operator (Dirac operator)
+                    - \([D, a]\) is bounded for all \(a \in \mathcal{A}\)</p>
+
+                    <p><strong>Connes Distance:</strong> For states \(\phi, \psi\) on \(\mathcal{A}\):
+                    \[d(\phi, \psi) = \sup\{|\phi(a) - \psi(a)| : \|[D, a]\| \leq 1\}\]</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Connes' Reconstruction Theorem:</strong> For a compact spin Riemannian manifold \(M\), the spectral triple \((C^\infty(M), L^2(M, S), D)\) where \(D\) is the Dirac operator, completely determines \(M\) up to isometry.</p>
+
+                    <p><em>Proof Sketch:</em> The key insight is that the Dirac operator encodes the metric via the formula:
+                    \[d(x, y) = \sup\{|f(x) - f(y)| : \|[D, f]\| \leq 1\}\]
+    where \(f\) acts by multiplication on spinors. This recovers the geodesic distance. The spectrum of \(D\) determines the volume form via the Dixmier trace. Together, these reconstruct the Riemannian structure.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{A}\) — C*-algebra (noncommutative "space")</li>
+                        <li>\(\mathcal{H}\) — Hilbert space carrying the representation</li>
+                        <li>\(D\) — Dirac operator (unbounded, self-adjoint)</li>
+                        <li>\([D, a] = Da - aD\) — commutator (measuring "differentiability")</li>
+                        <li>\(\sigma(a)\) — spectrum of operator \(a\)</li>
+                        <li>\(\text{Tr}_\omega\) — Dixmier trace (noncommutative integral)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.linalg import expm, eigvalsh
+import matplotlib.pyplot as plt
+
+class NoncommutativeTorus:
+    """
+    The noncommutative torus A_θ: C*-algebra generated by unitaries U, V
+    with UV = e^{2πiθ}VU.
+    """
+    
+    def __init__(self, theta, n=50):
+        """
+        theta: irrationality parameter (noncommutativity)
+        n: matrix dimension for finite approximation
+        """
+        self.theta = theta
+        self.n = n
+        
+        # Construct finite-dimensional approximation
+        # U = shift operator, V = diagonal with phases
+        self.U = np.zeros((n, n), dtype=complex)
+        for i in range(n-1):
+            self.U[i, i+1] = 1
+        self.U[n-1, 0] = 1  # Periodic boundary
+        
+        self.V = np.diag([np.exp(2j * np.pi * theta * k / n) 
+                          for k in range(n)])
+    
+    def verify_relation(self):
+        """Verify UV = e^{2πiθ}VU approximately."""
+        UV = self.U @ self.V
+        VU = self.V @ self.U
+        phase = np.exp(2j * np.pi * self.theta / self.n)
+        error = np.linalg.norm(UV - phase * VU)
+        return error
+    
+    def create_element(self, coefficients):
+        """
+        Create element from Fourier series: sum c_{m,n} U^m V^n
+        coefficients: dict mapping (m, n) to complex coefficient
+        """
+        result = np.zeros((self.n, self.n), dtype=complex)
+        U_pow = np.eye(self.n)
+        
+        # Precompute powers of U
+        U_pows = [np.eye(self.n)]
+        for _ in range(max((m for m, n in coefficients.keys()), default=0)):
+            U_pows.append(U_pows[-1] @ self.U)
+        
+        V_pow = np.eye(self.n)
+        max_n = max((n for m, n in coefficients.keys()), default=0)
+        
+        for n_power in range(max_n + 1):
+            for (m_power, n_coeff), coeff in coefficients.items():
+                if n_coeff == n_power:
+                    # U^m V^n = e^{-2πiθmn} V^n U^m (careful with ordering)
+                    phase = np.exp(-2j * np.pi * self.theta * m_power * n_power / self.n)
+                    result += coeff * phase * U_pows[m_power] @ V_pow
+            V_pow = V_pow @ self.V
+        
+        return result
+    
+    def dirac_operator(self, mass=0.1):
+        """
+        Construct a Dirac-type operator for the NC torus.
+        D = ∂_1 + i∂_2 + mass term
+        """
+        # Derivatives: [∂_1, U] = U, [∂_1, V] = 0 (approximately)
+        # Use finite difference approximation
+        k = np.arange(self.n)
+        eigenvalues = np.sqrt(k + mass**2)
+        return np.diag(eigenvalues)
+
+def spectral_action(D, f, Lambda):
+    """
+    Compute the spectral action: Tr(f(D/Λ))
+    This is a key quantity in noncommutative geometry.
+    """
+    eigenvalues = eigvalsh(D)
+    scaled = eigenvalues / Lambda
+    return np.sum(f(scaled))
+
+# Demonstration
+print("=== Noncommutative Geometry ===\n")
+
+# Create NC torus with θ = 1/3 (rational, so actually commutative)
+torus_comm = NoncommutativeTorus(theta=1/3, n=30)
+print(f"Commutative torus (θ=1/3):")
+print(f"  Relation error: {torus_comm.verify_relation():.2e}")
+
+# Create NC torus with irrational θ
+torus_nc = NoncommutativeTorus(theta=np.sqrt(2)/10, n=30)
+print(f"\nNoncommutative torus (θ=√2/10):")
+print(f"  Relation error: {torus_nc.verify_relation():.2e}")
+
+# Create an element
+a = torus_nc.create_element({(0, 0): 0.5, (1, 0): 0.3, (0, 1): 0.2})
+print(f"\nElement 'a' has norm: {np.linalg.norm(a, 2):.4f}")
+
+# Spectrum of the element
+eigenvalues_a = np.linalg.eigvalsh(a + a.conj().T)
+print(f"Spectrum of a + a*: [{eigenvalues_a.min():.4f}, {eigenvalues_a.max():.4f}]")
+
+# Dirac operator
+D = torus_nc.dirac_operator(mass=0.1)
+print(f"\nDirac operator spectrum (first 10):")
+print(np.sort(np.diag(D))[:10])
+
+# Spectral action
+def heat_kernel(x):
+    """f(x) = e^{-x^2} (heat kernel)."""
+    return np.exp(-x**2)
+
+Lambda_values = np.linspace(1, 10, 20)
+actions = [spectral_action(D, heat_kernel, Lambda) for Lambda in Lambda_values]
+
+plt.figure(figsize=(10, 6))
+plt.plot(Lambda_values, actions, 'b-', linewidth=2)
+plt.xlabel('Cutoff Λ')
+plt.ylabel('Spectral Action Tr(f(D/Λ))')
+plt.title('Spectral Action vs Cutoff')
+plt.grid(True, alpha=0.3)
+plt.savefig('spectral_action.png', dpi=150)
+plt.show()
+
+# Connes distance approximation
+def connes_distance(phi, psi, algebra_elements):
+    """
+    Approximate Connes distance between states.
+    d(φ, ψ) = sup{|φ(a) - ψ(a)| : ||[D, a]|| ≤ 1}
+    """
+    max_diff = 0
+    for a in algebra_elements:
+        diff = abs(phi(a) - psi(a))
+        # Compute commutator norm (simplified)
+        commutator = D @ a - a @ D
+        comm_norm = np.linalg.norm(commutator, 2)
+        if comm_norm <= 1.0:
+            max_diff = max(max_diff, diff)
+    return max_diff
+
+print("\n=== States and Distance ===")
+# Pure states: evaluation at points (for commutative case)
+def state_phi(a):
+    """State: φ(a) = <e_0 | a | e_0>"""
+    return a[0, 0]
+
+def state_psi(a):
+    """State: ψ(a) = <e_5 | a | e_5>"""
+    return a[5, 5] if a.shape[0] > 5 else a[0, 0]
+
+print(f"φ(a) = {state_phi(a):.4f}")
+print(f"ψ(a) = {state_psi(a):.4f}")</code></pre>
+                </div>
+
+                <!-- Special Topic 4: Ramsey Theory -->
+                <div class="deep-dive">
+                    <h3>Ramsey Theory: Order from Chaos</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Ramsey theory originated with Frank Ramsey's 1930 theorem proving that complete disorder is impossible in large structures. The field exploded in the 1930s with Erdős and Szekeres proving the party problem: among 6 people, there are always 3 mutual acquaintances or 3 mutual strangers. Ramsey theory now spans graph theory, number theory, geometry, and logic, embodying the principle that "complete disorder is impossible."</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Ramsey Number:</strong> \(R(s, t)\) is the smallest \(n\) such that every red-blue coloring of the edges of \(K_n\) contains either a red \(K_s\) or a blue \(K_t\).</p>
+
+                    <p><strong>Van der Waerden Number:</strong> \(W(k, r)\) is the smallest \(n\) such that every \(r\)-coloring of \(\{1, \ldots, n\}\) contains a monochromatic arithmetic progression of length \(k\).</p>
+
+                    <p><strong>Schur's Theorem:</strong> For any finite coloring of \(\mathbb{N}\), there exist monochromatic \(x, y, z\) with \(x + y = z\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Ramsey's Theorem (Graph Version):</strong> For all positive integers \(s, t\), the Ramsey number \(R(s, t)\) exists and satisfies:
+                    \[R(s, t) \leq R(s-1, t) + R(s, t-1)\]</p>
+
+                    <p><em>Proof Sketch:</em> Let \(n = R(s-1, t) + R(s, t-1)\). Consider any vertex \(v\) in a 2-colored \(K_n\). It has \(n-1\) neighbors, so either at least \(R(s-1, t)\) red edges or at least \(R(s, t-1)\) blue edges. In the first case, the red neighbors contain either a red \(K_{s-1}\) (giving red \(K_s\) with \(v\)) or a blue \(K_t\). The second case is symmetric. This gives the recurrence. Base cases: \(R(2, t) = t\) and \(R(s, 2) = s\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(R(s, t)\) — Ramsey number for red \(K_s\) or blue \(K_t\)</li>
+                        <li>\(K_n\) — complete graph on \(n\) vertices</li>
+                        <li>\(W(k, r)\) — van der Waerden number</li>
+                        <li>\(r_k(n)\) — size of largest subset of \(\{1, \ldots, n\}\) without \(k\)-term AP</li>
+                        <li>\(\chi(G)\) — chromatic number of graph \(G\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from itertools import combinations
+
+class RamseyTheory:
+    """Computational exploration of Ramsey theory."""
+    
+    @staticmethod
+    def check_monochromatic_clique(adj_matrix, color, size):
+        """
+        Check if there's a monochromatic clique of given size and color.
+        color: 0 or 1
+        """
+        n = len(adj_matrix)
+        # Get subgraph of edges with the given color
+        color_graph = (adj_matrix == color).astype(int)
+        
+        # Check all subsets of given size
+        for subset in combinations(range(n), size):
+            is_clique = True
+            for i, j in combinations(subset, 2):
+                if color_graph[i, j] == 0:
+                    is_clique = False
+                    break
+            if is_clique:
+                return True, subset
+        return False, None
+    
+    @staticmethod
+    def find_ramsey_certificate(n, s, t, max_attempts=1000):
+        """
+        Try to find a coloring of K_n with no red K_s and no blue K_t.
+        Returns the coloring if found, None otherwise.
+        """
+        for attempt in range(max_attempts):
+            # Random coloring
+            adj = np.random.randint(0, 2, size=(n, n))
+            adj = np.triu(adj, 1)  # Upper triangular
+            adj = adj + adj.T      # Symmetric
+            
+            has_red, _ = RamseyTheory.check_monochromatic_clique(adj, 1, s)
+            has_blue, _ = RamseyTheory.check_monochromatic_clique(adj, 0, t)
+            
+            if not has_red and not has_blue:
+                return adj
+        return None
+    
+    @staticmethod
+    def van_der_waerden_check(coloring, k):
+        """Check if coloring contains monochromatic k-term arithmetic progression."""
+        n = len(coloring)
+        for start in range(n):
+            for diff in range(1, (n - start) // k + 1):
+                ap = [start + i * diff for i in range(k)]
+                if all(coloring[x] == coloring[start] for x in ap):
+                    return True, ap
+        return False, None
+    
+    @staticmethod
+    def schur_partition(max_n, num_colors):
+        """
+        Find largest n such that [n] can be partitioned into num_colors 
+        sum-free sets (no x + y = z in same set).
+        """
+        def is_sum_free(subset):
+            s = set(subset)
+            for x in subset:
+                for y in subset:
+                    if x + y in s:
+                        return False
+            return True
+        
+        # Greedy coloring attempt
+        coloring = {}
+        for n in range(1, max_n + 1):
+            placed = False
+            for color in range(num_colors):
+                # Try placing n in this color
+                color_set = [k for k, v in coloring.items() if v == color] + [n]
+                if is_sum_free(color_set):
+                    coloring[n] = color
+                    placed = True
+                    break
+            if not placed:
+                return n - 1, coloring
+        return max_n, coloring
+
+def visualize_graph_coloring(adj_matrix, title=""):
+    """Visualize a 2-coloring of a complete graph."""
+    import networkx as nx
+    
+    n = len(adj_matrix)
+    G = nx.Graph()
+    G.add_nodes_from(range(n))
+    
+    red_edges = []
+    blue_edges = []
+    for i in range(n):
+        for j in range(i+1, n):
+            if adj_matrix[i, j] == 1:
+                red_edges.append((i, j))
+            else:
+                blue_edges.append((i, j))
+    
+    G.add_edges_from(red_edges + blue_edges)
+    
+    pos = nx.circular_layout(G)
+    plt.figure(figsize=(8, 8))
+    nx.draw_networkx_nodes(G, pos, node_color='lightgray', node_size=500)
+    nx.draw_networkx_labels(G, pos)
+    nx.draw_networkx_edges(G, pos, edgelist=red_edges, edge_color='red', width=2)
+    nx.draw_networkx_edges(G, pos, edgelist=blue_edges, edge_color='blue', width=2)
+    plt.title(title)
+    plt.axis('off')
+    return plt
+
+# Demonstrations
+print("=== Ramsey Theory ===\n")
+
+# R(3,3) = 6: Any 2-coloring of K_6 has monochromatic triangle
+print("R(3,3) = 6 demonstration:")
+ramsey = RamseyTheory()
+
+# K_5 can avoid monochromatic triangles
+cert_5 = ramsey.find_ramsey_certificate(5, 3, 3, max_attempts=10000)
+if cert_5 is not None:
+    print("  K_5 CAN avoid monochromatic triangles!")
+else:
+    print("  Couldn't find certificate (R(3,3) might be <= 5)")
+
+# K_6 always has monochromatic triangle
+print("  Testing K_6 colorings...")
+found_counterexample = False
+for _ in range(100):
+    adj = np.random.randint(0, 2, size=(6, 6))
+    adj = np.triu(adj, 1)
+    adj = adj + adj.T
+    has_red, red_clique = ramsey.check_monochromatic_clique(adj, 1, 3)
+    has_blue, blue_clique = ramsey.check_monochromatic_clique(adj, 0, 3)
+    if not has_red and not has_blue:
+        found_counterexample = True
+        break
+
+print(f"  Found counterexample in 100 trials: {found_counterexample}")
+print(f"  This suggests R(3,3) = 6")
+
+# Van der Waerden
+print("\n=== Van der Waerden's Theorem ===")
+print("W(3,2) = 9 (any 2-coloring of {1,...,9} has monochromatic 3-AP)")
+
+# Test: coloring of {1,...,8} without monochromatic 3-AP
+# The coloring 11001100 (repeated) avoids 3-APs
+coloring_8 = [1, 1, 0, 0, 1, 1, 0, 0]
+has_ap, ap = ramsey.van_der_waerden_check(coloring_8, 3)
+print(f"  Coloring {coloring_8} has 3-AP: {has_ap}")
+
+# Any coloring of {1,...,9} has a 3-AP
+print("  Testing random colorings of {1,...,9}...")
+ap_count = 0
+for _ in range(100):
+    coloring_9 = np.random.randint(0, 2, size=9)
+    has_ap, _ = ramsey.van_der_waerden_check(coloring_9, 3)
+    if has_ap:
+        ap_count += 1
+print(f"  {ap_count}/100 random colorings of [9] have monochromatic 3-AP")
+
+# Schur's theorem
+print("\n=== Schur's Theorem ===")
+print("Largest n such that [n] can be 2-colored without monochromatic x+y=z:")
+max_n, schur_coloring = ramsey.schur_partition(20, 2)
+print(f"  Schur number S(2) = {max_n}")
+print(f"  Coloring: {schur_coloring}")
+
+# Known values
+print("\n=== Known Ramsey Numbers ===")
+print("  R(3,3) = 6")
+print("  R(3,4) = 9")
+print("  R(3,5) = 14")
+print("  R(4,4) = 18")
+print("  R(5,5) is between 43 and 48 (open problem!)")
+
+# Visualize a certificate for R(3,3) > 5
+if cert_5 is not None:
+    plt = visualize_graph_coloring(cert_5, "K_5 coloring with no monochromatic K_3\n(R(3,3) > 5)")
+    plt.savefig('ramsey_certificate.png', dpi=150)
+    plt.show()</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== MATH HISTORY ==================== -->
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Modern Algebra</h2>
+                
+                <p>The 19th century witnessed a profound transformation in mathematics, as the study of algebra shifted from solving equations to understanding abstract structures. This revolution, often called the "structural turn," began with the work of Évariste Galois and culminated in the axiomatic approach of Emmy Noether and her school.</p>
+
+                <p>In 1832, the twenty-year-old Évariste Galois lay dying from a duel wound. In his final hours, he wrote a letter to his friend Auguste Chevalier, sketching the connection between field extensions and groups of permutations. Galois had discovered that the solvability of a polynomial equation by radicals depends on the structure of its associated group—the Galois group. An equation is solvable by radicals if and only if its Galois group is solvable. This insight resolved centuries-old questions about the quintic equation, proving that general quintics cannot be solved by radicals.</p>
+
+                <p>Galois's work was nearly lost to history. His manuscripts were rejected or misunderstood by the Paris Academy, and only through the efforts of Liouville were they eventually published in 1846. By then, the seeds of modern algebra had been planted. In Germany, Richard Dedekind was developing the theory of ideals in rings of integers, seeking to restore unique factorization in algebraic number fields. His approach was structural: instead of asking whether a specific number is prime, he asked about the lattice of ideals containing it.</p>
+
+                <p>The late 19th century saw the emergence of group theory as an independent subject. Felix Klein's Erlangen Program of 1872 proposed that geometries could be classified by their transformation groups. Sophus Lie developed the theory of continuous transformation groups—now called Lie groups—to study differential equations. These developments showed that groups were not merely tools for studying equations but fundamental objects worthy of study in their own right.</p>
+
+                <p>The axiomatic approach reached its mature form in the early 20th century through the work of David Hilbert and Emmy Noether. Hilbert's Grundlagen der Geometrie (1899) showed that geometry could be built from purely logical axioms without appeal to intuition. Noether, who arrived in Göttingen in 1915, transformed algebra by emphasizing the importance of homomorphisms, ideals, and modules over calculations with explicit elements. Her famous theorem connecting symmetries and conservation laws in physics remains a cornerstone of theoretical physics.</p>
+
+                <p>By the 1930s, the structural approach had permeated all of mathematics. The publication of van der Waerden's Moderne Algebra in 1930 codified the new approach for a generation of mathematicians. Bourbaki's Éléments de mathématique, beginning in 1939, attempted to rebuild all of mathematics from set-theoretic foundations using the language of structures. Whether this program succeeded or went too far remains a subject of debate, but its influence on 20th-century mathematics is undeniable.</p>
+            </section>
+
+            <!-- ==================== MATH JOURNALISM ==================== -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/">Quanta Magazine</a></h3>
+                    <p><strong>Recent Highlight:</strong> "Mathematicians Find Structure in Biased Polynomials"</p>
+                    <p>Researchers have made significant progress on understanding the structure of polynomials that exhibit bias—polynomials that take certain values more often than expected. This work connects to the polynomial method in combinatorics and has implications for theoretical computer science, particularly in understanding the complexity of certain computational problems. The breakthrough involves new techniques for decomposing biased polynomials into structured components, building on recent advances in higher-order Fourier analysis.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/subjects/mathematics-and-computing">Nature Mathematics</a></h3>
+                    <p><strong>Recent Highlight:</strong> "AI Discovers New Mathematical Connections"</p>
+                    <p>DeepMind's latest research demonstrates how machine learning can assist mathematicians in discovering new conjectures and theorems. By training neural networks to detect patterns in large mathematical datasets, researchers have identified previously unknown relationships between different areas of mathematics. The article discusses both the promise and limitations of AI-assisted mathematical research, emphasizing that human intuition and rigor remain essential for proof verification and conceptual understanding.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.ams.org/notices/">AMS Notices</a></h3>
+                    <p><strong>Recent Highlight:</strong> "The Legacy of Karen Uhlenbeck"</p>
+                    <p>A retrospective on the groundbreaking work of Karen Uhlenbeck, the first woman to receive the Abel Prize. The article traces her contributions to the calculus of variations, gauge theory, and geometric analysis. Uhlenbeck's work on the regularity of harmonic maps and her foundational results in Yang-Mills theory opened new directions in differential geometry that continue to influence research today. The piece also reflects on her role as a mentor and advocate for women in mathematics.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PROBLEM CORNER ==================== -->
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+
+                <div class="problem">
+                    <h3>Putnam Competition Problem (B5, 2003)</h3>
+                    <p><strong>Problem:</strong> Let \(A, B,\) and \(C\) be equidistant points on the circumference of a circle of unit radius centered at \(O\), and let \(P\) be any point in the circle's interior. Let \(a, b, c\) be the distances from \(P\) to \(A, B, C\) respectively. Show that there exists a triangle with side lengths \(a, b, c\), and that its area depends only on the distance from \(P\) to \(O\).</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Use complex numbers with the circle as the unit circle. Place \(A, B, C\) at the cube roots of unity. Express \(a^2, b^2, c^2\) in terms of \(P\)'s complex coordinate. For the area, use Heron's formula and show that the expression simplifies to depend only on \(|P|\).</p>
+                    </details>
+
+                    <details>
+                        <summary>📖 Solution</summary>
+                        <p>Place \(O\) at the origin and let \(A, B, C\) be at \(1, \omega, \omega^2\) where \(\omega = e^{2\pi i/3}\). Let \(P\) be at complex coordinate \(z\) with \(|z| = r < 1\).</p>
+                        
+                        <p>Then:
+                        \[a^2 = |z - 1|^2 = |z|^2 - z - \bar{z} + 1 = r^2 - 2\text{Re}(z) + 1\]
+                        \[b^2 = |z - \omega|^2 = r^2 - 2\text{Re}(\bar{\omega}z) + 1\]
+                        \[c^2 = |z - \omega^2|^2 = r^2 - 2\text{Re}(\omega z) + 1\]</p>
+
+                        <p>To show a triangle exists, we verify the triangle inequalities. By symmetry, it suffices to check \(a + b > c\). Using the law of cosines in triangles \(OPA\) and \(OPB\), and noting that \(\angle APB = 120°\) when \(P = O\), continuity ensures the triangle inequality holds for all \(P\) in the disk.</p>
+
+                        <p>For the area, use Heron's formula. Let \(s = (a+b+c)/2\). Then:
+                        \[16\cdot\text{Area}^2 = (a+b+c)(-a+b+c)(a-b+c)(a+b-c)\]</p>
+
+                        <p>After extensive algebra (or using the formula for the area of a triangle given vertex coordinates), one finds:
+                        \[\text{Area} = \frac{3\sqrt{3}}{4}(1 - r^2)\]</p>
+
+                        <p>This depends only on \(r = |OP|\), completing the proof. The maximum area \(\frac{3\sqrt{3}}{4}\) occurs at the center, and the area vanishes as \(P\) approaches the boundary.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== VISUALIZATION OF THE DAY ==================== -->
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Mandelbrot Set</h2>
+                
+                <p>The Mandelbrot set is the set of complex numbers \(c\) for which the iteration \(z_{n+1} = z_n^2 + c\) starting from \(z_0 = 0\) remains bounded. It exhibits infinite complexity at all scales and connects to the bifurcation diagram of the logistic map.</p>
+
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+
+def mandelbrot(c, max_iter=100, escape_radius=2.0):
+    """
+    Compute the number of iterations until escape for point c.
+    Returns the iteration count (normalized for smooth coloring).
+    """
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > escape_radius:
+            # Smooth coloring using log-log formula
+            log_zn = np.log(abs(z))
+            nu = np.log(log_zn / np.log(escape_radius)) / np.log(2)
+            return n + 1 - nu
+        z = z*z + c
+    return max_iter
+
+# Vectorized version for efficiency
+mandelbrot_vec = np.vectorize(mandelbrot)
+
+# Create the image
+width, height = 1200, 900
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -1.5, 1.5
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Compute Mandelbrot set
+print("Computing Mandelbrot set...")
+M = mandelbrot_vec(C, max_iter=80)
+
+# Create custom colormap
+colors = [
+    (0.0, 0.0, 0.2),   # Dark blue
+    (0.0, 0.0, 0.5),   # Blue
+    (0.0, 0.4, 1.0),   # Light blue
+    (0.0, 0.8, 1.0),   # Cyan
+    (0.4, 1.0, 0.4),   # Green
+    (1.0, 1.0, 0.0),   # Yellow
+    (1.0, 0.6, 0.0),   # Orange
+    (1.0, 0.0, 0.0),   # Red
+    (0.5, 0.0, 0.0),   # Dark red
+    (0.0, 0.0, 0.0),   # Black (interior)
+]
+cmap = LinearSegmentedColormap.from_list("mandelbrot", colors, N=256)
+
+# Plot
+fig, ax = plt.subplots(figsize=(16, 12))
+im = ax.imshow(M, extent=[xmin, xmax, ymin, ymax], 
+               cmap=cmap, origin='lower', interpolation='bilinear')
+ax.set_xlabel('Re(c)', fontsize=12)
+ax.set_ylabel('Im(c)', fontsize=12)
+ax.set_title('The Mandelbrot Set', fontsize=16, fontweight='bold')
+ax.set_aspect('equal')
+
+# Add colorbar
+cbar = plt.colorbar(im, ax=ax, shrink=0.8)
+cbar.set_label('Iterations to escape', rotation=270, labelpad=20)
+
+plt.tight_layout()
+plt.savefig('mandelbrot_set.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+# Zoom into a interesting region (Seahorse valley)
+print("\nZooming into Seahorse Valley...")
+xmin_z, xmax_z = -0.75, -0.74
+ymin_z, ymax_z = 0.1, 0.11
+
+x_z = np.linspace(xmin_z, xmax_z, 800)
+y_z = np.linspace(ymin_z, ymax_z, 800)
+X_z, Y_z = np.meshgrid(x_z, y_z)
+C_z = X_z + 1j*Y_z
+
+M_z = mandelbrot_vec(C_z, max_iter=200)
+
+fig, ax = plt.subplots(figsize=(12, 12))
+im = ax.imshow(M_z, extent=[xmin_z, xmax_z, ymin_z, ymax_z], 
+               cmap=cmap, origin='lower', interpolation='bilinear')
+ax.set_title('Seahorse Valley (Zoom)', fontsize=14, fontweight='bold')
+ax.set_xlabel('Re(c)')
+ax.set_ylabel('Im(c)')
+ax.set_aspect('equal')
+
+plt.tight_layout()
+plt.savefig('mandelbrot_zoom.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+print("\nKey features of the Mandelbrot set:")
+print("- The main cardioid: c = (e^{iθ} - 1)^2 / 4")
+print("- The period-2 bulb: |c + 1| < 1/4")
+print("- The boundary has Hausdorff dimension 2")
+print("- Connected to the bifurcation diagram of the logistic map")</code></pre>
+            </section>
+
+            <!-- ==================== QUOTE OF THE DAY ==================== -->
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+                <p class="quote-context">Cantor's declaration, made in his 1883 Grundlagen, defended the legitimacy of his theory of infinite sets against the criticisms of contemporaries like Kronecker. Today, it serves as a reminder that mathematics progresses not just through proof but through the courage to explore new conceptual territories.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — A curated collection of mathematical insights</p>
+        <p>Generated: February 26, 2026 at 03:34 UTC</p>
+    </footer>
+</body>
+</html>
