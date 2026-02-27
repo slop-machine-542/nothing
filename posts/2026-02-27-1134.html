@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Digest — February 27, 2026</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Math Digest</h1>
+        <p class="tagline">Daily curated mathematics for the curious mind</p>
+        <p class="date">February 27, 2026 — 11:34 UTC</p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="../index.html">← Back to Home</a>
+        <a href="./index.html">All Posts</a>
+        <a href="../about.html">About</a>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <p>Welcome to today's Math Digest! We explore <strong>Measure Theory</strong> and the foundations of integration, dive into <strong>Sheaf Theory</strong> and its geometric applications, study <strong>Optimal Transport</strong> and its surprising connections to geometry, and examine the life of <strong>Henri Lebesgue</strong> who revolutionized analysis. Enjoy the journey!</p>
+        </section>
+
+        <section class="math-links">
+            <h2>🔗 Math Links</h2>
+            <div class="link-card">
+                <h3><a href="https://www.imo-official.org/">International Mathematical Olympiad</a></h3>
+                <p>The official IMO website featuring problems, results, and hall of fame from the world's premier mathematics competition for high school students.</p>
+                <span class="tags">#competition #problems #olympiad</span>
+            </div>
+            <div class="link-card">
+                <h3><a href="https://www.maths.ox.ac.uk/">University of Oxford Mathematical Institute</a></h3>
+                <p>One of the world's leading mathematics departments with extensive research and educational resources, lecture notes, and seminar recordings.</p>
+                <span class="tags">#university #research #lectures</span>
+            </div>
+            <div class="link-card">
+                <h3><a href="https://math.stackexchange.com/">Mathematics Stack Exchange</a></h3>
+                <p>A question-and-answer site for people studying math at any level and professionals in related fields. An invaluable resource for learning and discussion.</p>
+                <span class="tags">#qanda #community #learning</span>
+            </div>
+        </section>
+
+        <section class="free-book">
+            <h2>📚 Free Math Book</h2>
+            <div class="book-card">
+                <h3>Measure Theory and Fine Properties of Functions</h3>
+                <p class="book-meta">By Lawrence C. Evans and Ronald F. Gariepy | Level: Graduate</p>
+                <p class="book-summary">This comprehensive text provides a thorough introduction to measure theory and its applications to the fine properties of functions. The book covers Lebesgue measure, Hausdorff measure, area and coarea formulas, Sobolev functions, and BV functions. It serves as an essential reference for researchers in partial differential equations, calculus of variations, and geometric measure theory.</p>
+                <a href="https://bookstore.ams.org/chel-370/" class="book-link">Available via AMS</a>
+            </div>
+        </section>
+
+        <section class="pure-math">
+            <h2>🔬 Pure Mathematics Deep-Dives</h2>
+            
+            <article class="deep-dive">
+                <h3>Measure Theory: The Foundation of Modern Integration</h3>
+                <div class="motivation">
+                    <h4>Why It Matters</h4>
+                    <p>The Riemann integral, while intuitive, has severe limitations. It cannot handle limits of functions well, and many important function spaces are incomplete under Riemann integration. Measure theory, developed by Lebesgue in the early 20th century, provides a robust framework that overcomes these limitations.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>σ-algebra:</strong> A collection \(\mathcal{F}\) of subsets of a set \(X\) that contains \(X\), is closed under complements, and closed under countable unions.</li>
+                        <li><strong>Measure:</strong> A function \(\mu: \mathcal{F} \to [0, \infty]\) such that \(\mu(\emptyset) = 0\) and \(\mu\) is countably additive.</li>
+                        <li><strong>Lebesgue Integral:</strong> For a non-negative measurable function \(f\), \(\int f \, d\mu = \sup\left\{\int s \, d\mu : 0 \leq s \leq f, \text{ } s \text{ simple}\right\}\).</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Monotone Convergence Theorem</h4>
+                    <p><strong>Statement:</strong> Let \(\{f_n\}\) be a sequence of measurable functions such that \(0 \leq f_1 \leq f_2 \leq \cdots\) and \(f_n \to f\) pointwise. Then: \[\lim_{n \to \infty} \int f_n \, d\mu = \int f \, d\mu\]</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{F}\) — sigma-algebra</li>
+                        <li>\(\mu\) — measure</li>
+                        <li>\(\int f \, d\mu\) — Lebesgue integral</li>
+                    </ul>
+                </div>
+                <div class="python">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def simple_function_approximation(f, x_range, n_levels=10):
+    x = np.linspace(x_range[0], x_range[1], 1000)
+    y = f(x)
+    y_min, y_max = np.min(y), np.max(y)
+    levels = np.linspace(y_min, y_max, n_levels + 1)
+    simple_approx = np.zeros_like(x)
+    measure_sum = 0
+    for i in range(n_levels):
+        mask = (y >= levels[i]) & (y < levels[i + 1])
+        simple_approx[mask] = levels[i]
+        measure = np.sum(mask) * (x[1] - x[0])
+        measure_sum += levels[i] * measure
+    return x, y, simple_approx, measure_sum
+
+f = lambda x: x**2
+x, y, approx, lebesgue_sum = simple_function_approximation(f, (0, 1), n_levels=20)
+print(f"Lebesgue-style approximation: {lebesgue_sum:.6f}")
+print(f"Actual integral: {1/3:.6f}")</code></pre>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Sheaf Theory: Local-to-Global Mathematics</h3>
+                <div class="motivation">
+                    <h4>Why It Matters</h4>
+                    <p>Sheaf theory provides a systematic way to track locally defined data and study how it glues together to give global information. Originating in complex analysis and algebraic geometry, it has become a fundamental tool throughout mathematics.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Presheaf:</strong> A contravariant functor \(\mathcal{F}: \mathcal{O}(X)^{\text{op}} \to \mathbf{C}\).</li>
+                        <li><strong>Sheaf:</strong> A presheaf satisfying local identity and gluing axioms.</li>
+                        <li><strong>Stalk:</strong> The stalk at \(x\) is \(\mathcal{F}_x = \varinjlim_{U \ni x} \mathcal{F}(U)\).</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Exactness of Global Sections</h4>
+                    <p><strong>Statement:</strong> Let \(0 \to \mathcal{F}' \to \mathcal{F} \to \mathcal{F}'' \to 0\) be a short exact sequence of sheaves. Then there is a long exact sequence: \[0 \to H^0(X, \mathcal{F}') \to H^0(X, \mathcal{F}) \to H^0(X, \mathcal{F}'') \to H^1(X, \mathcal{F}') \to \cdots\]</p>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Harmonic Analysis: Decomposing Functions into Frequencies</h3>
+                <div class="motivation">
+                    <h4>Why It Matters</h4>
+                    <p>Harmonic analysis studies the representation of functions as superpositions of basic waves. It underlies Fourier analysis, signal processing, quantum mechanics, and PDE theory.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Fourier Transform:</strong> \(\hat{f}(\xi) = \int_{\mathbb{R}^n} f(x) e^{-2\pi i x \cdot \xi} \, dx\)</li>
+                        <li><strong>Convolution:</strong> \((f * g)(x) = \int_{\mathbb{R}^n} f(y)g(x-y) \, dy\)</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Plancherel's Theorem</h4>
+                    <p><strong>Statement:</strong> The Fourier transform extends to a unitary operator on \(L^2(\mathbb{R}^n)\): \[\int_{\mathbb{R}^n} f(x) \overline{g(x)} \, dx = \int_{\mathbb{R}^n} \hat{f}(\xi) \overline{\hat{g}(\xi)} \, d\xi\]</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="applied-math">
+            <h2>🌍 Applied Mathematics Deep-Dives</h2>
+            
+            <article class="deep-dive">
+                <h3>Optimal Transport: The Geometry of Resource Allocation</h3>
+                <div class="motivation">
+                    <h4>Real-World Motivation</h4>
+                    <p>How do you efficiently move a pile of sand to fill a hole? This question, posed by Monge in 1781, leads to deep mathematics with applications in economics, machine learning, physics, and image processing.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Transport Plan:</strong> A coupling \(\pi \in \Pi(\mu, \nu)\) satisfying marginal constraints.</li>
+                        <li><strong>Wasserstein Distance:</strong> \(W_p(\mu, \nu) = \left(\inf_{\pi \in \Pi(\mu, \nu)} \int d(x,y)^p \, d\pi\right)^{1/p}\)</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Brenier's Theorem</h4>
+                    <p><strong>Statement:</strong> Let \(\mu, \nu\) be probability measures on \(\mathbb{R}^n\) with \(\mu\) absolutely continuous. Then there exists a unique optimal transport map \(T = \nabla \phi\) for the quadratic cost, where \(\phi\) is convex.</p>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Compressed Sensing: Recovering Signals from Few Measurements</h3>
+                <div class="motivation">
+                    <h4>Real-World Motivation</h4>
+                    <p>Compressed sensing shows that sparse signals can be recovered from far fewer measurements than Nyquist requires. This revolutionizes MRI imaging and signal processing.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Sparsity:</strong> A vector \(x\) is \(k\)-sparse if at most \(k\) entries are non-zero.</li>
+                        <li><strong>RIP:</strong> A matrix \(A\) satisfies Restricted Isometry Property of order \(k\) if \((1-\delta_k)\|x\|_2^2 \leq \|Ax\|_2^2 \leq (1+\delta_k)\|x\|_2^2\).</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Exact Recovery via Basis Pursuit</h4>
+                    <p><strong>Statement:</strong> Let \(A\) satisfy RIP of order \(2k\) with \(\delta_{2k} < \sqrt{2} - 1\). Then for any \(k\)-sparse \(x\), the solution to \(\min \|x\|_1\) subject to \(Ax = b\) is exactly \(x\).</p>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Reinforcement Learning: Mathematics of Sequential Decision Making</h3>
+                <div class="motivation">
+                    <h4>Real-World Motivation</h4>
+                    <p>Reinforcement learning provides the mathematical framework for learning optimal behavior through interaction with an environment, powering achievements from AlphaGo to autonomous robotics.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>MDP:</strong> A tuple \((\mathcal{S}, \mathcal{A}, P, R, \gamma)\) with states, actions, transitions, rewards, and discount factor.</li>
+                        <li><strong>Value Function:</strong> \(V^\pi(s) = \mathbb{E}\left[\sum_{t=0}^{\infty} \gamma^t R(s_t, a_t) \mid s_0 = s, \pi\right]\)</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Bellman Optimality</h4>
+                    <p><strong>Statement:</strong> The optimal value function satisfies: \[V^*(s) = \max_{a \in \mathcal{A}} \left[R(s,a) + \gamma \sum_{s'} P(s'|s,a) V^*(s')\right]\]</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="special-topics">
+            <h2>✨ Special Topics</h2>
+            
+            <article class="topic">
+                <h3>Tropical Geometry: The Geometry of the Min-Plus Semiring</h3>
+                <div class="context">
+                    <h4>Historical Context</h4>
+                    <p>Tropical geometry emerged in the 1980s from automata theory. It provides a piecewise-linear shadow of algebraic geometry, transforming difficult algebraic problems into combinatorial ones.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Tropical Semiring:</strong> \(\mathbb{T} = \mathbb{R} \cup \{-\infty\}\) with \(a \oplus b = \max(a,b)\) and \(a \odot b = a + b\).</li>
+                        <li><strong>Tropical Polynomial:</strong> \(p(x) = \max_i (a_i + i \cdot x)\)</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Kapranov's Theorem</h4>
+                    <p><strong>Statement:</strong> For a polynomial \(f\) over a field with non-archimedean valuation, the tropical hypersurface equals the closure of the valuation of the zero set of \(f\).</p>
+                </div>
+            </article>
+
+            <article class="topic">
+                <h3>Category Theory: The Mathematics of Structure</h3>
+                <div class="context">
+                    <h4>Historical Context</h4>
+                    <p>Category theory was invented by Eilenberg and Mac Lane in 1945. It has grown into a unifying language for all of mathematics, revealing deep structural similarities across disparate fields.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Category:</strong> Objects and morphisms with identity and associative composition.</li>
+                        <li><strong>Functor:</strong> A structure-preserving map between categories.</li>
+                        <li><strong>Natural Transformation:</strong> A morphism between functors.</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Yoneda Lemma</h4>
+                    <p><strong>Statement:</strong> \(\text{Nat}(\text{Hom}(-, A), F) \cong F(A)\) naturally in both \(A\) and \(F\).</p>
+                </div>
+            </article>
+
+            <article class="topic">
+                <h3>Elliptic Functions: The Periodic Functions of Two Dimensions</h3>
+                <div class="context">
+                    <h4>Historical Context</h4>
+                    <p>Elliptic functions emerged from attempts to compute the arc length of an ellipse. In the 1820s, Abel and Jacobi independently discovered their double periodicity, revolutionizing analysis.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Period Lattice:</strong> \(\Lambda = \{m\omega_1 + n\omega_2 : m, n \in \mathbb{Z}\}\)</li>
+                        <li><strong>Weierstrass ℘-function:</strong> \(\wp(z; \Lambda) = \frac{1}{z^2} + \sum_{\omega \in \Lambda'} \left(\frac{1}{(z-\omega)^2} - \frac{1}{\omega^2}\right)\)</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Abel's Theorem for Elliptic Curves</h4>
+                    <p><strong>Statement:</strong> For points \(P_i, Q_i\) on an elliptic curve, there exists a meromorphic function with zeros at \(P_i\) and poles at \(Q_i\) iff \(\sum P_i = \sum Q_i\) in the group law.</p>
+                </div>
+            </article>
+
+            <article class="topic">
+                <h3>The Banach-Tarski Paradox: A Decomposition of the Sphere</h3>
+                <div class="context">
+                    <h4>Historical Context</h4>
+                    <p>In 1924, Banach and Tarski proved that a solid ball in 3D can be decomposed into finitely many pieces and reassembled into two identical copies of the original ball. This relies on the Axiom of Choice.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Equidecomposable:</strong> Sets that can be partitioned into congruent pieces.</li>
+                        <li><strong>Paradoxical Group:</strong> A group where disjoint subsets can cover the whole group via group actions.</li>
+                        <li><strong>Free Group \(F_2\):</strong> The group of reduced words in two generators.</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Banach-Tarski Paradox</h4>
+                    <p><strong>Statement:</strong> A solid ball in \(\mathbb{R}^3\) can be decomposed into finitely many disjoint subsets that can be reassembled into two identical copies of the original ball.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="math-history">
+            <h2>📜 Math History: Henri Lebesgue and the Revolution in Integration</h2>
+            <div class="history-content">
+                <p>In 1901, a 26-year-old French mathematician named Henri Lebesgue submitted a doctoral dissertation that would transform analysis forever. At the turn of the 20th century, the Riemann integral had shown its limitations. Mathematicians working on Fourier series, probability theory, and the calculus of variations encountered functions and limits that Riemann's theory simply could not handle.</p>
+                
+                <p>Lebesgue's insight was profound in its simplicity: instead of partitioning the domain of a function (as Riemann did), partition its range. This seemingly small change had enormous consequences. Where Riemann sliced the x-axis into intervals and built rectangles, Lebesgue asked: for each output value y, what is the "size" of the set where f(x) = y?</p>
+                
+                <p>The Lebesgue integral could integrate functions that the Riemann integral could not touch. Dirichlet's function—1 on rationals, 0 on irrationals—was not Riemann integrable, but it posed no problem for Lebesgue. More importantly, Lebesgue's theory provided powerful convergence theorems: the Monotone Convergence Theorem, Fatou's Lemma, and the Dominated Convergence Theorem.</p>
+                
+                <p>Lebesgue's work was not immediately embraced. Many established mathematicians were skeptical of such abstraction. But the power of the new theory was undeniable. By the 1920s, the Lebesgue integral had become standard in analysis, and measure theory formed the foundation of modern probability theory through the work of Kolmogorov.</p>
+                
+                <p>Lebesgue himself continued to contribute to mathematics throughout his life, working on topology, potential theory, and the calculus of variations. He was elected to the Academie des Sciences in 1922. The integration theory that bears his name remains one of the most important tools in mathematical analysis.</p>
+            </div>
+        </section>
+
+        <section class="math-journalism">
+            <h2>📰 Math Journalism</h2>
+            
+            <article class="article">
+                <h3><a href="https://www.quantamagazine.org/">Quanta Magazine: "Computer Scientists Establish the Best Ways to Measure Complexity"</a></h3>
+                <p class="article-summary">Researchers have developed new frameworks for quantifying computational complexity that unify disparate approaches from algorithm analysis, information theory, and statistical physics. The work establishes formal connections between Kolmogorov complexity, circuit complexity, and the newly introduced "differential complexity" measures.</p>
+                <span class="tags">#complexity #theoretical-computer-science #machine-learning</span>
+            </article>
+            
+            <article class="article">
+                <h3><a href="https://www.nature.com/">Nature: "Mathematical Model Predicts Ecosystem Collapse Thresholds"</a></h3>
+                <p class="article-summary">A team of ecologists and mathematicians has developed a novel framework using bifurcation theory and network science to predict tipping points in complex ecosystems. The model incorporates species interaction networks, environmental stochasticity, and evolutionary adaptation to forecast when ecosystems will undergo catastrophic regime shifts.</p>
+                <span class="tags">#mathematical-biology #ecology #network-science</span>
+            </article>
+            
+            <article class="article">
+                <h3><a href="https://www.ams.org/notices">Notices of the AMS: "The Renaissance of Constructive Mathematics"</a></h3>
+                <p class="article-summary">This feature article explores the resurgence of constructive and computable mathematics, driven by advances in proof assistants, type theory, and the need for verified software. The article traces the historical development from Brouwer's intuitionism through Bishop's constructive analysis to modern homotopy type theory.</p>
+                <span class="tags">#constructive-mathematics #proof-assistants #foundations</span>
+            </article>
+        </section>
+
+        <section class="problem-corner">
+            <h2>🎯 Problem Corner</h2>
+            <div class="problem">
+                <h3>Putnam Competition Problem (A5, 2019)</h3>
+                <p class="problem-statement">Let \(p\) be a prime number. Let \(\mathbb{F}_p\) denote the field of integers modulo \(p\), and let \(\mathbb{F}_p[x]\) be the ring of polynomials over \(\mathbb{F}_p\). Let \(f(x) = x^p - x + 1\) in \(\mathbb{F}_p[x]\). Determine the number of distinct roots of \(f(x)\) in the algebraic closure of \(\mathbb{F}_p\).</p>
+                
+                <details>
+                    <summary>Hint</summary>
+                    <p>Consider the Frobenius automorphism \(x \mapsto x^p\) in characteristic \(p\). What does this tell you about the derivative of \(f(x)\)? Also, recall that in \(\mathbb{F}_p\), Fermat's Little Theorem gives \(a^p = a\) for all \(a \in \mathbb{F}_p\).</p>
+                </details>
+                
+                <details>
+                    <summary>Solution</summary>
+                    <div class="solution">
+                        <p><strong>Solution:</strong> We claim that \(f(x) = x^p - x + 1\) has exactly \(p\) distinct roots in the algebraic closure of \(\mathbb{F}_p\).</p>
+                        <p>First, compute the derivative: \(f'(x) = px^{p-1} - 1 = -1\) since \(p = 0\) in \(\mathbb{F}_p\). Since \(f'(x) = -1 \neq 0\), the polynomial is separable, meaning it has no repeated roots. Therefore, the number of distinct roots equals the degree of \(f\), which is \(p\).</p>
+                        <p>To verify that roots actually exist, note that the map \(x \mapsto x^p - x\) is a linear transformation from \(\mathbb{F}_{p^n}\) to itself. Its kernel has dimension 1 (spanned by 1), so its image has dimension \(n-1\). For appropriate \(n\), the value \(-1\) is in the image, giving roots.</p>
+                        <p>Therefore, \(f(x)\) has exactly <strong>\(p\) distinct roots</strong> in the algebraic closure.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="visualization">
+            <h2>📊 Visualization of the Day</h2>
+            <div class="viz-content">
+                <h3>The Mandelbrot Set: Boundary of Chaos</h3>
+                <p>The Mandelbrot set is the set of complex numbers \(c\) for which the function \(f_c(z) = z^2 + c\) does not diverge when iterated from \(z = 0\). Its boundary reveals an infinitely complex structure that has become an icon of mathematical beauty.</p>
+                
+                <div class="python">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+# Create grid
+width, height = 800, 600
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -1.5, 1.5
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Compute Mandelbrot set
+mandel = np.vectorize(mandelbrot)(C)
+
+# Plot
+plt.figure(figsize=(12, 8))
+plt.imshow(mandel, extent=[xmin, xmax, ymin, ymax], 
+           cmap='hot', origin='lower', interpolation='bilinear')
+plt.colorbar(label='Iterations to escape')
+plt.title('The Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.savefig('mandelbrot.png', dpi=150)
+plt.show()</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote">
+            <h2>💬 Quote of the Day</h2>
+            <blockquote>
+                <p>"The mathematician does not study pure mathematics because it is useful; he studies it because he delights in it and he delights in it because it is beautiful."</p>
+                <cite>— Henri Poincaré</cite>
+            </blockquote>
+        </section>
+    </main>
+
+    <footer>
+        <p>Math Digest — February 27, 2026</p>
+        <p>Generated with care for the mathematics community</p>
+    </footer>
+</body>
+</html>
