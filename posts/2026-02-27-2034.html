@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 27, 2026 at 20:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 27, 2026 at 20:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 27, 2026 at 20:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">riemann-surfaces</span>
+                <span class="tag">spectral-theory</span>
+                <span class="tag">measure-theory</span>
+                <span class="tag">supply-chain-optimization</span>
+                <span class="tag">medical-imaging</span>
+                <span class="tag">neural-networks</span>
+                <span class="tag">p-adic-numbers</span>
+                <span class="tag">topos-theory</span>
+                <span class="tag">surreal-numbers</span>
+                <span class="tag">alexander-grothendieck</span>
+            </div>
+
+            <!-- ==================== MATH LINKS ==================== -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://mathoverflow.net/">MathOverflow</a></h3>
+                    <p>A question and answer site for professional mathematicians. Unlike general Q&amp;A platforms, MathOverflow is specifically designed for research-level mathematics. It hosts discussions on cutting-edge topics across all mathematical disciplines, with contributions from Fields Medalists, Abel Prize winners, and leading researchers worldwide.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://terrytao.wordpress.com/">What's New — Terence Tao's Blog</a></h3>
+                    <p>Terence Tao, Fields Medalist and one of the most prolific mathematicians of our time, maintains this blog covering his research, expository articles, and discussions of mathematical developments. The blog features deep insights into analysis, number theory, combinatorics, and more.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.ams.org/journals/bull/">Bulletin of the American Mathematical Society</a></h3>
+                    <p>The Bulletin publishes expository articles on contemporary mathematical research, written in a way that gives insight to mathematicians who may not be experts in a particular area. It features surveys of major developments, book reviews, and historical perspectives.</p>
+                </div>
+            </section>
+
+            <!-- ==================== FREE MATH BOOK ==================== -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Complex Analysis</h3>
+                    <p><strong>Author:</strong> Elias Stein &amp; Rami Shakarchi</p>
+                    <p><strong>Level:</strong> Undergraduate/Graduate</p>
+                    <p><strong>Summary:</strong> This first volume in the Princeton Lectures in Analysis series provides a comprehensive introduction to complex analysis. The book covers Cauchy's theorem, meromorphic functions, the argument principle, conformal mappings, and the Riemann mapping theorem. What distinguishes this text is its emphasis on the connections between complex analysis and Fourier analysis, as well as its careful treatment of the zeta function and prime number theorem.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PURE MATH DEEP DIVES ==================== -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Riemann Surfaces: Geometry of Complex Functions</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>How can we understand multi-valued complex functions like the logarithm or square root? Riemann's revolutionary insight was to construct surfaces on which these functions become single-valued. A Riemann surface is a one-dimensional complex manifold that provides the natural domain for analytic functions.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Riemann Surface:</strong> A connected one-dimensional complex manifold. Formally, a Hausdorff topological space \(X\) with charts \(\{(U_\alpha, \phi_\alpha)\}\) where \(\phi_\alpha: U_\alpha \to \mathbb{C}\) are homeomorphisms with holomorphic transition maps.</p>
+
+                    <p><strong>Genus:</strong> The number of "holes" in a compact Riemann surface. Topologically, a compact Riemann surface of genus \(g\) is a sphere with \(g\) handles.</p>
+
+                    <h4>Theorem (Riemann-Roch)</h4>
+                    <p>Let \(X\) be a compact Riemann surface of genus \(g\), and let \(D\) be a divisor. Then:
+                    \[\ell(D) - \ell(K - D) = \deg(D) + 1 - g\]</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Riemann surface for sqrt(z)
+# Two-sheeted cover branched at 0 and infinity
+
+r = np.linspace(0.1, 2, 50)
+theta = np.linspace(0, 4*np.pi, 200)
+R, Theta = np.meshgrid(r, theta)
+
+Z_real = np.sqrt(R) * np.cos(Theta / 2)
+
+fig = plt.figure(figsize=(14, 6))
+ax1 = fig.add_subplot(121, projection='3d')
+X = R * np.cos(Theta)
+Y = R * np.sin(Theta)
+ax1.plot_surface(X, Y, Z_real, alpha=0.7, cmap='Blues')
+ax1.set_title('Riemann Surface of √z')
+plt.savefig('riemann_surface.png')</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Spectral Theory: The Eigenvalue Landscape</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>What can we learn about an operator by studying its spectrum? Spectral theory generalizes eigenvalues from finite-dimensional linear algebra to infinite-dimensional spaces. It underlies quantum mechanics, where observables correspond to self-adjoint operators.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Spectrum:</strong> For a linear operator \(T\), the spectrum \(\sigma(T)\) consists of all \(\lambda\) such that \((T - \lambda I)^{-1}\) does not exist as a bounded operator.</p>
+
+                    <p><strong>Self-Adjoint:</strong> \(T = T^*\), meaning \(\langle Tx, y \rangle = \langle x, Ty \rangle\).</p>
+
+                    <h4>Theorem (Spectral Theorem)</h4>
+                    <p>Let \(T\) be a bounded self-adjoint operator on a separable Hilbert space. Then there exists a measure space \((X, \mu)\) and unitary \(U\) such that \(UTU^{-1}\) is a multiplication operator.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.linalg import eigh
+
+# Discrete Laplacian
+n = 100
+L = np.diag(-2*np.ones(n)) + np.diag(np.ones(n-1), 1) + np.diag(np.ones(n-1), -1)
+
+eigenvalues, eigenvectors = eigh(L)
+print(f"First 10 eigenvalues: {eigenvalues[:10]}")
+# Theoretical: -4*sin²(kπ/(2(n+1)))</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Measure Theory: The Foundation of Integration</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Why can't we integrate all functions? Riemann integration fails for functions with too many discontinuities. Lebesgue's measure theory provides a robust foundation for integration.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>σ-Algebra:</strong> A collection \(\mathcal{F}\) closed under complements and countable unions.</p>
+
+                    <p><strong>Measure:</strong> \(\mu: \mathcal{F} \to [0, \infty]\) with \(\mu(\emptyset) = 0\) and countable additivity.</p>
+
+                    <h4>Theorem (Monotone Convergence)</h4>
+                    <p>If \(0 \leq f_n \leq f_{n+1} \to f\), then \(\int f_n \to \int f\).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy import integrate
+
+# Demonstrate monotone convergence
+# f_n(x) = min(x^(-1/2), n) → f(x) = x^(-1/2)
+
+x = np.linspace(0.001, 1, 1000)
+for n in [1, 5, 20, 100]:
+    f_n = np.minimum(x**(-0.5), n)
+    integral = integrate.simpson(f_n, x)
+    print(f"n={n}: ∫f_n = {integral:.4f}")
+# Converges to 2.0</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== APPLIED MATH DEEP DIVES ==================== -->
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Supply Chain Optimization: Network Flows</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How do companies like Amazon move millions of products efficiently? Supply chain optimization uses mathematical models to minimize costs while meeting demand.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Network Flow:</strong> A directed graph \(G = (V, E)\) with capacities \(u_{ij}\) and costs \(c_{ij}\).</p>
+
+                    <h4>Theorem (Integrality)</h4>
+                    <p>If capacities are integers, there exists an optimal integer flow.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.optimize import linprog
+
+# Minimum cost flow example
+# Suppliers → Warehouses → Retailers
+
+# EOQ Model
+D, S, H = 10000, 100, 2.5
+EOQ = np.sqrt(2 * D * S / H)
+print(f"Economic Order Quantity: {EOQ:.1f}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Medical Imaging: CT and MRI Mathematics</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How do CT scanners create 3D images? The mathematics involves the Radon transform and its inversion.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Radon Transform:</strong> \(\mathcal{R}f(\theta, s) = \int_{L(\theta,s)} f\, d\ell\)</p>
+
+                    <h4>Theorem (Filtered Backprojection)</h4>
+                    <p>\(f(x,y) = \frac{1}{2\pi} \int_0^{\pi} [p_\theta * h](x\cos\theta + y\sin\theta)\, d\theta\)</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.fft import fft, ifft
+
+# Ramp filter for FBP
+def ramp_filter(n):
+    freq = np.fft.fftfreq(n)
+    return np.abs(freq)
+
+# Filtered backprojection algorithm
+# 1. Take FFT of projection
+# 2. Multiply by ramp filter
+# 3. Take IFFT
+# 4. Backproject
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Neural Networks: Universal Approximation</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Why can neural networks approximate virtually any function? The universal approximation theorem provides the theoretical foundation.</p>
+
+                    <h4>Theorem (Universal Approximation)</h4>
+                    <p>Let \(\sigma\) be non-polynomial continuous. For any compact \(K\) and continuous \(f: K \to \mathbb{R}\), there exists a neural network \(\hat{f}\) such that \(\sup|f - \hat{f}| &lt; \epsilon\).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class NeuralNetwork:
+    def __init__(self, sizes):
+        self.weights = [np.random.randn(sizes[i], sizes[i+1]) 
+                        for i in range(len(sizes)-1)]
+    
+    def relu(self, z):
+        return np.maximum(0, z)
+    
+    def forward(self, X):
+        a = X
+        for w in self.weights[:-1]:
+            a = self.relu(np.dot(a, w))
+        return np.dot(a, self.weights[-1])
+</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== SPECIAL TOPICS ==================== -->
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>p-adic Numbers: An Alternative Number System</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>p-adic numbers were introduced by Kurt Hensel in 1897. While reals complete \(\mathbb{Q}\) with respect to \(|\cdot|_\infty\), p-adics complete with respect to \(|\cdot|_p\).</p>
+
+                    <h4>Definitions</h4>
+                    <p>\(|x|_p = p^{-v_p(x)}\) where \(v_p(n)\) is the highest power of \(p\) dividing \(n\).</p>
+
+                    <h4>Theorem (Ostrowski)</h4>
+                    <p>Every non-trivial absolute value on \(\mathbb{Q}\) is equivalent to \(|\cdot|_\infty\) or \(|\cdot|_p\).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>def p_adic_valuation(n, p):
+    if n == 0:
+        return float('inf')
+    v = 0
+    while n % p == 0:
+        n //= p
+        v += 1
+    return v
+
+def p_adic_abs(x, p):
+    from fractions import Fraction
+    frac = Fraction(x)
+    v = p_adic_valuation(frac.numerator, p) - p_adic_valuation(frac.denominator, p)
+    return p ** (-v)
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Topos Theory: Categorical Logic</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Topos theory emerged from Grothendieck's work in algebraic geometry. It provides a framework for intuitionistic logic.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Topos:</strong> A category with finite limits, exponentials, and a subobject classifier \(\Omega\).</p>
+
+                    <h4>Theorem (Fundamental Theorem)</h4>
+                    <p>If \(\mathcal{E}\) is a topos and \(X \in \mathcal{E}\), then \(\mathcal{E}/X\) is also a topos.</p>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Surreal Numbers: The Ultimate Number System</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Surreal numbers were discovered by John Conway in the 1970s. They include all reals, all ordinals, infinitesimals, and infinite numbers.</p>
+
+                    <h4>Definitions</h4>
+                    <p>\(x = \{X_L | X_R\}\) where all \(X_L &lt; X_R\).</p>
+
+                    <h4>Theorem (Conway)</h4>
+                    <p>The surreal numbers form an ordered field containing all reals and ordinals.</p>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Alexander Grothendieck: Revolutionizing Geometry</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Alexander Grothendieck (1928–2014) transformed algebraic geometry with schemes, topoi, and étale cohomology.</p>
+
+                    <h4>Key Contributions</h4>
+                    <ul>
+                        <li><strong>Schemes:</strong> Generalized algebraic varieties</li>
+                        <li><strong>Topoi:</strong> Generalized topological spaces</li>
+                        <li><strong>Étale Cohomology:</strong> Enabled proof of Weil conjectures</li>
+                    </ul>
+
+                    <h4>Theorem (Grothendieck-Riemann-Roch)</h4>
+                    <p>\(\text{ch}(f_!\mathcal{F}) \cdot \text{td}(Y) = f_*(\text{ch}(\mathcal{F}) \cdot \text{td}(X))\)</p>
+                </div>
+            </section>
+
+            <!-- ==================== MATH HISTORY ==================== -->
+            <section id="math-history">
+                <h2>📜 Math History: Alexander Grothendieck (1928–2014)</h2>
+                
+                <p>Alexander Grothendieck stands as one of the most revolutionary mathematicians in history. Born in Berlin on March 28, 1928, his early life was marked by displacement and survival. His father died at Auschwitz in 1942, while Alexander and his mother survived as refugees in France.</p>
+                
+                <p>From 1958 to 1970, Grothendieck worked at the IHÉS, producing his magnum opus. With Dieudonné, he created the "Éléments de Géométrie Algébrique" (EGA) and directed the "Séminaire de Géométrie Algébrique" (SGA). These works rebuilt algebraic geometry from its foundations.</p>
+                
+                <p>In 1970, at the height of his powers, Grothendieck abruptly left mathematics for political activism. He declined the Fields Medal in 1966. He lived as a recluse in the Pyrenees from 1991 until his death in 2014.</p>
+                
+                <p>Grothendieck's legacy extends far beyond his theorems. He taught mathematicians to think in terms of universal properties and relative situations. His emphasis on morphisms over objects transformed mathematics.</p>
+            </section>
+
+            <!-- ==================== MATH JOURNALISM ==================== -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3>Quanta Magazine: "Mathematicians Prove New Link Between Topology and Geometry"</h3>
+                    <p>Researchers have established surprising connections between topological properties of manifolds and their geometric structures, using techniques from Seiberg-Witten theory.</p>
+                </div>
+                
+                <div class="article-entry">
+                    <h3>Notices of the AMS: "The Rise of Cohomological Methods in Number Theory"</h3>
+                    <p>A comprehensive survey traces how cohomology has become central to modern number theory, from étale cohomology to p-adic Hodge theory.</p>
+                </div>
+                
+                <div class="article-entry">
+                    <h3>SIAM News: "Optimization Algorithms Power the AI Revolution"</h3>
+                    <p>Mathematical optimization lies at the heart of training deep neural networks. The article discusses open problems in understanding non-convex optimization.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PROBLEM CORNER ==================== -->
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Problem: Putnam 2022 B6</h3>
+                    
+                    <p>Let \(n\) be a positive integer. Determine the number of functions \(f: \{1, 2, \ldots, n\} \to \{1, 2, \ldots, n\}\) such that \(f(f(x)) = f(x)\) for all \(x\).</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>The condition means \(f\) acts as the identity on its image. Choose the image, then define \(f\) on remaining elements.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p>The answer is \(\sum_{k=1}^{n} \binom{n}{k} k^{n-k}\).</p>
+                        
+                        <p>Reasoning: The condition means \(f(y) = y\) for all \(y\) in the image. For image size \(k\): choose which \(k\) elements (\(\binom{n}{k}\) ways), then map the remaining \(n-k\) elements to the image (\(k^{n-k}\) ways).</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== VISUALIZATION ==================== -->
+            <section id="visualization">
+                <h2>📊 Visualization of the Day: Riemann Surface of sqrt(z)</h2>
+                
+                <p>The Riemann surface of \(w = \sqrt{z}\) is a two-sheeted cover of the complex plane, branched at \(z = 0\) and \(z = \infty\). As you travel around the origin once, you move from one sheet to the other.</p>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Create Riemann surface for sqrt(z)
+r = np.linspace(0.01, 2, 50)
+theta = np.linspace(0, 4*np.pi, 200)
+R, Theta = np.meshgrid(r, theta)
+
+# Two sheets of sqrt
+Z_real = np.sqrt(R) * np.cos(Theta / 2)
+X = R * np.cos(Theta)
+Y = R * np.sin(Theta)
+
+fig = plt.figure(figsize=(14, 6))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z_real, cmap='viridis', alpha=0.8)
+ax.set_title('Riemann Surface of w = √z')
+plt.savefig('riemann_surface_sqrt.png')</code></pre>
+            </section>
+
+            <!-- ==================== QUOTE ==================== -->
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"The question you ask is more important than the answer you give."</p>
+                    <cite>— Alexander Grothendieck</cite>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Math Digest. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
