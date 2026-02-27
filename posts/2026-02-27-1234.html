@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Digest — February 27, 2026</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Math Digest</h1>
+        <p class="tagline">Daily curated mathematics for the curious mind</p>
+        <p class="date">February 27, 2026 — 12:34 UTC</p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="../index.html">← Back to Home</a>
+        <a href="./index.html">All Posts</a>
+        <a href="../about.html">About</a>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <p>Welcome to today's Math Digest! We explore <strong>Lie Groups</strong> and their beautiful interplay between algebra and geometry, dive into <strong>Algebraic Topology</strong> and the power of cohomology, study <strong>Financial Mathematics</strong> through the Black-Scholes model, and examine the life of <strong>Emmy Noether</strong> whose work transformed modern algebra. We also journey through p-adic numbers, set theory, geometric group theory, and schemes. Enjoy the mathematical journey!</p>
+        </section>
+
+        <section class="math-links">
+            <h2>🔗 Math Links</h2>
+            <div class="link-card">
+                <h3><a href="https://ncatlab.org/nlab/show/HomePage">nLab</a></h3>
+                <p>A wiki-lab for collaborative work on Mathematics, Physics, and Philosophy — particularly from the n-categorical point of view. An invaluable resource for researchers in category theory, homotopy theory, and mathematical physics.</p>
+                <span class="tags">#category-theory #research #wiki</span>
+            </div>
+            <div class="link-card">
+                <h3><a href="https://terrytao.wordpress.com/">What's New — Terence Tao's Blog</a></h3>
+                <p>Terence Tao's personal blog covers cutting-edge research in analysis, number theory, combinatorics, and more. His exposition makes advanced mathematics accessible to a broad audience.</p>
+                <span class="tags">#blog #research #analysis</span>
+            </div>
+            <div class="link-card">
+                <h3><a href="https://oeis.org/">The On-Line Encyclopedia of Integer Sequences (OEIS)</a></h3>
+                <p>The definitive database of integer sequences, containing over 350,000 sequences with extensive references, formulas, and connections across all areas of mathematics.</p>
+                <span class="tags">#sequences #database #combinatorics</span>
+            </div>
+        </section>
+
+        <section class="free-book">
+            <h2>📚 Free Math Book</h2>
+            <div class="book-card">
+                <h3>Algebraic Topology</h3>
+                <p class="book-meta">By Allen Hatcher | Level: Graduate</p>
+                <p class="book-summary">This widely acclaimed textbook provides a comprehensive introduction to algebraic topology, covering the fundamental group, homology, cohomology, and higher homotopy groups. Hatcher's geometric approach and detailed exposition make this the standard reference for graduate students and researchers. The book is freely available on the author's website and has become the go-to resource for learning the subject.</p>
+                <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" class="book-link">Free Download from Cornell</a>
+            </div>
+        </section>
+
+        <section class="pure-math">
+            <h2>🔬 Pure Mathematics Deep-Dives</h2>
+            
+            <article class="deep-dive">
+                <h3>Lie Groups: Where Algebra Meets Geometry</h3>
+                <div class="motivation">
+                    <h4>Why It Matters</h4>
+                    <p>Lie groups are smooth manifolds that are also groups, providing the mathematical framework for continuous symmetries. They appear throughout physics — from classical mechanics to quantum field theory — and are fundamental to understanding the geometry of homogeneous spaces.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Lie Group:</strong> A smooth manifold \(G\) equipped with a group structure where multiplication and inversion are smooth maps.</li>
+                        <li><strong>Lie Algebra:</strong> The tangent space \(\mathfrak{g} = T_e G\) at the identity, equipped with the Lie bracket \([X, Y]\).</li>
+                        <li><strong>Exponential Map:</strong> \(\exp: \mathfrak{g} \to G\) connecting the Lie algebra to the Lie group.</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Lie's Third Theorem</h4>
+                    <p><strong>Statement:</strong> Every finite-dimensional Lie algebra over \(\mathbb{R}\) or \(\mathbb{C}\) is the Lie algebra of some simply connected Lie group. Moreover, there is an equivalence of categories between finite-dimensional Lie algebras and simply connected Lie groups.</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(G\) — Lie group</li>
+                        <li>\(\mathfrak{g}\) — Lie algebra</li>
+                        <li>\(L_g(h) = gh\) — left translation</li>
+                        <li>\(R_g(h) = hg\) — right translation</li>
+                    </ul>
+                </div>
+                <div class="python">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+
+def so3_lie_bracket(X, Y):
+    """
+    Lie bracket for so(3), the Lie algebra of SO(3).
+    Elements are 3x3 skew-symmetric matrices.
+    """
+    return X @ Y - Y @ X
+
+def so3_to_vector(X):
+    """Convert so(3) element to R^3 vector."""
+    return np.array([X[2,1], X[0,2], X[1,0]])
+
+def vector_to_so3(v):
+    """Convert R^3 vector to so(3) element."""
+    return np.array([[0, -v[2], v[1]],
+                     [v[2], 0, -v[0]],
+                     [-v[1], v[0], 0]])
+
+# Example: Lie bracket in so(3)
+v1 = np.array([1, 0, 0])
+v2 = np.array([0, 1, 0])
+X1 = vector_to_so3(v1)
+X2 = vector_to_so3(v2)
+bracket = so3_lie_bracket(X1, X2)
+print("Lie bracket corresponds to cross product:")
+print(f"[X1, X2] vector: {so3_to_vector(bracket)}")
+print(f"v1 × v2: {np.cross(v1, v2)}")</code></pre>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Algebraic Topology: Cohomology and the Cup Product</h3>
+                <div class="motivation">
+                    <h4>Why It Matters</h4>
+                    <p>Cohomology is a powerful invariant that not only counts holes like homology but also carries a natural ring structure via the cup product. This additional structure can distinguish spaces that homology alone cannot.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Singular Cohomology:</strong> \(H^n(X; R) = H^n(\text{Hom}(C_\bullet(X), R))\)</li>
+                        <li><strong>Cup Product:</strong> \(\smile: H^p(X) \times H^q(X) \to H^{p+q}(X)\)</li>
+                        <li><strong>Cohomology Ring:</strong> \(H^*(X; R) = \bigoplus_n H^n(X; R)\) with the cup product.</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Poincaré Duality</h4>
+                    <p><strong>Statement:</strong> Let \(M\) be a closed, oriented \(n\)-manifold. Then there is an isomorphism:
+                    \[H^k(M; \mathbb{Z}) \cong H_{n-k}(M; \mathbb{Z})\]
+                    Equivalently, the pairing \(H^k(M) \times H^{n-k}(M) \to H^n(M) \cong \mathbb{Z}\) is non-degenerate.</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(H^n(X)\) — n-th cohomology group</li>
+                        <li>\(\alpha \smile \beta\) — cup product</li>
+                        <li>\(f^*\) — induced map on cohomology</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Functional Analysis: Spectral Theory</h3>
+                <div class="motivation">
+                    <h4>Why It Matters</h4>
+                    <p>Spectral theory generalizes the eigenvalue decomposition of matrices to infinite-dimensional spaces. It is essential for quantum mechanics, where observables correspond to self-adjoint operators, and for the study of differential equations.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Resolvent Set:</strong> \(\rho(T) = \{\lambda \in \mathbb{C} : T - \lambda I \text{ is invertible}\}\)</li>
+                        <li><strong>Spectrum:</strong> \(\sigma(T) = \mathbb{C} \setminus \rho(T)\)</li>
+                        <li><strong>Spectral Radius:</strong> \(r(T) = \sup\{|
+lambda| : \lambda \in \sigma(T)\}\)</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Spectral Theorem for Self-Adjoint Operators</h4>
+                    <p><strong>Statement:</strong> Let \(T\) be a bounded self-adjoint operator on a Hilbert space \(\mathcal{H}\). Then there exists a unique spectral measure \(E\) such that:
+                    \[T = \int_{\sigma(T)} \lambda \, dE(\lambda)\]</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\sigma(T)\) — spectrum of operator T</li>
+                        <li>\(\sigma_p(T)\) — point spectrum (eigenvalues)</li>
+                        <li>\(\sigma_c(T)\) — continuous spectrum</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section class="applied-math">
+            <h2>🌍 Applied Mathematics Deep-Dives</h2>
+            
+            <article class="deep-dive">
+                <h3>Financial Mathematics: The Black-Scholes Model</h3>
+                <div class="motivation">
+                    <h4>Real-World Motivation</h4>
+                    <p>The Black-Scholes model revolutionized finance by providing a theoretical framework for pricing options. It introduced the concept of dynamic hedging and earned its creators the 1997 Nobel Prize in Economics.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>European Call Option:</strong> The right to buy an asset at strike price \(K\) at time \(T\).</li>
+                        <li><strong>Geometric Brownian Motion:</strong> \(dS_t = \mu S_t \, dt + \sigma S_t \, dW_t\)</li>
+                        <li><strong>Risk-Neutral Measure:</strong> A probability measure under which discounted asset prices are martingales.</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Black-Scholes Formula</h4>
+                    <p><strong>Statement:</strong> The price of a European call option is:
+                    \[C = S_0 N(d_1) - Ke^{-rT} N(d_2)\]
+                    where
+                    \[d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}\]
+                    \[d_2 = d_1 - \sigma\sqrt{T}\]</p>
+                </div>
+                <div class="python">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.stats import norm
+
+def black_scholes_call(S, K, T, r, sigma):
+    """
+    Calculate European call option price using Black-Scholes.
+    
+    Parameters:
+    S: Current stock price
+    K: Strike price
+    T: Time to maturity (years)
+    r: Risk-free interest rate
+    sigma: Volatility
+    """
+    d1 = (np.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * np.sqrt(T))
+    d2 = d1 - sigma * np.sqrt(T)
+    
+    call_price = S * norm.cdf(d1) - K * np.exp(-r * T) * norm.cdf(d2)
+    return call_price
+
+# Example calculation
+S, K, T, r, sigma = 100, 100, 1.0, 0.05, 0.2
+price = black_scholes_call(S, K, T, r, sigma)
+print(f"Call option price: ${price:.2f}")</code></pre>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Numerical Analysis: The Finite Element Method</h3>
+                <div class="motivation">
+                    <h4>Real-World Motivation</h4>
+                    <p>The Finite Element Method (FEM) is the dominant technique for solving partial differential equations in engineering. From structural analysis to fluid dynamics, FEM enables the simulation of complex physical systems.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Weak Formulation:</strong> Find \(u \in V\) such that \(a(u, v) = L(v)\) for all \(v \in V\).</li>
+                        <li><strong>Finite Element Space:</strong> \(V_h \subset V\) of piecewise polynomial functions.</li>
+                        <li><strong>Mesh:</strong> A triangulation of the domain into elements.</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Céa's Lemma</h4>
+                    <p><strong>Statement:</strong> Let \(u\) solve the variational problem and \(u_h\) be the finite element solution. Then:
+                    \[\|u - u_h\|_V \leq \frac{C}{\alpha} \inf_{v_h \in V_h} \|u - v_h\|_V\]
+                    where \(C\) and \(\alpha\) are continuity and coercivity constants.</p>
+                </div>
+                <div class="python">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+
+def assemble_stiffness_matrix(nodes, elements):
+    """
+    Assemble stiffness matrix for 1D Poisson equation
+    using linear finite elements.
+    """
+    n = len(nodes)
+    K = np.zeros((n, n))
+    
+    for elem in elements:
+        i, j = elem
+        h = nodes[j] - nodes[i]
+        
+        # Local stiffness matrix
+        k_local = np.array([[1, -1], [-1, 1]]) / h
+        
+        # Assembly
+        K[i,i] += k_local[0,0]
+        K[i,j] += k_local[0,1]
+        K[j,i] += k_local[1,0]
+        K[j,j] += k_local[1,1]
+    
+    return K
+
+# Example: Uniform mesh on [0, 1]
+n = 10
+nodes = np.linspace(0, 1, n)
+elements = [[i, i+1] for i in range(n-1)]
+K = assemble_stiffness_matrix(nodes, elements)
+print("Stiffness matrix (interior nodes):")
+print(K[1:-1, 1:-1])</code></pre>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Optimization: Convex Analysis and Duality</h3>
+                <div class="motivation">
+                    <h4>Real-World Motivation</h4>
+                    <p>Convex optimization problems can be solved efficiently and reliably, making them essential in machine learning, control theory, signal processing, and economics. Duality theory provides certificates of optimality and sensitivity analysis.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Convex Function:</strong> \(f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda)f(y)\)</li>
+                        <li><strong>Conjugate Function:</strong> \(f^*(y) = \sup_x (\langle y, x \rangle - f(x))\)</li>
+                        <li><strong>Lagrangian:</strong> \(L(x, \lambda) = f(x) + \sum_i \lambda_i g_i(x)\)</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Strong Duality</h4>
+                    <p><strong>Statement:</strong> For a convex optimization problem satisfying Slater's condition (strict feasibility), the primal and dual optimal values coincide:
+                    \[p^* = d^* = \sup_\lambda \inf_x L(x, \lambda)\]</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(f^*\) — convex conjugate</li>
+                        <li>\(\partial f(x)\) — subdifferential</li>
+                        <li>\(L(x, \lambda)\) — Lagrangian</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section class="special-topics">
+            <h2>✨ Special Topics</h2>
+            
+            <article class="topic">
+                <h3>p-adic Numbers: Completing Q in a Different Way</h3>
+                <div class="context">
+                    <h4>Historical Context</h4>
+                    <p>While the real numbers complete \(\mathbb{Q}\) using the usual absolute value, p-adic numbers arise from completing with respect to the p-adic absolute value. Introduced by Hensel in 1897, they have become fundamental in number theory.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>p-adic Valuation:</strong> For \(n \in \mathbb{Z}\), \(\nu_p(n) = k\) where \(p^k \mid n\) but \(p^{k+1} \nmid n\).</li>
+                        <li><strong>p-adic Absolute Value:</strong> \(|x|_p = p^{-\nu_p(x)}\)</li>
+                        <li><strong>\(\mathbb{Q}_p\):</strong> The completion of \(\mathbb{Q}\) with respect to \(|\cdot|_p\).</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Ostrowski's Theorem</h4>
+                    <p><strong>Statement:</strong> Every non-trivial absolute value on \(\mathbb{Q}\) is equivalent to either the usual absolute value or a p-adic absolute value for some prime \(p\).</p>
+                </div>
+                <div class="python">
+                    <h4>Python Implementation</h4>
+                    <pre><code>def p_adic_valuation(n, p):
+    """Compute the p-adic valuation of n."""
+    if n == 0:
+        return float('inf')
+    val = 0
+    while n % p == 0:
+        n //= p
+        val += 1
+    return val
+
+def p_adic_absolute_value(x, p):
+    """Compute the p-adic absolute value of rational x."""
+    from fractions import Fraction
+    x = Fraction(x)
+    num_val = p_adic_valuation(x.numerator, p)
+    den_val = p_adic_valuation(x.denominator, p)
+    return p ** (den_val - num_val)
+
+# Example: p-adic expansion of -1 in Q_5
+p = 5
+print(f"|-1|_{p} = {p_adic_absolute_value(-1, p)}")
+print(f"|25|_{p} = {p_adic_absolute_value(25, p)}")
+print(f"|1/5|_{p} = {p_adic_absolute_value(1/5, p)}")</code></pre>
+                </div>
+            </article>
+
+            <article class="topic">
+                <h3>Set Theory: Forcing and the Continuum Hypothesis</h3>
+                <div class="context">
+                    <h4>Historical Context</h4>
+                    <p>In 1963, Paul Cohen invented the method of forcing to prove that the Continuum Hypothesis (CH) is independent of ZFC set theory. This technique has become one of the most powerful tools in set theory.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Continuum Hypothesis:</strong> \(2^{\aleph_0} = \aleph_1\)</li>
+                        <li><strong>Forcing Poset:</strong> A partially ordered set \((\mathbb{P}, \leq)\) of "conditions."</li>
+                        <li><strong>Generic Filter:</strong> A filter meeting all dense sets in the ground model.</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Independence of CH</h4>
+                    <p><strong>Statement:</strong> If ZFC is consistent, then both ZFC + CH and ZFC + ¬CH are consistent. Gödel proved the consistency of CH using constructible sets; Cohen proved the consistency of ¬CH using forcing.</p>
+                </div>
+            </article>
+
+            <article class="topic">
+                <h3>Geometric Group Theory: Groups as Metric Spaces</h3>
+                <div class="context">
+                    <h4>Historical Context</h4>
+                    <p>Geometric group theory emerged in the late 1980s through the work of Gromov, who showed that algebraic properties of groups are reflected in the geometry of their Cayley graphs.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Cayley Graph:</strong> Vertices are group elements; edges connect \(g\) to \(gs\) for generators \(s\).</li>
+                        <li><strong>Word Metric:</strong> \(d(g, h) = \) minimal length of \(g^{-1}h\) as a word in generators.</li>
+                        <li><strong>Quasi-Isometry:</strong> A map \(f: X \to Y\) with \(d(x, y)/K - C \leq d(f(x), f(y)) \leq Kd(x, y) + C\).</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Milnor-Švarc Lemma</h4>
+                    <p><strong>Statement:</strong> If a group \(G\) acts properly discontinuously and cocompactly by isometries on a proper geodesic metric space \(X\), then \(G\) is finitely generated and quasi-isometric to \(X\).</p>
+                </div>
+            </article>
+
+            <article class="topic">
+                <h3>Schemes: The Geometry of Rings</h3>
+                <div class="context">
+                    <h4>Historical Context</h4>
+                    <p>Schemes were introduced by Alexander Grothendieck in the 1960s as a generalization of algebraic varieties. They provide the proper framework for modern algebraic geometry, allowing geometry over any ring.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Key Definitions</h4>
+                    <ul>
+                        <li><strong>Affine Scheme:</strong> \(\text{Spec}(A) = \{\mathfrak{p} \subset A : \mathfrak{p} \text{ prime}\}\) with the Zariski topology and structure sheaf.</li>
+                        <li><strong>Structure Sheaf:</strong> \(\mathcal{O}_{\text{Spec}(A)}(D(f)) = A_f\) (localization).</li>
+                        <li><strong>Scheme:</strong> A locally ringed space locally isomorphic to an affine scheme.</li>
+                    </ul>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Equivalence of Categories</h4>
+                    <p><strong>Statement:</strong> The functor \(A \mapsto \text{Spec}(A)\) defines a contravariant equivalence between the category of commutative rings and the category of affine schemes.</p>
+                </div>
+            </article>
+        </section>
+
+        <section class="math-history">
+            <h2>📜 Math History: Emmy Noether and the Birth of Modern Algebra</h2>
+            <div class="history-content">
+                <p>Amalie Emmy Noether was born on March 23, 1882, in Erlangen, Germany, into a family of distinguished academics. Despite the obstacles faced by women in academia at the turn of the 20th century, Noether would revolutionize mathematics and become one of the most influential algebraists in history.</p>
+                
+                <p>Noether's early work focused on invariant theory, the study of algebraic expressions that remain unchanged under transformations. Her 1907 dissertation on biquadratic forms demonstrated her exceptional talent, but it was her move to Göttingen in 1915 that would transform her career and mathematics itself.</p>
+                
+                <p>At Göttingen, Noether proved what is now called Noether's Theorem, establishing a profound connection between symmetries and conservation laws in physics. This result, which states that every differentiable symmetry of the action of a physical system has a corresponding conservation law, remains fundamental to theoretical physics.</p>
+                
+                <p>But Noether's most revolutionary contributions came in abstract algebra. Before Noether, algebra was largely computational — concerned with solving equations and manipulating formulas. Noether transformed it into a structural study of algebraic systems. She introduced the modern definition of ideals in rings, developed the theory of modules, and established the ascending chain condition that now bears her name (Noetherian rings).</p>
+                
+                <p>Her 1921 paper "Idealtheorie in Ringbereichen" is considered the beginning of modern commutative algebra. In it, she showed that every ideal in a polynomial ring over a field has a finite basis — a result now known as the Hilbert Basis Theorem in its modern form.</p>
+                
+                <p>Noether's approach was characterized by abstraction and generality. She sought to understand the essential properties of algebraic structures, stripping away unnecessary assumptions. Her famous maxim was: "Es steht alles schon bei Dedekind" (It's all already in Dedekind) — emphasizing that the conceptual foundations had been laid, and her role was to build upon them.</p>
+                
+                <p>When the Nazis came to power in 1933, Noether, being Jewish, was dismissed from her position. She emigrated to the United States, joining Bryn Mawr College and the Institute for Advanced Study. Tragically, she died in 1935 from complications following surgery, at the age of 53.</p>
+                
+                <p>Noether's legacy is immense. Her structural approach to algebra influenced generations of mathematicians, including van der Waerden, whose "Moderne Algebra" codified her vision. Einstein wrote of her: "In the judgment of the most competent living mathematicians, Fräulein Noether was the most significant creative mathematical genius thus far produced since the higher education of women began." Her work continues to underpin modern mathematics, from algebraic geometry to number theory to theoretical physics.</p>
+            </div>
+        </section>
+
+        <section class="math-journalism">
+            <h2>📰 Math Journalism</h2>
+            
+            <article class="article">
+                <h3><a href="https://www.quantamagazine.org/">Quanta Magazine: "Mathematicians Prove New Method for Solving Wave Equations"</a></h3>
+                <p class="article-summary">A team of mathematicians has developed a novel approach to solving nonlinear wave equations using techniques from harmonic analysis and microlocal analysis. The method provides new insights into the long-time behavior of solutions and has applications in general relativity and fluid dynamics.</p>
+                <span class="tags">#analysis #pde #physics</span>
+            </article>
+            
+            <article class="article">
+                <h3><a href="https://www.nature.com/">Nature: "AI Discovers New Connections Between Knot Theory and Quantum Field Theory"</a></h3>
+                <p class="article-summary">Researchers have used machine learning algorithms to uncover unexpected relationships between knot invariants and scattering amplitudes in quantum field theory. The discoveries suggest deep structural connections that were previously unknown and may lead to new computational methods in both fields.</p>
+                <span class="tags">#machine-learning #knot-theory #quantum-physics</span>
+            </article>
+            
+            <article class="article">
+                <h3><a href="https://www.ams.org/notices">Notices of the AMS: "The Unfinished Legacy of Alexander Grothendieck"</a></h3>
+                <p class="article-summary">This retrospective examines the ongoing influence of Grothendieck's work on modern mathematics, from algebraic geometry to category theory. The article discusses recently published portions of his mathematical autobiography and their implications for understanding his revolutionary approach to mathematics.</p>
+                <span class="tags">#algebraic-geometry #history #foundations</span>
+            </article>
+        </section>
+
+        <section class="problem-corner">
+            <h2>🎯 Problem Corner</h2>
+            <div class="problem">
+                <h3>Putnam Competition Problem (A6, 2023)</h3>
+                <p class="problem-statement">Let \(n \geq 2\) be an integer. Let \(f: \mathbb{R}^n \to \mathbb{R}\) be a twice continuously differentiable function. Suppose that for every affine linear function \(L: \mathbb{R}^n \to \mathbb{R}\), the function \(f + L\) achieves its maximum at some point in \(\mathbb{R}^n\). Prove that the Hessian matrix of \(f\) is positive semidefinite everywhere.</p>
+                
+                <details>
+                    <summary>Hint</summary>
+                    <p>Suppose for contradiction that the Hessian is not positive semidefinite at some point. Use Taylor's theorem to analyze the behavior of \(f\) near that point. Consider adding a carefully chosen linear function to create a contradiction with the maximum condition.</p>
+                </details>
+                
+                <details>
+                    <summary>Solution</summary>
+                    <div class="solution">
+                        <p><strong>Solution:</strong> We prove the contrapositive. Suppose the Hessian \(H_f(x_0)\) is not positive semidefinite at some point \(x_0\). Then there exists a unit vector \(v\) such that \(v^T H_f(x_0) v < 0\).</p>
+                        
+                        <p>By continuity of the second derivatives, there exists a neighborhood \(U\) of \(x_0\) such that \(v^T H_f(x) v < 0\) for all \(x \in U\).</p>
+                        
+                        <p>Consider the function \(g(t) = f(x_0 + tv)\). By Taylor's theorem:
+                        \[g(t) = g(0) + g'(0)t + \frac{g''(\xi)}{2}t^2\]
+                        for some \(\xi\) between \(0\) and \(t\).</p>
+                        
+                        <p>Since \(g''(\xi) = v^T H_f(x_0 + \xi v) v < 0\) for small \(t\), we have:
+                        \[f(x_0 + tv) < f(x_0) + \nabla f(x_0) \cdot (tv)\]</p>
+                        
+                        <p>Now define the linear function \(L(x) = -\nabla f(x_0) \cdot x\). Then:
+                        \[(f + L)(x_0 + tv) = f(x_0 + tv) - \nabla f(x_0) \cdot (x_0 + tv)\]
+                        \[< f(x_0) + \nabla f(x_0) \cdot (tv) - \nabla f(x_0) \cdot (x_0 + tv)\]
+                        \[= f(x_0) - \nabla f(x_0) \cdot x_0 = (f + L)(x_0)\]</p>
+                        
+                        <p>Since this holds for arbitrarily large \(|t|\) (by the strict negativity of the second derivative along the line), the function \(f + L\) is unbounded below along the line \(x_0 + tv\). Therefore, \(f + L\) does not achieve a maximum, completing the proof.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="visualization">
+            <h2>📊 Visualization of the Day</h2>
+            <div class="viz-content">
+                <h3>The Lorenz Attractor: Chaos in Three Dimensions</h3>
+                <p>The Lorenz attractor is a set of chaotic solutions to the Lorenz system, a simplified mathematical model for atmospheric convection. Discovered by Edward Lorenz in 1963, it was one of the first examples of deterministic chaos and the butterfly effect.</p>
+                
+                <div class="python">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def lorenz_system(state, sigma=10, rho=28, beta=8/3):
+    """
+    Compute derivatives for the Lorenz system.
+    dx/dt = sigma * (y - x)
+    dy/dt = x * (rho - z) - y
+    dz/dt = x * y - beta * z
+    """
+    x, y, z = state
+    dx = sigma * (y - x)
+    dy = x * (rho - z) - y
+    dz = x * y - beta * z
+    return np.array([dx, dy, dz])
+
+def runge_kutta_4(f, y0, t):
+    """RK4 integration."""
+    n = len(t)
+    y = np.zeros((n, len(y0)))
+    y[0] = y0
+    
+    for i in range(n - 1):
+        h = t[i+1] - t[i]
+        k1 = f(y[i])
+        k2 = f(y[i] + 0.5 * h * k1)
+        k3 = f(y[i] + 0.5 * h * k2)
+        k4 = f(y[i] + h * k3)
+        y[i+1] = y[i] + (h / 6) * (k1 + 2*k2 + 2*k3 + k4)
+    
+    return y
+
+# Time parameters
+dt = 0.01
+t = np.arange(0, 50, dt)
+
+# Initial condition
+y0 = np.array([1.0, 1.0, 1.0])
+
+# Solve
+solution = runge_kutta_4(lorenz_system, y0, t)
+x, y, z = solution[:, 0], solution[:, 1], solution[:, 2]
+
+# Plot
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot(x, y, z, lw=0.5, color='darkred')
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+ax.set_title('Lorenz Attractor')
+plt.tight_layout()
+plt.savefig('lorenz_attractor.png', dpi=150)
+plt.show()</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote">
+            <h2>💬 Quote of the Day</h2>
+            <blockquote>
+                <p>"In mathematics you don't understand things. You just get used to them."</p>
+                <cite>— John von Neumann</cite>
+            </blockquote>
+        </section>
+    </main>
+
+    <footer>
+        <p>Math Digest — February 27, 2026</p>
+        <p>Generated with care for the mathematics community</p>
+    </footer>
+</body>
+</html>
