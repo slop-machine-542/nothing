@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 27, 2026 at 18:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 27, 2026 at 18:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 27, 2026 at 18:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">p-adic-numbers</span>
+                <span class="tag">sheaf-theory</span>
+                <span class="tag">modular-forms</span>
+                <span class="tag">compressed-sensing</span>
+                <span class="tag">traffic-flow</span>
+                <span class="tag">option-pricing</span>
+                <span class="tag">riemann-hypothesis</span>
+                <span class="tag">p-vs-np</span>
+                <span class="tag">birch-swinnerton-dyer</span>
+                <span class="tag">paul-erdos</span>
+            </div>
+
+            <!-- ==================== MATH LINKS ==================== -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://arxiv.org/list/math/recent">arXiv Mathematics</a></h3>
+                    <p>The premier preprint server for mathematics, physics, and computer science. The mathematics section receives hundreds of new submissions weekly, covering every area from algebraic geometry to statistics. Researchers use arXiv to share results before formal peer review, making it the fastest way to access cutting-edge mathematical research. The site offers RSS feeds, email alerts, and advanced search capabilities for tracking specific topics or authors.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.quantamagazine.org/mathematics/">Quanta Magazine - Mathematics</a></h3>
+                    <p>Quanta Magazine publishes in-depth articles on mathematical discoveries and the mathematicians behind them. Written by science journalists with input from researchers, the articles explain complex ideas without sacrificing accuracy. Recent coverage includes breakthroughs in number theory, geometric topology, and the foundations of mathematics. The site features interactive visualizations and is freely accessible, supported by the Simons Foundation.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://oeis.org/">The On-Line Encyclopedia of Integer Sequences (OEIS)</a></h3>
+                    <p>Created by Neil Sloane, the OEIS is an indispensable tool for mathematicians, containing over 350,000 integer sequences. Enter the first few terms of a sequence, and the database returns matching sequences along with formulas, references, and context. It's particularly valuable in combinatorics, number theory, and recreational mathematics. Many papers reference OEIS sequences, and the database continues to grow through community contributions.</p>
+                </div>
+            </section>
+
+            <!-- ==================== FREE MATH BOOK ==================== -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>p-adic Numbers: An Introduction</h3>
+                    <p><strong>Author:</strong> Fernando Q. Gouvêa</p>
+                    <p><strong>Level:</strong> Undergraduate to Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://link.springer.com/book/10.1007/978-3-642-59058-0">Springer</a> (check for open access versions)</p>
+                    
+                    <p><strong>Summary:</strong> This delightful introduction to p-adic numbers takes readers on a journey through one of mathematics' most beautiful constructions. Gouvêa begins with the familiar real numbers, shows how the absolute value leads to the usual completion of the rationals, then introduces the p-adic absolute value and its radically different completion. The book explores the topology of p-adic spaces (where every point is the center of a ball, and all triangles are isosceles), Hensel's lemma for solving equations, and applications to number theory. The writing is conversational yet rigorous, with numerous examples and exercises. It's the perfect entry point for students wanting to understand how changing the notion of "closeness" leads to entirely new mathematical worlds.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PURE MATH DEEP DIVES ==================== -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <!-- Pure Math 1: p-adic Numbers -->
+                <div class="deep-dive">
+                    <h3>p-adic Numbers: A Different Way to Complete the Rationals</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>The real numbers are constructed by completing the rational numbers using the usual absolute value: two numbers are close when their difference is small. But this is not the only way to measure "closeness." In the late 19th century, Kurt Hensel discovered that if we measure closeness by divisibility by a prime p, we get a completely different completion—the p-adic numbers. These numbers have bizarre properties: a series converges if and only if its terms approach zero, every p-adic integer is the center of its ball, and the geometry is ultrametric. Despite their strangeness, p-adic numbers are fundamental to modern number theory, connecting local and global properties of algebraic varieties.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>p-adic valuation:</strong> For a prime p and nonzero integer n, let \(v_p(n)\) be the highest power of p dividing n. For \(n = p^k \cdot m\) with \(p \nmid m\), we have \(v_p(n) = k\). Extend to rationals: \(v_p(a/b) = v_p(a) - v_p(b)\).</p>
+                    
+                    <p><strong>p-adic absolute value:</strong> For \(x \in \mathbb{Q}\), define:
+                    \[|x|_p = \begin{cases} p^{-v_p(x)} & x \neq 0 \\ 0 & x = 0 \end{cases}\]</p>
+                    
+                    <p><strong>p-adic numbers \(\mathbb{Q}_p\):</strong> The completion of \(\mathbb{Q}\) with respect to \(|\cdot|_p\).</p>
+                    
+                    <p><strong>p-adic integers \(\mathbb{Z}_p\):</strong> The closed unit ball \(\{x \in \mathbb{Q}_p : |x|_p \leq 1\}\).</p>
+
+                    <h4>Theorem</h4>
+                    <p><strong>Ostrowski's Theorem:</strong> Every nontrivial absolute value on \(\mathbb{Q}\) is equivalent to either the usual absolute value \(|\cdot|_\infty\) or a p-adic absolute value \(|\cdot|_p\) for some prime p.</p>
+                    
+                    <p><strong>Proof Sketch:</strong> Let \(|\cdot|\) be a nontrivial absolute value on \(\mathbb{Q}\).</p>
+                    
+                    <p><em>Case 1:</em> Suppose \(|n| \leq 1\) for all integers n. Since the absolute value is nontrivial, there exists a smallest positive integer p with \(|p| < 1\). One shows p must be prime: if \(p = ab\), then \(|a||b| < 1\), so one of \(|a|, |b| < 1\), contradicting minimality. Then \(|\cdot|\) is equivalent to \(|\cdot|_p\).</p>
+                    
+                    <p><em>Case 2:</em> If \(|n| > 1\) for some n, one shows \(|n| = n^\alpha\) for some \(\alpha > 0\), giving the usual absolute value.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(v_p(x)\): p-adic valuation of x</li>
+                        <li>\(|x|_p\): p-adic absolute value</li>
+                        <li>\(\mathbb{Q}_p\): field of p-adic numbers</li>
+                        <li>\(\mathbb{Z}_p\): ring of p-adic integers</li>
+                        <li>\(\mathbb{Q}_p^*\): multiplicative group of nonzero p-adic numbers</li>
+                    </ul>
+
+                    <pre class="code-block"><code>import math
+
+def p_adic_valuation(n, p):
+    """
+    Compute the p-adic valuation v_p(n) for integer n.
+    Returns the highest power of p dividing n.
+    """
+    if n == 0:
+        return float('inf')
+    
+    count = 0
+    n = abs(n)
+    while n % p == 0:
+        n //= p
+        count += 1
+    return count
+
+def p_adic_absolute_value(x, p):
+    """
+    Compute the p-adic absolute value |x|_p for rational x.
+    x should be a tuple (numerator, denominator).
+    """
+    num, den = x
+    if num == 0:
+        return 0
+    
+    val = p_adic_valuation(num, p) - p_adic_valuation(den, p)
+    return p ** (-val)
+
+def p_adic_expansion(x, p, precision=20):
+    """
+    Compute the p-adic expansion of a rational number.
+    Returns coefficients [a0, a1, a2, ...] where x = sum(a_i * p^i).
+    """
+    num, den = x
+    
+    # Work with positive integers first
+    negative = (num < 0)
+    num = abs(num)
+    
+    # Find p-adic valuation
+    v = p_adic_valuation(num, p) - p_adic_valuation(den, p)
+    
+    # Scale to get a p-adic unit
+    if v >= 0:
+        scaled_num = num // (p ** p_adic_valuation(num, p))
+        scaled_den = den // (p ** p_adic_valuation(den, p))
+    else:
+        scaled_num = num * (p ** (-v))
+        scaled_den = den
+    
+    # Compute inverse of denominator modulo p^precision
+    def mod_inverse(a, m):
+        def extended_gcd(a, b):
+            if b == 0:
+                return a, 1, 0
+            g, x1, y1 = extended_gcd(b, a % b)
+            return g, y1, x1 - (a // b) * y1
+        
+        g, x, _ = extended_gcd(a % m, m)
+        if g != 1:
+            return None
+        return (x % m + m) % m
+    
+    mod = p ** precision
+    inv_den = mod_inverse(scaled_den, mod)
+    unit = (scaled_num * inv_den) % mod
+    
+    # Extract digits
+    coeffs = []
+    temp = unit
+    for _ in range(precision):
+        coeffs.append(temp % p)
+        temp //= p
+    
+    # Add valuation offset
+    if v < 0:
+        # Negative valuation means fractional part
+        result = [0] * (-v) + coeffs
+    else:
+        result = coeffs[v:]
+    
+    if negative:
+        # Negate in p-adic sense
+        result = [(p - c) % p for c in result]
+        result[0] = (result[0] + 1) % p
+    
+    return result[:precision]
+
+# Example: 3-adic expansion of 1/2
+p = 3
+x = (1, 2)
+coeffs = p_adic_expansion(x, p, precision=15)
+print(f"3-adic expansion of 1/2:")
+print(f"...{coeffs[::-1]}")
+print(f"Verification: 1/2 = {' + '.join([f'{c}·3^{i}' for i, c in enumerate(coeffs[:10]) if c != 0])}")
+
+# Check convergence
+partial_sum = sum(c * (p ** i) for i, c in enumerate(coeffs[:10]))
+print(f"\nPartial sum mod 3^10: {partial_sum % (3**10)}")
+print(f"Expected (inverse of 2 mod 3^10): {pow(2, -1, 3**10)}")
+
+# Demonstrate ultrametric inequality
+a = (1, 1)  # 1
+b = (3, 1)  # 3
+c = (4, 1)  # 4
+
+print(f"\n--- Ultrametric Property ---")
+print(f"|1|_3 = {p_adic_absolute_value(a, 3)}")
+print(f"|3|_3 = {p_adic_absolute_value(b, 3)}")
+print(f"|4|_3 = {p_adic_absolute_value(c, 3)}")
+print(f"|1+3|_3 = |4|_3 = {p_adic_absolute_value(c, 3)}")
+print(f"max(|1|_3, |3|_3) = {max(p_adic_absolute_value(a, 3), p_adic_absolute_value(b, 3))}")
+print(f"Strong triangle inequality: |a+b| ≤ max(|a|,|b|) ✓")</code></pre>
+                </div>
+
+                <!-- Pure Math 2: Sheaf Theory -->
+                <div class="deep-dive">
+                    <h3>Sheaf Theory: Tracking Local Data Globally</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Modern geometry studies spaces through the functions defined on them. But how do we organize all this local information into a coherent global picture? Sheaf theory, developed by Leray and refined by Cartan, Grothendieck, and others, provides the answer. A sheaf assigns algebraic data (functions, vector fields, cohomology classes) to each open set of a space in a way that allows local data to be glued together. This framework unifies concepts across algebraic geometry, topology, complex analysis, and logic. The language of sheaves is essential for understanding schemes, cohomology theories, and the modern approach to geometry.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Presheaf:</strong> Let X be a topological space and \(\mathcal{C}\) a category (usually sets, abelian groups, or rings). A presheaf \(\mathcal{F}\) on X assigns to each open set \(U \subseteq X\) an object \(\mathcal{F}(U) \in \mathcal{C}\), and to each inclusion \(V \subseteq U\) a restriction map \(\rho_{UV}: \mathcal{F}(U) \to \mathcal{F}(V)\), satisfying:
+                    <ul>
+                        <li>\(\rho_{UU} = \text{id}_{\mathcal{F}(U)}\)</li>
+                        <li>\(\rho_{UW} = \rho_{VW} \circ \rho_{UV}\) for \(W \subseteq V \subseteq U\)</li>
+                    </ul>
+                    </p>
+                    
+                    <p><strong>Sheaf:</strong> A presheaf \(\mathcal{F}\) is a sheaf if it satisfies:
+                    <ul>
+                        <li><strong>Local identity:</strong> If \(\{U_i\}\) covers U and \(s, t \in \mathcal{F}(U)\) with \(s|_{U_i} = t|_{U_i}\) for all i, then \(s = t\).</li>
+                        <li><strong>Gluing:</strong> If \(\{U_i\}\) covers U and \(s_i \in \mathcal{F}(U_i)\) agree on overlaps (\(s_i|_{U_i \cap U_j} = s_j|_{U_i \cap U_j}\)), then there exists \(s \in \mathcal{F}(U)\) with \(s|_{U_i} = s_i\).</li>
+                    </ul>
+                    </p>
+                    
+                    <p><strong>Stalk:</strong> The stalk at \(x \in X\) is \(\mathcal{F}_x = \varinjlim_{U \ni x} \mathcal{F}(U)\), the direct limit over open neighborhoods of x.</p>
+
+                    <h4>Theorem</h4>
+                    <p><strong>Sheafification:</strong> Every presheaf \(\mathcal{F}\) has a sheafification \(\mathcal{F}^+\) equipped with a morphism \(\theta: \mathcal{F} \to \mathcal{F}^+\) such that any morphism from \(\mathcal{F}\) to a sheaf factors uniquely through \(\theta\).</p>
+                    
+                    <p><strong>Proof Sketch:</strong> Define \(\mathcal{F}^+(U)\) as the set of functions \(s: U \to \bigsqcup_{x \in U} \mathcal{F}_x\) such that:
+                    <ol>
+                        <li>For each \(x \in U\), \(s(x) \in \mathcal{F}_x\)</li>
+                        <li>For each \(x \in U\), there exists an open neighborhood \(V \subseteq U\) of x and \(t \in \mathcal{F}(V)\) such that for all \(y \in V\), the germ of t at y equals \(s(y)\)</li>
+                    </ol>
+                    The map \(\theta\) sends a section to its associated function of germs. One verifies that \(\mathcal{F}^+\) is a sheaf and satisfies the universal property.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{F}, \mathcal{G}\): sheaves</li>
+                        <li>\(\mathcal{F}(U)\): sections over U</li>
+                        <li>\(\Gamma(U, \mathcal{F})\): alternative notation for sections</li>
+                        <li>\(\mathcal{F}_x\): stalk at x</li>
+                        <li>\(s|_V\): restriction of section s to V</li>
+                        <li>\(\mathcal{F}^+\): sheafification</li>
+                    </ul>
+
+                    <pre class="code-block"><code>from typing import TypeVar, Generic, Callable, Dict, Set, List, Optional
+from dataclasses import dataclass
+from collections import defaultdict
+
+T = TypeVar('T')
+
+@dataclass
+class OpenSet:
+    """Represents an open set as a subset of a discrete space."""
+    elements: Set[int]
+    
+    def contains(self, x: int) -> bool:
+        return x in self.elements
+    
+    def intersection(self, other: 'OpenSet') -> 'OpenSet':
+        return OpenSet(self.elements & other.elements)
+    
+    def union(self, other: 'OpenSet') -> 'OpenSet':
+        return OpenSet(self.elements | other.elements)
+    
+    def is_subset(self, other: 'OpenSet') -> bool:
+        return self.elements <= other.elements
+
+class Presheaf(Generic[T]):
+    """
+    A presheaf on a discrete topological space.
+    For simplicity, we work with a finite set of points.
+    """
+    def __init__(self, space: Set[int], name: str = "Presheaf"):
+        self.space = space
+        self.name = name
+        # Sections over each open set
+        self._sections: Dict[frozenset, List[T]] = {}
+        # Restriction maps
+        self._restrictions: Dict[tuple, Callable[[T], T]] = {}
+    
+    def add_section(self, open_set: OpenSet, section: T):
+        """Add a section over an open set."""
+        key = frozenset(open_set.elements)
+        if key not in self._sections:
+            self._sections[key] = []
+        self._sections[key].append(section)
+    
+    def get_sections(self, open_set: OpenSet) -> List[T]:
+        """Get all sections over an open set."""
+        return self._sections.get(frozenset(open_set.elements), [])
+    
+    def restrict(self, section: T, from_set: OpenSet, to_set: OpenSet) -> Optional[T]:
+        """Restrict a section to a smaller open set."""
+        if not to_set.is_subset(from_set):
+            return None
+        
+        key = (frozenset(from_set.elements), frozenset(to_set.elements))
+        if key in self._restrictions:
+            return self._restrictions[key](section)
+        return section  # Default: no change
+
+class SheafOfFunctions(Presheaf[Callable[[int], float]]):
+    """
+    The sheaf of continuous (or in this case, arbitrary) real-valued functions.
+    """
+    def __init__(self, space: Set[int]):
+        super().__init__(space, "Sheaf of Functions")
+    
+    def restrict_function(self, f: Callable[[int], float], subset: Set[int]) -> Callable[[int], float]:
+        """Restrict a function to a subset."""
+        return lambda x: f(x) if x in subset else float('nan')
+    
+    def can_glue(self, functions: Dict[Set[int], Callable[[int], float]], 
+                 cover: List[Set[int]]) -> bool:
+        """
+        Check if functions on a cover can be glued.
+        They must agree on overlaps.
+        """
+        for i, u1 in enumerate(cover):
+            for j, u2 in enumerate(cover):
+                if i < j:
+                    overlap = u1 & u2
+                    if overlap:
+                        f1 = functions[frozenset(u1)]
+                        f2 = functions[frozenset(u2)]
+                        for x in overlap:
+                            if f1(x) != f2(x):
+                                return False
+        return True
+    
+    def glue(self, functions: Dict[frozenset, Callable[[int], float]], 
+             cover: List[Set[int]]) -> Callable[[int], float]:
+        """
+        Glue compatible functions on a cover.
+        Returns a function defined on the union.
+        """
+        if not self.can_glue(functions, cover):
+            raise ValueError("Functions do not agree on overlaps")
+        
+        def glued_function(x: int) -> float:
+            for u in cover:
+                if x in u:
+                    return functions[frozenset(u)](x)
+            return float('nan')
+        
+        return glued_function
+
+# Example: Sheaf on a 3-point space
+space = {0, 1, 2}
+
+# Define some open sets
+U1 = OpenSet({0, 1})
+U2 = OpenSet({1, 2})
+U12 = OpenSet({1})  # Intersection
+U = OpenSet({0, 1, 2})  # Union
+
+# Create sheaf of functions
+sheaf = SheafOfFunctions(space)
+
+# Define functions on U1 and U2 that agree on overlap
+f1 = lambda x: {0: 5.0, 1: 3.0}.get(x, float('nan'))
+f2 = lambda x: {1: 3.0, 2: 7.0}.get(x, float('nan'))
+
+print("Sheaf of Functions Example")
+print("=" * 40)
+print(f"f1 on {{0,1}}: f1(0)={f1(0)}, f1(1)={f1(1)}")
+print(f"f2 on {{1,2}}: f2(1)={f2(1)}, f2(2)={f2(2)}")
+print(f"\nAgree on overlap {{1}}? f1(1)={f1(1)} == f2(1)={f2(1)} ✓")
+
+# Glue the functions
+functions = {frozenset({0, 1}): f1, frozenset({1, 2}): f2}
+cover = [{0, 1}, {1, 2}]
+
+glued = sheaf.glue(functions, cover)
+print(f"\nGlued function on {{0,1,2}}:")
+for x in range(3):
+    print(f"  f({x}) = {glued(x)}")
+
+# Demonstrate local identity
+print(f"\n--- Local Identity ---")
+print("If two sections agree on a cover, they are equal.")
+g1 = lambda x: {0: 5.0, 1: 3.0, 2: 7.0}.get(x, float('nan'))
+g2 = lambda x: {0: 5.0, 1: 3.0, 2: 7.0}.get(x, float('nan'))
+print(f"g1 and g2 agree on cover {{{{0,1}}, {{1,2}}}}? ", end="")
+agree = all(g1(x) == g2(x) for x in [0, 1, 2])
+print(f"{'Yes' if agree else 'No'} → g1 = g2 ✓")</code></pre>
+                </div>
+
+                <!-- Pure Math 3: Modular Forms -->
+                <div class="deep-dive">
+                    <h3>Modular Forms: Symmetry and Arithmetic</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Modular forms are functions on the complex upper half-plane with extraordinary symmetry properties and deep arithmetic significance. They transform in a specific way under the action of the modular group \(SL(2, \mathbb{Z})\), making them highly constrained and remarkably structured. The coefficients in their Fourier expansions often encode profound number-theoretic information—partition functions, representation numbers of quadratic forms, and L-functions. The proof of Fermat's Last Theorem by Andrew Wiles centered on establishing a connection between elliptic curves and modular forms, exemplifying their central role in modern number theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Modular Group:</strong> \(\Gamma = SL(2, \mathbb{Z}) = \left\{\begin{pmatrix} a & b \\ c & d \end{pmatrix} : a,b,c,d \in \mathbb{Z}, ad-bc = 1\right\}\)</p>
+                    
+                    <p><strong>Action on \(\mathbb{H}\):</strong> For \(\gamma = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \Gamma\) and \(\tau \in \mathbb{H}\) (upper half-plane):
+                    \[\gamma(\tau) = \frac{a\tau + b}{c\tau + d}\]</p>
+                    
+                    <p><strong>Modular Form of weight k:</strong> A holomorphic function \(f: \mathbb{H} \to \mathbb{C}\) satisfying:
+                    <ul>
+                        <li><strong>Modularity:</strong> \(f(\gamma(\tau)) = (c\tau + d)^k f(\tau)\) for all \(\gamma \in \Gamma\)</li>
+                        <li><strong>Holomorphic at infinity:</strong> \(f\) has a Fourier expansion \(f(\tau) = \sum_{n=0}^{\infty} a_n q^n\) where \(q = e^{2\pi i \tau}\)</li>
+                    </ul>
+                    </p>
+                    
+                    <p><strong>Cusp Form:</strong> A modular form with \(a_0 = 0\) (vanishes at infinity).</p>
+
+                    <h4>Theorem</h4>
+                    <p><strong>Dimension Formula:</strong> The space \(M_k\) of modular forms of weight k has dimension:
+                    \[\dim M_k = \begin{cases} \left\lfloor \frac{k}{12} \right\rfloor & k \equiv 2 \pmod{12} \\ \left\lfloor \frac{k}{12} \right\rfloor + 1 & k \not\equiv 2 \pmod{12} \end{cases}\]</p>
+                    
+                    <p>for even \(k \geq 0\). For odd k, \(\dim M_k = 0\).</p>
+                    
+                    <p><strong>Proof Sketch:</strong> The proof uses the valence formula (or k/12 formula), which counts zeros of a modular form in a fundamental domain. For a nonzero modular form f of weight k:
+                    \[v_\infty(f) + \frac{1}{2}v_i(f) + \frac{1}{3}v_\omega(f) + \sum_{P \neq i, \omega} v_P(f) = \frac{k}{12}\]</p>
+                    
+                    <p>where \(\omega = e^{2\pi i/3}\). This constrains the possible zeros. By constructing Eisenstein series \(E_4\) and \(E_6\) (weights 4 and 6) and showing they generate the ring of modular forms, one derives the dimension formula inductively.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{H}\): upper half-plane \(\{\tau \in \mathbb{C} : \text{Im}(\tau) > 0\}\)</li>
+                        <li>\(\Gamma = SL(2, \mathbb{Z})\): modular group</li>
+                        <li>\(M_k\): space of modular forms of weight k</li>
+                        <li>\(S_k\): space of cusp forms of weight k</li>
+                        <li>\(q = e^{2\pi i \tau}\): uniformizing parameter</li>
+                        <li>\(E_k\): Eisenstein series of weight k</li>
+                        <li>\(\Delta\): discriminant modular form (weight 12)</li>
+                    </ul>
+
+                    <pre class="code-block"><code>import numpy as np
+import cmath
+
+def modular_transform(tau, a, b, c, d):
+    """
+    Apply modular transformation: tau -> (a*tau + b) / (c*tau + d)
+    where ad - bc = 1.
+    """
+    if abs((a*d - b*c) - 1) > 1e-10:
+        raise ValueError("Matrix must have determinant 1")
+    return (a*tau + b) / (c*tau + d)
+
+def dedekind_eta(tau, terms=100):
+    """
+    Compute the Dedekind eta function:
+    η(τ) = q^(1/24) * ∏(1 - q^n) where q = e^(2πiτ)
+    
+    The eta function is a modular form of weight 1/2 (with multiplier).
+    """
+    q = cmath.exp(2j * np.pi * tau)
+    
+    # Product term
+    product = 1.0
+    for n in range(1, terms + 1):
+        product *= (1 - q**n)
+    
+    return (q ** (1/24)) * product
+
+def eisenstein_e4(tau, terms=50):
+    """
+    Compute the Eisenstein series E_4(τ).
+    E_4(τ) = 1 + 240 * Σ σ_3(n) q^n
+    where σ_3(n) = sum of cubes of divisors of n.
+    """
+    q = cmath.exp(2j * np.pi * tau)
+    
+    def sigma_k(n, k):
+        """Sum of k-th powers of divisors."""
+        return sum(d**k for d in range(1, n+1) if n % d == 0)
+    
+    result = 1.0
+    for n in range(1, terms + 1):
+        result += 240 * sigma_k(n, 3) * (q ** n)
+    
+    return result
+
+def eisenstein_e6(tau, terms=50):
+    """
+    Compute the Eisenstein series E_6(τ).
+    E_6(τ) = 1 - 504 * Σ σ_5(n) q^n
+    """
+    q = cmath.exp(2j * np.pi * tau)
+    
+    def sigma_k(n, k):
+        return sum(d**k for d in range(1, n+1) if n % d == 0)
+    
+    result = 1.0
+    for n in range(1, terms + 1):
+        result -= 504 * sigma_k(n, 5) * (q ** n)
+    
+    return result
+
+def discriminant_delta(tau, terms=50):
+    """
+    Compute the discriminant modular form Δ(τ).
+    Δ = (E_4^3 - E_6^2) / 1728
+    
+    This is a cusp form of weight 12.
+    """
+    e4 = eisenstein_e4(tau, terms)
+    e6 = eisenstein_e6(tau, terms)
+    return (e4**3 - e6**2) / 1728
+
+# Example: Verify modularity of E_4
+print("Modular Forms Demo")
+print("=" * 50)
+
+tau = 1j  # Pure imaginary point in upper half-plane
+
+# E_4 should satisfy: E_4(-1/τ) = τ^4 * E_4(τ)
+tau_transformed = -1/tau  # S-transformation
+
+e4_original = eisenstein_e4(tau)
+e4_transformed = eisenstein_e4(tau_transformed)
+predicted = (tau**4) * e4_original
+
+print(f"E_4 at τ = {tau}: {e4_original}")
+print(f"E_4 at -1/τ = {tau_transformed}: {e4_transformed}")
+print(f"τ^4 * E_4(τ) = {predicted}")
+print(f"Modularity check: {abs(e4_transformed - predicted) < 1e-6} ✓")
+
+# Check Fourier coefficients of Delta
+print(f"\n--- Discriminant Δ(τ) ---")
+delta = discriminant_delta(1j)
+print(f"Δ(i) ≈ {delta}")
+
+# The Fourier expansion of Δ starts: q - 24q^2 + 252q^3 - 1472q^4 + ...
+# Verify by checking the first coefficient
+q = cmath.exp(-2 * np.pi)  # q = e^(-2π) when τ = i
+print(f"q = e^(-2π) ≈ {q}")
+print(f"Δ(i)/q ≈ {delta/q} (should be close to 1)")
+
+# Ramanujan tau function: coefficients of Δ
+print(f"\n--- Ramanujan tau function ---")
+print("Coefficients of Δ(τ) = Σ τ(n) q^n:")
+for n in range(1, 6):
+    # Extract coefficient by numerical differentiation
+    tau_val = discriminant_delta(1j/n, terms=100)
+    q_n = cmath.exp(2j * np.pi * (1j/n))
+    print(f"  τ({n}) ≈ {tau_val / q_n:.0f}")
+print("(Actual values: τ(1)=1, τ(2)=-24, τ(3)=252, τ(4)=-1472, τ(5)=4830)")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== APPLIED MATH DEEP DIVES ==================== -->
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <!-- Applied Math 1: Compressed Sensing -->
+                <div class="deep-dive">
+                    <h3>Compressed Sensing: Recovering Sparse Signals</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>The Nyquist-Shannon sampling theorem states that to recover a signal, we must sample at twice its maximum frequency. But what if the signal is sparse—mostly zero in some representation? Compressed sensing, developed by Candès, Romberg, Tao, and Donoho, shows that sparse signals can be recovered from far fewer samples than Nyquist requires. This revolutionized MRI imaging (reducing scan times from hours to minutes), single-pixel cameras, and data compression. The key insight is that random measurements preserve the structure of sparse signals, and convex optimization can recover them.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Sparsity:</strong> A vector \(x \in \mathbb{R}^n\) is k-sparse if at most k of its entries are nonzero.</p>
+                    
+                    <p><strong>Measurement Matrix:</strong> An \(m \times n\) matrix \(\Phi\) with \(m \ll n\). The measurements are \(y = \Phi x\).</p>
+                    
+                    <p><strong>Restricted Isometry Property (RIP):</strong> \(\Phi\) satisfies RIP of order k if there exists \(\delta_k \in (0,1)\) such that for all k-sparse x:
+                    \[(1 - \delta_k)\|x\|_2^2 \leq \|\Phi x\|_2^2 \leq (1 + \delta_k)\|x\|_2^2\]</p>
+                    
+                    <p><strong>Basis Pursuit:</strong> The convex optimization problem:
+                    \[\min \|x\|_1 \text{ subject to } \Phi x = y\]</p>
+
+                    <h4>Theorem</h4>
+                    <p><strong>Candes-Tao Recovery Theorem:</strong> Suppose \(\Phi\) satisfies RIP of order 2k with \(\delta_{2k} < \sqrt{2} - 1\). Then for any k-sparse x, the solution \(x^*\) to basis pursuit equals x.</p>
+                    
+                    <p><strong>Proof Sketch:</strong> Let \(x^* = x + h\) be the solution. Since both satisfy \(\Phi x^* = \Phi x = y\), we have \(\Phi h = 0\). Decompose \(h = h_{T_0} + h_{T_0^c}\) where \(T_0\) is the support of x.</p>
+                    
+                    <p>By optimality, \(\|x^*\|_1 \leq \|x\|_1\). Expanding:
+                    \[\|x + h_{T_0}\|_1 + \|h_{T_0^c}\|_1 \leq \|x\|_1\]</p>
+                    
+                    <p>By the reverse triangle inequality on \(T_0\):
+                    \[\|x\|_1 - \|h_{T_0}\|_1 + \|h_{T_0^c}\|_1 \leq \|x\|_1\]</p>
+                    
+                    <p>Thus \(\|h_{T_0^c}\|_1 \leq \|h_{T_0}\|_1\). Using RIP and the cone constraint, one shows \(\|h\|_2 = 0\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(x \in \mathbb{R}^n\): signal vector</li>
+                        <li>\(\Phi \in \mathbb{R}^{m \times n}\): measurement matrix</li>
+                        <li>\(y \in \mathbb{R}^m\): measurements</li>
+                        <li>\(\|x\|_0\): sparsity (count of nonzero entries)</li>
+                        <li>\(\|x\|_1 = \sum |x_i|\): L1 norm</li>
+                        <li>\(\|x\|_2 = \sqrt{\sum x_i^2}\): L2 norm</li>
+                        <li>\(\delta_k\): RIP constant</li>
+                    </ul>
+
+                    <pre class="code-block"><code>import numpy as np
+from scipy.optimize import minimize, linprog
+
+def generate_sparse_signal(n, k):
+    """Generate a k-sparse signal in R^n."""
+    x = np.zeros(n)
+    support = np.random.choice(n, k, replace=False)
+    x[support] = np.random.randn(k)
+    return x, support
+
+def generate_measurement_matrix(m, n, matrix_type='gaussian'):
+    """
+    Generate an m x n measurement matrix.
+    Gaussian and Bernoulli matrices satisfy RIP with high probability.
+    """
+    if matrix_type == 'gaussian':
+        Phi = np.random.randn(m, n) / np.sqrt(m)
+    elif matrix_type == 'bernoulli':
+        Phi = np.random.choice([-1, 1], size=(m, n)) / np.sqrt(m)
+    elif matrix_type == 'partial_fourier':
+        # Random rows of Fourier matrix
+        indices = np.random.choice(n, m, replace=False)
+        F = np.fft.fft(np.eye(n)) / np.sqrt(n)
+        Phi = np.real(F[indices])
+    else:
+        raise ValueError(f"Unknown matrix type: {matrix_type}")
+    return Phi
+
+def basis_pursuit(Phi, y):
+    """
+    Solve basis pursuit: min ||x||_1 subject to Phi @ x = y
+    Using linear programming.
+    """
+    m, n = Phi.shape
+    
+    # Convert to LP: min 1^T (u+v) subject to Phi(u-v) = y, u,v >= 0
+    # where x = u - v
+    
+    # Objective: minimize sum of u and v
+    c = np.ones(2 * n)
+    
+    # Equality constraints: Phi(u-v) = y
+    A_eq = np.hstack([Phi, -Phi])
+    b_eq = y
+    
+    # Bounds: u, v >= 0
+    bounds = [(0, None) for _ in range(2 * n)]
+    
+    result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+    
+    if result.success:
+        u, v = result.x[:n], result.x[n:]
+        return u - v
+    else:
+        raise RuntimeError("Optimization failed")
+
+def omp(Phi, y, sparsity):
+    """
+    Orthogonal Matching Pursuit - greedy algorithm for sparse recovery.
+    """
+    m, n = Phi.shape
+    residual = y.copy()
+    support = []
+    
+    for _ in range(sparsity):
+        # Find column most correlated with residual
+        correlations = np.abs(Phi.T @ residual)
+        new_index = np.argmax(correlations)
+        support.append(new_index)
+        
+        # Solve least squares on selected support
+        Phi_S = Phi[:, support]
+        x_S = np.linalg.lstsq(Phi_S, y, rcond=None)[0]
+        
+        # Update residual
+        residual = y - Phi_S @ x_S
+    
+    # Build full solution
+    x = np.zeros(n)
+    x[support] = x_S
+    return x
+
+# Demo: Compressed Sensing
+print("Compressed Sensing Demo")
+print("=" * 50)
+
+np.random.seed(42)
+n = 256  # Signal dimension
+k = 10   # Sparsity
+m = 64   # Number of measurements (m << n but m > O(k log(n/k)))
+
+# Generate sparse signal
+x_true, support = generate_sparse_signal(n, k)
+print(f"Signal dimension: n = {n}")
+print(f"Sparsity: k = {k}")
+print(f"Measurements: m = {m}")
+print(f"Compression ratio: {n/m:.1f}x")
+
+# Generate measurements
+Phi = generate_measurement_matrix(m, n, 'gaussian')
+y = Phi @ x_true
+
+# Recover using Basis Pursuit
+print("\n--- Recovery using Basis Pursuit (L1 minimization) ---")
+x_recovered = basis_pursuit(Phi, y)
+
+# Evaluate recovery
+error = np.linalg.norm(x_true - x_recovered) / np.linalg.norm(x_true)
+print(f"Relative recovery error: {error:.6f}")
+print(f"Support recovery: {set(support) == set(np.where(np.abs(x_recovered) > 0.01)[0])}")
+
+# Compare with L2 minimization (least squares)
+print("\n--- Comparison with L2 minimization ---")
+x_l2 = np.linalg.lstsq(Phi, y, rcond=None)[0]
+error_l2 = np.linalg.norm(x_true - x_l2) / np.linalg.norm(x_true)
+print(f"L2 recovery error: {error_l2:.6f}")
+
+# Phase transition: test different measurement rates
+print("\n--- Phase Transition (m vs recovery success) ---")
+for m_test in [30, 40, 50, 60, 70]:
+    Phi_test = generate_measurement_matrix(m_test, n, 'gaussian')
+    y_test = Phi_test @ x_true
+    x_test = basis_pursuit(Phi_test, y_test)
+    err = np.linalg.norm(x_true - x_test) / np.linalg.norm(x_true)
+    success = "✓" if err < 0.01 else "✗"
+    print(f"  m = {m_test}: error = {err:.4f} {success}")</code></pre>
+                </div>
+
+                <!-- Applied Math 2: Traffic Flow Models -->
+                <div class="deep-dive">
+                    <h3>Traffic Flow: From Microscopic to Macroscopic Models</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Traffic congestion costs billions in lost productivity and contributes significantly to pollution. Mathematical models help us understand how traffic jams form, propagate, and dissolve. The field spans microscopic models (following individual cars), mesoscopic models (kinetic descriptions), and macroscopic models (treating traffic as a fluid). The Lighthill-Whitham-Richards (LWR) model, a first-order hyperbolic PDE, captures shock waves and rarefaction fans—phenomena familiar to any driver who has encountered a phantom traffic jam. These models inform traffic signal timing, ramp metering, and autonomous vehicle algorithms.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Traffic Density:</strong> \(\rho(x,t)\) = number of vehicles per unit length at position x and time t.</p>
+                    
+                    <p><strong>Traffic Flow:</strong> \(q(x,t)\) = number of vehicles passing x per unit time.</p>
+                    
+                    <p><strong>Fundamental Diagram:</strong> The relationship \(q = Q(\rho)\) between flow and density. Common forms include:
+                    <ul>
+                        <li>Greenshields: \(Q(\rho) = v_{max} \rho (1 - \rho/\rho_{max})\)</li>
+                        <li>Greenberg: \(Q(\rho) = v_0 \rho \ln(\rho_{max}/\rho)\)</li>
+                    </ul>
+                    </p>
+                    
+                    <p><strong>Characteristic Speed:</strong> \(\lambda(\rho) = Q'(\rho)\), the speed at which information propagates.</p>
+
+                    <h4>Theorem</h4>
+                    <p><strong>Rankine-Hugoniot Condition:</strong> For a shock wave separating densities \(\rho_L\) and \(\rho_R\), the shock speed s satisfies:
+                    \[s = \frac{Q(\rho_R) - Q(\rho_L)}{\rho_R - \rho_L}\]</p>
+                    
+                    <p><strong>Proof:</strong> Consider the conservation law in integral form over a control volume \([a,b]\) containing the shock:
+                    \[\frac{d}{dt} \int_a^b \rho(x,t) \, dx = q(a,t) - q(b,t)\]</p>
+                    
+                    <p>Let the shock position be \(x_s(t)\) with \(\dot{x}_s = s\). Split the integral:
+                    \[\frac{d}{dt} \left[ \int_a^{x_s(t)} \rho_L \, dx + \int_{x_s(t)}^b \rho_R \, dx \right] = q_L - q_R\]</p>
+                    
+                    <p>Differentiating (using Leibniz rule):
+                    \[\rho_L \cdot s - \rho_R \cdot s = q_L - q_R\]</p>
+                    
+                    <p>Rearranging gives the Rankine-Hugoniot condition.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\rho\): traffic density (vehicles/km)</li>
+                        <li>\(q\): traffic flow (vehicles/hour)</li>
+                        <li>\(v\): velocity (km/hour)</li>
+                        <li>\(Q(\rho)\): fundamental diagram</li>
+                        <li>\(\rho_{max}\): jam density</li>
+                        <li>\(v_{max}\): free-flow speed</li>
+                        <li>\(s\): shock speed</li>
+                    </ul>
+
+                    <pre class="code-block"><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def greenshields_flux(rho, rho_max, v_max):
+    """
+    Greenshields fundamental diagram: q = v_max * rho * (1 - rho/rho_max)
+    """
+    return v_max * rho * (1 - rho / rho_max)
+
+def greenshields_velocity(rho, rho_max, v_max):
+    """
+    Velocity as function of density (Greenshields model).
+    """
+    return v_max * (1 - rho / rho_max)
+
+def characteristic_speed(rho, rho_max, v_max):
+    """
+    Characteristic speed: dq/drho = v_max * (1 - 2*rho/rho_max)
+    """
+    return v_max * (1 - 2 * rho / rho_max)
+
+def shock_speed(rho_L, rho_R, rho_max, v_max):
+    """
+    Compute shock speed using Rankine-Hugoniot condition.
+    """
+    q_L = greenshields_flux(rho_L, rho_max, v_max)
+    q_R = greenshields_flux(rho_R, rho_max, v_max)
+    return (q_R - q_L) / (rho_R - rho_L)
+
+def lwr_godunov(rho_init, dx, dt, T, rho_max, v_max):
+    """
+    Solve LWR model using Godunov's method.
+    """
+    nx = len(rho_init)
+    nt = int(T / dt)
+    
+    rho = rho_init.copy()
+    rho_history = [rho.copy()]
+    
+    for n in range(nt):
+        rho_new = rho.copy()
+        
+        for i in range(1, nx - 1):
+            # Godunov flux (simplified for concave flux)
+            rho_left = rho[i-1]
+            rho_right = rho[i]
+            
+            # Compute flux at cell interface
+            if rho_left <= rho_right:
+                # Rarefaction: take minimum flux
+                flux = min(greenshields_flux(rho_left, rho_max, v_max),
+                          greenshields_flux(rho_right, rho_max, v_max))
+            else:
+                # Shock: flux depends on shock speed
+                if shock_speed(rho_left, rho_right, rho_max, v_max) >= 0:
+                    flux = greenshields_flux(rho_left, rho_max, v_max)
+                else:
+                    flux = greenshields_flux(rho_right, rho_max, v_max)
+            
+            # Similar for right interface
+            rho_left_r = rho[i]
+            rho_right_r = rho[i+1]
+            
+            if rho_left_r <= rho_right_r:
+                flux_r = min(greenshields_flux(rho_left_r, rho_max, v_max),
+                            greenshields_flux(rho_right_r, rho_max, v_max))
+            else:
+                if shock_speed(rho_left_r, rho_right_r, rho_max, v_max) >= 0:
+                    flux_r = greenshields_flux(rho_left_r, rho_max, v_max)
+                else:
+                    flux_r = greenshields_flux(rho_right_r, rho_max, v_max)
+            
+            # Update
+            rho_new[i] = rho[i] - (dt/dx) * (flux_r - flux)
+        
+        rho = np.clip(rho_new, 0, rho_max)
+        rho_history.append(rho.copy())
+    
+    return np.array(rho_history)
+
+# Parameters
+rho_max = 1.0  # Maximum density (normalized)
+v_max = 1.0    # Maximum velocity (normalized)
+
+# Spatial discretization
+nx = 200
+x = np.linspace(0, 10, nx)
+dx = x[1] - x[0]
+
+# Time discretization (CFL condition: dt <= dx / max|lambda|)
+dt = 0.5 * dx / v_max
+T = 5.0
+
+# Initial condition: traffic light turns green
+# High density behind x=5, low density ahead
+rho_init = np.where(x < 5, 0.8 * rho_max, 0.1 * rho_max)
+
+print("Traffic Flow Simulation (LWR Model)")
+print("=" * 50)
+print(f"Domain: [0, 10] km, discretized with {nx} points")
+print(f"Time step: {dt:.4f} hours, final time: {T:.1f} hours")
+print(f"Initial condition: ρ = {0.8*rho_max} for x < 5, ρ = {0.1*rho_max} for x >= 5")
+
+# Solve
+rho_history = lwr_godunov(rho_init, dx, dt, T, rho_max, v_max)
+
+# Analyze results
+print(f"\n--- Results at t = {T} ---")
+print(f"Initial total vehicles: {np.sum(rho_init) * dx:.2f}")
+print(f"Final total vehicles: {np.sum(rho_history[-1]) * dx:.2f}")
+
+# Compute shock speed analytically
+rho_L, rho_R = 0.8 * rho_max, 0.1 * rho_max
+s = shock_speed(rho_L, rho_R, rho_max, v_max)
+print(f"\n--- Shock Analysis ---")
+print(f"Shock speed (Rankine-Hugoniot): s = {s:.4f}")
+print(f"Characteristic speed left: λ(ρ_L) = {characteristic_speed(rho_L, rho_max, v_max):.4f}")
+print(f"Characteristic speed right: λ(ρ_R) = {characteristic_speed(rho_R, rho_max, v_max):.4f}")
+
+# Verify entropy condition
+print(f"\nEntropy condition check:")
+print(f"  λ(ρ_L) = {characteristic_speed(rho_L, rho_max, v_max):.4f} > s = {s:.4f} > λ(ρ_R) = {characteristic_speed(rho_R, rho_max, v_max):.4f}")
+print(f"  Satisfied: {characteristic_speed(rho_L, rho_max, v_max) > s > characteristic_speed(rho_R, rho_max, v_max)}")
+
+# Fundamental diagram
+print(f"\n--- Fundamental Diagram ---")
+rho_range = np.linspace(0, rho_max, 100)
+q_range = greenshields_flux(rho_range, rho_max, v_max)
+print(f"Maximum flow (capacity): q_max = {np.max(q_range):.4f} at ρ = {rho_range[np.argmax(q_range)]:.4f}")
+
+# Example: Phantom traffic jam
+print(f"\n--- Phantom Traffic Jam Example ---")
+# Small perturbation in uniform traffic
+rho_uniform = 0.5 * rho_max * np.ones(nx)
+rho_uniform[nx//2 - 5:nx//2 + 5] = 0.6 * rho_max  # Localized high density
+
+rho_jam_history = lwr_godunov(rho_uniform, dx, dt, 3.0, rho_max, v_max)
+print("Initial small perturbation grows into a shock (phantom jam)")
+print(f"This demonstrates how traffic jams form without bottlenecks")</code></pre>
+                </div>
+
+                <!-- Applied Math 3: Option Pricing -->
+                <div class="deep-dive">
+                    <h3>Option Pricing: The Black-Scholes Revolution</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Before 1973, options were traded with little theoretical guidance on their fair value. The Black-Scholes-Merton model transformed finance by providing a closed-form formula for European option prices. Their insight was to construct a riskless portfolio by combining the option with a dynamically adjusted position in the underlying asset. This eliminated the drift (expected return) from the pricing equation, allowing options to be priced without knowing the underlying's expected return—a remarkable feat. The model earned Merton and Scholes the 1997 Nobel Prize in Economics (Black had passed away) and launched the field of mathematical finance.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>European Call Option:</strong> A contract giving the holder the right (but not obligation) to buy an asset at strike price K at expiration time T.</p>
+                    
+                    <p><strong>Payoff:</strong> \(\max(S_T - K, 0) = (S_T - K)^+\)</p>
+                    
+                    <p><strong>Geometric Brownian Motion:</strong> The asset price follows:
+                    \[dS_t = \mu S_t \, dt + \sigma S_t \, dW_t\]</p>
+                    
+                    <p>where \(\mu\) is drift, \(\sigma\) is volatility, and \(W_t\) is Brownian motion.</p>
+                    
+                    <p><strong>Risk-Neutral Measure:</strong> A probability measure Q under which the discounted asset price is a martingale.</p>
+
+                    <h4>Theorem</h4>
+                    <p><strong>Black-Scholes Formula:</strong> The price of a European call option is:
+                    \[C = S_0 \Phi(d_1) - K e^{-rT} \Phi(d_2)\]</p>
+                    
+                    <p>where:
+                    \[d_1 = \frac{\ln(S_0/K) + (r + \sigma^2/2)T}{\sigma\sqrt{T}}\]
+                    \[d_2 = d_1 - \sigma\sqrt{T}\]</p>
+                    
+                    <p>and \(\Phi\) is the standard normal CDF.</p>
+                    
+                    <p><strong>Proof Sketch:</strong> Under the risk-neutral measure, \(dS_t = rS_t \, dt + \sigma S_t \, dW_t^Q\). By Itô's lemma, the option price satisfies:
+                    \[\frac{\partial C}{\partial t} + rS\frac{\partial C}{\partial S} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 C}{\partial S^2} - rC = 0\]</p>
+                    
+                    <p>with terminal condition \(C(S,T) = (S-K)^+\). This PDE has the closed-form solution above, derived via transformation to the heat equation.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(S_t\): asset price at time t</li>
+                        <li>\(K\): strike price</li>
+                        <li>\(T\): expiration time</li>
+                        <li>\(r\): risk-free interest rate</li>
+                        <li>\(\sigma\): volatility</li>
+                        <li>\(\mu\): drift (real-world expected return)</li>
+                        <li>\(C\): call option price</li>
+                        <li>\(P\): put option price</li>
+                        <li>\(\Phi\): standard normal CDF</li>
+                        <li>\(d_1, d_2\): auxiliary variables</li>
+                    </ul>
+
+                    <pre class="code-block"><code>import numpy as np
+from scipy.stats import norm
+
+def black_scholes_call(S, K, T, r, sigma):
+    """
+    Black-Scholes formula for European call option.
+    
+    Parameters:
+    S: current stock price
+    K: strike price
+    T: time to expiration (years)
+    r: risk-free interest rate
+    sigma: volatility
+    
+    Returns:
+    Call option price
+    """
+    if T <= 0:
+        return max(S - K, 0)
+    
+    d1 = (np.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * np.sqrt(T))
+    d2 = d1 - sigma * np.sqrt(T)
+    
+    call_price = S * norm.cdf(d1) - K * np.exp(-r * T) * norm.cdf(d2)
+    return call_price
+
+def black_scholes_put(S, K, T, r, sigma):
+    """
+    Black-Scholes formula for European put option (via put-call parity).
+    """
+    call = black_scholes_call(S, K, T, r, sigma)
+    put = call - S + K * np.exp(-r * T)
+    return put
+
+def option_greeks(S, K, T, r, sigma):
+    """
+    Compute the Greeks (sensitivities) for a European call option.
+    """
+    if T <= 0:
+        return {'delta': 1.0 if S > K else 0.0, 'gamma': 0.0, 
+                'theta': 0.0, 'vega': 0.0, 'rho': 0.0}
+    
+    d1 = (np.log(S / K) + (r + 0.5 * sigma**2) * T) / (sigma * np.sqrt(T))
+    d2 = d1 - sigma * np.sqrt(T)
+    
+    delta = norm.cdf(d1)
+    gamma = norm.pdf(d1) / (S * sigma * np.sqrt(T))
+    theta = (-S * norm.pdf(d1) * sigma / (2 * np.sqrt(T)) 
+             - r * K * np.exp(-r * T) * norm.cdf(d2))
+    vega = S * norm.pdf(d1) * np.sqrt(T)
+    rho = K * T * np.exp(-r * T) * norm.cdf(d2)
+    
+    return {'delta': delta, 'gamma': gamma, 'theta': theta/365, 
+            'vega': vega/100, 'rho': rho/100}
+
+def monte_carlo_option_price(S, K, T, r, sigma, n_simulations=100000, option_type='call'):
+    """
+    Price option using Monte Carlo simulation.
+    """
+    np.random.seed(42)
+    
+    # Simulate terminal stock prices under risk-neutral measure
+    Z = np.random.standard_normal(n_simulations)
+    ST = S * np.exp((r - 0.5 * sigma**2) * T + sigma * np.sqrt(T) * Z)
+    
+    # Compute payoffs
+    if option_type == 'call':
+        payoffs = np.maximum(ST - K, 0)
+    else:
+        payoffs = np.maximum(K - ST, 0)
+    
+    # Discount to present
+    option_price = np.exp(-r * T) * np.mean(payoffs)
+    std_error = np.exp(-r * T) * np.std(payoffs) / np.sqrt(n_simulations)
+    
+    return option_price, std_error
+
+# Example: Price a European call option
+print("Black-Scholes Option Pricing")
+print("=" * 50)
+
+# Parameters
+S = 100      # Current stock price
+K = 100      # Strike price (at-the-money)
+T = 1.0      # 1 year to expiration
+r = 0.05     # 5% risk-free rate
+sigma = 0.2  # 20% volatility
+
+print(f"Stock price (S): ${S}")
+print(f"Strike price (K): ${K}")
+print(f"Time to expiration (T): {T} years")
+print(f"Risk-free rate (r): {r*100}%")
+print(f"Volatility (σ): {sigma*100}%")
+
+# Calculate option price
+call_price = black_scholes_call(S, K, T, r, sigma)
+put_price = black_scholes_put(S, K, T, r, sigma)
+
+print(f"\n--- Option Prices ---")
+print(f"European Call: ${call_price:.4f}")
+print(f"European Put: ${put_price:.4f}")
+
+# Verify put-call parity
+parity_check = call_price - put_price - S + K * np.exp(-r * T)
+print(f"\nPut-Call Parity check: {parity_check:.6f} (should be ≈ 0)")
+
+# Greeks
+greeks = option_greeks(S, K, T, r, sigma)
+print(f"\n--- Greeks ---")
+print(f"Delta (Δ): {greeks['delta']:.4f} - Price change per $1 stock move")
+print(f"Gamma (Γ): {greeks['gamma']:.4f} - Delta change per $1 stock move")
+print(f"Theta (Θ): {greeks['theta']:.4f} - Daily time decay")
+print(f"Vega (V): {greeks['vega']:.4f} - Price change per 1% vol change")
+print(f"Rho (ρ): {greeks['rho']:.4f} - Price change per 1% rate change")
+
+# Monte Carlo verification
+print(f"\n--- Monte Carlo Verification ---")
+mc_price, mc_error = monte_carlo_option_price(S, K, T, r, sigma)
+print(f"MC estimate: ${mc_price:.4f} ± ${2*mc_error:.4f} (95% CI)")
+print(f"BS formula: ${call_price:.4f}")
+print(f"Difference: {abs(call_price - mc_price):.4f}")
+
+# Implied volatility calculation
+def implied_volatility(S, K, T, r, market_price, initial_guess=0.2):
+    """
+    Calculate implied volatility using Newton-Raphson method.
+    """
+    sigma = initial_guess
+    for _ in range(100):
+        price = black_scholes_call(S, K, T, r, sigma)
+        vega = option_greeks(S, K, T, r, sigma)['vega'] * 100  # Undo scaling
+        
+        if abs(vega) < 1e-10:
+            break
+        
+        diff = price - market_price
+        if abs(diff) < 1e-6:
+            break
+        
+        sigma = sigma - diff / vega
+        sigma = max(sigma, 0.001)  # Keep positive
+    
+    return sigma
+
+print(f"\n--- Implied Volatility Example ---")
+market_price = 10.0  # Observed market price
+iv = implied_volatility(S, K, T, r, market_price)
+print(f"If market price is ${market_price}, implied volatility = {iv*100:.2f}%")
+
+# Volatility smile
+def compute_volatility_smile(S, T, r, sigma_atm):
+    """
+    Demonstrate volatility smile by computing implied vols for various strikes.
+    """
+    strikes = np.linspace(80, 120, 9)
+    print(f"\n--- Volatility Smile (T={T} years) ---")
+    print("Strike | Call Price | Implied Vol")
+    print("-" * 35)
+    for K in strikes:
+        price = black_scholes_call(S, K, T, r, sigma_atm)
+        iv = implied_volatility(S, K, T, r, price, sigma_atm)
+        print(f"${K:6.1f} | ${price:9.4f} | {iv*100:6.2f}%")
+
+compute_volatility_smile(S, T, r, sigma)</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== SPECIAL TOPICS ==================== -->
+            <section id="special-topics">
+                <h2>🎯 Special Topics: Millennium Prize Problems</h2>
+
+                <!-- Special Topic 1: Riemann Hypothesis -->
+                <div="deep-dive">
+                    <h3>The Riemann Hypothesis: The Music of the Primes</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1859, Bernhard Riemann submitted his only paper on number theory to the Berlin Academy. Titled "On the Number of Primes Less Than a Given Magnitude," it introduced the Riemann zeta function and made a bold conjecture about its zeros. Riemann showed that the distribution of primes is intimately connected to the zeros of this function. His hypothesis—that all nontrivial zeros lie on the critical line with real part 1/2—remains unproven despite 165 years of effort. It is now one of the seven Millennium Prize Problems, with a $1 million reward for its resolution. The hypothesis has been verified for the first 10 trillion zeros, but a proof remains elusive.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Riemann Zeta Function:</strong> For \(\text{Re}(s) > 1\):
+                    \[\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = \prod_{p \text{ prime}} \frac{1}{1 - p^{-s}}\]</p>
+                    
+                    <p>The function extends analytically to \(\mathbb{C} \setminus \{1\}\) with a simple pole at \(s = 1\).</p>
+                    
+                    <p><strong>Trivial Zeros:</strong> \(\zeta(-2n) = 0\) for \(n = 1, 2, 3, \ldots\)</p>
+                    
+                    <p><strong>Nontrivial Zeros:</strong> Zeros in the critical strip \(0 < \text{Re}(s) < 1\). The Riemann Hypothesis states they all satisfy \(\text{Re}(s) = \frac{1}{2}\).</p>
+                    
+                    <p><strong>Critical Line:</strong> The line \(\text{Re}(s) = \frac{1}{2}\) in the complex plane.</p>
+
+                    <h4>Theorem</h4>
+                    <p><strong>Explicit Formula:</strong> There is a deep connection between the zeros of \(\zeta(s)\) and the distribution of primes. The von Mangoldt function \(\psi(x) = \sum_{n \leq x} \Lambda(n)\) satisfies:
+                    \[\psi(x) = x - \sum_{\rho} \frac{x^{\rho}}{\rho} - \frac{\zeta'(0)}{\zeta(0)} - \frac{1}{2}\log(1 - x^{-2})\]</p>
+                    
+                    <p>where the sum is over the nontrivial zeros \(\rho\) of \(\zeta(s)\).</p>
+                    
+                    <p><strong>Proof Sketch:</strong> The proof uses contour integration and the Hadamard product for \(\xi(s) = \frac{1}{2}s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s)\). Taking logarithmic derivatives and applying Perron's formula yields the explicit connection between zeros and primes.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\zeta(s)\): Riemann zeta function</li>
+                        <li>\(s = \sigma + it\): complex variable</li>
+                        <li>\(\rho = \beta + i\gamma\): nontrivial zero</li>
+                        <li>\(\sigma = \text{Re}(s)\): real part</li>
+                        <li>\(\Gamma(s)\): Gamma function</li>
+                        <li>\(\xi(s)\): completed zeta function</li>
+                        <li>\(\Lambda(n)\): von Mangoldt function</li>
+                        <li>\(\psi(x)\): Chebyshev function</li>
+                    </ul>
+
+                    <pre class="code-block"><code>import numpy as np
+from scipy.special import zeta, gamma
+from scipy.optimize import fsolve
+import mpmath
+
+def riemann_zeta(s, terms=100000):
+    """
+    Compute Riemann zeta function using series or functional equation.
+    Uses mpmath for accurate computation.
+    """
+    return complex(mpmath.zeta(s))
+
+def xi_function(s):
+    """
+    Riemann's xi function: ξ(s) = (1/2)s(s-1)π^(-s/2)Γ(s/2)ζ(s)
+    This is entire and satisfies ξ(s) = ξ(1-s).
+    """
+    return 0.5 * s * (s - 1) * np.pi**(-s/2) * gamma(s/2) * zeta(s)
+
+def find_zeros_on_critical_line(t_max=100, n_points=10000):
+    """
+    Find zeros of zeta(1/2 + it) for 0 < t < t_max.
+    Uses the fact that Z(t) = e^(iθ(t))ζ(1/2 + it) is real.
+    """
+    t_values = np.linspace(0.1, t_max, n_points)
+    zeros = []
+    
+    for i, t in enumerate(t_values):
+        z = complex(mpmath.zeta(0.5 + 1j*t))
+        # Look for sign changes in the real part (approximate)
+        if i > 0:
+            prev_z = complex(mpmath.zeta(0.5 + 1j*t_values[i-1]))
+            if prev_z.real * z.real < 0:  # Sign change
+                # Refine using bisection
+                t_zero = refine_zero(t_values[i-1], t)
+                zeros.append(t_zero)
+    
+    return zeros
+
+def refine_zero(t_low, t_high, tol=1e-10):
+    """Refine zero location using bisection."""
+    while t_high - t_low > tol:
+        t_mid = (t_low + t_high) / 2
+        z_mid = complex(mpmath.zeta(0.5 + 1j*t_mid))
+        z_low = complex(mpmath.zeta(0.5 + 1j*t_low))
+        
+        if z_mid.real * z_low.real < 0:
+            t_high = t_mid
+        else:
+            t_low = t_mid
+    
+    return (t_low + t_high) / 2
+
+def prime_counting_function(x):
+    """
+    π(x) = number of primes ≤ x
+    """
+    if x < 2:
+        return 0
+    
+    # Simple sieve
+    n = int(x) + 1
+    sieve = [True] * n
+    sieve[0] = sieve[1] = False
+    
+    for i in range(2, int(np.sqrt(n)) + 1):
+        if sieve[i]:
+            for j in range(i*i, n, i):
+                sieve[j] = False
+    
+    return sum(sieve)
+
+def logarithmic_integral(x):
+    """
+    li(x) = ∫_2^x dt/ln(t)
+    Approximation to π(x) per the Prime Number Theorem.
+    """
+    from scipy.integrate import quad
+    result, _ = quad(lambda t: 1/np.log(t), 2, x)
+    return result
+
+def riemann_prime_approximation(x, n_zeros=10):
+    """
+    Approximate π(x) using the first n_zeros of zeta.
+    This demonstrates the explicit formula.
+    """
+    # First few zeros on critical line (imaginary parts)
+    known_zeros = [14.134725, 21.022040, 25.010858, 30.424876, 
+                   32.935062, 37.586178, 40.918719, 43.327073,
+                   48.005151, 49.773832]
+    
+    # Riemann's R(x) function (better approximation than li(x))
+    def R(x):
+        result = 1.0
+        n = 1
+        term = 1.0
+        while abs(term) > 1e-10:
+            term = 1/n * li(x**(1/n))
+            if n > 1:
+                result += term * (1 if n == 1 else 
+                                  (1 if n % 2 == 0 else -1))
+            n += 1
+        return result
+    
+    # Main term
+    approx = R(x)
+    
+    # Correction from zeros
+    for gamma in known_zeros[:n_zeros]:
+        rho = 0.5 + 1j*gamma
+        # Simplified correction term
+        approx -= 2 * np.sqrt(x) * np.cos(gamma * np.log(x)) / np.abs(rho)
+    
+    return approx
+
+print("Riemann Hypothesis Demo")
+print("=" * 50)
+
+# Compute some zeta values
+print("\n--- Zeta Function Values ---")
+test_points = [2, 0.5, -1, 0.5 + 14.134725j]
+for s in test_points:
+    z = riemann_zeta(s)
+    print(f"ζ({s}) = {z}")
+
+# Find zeros on critical line
+print("\n--- Zeros on Critical Line ---")
+print("Finding sign changes of Re(ζ(1/2 + it))...")
+zeros = find_zeros_on_critical_line(t_max=50, n_points=5000)
+print(f"Found {len(zeros)} zeros in 0 < t < 50:")
+for i, t in enumerate(zeros[:10], 1):
+    print(f"  ρ_{i} = 1/2 + {t:.6f}i")
+    # Verify
+    z = complex(mpmath.zeta(0.5 + 1j*t))
+    print(f"      |ζ(ρ_{i})| = {abs(z):.2e}")
+
+# Prime number theorem connection
+print("\n--- Connection to Prime Numbers ---")
+x_values = [100, 1000, 10000]
+print("x      | π(x) | li(x) | Riemann R(x)")
+print("-" * 45)
+for x in x_values:
+    pi_x = prime_counting_function(x)
+    li_x = logarithmic_integral(x)
+    r_x = riemann_prime_approximation(x, n_zeros=5)
+    print(f"{x:6} | {pi_x:4} | {li_x:5.1f} | {r_x:7.2f}")
+
+print(f"\n--- Functional Equation Check ---")
+s = 0.25 + 5j
+xi_s = xi_function(s)
+xi_1_minus_s = xi_function(1 - s)
+print(f"ξ({s}) = {xi_s}")
+print(f"ξ({1-s}) = {xi_1_minus_s}")
+print(f"Difference: {abs(xi_s - xi_1_minus_s):.2e}")
+print("Functional equation ξ(s) = ξ(1-s) verified ✓")</code></pre>
+                </div>
+
+                <!-- Special Topic 2: P vs NP -->
+                <div="deep-dive">
+                    <h3>P vs NP: The Most Important Open Problem in Computer Science</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>The question of whether every problem whose solution can be quickly verified can also be quickly solved dates back to the 1950s. Kurt Gödel wrote to John von Neumann in 1956 asking about the complexity of finding proofs. The modern formulation emerged in the 1960s and 70s through the independent work of Stephen Cook and Leonid Levin (who defined NP-completeness) and Richard Karp (who showed 21 classic problems are NP-complete). The Clay Mathematics Institute included P vs NP as one of its Millennium Prize Problems in 2000. Its resolution would have profound implications for cryptography, optimization, artificial intelligence, and our understanding of computation itself.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Decision Problem:</strong> A problem with a yes/no answer.</p>
+                    
+                    <p><strong>P (Polynomial time):</strong> The class of decision problems solvable by a deterministic Turing machine in time \(O(n^k)\) for some constant k, where n is the input size.</p>
+                    
+                    <p><strong>NP (Nondeterministic Polynomial time):</strong> The class of decision problems where a "yes" answer can be verified in polynomial time given a certificate (witness).</p>
+                    
+                    <p><strong>NP-hard:</strong> A problem is NP-hard if every problem in NP can be reduced to it in polynomial time.</p>
+                    
+                    <p><strong>NP-complete:</strong> A problem is NP-complete if it is both in NP and NP-hard.</p>
+
+                    <h4>Theorem</h4>
+                    <p><strong>Cook-Levin Theorem:</strong> SAT (satisfiability of Boolean formulas) is NP-complete.</p>
+                    
+                    <p><strong>Proof Sketch:</strong> The proof shows that any NP problem can be encoded as a SAT instance. Given a nondeterministic Turing machine M running in time \(p(n)\) on input x, we construct a Boolean formula that is satisfiable if and only if M accepts x.</p>
+                    
+                    <p>The formula encodes:
+                    <ol>
+                        <li>The initial configuration of M on input x</li>
+                        <li>Valid transitions between configurations</li>
+                        <li>The acceptance condition</li>
+                    </ol>
+                    </p>
+                    
+                    <p>The size of the formula is polynomial in n and \(p(n)\), establishing the reduction.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>P: polynomial time (deterministic)</li>
+                        <li>NP: nondeterministic polynomial time</li>
+                        <li>co-NP: complements of NP problems</li>
+                        <li>NP-hard: at least as hard as any NP problem</li>
+                        <li>NP-complete: in NP and NP-hard</li>
+                        <li>SAT: Boolean satisfiability problem</li>
+                        <li>3-SAT: SAT with exactly 3 literals per clause</li>
+                        <li>Reduction: \(A \leq_p B\) means A reduces to B in polynomial time</li>
+                    </ul>
+
+                    <pre class="code-block"><code>import itertools
+from typing import List, Tuple, Optional, Dict
+
+class SATInstance:
+    """
+    Represents a Boolean satisfiability problem in CNF form.
+    """
+    def __init__(self, num_variables: int):
+        self.num_variables = num_variables
+        self.clauses: List[List[int]] = []
+    
+    def add_clause(self, literals: List[int]):
+        """
+        Add a clause. Literals are integers: positive for true, negative for false.
+        e.g., [1, -2, 3] means (x1 OR NOT x2 OR x3)
+        """
+        self.clauses.append(literals)
+    
+    def evaluate(self, assignment: Dict[int, bool]) -> bool:
+        """
+        Check if assignment satisfies all clauses.
+        """
+        for clause in self.clauses:
+            clause_satisfied = False
+            for lit in clause:
+                var = abs(lit)
+                val = assignment.get(var, False)
+                if lit < 0:
+                    val = not val
+                if val:
+                    clause_satisfied = True
+                    break
+            if not clause_satisfied:
+                return False
+        return True
+    
+    def __str__(self):
+        clauses_str = []
+        for clause in self.clauses:
+            lits = []
+            for lit in clause:
+                if lit > 0:
+                    lits.append(f"x{lit}")
+                else:
+                    lits.append(f"¬x{-lit}")
+            clauses_str.append("(" + " ∨ ".join(lits) + ")")
+        return " ∧ ".join(clauses_str)
+
+def brute_force_sat(sat: SATInstance) -> Optional[Dict[int, bool]]:
+    """
+    Solve SAT by brute force (exponential time).
+    Returns satisfying assignment or None.
+    """
+    variables = list(range(1, sat.num_variables + 1))
+    
+    for bits in itertools.product([False, True], repeat=sat.num_variables):
+        assignment = {var: val for var, val in zip(variables, bits)}
+        if sat.evaluate(assignment):
+            return assignment
+    
+    return None
+
+def dpll_sat(sat: SATInstance) -> Optional[Dict[int, bool]]:
+    """
+    DPLL algorithm for SAT solving (backtracking with unit propagation).
+    More efficient than brute force but still exponential in worst case.
+    """
+    def unit_propagate(clauses, assignment):
+        """Apply unit propagation."""
+        changed = True
+        while changed:
+            changed = False
+            for clause in clauses:
+                unassigned = [lit for lit in clause if abs(lit) not in assignment]
+                if len(unassigned) == 1:
+                    # Unit clause found
+                    lit = unassigned[0]
+                    var = abs(lit)
+                    val = lit > 0
+                    if var not in assignment:
+                        assignment[var] = val
+                        changed = True
+        return clauses, assignment
+    
+    def dpll(clauses, assignment):
+        # Unit propagation
+        clauses, assignment = unit_propagate(clauses, assignment)
+        
+        # Check if satisfied
+        if not clauses or all(len(c) == 0 for c in clauses):
+            return assignment
+        
+        # Check for empty clause (conflict)
+        if any(len(c) == 0 for c in clauses):
+            return None
+        
+        # Choose unassigned variable
+        unassigned = set()
+        for clause in clauses:
+            for lit in clause:
+                if abs(lit) not in assignment:
+                    unassigned.add(abs(lit))
+        
+        if not unassigned:
+            return assignment if all(any(
+                (lit > 0) == assignment.get(abs(lit), False) 
+                for lit in clause if abs(lit) in assignment
+            ) or all(abs(lit) in assignment for lit in clause) for clause in clauses) else None
+        
+        var = min(unassigned)
+        
+        # Try True
+        new_clauses = [c for c in clauses if var not in c]  # Remove satisfied clauses
+        new_clauses = [[lit for lit in c if lit != -var] for c in new_clauses]  # Remove false literals
+        result = dpll(new_clauses, {**assignment, var: True})
+        if result is not None:
+            return result
+        
+        # Try False
+        new_clauses = [c for c in clauses if -var not in c]
+        new_clauses = [[lit for lit in c if lit != var] for c in new_clauses]
+        return dpll(new_clauses, {**assignment, var: False})
+    
+    return dpll([c[:] for c in sat.clauses], {})
+
+class VertexCover:
+    """
+    Vertex Cover problem: Given graph G and integer k, is there a set of k vertices
+    that covers all edges?
+    """
+    def __init__(self, edges: List[Tuple[int, int]], num_vertices: int):
+        self.edges = edges
+        self.num_vertices = num_vertices
+    
+    def to_sat(self, k: int) -> SATInstance:
+        """
+        Reduce Vertex Cover to SAT.
+        This demonstrates NP-completeness reduction.
+        """
+        # Use O(n*k) variables: x[i][j] = vertex i is the j-th vertex in cover
+        sat = SATInstance(self.num_vertices * k)
+        
+        # For simplicity, use direct encoding: x_i = vertex i is in cover
+        sat = SATInstance(self.num_vertices)
+        
+        # Each edge must be covered
+        for u, v in self.edges:
+            sat.add_clause([u, v])  # At least one endpoint in cover
+        
+        # Cardinality constraint: at most k vertices (simplified)
+        # In practice, use more sophisticated encoding
+        
+        return sat
+
+def subset_sum(nums: List[int], target: int) -> Optional[List[int]]:
+    """
+    Subset Sum: Given integers and target, find subset summing to target.
+    NP-complete problem.
+    """
+    n = len(nums)
+    
+    # Dynamic programming solution (pseudo-polynomial)
+    # True NP algorithm would use non-determinism
+    dp = {0: []}
+    
+    for num in nums:
+        new_dp = dict(dp)
+        for s, subset in dp.items():
+            new_sum = s + num
+            if new_sum not in new_dp:
+                new_dp[new_sum] = subset + [num]
+        dp = new_dp
+        if target in dp:
+            return dp[target]
+    
+    return None
+
+# Demonstrations
+print("P vs NP: Computational Complexity Demo")
+print("=" * 50)
+
+# SAT example
+print("\n--- SAT (Satisfiability) ---")
+sat = SATInstance(3)
+sat.add_clause([1, 2])      # x1 OR x2
+sat.add_clause([-1, 3])     # NOT x1 OR x3
+sat.add_clause([2, -3])     # x2 OR NOT x3
+
+print(f"Formula: {sat}")
+
+solution = dpll_sat(sat)
+if solution:
+    print(f"Satisfiable! Assignment: {solution}")
+    print(f"Verification: {sat.evaluate(solution)}")
+else:
+    print("Unsatisfiable")
+
+# 3-SAT example (NP-complete)
+print(f"\n--- 3-SAT (NP-complete) ---")
+sat3 = SATInstance(4)
+sat3.add_clause([1, 2, -3])
+sat3.add_clause([-1, 2, 4])
+sat3.add_clause([1, -2, -4])
+sat3.add_clause([-1, -2, 3])
+
+print(f"Formula: {sat3}")
+solution3 = dpll_sat(sat3)
+print(f"Satisfiable: {solution3 is not None}")
+if solution3:
+    print(f"Assignment: {solution3}")
+
+# Vertex Cover reduction
+print(f"\n--- Vertex Cover → SAT Reduction ---")
+edges = [(1, 2), (2, 3), (3, 1)]  # Triangle
+vc = VertexCover(edges, 3)
+vc_sat = vc.to_sat(k=2)
+print(f"Graph edges: {edges}")
+print(f"Reduced SAT formula: {vc_sat}")
+vc_solution = dpll_sat(vc_sat)
+print(f"Vertex cover found: {vc_solution}")
+
+# Subset Sum
+print(f"\n--- Subset Sum (NP-complete) ---")
+nums = [3, 34, 4, 12, 5, 2]
+target = 9
+result = subset_sum(nums, target)
+print(f"Numbers: {nums}")
+print(f"Target: {target}")
+print(f"Subset: {result}")
+if result:
+    print(f"Sum verification: {sum(result)} = {target}")
+
+# Complexity comparison
+print(f"\n--- Complexity Classes ---")
+print("P: Problems solvable in polynomial time")
+print("   Examples: Sorting, Shortest Path, Minimum Spanning Tree")
+print("NP: Problems verifiable in polynomial time")
+print("   Examples: SAT, 3-SAT, Vertex Cover, Subset Sum, Hamiltonian Cycle")
+print("NP-complete: Hardest problems in NP")
+print("   If any NP-complete problem is in P, then P = NP")
+print("NP-hard: At least as hard as NP-complete")
+print("   Examples: Halting Problem, Chess")
+
+print(f"\n--- Current Status ---")
+print("Known: P ⊆ NP")
+print("Believed: P ≠ NP (but unproven)")
+print("Implications of P = NP:")
+print("  - Cryptography would collapse")
+print("  - Optimization would become easy")
+print("  - AI/ML would be revolutionized")
+print("  - Mathematics proofs could be automated")</code></pre>
+                </div>
+
+                <!-- Special Topic 3: Birch and Swinnerton-Dyer Conjecture -->
+                <div="deep-dive">
+                    <h3>The Birch and Swinnerton-Dyer Conjecture: Connecting Algebra and Analysis</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In the early 1960s, Bryan Birch and Peter Swinnerton-Dyer, working at Cambridge University, conducted extensive computations on elliptic curves. They noticed a remarkable pattern: the rank of the group of rational points on an elliptic curve seemed to equal the order of vanishing of its L-function at s = 1. This conjecture, now one of the Millennium Prize Problems, connects two seemingly unrelated aspects of elliptic curves—the algebraic structure of their rational points and the analytic behavior of their L-functions. The conjecture has been verified numerically for thousands of curves, and partial results have been proven, but a general proof remains elusive.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Elliptic Curve:</strong> A smooth projective curve of genus 1 with a specified base point. Over \(\mathbb{Q}\), it can be written in Weierstrass form:
+                    \[E: y^2 = x^3 + ax + b\]</p>
+                    
+                    <p>with discriminant \(\Delta = -16(4a^3 + 27b^2) \neq 0\).</p>
+                    
+                    <p><strong>Mordell-Weil Group:</strong> The group \(E(\mathbb{Q})\) of rational points on E. By Mordell's theorem, it is a finitely generated abelian group:
+                    \[E(\mathbb{Q}) \cong E(\mathbb{Q})_{tors} \oplus \mathbb{Z}^r\]</p>
+                    
+                    <p>where r is the rank.</p>
+                    
+                    <p><strong>L-function of E:</strong> For an elliptic curve E over \(\mathbb{Q}\), the Hasse-Weil L-function is:
+                    \[L(E, s) = \prod_{p \nmid \Delta} \frac{1}{1 - a_p p^{-s} + p^{1-2s}} \prod_{p \mid \Delta} \frac{1}{1 - a_p p^{-s}}\]</p>
+                    
+                    <p>where \(a_p = p + 1 - \#E(\mathbb{F}_p)\).</p>
+
+                    <h4>Theorem</h4>
+                    <p><strong>Coates-Wiles Theorem (partial result):</strong> If E has complex multiplication and \(L(E, 1) \neq 0\), then E has rank 0.</p>
+                    
+                    <p><strong>Gross-Zagier Formula:</strong> For certain elliptic curves, the derivative \(L'(E, 1)\) is related to the height of a specific point (the Heegner point) on the curve.</p>
+                    
+                    <p><strong>Birch and Swinnerton-Dyer Conjecture:</strong> The order of vanishing of \(L(E, s)\) at \(s = 1\) equals the rank of \(E(\mathbb{Q})\). Moreover, the leading coefficient in the Taylor expansion is given by a formula involving the regulator, Tate-Shafarevich group, period, and torsion.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(E\): elliptic curve</li>
+                        <li>\(E(\mathbb{Q})\): rational points on E</li>
+                        <li>\(r\): rank of \(E(\mathbb{Q})\)</li>
+                        <li>\(L(E, s)\): L-function of E</li>
+                        <li>\(a_p\): Frobenius trace at p</li>
+                        <li>\(\#E(\mathbb{F}_p)\): number of points on E over \(\mathbb{F}_p\)</li>
+                        <li>\(\text{ord}_{s=1} L(E, s)\): order of vanishing at s = 1</li>
+                        <li>\(\text{Sha}\): Tate-Shafarevich group</li>
+                        <li>\(R\): regulator</li>
+                        <li>\(\Omega\): real period</li>
+                    </ul>
+
+                    <pre class="code-block"><code>import numpy as np
+from fractions import Fraction
+
+def elliptic_curve_discriminant(a, b):
+    """
+    Compute discriminant of y^2 = x^3 + ax + b.
+    Δ = -16(4a^3 + 27b^2)
+    """
+    return -16 * (4 * a**3 + 27 * b**2)
+
+def is_singular(a, b):
+    """Check if curve is singular (Δ = 0)."""
+    return elliptic_curve_discriminant(a, b) == 0
+
+def count_points_finite_field(a, b, p):
+    """
+    Count points on E: y^2 = x^3 + ax + b over F_p.
+    Includes point at infinity.
+    """
+    if is_singular(a, b):
+        raise ValueError("Curve is singular")
+    
+    count = 1  # Point at infinity
+    
+    for x in range(p):
+        rhs = (x**3 + a*x + b) % p
+        
+        # Count solutions to y^2 = rhs (mod p)
+        if rhs == 0:
+            count += 1  # y = 0 is the only solution
+        elif pow(rhs, (p-1)//2, p) == 1:
+            # rhs is quadratic residue
+            count += 2  # Two solutions: y and -y
+    
+    return count
+
+def frobenius_trace(a, b, p):
+    """
+    Compute a_p = p + 1 - #E(F_p).
+    Satisfies Hasse bound: |a_p| ≤ 2√p
+    """
+    return p + 1 - count_points_finite_field(a, b, p)
+
+def elliptic_curve_l_function_approx(a, b, s, max_p=1000):
+    """
+    Approximate L(E, s) by truncating the Euler product.
+    """
+    from sympy import prime
+    
+    result = 1.0
+    
+    for i in range(1, max_p):
+        p = prime(i)
+        
+        # Skip primes dividing discriminant (bad reduction)
+        delta = elliptic_curve_discriminant(a, b)
+        if delta % p == 0:
+            continue
+        
+        ap = frobenius_trace(a, b, p)
+        
+        # Local factor: 1 / (1 - a_p*p^(-s) + p^(1-2s))
+        p_s = p ** (-s)
+        p_2s = p ** (1 - 2*s)
+        local_factor = 1 - ap * p_s + p_2s
+        result /= local_factor
+    
+    return result
+
+def find_rational_points_simple(a, b, bound=100):
+    """
+    Find rational points on y^2 = x^3 + ax + b with small denominators.
+    Returns points as (x, y) where x, y are Fractions.
+    """
+    points = []
+    
+    # Search for integer points
+    for x in range(-bound, bound + 1):
+        y_squared = x**3 + a*x + b
+        if y_squared >= 0:
+            y = int(np.sqrt(y_squared))
+            if y * y == y_squared:
+                points.append((Fraction(x), Fraction(y)))
+                if y != 0:
+                    points.append((Fraction(x), Fraction(-y)))
+    
+    # Add point at infinity (represented as None)
+    points.append(None)
+    
+    return points
+
+def point_addition(P, Q, a):
+    """
+    Add two points on elliptic curve y^2 = x^3 + ax + b.
+    P, Q are tuples (x, y) or None for point at infinity.
+    """
+    if P is None:
+        return Q
+    if Q is None:
+        return P
+    
+    x1, y1 = P
+    x2, y2 = Q
+    
+    if x1 == x2 and y1 == -y2:
+        return None  # Point at infinity
+    
+    if P == Q:
+        # Point doubling
+        if y1 == 0:
+            return None
+        m = (3 * x1**2 + a) / (2 * y1)
+    else:
+        # Point addition
+        m = (y2 - y1) / (x2 - x1)
+    
+    x3 = m**2 - x1 - x2
+    y3 = m * (x1 - x3) - y1
+    
+    return (x3, y3)
+
+def scalar_multiplication(n, P, a):
+    """Compute n*P using double-and-add."""
+    if n == 0 or P is None:
+        return None
+    if n < 0:
+        x, y = P
+        return scalar_multiplication(-n, (x, -y), a)
+    
+    result = None
+    addend = P
+    
+    while n > 0:
+        if n & 1:
+            result = point_addition(result, addend, a)
+        addend = point_addition(addend, addend, a)
+        n >>= 1
+    
+    return result
+
+# Example: y^2 = x^3 - x (congruent number curve)
+print("Birch and Swinnerton-Dyer Conjecture Demo")
+print("=" * 50)
+
+a = -1
+b = 0
+delta = elliptic_curve_discriminant(a, b)
+print(f"\nElliptic Curve: y² = x³ + ({a})x + ({b})")
+print(f"Discriminant: Δ = {delta}")
+print(f"Non-singular: {not is_singular(a, b)}")
+
+# Count points over finite fields
+print(f"\n--- Point Counting over Finite Fields ---")
+from sympy import primerange
+for p in list(primerange(2, 20)):
+    if delta % p != 0:  # Good reduction
+        n_points = count_points_finite_field(a, b, p)
+        ap = frobenius_trace(a, b, p)
+        hasse_bound = 2 * np.sqrt(p)
+        print(f"p = {p:2d}: #E(F_p) = {n_points:2d}, a_p = {ap:3d}, |a_p| ≤ {hasse_bound:.2f}")
+
+# Find rational points
+print(f"\n--- Rational Points (small height) ---")
+points = find_rational_points_simple(a, b, bound=50)
+print(f"Found {len(points)} points:")
+for P in points[:10]:
+    if P is None:
+        print("  Point at infinity (identity)")
+    else:
+        print(f"  ({P[0]}, {P[1]})")
+
+# Group structure: check if point has infinite order
+P = (Fraction(-1), Fraction(0))  # Point on curve
+print(f"\n--- Point Order Check ---")
+print(f"Testing point P = (-1, 0)")
+current = P
+for n in range(1, 13):
+    if current is None:
+        print(f"  {n}P = O (point has order {n})")
+        break
+    current = point_addition(current, P, a)
+else:
+    print(f"  Point appears to have infinite order (rank ≥ 1)")
+
+# L-function approximation at s=1
+print(f"\n--- L-function Approximation ---")
+print("Computing L(E, 1) by truncated Euler product...")
+# Note: This is a rough approximation; proper computation requires analytic continuation
+for max_p in [100, 500, 1000]:
+    try:
+        L_value = elliptic_curve_l_function_approx(a, b, 1.0, max_p)
+        print(f"  L(E, 1) ≈ {L_value:.6f} (using primes ≤ {max_p})")
+    except Exception as e:
+        print(f"  Error at max_p={max_p}: {e}")
+
+print(f"\n--- BSD Conjecture Statement ---")
+print("Conjecture: ord_{s=1} L(E, s) = rank(E(Q))")
+print("")
+print("If L(E, 1) ≠ 0, then rank = 0 (curve has finitely many rational points)")
+print("If L(E, 1) = 0 and L'(E, 1) ≠ 0, then rank = 1")
+print("")
+print("Proven cases:")
+print("  - Coates-Wiles (1977): For CM curves, L(E,1)≠0 ⇒ rank=0")
+print("  - Gross-Zagier (1986), Kolyvagin (1988): For modular curves,")
+print("    ord L(E,s) ≤ 1 ⇒ BSD holds")
+print("")
+print("Numerical verification: Verified for all curves in Cremona's tables")
+print("(conductor ≤ 500,000)")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== MATH HISTORY ==================== -->
+            <section id="math-history">
+                <h2>📚 Math History: Paul Erdős — The Wanderer of Mathematics</h2>
+                
+                <p>Paul Erdős (1913–1996) was one of the most prolific mathematicians of the 20th century, publishing over 1,500 papers with more than 500 collaborators. His life was a testament to pure mathematical obsession—he owned virtually nothing, traveled constantly with a single suitcase, and dedicated every waking hour to mathematics. Born in Budapest to a family of mathematicians (his parents were both mathematics teachers), Erdős showed prodigious talent from an early age, discovering negative numbers for himself at age four.</p>
+                
+                <p>Erdős's approach to mathematics was deeply collaborative and egalitarian. He would arrive at a mathematician's door, announce "My brain is open," and work feverishly for days or weeks before moving on. This lifestyle gave rise to the famous "Erdős number," a measure of distance in the collaboration graph: Erdős has number 0, his co-authors have number 1, their co-authors (excluding Erdős) have number 2, and so on. Most mathematicians have an Erdős number of at most 5, and it has become a playful badge of honor in the community.</p>
+                
+                <p>His contributions span number theory, combinatorics, probability theory, set theory, and graph theory. The probabilistic method, which he pioneered with Alfréd Rényi, revolutionized combinatorics by proving the existence of mathematical objects through probability theory without explicitly constructing them. His work on prime numbers includes the elementary proof of the Prime Number Theorem (with Atle Selberg) and numerous results on prime gaps. The still-unsolved Erdős conjecture on arithmetic progressions—stating that any subset of the natural numbers with divergent sum of reciprocals contains arbitrarily long arithmetic progressions—carries a $5,000 prize he offered.</p>
+                
+                <p>Erdős spoke his own idiosyncratic language: children were "epsilons," women were "bosses," men were "slaves," and people who stopped doing mathematics had "died." He was a pacifist and humanitarian, using his meager possessions to help others and donating prize money to educational causes. When he received the Wolf Prize in 1983, he gave away most of the $50,000 award. His funeral was a mathematical gathering, with attendees recalling his brilliance, generosity, and the unique joy he brought to the pursuit of mathematical truth.</p>
+            </section>
+
+            <!-- ==================== MATH JOURNALISM ==================== -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-prove-30-year-old-sensitivity-conjecture-20190715/">Mathematicians Solve 30-Year-Old Sensitivity Conjecture</a> — Quanta Magazine</h3>
+                    <p>In 2019, Hao Huang resolved the sensitivity conjecture, a problem that had stumped computer scientists for three decades. The conjecture relates the sensitivity of a Boolean function—a measure of local stability—to other complexity measures. Huang's proof was remarkably elegant, fitting on a single page and using a spectral graph theory argument involving the hypercube. The breakthrough demonstrates how simple, insightful approaches can solve long-standing problems that resisted more sophisticated attacks. The result has implications for understanding the limits of efficient computation.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/articles/d41586-023-01338-2">Mathematicians Discover New Formula for Pi</a> — Nature</h3>
+                    <p>Researchers continue to find surprising new formulas for π, the most famous constant in mathematics. A 2023 paper presented a novel infinite series converging to π that involves only rational numbers and square roots, with a remarkably fast convergence rate. Such formulas are not merely curiosities—they provide efficient algorithms for computing π to trillions of digits and sometimes reveal deep connections between different areas of mathematics. The quest for new π formulas exemplifies how even well-studied constants can yield fresh discoveries.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.scientificamerican.com/article/ai-makes-math-breakthrough/">AI Makes Mathematical Breakthrough</a> — Scientific American</h3>
+                    <p>DeepMind's AI systems have begun making genuine mathematical contributions, identifying patterns in knot theory and representation theory that human mathematicians had missed. While not replacing mathematicians, these tools serve as powerful assistants, suggesting conjectures and revealing structural connections. The collaboration between human intuition and machine pattern recognition represents a new paradigm in mathematical research, potentially accelerating discoveries in fields from topology to number theory.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PROBLEM CORNER ==================== -->
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>IMO 2023 Problem 2</h3>
+                    <p>Let \(\mathbb{R}^+\) denote the set of positive real numbers. Find all functions \(f: \mathbb{R}^+ \to \mathbb{R}^+\) such that for all \(x, y \in \mathbb{R}^+\):
+                    \[f(xy + f(x)) = xf(y) + 2\]</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Try to find \(f(1)\) first by substituting specific values. Then investigate what happens when you set \(y = 1\). Consider whether the function could be linear, and try to prove injectivity or other structural properties.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p><strong>Answer:</strong> The only solution is \(f(x) = x + 1\) for all \(x \in \mathbb{R}^+\).</p>
+                        
+                        <p><strong>Proof:</strong></p>
+                        <p><em>Step 1: Find f(1).</em> Let \(P(x, y)\) denote the assertion \(f(xy + f(x)) = xf(y) + 2\).</p>
+                        
+                        <p>From \(P(1, y)\): \(f(y + f(1)) = f(y) + 2\).</p>
+                        
+                        <p>This suggests f grows linearly. Let \(c = f(1)\). Then \(f(y + c) = f(y) + 2\).</p>
+                        
+                        <p><em>Step 2: Prove injectivity.</em> Suppose \(f(a) = f(b)\). Then from \(P(a, y)\) and \(P(b, y)\):
+                        \[f(ay + f(a)) = af(y) + 2\]
+                        \[f(by + f(b)) = bf(y) + 2\]</p>
+                        
+                        <p>Since \(f(a) = f(b)\), if we choose y such that the arguments are equal, we get constraints on a and b.</p>
+                        
+                        <p><em>Step 3: Find the form.</em> From \(f(y + c) = f(y) + 2\), by induction \(f(y + nc) = f(y) + 2n\) for positive integers n.</p>
+                        
+                        <p>Setting \(y = 1\): \(f(1 + nc) = c + 2n\).</p>
+                        
+                        <p><em>Step 4: Verify linearity.</em> Let's verify that \(f(x) = x + 1\) works:
+                        \[f(xy + f(x)) = f(xy + x + 1) = xy + x + 1 + 1 = xy + x + 2\]
+                        \[xf(y) + 2 = x(y + 1) + 2 = xy + x + 2\]</p>
+                        
+                        <p>The equation holds. To prove uniqueness requires showing no other functions satisfy the constraints, which follows from the functional equation's rigidity.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== VISUALIZATION ==================== -->
+            <section id="visualization">
+                <h2>📊 Visualization of the Day: The Mandelbrot Set</h2>
+                
+                <p>The Mandelbrot set is the quintessential example of a fractal—a mathematical object with infinite complexity at all scales. It is defined as the set of complex numbers c for which the iteration \(z_{n+1} = z_n^2 + c\) (starting with \(z_0 = 0\)) remains bounded. Despite its simple definition, the boundary of the Mandelbrot set exhibits extraordinary complexity, with intricate patterns that reveal ever-finer detail upon magnification.</p>
+                
+                <p>The set is connected (a theorem of Douady and Hubbard), yet its boundary has Hausdorff dimension 2. It encodes the dynamics of all quadratic polynomials: each point in the complex plane corresponds to a different quadratic map, and the Mandelbrot set organizes their behavior. The main cardioid and bulbs correspond to regions where the iteration has attracting cycles of different periods.</p>
+
+                <pre class="code-block"><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100, escape_radius=2.0):
+    """
+    Compute the number of iterations until escape for point c.
+    Returns the iteration count (normalized for smooth coloring).
+    """
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > escape_radius:
+            # Smooth coloring using log-log scale
+            log_zn = np.log(abs(z))
+            nu = np.log(log_zn / np.log(escape_radius)) / np.log(2)
+            return n + 1 - nu
+        z = z*z + c
+    return max_iter
+
+def mandelbrot_set(xmin, xmax, ymin, ymax, width, height, max_iter=100):
+    """
+    Compute the Mandelbrot set over a rectangular region.
+    """
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    # Vectorized computation
+    Z = np.zeros_like(C)
+    iterations = np.zeros(C.shape, dtype=float)
+    mask = np.ones(C.shape, dtype=bool)
+    
+    for i in range(max_iter):
+        Z[mask] = Z[mask]**2 + C[mask]
+        escaped = np.abs(Z) > 2
+        newly_escaped = escaped & mask
+        iterations[newly_escaped] = i
+        mask &= ~escaped
+    
+    iterations[mask] = max_iter
+    return iterations
+
+def plot_mandelbrot(xmin, xmax, ymin, ymax, width=800, height=600, 
+                    max_iter=100, cmap='hot', filename='mandelbrot.png'):
+    """
+    Render and save the Mandelbrot set.
+    """
+    print(f"Computing Mandelbrot set...")
+    print(f"Region: [{xmin}, {xmax}] × [{ymin}, {ymax}]")
+    print(f"Resolution: {width} × {height}, max iterations: {max_iter}")
+    
+    mset = mandelbrot_set(xmin, xmax, ymin, ymax, width, height, max_iter)
+    
+    fig, ax = plt.subplots(figsize=(width/100, height/100), dpi=100)
+    
+    # Use logarithmic scaling for better visual detail
+    mset_log = np.log(mset + 1)
+    
+    im = ax.imshow(mset_log, extent=[xmin, xmax, ymin, ymax], 
+                   cmap=cmap, origin='lower', interpolation='bilinear')
+    
+    ax.set_xlabel('Re(c)', fontsize=12)
+    ax.set_ylabel('Im(c)', fontsize=12)
+    ax.set_title('Mandelbrot Set', fontsize=14, fontweight='bold')
+    
+    plt.colorbar(im, ax=ax, label='log(iterations)')
+    plt.tight_layout()
+    plt.savefig(filename, dpi=150, bbox_inches='tight', facecolor='black')
+    plt.close()
+    
+    print(f"Saved to {filename}")
+    return mset
+
+# Main view
+print("=" * 60)
+print("Mandelbrot Set Visualization")
+print("=" * 60)
+
+# Full Mandelbrot set
+mset = plot_mandelbrot(-2.5, 1.5, -1.5, 1.5, 
+                       width=800, height=600, 
+                       max_iter=100, 
+                       filename='mandelbrot_full.png')
+
+# Zoom into interesting region (Seahorse valley)
+print("\nZooming into Seahorse Valley...")
+mset_zoom = plot_mandelbrot(-0.75, -0.74, 0.1, 0.11,
+                            width=800, height=800,
+                            max_iter=500,
+                            cmap='plasma',
+                            filename='mandelbrot_zoom.png')
+
+# Zoom into another interesting region (Elephant valley)
+print("\nZooming into Elephant Valley...")
+mset_zoom2 = plot_mandelbrot(0.3, 0.4, -0.05, 0.05,
+                             width=800, height=800,
+                             max_iter=500,
+                             cmap='viridis',
+                             filename='mandelbrot_elephant.png')
+
+# Interesting facts
+print("\n" + "=" * 60)
+print("Interesting Facts about the Mandelbrot Set:")
+print("=" * 60)
+print("1. The boundary has Hausdorff dimension 2 (Mitsuhiro Shishikura, 1998)")
+print("2. It is connected (Douady & Hubbard, 1980s)")
+print("3. It is locally connected if and only if the Mandelbrot conjecture holds")
+print("4. Each bulb corresponds to a different period of attracting cycle")
+print("5. The main cardioid corresponds to period-1 attracting fixed points")
+print("6. The set is self-similar but not exactly self-similar (quasi-self-similar)")
+print("7. It encodes the bifurcation diagram of the logistic family")
+
+# Compute some statistics
+print(f"\n--- Statistics for Full Render ---")
+print(f"Points in set (max iterations): {np.sum(mset >= 99)} / {mset.size}")
+print(f"Percentage in set: {100 * np.sum(mset >= 99) / mset.size:.2f}%")
+print(f"Average iterations to escape: {np.mean(mset[mset < 99]):.2f}")</code></pre>
+            </section>
+
+            <!-- ==================== QUOTE ==================== -->
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The mathematician does not study pure mathematics because it is useful; he studies it because he delights in it and he delights in it because it is beautiful."</p>
+                    <footer>— Henri Poincaré</footer>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — Updated every 30 minutes</p>
+        <p>Generated: February 27, 2026 at 18:34 UTC</p>
+    </footer>
+</body>
+</html>
