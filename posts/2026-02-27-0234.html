@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 27, 2026 at 02:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 27, 2026 at 02:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 27, 2026 at 02:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">symplectic-geometry</span>
+                <span class="tag">random-matrix-theory</span>
+                <span class="tag">algebraic-combinatorics</span>
+                <span class="tag">quantum-information</span>
+                <span class="tag">mathematical-biology</span>
+                <span class="tag">reinforcement-learning</span>
+                <span class="tag">spectral-sequences</span>
+                <span class="tag">model-theory</span>
+                <span class="tag">higher-category-theory</span>
+                <span class="tag">constructive-mathematics</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <!-- ==================== MATH LINKS ==================== -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://mathoverflow.net/">MathOverflow</a></h3>
+                    <p>A question-and-answer site for professional mathematicians. Unlike general math forums, MathOverflow targets research-level questions and attracts contributions from leading mathematicians worldwide. The site has become an essential resource for researchers seeking insights on complex problems, references for obscure topics, and connections between different areas of mathematics.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.numbertheory.org/">Number Theory Web</a></h3>
+                    <p>A comprehensive collection of resources for number theorists, maintained by Keith Matthews. The site provides links to preprints, lecture notes, software, and conferences in all branches of number theory.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://ncatlab.org/nlab/show/HomePage">nLab</a></h3>
+                    <p>A wiki-lab for collaborative work on mathematics, physics, and philosophy, with a focus on category theory and higher-dimensional algebra.</p>
+                </div>
+            </section>
+
+            <!-- ==================== FREE MATH BOOK ==================== -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Symplectic Geometry and Topology</h3>
+                    <p><strong>Author:</strong> Ana Cannas da Silva</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://people.math.ethz.ch/~acannas/Papers/lsg.pdf">ETH Zurich (Free PDF)</a></p>
+                    
+                    <p><strong>Summary:</strong> These lecture notes provide an accessible introduction to symplectic geometry, a field that originated in classical mechanics but has grown into a central area of modern mathematics with deep connections to algebraic geometry, topology, and mathematical physics.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PURE MATH DEEP DIVES ==================== -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <!-- Pure Math 1: Symplectic Geometry -->
+                <div class="deep-dive">
+                    <h3>Symplectic Geometry: The Geometry of Classical Mechanics</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Symplectic geometry emerged from the study of classical mechanics, where the phase space of a mechanical system naturally carries a symplectic structure. Unlike Riemannian geometry, which measures distances and angles, symplectic geometry captures the structure of Hamiltonian dynamics.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Symplectic Form:</strong> A closed, non-degenerate 2-form \( \omega \) on a smooth manifold \( M \).</p>
+
+                    <p><strong>Symplectic Manifold:</strong> A pair \( (M, \omega) \) where \( M \) is a smooth manifold and \( \omega \) is a symplectic form.</p>
+
+                    <h4>Theorem: Darboux's Theorem</h4>
+                    <p>Let \( (M, \omega) \) be a symplectic manifold of dimension \( 2n \). For any point \( p \in M \), there exists a coordinate chart where:
+                    \[\omega|_U = \sum_{i=1}^{n} dx_i \wedge dy_i\]</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+# Standard symplectic form on R^{2n}
+def symplectic_form(n):
+    J = np.zeros((2*n, 2*n))
+    J[:n, n:] = np.eye(n)
+    J[n:, :n] = -np.eye(n)
+    return J
+
+J = symplectic_form(2)
+print("Symplectic form J:")
+print(J)
+print("J^2 = -I:", np.allclose(J @ J, -np.eye(4)))</code></pre>
+                </div>
+
+                <!-- Pure Math 2: Random Matrix Theory -->
+                <div class="deep-dive">
+                    <h3>Random Matrix Theory: Universality in Statistics</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Random matrix theory studies the statistical properties of matrices with random entries. Originating in nuclear physics in the 1950s, it has found applications in number theory, quantum chaos, wireless communications, and machine learning.</p>
+
+                    <h4>Theorem: Wigner's Semicircle Law</h4>
+                    <p>Let \( W_n \) be an \( n \times n \) Wigner matrix. Then the empirical spectral distribution converges to the semicircle distribution:
+                    \[d\mu_{sc}(x) = \frac{1}{2\pi}\sqrt{4-x^2} \cdot \mathbf{1}_{|x| \leq 2} \, dx\]</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+def generate_wigner(n):
+    A = np.random.randn(n, n)
+    W = (A + A.T) / np.sqrt(2 * n)
+    return W
+
+def semicircle_pdf(x):
+    return np.where(np.abs(x) <= 2, 
+                   np.sqrt(4 - x**2) / (2 * np.pi), 0)
+
+# Generate and analyze
+W = generate_wigner(1000)
+eigenvals = np.linalg.eigvalsh(W)
+print(f"Min: {np.min(eigenvals):.3f}, Max: {np.max(eigenvals):.3f}")</code></pre>
+                </div>
+
+                <!-- Pure Math 3: Algebraic Combinatorics -->
+                <div class="deep-dive">
+                    <h3>Algebraic Combinatorics: The RSK Correspondence</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>The Robinson-Schensted-Knuth (RSK) correspondence is a fundamental bijection between matrices with non-negative integer entries and pairs of semistandard Young tableaux of the same shape.</p>
+
+                    <h4>Theorem: The RSK Correspondence</h4>
+                    <p>There is a bijection between \( m \times n \) matrices \( A = (a_{ij}) \) with non-negative integer entries and pairs \( (P, Q) \) of semistandard Young tableaux of the same shape.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class YoungTableau:
+    def __init__(self):
+        self.entries = []
+    
+    def row_insert(self, x):
+        current = x
+        row_idx = 0
+        while row_idx < len(self.entries):
+            row = self.entries[row_idx]
+            insert_pos = len(row)
+            for i, val in enumerate(row):
+                if val > current:
+                    insert_pos = i
+                    break
+            if insert_pos == len(row):
+                row.append(current)
+                return None, row_idx
+            else:
+                bumped = row[insert_pos]
+                row[insert_pos] = current
+                current = bumped
+                row_idx += 1
+        self.entries.append([current])
+        return None, row_idx
+
+# Example usage
+T = YoungTableau()
+for x in [3, 1, 4, 1, 5]:
+    T.row_insert(x)
+print("Tableau rows:", T.entries)</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== APPLIED MATH DEEP DIVES ==================== -->
+            <section id="applied-math">
+                <h2>🚀 Applied Math Deep-Dives</h2>
+
+                <!-- Applied Math 1: Quantum Information Theory -->
+                <div class="deep-dive">
+                    <h3>Quantum Information Theory: The Mathematics of Quantum Computing</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Quantum information theory studies how information can be encoded, processed, and transmitted using quantum mechanical systems. With the development of quantum computers by companies like IBM, Google, and startups worldwide, understanding quantum information has become crucial for cryptography, drug discovery, optimization, and materials science.</p>
+
+                    <h4>Theorem: Holevo's Theorem</h4>
+                    <p>For a quantum channel that outputs states \( \rho_x \) with probabilities \( p_x \), the classical information capacity is bounded by:
+                    \[\chi = S\left(\sum_x p_x \rho_x\right) - \sum_x p_x S(\rho_x)\]</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+def von_neumann_entropy(rho):
+    eigenvalues = np.linalg.eigvalsh(rho)
+    eigenvalues = eigenvalues[eigenvalues > 1e-12]
+    return -np.sum(eigenvalues * np.log2(eigenvalues))
+
+# Bell state (maximally entangled)
+bell = (np.kron([1,0], [1,0]) + np.kron([0,1], [0,1])) / np.sqrt(2)
+rho_bell = np.outer(bell, bell)
+print(f"Entanglement entropy: {von_neumann_entropy(rho_bell):.4f}")</code></pre>
+                </div>
+
+                <!-- Applied Math 2: Mathematical Biology -->
+                <div class="deep-dive">
+                    <h3>Mathematical Biology: Reaction-Diffusion Systems</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Reaction-diffusion systems model how concentrations of substances change under the influence of local chemical reactions and spatial diffusion. First studied by Turing in 1952 as a mechanism for morphogenesis (pattern formation in biological organisms), these systems explain phenomena ranging from animal coat patterns to the spread of infectious diseases.</p>
+
+                    <h4>Theorem: Turing's Instability Criterion</h4>
+                    <p>Consider a 2-species reaction-diffusion system with linearization around a homogeneous steady state. If the homogeneous state is stable but diffusion-driven instability condition holds, then there exist spatial perturbations that grow exponentially, leading to pattern formation.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+def gray_scott_reaction(u, v, F, k):
+    du = -u * v**2 + F * (1 - u)
+    dv = u * v**2 - (F + k) * v
+    return du, dv
+
+def laplacian_2d(u, dx):
+    return (np.roll(u, -1, axis=0) + np.roll(u, 1, axis=0) + 
+            np.roll(u, -1, axis=1) + np.roll(u, 1, axis=1) - 4*u) / dx**2
+
+# Parameters for pattern formation
+F, k = 0.035, 0.06  # Coral pattern
+print(f"Gray-Scott parameters: F={F}, k={k}")</code></pre>
+                </div>
+
+                <!-- Applied Math 3: Reinforcement Learning -->
+                <div class="deep-dive">
+                    <h3>Reinforcement Learning: The Mathematics of Optimal Control</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Reinforcement learning (RL) is a framework for sequential decision-making where an agent learns to maximize cumulative reward through interaction with an environment. From AlphaGo's victory over world champions to autonomous robotics and recommendation systems, RL has demonstrated remarkable success.</p>
+
+                    <h4>Theorem: Convergence of Q-Learning</h4>
+                    <p>Consider Q-learning with appropriate learning rates. If all state-action pairs are visited infinitely often, then \( Q_t \to Q^* \) almost surely.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+def value_iteration(P, R, gamma, theta=1e-6):
+    n_states = len(P)
+    n_actions = len(P[0])
+    V = np.zeros(n_states)
+    
+    while True:
+        V_new = np.zeros(n_states)
+        for s in range(n_states):
+            q_values = [R[s][a] + gamma * sum(p * V[s_next] 
+                        for s_next, p in enumerate(P[s][a])) 
+                       for a in range(n_actions)]
+            V_new[s] = max(q_values)
+        if np.max(np.abs(V_new - V)) < theta:
+            break
+        V = V_new
+    
+    # Extract optimal policy
+    policy = np.array([np.argmax([R[s][a] + gamma * sum(p * V[s_next] 
+                      for s_next, p in enumerate(P[s][a])) 
+                     for a in range(n_actions)]) for s in range(n_states)])
+    return V, policy
+
+print("Value iteration converges to optimal policy")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== SPECIAL TOPICS ==================== -->
+            <section id="special-topics">
+                <h2>🎯 Special Topics</h2>
+
+                <!-- Special Topic 1: Spectral Sequences -->
+                <div class="deep-dive">
+                    <h3>Spectral Sequences: A Computational Tool in Algebraic Topology</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Spectral sequences were invented by Jean Leray while he was a prisoner of war during World War II (1940-1945). Confined without access to mathematical literature, Leray developed this powerful computational tool to study the topology of manifolds.</p>
+
+                    <h4>Theorem: Leray-Serre Spectral Sequence</h4>
+                    <p>Let \( \pi: E \to B \) be a fibration with fiber \( F \) over a path-connected base \( B \). If \( B \) is simply connected, there exists a first quadrant cohomology spectral sequence with:
+                    \[E_2^{p,q} = H^p(B; H^q(F; G)) \Rightarrow H^{p+q}(E; G)\]</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+def compute_leray_serre_e2(H_base, H_fiber):
+    """Compute E_2 page of Leray-Serre spectral sequence."""
+    E2 = {}
+    for p, hb in enumerate(H_base):
+        for q, hf in enumerate(H_fiber):
+            E2[(p, q)] = hb * hf
+    return E2
+
+# Example: S^2 x S^3
+H_S2 = [1, 0, 1]  # H^0, H^1, H^2
+H_S3 = [1, 0, 0, 1]  # H^0, H^1, H^2, H^3
+E2 = compute_leray_serre_e2(H_S2, H_S3)
+print("E_2 page for S^2 x S^3:")
+for (p, q), dim in sorted(E2.items()):
+    if dim > 0:
+        print(f"  E_2^{p},{q} = {dim}")</code></pre>
+                </div>
+
+                <!-- Special Topic 2: Model Theory -->
+                <div class="deep-dive">
+                    <h3>Model Theory: The Mathematics of Mathematical Structures</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Model theory emerged in the mid-20th century from the work of Alfred Tarski and Abraham Robinson. Tarski developed the semantic approach to logic, defining truth in mathematical structures, while Robinson created non-standard analysis, providing rigorous foundations for infinitesimals.</p>
+
+                    <h4>Theorem: Compactness Theorem</h4>
+                    <p>A set of first-order sentences \( \Sigma \) has a model if and only if every finite subset of \( \Sigma \) has a model.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code># Model theory concepts demonstration
+
+class Structure:
+    """A simple mathematical structure."""
+    def __init__(self, domain, relations=None, functions=None):
+        self.domain = domain
+        self.relations = relations or {}
+        self.functions = functions or {}
+
+# Dense Linear Order without endpoints
+DLO = Structure(
+    domain=set(range(10)),
+    relations={'<': {(a, b) for a in range(10) for b in range(10) if a < b}}
+)
+
+print("DLO axioms:")
+print("1. Transitivity: ∀x∀y∀z(x<y ∧ y<z → x<z)")
+print("2. Totality: ∀x∀y(x<y ∨ x=y ∨ y<x)")
+print("3. No endpoints: ∀x∃y(x<y) ∧ ∀x∃y(y<x)")
+print("4. Density: ∀x∀y(x<y → ∃z(x<z ∧ z<y))")</code></pre>
+                </div>
+
+                <!-- Special Topic 3: Higher Category Theory -->
+                <div class="deep-dive">
+                    <h3>Higher Category Theory: Beyond Composition</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Higher category theory extends category theory by allowing morphisms between morphisms (2-morphisms), morphisms between 2-morphisms (3-morphisms), and so on. The foundations were laid by Grothendieck in his famous "Pursuing Stacks" manuscript (1983).</p>
+
+                    <h4>Theorem: The Cobordism Hypothesis</h4>
+                    <p>For a symmetric monoidal (∞,n)-category \( \mathcal{C} \) with duals, the (∞,n)-category of framed cobordisms classifies fully extended topological field theories.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class Morphism:
+    def __init__(self, source, target, name, degree=1):
+        self.source = source
+        self.target = target
+        self.name = name
+        self.degree = degree
+
+class Bicategory:
+    """Simplified bicategory."""
+    def __init__(self):
+        self.objects = set()
+        self.morphisms = {}
+        
+    def add_object(self, obj):
+        self.objects.add(obj)
+        
+    def add_morphism(self, f):
+        key = (f.source, f.target)
+        if key not in self.morphisms:
+            self.morphisms[key] = []
+        self.morphisms[key].append(f)
+
+# Example
+bicat = Bicategory()
+for obj in ['A', 'B', 'C']:
+    bicat.add_object(obj)
+
+f = Morphism('A', 'B', 'f')
+g = Morphism('B', 'C', 'g')
+bicat.add_morphism(f)
+bicat.add_morphism(g)
+
+print("Bicategory with objects A, B, C")
+print("1-morphisms: f: A→B, g: B→C")
+print("Note: In a bicategory, composition is associative only up to 2-isomorphism")</code></pre>
+                </div>
+
+                <!-- Special Topic 4: Constructive Mathematics -->
+                <div class="deep-dive">
+                    <h3>Constructive Mathematics: Mathematics with Algorithms</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Constructive mathematics requires that proofs of existence provide explicit constructions of the objects claimed to exist. This approach traces back to Kronecker's dictum "God made the integers; all else is the work of man" and was developed systematically by Brouwer's intuitionism in the early 20th century.</p>
+
+                    <h4>Theorem: Bishop's Constructive Intermediate Value Theorem</h4>
+                    <p>Let \( f: [0,1] \to \mathbb{R} \) be uniformly continuous with \( f(0) < 0 \) and \( f(1) > 0 \). For any \( \varepsilon > 0 \), there exists \( x \in [0,1] \) such that \( |f(x)| < \varepsilon \).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+def bisection_method(f, a, b, epsilon):
+    """Constructive intermediate value theorem approximation.
+    Finds x such that |f(x)| < epsilon.
+    """
+    if f(a) * f(b) > 0:
+        return None
+    
+    while abs(b - a) > epsilon:
+        mid = (a + b) / 2
+        f_mid = f(mid)
+        
+        if abs(f_mid) < epsilon:
+            return mid
+        
+        if f(a) * f_mid < 0:
+            b = mid
+        else:
+            a = mid
+    
+    return (a + b) / 2
+
+# Example: Find approximate root of f(x) = x^3 - 2
+def f(x):
+    return x**3 - 2
+
+result = bisection_method(f, 1.0, 2.0, epsilon=0.001)
+print(f"Approximate cube root of 2: {result:.6f}")
+print(f"f({result:.6f}) = {f(result):.6f}")
+print(f"Actual 2^(1/3) = {2**(1/3):.6f}")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== MATH HISTORY ==================== -->
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                
+                <h3>The Development of Abstract Algebra: From Equations to Structures</h3>
+                
+                <p>The emergence of abstract algebra in the 19th century represents one of the most profound shifts in mathematical thinking. Before this transformation, algebra was primarily concerned with solving equations—finding unknown numbers that satisfied specific conditions. By the end of the century, it had become the study of algebraic structures: groups, rings, fields, and vector spaces.</p>
+                
+                <p>The story begins with the work of Évariste Galois in the 1830s. Galois, a young French mathematician who would die in a duel at age 20, discovered profound connections between the solvability of polynomial equations and the structure of permutation groups. His famous result—that the general quintic equation cannot be solved by radicals—was not merely a negative theorem but a demonstration that the structure of the equation's symmetry group determined its solvability.</p>
+                
+                <p>The concept of a group, implicit in Galois's work, was extracted and formalized over the following decades. Cauchy had studied permutations systematically, but the abstract definition of a group emerged gradually through the work of Cayley, Kronecker, and especially von Dyck in the 1880s.</p>
+                
+                <p>Emmy Noether stands as the pivotal figure in this transformation. Her 1921 paper "Idealtheorie in Ringbereichen" established the foundation of modern commutative algebra by showing how important results followed from chain conditions rather than specific properties of polynomial rings. Van der Waerden's "Moderne Algebra" (1930), based on Noether's lectures and those of Artin, became the definitive text that established the structural approach as standard.</p>
+            </section>
+
+            <!-- ==================== MATH JOURNALISM ==================== -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/">Quanta Magazine: "Mathematicians Prove Hilbert's 12th Problem for a Large Class of Equations"</a></h3>
+                    <p>Researchers have made significant progress on Hilbert's 12th problem, one of the remaining open questions from Hilbert's famous list of 23 problems presented in 1900. The problem asks for explicit construction of abelian extensions of number fields, analogous to the Kronecker-Weber theorem for the rational numbers.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/">Nature: "AI Makes Breakthrough in Solving International Mathematical Olympiad Problems"</a></h3>
+                    <p>DeepMind's AlphaGeometry2 and a new system called "Neuro-Symbolic Reasoner" have demonstrated unprecedented performance on International Mathematical Olympiad (IMO) geometry problems, solving 83% of problems from past competitions. This represents a significant leap from previous AI systems.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.ams.org/journals/notices/">Notices of the AMS: "The State of Mathematical Publishing in 2025"</a></h3>
+                    <p>The American Mathematical Society's annual review examines the rapidly evolving landscape of mathematical publishing. Key developments include the continued growth of diamond open access journals (free to read and publish), the integration of AI-assisted peer review tools, and new initiatives to address the reproducibility crisis in computational mathematics.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PROBLEM CORNER ==================== -->
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Problem: IMO Shortlist 2024 Algebra Problem</h3>
+                    <p>Let \( n \) be a positive integer. Find all functions \( f: \mathbb{R} \to \mathbb{R} \) such that for all real numbers \( x \) and \( y \):
+                    \[f(x^n + y^n) = f(x)^n + f(y)^n\]</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Consider the cases \( n = 1 \) and \( n \geq 2 \) separately. For \( n \geq 2 \), try substituting specific values like \( x = y = 0 \) and analyze the behavior of \( f \) at zero.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p><strong>Case 1: \( n = 1 \)</strong></p>
+                        <p>The equation becomes \( f(x + y) = f(x) + f(y) \), which is Cauchy's functional equation. Assuming regularity conditions (continuity, boundedness on an interval, or measurability), the solutions are \( f(x) = cx \) for some constant \( c \).</p>
+                        
+                        <p><strong>Case 2: \( n \geq 2 \)</strong></p>
+                        <p>Setting \( x = y = 0 \): \( f(0) = 2f(0)^n \). This gives either \( f(0) = 0 \) or \( f(0) = (1/2)^{1/(n-1)} \).</p>
+                        
+                        <p>If \( f(0) = 0 \): Setting \( y = 0 \) gives \( f(x^n) = f(x)^n \). This implies \( f \) preserves nth powers.</p>
+                        
+                        <p>For odd \( n \): The solutions are \( f(x) = x \), \( f(x) = 0 \), and \( f(x) = -x \) (when \( n \) is odd).</p>
+                        
+                        <p>For even \( n \): Since \( x^n \geq 0 \), we need \( f(x)^n + f(y)^n \) to depend only on \( x^n + y^n \). The solutions are \( f(x) = x \) and \( f(x) = 0 \).</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== VISUALIZATION ==================== -->
+            <section id="visualization">
+                <h2>📊 Visualization of the Day</h2>
+                
+                <h3>The Mandelbrot Set</h3>
+                <p>The Mandelbrot set is the set of complex numbers \( c \) for which the function \( f_c(z) = z^2 + c \) does not diverge when iterated from \( z = 0 \). It is one of the most famous examples of a fractal, exhibiting infinite complexity at all scales.</p>
+                
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    """Compute the number of iterations until divergence."""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+# Create grid
+width, height = 800, 600
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -1.5, 1.5
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Compute Mandelbrot set
+mandelbrot_set = np.vectorize(mandelbrot)(C)
+
+# Plot
+plt.figure(figsize=(12, 8))
+plt.imshow(mandelbrot_set, extent=[xmin, xmax, ymin, ymax], 
+           cmap='hot', origin='lower')
+plt.colorbar(label='Iterations')
+plt.title('Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.show()</code></pre>
+                
+                <p>The Mandelbrot set exhibits remarkable properties:</p>
+                <ul>
+                    <li>It is connected (proved by Douady and Hubbard in the 1980s)</li>
+                    <li>Its boundary has Hausdorff dimension 2</li>
+                    <li>It contains infinitely many copies of itself at different scales</li>
+                    <li>The main cardioid and bulbs correspond to periodic orbits of different periods</li>
+                </ul>
+            </section>
+
+            <!-- ==================== QUOTE ==================== -->
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"Mathematics is the art of giving the same name to different things."</p>
+                    <cite>— Henri Poincaré</cite>
+                </blockquote>
+                
+                <p>This quote captures the essence of mathematical abstraction—finding common structures across seemingly different domains. Whether we call it a group, a vector space, or a manifold, the power of mathematics lies in recognizing these unifying patterns.</p>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — Curated mathematical insights</p>
+        <p>Generated: February 27, 2026 at 02:34 UTC</p>
+    </footer>
+</body>
+</html>
