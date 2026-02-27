@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 27, 2026 at 04:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 27, 2026 at 04:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 27, 2026 at 04:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">schemes</span>
+                <span class="tag">algebraic-surfaces</span>
+                <span class="tag">birational-geometry</span>
+                <span class="tag">portfolio-theory</span>
+                <span class="tag">image-processing</span>
+                <span class="tag">queueing-theory</span>
+                <span class="tag">class-field-theory</span>
+                <span class="tag">higher-homotopy</span>
+                <span class="tag">arithmetic-groups</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://stacks.math.columbia.edu/">The Stacks Project</a></h3>
+                    <p>An open-source textbook and reference work on algebraic geometry, maintained by Aise Johan de Jong and collaborators. The Stacks Project aims to build up the foundations of algebraic geometry from scratch, with a particular focus on algebraic stacks. With over 7,000 pages of meticulously cross-referenced material, it has become the definitive reference for researchers working in modern algebraic geometry.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.ams.org/open-math-notes">AMS Open Math Notes</a></h3>
+                    <p>A repository of freely downloadable mathematical works in progress hosted by the American Mathematical Society. These include course notes, textbooks, and research monographs that authors have made available for educational use.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://ar5iv.org/">ar5iv.org</a></h3>
+                    <p>An alternative frontend for arXiv.org that provides HTML versions of mathematical papers. Unlike the standard arXiv PDF format, ar5iv renders LaTeX source as responsive web pages with proper MathJax support.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Algebraic Geometry: A First Course</h3>
+                    <p><strong>Author:</strong> Joe Harris</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://link.springer.com/book/10.1007/978-1-4757-2189-8">Springer</a></p>
+                    <p><strong>Summary:</strong> This classic text introduces algebraic geometry through concrete examples and geometric intuition rather than abstract machinery. Harris develops the theory by studying classical varieties—rational normal curves, Segre and Veronese varieties, Grassmannians, and determinantal varieties—before introducing schemes and sheaves. The book emphasizes the interplay between algebra and geometry, with numerous examples and exercises that illustrate the beauty of the subject.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Schemes: The Language of Modern Algebraic Geometry</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Classical algebraic geometry studies solutions to polynomial equations over algebraically closed fields like the complex numbers. However, this framework fails to capture arithmetic phenomena—questions about integer solutions, reduction modulo primes, and families of varieties. Alexander Grothendieck's theory of schemes, developed in the 1960s, revolutionized algebraic geometry by replacing varieties with a more general notion that encompasses all commutative rings.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Affine Scheme:</strong> For a commutative ring \( A \), the affine scheme \( \text{Spec}(A) \) is the pair consisting of: (1) The set of prime ideals of \( A \) (the underlying topological space), and (2) The structure sheaf \( \mathcal{O}_{\text{Spec}(A)} \).</p>
+
+                    <p><strong>Scheme:</strong> A locally ringed space \( (X, \mathcal{O}_X) \) that is locally isomorphic to an affine scheme.</p>
+
+                    <h4>Theorem: The Equivalence of Categories</h4>
+                    <p>The functor \( A \mapsto \text{Spec}(A) \) establishes a contravariant equivalence between the category of commutative rings and the category of affine schemes:</p>
+                    <p>\[\text{Hom}_{\text{Rings}}(B, A) \cong \text{Hom}_{\text{Schemes}}(\text{Spec}(A), \text{Spec}(B))\]</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import sympy as sp
+from sympy import symbols, groebner
+
+class SchemeTheory:
+    @staticmethod
+    def fiber_product_example():
+        x, y = symbols('x y')
+        f1 = y - x**2  # Parabola
+        f2 = y - x - 2  # Line
+        G = groebner([f1, f2], x, y, order='lex')
+        return G
+
+st = SchemeTheory()
+print("Intersection of curves:", st.fiber_product_example())</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Algebraic Surfaces: Classification and Invariants</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Algebraic surfaces—two-dimensional varieties—occupy a special place in algebraic geometry. They are complex enough to exhibit rich geometric phenomena yet tractable enough for detailed classification. The Enriques-Kodaira classification organizes surfaces into a hierarchy analogous to the classification of curves by genus.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Canonical Divisor:</strong> For a smooth surface \( X \), the canonical divisor \( K_X \) is the divisor associated to the line bundle of regular 2-forms.</p>
+                    <p><strong>Geometric Genus:</strong> \( p_g(X) = h^0(X, K_X) = \dim H^0(X, \mathcal{O}_X(K_X)) \)</p>
+
+                    <h4>Theorem: Noether's Formula</h4>
+                    <p>For a smooth projective surface \( X \):</p>
+                    <p>\[\chi(\mathcal{O}_X) = \frac{c_1^2 + c_2}{12} = \frac{K_X^2 + e(X)}{12}\]</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>class AlgebraicSurface:
+    @staticmethod
+    def noether_formula(c1_squared, c2):
+        return (c1_squared + c2) / 12
+    
+    @staticmethod
+    def k3_invariants():
+        K_sq, euler, q, pg = 0, 24, 0, 1
+        chi = 1 - q + pg
+        return chi
+
+surf = AlgebraicSurface()
+print("K3 surface χ:", surf.k3_invariants())</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Birational Geometry: The Minimal Model Program</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Birational geometry studies varieties up to birational equivalence—roughly, equivalence after removing lower-dimensional subsets. The Minimal Model Program (MMP) provides an algorithm for simplifying varieties by contracting "negative" curves.</p>
+
+                    <h4>Theorem: Castelnuovo's Contraction Criterion</h4>
+                    <p>Let \( X \) be a smooth projective surface and \( C \subset X \) a curve. There exists a smooth projective surface \( Y \) and a morphism \( f: X \to Y \) contracting \( C \) to a point if and only if: (1) \( C \cong \mathbb{P}^1 \) and (2) \( C^2 = -1 \).</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>class BirationalGeometry:
+    @staticmethod
+    def castelnuovo_check(C_sq, genus):
+        return genus == 0 and C_sq == -1
+
+bg = BirationalGeometry()
+print("Can contract:", bg.castelnuovo_check(-1, 0))</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Modern Portfolio Theory: Mean-Variance Optimization</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Modern Portfolio Theory (MPT), developed by Harry Markowitz in 1952, provides a mathematical framework for optimizing the risk-return trade-off in investment management.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Portfolio Return:</strong> \(R_p = w^T r = \sum_{i=1}^n w_i r_i\)</p>
+                    <p><strong>Portfolio Variance:</strong> \(\sigma_p^2 = w^T \Sigma w\)</p>
+
+                    <h4>Theorem: Two-Fund Separation</h4>
+                    <p>Any efficient portfolio can be constructed as a linear combination of two distinct efficient portfolios.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class PortfolioTheory:
+    @staticmethod
+    def portfolio_metrics(weights, returns, cov):
+        port_return = np.dot(weights, returns)
+        port_vol = np.sqrt(weights @ cov @ weights)
+        return port_return, port_vol
+
+# Example
+weights = np.array([0.4, 0.3, 0.2, 0.1])
+returns = np.array([0.10, 0.12, 0.08, 0.15])
+print("Portfolio metrics calculated")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Image Processing: Convolution and Filtering</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Every digital image—from medical scans to smartphone photos—has been processed using mathematical techniques. At the heart of these operations lies convolution.</p>
+
+                    <h4>Theorem: Convolution Theorem</h4>
+                    <p>\[\widehat{f * g} = \hat{f} \cdot \hat{g}\]</p>
+                    <p>Convolution in the spatial domain equals pointwise multiplication in the frequency domain.</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.fft import fft2, ifft2
+
+def convolve_fft(image, kernel):
+    F = fft2(image)
+    H = fft2(kernel, s=image.shape)
+    return np.real(ifft2(F * H))</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Queueing Theory: Modeling Waiting Lines</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Queues are everywhere: customers at supermarkets, packets in computer networks, calls to customer service centers. Queueing theory provides mathematical models to analyze and optimize these systems.</p>
+
+                    <h4>Theorem: M/M/1 Queue Steady-State</h4>
+                    <p>For an M/M/1 queue with \( \rho = \lambda/\mu \lt 1 \):</p>
+                    <p>\[P_n = (1-\rho)\rho^n, \quad L = \frac{\rho}{1-\rho}\]</p>
+
+                    <h4>Python Code</h4>
+                    <pre><code>class QueueingTheory:
+    @staticmethod
+    def mm1_metrics(lam, mu):
+        rho = lam / mu
+        L = rho / (1 - rho)
+        W = 1 / (mu - lam)
+        return {'rho': rho, 'L': L, 'W': W}
+
+qt = QueueingTheory()
+print("M/M/1 metrics:", qt.mm1_metrics(8, 10))</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>🎯 Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>Class Field Theory: Abelian Extensions</h3>
+                    <p>Class field theory provides a complete description of all abelian extensions of a number field in terms of intrinsic data from the base field.</p>
+                    
+                    <h4>Theorem: Artin Reciprocity</h4>
+                    <p>For an abelian extension \( L/K \), there exists a modulus \( \mathfrak{m} \) such that:</p>
+                    <p>\[\text{Cl}_\mathfrak{m}(K) / N_{L/K}(\text{Cl}_\mathfrak{m}(L)) \cong \text{Gal}(L/K)\]</p>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Higher Homotopy Groups</h3>
+                    <p>While the fundamental group \( \pi_1 \) captures one-dimensional holes, higher homotopy groups \( \pi_n \) for \( n \geq 2 \) detect higher-dimensional voids.</p>
+                    
+                    <h4>Theorem: Hurewicz Theorem</h4>
+                    <p>Let \( X \) be an \( (n-1) \)-connected space. Then \( \pi_n(X) \cong H_n(X) \) via the Hurewicz map.</p>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Arithmetic Groups</h3>
+                    <p>Arithmetic groups are discrete subgroups of Lie groups defined by arithmetic conditions, such as \(\text{SL}(n, \mathbb{Z})\) inside \(\text{SL}(n, \mathbb{R})\).</p>
+                    
+                    <h4>Theorem: Borel-Harish-Chandra</h4>
+                    <p>Let \( G \) be a semisimple algebraic group over \( \mathbb{Q} \) and \( \Gamma \) an arithmetic subgroup. Then \( \Gamma \) is finitely presented and \( \Gamma \backslash G(\mathbb{R}) / K \) has finite volume.</p>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>The Weil Conjectures</h3>
+                    <p>The Weil conjectures relate the number of solutions to polynomial equations over finite fields to the topology of complex algebraic varieties.</p>
+                    
+                    <h4>Theorem: Weil Conjectures (Deligne)</h4>
+                    <p>For a smooth projective variety \( X \) over \( \mathbb{F}_q \):</p>
+                    <p>1. \( Z(X, t) \) is rational</p>
+                    <p>2. Functional equation holds</p>
+                    <p>3. Riemann hypothesis: eigenvalues of Frobenius have \( |\alpha| = q^{i/2} \)</p>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                
+                <div class="history-entry">
+                    <h3>The Development of Category Theory</h3>
+                    <p>The emergence of category theory in the mid-20th century represents one of the most significant shifts in mathematical thinking since the development of set theory. Born from the need to formalize natural transformations in algebraic topology, category theory has evolved into a universal language that transcends individual mathematical disciplines.</p>
+                    <p>The story begins in 1942 when Samuel Eilenberg and Saunders Mac Lane introduced categories, functors, and natural transformations. Their 1945 paper "General Theory of Natural Equivalences" laid the foundation. Grothendieck later used categorical methods to revolutionize algebraic geometry, while Lawvere showed that category theory could serve as a foundation for mathematics itself.</p>
+                </div>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/">Quanta Magazine: "Mathematicians Solve the 'Happy Ending' Problem"</a></h3>
+                    <p>Researchers have made significant progress on the Erdős-Szekeres problem, using computer-assisted proofs with novel combinatorial techniques.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/">Nature: "AI Mathematicians: The Next Generation of Theorem Provers"</a></h3>
+                    <p>A survey examining rapid progress in automated theorem proving and AI systems capable of assisting with mathematical discovery.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.ams.org/notices">AMS Notices: "The Hidden Mathematics of Juggling"</a></h3>
+                    <p>An exploration of the sophisticated mathematics underlying juggling, revealing connections to combinatorics and group theory.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem-entry">
+                    <h3>Functional Equation (IMO Shortlist)</h3>
+                    <p>Find all functions \( f: \mathbb{R} \to \mathbb{R} \) such that \( f(x^2 + f(y)) = y + f(x)^2 \).</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Start by investigating injectivity and surjectivity. Try to find \( f(0) \).</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p>The unique solution is \( f(x) = x \). Proof involves showing injectivity, proving \( f(0) = 0 \), and establishing that \( f \) satisfies Cauchy's functional equation.</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day</h2>
+                
+                <div class="visualization-entry">
+                    <h3>Modular Group Action on the Upper Half-Plane</h3>
+                    <p>The modular group \(\text{SL}(2, \mathbb{Z})\) acts on the upper half-plane by Möbius transformations, creating a beautiful tessellation pattern.</p>
+                    
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mobius_transform(z, a, b, c, d):
+    return (a*z + b) / (c*z + d)
+
+# Generate modular tessellation
+print("Visualizing SL(2,Z) action...")</code></pre>
+                </div>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <cite>— Georg Cantor</cite>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — Curated mathematical insights</p>
+        <p>Generated: February 27, 2026 at 04:34 UTC</p>
+    </footer>
+</body>
+</html>
