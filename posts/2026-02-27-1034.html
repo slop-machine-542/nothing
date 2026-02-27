@@ -1,0 +1,2295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 27, 2026 at 10:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 27, 2026 at 10:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 27, 2026 at 10:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">spectral-graph-theory</span>
+                <span class="tag">algebraic-combinatorics</span>
+                <span class="tag">symplectic-geometry</span>
+                <span class="tag">random-matrix-theory</span>
+                <span class="tag">reinforcement-learning</span>
+                <span class="tag">quantum-information</span>
+                <span class="tag">arithmetic-dynamics</span>
+                <span class="tag">model-theory</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://www.ams.org/publicoutreach/feature-column/fcarc-index">AMS Feature Columns</a></h3>
+                    <p>The American Mathematical Society's Feature Columns provide accessible expositions of current mathematical research. Written by leading mathematicians, these articles bridge the gap between research papers and general interest, covering topics from pure mathematics to applications in science and technology.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://terrytao.wordpress.com/">What's New — Terry Tao's Blog</a></h3>
+                    <p>Fields Medalist Terence Tao shares insights on mathematical research, exposition, and education. His blog covers cutting-edge developments in analysis, number theory, and combinatorics, often explaining complex ideas with remarkable clarity. The comment sections feature discussions with other leading mathematicians.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.cut-the-knot.org/">Cut-the-Knot</a></h3>
+                    <p>An extensive collection of interactive mathematics essays, puzzles, and applets maintained by Alexander Bogomolny until his passing. The site covers geometry, algebra, probability, and more, with a focus on visual understanding and interactive exploration. It remains a valuable resource for students and educators.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Introduction to Graph Theory</h3>
+                    <p><strong>Author:</strong> Douglas B. West</p>
+                    <p><strong>Level:</strong> Undergraduate / Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://www.math.uiuc.edu/~west/igt/">University of Illinois</a></p>
+                    <p><strong>Summary:</strong> This comprehensive text covers the fundamentals of graph theory with exceptional depth and clarity. West develops the subject from basic definitions through advanced topics including Ramsey theory, extremal graph theory, and graph algorithms. The book features over 800 exercises ranging from routine to challenging, with solutions to selected problems. The writing emphasizes both proof techniques and the structural intuition that guides mathematical discovery in combinatorics.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Spectral Graph Theory: Eigenvalues and Graph Structure</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Spectral graph theory connects linear algebra with combinatorics by studying graphs through their associated matrices. The eigenvalues of these matrices reveal deep structural properties: connectivity, expansion, random walk behavior, and even geometric embeddings. This field has profound applications in network analysis, clustering algorithms, and the design of error-correcting codes.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Adjacency Matrix:</strong> For a graph \( G = (V, E) \) with \( n \) vertices, the adjacency matrix \( A \) is the \( n \times n \) matrix where \( A_{ij} = 1 \) if \( (i,j) \in E \) and \( 0 \) otherwise.</p>
+
+                    <p><strong>Laplacian Matrix:</strong> \( L = D - A \) where \( D \) is the diagonal degree matrix with \( D_{ii} = \deg(v_i) \).</p>
+
+                    <p><strong>Normalized Laplacian:</strong> \( \mathcal{L} = D^{-1/2} L D^{-1/2} = I - D^{-1/2} A D^{-1/2} \).</p>
+
+                    <p><strong>Graph Spectrum:</strong> The multiset of eigenvalues \( \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n \) of the Laplacian matrix.</p>
+
+                    <h4>Theorem: Cheeger's Inequality</h4>
+                    <p>For any connected graph \( G \) with normalized Laplacian eigenvalues \( 0 = \lambda_1 < \lambda_2 \leq \cdots \leq \lambda_n \), the Cheeger constant (edge expansion) \( h(G) \) satisfies:
+                    \[ \frac{\lambda_2}{2} \leq h(G) \leq \sqrt{2\lambda_2} \]</p>
+                    <p>where the Cheeger constant is defined as:
+                    \[ h(G) = \min_{S \subseteq V, |S| \leq n/2} \frac{|\partial S|}{|S|} \]
+                    with \( \partial S \) denoting the edge boundary of \( S \).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( A \) — adjacency matrix</li>
+                        <li>\( L \) — (combinatorial) Laplacian matrix</li>
+                        <li>\( \mathcal{L} \) — normalized Laplacian</li>
+                        <li>\( \lambda_i \) — i-th smallest eigenvalue</li>
+                        <li>\( h(G) \) — Cheeger constant (isoperimetric number)</li>
+                        <li>\( \partial S \) — edge boundary of set \( S \)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import networkx as nx
+from scipy.sparse import csgraph
+from scipy.sparse.linalg import eigsh
+
+class SpectralGraphAnalyzer:
+    """
+    Spectral analysis of graphs using various matrix representations.
+    """
+    def __init__(self, graph):
+        """
+        Initialize with a NetworkX graph.
+        """
+        self.G = graph
+        self.n = graph.number_of_nodes()
+        self.node_list = list(graph.nodes())
+        self.node_index = {node: i for i, node in enumerate(self.node_list)}
+    
+    def adjacency_matrix(self):
+        """Return the adjacency matrix as a dense numpy array."""
+        return nx.to_numpy_array(self.G, nodelist=self.node_list)
+    
+    def laplacian_matrix(self):
+        """Return the combinatorial Laplacian matrix."""
+        return nx.laplacian_matrix(self.G, nodelist=self.node_list).toarray()
+    
+    def normalized_laplacian(self):
+        """Return the normalized Laplacian matrix."""
+        return nx.normalized_laplacian_matrix(self.G, nodelist=self.node_list).toarray()
+    
+    def spectrum(self, matrix_type='laplacian', k=None):
+        """
+        Compute eigenvalues of the specified matrix.
+        
+        Parameters:
+        -----------
+        matrix_type : str
+            'adjacency', 'laplacian', or 'normalized'
+        k : int
+            Number of eigenvalues to compute (None for all)
+        """
+        if matrix_type == 'adjacency':
+            M = self.adjacency_matrix()
+        elif matrix_type == 'laplacian':
+            M = self.laplacian_matrix()
+        elif matrix_type == 'normalized':
+            M = self.normalized_laplacian()
+        else:
+            raise ValueError(f"Unknown matrix type: {matrix_type}")
+        
+        if k is None or k >= self.n:
+            eigenvalues = np.linalg.eigvalsh(M)
+        else:
+            # Use sparse eigensolver for large graphs
+            if matrix_type == 'laplacian':
+                L_sparse = nx.laplacian_matrix(self.G, nodelist=self.node_list)
+            elif matrix_type == 'normalized':
+                L_sparse = nx.normalized_laplacian_matrix(self.G, nodelist=self.node_list)
+            else:
+                L_sparse = nx.to_scipy_sparse_array(self.G, nodelist=self.node_list)
+            eigenvalues = eigsh(L_sparse, k=k, which='SM', return_eigenvectors=False)
+        
+        return np.sort(eigenvalues)
+    
+    def fiedler_vector(self):
+        """
+        Compute the Fiedler vector (eigenvector for \lambda_2).
+        Used for graph partitioning.
+        """
+        L = nx.laplacian_matrix(self.G, nodelist=self.node_list).astype(float)
+        eigenvalues, eigenvectors = eigsh(L, k=2, which='SM')
+        return eigenvectors[:, 1]  # Second smallest eigenvector
+    
+    def spectral_partition(self):
+        """
+        Partition graph using Fiedler vector (spectral clustering).
+        """
+        fiedler = self.fiedler_vector()
+        partition_0 = [self.node_list[i] for i in range(self.n) if fiedler[i] < 0]
+        partition_1 = [self.node_list[i] for i in range(self.n) if fiedler[i] >= 0]
+        return partition_0, partition_1
+    
+    def cheeger_constant(self):
+        """
+        Approximate the Cheeger constant (edge expansion).
+        """
+        n = self.n
+        min_expansion = float('inf')
+        
+        # For small graphs, try all subsets
+        if n <= 20:
+            from itertools import combinations
+            for size in range(1, n // 2 + 1):
+                for subset_nodes in combinations(range(n), size):
+                    S = set(subset_nodes)
+                    boundary = 0
+                    for i in S:
+                        for j in range(n):
+                            if j not in S and self.G.has_edge(self.node_list[i], self.node_list[j]):
+                                boundary += 1
+                    expansion = boundary / len(S)
+                    min_expansion = min(min_expansion, expansion)
+        else:
+            # Use spectral approximation for larger graphs
+            lambda_2 = self.spectrum('normalized', k=2)[1]
+            min_expansion = lambda_2 / 2  # Lower bound from Cheeger
+        
+        return min_expansion
+    
+    def effective_resistance(self, u, v):
+        """
+        Compute effective resistance between nodes u and v.
+        """
+        L = self.laplacian_matrix()
+        # Use pseudoinverse for connected graphs
+        L_pinv = np.linalg.pinv(L)
+        i, j = self.node_index[u], self.node_index[v]
+        return L_pinv[i, i] + L_pinv[j, j] - 2 * L_pinv[i, j]
+
+# Example: Spectral analysis of a cycle graph
+print("=== Spectral Analysis of Cycle Graph C_8 ===")
+C8 = nx.cycle_graph(8)
+analyzer = SpectralGraphAnalyzer(C8)
+
+print("\nAdjacency Matrix:")
+print(analyzer.adjacency_matrix())
+
+print("\nLaplacian Spectrum:")
+eigenvalues = analyzer.spectrum('laplacian')
+print(eigenvalues)
+
+print("\nNormalized Laplacian Spectrum:")
+norm_eigenvalues = analyzer.spectrum('normalized')
+print(norm_eigenvalues)
+
+print(f"\nAlgebraic connectivity (\lambda_2): {eigenvalues[1]:.4f}")
+
+# Spectral partitioning
+part_0, part_1 = analyzer.spectral_partition()
+print(f"\nSpectral Partition: {part_0} | {part_1}")
+
+# Example: Expander graph
+print("\n\n=== Random Regular Graph (Expander) ===")
+expander = nx.random_regular_graph(3, 20)
+exp_analyzer = SpectralGraphAnalyzer(expander)
+exp_eigenvalues = exp_analyzer.spectrum('normalized', k=5)
+print(f"First 5 normalized eigenvalues: {exp_eigenvalues}")
+print(f"Spectral gap (1 - \lambda_2): {1 - exp_eigenvalues[1]:.4f}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Algebraic Combinatorics: Young Tableaux and Representation Theory</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Young tableaux are combinatorial objects that encode the representation theory of symmetric groups and general linear groups. They provide a concrete way to understand abstract algebraic structures, with applications ranging from algebraic geometry (Schubert calculus) to physics (quantum mechanics of identical particles). The interplay between combinatorics and algebra here exemplifies the power of constructive approaches to abstract mathematics.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Partition:</strong> A sequence \( \lambda = (\lambda_1, \lambda_2, \ldots, \lambda_k) \) where \( \lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_k \geq 1 \) and \( \sum \lambda_i = n \). We write \( \lambda \vdash n \).</p>
+
+                    <p><strong>Young Diagram:</strong> A left-justified array of boxes with \( \lambda_i \) boxes in row \( i \).</p>
+
+                    <p><strong>Standard Young Tableau (SYT):</strong> A filling of a Young diagram with numbers \( 1, 2, \ldots, n \) such that rows increase left-to-right and columns increase top-to-bottom.</p>
+
+                    <p><strong>Semistandard Young Tableau (SSYT):</strong> A filling with positive integers where rows are weakly increasing and columns are strictly increasing.</p>
+
+                    <h4>Theorem: Hook Length Formula</h4>
+                    <p>The number of standard Young tableaux of shape \( \lambda \vdash n \) is:
+                    \[ f^{\lambda} = \frac{n!}{\prod_{(i,j) \in \lambda} h(i,j)} \]
+                    where \( h(i,j) \) is the hook length of cell \( (i,j) \), defined as:
+                    \[ h(i,j) = (\lambda_i - j) + (\lambda'_j - i) + 1 \]
+                    with \( \lambda' \) being the conjugate partition (transpose diagram).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \lambda \vdash n \) — partition of \( n \)</li>
+                        <li>\( f^{\lambda} \) — number of SYT of shape \( \lambda \)</li>
+                        <li>\( h(i,j) \) — hook length of cell \( (i,j) \)</li>
+                        <li>\( \lambda' \) — conjugate (transpose) partition</li>
+                        <li>\( s_{\lambda} \) — Schur function</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>from itertools import permutations
+from functools import lru_cache
+import numpy as np
+
+class YoungDiagram:
+    """
+    Represents a Young diagram and its associated combinatorics.
+    """
+    def __init__(self, partition):
+        """
+        Initialize with a partition (list of row lengths).
+        """
+        self.partition = tuple(sorted(partition, reverse=True))
+        self.n = sum(self.partition)
+        self.rows = len(self.partition)
+        self.cols = max(self.partition) if self.partition else 0
+    
+    def __repr__(self):
+        return f"YoungDiagram({list(self.partition)})"
+    
+    def cells(self):
+        """Return list of (row, col) coordinates for all cells."""
+        cells = []
+        for i, row_len in enumerate(self.partition):
+            for j in range(row_len):
+                cells.append((i, j))
+        return cells
+    
+    def hook_lengths(self):
+        """
+        Compute hook length for each cell.
+        Hook length = cells to right + cells below + 1
+        """
+        hooks = {}
+        for i, j in self.cells():
+            # Cells to the right in same row
+            right = self.partition[i] - j - 1
+            # Cells below in same column
+            below = sum(1 for r in range(i + 1, self.rows) if self.partition[r] > j)
+            hooks[(i, j)] = right + below + 1
+        return hooks
+    
+    def hook_length_formula(self):
+        """
+        Compute number of standard Young tableaux using hook length formula.
+        """
+        import math
+        hooks = self.hook_lengths()
+        product = 1
+        for h in hooks.values():
+            product *= h
+        return math.factorial(self.n) // product
+    
+    def conjugate(self):
+        """Return the conjugate (transpose) partition."""
+        if not self.partition:
+            return YoungDiagram([])
+        conj = []
+        for j in range(self.cols):
+            col_len = sum(1 for i in range(self.rows) if self.partition[i] > j)
+            conj.append(col_len)
+        return YoungDiagram(conj)
+    
+    def draw(self):
+        """ASCII art representation of the diagram."""
+        result = []
+        for row_len in self.partition:
+            result.append('□ ' * row_len)
+        return '\n'.join(result)
+
+class YoungTableau:
+    """
+    Represents a Young tableau with its filling.
+    """
+    def __init__(self, partition, filling=None):
+        self.diagram = YoungDiagram(partition)
+        self.n = self.diagram.n
+        
+        if filling is None:
+            self.filling = {}
+        else:
+            self.filling = filling
+    
+    def is_standard(self):
+        """Check if filling is a standard Young tableau."""
+        if set(self.filling.values()) != set(range(1, self.n + 1)):
+            return False
+        
+        # Check rows increase left-to-right
+        for i, row_len in enumerate(self.diagram.partition):
+            for j in range(row_len - 1):
+                if self.filling.get((i, j), 0) >= self.filling.get((i, j + 1), 0):
+                    return False
+        
+        # Check columns increase top-to-bottom
+        for j in range(self.diagram.cols):
+            col = [(i, self.filling.get((i, j), float('inf'))) 
+                   for i in range(self.diagram.rows) if (i, j) in self.filling]
+            for k in range(len(col) - 1):
+                if col[k][1] >= col[k + 1][1]:
+                    return False
+        
+        return True
+    
+    def is_semistandard(self):
+        """Check if filling is a semistandard Young tableau."""
+        # Check rows weakly increase
+        for i, row_len in enumerate(self.diagram.partition):
+            for j in range(row_len - 1):
+                if self.filling.get((i, j), 0) > self.filling.get((i, j + 1), 0):
+                    return False
+        
+        # Check columns strictly increase
+        for j in range(self.diagram.cols):
+            col = [(i, self.filling.get((i, j), float('inf'))) 
+                   for i in range(self.diagram.rows) if (i, j) in self.filling]
+            for k in range(len(col) - 1):
+                if col[k][1] >= col[k + 1][1]:
+                    return False
+        
+        return True
+    
+    def draw(self):
+        """ASCII art with filling."""
+        result = []
+        for i, row_len in enumerate(self.diagram.partition):
+            row = []
+            for j in range(row_len):
+                val = self.filling.get((i, j), '.')
+                row.append(f"{val:2}")
+            result.append(' '.join(row))
+        return '\n'.join(result)
+
+def generate_syt(partition):
+    """
+    Generate all standard Young tableaux of given shape.
+    Uses backtracking algorithm.
+    """
+    diagram = YoungDiagram(partition)
+    cells = diagram.cells()
+    n = diagram.n
+    
+    def is_valid_partial(filling):
+        """Check if partial filling can be extended to SYT."""
+        # Check rows
+        for i, row_len in enumerate(partition):
+            row_vals = [filling.get((i, j)) for j in range(row_len) if (i, j) in filling]
+            if len(row_vals) >= 2:
+                for k in range(len(row_vals) - 1):
+                    if row_vals[k] >= row_vals[k + 1]:
+                        return False
+        
+        # Check columns
+        max_col = max((j for _, j in cells), default=-1)
+        for j in range(max_col + 1):
+            col_vals = [filling.get((i, j)) for i in range(len(partition)) 
+                       if (i, j) in filling and partition[i] > j]
+            if len(col_vals) >= 2:
+                for k in range(len(col_vals) - 1):
+                    if col_vals[k] >= col_vals[k + 1]:
+                        return False
+        return True
+    
+    def backtrack(filling, used, pos):
+        if pos == n:
+            yield filling.copy()
+            return
+        
+        cell = cells[pos]
+        for num in range(1, n + 1):
+            if num not in used:
+                filling[cell] = num
+                if is_valid_partial(filling):
+                    used.add(num)
+                    yield from backtrack(filling, used, pos + 1)
+                    used.remove(num)
+                del filling[cell]
+    
+    yield from backtrack({}, set(), 0)
+
+# Examples
+print("=== Young Diagrams and Hook Lengths ===")
+
+# Partition (3, 2, 1) of 6
+partition = [3, 2, 1]
+diag = YoungDiagram(partition)
+print(f"\nPartition {partition}:")
+print(diag.draw())
+print(f"Hook lengths: {diag.hook_lengths()}")
+print(f"Number of SYT (hook formula): {diag.hook_length_formula()}")
+
+# Verify by enumeration
+print("\nAll SYT of shape (3, 2, 1):")
+count = 0
+for filling in generate_syt(partition):
+    count += 1
+    print(f"\nTableau {count}:")
+    yt = YoungTableau(partition, filling)
+    print(yt.draw())
+print(f"\nTotal: {count} SYT")
+
+# Conjugate partition
+print("\n=== Conjugate Partition ===")
+conj = diag.conjugate()
+print(f"Conjugate of {partition}: {list(conj.partition)}")
+print(conj.draw())
+
+# Larger example: (4, 3, 2, 1)
+print("\n=== Staircase Shape (4, 3, 2, 1) ===")
+staircase = YoungDiagram([4, 3, 2, 1])
+print(staircase.draw())
+print(f"Hook lengths: {staircase.hook_lengths()}")
+print(f"Number of SYT: {staircase.hook_length_formula()}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Symplectic Geometry: The Geometry of Classical Mechanics</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Symplectic geometry provides the mathematical framework for classical mechanics, encoding the Hamiltonian structure of physical systems. Unlike Riemannian geometry which measures distances, symplectic geometry captures the notion of phase space volume and the conservation laws that govern dynamical evolution. This field has expanded far beyond physics, with deep connections to algebraic geometry, topology, and representation theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Symplectic Vector Space:</strong> A pair \( (V, \omega) \) where \( V \) is a vector space and \( \omega: V \times V \to \mathbb{R} \) is a bilinear form that is skew-symmetric (\( \omega(u,v) = -\omega(v,u) \)) and non-degenerate (if \( \omega(u,v) = 0 \) for all \( v \), then \( u = 0 \)).</p>
+
+                    <p><strong>Symplectic Manifold:</strong> A smooth manifold \( M \) equipped with a closed, non-degenerate 2-form \( \omega \in \Omega^2(M) \) (i.e., \( d\omega = 0 \) and \( \omega^n \neq 0 \) everywhere).</p>
+
+                    <p><strong>Hamiltonian Vector Field:</strong> For \( H \in C^{\infty}(M) \), the vector field \( X_H \) is defined by \( \iota_{X_H}\omega = dH \).</p>
+
+                    <p><strong>Poisson Bracket:</strong> \( \{f, g\} = \omega(X_f, X_g) = X_f(g) \).</p>
+
+                    <h4>Theorem: Darboux's Theorem</h4>
+                    <p>Let \( (M, \omega) \) be a symplectic manifold of dimension \( 2n \). For any point \( p \in M \), there exist local coordinates \( (q_1, \ldots, q_n, p_1, \ldots, p_n) \) (Darboux coordinates) such that:
+                    \[ \omega = \sum_{i=1}^{n} dq_i \wedge dp_i \]</p>
+                    <p>This shows that all symplectic manifolds are locally equivalent—there are no local invariants unlike in Riemannian geometry.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \omega \) — symplectic form</li>
+                        <li>\( \Omega^2(M) \) — space of 2-forms on \( M \)</li>
+                        <li>\( X_H \) — Hamiltonian vector field for \( H \)</li>
+                        <li>\( \iota_X \) — interior product (contraction)</li>
+                        <li>\( \{f, g\} \) — Poisson bracket</li>
+                        <li>\( (q, p) \) — canonical (Darboux) coordinates</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.integrate import solve_ivp
+import matplotlib.pyplot as plt
+
+class SymplecticManifold:
+    """
+    Represents a symplectic manifold with Hamiltonian dynamics.
+    """
+    def __init__(self, n):
+        """
+        Initialize 2n-dimensional symplectic manifold.
+        n = number of position (and momentum) coordinates.
+        """
+        self.n = n
+        self.dim = 2 * n
+    
+    def symplectic_form_matrix(self):
+        """
+        Return the standard symplectic matrix J where
+        omega(u, v) = u^T J v
+        """
+        n = self.n
+        J = np.zeros((2*n, 2*n))
+        J[:n, n:] = np.eye(n)
+        J[n:, :n] = -np.eye(n)
+        return J
+    
+    def hamiltonian_vector_field(self, H_func, state):
+        """
+        Compute Hamiltonian vector field X_H at given state.
+        
+        Parameters:
+        -----------
+        H_func : callable
+            Function that returns (H, dH) where dH is gradient
+        state : array
+            [q1, ..., qn, p1, ..., pn]
+        """
+        _, dH = H_func(state)
+        J = self.symplectic_form_matrix()
+        X_H = J @ dH
+        return X_H
+    
+    def poisson_bracket(self, f_func, g_func, state):
+        """
+        Compute {f, g} at given state.
+        """
+        _, df = f_func(state)
+        _, dg = g_func(state)
+        X_f = self.hamiltonian_vector_field(f_func, state)
+        return np.dot(X_f, dg)
+
+class HamiltonianSystem:
+    """
+    Hamiltonian system with symplectic integration.
+    """
+    def __init__(self, H_func, n_dof):
+        """
+        Parameters:
+        -----------
+        H_func : callable
+            H(state) returns Hamiltonian value
+        n_dof : int
+            Number of degrees of freedom
+        """
+        self.H_func = H_func
+        self.n = n_dof
+        self.manifold = SymplecticManifold(n_dof)
+    
+    def gradient_H(self, state, eps=1e-8):
+        """Numerical gradient of Hamiltonian."""
+        grad = np.zeros_like(state)
+        for i in range(len(state)):
+            state_plus = state.copy()
+            state_minus = state.copy()
+            state_plus[i] += eps
+            state_minus[i] -= eps
+            grad[i] = (self.H_func(state_plus) - self.H_func(state_minus)) / (2*eps)
+        return grad
+    
+    def dynamics(self, t, state):
+        """Hamilton's equations: dq/dt = dH/dp, dp/dt = -dH/dq"""
+        dH = self.gradient_H(state)
+        n = self.n
+        dqdt = dH[n:]  # dH/dp
+        dpdt = -dH[:n]  # -dH/dq
+        return np.concatenate([dqdt, dpdt])
+    
+    def symplectic_euler_step(self, state, dt):
+        """
+        Symplectic Euler method (first order).
+        Update p first, then q using updated p.
+        """
+        n = self.n
+        q, p = state[:n], state[n:]
+        
+        # Compute gradient at current state
+        dH = self.gradient_H(state)
+        dH_dq = dH[:n]
+        dH_dp = dH[n:]
+        
+        # Update momentum first
+        p_new = p - dt * dH_dq
+        # Update position using new momentum
+        q_new = q + dt * self.gradient_H(np.concatenate([q, p_new]))[n:]
+        
+        return np.concatenate([q_new, p_new])
+    
+    def stormer_verlet_step(self, state, dt):
+        """
+        Störmer-Verlet method (second order symplectic).
+        """
+        n = self.n
+        q, p = state[:n], state[n:]
+        
+        # Half step for momentum
+        dH = self.gradient_H(state)
+        p_half = p - 0.5 * dt * dH[:n]
+        
+        # Full step for position
+        state_half = np.concatenate([q, p_half])
+        dH_half = self.gradient_H(state_half)
+        q_new = q + dt * dH_half[n:]
+        
+        # Half step for momentum
+        state_new = np.concatenate([q_new, p_half])
+        dH_new = self.gradient_H(state_new)
+        p_new = p_half - 0.5 * dt * dH_new[:n]
+        
+        return np.concatenate([q_new, p_new])
+    
+    def integrate(self, state0, t_span, dt, method='verlet'):
+        """
+        Integrate Hamiltonian system.
+        """
+        t0, tf = t_span
+        times = np.arange(t0, tf, dt)
+        states = [state0]
+        state = state0.copy()
+        
+        step_func = self.stormer_verlet_step if method == 'verlet' else self.symplectic_euler_step
+        
+        for _ in times[1:]:
+            state = step_func(state, dt)
+            states.append(state)
+        
+        return np.array(times), np.array(states)
+
+# Example 1: Simple Harmonic Oscillator
+print("=== Simple Harmonic Oscillator ===")
+# H = (p^2 + q^2) / 2
+H_ho = lambda state: 0.5 * np.sum(state**2)
+sys_ho = HamiltonianSystem(H_ho, n_dof=1)
+
+state0 = np.array([1.0, 0.0])  # q=1, p=0
+times, states = sys_ho.integrate(state0, (0, 10), 0.01, method='verlet')
+
+print(f"Initial energy: {H_ho(state0):.6f}")
+print(f"Final energy: {H_ho(states[-1]):.6f}")
+print(f"Energy drift: {abs(H_ho(states[-1]) - H_ho(state0)):.2e}")
+
+# Example 2: Double Pendulum
+print("\n=== Double Pendulum ===")
+def H_double_pendulum(state, m1=1, m2=1, L1=1, L2=1, g=9.8):
+    """
+    Hamiltonian for double pendulum.
+    state = [theta1, theta2, p1, p2]
+    """
+    theta1, theta2, p1, p2 = state
+    
+    # Simplified Hamiltonian (kinetic + potential energy)
+    delta = theta1 - theta2
+    denom = (m1 + m2) * L1 * L2 - m2 * L1 * L2 * np.cos(delta)**2
+    
+    # Kinetic energy
+    A = (m1 + m2) * L1**2
+    B = m2 * L2**2
+    C = m2 * L1 * L2 * np.cos(delta)
+    
+    det = A * B - C**2
+    T = 0.5 * (B * p1**2 - 2*C*p1*p2 + A*p2**2) / det
+    
+    # Potential energy
+    V = -(m1 + m2) * g * L1 * np.cos(theta1) - m2 * g * L2 * np.cos(theta2)
+    
+    return T + V
+
+sys_dp = HamiltonianSystem(lambda s: H_double_pendulum(s), n_dof=2)
+state0_dp = np.array([np.pi/2, np.pi/2, 0, 0])  # Both pendulums horizontal
+times_dp, states_dp = sys_dp.integrate(state0_dp, (0, 20), 0.001, method='verlet')
+
+print(f"Initial energy: {H_double_pendulum(state0_dp):.6f}")
+print(f"Final energy: {H_double_pendulum(states_dp[-1]):.6f}")
+
+# Example 3: Symplectic form verification
+print("\n=== Symplectic Form Properties ===")
+manifold = SymplecticManifold(n=2)
+J = manifold.symplectic_form_matrix()
+print(f"Symplectic matrix J (4x4):\n{J}")
+print(f"J^T = -J (skew-symmetric): {np.allclose(J.T, -J)}")
+print(f"J^2 = -I: {np.allclose(J @ J, -np.eye(4))}")
+print(f"det(J) = 1: {np.isclose(np.linalg.det(J), 1)}")</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🚀 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Random Matrix Theory: Universality in High Dimensions</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Random matrix theory (RMT) studies the statistical properties of matrices with random entries. It emerged from nuclear physics (Wigner's work on energy levels) and has since found applications in quantum chaos, number theory, wireless communications, machine learning, and finance. The remarkable phenomenon of universality—where microscopic details of the randomness become irrelevant in high dimensions—makes RMT a powerful tool for understanding complex systems.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Gaussian Unitary Ensemble (GUE):</strong> Hermitian matrices with independent Gaussian entries: diagonal real \( N(0, 1) \), off-diagonal complex \( N(0, 1/2) + iN(0, 1/2) \).</p>
+
+                    <p><strong>Gaussian Orthogonal Ensemble (GOE):</strong> Real symmetric matrices with diagonal \( N(0, 2) \) and off-diagonal \( N(0, 1) \).</p>
+
+                    <p><strong>Empirical Spectral Distribution (ESD):</strong> For an \( n \times n \) matrix with eigenvalues \( \lambda_1, \ldots, \lambda_n \):
+                    \[ \mu_n = \frac{1}{n} \sum_{i=1}^{n} \delta_{\lambda_i} \]</p>
+
+                    <p><strong>Wigner Semicircle Law:</strong> The limiting distribution of eigenvalues for Wigner matrices.</p>
+
+                    <h4>Theorem: Wigner's Semicircle Law</h4>
+                    <p>Let \( W_n \) be an \( n \times n \) Wigner matrix (symmetric, independent entries above diagonal with mean 0, variance 1/n). As \( n \to \infty \), the empirical spectral distribution converges to the semicircle distribution:
+                    \[ \mu_n \xrightarrow{w} \mu_{sc} \]
+                    where
+                    \[ d\mu_{sc}(x) = \frac{1}{2\pi} \sqrt{4 - x^2} \cdot \mathbf{1}_{|x| \leq 2} \, dx \]</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \lambda_i \) — eigenvalues</li>
+                        <li>\( \mu_n \) — empirical spectral distribution</li>
+                        <li>\( \mu_{sc} \) — semicircle distribution</li>
+                        <li>\( \xrightarrow{w} \) — weak convergence</li>
+                        <li>\( \beta \) — Dyson index (1 for GOE, 2 for GUE, 4 for GSE)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import gaussian_kde
+from scipy.special import airy
+
+class RandomMatrixEnsemble:
+    """
+    Various random matrix ensembles and their spectral analysis.
+    """
+    
+    @staticmethod
+    def generate_goe(n, sigma=1.0):
+        """
+        Generate n x n matrix from Gaussian Orthogonal Ensemble.
+        """
+        # Upper triangular part
+        A = np.random.normal(0, sigma, (n, n))
+        # Make symmetric
+        M = (A + A.T) / np.sqrt(2)
+        return M
+    
+    @staticmethod
+    def generate_gue(n, sigma=1.0):
+        """
+        Generate n x n matrix from Gaussian Unitary Ensemble.
+        """
+        # Complex Gaussian
+        X = np.random.normal(0, sigma/np.sqrt(2), (n, n))
+        Y = np.random.normal(0, sigma/np.sqrt(2), (n, n))
+        A = X + 1j * Y
+        # Make Hermitian
+        M = (A + A.conj().T) / np.sqrt(2)
+        return M
+    
+    @staticmethod
+    def generate_wishart(n, p, sigma=1.0):
+        """
+        Generate Wishart matrix: X^T X where X is n x p.
+        """
+        X = np.random.normal(0, sigma, (n, p))
+        W = X.T @ X / n
+        return W
+    
+    @staticmethod
+    def semicircle_pdf(x):
+        """PDF of semicircle distribution."""
+        return np.where(np.abs(x) <= 2, 
+                       np.sqrt(4 - x**2) / (2 * np.pi), 
+                       0)
+    
+    @staticmethod
+    def marchenko_pastur_pdf(x, gamma):
+        """
+        PDF of Marchenko-Pastur distribution.
+        gamma = p/n (aspect ratio)
+        """
+        lambda_plus = (1 + np.sqrt(gamma))**2
+        lambda_minus = (1 - np.sqrt(gamma))**2
+        
+        pdf = np.zeros_like(x)
+        mask = (x > lambda_minus) & (x < lambda_plus)
+        pdf[mask] = np.sqrt((lambda_plus - x[mask]) * (x[mask] - lambda_minus)) / (2 * np.pi * gamma * x[mask])
+        return pdf
+
+class SpectralStatistics:
+    """
+    Statistical analysis of eigenvalue distributions.
+    """
+    
+    @staticmethod
+    def eigenvalues(matrix):
+        """Compute eigenvalues (sorted)."""
+        return np.linalg.eigvalsh(matrix)
+    
+    @staticmethod
+    def level_spacing(eigenvalues):
+        """
+        Compute nearest-neighbor level spacings.
+        """
+        sorted_eigs = np.sort(eigenvalues)
+        spacings = np.diff(sorted_eigs)
+        # Normalize by mean spacing (unfolding)
+        mean_spacing = np.mean(spacings)
+        return spacings / mean_spacing
+    
+    @staticmethod
+    def wigner_surmise(s, beta=1):
+        """
+        Wigner surmise for level spacing distribution.
+        beta = 1 (GOE), 2 (GUE), 4 (GSE)
+        """
+        if beta == 1:  # GOE
+            return (np.pi * s / 2) * np.exp(-np.pi * s**2 / 4)
+        elif beta == 2:  # GUE
+            return (32 * s**2 / np.pi**2) * np.exp(-4 * s**2 / np.pi)
+        elif beta == 4:  # GSE
+            return (2**18 * s**4 / (3**6 * np.pi**3)) * np.exp(-64 * s**2 / (9 * np.pi))
+    
+    @staticmethod
+    def poisson_spacing(s):
+        """Poisson (integrable) spacing distribution."""
+        return np.exp(-s)
+
+# Demonstrations
+print("=== Random Matrix Theory Demonstrations ===")
+
+# 1. Semicircle Law
+print("\n1. Wigner's Semicircle Law")
+n = 2000
+ensemble = RandomMatrixEnsemble()
+
+# Generate GOE matrix and normalize
+M = ensemble.generate_goe(n)
+M = M / np.sqrt(n)  # Normalize for semicircle law
+eigenvalues = SpectralStatistics.eigenvalues(M)
+
+print(f"Matrix size: {n} x {n}")
+print(f"Eigenvalue range: [{eigenvalues.min():.3f}, {eigenvalues.max():.3f}]")
+print(f"Theoretical range: [-2, 2]")
+
+# 2. Marchenko-Pastur Law
+print("\n2. Marchenko-Pastur Law (Wishart matrices)")
+n, p = 1000, 500
+gamma = p / n
+W = ensemble.generate_wishart(n, p)
+wishart_eigs = SpectralStatistics.eigenvalues(W)
+
+print(f"Matrix size: {p} x {p} (from {n} x {p} data)")
+print(f"Aspect ratio gamma = p/n = {gamma:.3f}")
+print(f"Eigenvalue range: [{wishart_eigs.min():.3f}, {wishart_eigs.max():.3f}]")
+print(f"Theoretical range: [{(1-np.sqrt(gamma))**2:.3f}, {(1+np.sqrt(gamma))**2:.3f}]")
+
+# 3. Level Spacing Statistics
+print("\n3. Level Spacing Statistics")
+# Use unfolded spectrum from center of bulk
+center_eigs = eigenvalues[(eigenvalues > -1) & (eigenvalues < 1)]
+spacings = SpectralStatistics.level_spacing(center_eigs)
+
+print(f"Analyzing {len(center_eigs)} eigenvalues from center of spectrum")
+print(f"Mean normalized spacing: {np.mean(spacings):.4f} (should be ~1)")
+
+# Compare with Wigner surmise
+from scipy.stats import kstest
+# This is a simplified comparison
+print("\nSpacing distribution comparison:")
+print(f"Variance of spacings: {np.var(spacings):.4f}")
+print(f"GOE Wigner surmise variance: {4/np.pi - 1:.4f}")
+print(f"Poisson variance: 1.0000")
+
+# 4. Universality: Different distributions, same limit
+print("\n4. Universality Test")
+print("Testing different entry distributions...")
+
+distributions = [
+    ('Gaussian', lambda n: np.random.normal(0, 1, n)),
+    ('Rademacher', lambda n: np.random.choice([-1, 1], n)),
+    ('Uniform', lambda n: np.random.uniform(-np.sqrt(3), np.sqrt(3), n))
+]
+
+for name, dist in distributions:
+    # Create symmetric matrix
+    A = dist(n * n).reshape(n, n)
+    M = (A + A.T) / np.sqrt(2 * n)
+    eigs = SpectralStatistics.eigenvalues(M)
+    print(f"{name:12s}: eigenvalue range = [{eigs.min():.3f}, {eigs.max():.3f}]")
+
+# 5. Tracy-Widom distribution (edge statistics)
+print("\n5. Tracy-Widom Law (Edge Statistics)")
+# Largest eigenvalue statistics
+n_samples = 100
+largest_eigs = []
+for _ in range(n_samples):
+    M = ensemble.generate_goe(100) / np.sqrt(100)
+    eigs = SpectralStatistics.eigenvalues(M)
+    largest_eigs.append(eigs.max())
+
+# Normalize for Tracy-Widom
+# TW scaling: n^(2/3) * (\lambda_max - 2)
+largest_eigs_scaled = (100**(2/3)) * (np.array(largest_eigs) - 2)
+print(f"Scaled largest eigenvalue mean: {np.mean(largest_eigs_scaled):.4f}")
+print(f"Tracy-Widom mean (approx): -1.21")
+print(f"Scaled largest eigenvalue std: {np.std(largest_eigs_scaled):.4f}")
+print(f"Tracy-Widom std (approx): 0.90")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Reinforcement Learning: The Mathematics of Optimal Decision-Making</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Reinforcement learning (RL) formalizes how agents should act in environments to maximize cumulative reward. From game-playing AI (AlphaGo, AlphaZero) to robotics control and recommendation systems, RL provides a mathematical framework for sequential decision-making under uncertainty. The field draws on dynamic programming, optimal control, and statistical learning theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Markov Decision Process (MDP):</strong> A tuple \( \mathcal{M} = (\mathcal{S}, \mathcal{A}, P, R, \gamma) \) where:
+                    - \( \mathcal{S} \) is the state space
+                    - \( \mathcal{A} \) is the action space
+                    - \( P(s'|s,a) \) is the transition probability
+                    - \( R(s,a) \) is the reward function
+                    - \( \gamma \in [0,1) \) is the discount factor</p>
+
+                    <p><strong>Policy:</strong> A mapping \( \pi: \mathcal{S} \to \Delta(\mathcal{A}) \) where \( \pi(a|s) \) is the probability of taking action \( a \) in state \( s \).</p>
+
+                    <p><strong>Value Function:</strong> The expected cumulative reward starting from state \( s \):
+                    \[ V^{\pi}(s) = \mathbb{E}\left[ \sum_{t=0}^{\infty} \gamma^t R(s_t, a_t) \mid s_0 = s, \pi \right] \]</p>
+
+                    <p><strong>Q-Function:</strong> The expected cumulative reward starting from state-action pair \( (s,a) \):
+                    \[ Q^{\pi}(s,a) = \mathbb{E}\left[ \sum_{t=0}^{\infty} \gamma^t R(s_t, a_t) \mid s_0 = s, a_0 = a, \pi \right] \]</p>
+
+                    <h4>Theorem: Bellman Optimality Equations</h4>
+                    <p>The optimal value function \( V^* \) is the unique solution to:
+                    \[ V^*(s) = \max_{a \in \mathcal{A}} \left[ R(s,a) + \gamma \sum_{s'} P(s'|s,a) V^*(s') \right] \]</p>
+                    <p>Similarly, the optimal Q-function satisfies:
+                    \[ Q^*(s,a) = R(s,a) + \gamma \sum_{s'} P(s'|s,a) \max_{a'} Q^*(s', a') \]</p>
+                    <p>An optimal policy \( \pi^* \) satisfies \( \pi^*(s) \in \arg\max_a Q^*(s,a) \).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathcal{S}, \mathcal{A} \) — state and action spaces</li>
+                        <li>\( P(s'|s,a) \) — transition probability</li>
+                        <li>\( \gamma \) — discount factor</li>
+                        <li>\( V^{\pi}(s) \) — value function under policy \( \pi \)</li>
+                        <li>\( Q^{\pi}(s,a) \) — action-value function</li>
+                        <li>\( \pi^* \) — optimal policy</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from collections import defaultdict
+import random
+
+class MDP:
+    """
+    Markov Decision Process representation.
+    """
+    def __init__(self, n_states, n_actions, transition_probs, rewards, gamma=0.95):
+        """
+        Parameters:
+        -----------
+        n_states : int
+            Number of states
+        n_actions : int
+            Number of actions
+        transition_probs : dict or array
+            P[s][a][s'] = probability of transitioning to s' from s taking a
+        rewards : dict or array
+            R[s][a] = immediate reward
+        gamma : float
+            Discount factor
+        """
+        self.n_states = n_states
+        self.n_actions = n_actions
+        self.P = transition_probs
+        self.R = rewards
+        self.gamma = gamma
+    
+    def step(self, state, action):
+        """
+        Sample next state and reward.
+        """
+        if isinstance(self.P, dict):
+            next_states = list(self.P[state][action].keys())
+            probs = list(self.P[state][action].values())
+            next_state = np.random.choice(next_states, p=probs)
+            reward = self.R[state][action]
+        else:
+            next_state = np.random.choice(self.n_states, p=self.P[state, action])
+            reward = self.R[state, action]
+        return next_state, reward
+
+class ValueIteration:
+    """
+    Value Iteration algorithm for solving MDPs.
+    """
+    def __init__(self, mdp, theta=1e-6):
+        self.mdp = mdp
+        self.theta = theta
+        self.V = np.zeros(mdp.n_states)
+        self.policy = np.zeros(mdp.n_states, dtype=int)
+    
+    def run(self, max_iterations=1000):
+        """
+        Run value iteration until convergence.
+        """
+        for i in range(max_iterations):
+            delta = 0
+            for s in range(self.mdp.n_states):
+                v = self.V[s]
+                # Compute Q-values for all actions
+                Q_s = np.zeros(self.mdp.n_actions)
+                for a in range(self.mdp.n_actions):
+                    if isinstance(self.mdp.P, dict):
+                        Q_s[a] = self.mdp.R[s][a] + self.mdp.gamma * sum(
+                            self.mdp.P[s][a][s_next] * self.V[s_next]
+                            for s_next in self.mdp.P[s][a]
+                        )
+                    else:
+                        Q_s[a] = self.mdp.R[s, a] + self.mdp.gamma * np.sum(
+                            self.mdp.P[s, a] * self.V
+                        )
+                
+                self.V[s] = np.max(Q_s)
+                delta = max(delta, abs(v - self.V[s]))
+            
+            if delta < self.theta:
+                print(f"Converged after {i+1} iterations")
+                break
+        
+        # Extract policy
+        self._extract_policy()
+        return self.V, self.policy
+    
+    def _extract_policy(self):
+        """Extract greedy policy from value function."""
+        for s in range(self.mdp.n_states):
+            Q_s = np.zeros(self.mdp.n_actions)
+            for a in range(self.mdp.n_actions):
+                if isinstance(self.mdp.P, dict):
+                    Q_s[a] = self.mdp.R[s][a] + self.mdp.gamma * sum(
+                        self.mdp.P[s][a][s_next] * self.V[s_next]
+                        for s_next in self.mdp.P[s][a]
+                    )
+                else:
+                    Q_s[a] = self.mdp.R[s, a] + self.mdp.gamma * np.sum(
+                        self.mdp.P[s, a] * self.V
+                    )
+            self.policy[s] = np.argmax(Q_s)
+
+class QLearning:
+    """
+    Q-Learning: Model-free RL algorithm.
+    """
+    def __init__(self, n_states, n_actions, alpha=0.1, gamma=0.95, epsilon=0.1):
+        self.n_states = n_states
+        self.n_actions = n_actions
+        self.alpha = alpha  # Learning rate
+        self.gamma = gamma  # Discount factor
+        self.epsilon = epsilon  # Exploration rate
+        self.Q = np.zeros((n_states, n_actions))
+    
+    def choose_action(self, state):
+        """Epsilon-greedy action selection."""
+        if random.random() < self.epsilon:
+            return random.randint(0, self.n_actions - 1)
+        return np.argmax(self.Q[state])
+    
+    def update(self, state, action, reward, next_state, done):
+        """
+        Q-learning update rule:
+        Q(s,a) <- Q(s,a) + alpha * [r + gamma * max_a' Q(s',a') - Q(s,a)]
+        """
+        best_next = 0 if done else np.max(self.Q[next_state])
+        td_target = reward + self.gamma * best_next
+        td_error = td_target - self.Q[state, action]
+        self.Q[state, action] += self.alpha * td_error
+    
+    def train(self, env, n_episodes=1000, max_steps=100):
+        """
+        Train Q-learning agent.
+        
+        Parameters:
+        -----------
+        env : MDP or environment with reset() and step() methods
+        """
+        rewards_history = []
+        
+        for episode in range(n_episodes):
+            state = random.randint(0, self.n_states - 1)  # Random initial state
+            total_reward = 0
+            
+            for step in range(max_steps):
+                action = self.choose_action(state)
+                next_state, reward = env.step(state, action)
+                done = (step == max_steps - 1)
+                
+                self.update(state, action, reward, next_state, done)
+                
+                total_reward += reward
+                state = next_state
+                
+                if done:
+                    break
+            
+            rewards_history.append(total_reward)
+            
+            # Decay exploration
+            self.epsilon = max(0.01, self.epsilon * 0.995)
+        
+        return rewards_history
+
+class GridWorld:
+    """
+    Simple GridWorld environment.
+    """
+    def __init__(self, size=4):
+        self.size = size
+        self.n_states = size * size
+        self.n_actions = 4  # up, down, left, right
+        self.goal = (size-1, size-1)
+        self.reset()
+    
+    def state_to_pos(self, state):
+        return (state // self.size, state % self.size)
+    
+    def pos_to_state(self, pos):
+        return pos[0] * self.size + pos[1]
+    
+    def reset(self):
+        self.state = 0  # Start at top-left
+        return self.state
+    
+    def step(self, state, action):
+        """Take action in state, return next_state, reward."""
+        pos = self.state_to_pos(state)
+        row, col = pos
+        
+        # Actions: 0=up, 1=down, 2=left, 3=right
+        if action == 0: row = max(0, row - 1)
+        elif action == 1: row = min(self.size - 1, row + 1)
+        elif action == 2: col = max(0, col - 1)
+        elif action == 3: col = min(self.size - 1, col + 1)
+        
+        next_state = self.pos_to_state((row, col))
+        
+        # Reward: -1 for each step, +10 for reaching goal
+        if (row, col) == self.goal:
+            reward = 10
+        else:
+            reward = -1
+        
+        return next_state, reward
+
+# Example: GridWorld with Q-Learning
+print("=== Reinforcement Learning: GridWorld ===")
+
+env = GridWorld(size=4)
+print(f"Grid size: {env.size}x{env.size}")
+print(f"States: {env.n_states}, Actions: {env.n_actions}")
+
+# Train Q-learning agent
+agent = QLearning(env.n_states, env.n_actions, alpha=0.2, gamma=0.95, epsilon=0.3)
+rewards = agent.train(env, n_episodes=500, max_steps=50)
+
+print(f"\nTraining complete!")
+print(f"Average reward (last 100 episodes): {np.mean(rewards[-100:]):.2f}")
+
+# Display learned Q-values
+print("\nLearned Q-values (best action for each state):")
+for i in range(env.size):
+    row_actions = []
+    for j in range(env.size):
+        s = env.pos_to_state((i, j))
+        best_action = np.argmax(agent.Q[s])
+        arrows = ['↑', '↓', '←', '→']
+        row_actions.append(arrows[best_action])
+    print(' '.join(row_actions))
+
+# Example: Simple MDP with Value Iteration
+print("\n=== Value Iteration on Simple MDP ===")
+
+# Define a simple 3-state, 2-action MDP
+n_states, n_actions = 3, 2
+
+# Transition probabilities: P[s, a, s']
+P = np.zeros((n_states, n_actions, n_states))
+# From state 0
+P[0, 0, 0] = 0.7  # Action 0: stay in 0 with prob 0.7
+P[0, 0, 1] = 0.3
+P[0, 1, 1] = 0.8  # Action 1: go to 1 with prob 0.8
+P[0, 1, 0] = 0.2
+# From state 1
+P[1, 0, 0] = 0.4
+P[1, 0, 2] = 0.6
+P[1, 1, 1] = 0.5
+P[1, 1, 2] = 0.5
+# From state 2 (absorbing)
+P[2, 0, 2] = 1.0
+P[2, 1, 2] = 1.0
+
+# Rewards
+R = np.array([
+    [1, 0],   # State 0
+    [0, 2],   # State 1
+    [10, 10]  # State 2 (goal)
+])
+
+mdp = MDP(n_states, n_actions, P, R, gamma=0.9)
+vi = ValueIteration(mdp)
+V, policy = vi.run()
+
+print(f"Optimal Value Function: {V}")
+print(f"Optimal Policy: {policy}")
+print(f"Policy interpretation: {['Action ' + str(a) for a in policy]}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Quantum Information Theory: The Mathematics of Quantum Computing</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Quantum information theory studies how information is encoded, processed, and transmitted using quantum mechanical systems. Quantum computers exploit superposition and entanglement to solve certain problems exponentially faster than classical computers. This field combines linear algebra, probability theory, and information theory, with applications in cryptography, simulation of quantum systems, and optimization.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Qubit:</strong> A unit vector in \( \mathbb{C}^2 \), written as \( |\psi\rangle = \alpha|0\rangle + \beta|1\rangle \) where \( |\alpha|^2 + |\beta|^2 = 1 \).</p>
+
+                    <p><strong>Density Matrix:</strong> For a pure state \( |\psi\rangle \), \( \rho = |\psi\rangle\langle\psi| \). For mixed states, \( \rho = \sum_i p_i |\psi_i\rangle\langle\psi_i| \).</p>
+
+                    <p><strong>von Neumann Entropy:</strong> \( S(\rho) = -\text{Tr}(\rho \log \rho) = -\sum_i \lambda_i \log \lambda_i \) where \( \lambda_i \) are eigenvalues of \( \rho \).</p>
+
+                    <p><strong>Quantum Channel:</strong> A completely positive trace-preserving (CPTP) map \( \mathcal{E}: \mathcal{L}(\mathcal{H}_A) \to \mathcal{L}(\mathcal{H}_B) \).</p>
+
+                    <h4>Theorem: Schmidt Decomposition</h4>
+                    <p>For any bipartite pure state \( |\psi\rangle_{AB} \in \mathcal{H}_A \otimes \mathcal{H}_B \), there exist orthonormal bases \( \{|a_i\rangle\} \) for \( \mathcal{H}_A \) and \( \{|b_i\rangle\} \) for \( \mathcal{H}_B \), and non-negative real numbers \( \{\lambda_i\} \) (Schmidt coefficients) with \( \sum_i \lambda_i^2 = 1 \), such that:
+                    \[ |\psi\rangle_{AB} = \sum_{i=1}^{r} \lambda_i |a_i\rangle \otimes |b_i\rangle \]</p>
+                    <p>The number \( r \) of non-zero Schmidt coefficients is the Schmidt rank. The state is entangled if and only if \( r > 1 \).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( |\psi\rangle \) — quantum state (ket)</li>
+                        <li>\( \langle\psi| \) — dual vector (bra)</li>
+                        <li>\( \rho \) — density matrix</li>
+                        <li>\( S(\rho) \) — von Neumann entropy</li>
+                        <li>\( \mathcal{H} \) — Hilbert space</li>
+                        <li>\( \otimes \) — tensor product</li>
+                        <li>\( \text{Tr} \) — trace operation</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.linalg import sqrtm, logm
+from itertools import product
+
+class QuantumState:
+    """
+    Represents quantum states and operations.
+    """
+    
+    # Pauli matrices
+    X = np.array([[0, 1], [1, 0]])
+    Y = np.array([[0, -1j], [1j, 0]])
+    Z = np.array([[1, 0], [0, -1]])
+    I = np.eye(2)
+    
+    # Hadamard gate
+    H = np.array([[1, 1], [1, -1]]) / np.sqrt(2)
+    
+    # Standard basis states
+    ket0 = np.array([1, 0])
+    ket1 = np.array([0, 1])
+    ket_plus = (ket0 + ket1) / np.sqrt(2)
+    ket_minus = (ket0 - ket1) / np.sqrt(2)
+    
+    @staticmethod
+    def density_matrix(state_vector):
+        """Create density matrix from pure state."""
+        return np.outer(state_vector, state_vector.conj())
+    
+    @staticmethod
+    def von_neumann_entropy(rho):
+        """
+        Compute von Neumann entropy S(rho) = -Tr(rho log rho).
+        """
+        eigenvalues = np.linalg.eigvalsh(rho)
+        # Filter out zero eigenvalues
+        eigenvalues = eigenvalues[eigenvalues > 1e-12]
+        return -np.sum(eigenvalues * np.log2(eigenvalues))
+    
+    @staticmethod
+    def schmidt_decomposition(state_vector, dim_a, dim_b):
+        """
+        Compute Schmidt decomposition of bipartite pure state.
+        
+        Parameters:
+        -----------
+        state_vector : array
+            State vector of length dim_a * dim_b
+        dim_a, dim_b : int
+            Dimensions of subsystems
+        
+        Returns:
+        --------
+        coefficients : Schmidt coefficients (sorted descending)
+        basis_a : basis states for subsystem A
+        basis_b : basis states for subsystem B
+        """
+        # Reshape to matrix
+        psi_matrix = state_vector.reshape(dim_a, dim_b)
+        
+        # SVD gives Schmidt decomposition
+        U, S, Vh = np.linalg.svd(psi_matrix, full_matrices=False)
+        
+        return S, U, Vh.conj().T
+    
+    @staticmethod
+    def entanglement_entropy(state_vector, dim_a, dim_b):
+        """
+        Compute entanglement entropy of subsystem A.
+        """
+        coefficients, _, _ = QuantumState.schmidt_decomposition(
+            state_vector, dim_a, dim_b
+        )
+        # Probabilities are squares of Schmidt coefficients
+        probs = coefficients**2
+        probs = probs[probs > 1e-12]
+        return -np.sum(probs * np.log2(probs))
+    
+    @staticmethod
+    def partial_trace(rho, dims, trace_over):
+        """
+        Compute partial trace of density matrix.
+        
+        Parameters:
+        -----------
+        rho : array
+            Density matrix
+        dims : tuple
+            Dimensions of subsystems (dim_a, dim_b)
+        trace_over : int
+            0 to trace over A, 1 to trace over B
+        """
+        dim_a, dim_b = dims
+        
+        if trace_over == 0:  # Trace over A
+            result = np.zeros((dim_b, dim_b), dtype=complex)
+            for i in range(dim_a):
+                # Projector |i><i| on A
+                for j in range(dim_b):
+                    for k in range(dim_b):
+                        idx_j = i * dim_b + j
+                        idx_k = i * dim_b + k
+                        result[j, k] += rho[idx_j, idx_k]
+            return result
+        else:  # Trace over B
+            result = np.zeros((dim_a, dim_a), dtype=complex)
+            for j in range(dim_b):
+                for i in range(dim_a):
+                    for k in range(dim_a):
+                        idx_i = i * dim_b + j
+                        idx_k = k * dim_b + j
+                        result[i, k] += rho[idx_i, idx_k]
+            return result
+    
+    @staticmethod
+    def apply_gate(state, gate, targets, n_qubits):
+        """
+        Apply quantum gate to state.
+        
+        Parameters:
+        -----------
+        state : array
+            State vector
+        gate : array
+            Gate matrix (2^k x 2^k for k-qubit gate)
+        targets : list
+            Target qubit indices
+        n_qubits : int
+            Total number of qubits
+        """
+        # Build full gate by tensoring with identities
+        full_gate = 1
+        gate_idx = 0
+        for i in range(n_qubits):
+            if i in targets:
+                full_gate = np.kron(full_gate, gate) if gate_idx == 0 else full_gate
+                gate_idx += 1
+            else:
+                full_gate = np.kron(full_gate, QuantumState.I)
+        
+        return full_gate @ state
+
+class QuantumChannel:
+    """
+    Quantum channels and their representations.
+    """
+    
+    @staticmethod
+    def depolarizing_channel(rho, p):
+        """
+        Depolarizing channel: E(rho) = (1-p)*rho + p*I/d
+        """
+        d = rho.shape[0]
+        return (1 - p) * rho + p * np.eye(d) / d
+    
+    @staticmethod
+    def amplitude_damping(rho, gamma):
+        """
+        Amplitude damping channel (energy dissipation).
+        """
+        E0 = np.array([[1, 0], [0, np.sqrt(1 - gamma)]])
+        E1 = np.array([[0, np.sqrt(gamma)], [0, 0]])
+        return E0 @ rho @ E0.conj().T + E1 @ rho @ E1.conj().T
+    
+    @staticmethod
+    def bit_flip(rho, p):
+        """
+        Bit flip channel.
+        """
+        X = QuantumState.X
+        return (1 - p) * rho + p * X @ rho @ X
+
+# Demonstrations
+print("=== Quantum Information Theory ===")
+
+# 1. Qubit states and Bloch sphere
+print("\n1. Qubit States")
+psi = np.array([np.cos(np.pi/8), np.sin(np.pi/8)])
+print(f"State |psi> = cos(pi/8)|0> + sin(pi/8)|1>")
+print(f"Probability of |0>: {abs(psi[0])**2:.4f}")
+print(f"Probability of |1>: {abs(psi[1])**2:.4f}")
+
+# Density matrix
+rho = QuantumState.density_matrix(psi)
+print(f"\nDensity matrix:")
+print(rho)
+
+# 2. Entanglement - Bell states
+print("\n2. Bell States (Maximally Entangled)")
+# |Phi+> = (|00> + |11>) / sqrt(2)
+phi_plus = np.array([1, 0, 0, 1]) / np.sqrt(2)
+print(f"|Phi+> = (|00> + |11>)/sqrt(2)")
+
+coeffs, basis_a, basis_b = QuantumState.schmidt_decomposition(phi_plus, 2, 2)
+print(f"Schmidt coefficients: {coeffs}")
+print(f"Schmidt rank: {len(coeffs[coeffs > 1e-10])}")
+
+ent_entropy = QuantumState.entanglement_entropy(phi_plus, 2, 2)
+print(f"Entanglement entropy: {ent_entropy:.4f} bits (max = 1)")
+
+# 3. Partial trace
+print("\n3. Partial Trace")
+rho_phi_plus = QuantumState.density_matrix(phi_plus)
+rho_A = QuantumState.partial_trace(rho_phi_plus, (2, 2), trace_over=1)
+print(f"Reduced density matrix of subsystem A:")
+print(rho_A)
+print(f"This is the maximally mixed state (I/2)")
+
+# 4. von Neumann entropy
+print("\n4. von Neumann Entropy")
+S = QuantumState.von_neumann_entropy(rho_A)
+print(f"S(rho_A) = {S:.4f} bits")
+
+# Pure state has zero entropy
+S_pure = QuantumState.von_neumann_entropy(rho_phi_plus)
+print(f"S(|Phi+><Phi+|) = {S_pure:.4f} bits (pure state)")
+
+# 5. Quantum channels
+print("\n5. Quantum Channels")
+# Apply depolarizing channel
+rho_depol = QuantumChannel.depolarizing_channel(rho, p=0.3)
+print(f"After depolarizing channel (p=0.3):")
+print(rho_depol)
+
+# 6. GHZ state (3-qubit entanglement)
+print("\n6. GHZ State (3-qubit entanglement)")
+# |GHZ> = (|000> + |111>) / sqrt(2)
+ghz = np.zeros(8)
+ghz[0] = 1 / np.sqrt(2)
+ghz[7] = 1 / np.sqrt(2)
+
+# Bipartite cut: A = qubit 0, B = qubits 1,2
+ent_ghz = QuantumState.entanglement_entropy(ghz, 2, 4)
+print(f"Entanglement entropy (cut after qubit 0): {ent_ghz:.4f} bits")
+
+# 7. Quantum teleportation circuit simulation
+print("\n7. Quantum Teleportation")
+# Initial state to teleport
+alpha, beta = 0.8, 0.6  # |psi> = 0.8|0> + 0.6|1>
+psi_teleport = np.array([alpha, beta])
+print(f"State to teleport: |psi> = {alpha}|0> + {beta}|1>")
+
+# Create Bell pair
+bell_pair = phi_plus
+
+# Full 3-qubit state: |psi> (qubit 0) + Bell pair (qubits 1,2)
+# |psi> |Phi+> = (alpha|0> + beta|1>) (|00> + |11>)/sqrt(2)
+# This is a simplified representation
+full_state = np.kron(psi_teleport, bell_pair)
+print(f"Initial 3-qubit state prepared")
+
+# After Bell measurement and corrections, qubit 2 has state |psi>
+# (This would require classical communication in reality)
+print(f"After teleportation protocol, qubit 2 contains |psi>")</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>Arithmetic Dynamics: Number Theory Meets Dynamical Systems</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Arithmetic dynamics is a relatively new field (emerging in the 1990s) that studies the iteration of rational maps over number fields and finite fields. It combines tools from complex dynamics, Diophantine geometry, and algebraic number theory. The field was pioneered by researchers like Joseph Silverman and Robert Benedetto, who recognized that the arithmetic of periodic points reveals deep structure in dynamical systems.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Rational Map:</strong> A function \( f: \mathbb{P}^1 \to \mathbb{P}^1 \) given by \( f(z) = \frac{P(z)}{Q(z)} \) where \( P, Q \in K[z] \) are coprime polynomials over a field \( K \).</p>
+
+                    <p><strong>Forward Orbit:</strong> For \( \alpha \in \mathbb{P}^1(K) \), the orbit is \( \mathcal{O}_f(\alpha) = \{\alpha, f(\alpha), f^2(\alpha), \ldots\} \).</p>
+
+                    <p><strong>Periodic Point:</strong> A point \( \alpha \) is periodic with period \( n \) if \( f^n(\alpha) = \alpha \) and \( f^k(\alpha) \neq \alpha \) for \( 1 \leq k < n \).</p>
+
+                    <p><strong>Preperiodic Point:</strong> A point that is eventually periodic: \( f^{m+n}(\alpha) = f^m(\alpha) \) for some \( m \geq 0, n \geq 1 \).</p>
+
+                    <h4>Theorem: Uniform Boundedness Conjecture (Morton-Silverman)</h4>
+                    <p>Let \( f: \mathbb{P}^N \to \mathbb{P}^N \) be a morphism of degree \( d \geq 2 \) defined over a number field \( K \). There exists a constant \( C(f, K) \) such that for all \( P \in \mathbb{P}^N(K) \):
+                    \[ |\mathcal{O}_f(P)| \leq C(f, K) \]</p>
+                    <p>This conjecture remains open even for quadratic polynomials in one variable over \( \mathbb{Q} \). It implies uniform bounds on torsion for elliptic curves (Mazur's theorem) and abelian varieties.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathbb{P}^1 \) — projective line (Riemann sphere)</li>
+                        <li>\( f^n \) — n-th iterate of \( f \)</li>
+                        <li>\( \mathcal{O}_f(\alpha) \) — forward orbit of \( \alpha \)</li>
+                        <li>\( \text{Per}(f) \) — set of periodic points</li>
+                        <li>\( \text{PrePer}(f) \) — set of preperiodic points</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from fractions import Fraction
+from collections import defaultdict
+
+class ArithmeticDynamics:
+    """
+    Arithmetic dynamics over Q and finite fields.
+    """
+    
+    def __init__(self, f_num, f_den):
+        """
+        Define rational map f(x) = f_num(x) / f_den(x).
+        Coefficients are given as lists [a0, a1, ..., an] for a0 + a1*x + ... + an*x^n.
+        """
+        self.f_num = f_num  # Numerator coefficients
+        self.f_den = f_den  # Denominator coefficients
+        self.degree = max(len(f_num), len(f_den)) - 1
+    
+    def evaluate(self, x, mod=None):
+        """
+        Evaluate f(x) = P(x)/Q(x).
+        Returns Fraction for exact arithmetic over Q.
+        """
+        if isinstance(x, Fraction):
+            # Evaluate polynomials at x
+            num_val = sum(c * (x ** i) for i, c in enumerate(self.f_num))
+            den_val = sum(c * (x ** i) for i, c in enumerate(self.f_den))
+            if den_val == 0:
+                return None  # Pole
+            return num_val / den_val
+        else:
+            # Integer or modular arithmetic
+            num_val = sum(c * pow(x, i, mod) for i, c in enumerate(self.f_num)) % mod
+            den_val = sum(c * pow(x, i, mod) for i, c in enumerate(self.f_den)) % mod
+            if den_val == 0:
+                return None
+            # Modular inverse
+            try:
+                den_inv = pow(den_val, -1, mod)
+                return (num_val * den_inv) % mod
+            except ValueError:
+                return None
+    
+    def iterate(self, x0, n, mod=None):
+        """
+        Compute n-th iterate f^n(x0).
+        """
+        x = x0
+        for _ in range(n):
+            x = self.evaluate(x, mod)
+            if x is None:
+                return None
+        return x
+    
+    def orbit(self, x0, max_iter=100, mod=None):
+        """
+        Compute forward orbit until repetition or max_iter.
+        """
+        orbit = [x0]
+        seen = {x0: 0}
+        x = x0
+        
+        for i in range(max_iter):
+            x = self.evaluate(x, mod)
+            if x is None:
+                return orbit, None  # Hit a pole
+            
+            if x in seen:
+                preperiod = seen[x]
+                period = len(orbit) - preperiod
+                return orbit, (preperiod, period)
+            
+            seen[x] = len(orbit)
+            orbit.append(x)
+        
+        return orbit, None  # Did not detect periodicity
+    
+    def periodic_points_mod_p(self, p, period):
+        """
+        Find periodic points of given period over F_p.
+        """
+        periodic = []
+        for x in range(p):
+            if self.iterate(x, period, mod=p) == x:
+                # Check it's not smaller period
+                is_minimal = True
+                for d in range(1, period):
+                    if period % d == 0 and self.iterate(x, d, mod=p) == x:
+                        is_minimal = False
+                        break
+                if is_minimal:
+                    periodic.append(x)
+        return periodic
+    
+    def canonical_height(self, x, n_iter=20):
+        """
+        Estimate canonical height (simplified).
+        For quadratic polynomials, relates to complexity of orbit.
+        """
+        height_sum = 0
+        current = Fraction(x) if isinstance(x, int) else x
+        
+        for _ in range(n_iter):
+            height_sum += max(0, np.log(abs(float(current))))
+            current = self.evaluate(current)
+            if current is None:
+                break
+        
+        return height_sum / (self.degree ** n_iter)
+
+# Example: Quadratic polynomial f(x) = x^2 - 1
+print("=== Arithmetic Dynamics ===")
+print("\n1. Quadratic Polynomial: f(x) = x^2 - 1")
+
+f = ArithmeticDynamics([-1, 0, 1], [1])  # (x^2 - 1) / 1
+
+# Orbit analysis over Q
+print("\nOrbits over Q:")
+starting_points = [Fraction(0), Fraction(1), Fraction(2), Fraction(1, 2)]
+for x0 in starting_points:
+    orbit, period_info = f.orbit(x0, max_iter=10)
+    if period_info:
+        preper, period = period_info
+        print(f"  f^*({x0}): preperiod={preper}, period={period}, orbit={orbit[:preper+period+1]}")
+    else:
+        print(f"  f^*({x0}): orbit diverges or too long: {orbit}")
+
+# Analysis over finite fields
+print("\n2. Dynamics over Finite Fields")
+for p in [3, 5, 7]:
+    print(f"\nOver F_{p}:")
+    
+    # Count periodic points
+    all_periodic = set()
+    for period in range(1, 6):
+        per = f.periodic_points_mod_p(p, period)
+        if per:
+            print(f"  Period {period}: {per}")
+            all_periodic.update(per)
+    
+    print(f"  Total periodic points: {len(all_periodic)}")
+    
+    # Preperiodic points
+    preperiodic = set()
+    for x in range(p):
+        orbit, info = f.orbit(x, mod=p)
+        if info:
+            preperiodic.add(x)
+    print(f"  Total preperiodic points: {len(preperiodic)}")
+
+# Example: f(x) = x^2 + c family
+print("\n3. Mandelbrot-like Analysis: f_c(x) = x^2 + c")
+def analyze_c(c_val, x0=Fraction(0), n_iter=10):
+    """Analyze orbit of 0 under f(x) = x^2 + c."""
+    fc = ArithmeticDynamics([c_val.numerator if isinstance(c_val, Fraction) else c_val, 0, 1], 
+                            [c_val.denominator if isinstance(c_val, Fraction) else 1])
+    orbit, info = fc.orbit(x0, max_iter=n_iter)
+    return orbit, info
+
+test_c_values = [Fraction(0), Fraction(-1), Fraction(-2), Fraction(1, 4), Fraction(-1, 2)]
+for c in test_c_values:
+    orbit, info = analyze_c(c)
+    if info:
+        print(f"  c = {c}: preperiodic (preperiod={info[0]}, period={info[1]})")
+    else:
+        # Check if orbit seems bounded
+        if len(orbit) > 5:
+            last_vals = [float(o) for o in orbit[-5:]]
+            if all(abs(v) < 10 for v in last_vals):
+                print(f"  c = {c}: appears bounded, orbit (first 8): {orbit[:8]}")
+            else:
+                print(f"  c = {c}: appears unbounded")
+        else:
+            print(f"  c = {c}: orbit = {orbit}")
+
+# 4. Heights and complexity
+print("\n4. Canonical Height Estimates")
+f_mandel = ArithmeticDynamics([0, 0, 1], [1])  # f(x) = x^2
+test_points = [Fraction(2), Fraction(3), Fraction(1, 2), Fraction(3, 2)]
+for x in test_points:
+    h = f_mandel.canonical_height(x, n_iter=15)
+    print(f"  h_f({x}) ≈ {h:.4f}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Model Theory: The Mathematics of Mathematical Structures</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Model theory, a branch of mathematical logic, studies the relationship between formal languages and their interpretations (models). Founded by Alfred Tarski and Abraham Robinson in the mid-20th century, it has evolved into a sophisticated tool with surprising applications in algebra and geometry. The field gained prominence through Robinson's non-standard analysis and Morley's categoricity theorem, culminating in modern geometric stability theory.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>First-Order Language:</strong> A language \( \mathcal{L} \) consists of function symbols, relation symbols, and constant symbols, each with specified arities.</p>
+
+                    <p><strong>Structure:</strong> An \( \mathcal{L} \)-structure \( \mathcal{M} = (M, \ldots) \) consists of a domain \( M \) together with interpretations of all symbols in \( \mathcal{L} \).</p>
+
+                    <p><strong>Theory:</strong> A set \( T \) of sentences (formulas with no free variables) in \( \mathcal{L} \).</p>
+
+                    <p><strong>Elementary Equivalence:</strong> Structures \( \mathcal{M} \) and \( \mathcal{N} \) are elementarily equivalent (\( \mathcal{M} \equiv \mathcal{N} \)) if they satisfy the same sentences.</p>
+
+                    <h4>Theorem: Compactness Theorem</h4>
+                    <p>A theory \( T \) has a model if and only if every finite subset of \( T \) has a model.</p>
+                    <p><strong>Corollary:</strong> If a theory \( T \) has arbitrarily large finite models, then it has an infinite model.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\( \mathcal{L} \) — first-order language</li>
+                        <li>\( \mathcal{M}, \mathcal{N} \) — structures (models)</li>
+                        <li>\( T \) — theory (set of sentences)</li>
+                        <li>\( \mathcal{M} \models \phi \) — structure satisfies formula</li>
+                        <li>\( \equiv \) — elementary equivalence</li>
+                        <li>\( \preceq \) — elementary substructure</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>from itertools import product
+from functools import lru_cache
+
+class FirstOrderStructure:
+    """
+    Represents a first-order structure with domain and interpretations.
+    """
+    def __init__(self, domain, relations=None, functions=None, constants=None):
+        """
+        Parameters:
+        -----------
+        domain : set
+            The underlying set of the structure
+        relations : dict
+            Mapping from relation symbols to subsets of domain^n
+        functions : dict
+            Mapping from function symbols to functions domain^n -> domain
+        constants : dict
+            Mapping from constant symbols to elements of domain
+        """
+        self.domain = set(domain)
+        self.relations = relations or {}
+        self.functions = functions or {}
+        self.constants = constants or {}
+    
+    def evaluate_term(self, term, assignment):
+        """
+        Evaluate a term under variable assignment.
+        term can be:
+        - variable name (string)
+        - constant name (string)
+        - ('f', t1, ..., tn) for function application
+        """
+        if isinstance(term, str):
+            if term in self.constants:
+                return self.constants[term]
+            return assignment.get(term)
+        
+        # Function application
+        func_name = term[0]
+        args = [self.evaluate_term(t, assignment) for t in term[1:]]
+        return self.functions[func_name](*args)
+    
+    def satisfies(self, formula, assignment=None):
+        """
+        Check if structure satisfies formula under assignment.
+        """
+        if assignment is None:
+            assignment = {}
+        
+        # Atomic formulas
+        if isinstance(formula, tuple) and formula[0] == '=':
+            t1, t2 = formula[1], formula[2]
+            return self.evaluate_term(t1, assignment) == self.evaluate_term(t2, assignment)
+        
+        if isinstance(formula, tuple) and formula[0] in self.relations:
+            rel_name = formula[0]
+            args = tuple(self.evaluate_term(t, assignment) for t in formula[1:])
+            return args in self.relations[rel_name]
+        
+        # Logical connectives
+        if formula[0] == 'not':
+            return not self.satisfies(formula[1], assignment)
+        
+        if formula[0] == 'and':
+            return all(self.satisfies(f, assignment) for f in formula[1:])
+        
+        if formula[0] == 'or':
+            return any(self.satisfies(f, assignment) for f in formula[1:])
+        
+        if formula[0] == 'implies':
+            return (not self.satisfies(formula[1], assignment)) or self.satisfies(formula[2], assignment)
+        
+        # Quantifiers
+        if formula[0] == 'forall':
+            var = formula[1]
+            subformula = formula[2]
+            return all(
+                self.satisfies(subformula, {**assignment, var: a})
+                for a in self.domain
+            )
+        
+        if formula[0] == 'exists':
+            var = formula[1]
+            subformula = formula[2]
+            return any(
+                self.satisfies(subformula, {**assignment, var: a})
+                for a in self.domain
+            )
+        
+        raise ValueError(f"Unknown formula structure: {formula}")
+
+class Theory:
+    """
+    A first-order theory (set of sentences).
+    """
+    def __init__(self, axioms=None):
+        self.axioms = axioms or []
+    
+    def is_model(self, structure):
+        """Check if structure satisfies all axioms."""
+        return all(structure.satisfies(ax) for ax in self.axioms)
+    
+    def add_axiom(self, axiom):
+        self.axioms.append(axiom)
+
+# Examples
+print("=== Model Theory Examples ===")
+
+# 1. Dense Linear Order without Endpoints (DLO)
+print("\n1. Dense Linear Order without Endpoints")
+
+# Domain: rational numbers in [0, 1]
+domain = {i/10 for i in range(1, 10)}  # {0.1, 0.2, ..., 0.9}
+
+# Relation: <
+less_than = {(a, b) for a in domain for b in domain if a < b}
+
+dlo_structure = FirstOrderStructure(
+    domain=domain,
+    relations={'<': less_than}
+)
+
+# Check some properties
+# Transitivity: forall x y z. (x < y and y < z) -> x < z
+transitivity = ('forall', 'x', ('forall', 'y', ('forall', 'z',
+    ('implies', 
+        ('and', ('<', 'x', 'y'), ('<', 'y', 'z')),
+        ('<', 'x', 'z')
+    )
+)))
+
+print(f"Transitivity holds: {dlo_structure.satisfies(transitivity)}")
+
+# Irreflexivity: forall x. not(x < x)
+irreflexivity = ('forall', 'x', ('not', ('<', 'x', 'x')))
+print(f"Irreflexivity holds: {dlo_structure.satisfies(irreflexivity)}")
+
+# 2. Group Theory
+print("\n2. Group Theory - Cyclic Group Z_4")
+
+Z4 = {0, 1, 2, 3}
+addition_mod_4 = lambda a, b: (a + b) % 4
+zero = 0
+
+def neg(a):
+    return (-a) % 4
+
+Z4_structure = FirstOrderStructure(
+    domain=Z4,
+    functions={'+': addition_mod_4, '-': neg},
+    constants={'0': zero}
+)
+
+# Group axioms
+# Closure is implicit in function definition
+# Associativity: forall x y z. (x + y) + z = x + (y + z)
+associativity = ('forall', 'x', ('forall', 'y', ('forall', 'z',
+    ('=', ('+', ('+', 'x', 'y'), 'z'), ('+', 'x', ('+', 'y', 'z')))
+)))
+
+# Identity: forall x. x + 0 = x and 0 + x = x
+identity = ('forall', 'x', ('and',
+    ('=', ('+', 'x', '0'), 'x'),
+    ('=', ('+', '0', 'x'), 'x')
+))
+
+# Inverse: forall x. exists y. x + y = 0 and y + x = 0
+inverse = ('forall', 'x', ('exists', 'y', ('and',
+    ('=', ('+', 'x', 'y'), '0'),
+    ('=', ('+', 'y', 'x'), '0')
+))))
+
+print(f"Associativity: {Z4_structure.satisfies(associativity)}")
+print(f"Identity: {Z4_structure.satisfies(identity)}")
+print(f"Inverse: {Z4_structure.satisfies(inverse)}")
+
+# 3. Graph Theory as Relational Structure
+print("\n3. Graph as Relational Structure")
+
+# Triangle graph: vertices {0, 1, 2}, edges (0,1), (1,2), (2,0)
+vertices = {0, 1, 2}
+edges = {(0, 1), (1, 0), (1, 2), (2, 1), (2, 0), (0, 2)}  # Undirected
+
+graph_structure = FirstOrderStructure(
+    domain=vertices,
+    relations={'E': edges}
+)
+
+# Check if graph is undirected: forall x y. E(x,y) -> E(y,x)
+undirected = ('forall', 'x', ('forall', 'y',
+    ('implies', ('E', 'x', 'y'), ('E', 'y', 'x'))
+))
+print(f"Graph is undirected: {graph_structure.satisfies(undirected)}")
+
+# Check for triangle: exists x y z. E(x,y) and E(y,z) and E(z,x) and x!=y and y!=z and x!=z
+triangle = ('exists', 'x', ('exists', 'y', ('exists', 'z',
+    ('and',
+        ('E', 'x', 'y'), ('E', 'y', 'z'), ('E', 'z', 'x'),
+        ('not', ('=', 'x', 'y')),
+        ('not', ('=', 'y', 'z')),
+        ('not', ('=', 'x', 'z'))
+    )
+)))
+print(f"Graph contains triangle: {graph_structure.satisfies(triangle)}")
+
+# 4. Elementary Equivalence (simplified)
+print("\n4. Elementary Equivalence Check")
+
+# Two structures that should be elementarily equivalent
+# (infinite dense linear orders without endpoints)
+
+def create_dlo_structure(domain):
+    less_than = {(a, b) for a in domain for b in domain if a < b}
+    return FirstOrderStructure(domain=domain, relations={'<': less_than})
+
+# Q ∩ [0, 1] and Q ∩ [0, 2] should satisfy same sentences about order
+dlo1 = create_dlo_structure({i/10 for i in range(1, 10)})
+dlo2 = create_dlo_structure({i/5 for i in range(1, 10)})
+
+# Check they both satisfy density-like property
+# forall x y. (x < y -> exists z. x < z and z < y)
+density = ('forall', 'x', ('forall', 'y',
+    ('implies', ('<', 'x', 'y'),
+        ('exists', 'z', ('and', ('<', 'x', 'z'), ('<', 'z', 'y')))
+    )
+))
+
+print(f"Structure 1 satisfies density: {dlo1.satisfies(density)}")
+print(f"Structure 2 satisfies density: {dlo2.satisfies(density)}")</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                
+                <div class="history-entry">
+                    <h3>The Birth of Modern Algebra: Évariste Galois</h3>
+                    
+                    <p>In the early hours of May 30, 1832, a young Frenchman named Évariste Galois died from wounds sustained in a duel. He was just twenty years old. Yet in his brief life, Galois had revolutionized mathematics, founding what we now call Galois theory—a subject that would transform our understanding of equations, symmetry, and the very nature of mathematical structure.</p>
+                    
+                    <p>Galois's story is one of extraordinary genius emerging against extraordinary odds. Born in 1811 to a politically active family in Bourg-la-Reine, he showed early mathematical promise but struggled with conventional education. His school reports described him as "original" and "bizarre," and his confrontational personality alienated teachers and examiners alike. Twice he failed the entrance examination for the École Polytechnique, the premier institution for mathematical training in France.</p>
+                    
+                    <p>What Galois lacked in social grace, he possessed in mathematical vision. While still a teenager, he had already discovered the fundamental theorem that would bear his name: a polynomial equation is solvable by radicals (using only addition, subtraction, multiplication, division, and root extraction) if and only if its Galois group is solvable. This result settled a question that had tormented mathematicians for centuries—the search for general solutions to polynomial equations.</p>
+                    
+                    <p>The ancient Babylonians had known how to solve quadratic equations. In the 16th century, Italian mathematicians—Tartaglia, Cardano, Ferrari—had discovered formulas for cubic and quartic equations. But the quintic (degree five) equation resisted all attempts. In 1799, Paolo Ruffini had suggested that no general formula exists, and in 1824, Niels Henrik Abel proved this conjecture. Galois went further: he provided a complete characterization of which equations are solvable and why.</p>
+                    
+                    <p>The key insight was to associate with each polynomial a group—its Galois group—consisting of the symmetries of its roots. This was revolutionary. Before Galois, algebra was primarily about manipulating equations. After Galois, it became the study of structure and symmetry. The concept of a "group," which would become one of the most important ideas in all of mathematics, emerged from this work.</p>
+                    
+                    <p>Galois wrote up his discoveries in a series of papers submitted to the Paris Academy of Sciences. Cauchy, one of the leading mathematicians of the era, promised to review them but never did. Fourier, the Academy's secretary, took the manuscript home and died shortly after—it was never found. Poisson eventually reviewed Galois's work and rejected it as "incomprehensible." The tragedy of Galois's life was not just its brevity but the repeated failure of the mathematical establishment to recognize his genius.</p>
+                    
+                    <p>The night before his fatal duel, Galois stayed up writing. In the margins of his manuscript, he scribbled: "I have no time, I have no time." He entrusted the papers to his friend Auguste Chevalier, asking that they be sent to Gauss and Jacobi. They were finally published in 1846, fourteen years after his death, by Joseph Liouville. The mathematical world then recognized what had been lost.</p>
+                    
+                    <p>Today, Galois theory stands as a cornerstone of modern algebra. It connects field theory and group theory in a profound correspondence. It explains why the general quintic cannot be solved, while certain special quintics can. It provides the foundation for much of algebraic number theory and algebraic geometry. And it exemplifies a pattern that would recur throughout mathematics: the power of abstract structural thinking to solve concrete problems.</p>
+                    
+                    <p>The romantic image of Galois—the misunderstood genius, the victim of political intrigue and personal conflict—has sometimes overshadowed his mathematical achievement. But the mathematics endures. Every student who learns that there is no quintic formula, every researcher who uses group theory to understand symmetry, every cryptographer who relies on the properties of finite fields, works in the tradition that Galois founded. His life was brief, but his intellectual legacy is immortal.</p>
+                </div>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/">Quanta Magazine: "Mathematicians Solve the 'Happy Ending' Problem for Medium-Sized Sets"</a></h3>
+                    <p><strong>Summary:</strong> Researchers have made significant progress on the Erdős-Szekeres problem, also known as the "happy ending problem." This classic question in combinatorial geometry asks: given any five points in general position in the plane, must some four form a convex quadrilateral? More generally, what is the smallest number of points that guarantees a convex n-gon? The problem earned its whimsical name because it led to the marriage of mathematicians Esther Klein and George Szekeres. Recent work has established new bounds for the case of convex hexagons, bringing us closer to understanding the asymptotic behavior of this function. The proof combines techniques from Ramsey theory with novel geometric insights.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/subjects/mathematics-and-computing">Nature: "AI Mathematicians: The Promise and Peril of Machine Learning in Proof Discovery"</a></h3>
+                    <p><strong>Summary:</strong> A recent survey in Nature examines how machine learning is transforming mathematical research. Systems like DeepMind's FunSearch and Google's AlphaTensor have discovered new algorithms and mathematical constructions, raising profound questions about the nature of mathematical creativity. The article explores both the potential—AI systems can search vast spaces of possibilities and identify patterns invisible to humans—and the limitations: current systems lack the ability to provide rigorous proofs or understand why their discoveries work. Mathematicians interviewed express a mix of excitement and caution, noting that AI is most effective as a tool for exploration rather than verification. The piece concludes with reflections on how the role of human mathematicians might evolve.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.ams.org/journals/notices/">Notices of the AMS: "The Resolution of the Connes Embedding Problem"</a></h3>
+                    <p><strong>Summary:</strong> This article details the resolution of one of the most significant open problems in operator algebras. The Connes embedding problem, posed by Alain Connes in 1976, asked whether every type II_1 von Neumann factor embeds into an ultrapower of the hyperfinite II_1 factor. After decades of resistance, the problem was solved negatively through an unexpected connection to quantum information theory. Ji, Natarajan, Vidick, Wright, and Yuen proved that the problem is equivalent to a question about non-local games in quantum mechanics—and used this equivalence to construct a counterexample. The proof required sophisticated techniques from complexity theory, including the theory of multiprover interactive proofs. This resolution exemplifies the increasingly interdisciplinary nature of modern mathematics.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>IMO 2001 Problem 2</h3>
+                    <p>Let \( a, b, c \) be positive real numbers. Prove that:
+                    \[ \frac{a}{\sqrt{a^2 + 8bc}} + \frac{b}{\sqrt{b^2 + 8ca}} + \frac{c}{\sqrt{c^2 + 8ab}} \geq 1 \]</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Consider using Jensen's inequality or Hölder's inequality. Alternatively, try to find a suitable substitution that simplifies the denominators. A useful approach might be to use the inequality \( \sqrt{x^2 + 8yz} \leq x + 2\sqrt{2yz} \) or to apply the Cauchy-Schwarz inequality in a clever way.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p>We will use Hölder's inequality. Recall that for positive reals, Hölder's inequality states:
+                        \[ \left(\sum a_i^{p}\right)^{1/p} \left(\sum b_i^{q}\right)^{1/q} \geq \sum a_i b_i \]
+                        where \( \frac{1}{p} + \frac{1}{q} = 1 \).</p>
+                        
+                        <p>A more general form of Hölder's inequality for three sequences is:
+                        \[ \left(\sum x_i^3\right)^{1/3} \left(\sum y_i^3\right)^{1/3} \left(\sum z_i^3\right)^{1/3} \geq \sum x_i y_i z_i \]</p>
+                        
+                        <p>We apply Hölder's inequality as follows:
+                        \[ \left(\sum_{cyc} \frac{a}{\sqrt{a^2 + 8bc}}\right)^2 \left(\sum_{cyc} a(a^2 + 8bc)\right) \geq (a + b + c)^3 \]</p>
+                        
+                        <p>So it suffices to prove:
+                        \[ (a + b + c)^3 \geq \sum_{cyc} a(a^2 + 8bc) = a^3 + b^3 + c^3 + 24abc \]</p>
+                        
+                        <p>Expanding the left side:
+                        \[ (a + b + c)^3 = a^3 + b^3 + c^3 + 3(a + b)(b + c)(c + a) \]</p>
+                        
+                        <p>By AM-GM:
+                        \[ (a + b)(b + c)(c + a) \geq 8abc \]</p>
+                        
+                        <p>Therefore:
+                        \[ (a + b + c)^3 \geq a^3 + b^3 + c^3 + 24abc \]</p>
+                        
+                        <p>as required. Equality holds when \( a = b = c \).</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day</h2>
+                
+                <div class="visualization">
+                    <h3>Newton's Method Fractal</h3>
+                    <p>Newton's method for finding roots of complex polynomials generates stunning fractal patterns. When applied to \( z^3 - 1 = 0 \) in the complex plane, each point is colored according to which root it converges to, with brightness indicating the speed of convergence. The resulting image displays intricate self-similar structures at all scales—basins of attraction with fractal boundaries.</p>
+                    
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def newton_fractal(width=800, height=800, max_iter=50, tol=1e-6):
+    """
+    Generate Newton fractal for z^3 - 1 = 0.
+    """
+    # Roots of z^3 - 1 = 0
+    roots = np.array([1, -0.5 + 0.8660254j, -0.5 - 0.8660254j])
+    
+    # Define complex plane
+    x_min, x_max = -2, 2
+    y_min, y_max = -2, 2
+    
+    x = np.linspace(x_min, x_max, width)
+    y = np.linspace(y_min, y_max, height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    # Output arrays
+    root_index = np.zeros(Z.shape, dtype=int)
+    iterations = np.zeros(Z.shape, dtype=int)
+    
+    # Newton's method: z_{n+1} = z_n - f(z_n)/f'(z_n)
+    # For f(z) = z^3 - 1: z_{n+1} = z_n - (z_n^3 - 1)/(3*z_n^2)
+    #              = (2*z_n^3 + 1)/(3*z_n^2)
+    
+    for i in range(max_iter):
+        # Newton iteration
+        Z_new = (2 * Z**3 + 1) / (3 * Z**2)
+        
+        # Check convergence
+        for r_idx, root in enumerate(roots):
+            mask = np.abs(Z - root) < tol
+            root_index[mask] = r_idx
+            iterations[mask] = i
+        
+        # Stop if all converged
+        if np.all(iterations > 0):
+            break
+        
+        Z = Z_new
+    
+    # Create colored image
+    # Color by root, brightness by convergence speed
+    img = np.zeros((height, width, 3))
+    colors = np.array([
+        [1, 0, 0],    # Red for root 1
+        [0, 1, 0],    # Green for root 2
+        [0, 0, 1]     # Blue for root 3
+    ])
+    
+    for i in range(3):
+        mask = (root_index == i)
+        # Brightness based on iteration count (faster = brighter)
+        brightness = 1 - (iterations[mask] / max_iter) * 0.7
+        for c in range(3):
+            channel = img[:, :, c]
+            channel[mask] = colors[i, c] * brightness
+    
+    return img
+
+# Generate and display
+fractal = newton_fractal(width=600, height=600, max_iter=50)
+
+plt.figure(figsize=(10, 10))
+plt.imshow(fractal, extent=[-2, 2, -2, 2])
+plt.title("Newton Fractal for $z^3 - 1 = 0$")
+plt.xlabel("Re(z)")
+plt.ylabel("Im(z)")
+plt.axis('equal')
+plt.tight_layout()
+plt.savefig('newton_fractal.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+# Zoom into interesting region
+print("Generating zoomed view...")
+
+def newton_fractal_zoom(width=600, height=600, max_iter=80, 
+                        x_range=(-0.5, 0.5), y_range=(-0.5, 0.5)):
+    """Zoomed version for more detail."""
+    roots = np.array([1, -0.5 + 0.8660254j, -0.5 - 0.8660254j])
+    
+    x = np.linspace(x_range[0], x_range[1], width)
+    y = np.linspace(y_range[0], y_range[1], height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    root_index = np.zeros(Z.shape, dtype=int)
+    iterations = np.zeros(Z.shape, dtype=int)
+    
+    for i in range(max_iter):
+        Z_new = (2 * Z**3 + 1) / (3 * Z**2)
+        
+        for r_idx, root in enumerate(roots):
+            mask = np.abs(Z - root) < 1e-10
+            root_index[mask] = r_idx
+            iterations[mask] = i
+        
+        if np.all(iterations > 0):
+            break
+        
+        Z = Z_new
+    
+    # Create image with smooth coloring
+    img = np.zeros((height, width, 3))
+    colors = np.array([[1, 0.2, 0.2], [0.2, 1, 0.2], [0.2, 0.2, 1]])
+    
+    for i in range(3):
+        mask = (root_index == i)
+        brightness = np.exp(-iterations[mask] / 20) * 0.8 + 0.2
+        for c in range(3):
+            channel = img[:, :, c]
+            channel[mask] = colors[i, c] * brightness
+    
+    return img
+
+zoom_fractal = newton_fractal_zoom(x_range=(-0.3, 0.3), y_range=(-0.3, 0.3))
+
+plt.figure(figsize=(10, 10))
+plt.imshow(zoom_fractal, extent=[-0.3, 0.3, -0.3, 0.3])
+plt.title("Newton Fractal (Zoomed)")
+plt.xlabel("Re(z)")
+plt.ylabel("Im(z)")
+plt.axis('equal')
+plt.tight_layout()
+plt.savefig('newton_fractal_zoom.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+print("Fractal images saved!")</code></pre>
+                </div>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>Generated on February 27, 2026 at 10:34 UTC</p>
+        <p><a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
