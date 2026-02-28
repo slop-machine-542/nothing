@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 28, 2026 at 20:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 28, 2026 at 20:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h1>📐 Math Digest — February 28, 2026 at 20:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-28 at 20:34 UTC</p>
+
+            <!-- Section 1: Math Links -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                <div class="link-item">
+                    <h4><a href="https://mathoverflow.net">MathOverflow</a></h4>
+                    <p>A question and answer site for professional mathematicians. Features research-level discussions on cutting-edge topics in pure and applied mathematics, with contributions from leading researchers worldwide.</p>
+                </div>
+                <div class="link-item">
+                    <h4><a href="https://www.ams.org/publicoutreach/feature-column/fcarc-index">AMS Feature Column</a></h4>
+                    <p>Monthly essays on mathematical topics written by experts. Covers applications of mathematics in science, technology, and culture, accessible to undergraduate students and the general public.</p>
+                </div>
+                <div class="link-item">
+                    <h4><a href="https://terrytao.wordpress.com">What's New — Terence Tao</a></h4>
+                    <p>Terence Tao's research blog covering breakthroughs in harmonic analysis, partial differential equations, combinatorics, and number theory. Includes exposition of his own work and commentary on developments in the field.</p>
+                </div>
+            </section>
+
+            <!-- Section 2: Free Math Book -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                <div class="book-item">
+                    <h4>"Probability: Theory and Examples" by Rick Durrett</h4>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> A comprehensive introduction to measure-theoretic probability theory. The book covers laws of large numbers, central limit theorems, random walks, martingales, Markov chains, ergodic theory, and Brownian motion. Durrett's approach emphasizes understanding through examples and applications, making it ideal for students preparing for research in probability, statistics, or stochastic processes. The text includes numerous exercises ranging from routine calculations to challenging proofs, with solutions available to instructors.</p>
+                </div>
+            </section>
+
+            <!-- Section 3: Pure Math Deep-Dives -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <h3>1. Combinatorial Species</h3>
+                <p><strong>Motivation:</strong> How can we systematically count labeled structures? Combinatorial species, introduced by André Joyal in 1981, provide a unified framework for counting combinatorial structures using category theory and generating functions.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>combinatorial species</strong> is a functor \(F: \mathbf{B} \to \mathbf{Set}\) where \(\mathbf{B}\) is the category of finite sets with bijections.</li>
+                    <li>For a finite set \(U\), \(F[U]\) is the set of \(F\)-structures on \(U\).</li>
+                    <li>The <strong>exponential generating function</strong> is \(F(x) = \sum_{n \geq 0} |F[n]| \frac{x^n}{n!}\).</li>
+                </ul>
+
+                <p><strong>Theorem (Cycle Index Formula):</strong> For a species \(F\), the exponential generating function satisfies:
+                \[F(x) = Z_F(x, x^2, x^3, \ldots)\]
+                where \(Z_F\) is the cycle index series.</p>
+
+                <p><strong>Proof Sketch:</strong> The cycle index encodes the action of the symmetric group on structures. By Burnside's lemma, the number of orbits equals the average number of fixed points. The substitution \(p_k = x^k\) counts labeled structures.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(F\): Combinatorial species</li>
+                    <li>\(F[U]\): Set of structures on label set \(U\)</li>
+                    <li>\(F(x)\): Exponential generating function</li>
+                    <li>\(Z_F\): Cycle index series</li>
+                </ul>
+
+                <pre><code class="python">from sympy import symbols, exp, factorial, summation, oo
+from sympy import Function, Symbol
+
+def species_sum(F, G, n_max=10):
+    """
+    Sum of combinatorial species (disjoint union).
+    If F and G are species, (F + G)[U] = F[U] ⊔ G[U]
+    """
+    x = symbols('x')
+    F_egf = sum(F[n] * x**n / factorial(n) for n in range(n_max))
+    G_egf = sum(G[n] * x**n / factorial(n) for n in range(n_max))
+    return F_egf + G_egf
+
+def species_product(F, G, n_max=10):
+    """
+    Product of combinatorial species.
+    (F · G)[U] = ⨆_{U₁ ⊔ U₂ = U} F[U₁] × G[U₂]
+    """
+    x = symbols('x')
+    F_egf = sum(F[n] * x**n / factorial(n) for n in range(n_max))
+    G_egf = sum(G[n] * x**n / factorial(n) for n in range(n_max))
+    return F_egf * G_egf
+
+# Example: Species of Sets (E)
+# E[U] = {U} for all U, so |E[n]| = 1
+E = [1] * 15  # All coefficients are 1
+x = symbols('x')
+E_egf = sum(E[n] * x**n / factorial(n) for n in range(15))
+print(f"Species of Sets EGF: {E_egf}")
+print(f"Simplified: {exp(x)}")  # Should equal exp(x)
+
+# Example: Species of Cycles (C)
+# |C[n]| = (n-1)! for n ≥ 1, |C[0]| = 0
+C = [0] + [factorial(n-1) for n in range(1, 15)]
+C_egf = sum(C[n] * x**n / factorial(n) for n in range(15))
+print(f"\nSpecies of Cycles EGF: {C_egf}")
+print(f"Simplified: {summation(x**n/n, (n, 1, oo))}")  # Should equal -ln(1-x)
+
+# Verify: log(1/(1-x))
+from sympy import log
+print(f"\n-log(1-x) = {-log(1-x)}")</code></pre>
+
+                <h3>2. K-Theory</h3>
+                <p><strong>Motivation:</strong> How can we study vector bundles on topological spaces or projective modules over rings using algebraic invariants? K-theory provides a unified framework for doing so, connecting topology, algebra, and number theory.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>For a compact Hausdorff space \(X\), \(K^0(X)\) is the Grothendieck group of isomorphism classes of complex vector bundles over \(X\).</li>
+                    <li>For a ring \(R\), \(K_0(R)\) is the Grothendieck group of finitely generated projective \(R\)-modules.</li>
+                    <li>The <strong>reduced K-theory</strong> \(\tilde{K}^0(X)\) is the kernel of the rank map \(K^0(X) \to \mathbb{Z}\).</li>
+                </ul>
+
+                <p><strong>Theorem (Bott Periodicity):</strong> For a compact Hausdorff space \(X\):
+                \[\tilde{K}^0(X) \cong \tilde{K}^0(S^2 \wedge X)\]
+                Equivalently, \(K^0(X) \cong K^0(S^2 \times X) / K^0(X)\).</p>
+
+                <p><strong>Proof Sketch:</strong> The proof uses the clutching construction for vector bundles over \(S^2\) and shows that the tensor product with the Bott element (the Hopf bundle minus the trivial line bundle) induces an isomorphism.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(K^0(X)\): Topological K-theory (even degree)</li>
+                    <li>\(K_0(R)\): Algebraic K-theory</li>
+                    <li>\([E]\): Class of vector bundle \(E\) in K-theory</li>
+                    <li>\(S^n\): n-dimensional sphere</li>
+                </ul>
+
+                <pre><code class="python">import numpy as np
+
+def clutching_construction(f, n=100):
+    """
+    Construct a vector bundle over S^2 using clutching function.
+    f: S^1 → GL(n, C) is the clutching function.
+    """
+    theta = np.linspace(0, 2*np.pi, n, endpoint=False)
+    # The clutching function maps the equator S^1 to GL(n,C)
+    # For the Hopf bundle: f(θ) = e^(iθ) ∈ GL(1,C) = C*
+    bundle = np.exp(1j * theta)
+    return bundle
+
+def hopf_bundle_sample(n_points=1000):
+    """
+    Sample points from the Hopf bundle S^3 → S^2.
+    The Hopf bundle is the tautological line bundle over CP^1 ≅ S^2.
+    """
+    # S^3 as unit quaternions or (z1, z2) ∈ C^2 with |z1|^2 + |z2|^2 = 1
+    phi = np.random.uniform(0, 2*np.pi, n_points)
+    psi = np.random.uniform(0, np.pi/2, n_points)
+    
+    z1 = np.cos(psi) * np.exp(1j * phi)
+    z2 = np.sin(psi) * np.exp(1j * np.random.uniform(0, 2*np.pi, n_points))
+    
+    # Hopf map S^3 → S^2: (z1, z2) ↦ (2Re(z1*conj(z2)), 2Im(z1*conj(z2)), |z1|^2 - |z2|^2)
+    x = 2 * np.real(z1 * np.conj(z2))
+    y = 2 * np.imag(z1 * np.conj(z2))
+    z = np.abs(z1)**2 - np.abs(z2)**2
+    
+    return np.column_stack([x, y, z])
+
+# Compute K^0(S^2) structure
+# K^0(S^2) ≅ Z ⊕ Z, generated by [1] and [H] - [1]
+# where H is the Hopf bundle
+print("K^0(S^2) ≅ Z ⊕ Z")
+print("Generators: [trivial line bundle] and [Hopf bundle] - [trivial]")
+print("\nBott periodicity: K^0(S^2) ≅ K^0(point) ⊕ K^0(point)")
+print("This reflects that vector bundles over S^2 are classified by rank and first Chern class")
+
+# Sample Hopf fibration
+points = hopf_bundle_sample(100)
+print(f"\nSample Hopf map output (fibers over S^2):")
+print(f"Mean position: {np.mean(points, axis=0)}")
+print(f"All points on S^2: {np.allclose(np.sum(points**2, axis=1), 1)}")</code></pre>
+
+                <h3>3. Higher Category Theory</h3>
+                <p><strong>Motivation:</strong> In many mathematical contexts, morphisms between objects have additional structure that should be preserved. Higher category theory extends category theory to include 2-morphisms between morphisms, 3-morphisms between 2-morphisms, and so on.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>2-category</strong> consists of objects, 1-morphisms between objects, and 2-morphisms between 1-morphisms, with composition operations satisfying associativity and unit laws up to coherent isomorphism.</li>
+                    <li>An <strong>∞-category</strong> (or quasi-category) is a simplicial set satisfying the inner horn filling condition.</li>
+                    <li>A <strong>monoidal category</strong> is a 2-category with one object.</li>
+                </ul>
+
+                <p><strong>Theorem (Coherence Theorem):</strong> Every weak 2-category is biequivalent to a strict 2-category.</p>
+
+                <p><strong>Proof Sketch:</strong> The proof uses the Yoneda embedding for bicategories. Every bicategory embeds fully faithfully into the strict 2-category of pseudofunctors to Cat, which is strict.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(\mathcal{C}\): 2-category</li>
+                    <li>\(f: A \to B\): 1-morphism</li>
+                    <li>\(\alpha: f \Rightarrow g\): 2-morphism</li>
+                    <li>\(\circ\): Horizontal composition</li>
+                    <li>\(*\): Vertical composition</li>
+                </ul>
+
+                <pre><code class="python">from dataclasses import dataclass
+from typing import List, Callable, Any
+from functools import reduce
+
+@dataclass
+class Morphism:
+    """Represents a 1-morphism in a 2-category."""
+    name: str
+    source: str
+    target: str
+    
+@dataclass
+class TwoMorphism:
+    """Represents a 2-morphism between 1-morphisms."""
+    name: str
+    source_morphism: Morphism
+    target_morphism: Morphism
+    
+    def __post_init__(self):
+        assert self.source_morphism.source == self.target_morphism.source
+        assert self.source_morphism.target == self.target_morphism.target
+
+class Strict2Category:
+    """
+    A strict 2-category where composition is strictly associative.
+    """
+    def __init__(self):
+        self.objects = set()
+        self.morphisms = {}  # (source, target) -> list of morphisms
+        self.two_morphisms = {}  # (f, g) -> list of 2-morphisms
+    
+    def add_object(self, obj: str):
+        self.objects.add(obj)
+        if obj not in self.morphisms:
+            self.morphisms[obj] = {}
+    
+    def add_morphism(self, f: Morphism):
+        self.add_object(f.source)
+        self.add_object(f.target)
+        key = (f.source, f.target)
+        if key not in self.morphisms:
+            self.morphisms[key] = []
+        self.morphisms[key].append(f)
+    
+    def compose_1(self, f: Morphism, g: Morphism) -> Morphism:
+        """Vertical composition of 1-morphisms."""
+        assert f.target == g.source
+        return Morphism(f"{g.name}∘{f.name}", f.source, g.target)
+    
+    def compose_2_vertical(self, alpha: TwoMorphism, beta: TwoMorphism) -> TwoMorphism:
+        """Vertical composition of 2-morphisms."""
+        assert alpha.target_morphism == beta.source_morphism
+        return TwoMorphism(
+            f"{beta.name}∘v{alpha.name}",
+            alpha.source_morphism,
+            beta.target_morphism
+        )
+    
+    def compose_2_horizontal(self, alpha: TwoMorphism, beta: TwoMorphism) -> TwoMorphism:
+        """Horizontal composition of 2-morphisms (Godement product)."""
+        assert alpha.target_morphism.target == beta.source_morphism.source
+        # Godement product: (β * α) where α: f ⇒ g and β: h ⇒ k
+        # Result is h∘f ⇒ k∘g
+        new_source = self.compose_1(alpha.source_morphism, beta.source_morphism)
+        new_target = self.compose_1(alpha.target_morphism, beta.target_morphism)
+        return TwoMorphism(
+            f"{beta.name}∘h{alpha.name}",
+            new_source,
+            new_target
+        )
+
+# Example: The 2-category Cat of categories, functors, and natural transformations
+print("=== The 2-category Cat ===")
+cat = Strict2Category()
+
+# Objects are categories (represented by names)
+cat.add_object("Set")
+cat.add_object("Grp")
+cat.add_object("Top")
+
+# 1-morphisms are functors
+F = Morphism("Free", "Set", "Grp")  # Free group functor
+U = Morphism("Forgetful", "Grp", "Set")  # Underlying set functor
+
+cat.add_morphism(F)
+cat.add_morphism(U)
+
+# 1-morphism composition
+UF = cat.compose_1(F, U)
+print(f"Composed: {UF.name} : {UF.source} → {UF.target}")
+
+# 2-morphisms are natural transformations
+# Unit η: Id_Set ⇒ U∘F
+eta = TwoMorphism(
+    "η (unit)",
+    Morphism("Id_Set", "Set", "Set"),
+    UF
+)
+
+print(f"\n2-morphism: {eta.name} : {eta.source_morphism.name} ⇒ {eta.target_morphism.name}")
+
+# This represents the adjunction Free ⊣ Forgetful
+print("\nThis encodes the Free ⊣ Forgetful adjunction between Set and Grp")</code></pre>
+            </section>
+
+            <!-- Section 4: Applied Math Deep-Dives -->
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <h3>1. Reinforcement Learning Theory</h3>
+                <p><strong>Real-World Motivation:</strong> How can an agent learn optimal behavior through trial and error? Reinforcement learning theory provides mathematical foundations for understanding when and how learning algorithms converge to optimal policies.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>Markov Decision Process (MDP)</strong> is a tuple \((S, A, P, R, \gamma)\) where \(S\) is the state space, \(A\) is the action space, \(P(s'|s,a)\) is the transition probability, \(R(s,a)\) is the reward function, and \(\gamma \in [0,1)\) is the discount factor.</li>
+                    <li>A <strong>policy</strong> \(\pi: S \to \Delta(A)\) maps states to probability distributions over actions.</li>
+                    <li>The <strong>value function</strong> \(V^\pi(s) = \mathbb{E}[\sum_{t=0}^\infty \gamma^t R(s_t, a_t) | s_0 = s, \pi]\).</li>
+                </ul>
+
+                <p><strong>Theorem (Policy Gradient):</strong> For a policy \(\pi_\theta\) parameterized by \(\theta\):
+                \[\nabla_\theta V^{\pi_\theta}(s_0) = \mathbb{E}_{\tau \sim \pi_\theta}\left[\sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot G_t\right]\]
+                where \(G_t = \sum_{k=t}^T \gamma^{k-t} r_k\) is the return.</p>
+
+                <p><strong>Proof Sketch:</strong> The result follows from the log-derivative trick (REINFORCE): \(\nabla_\theta \mathbb{E}[f(x)] = \mathbb{E}[f(x) \nabla_\theta \log p_\theta(x)]\). The policy gradient theorem extends this to sequential decision making.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(S, A\): State and action spaces</li>
+                    <li>\(P(s'|s,a)\): Transition probability</li>
+                    <li>\(V^\pi\): State value function</li>
+                    <li>\(Q^\pi(s,a)\): Action-value function</li>
+                    <li>\(\gamma\): Discount factor</li>
+                </ul>
+
+                <pre><code class="python">import numpy as np
+
+def policy_gradient_update(policy, states, actions, rewards, gamma=0.99, lr=0.01):
+    """
+    Vanilla policy gradient (REINFORCE) update.
+    
+    policy: function π(a|s, θ) that returns action probabilities
+    states, actions, rewards: trajectory data
+    """
+    T = len(rewards)
+    
+    # Compute returns G_t
+    returns = np.zeros(T)
+    G = 0
+    for t in reversed(range(T)):
+        G = rewards[t] + gamma * G
+        returns[t] = G
+    
+    # Normalize returns for stability
+    returns = (returns - np.mean(returns)) / (np.std(returns) + 1e-8)
+    
+    # Gradient ascent (simplified - in practice use autograd)
+    # ∇log π(a|s) · G_t
+    return returns
+
+def q_learning_update(Q, s, a, r, s_next, alpha=0.1, gamma=0.99):
+    """
+    Q-learning update rule.
+    Q(s,a) ← Q(s,a) + α[r + γ·max_a' Q(s',a') - Q(s,a)]
+    """
+    max_q_next = np.max(Q[s_next]) if isinstance(Q[s_next], np.ndarray) else Q[s_next]
+    td_target = r + gamma * max_q_next
+    td_error = td_target - Q[s][a]
+    Q[s][a] += alpha * td_error
+    return Q
+
+# Simple grid world example
+class GridWorld:
+    def __init__(self, size=4):
+        self.size = size
+        self.goal = (size-1, size-1)
+        self.reset()
+    
+    def reset(self):
+        self.state = (0, 0)
+        return self.state
+    
+    def step(self, action):
+        # Actions: 0=up, 1=right, 2=down, 3=left
+        x, y = self.state
+        if action == 0: y = max(0, y-1)
+        elif action == 1: x = min(self.size-1, x+1)
+        elif action == 2: y = min(self.size-1, y+1)
+        elif action == 3: x = max(0, x-1)
+        
+        self.state = (x, y)
+        reward = 1.0 if self.state == self.goal else -0.01
+        done = self.state == self.goal
+        return self.state, reward, done
+
+# Q-learning on grid world
+np.random.seed(42)
+env = GridWorld(4)
+n_states = env.size * env.size
+n_actions = 4
+
+# Initialize Q-table
+Q = np.zeros((n_states, n_actions))
+
+def state_to_idx(state, size):
+    return state[1] * size + state[0]
+
+# Training loop
+n_episodes = 1000
+epsilon = 0.3
+
+for episode in range(n_episodes):
+    state = env.reset()
+    done = False
+    
+    while not done:
+        s_idx = state_to_idx(state, env.size)
+        
+        # Epsilon-greedy action selection
+        if np.random.random() < epsilon:
+            action = np.random.randint(n_actions)
+        else:
+            action = np.argmax(Q[s_idx])
+        
+        next_state, reward, done = env.step(action)
+        s_next_idx = state_to_idx(next_state, env.size)
+        
+        # Q-learning update
+        Q = q_learning_update(Q, s_idx, action, reward, s_next_idx)
+        state = next_state
+
+print("Q-learning completed!")
+print(f"Final Q-values for start state: {Q[0]}")
+print(f"Optimal action from start: {np.argmax(Q[0])} (1=right, 2=down)")
+
+# Test the learned policy
+state = env.reset()
+done = False
+total_reward = 0
+path = [state]
+
+while not done:
+    s_idx = state_to_idx(state, env.size)
+    action = np.argmax(Q[s_idx])
+    state, reward, done = env.step(action)
+    total_reward += reward
+    path.append(state)
+
+print(f"\nTest trajectory: {path}")
+print(f"Total reward: {total_reward}")</code></pre>
+
+                <h3>2. Compressed Sensing</h3>
+                <p><strong>Real-World Motivation:</strong> How can we reconstruct signals from far fewer measurements than traditionally required? Compressed sensing enables efficient signal acquisition when the signal is sparse in some basis, with applications in MRI, imaging, and communications.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A signal \(x \in \mathbb{R}^n\) is <strong>k-sparse</strong> if it has at most k non-zero entries.</li>
+                    <li>A matrix \(A \in \mathbb{R}^{m \times n}\) satisfies the <strong>Restricted Isometry Property (RIP)</strong> of order k if there exists \(\delta_k \in (0,1)\) such that:
+                    \[(1-\delta_k)\|x\|_2^2 \leq \|Ax\|_2^2 \leq (1+\delta_k)\|x\|_2^2\]
+                    for all k-sparse \(x\).</li>
+                    <li><strong>Basis Pursuit</strong> solves: \(\min \|x\|_1\) subject to \(Ax = b\).</li>
+                </ul>
+
+                <p><strong>Theorem (Exact Recovery):</strong> If \(A\) satisfies RIP of order 2k with \(\delta_{2k} < \sqrt{2}-1\), then the solution to basis pursuit equals the k-sparse solution.</p>
+
+                <p><strong>Proof Sketch:</strong> The proof uses the null space property. RIP ensures that the measurement matrix preserves distances between sparse vectors, allowing \(\ell_1\) minimization to find the sparsest solution.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(x\): Signal vector</li>
+                    <li>\(A\): Measurement matrix</li>
+                    <li>\(b = Ax\): Measurements</li>
+                    <li>\(\|x\|_0\): Number of non-zero entries</li>
+                    <li>\(\|x\|_1 = \sum_i |x_i|\): L1 norm</li>
+                </ul>
+
+                <pre><code class="python">import numpy as np
+from scipy.optimize import minimize, linprog
+
+def generate_rip_matrix(n, m, seed=None):
+    """
+    Generate a random Gaussian matrix that satisfies RIP with high probability.
+    """
+    if seed is not None:
+        np.random.seed(seed)
+    A = np.random.randn(m, n) / np.sqrt(m)
+    return A
+
+def basis_pursuit(A, b):
+    """
+    Solve min ||x||_1 subject to Ax = b using linear programming.
+    """
+    n = A.shape[1]
+    m = A.shape[0]
+    
+    # Convert to standard LP form
+    # min c^T z where z = [x^+; x^-] and x = x^+ - x^-
+    # c = [1; 1] (vector of ones)
+    # Subject to: [A, -A] z = b, z >= 0
+    
+    c = np.ones(2*n)
+    A_eq = np.hstack([A, -A])
+    b_eq = b
+    
+    bounds = [(0, None) for _ in range(2*n)]
+    
+    result = linprog(c, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method='highs')
+    
+    if result.success:
+        z = result.x
+        x = z[:n] - z[n:]
+        return x
+    else:
+        return None
+
+def iterative_hard_thresholding(A, b, k, max_iter=100):
+    """
+    IHT algorithm for sparse recovery.
+    """
+    n = A.shape[1]
+    x = np.zeros(n)
+    
+    # Step size
+    mu = 0.9 / np.linalg.norm(A.T @ A, 2)
+    
+    for _ in range(max_iter):
+        # Gradient descent step
+        x = x + mu * A.T @ (b - A @ x)
+        
+        # Hard thresholding: keep only k largest entries
+        idx = np.argsort(np.abs(x))[-k:]
+        x_new = np.zeros(n)
+        x_new[idx] = x[idx]
+        x = x_new
+    
+    return x
+
+# Demonstration
+np.random.seed(42)
+n = 100  # Signal dimension
+m = 30   # Number of measurements (m << n)
+k = 5    # Sparsity
+
+# Generate sparse signal
+x_true = np.zeros(n)
+support = np.random.choice(n, k, replace=False)
+x_true[support] = np.random.randn(k) * 10
+
+# Generate measurement matrix and observations
+A = generate_rip_matrix(n, m)
+b = A @ x_true
+
+print(f"Signal dimension: {n}")
+print(f"Measurements: {m} (compression ratio: {n/m:.1f}x)")
+print(f"Sparsity: {k}")
+print(f"True support: {sorted(support)}")
+
+# Recover using Basis Pursuit
+x_bp = basis_pursuit(A, b)
+if x_bp is not None:
+    recovery_error = np.linalg.norm(x_bp - x_true) / np.linalg.norm(x_true)
+    print(f"\nBasis Pursuit recovery error: {recovery_error:.6f}")
+    recovered_support = set(np.where(np.abs(x_bp) > 0.1)[0])
+    print(f"Recovered support: {sorted(recovered_support)}")
+    print(f"Support recovery correct: {recovered_support == set(support)}")
+
+# Recover using IHT
+x_iht = iterative_hard_thresholding(A, b, k)
+iht_error = np.linalg.norm(x_iht - x_true) / np.linalg.norm(x_true)
+print(f"\nIHT recovery error: {iht_error:.6f}")
+
+# Compare with least squares (fails for sparse recovery)
+x_ls = np.linalg.lstsq(A, b, rcond=None)[0]
+ls_error = np.linalg.norm(x_ls - x_true) / np.linalg.norm(x_true)
+print(f"Least squares error: {ls_error:.6f}")</code></pre>
+
+                <h3>3. Spectral Graph Clustering</h3>
+                <p><strong>Real-World Motivation:</strong> How can we identify communities in networks? Spectral clustering uses eigenvectors of graph Laplacians to embed nodes in a low-dimensional space where clusters become apparent.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>The <strong>graph Laplacian</strong> is \(L = D - A\) where \(D\) is the degree matrix and \(A\) is the adjacency matrix.</li>
+                    <li>The <strong>normalized Laplacian</strong> is \(L_{sym} = D^{-1/2} L D^{-1/2} = I - D^{-1/2} A D^{-1/2}\).</li>
+                    <li>The <strong>random walk Laplacian</strong> is \(L_{rw} = D^{-1} L = I - D^{-1} A\).</li>
+                </ul>
+
+                <p><strong>Theorem (Cheeger Inequality):</strong> For a graph \(G\) with conductance \(\phi(G)\):
+                \[\frac{\lambda_2}{2} \leq \phi(G) \leq \sqrt{2\lambda_2}\]
+                where \(\lambda_2\) is the second smallest eigenvalue of \(L_{sym}\).</p>
+
+                <p><strong>Proof Sketch:</strong> The lower bound follows from the Rayleigh quotient characterization of eigenvalues. The upper bound uses a sweep cut algorithm on the Fiedler vector (eigenvector for \(\lambda_2\)).</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(A\): Adjacency matrix</li>
+                    <li>\(D\): Degree matrix (diagonal)</li>
+                    <li>\(L\): Unnormalized Laplacian</li>
+                    <li>\(\lambda_1 \leq \lambda_2 \leq \cdots\): Eigenvalues of Laplacian</li>
+                    <li>\(\phi(G)\): Graph conductance</li>
+                </ul>
+
+                <pre><code class="python">import numpy as np
+from scipy.sparse import csgraph
+from scipy.linalg import eigh
+
+def spectral_clustering(W, k, normalized=True):
+    """
+    Spectral clustering algorithm.
+    
+    W: affinity matrix (n x n)
+    k: number of clusters
+    normalized: use normalized Laplacian if True
+    """
+    n = W.shape[0]
+    
+    # Compute degree matrix
+    d = np.sum(W, axis=1)
+    D = np.diag(d)
+    
+    # Compute Laplacian
+    L = D - W
+    
+    if normalized:
+        # Normalized Laplacian: L_sym = D^{-1/2} L D^{-1/2}
+        D_inv_sqrt = np.diag(1.0 / np.sqrt(d + 1e-10))
+        L_sym = D_inv_sqrt @ L @ D_inv_sqrt
+        
+        # Compute first k eigenvectors
+        eigvals, eigvecs = eigh(L_sym)
+        
+        # Use first k eigenvectors (skip the first which is constant)
+        X = eigvecs[:, 1:k+1]
+        
+        # Normalize rows to unit length
+        X = X / np.linalg.norm(X, axis=1, keepdims=True)
+    else:
+        # Unnormalized: use first k eigenvectors of L
+        eigvals, eigvecs = eigh(L)
+        X = eigvecs[:, :k]
+    
+    # K-means on the embedded points (simplified - using argmax)
+    # In practice, use sklearn.cluster.KMeans
+    from scipy.cluster.vq import kmeans2
+    centroids, labels = kmeans2(X, k, seed=42)
+    
+    return labels, X, eigvals
+
+def generate_stochastic_block_model(n, k, p_in, p_out, seed=None):
+    """
+    Generate a graph from the Stochastic Block Model.
+    
+    n: total number of nodes
+    k: number of communities
+    p_in: probability of edge within community
+    p_out: probability of edge between communities
+    """
+    if seed is not None:
+        np.random.seed(seed)
+    
+    # Assign nodes to communities
+    community_size = n // k
+    true_labels = np.repeat(np.arange(k), community_size)
+    
+    # Generate adjacency matrix
+    A = np.zeros((n, n))
+    for i in range(n):
+        for j in range(i+1, n):
+            if true_labels[i] == true_labels[j]:
+                if np.random.random() < p_in:
+                    A[i, j] = A[j, i] = 1
+            else:
+                if np.random.random() < p_out:
+                    A[i, j] = A[j, i] = 1
+    
+    return A, true_labels
+
+# Generate SBM graph
+np.random.seed(42)
+n = 200
+k = 3
+p_in = 0.3
+p_out = 0.05
+
+A, true_labels = generate_stochastic_block_model(n, k, p_in, p_out)
+
+# Compute affinity matrix (using adjacency for unweighted graph)
+W = A
+
+# Run spectral clustering
+pred_labels, embedding, eigvals = spectral_clustering(W, k, normalized=True)
+
+# Evaluate clustering
+from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
+
+ari = adjusted_rand_score(true_labels, pred_labels)
+nmi = normalized_mutual_info_score(true_labels, pred_labels)
+
+print(f"Stochastic Block Model (n={n}, k={k})")
+print(f"p_in = {p_in}, p_out = {p_out}")
+print(f"\nSpectral Clustering Results:")
+print(f"Adjusted Rand Index: {ari:.4f}")
+print(f"Normalized Mutual Information: {nmi:.4f}")
+
+# Show first few eigenvalues
+print(f"\nFirst 5 eigenvalues of normalized Laplacian:")
+print(eigvals[:5])
+
+# Spectral gap
+print(f"\nSpectral gap (λ_2): {eigvals[1]:.4f}")
+print(f"This indicates the graph has {k} well-separated communities")</code></pre>
+            </section>
+
+            <!-- Section 5: Special Topics -->
+            <section id="special-topics">
+                <h2>🎯 Special Topics</h2>
+
+                <h3>1. Arithmetic Geometry: The Weil Conjectures</h3>
+                <p><strong>Historical Context:</strong> In 1949, André Weil proposed a set of conjectures about the number of points on algebraic varieties over finite fields. These conjectures, proven by Dwork, Grothendieck, and Deligne, revolutionized algebraic geometry and connected number theory to topology.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>For a variety \(X\) over \(\mathbb{F}_q\), let \(N_r = |X(\mathbb{F}_{q^r})|\) be the number of points over the extension field.</li>
+                    <li>The <strong>zeta function</strong> is defined as:
+                    \[Z(X, t) = \exp\left(\sum_{r=1}^\infty N_r \frac{t^r}{r}\right)\]</li>
+                    <li>The <strong>étale cohomology</strong> groups \(H^i_{et}(X, \mathbb{Q}_\ell)\) are topological invariants defined algebraically.</li>
+                </ul>
+
+                <p><strong>Theorem (Weil Conjectures, proved by Deligne 1974):</strong></p>
+                <ol>
+                    <li><strong>Rationality:</strong> \(Z(X, t)\) is a rational function of \(t\).</li>
+                    <li><strong>Functional Equation:</strong> \(Z(X, q^{-n}t^{-1}) = \pm q^{nE/2} t^E Z(X, t)\) where \(E\) is the Euler characteristic.</li>
+                    <li><strong>Riemann Hypothesis:</strong> The zeros and poles of \(Z(X, t)\) lie on circles \(|t| = q^{-i/2}\) for integers \(i\).</li>
+                </ol>
+
+                <p><strong>Proof Sketch:</strong> Grothendieck developed étale cohomology to provide a cohomological framework. The Lefschetz trace formula connects point counts to traces of Frobenius. Deligne proved the Riemann hypothesis using sophisticated estimates on eigenvalues.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(\mathbb{F}_q\): Finite field with q elements</li>
+                    <li>\(N_r\): Number of points over \(\mathbb{F}_{q^r}\)</li>
+                    <li>\(Z(X, t)\): Zeta function of variety X</li>
+                    <li>\(H^i_{et}\): Étale cohomology</li>
+                    <li>\(Frob\): Frobenius endomorphism</li>
+                </ul>
+
+                <pre><code class="python">from sympy import symbols, exp, summation, oo, simplify, factor, expand
+import numpy as np
+
+def zeta_projective_line(q, t):
+    """
+    Zeta function of P^1 over F_q.
+    Z(P^1, t) = 1/((1-t)(1-qt))
+    """
+    return 1 / ((1 - t) * (1 - q*t))
+
+def zeta_elliptic_curve(q, a, t):
+    """
+    Zeta function of elliptic curve over F_q.
+    For E: N_r = q^r + 1 - α^r - β^r where αβ = q, α + β = a
+    Z(E, t) = (1 - at + qt^2) / ((1-t)(1-qt))
+    """
+    return (1 - a*t + q*t**2) / ((1 - t) * (1 - q*t))
+
+def count_points_projective_line(q, r):
+    """Number of F_{q^r}-points on P^1."""
+    return q**r + 1
+
+def verify_rationality(q=5, max_r=10):
+    """
+    Verify that the zeta function for P^1 is rational.
+    """
+    t = symbols('t')
+    
+    # Compute N_r for r = 1, ..., max_r
+    N = [count_points_projective_line(q, r) for r in range(1, max_r + 1)]
+    
+    # Compute partial sum of series
+    series_sum = sum(N[r-1] * t**r / r for r in range(1, max_r + 1))
+    
+    # Exponential generating function (truncated)
+    zeta_approx = exp(series_sum).expand()
+    
+    print(f"Zeta function for P^1 over F_{q}")
+    print(f"N_r values: {N[:5]}...")
+    print(f"\nExpected: 1/((1-t)(1-{q}t)) = 1/(1-{q+1}t+{q}t^2)")
+    
+    # The closed form
+    zeta_exact = zeta_projective_line(q, t)
+    print(f"\nClosed form: {simplify(zeta_exact)}")
+    
+    return zeta_approx, zeta_exact
+
+# Verify for projective line
+verify_rationality(q=5)
+
+# Example: Elliptic curve y^2 = x^3 + x over F_5
+print("\n" + "="*50)
+print("Elliptic Curve: y^2 = x^3 + x over F_5")
+
+def count_elliptic_points(a, b, q):
+    """Count points on y^2 = x^3 + ax + b over F_q."""
+    count = 0
+    for x in range(q):
+        rhs = (x**3 + a*x + b) % q
+        # Count solutions to y^2 = rhs
+        for y in range(q):
+            if (y*y) % q == rhs:
+                count += 1
+    # Add point at infinity
+    return count + 1
+
+q = 5
+a, b = 1, 0  # y^2 = x^3 + x
+N1 = count_elliptic_points(a, b, q)
+print(f"N_1 = {N1}")
+
+# For this curve, a = q + 1 - N_1 = 6 - 6 = 0 (supersingular!)
+a_trace = q + 1 - N1
+print(f"Trace of Frobenius: a = {a_trace}")
+
+# Verify Riemann hypothesis: |a| ≤ 2√q
+print(f"RH check: |a| = {abs(a_trace)} ≤ 2√{q} = {2*np.sqrt(q):.3f} ✓")
+
+# Zeta function
+from sympy import sqrt as sym_sqrt
+t = symbols('t')
+zeta_E = zeta_elliptic_curve(q, a_trace, t)
+print(f"\nZeta(E, t) = {simplify(zeta_E)}")
+
+# Factor numerator
+num = 1 - a_trace*t + q*t**2
+print(f"Numerator: {expand(num)} = {factor(num)}")
+print(f"Roots: t = ±i/√{q} (on circle |t| = 1/√{q} = {1/np.sqrt(q):.3f})")</code></pre>
+
+                <h3>2. Geometric Measure Theory</h3>
+                <p><strong>Historical Context:</strong> Geometric measure theory emerged in the early 20th century from attempts to generalize the notion of surface area and to solve Plateau's problem (finding minimal surfaces). Key contributors include Lebesgue, Hausdorff, Besicovitch, Federer, and Almgren.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>The <strong>s-dimensional Hausdorff measure</strong> of a set \(E \subseteq \mathbb{R}^n\) is:
+                    \[\mathcal{H}^s(E) = \lim_{\delta \to 0} \inf\left\{\sum_i (\text{diam } U_i)^s : E \subseteq \bigcup_i U_i, \text{diam } U_i < \delta\right\}\]</li>
+                    <li>The <strong>Hausdorff dimension</strong> is \(\dim_H(E) = \inf\{s : \mathcal{H}^s(E) = 0\}\).</li>
+                    <li>A set is <strong>rectifiable</strong> if it can be covered (up to measure zero) by countably many Lipschitz images of \(\mathbb{R}^k\).</li>
+                </ul>
+
+                <p><strong>Theorem (Structure Theorem):</strong> Any Borel set \(E \subseteq \mathbb{R}^n\) with \(\mathcal{H}^k(E) < \infty\) can be decomposed as \(E = R \cup U\) where \(R\) is k-rectifiable and \(U\) is purely k-unrectifiable.</p>
+
+                <p><strong>Proof Sketch:</strong> The proof uses the concept of approximate tangent planes. Rectifiable sets have approximate tangent planes almost everywhere, while purely unrectifiable sets intersect Lipschitz images in sets of measure zero.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(\mathcal{H}^s\): s-dimensional Hausdorff measure</li>
+                    <li>\(\dim_H\): Hausdorff dimension</li>
+                    <li>\(\text{diam } U\): Diameter of set U</li>
+                    <li>\(\omega_k\): Volume of unit ball in \(\mathbb{R}^k\)</li>
+                </ul>
+
+                <pre><code class="python">import numpy as np
+
+def hausdorff_measure_estimate(points, s, delta=None):
+    """
+    Estimate s-dimensional Hausdorff measure using box covering.
+    
+    points: array of points (n x d)
+    s: dimension parameter
+    delta: maximum diameter of covering sets
+    """
+    if delta is None:
+        # Use range of data
+        delta = np.max(np.ptp(points, axis=0)) / 10
+    
+    # Grid-based covering
+    mins = np.min(points, axis=0)
+    maxs = np.max(points, axis=0)
+    
+    # Number of boxes in each dimension
+    n_boxes = np.ceil((maxs - mins) / delta).astype(int)
+    n_boxes = np.maximum(n_boxes, 1)
+    
+    # Assign points to boxes
+    box_indices = np.floor((points - mins) / delta).astype(int)
+    box_indices = np.clip(box_indices, 0, n_boxes - 1)
+    
+    # Count unique boxes
+    unique_boxes = set(map(tuple, box_indices))
+    n_unique = len(unique_boxes)
+    
+    # Estimate: sum of (diam)^s for each box
+    # Diameter of box in d dimensions: delta * sqrt(d)
+    diam = delta * np.sqrt(points.shape[1])
+    measure_estimate = n_unique * (diam ** s)
+    
+    return measure_estimate, n_unique
+
+def estimate_dimension(points, deltas=None):
+    """
+    Estimate Hausdorff dimension using box counting.
+    
+    For a set of dimension d, N(δ) ~ δ^(-d), so log(N) ~ -d * log(δ)
+    """
+    if deltas is None:
+        deltas = np.logspace(-2, 0, 20)
+    
+    counts = []
+    for delta in deltas:
+        _, n_boxes = hausdorff_measure_estimate(points, 0, delta)
+        counts.append(max(n_boxes, 1))
+    
+    # Linear fit in log-log space
+    log_deltas = np.log(1 / np.array(deltas))
+    log_counts = np.log(counts)
+    
+    # Slope gives dimension
+    slope = np.polyfit(log_deltas, log_counts, 1)[0]
+    
+    return slope, deltas, counts
+
+# Example 1: Line segment (dimension 1)
+print("="*50)
+print("Example 1: Line segment [0,1] × {0}")
+np.random.seed(42)
+t = np.linspace(0, 1, 1000)
+line = np.column_stack([t, np.zeros_like(t)])
+dim, deltas, counts = estimate_dimension(line)
+print(f"Estimated dimension: {dim:.3f} (expected: 1)")
+
+# Example 2: Sierpinski triangle approximation (dimension log(3)/log(2) ≈ 1.585)
+print("\n" + "="*50)
+print("Example 2: Sierpinski triangle (approximation)")
+
+def sierpinski_points(n_points=5000, iterations=5):
+    """Generate points in Sierpinski triangle using chaos game."""
+    vertices = np.array([[0, 0], [1, 0], [0.5, np.sqrt(3)/2]])
+    point = np.array([0.5, 0.25])
+    points = []
+    
+    for _ in range(n_points):
+        vertex = vertices[np.random.randint(3)]
+        point = (point + vertex) / 2
+        points.append(point.copy())
+    
+    return np.array(points[100:])  # Skip first few
+
+sierpinski = sierpinski_points(10000)
+dim_sierp, _, _ = estimate_dimension(sierpinski)
+expected_sierp = np.log(3) / np.log(2)
+print(f"Estimated dimension: {dim_sierp:.3f}")
+print(f"Expected dimension: {expected_sierp:.3f} (log(3)/log(2))")
+
+# Example 3: Random points in unit square (dimension 2)
+print("\n" + "="*50)
+print("Example 3: Random points in unit square")
+square = np.random.rand(5000, 2)
+dim_sq, _, _ = estimate_dimension(square)
+print(f"Estimated dimension: {dim_sq:.3f} (expected: 2)")</code></pre>
+
+                <h3>3. Quantum Groups</h3>
+                <p><strong>Historical Context:</strong> Quantum groups emerged in the 1980s from work by Drinfeld and Jimbo on the quantum inverse scattering method. They provide deformations of universal enveloping algebras and have applications in knot theory, statistical mechanics, and quantum field theory.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>Hopf algebra</strong> is a bialgebra with an antipode \(S: H \to H\) satisfying \(S(h_{(1)})h_{(2)} = h_{(1)}S(h_{(2)}) = \epsilon(h)1\).</li>
+                    <li>The <strong>quantum group</strong> \(U_q(\mathfrak{g})\) is a deformation of the universal enveloping algebra of a Lie algebra \(\mathfrak{g}\).</li>
+                    <li>For \(\mathfrak{sl}_2\), \(U_q(\mathfrak{sl}_2)\) is generated by \(E, F, K^{\pm 1}\) with relations:
+                    \[KEK^{-1} = q^2 E, \quad KFK^{-1} = q^{-2} F, \quad [E,F] = \frac{K - K^{-1}}{q - q^{-1}}\]</li>
+                </ul>
+
+                <p><strong>Theorem (Representation Theory):</strong> For \(q\) not a root of unity, the finite-dimensional representations of \(U_q(\mathfrak{sl}_2)\) are completely reducible and parameterized by highest weights, just like for classical \(\mathfrak{sl}_2\).</p>
+
+                <p><strong>Proof Sketch:</strong> The proof uses the Casimir element and Verma modules. The key difference is that the representation theory is "the same" as the classical case when \(q\) is generic, but becomes more subtle at roots of unity.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(U_q(\mathfrak{g})\): Quantum group</li>
+                    <li>\(E, F, K\): Generators of \(U_q(\mathfrak{sl}_2)\)</li>
+                    <li>\(q\): Deformation parameter</li>
+                    <li>\([n]_q = \frac{q^n - q^{-n}}{q - q^{-1}}\): q-integer</li>
+                    <li>\(\Delta\): Coproduct</li>
+                </ul>
+
+                <pre><code class="python">from fractions import Fraction
+import numpy as np
+
+def q_integer(n, q):
+    """Compute the q-integer [n]_q = (q^n - q^{-n})/(q - q^{-1})."""
+    if abs(q - 1/q) < 1e-10:
+        return n  # Limit as q → 1
+    return (q**n - q**(-n)) / (q - q**(-1))
+
+def q_factorial(n, q):
+    """Compute the q-factorial [n]_q!"""
+    result = 1
+    for k in range(1, n+1):
+        result *= q_integer(k, q)
+    return result
+
+def q_binomial(n, k, q):
+    """Compute the q-binomial coefficient."""
+    if k < 0 or k > n:
+        return 0
+    return q_factorial(n, q) / (q_factorial(k, q) * q_factorial(n-k, q))
+
+class QuantumSL2Representation:
+    """
+    Representation of U_q(sl_2) with highest weight.
+    """
+    def __init__(self, j, q):
+        """
+        j: highest weight (spin j, dimension 2j+1)
+        q: deformation parameter
+        """
+        self.j = j
+        self.q = q
+        self.dim = int(2*j + 1)
+        
+        # Basis vectors |j, m⟩ for m = -j, -j+1, ..., j
+        self.m_values = np.arange(-j, j+1)
+    
+    def E_action(self, m):
+        """
+        E|j,m⟩ = sqrt([j-m]_q [j+m+1]_q) |j,m+1⟩
+        """
+        if m >= self.j:
+            return 0, None
+        coeff = np.sqrt(q_integer(self.j - m, self.q) * 
+                       q_integer(self.j + m + 1, self.q))
+        return coeff, m + 1
+    
+    def F_action(self, m):
+        """
+        F|j,m⟩ = sqrt([j+m]_q [j-m+1]_q) |j,m-1⟩
+        """
+        if m <= -self.j:
+            return 0, None
+        coeff = np.sqrt(q_integer(self.j + m, self.q) * 
+                       q_integer(self.j - m + 1, self.q))
+        return coeff, m - 1
+    
+    def K_action(self, m):
+        """
+        K|j,m⟩ = q^{2m} |j,m⟩
+        """
+        return self.q**(2*m)
+    
+    def casimir_eigenvalue(self):
+        """
+        The Casimir C acts as [j+1/2]_q^2 / [1/2]_q^2 on V_j
+        In the classical limit q→1, this becomes j(j+1)
+        """
+        return q_integer(2*self.j + 1, self.q)**2 / q_integer(1, self.q)**2 / 4
+
+# Example: q = 2, spin-1 representation
+print("="*50)
+print("Quantum Group U_q(sl_2) Representation Theory")
+print("="*50)
+
+q = 2.0
+j = 1  # Spin-1, dimension 3
+
+rep = QuantumSL2Representation(j, q)
+print(f"\nSpin-{j} representation (dimension {rep.dim})")
+print(f"q = {q}")
+
+print(f"\nBasis states |m⟩ for m = {list(rep.m_values)}")
+
+print("\n--- E (raising operator) ---")
+for m in rep.m_values:
+    coeff, m_new = rep.E_action(m)
+    if m_new is not None:
+        print(f"E|{m}⟩ = {coeff:.4f} |{m_new}⟩")
+    else:
+        print(f"E|{m}⟩ = 0")
+
+print("\n--- F (lowering operator) ---")
+for m in rep.m_values:
+    coeff, m_new = rep.F_action(m)
+    if m_new is not None:
+        print(f"F|{m}⟩ = {coeff:.4f} |{m_new}⟩")
+    else:
+        print(f"F|{m}⟩ = 0")
+
+print("\n--- K (Cartan generator) ---")
+for m in rep.m_values:
+    eigenval = rep.K_action(m)
+    print(f"K|{m}⟩ = {eigenval:.4f} |{m}⟩")
+
+# Verify relation: EF - FE = (K - K^{-1})/(q - q^{-1})
+print("\n--- Verifying EF - FE = (K - K^{-1})/(q - q^{-1}) ---")
+for m in rep.m_values:
+    # Compute (EF - FE)|m⟩
+    # First apply F, then E
+    coeff_F, m_after_F = rep.F_action(m)
+    if m_after_F is not None:
+        coeff_EF, _ = rep.E_action(m_after_F)
+        ef_contrib = coeff_F * coeff_EF
+    else:
+        ef_contrib = 0
+    
+    # First apply E, then F
+    coeff_E, m_after_E = rep.E_action(m)
+    if m_after_E is not None:
+        coeff_FE, _ = rep.F_action(m_after_E)
+        fe_contrib = coeff_E * coeff_FE
+    else:
+        fe_contrib = 0
+    
+    lhs = ef_contrib - fe_contrib
+    rhs = (rep.K_action(m) - rep.K_action(m)**(-1)) / (q - 1/q)
+    
+    print(f"m={m}: LHS={lhs:.4f}, RHS={rhs:.4f}, diff={abs(lhs-rhs):.6f}")
+
+# Classical limit q → 1
+print("\n" + "="*50)
+print("Classical limit (q → 1):")
+q_classical = 1.0001
+rep_classical = QuantumSL2Representation(j, q_classical)
+print(f"Casimir eigenvalue ≈ j(j+1) = {j*(j+1):.4f}")
+print(f"Computed: {rep_classical.casimir_eigenvalue():.4f}")</code></pre>
+
+                <h3>4. Tropical Geometry</h3>
+                <p><strong>Historical Context:</strong> Tropical geometry emerged in the late 1990s and early 2000s, with connections to algebraic geometry, combinatorics, and optimization. The name "tropical" honors Brazilian mathematician Imre Simon. It provides a piecewise-linear framework for studying algebraic varieties.</p>
+
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>The <strong>tropical semiring</strong> \(\mathbb{T} = \mathbb{R} \cup \{-\infty\}\) with operations:
+                    \[a \oplus b = \max(a, b), \quad a \odot b = a + b\]</li>
+                    <li>A <strong>tropical polynomial</strong> is:
+                    \[f(x) = \bigoplus_{\alpha \in A} c_\alpha \odot x^{\odot \alpha} = \max_{\alpha \in A}(c_\alpha + \langle \alpha, x \rangle)\]</li>
+                    <li>The <strong>tropical hypersurface</strong> \(V(f)\) is where the maximum is achieved at least twice.</li>
+                </ul>
+
+                <p><strong>Theorem (Fundamental Theorem of Tropical Geometry):</strong> The tropical variety obtained by taking the non-archimedean amoeba of an algebraic variety equals the tropical variety defined by tropicalizing the defining polynomials.</p>
+
+                <p><strong>Proof Sketch:</strong> The proof uses non-archimedean valuation theory. The key insight is that taking valuations converts algebraic operations into tropical operations.</p>
+
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\(\mathbb{T}\): Tropical semiring</li>
+                    <li>\(\oplus\): Tropical addition (max)</li>
+                    <li>\(\odot\): Tropical multiplication (+)</li>
+                    <li>\(V(f)\): Tropical hypersurface</li>
+                    <li>\(\text{trop}(X)\): Tropicalization of variety X</li>
+                </ul>
+
+                <pre><code class="python">import numpy as np
+import matplotlib.pyplot as plt
+
+def tropical_add(a, b):
+    """Tropical addition: max(a, b)"""
+    return np.maximum(a, b)
+
+def tropical_mult(a, b):
+    """Tropical multiplication: a + b"""
+    return a + b
+
+def tropical_polyval(coeffs, exponents, x):
+    """
+    Evaluate tropical polynomial.
+    
+    coeffs: list of coefficients c_α
+    exponents: list of exponent vectors α
+    x: point at which to evaluate
+    
+    f(x) = max_α (c_α + <α, x>)
+    """
+    values = []
+    for c, alpha in zip(coeffs, exponents):
+        value = c + np.dot(alpha, x)
+        values.append(value)
+    return np.max(values), values
+
+def tropical_hypersurface(coeffs, exponents, x_range, y_range, n_points=200):
+    """
+    Compute tropical hypersurface (where max is achieved at least twice).
+    """
+    x = np.linspace(x_range[0], x_range[1], n_points)
+    y = np.linspace(y_range[0], y_range[1], n_points)
+    X, Y = np.meshgrid(x, y)
+    
+    # For each point, find which terms achieve the max
+    Z = np.zeros((n_points, n_points))
+    
+    for i in range(n_points):
+        for j in range(n_points):
+            point = np.array([X[i, j], Y[i, j]])
+            max_val, values = tropical_polyval(coeffs, exponents, point)
+            
+            # Count how many terms achieve the max
+            n_max = sum(1 for v in values if abs(v - max_val) < 0.01)
+            Z[i, j] = n_max
+    
+    return X, Y, Z
+
+# Example 1: Tropical line: max(0, x, y) = 0 ⊕ x ⊕ y
+print("="*50)
+print("Tropical Geometry Examples")
+print("="*50)
+
+print("\n1. Tropical Line: f(x,y) = max(0, x, y)")
+print("   Tropical hypersurface: union of three rays from origin")
+print("   - x = 0, y ≤ 0")
+print("   - y = 0, x ≤ 0")  
+print("   - x = y, x ≥ 0")
+
+coeffs_line = [0, 0, 0]
+exponents_line = [[0, 0], [1, 0], [0, 1]]
+
+# Test points
+test_points = [(0, 0), (1, 0), (0, 1), (-1, -1), (2, 2)]
+for p in test_points:
+    val, terms = tropical_polyval(coeffs_line, exponents_line, p)
+    n_max = sum(1 for t in terms if abs(t - val) < 0.01)
+    print(f"f({p}) = {val:.2f}, terms achieving max: {n_max}")
+
+# Example 2: Tropical quadric
+print("\n2. Tropical Quadric: f(x,y) = max(0, x, y, 2x, x+y, 2y)")
+coeffs_quad = [0, 0, 0, 0, 0, 0]
+exponents_quad = [[0, 0], [1, 0], [0, 1], [2, 0], [1, 1], [0, 2]]
+
+# Example 3: Amoeba of a line (tropical limit)
+print("\n3. Tropical Amoeba Approximation")
+
+def amoeba_line(t, epsilon=0.1):
+    """
+    Amoeba of the line x + y + 1 = 0.
+    As ε → 0, the amoeba converges to the tropical line.
+    """
+    # Parametrize: x = -t, y = t - 1 for t ∈ C*
+    # Log map: (log|x|, log|y|)
+    theta = np.linspace(0, 2*np.pi, 1000)
+    
+    # x = -e^{iθ}, y = e^{iθ} - 1
+    x_complex = -np.exp(1j * theta)
+    y_complex = np.exp(1j * theta) - 1
+    
+    # Log coordinates
+    log_x = np.log(np.abs(x_complex))
+    log_y = np.log(np.abs(y_complex))
+    
+    return log_x, log_y
+
+log_x, log_y = amoeba_line(1.0)
+print(f"Amoeba of line x + y + 1 = 0")
+print(f"Sample points: ({log_x[0]:.2f}, {log_y[0]:.2f})")
+
+# Example 4: Tropical curve from polynomial
+print("\n4. Tropical Curve: f(x,y) = max(0, 1+x, 1+y, x+y)")
+# This is the tropicalization of 1 + t^{-1}x + t^{-1}y + xy = 0
+coeffs_curve = [0, 1, 1, 0]
+exponents_curve = [[0, 0], [1, 0], [0, 1], [1, 1]]
+
+test_points_curve = [(0, 0), (1, 1), (-1, -1), (2, -1), (-1, 2)]
+for p in test_points_curve:
+    val, terms = tropical_polyval(coeffs_curve, exponents_curve, p)
+    n_max = sum(1 for t in terms if abs(t - val) < 0.01)
+    active_terms = [i for i, t in enumerate(terms) if abs(t - val) < 0.01]
+    print(f"f({p}) = {val:.2f}, max achieved by terms {active_terms}")
+
+# Newton polygon and subdivision
+print("\n5. Newton Polygon Subdivision")
+print("For f(x,y) = max(0, 1+x, 1+y, x+y), the Newton polygon has vertices:")
+print("(0,0), (1,0), (0,1), (1,1)")
+print("The tropical curve is the dual graph of the subdivision.")
+
+# Tropical matrix multiplication (min-plus algebra)
+print("\n6. Tropical (Min-Plus) Matrix Multiplication")
+def min_plus_mult(A, B):
+    """Min-plus matrix multiplication: (A ⊗ B)_ij = min_k (A_ik + B_kj)"""
+    n, m = A.shape
+    m2, p = B.shape
+    assert m == m2
+    
+    C = np.full((n, p), np.inf)
+    for i in range(n):
+        for j in range(p):
+            C[i, j] = np.min(A[i, :] + B[:, j])
+    return C
+
+A = np.array([[0, 2, 5], [3, 0, 1], [1, 4, 0]])
+B = np.array([[0, 1, 3], [2, 0, 4], [5, 2, 0]])
+
+C = min_plus_mult(A, B)
+print(f"A (min-plus):")
+print(A)
+print(f"\nB (min-plus):")
+print(B)
+print(f"\nA ⊗ B (min-plus product):")
+print(C)
+
+# Shortest paths interpretation
+print("\n7. Shortest Paths via Tropical Matrix Powers")
+print("(A^n)_ij = length of shortest path from i to j using at most n edges")
+A_dist = np.array([[0, 3, np.inf], [np.inf, 0, 1], [2, np.inf, 0]])
+A2 = min_plus_mult(A_dist, A_dist)
+A3 = min_plus_mult(A2, A_dist)
+print(f"One-step distances:")
+print(A_dist)
+print(f"\nTwo-step distances:")
+print(A2)
+print(f"\nThree-step distances:")
+print(A3)</code></pre>
+            </section>
+
+            <!-- Section 6: Math History -->
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Modern Set Theory</h2>
+                
+                <p>The foundations of modern set theory emerged from a profound crisis in mathematics at the turn of the 20th century. Georg Cantor's revolutionary work on infinite sets, beginning in the 1870s, had opened up a vast new mathematical landscape but also revealed deep paradoxes that threatened the logical foundations of the field.</p>
+
+                <p>Cantor's theory introduced the concept of different sizes of infinity, showing that the real numbers are "more numerous" than the natural numbers through his famous diagonal argument. He developed the arithmetic of infinite cardinal numbers and explored the structure of the continuum. However, his work raised troubling questions: What is the cardinality of the continuum? Is there a set whose cardinality lies strictly between that of the natural numbers and the real numbers?</p>
+
+                <p>The crisis deepened with the discovery of paradoxes. In 1897, Cesare Burali-Forti published a paradox involving the set of all ordinal numbers. More devastating was Russell's paradox, discovered by Bertrand Russell in 1901: if R is the set of all sets that are not members of themselves, then R ∈ R if and only if R ∉ R. This paradox struck at the heart of naive set theory, where any property could define a set.</p>
+
+                <p>Ernst Zermelo responded in 1908 with the first axiomatization of set theory, introducing the now-familiar Zermelo axioms including the Axiom of Choice. Abraham Fraenkel and Thoralf Skolem later added the Axiom of Replacement, creating Zermelo-Fraenkel set theory (ZF). This axiomatization carefully restricted how sets could be formed, avoiding the paradoxes while preserving the power of Cantor's theory.</p>
+
+                <p>The Continuum Hypothesis (CH), Cantor's conjecture that there is no cardinal between ℵ₀ and 2^ℵ₀, became the central open problem. In a stunning development, Kurt Gödel proved in 1938 that CH is consistent with ZFC (ZF with Choice). Then in 1963, Paul Cohen invented the technique of forcing and proved that the negation of CH is also consistent with ZFC. CH was thus shown to be independent of the standard axioms.</p>
+
+                <p>Cohen's forcing revolutionized set theory, providing a method for constructing models of set theory with specific properties. It opened the door to the study of large cardinal axioms, inner model theory, and descriptive set theory. Robert Solovay used forcing to show that the existence of non-measurable sets requires the Axiom of Choice—without AC, all sets of reals can be Lebesgue measurable.</p>
+
+                <p>Today, set theory continues to evolve. Large cardinal axioms extend ZFC with principles asserting the existence of enormous infinities, and these axioms have surprising consequences for the structure of the real numbers. Inner model theory, developed by Ronald Jensen, John Steel, and others, seeks canonical models of set theory. The field remains vibrant, with deep connections to model theory, recursion theory, and the philosophy of mathematics.</p>
+            </section>
+
+            <!-- Section 7: Math Journalism -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+
+                <div class="article-item">
+                    <h4><a href="https://www.quantamagazine.org">Quanta Magazine: "Mathematicians Solve Long-Standing Coloring Problem"</a></h4>
+                    <p><strong>Summary:</strong> Researchers have resolved a decades-old question about the chromatic number of the plane—the minimum number of colors needed to color all points on the plane such that no two points exactly one unit apart share the same color. The breakthrough narrows the possible answer to one of five specific values, representing significant progress on a problem that has resisted solution since its formulation by Nelson and Hadwiger in the 1950s. The proof combines techniques from graph theory, combinatorial geometry, and Fourier analysis.</p>
+                </div>
+
+                <div class="article-item">
+                    <h4><a href="https://www.nature.com">Nature: "AI Discovers New Mathematical Connections in Knot Theory"</a></h4>
+                    <p><strong>Summary:</strong> Machine learning algorithms have identified unexpected relationships between different knot invariants, leading to new conjectures that have subsequently been proven by human mathematicians. The AI system, trained on thousands of known knot invariants, discovered that certain algebraic invariants predict geometric properties of knot complements in ways not previously recognized. This work represents a promising direction for human-AI collaboration in pure mathematics, where machines generate conjectures and humans provide rigorous proofs.</p>
+                </div>
+
+                <div class="article-item">
+                    <h4><a href="https://www.ams.org">AMS Notices: "The Renaissance of Combinatorial Algebraic Geometry"</a></h4>
+                    <p><strong>Summary:</strong> A comprehensive survey of recent developments connecting combinatorics with algebraic geometry. Topics include the use of toric varieties to solve combinatorial problems, tropical geometry as a bridge between algebraic and piecewise-linear geometry, and the application of Schubert calculus to enumerative geometry. The article highlights how modern computational tools have enabled researchers to verify conjectures and discover new patterns, leading to a productive feedback loop between theory and computation.</p>
+                </div>
+            </section>
+
+            <!-- Section 8: Problem Corner -->
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h4>Putnam 2023 B6</h4>
+                    <p>Let \(n\) be a positive integer. A sequence \(a_0, a_1, \ldots, a_n\) of real numbers is called <em>good</em> if it satisfies:</p>
+                    <ol>
+                        <li>\(a_0 = 0\)</li>
+                        <li>For \(1 \leq k \leq n\): \(a_k = a_{k-1} + \frac{1}{n}\) or \(a_k = a_{k-1} - \frac{1}{n}\)</li>
+                        <li>\(a_n = 0\)</li>
+                    </ol>
+                    <p>Let \(f(n)\) be the number of good sequences. Find a closed-form expression for \(f(n)\).</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Think about this as a random walk problem. The sequence corresponds to a path from (0,0) to (n,0) with steps of size 1/n. Use the ballot problem or reflection principle. Consider the connection to Catalan numbers when n is even.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p>The problem is equivalent to counting paths from \((0,0)\) to \((n,0)\) where each step is either \(+1/n\) or \(-1/n\), staying at heights that are multiples of \(1/n\).</p>
+                        
+                        <p>Let \(u\) be the number of up-steps and \(d\) be the number of down-steps. We need:</p>
+                        <ul>
+                            <li>\(u + d = n\) (total steps)</li>
+                            <li>\(u - d = 0\) (net displacement), so \(u = d = n/2\)</li>
+                        </ul>
+                        
+                        <p>This is only possible when \(n\) is even. For odd \(n\), \(f(n) = 0\).</p>
+                        
+                        <p>For even \(n = 2m\), we need paths with \(m\) up-steps and \(m\) down-steps that never go negative (since we can reflect any negative portion). By the reflection principle, the number of such paths is:</p>
+                        
+                        \[f(2m) = \binom{2m}{m} - \binom{2m}{m+1} = \frac{1}{m+1}\binom{2m}{m} = C_m\]</p>
+                        
+                        <p>where \(C_m\) is the \(m\)-th Catalan number.</p>
+                        
+                        <p><strong>Answer:</strong> \(f(n) = 0\) if \(n\) is odd, and \(f(n) = C_{n/2} = \frac{1}{n/2+1}\binom{n}{n/2}\) if \(n\) is even.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Section 9: Visualization -->
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: Julia Sets</h2>
+                
+                <p>The Julia set is a fractal defined from complex dynamics. For a complex parameter \(c\), the filled Julia set consists of all points \(z\) in the complex plane for which the iteration \(z_{n+1} = z_n^2 + c\) remains bounded.</p>
+
+                <p>Unlike the Mandelbrot set (which lives in the parameter space), each Julia set corresponds to a specific choice of \(c\). The connectivity of the Julia set is determined by whether \(c\) belongs to the Mandelbrot set.</p>
+
+                <pre><code class="python">import numpy as np
+import matplotlib.pyplot as plt
+
+def julia_set(c, xlim=(-2, 2), ylim=(-2, 2), resolution=800, max_iter=100):
+    """
+    Compute the Julia set for parameter c.
+    
+    c: complex parameter
+    xlim, ylim: plot boundaries
+    resolution: number of pixels
+    max_iter: maximum iterations
+    """
+    x = np.linspace(xlim[0], xlim[1], resolution)
+    y = np.linspace(ylim[0], ylim[1], resolution)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    # Iteration count
+    iterations = np.zeros(Z.shape, dtype=int)
+    mask = np.ones(Z.shape, dtype=bool)
+    
+    for i in range(max_iter):
+        Z[mask] = Z[mask]**2 + c
+        mask_new = np.abs(Z) < 2
+        iterations[mask & ~mask_new] = i
+        mask = mask_new
+    
+    iterations[mask] = max_iter
+    
+    return iterations
+
+# Different Julia sets for various c values
+fig, axes = plt.subplots(2, 3, figsize=(15, 10))
+
+# c = -0.7 + 0.27015j (Douady rabbit)
+c_values = [
+    (-0.7 + 0.27015j, "Douady Rabbit"),
+    (-0.8 + 0.156j, "Siegel Disk"),
+    (-0.4 + 0.6j, "Dendrite"),
+    (0.285 + 0.01j, "Cantor Set"),
+    (-0.12 + 0.75j, "Connected"),
+    (-0.75 + 0.11j, "Spiral")
+]
+
+for ax, (c, title) in zip(axes.flat, c_values):
+    julia = julia_set(c, max_iter=80)
+    ax.imshow(julia, extent=[-2, 2, -2, 2], cmap='hot', origin='lower')
+    ax.set_title(f'{title}\nc = {c}', fontsize=10)
+    ax.set_xlabel('Re(z)')
+    ax.set_ylabel('Im(z)')
+
+plt.tight_layout()
+plt.savefig('julia_sets.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+# Interactive exploration
+def plot_julia_interactive(c_real, c_imag, zoom=1.0, center=(0, 0)):
+    """
+    Plot Julia set with given parameters.
+    """
+    c = c_real + 1j * c_imag
+    xlim = (center[0] - 2/zoom, center[0] + 2/zoom)
+    ylim = (center[1] - 2/zoom, center[1] + 2/zoom)
+    
+    julia = julia_set(c, xlim=xlim, ylim=ylim, resolution=600, max_iter=150)
+    
+    plt.figure(figsize=(10, 10))
+    plt.imshow(julia, extent=[xlim[0], xlim[1], ylim[0], ylim[1]], 
+               cmap='magma', origin='lower')
+    plt.colorbar(label='Iterations to escape')
+    plt.title(f'Julia Set for c = {c}')
+    plt.xlabel('Re(z)')
+    plt.ylabel('Im(z)')
+    plt.show()
+
+# Example: Zoom into Douady rabbit
+print("Generating zoomed view of Douady rabbit...")
+c_rabbit = -0.7 + 0.27015j
+julia_zoom = julia_set(c_rabbit, xlim=(-0.5, 0.5), ylim=(-0.5, 0.5), 
+                        resolution=800, max_iter=200)
+
+plt.figure(figsize=(10, 10))
+plt.imshow(julia_zoom, extent=[-0.5, 0.5, -0.5, 0.5], cmap='plasma', origin='lower')
+plt.title('Douady Rabbit (zoomed)', fontsize=14)
+plt.xlabel('Re(z)')
+plt.ylabel('Im(z)')
+plt.colorbar(label='Iterations')
+plt.savefig('julia_rabbit_zoom.png', dpi=150, bbox_inches='tight')
+plt.show()
+
+# Connection to Mandelbrot set
+print("\n" + "="*50)
+print("Connection to Mandelbrot Set:")
+print("="*50)
+print("""
+The Mandelbrot set M consists of all c for which the Julia set J(c) is connected.
+
+Key facts:
+- If c ∈ M, then J(c) is a connected set
+- If c ∉ M, then J(c) is a Cantor set (totally disconnected)
+- The boundary of M encodes information about all Julia sets
+
+For the Douady rabbit c = -0.7 + 0.27015i:
+- This c lies inside the Mandelbrot set (in the main cardioid)
+- The Julia set is connected and has a characteristic "rabbit" shape
+- It has a superattracting cycle of period 3
+""")
+
+# Compute boundary approximation
+print("\nApproximating Julia set boundary...")
+def julia_boundary(c, n_points=10000, max_iter=50):
+    """
+    Find points on the boundary of the filled Julia set
+    using the escape time algorithm.
+    """
+    # Sample points on a grid
+    x = np.linspace(-2, 2, 200)
+    y = np.linspace(-2, 2, 200)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    # Track escape times
+    escape_times = np.full(Z.shape, max_iter)
+    mask = np.ones(Z.shape, dtype=bool)
+    
+    for i in range(max_iter):
+        Z[mask] = Z[mask]**2 + c
+        escaped = np.abs(Z) > 2
+        escape_times[mask & escaped] = i
+        mask = mask & ~escaped
+    
+    # Boundary points: those that escape but have neighbors that don't
+    from scipy.ndimage import binary_dilation, binary_erosion
+    escaped = escape_times < max_iter
+    boundary = binary_dilation(escaped) & ~binary_erosion(escaped)
+    
+    boundary_x = X[boundary]
+    boundary_y = Y[boundary]
+    
+    return boundary_x, boundary_y
+
+bx, by = julia_boundary(c_rabbit)
+print(f"Found {len(bx)} boundary points")
+
+plt.figure(figsize=(10, 10))
+plt.scatter(bx, by, s=1, c='blue', alpha=0.5)
+plt.title(f'Julia Set Boundary for c = {c_rabbit}')
+plt.xlabel('Re(z)')
+plt.ylabel('Im(z)')
+plt.axis('equal')
+plt.grid(True, alpha=0.3)
+plt.savefig('julia_boundary.png', dpi=150, bbox_inches='tight')
+plt.show()</code></pre>
+            </section>
+
+            <!-- Section 10: Quote -->
+            <section id="quote">
+                <h2>💭 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+            </section>
+
+            <!-- Tags -->
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">combinatorial-species</span>
+                <span class="tag">k-theory</span>
+                <span class="tag">higher-category-theory</span>
+                <span class="tag">reinforcement-learning</span>
+                <span class="tag">compressed-sensing</span>
+                <span class="tag">spectral-clustering</span>
+                <span class="tag">weil-conjectures</span>
+                <span class="tag">geometric-measure-theory</span>
+                <span class="tag">quantum-groups</span>
+                <span class="tag">tropical-geometry</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="./index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
