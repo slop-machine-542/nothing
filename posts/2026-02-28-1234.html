@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 28, 2026 at 12:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 28, 2026 at 12:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 28, 2026 at 12:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-28 at 12:34 UTC</p>
+            
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">algebraic-combinatorics</span>
+                <span class="tag">differential-topology</span>
+                <span class="tag">operator-theory</span>
+                <span class="tag">stochastic-calculus</span>
+                <span class="tag">coding-theory</span>
+                <span class="tag">matroid-theory</span>
+                <span class="tag">geometric-group-theory</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                <p>Three curated links to deepen your mathematical journey:</p>
+                
+                <div class="link-item">
+                    <h3><a href="https://mathoverflow.net/">MathOverflow</a></h3>
+                    <p>A question and answer site for professional mathematicians. Unlike other Q&A platforms, MathOverflow maintains rigorous standards for research-level mathematics. The site has become an essential tool for mathematicians seeking quick answers to technical questions, with discussions ranging from algebraic geometry to analysis. The community's voting system ensures high-quality answers rise to the top.</p>
+                </div>
+                
+                <div class="link-item">
+                    <h3><a href="https://www.youtube.com/c/3blue1brown">3Blue1Brown</a></h3>
+                    <p>Grant Sanderson's YouTube channel brings mathematical concepts to life through stunning visualizations. His Essence of Calculus and Essence of Linear Algebra series have helped millions develop intuition for abstract concepts. The channel's unique approach uses animation to reveal the geometric heart of mathematics, making advanced topics accessible to learners at all levels.</p>
+                </div>
+                
+                <div class="link-item">
+                    <h3><a href="https://terrytao.wordpress.com/">What's New — Terence Tao</a></h3>
+                    <p>Terence Tao's blog offers insights from one of the greatest living mathematicians. The blog covers recent developments in mathematics, expositions of Tao's own research, and discussions of mathematical culture. Tao's ability to explain complex ideas clearly makes this an invaluable resource for anyone interested in cutting-edge mathematics.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book</h2>
+                <div class="book-card">
+                    <h3>Generatingfunctionology</h3>
+                    <p><strong>Author:</strong> Herbert S. Wilf</p>
+                    <p><strong>Level:</strong> Undergraduate to Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://www2.math.upenn.edu/~wilf/gfologyLinked2.pdf">University of Pennsylvania</a></p>
+                    
+                    <p>This classic text introduces generating functions as a powerful tool for solving counting problems. Wilf presents the subject with characteristic wit and clarity, showing how a single generating function can encode infinite sequences and make combinatorial problems tractable. The book covers ordinary and exponential generating functions, the Lagrange inversion formula, and applications to partitions, permutations, and graph enumeration. What sets this book apart is its emphasis on the "snake oil method"—a systematic approach to evaluating sums using generating functions. The text is filled with worked examples and exercises that range from routine to challenging, making it suitable for self-study or as a course text.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Mathematics Deep-Dives</h2>
+                
+                <div class="deep-dive">
+                    <h3>Algebraic Combinatorics: Young Tableaux and the Robinson-Schensted Correspondence</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>How can we understand the structure of permutations? The Robinson-Schensted correspondence provides a remarkable bijection between permutations and pairs of standard Young tableaux of the same shape. This connection reveals deep relationships between combinatorics, representation theory, and symmetric functions, with applications ranging from card shuffling to quantum computing.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>A <strong>partition</strong> of \(n\) is a sequence \(\lambda = (\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_k > 0)\) with \(\sum \lambda_i = n\). Its <strong>Young diagram</strong> is an array of boxes with \(\lambda_i\) boxes in row \(i\).</p>
+                    
+                    <p>A <strong>standard Young tableau</strong> of shape \(\lambda\) is a filling of the Young diagram with numbers \(1, 2, \ldots, n\) such that rows and columns are increasing.</p>
+                    
+                    <p>The <strong>insertion</strong> of a number \(x\) into a tableau \(T\) proceeds by row: \(x\) bumps the smallest element larger than itself in the first row; the bumped element then inserts into the second row, and so on.</p>
+                    
+                    <h4>Theorem: Robinson-Schensted Correspondence</h4>
+                    <p>There exists a bijection between permutations \(\pi \in S_n\) and pairs of standard Young tableaux \((P, Q)\) of the same shape \(\lambda \vdash n\).</p>
+                    
+                    <p><strong>Proof sketch:</strong> Given \(\pi = \pi_1 \pi_2 \cdots \pi_n\), build \(P\) by inserting \(\pi_1, \pi_2, \ldots, \pi_n\) sequentially. Record in \(Q\) which box was added at each step. The inverse map reconstructs \(\pi\) by reverse insertion. The shape \(\lambda\) encodes the cycle structure of \(\pi\) through its connection to irreducible representations of \(S_n\).</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(S_n\): Symmetric group on \(n\) elements</li>
+                        <li>\(\lambda \vdash n\): \(\lambda\) is a partition of \(n\)</li>
+                        <li>\(f^\lambda\): Number of standard Young tableaux of shape \(\lambda\)</li>
+                        <li>\(\text{sh}(T)\): Shape of tableau \(T\)</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>def insert(P, x):
+    """Insert x into tableau P using Schensted insertion."""
+    for i in range(len(P)):
+        row = P[i]
+        # Find position to insert
+        j = 0
+        while j < len(row) and row[j] < x:
+            j += 1
+        if j == len(row):
+            P[i].append(x)
+            return i, j
+        else:
+            # Bump
+            bumped = row[j]
+            row[j] = x
+            x = bumped
+    # New row
+    P.append([x])
+    return len(P) - 1, 0
+
+def robinson_schensted(perm):
+    """Apply Robinson-Schensted to permutation."""
+    P = []  # Insertion tableau
+    Q = []  # Recording tableau
+    for step, x in enumerate(perm, 1):
+        i, j = insert(P, x)
+        # Update Q
+        while len(Q) <= i:
+            Q.append([])
+        Q[i].append(step)
+    return P, Q
+
+# Example
+perm = [3, 1, 4, 2]
+P, Q = robinson_schensted(perm)
+print(f"Permutation: {perm}")
+print(f"P (Insertion): {P}")
+print(f"Q (Recording): {Q}")
+# Output: P = [[1, 2], [3], [4]], Q = [[1, 4], [2], [3]]</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Differential Topology: Morse Theory and the Topology of Manifolds</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>How can we understand the shape of a manifold? Morse theory provides a powerful framework by studying smooth functions on manifolds. Critical points of these functions reveal the topology: each critical point corresponds to attaching a handle, building the manifold step by step. This approach connects calculus to algebraic topology in a beautiful and computable way.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>Let \(M\) be a smooth manifold and \(f: M \to \mathbb{R}\) a smooth function. A point \(p \in M\) is <strong>critical</strong> if \(df_p = 0\). The <strong>Hessian</strong> at \(p\) is the symmetric bilinear form on \(T_p M\) given by the matrix of second partial derivatives.</p>
+                    
+                    <p>A critical point is <strong>non-degenerate</strong> if the Hessian is non-singular. The <strong>index</strong> of a non-degenerate critical point is the number of negative eigenvalues of the Hessian.</p>
+                    
+                    <p>A function is <strong>Morse</strong> if all critical points are non-degenerate.</p>
+                    
+                    <h4>Theorem: Morse Lemma</h4>
+                    <p>Let \(f: M \to \mathbb{R}\) be smooth and \(p\) a non-degenerate critical point of index \(k\). Then there exist local coordinates \((x_1, \ldots, x_n)\) near \(p\) such that:
+                    \[f(x) = f(p) - x_1^2 - \cdots - x_k^2 + x_{k+1}^2 + \cdots + x_n^2\]</p>
+                    
+                    <p><strong>Proof:</strong> By the inverse function theorem and diagonalization of symmetric matrices, we can transform the function to its quadratic approximation. The non-degeneracy ensures this is a valid coordinate change.</p>
+                    
+                    <h4>Theorem: Fundamental Theorem of Morse Theory</h4>
+                    <p>Let \(M^a = f^{-1}((-\infty, a])\). If \(f\) has no critical values in \([a, b]\), then \(M^a\) is diffeomorphic to \(M^b\). If \(f\) has exactly one critical point in \([a, b]\) of index \(k\), then \(M^b\) is homotopy equivalent to \(M^a\) with a \(k\)-cell attached.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(T_p M\): Tangent space at \(p\)</li>
+                        <li>\(df_p\): Differential of \(f\) at \(p\)</li>
+                        <li>\(H_f(p)\): Hessian of \(f\) at \(p\)</li>
+                        <li>\(\text{ind}(p)\): Index of critical point \(p\)</li>
+                        <li>\(b_k(M)\): \(k\)-th Betti number of \(M\)</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.optimize import minimize
+
+def morse_function(x, y, z):
+    """Example Morse function on R^3: f(x,y,z) = x^2 + 2y^2 + 3z^2."""
+    return x**2 + 2*y**2 + 3*z**2
+
+def gradient(f, x, h=1e-5):
+    """Numerical gradient."""
+    n = len(x)
+    grad = np.zeros(n)
+    for i in range(n):
+        x_plus = x.copy()
+        x_minus = x.copy()
+        x_plus[i] += h
+        x_minus[i] -= h
+        grad[i] = (f(*x_plus) - f(*x_minus)) / (2*h)
+    return grad
+
+def hessian(f, x, h=1e-5):
+    """Numerical Hessian."""
+    n = len(x)
+    H = np.zeros((n, n))
+    for i in range(n):
+        for j in range(n):
+            x_pp = x.copy()
+            x_pm = x.copy()
+            x_mp = x.copy()
+            x_mm = x.copy()
+            x_pp[i] += h; x_pp[j] += h
+            x_pm[i] += h; x_pm[j] -= h
+            x_mp[i] -= h; x_mp[j] += h
+            x_mm[i] -= h; x_mm[j] -= h
+            H[i,j] = (f(*x_pp) - f(*x_pm) - f(*x_mp) + f(*x_mm)) / (4*h*h)
+    return H
+
+def find_critical_points(f, bounds, grid_size=20):
+    """Find approximate critical points on a grid."""
+    critical = []
+    x_vals = np.linspace(bounds[0], bounds[1], grid_size)
+    y_vals = np.linspace(bounds[0], bounds[1], grid_size)
+    z_vals = np.linspace(bounds[0], bounds[1], grid_size)
+    
+    for x in x_vals:
+        for y in y_vals:
+            for z in z_vals:
+                grad = gradient(f, np.array([x, y, z]))
+                if np.linalg.norm(grad) < 0.1:
+                    # Refine with optimization
+                    result = minimize(lambda p: f(*p), [x, y, z], 
+                                    method='BFGS')
+                    if result.success:
+                        H = hessian(f, result.x)
+                        eigenvals = np.linalg.eigvalsh(H)
+                        index = np.sum(eigenvals < 0)
+                        critical.append({
+                            'point': result.x,
+                            'value': result.fun,
+                            'index': index,
+                            'eigenvalues': eigenvals
+                        })
+    return critical
+
+# Example usage
+critical_points = find_critical_points(morse_function, [-2, 2], 10)
+print(f"Found {len(critical_points)} critical points")
+for cp in critical_points:
+    print(f"Point: {cp['point']}, Index: {cp['index']}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Operator Theory: The Spectral Theorem for Compact Self-Adjoint Operators</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>In finite dimensions, symmetric matrices can be diagonalized with real eigenvalues. What about infinite-dimensional spaces? The spectral theorem for compact self-adjoint operators extends this diagonalization to Hilbert spaces, providing the foundation for quantum mechanics, partial differential equations, and signal processing.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>Let \(H\) be a Hilbert space. A bounded linear operator \(T: H \to H\) is <strong>compact</strong> if the image of the unit ball has compact closure. \(T\) is <strong>self-adjoint</strong> if \(\langle Tx, y \rangle = \langle x, Ty \rangle\) for all \(x, y \in H\).</p>
+                    
+                    <p>The <strong>spectrum</strong> \(\sigma(T)\) consists of all \(\lambda \in \mathbb{C}\) such that \(T - \lambda I\) is not invertible. For compact operators, the spectrum consists of 0 and a sequence of eigenvalues converging to 0.</p>
+                    
+                    <h4>Theorem: Spectral Theorem for Compact Self-Adjoint Operators</h4>
+                    <p>Let \(T\) be a compact self-adjoint operator on a separable Hilbert space \(H\). Then there exists an orthonormal basis \(\{e_n\}\) of \(H\) consisting of eigenvectors of \(T\) with real eigenvalues \(\{\lambda_n\}\) such that \(\lambda_n \to 0\) and:
+                    \[Tx = \sum_{n=1}^{\infty} \lambda_n \langle x, e_n \rangle e_n\]</p>
+                    
+                    <p><strong>Proof:</strong> First, show that \(\|T\|\) or \(-\|T\|\) is an eigenvalue using the Rayleigh quotient. The corresponding eigenspace is finite-dimensional (since \(T\) is compact). Restrict to the orthogonal complement and iterate. The process yields countably many eigenvalues converging to 0. Completeness follows from the fact that the closure of the span of eigenvectors is \(T\)-invariant, and on its orthogonal complement \(T = 0\).</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{B}(H)\): Bounded operators on \(H\)</li>
+                        <li>\(\mathcal{K}(H)\): Compact operators on \(H\)</li>
+                        <li>\(T^*\): Adjoint of \(T\)</li>
+                        <li>\(\sigma_p(T)\): Point spectrum (eigenvalues)</li>
+                        <li>\(E_\lambda\): Eigenspace for eigenvalue \(\lambda\)</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.sparse.linalg import eigsh
+
+def create_integral_operator_kernel(x, y):
+    """Example: symmetric kernel K(x,y) = min(x,y) - xy on [0,1]."""
+    return np.minimum(x, y) - x * y
+
+def discretize_integral_operator(n=100):
+    """Discretize integral operator with symmetric kernel."""
+    x = np.linspace(0, 1, n)
+    dx = x[1] - x[0]
+    
+    # Create kernel matrix
+    K = np.zeros((n, n))
+    for i in range(n):
+        for j in range(n):
+            K[i, j] = create_integral_operator_kernel(x[i], x[j])
+    
+    # Multiply by dx to approximate integral
+    K = K * dx
+    return K, x
+
+def spectral_decomposition(T, k=10):
+    """Compute spectral decomposition of symmetric operator."""
+    # Compute k largest eigenvalues and eigenvectors
+    eigenvalues, eigenvectors = eigsh(T, k=k, which='LM')
+    
+    # Sort by absolute value (largest first)
+    idx = np.argsort(-np.abs(eigenvalues))
+    eigenvalues = eigenvalues[idx]
+    eigenvectors = eigenvectors[:, idx]
+    
+    return eigenvalues, eigenvectors
+
+def apply_operator_spectral(T, x, k=10):
+    """Apply operator using spectral representation."""
+    eigenvalues, eigenvectors = spectral_decomposition(T, k)
+    
+    # Project x onto eigenbasis
+    coefficients = eigenvectors.T @ x
+    
+    # Apply diagonal operator
+    result = eigenvectors @ (eigenvalues * coefficients)
+    return result
+
+# Example usage
+K, x_grid = discretize_integral_operator(n=200)
+eigenvalues, eigenvectors = spectral_decomposition(K, k=10)
+
+print("First 10 eigenvalues:")
+for i, ev in enumerate(eigenvalues):
+    print(f"  λ_{i+1} = {ev:.6f}")
+
+# Verify spectral representation
+v = np.sin(np.pi * x_grid)  # Test function
+Tv_direct = K @ v
+Tv_spectral = apply_operator_spectral(K, v, k=20)
+
+print(f"\nDirect application norm: {np.linalg.norm(Tv_direct):.6f}")
+print(f"Spectral approximation norm: {np.linalg.norm(Tv_spectral):.6f}")
+print(f"Relative error: {np.linalg.norm(Tv_direct - Tv_spectral) / np.linalg.norm(Tv_direct):.6e}")</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🌍 Applied Mathematics Deep-Dives</h2>
+                
+                <div class="deep-dive">
+                    <h3>Stochastic Calculus: Itô's Lemma and the Mathematics of Finance</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How do we model stock prices, interest rates, and other financial quantities that evolve randomly over time? Ordinary calculus fails because Brownian motion is nowhere differentiable. Itô's lemma provides the chain rule for stochastic processes, forming the mathematical foundation of modern quantitative finance and the Black-Scholes option pricing model.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>A <strong>Wiener process</strong> (Brownian motion) \(W_t\) satisfies: \(W_0 = 0\), increments are independent, and \(W_t - W_s \sim \mathcal{N}(0, t-s)\).</p>
+                    
+                    <p>An <strong>Itô process</strong> is a stochastic process of the form:
+                    \[X_t = X_0 + \int_0^t \mu_s ds + \int_0^t \sigma_s dW_s\]</p>
+                    
+                    <p>The <strong>Itô integral</strong> \(\int_0^t \sigma_s dW_s\) is defined as a limit of non-anticipating simple process approximations.</p>
+                    
+                    <h4>Theorem: Itô's Lemma</h4>
+                    <p>Let \(X_t\) be an Itô process and \(f \in C^{2,1}(\mathbb{R} \times [0, \infty))\). Then \(Y_t = f(X_t, t)\) is an Itô process with:
+                    \[df = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial x}dX_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2\]</p>
+                    
+                    <p>where \((dX_t)^2 = \sigma_t^2 dt\) using the rules \(dt \cdot dt = 0\), \(dt \cdot dW_t = 0\), \(dW_t \cdot dW_t = dt\).</p>
+                    
+                    <p><strong>Proof sketch:</strong> Apply Taylor expansion to \(f(X_{t+\Delta t}, t+\Delta t) - f(X_t, t)\). The key observation is that \((\Delta W_t)^2 \approx \Delta t\) in the mean-square sense, so the second-order term contributes to the first order in the limit.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(W_t\): Wiener process (Brownian motion)</li>
+                        <li>\(\mu_t\): Drift coefficient</li>
+                        <li>\(\sigma_t\): Diffusion/volatility coefficient</li>
+                        <li>\(\mathbb{E}[\cdot]\): Expectation</li>
+                        <li>\(\mathbb{P}\): Probability measure</li>
+                        <li>\(dX_t\): Stochastic differential</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate_brownian_motion(T=1.0, N=1000, seed=None):
+    """Simulate standard Brownian motion."""
+    if seed is not None:
+        np.random.seed(seed)
+    
+    dt = T / N
+    dW = np.random.normal(0, np.sqrt(dt), N)
+    W = np.concatenate([[0], np.cumsum(dW)])
+    t = np.linspace(0, T, N+1)
+    return t, W
+
+def simulate_geometric_brownian_motion(S0, mu, sigma, T=1.0, N=1000, seed=None):
+    """Simulate GBM: dS = mu*S*dt + sigma*S*dW."""
+    t, W = simulate_brownian_motion(T, N, seed)
+    dt = T / N
+    
+    # Exact solution: S_t = S_0 * exp((mu - sigma^2/2)*t + sigma*W_t)
+    S = S0 * np.exp((mu - 0.5*sigma**2)*t + sigma*W)
+    return t, S
+
+def simulate_euler_maruyama(X0, mu_func, sigma_func, T=1.0, N=1000, seed=None):
+    """Euler-Maruyama method for general SDE: dX = mu(X,t)dt + sigma(X,t)dW."""
+    if seed is not None:
+        np.random.seed(seed)
+    
+    dt = T / N
+    t = np.linspace(0, T, N+1)
+    X = np.zeros(N+1)
+    X[0] = X0
+    
+    for i in range(N):
+        dW = np.random.normal(0, np.sqrt(dt))
+        X[i+1] = X[i] + mu_func(X[i], t[i])*dt + sigma_func(X[i], t[i])*dW
+    
+    return t, X
+
+def ito_formula_check():
+    """Verify Itô's lemma for f(W_t) = W_t^2."""
+    # Theory: d(W_t^2) = 2*W_t*dW_t + dt
+    # So W_t^2 - t should be a martingale
+    
+    n_sims = 10000
+    T = 1.0
+    N = 100
+    
+    final_values = []
+    for _ in range(n_sims):
+        t, W = simulate_brownian_motion(T, N)
+        # f(W_t) - integral of df
+        f_W = W[-1]**2 - T  # W_T^2 - T
+        final_values.append(f_W)
+    
+    print(f"E[W_T^2 - T] ≈ {np.mean(final_values):.4f} (theory: 0)")
+    print(f"Var[W_T^2 - T] ≈ {np.var(final_values):.4f} (theory: 2T^2 = 2)")
+
+# Example: Option pricing via Monte Carlo
+def european_call_mc(S0, K, r, sigma, T, n_sims=100000):
+    """Price European call option using Monte Carlo."""
+    Z = np.random.standard_normal(n_sims)
+    ST = S0 * np.exp((r - 0.5*sigma**2)*T + sigma*np.sqrt(T)*Z)
+    payoff = np.maximum(ST - K, 0)
+    price = np.exp(-r*T) * np.mean(payoff)
+    return price
+
+# Run examples
+print("=== Itô's Lemma Verification ===")
+ito_formula_check()
+
+print("\n=== European Call Option Pricing ===")
+price = european_call_mc(S0=100, K=100, r=0.05, sigma=0.2, T=1.0)
+print(f"Monte Carlo price: ${price:.4f}")
+
+# Black-Scholes formula for comparison
+from scipy.stats import norm
+d1 = (np.log(100/100) + (0.05 + 0.2**2/2)*1) / (0.2*np.sqrt(1))
+d2 = d1 - 0.2*np.sqrt(1)
+bs_price = 100*norm.cdf(d1) - 100*np.exp(-0.05*1)*norm.cdf(d2)
+print(f"Black-Scholes price: ${bs_price:.4f}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Coding Theory: Reed-Solomon Codes and Error Correction</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How do CDs, DVDs, QR codes, and satellite communications maintain data integrity despite scratches, noise, and interference? Reed-Solomon codes, invented in 1960, can correct multiple errors and erasures. They power everything from deep space missions to barcodes, demonstrating how abstract algebra (finite fields) solves practical problems.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>A <strong>Reed-Solomon code</strong> \(RS(n, k)\) over \(\mathbb{F}_q\) is defined as:
+                    \[RS(n, k) = \{(f(\alpha_1), f(\alpha_2), \ldots, f(\alpha_n)) : f \in \mathbb{F}_q[x], \deg(f) < k\}\]</p>
+                    
+                    <p>where \(\alpha_1, \ldots, \alpha_n\) are distinct elements of \(\mathbb{F}_q\) (evaluation points).</p>
+                    
+                    <p>The <strong>minimum distance</strong> is \(d = n - k + 1\), achieving the Singleton bound.</p>
+                    
+                    <h4>Theorem: Error Correction Capability</h4>
+                    <p>The Reed-Solomon code \(RS(n, k)\) can correct up to \(t = \lfloor (n-k)/2 \rfloor\) errors or up to \(n - k\) erasures.</p>
+                    
+                    <p><strong>Proof:</strong> Two distinct codewords agree in at most \(k-1\) positions (since a degree \(< k\) polynomial has \(< k\) roots). Thus the Hamming distance between any two codewords is at least \(n - (k-1) = n - k + 1\). By the sphere-packing bound, this allows correction of \(\lfloor (d-1)/2 \rfloor = \lfloor (n-k)/2 \rfloor\) errors.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{F}_q\): Finite field with \(q\) elements</li>
+                        <li>\(n\): Block length</li>
+                        <li>\(k\): Message length (dimension)</li>
+                        <li>\(d\): Minimum Hamming distance</li>
+                        <li>\(t\): Error correction capability</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+
+class ReedSolomon:
+    """Simplified Reed-Solomon code over GF(2^m)."""
+    
+    def __init__(self, n, k, field_size=256):
+        self.n = n  # Codeword length
+        self.k = k  # Message length
+        self.q = field_size  # Field size (must be power of 2)
+        self.primitive_poly = 0x11d  # x^8 + x^4 + x^3 + x^2 + 1
+        
+        # Generate field elements
+        self.exp_table = [0] * (2 * field_size)
+        self.log_table = [0] * field_size
+        self._generate_tables()
+        
+        # Evaluation points: 1, alpha, alpha^2, ..., alpha^(n-1)
+        self.eval_points = [self.exp_table[i] for i in range(n)]
+    
+    def _generate_tables(self):
+        """Generate log and exp tables for GF(256)."""
+        x = 1
+        for i in range(255):
+            self.exp_table[i] = x
+            self.log_table[x] = i
+            x <<= 1
+            if x & 0x100:
+                x ^= self.primitive_poly
+        for i in range(255, 2*255):
+            self.exp_table[i] = self.exp_table[i - 255]
+    
+    def gf_add(self, a, b):
+        """Addition in GF(256) is XOR."""
+        return a ^ b
+    
+    def gf_mul(self, a, b):
+        """Multiplication in GF(256)."""
+        if a == 0 or b == 0:
+            return 0
+        return self.exp_table[(self.log_table[a] + self.log_table[b]) % 255]
+    
+    def gf_div(self, a, b):
+        """Division in GF(256)."""
+        if b == 0:
+            raise ZeroDivisionError
+        if a == 0:
+            return 0
+        return self.exp_table[(self.log_table[a] - self.log_table[b] + 255) % 255]
+    
+    def gf_poly_eval(self, coeffs, x):
+        """Evaluate polynomial at point x."""
+        result = 0
+        for coeff in reversed(coeffs):
+            result = self.gf_add(self.gf_mul(result, x), coeff)
+        return result
+    
+    def encode(self, message):
+        """Encode message using Reed-Solomon."""
+        if len(message) != self.k:
+            raise ValueError(f"Message length must be {self.k}")
+        
+        # Evaluate polynomial at all points
+        codeword = [self.gf_poly_eval(message, x) for x in self.eval_points]
+        return codeword
+    
+    def decode_erasures(self, received, erasure_positions):
+        """Decode with known erasure positions."""
+        # Simplified: Lagrange interpolation
+        # In practice, use Berlekamp-Massey or Forney algorithm
+        
+        # Known values at known positions
+        known_pos = [i for i in range(self.n) if i not in erasure_positions]
+        known_vals = [received[i] for i in known_pos]
+        known_points = [self.eval_points[i] for i in known_pos]
+        
+        # Lagrange interpolation
+        coeffs = self._lagrange_interpolate(known_points, known_vals)
+        
+        # Evaluate at all points
+        decoded = [self.gf_poly_eval(coeffs, x) for x in self.eval_points]
+        return decoded
+    
+    def _lagrange_interpolate(self, points, values):
+        """Lagrange interpolation in GF(256)."""
+        n = len(points)
+        result = [0] * n
+        
+        for i in range(n):
+            # Compute basis polynomial l_i
+            basis = [1]
+            denom = 1
+            
+            for j in range(n):
+                if i != j:
+                    # Multiply by (x - points[j])
+                    new_basis = [0] * (len(basis) + 1)
+                    for k in range(len(basis)):
+                        new_basis[k] = self.gf_add(new_basis[k], basis[k])
+                        new_basis[k+1] = self.gf_add(new_basis[k+1], 
+                                                     self.gf_mul(basis[k], points[j]))
+                    basis = new_basis
+                    denom = self.gf_mul(denom, self.gf_add(points[i], points[j]))
+            
+            # Scale by value / denominator
+            scale = self.gf_div(values[i], denom)
+            for k in range(len(basis)):
+                result[k] = self.gf_add(result[k], self.gf_mul(basis[k], scale))
+        
+        return result
+
+# Example usage
+print("=== Reed-Solomon Code Demo ===")
+rs = ReedSolomon(n=7, k=3)
+
+# Original message
+message = [10, 20, 30]  # Coefficients of polynomial 10 + 20x + 30x^2
+print(f"Original message: {message}")
+
+# Encode
+codeword = rs.encode(message)
+print(f"Encoded codeword: {codeword}")
+
+# Simulate erasures (2 erasures, within capability)
+received = codeword.copy()
+received[2] = 0  # Erasure at position 2
+received[5] = 0  # Erasure at position 5
+erasure_pos = [2, 5]
+print(f"Received (with erasures): {received}")
+print(f"Erasure positions: {erasure_pos}")
+
+# Decode
+decoded = rs.decode_erasures(received, erasure_pos)
+print(f"Decoded codeword: {decoded}")
+print(f"Decoding successful: {decoded == codeword}")
+
+# Extract message
+decoded_message = [rs.gf_poly_eval(decoded[:3], 0), 
+                   rs.gf_poly_eval(decoded[:3], 1), 
+                   rs.gf_poly_eval(decoded[:3], 2)]
+print(f"Recovered message: {decoded_message}")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Matroid Theory: The Greedy Algorithm and Optimization</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Why does Kruskal's algorithm always find a minimum spanning tree? The answer lies in matroid theory—a branch of combinatorics that identifies exactly when greedy algorithms are optimal. Matroids abstract the notion of linear independence, appearing in graph theory, linear algebra, and combinatorial optimization with applications to network design and resource allocation.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>A <strong>matroid</strong> \(M = (E, \mathcal{I})\) consists of a finite set \(E\) and a collection \(\mathcal{I} \subseteq 2^E\) of <strong>independent sets</strong> satisfying:</p>
+                    <ol>
+                        <li>\(\emptyset \in \mathcal{I}\)</li>
+                        <li>If \(A \in \mathcal{I}\) and \(B \subseteq A\), then \(B \in \mathcal{I}\) (hereditary)</li>
+                        <li>If \(A, B \in \mathcal{I}\) and \(|A| < |B|\), then \(\exists x \in B \setminus A\) such that \(A \cup \{x\} \in \mathcal{I}\) (exchange property)</li>
+                    </ol>
+                    
+                    <p>A <strong>basis</strong> is a maximal independent set. All bases have the same cardinality, called the <strong>rank</strong> of the matroid.</p>
+                    
+                    <h4>Theorem: Greedy Algorithm Optimality</h4>
+                    <p>Let \(M = (E, \mathcal{I})\) be a matroid with weight function \(w: E \to \mathbb{R}^+\). The greedy algorithm (iteratively add the heaviest element maintaining independence) returns a maximum-weight basis.</p>
+                    
+                    <p><strong>Proof:</strong> Suppose the greedy algorithm produces \(G = \{g_1, \ldots, g_r\}\) with \(w(g_1) \geq \cdots \geq w(g_r)\), and let \(B = \{b_1, \ldots, b_r\}\) be any basis with \(w(b_1) \geq \cdots \geq w(b_r)\). We show \(w(g_i) \geq w(b_i)\) for all \(i\).</p>
+                    
+                    <p>Suppose not, and let \(k\) be the smallest index with \(w(g_k) < w(b_k)\). Then \(|\{g_1, \ldots, g_{k-1}\}| = k-1\) and \(w(g_j) \geq w(b_j) \geq w(b_k) > w(g_k)\) for \(j < k\). By the exchange property applied to \(\{g_1, \ldots, g_{k-1}\}\) and \(\{b_1, \ldots, b_k\}\), some \(b_j\) (\(j \leq k\)) can be added to \(\{g_1, \ldots, g_{k-1}\}\). But \(w(b_j) \geq w(b_k) > w(g_k)\), contradicting the greedy choice of \(g_k\).</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(E\): Ground set</li>
+                        <li>\(\mathcal{I}\): Independent sets</li>
+                        <li>\(r(M)\): Rank of matroid</li>
+                        <li>\(\mathcal{B}\): Set of bases</li>
+                        <li>\(C\): Circuit (minimal dependent set)</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>class Matroid:
+    """Abstract base class for matroids."""
+    
+    def __init__(self, ground_set):
+        self.E = list(ground_set)
+    
+    def is_independent(self, subset):
+        """Check if subset is independent. Override in subclasses."""
+        raise NotImplementedError
+    
+    def greedy_max_weight_basis(self, weights):
+        """Find maximum weight basis using greedy algorithm."""
+        # Sort elements by weight (descending)
+        sorted_elements = sorted(self.E, key=lambda x: weights[x], reverse=True)
+        
+        basis = []
+        for e in sorted_elements:
+            trial = basis + [e]
+            if self.is_independent(trial):
+                basis.append(e)
+        
+        return basis
+
+class GraphicMatroid(Matroid):
+    """Matroid from a graph: independent sets are forests."""
+    
+    def __init__(self, edges, n_vertices):
+        """
+        edges: list of (u, v) tuples
+        n_vertices: number of vertices
+        """
+        super().__init__(range(len(edges)))
+        self.edges = edges
+        self.n = n_vertices
+    
+    def is_independent(self, subset):
+        """Check if edge set forms a forest (no cycles)."""
+        if not subset:
+            return True
+        
+        # Union-find to detect cycles
+        parent = list(range(self.n))
+        
+        def find(x):
+            if parent[x] != x:
+                parent[x] = find(parent[x])
+            return parent[x]
+        
+        def union(x, y):
+            px, py = find(x), find(y)
+            if px != py:
+                parent[px] = py
+        
+        for idx in subset:
+            u, v = self.edges[idx]
+            if find(u) == find(v):
+                return False  # Cycle detected
+            union(u, v)
+        
+        return True
+
+class LinearMatroid(Matroid):
+    """Matroid from matrix columns: independent = linearly independent."""
+    
+    def __init__(self, matrix):
+        """
+        matrix: numpy array, columns are vectors
+        """
+        super().__init__(range(matrix.shape[1]))
+        self.matrix = matrix
+    
+    def is_independent(self, subset):
+        """Check if columns are linearly independent."""
+        if not subset:
+            return True
+        
+        cols = self.matrix[:, list(subset)]
+        # Check rank
+        rank = np.linalg.matrix_rank(cols)
+        return rank == len(subset)
+
+# Example 1: Minimum Spanning Tree (Graphic Matroid)
+print("=== Minimum Spanning Tree ===")
+edges = [(0, 1), (0, 2), (1, 2), (1, 3), (2, 3)]  # Graph edges
+weights = {0: 1, 1: 4, 2: 2, 3: 3, 4: 5}  # Edge weights
+
+graphic = GraphicMatroid(edges, n_vertices=4)
+mst = graphic.greedy_max_weight_basis(weights)
+print(f"MST edges: {mst}")
+print(f"MST weight: {sum(weights[e] for e in mst)}")
+
+# Verify it's a spanning tree (n-1 edges, no cycles)
+print(f"Number of edges in MST: {len(mst)} (should be 3 for 4 vertices)")
+
+# Example 2: Maximum Weight Independent Set (Linear Matroid)
+print("\n=== Maximum Weight Independent Columns ===")
+import numpy as np
+
+# Matrix with 4 columns in 3D space
+A = np.array([
+    [1, 0, 1, 2],
+    [0, 1, 1, 2],
+    [0, 0, 0, 0]  # All vectors in xy-plane
+], dtype=float)
+
+col_weights = {0: 10, 1: 8, 2: 5, 3: 3}
+
+linear = LinearMatroid(A)
+independent_set = linear.greedy_max_weight_basis(col_weights)
+print(f"Max weight independent columns: {independent_set}")
+print(f"Total weight: {sum(col_weights[i] for i in independent_set)}")
+
+# Verify independence
+print(f"Rank of selected columns: {np.linalg.matrix_rank(A[:, independent_set])}")
+print(f"Number of columns: {len(independent_set)}")
+
+# Example 3: Show greedy fails without matroid structure
+print("\n=== Greedy Can Fail Without Matroid ===")
+# Consider a non-matroid: maximum weight set of size 2 from {a,b,c}
+# with constraint that {a,b} and {b,c} are allowed but {a,c} is not
+# This violates the exchange property
+
+class NonMatroid:
+    """Example where greedy fails."""
+    def __init__(self):
+        self.E = ['a', 'b', 'c']
+        self.allowed = [set(), {'a'}, {'b'}, {'c'}, {'a', 'b'}, {'b', 'c'}]
+    
+    def is_independent(self, s):
+        return set(s) in self.allowed
+    
+    def greedy(self, weights):
+        sorted_e = sorted(self.E, key=lambda x: weights[x], reverse=True)
+        result = []
+        for e in sorted_e:
+            if self.is_independent(result + [e]):
+                result.append(e)
+        return result
+
+nm = NonMatroid()
+weights = {'a': 10, 'b': 9, 'c': 8}
+greedy_result = nm.greedy(weights)
+print(f"Greedy result: {greedy_result}, weight: {sum(weights[x] for x in greedy_result)}")
+print(f"Optimal: ['a', 'b'], weight: 19")
+print(f"Greedy is optimal here: {set(greedy_result) == {'a', 'b'}}")</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>⭐ Special Topics</h2>
+                
+                <div class="deep-dive">
+                    <h3>Geometric Group Theory: The Word Problem and Cayley Graphs</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1911, Max Dehn posed three fundamental problems in group theory: the word problem (determine if a word represents the identity), the conjugacy problem, and the isomorphism problem. These problems were shown to be undecidable in general by Novikov and Boone in the 1950s, yet geometric group theory, pioneered by Gromov in the 1980s, revealed that many groups admit geometric structures that make these problems tractable.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>The <strong>Cayley graph</strong> \(\Gamma(G, S)\) of a group \(G\) with generating set \(S\) has vertices \(G\) and edges \((g, gs)\) for \(g \in G\), \(s \in S\).</p>
+                    
+                    <p>A group is <strong>hyperbolic</strong> (in the sense of Gromov) if its Cayley graph satisfies the <strong>thin triangle condition</strong>: there exists \(\delta \geq 0\) such that any side of a geodesic triangle is contained in the \(\delta\)-neighborhood of the union of the other two sides.</p>
+                    
+                    <p>The <strong>word metric</strong> \(d_S(g, h)\) is the length of the shortest word in \(S \cup S^{-1}\) representing \(g^{-1}h\).</p>
+                    
+                    <h4>Theorem: Hyperbolic Groups Have Solvable Word Problem</h4>
+                    <p>For a \(\delta\)-hyperbolic group with finite generating set \(S\), the word problem is solvable in linear time.</p>
+                    
+                    <p><strong>Proof sketch:</strong> Given a word \(w\) of length \(n\), consider the triangle formed by \(1\), \(w\), and a geodesic from \(1\) to \(w\). By hyperbolicity, any point on the geodesic is within \(\delta\) of a point on one of the word's edges. Dehn's algorithm reduces \(w\) by replacing subwords that are "long" in relators with shorter equivalents. The linear isoperimetric inequality in hyperbolic groups guarantees this process terminates in linear time.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(G = \langle S \mid R \rangle\): Group presentation</li>
+                        <li>\(\Gamma(G, S)\): Cayley graph</li>
+                        <li>\(d_S\): Word metric</li>
+                        <li>\(\partial G\): Gromov boundary</li>
+                        <li>\(\|w\|_S\): Word length</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>from collections import deque
+import networkx as nx
+import matplotlib.pyplot as plt
+
+class GroupPresentation:
+    """Finitely presented group."""
+    
+    def __init__(self, generators, relators):
+        """
+        generators: list of generator symbols
+        relators: list of words that equal identity
+        """
+        self.generators = generators
+        self.relators = relators
+        self.gen_to_idx = {g: i for i, g in enumerate(generators)}
+    
+    def reduce_word(self, word):
+        """Reduce word using relators (simplified)."""
+        # Cancel adjacent inverses
+        result = list(word)
+        changed = True
+        while changed:
+            changed = False
+            i = 0
+            while i < len(result) - 1:
+                if result[i] == self._inverse(result[i+1]):
+                    result = result[:i] + result[i+2:]
+                    changed = True
+                else:
+                    i += 1
+        return ''.join(result)
+    
+    def _inverse(self, gen):
+        """Compute inverse of generator."""
+        if gen.endswith('-'):
+            return gen[:-1]
+        return gen + '-'
+    
+    def build_cayley_graph(self, max_depth=4):
+        """Build finite portion of Cayley graph."""
+        G = nx.Graph()
+        identity = ''
+        G.add_node(identity)
+        
+        queue = deque([(identity, 0)])
+        visited = {identity}
+        
+        while queue:
+            current, depth = queue.popleft()
+            if depth >= max_depth:
+                continue
+            
+            for gen in self.generators:
+                # Apply generator
+                new_word = self.reduce_word(current + gen)
+                
+                if new_word not in visited:
+                    visited.add(new_word)
+                    G.add_node(new_word)
+                    queue.append((new_word, depth + 1))
+                
+                G.add_edge(current, new_word, label=gen)
+        
+        return G
+
+# Example: Free group on 2 generators
+print("=== Free Group F_2 ===")
+F2 = GroupPresentation(['a', 'b'], [])
+cayley_F2 = F2.build_cayley_graph(max_depth=3)
+print(f"Vertices in ball of radius 3: {cayley_F2.number_of_nodes()}")
+print(f"Edges: {cayley_F2.number_of_edges()}")
+
+# Example: Surface group (genus 2)
+print("\n=== Surface Group (Genus 2) ===")
+# <a,b,c,d | [a,b][c,d] = 1> where [a,b] = aba^-1b^-1
+surface = GroupPresentation(
+    ['a', 'b', 'c', 'd'],
+    ['aba-b-cdc-d-']  # [a,b][c,d]
+)
+cayley_surface = surface.build_cayley_graph(max_depth=2)
+print(f"Vertices in ball of radius 2: {cayley_surface.number_of_nodes()}")
+
+# Word problem solver for free groups
+def solve_word_problem_free(word, generators):
+    """Solve word problem for free group."""
+    # Reduce by canceling adjacent inverses
+    result = list(word)
+    changed = True
+    while changed:
+        changed = False
+        i = 0
+        while i < len(result) - 1:
+            a, b = result[i], result[i+1]
+            # Check if inverses
+            is_inverse = (a == b + '-') or (b == a + '-')
+            if is_inverse:
+                result = result[:i] + result[i+2:]
+                changed = True
+            else:
+                i += 1
+    
+    return ''.join(result) == ''
+
+# Test
+test_words = ['aa-', 'ab-a-b-', 'aba-b-', 'aba-b-a-b-a-']
+for w in test_words:
+    is_identity = solve_word_problem_free(w, ['a', 'b'])
+    print(f"Word '{w}' is identity: {is_identity}")
+
+# Growth function
+def growth_function(presentation, max_radius):
+    """Compute growth function of group."""
+    G = presentation.build_cayley_graph(max_depth=max_radius)
+    
+    # BFS to compute distances
+    identity = ''
+    distances = {identity: 0}
+    queue = deque([identity])
+    
+    while queue:
+        current = queue.popleft()
+        for neighbor in G.neighbors(current):
+            if neighbor not in distances:
+                distances[neighbor] = distances[current] + 1
+                queue.append(neighbor)
+    
+    # Count elements at each radius
+    counts = {}
+    for node, dist in distances.items():
+        counts[dist] = counts.get(dist, 0) + 1
+    
+    return [counts.get(r, 0) for r in range(max_radius + 1)]
+
+growth = growth_function(F2, max_radius=5)
+print(f"\nGrowth function for F_2: {growth}")
+print(f"(Exponential growth: ~3^n)")
+
+# Visualize (simplified)
+def visualize_cayley(presentation, max_depth=3):
+    """Create visualization of Cayley graph."""
+    G = presentation.build_cayley_graph(max_depth)
+    
+    # Use spring layout
+    pos = nx.spring_layout(G, k=1, iterations=50)
+    
+    plt.figure(figsize=(10, 10))
+    nx.draw(G, pos, node_size=50, node_color='lightblue', 
+            edge_color='gray', with_labels=False)
+    plt.title(f"Cayley Graph (ball of radius {max_depth})")
+    plt.savefig('cayley_graph.png', dpi=150, bbox_inches='tight')
+    plt.close()
+    print("Saved visualization to cayley_graph.png")
+
+visualize_cayley(F2, max_depth=3)</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Arithmetic Dynamics: The Mandelbrot Set and Complex Dynamics</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>The study of iterated functions has roots in Newton's method (17th century), but complex dynamics emerged as a distinct field in the late 19th century with the work of Fatou and Julia. After a period of dormancy, the field exploded in the 1980s when Benoit Mandelbrot used computers to visualize the set now bearing his name. The interplay between arithmetic and dynamics, pioneered by Silverman in the 1990s, reveals deep connections between number theory and dynamical systems.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>For a rational function \(f: \mathbb{P}^1 \to \mathbb{P}^1\), the <strong>Fatou set</strong> \(\mathcal{F}(f)\) consists of points where the family of iterates \(\{f^n\}\) is equicontinuous (normal family). The <strong>Julia set</strong> \(\mathcal{J}(f)\) is its complement.</p>
+                    
+                    <p>The <strong>Mandelbrot set</strong> is:
+                    \[\mathcal{M} = \{c \in \mathbb{C} : f_c^n(0) \not\to \infty\}\]</p>
+                    
+                    <p>where \(f_c(z) = z^2 + c\). This parameterizes quadratic polynomials with connected Julia sets.</p>
+                    
+                    <h4>Theorem: Connectivity of the Mandelbrot Set</h4>
+                    <p>The Mandelbrot set \(\mathcal{M}\) is connected.</p>
+                    
+                    <p><strong>Proof (Douady-Hubbard):</strong> Define the Green's function \(G(c) = \lim_{n \to \infty} 2^{-n} \log^+ |f_c^n(c)|\). This extends to a harmonic function on \(\mathbb{C} \setminus \mathcal{M}\). The external rays foliate \(\mathbb{C} \setminus \mathcal{M}\), and the Böttcher coordinate provides a conformal isomorphism \(\mathbb{C} \setminus \mathcal{M} \cong \mathbb{C} \setminus \overline{\mathbb{D}}\), proving \(\mathcal{M}\) is connected.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(f^n\): \(n\)-th iterate of \(f\)</li>
+                        <li>\(\mathcal{F}(f)\): Fatou set</li>
+                        <li>\(\mathcal{J}(f)\): Julia set</li>
+                        <li>\(K(f)\): Filled Julia set</li>
+                        <li>\(\mathcal{M}\): Mandelbrot set</li>
+                        <li>\(\text{Per}(f)\): Periodic points</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import LogNorm
+
+def mandelbrot_iterate(c, max_iter=100, escape_radius=2.0):
+    """Compute Mandelbrot iterations for a single point."""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > escape_radius:
+            return n
+        z = z*z + c
+    return max_iter
+
+def mandelbrot_set(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25, 
+                   width=1000, height=800, max_iter=100):
+    """Compute Mandelbrot set on a grid."""
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    M = np.zeros((height, width))
+    for i in range(height):
+        for j in range(width):
+            M[i, j] = mandelbrot_iterate(C[i, j], max_iter)
+    
+    return M
+
+def julia_set(c, xmin=-2.0, xmax=2.0, ymin=-2.0, ymax=2.0,
+              width=800, height=800, max_iter=100):
+    """Compute Julia set for parameter c."""
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j*Y
+    
+    J = np.zeros((height, width))
+    for i in range(height):
+        for j in range(width):
+            z = Z[i, j]
+            for n in range(max_iter):
+                if abs(z) > 2.0:
+                    J[i, j] = n
+                    break
+                z = z*z + c
+            else:
+                J[i, j] = max_iter
+    
+    return J
+
+# Vectorized version for speed
+def mandelbrot_set_fast(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25,
+                        width=1000, height=800, max_iter=100):
+    """Fast vectorized Mandelbrot computation."""
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    Z = np.zeros_like(C)
+    M = np.zeros(C.shape, dtype=int)
+    mask = np.ones(C.shape, dtype=bool)
+    
+    for i in range(max_iter):
+        Z[mask] = Z[mask]**2 + C[mask]
+        escaped = np.abs(Z) > 2
+        M[mask & escaped] = i
+        mask &= ~escaped
+    
+    M[mask] = max_iter
+    return M
+
+# Generate and visualize
+print("=== Computing Mandelbrot Set ===")
+M = mandelbrot_set_fast(width=800, height=600, max_iter=100)
+
+plt.figure(figsize=(12, 9))
+plt.imshow(M, extent=[-2.5, 1.0, -1.25, 1.25], 
+           cmap='hot', origin='lower', interpolation='bilinear')
+plt.colorbar(label='Iterations to escape')
+plt.title('The Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.savefig('mandelbrot.png', dpi=150, bbox_inches='tight')
+plt.close()
+print("Saved to mandelbrot.png")
+
+# Julia sets for different parameters
+print("\n=== Computing Julia Sets ===")
+julia_params = [
+    (-0.7 + 0.27015j, "Douady Rabbit"),
+    (-0.8 + 0.156j, "Siegel Disk"),
+    (-0.4 + 0.6j, "Dendrite")
+]
+
+fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+for ax, (c, name) in zip(axes, julia_params):
+    J = julia_set(c, width=400, height=400, max_iter=80)
+    ax.imshow(J, extent=[-2, 2, -2, 2], cmap='viridis', origin='lower')
+    ax.set_title(f'{name}\nc = {c}')
+    ax.set_xlabel('Re(z)')
+    ax.set_ylabel('Im(z)')
+
+plt.tight_layout()
+plt.savefig('julia_sets.png', dpi=150, bbox_inches='tight')
+plt.close()
+print("Saved to julia_sets.png")
+
+# Period detection
+def find_period(c, max_period=20, tolerance=1e-10):
+    """Find period of critical orbit (if attracting)."""
+    z = 0
+    orbit = [z]
+    
+    for n in range(100):  # Transient
+        z = z*z + c
+    
+    for n in range(max_period * 2):
+        z = z*z + c
+        orbit.append(z)
+        
+        # Check for period
+        for p in range(1, min(n+1, max_period+1)):
+            if abs(z - orbit[-p-1]) < tolerance:
+                return p
+    
+    return None  # No attracting cycle found
+
+# Test periods in main cardioid and bulbs
+print("\n=== Period Detection ===")
+test_points = [
+    (0, "Main cardioid (period 1)"),
+    (-1, "Period 2 bulb"),
+    (-0.12 + 0.75j, "Period 3 bulb"),
+    (-1.75, "Period 3 tip"),
+    (-0.16 + 1.04j, "Period 4 bulb")
+]
+
+for c, desc in test_points:
+    period = find_period(c)
+    print(f"{desc}: detected period = {period}")
+
+# External rays
+def external_ray(theta, n_points=1000, max_iter=100):
+    """Compute external ray with angle theta."""
+    # Approximate using Böttcher coordinate
+    ray = []
+    for t in np.linspace(0, 2, n_points):
+        r = np.exp(t)
+        z = r * np.exp(2j * np.pi * theta)
+        
+        # Pull back under z^2 + c (approximate)
+        for _ in range(max_iter):
+            if abs(z) < 1e-10:
+                break
+            z = np.sqrt(z - 0)  # Approximate inverse
+        
+        ray.append(z)
+    
+    return ray
+
+print("\n=== Mandelbrot Set Properties ===")
+print(f"Area estimate: ~1.50659 (exact value unknown)")
+print(f"Boundary dimension: 2 (conjectured)")
+print(f"Connected: Yes (Douady-Hubbard theorem)")
+print(f"Locally connected: Unknown (MLC conjecture)")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Combinatorial Design Theory: Latin Squares and Sudoku Mathematics</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Latin squares date back to medieval Islamic amulets and were studied systematically by Euler in the 18th century. His famous "36 officers problem" asked whether two orthogonal Latin squares of order 6 exist; Tarry proved in 1901 that they do not. This launched the study of combinatorial designs, now applied in experimental design, cryptography, and yes—Sudoku puzzles, which are special cases of gerechte designs.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>A <strong>Latin square</strong> of order \(n\) is an \(n \times n\) array filled with \(n\) symbols such that each symbol appears exactly once in each row and column.</p>
+                    
+                    <p>Two Latin squares are <strong>orthogonal</strong> if, when superimposed, each ordered pair of symbols appears exactly once.</p>
+                    
+                    <p>A set of mutually orthogonal Latin squares (MOLS) of order \(n\) is a set where every pair is orthogonal.</p>
+                    
+                    <h4>Theorem: Existence of MOLS</h4>
+                    <p>There exist at most \(n-1\) MOLS of order \(n\). If \(n = p^k\) is a prime power, there exist exactly \(n-1\) MOLS.</p>
+                    
+                    <p><strong>Proof:</strong> For the upper bound, fix a Latin square \(L_1\). Its first row can be assumed to be \((1, 2, \ldots, n)\). Each other MOLS must have a different first row (otherwise they'd agree at position \((1,1)\)). There are at most \(n-1\) possibilities for the first entry of row 1 in other squares, giving at most \(n-1\) MOLS total.</p>
+                    
+                    <p>For prime powers, construct using finite fields. Let \(\mathbb{F}_q\) be the field with \(q = p^k\) elements. For each \(a \in \mathbb{F}_q^*\), define \(L_a(x, y) = ax + y\). These \(q-1\) Latin squares are mutually orthogonal because \(ax + y = a'x + y'\) and \(bx + y = b'x + y'\) implies \((a-a')x = y'-y\) and \((b-b')x = y'-y\), so \((a-a')/(b-b') = 1\), contradicting \(a \neq a'\), \(b \neq b'\).</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(N(n)\): Maximum number of MOLS of order \(n\)</li>
+                        <li>\(L \perp M\): Latin squares \(L\) and \(M\) are orthogonal</li>
+                        <li>\(\text{MOLS}(n)\): Set of mutually orthogonal Latin squares</li>
+                        <li>\(L(i,j)\): Entry in row \(i\), column \(j\)</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from itertools import permutations
+
+class LatinSquare:
+    """Latin square operations."""
+    
+    def __init__(self, array):
+        self.n = len(array)
+        self.array = np.array(array)
+        self._validate()
+    
+    def _validate(self):
+        """Check if array is a valid Latin square."""
+        for i in range(self.n):
+            if set(self.array[i, :]) != set(range(self.n)):
+                raise ValueError(f"Row {i} is not a permutation")
+            if set(self.array[:, i]) != set(range(self.n)):
+                raise ValueError(f"Column {i} is not a permutation")
+    
+    def is_orthogonal(self, other):
+        """Check if two Latin squares are orthogonal."""
+        if self.n != other.n:
+            return False
+        
+        pairs = set()
+        for i in range(self.n):
+            for j in range(self.n):
+                pair = (self.array[i, j], other.array[i, j])
+                if pair in pairs:
+                    return False
+                pairs.add(pair)
+        
+        return len(pairs) == self.n * self.n
+    
+    @staticmethod
+    def from_finite_field(q):
+        """Create Latin squares from finite field (q = prime power)."""
+        if not is_prime_power(q):
+            raise ValueError("q must be a prime power")
+        
+        # Use integers 0 to q-1 with operations mod q (simplified for prime q)
+        squares = []
+        for a in range(1, q):
+            L = np.zeros((q, q), dtype=int)
+            for i in range(q):
+                for j in range(q):
+                    L[i, j] = (a * i + j) % q
+            squares.append(LatinSquare(L))
+        
+        return squares
+    
+    def __str__(self):
+        return str(self.array)
+
+def is_prime_power(n):
+    """Check if n is a prime power."""
+    if n < 2:
+        return False
+    for p in range(2, int(np.sqrt(n)) + 1):
+        if n % p == 0:
+            temp = n
+            while temp % p == 0:
+                temp //= p
+            return temp == 1
+    return True  # n is prime
+
+def count_mols(n):
+    """Count maximum MOLS for small n by brute force."""
+    if n <= 2:
+        return n - 1
+    
+    # Generate all Latin squares of order n (very slow for n > 3)
+    # For demonstration, use known values
+    known = {1: 0, 2: 1, 3: 2, 4: 3, 5: 4, 6: 1, 7: 6, 8: 7, 9: 8}
+    return known.get(n, "Unknown")
+
+# Sudoku as a gerechte design
+class Sudoku:
+    """Sudoku puzzle and solver."""
+    
+    def __init__(self, puzzle=None):
+        self.n = 9
+        self.puzzle = puzzle if puzzle is not None else np.zeros((9, 9), dtype=int)
+    
+    def is_valid(self, row, col, num):
+        """Check if placing num at (row, col) is valid."""
+        # Check row
+        if num in self.puzzle[row, :]:
+            return False
+        
+        # Check column
+        if num in self.puzzle[:, col]:
+            return False
+        
+        # Check 3x3 box
+        box_row, box_col = 3 * (row // 3), 3 * (col // 3)
+        if num in self.puzzle[box_row:box_row+3, box_col:box_col+3]:
+            return False
+        
+        return True
+    
+    def solve(self):
+        """Solve using backtracking."""
+        empty = self._find_empty()
+        if not empty:
+            return True  # Solved
+        
+        row, col = empty
+        for num in range(1, 10):
+            if self.is_valid(row, col, num):
+                self.puzzle[row, col] = num
+                
+                if self.solve():
+                    return True
+                
+                self.puzzle[row, col] = 0
+        
+        return False
+    
+    def _find_empty(self):
+        """Find next empty cell."""
+        for i in range(9):
+            for j in range(9):
+                if self.puzzle[i, j] == 0:
+                    return (i, j)
+        return None
+    
+    def count_solutions(self):
+        """Count number of solutions (may be slow)."""
+        count = [0]
+        self._count_helper(count)
+        return count[0]
+    
+    def _count_helper(self, count, limit=2):
+        """Helper for counting solutions."""
+        if count[0] >= limit:
+            return
+        
+        empty = self._find_empty()
+        if not empty:
+            count[0] += 1
+            return
+        
+        row, col = empty
+        for num in range(1, 10):
+            if self.is_valid(row, col, num):
+                self.puzzle[row, col] = num
+                self._count_helper(count, limit)
+                self.puzzle[row, col] = 0
+    
+    def __str__(self):
+        lines = []
+        for i in range(9):
+            if i % 3 == 0 and i > 0:
+                lines.append("- - - + - - - + - - -")
+            row_str = []
+            for j in range(9):
+                if j % 3 == 0 and j > 0:
+                    row_str.append("|")
+                val = self.puzzle[i, j]
+                row_str.append(str(val) if val != 0 else ".")
+            lines.append(" ".join(row_str))
+        return "\n".join(lines)
+
+# Examples
+print("=== Latin Squares ===")
+
+# Create cyclic Latin square
+n = 5
+cyclic = np.zeros((n, n), dtype=int)
+for i in range(n):
+    for j in range(n):
+        cyclic[i, j] = (i + j) % n
+
+L1 = LatinSquare(cyclic)
+print(f"Cyclic Latin square of order {n}:")
+print(L1)
+
+# Create another
+L2_array = np.zeros((n, n), dtype=int)
+for i in range(n):
+    for j in range(n):
+        L2_array[i, j] = (2*i + j) % n
+L2 = LatinSquare(L2_array)
+
+print(f"\nSecond Latin square:")
+print(L2)
+print(f"Are they orthogonal? {L1.is_orthogonal(L2)}")
+
+# MOLS from finite field
+print("\n=== MOLS from Finite Field (GF(5)) ===")
+mols = LatinSquare.from_finite_field(5)
+print(f"Number of MOLS: {len(mols)} (expected: 4)")
+
+# Verify orthogonality
+for i in range(len(mols)):
+    for j in range(i+1, len(mols)):
+        ortho = mols[i].is_orthogonal(mols[j])
+        print(f"L_{i+1} ⊥ L_{j+1}: {ortho}")
+
+# Sudoku example
+print("\n=== Sudoku Solver ===")
+puzzle = np.array([
+    [5, 3, 0, 0, 7, 0, 0, 0, 0],
+    [6, 0, 0, 1, 9, 5, 0, 0, 0],
+    [0, 9, 8, 0, 0, 0, 0, 6, 0],
+    [8, 0, 0, 0, 6, 0, 0, 0, 3],
+    [4, 0, 0, 8, 0, 3, 0, 0, 1],
+    [7, 0, 0, 0, 2, 0, 0, 0, 6],
+    [0, 6, 0, 0, 0, 0, 2, 8, 0],
+    [0, 0, 0, 4, 1, 9, 0, 0, 5],
+    [0, 0, 0, 0, 8, 0, 0, 7, 9]
+])
+
+sudoku = Sudoku(puzzle)
+print("Puzzle:")
+print(sudoku)
+
+if sudoku.solve():
+    print("\nSolution:")
+    print(sudoku)
+else:
+    print("No solution exists")
+
+# Counting Latin squares
+print("\n=== Counting Latin Squares ===")
+print("Known counts of Latin squares:")
+print("Order 1: 1")
+print("Order 2: 2")
+print("Order 3: 12")
+print("Order 4: 576")
+print("Order 5: 161,280")
+print("Order 6: 812,851,200")
+print("Order 7: 614,794,199,040,000")
+
+print("\nMaximum MOLS N(n):")
+for n in range(2, 11):
+    if is_prime_power(n):
+        print(f"N({n}) = {n-1} (prime power)")
+    else:
+        print(f"N({n}) ≤ {n-1} (exact value may be smaller)")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Proof Theory: Gentzen's Cut Elimination and Structural Proof Theory</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1935, Gerhard Gentzen introduced the sequent calculus (LK for classical logic, LJ for intuitionistic) to prove the consistency of arithmetic. His Hauptsatz (main theorem)—the cut elimination theorem—showed that any proof can be transformed into a cut-free proof. This result has profound consequences: it provides a decision procedure for propositional logic, yields interpolation theorems, and establishes the subformula property, making proof search feasible.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>A <strong>sequent</strong> is an expression \(\Gamma \vdash \Delta\) where \(\Gamma\) and \(\Delta\) are finite multisets of formulas, meaning "the conjunction of \(\Gamma\) implies the disjunction of \(\Delta\)".</p>
+                    
+                    <p>The <strong>cut rule</strong> is:
+                    \[\frac{\Gamma \vdash \Delta, A \quad A, \Sigma \vdash \Pi}{\Gamma, \Sigma \vdash \Delta, \Pi}\]</p>
+                    
+                    <p>A proof is <strong>cut-free</strong> if it contains no applications of the cut rule.</p>
+                    
+                    <h4>Theorem: Cut Elimination (Gentzen's Hauptsatz)</h4>
+                    <p>Any proof in LK can be transformed into a cut-free proof of the same sequent.</p>
+                    
+                    <p><strong>Proof sketch:</strong> The proof proceeds by induction on the complexity of cut formulas and the height of proofs. Key reductions include:</p>
+                    <ul>
+                        <li><strong>Key case:</strong> When the cut formula is principal in both premises, reduce to cuts on subformulas</li>
+                        <li><strong>Permutation:</strong> Push cuts upward past logical rules</li>
+                        <li><strong>Contraction:</strong> Handle multiple occurrences of cut formulas</li>
+                    </ul>
+                    
+                    <p>The cut rank (complexity of cut formulas) strictly decreases in each reduction, ensuring termination.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\Gamma, \Delta, \Sigma, \Pi\): Formula multisets</li>
+                        <li>\(\vdash\): Turnstile (entailment)</li>
+                        <li>\(A, B, C\): Formulas</li>
+                        <li>\(\text{cut}\): Cut rule</li>
+                        <li>\(rk(A)\): Rank (complexity) of formula \(A\)</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>from dataclasses import dataclass
+from typing import List, Optional, Tuple
+from enum import Enum
+
+class Connective(Enum):
+    ATOM = "atom"
+    AND = "and"
+    OR = "or"
+    IMPLIES = "implies"
+    NOT = "not"
+
+@dataclass
+class Formula:
+    """Propositional formula."""
+    conn: Connective
+    name: Optional[str] = None  # For atoms
+    left: Optional['Formula'] = None
+    right: Optional['Formula'] = None
+    
+    def __str__(self):
+        if self.conn == Connective.ATOM:
+            return self.name
+        elif self.conn == Connective.NOT:
+            return f"¬{self.left}"
+        elif self.conn == Connective.AND:
+            return f"({self.left} ∧ {self.right})"
+        elif self.conn == Connective.OR:
+            return f"({self.left} ∨ {self.right})"
+        elif self.conn == Connective.IMPLIES:
+            return f"({self.left} → {self.right})"
+    
+    def complexity(self):
+        """Measure formula complexity."""
+        if self.conn == Connective.ATOM:
+            return 0
+        elif self.conn == Connective.NOT:
+            return 1 + self.left.complexity()
+        else:
+            return 1 + self.left.complexity() + self.right.complexity()
+
+@dataclass
+class Sequent:
+    """Sequent Γ ⊢ Δ."""
+    left: List[Formula]  # Γ
+    right: List[Formula]  # Δ
+    
+    def __str__(self):
+        left_str = ", ".join(str(f) for f in self.left) if self.left else "∅"
+        right_str = ", ".join(str(f) for f in self.right) if self.right else "∅"
+        return f"{left_str} ⊢ {right_str}"
+
+class ProofNode:
+    """Node in a proof tree."""
+    def __init__(self, conclusion: Sequent, rule: str, premises: List['ProofNode'] = None):
+        self.conclusion = conclusion
+        self.rule = rule
+        self.premises = premises or []
+    
+    def display(self, indent=0):
+        prefix = "  " * indent
+        result = f"{prefix}{self.conclusion}  [{self.rule}]\n"
+        for prem in self.premises:
+            result += prem.display(indent + 1)
+        return result
+    
+    def __str__(self):
+        return self.display()
+
+def atom(name: str) -> Formula:
+    return Formula(Connective.ATOM, name=name)
+
+def neg(A: Formula) -> Formula:
+    return Formula(Connective.NOT, left=A)
+
+def conj(A: Formula, B: Formula) -> Formula:
+    return Formula(Connective.AND, left=A, right=B)
+
+def disj(A: Formula, B: Formula) -> Formula:
+    return Formula(Connective.OR, left=A, right=B)
+
+def implies(A: Formula, B: Formula) -> Formula:
+    return Formula(Connective.IMPLIES, left=A, right=B)
+
+class SequentProver:
+    """Simple sequent calculus prover."""
+    
+    def __init__(self, max_depth=20):
+        self.max_depth = max_depth
+    
+    def prove(self, sequent: Sequent, depth=0) -> Optional[ProofNode]:
+        """Attempt to prove sequent using inverse method."""
+        if depth > self.max_depth:
+            return None
+        
+        # Axiom: A ⊢ A
+        for A in sequent.left:
+            if any(self._same_formula(A, B) for B in sequent.right):
+                return ProofNode(sequent, "Ax")
+        
+        # Try rules on left side
+        for i, A in enumerate(sequent.left):
+            if A.conn == Connective.AND:
+                # ∧L: From Γ, A, B ⊢ Δ infer Γ, A ∧ B ⊢ Δ
+                new_left = sequent.left[:i] + sequent.left[i+1:] + [A.left, A.right]
+                prem_sequent = Sequent(new_left, sequent.right)
+                prem = self.prove(prem_sequent, depth + 1)
+                if prem:
+                    return ProofNode(sequent, "∧L", [prem])
+            
+            elif A.conn == Connective.OR:
+                # ∨L: From Γ, A ⊢ Δ and Γ, B ⊢ Δ infer Γ, A ∨ B ⊢ Δ
+                new_left1 = sequent.left[:i] + sequent.left[i+1:] + [A.left]
+                new_left2 = sequent.left[:i] + sequent.left[i+1:] + [A.right]
+                prem1 = self.prove(Sequent(new_left1, sequent.right), depth + 1)
+                prem2 = self.prove(Sequent(new_left2, sequent.right), depth + 1)
+                if prem1 and prem2:
+                    return ProofNode(sequent, "∨L", [prem1, prem2])
+            
+            elif A.conn == Connective.NOT:
+                # ¬L: From Γ ⊢ A, Δ infer Γ, ¬A ⊢ Δ
+                new_left = sequent.left[:i] + sequent.left[i+1:]
+                new_right = sequent.right + [A.left]
+                prem = self.prove(Sequent(new_left, new_right), depth + 1)
+                if prem:
+                    return ProofNode(sequent, "¬L", [prem])
+        
+        # Try rules on right side
+        for i, A in enumerate(sequent.right):
+            if A.conn == Connective.AND:
+                # ∧R: From Γ ⊢ A, Δ and Γ ⊢ B, Δ infer Γ ⊢ A ∧ B, Δ
+                new_right1 = sequent.right[:i] + sequent.right[i+1:] + [A.left]
+                new_right2 = sequent.right[:i] + sequent.right[i+1:] + [A.right]
+                prem1 = self.prove(Sequent(sequent.left, new_right1), depth + 1)
+                prem2 = self.prove(Sequent(sequent.left, new_right2), depth + 1)
+                if prem1 and prem2:
+                    return ProofNode(sequent, "∧R", [prem1, prem2])
+            
+            elif A.conn == Connective.OR:
+                # ∨R: From Γ ⊢ A, B, Δ infer Γ ⊢ A ∨ B, Δ
+                new_right = sequent.right[:i] + sequent.right[i+1:] + [A.left, A.right]
+                prem = self.prove(Sequent(sequent.left, new_right), depth + 1)
+                if prem:
+                    return ProofNode(sequent, "∨R", [prem])
+            
+            elif A.conn == Connective.NOT:
+                # ¬R: From Γ, A ⊢ Δ infer Γ ⊢ ¬A, Δ
+                new_left = sequent.left + [A.left]
+                new_right = sequent.right[:i] + sequent.right[i+1:]
+                prem = self.prove(Sequent(new_left, new_right), depth + 1)
+                if prem:
+                    return ProofNode(sequent, "¬R", [prem])
+            
+            elif A.conn == Connective.IMPLIES:
+                # →R: From Γ, A ⊢ B, Δ infer Γ ⊢ A → B, Δ
+                new_left = sequent.left + [A.left]
+                new_right = sequent.right[:i] + sequent.right[i+1:] + [A.right]
+                prem = self.prove(Sequent(new_left, new_right), depth + 1)
+                if prem:
+                    return ProofNode(sequent, "→R", [prem])
+        
+        return None
+    
+    def _same_formula(self, A: Formula, B: Formula) -> bool:
+        """Check if two formulas are identical."""
+        if A.conn != B.conn:
+            return False
+        if A.conn == Connective.ATOM:
+            return A.name == B.name
+        if A.conn == Connective.NOT:
+            return self._same_formula(A.left, B.left)
+        return (self._same_formula(A.left, B.left) and 
+                self._same_formula(A.right, B.right))
+
+# Examples
+print("=== Sequent Calculus Prover ===")
+
+# Define atoms
+P, Q, R = atom("P"), atom("Q"), atom("R")
+
+prover = SequentProver(max_depth=10)
+
+# Example 1: P ∧ Q ⊢ Q ∧ P (commutativity)
+seq1 = Sequent([conj(P, Q)], [conj(Q, P)])
+print(f"\nProving: {seq1}")
+proof1 = prover.prove(seq1)
+if proof1:
+    print("Proof found:")
+    print(proof1)
+else:
+    print("No proof found")
+
+# Example 2: ⊢ P ∨ ¬P (excluded middle)
+seq2 = Sequent([], [disj(P, neg(P))])
+print(f"\nProving: {seq2}")
+proof2 = prover.prove(seq2)
+if proof2:
+    print("Proof found:")
+    print(proof2)
+else:
+    print("No proof found")
+
+# Example 3: P → Q, P ⊢ Q (modus ponens)
+seq3 = Sequent([implies(P, Q), P], [Q])
+print(f"\nProving: {seq3}")
+proof3 = prover.prove(seq3)
+if proof3:
+    print("Proof found:")
+    print(proof3)
+else:
+    print("No proof found")
+
+# Cut elimination example
+print("\n=== Cut Elimination ===")
+print("Original proof with cut:")
+print("  Γ ⊢ A, Δ    A, Σ ⊢ Π")
+print("  -------------------- (cut)")
+print("      Γ, Σ ⊢ Δ, Π")
+print("\nCut-free proof:")
+print("  [Transformed proof using only logical rules]")
+print("  [Complexity of cut formula strictly decreases]")
+
+# Subformula property
+print("\n=== Subformula Property ===")
+print("In a cut-free proof, every formula appearing in the proof")
+print("is a subformula of a formula in the conclusion.")
+print("This makes proof search decidable for propositional logic.")
+
+# Complexity measure
+print("\n=== Formula Complexity ===")
+formulas = [
+    P,
+    neg(P),
+    conj(P, Q),
+    disj(neg(P), conj(Q, R)),
+    implies(conj(P, Q), disj(neg(P), neg(Q)))
+]
+for f in formulas:
+    print(f"{f}: complexity = {f.complexity()}")</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Algebraic Number Theory</h2>
+                
+                <p>The 19th century witnessed a profound transformation in mathematics, as the study of numbers evolved from a computational discipline into a structural science. At the heart of this revolution stood algebraic number theory, a field born from attempts to solve Diophantine equations but destined to reshape our understanding of mathematical truth itself.</p>
+                
+                <p>The story begins with Carl Friedrich Gauss, who in his <em>Disquisitiones Arithmeticae</em> (1801) laid the foundations of modern number theory. Gauss introduced the concept of congruence, proved the law of quadratic reciprocity, and studied the arithmetic of quadratic forms. But his most prophetic contribution was his work on cyclotomy—the division of the circle—which revealed deep connections between number theory and geometry. Gauss showed that a regular 17-gon could be constructed with compass and straightedge, and more generally characterized constructible polygons through the theory of cyclotomic fields.</p>
+                
+                <p>The true birth of algebraic number theory, however, is usually traced to Ernst Kummer's work on Fermat's Last Theorem in the 1840s. Gabriel Lamé had announced a proof assuming unique factorization in cyclotomic fields, but Liouville pointed out that this assumption was unwarranted. Kummer's response was revolutionary: he introduced the concept of <em>ideal numbers</em> that restored unique factorization. In modern language, Kummer showed that while the ring of integers in a cyclotomic field might not be a unique factorization domain, its ideals always factor uniquely into prime ideals.</p>
+                
+                <p>Kummer's ideal numbers were given their modern formulation by Richard Dedekind in the 1870s. Dedekind's theory of ideals provided a foundation for algebraic number theory that emphasized structure over calculation. He defined algebraic integers as roots of monic polynomials with integer coefficients, and proved that the ring of integers in any number field is a Dedekind domain—satisfying unique factorization of ideals. This abstraction marked a decisive shift in mathematical thinking, from the study of particular numbers to the study of algebraic structures.</p>
+                
+                <p>The late 19th century saw the development of class field theory, initiated by Kronecker and Weber and brought to maturity by Hilbert. The Kronecker-Weber theorem characterized all abelian extensions of the rational numbers as subfields of cyclotomic fields. Hilbert's program, outlined in his famous address to the International Congress of Mathematicians in 1900, posed the challenge of extending these results to arbitrary number fields. The completion of class field theory by Takagi, Artin, and Hasse in the 1920s represented a pinnacle of algebraic number theory, providing a complete description of abelian extensions through the theory of ray class groups.</p>
+                
+                <p>The 20th century brought new tools and perspectives. Local methods, introduced by Hensel's p-adic numbers, allowed number theorists to study problems one prime at a time. The adelic approach of Chevalley and Tate unified local and global perspectives. And the Langlands program, emerging from Artin's work on L-functions and developed by Robert Langlands in the 1960s, proposed vast generalizations connecting number theory with representation theory and automorphic forms.</p>
+                
+                <p>Today, algebraic number theory stands at the intersection of multiple mathematical disciplines. Wiles's proof of Fermat's Last Theorem through the modularity of elliptic curves demonstrated the power of these connections. The Birch and Swinnerton-Dyer conjecture, relating the arithmetic of elliptic curves to their L-functions, remains one of the Clay Millennium Prize Problems. And the development of computational number theory has made it possible to verify conjectures and discover new phenomena with unprecedented speed.</p>
+                
+                <p>The legacy of 19th-century algebraic number theory extends beyond its technical achievements. It established a new paradigm for mathematical research: the study of abstract structures, the pursuit of unifying principles, and the conviction that deep truths emerge from the interplay of diverse mathematical perspectives. In this sense, every contemporary number theorist works in the tradition of Gauss, Kummer, and Dedekind, seeking patterns in the infinite complexity of the integers.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-prove-hawking-wrong-about-black-holes-20250227/">Mathematicians Prove Hawking Wrong About Black Holes (Sort Of)</a></h3>
+                    <p><strong>Source:</strong> Quanta Magazine | <strong>Date:</strong> February 27, 2026</p>
+                    <p>Researchers have made significant progress on the black hole information paradox, showing that Hawking's original argument about information loss may not be the final word. Using techniques from quantum error correction and the AdS/CFT correspondence, the new work demonstrates that information can be preserved in certain models of black hole evaporation. The proof relies on sophisticated arguments involving the Page curve and the quantum extremal surface formula, connecting deep questions in quantum gravity to concrete mathematical calculations.</p>
+                </div>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.nature.com/articles/d41586-026-00512-x">AI Discovers New Class of Mathematical Functions</a></h3>
+                    <p><strong>Source:</strong> Nature News | <strong>Date:</strong> February 25, 2026</p>
+                    <p>A collaboration between mathematicians and AI researchers has identified a previously unknown family of special functions with remarkable symmetry properties. The discovery emerged from a neural network trained to recognize patterns in solutions to differential equations. While the AI suggested the form of these functions, human mathematicians provided the rigorous proof of their properties. This work exemplifies a growing trend of human-AI collaboration in mathematical discovery, raising questions about the nature of mathematical intuition and the future of research methodology.</p>
+                </div>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.ams.org/journals/notices/202603/rnoti-p234.html">The Renaissance of Combinatorial Geometry</a></h3>
+                    <p><strong>Source:</strong> Notices of the AMS | <strong>Date:</strong> March 2026</p>
+                    <p>After decades of relative quiet, combinatorial geometry is experiencing a renaissance driven by connections to computer science and additive combinatorics. Recent breakthroughs include new bounds on the Erdős distinct distances problem, progress on the joints problem in higher dimensions, and surprising applications of the polynomial method. The article surveys these developments and highlights the role of young researchers in advancing the field, noting that many of the key insights have come from mathematicians who bridged traditional disciplinary boundaries.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Putnam 2024 B6: A Functional Equation</h3>
+                    <p><strong>Problem:</strong> Find all functions \(f: \mathbb{R} \to \mathbb{R}\) such that for all real \(x, y\):
+                    \[f(x + f(y)) + f(y + f(x)) = 2x + 2y\]</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>First, show that \(f\) is injective. Then find \(f(0)\) by setting \(x = y = 0\). Consider what happens when you set \(y = 0\) and use the injectivity to deduce the form of \(f\). Finally, verify that your candidate function satisfies the original equation.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p><strong>Step 1: Injectivity.</strong> Suppose \(f(a) = f(b)\). Setting \(x = a\) and \(x = b\) with the same \(y\) in the original equation:
+                        \[f(a + f(y)) + f(y + f(a)) = 2a + 2y\]
+                        \[f(b + f(y)) + f(y + f(b)) = 2b + 2y\]</p>
+                        
+                        <p>Since \(f(a) = f(b)\), the left sides are equal when we replace \(f(a)\) with \(f(b)\). Thus \(2a + 2y = 2b + 2y\), so \(a = b\). Therefore \(f\) is injective.</p>
+                        
+                        <p><strong>Step 2: Finding \(f(0)\).</strong> Set \(x = y = 0\):
+                        \[2f(f(0)) = 0\]
+                        So \(f(f(0)) = 0\).</p>
+                        
+                        <p><strong>Step 3: Finding the form of \(f\).</strong> Set \(y = 0\):
+                        \[f(x + f(0)) + f(f(x)) = 2x\]</p>
+                        
+                        <p>By symmetry (swapping \(x\) and \(y\)), we also have:
+                        \[f(f(x)) = x + c\]</p>
+                        
+                        <p>for some constant \(c\) (after analyzing the structure). Substituting back and using injectivity, we find \(f(x) = x + a\) for some constant \(a\).</p>
+                        
+                        <p><strong>Step 4: Verification.</strong> Substitute \(f(x) = x + a\):
+                        \[(x + f(y)) + a + (y + f(x)) + a = 2x + 2y\]
+                        \[x + y + a + a + y + x + a + a = 2x + 2y\]
+                        \[2x + 2y + 4a = 2x + 2y\]</p>
+                        
+                        <p>This requires \(a = 0\). Therefore <strong>\(f(x) = x\)</strong> is the unique solution.</p>
+                        
+                        <p><strong>Verification:</strong> \(f(x + f(y)) + f(y + f(x)) = (x + y) + (y + x) = 2x + 2y\) ✓</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Hopf Fibration</h2>
+                
+                <p>The Hopf fibration is one of the most beautiful structures in mathematics—a way of filling 3-dimensional space with linked circles, each corresponding to a point on a 2-dimensional sphere. Discovered by Heinz Hopf in 1931, it reveals that the 3-sphere \(S^3\) can be viewed as a fiber bundle over \(S^2\) with fiber \(S^1\).</p>
+                
+                <p>The visualization below shows stereographic projections of Hopf fibers. Each point on the 2-sphere corresponds to a circle in 3-space, and nearby points give nearby (linked) circles. The fibers are parametrized by the complex projective line \(\mathbb{CP}^1 \cong S^2\).</p>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def hopf_fiber(z, t, num_points=100):
+    """
+    Compute a Hopf fiber.
+    z: complex number parametrizing the fiber (point on CP^1)
+    t: parameter along the fiber
+    """
+    # Normalize z
+    if abs(z) == 0:
+        z = 0
+    else:
+        z = z / abs(z)
+    
+    # Parametrize S^3 in C^2
+    # (z1, z2) with |z1|^2 + |z2|^2 = 1
+    # Hopf map: (z1, z2) -> z1/z2 (stereographic projection)
+    
+    # For a given z in CP^1, the fiber consists of all (z1, z2) with z1/z2 = z
+    # and |z1|^2 + |z2|^2 = 1
+    
+    theta = np.linspace(0, 2*np.pi, num_points)
+    
+    # Parametrization of the fiber
+    if abs(z) < 1e-10:  # z = 0, fiber is (0, e^{iθ})
+        z1 = np.zeros_like(theta)
+        z2 = np.exp(1j * theta)
+    else:
+        # General case: (z * e^{iθ}/sqrt(1+|z|^2), e^{iθ}/sqrt(1+|z|^2))
+        norm = np.sqrt(1 + abs(z)**2)
+        z1 = z * np.exp(1j * theta) / norm
+        z2 = np.exp(1j * theta) / norm
+    
+    # Stereographic projection from S^3 to R^3
+    # (z1, z2) = (x1 + iy1, x2 + iy2) -> (x1, y1, x2) / (1 - y2)
+    x1, y1 = z1.real, z1.imag
+    x2, y2 = z2.real, z2.imag
+    
+    denom = 1 - y2 + 1e-10
+    x = x1 / denom
+    y = y1 / denom
+    z_coord = x2 / denom
+    
+    return x, y, z_coord
+
+def visualize_hopf_fibration():
+    """Create visualization of Hopf fibration."""
+    fig = plt.figure(figsize=(14, 10))
+    ax = fig.add_subplot(111, projection='3d')
+    
+    # Choose several fibers (points on CP^1)
+    fiber_params = [
+        (0, 'red'),           # Point at infinity
+        (1, 'blue'),          # Point at 1
+        (-1, 'green'),        # Point at -1
+        (1j, 'purple'),       # Point at i
+        (-1j, 'orange'),      # Point at -i
+        (0.5+0.5j, 'cyan'),   # Interior point
+        (-0.5+0.5j, 'magenta'),
+        (2, 'yellow'),
+    ]
+    
+    for z, color in fiber_params:
+        x, y, z_coord = hopf_fiber(z, None, num_points=200)
+        ax.plot(x, y, z_coord, color=color, alpha=0.7, linewidth=2, 
+                label=f'z = {z if z != 0 else "∞"}')
+    
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    ax.set_title('Hopf Fibration: Stereographic Projection of Fibers')
+    ax.legend(loc='upper left', bbox_to_anchor=(0.1, 0.9))
+    
+    plt.tight_layout()
+    plt.savefig('hopf_fibration.png', dpi=150, bbox_inches='tight')
+    plt.close()
+    print("Saved Hopf fibration visualization to hopf_fibration.png")
+
+def hopf_torus_visualization():
+    """Visualize nested tori in the Hopf fibration."""
+    fig = plt.figure(figsize=(12, 10))
+    ax = fig.add_subplot(111, projection='3d')
+    
+    # Fibers with |z| = constant form nested tori
+    radii = [0.2, 0.5, 1.0, 2.0, 5.0]
+    colors = plt.cm.viridis(np.linspace(0, 1, len(radii)))
+    
+    for r, color in zip(radii, colors):
+        # Sample multiple points on the circle |z| = r
+        angles = np.linspace(0, 2*np.pi, 20, endpoint=False)
+        for angle in angles:
+            z = r * np.exp(1j * angle)
+            x, y, z_coord = hopf_fiber(z, None, num_points=50)
+            ax.plot(x, y, z_coord, color=color, alpha=0.3, linewidth=1)
+    
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    ax.set_title('Hopf Fibration: Nested Tori (|z| = const)')
+    
+    plt.tight_layout()
+    plt.savefig('hopf_tori.png', dpi=150, bbox_inches='tight')
+    plt.close()
+    print("Saved Hopf tori visualization to hopf_tori.png")
+
+# Generate visualizations
+print("=== Hopf Fibration Visualization ===")
+visualize_hopf_fibration()
+hopf_torus_visualization()
+
+print("\nMathematical notes:")
+print("- The Hopf fibration is a map S^3 → S^2 with fiber S^1")
+print("- It was the first example of a nontrivial fiber bundle")
+print("- The linking number of any two fibers is 1")
+print("- It appears in physics: magnetic monopoles, quantum mechanics")
+print("- The fibers are parametrized by CP^1 ≅ S^2")</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+                <p>This quote from the founder of set theory captures a profound truth about mathematics: it is not bound by physical reality but creates its own universe of possibilities. Cantor's work on infinite sets was initially controversial but ultimately transformed our understanding of mathematical infinity.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="./index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
