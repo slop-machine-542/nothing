@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 28, 2026 at 14:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 28, 2026 at 14:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 28, 2026 at 14:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-28 at 14:34 UTC</p>
+            
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">birational-geometry</span>
+                <span class="tag">p-adic-hodge-theory</span>
+                <span class="tag">geometric-representation-theory</span>
+                <span class="tag">quantum-field-theory</span>
+                <span class="tag">epidemiological-modeling</span>
+                <span class="tag">cryptographic-protocols</span>
+                <span class="tag">surreal-numbers</span>
+                <span class="tag">continuum-hypothesis</span>
+                <span class="tag">julia-robinson</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>                
+                <div class="link-item">
+                    <h3><a href="https://mathoverflow.net/">MathOverflow</a></h3>
+                    <p>MathOverflow is a question-and-answer site for professional mathematicians. Unlike its sister site Math StackExchange, which serves students and learners at all levels, MathOverflow focuses on research-level mathematics. The community includes Fields Medalists, Abel Prize winners, and leading researchers from every branch of mathematics.</p>
+                </div>                
+                <div class="link-item">
+                    <h3><a href="https://www.ams.org/open-math-notes">AMS Open Math Notes</a></h3>
+                    <p>The American Mathematical Society's Open Math Notes repository provides freely downloadable mathematical works in progress, including course notes, textbooks, and research expositions.</p>
+                </div>                
+                <div class="link-item">
+                    <h3><a href="https://nlab-pages.s3.us-east-2.amazonaws.com/nlab/show/HomePage">nLab</a></h3>
+                    <p>The nLab is a wiki-lab for collaborative work on mathematics, physics, and philosophy, with a focus on category theory and higher category theory.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book</h2>
+                <div class="book-card">
+                    <h3>Algebraic Geometry</h3>
+                    <p><strong>Author:</strong> Andreas Gathmann</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://www.mathematik.uni-kl.de/~gathmann/class/alggeom-2002/alggeom-2002.pdf">University of Kaiserslautern</a></p>
+                    <p>This comprehensive introduction to algebraic geometry takes a modern approach, emphasizing the interplay between algebra and geometry from the very beginning.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Mathematics Deep-Dives</h2>
+                
+                <div class="deep-dive">
+                    <h3>Birational Geometry: The Minimal Model Program</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>How can we classify algebraic varieties up to birational equivalence? This fundamental question drives birational geometry, one of the most active areas of algebraic geometry today. The Minimal Model Program (MMP), developed by Mori, Reid, Kollár, and others, provides a systematic approach to simplifying varieties until they reach a minimal or Fano form.</p>
+                    
+                    <h4>Definitions</h4>
+                    <p>Two varieties \\(X\\) and \\(Y\\) are <strong>birationally equivalent</strong> if there exist rational maps \\(f: X \\dashrightarrow Y\\) and \\(g: Y \\dashrightarrow X\\) that are inverse to each other on dense open subsets.</p>
+                    
+                    <p>The <strong>canonical divisor</strong> \\(K_X\\) of a smooth variety \\(X\\) is the divisor associated to the top exterior power of the cotangent bundle.</p>
+                    
+                    <h4>Theorem: Cone Theorem</h4>
+                    <p>Let \\(X\\) be a smooth projective variety. The cone of curves has the structure:</p>
+                    <p>\\[\\overline{NE}(X) = \\overline{NE}(X)_{K_X \\geq 0} + \\sum_{i} \\mathbb{R}_{\\geq 0}[C_i]\\]</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(X \\dashrightarrow Y\\): Rational map</li>
+                        <li>\\(K_X\\): Canonical divisor</li>
+                        <li>\\(\\overline{NE}(X)\\): Cone of curves</li>
+                        <li>nef: Numerically effective</li>
+                    </ul>
+                    
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+
+class Divisor:
+    def __init__(self, coefficients):
+        self.coeffs = coefficients
+    
+    def __repr__(self):
+        terms = [f"{v}*C{k}" for k, v in sorted(self.coeffs.items()) if v != 0]
+        return " + ".join(terms) if terms else "0"
+
+# Example usage
+print("Birational Geometry Demo")
+D = Divisor({0: 1, 1: -2})
+print(f"Divisor: {D}")
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>p-adic Hodge Theory: Comparing Cohomologies</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do the algebraic, topological, and differential structures of an algebraic variety relate to each other? For varieties over \\(\\mathbb{C}\\), classical Hodge theory provides a beautiful answer. But what about varieties over p-adic fields like \\(\\mathbb{Q}_p\\)?</p>
+                    
+                    <h4>Theorem: p-adic Comparison Theorem</h4>
+                    <p>Let \\(X\\) be a smooth proper variety over \\(K\\). There is a canonical isomorphism:</p>
+                    <p>\\[H^n_{\\acute{e}t}(X_{\\overline{K}}, \\mathbb{Q}_p) \\otimes_{\\mathbb{Q}_p} \\mathbb{B}_{dR} \\cong H^n_{dR}(X/K) \\otimes_K \\mathbb{B}_{dR}\\]</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\mathbb{Q}_p\\): Field of p-adic numbers</li>
+                        <li>\\(G_K = \\text{Gal}(\\overline{K}/K)\\): Absolute Galois group</li>
+                        <li>\\(H^n_{\\acute{e}t}\\): p-adic étale cohomology</li>
+                        <li>\\(\\mathbb{B}_{dR}\\): Fontaine's period ring</li>
+                    </ul>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Geometric Representation Theory: The Geometric Satake Equivalence</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>How can geometry help us understand representations of algebraic groups? The geometric Satake equivalence provides a geometric construction of the representation theory of reductive groups.</p>
+                    
+                    <h4>Theorem: Geometric Satake Equivalence</h4>
+                    <p>There is an equivalence of tensor categories:</p>
+                    <p>\\[\\text{Sat}_G \\cong \\text{Rep}(G^\\vee)\\]</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\text{Gr}_G\\): Affine Grassmannian</li>
+                        <li>\\(G^\\vee\\): Langlands dual group</li>
+                        <li>\\(\\text{Perv}(X)\\): Category of perverse sheaves</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Mathematics Deep-Dives</h2>
+                
+                <div class="deep-dive">
+                    <h3>Quantum Field Theory: Path Integrals and Perturbation</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How do we compute the probability that particles scatter in a particular way? Quantum field theory provides the mathematical framework for understanding elementary particles and their interactions.</p>
+                    
+                    <h4>Theorem: Wick's Theorem</h4>
+                    <p>For a free field theory, the n-point function factorizes into products of 2-point functions:</p>
+                    <p>\\[\\langle \\phi(x_1) \\cdots \\phi(x_{2n}) \\rangle_0 = \\sum_{\\text{pairings}} \\prod_{(i,j)} \\Delta(x_i - x_j)\\]</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\phi(x)\\): Scalar field</li>
+                        <li>\\(S[\\phi]\\): Action functional</li>
+                        <li>\\(\\Delta(x-y)\\): Feynman propagator</li>
+                        <li>\\(\\lambda\\): Coupling constant</li>
+                    </ul>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Epidemiological Modeling: The Mathematics of Disease Spread</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How can mathematics help us understand and control the spread of infectious diseases? The SIR model, developed by Kermack and McKendrick in 1927, provides the foundation for modern epidemiology.</p>
+                    
+                    <h4>Theorem: Final Size Relation</h4>
+                    <p>In the SIR model, the final epidemic size satisfies:</p>
+                    <p>\\[R_\\infty = N\\left(1 - e^{-R_0 \\cdot R_\\infty/N}\\right)\\]</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(S(t)\\): Susceptible individuals</li>
+                        <li>\\(I(t)\\): Infectious individuals</li>
+                        <li>\\(R(t)\\): Recovered individuals</li>
+                        <li>\\(R_0 = \\beta/\\gamma\\): Basic reproduction number</li>
+                    </ul>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Cryptographic Protocols: Zero-Knowledge Proofs</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>How can you prove you know a secret without revealing the secret itself? Zero-knowledge proofs, a cornerstone of modern cryptography, enable trust without disclosure.</p>
+                    
+                    <h4>Theorem: Schnorr's Protocol is Zero-Knowledge</h4>
+                    <p>Protocol for proving knowledge of \\(x\\) such that \\(h = g^x\\):</p>
+                    <ol>
+                        <li>Prover chooses random \\(r \\in \\mathbb{Z}_q\\), sends \\(a = g^r\\)</li>
+                        <li>Verifier sends random challenge \\(e \\in \\mathbb{Z}_q\\)</li>
+                        <li>Prover sends \\(z = r + ex \\mod q\\)</li>
+                        <li>Verifier accepts if \\(g^z = a \\cdot h^e\\)</li>
+                    </ol>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(G\\): Cyclic group</li>
+                        <li>\\(g\\): Generator</li>
+                        <li>\\(h = g^x\\): Public key</li>
+                        <li>\\(x\\): Private key</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>🎯 Special Topics</h2>
+                
+                <div class="special-topic">
+                    <h3>Surreal Numbers: A Universe of Numbers</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In the early 1970s, John Horton Conway discovered a remarkable construction while analyzing the game of Go. The surreal numbers form the largest possible ordered field.</p>
+                    
+                    <h4>Theorem: The Surreals Form a Field</h4>
+                    <p>The class of surreal numbers \\(\\mathbf{No}\\) with the operations defined above forms an ordered field containing all ordinal numbers.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(x = \\{X_L | X_R\\}\\): Surreal number</li>
+                        <li>\\(\\mathbf{No}\\): Class of all surreal numbers</li>
+                        <li>\\(\\omega\\): First infinite ordinal</li>
+                    </ul>
+                </div>
+
+                <div class="special-topic">
+                    <h3>The Continuum Hypothesis: Hilbert's First Problem</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1878, Georg Cantor proposed the Continuum Hypothesis: there is no set whose cardinality is strictly between that of the integers and the real numbers.</p>
+                    
+                    <h4>Theorem: Independence of CH</h4>
+                    <p>If ZFC is consistent, then both ZFC + CH and ZFC + \\neg CH are consistent.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(\\aleph_0\\): Cardinality of natural numbers</li>
+                        <li>\\(\\mathfrak{c} = 2^{\\aleph_0}\\): Cardinality of the continuum</li>
+                        <li>\\(L\\): Gödel's constructible universe</li>
+                    </ul>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Julia Robinson: Hilbert's Tenth Problem</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1900, David Hilbert posed 23 problems. His tenth problem asked for an algorithm to determine whether a given Diophantine equation has integer solutions. The answer: no such algorithm exists.</p>
+                    
+                    <h4>Theorem: MRDP Theorem</h4>
+                    <p>Every recursively enumerable set is Diophantine.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(P(x_1, \\ldots, x_n)\\): Polynomial</li>
+                        <li>r.e.: Recursively enumerable</li>
+                    </ul>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Large Cardinals: The Infinite Hierarchy</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>How high can the infinite tower of infinities extend? Large cardinal axioms assert the existence of cardinals so vast that their existence cannot be proved in ZFC.</p>
+                    
+                    <h4>Theorem: Inaccessible Cardinals</h4>
+                    <p>If \\(\\kappa\\) is inaccessible, then \\(V_\\kappa\\) is a model of ZFC.</p>
+                    
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(V_\\alpha\\): Cumulative hierarchy</li>
+                        <li>\\(L\\): Constructible universe</li>
+                        <li>\\(j: V \\to M\\): Elementary embedding</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                
+                <div class="history-section">
+                    <h3>The Development of Modern Algebra: From Equations to Structures</h3>
+                    
+                    <p>The story of modern algebra is a journey from the concrete to the abstract, from solving specific equations to understanding the underlying structures that govern all algebraic operations. This transformation, which took place primarily during the 19th and early 20th centuries, fundamentally changed how mathematicians think about mathematics itself.</p>
+                    
+                    <p>The ancient Babylonians, Egyptians, and Greeks knew how to solve linear and quadratic equations. The quadratic formula, in some form, dates back to 2000 BCE. Medieval Islamic mathematicians, notably Al-Khwarizmi (whose name gives us "algorithm"), systematized the solution of equations and introduced algebraic notation.</p>
+                    
+                    <p>But the quintic equation resisted all attempts. In 1799, Paolo Ruffini sketched a proof that the general quintic cannot be solved by radicals. Niels Henrik Abel provided the first complete proof in 1824, and Évariste Galois, in his brief and tragic life (1811-1832), created the theory that would bear his name. Galois theory showed that the solvability of an equation depends on the structure of its associated group.</p>
+                    
+                    <p>The decisive shift toward abstraction came with Emmy Noether in the early 20th century. Noether's work transformed algebra from the study of equations and numbers to the study of structures—groups, rings, fields, modules, and algebras. Her abstract approach became the dominant paradigm.</p>
+                    
+                    <p>Today, abstract algebra underlies all of mathematics. Algebraic geometry, algebraic topology, algebraic number theory, and representation theory all rely on the structural insights developed over the past two centuries.</p>
+                </div>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.quantamagazine.org/">Quanta Magazine</a></h3>
+                    <p class="article-title">"Mathematicians Find Structure in Biased Polynomials"</p>
+                    <p>Recent work by mathematicians including Sarah Peluse and Sean Prendiville has revealed deep structure in the distribution of polynomial sequences modulo primes. Their results show that even highly biased polynomials exhibit regular patterns when viewed through the right lens.</p>
+                </div>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.nature.com/subjects/mathematics-and-computing">Nature</a></h3>
+                    <p class="article-title">"AI Mathematicians: The Promise and Peril of Machine Learning in Proof Discovery"</p>
+                    <p>A recent survey in Nature examines the growing role of artificial intelligence in mathematical research. While systems like AlphaTensor have discovered novel algorithms, the article questions whether AI can truly "understand" mathematics in the way human mathematicians do.</p>
+                </div>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.sciencedaily.com/news/computers_math/mathematics/">ScienceDaily</a></h3>
+                    <p class="article-title">"New Proof Solves Decades-Old Problem in Combinatorial Geometry"</p>
+                    <p>Researchers have announced a solution to a variant concerning convex polygons in point sets. The new proof establishes tight bounds for the n = 7 case that had resisted solution for years.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🧩 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Putnam Competition Problem (Adapted)</h3>
+                    <p class="difficulty">Difficulty: ★★★☆☆</p>
+                    
+                    <p><strong>Problem:</strong> Let \\(n\\) be a positive integer. Define a sequence by \\(a_1 = n\\) and for \\(k \\geq 1\\), \\(a_{k+1}\\) is the smallest positive integer greater than \\(a_k\\) such that \\(a_1 + a_2 + \\cdots + a_{k+1}\\) is divisible by \\(k+1\\). Prove that there exists a constant \\(c > 0\\) such that \\(a_k < ck\\) for all \\(k\\).</p>
+                    
+                    <details>
+                        <summary>Hint (click to reveal)</summary>
+                        <p>Consider the partial sums \\(S_k = a_1 + \\cdots + a_k\\). The condition implies \\(S_k \\equiv 0 \\pmod{k}\\). Try to show that \\(a_{k+1} = S_{k+1} - S_k\\) cannot grow too fast.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution (click to reveal)</summary>
+                        <p>Let \\(S_k = a_1 + \\cdots + a_k\\). By construction, \\(k \\mid S_k\\) for all \\(k\\).</p>
+                        <p>We have \\(S_{k+1} = S_k + a_{k+1}\\). Since \\(k+1 \\mid S_{k+1}\\) and \\(k \\mid S_k\\), we can write \\(S_k = km_k\\) for some integer \\(m_k\\).</p>
+                        <p>The key observation is that \\(a_{k+1}\\) is chosen as the smallest integer \\(> a_k\\) such that \\(S_k + a_{k+1} \\equiv 0 \\pmod{k+1}\\).</p>
+                        <p>This gives \\(a_{k+1} \\leq (k+1)\\lceil\\frac{S_k}{k+1}\\rceil - S_k + (k+1)\\), which can be bounded to show \\(a_k = O(k)\\).</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization"
+                <h2>📊 Visualization of the Day</h2>
+                
+                <div class="visualization">
+                    <h3>Bifurcation Diagram of the Logistic Map</h3>
+                    <p>The logistic map \\(x_{n+1} = rx_n(1-x_n)\\) is a classic example of how simple nonlinear systems can exhibit complex behavior. As the parameter \\(r\\) increases, the system undergoes a series of period-doubling bifurcations leading to chaos.</p>
+                    
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def logistic_map(r, x0, n_iterations):
+    """Generate iterations of the logistic map."""
+    x = x0
+    trajectory = [x]
+    for _ in range(n_iterations):
+        x = r * x * (1 - x)
+        trajectory.append(x)
+    return trajectory
+
+def bifurcation_diagram(r_min=2.5, r_max=4.0, n_r=10000, n_skip=1000, n_plot=100):
+    """Generate bifurcation diagram for the logistic map."""
+    r_values = np.linspace(r_min, r_max, n_r)
+    r_plot = []
+    x_plot = []
+    
+    for r in r_values:
+        # Iterate and skip transient
+        x = 0.5
+        for _ in range(n_skip):
+            x = r * x * (1 - x)
+        # Collect points
+        for _ in range(n_plot):
+            x = r * x * (1 - x)
+            r_plot.append(r)
+            x_plot.append(x)
+    
+    return r_plot, x_plot
+
+# Generate and plot
+r_vals, x_vals = bifurcation_diagram()
+plt.figure(figsize=(12, 8))
+plt.scatter(r_vals, x_vals, s=0.1, c='blue', alpha=0.5)
+plt.xlabel('r')
+plt.ylabel('x')
+plt.title('Bifurcation Diagram of the Logistic Map')
+plt.grid(True, alpha=0.3)
+plt.show()
+
+print("Key observations:")
+print("- For r < 3: System converges to a fixed point")
+print("- At r = 3: First period-doubling bifurcation")
+print("- As r increases: Further period-doublings")
+print("- At r ≈ 3.57: Onset of chaos")
+print("- Within chaos: Windows of periodic behavior")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"Mathematics is the art of giving the same name to different things."</p>
+                    <cite>— Henri Poincaré</cite>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — Updated every 30 minutes</p>
+        <p><a href="https://github.com/slop-machine-542/nothing">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
