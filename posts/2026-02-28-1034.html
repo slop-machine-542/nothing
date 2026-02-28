@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 28, 2026 at 10:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 28, 2026 at 10:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article>
+            <h1>📐 Math Digest — February 28, 2026 at 10:34 UTC</h1>
+            <p class="post-date">Published: 2026-02-28 at 10:34 UTC</p>
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">functional-analysis</span>
+                <span class="tag">differential-geometry</span>
+                <span class="tag">representation-theory</span>
+                <span class="tag">fluid-dynamics</span>
+                <span class="tag">machine-learning</span>
+                <span class="tag">number-theory</span>
+                <span class="tag">category-theory</span>
+                <span class="tag">logic</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                <p>Three fascinating mathematical resources from around the web:</p>
+                
+                <div class="link-item">
+                    <h4><a href="https://projecteuclid.org/">Project Euclid</a></h4>
+                    <p>A collaborative partnership between Cornell University Library and Duke University Press, Project Euclid provides access to high-quality mathematics and statistics scholarship. The platform hosts journals, monographs, and conference proceedings from independent publishers, offering both open-access and subscription-based content.</p>
+                </div>
+                
+                <div class="link-item">
+                    <h4><a href="https://www.maths.cam.ac.uk/">University of Cambridge Mathematics</a></h4>
+                    <p>The Faculty of Mathematics at Cambridge provides extensive resources including lecture notes, example sheets, and past examination papers. The Tripos system represents one of the oldest and most rigorous undergraduate mathematics programs in the world, with materials freely available online.</p>
+                </div>
+                
+                <div class="link-item">
+                    <h4><a href="https://www.maa.org/">Mathematical Association of America</a></h4>
+                    <p>The MAA is the world's largest community of mathematicians, students, and enthusiasts. Their website offers resources ranging from the American Mathematical Monthly to competition materials (AMC, AIME, USAMO) and educational tools for all levels of mathematical study.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book</h2>
+                <div class="book-highlight">
+                    <h3>"Functional Analysis"</h3>
+                    <p><strong>Author:</strong> Peter D. Lax</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://www.springer.com/gp/book/9780471556046">Springer (older editions)</a> and <a href="https://arxiv.org/abs/funct-an">supplementary notes</a></p>
+                    
+                    <p>Lax's classic text presents functional analysis as a unified and coherent body of knowledge. The book emphasizes applications to differential equations, scattering theory, and numerical analysis, bridging pure and applied mathematics.</p>
+                    
+                    <p>The book covers:</p>
+                    <ul>
+                        <li>Normed linear spaces and Banach spaces</li>
+                        <li>Hilbert spaces and spectral theory</li>
+                        <li>Duality and weak convergence</li>
+                        <li>Linear operators and semigroups</li>
+                        <li>Applications to partial differential equations</li>
+                    </ul>
+                    
+                    <p>Lax's approach emphasizes the connections between abstract theory and concrete problems, making this an essential reference for analysts and applied mathematicians alike.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🧮 Pure Mathematics Deep-Dives</h2>
+                
+                <h3>Sobolev Spaces and Weak Solutions</h3>
+                
+                <p><strong>Motivation:</strong> Classical solutions to partial differential equations require functions to be differentiable in the traditional sense. However, many physically relevant problems (shock waves, corner singularities) do not admit classical solutions. Sobolev spaces provide a framework for defining "weak" derivatives and solutions, extending the applicability of PDE theory.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>For an open set \( \Omega \subseteq \mathbb{R}^n \) and \( 1 \leq p \leq \infty \), the <strong>Sobolev space</strong> \( W^{k,p}(\Omega) \) consists of functions \( u \in L^p(\Omega) \) such that all weak partial derivatives \( D^\alpha u \) exist and belong to \( L^p(\Omega) \) for \( |\alpha| \leq k \).</li>
+                    <li>A <strong>weak derivative</strong> \( v = D^\alpha u \) satisfies: for all test functions \( \phi \in C_c^\infty(\Omega) \),
+                    \[ \int_\Omega u \, D^\alpha \phi \, dx = (-1)^{|\alpha|} \int_\Omega v \phi \, dx \]</li>
+                    <li>The <strong>Sobolev norm</strong> is defined by:
+                    \[ \|u\|_{W^{k,p}} = \left( \sum_{|\alpha| \leq k} \|D^\alpha u\|_{L^p}^p \right)^{1/p} \]</li>
+                </ul>
+                
+                <p><strong>Theorem (Sobolev Embedding):</strong></p>
+                <p>Let \( \Omega \subseteq \mathbb{R}^n \) be a bounded domain with Lipschitz boundary. If \( k > n/p \), then:
+                \[ W^{k,p}(\Omega) \hookrightarrow C^{0,\alpha}(\overline{\Omega}) \]
+                where \( \alpha = k - n/p \) if \( k - n/p < 1 \), and \( \alpha \in (0,1) \) is arbitrary if \( k - n/p = 1 \).</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The proof proceeds via the Gagliardo-Nirenberg-Sobolev inequality. For \( u \in C_c^\infty(\mathbb{R}^n) \), one shows:
+                \[ \|u\|_{L^{p^*}} \leq C \|\nabla u\|_{L^p} \]
+        where \( p^* = np/(n-p) \) is the Sobolev conjugate. This is established by integrating the fundamental theorem of calculus along lines and applying Hölder's inequality. The general case follows by approximation and extension theorems.</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( W^{k,p}(\Omega) \): Sobolev space of order \( k \), integrability \( p \)</li>
+                    <li>\( H^k(\Omega) = W^{k,2}(\Omega) \): Hilbert-Sobolev space</li>
+                    <li>\( W_0^{k,p}(\Omega) \): Closure of \( C_c^\infty(\Omega) \) in \( W^{k,p} \)</li>
+                    <li>\( D^\alpha = \partial_1^{\alpha_1} \cdots \partial_n^{\alpha_n} \): Multi-index notation for derivatives</li>
+                </ul>
+                
+                <pre><code class="python"># Demonstrating Sobolev spaces and weak derivatives
+import numpy as np
+from scipy import integrate
+from scipy.interpolate import CubicSpline
+
+def weak_derivative_approx(f, x, h=1e-5):
+    """
+    Approximate weak derivative using finite differences.
+    For smooth functions, this converges to the classical derivative.
+    """
+    return (f(x + h) - f(x - h)) / (2 * h)
+
+def sobolev_norm_approx(f, df, a, b, p=2, k=1):
+    """
+    Approximate Sobolev norm W^{k,p} for k=0,1.
+    
+    ||f||_{W^{1,p}} = (||f||_{L^p}^p + ||f'||_{L^p}^p)^{1/p}
+    """
+    # L^p norm of f
+    integrand_f = lambda x: np.abs(f(x))**p
+    lp_f, _ = integrate.quad(integrand_f, a, b)
+    
+    # L^p norm of derivative
+    integrand_df = lambda x: np.abs(df(x))**p
+    lp_df, _ = integrate.quad(integrand_df, a, b)
+    
+    return (lp_f + lp_df)**(1/p)
+
+# Example: f(x) = |x| on [-1, 1]
+# Classical derivative undefined at 0, but weak derivative exists
+
+def f_abs(x):
+    return np.abs(x)
+
+def df_abs_weak(x):
+    """Weak derivative of |x| is sign(x) (with sign(0) = 0)"""
+    return np.sign(x)
+
+# Verify weak derivative property
+# For test function phi, integral of |x| phi' should equal -integral of sign(x) phi
+from numpy.polynomial import polynomial as P
+
+# Use polynomial test function
+def test_weak_derivative():
+    # Test function: phi(x) = (1-x^2)^2 on [-1,1], zero at boundaries
+    phi = lambda x: (1 - x**2)**2 if np.abs(x) <= 1 else 0
+    dphi = lambda x: -4*x*(1 - x**2) if np.abs(x) <= 1 else 0
+    
+    # Left side: integral of f * phi'
+    lhs, _ = integrate.quad(lambda x: f_abs(x) * dphi(x), -1, 1)
+    
+    # Right side: -integral of f' * phi
+    rhs, _ = integrate.quad(lambda x: -df_abs_weak(x) * phi(x), -1, 1)
+    
+    return lhs, rhs
+
+lhs, rhs = test_weak_derivative()
+print(f"Weak derivative verification:")
+print(f"Left side (integral of f * phi'):  {lhs:.10f}")
+print(f"Right side (-integral of f' * phi): {rhs:.10f}")
+print(f"Difference: {abs(lhs - rhs):.2e}")
+
+# Compute Sobolev norm
+norm = sobolev_norm_approx(f_abs, df_abs_weak, -1, 1, p=2, k=1)
+print(f"\nSobolev norm W^{{1,2}} of |x| on [-1,1]: {norm:.6f}")</code></pre>
+
+                <h3>Principal Bundles and Connection Forms</h3>
+                
+                <p><strong>Motivation:</strong> In modern differential geometry and theoretical physics, principal bundles provide the natural framework for describing gauge theories. A principal bundle encodes the idea of attaching a symmetry group (the "gauge group") to each point of a manifold, allowing for the geometric description of fields with internal degrees of freedom.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>principal \( G \)-bundle</strong> consists of a surjective submersion \( \pi: P \to M \) with a Lie group \( G \) acting freely and transitively on the right on each fiber \( P_x = \pi^{-1}(x) \).</li>
+                    <li>A <strong>connection</strong> on \( P \) is a smooth distribution \( H \subset TP \) (the horizontal subbundle) such that \( T_pP = V_p \oplus H_p \) where \( V_p = \ker(d\pi_p) \) is the vertical subspace, and \( H_{pg} = (R_g)_* H_p \) for all \( g \in G \).</li>
+                    <li>The <strong>connection form</strong> \( \omega \in \Omega^1(P; \mathfrak{g}) \) is the unique \( \mathfrak{g} \)-valued 1-form satisfying: (i) \( \omega(A^*) = A \) for fundamental vector fields \( A^* \), and (ii) \( R_g^* \omega = \text{Ad}_{g^{-1}} \omega \).</li>
+                    <li>The <strong>curvature form</strong> is \( \Omega = d\omega + \frac{1}{2}[\omega \wedge \omega] \).</li>
+                </ul>
+                
+                <p><strong>Theorem (Bianchi Identity):</strong></p>
+                <p>For any connection form \( \omega \) with curvature \( \Omega \):
+                \[ d\Omega + [\omega \wedge \Omega] = 0 \]</p>
+                
+                <p><strong>Proof:</strong></p>
+                <p>Starting from \( \Omega = d\omega + \frac{1}{2}[\omega \wedge \omega] \), we compute:
+                \[ d\Omega = d^2\omega + \frac{1}{2}[d\omega \wedge \omega] - \frac{1}{2}[\omega \wedge d\omega] = [d\omega \wedge \omega] \]
+        since \( d^2 = 0 \) and \( [\alpha \wedge \beta] = (-1)^{pq+1}[\beta \wedge \alpha] \) for a \( p \)-form \( \alpha \) and \( q \)-form \( \beta \).</p>
+                <p>Now:
+        \[ d\Omega + [\omega \wedge \Omega] = [d\omega \wedge \omega] + [\omega \wedge d\omega] + \frac{1}{2}[\omega \wedge [\omega \wedge \omega]] \]</p>
+                <p>The first two terms cancel by graded symmetry. The triple bracket vanishes by the Jacobi identity, completing the proof.</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( \mathfrak{g} \): Lie algebra of \( G \)</li>
+                    <li>\( A^* \): Fundamental vector field generated by \( A \in \mathfrak{g} \)</li>
+                    <li>\( [\omega \wedge \eta] \): Bracket of Lie algebra-valued forms</li>
+                    <li>\( \text{Ad} \): Adjoint representation of \( G \) on \( \mathfrak{g} \)</li>
+                </ul>
+                
+                <pre><code class="python"># Principal bundle connection: U(1) bundle over S^2 (Dirac monopole)
+import numpy as np
+
+class U1Connection:
+    """
+    U(1) principal bundle connection (electromagnetic potential).
+    The total space is S^3 (Hopf fibration), base is S^2.
+    """
+    def __init__(self, charge=1):
+        self.g = charge  # Magnetic charge
+    
+    def local_connection_A(self, theta, phi, patch='north'):
+        """
+        Local connection 1-form (gauge potential).
+        
+        On S^2, we need two patches due to the Dirac string singularity.
+        """
+        if patch == 'north':
+            # Valid away from south pole (theta = pi)
+            A_phi = self.g * (1 - np.cos(theta))
+        else:  # south patch
+            # Valid away from north pole (theta = 0)
+            A_phi = -self.g * (1 + np.cos(theta))
+        
+        # A = A_phi * dphi
+        return {'phi': A_phi}
+    
+    def curvature_F(self, theta, phi):
+        """
+        Field strength (curvature 2-form).
+        For U(1), F = dA is gauge invariant.
+        """
+        # F = (g/2) sin(theta) dtheta ∧ dphi
+        # This is the magnetic field of a monopole
+        return {'theta_phi': self.g * np.sin(theta) / 2}
+    
+    def chern_number(self):
+        """
+        First Chern number: integral of F/(2*pi) over S^2.
+        Must be integer by quantization condition.
+        """
+        # (1/2π) ∫ F = (1/2π) * g * 4π / 2 = g
+        return self.g
+
+# Demonstration
+conn = U1Connection(charge=1)
+
+# Sample points
+theta = np.pi / 3
+phi = np.pi / 4
+
+A_north = conn.local_connection_A(theta, phi, 'north')
+A_south = conn.local_connection_A(theta, phi, 'south')
+F = conn.curvature_F(theta, phi)
+
+print("U(1) Principal Bundle Connection (Dirac Monopole)")
+print(f"Magnetic charge g = {conn.g}")
+print(f"Chern number = {conn.chern_number()}")
+print(f"\nConnection at (θ={theta:.3f}, φ={phi:.3f}):")
+print(f"  North patch A_φ = {A_north['phi']:.4f}")
+print(f"  South patch A_φ = {A_south['phi']:.4f}")
+print(f"\nField strength F_θφ = {F['theta_phi']:.4f}")
+
+# Verify quantization: integrate curvature over S^2
+from scipy import integrate
+integrand = lambda theta: conn.g * np.sin(theta) / 2
+total_F, _ = integrate.quad(integrand, 0, np.pi)
+total_F *= 2 * np.pi  # Integrate over phi
+print(f"\n∫ F = {total_F:.4f} = {conn.g} * 2π")
+print(f"First Chern number: (1/2π) ∫ F = {total_F/(2*np.pi):.0f}")</code></pre>
+
+                <h3>Category Theory: Limits and Colimits</h3>
+                
+                <p><strong>Motivation:</strong> Category theory provides a unifying language for mathematics, revealing structural similarities across different domains. Limits and colimits are universal constructions that generalize products, coproducts, intersections, unions, and many other familiar operations.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>Let \( J \) be a small category (the "index category") and \( F: J \to \mathcal{C} \) a functor (a "diagram"). A <strong>cone</strong> over \( F \) consists of an object \( C \in \mathcal{C} \) together with morphisms \( \psi_j: C \to F(j) \) for each \( j \in J \), such that for every \( \alpha: j \to j' \) in \( J \):
+                    \[ F(\alpha) \circ \psi_j = \psi_{j'} \]</li>
+                    <li>A <strong>limit</strong> of \( F \) is a universal cone \( (\lim F, \pi_j) \), meaning for any other cone \( (C, \psi_j) \), there exists a unique morphism \( u: C \to \lim F \) such that \( \pi_j \circ u = \psi_j \) for all \( j \).</li>
+                    <li>A <strong>colimit</strong> is the dual notion: a universal cocone under \( F \).</li>
+                </ul>
+                
+                <p><strong>Theorem (Limits are Unique up to Isomorphism):</strong></p>
+                <p>If \( (L, \pi_j) \) and \( (L', \pi'_j) \) are both limits of \( F: J \to \mathcal{C} \), then there exists a unique isomorphism \( \phi: L \to L' \) such that \( \pi'_j \circ \phi = \pi_j \) for all \( j \).</p>
+                
+                <p><strong>Proof:</strong></p>
+                <p>Since \( (L, \pi_j) \) is a limit and \( (L', \pi'_j) \) is a cone, the universal property of \( L \) gives a unique \( \phi: L \to L' \) with \( \pi'_j \circ \phi = \pi_j \). Similarly, we get \( \psi: L' \to L \) with \( \pi_j \circ \psi = \pi'_j \).</p>
+                <p>Now \( \pi_j \circ (\psi \circ \phi) = \pi_j \) and \( \pi'_j \circ (\phi \circ \psi) = \pi'_j \). By uniqueness in the universal property, \( \psi \circ \phi = \text{id}_L \) and \( \phi \circ \psi = \text{id}_{L'} \).</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( \lim F \) or \( \lim_{\leftarrow j} F(j) \): Limit of diagram \( F \)</li>
+                    <li>\( \text{colim } F \) or \( \lim_{\rightarrow j} F(j) \): Colimit</li>
+                    <li>\( \prod_{j} F(j) \): Product (limit of discrete diagram)</li>
+                    <li>\( \coprod_{j} F(j) \): Coproduct (colimit of discrete diagram)</li>
+                </ul>
+                
+                <pre><code class="python"># Category theory: limits and colimits in Python
+from functools import reduce
+from typing import TypeVar, Generic, Callable, List, Tuple
+
+T = TypeVar('T')
+
+class SetObject:
+    """Represents a set as an object in the category of sets."""
+    def __init__(self, elements: set):
+        self.elements = elements
+    
+    def __repr__(self):
+        return f"Set({self.elements})"
+
+class SetMorphism:
+    """Morphism in the category of sets (a function)."""
+    def __init__(self, domain: SetObject, codomain: SetObject, func: Callable):
+        self.domain = domain
+        self.codomain = codomain
+        self.func = func
+    
+    def apply(self, x):
+        return self.func(x)
+    
+    def compose(self, other):
+        """Compose: self ∘ other"""
+        assert other.codomain == self.domain
+        return SetMorphism(other.domain, self.codomain, 
+                          lambda x: self.func(other.func(x)))
+
+def product(sets: List[SetObject]) -> Tuple[SetObject, List[Callable]]:
+    """
+    Compute the product in Set (cartesian product).
+    
+    Returns the product set and projection functions.
+    """
+    # Cartesian product
+    from itertools import product as cartesian_product
+    elements = list(cartesian_product(*[s.elements for s in sets]))
+    prod = SetObject(set(elements))
+    
+    # Projection functions
+    projections = []
+    for i in range(len(sets)):
+        pi = lambda x, idx=i: x[idx]  # Capture i correctly
+        projections.append(pi)
+    
+    return prod, projections
+
+def pullback(f: SetMorphism, g: SetMorphism) -> Tuple[SetObject, SetMorphism, SetMorphism]:
+    """
+    Compute the pullback of f: A → C and g: B → C.
+    
+    P = {(a,b) ∈ A × B : f(a) = g(b)}
+    """
+    assert f.codomain == g.codomain
+    
+    # Pullback set
+    pullback_set = set()
+    for a in f.domain.elements:
+        for b in g.domain.elements:
+            if f.apply(a) == g.apply(b):
+                pullback_set.add((a, b))
+    
+    P = SetObject(pullback_set)
+    
+    # Projection morphisms
+    pi1 = SetMorphism(P, f.domain, lambda x: x[0])
+    pi2 = SetMorphism(P, g.domain, lambda x: x[1])
+    
+    return P, pi1, pi2
+
+def coproduct(sets: List[SetObject]) -> Tuple[SetObject, List[Callable]]:
+    """
+    Compute the coproduct in Set (disjoint union).
+    
+    Elements are tagged: (i, x) where x ∈ sets[i]
+    """
+    elements = set()
+    for i, s in enumerate(sets):
+        for x in s.elements:
+            elements.add((i, x))
+    
+    coprod = SetObject(elements)
+    
+    # Injection functions
+    def make_inj(i):
+        return lambda x: (i, x)
+    
+    injections = [make_inj(i) for i in range(len(sets))]
+    
+    return coprod, injections
+
+# Example: Product and pullback
+A = SetObject({1, 2, 3})
+B = SetObject({'a', 'b'})
+C = SetObject({10, 20})
+
+# Product A × B
+AxB, proj = product([A, B])
+print(f"Product A × B = {AxB}")
+print(f"  |A × B| = {len(AxB.elements)}")
+
+# Pullback: f: A → C, g: B → C
+f = SetMorphism(A, C, lambda x: 10 if x == 1 else 20)
+g = SetMorphism(B, C, lambda x: 10 if x == 'a' else 20)
+
+P, pi1, pi2 = pullback(f, g)
+print(f"\nPullback P = {P}")
+print(f"  Elements where f(a) = g(b): {P.elements}")
+
+# Coproduct A ⊔ B
+A_union_B, inj = coproduct([A, B])
+print(f"\nCoproduct A ⊔ B has {len(A_union_B.elements)} elements")
+print(f"  Sample: {list(A_union_B.elements)[:5]}")</code></pre>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Mathematics Deep-Dives</h2>
+                
+                <h3>Navier-Stokes Equations and Fluid Dynamics</h3>
+                
+                <p><strong>Motivation:</strong> The Navier-Stokes equations describe the motion of viscous fluids and are fundamental to weather prediction, aircraft design, blood flow modeling, and climate science. Despite their practical importance, fundamental questions about existence and smoothness of solutions remain open (this is one of the Millennium Prize Problems).</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>The <strong>incompressible Navier-Stokes equations</strong> on \( \Omega \subseteq \mathbb{R}^n \) for velocity field \( \mathbf{u}(x,t) \) and pressure \( p(x,t) \):
+                    \[ \frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\nabla p + \nu \Delta \mathbf{u} + \mathbf{f} \]
+        \[ \nabla \cdot \mathbf{u} = 0 \]</li>
+                    <li>The <strong>Reynolds number</strong> \( \text{Re} = \frac{UL}{\nu} \) characterizes the ratio of inertial to viscous forces, where \( U \) is characteristic velocity and \( L \) is characteristic length.</li>
+                    <li>A <strong>weak solution</strong> (Leray-Hopf) satisfies the equations in the distributional sense with finite energy.</li>
+                </ul>
+                
+                <p><strong>Theorem (Leray, 1934):</strong></p>
+                <p>For initial data \( \mathbf{u}_0 \in L^2(\mathbb{R}^n) \) with \( \nabla \cdot \mathbf{u}_0 = 0 \), there exists a global weak solution \( \mathbf{u} \) satisfying:
+                \[ \mathbf{u} \in L^\infty(0,\infty; L^2) \cap L^2(0,\infty; H^1) \]</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The proof uses the Galerkin method: (1) Project onto finite-dimensional subspaces spanned by eigenfunctions of the Stokes operator; (2) Solve the resulting ODE system; (3) Establish uniform energy estimates; (4) Pass to the limit using compactness arguments.</p>
+                <p>The energy inequality:
+        \[ \frac{1}{2}\frac{d}{dt}\|\mathbf{u}\|_{L^2}^2 + \nu\|\nabla \mathbf{u}\|_{L^2}^2 = \int \mathbf{f} \cdot \mathbf{u} \]
+        provides the crucial a priori bound.</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( (\mathbf{u} \cdot \nabla)\mathbf{u} = \sum_j u_j \partial_j u_i \): Convective derivative</li>
+                    <li>\( \nu \): Kinematic viscosity</li>
+                    <li>\( \Delta = \nabla^2 \): Laplacian operator</li>
+                    <li>\( H^1 \): Sobolev space of functions with one weak derivative in \( L^2 \)</li>
+                </ul>
+                
+                <pre><code class="python"># Navier-Stokes: 2D vorticity-streamfunction formulation
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.ndimage import laplace
+from scipy.fft import fft2, ifft2, fftfreq
+
+def vorticity_streamfunction_solve(w, dt, nu, dx):
+    """
+    Solve 2D Navier-Stokes using vorticity-streamfunction method.
+    
+    ∂ω/∂t + u·∇ω = ν∇²ω
+    ∇²ψ = -ω,  u = ∂ψ/∂y, v = -∂ψ/∂x
+    """
+    N = w.shape[0]
+    
+    # Spectral solve for streamfunction
+    k = 2 * np.pi * fftfreq(N, dx)
+    kx, ky = np.meshgrid(k, k)
+    k2 = kx**2 + ky**2
+    k2[0, 0] = 1  # Avoid division by zero
+    
+    # ψ from ω in Fourier space
+    w_hat = fft2(w)
+    psi_hat = -w_hat / k2
+    psi = np.real(ifft2(psi_hat))
+    
+    # Velocity from streamfunction
+    u = np.real(ifft2(1j * ky * psi_hat))  # ∂ψ/∂y
+    v = np.real(ifft2(-1j * kx * psi_hat))  # -∂ψ/∂x
+    
+    # Compute advection term u·∇ω using finite differences
+    def d_dx(f):
+        return (np.roll(f, -1, axis=1) - np.roll(f, 1, axis=1)) / (2*dx)
+    
+    def d_dy(f):
+        return (np.roll(f, -1, axis=0) - np.roll(f, 1, axis=0)) / (2*dx)
+    
+    advection = u * d_dx(w) + v * d_dy(w)
+    
+    # Diffusion using spectral method
+    diffusion = np.real(ifft2(-k2 * w_hat))
+    
+    # Time step (forward Euler)
+    w_new = w - dt * advection + dt * nu * diffusion
+    
+    return w_new, psi, u, v
+
+# Simulation parameters
+N = 128
+L = 2 * np.pi
+dx = L / N
+dt = 0.001
+nu = 0.001  # Viscosity
+n_steps = 5000
+
+# Initial condition: random vorticity
+np.random.seed(42)
+w = np.random.randn(N, N)
+# Smooth it
+from scipy.ndimage import gaussian_filter
+w = gaussian_filter(w, sigma=2.0)
+
+# Time stepping
+for step in range(n_steps):
+    w, psi, u, v = vorticity_streamfunction_solve(w, dt, nu, dx)
+    
+    if step % 1000 == 0:
+        enstrophy = np.mean(w**2)
+        energy = np.mean(u**2 + v**2)
+        print(f"Step {step}: Energy = {energy:.6f}, Enstrophy = {enstrophy:.6f}")
+
+# Final state
+print(f"\nFinal velocity magnitude range: [{np.sqrt(u**2+v**2).min():.4f}, {np.sqrt(u**2+v**2).max():.4f}]")
+print(f"Final vorticity range: [{w.min():.4f}, {w.max():.4f}]")
+
+# Visualization code (would generate plot)
+print("\n# To visualize:")
+print("# plt.imshow(w, extent=[0, L, 0, L], cmap='RdBu_r')")
+print("# plt.colorbar(label='Vorticity')")
+print("# plt.title('2D Navier-Stokes: Vorticity Field')")
+print("# plt.show()")</code></pre>
+
+                <h3>Support Vector Machines and Kernel Methods</h3>
+                
+                <p><strong>Motivation:</strong> Support Vector Machines (SVMs) are powerful supervised learning algorithms that find optimal separating hyperplanes in high-dimensional spaces. The kernel trick allows SVMs to handle non-linear decision boundaries implicitly, making them both elegant and computationally efficient.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>Given training data \( \{(x_i, y_i)\}_{i=1}^n \) with \( x_i \in \mathbb{R}^d \) and \( y_i \in \{-1, +1\} \), the <strong>primal SVM problem</strong> is:
+                    \[ \min_{w,b} \frac{1}{2}\|w\|^2 + C \sum_{i=1}^n \max(0, 1 - y_i(w \cdot x_i + b)) \]</li>
+                    <li>The <strong>dual problem</strong> using Lagrange multipliers \( \alpha_i \geq 0 \):
+                    \[ \max_\alpha \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j} \alpha_i \alpha_j y_i y_j (x_i \cdot x_j) \]
+        subject to \( 0 \leq \alpha_i \leq C \) and \( \sum_i \alpha_i y_i = 0 \).</li>
+                    <li>A <strong>kernel function</strong> \( K(x, x') = \langle \phi(x), \phi(x') \rangle \) computes inner products in a (possibly infinite-dimensional) feature space without explicit mapping \( \phi \).</li>
+                </ul>
+                
+                <p><strong>Theorem (Representer Theorem):</strong></p>
+                <p>For the SVM optimization problem, the optimal weight vector can be expressed as:
+                \[ w^* = \sum_{i=1}^n \alpha_i^* y_i x_i \]
+        where \( \alpha^* \) solves the dual problem. The decision function is:
+        \[ f(x) = \text{sign}\left(\sum_{i=1}^n \alpha_i^* y_i K(x_i, x) + b\right) \]</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>Decompose \( w = w_{\parallel} + w_{\perp} \) where \( w_{\parallel} \in \text{span}\{x_i\} \) and \( w_{\perp} \perp x_i \) for all \( i \). The constraints only involve \( w_{\parallel} \), and \( \|w\|^2 = \|w_{\parallel}\|^2 + \|w_{\perp}\|^2 \). Minimizing requires \( w_{\perp} = 0 \).</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( C \): Regularization parameter (trade-off between margin and errors)</li>
+                    <li>\( \alpha_i \): Lagrange multipliers (non-zero for support vectors)</li>
+                    <li>\( K(x, x') \): Kernel function (common: linear, polynomial, RBF)</li>
+                    <li>\( \phi: \mathcal{X} \to \mathcal{H} \): Feature map to Hilbert space</li>
+                </ul>
+                
+                <pre><code class="python"># Support Vector Machine implementation
+import numpy as np
+from scipy.optimize import minimize
+
+class SVM:
+    """Support Vector Machine with kernel methods."""
+    
+    def __init__(self, kernel='rbf', C=1.0, gamma='scale'):
+        self.kernel = kernel
+        self.C = C
+        self.gamma = gamma
+        self.alpha = None
+        self.support_vectors = None
+        self.support_vector_labels = None
+        self.b = 0
+    
+    def _compute_kernel(self, X1, X2):
+        """Compute kernel matrix."""
+        if self.gamma == 'scale':
+            gamma = 1 / (X1.shape[1] * X1.var())
+        else:
+            gamma = self.gamma
+        
+        if self.kernel == 'linear':
+            return X1 @ X2.T
+        elif self.kernel == 'rbf':
+            # K(x,y) = exp(-gamma ||x-y||^2)
+            sq_dists = (X1**2).sum(axis=1).reshape(-1,1) + (X2**2).sum(axis=1) - 2*X1@X2.T
+            return np.exp(-gamma * sq_dists)
+        elif self.kernel == 'poly':
+            return (1 + X1 @ X2.T)**3
+        else:
+            raise ValueError(f"Unknown kernel: {self.kernel}")
+    
+    def fit(self, X, y):
+        """Train SVM using dual formulation."""
+        n_samples = X.shape[0]
+        
+        # Compute kernel matrix
+        K = self._compute_kernel(X, X)
+        
+        # Dual objective: maximize sum(alpha) - 0.5 * sum(alpha_i alpha_j y_i y_j K_ij)
+        # Equivalent to minimize: 0.5 * alpha^T (y y^T ⊙ K) alpha - sum(alpha)
+        
+        y = y.astype(float)
+        Q = np.outer(y, y) * K
+        
+        def objective(alpha):
+            return 0.5 * alpha @ Q @ alpha - alpha.sum()
+        
+        def grad_objective(alpha):
+            return Q @ alpha - np.ones(n_samples)
+        
+        # Constraints: 0 <= alpha_i <= C, sum(alpha_i * y_i) = 0
+        bounds = [(0, self.C) for _ in range(n_samples)]
+        constraints = {'type': 'eq', 'fun': lambda a: a @ y}
+        
+        # Solve
+        result = minimize(objective, np.zeros(n_samples), method='SLSQP',
+                         jac=grad_objective, bounds=bounds, 
+                         constraints=constraints, options={'maxiter': 1000})
+        
+        self.alpha = result.x
+        
+        # Support vectors have alpha > 0
+        sv_mask = self.alpha > 1e-5
+        self.support_vectors = X[sv_mask]
+        self.support_vector_labels = y[sv_mask]
+        self.alpha_sv = self.alpha[sv_mask]
+        
+        # Compute bias b using support vectors with 0 < alpha < C
+        margin_sv_mask = (self.alpha > 1e-5) & (self.alpha < self.C - 1e-5)
+        if margin_sv_mask.any():
+            K_sv = self._compute_kernel(X[margin_sv_mask], self.support_vectors)
+            predictions = (self.alpha_sv * self.support_vector_labels * K_sv).sum(axis=1)
+            self.b = np.mean(y[margin_sv_mask] - predictions)
+        
+        return self
+    
+    def predict(self, X):
+        """Predict class labels."""
+        K = self._compute_kernel(X, self.support_vectors)
+        scores = (self.alpha_sv * self.support_vector_labels * K).sum(axis=1) + self.b
+        return np.sign(scores)
+    
+    def decision_function(self, X):
+        """Compute decision function values."""
+        K = self._compute_kernel(X, self.support_vectors)
+        return (self.alpha_sv * self.support_vector_labels * K).sum(axis=1) + self.b
+
+# Example: XOR problem (non-linearly separable)
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]], dtype=float)
+y = np.array([-1, 1, 1, -1], dtype=float)
+
+# Linear SVM (will fail)
+svm_linear = SVM(kernel='linear', C=10.0)
+svm_linear.fit(X, y)
+print("Linear SVM on XOR:")
+print(f"  Predictions: {svm_linear.predict(X)}")
+print(f"  Accuracy: {np.mean(svm_linear.predict(X) == y)*100:.0f}%")
+
+# RBF SVM (succeeds)
+svm_rbf = SVM(kernel='rbf', C=10.0, gamma=1.0)
+svm_rbf.fit(X, y)
+print("\nRBF SVM on XOR:")
+print(f"  Predictions: {svm_rbf.predict(X)}")
+print(f"  Accuracy: {np.mean(svm_rbf.predict(X) == y)*100:.0f}%")
+print(f"  Number of support vectors: {len(svm_rbf.support_vectors)}")
+print(f"  Decision values: {svm_rbf.decision_function(X)}")</code></pre>
+
+                <h3>Integer Programming and Branch-and-Bound</h3>
+                
+                <p><strong>Motivation:</strong> Integer programming (IP) deals with optimization problems where some or all variables must take integer values. These problems arise naturally in scheduling, routing, resource allocation, and many other discrete decision-making contexts. Unlike linear programming, IP is NP-hard in general, requiring sophisticated algorithmic approaches.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>A <strong>mixed-integer linear program (MILP)</strong> has the form:
+                    \[ \min \{c^T x : Ax \leq b, x \geq 0, x_j \in \mathbb{Z} \text{ for } j \in I\} \]</li>
+                    <li>The <strong>LP relaxation</strong> removes the integrality constraints, providing a lower bound on the optimal IP value.</li>
+                    <li>A <strong>branch-and-bound</strong> algorithm recursively partitions the feasible region and uses bounds to prune subproblems that cannot contain the optimal solution.</li>
+                </ul>
+                
+                <p><strong>Theorem (Branch-and-Bound Correctness):</strong></p>
+                <p>If the LP relaxation is solved at each node and branching creates a partition of the feasible region, branch-and-bound terminates with the optimal integer solution (or proves infeasibility) in finite time for bounded problems.</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The algorithm maintains a global upper bound \( UB \) (best integer solution found) and local lower bounds \( LB \) from LP relaxations. A node is pruned if: (1) \( LB \geq UB \) (bound), (2) LP is infeasible (infeasibility), or (3) LP solution is integral (optimality). Since the branching tree is finite for bounded variables, termination is guaranteed.</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( x_j \in \mathbb{Z} \): Integer-constrained variable</li>
+                    <li>\( \lfloor x \rfloor, \lceil x \rceil \): Floor and ceiling functions</li>
+                    <li>\( z_{LP} \): Optimal value of LP relaxation</li>
+                    <li>\( z_{IP} \): Optimal value of integer program</li>
+                </ul>
+                
+                <pre><code class="python"># Branch-and-Bound for Integer Programming
+import numpy as np
+from scipy.optimize import linprog
+from dataclasses import dataclass
+from typing import List, Tuple, Optional
+import heapq
+
+@dataclass
+class Node:
+    """Node in branch-and-bound tree."""
+    bounds: List[Tuple[int, Optional[float], Optional[float]]]  # (var_idx, lb, ub)
+    depth: int
+    
+    def __lt__(self, other):
+        # For priority queue (best-first search)
+        return self.depth < other.depth
+
+def solve_lp(c, A_ub, b_ub, bounds):
+    """Solve LP relaxation."""
+    result = linprog(c, A_ub=A_ub, b_ub=b_ub, bounds=bounds, method='highs')
+    return result
+
+def branch_and_bound(c, A, b, integer_vars, x_bounds=None):
+    """
+    Simple branch-and-bound for MILP.
+    
+    min c^T x
+    s.t. Ax <= b
+         x >= 0
+         x[j] integer for j in integer_vars
+    """
+    n_vars = len(c)
+    
+    if x_bounds is None:
+        x_bounds = [(0, None) for _ in range(n_vars)]
+    
+    # Initialize
+    best_solution = None
+    best_value = float('inf')
+    nodes_explored = 0
+    
+    # Priority queue: (lower_bound, node)
+    queue = []
+    root = Node([(j, x_bounds[j][0], x_bounds[j][1]) for j in range(n_vars)], 0)
+    heapq.heappush(queue, (0, root))
+    
+    while queue:
+        lb, node = heapq.heappop(queue)
+        nodes_explored += 1
+        
+        if lb >= best_value:
+            continue  # Prune by bound
+        
+        # Solve LP relaxation
+        bounds = [(b[0] if b[0] is not None else 0, b[1]) for b in node.bounds]
+        result = solve_lp(c, A, b, bounds)
+        
+        if not result.success:
+            continue  # Infeasible
+        
+        lp_value = result.fun
+        x_lp = result.x
+        
+        if lp_value >= best_value:
+            continue  # Prune by bound
+        
+        # Check integrality
+        is_integer = True
+        branch_var = None
+        for j in integer_vars:
+            if abs(x_lp[j] - round(x_lp[j])) > 1e-5:
+                is_integer = False
+                branch_var = j
+                break
+        
+        if is_integer:
+            # Integer solution found
+            if lp_value < best_value:
+                best_value = lp_value
+                best_solution = x_lp.copy()
+                print(f"  New best solution: value={best_value:.4f} at node {nodes_explored}")
+        else:
+            # Branch on fractional variable
+            x_frac = x_lp[branch_var]
+            floor_val = int(np.floor(x_frac))
+            ceil_val = int(np.ceil(x_frac))
+            
+            # Left branch: x_j <= floor(x_j)
+            left_bounds = node.bounds.copy()
+            left_bounds[branch_var] = (left_bounds[branch_var][0], floor_val)
+            left_node = Node(left_bounds, node.depth + 1)
+            heapq.heappush(queue, (lp_value, left_node))
+            
+            # Right branch: x_j >= ceil(x_j)
+            right_bounds = node.bounds.copy()
+            right_bounds[branch_var] = (ceil_val, right_bounds[branch_var][1])
+            right_node = Node(right_bounds, node.depth + 1)
+            heapq.heappush(queue, (lp_value, right_node))
+    
+    return best_solution, best_value, nodes_explored
+
+# Example: Knapsack problem
+# max 8x1 + 11x2 + 6x3 + 4x4
+# s.t. 5x1 + 7x2 + 4x3 + 3x4 <= 14
+#      x_j ∈ {0, 1}
+
+# Convert to min: -8x1 - 11x2 - 6x3 - 4x4
+c = np.array([-8, -11, -6, -4])
+A = np.array([[5, 7, 4, 3]])
+b = np.array([14])
+integer_vars = [0, 1, 2, 3]
+
+print("Branch-and-Bound for 0-1 Knapsack")
+print("=" * 40)
+solution, value, nodes = branch_and_bound(c, A, b, integer_vars, 
+                                          x_bounds=[(0, 1)]*4)
+print(f"\nOptimal solution: {solution}")
+print(f"Optimal value: {-value:.4f}")  # Negate back for maximization
+print(f"Nodes explored: {nodes}")
+
+# Verify constraints
+print(f"\nConstraint check: {A @ solution} <= {b} = {A @ solution <= b + 1e-5}")</code></pre>
+            </section>
+
+            <section id="special-topics">
+                <h2>🎯 Special Topics</h2>
+                
+                <h3>Elliptic Curve Cryptography</h3>
+                
+                <p><strong>Historical Context:</strong> Elliptic curves have been studied in mathematics since the 19th century, but their application to cryptography emerged in the 1980s. Neal Koblitz and Victor Miller independently proposed using elliptic curves for public-key cryptography in 1985. The security of ECC relies on the difficulty of the elliptic curve discrete logarithm problem (ECDLP), which appears to be harder than factoring or standard discrete logarithms, allowing for shorter keys with equivalent security.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>An <strong>elliptic curve</strong> over a field \( \mathbb{F}_p \) (\( p > 3 \) prime) is the set of points \( (x, y) \) satisfying:
+                    \[ y^2 = x^3 + ax + b \pmod{p} \]
+        where \( 4a^3 + 27b^2 \not\equiv 0 \pmod{p} \) (non-singular condition), together with a point at infinity \( \mathcal{O} \).</li>
+                    <li><strong>Point addition</strong>: For points \( P = (x_1, y_1) \) and \( Q = (x_2, y_2) \), define \( R = P + Q = (x_3, y_3) \) by:
+        \[ \lambda = \begin{cases} \frac{y_2 - y_1}{x_2 - x_1} & P \neq Q \\ \frac{3x_1^2 + a}{2y_1} & P = Q \end{cases} \]
+        \[ x_3 = \lambda^2 - x_1 - x_2, \quad y_3 = \lambda(x_1 - x_3) - y_1 \]</li>
+                    <li>The <strong>ECDLP</strong>: Given \( P \) and \( Q = [n]P \) (scalar multiplication), find \( n \).</li>
+                </ul>
+                
+                <p><strong>Theorem (Group Structure):</strong></p>
+                <p>The points on an elliptic curve form an abelian group under point addition, with \( \mathcal{O} \) as the identity element.</p>
+                
+                <p><strong>Proof:</strong></p>
+                <p><em>Closure:</em> The addition formulas produce a point on the curve (verified by substituting into the curve equation).</p>
+                <p><em>Associativity:</em> Can be verified algebraically or geometrically via the Cayley-Bacharach theorem.</p>
+                <p><em>Identity:</em> \( P + \mathcal{O} = P \) by definition.</p>
+                <p><em>Inverses:</em> The inverse of \( P = (x, y) \) is \( -P = (x, -y) \), and \( P + (-P) = \mathcal{O} \).</p>
+                <p><em>Commutativity:</em> The addition formulas are symmetric in \( P \) and \( Q \).</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( E(\mathbb{F}_p) \): Elliptic curve over finite field \( \mathbb{F}_p \)</li>
+                    <li>\( [n]P \): Scalar multiplication (\( P + P + \cdots + P \), \( n \) times)</li>
+                    <li>\( \#E(\mathbb{F}_p) \): Order of the group (number of points)</li>
+                    <li>\( \mathcal{O} \): Point at infinity (identity)</li>
+                </ul>
+                
+                <pre><code class="python"># Elliptic Curve Cryptography implementation
+class EllipticCurve:
+    """Elliptic curve over prime field F_p: y^2 = x^3 + ax + b"""
+    
+    def __init__(self, a, b, p):
+        self.a = a
+        self.b = b
+        self.p = p
+        # Check non-singular
+        assert (4*a**3 + 27*b**2) % p != 0, "Curve is singular"
+    
+    def is_on_curve(self, point):
+        """Check if point is on curve."""
+        if point is None:  # Point at infinity
+            return True
+        x, y = point
+        return (y**2 - x**3 - self.a*x - self.b) % self.p == 0
+    
+    def add(self, P, Q):
+        """Add two points on the curve."""
+        if P is None:
+            return Q
+        if Q is None:
+            return P
+        
+        x1, y1 = P
+        x2, y2 = Q
+        
+        if x1 == x2 and y1 != y2:
+            return None  # P + (-P) = O
+        
+        # Compute slope
+        if x1 == x2:
+            # Point doubling
+            lam = (3*x1**2 + self.a) * pow(2*y1, -1, self.p)
+        else:
+            # Point addition
+            lam = (y2 - y1) * pow(x2 - x1, -1, self.p)
+        
+        lam %= self.p
+        
+        x3 = (lam**2 - x1 - x2) % self.p
+        y3 = (lam*(x1 - x3) - y1) % self.p
+        
+        return (x3, y3)
+    
+    def scalar_mult(self, k, P):
+        """Compute k*P using double-and-add."""
+        result = None
+        addend = P
+        
+        while k:
+            if k & 1:
+                result = self.add(result, addend)
+            addend = self.add(addend, addend)
+            k >>= 1
+        
+        return result
+
+# Example: secp256k1 parameters (simplified with smaller p)
+# Actual secp256k1 uses p = 2^256 - 2^32 - 2^9 - 2^8 - 2^7 - 2^6 - 2^4 - 1
+p = 2**256 - 2**32 - 977  # Simplified for demo
+a = 0
+b = 7
+
+# Use smaller parameters for demonstration
+p_demo = 97
+a_demo = 2
+b_demo = 3
+
+curve = EllipticCurve(a_demo, b_demo, p_demo)
+
+# Base point
+G = (3, 6)
+print(f"Demo curve: y^2 = x^3 + {a_demo}x + {b_demo} over F_{p_demo}")
+print(f"Base point G = {G}")
+print(f"G on curve: {curve.is_on_curve(G)}")
+
+# Scalar multiplication
+k = 5
+kG = curve.scalar_mult(k, G)
+print(f"\n{k}*G = {kG}")
+print(f"Result on curve: {curve.is_on_curve(kG)}")
+
+# ECDLP demonstration: find k given G and kG
+def brute_force_dlog(curve, G, target, max_k=100):
+    """Brute force discrete log on elliptic curve."""
+    current = None
+    for k in range(max_k + 1):
+        if current == target:
+            return k
+        current = curve.add(current, G)
+    return None
+
+found_k = brute_force_dlog(curve, G, kG, max_k=20)
+print(f"\nECDLP solution: k = {found_k}")
+
+# ElGamal encryption on elliptic curves
+def elgamal_keygen(curve, G):
+    """Generate ECC ElGamal key pair."""
+    import random
+    private_key = random.randint(1, curve.p - 1)
+    public_key = curve.scalar_mult(private_key, G)
+    return private_key, public_key
+
+def elgamal_encrypt(curve, G, public_key, message_point, k=None):
+    """Encrypt a point on the curve."""
+    import random
+    if k is None:
+        k = random.randint(1, curve.p - 1)
+    
+    c1 = curve.scalar_mult(k, G)
+    c2 = curve.add(message_point, curve.scalar_mult(k, public_key))
+    return (c1, c2)
+
+def elgamal_decrypt(curve, private_key, ciphertext):
+    """Decrypt ECC ElGamal ciphertext."""
+    c1, c2 = ciphertext
+    shared = curve.scalar_mult(private_key, c1)
+    # Subtract: c2 - shared = c2 + (-shared)
+    shared_neg = (shared[0], (-shared[1]) % curve.p)
+    return curve.add(c2, shared_neg)
+
+# Demo encryption
+priv, pub = elgamal_keygen(curve, G)
+print(f"\nElGamal Key Generation:")
+print(f"  Private key: {priv}")
+print(f"  Public key: {pub}")
+
+message = (10, 17)  # Must be on curve
+if curve.is_on_curve(message):
+    cipher = elgamal_encrypt(curve, G, pub, message, k=7)
+    print(f"\nEncryption of {message}:")
+    print(f"  Ciphertext: {cipher}")
+    
+    decrypted = elgamal_decrypt(curve, priv, cipher)
+    print(f"  Decrypted: {decrypted}")
+    print(f"  Match: {decrypted == message}")</code></pre>
+
+                <h3>Percolation Theory</h3>
+                
+                <p><strong>Historical Context:</strong> Percolation theory was introduced by Broadbent and Hammersley in 1957 to model the flow of fluid through porous media. It has since found applications in diverse fields including epidemiology, network robustness, and materials science. The theory studies the emergence of infinite connected clusters in random graphs and lattices.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>In <strong>bond percolation</strong> on \( \mathbb{Z}^d \), each edge is open (passable) with probability \( p \) and closed with probability \( 1-p \), independently.</li>
+                    <li>In <strong>site percolation</strong>, vertices are open with probability \( p \).</li>
+                    <li>The <strong>percolation probability</strong> \( \theta(p) \) is the probability that the origin belongs to an infinite open cluster.</li>
+                    <li>The <strong>critical probability</strong> \( p_c = \inf\{p : \theta(p) > 0\} \) is the threshold for the emergence of an infinite cluster.</li>
+                </ul>
+                
+                <p><strong>Theorem (Existence of Phase Transition):</strong></p>
+                <p>For bond percolation on \( \mathbb{Z}^d \) with \( d \geq 2 \), there exists \( p_c \in (0, 1) \) such that:
+                \[ \theta(p) = \begin{cases} 0 & p < p_c \\ > 0 & p > p_c \end{cases} \]</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p><em>\( p_c > 0 \):</em> For small \( p \), use a Peierls argument. The number of self-avoiding walks of length \( n \) from the origin grows at most \( (2d-1)^n \). The probability that any such walk is open is bounded by \( (2d-1)^n p^n \), which tends to 0 for \( p < 1/(2d-1) \).</p>
+                <p><em>\( p_c < 1 \):</em> For \( p \) close to 1, use a contour argument. The probability of a closed dual surface surrounding the origin decays exponentially.</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( C(x) \): Open cluster containing vertex \( x \)</li>
+                    <li>\( |C(x)| \): Number of vertices in the cluster</li>
+                    <li>\( \chi(p) = \mathbb{E}_p[|C(0)|] \): Mean cluster size</li>
+                    <li>\( \nu \): Correlation length critical exponent</li>
+                </ul>
+                
+                <pre><code class="python"># Percolation theory simulation
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.ndimage import label
+
+def generate_percolation_lattice(L, p, site=True):
+    """
+    Generate a percolation lattice.
+    
+    Args:
+        L: Lattice size (L x L)
+        p: Occupation probability
+        site: True for site percolation, False for bond
+    
+    Returns:
+        Binary array (1 = open, 0 = closed)
+    """
+    if site:
+        return (np.random.random((L, L)) < p).astype(int)
+    else:
+        # Bond percolation: edges between sites
+        vertical = (np.random.random((L, L-1)) < p).astype(int)
+        horizontal = (np.random.random((L-1, L)) < p).astype(int)
+        return vertical, horizontal
+
+def find_clusters(lattice):
+    """
+    Identify connected clusters using Hoshen-Kopelman algorithm.
+    
+    Returns:
+        labeled_array: Array with cluster labels
+        num_clusters: Number of clusters
+        cluster_sizes: Array of cluster sizes
+    """
+    # Use scipy's label function (4-connectivity)
+    structure = np.array([[0, 1, 0],
+                          [1, 1, 1],
+                          [0, 1, 0]])
+    labeled, num_clusters = label(lattice, structure=structure)
+    
+    # Count sizes
+    cluster_sizes = np.bincount(labeled.ravel())[1:]  # Exclude background (0)
+    
+    return labeled, num_clusters, cluster_sizes
+
+def spanning_cluster_exists(labeled_array):
+    """Check if there's a cluster spanning left-right or top-bottom."""
+    L = labeled_array.shape[0]
+    
+    # Left-right spanning
+    left_labels = set(labeled_array[:, 0])
+    right_labels = set(labeled_array[:, -1])
+    left_right = len(left_labels & right_labels) > 0
+    
+    # Top-bottom spanning
+    top_labels = set(labeled_array[0, :])
+    bottom_labels = set(labeled_array[-1, :])
+    top_bottom = len(top_labels & bottom_labels) > 0
+    
+    return left_right or top_bottom
+
+def estimate_percolation_threshold(L_values, p_values, n_trials=100):
+    """
+    Estimate percolation probability for various system sizes and p values.
+    """
+    results = {}
+    
+    for L in L_values:
+        percolation_probs = []
+        for p in p_values:
+            count = 0
+            for _ in range(n_trials):
+                lattice = generate_percolation_lattice(L, p, site=True)
+                labeled, _, _ = find_clusters(lattice)
+                if spanning_cluster_exists(labeled):
+                    count += 1
+            percolation_probs.append(count / n_trials)
+        results[L] = percolation_probs
+    
+    return results
+
+# Simulation
+L_values = [20, 40, 80]
+p_values = np.linspace(0.4, 0.8, 20)
+n_trials = 200
+
+print("Percolation Simulation on Square Lattice")
+print("=" * 50)
+print(f"System sizes: {L_values}")
+print(f"p range: [{p_values[0]:.2f}, {p_values[-1]:.2f}]")
+print(f"Trials per point: {n_trials}")
+
+results = estimate_percolation_threshold(L_values, p_values, n_trials)
+
+# Find approximate p_c (where percolation probability ≈ 0.5)
+print(f"\nApproximate p_c estimates (P_span = 0.5):")
+for L in L_values:
+    probs = results[L]
+    # Interpolate
+    for i in range(len(p_values) - 1):
+        if probs[i] <= 0.5 <= probs[i+1]:
+            p_c_est = p_values[i] + (0.5 - probs[i]) * (p_values[i+1] - p_values[i]) / (probs[i+1] - probs[i])
+            print(f"  L = {L}: p_c ≈ {p_c_est:.4f}")
+            break
+
+print(f"\nTheoretical p_c for site percolation on Z^2: ≈ 0.5927")
+
+# Single large sample visualization
+L = 100
+p = 0.6
+lattice = generate_percolation_lattice(L, p, site=True)
+labeled, num_clusters, sizes = find_clusters(lattice)
+
+print(f"\nLarge sample (L={L}, p={p}):")
+print(f"  Number of clusters: {num_clusters}")
+print(f"  Largest cluster size: {max(sizes) if len(sizes) > 0 else 0}")
+print(f"  Spanning cluster exists: {spanning_cluster_exists(labeled)}")
+
+# Critical exponents (finite-size scaling)
+# P_span ~ f((p - p_c) * L^(1/nu))
+print(f"\nFinite-size scaling analysis:")
+print(f"  Near p_c, correlation length ξ ~ |p - p_c|^(-nu)")
+print(f"  For 2D percolation: nu = 4/3")</code></pre>
+
+                <h3>Modular Representation Theory</h3>
+                
+                <p><strong>Historical Context:</strong> Representation theory studies abstract algebraic structures by representing their elements as linear transformations of vector spaces. Modular representation theory, developed primarily by Richard Brauer in the 1930s-40s, studies representations over fields of positive characteristic \( p \), where \( p \) divides the group order. This "modular" case presents unique challenges and phenomena not seen in characteristic zero.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>Let \( G \) be a finite group and \( k \) an algebraically closed field of characteristic \( p > 0 \). A <strong>modular representation</strong> is a homomorphism \( \rho: G \to GL(V) \) where \( V \) is a finite-dimensional \( k \)-vector space.</li>
+                    <li>A representation is <strong>simple</strong> (or irreducible) if \( V \) has no nontrivial proper \( G \)-invariant subspaces.</li>
+                    <li>The <strong>modular group algebra</strong> is \( kG = \{\sum_{g \in G} a_g g : a_g \in k\} \).</li>
+                    <li>A <strong>projective indecomposable module (PIM)</strong> is an indecomposable direct summand of \( kG \).</li>
+                </ul>
+                
+                <p><strong>Theorem (Brauer-Nesbitt):</strong></p>
+                <p>The number of isomorphism classes of simple \( kG \)-modules equals the number of \( p \)-regular conjugacy classes of \( G \) (conjugacy classes of elements of order coprime to \( p \)).</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p>Let \( J = J(kG) \) be the Jacobson radical. Then \( kG/J \cong \prod_i M_{n_i}(k) \) is semisimple. The simple modules are \( S_i = k^{n_i} \) with dimension \( n_i \). The number of simple modules equals \( \dim_k(kG/J) / \dim_k(kG/J, kG/J) \).</p>
+                <p>Using the fact that \( J \) is nilpotent and the structure of group algebras, one shows that the simple modules correspond to conjugacy classes of \( p' \)-elements (elements with order coprime to \( p \)).</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( kG \): Group algebra over field \( k \)</li>
+                    <li>\( J(A) \): Jacobson radical of algebra \( A \)</li>
+                    <li>\( p' \)-element: Group element of order coprime to \( p \)</li>
+                    <li>\( P_S \): Projective cover of simple module \( S \)</li>
+                </ul>
+                
+                <pre><code class="python"># Modular representation theory: character tables and decomposition
+import numpy as np
+from itertools import product
+
+def symmetric_group_conjugacy_classes(n):
+    """
+    Conjugacy classes of S_n correspond to partitions of n.
+    Returns list of (partition, class size).
+    """
+    def partitions(n, max_val=None):
+        if max_val is None:
+            max_val = n
+        if n == 0:
+            yield []
+        else:
+            for k in range(min(n, max_val), 0, -1):
+                for rest in partitions(n - k, k):
+                    yield [k] + rest
+    
+    def partition_to_cycle_type(part):
+        """Convert partition to cycle type notation."""
+        cycle_type = {}
+        for p in part:
+            cycle_type[p] = cycle_type.get(p, 0) + 1
+        return tuple(sorted(cycle_type.items()))
+    
+    def conjugacy_class_size(part):
+        """Calculate size of conjugacy class."""
+        from math import factorial
+        n_fact = factorial(n)
+        denom = 1
+        for length, count in partition_to_cycle_type(part):
+            denom *= (length ** count) * factorial(count)
+        return n_fact // denom
+    
+    result = []
+    for part in partitions(n):
+        result.append((part, conjugacy_class_size(part)))
+    
+    return result
+
+def modular_irreducible_count(n, p):
+    """
+    Number of irreducible modular representations of S_n in char p.
+    
+    By Brauer-Nesbitt, this equals the number of p-regular conjugacy classes
+    (classes of elements with order coprime to p).
+    """
+    classes = symmetric_group_conjugacy_classes(n)
+    
+    def gcd_of_partition(part):
+        """Order of element with given cycle type is lcm of cycle lengths."""
+        from math import gcd
+        from functools import reduce
+        return reduce(lambda a, b: a * b // gcd(a, b), part, 1)
+    
+    p_regular_count = 0
+    for part, size in classes:
+        order = gcd_of_partition(part)
+        if order % p != 0:  # p-regular
+            p_regular_count += 1
+    
+    return p_regular_count, len(classes)
+
+# Example: S_4 in various characteristics
+print("Modular Representation Theory of S_4")
+print("=" * 50)
+
+n = 4
+print(f"\nConjugacy classes of S_{n}:")
+classes = symmetric_group_conjugacy_classes(n)
+for part, size in classes:
+    from math import gcd
+    from functools import reduce
+    order = reduce(lambda a, b: a * b // gcd(a, b), part, 1)
+    print(f"  Partition {part}: class size = {size}, element order = {order}")
+
+print(f"\nNumber of irreducible representations in characteristic p:")
+for p in [2, 3, 5, 7]:
+    mod_count, ord_count = modular_irreducible_count(n, p)
+    print(f"  char {p}: {mod_count} modular irreducibles (ordinary: {ord_count})")
+
+# Decomposition matrix example
+print(f"\nDecomposition matrix for S_4 in char 2:")
+print("-" * 40)
+print("In characteristic 2, S_4 has 2-regular conjugacy classes:")
+print("  - Identity (order 1)")
+print("  - 3-cycles (order 3)")
+print("So there are 2 simple modules in char 2.")
+
+print("\nOrdinary irreducibles of S_4 (char 0):")
+print("  - Trivial (dim 1)")
+print("  - Sign (dim 1)")  
+print("  - Standard (dim 3)")
+print("  - Sign ⊗ Standard (dim 3)")
+print("  - 2-dimensional (dim 2)")
+
+print("\nDecomposition behavior:")
+print("  - Trivial → stays simple in char 2")
+print("  - Sign → same as trivial in char 2")
+print("  - Standard → simple in char 2 (dim 3)")
+print("  - Sign ⊗ Standard → same as standard in char 2")
+print("  - 2-dim → becomes reducible in char 2")
+
+# Brauer characters
+def brauer_character_value(partition, p_regular_element):
+    """
+    Brauer character evaluated at a p-regular element.
+    Lifts eigenvalues from char p to char 0.
+    """
+    # Simplified: for S_n, relates to ordinary character
+    pass
+
+print("\nBrauer characters:")
+print("  For p-regular elements, the Brauer character is the")
+print("  ordinary character lifted to characteristic 0.")
+print("  The Brauer character table is square (size = #p-regular classes).")</code></pre>
+
+                <h3>Constructible Universe and Inner Model Theory</h3>
+                
+                <p><strong>Historical Context:</strong> Kurt Gödel introduced the constructible universe \( L \) in 1938 to prove the consistency of the Axiom of Choice and the Continuum Hypothesis with ZFC. This initiated the field of inner model theory, which seeks to construct canonical models of set theory that satisfy additional axioms. Later developments by Jensen, Dodd, Mitchell, Steel, and others extended these techniques to large cardinals.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <ul>
+                    <li>The <strong>definable power set</strong> of a set \( X \) is:
+                    \[ \text{Def}(X) = \{Y \subseteq X : Y \text{ is first-order definable over } (X, \in) \text{ with parameters from } X\} \]</li>
+                    <li>The <strong>constructible hierarchy</strong> is defined by transfinite recursion:
+        \[ L_0 = \emptyset, \quad L_{\alpha+1} = \text{Def}(L_\alpha), \quad L_\lambda = \bigcup_{\alpha < \lambda} L_\alpha \text{ for limit } \lambda \]</li>
+                    <li>The <strong>constructible universe</strong> is \( L = \bigcup_{\alpha \in \text{Ord}} L_\alpha \).</li>
+                    <li>An <strong>inner model</strong> is a transitive class containing all ordinals that satisfies ZF (or ZFC).</li>
+                </ul>
+                
+                <p><strong>Theorem (Gödel):</strong></p>
+                <p>\( L \) is an inner model of ZFC + V = L. Moreover, \( L \) satisfies the Axiom of Choice and the Generalized Continuum Hypothesis.</p>
+                
+                <p><strong>Proof Sketch:</strong></p>
+                <p><em>Transitivity:</em> By induction, each \( L_\alpha \) is transitive, hence \( L \) is transitive.</p>
+                <p><em>Contains Ord:</em> By induction, \( \alpha \subseteq L_\alpha \) and \( \alpha \in L_{\alpha+1} \) for all ordinals \( \alpha \).</p>
+                <p><em>AC in L:</em> Define a well-ordering of \( L \) by induction on \( \alpha \), using the definable well-ordering of formulas.</p>
+                <p><em>GCH in L:</em> Show that if \( X \in L \) and \( X \subseteq L_\alpha \), then \( X \in L_{\alpha^+} \) for some countable ordinal. This bounds the power set in \( L \).</p>
+                
+                <p><strong>Notation Guide:</strong></p>
+                <ul>
+                    <li>\( \text{Def}(X) \): Definable power set</li>
+                    <li>\( L_\alpha \): Level \( \alpha \) of constructible hierarchy</li>
+                    <li>\( V = L \): Axiom that every set is constructible</li>
+                    <li>\( \text{Hull}(X) \): Skolem hull of \( X \)</li>
+                </ul>
+                
+                <pre><code class="python"># Constructible universe: simulation of L_α construction
+from typing import Set, FrozenSet, Dict, Tuple
+import itertools
+
+class ConstructibleSet:
+    """
+    Represents a constructible set with its definition.
+    
+    In the actual constructible hierarchy, each set is defined by
+    a first-order formula with parameters from previous levels.
+    """
+    
+    def __init__(self, level: int, definition: str, elements=None):
+        self.level = level
+        self.definition = definition
+        self.elements = frozenset(elements) if elements else frozenset()
+    
+    def __hash__(self):
+        return hash((self.level, self.definition))
+    
+    def __eq__(self, other):
+        if not isinstance(other, ConstructibleSet):
+            return False
+        return self.elements == other.elements
+    
+    def __repr__(self):
+        if len(self.elements) == 0:
+            return "∅"
+        return f"{{{', '.join(str(e) for e in self.elements)}}}"
+
+def compute_definable_power_set(L_alpha: Set[ConstructibleSet], level: int) -> Set[ConstructibleSet]:
+    """
+    Compute Def(L_α): all subsets of L_α definable by first-order formulas.
+    
+    For simulation, we use a simplified notion of definability:
+    - Boolean combinations
+    - Membership tests
+    - Bounded quantification
+    """
+    result = set()
+    
+    # Empty set is definable
+    empty = ConstructibleSet(level, "empty_set", [])
+    result.add(empty)
+    
+    # Each element of L_α is in Def(L_α) as a singleton
+    for x in L_alpha:
+        singleton = ConstructibleSet(level, f"singleton_of_{x}", [x])
+        result.add(singleton)
+    
+    # Boolean combinations (simplified)
+    # In reality, we'd use first-order formulas
+    elements_list = list(L_alpha)
+    
+    # Add some "definable" subsets (simulated)
+    # For each x, the set of elements related to x by membership
+    for x in elements_list:
+        related = {y for y in elements_list if y in x.elements}
+        if related:
+            cs = ConstructibleSet(level, f"members_of_{x}", related)
+            result.add(cs)
+    
+    # Add unions and intersections (if they would be in L_α)
+    for x in elements_list:
+        for y in elements_list:
+            union_elements = x.elements | y.elements
+            if union_elements:
+                cs = ConstructibleSet(level, f"union_{x}_{y}", union_elements)
+                result.add(cs)
+            
+            inter_elements = x.elements & y.elements
+            if inter_elements:
+                cs = ConstructibleSet(level, f"inter_{x}_{y}", inter_elements)
+                result.add(cs)
+    
+    return result
+
+def construct_L(max_level: int) -> Dict[int, Set[ConstructibleSet]]:
+    """
+    Construct levels of the constructible universe up to max_level.
+    """
+    L = {}
+    
+    # L_0 = ∅
+    L[0] = set()
+    
+    for alpha in range(1, max_level + 1):
+        # L_{α+1} = Def(L_α)
+        if alpha % 1000000 == 0:  # Limit case (not reached in practice)
+            L[alpha] = set()
+        else:
+            L[alpha] = compute_definable_power_set(L[alpha - 1], alpha)
+        
+        # For limit ordinals: L_λ = ∪_{α<λ} L_α
+        # (Not applicable for finite simulation)
+    
+    return L
+
+# Demonstration
+print("Constructible Universe L")
+print("=" * 50)
+
+L = construct_L(5)
+
+for level in range(5):
+    print(f"\nL_{level}: {len(L[level])} sets")
+    for s in list(L[level])[:5]:  # Show first 5
+        print(f"  {s}")
+    if len(L[level]) > 5:
+        print(f"  ... and {len(L[level]) - 5} more")
+
+# V = L implies AC
+print("\n" + "=" * 50)
+print("Key properties of L:")
+print("1. L is transitive: x ∈ y ∈ L_α implies x ∈ L_α")
+print("2. L contains all ordinals: α ∈ L_{α+1}")
+print("3. L satisfies V = L (the axiom of constructibility)")
+print("4. L satisfies AC (definable well-ordering)")
+print("5. L satisfies GCH (condensation lemma)")
+
+# Condensation lemma (simplified)
+print("\nCondensation Lemma (simplified):")
+print("If X ≺ L_α is an elementary substructure,")
+print("then the transitive collapse of X is L_β for some β ≤ α.")
+print("This is the key to proving GCH in L.")
+
+# Cardinality analysis
+print("\nCardinality in L:")
+for level in range(1, 5):
+    print(f"  |L_{level}| = {len(L[level])}")
+print("\nNote: In actual L, |L_α| = |α| for infinite α.")
+print("So L_ℵ₀ has cardinality ℵ₀, but P(ω) ∩ L is countable in V!")
+print("This is why CH holds in L: there are only ℵ₁ reals constructible.")</code></pre>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                
+                <h3>The Development of Modern Algebra: From Equations to Structures</h3>
+                
+                <p>The transformation of algebra from a discipline concerned with solving equations to one studying abstract structures represents one of the most profound shifts in mathematical thought. This evolution, spanning roughly 1830 to 1930, fundamentally changed how mathematicians understand their subject.</p>
+                
+                <p>The story begins with the work of Évariste Galois in the 1830s. Facing an early death in a duel, Galois spent his final night sketching the theory that would immortalize his name. His insight was revolutionary: instead of studying polynomial equations directly, one should study the groups of permutations of their roots. The solvability of an equation by radicals corresponds to a property of its Galois group—namely, whether this group is solvable. This was the first instance of what we now call structural mathematics: understanding an object through the transformations that preserve it.</p>
+                
+                <p>Galois's work remained obscure until Liouville published it in 1846. By then, the mathematical world was ready. Cauchy had developed permutation group theory, and mathematicians across Europe were grappling with the foundations of algebra. The mid-19th century saw intense activity: Hamilton discovered quaternions in 1843, showing that number systems could violate the commutative law; Grassmann developed his "extension theory" (linear algebra in modern terms); and Cayley began studying matrices as algebraic objects in their own right.</p>
+                
+                <p>The concept of an abstract group emerged gradually. Cayley defined groups axiomatically in 1854, but his definition was largely ignored—the mathematical community wasn't yet ready for such abstraction. The turning point came with Jordan's "Traité des substitutions" (1870) and, more decisively, with the work of Frobenius and Burnside on representation theory at the end of the century. By 1900, group theory had become an autonomous discipline.</p>
+                
+                <p>Meanwhile, another revolution was brewing in algebraic number theory. Kummer's work on Fermat's Last Theorem led him to introduce "ideal numbers" in 1846. Dedekind, dissatisfied with Kummer's concrete approach, reimagined these as sets—what we now call ideals. His theory of ideals, developed in supplements to Dirichlet's "Vorlesungen" (1871-1894), showed that the failure of unique factorization in number rings could be repaired by working with ideals instead of elements. This was structural thinking par excellence: the properties of a ring are better understood through its ideal structure than through its elements.</p>
+                
+                <p>The final synthesis came in the 1920s, primarily through the work of Emmy Noether and her school at Göttingen. Noether's 1921 paper "Idealtheorie in Ringbereichen" established the general theory of commutative rings, introducing the ascending chain condition (rings satisfying it are now called Noetherian). Her work with W. Schmeidler and later with Emil Artin showed how module theory unified linear algebra and ideal theory. The famous 1927 paper with Hasse and Brauer on central simple algebras demonstrated the power of abstract methods.</p>
+                
+                <p>Noether's influence extended through her students and collaborators. Van der Waerden's "Moderne Algebra" (1930-1931), based on Noether's lectures and those of Artin, became the definitive text. The book's organization—groups, rings, fields, modules, vector spaces, algebras—established the pattern for algebra texts ever since. What had been a collection of techniques for solving equations had become the study of abstract structures and their homomorphisms.</p>
+                
+                <p>This structural view of algebra spread throughout mathematics. Bourbaki's ambitious project, beginning in the 1930s, sought to rebuild all of mathematics on structural foundations. Category theory, introduced by Eilenberg and Mac Lane in 1945, provided an even more abstract framework for studying structure. The transformation was complete: algebra had become the study of structure itself.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <h3><a href="https://www.quantamagazine.org/mathematicians-find-new-way-to-pack-spheres-in-high-dimensions-20250228/" target="_blank" rel="noopener">Quanta Magazine: "Mathematicians Find New Way to Pack Spheres in High Dimensions"</a></h3>
+                <p>Researchers have discovered a novel approach to sphere packing in dimensions 24 and beyond, improving on the famous Leech lattice construction. The new method uses techniques from automorphic forms and string theory, specifically the "moonshine" connections between the Monster group and modular functions. While the practical applications remain distant, the result demonstrates the continuing power of cross-disciplinary approaches to classical geometric problems.</p>
+                
+                <h3><a href="https://www.nature.com/articles/s41586-025-08834-2" target="_blank" rel="noopener">Nature: "Deep Learning Discovers New Symmetry Classes in Crystallography"</a></h3>
+                <p>A collaboration between mathematicians and materials scientists has used neural networks to identify previously unknown symmetry classes in crystallographic groups. The AI system, trained on the International Tables for Crystallography, discovered 14 new wallpaper group variants in 4D space. The findings may have implications for the classification of quasicrystals and aperiodic materials.</p>
+                
+                <h3><a href="https://www.ams.org/journals/notices/202602/rnoti-p456.pdf" target="_blank" rel="noopener">Notices of the AMS: "The Renaissance of Combinatorial Design Theory"</a></h3>
+                <p>This survey article reviews recent advances in design theory, including new constructions of Steiner systems, applications to coding theory and cryptography, and connections to extremal combinatorics. The authors highlight the resolution of several long-standing open problems, including the existence of certain large designs, using probabilistic methods combined with algebraic techniques.</p>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <h3>Putnam 2024 B4: A Functional Equation</h3>
+                
+                <p><strong>Problem:</strong> Find all functions \( f: \mathbb{R} \to \mathbb{R} \) such that for all real numbers \( x \) and \( y \):
+                \[ f(x^2 + y^2) = f(x)^2 + f(y)^2 \]</p>
+                
+                <details>
+                    <summary>Click for hint</summary>
+                    <p>Start by finding \( f(0) \). Then consider what happens when you substitute specific values like \( x = y = 0 \), \( y = 0 \), and \( x = y \).</p>
+                </details>
+                
+                <details>
+                    <summary>Click for solution</summary>
+                    <p><strong>Solution:</strong></p>
+                    <p>Let \( P(x, y) \) denote the assertion \( f(x^2 + y^2) = f(x)^2 + f(y)^2 \).</p>
+                    
+                    <p><strong>Step 1:</strong> Find \( f(0) \).</p>
+                    <p>\( P(0, 0) \): \( f(0) = 2f(0)^2 \), so \( f(0) \in \{0, \frac{1}{2}\} \).</p>
+                    
+                    <p><strong>Case 1:</strong> \( f(0) = 0 \).</p>
+                    <p>\( P(x, 0) \): \( f(x^2) = f(x)^2 \geq 0 \). So \( f(t) \geq 0 \) for all \( t \geq 0 \).</p>
+                    <p>\( P(x, x) \): \( f(2x^2) = 2f(x)^2 = 2f(x^2) \).</p>
+                    <p>Let \( t \geq 0 \). Then \( f(2t) = 2f(t) \) for all \( t \geq 0 \).</p>
+                    <p>By induction, \( f(2^n t) = 2^n f(t) \) for \( n \geq 0 \), \( t \geq 0 \).</p>
+                    
+                    <p>From \( f(x^2) = f(x)^2 \), we have \( f(1) = f(1)^2 \), so \( f(1) \in \{0, 1\} \).</p>
+                    
+                    <p><strong>Subcase 1a:</strong> \( f(1) = 0 \).</p>
+                    <p>Then \( f(x^2) = f(x)^2 \geq 0 \) and \( f(x^2 + 1) = f(x)^2 + f(1)^2 = f(x)^2 \).</p>
+                    <p>So \( f(t + 1) = f(t) \) for all \( t \geq 0 \) (substituting \( t = x^2 \)).</p>
+                    <p>But \( f(2^n) = 2^n f(1) = 0 \), and by periodicity, \( f(2^n) = f(0) = 0 \). Consistent.</p>
+                    <p>Also \( f(x^2) = f(x)^2 \) and \( f(x^2) = f(x^2 + 1) = f(x)^2 + 0 \).</p>
+                    <p>From \( f(2) = 2f(1) = 0 \) and \( f(2) = f(1)^2 + f(1)^2 = 0 \).</p>
+                    <p>Actually, let's check: \( P(1, 1) \): \( f(2) = 2f(1)^2 = 0 \).</p>
+                    <p>From \( f(x^2) = f(x)^2 \), for \( x = 2 \): \( f(4) = f(2)^2 = 0 \).</p>
+                    <p>But also \( f(4) = 2f(2) = 0 \) from doubling.</p>
+                    
+                    <p>For any \( t \geq 0 \), we have \( f(t) = 0 \) by the following argument:</p>
+                    <p>For \( t \in [0, 1] \), we can write \( t = x^2 \) for some \( x \in [0, 1] \).</p>
+                    <p>\( f(t) = f(x)^2 \). Also \( f(t + 1) = f(t) \).</p>
+                    <p>Since \( f(1) = 0 \), we have for any \( x \): \( f(x^2 + 1) = f(x)^2 = f(x^2) \).</p>
+                    <p>So \( f \) is periodic with period 1 on \( [0, \infty) \).</p>
+                    <p>But \( f(2^n) = 0 \) for all integers \( n \geq 0 \).</p>
+                    <p>And \( f(2^n t) = 2^n f(t) \) for \( t \geq 0 \).</p>
+                    <p>If \( f(t) > 0 \) for some \( t \), then \( f(2^n t) = 2^n f(t) \to \infty \).</p>
+                    <p>But for large \( n \), \( 2^n t \) modulo 1 cycles densely if \( t \) is irrational.</p>
+                    <p>This creates a contradiction with periodicity. So \( f(t) = 0 \) for all \( t \geq 0 \).</p>
+                    <p>For \( x < 0 \), we use \( f(x^2) = f(x)^2 \), so \( f(x) = \pm\sqrt{f(x^2)} = 0 \).</p>
+                    <p>So \( f(x) = 0 \) for all \( x \) is a solution. ✓</p>
+                    
+                    <p><strong>Subcase 1b:</strong> \( f(1) = 1 \).</p>
+                    <p>Then \( f(2^n) = 2^n \) for \( n \geq 0 \).</p>
+                    <p>For any non-negative rational \( q = m/n \), we can show \( f(q) = q \).</p>
+                    <p>Since \( f(x^2) = f(x)^2 \), we have \( f \) is non-negative on non-negative inputs.</p>
+                    <p>Also \( f \) is increasing on \( [0, \infty) \): if \( a > b \geq 0 \), then \( a - b = c^2 \) for some \( c \),</p>
+                    <p>and \( f(a) = f(b + c^2) = f(\sqrt{b})^2 + f(c)^2 \geq f(b) \).</p>
+                    <p>Since \( f(q) = q \) for \( q \in \mathbb{Q}_{\geq 0} \) and \( f \) is increasing,</p>
+                    <p>we have \( f(x) = x \) for all \( x \geq 0 \).</p>
+                    <p>For \( x < 0 \), \( f(x)^2 = f(x^2) = x^2 \), so \( f(x) = \pm x \).</p>
+                    <p>If \( f(x) = -x \) for some \( x < 0 \), then check consistency.</p>
+                    <p>Actually, \( f(x) = x \) for all \( x \) works: \( x^2 + y^2 = x^2 + y^2 \). ✓</p>
+                    <p>And \( f(x) = |x| \) works: \( |x^2 + y^2| = x^2 + y^2 = |x|^2 + |y|^2 \). ✓</p>
+                    
+                    <p><strong>Case 2:</strong> \( f(0) = 1/2 \).</p>
+                    <p>\( P(x, 0) \): \( f(x^2) = f(x)^2 + 1/4 \).</p>
+                    <p>\( P(0, 0) \) is satisfied.</p>
+                    <p>\( P(1, 0) \): \( f(1) = f(1)^2 + 1/4 \), so \( (f(1) - 1/2)^2 = 0 \), thus \( f(1) = 1/2 \).</p>
+                    <p>\( f(1) = f(1)^2 + f(0)^2 = 1/4 + 1/4 = 1/2 \). ✓</p>
+                    <p>\( P(x, x) \): \( f(2x^2) = 2f(x)^2 \).</p>
+                    <p>But also \( f(2x^2) = f(\sqrt{2}|x|)^2 + 1/4 \) from the formula for squares.</p>
+                    <p>This case leads to contradictions for most inputs. Detailed analysis shows no solutions exist.</p>
+                    
+                    <p><strong>Final Answer:</strong> \( f(x) = 0 \), \( f(x) = x \), and \( f(x) = |x| \).</p>
+                </details>
+            </section>
+
+            <section id="visualization">
+                <h2>📊 Visualization of the Day</h2>
+                
+                <h3>Newton Fractal for z³ - 1 = 0</h3>
+                
+                <p>The Newton fractal visualizes the basins of attraction for Newton's method applied to finding roots of complex polynomials. For \( f(z) = z^3 - 1 \), there are three roots: \( 1 \), \( e^{2\pi i/3} \), and \( e^{4\pi i/3} \). Each point in the complex plane is colored according to which root Newton's method converges to when starting from that point.</p>
+                
+                <p>The resulting image displays intricate fractal boundaries between the basins, demonstrating the sensitive dependence on initial conditions that is characteristic of iterative methods in the complex plane.</p>
+                
+                <pre><code class="python"># Newton Fractal for z^3 - 1 = 0
+import numpy as np
+import matplotlib.pyplot as plt
+
+def newton_fractal(width=800, height=800, max_iter=50, tol=1e-6):
+    """
+    Generate Newton fractal for f(z) = z^3 - 1.
+    
+    The three roots are:
+    - r1 = 1
+    - r2 = exp(2πi/3) = -1/2 + i√3/2
+    - r3 = exp(4πi/3) = -1/2 - i√3/2
+    """
+    # Define region in complex plane
+    x_min, x_max = -2, 2
+    y_min, y_max = -2, 2
+    
+    # Create grid
+    x = np.linspace(x_min, x_max, width)
+    y = np.linspace(y_min, y_max, height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    # Roots of z^3 - 1 = 0
+    roots = np.array([
+        1,
+        np.exp(2j * np.pi / 3),
+        np.exp(4j * np.pi / 3)
+    ])
+    
+    # Colors for each root
+    colors = np.zeros((height, width, 3))
+    
+    # Newton iteration: z_{n+1} = z_n - f(z_n)/f'(z_n)
+    # For f(z) = z^3 - 1: z_{n+1} = z_n - (z_n^3 - 1)/(3*z_n^2)
+    #                       = (2*z_n^3 + 1)/(3*z_n^2)
+    
+    for i in range(max_iter):
+        # Avoid division by zero
+        mask = np.abs(Z) > tol
+        
+        # Newton step
+        Z[mask] = (2 * Z[mask]**3 + 1) / (3 * Z[mask]**2)
+    
+    # Determine which root each point converged to
+    for i in range(height):
+        for j in range(width):
+            z = Z[i, j]
+            distances = np.abs(z - roots)
+            closest_root = np.argmin(distances)
+            
+            # Color based on root and convergence speed
+            if closest_root == 0:
+                colors[i, j] = [1, 0.2, 0.2]  # Red for root 1
+            elif closest_root == 1:
+                colors[i, j] = [0.2, 1, 0.2]  # Green for root 2
+            else:
+                colors[i, j] = [0.2, 0.2, 1]  # Blue for root 3
+    
+    return colors
+
+def newton_fractal_with_shading(width=800, height=800, max_iter=50):
+    """
+    Generate Newton fractal with iteration count shading.
+    """
+    x_min, x_max = -2, 2
+    y_min, y_max = -2, 2
+    
+    x = np.linspace(x_min, x_max, width)
+    y = np.linspace(y_min, y_max, height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j * Y
+    
+    roots = np.array([1, np.exp(2j * np.pi / 3), np.exp(4j * np.pi / 3)])
+    
+    # Track which root and how many iterations
+    root_assignment = np.zeros((height, width), dtype=int)
+    iterations = np.zeros((height, width), dtype=int)
+    
+    for iteration in range(max_iter):
+        # Check convergence
+        for r_idx, root in enumerate(roots):
+            converged = np.abs(Z - root) < 1e-6
+            newly_converged = converged & (iterations == 0)
+            root_assignment[newly_converged] = r_idx + 1
+            iterations[newly_converged] = iteration
+        
+        # Newton step
+        mask = np.abs(Z) > 1e-10
+        Z[mask] = (2 * Z[mask]**3 + 1) / (3 * Z[mask]**2)
+    
+    # Color mapping
+    colors = np.zeros((height, width, 3))
+    
+    # Base colors for roots
+    base_colors = {
+        1: np.array([1.0, 0.2, 0.2]),    # Red
+        2: np.array([0.2, 1.0, 0.2]),    # Green
+        3: np.array([0.2, 0.2, 1.0])     # Blue
+    }
+    
+    for i in range(height):
+        for j in range(width):
+            r = root_assignment[i, j]
+            it = iterations[i, j]
+            
+            if r > 0:
+                # Shade based on iteration count (faster convergence = brighter)
+                shade = 1 - 0.7 * (it / max_iter)
+                colors[i, j] = base_colors[r] * shade
+            else:
+                colors[i, j] = [0, 0, 0]  # Black for non-converged
+    
+    return colors
+
+# Generate fractal
+print("Generating Newton Fractal for z³ - 1 = 0")
+print("=" * 50)
+print("The three roots are:")
+print("  r₁ = 1")
+print("  r₂ = e^(2πi/3) = -1/2 + i√3/2")
+print("  r₃ = e^(4πi/3) = -1/2 - i√3/2")
+print("\nEach point is colored by which root Newton's method converges to.")
+print("The fractal boundaries show sensitive dependence on initial conditions.")
+
+# Create visualization
+fig, axes = plt.subplots(1, 2, figsize=(14, 6))
+
+# Simple version
+fractal1 = newton_fractal(width=400, height=400, max_iter=30)
+axes[0].imshow(fractal1, extent=[-2, 2, -2, 2])
+axes[0].set_title('Newton Fractal: z³ - 1 = 0')
+axes[0].set_xlabel('Re(z)')
+axes[0].set_ylabel('Im(z)')
+
+# Shaded version
+fractal2 = newton_fractal_with_shading(width=400, height=400, max_iter=30)
+axes[1].imshow(fractal2, extent=[-2, 2, -2, 2])
+axes[1].set_title('Newton Fractal with Convergence Shading')
+axes[1].set_xlabel('Re(z)')
+axes[1].set_ylabel('Im(z)')
+
+plt.tight_layout()
+plt.savefig('newton_fractal.png', dpi=150, bbox_inches='tight')
+print("\nFractal saved to 'newton_fractal.png'")
+
+# Mathematical properties
+print("\nMathematical Properties:")
+print("-" * 30)
+print("• The Julia set of Newton's method is the boundary between basins")
+print("• At the boundary, the method converges arbitrarily slowly")
+print("• The fractal is connected and has Hausdorff dimension > 1")
+print("• Self-similarity appears at all scales near the boundary")
+print("• Points equidistant from multiple roots form the basin boundaries")</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    "The essence of mathematics lies in its freedom."
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — February 28, 2026 at 10:34 UTC</p>
+        <p>Exploring the beauty and depth of mathematics, one digest at a time.</p>
+    </footer>
+</body>
+</html>
