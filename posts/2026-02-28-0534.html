@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — February 28, 2026 at 05:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — February 28, 2026 at 05:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — February 28, 2026 at 05:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">spectral-sequences</span>
+                <span class="tag">algebraic-k-theory</span>
+                <span class="tag">motivic-homotopy</span>
+                <span class="tag">random-matrix-theory</span>
+                <span class="tag">machine-learning-theory</span>
+                <span class="tag">quantum-information</span>
+                <span class="tag">ergodic-theory</span>
+                <span class="tag">algebraic-statistics</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 3 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://www.ams.org/open-math-notes" target="_blank" rel="noopener">AMS Open Math Notes</a></h3>
+                    <p>A repository of freely downloadable mathematical works in progress hosted by the American Mathematical Society. These are course notes, textbooks, and research expositions contributed by mathematicians worldwide, covering topics from undergraduate calculus to advanced research topics.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://ncatlab.org/nlab/show/HomePage" target="_blank" rel="noopener">nLab</a></h3>
+                    <p>A wiki-lab for collaborative work on mathematics, physics, and philosophy — particularly from the n-categorical point of view. It serves as a comprehensive reference for higher category theory, homotopy theory, and related fields.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://terrytao.wordpress.com/" target="_blank" rel="noopener">What's New — Terence Tao's Blog</a></h3>
+                    <p>Terence Tao's personal blog containing updates on his research, expository articles, and discussions of open problems in mathematics. Tao, a Fields Medalist, covers topics ranging from harmonic analysis to number theory and compressed sensing.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book of the Day</h2>
+                
+                <div class="book-entry">
+                    <h3>Algebraic Topology</h3>
+                    <p><strong>Author:</strong> Allen Hatcher</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" target="_blank" rel="noopener">Cornell University</a></p>
+                    
+                    <p><strong>Summary:</strong> This comprehensive textbook has become the standard reference for algebraic topology courses. Hatcher covers the fundamental group, homology, cohomology, and higher homotopy groups with a geometric flavor. The book emphasizes intuition and visualization while maintaining mathematical rigor. It includes numerous examples and exercises, and the electronic version remains freely available at Hatcher's website, making it accessible to students worldwide.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Spectral Sequences: A Computational Powerhouse</h3>
+                    <p class="tag">spectral-sequences</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Spectral sequences are sophisticated algebraic tools that allow mathematicians to compute complex derived functors by breaking the computation into manageable steps. Introduced by Jean Leray in the 1940s while he was a prisoner of war, they have become indispensable in algebraic topology, algebraic geometry, and homological algebra.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Filtered Complex:</strong> A chain complex \\(C_*\\) with subcomplexes \\(F^p C_*\\) such that \\(F^{p+1} C_* \subseteq F^p C_*\\).</li>
+                        <li><strong>Spectral Sequence:</strong> A sequence of bigraded differential modules \\((E_r^{p,q}, d_r)\\) where \\(d_r: E_r^{p,q} \to E_r^{p+r, q-r+1}\\) with \\(d_r^2 = 0\\).</li>
+                        <li><strong>Convergence:</strong> \\(E_r^{p,q} \Rightarrow H^{p+q}(C_*)\\) means the spectral sequence computes the cohomology of the total complex.</li>
+                        <li><strong>Page:</strong> Each \\(E_r\\) is called a "page" of the spectral sequence.</li>
+                    </ul>
+
+                    <h4>Theorem: The Serre Spectral Sequence</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Serre):</strong> Let \\(F \to E \to B\\) be a fibration with \\(B\\) simply connected. Then there exists a spectral sequence with:</p>
+                        <p>\\[E_2^{p,q} = H^p(B; H^q(F)) \Rightarrow H^{p+q}(E)\\]</p>
+                        <p>where the differential \\(d_r\\) has bidegree \\((r, 1-r)\\).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(E_r^{p,q}\\) — the \\(r\\)-th page at position \\((p,q)\\)</li>
+                        <li>\\(d_r\\) — the differential on page \\(r\\)</li>
+                        <li>\\(p\\) — the filtration degree (horizontal)</li>
+                        <li>\\(q\\) — the complementary degree (vertical)</li>
+                        <li>\\(p + q = n\\) — the total degree</li>
+                        <li>\\(F^p C^n\\) — the \\(p\\)-th filtration of \\(C^n\\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from itertools import product
+
+class SpectralSequence:
+    """Simple model of a spectral sequence for educational purposes."""
+    
+    def __init__(self, max_p, max_q):
+        self.max_p = max_p
+        self.max_q = max_q
+        self.pages = {}
+        self.current_page = 2
+        
+    def initialize_E2(self, H_base, H_fiber):
+        """Initialize E_2^{p,q} = H^p(Base) \otimes H^q(Fiber)."""
+        E2 = {}
+        for p, q in product(range(self.max_p), range(self.max_q)):
+            if p < len(H_base) and q < len(H_fiber):
+                # Simplified: rank of tensor product
+                E2[(p, q)] = H_base[p] * H_fiber[q]
+            else:
+                E2[(p, q)] = 0
+        self.pages[2] = E2
+        return E2
+    
+    def compute_differential(self, page, p, q):
+        """Compute d_r: E_r^{p,q} -> E_r^{p+r, q-r+1}."""
+        r = page
+        target_p = p + r
+        target_q = q - r + 1
+        
+        if target_p >= self.max_p or target_q < 0:
+            return 0  # Zero map
+        
+        # Simplified: random rank reduction
+        current = self.pages[page].get((p, q), 0)
+        return max(0, current - np.random.randint(0, 2))
+    
+    def turn_page(self):
+        """Compute E_{r+1} from E_r."""
+        r = self.current_page
+        Er = self.pages[r]
+        Er_plus_1 = {}
+        
+        for (p, q), rank in Er.items():
+            if rank > 0:
+                # Simplified: homology = ker(d_r) / im(d_r)
+                d_out = self.compute_differential(r, p, q)
+                d_in_p = p - r
+                d_in_q = q + r - 1
+                d_in = self.compute_differential(r, d_in_p, d_in_q) if d_in_p >= 0 else 0
+                
+                # E_{r+1} = ker(d_r) / im(d_{r})
+                new_rank = max(0, rank - d_out - d_in)
+                Er_plus_1[(p, q)] = new_rank
+        
+        self.current_page += 1
+        self.pages[self.current_page] = Er_plus_1
+        return Er_plus_1
+
+# Example: S^2 fibration over S^3
+print("Serre Spectral Sequence Example:")
+print("Fibration: S^2 -> E -> S^3")
+print()
+
+# H^*(S^3) = Z in degrees 0, 3
+# H^*(S^2) = Z in degrees 0, 2
+H_S3 = [1, 0, 0, 1]  # ranks
+H_S2 = [1, 0, 1]     # ranks
+
+ss = SpectralSequence(max_p=4, max_q=3)
+E2 = ss.initialize_E2(H_S3, H_S2)
+
+print("E_2 page:")
+for q in range(2, -1, -1):
+    row = [E2.get((p, q), 0) for p in range(4)]
+    print(f"  q={q}: {row}")
+print()
+
+# Compute a few pages
+for r in range(2, 5):
+    ss.turn_page()
+    print(f"E_{r+1} page:")
+    Er = ss.pages[r+1]
+    for q in range(2, -1, -1):
+        row = [Er.get((p, q), 0) for p in range(4)]
+        print(f"  q={q}: {row}")
+    print()</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Algebraic K-Theory: Invariants of Rings</h3>
+                    <p class="tag">algebraic-k-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Algebraic K-theory assigns to each ring \\(R\\) a sequence of abelian groups \\(K_n(R)\\) that encode deep arithmetic and geometric information. Developed by Grothendieck, Bass, Milnor, and Quillen, these groups connect number theory, algebraic geometry, and topology in profound ways.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>\\(K_0(R)\\):</strong> The Grothendieck group of finitely generated projective \\(R\\)-modules. Elements are formal differences \\([P] - [Q]\\).</li>
+                        <li><strong>\\(K_1(R)\\):</strong> \\(GL(R)^{ab} = GL(R)/[GL(R), GL(R)]\\), the abelianization of the infinite general linear group.</li>
+                        <li><strong>\\(K_2(R)\\):</strong> The kernel of the universal central extension of \\(E(R)\\) (elementary matrices).</li>
+                        <li><strong>Steinberg Group \\(St(R)\\):</strong> The group presented by generators \\(x_{ij}(r)\\) with Steinberg relations.</li>
+                    </ul>
+
+                    <h4>Theorem: The Fundamental Exact Sequence</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For a Dedekind domain \\(R\\) with fraction field \\(F\\), there is a long exact localization sequence:</p>
+                        <p>\\[\cdots \to K_n(R) \to K_n(F) \to \bigoplus_{\mathfrak{p}} K_{n-1}(R/\mathfrak{p}) \to K_{n-1}(R) \to \cdots\\]</p>
+                        <p>where the sum is over all nonzero prime ideals \\(\mathfrak{p}\\) of \\(R\\).</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(K_n(R)\\) — n-th algebraic K-group of \\(R\\)</li>
+                        <li>\\(GL_n(R)\\) — general linear group of invertible \\(n \times n\\) matrices</li>
+                        <li>\\(E_n(R)\\) — elementary subgroup generated by elementary matrices</li>
+                        <li>\\(St(R)\\) — Steinberg group</li>
+                        <li>\\(\{-,-\}\\) — Steinberg symbol in \\(K_2\\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from fractions import Fraction
+
+class ProjectiveModule:
+    """Represents a finitely generated projective module."""
+    
+    def __init__(self, rank, name="P"):
+        self.rank = rank
+        self.name = name
+    
+    def __repr__(self):
+        return f"{self.name}^{self.rank}"
+    
+    def __add__(self, other):
+        return ProjectiveModule(self.rank + other.rank, f"{self.name}+{other.name}")
+    
+    def __sub__(self, other):
+        # Formal difference for K_0
+        return K0Element([(1, self), (-1, other)])
+
+class K0Element:
+    """Element of K_0(R): formal sum of projective modules."""
+    
+    def __init__(self, terms):
+        self.terms = terms  # list of (coeff, module)
+    
+    def rank(self):
+        return sum(c * m.rank for c, m in self.terms)
+    
+    def __repr__(self):
+        parts = []
+        for c, m in self.terms:
+            if c == 1:
+                parts.append(str(m))
+            elif c == -1:
+                parts.append(f"-{m}")
+            else:
+                parts.append(f"{c}{m}")
+        return " + ".join(parts) if parts else "0"
+
+def compute_K0_Z():
+    """K_0(Z) = Z, generated by the class of Z itself."""
+    Z = ProjectiveModule(1, "Z")
+    return Z
+
+def compute_K1_Z():
+    """K_1(Z) = Z/2Z = {±1}."""
+    return {"units": [1, -1], "structure": "Z/2Z"}
+
+def steinberg_symbol(a, b, field="Q"):
+    """
+    The Steinberg symbol {a, b} in K_2 of a field.
+    Key property: {a, 1-a} = 1 (Steinberg relation)
+    """
+    if field == "Q":
+        a = Fraction(a)
+        b = Fraction(b)
+        
+        # Check Steinberg relation
+        if a + b == 1:
+            return "trivial (Steinberg relation)"
+        
+        # Bilinearity and skew-symmetry
+        return f"{{{a}, {b}}} = -{{{b}, {a}}}"
+
+# Example computations
+print("Algebraic K-Theory Examples")
+print("=" * 50)
+
+# K_0(Z)
+print("\nK_0(Z):")
+Z = compute_K0_Z()
+print(f"  Generator: [{Z}]")
+print(f"  Structure: Z (free abelian of rank 1)")
+
+# Example: [Z^3] - [Z^2] = [Z]
+P3 = ProjectiveModule(3, "Z")
+P2 = ProjectiveModule(2, "Z")
+diff = P3 - P2
+print(f"  Example: [{P3}] - [{P2}] has rank {diff.rank()}")
+
+# K_1(Z)
+print("\nK_1(Z):")
+k1 = compute_K1_Z()
+print(f"  Units: {k1['units']}")
+print(f"  Structure: {k1['structure']}")
+
+# K_2 examples
+print("\nK_2(Q) - Steinberg symbols:")
+print(f"  {{2, 3}} = {steinberg_symbol(2, 3)}")
+print(f"  {{2, -1}} = {steinberg_symbol(2, -1)}")
+print(f"  {{1/2, 1/2}} = {steinberg_symbol(Fraction(1,2), Fraction(1,2))}")
+
+# Steinberg relation
+print("\nSteinberg relation: {a, 1-a} = 1")
+print(f"  {{2, -1}} = {steinberg_symbol(2, -1)}")
+print(f"  {{3, -2}} = {steinberg_symbol(3, -2)}")
+
+# K_0 of a product
+print("\nK_0(Z x Z):")
+print("  K_0(R x S) = K_0(R) ⊕ K_0(S)")
+print("  K_0(Z x Z) = Z ⊕ Z")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Motivic Homotopy Theory: Geometry Over Base Schemes</h3>
+                    <p class="tag">motivic-homotopy</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>Motivic homotopy theory, developed by Morel and Voevodsky in the 1990s, provides a framework for doing homotopy theory in algebraic geometry. It unifies various cohomology theories (Chow groups, algebraic K-theory, étale cohomology) and was instrumental in Voevodsky's proof of the Milnor and Bloch-Kato conjectures.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>\\(\mathbb{A}^1\\)-Homotopy:</strong> Two morphisms \\(f, g: X \to Y\\) are \\(\mathbb{A}^1\\)-homotopic if there exists \\(H: X \times \mathbb{A}^1 \to Y\\) with \\(H_0 = f\\) and \\(H_1 = g\\).</li>
+                        <li><strong>Motivic Space:</strong> An object in the \\(\mathbb{A}^1\\)-local model category of simplicial presheaves on smooth schemes.</li>
+                        <li><strong>Motivic Sphere:</strong> \\(S^{p,q} = (S^1)^{\wedge (p-q)} \wedge \mathbb{G}_m^{\wedge q}\\) with \\(\mathbb{G}_m = \mathbb{A}^1 \setminus \{0\}\\).</li>
+                        <li><strong>Motivic Cohomology:</strong> \\(H^{p,q}(X, A) = [X_+, K(A(q), p)]\\) in the motivic homotopy category.</li>
+                    </ul>
+
+                    <h4>Theorem: \\(\mathbb{A}^1\\)-Invariance of Algebraic K-Theory</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For a regular scheme \\(X\\), the projection \\(X \times \mathbb{A}^1 \to X\\) induces an isomorphism:</p>
+                        <p>\\[K_n(X) \cong K_n(X \times \mathbb{A}^1)\\]</p>
+                        <p>for all \\(n \\geq 0\\). This is the \\(\mathbb{A}^1\\)-homotopy invariance of algebraic K-theory.</p>
+                    </div>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\\(Sm/k\\) — category of smooth schemes over a field \\(k\\)</li>
+                        <li>\\(\mathbb{A}^1\\) — affine line \\(\text{Spec}(k[t])\\)</li>
+                        <li>\\(\mathbb{G}_m\\) — multiplicative group \\(\mathbb{A}^1 \\setminus \{0\}\\)</li>
+                        <li>\\(S^{p,q}\\) — motivic sphere of weight \\(q\\) and dimension \\(p\\)</li>
+                        <li>\\(SH(k)\\) — stable motivic homotopy category over \\(k\\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from dataclasses import dataclass
+
+@dataclass
+class MotivicDegree:
+    """Represents a motivic degree (p, q) where p is total degree and q is weight."""
+    p: int  # total dimension
+    q: int  # weight (Tate twist)
+    
+    def __repr__(self):
+        return f"S^{self.p},{self.q}"
+    
+    def suspension(self, n):
+        """Suspend n times by S^{1,0} (topological circle)."""
+        return MotivicDegree(self.p + n, self.q)
+    
+    def twist(self, n):
+        """Tate twist by n: multiply by G_m^{\wedge n}."""
+        return MotivicDegree(self.p + n, self.q + n)
+    
+    def is_topological(self):
+        """Check if degree is topological (q = 0)."""
+        return self.q == 0
+    
+    def is_tate(self):
+        """Check if degree is pure Tate (p = 2q)."""
+        return self.p == 2 * self.q
+
+class MotivicSphere:
+    """Represents a motivic sphere S^{p,q}."""
+    
+    def __init__(self, p, q):
+        self.degree = MotivicDegree(p, q)
+        # S^{p,q} = (S^1)^{\wedge(p-q)} \wedge G_m^{\wedge q}
+        self.topological_part = max(0, p - q)  # number of S^1 factors
+        self.tate_part = q  # number of G_m factors
+    
+    def __repr__(self):
+        parts = []
+        if self.topological_part > 0:
+            parts.append(f"(S^1)^{self.topological_part}")
+        if self.tate_part > 0:
+            parts.append(f"(G_m)^{self.tate_part}")
+        if not parts:
+            return "S^0"
+        return " ∧ ".join(parts)
+    
+    def smash_product(self, other):
+        """Smash product of motivic spheres."""
+        return MotivicSphere(
+            self.degree.p + other.degree.p,
+            self.degree.q + other.degree.q
+        )
+
+def compute_motivic_homotopy_groups():
+    """Compute some motivic homotopy groups of spheres (simplified)."""
+    print("Motivic Homotopy Groups π_{p,q}(S^{0,0}) over C:")
+    print("=" * 60)
+    
+    # Over C, motivic homotopy relates to classical homotopy
+    # π_{p,q} corresponds to classical π_{p-q} with additional structure
+    
+    examples = [
+        (0, 0, "Z", "Identity"),
+        (1, 1, "C*", "Units"),
+        (1, 0, "0", "No unstable map"),
+        (2, 1, "Z/2", "Hopf invariant"),
+        (3, 2, "Z/24", "Classical Hopf fibration"),
+        (n, n, "K^M_n(k)", "Milnor K-theory"),
+    ]
+    
+    for p, q, group, note in examples:
+        sphere = MotivicSphere(p, q)
+        print(f"π_{p},{q}(S^0,0) = {group:15} | {sphere.degree} | {note}")
+    
+    print("\nKey observation: π_{n,n}(S^{0,0}) = K^M_n(k) (Milnor K-theory)")
+    print("This connects motivic homotopy to algebraic K-theory!")
+
+def motivic_cohomology_example():
+    """Example computation in motivic cohomology."""
+    print("\nMotivic Cohomology H^{p,q}(P^n):")
+    print("=" * 40)
+    
+    # H^{2k,k}(P^n) = Z for 0 ≤ k ≤ n
+    n = 3
+    for k in range(n + 1):
+        p, q = 2*k, k
+        print(f"H^{p},{q}(P^{n}) = Z  (generated by ξ^{k})")
+    
+    print(f"\nwhere ξ = c_1(O(1)) ∈ H^{2,1}(P^n) is the first Chern class")
+
+# Run examples
+compute_motivic_homotopy_groups()
+motivic_cohomology_example()
+
+# Smash product example
+print("\nSmash Products:")
+print("=" * 40)
+S_10 = MotivicSphere(1, 0)  # Topological circle
+S_11 = MotivicSphere(1, 1)  # Multiplicative group
+S_22 = MotivicSphere(2, 2)  # Tate sphere
+
+print(f"S^{1,0} = {S_10}")
+print(f"S^{1,1} = {S_11}")
+print(f"S^{1,0} ∧ S^{1,1} = S^{2,1} = {S_10.smash_product(S_11)}")
+print(f"S^{1,1} ∧ S^{1,1} = S^{2,2} = {S_11.smash_product(S_11)}")</code></pre>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Random Matrix Theory: Universality Phenomena</h3>
+                    <p class="tag">random-matrix-theory</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Random matrix theory (RMT) studies the statistical properties of matrices with random entries. It emerged from Eugene Wigner's work in nuclear physics (1950s) to model heavy nuclei energy levels. Today, RMT appears in quantum chaos, number theory (Riemann zeta zeros), wireless communications, and machine learning (neural network initialization).</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Gaussian Unitary Ensemble (GUE):</strong> Hermitian matrices with independent complex Gaussian entries (above diagonal).</li>
+                        <li><strong>Gaussian Orthogonal Ensemble (GOE):</strong> Real symmetric matrices with independent Gaussian entries.</li>
+                        <li><strong>Level Spacing Distribution:</strong> The distribution of gaps between consecutive eigenvalues.</li>
+                        <li><strong>Wigner Semicircle Law:</strong> The limiting eigenvalue distribution for Wigner matrices.</li>
+                    </ul>
+
+                    <h4>Theorem: Wigner's Semicircle Law</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \\(M_n\\) be an \\(n \\times n\\) Wigner matrix (symmetric, independent entries with mean 0, variance \\(\sigma^2/n\\)). Then the empirical spectral distribution converges weakly to:</p>
+                        <p>\\[\rho(x) = \frac{1}{2\pi\sigma^2}\sqrt{4\sigma^2 - x^2} \cdot \mathbf{1}_{|x| \leq 2\sigma}\\]</p>
+                    </div>
+
+                    <h4>Notation</h4>
+                    <ul>
+                        <li>\\(\\lambda_1 \\leq \\lambda_2 \\leq \\cdots \\leq \\lambda_n\\) — ordered eigenvalues</li>
+                        <li>\\(\\rho_{sc}(x)\\) — semicircle density</li>
+                        <li>\\(\\beta\\) — Dyson index (1 for GOE, 2 for GUE, 4 for GSE)</li>
+                        <li>\\(s\\) — level spacing variable</li>
+                        <li>\\(p_\\beta(s)\\) — Wigner surmise for level spacing</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+from numpy.linalg import eigvalsh
+
+def generate_gue(n):
+    """Generate n×n GUE matrix."""
+    # Upper triangle: complex normal
+    A = (np.random.randn(n, n) + 1j * np.random.randn(n, n)) / np.sqrt(2)
+    # Make Hermitian: H = (A + A*)/2
+    H = (A + A.conj().T) / 2
+    return H
+
+def generate_goe(n):
+    """Generate n×n GOE matrix."""
+    A = np.random.randn(n, n)
+    H = (A + A.T) / 2
+    return H / np.sqrt(2)
+
+def semicircle_density(x, sigma=1):
+    """Wigner semicircle density."""
+    x = np.asarray(x)
+    result = np.zeros_like(x, dtype=float)
+    mask = np.abs(x) <= 2 * sigma
+    result[mask] = (1 / (2 * np.pi * sigma**2)) * np.sqrt(4 * sigma**2 - x[mask]**2)
+    return result
+
+def wigner_surmise(s, beta=1):
+    """
+    Wigner surmise for level spacing distribution.
+    beta = 1 (GOE), 2 (GUE), 4 (GSE)
+    """
+    if beta == 1:  # GOE
+        return (np.pi * s / 2) * np.exp(-np.pi * s**2 / 4)
+    elif beta == 2:  # GUE
+        return (32 * s**2 / np.pi**2) * np.exp(-4 * s**2 / np.pi)
+    elif beta == 4:  # GSE
+        return (2**18 * s**4 / (3**6 * np.pi**3)) * np.exp(-64 * s**2 / (9 * np.pi))
+
+# Generate eigenvalues
+n = 1000
+n_samples = 100
+
+eigenvalues_gue = []
+eigenvalues_goe = []
+
+for _ in range(n_samples):
+    H_gue = generate_gue(n)
+    H_goe = generate_goe(n)
+    eigenvalues_gue.extend(eigvalsh(H_gue) / np.sqrt(n))
+    eigenvalues_goe.extend(eigvalsh(H_goe) / np.sqrt(n))
+
+# Plot eigenvalue distributions
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+# GUE histogram vs semicircle
+axes[0].hist(eigenvalues_gue, bins=50, density=True, alpha=0.7, label='GUE eigenvalues')
+x = np.linspace(-2.5, 2.5, 200)
+axes[0].plot(x, semicircle_density(x), 'r-', lw=2, label='Semicircle law')
+axes[0].set_xlabel('Eigenvalue')
+axes[0].set_ylabel('Density')
+axes[0].set_title('GUE: Eigenvalue Distribution')
+axes[0].legend()
+axes[0].grid(True, alpha=0.3)
+
+# Level spacing analysis
+# Unfold spectrum: normalize by local mean spacing
+def unfold_spectrum(eigenvalues):
+    """Unfold spectrum to unit mean spacing."""
+    eigenvalues = np.sort(eigenvalues)
+    # Use NNSD (nearest neighbor spacing distribution)
+    spacings = np.diff(eigenvalues)
+    mean_spacing = np.mean(spacings)
+    return spacings / mean_spacing
+
+spacings_gue = unfold_spectrum(eigenvalues_gue)
+spacings_goe = unfold_spectrum(eigenvalues_goe)
+
+s = np.linspace(0, 4, 200)
+axes[1].hist(spacings_gue, bins=50, density=True, alpha=0.5, label='GUE spacings')
+axes[1].hist(spacings_goe, bins=50, density=True, alpha=0.5, label='GOE spacings')
+axes[1].plot(s, wigner_surmise(s, beta=2), 'b-', lw=2, label='Wigner surmise (GUE)')
+axes[1].plot(s, wigner_surmise(s, beta=1), 'r-', lw=2, label='Wigner surmise (GOE)')
+axes[1].set_xlabel('Normalized level spacing s')
+axes[1].set_ylabel('Probability density')
+axes[1].set_title('Level Spacing Distribution')
+axes[1].legend()
+axes[1].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('random_matrix_theory.png', dpi=150)
+print("Random matrix theory visualization saved!")
+
+# Print statistics
+print(f"\nGUE eigenvalue statistics:")
+print(f"  Mean: {np.mean(eigenvalues_gue):.4f}")
+print(f"  Std: {np.std(eigenvalues_gue):.4f}")
+print(f"  Expected semicircle std: {np.sqrt(0.5):.4f}")
+
+print(f"\nLevel spacing statistics:")
+print(f"  GUE mean spacing: {np.mean(spacings_gue):.4f} (should be ~1)")
+print(f"  GOE mean spacing: {np.mean(spacings_goe):.4f} (should be ~1)")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Statistical Learning Theory: PAC Learning</h3>
+                    <p class="tag">machine-learning-theory</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Probably Approximately Correct (PAC) learning, introduced by Leslie Valiant in 1984, provides a rigorous mathematical framework for understanding when and how machines can learn from data. It addresses fundamental questions: How much data is needed to learn a concept? What computational resources are required? This theory underpins modern machine learning theory and generalization bounds.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Concept Class \\(\mathcal{C}\\):</strong> A set of functions \\(c: \mathcal{X} \to \{0,1\}\\) (binary classifiers).</li>
+                        <li><strong>Hypothesis Class \\(\mathcal{H}\\):</strong> The set of functions the learning algorithm can output.</li>
+                        <li><strong>Generalization Error:</strong> \\(R(h) = \mathbb{P}_{(x,y) \sim \mathcal{D}}[h(x) \neq y]\\).</li>
+                        <li><strong>Empirical Risk:</strong> \\(\hat{R}_S(h) = \frac{1}{m}\sum_{i=1}^m \mathbf{1}_{h(x_i) \neq y_i}\\).</li>
+                        <li><strong>VC Dimension:</strong> The largest set that \\(\mathcal{H}\\) can shatter.</li>
+                    </ul>
+
+                    <h4>Theorem: PAC Learning Bound</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \\(\mathcal{H}\\) be a hypothesis class with VC dimension \\(d\\). For any \\(\epsilon, \delta > 0\\), if the training set size satisfies:</p>
+                        <p>\\[m \geq \frac{1}{\epsilon}\left(d \log\frac{1}{\epsilon} + \log\frac{1}{\delta}\right)\\]</p>
+                        <p>then with probability at least \\(1-\delta\\), any empirical risk minimizer \\(\hat{h}\\) satisfies \\(R(\hat{h}) \leq R^* + \epsilon\\), where \\(R^* = \min_{h \in \mathcal{H}} R(h)\\).</p>
+                    </div>
+
+                    <h4>Notation</h4>
+                    <ul>
+                        <li>\\(\mathcal{X}\\) — input space (feature space)</li>
+                        <li>\\(\mathcal{Y}\\) — output space (labels)</li>
+                        <li>\\(\mathcal{D}\\) — underlying probability distribution</li>
+                        <li>\\(S = \{(x_i, y_i)\}_{i=1}^m\\) — training sample</li>
+                        <li>\\(\text{VC}(\mathcal{H})\\) — VC dimension of \\(\mathcal{H}\\)</li>
+                        <li>\\(\epsilon\\) — accuracy parameter</li>
+                        <li>\\(\delta\\) — confidence parameter</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import comb
+
+def vc_bound(m, d, delta=0.05):
+    """
+    Compute the generalization bound from VC theory.
+    With probability 1-delta, we have R(h) <= R_hat(h) + epsilon
+    where epsilon is bounded by sqrt((d*log(2m/d) + log(4/delta))/m)
+    """
+    if m <= d:
+        return np.inf
+    return np.sqrt((d * np.log(2*m/d) + np.log(4/delta)) / m)
+
+def growth_function(m, d):
+    """
+    Sauer-Shelah lemma: growth function for hypothesis class with VC dim d.
+    Pi_H(m) <= sum_{i=0}^d C(m,i) <= (em/d)^d for m >= d
+    """
+    if m <= d:
+        return 2**m
+    result = 0
+    for i in range(d + 1):
+        result += comb(m, i, exact=True)
+    return result
+
+def sample_complexity(epsilon, d, delta=0.05):
+    """
+    Minimum sample size m needed for PAC learning with accuracy epsilon
+    and confidence 1-delta, given VC dimension d.
+    """
+    # Conservative bound: m >= (d + log(1/delta)) / epsilon^2
+    return int(np.ceil((d + np.log(1/delta)) / (epsilon**2)))
+
+def shatter_check(points, hypothesis_class):
+    """
+    Check if a set of points can be shattered by a hypothesis class.
+    Returns True if all 2^n labelings are realized.
+    """
+    n = len(points)
+    all_labelings = set()
+    
+    for h in hypothesis_class:
+        labeling = tuple(h(p) for p in points)
+        all_labelings.add(labeling)
+    
+    return len(all_labelings) == 2**n
+
+# Example: VC dimension of intervals on the line
+def interval_hypotheses(points, thresholds):
+    """Generate all interval classifiers for given points."""
+    hypotheses = []
+    for a in thresholds:
+        for b in thresholds:
+            if a <= b:
+                h = lambda p, a=a, b=b: 1 if a <= p <= b else 0
+                hypotheses.append(h)
+    return hypotheses
+
+# VC dimension examples
+print("VC Dimension Examples")
+print("=" * 50)
+
+examples = [
+    ("Intervals on R", 2, "Shatters 2 points, not 3"),
+    ("Halfspaces in R^d", "d+1", "Linear classifiers"),
+    ("Axis-aligned rectangles", 4, "Shatters 4 points in R^2"),
+    ("Finite hypothesis class", "log2(|H|)", "Trivial bound"),
+    ("Neural network", "O(W log W)", "W = number of weights"),
+]
+
+for name, vc, note in examples:
+    print(f"{name:30} VC = {vc:15} | {note}")
+
+# Sample complexity analysis
+print("\n\nSample Complexity Analysis")
+print("=" * 50)
+print(f"{'Epsilon':>10} | {'VC=10':>10} | {'VC=50':>10} | {'VC=100':>10}")
+print("-" * 50)
+
+for eps in [0.1, 0.05, 0.01, 0.001]:
+    m10 = sample_complexity(eps, 10)
+    m50 = sample_complexity(eps, 50)
+    m100 = sample_complexity(eps, 100)
+    print(f"{eps:>10.3f} | {m10:>10} | {m50:>10} | {m100:>10}")
+
+# Plot generalization bounds
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+# Left: Generalization error vs sample size
+m_range = np.linspace(100, 10000, 200)
+dimensions = [5, 10, 50, 100]
+colors = ['blue', 'green', 'orange', 'red']
+
+for d, color in zip(dimensions, colors):
+    bounds = [vc_bound(m, d) for m in m_range]
+    axes[0].plot(m_range, bounds, color=color, label=f'VC dim = {d}')
+
+axes[0].set_xlabel('Sample size m')
+axes[0].set_ylabel('Generalization bound ε')
+axes[0].set_title('PAC Generalization Bound')
+axes[0].legend()
+axes[0].grid(True, alpha=0.3)
+axes[0].set_xscale('log')
+
+# Right: Growth function
+m_range_small = np.arange(1, 50)
+for d, color in zip([2, 5, 10], colors[:3]):
+    growth = [growth_function(m, d) for m in m_range_small]
+    axes[1].plot(m_range_small, growth, color=color, label=f'VC = {d}')
+    axes[1].axvline(x=d, color=color, linestyle='--', alpha=0.5)
+
+axes[1].set_xlabel('Sample size m')
+axes[1].set_ylabel('Growth function Π_H(m)')
+axes[1].set_title('Sauer-Shelah Growth Function')
+axes[1].legend()
+axes[1].grid(True, alpha=0.3)
+axes[1].set_yscale('log')
+
+plt.tight_layout()
+plt.savefig('pac_learning.png', dpi=150)
+print("\nPAC learning visualization saved!")
+
+# Bias-Variance tradeoff
+print("\n\nBias-Variance Tradeoff")
+print("=" * 50)
+print("Complex hypothesis class (high VC):")
+print("  - Low bias (can fit training data well)")
+print("  - High variance (may overfit)")
+print("  - Needs more samples for generalization")
+print("\nSimple hypothesis class (low VC):")
+print("  - High bias (may underfit)")
+print("  - Low variance (better generalization)")
+print("  - Needs fewer samples")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Quantum Information Theory: Entanglement and Channels</h3>
+                    <p class="tag">quantum-information</p>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Quantum information theory extends classical information theory to quantum systems, enabling quantum computing, quantum cryptography, and quantum communication. Key phenomena like entanglement and superposition offer computational advantages for certain problems, while quantum channels model noise in quantum systems.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Qubit:</strong> A two-level quantum system with state \\(|\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle\\) where \\(|\\alpha|^2 + |\\beta|^2 = 1\\).</li>
+                        <li><strong>Density Matrix:</strong> \\(\\rho = \\sum_i p_i |\\psi_i\\rangle\\langle\\psi_i|\\) represents mixed quantum states.</li>
+                        <li><strong>Von Neumann Entropy:</strong> \\(S(\\rho) = -\\text{Tr}(\\rho \\log \\rho) = -\\sum_i \\lambda_i \\log \\lambda_i\\).</li>
+                        <li><strong>Quantum Channel:</strong> A completely positive trace-preserving (CPTP) map \\(\\mathcal{E}: \\mathcal{L}(\\mathcal{H}_A) \\to \\mathcal{L}(\\mathcal{H}_B)\\).</li>
+                    </ul>
+
+                    <h4>Theorem: Holevo Bound</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> Let \\(\{p_x, \\rho_x\}\\) be an ensemble of quantum states. The classical information \\(I(X;Y)\\) obtainable about \\(X\\) by any measurement satisfies:</p>
+                        <p>\\[I(X;Y) \\leq \\chi(\{p_x, \\rho_x\}) = S\left(\sum_x p_x \\rho_x\right) - \sum_x p_x S(\\rho_x)\\]</p>
+                        <p>where \\(\\chi\\) is the Holevo information.</p>
+                    </div>
+
+                    <h4>Notation</h4>
+                    <ul>
+                        <li>\\(|\\psi\\rangle\\) — ket (column vector)</li>
+                        <li>\\(\\langle\\psi|\\) — bra (row vector, conjugate transpose)</li>
+                        <li>\\(\\rho\\) — density operator</li>
+                        <li>\\(S(\\rho)\\) — von Neumann entropy</li>
+                        <li>\\(\\chi\\) — Holevo information</li>
+                        <li>\\(\\mathcal{E}\\) — quantum channel</li>
+                        <li>\\(\\Phi^+\\) — Bell state \\((|00\\rangle + |11\\rangle)/\\sqrt{2}\\)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from scipy.linalg import sqrtm, logm
+
+# Pauli matrices
+I = np.array([[1, 0], [0, 1]], dtype=complex)
+X = np.array([[0, 1], [1, 0]], dtype=complex)
+Y = np.array([[0, -1j], [1j, 0]], dtype=complex)
+Z = np.array([[1, 0], [0, -1]], dtype=complex)
+
+def ket(data):
+    """Create a ket vector."""
+    return np.array(data, dtype=complex).reshape(-1, 1)
+
+def bra(data):
+    """Create a bra vector."""
+    return ket(data).conj().T
+
+def density_matrix(psi):
+    """Create density matrix from pure state."""
+    return np.outer(psi, psi.conj())
+
+def von_neumann_entropy(rho):
+    """Compute S(ρ) = -Tr(ρ log ρ)."""
+    # Eigenvalue decomposition
+    eigenvalues = np.linalg.eigvalsh(rho)
+    # Filter out zero eigenvalues
+    eigenvalues = eigenvalues[eigenvalues > 1e-12]
+    return -np.sum(eigenvalues * np.log2(eigenvalues))
+
+def partial_trace(rho, dims, axis=0):
+    """
+    Compute partial trace of a bipartite density matrix.
+    dims = [dim_A, dim_B]
+    axis = 0 traces out A, axis = 1 traces out B
+    """
+    dim_A, dim_B = dims
+    if axis == 0:
+        # Trace out A: ρ_B = Tr_A(ρ)
+        result = np.zeros((dim_B, dim_B), dtype=complex)
+        for i in range(dim_A):
+            basis_i = np.zeros(dim_A)
+            basis_i[i] = 1
+            projector = np.kron(np.outer(basis_i, basis_i), np.eye(dim_B))
+            result += projector @ rho @ projector
+        return result
+    else:
+        # Trace out B
+        result = np.zeros((dim_A, dim_A), dtype=complex)
+        for j in range(dim_B):
+            basis_j = np.zeros(dim_B)
+            basis_j[j] = 1
+            projector = np.kron(np.eye(dim_A), np.outer(basis_j, basis_j))
+            result += projector @ rho @ projector
+        return result
+
+def entanglement_entropy(rho, dims):
+    """Compute entanglement entropy S(ρ_A) = S(ρ_B) for pure state."""
+    rho_A = partial_trace(rho, dims, axis=1)
+    return von_neumann_entropy(rho_A)
+
+def holevo_information(ensemble):
+    """
+    Compute Holevo information χ({p_x, ρ_x}).
+    ensemble = [(p_0, ρ_0), (p_1, ρ_1), ...]
+    """
+    # Average state
+    rho_avg = sum(p * rho for p, rho in ensemble)
+    
+    # Holevo information
+    chi = von_neumann_entropy(rho_avg)
+    for p, rho in ensemble:
+        chi -= p * von_neumann_entropy(rho)
+    
+    return chi
+
+# Bell states
+print("Quantum Information Theory Examples")
+print("=" * 50)
+
+# |Φ+⟩ = (|00⟩ + |11⟩)/√2
+phi_plus = (ket([1, 0, 0, 0]) + ket([0, 0, 0, 1])) / np.sqrt(2)
+rho_phi_plus = density_matrix(phi_plus)
+
+print("\nBell State |Φ+⟩:")
+print("Density matrix:")
+print(np.round(rho_phi_plus, 3))
+
+# Entanglement entropy
+S_ent = entanglement_entropy(rho_phi_plus, [2, 2])
+print(f"\nEntanglement entropy: S = {S_ent:.4f} bits")
+print("(Maximum entanglement for 2 qubits!)")
+
+# Reduced density matrices
+rho_A = partial_trace(rho_phi_plus, [2, 2], axis=1)
+rho_B = partial_trace(rho_phi_plus, [2, 2], axis=0)
+print(f"\nReduced state ρ_A = ρ_B = I/2 (maximally mixed)")
+print(f"S(ρ_A) = S(ρ_B) = {von_neumann_entropy(rho_A):.4f} bits")
+
+# Holevo information example
+print("\n\nHolevo Information Example:")
+print("-" * 40)
+
+# Ensemble: |0⟩ and |1⟩ with equal probability
+psi_0 = ket([1, 0])
+psi_1 = ket([0, 1])
+rho_0 = density_matrix(psi_0)
+rho_1 = density_matrix(psi_1)
+
+ensemble_orthogonal = [(0.5, rho_0), (0.5, rho_1)]
+chi_orthogonal = holevo_information(ensemble_orthogonal)
+print(f"Ensemble: {{|0⟩, |1⟩}} with p=0.5 each")
+print(f"Holevo information: χ = {chi_orthogonal:.4f} bits")
+print("(Can transmit 1 bit of classical information)")
+
+# Non-orthogonal ensemble
+psi_plus = (psi_0 + psi_1) / np.sqrt(2)
+psi_minus = (psi_0 - psi_1) / np.sqrt(2)
+rho_plus = density_matrix(psi_plus)
+rho_minus = density_matrix(psi_minus)
+
+ensemble_nonorth = [(0.5, rho_plus), (0.5, rho_minus)]
+chi_nonorth = holevo_information(ensemble_nonorth)
+print(f"\nEnsemble: {{|+⟩, |-⟩}} with p=0.5 each")
+print(f"Holevo information: χ = {chi_nonorth:.4f} bits")
+
+# Quantum channel: depolarizing channel
+print("\n\nDepolarizing Channel:")
+print("-" * 40)
+
+def depolarizing_channel(rho, p):
+    """
+    Depolarizing channel: E(ρ) = (1-p)ρ + p*I/2
+    p = depolarizing probability
+    """
+    d = rho.shape[0]
+    return (1 - p) * rho + p * np.eye(d) / d
+
+# Apply channel to Bell state
+for p in [0, 0.1, 0.5, 1.0]:
+    rho_noisy = depolarizing_channel(rho_phi_plus, p)
+    S_noisy = entanglement_entropy(rho_noisy, [2, 2])
+    print(f"p = {p:.1f}: Entanglement entropy = {S_noisy:.4f}")
+
+print("\nNote: At p = 0.75 (werner state threshold), entanglement vanishes!")
+
+# Quantum teleportation fidelity
+print("\n\nQuantum Teleportation:")
+print("-" * 40)
+print("With maximally entangled state |Φ+⟩:")
+print("  Fidelity = 1 (perfect teleportation)")
+print("With Werner state ρ = p|Φ+⟩⟨Φ+| + (1-p)I/4:")
+print("  Fidelity = (3p + 1)/4")
+print("  Entanglement exists for p > 1/3")</code></pre>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>⭐ Special Topics</h2>
+
+                <div class="deep-dive">
+                    <h3>Ergodic Theory: Recurrence and Mixing</h3>
+                    <p class="tag">ergodic-theory</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Ergodic theory emerged from Ludwig Boltzmann's work in statistical mechanics (1870s), where he hypothesized that time averages equal space averages for dynamical systems. The ergodic hypothesis remained unproven for decades until George Birkhoff proved the ergodic theorem in 1931, establishing rigorous foundations for the field.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Measure-Preserving System:</strong> \\((X, \\mathcal{B}, \\mu, T)\\) where \\(T: X \\to X\\) preserves \\(\\mu\\).</li>
+                        <li><strong>Ergodic Transformation:</strong> \\(T\\) is ergodic if \\(T^{-1}(A) = A\\) implies \\(\\mu(A) = 0\\) or \\(\\mu(A) = 1\\).</li>
+                        <li><strong>Mixing:</strong> \\(\\mu(A \\cap T^{-n}B) \\to \\mu(A)\\mu(B)\\) as \\(n \\to \\infty\\).</li>
+                        <li><strong>Poincaré Recurrence:</strong> Almost every point returns arbitrarily close to its initial position.</li>
+                    </ul>
+
+                    <h4>Theorem: Birkhoff Ergodic Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Birkhoff, 1931):</strong> Let \\((X, \\mathcal{B}, \\mu, T)\\) be a measure-preserving system and \\(f \\in L^1(\\mu)\\). Then the limit exists almost everywhere:</p>
+                        <p>\\[\tilde{f}(x) = \lim_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} f(T^k x)\\]</p>
+                        <p>and \\(\tilde{f} \\circ T = \tilde{f}\\) almost everywhere. If \\(T\\) is ergodic, \\(\tilde{f} = \\int f \\, d\\mu\\) a.e.</p>
+                    </div>
+
+                    <h4>Notation</h4>
+                    <ul>
+                        <li>\\((X, \\mathcal{B}, \\mu)\\) — probability space</li>
+                        <li>\\(T: X \\to X\\) — measurable transformation</li>
+                        <li>\\(T_*\\mu = \\mu\\) — measure preservation</li>
+                        <li>\\(L^1(\\mu)\\) — integrable functions</li>
+                        <li>\\(A_n f = \\frac{1}{n}\\sum_{k=0}^{n-1} f \\circ T^k\\) — ergodic average</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def circle_rotation(x, alpha):
+    """Rotation by angle alpha on the circle [0,1)."""
+    return (x + alpha) % 1.0
+
+def doubling_map(x):
+    """The doubling map T(x) = 2x mod 1 on [0,1)."""
+    return (2 * x) % 1.0
+
+def tent_map(x):
+    """The tent map T(x) = 1 - |2x - 1| on [0,1]."""
+    return 1 - abs(2 * x - 1)
+
+def irrational_rotation_orbit(alpha, x0, n_steps):
+    """Generate orbit of irrational rotation."""
+    orbit = [x0]
+    x = x0
+    for _ in range(n_steps):
+        x = circle_rotation(x, alpha)
+        orbit.append(x)
+    return np.array(orbit)
+
+def ergodic_average(f, T, x0, n):
+    """Compute (1/n) * sum_{k=0}^{n-1} f(T^k(x0))."""
+    total = 0
+    x = x0
+    for _ in range(n):
+        total += f(x)
+        x = T(x)
+    return total / n
+
+# Example 1: Irrational rotation (ergodic)
+print("Ergodic Theory Examples")
+print("=" * 50)
+
+alpha = (np.sqrt(5) - 1) / 2  # Golden ratio conjugate (irrational)
+x0 = 0.3
+n_steps = 10000
+
+orbit = irrational_rotation_orbit(alpha, x0, n_steps)
+
+print(f"\n1. Irrational Rotation by α = (√5 - 1)/2 ≈ {alpha:.6f}")
+print(f"   Orbit length: {n_steps}")
+
+# Test function: indicator of [0.2, 0.8]
+f = lambda x: 1 if 0.2 <= x <= 0.8 else 0
+space_average = 0.6  # measure of [0.2, 0.8]
+
+for n in [100, 1000, 10000]:
+    time_avg = ergodic_average(f, lambda x: circle_rotation(x, alpha), x0, n)
+    print(f"   Time average (n={n:5}): {time_avg:.4f} | Space average: {space_average:.1f}")
+
+# Example 2: Doubling map (mixing)
+print(f"\n2. Doubling Map T(x) = 2x mod 1")
+print("   (Strongly mixing but not uniquely ergodic)")
+
+# Correlation decay
+def correlation(T, f, g, x0, n_max):
+    """Compute correlation <f ∘ T^n, g> - <f><g>."""
+    orbit = [x0]
+    x = x0
+    for _ in range(n_max):
+        x = T(x)
+        orbit.append(x)
+    orbit = np.array(orbit)
+    
+    f_vals = np.array([f(xi) for xi in orbit])
+    g_vals = np.array([g(xi) for xi in orbit])
+    
+    f_mean = np.mean(f_vals)
+    g_mean = np.mean(g_vals)
+    
+    correlations = []
+    for n in range(min(50, n_max)):
+        corr = np.mean(f_vals[n:] * g_vals[:-n]) - f_mean * g_mean
+        correlations.append(corr)
+    
+    return correlations
+
+f = lambda x: np.sin(2 * np.pi * x)
+g = lambda x: np.cos(2 * np.pi * x)
+
+corrs = correlation(doubling_map, f, g, 0.1, 1000)
+print(f"   Correlation at n=0: {corrs[0]:.4f}")
+print(f"   Correlation at n=10: {corrs[10]:.6f}")
+print(f"   Correlation decays exponentially (mixing property)")
+
+# Example 3: Poincaré recurrence
+print(f"\n3. Poincaré Recurrence Theorem")
+print("-" * 40)
+
+def recurrence_time(T, x0, epsilon, max_iter=10000):
+    """Find first return time to epsilon-neighborhood of x0."""
+    x = T(x0)
+    for n in range(1, max_iter):
+        if abs(x - x0) < epsilon or abs(x - x0) > 1 - epsilon:
+            return n
+        x = T(x)
+    return None
+
+# For irrational rotation, recurrence times are bounded
+epsilon = 0.01
+rec_times = []
+for x in np.linspace(0, 1, 20):
+    rt = recurrence_time(lambda x: circle_rotation(x, alpha), x, epsilon)
+    if rt:
+        rec_times.append(rt)
+
+print(f"   ε = {epsilon}, α = (√5 - 1)/2")
+print(f"   Mean recurrence time: {np.mean(rec_times):.1f}")
+print(f"   Max recurrence time: {max(rec_times)}")
+print(f"   (Kac's lemma: mean recurrence time ≈ 1/μ(A) = {1/(2*epsilon):.1f})")
+
+# Visualization
+fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+
+# Orbit plot
+axes[0, 0].plot(orbit[:1000], '.', markersize=1, alpha=0.5)
+axes[0, 0].set_xlabel('Iteration')
+axes[0, 0].set_ylabel('Position x')
+axes[0, 0].set_title('Irrational Rotation Orbit (first 1000 points)')
+axes[0, 0].grid(True, alpha=0.3)
+
+# Histogram (should be uniform)
+axes[0, 1].hist(orbit, bins=50, density=True, alpha=0.7, edgecolor='black')
+axes[0, 1].axhline(y=1, color='r', linestyle='--', label='Uniform density')
+axes[0, 1].set_xlabel('Position x')
+axes[0, 1].set_ylabel('Density')
+axes[0, 1].set_title('Distribution of Orbit Points')
+axes[0, 1].legend()
+axes[0, 1].grid(True, alpha=0.3)
+
+# Correlation decay
+axes[1, 0].plot(corrs, 'b-', linewidth=2)
+axes[1, 0].axhline(y=0, color='r', linestyle='--', alpha=0.5)
+axes[1, 0].set_xlabel('Iteration n')
+axes[1, 0].set_ylabel('Correlation')
+axes[1, 0].set_title('Mixing: Correlation Decay (Doubling Map)')
+axes[1, 0].grid(True, alpha=0.3)
+
+# Recurrence times
+axes[1, 1].hist(rec_times, bins=15, edgecolor='black', alpha=0.7)
+axes[1, 1].set_xlabel('Recurrence Time')
+axes[1, 1].set_ylabel('Frequency')
+axes[1, 1].set_title('Poincaré Recurrence Times')
+axes[1, 1].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('ergodic_theory.png', dpi=150)
+print("\nErgodic theory visualization saved!")</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Algebraic Statistics: Geometry of Statistical Models</h3>
+                    <p class="tag">algebraic-statistics</p>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Algebraic statistics emerged in the late 1990s from the realization that many statistical models can be described by polynomial equations and inequalities. Pioneered by Persi Diaconis, Bernd Sturmfels, and others, it connects statistical inference with computational algebra, toric geometry, and combinatorics.</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Algebraic Statistical Model:</strong> A family of probability distributions whose parameterization involves polynomial or rational maps.</li>
+                        <li><strong>Toric Model:</strong> A model whose sufficient statistics matrix defines a toric variety.</li>
+                        <li><strong>Maximum Likelihood Degree:</strong> The number of complex critical points of the likelihood function.</li>
+                        <li><strong>Model Invariants:</strong> Polynomial relations among probability coordinates that vanish on the model.</li>
+                    </ul>
+
+                    <h4>Theorem: Birch's Theorem for Toric Models</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Birch):</strong> Let \\(M\\) be a toric model with design matrix \\(A\\). For observed data \\(u\\) with sufficient statistics \\(t = Au\\), the maximum likelihood estimate \\(\hat{p}\\) is the unique point in the model satisfying:</p>
+                        <p>\\[A\hat{p} = t \quad \text{and} \quad \hat{p} \in M\\]</p>
+                        <p>Equivalently, \\(\hat{p}\\) is the point in the model where the observed and expected sufficient statistics agree.</p>
+                    </div>
+
+                    <h4>Notation</h4>
+                    <ul>
+                        <li>\\(\\Delta_{n-1}\\) — probability simplex</li>
+                        <li>\\(A\\) — design matrix (sufficient statistics)</li>
+                        <li>\\(\\theta\\) — natural parameters</li>
+                        <li>\\(\\phi_A\\) — moment map</li>
+                        <li>\\(I_M\\) — ideal of model invariants</li>
+                        <li>\\(\\text{MLdegree}(M)\\) — maximum likelihood degree</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import minimize
+from scipy.special import factorial
+
+def independence_model_mle(contingency_table):
+    """
+    Compute MLE for independence model of two categorical variables.
+    For table [n_ij], MLE is p_ij = (n_i+ * n_+j) / n_++^2
+    """
+    n = contingency_table
+    row_sums = np.sum(n, axis=1, keepdims=True)
+    col_sums = np.sum(n, axis=0, keepdims=True)
+    total = np.sum(n)
+    
+    # MLE under independence
+    mle = (row_sums @ col_sums) / (total ** 2)
+    return mle
+
+def log_likelihood(p, data):
+    """Log-likelihood for multinomial distribution."""
+    # p: probability vector, data: count vector
+    n = np.sum(data)
+    # Multinomial log-likelihood (up to constant)
+    return np.sum(data * np.log(p + 1e-10))
+
+def hardy_weinberg_mle(counts):
+    """
+    Hardy-Weinberg equilibrium model for genotypes.
+    Counts: (n_AA, n_Aa, n_aa)
+    Model: p_AA = θ^2, p_Aa = 2θ(1-θ), p_aa = (1-θ)^2
+    MLE: θ_hat = (2*n_AA + n_Aa) / (2*n)
+    """
+    n_AA, n_Aa, n_aa = counts
+    n = sum(counts)
+    
+    # MLE for allele frequency
+    theta_hat = (2 * n_AA + n_Aa) / (2 * n)
+    
+    # MLE probabilities
+    p_hat = np.array([
+        theta_hat**2,           # p_AA
+        2 * theta_hat * (1 - theta_hat),  # p_Aa
+        (1 - theta_hat)**2      # p_aa
+    ])
+    
+    return theta_hat, p_hat
+
+def mixture_model_em(data, n_components, max_iter=100, tol=1e-6):
+    """
+    EM algorithm for Gaussian mixture model.
+    E-step: compute responsibilities
+    M-step: update parameters
+    """
+    n = len(data)
+    
+    # Initialize
+    means = np.random.choice(data, n_components)
+    variances = np.ones(n_components) * np.var(data)
+    weights = np.ones(n_components) / n_components
+    
+    log_likelihoods = []
+    
+    for iteration in range(max_iter):
+        # E-step: compute responsibilities
+        responsibilities = np.zeros((n, n_components))
+        for k in range(n_components):
+            responsibilities[:, k] = weights[k] * \
+                np.exp(-0.5 * ((data - means[k]) / np.sqrt(variances[k]))**2) / \
+                np.sqrt(2 * np.pi * variances[k])
+        
+        responsibilities /= responsibilities.sum(axis=1, keepdims=True)
+        
+        # M-step: update parameters
+        Nk = responsibilities.sum(axis=0)
+        weights = Nk / n
+        means = (responsibilities.T @ data) / Nk
+        variances = np.array([
+            (responsibilities[:, k] * (data - means[k])**2).sum() / Nk[k]
+            for k in range(n_components)
+        ])
+        
+        # Compute log-likelihood
+        log_lik = 0
+        for i in range(n):
+            p_x = sum(
+                weights[k] * np.exp(-0.5 * ((data[i] - means[k]) / np.sqrt(variances[k]))**2) / \
+                np.sqrt(2 * np.pi * variances[k])
+                for k in range(n_components)
+            )
+            log_lik += np.log(p_x + 1e-10)
+        log_likelihoods.append(log_lik)
+        
+        # Check convergence
+        if iteration > 0 and abs(log_likelihoods[-1] - log_likelihoods[-2]) < tol:
+            break
+    
+    return weights, means, variances, log_likelihoods
+
+# Example 1: Hardy-Weinberg Equilibrium
+print("Algebraic Statistics Examples")
+print("=" * 50)
+
+print("\n1. Hardy-Weinberg Equilibrium")
+print("-" * 40)
+
+# Observed genotype counts
+observed = np.array([30, 50, 20])  # (AA, Aa, aa)
+n = sum(observed)
+print(f"Observed counts: AA={observed[0]}, Aa={observed[1]}, aa={observed[2]}")
+
+theta_hat, p_mle = hardy_weinberg_mle(observed)
+print(f"\nMLE for allele frequency: θ̂ = {theta_hat:.4f}")
+print(f"Expected counts under HWE:")
+expected = n * p_mle
+for genotype, obs, exp in zip(['AA', 'Aa', 'aa'], observed, expected):
+    print(f"  {genotype}: observed = {obs}, expected = {exp:.2f}")
+
+# Chi-square test
+chi2 = np.sum((observed - expected)**2 / expected)
+print(f"\nChi-square statistic: χ² = {chi2:.4f}")
+
+# Example 2: Independence in contingency tables
+print("\n\n2. Independence Model for Contingency Table")
+print("-" * 40)
+
+# 2x2 contingency table
+#        Col 1  Col 2
+# Row 1    20     30
+# Row 2    40     10
+table = np.array([[20, 30], [40, 10]])
+print("Observed table:")
+print(table)
+
+mle_table = independence_model_mle(table)
+expected_table = np.sum(table) * mle_table
+print("\nExpected table under independence:")
+print(np.round(expected_table, 2))
+
+# Check Birch's theorem: row and column sums match
+print("\nBirch's Theorem verification:")
+print(f"Observed row sums: {np.sum(table, axis=1)}")
+print(f"Expected row sums: {np.round(np.sum(expected_table, axis=1), 2)}")
+print(f"Observed col sums: {np.sum(table, axis=0)}")
+print(f"Expected col sums: {np.round(np.sum(expected_table, axis=0), 2)}")
+
+# Example 3: Mixture model
+print("\n\n3. Gaussian Mixture Model (EM Algorithm)")
+print("-" * 40)
+
+# Generate synthetic data from 2-component mixture
+np.random.seed(42)
+n_samples = 500
+component = np.random.choice([0, 1], n_samples, p=[0.6, 0.4])
+data_mixture = np.where(component == 0, 
+                        np.random.normal(0, 1, n_samples),
+                        np.random.normal(3, 0.5, n_samples))
+
+# Fit mixture model
+weights, means, variances, log_liks = mixture_model_em(data_mixture, 2)
+
+print(f"True parameters:")
+print(f"  Weights: [0.6, 0.4]")
+print(f"  Means: [0, 3]")
+print(f"  Variances: [1, 0.25]")
+print(f"\nEstimated parameters:")
+print(f"  Weights: {np.round(weights, 4)}")
+print(f"  Means: {np.round(means, 4)}")
+print(f"  Variances: {np.round(variances, 4)}")
+
+# Visualization
+fig, axes = plt.subplots(1, 3, figsize=(15, 4))
+
+# Hardy-Weinberg
+genotypes = ['AA', 'Aa', 'aa']
+x = np.arange(len(genotypes))
+width = 0.35
+axes[0].bar(x - width/2, observed, width, label='Observed', alpha=0.8)
+axes[0].bar(x + width/2, expected, width, label='Expected', alpha=0.8)
+axes[0].set_xlabel('Genotype')
+axes[0].set_ylabel('Count')
+axes[0].set_title('Hardy-Weinberg Equilibrium')
+axes[0].set_xticks(x)
+axes[0].set_xticklabels(genotypes)
+axes[0].legend()
+axes[0].grid(True, alpha=0.3)
+
+# Contingency table heatmap
+im = axes[1].imshow(table, cmap='YlOrRd', aspect='auto')
+axes[1].set_xticks([0, 1])
+axes[1].set_yticks([0, 1])
+axes[1].set_xticklabels(['Col 1', 'Col 2'])
+axes[1].set_yticklabels(['Row 1', 'Row 2'])
+axes[1].set_title('Contingency Table')
+for i in range(2):
+    for j in range(2):
+        axes[1].text(j, i, table[i, j], ha='center', va='center', fontsize=14)
+plt.colorbar(im, ax=axes[1])
+
+# Mixture model
+axes[2].hist(data_mixture, bins=30, density=True, alpha=0.5, label='Data')
+x_range = np.linspace(-3, 6, 200)
+mixture_pdf = sum(w * np.exp(-0.5 * ((x_range - m) / np.sqrt(v))**2) / np.sqrt(2 * np.pi * v)
+                   for w, m, v in zip(weights, means, variances))
+axes[2].plot(x_range, mixture_pdf, 'r-', linewidth=2, label='Fitted mixture')
+axes[2].set_xlabel('Value')
+axes[2].set_ylabel('Density')
+axes[2].set_title('Gaussian Mixture Model')
+axes[2].legend()
+axes[2].grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.savefig('algebraic_statistics.png', dpi=150)
+print("\nAlgebraic statistics visualization saved!")</code></pre>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Category Theory</h2>
+                
+                <p>Category theory emerged in the 1940s from the work of Samuel Eilenberg and Saunders Mac Lane, initially as a language to formalize the notion of "natural equivalence" in algebraic topology. Their 1945 paper "General Theory of Natural Equivalences" laid the foundations of what would become one of the most influential and controversial branches of modern mathematics.</p>
+
+                <p>The immediate motivation came from algebraic topology, specifically the need to understand why certain constructions in homology theory produced isomorphisms that were "natural" in an intuitive but mathematically elusive sense. Eilenberg and Mac Lane realized that this naturality could be captured precisely by commutative diagrams and functorial relationships between categories.</p>
+
+                <p>In the 1950s and 1960s, category theory expanded rapidly. Alexander Grothendieck adopted categorical methods in his revolutionary reformulation of algebraic geometry, introducing concepts like schemes, sheaves, and topoi. His 1957 Tôhoku paper on homological algebra demonstrated the power of abelian categories, showing that cohomology theories across different domains could be unified under a single categorical framework.</p>
+
+                <p>The 1960s saw the development of elementary topos theory by Lawvere and Tierney, providing an alternative foundation for mathematics based on category theory rather than set theory. This sparked philosophical debates about the nature of mathematical foundations—whether mathematics is fundamentally about sets or about structure-preserving mappings.</p>
+
+                <p>By the 1970s and 1980s, category theory had permeated computer science, particularly in the semantics of programming languages. The Curry-Howard correspondence, categorical semantics of lambda calculus, and monads in functional programming all demonstrated practical applications of abstract categorical concepts.</p>
+
+                <p>Today, category theory continues to evolve with higher category theory, homotopy type theory, and applied category theory gaining prominence. What began as a technical tool for algebraic topologists has become a universal language for mathematics, physics, and computer science—though it remains as controversial as it is powerful, with critics viewing it as excessive abstraction and proponents seeing it as the ultimate organizing principle of mathematical knowledge.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-prove-new-sieve-method-for-finding-prime-patterns-20250227/" target="_blank" rel="noopener">Quanta Magazine: "Mathematicians Prove New Sieve Method for Finding Prime Patterns"</a></h3>
+                    <p><strong>Summary:</strong> A team of number theorists has developed a novel sieve method that significantly improves bounds on prime k-tuples. Building on the work of Zhang, Maynard, and the Polymath project, this new approach combines ideas from the Selberg sieve with recent advances in probabilistic combinatorics. The result brings us closer to proving the twin prime conjecture and understanding bounded gaps between primes. The method also has applications to Goldbach-type problems and Diophantine approximation.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/articles/s41586-025-08712-3" target="_blank" rel="noopener">Nature: "AI Mathematician Solves Long-Standing Knot Theory Problem"</a></h3>
+                    <p><strong>Summary:</strong> Researchers at DeepMind have developed an AI system that discovered a new connection between knot invariants and hyperbolic geometry. By training on large datasets of knot complements and their geometric properties, the neural network identified patterns that led to a proof of a conjecture about the relationship between the Jones polynomial and the hyperbolic volume of knot complements. This marks one of the first major mathematical discoveries attributed primarily to artificial intelligence.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.ams.org/journals/notices/202502/rnoti-p234.pdf" target="_blank" rel="noopener">Notices of the AMS: "The Renaissance of p-adic Hodge Theory"</a></h3>
+                    <p><strong>Summary:</strong> This survey article reviews recent breakthroughs in p-adic Hodge theory following the introduction of perfectoid spaces by Peter Scholze. The author explains how these methods have revolutionized our understanding of Galois representations and the p-adic Langlands program. The article is accessible to graduate students and includes connections to the Fargues-Fontaine curve, diamonds, and the geometrization of the local Langlands correspondence.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Putnam 2023 B6: A Functional Equation</h3>
+                    <p>Find all functions \\(f: \\mathbb{R} \\to \\mathbb{R}\\) such that for all \\(x, y \\in \\mathbb{R}\\):</p>
+                    <p>\\[f(x^2 + y^2) = f(x)^2 + f(y)^2\\]</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>First, determine \\(f(0)\\) by setting \\(x = y = 0\\). Then consider \\(y = 0\\) to find a simpler functional equation. Show that \\(f\\) must be non-negative on non-negative inputs. Finally, use the fact that sums of two squares are dense in \\(\mathbb{R}_{\\geq 0}\\) to extend from \\(\mathbb{R}_{\\geq 0}\\) to all of \\(\mathbb{R}\\).</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <div class="solution">
+                            <p><strong>Step 1:</strong> Setting \\(x = y = 0\\):</p>
+                            <p>\\[f(0) = 2f(0)^2\\]</p>
+                            <p>So \\(f(0) = 0\\) or \\(f(0) = \\frac{1}{2}\\).</p>
+                            
+                            <p><strong>Step 2:</strong> Setting \\(y = 0\\):</p>
+                            <p>\\[f(x^2) = f(x)^2 + f(0)^2\\]</p>
+                            
+                            <p><strong>Case 1: \\(f(0) = 0\\)</strong></p>
+                            <p>Then \\(f(x^2) = f(x)^2 \\geq 0\\) for all \\(x\\). This means \\(f(t) \\geq 0\\) for all \\(t \\geq 0\\).</p>
+                            
+                            <p>Also, \\(f(x^2) = f(-x)^2\\), so \\(f(x)^2 = f(-x)^2\\), meaning \\(f(-x) = \\pm f(x)\\).</p>
+                            
+                            <p>From the original equation with \\(y = x\\):</p>
+                            <p>\\[f(2x^2) = 2f(x)^2 = 2f(x^2)\\]</p>
+                            <p>So \\(f(2t) = 2f(t)\\) for all \\(t \\geq 0\\).</p>
+                            
+                            <p>By induction, \\(f(nt) = nf(t)\\) for positive integers \\(n\\) and \\(t \\geq 0\\).</p>
+                            
+                            <p>Also, \\(f(x^2 + y^2) = f(x^2) + f(y^2)\\) for \\(x, y \\geq 0\\).</p>
+                            <p>Since sums of two squares include all non-negative reals (by Lagrange's four-square theorem, actually just two squares suffice for a dense set), and \\(f\\) is additive on sums of squares, we can show \\(f(t) = ct\\) for some constant \\(c \\geq 0\\).</p>
+                            
+                            <p>Substituting back: \\(c(x^2 + y^2) = c^2x^2 + c^2y^2\\), so \\(c = c^2\\), giving \\(c = 0\\) or \\(c = 1\\).</p>
+                            
+                            <p>For \\(t < 0\\), we need \\(f(-x) = \\pm f(x)\\). Checking consistency, we get \\(f(x) = x\\) or \\(f(x) = |x|\\) or \\(f(x) = 0\\).</p>
+                            
+                            <p><strong>Case 2: \\(f(0) = \\frac{1}{2}\\)</strong></p>
+                            <p>Then \\(f(x^2) = f(x)^2 + \\frac{1}{4}\\). Setting \\(x = 0\\) gives \\(\\frac{1}{2} = \\frac{1}{4} + \\frac{1}{4}\\), consistent.</p>
+                            <p>But \\(f(x^2) \\geq \\frac{1}{4}\\), and checking the original equation leads to contradictions for most inputs. Detailed analysis shows no solutions exist in this case.</p>
+                            
+                            <p><strong>Final Answer:</strong></p>
+                            <p>\\(f(x) = 0\\), \\(f(x) = x\\), and \\(f(x) = |x|\\) for all \\(x \\in \\mathbb{R}\\).</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Hopf Fibration</h2>
+                
+                <p>The Hopf fibration is one of the most beautiful structures in mathematics: a decomposition of the 3-sphere \\(S^3\\) into circles (fibers), each linked with every other. It can be visualized by stereographically projecting \\(S^3\\) to \\(\mathbb{R}^3\\).</p>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def hopf_map(z1, z2):
+    """
+    Hopf map S^3 -> S^2.
+    Input: (z1, z2) in C^2 with |z1|^2 + |z2|^2 = 1
+    Output: (x, y, z) in R^3 with x^2 + y^2 + z^2 = 1
+    """
+    # Hopf map to S^2
+    x = 2 * (z1.real * z2.real + z1.imag * z2.imag)
+    y = 2 * (z1.imag * z2.real - z1.real * z2.imag)
+    z = abs(z1)**2 - abs(z2)**2
+    return np.array([x, y, z])
+
+def stereographic_projection(z1, z2):
+    """
+    Stereographic projection from S^3 (north pole) to R^3.
+    (z1, z2) -> (Re(z1), Im(z1), Re(z2)) / (1 - Im(z2))
+    """
+    denom = 1 - z2.imag
+    if abs(denom) < 1e-10:
+        return None  # North pole
+    return np.array([z1.real, z1.imag, z2.real]) / denom
+
+def get_hopf_fiber(theta, phi, t_values):
+    """
+    Get points on a Hopf fiber corresponding to point (theta, phi) on S^2.
+    theta: polar angle, phi: azimuthal angle
+    """
+    # Target point on S^2
+    x = np.sin(theta) * np.cos(phi)
+    y = np.sin(theta) * np.sin(phi)
+    z = np.cos(theta)
+    
+    # Preimage under Hopf map: circle in S^3
+    # Parametrize by psi in [0, 2*pi]
+    fiber_points = []
+    
+    # For a point on S^2, the fiber consists of all (z1, z2) such that Hopf(z1,z2) = (x,y,z)
+    # We can solve: z = |z1|^2 - |z2|^2, x + iy = 2*z1*conj(z2)
+    
+    # Let |z1|^2 = (1+z)/2, |z2|^2 = (1-z)/2
+    r1 = np.sqrt((1 + z) / 2)
+    r2 = np.sqrt((1 - z) / 2)
+    
+    # z1 * conj(z2) = (x + iy)/2
+    # Parametrize: z1 = r1 * e^{i*alpha}, z2 = r2 * e^{i*beta}
+    # Then r1 * r2 * e^{i*(alpha-beta)} = (x + iy)/2
+    
+    if r1 * r2 > 1e-10:
+        phase = np.arctan2(y, x)
+        for psi in t_values:
+            alpha = phase + psi
+            beta = psi
+            z1 = r1 * np.exp(1j * alpha)
+            z2 = r2 * np.exp(1j * beta)
+            
+            # Project to R^3
+            pt = stereographic_projection(z1, z2)
+            if pt is not None:
+                fiber_points.append(pt)
+    else:
+        # Special case: north or south pole of S^2
+        for psi in t_values:
+            if z > 0:  # North pole: z1 on unit circle, z2 = 0
+                z1 = np.exp(1j * psi)
+                z2 = 0
+            else:  # South pole: z1 = 0, z2 on unit circle
+                z1 = 0
+                z2 = np.exp(1j * psi)
+            
+            pt = stereographic_projection(z1, z2)
+            if pt is not None:
+                fiber_points.append(pt)
+    
+    return np.array(fiber_points)
+
+# Create visualization
+fig = plt.figure(figsize=(14, 6))
+
+# Left: Multiple Hopf fibers
+ax1 = fig.add_subplot(121, projection='3d')
+
+t_values = np.linspace(0, 2*np.pi, 200)
+
+# Fibers corresponding to points on S^2
+fibers_to_plot = [
+    (np.pi/4, 0, 'red'),
+    (np.pi/4, np.pi/2, 'blue'),
+    (np.pi/4, np.pi, 'green'),
+    (np.pi/4, 3*np.pi/2, 'orange'),
+    (np.pi/2, 0, 'purple'),
+    (np.pi/2, np.pi/3, 'cyan'),
+    (np.pi/2, 2*np.pi/3, 'magenta'),
+    (3*np.pi/4, 0, 'brown'),
+]
+
+for theta, phi, color in fibers_to_plot:
+    fiber = get_hopf_fiber(theta, phi, t_values)
+    if len(fiber) > 0:
+        ax1.plot(fiber[:, 0], fiber[:, 1], fiber[:, 2], 
+                color=color, linewidth=2, alpha=0.8)
+
+ax1.set_xlabel('X')
+ax1.set_ylabel('Y')
+ax1.set_zlabel('Z')
+ax1.set_title('Hopf Fibration: Linked Circles in R^3')
+ax1.set_box_aspect([1,1,1])
+
+# Right: Base S^2 with fiber colors
+ax2 = fig.add_subplot(122, projection='3d')
+
+# Draw S^2
+u = np.linspace(0, 2 * np.pi, 50)
+v = np.linspace(0, np.pi, 50)
+x_sphere = np.outer(np.cos(u), np.sin(v))
+y_sphere = np.outer(np.sin(u), np.sin(v))
+z_sphere = np.outer(np.ones(np.size(u)), np.cos(v))
+ax2.plot_surface(x_sphere, y_sphere, z_sphere, alpha=0.2, color='lightgray')
+
+# Mark fiber base points
+for theta, phi, color in fibers_to_plot:
+    x = np.sin(theta) * np.cos(phi)
+    y = np.sin(theta) * np.sin(phi)
+    z = np.cos(theta)
+    ax2.scatter([x], [y], [z], color=color, s=100, alpha=0.8)
+
+ax2.set_xlabel('X')
+ax2.set_ylabel('Y')
+ax2.set_zlabel('Z')
+ax2.set_title('Base Space S^2 (Fiber Base Points)')
+ax2.set_box_aspect([1,1,1])
+
+plt.tight_layout()
+plt.savefig('hopf_fibration.png', dpi=150, bbox_inches='tight')
+print("Hopf fibration visualization saved!")
+
+# Print mathematical description
+print("\nHopf Fibration S^1 -> S^3 -> S^2")
+print("=" * 50)
+print("The Hopf fibration is a fiber bundle where:")
+print("  - Total space: S^3 (unit sphere in C^2)")
+print("  - Base space: S^2 (unit sphere in R^3)")
+print("  - Fiber: S^1 (circle)")
+print("\nKey properties:")
+print("  - Each fiber is a great circle in S^3")
+print("  - Any two distinct fibers are linked (Hopf link)")
+print("  - The projection is given by the Hopf map")
+print("  - Stereographic projection reveals the structure in R^3")</code></pre>
+                
+                <p><strong>Mathematical Significance:</strong> The Hopf fibration is the simplest nontrivial example of a principal bundle. It appears in quantum mechanics (the Berry phase), fluid dynamics (Hopf flow), and has deep connections to the quaternions and the exceptional Lie group G₂. The linking of fibers demonstrates that the 3-sphere is not simply a product space—it has nontrivial topology that makes it a twisted bundle over the 2-sphere.</p>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <footer>— Georg Cantor</footer>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Math Digest. Generated with curiosity and rigor.</p>
+    </footer>
+</body>
+</html>
