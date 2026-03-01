@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Digest - March 1, 2026</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- MathJax 3 Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <h1 class="site-title">Math Digest</h1>
+            <p class="site-subtitle">March 1, 2026 | Issue #2134</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Math Links Section -->
+            <section class="math-links">
+                <h2 class="section-title">Math Links</h2>
+                <article class="link-card">
+                    <h3><a href="https://www.lmfdb.org" target="_blank">LMFDB — The L-functions and Modular Forms Database</a></h3>
+                    <p>An extensive database of mathematical objects related to L-functions and modular forms, including elliptic curves, number fields, and more.</p>
+                </article>
+                <article class="link-card">
+                    <h3><a href="https://www.quantamagazine.org/mathematics/" target="_blank">Quanta Magazine — Mathematics</a></h3>
+                    <p>Cutting-edge mathematics journalism covering breakthroughs in pure and applied mathematics, written for the scientifically curious.</p>
+                </article>
+                <article class="link-card">
+                    <h3><a href="https://oeis.org" target="_blank">OEIS — The On-Line Encyclopedia of Integer Sequences</a></h3>
+                    <p>The definitive database of integer sequences, containing over 360,000 sequences with extensive references and formulas.</p>
+                </article>
+            </section>
+
+            <!-- Free Math Book Section -->
+            <section class="free-book">
+                <h2 class="section-title">Free Math Book</h2>
+                <article class="book-feature">
+                    <h3>Algebraic Number Theory</h3>
+                    <p class="book-authors">by J.W.S. Cassels and A. Fröhlich</p>
+                    <p class="book-description">
+                        This classic text, based on lectures given at the Instructional Conference on Algebraic Number Theory 
+                        held in Brighton in 1965, remains one of the most influential works in the field. It covers the 
+                        foundations of algebraic number theory, local fields, cohomology, class field theory, and zeta functions 
+                        and L-functions. The book is renowned for its elegant exposition and has shaped the education of 
+                        generations of number theorists.
+                    </p>
+                    <p class="book-note">Available from various academic sources and online mathematical libraries.</p>
+                </article>
+            </section>
+
+            <!-- Pure Math Deep-Dives -->
+            <section class="pure-math">
+                <h2 class="section-title">Pure Math Deep-Dives</h2>
+                
+                <article class="deep-dive">
+                    <h3>Elliptic Curves and the Mordell-Weil Theorem</h3>
+                    <p>
+                        An elliptic curve \(E\) over a field \(K\) is a smooth projective curve of genus 1 with a specified 
+                        base point \(O\). The set of \(K\)-rational points \(E(K)\) forms an abelian group with identity \(O\).
+                    </p>
+                    <p>
+                        The <strong>Mordell-Weil Theorem</strong> states that for an elliptic curve \(E\) over a number field 
+                        \(K\), the group \(E(K)\) is finitely generated. This means:
+                        \[
+                        E(K) \cong E(K)_{\text{tors}} \oplus \mathbb{Z}^r
+                        \]
+                        where \(E(K)_{\text{tors}}\) is the finite torsion subgroup and \(r\) is the rank of \(E\).
+                    </p>
+                    <p>
+                        The proof involves two main steps: first showing that \(E(K)/2E(K)\) is finite (the "weak Mordell-Weil 
+                        theorem"), then using height functions to establish finite generation. This theorem is foundational in 
+                        arithmetic geometry and connects to the Birch and Swinnerton-Dyer conjecture, which relates the rank 
+                        \(r\) to the order of vanishing of the L-function \(L(E,s)\) at \(s=1\).
+                    </p>
+                </article>
+
+                <article class="deep-dive">
+                    <h3>Modular Forms and Hecke Operators</h3>
+                    <p>
+                        A <strong>modular form</strong> of weight \(k\) for \(\text{SL}_2(\mathbb{Z})\) is a holomorphic 
+                        function \(f: \mathbb{H} \to \mathbb{C}\) on the upper half-plane satisfying:
+                        \[
+                        f\left(\frac{az+b}{cz+d}\right) = (cz+d)^k f(z) \quad \text{for all } \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \text{SL}_2(\mathbb{Z})
+                        \]
+                        and being holomorphic at infinity with Fourier expansion \(f(z) = \sum_{n=0}^{\infty} a_n q^n\) 
+                        where \(q = e^{2\pi i z}\).
+                    </p>
+                    <p>
+                        The <strong>Hecke operators</strong> \(T_n\) act on the space of modular forms \(M_k\) and preserve 
+                        the subspace of cusp forms \(S_k\). For a prime \(p\), the operator \(T_p\) is defined by:
+                        \[
+                        (T_p f)(z) = p^{k-1} f(pz) + \frac{1}{p} \sum_{j=0}^{p-1} f\left(\frac{z+j}{p}\right)
+                        \]
+                    </p>
+                    <p>
+                        The Hecke operators commute with each other and are self-adjoint with respect to the Petersson inner 
+                        product. This allows simultaneous diagonalization, yielding <strong>Hecke eigenforms</strong>. For an 
+                        eigenform \(f\) with \(a_1 = 1\), the eigenvalue of \(T_n\) equals the Fourier coefficient \(a_n\), 
+                        leading to the multiplicative property \(a_{mn} = a_m a_n\) for coprime \(m,n\).
+                    </p>
+                </article>
+
+                <article class="deep-dive">
+                    <h3>Algebraic Number Theory: Class Field Theory</h3>
+                    <p>
+                        <strong>Class field theory</strong> describes the abelian extensions of a number field \(K\) in terms 
+                        of the arithmetic of \(K\) itself. The fundamental object is the <strong>ray class group</strong> 
+                        \(Cl_K^{\mathfrak{m}}\) modulo a modulus \(\mathfrak{m}\).
+                    </p>
+                    <p>
+                        The main theorem states that for each modulus \(\mathfrak{m}\), there exists a unique abelian extension 
+                        \(K_{\mathfrak{m}}\) (the ray class field) such that:
+                        \[
+                        \text{Gal}(K_{\mathfrak{m}}/K) \cong Cl_K^{\mathfrak{m}}
+                        \]
+                        via the Artin map \(\psi: Cl_K^{\mathfrak{m}} \to \text{Gal}(K_{\mathfrak{m}}/K)\).
+                    </p>
+                    <p>
+                        For \(K = \mathbb{Q}\) and \(\mathfrak{m} = (m)\infty\), the ray class field is the cyclotomic field 
+                        \(\mathbb{Q}(\zeta_m)\), recovering the Kronecker-Weber theorem: every abelian extension of 
+                        \(\mathbb{Q}\) is contained in a cyclotomic field. The Artin reciprocity law generalizes quadratic 
+                        reciprocity and provides the cornerstone of modern algebraic number theory.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Applied Math Deep-Dives -->
+            <section class="applied-math">
+                <h2 class="section-title">Applied Math Deep-Dives</h2>
+                
+                <article class="deep-dive">
+                    <h3>Modern Portfolio Theory and Mean-Variance Optimization</h3>
+                    <p>
+                        Developed by Harry Markowitz in 1952, <strong>Modern Portfolio Theory (MPT)</strong> provides a 
+                        mathematical framework for assembling portfolios that maximize expected return for a given level of risk.
+                    </p>
+                    <p>
+                        Let \(\mathbf{w} = (w_1, \ldots, w_n)^T\) be portfolio weights, \(\boldsymbol{\mu}\) the vector of 
+                        expected returns, and \(\Sigma\) the covariance matrix of returns. The portfolio return and variance are:
+                        \[
+                        \mu_p = \mathbf{w}^T \boldsymbol{\mu}, \quad \sigma_p^2 = \mathbf{w}^T \Sigma \mathbf{w}
+                        \]
+                    </p>
+                    <p>
+                        The <strong>mean-variance optimization</strong> problem seeks to minimize variance subject to a target 
+                        return \(\mu_0\) and the constraint \(\sum w_i = 1\):
+                        \[
+                        \min_{\mathbf{w}} \mathbf{w}^T \Sigma \mathbf{w} \quad \text{s.t.} \quad \mathbf{w}^T \boldsymbol{\mu} = \mu_0, \quad \mathbf{w}^T \mathbf{1} = 1
+                        \]
+                        The solution yields the <strong>efficient frontier</strong>—the set of optimal portfolios offering the 
+                        highest expected return for a defined level of risk.
+                    </p>
+                </article>
+
+                <article class="deep-dive">
+                    <h3>Epidemiological Modeling: SIR Dynamics</h3>
+                    <p>
+                        The <strong>SIR model</strong> divides a population into three compartments: Susceptible (\(S\)), 
+                        Infected (\(I\)), and Recovered (\(R\)). The classic Kermack-McKendrick model uses the system:
+                        \[
+                        \begin{aligned}
+                        \frac{dS}{dt} &= -\beta SI \\
+                        \frac{dI}{dt} &= \beta SI - \gamma I \\
+                        \frac{dR}{dt} &= \gamma I
+                        \end{aligned}
+                        \]
+                        where \(\beta\) is the infection rate and \(\gamma\) is the recovery rate.
+                    </p>
+                    <p>
+                        The <strong>basic reproduction number</strong> \(R_0 = \frac{\beta S_0}{\gamma}\) determines whether 
+                        an epidemic occurs. When \(R_0 > 1\), infections grow initially. The <strong>herd immunity threshold</strong> 
+                        occurs when the susceptible fraction drops below \(1/R_0\).
+                    </p>
+                    <p>
+                        Extensions include SEIR (with exposed period), SIRS (with waning immunity), and age-structured models. 
+                        These differential equations provide crucial insights for public health policy and intervention strategies.
+                    </p>
+                </article>
+
+                <article class="deep-dive">
+                    <h3>Digital Signal Processing: The Sampling Theorem</h3>
+                    <p>
+                        The <strong>Nyquist-Shannon Sampling Theorem</strong> is fundamental to digital signal processing. 
+                        It states that a continuous-time signal \(x(t)\) bandlimited to \([-B, B]\) Hz can be perfectly 
+                        reconstructed from samples taken at rate \(f_s > 2B\) (the Nyquist rate).
+                    </p>
+                    <p>
+                        The reconstruction formula is:
+                        \[
+                        x(t) = \sum_{n=-\infty}^{\infty} x(nT) \cdot \text{sinc}\left(\frac{t - nT}{T}\right)
+                        \]
+                        where \(T = 1/f_s\) is the sampling period and \(\text{sinc}(x) = \frac{\sin(\pi x)}{\pi x}\).
+                    </p>
+                    <p>
+                        If \(f_s < 2B\), <strong>aliasing</strong> occurs—high frequencies masquerade as lower frequencies. 
+                        The theorem bridges continuous and discrete mathematics, enabling digital audio, image processing, 
+                        and telecommunications. The frequency-domain interpretation uses the Poisson summation formula:
+                        \[
+                        X_s(f) = \frac{1}{T} \sum_{k=-\infty}^{\infty} X\left(f - \frac{k}{T}\right)
+                        \]
+                    </p>
+                </article>
+            </section>
+
+            <!-- Special Topics -->
+            <section class="special-topics">
+                <h2 class="section-title">Special Topics: Millennium Prize Problems and Famous Conjectures</h2>
+                
+                <article class="topic-card">
+                    <h3>The Riemann Hypothesis</h3>
+                    <p>
+                        Proposed by Bernhard Riemann in 1859, this conjecture states that all non-trivial zeros of the 
+                        Riemann zeta function have real part equal to \(\frac{1}{2}\):
+                        \[
+                        \zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s} = 0 \quad \Rightarrow \quad \text{Re}(s) = \frac{1}{2}
+                        \]
+                        for \(s\) in the critical strip \(0 < \text{Re}(s) < 1\). This is one of the seven Millennium 
+                        Prize Problems with a $1 million reward. The hypothesis has profound implications for the distribution 
+                        of prime numbers, with connections to random matrix theory and quantum chaos.
+                    </p>
+                </article>
+
+                <article class="topic-card">
+                    <h3>P vs NP</h3>
+                    <p>
+                        The central question of computational complexity theory asks whether every problem whose solution can 
+                        be quickly verified by a computer can also be quickly solved. Formally:
+                        \[
+                        \text{P} \stackrel{?}{=} \text{NP}
+                        \]
+                        where P is the class of problems solvable in polynomial time, and NP is the class of problems 
+                        verifiable in polynomial time. If P = NP, it would revolutionize cryptography, optimization, and 
+                        artificial intelligence. Most experts conjecture P \(\neq\) NP, but a proof remains elusive.
+                    </p>
+                </article>
+
+                <article class="topic-card">
+                    <h3>The Collatz Conjecture</h3>
+                    <p>
+                        Also known as the \(3n+1\) problem, this deceptively simple conjecture concerns the function:
+                        \[
+                        f(n) = \begin{cases} n/2 & \text{if } n \text{ is even} \\ 3n+1 & \text{if } n \text{ is odd} \end{cases}
+                        \]
+                        The conjecture states that for any positive integer starting value, iterating \(f\) eventually 
+                        reaches 1. Despite its simplicity, the problem has resisted proof for over 80 years. Paul Erdős 
+                        famously said, "Mathematics may not be ready for such problems." The conjecture connects to 
+                        ergodic theory, dynamical systems, and undecidability questions.
+                    </p>
+                </article>
+
+                <article class="topic-card">
+                    <h3>The Twin Prime Conjecture</h3>
+                    <p>
+                        Twin primes are pairs of primes that differ by 2, such as \((3, 5)\), \((5, 7)\), \((11, 13)\), 
+                        \((17, 19)\). The conjecture states that there are infinitely many such pairs:
+                        \[
+                        \pi_2(x) \to \infty \quad \text{as} \quad x \to \infty
+                        \]
+                        where \(\pi_2(x)\) counts twin prime pairs up to \(x\). In 2013, Yitang Zhang proved that there 
+                        are infinitely many prime pairs with gap at most 70 million, later reduced to 246 through the 
+                        Polymath project. The Hardy-Littlewood conjecture predicts \(\pi_2(x) \sim 2C_2 \frac{x}{(\ln x)^2}\) 
+                        where \(C_2 \approx 0.6601\) is the twin prime constant.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Math History Section -->
+            <section class="math-history">
+                <h2 class="section-title">Math History</h2>
+                <article class="history-feature">
+                    <h3>Andrew Wiles and Fermat's Last Theorem</h3>
+                    <p>
+                        Pierre de Fermat, a 17th-century French mathematician, famously wrote in the margin of his copy of 
+                        Diophantus's <em>Arithmetica</em>: "I have discovered a truly marvelous proof of this, which this 
+                        margin is too narrow to contain." The theorem in question states that for integers \(n > 2\), there 
+                        are no positive integer solutions to the equation \(a^n + b^n = c^n\). This simple statement, known 
+                        as Fermat's Last Theorem, would captivate mathematicians for over 350 years.
+                    </p>
+                    <p>
+                        Enter Andrew Wiles, a British mathematician who first encountered Fermat's Last Theorem as a ten-year-old 
+                        boy in a Cambridge public library. The problem became his lifelong obsession. After earning his doctorate 
+                        at Cambridge and moving to Princeton University, Wiles spent seven years working in complete secrecy, 
+                        telling almost no one about his quest to prove the theorem that had defeated so many before him.
+                    </p>
+                    <p>
+                        The breakthrough came through an unexpected connection. In the 1950s and 60s, Japanese mathematicians 
+                        Yutaka Taniyama and Goro Shimura proposed a radical idea: every elliptic curve over the rational numbers 
+                        is modular—that is, associated with a modular form. This Taniyama-Shimura conjecture seemed unrelated to 
+                        Fermat's Last Theorem until 1986, when Ken Ribet proved that Fermat's Last Theorem would follow from a 
+                        special case of the Taniyama-Shimura conjecture. If every semistable elliptic curve were modular, then 
+                        Fermat's equation could have no solutions.
+                    </p>
+                    <p>
+                        Wiles realized that proving this special case would settle Fermat's Last Theorem. Working alone in his 
+                        attic study, he developed new techniques in Galois representations and Iwasawa theory. On June 23, 1993, 
+                        at the Isaac Newton Institute in Cambridge, Wiles announced his proof in a series of three lectures 
+                        titled "Modular Forms, Elliptic Curves, and Galois Representations." The mathematical world was stunned. 
+                        The 358-year-old problem was solved.
+                    </p>
+                    <p>
+                        However, the story wasn't over. During peer review, a subtle gap was discovered in the proof. Wiles 
+                        spent another year, with help from his former student Richard Taylor, repairing the argument. The 
+                        corrected proof was published in 1995 in the <em>Annals of Mathematics</em>. Wiles received numerous 
+                        honors, including the Abel Prize in 2016. His achievement demonstrated the power of modern algebraic 
+                        geometry and number theory, and showed that even the most ancient mathematical mysteries can yield to 
+                        persistent human curiosity and intellectual courage.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Math Journalism Section -->
+            <section class="math-journalism">
+                <h2 class="section-title">Math Journalism</h2>
+                
+                <article class="article-card">
+                    <h3><a href="https://www.quantamagazine.org/" target="_blank">Mathematicians Discover New Way to Count</a></h3>
+                    <p class="article-source">Quanta Magazine</p>
+                    <p class="article-summary">
+                        Recent breakthroughs in combinatorics have revealed unexpected connections between counting problems 
+                        in different areas of mathematics. Researchers have developed novel techniques using tropical geometry 
+                        and cluster algebras to solve long-standing enumeration problems.
+                    </p>
+                </article>
+
+                <article class="article-card">
+                    <h3><a href="https://www.nature.com/subjects/mathematics-and-computing" target="_blank">AI Mathematicians: The Future of Proof</a></h3>
+                    <p class="article-source">Nature</p>
+                    <p class="article-summary">
+                        Machine learning systems are increasingly assisting mathematicians in discovering patterns and 
+                        formulating conjectures. Recent work has shown how neural networks can identify subtle relationships 
+                        in knot theory and representation theory that human mathematicians had missed.
+                    </p>
+                </article>
+
+                <article class="article-card">
+                    <h3><a href="https://www.ams.org/publications/journals/notices" target="_blank">The Renaissance of Geometry</a></h3>
+                    <p class="article-source">Notices of the AMS</p>
+                    <p class="article-summary">
+                        A new wave of geometric thinking is transforming fields from number theory to theoretical physics. 
+                        This article explores how ideas from symplectic geometry and mirror symmetry are providing powerful 
+                        tools for solving classical problems.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Problem Corner -->
+            <section class="problem-corner">
+                <h2 class="section-title">Problem Corner</h2>
+                <article class="problem">
+                    <h3>Putnam Competition Problem (1992 B6)</h3>
+                    <p class="problem-statement">
+                        Four points are chosen at random on the surface of a sphere. What is the probability that the center 
+                        of the sphere lies inside the tetrahedron formed by these four points?
+                    </p>
+                    
+                    <details class="hint">
+                        <summary>Hint (click to reveal)</summary>
+                        <p>
+                            Consider the condition for the origin to lie inside the tetrahedron. Use the fact that for points 
+                            \(\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3, \mathbf{v}_4\) on the unit sphere, the origin is inside 
+                            the tetrahedron if and only if the points do not all lie on the same hemisphere. Also, consider 
+                            the relationship to random hyperplanes through the origin.
+                        </p>
+                    </details>
+                    
+                    <details class="solution">
+                        <summary>Solution (click to reveal)</summary>
+                        <p>
+                            The key insight is that the origin lies inside the tetrahedron if and only if the four points do 
+                            not all lie on any hemisphere. Equivalently, the convex hull contains the origin if and only if 
+                            the points are not contained in any open half-space defined by a plane through the origin.
+                        </p>
+                        <p>
+                            Consider the random hyperplane through the origin determined by any three of the four points. 
+                            The fourth point lies on one side of this plane with probability \(\frac{1}{2}\) (by symmetry).
+                        </p>
+                        <p>
+                            A more elegant approach: For \(n\) points on \(S^{n-2}\), the probability that their convex hull 
+                            contains the origin is related to the number of regions created by random hyperplanes. For 4 points 
+                            on \(S^2\) (the 2-sphere), we can use Wendel's theorem which states that for \(N\) random points 
+                            on \(S^{d-1}\), the probability that they all lie on some hemisphere is:
+                            \[
+                            P_{\text{hemisphere}} = 2^{-N+1} \sum_{k=0}^{d-1} \binom{N-1}{k}
+                            \]
+                        </p>
+                        <p>
+                            For our case with \(N = 4\) points on \(S^2\) (so \(d = 3\)):
+                            \[
+                            P_{\text{hemisphere}} = 2^{-3} \sum_{k=0}^{2} \binom{3}{k} = \frac{1}{8}(1 + 3 + 3) = \frac{7}{8}
+                            \]
+                        </p>
+                        <p>
+                            Therefore, the probability that the origin lies inside the tetrahedron is:
+                            \[
+                            \boxed{\dfrac{1}{8}}
+                            \]
+                        </p>
+                    </details>
+                </article>
+            </section>
+
+            <!-- Visualization of the Day -->
+            <section class="visualization">
+                <h2 class="section-title">Visualization of the Day: The Mandelbrot Set</h2>
+                <article class="viz-feature">
+                    <p>
+                        The Mandelbrot set is the set of complex numbers \(c\) for which the iteration \(z_{n+1} = z_n^2 + c\) 
+                        with \(z_0 = 0\) remains bounded. It exhibits infinite complexity at all scales and is perhaps the 
+                        most famous fractal in mathematics.
+                    </p>
+                    
+                    <div class="code-block">
+                        <h4>Python Code to Generate the Mandelbrot Set</h4>
+                        <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    """Compute the number of iterations until divergence."""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+def mandelbrot_set(width, height, x_min=-2.5, x_max=1.0, 
+                   y_min=-1.25, y_max=1.25, max_iter=100):
+    """Generate the Mandelbrot set."""
+    x = np.linspace(x_min, x_max, width)
+    y = np.linspace(y_min, y_max, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    M = np.zeros((height, width))
+    for i in range(height):
+        for j in range(width):
+            M[i, j] = mandelbrot(C[i, j], max_iter)
+    
+    return M
+
+# Generate and plot
+width, height = 800, 600
+M = mandelbrot_set(width, height, max_iter=100)
+
+plt.figure(figsize=(12, 8))
+plt.imshow(M, extent=[-2.5, 1.0, -1.25, 1.25], 
+           cmap='hot', origin='lower', interpolation='bilinear')
+plt.colorbar(label='Iterations')
+plt.title('The Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.tight_layout()
+plt.savefig('mandelbrot.png', dpi=150)
+plt.show()</code></pre>
+                    </div>
+                    
+                    <p class="viz-note">
+                        The Mandelbrot set's boundary has Hausdorff dimension 2, making it a curve that fills space in a 
+                        peculiar sense. It is connected (proved by Douady and Hubbard in the 1980s) and locally connected 
+                        (MLC conjecture—still open). The set exhibits self-similarity and contains infinitely many copies 
+                        of itself at different scales.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Quote of the Day -->
+            <section class="quote-section">
+                <h2 class="section-title">Quote of the Day</h2>
+                <blockquote class="math-quote">
+                    <p>
+                        "Mathematics is the art of giving the same name to different things."
+                    </p>
+                    <footer>— Henri Poincaré</footer>
+                </blockquote>
+                <p class="quote-context">
+                    Henri Poincaré (1854–1912) was a French mathematician, theoretical physicist, and philosopher of science. 
+                    Often described as a polymath, he made fundamental contributions to topology, dynamical systems, and the 
+                    theory of relativity. This quote reflects his deep understanding of mathematical abstraction—the power 
+                    of mathematics to unify seemingly disparate phenomena under common structures and concepts.
+                </p>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Math Digest. All rights reserved.</p>
+            <p>Curated with passion for the beauty of mathematics.</p>
+            <p class="footer-links">
+                <a href="../index.html">Home</a> |
+                <a href="../archive.html">Archive</a> |
+                <a href="../about.html">About</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
