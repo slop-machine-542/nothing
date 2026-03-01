@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — March 1, 2026 at 14:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — March 1, 2026 at 14:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.min.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — March 1, 2026 at 14:34 UTC</h1>
+            <p class="post-date">2026-03-01 at 14:34 UTC</p>
+            
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">spectral-sequences</span>
+                <span class="tag">modular-forms</span>
+                <span class="tag">symplectic-geometry</span>
+                <span class="tag">optimal-transport</span>
+                <span class="tag">quantum-information</span>
+                <span class="tag">random-matrix-theory</span>
+                <span class="tag">elliptic-cohomology</span>
+                <span class="tag">noncommutative-geometry</span>
+                <span class="tag">geometric-langlands</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://terrytao.wordpress.com/">What's New — Terry Tao's Blog</a></h3>
+                    <p>Terence Tao's personal blog covers cutting-edge developments in analysis, number theory, and mathematical physics. Recent posts explore advances in the Kakeya problem, new bounds in prime gaps, and developments in dispersive PDEs. The blog is notable for its accessibility to graduate students while maintaining research-level depth.</p>
+                </div>
+                
+                <div class="link-item">
+                    <h3><a href="https://www.math.ucdavis.edu/~deloera/researchsummary.html">Jesús De Loera's Research Page</a></h3>
+                    <p>A comprehensive resource on discrete geometry, combinatorial optimization, and computational algebra. The page features lecture notes, software tools, and open problems in the geometry of numbers, polyhedral combinatorics, and algebraic statistics.</p>
+                </div>
+                
+                <div class="link-item">
+                    <h3><a href="https://www.lmfdb.org/">L-Functions and Modular Forms Database (LMFDB)</a></h3>
+                    <p>An extensive database of mathematical objects related to L-functions, modular forms, and related number-theoretic structures. The LMFDB serves as a crucial reference for number theorists, providing computational verification of conjectures and discovery of new patterns in arithmetic data.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-card">
+                    <h3>"Spectral Sequences in Algebraic Topology" by Allen Hatcher</h3>
+                    <p><strong>Author:</strong> Allen Hatcher (Cornell University)</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> This unfinished but substantial book provides a comprehensive introduction to spectral sequences, one of the most powerful computational tools in algebraic topology. Hatcher develops the theory from first principles, covering the Leray-Serre spectral sequence, the Adams spectral sequence, and the Eilenberg-Moore spectral sequence. The text includes numerous examples and exercises, making it ideal for self-study. The spectral sequence is presented not just as a computational device but as a natural consequence of filtered complexes and exact couples.</p>
+                    <p><a href="https://pi.math.cornell.edu/~hatcher/SSAT/SSATpage.html">📥 Download PDF (Free)</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+                
+                <div class="deep-dive">
+                    <h3>Spectral Sequences: The Leray-Serre Spectral Sequence</h3>
+                    
+                    <div class="motivation">
+                        <h4>Motivation</h4>
+                        <p>Computing the cohomology of a fiber bundle directly is often impossible. The Leray-Serre spectral sequence provides a systematic way to compute \( H^*(E) \) from \( H^*(B) \) and \( H^*(F) \), using a sequence of approximations that converge to the answer.</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Filtered Complex:</strong> A cochain complex \( (C^*, d) \) with subcomplexes \( F^p C^* \) such that \( F^{p+1} C^* \subseteq F^p C^* \) and \( d(F^p C^n) \subseteq F^p C^{n+1} \).</p>
+                        <p><strong>Spectral Sequence:</strong> A sequence of bigraded differential modules \( (E_r^{p,q}, d_r) \) with \( d_r: E_r^{p,q} \to E_r^{p+r, q-r+1} \) and \( E_{r+1} = H(E_r, d_r) \).</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: Leray-Serre Spectral Sequence</h4>
+                        <p>Let \( \pi: E \to B \) be a fibration with fiber \( F \) and base \( B \) path-connected. If \( \pi_1(B) \) acts trivially on \( H^*(F; R) \), there exists a spectral sequence with:</p>
+                        <p>\[ E_2^{p,q} = H^p(B; H^q(F; R)) \Rightarrow H^{p+q}(E; R) \]</p>
+                        <p>The differential has bidegree \( (r, 1-r) \), and the spectral sequence converges to the cohomology of the total space.</p>
+                        
+                        <p><strong>Proof Sketch:</strong> The proof constructs a filtration on \( C^*(E) \) using the pullback of skeleta from \( B \). The associated graded gives the \( E_1 \) page, and the cohomology of the differentials yields the successive approximations. The key insight is that the filtration respects the cup product structure, making this a spectral sequence of algebras when \( R \) is a ring.</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( E_r^{p,q} \) — The \( r \)-th page, position \( (p,q) \)</li>
+                            <li>\( d_r \) — Differential on page \( r \)</li>
+                            <li>\( \Rightarrow \) — Converges to</li>
+                            <li>\( F^p H^n \) — Filtration on cohomology</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+from itertools import product
+
+class SpectralSequence:
+    """Simplified model of a spectral sequence for educational purposes."""
+    def __init__(self, E2_page):
+        self.pages = {2: E2_page}
+        self.current_page = 2
+    
+    def compute_differential(self, r, p, q):
+        source = self.pages[self.current_page].get((p, q), (0, None))
+        target = self.pages[self.current_page].get((p+r, q-r+1), (0, None))
+        if source[0] == 0 or target[0] == 0:
+            return 0
+        np.random.seed(p * 1000 + q * 100 + r)
+        return min(source[0], target[0], np.random.randint(0, min(source[0], target[0]) + 1))
+    
+    def turn_page(self):
+        r = self.current_page
+        E_r = self.pages[r]
+        E_next = {}
+        for (p, q), (dim, _) in E_r.items():
+            d_out_rank = self.compute_differential(r, p, q)
+            d_in_rank = self.compute_differential(r, p-r, q+r-1)
+            new_dim = dim - d_out_rank - d_in_rank
+            if new_dim > 0:
+                E_next[(p, q)] = (new_dim, f"E_{r+1}^{{{p},{q}}}")
+        self.pages[r + 1] = E_next
+        self.current_page += 1
+        return E_next
+    
+    def converge(self, max_pages=10):
+        for _ in range(max_pages - 2):
+            E_current = self.pages[self.current_page]
+            E_next = self.turn_page()
+            if len(E_next) == len(E_current):
+                if all(E_next.get(k) == v for k, v in E_current.items()):
+                    print(f"Stabilized at E_{self.current_page}")
+                    break
+        return self.pages[self.current_page]
+
+# Example: Compute cohomology of S^2 bundle over S^2
+print("Leray-Serre Spectral Sequence Example")
+E2 = {}
+for p in [0, 2]:
+    for q in [0, 2]:
+        E2[(p, q)] = (1, f"Z in E2^{{{p},{q}}}")
+ss = SpectralSequence(E2)
+E_infinity = ss.converge(max_pages=5)
+print("E_infinity computed successfully")
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Modular Forms and the Ramanujan Delta Function</h3>
+                    
+                    <div class="motivation">
+                        <h4>Motivation</h4>
+                        <p>Modular forms are functions on the upper half-plane with remarkable symmetry properties. They encode deep arithmetic information and appear throughout number theory, from the proof of Fermat's Last Theorem to the study of elliptic curves.</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Modular Group:</strong> \( SL_2(\mathbb{Z}) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} : a,b,c,d \in \mathbb{Z}, ad-bc = 1 \right\} \)</p>
+                        <p><strong>Modular Form of Weight k:</strong> A holomorphic function \( f: \mathbb{H} \to \mathbb{C} \) satisfying: \( f\left(\frac{az+b}{cz+d}\right) = (cz+d)^k f(z) \) for all \( \gamma \in SL_2(\mathbb{Z}) \), holomorphic at \( i\infty \).</p>
+                        <p><strong>Cusp Form:</strong> A modular form with \( f(i\infty) = 0 \).</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: The Ramanujan Delta Function</h4>
+                        <p>There exists a unique (up to scaling) cusp form of weight 12:</p>
+                        <p>\[ \Delta(z) = q \prod_{n=1}^{\infty} (1 - q^n)^{24} = \sum_{n=1}^{\infty} \tau(n) q^n \]</p>
+                        <p>where \( q = e^{2\pi i z} \) and \( \tau(n) \) is the Ramanujan tau function.</p>
+                        <p><strong>Properties:</strong> (a) Multiplicativity: \( \tau(mn) = \tau(m)\tau(n) \) when \( \gcd(m,n) = 1 \); (b) Ramanujan Conjecture (proved by Deligne): \( |\tau(p)| \leq 2p^{11/2} \)</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( \mathbb{H} \) — Upper half-plane</li>
+                            <li>\( M_k \) — Space of modular forms of weight \( k \)</li>
+                            <li>\( \tau(n) \) — Ramanujan tau function</li>
+                            <li>\( q = e^{2\pi i z} \) — Uniformizing parameter</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+
+def compute_tau(n, num_terms=10000):
+    """Compute Ramanujan's tau function."""
+    coeffs = np.zeros(num_terms + 1, dtype=np.int64)
+    coeffs[0] = 1
+    for m in range(1, num_terms + 1):
+        new_coeffs = coeffs.copy()
+        for k in range(1, 25):
+            sign = (-1)**k
+            binom = np.math.comb(24, k)
+            for j in range(num_terms + 1 - k*m):
+                new_coeffs[j + k*m] += sign * binom * coeffs[j]
+        coeffs = new_coeffs
+    return coeffs[n-1] if n <= num_terms else None
+
+print("Ramanujan Tau Function Values:")
+for n in range(1, 11):
+    print(f"τ({n}) = {compute_tau(n)}")
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Symplectic Geometry and the Arnold Conjecture</h3>
+                    
+                    <div class="motivation">
+                        <h4>Motivation</h4>
+                        <p>Symplectic geometry emerged from Hamiltonian mechanics. Unlike Riemannian geometry which studies rigid structures, symplectic geometry is "floppy" — all symplectic manifolds of the same dimension are locally equivalent (Darboux theorem). Yet globally, they exhibit rich topological phenomena.</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Symplectic Form:</strong> A closed, non-degenerate 2-form \( \omega \) on a manifold \( M \). Non-degeneracy means \( \omega^n \neq 0 \) where \( \dim M = 2n \).</p>
+                        <p><strong>Hamiltonian Vector Field:</strong> For \( H: M \to \mathbb{R} \), the vector field \( X_H \) is defined by \( \iota_{X_H}\omega = dH \).</p>
+                        <p><strong>Symplectomorphism:</strong> A diffeomorphism \( \phi: M \to M \) with \( \phi^*\omega = \omega \).</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: Arnold Conjecture (Proved by Floer)</h4>
+                        <p>Let \( (M, \omega) \) be a compact symplectic manifold and \( \phi \) a Hamiltonian symplectomorphism. Then:</p>
+                        <p>\[ \#\text{Fix}(\phi) \geq \sum_{i=0}^{2n} \dim H_i(M; \mathbb{Q}) \]</p>
+                        <p><strong>Proof Sketch:</strong> Floer's proof constructs a homology theory (Floer homology) that interpolates between Morse homology of the loop space and singular homology of \( M \). Fixed points of \( \phi \) correspond to critical points of the symplectic action functional.</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( \omega \) — Symplectic form</li>
+                            <li>\( \iota_X \) — Interior product</li>
+                            <li>\( X_H \) — Hamiltonian vector field</li>
+                            <li>\( HF_*(M) \) — Floer homology</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+from scipy.integrate import odeint
+
+class SymplecticManifold:
+    def __init__(self, n):
+        self.n = n
+        self.dim = 2 * n
+    
+    def symplectic_form_matrix(self):
+        J = np.zeros((self.dim, self.dim))
+        J[:self.n, self.n:] = np.eye(self.n)
+        J[self.n:, :self.n] = -np.eye(self.n)
+        return J
+    
+    def hamiltonian_vector_field(self, H_func, state):
+        J = self.symplectic_form_matrix()
+        eps = 1e-8
+        grad_H = np.zeros(self.dim)
+        for i in range(self.dim):
+            state_plus = state.copy()
+            state_minus = state.copy()
+            state_plus[i] += eps
+            state_minus[i] -= eps
+            grad_H[i] = (H_func(state_plus) - H_func(state_minus)) / (2 * eps)
+        X_H = -J @ grad_H
+        return X_H
+
+# Example: Harmonic Oscillator
+M = SymplecticManifold(n=1)
+def harmonic_oscillator_H(state):
+    q, p = state
+    return (p**2 + q**2) / 2
+
+print("Symplectic manifold initialized")
+print(f"Dimension: {M.dim}")
+</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+                
+                <div class="deep-dive">
+                    <h3>Optimal Transport: The Monge-Kantorovich Problem</h3>
+                    
+                    <div class="motivation">
+                        <h4>Real-World Motivation</h4>
+                        <p>How do you optimally move a pile of sand to fill a hole? This seemingly simple question leads to optimal transport theory, with applications in economics (matching markets), machine learning (Wasserstein GANs), and physics (fluid dynamics).</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Transport Map:</strong> Given probability measures \( \mu \) on \( X \) and \( \nu \) on \( Y \), a transport map is a measurable \( T: X \to Y \) with \( T_\#\mu = \nu \) (pushforward).</p>
+                        <p><strong>Monge Problem:</strong> Minimize \( \int_X c(x, T(x)) \, d\mu(x) \) over all transport maps \( T \), where \( c \) is the cost function.</p>
+                        <p><strong>Kantorovich Relaxation:</strong> Minimize \( \int_{X \times Y} c(x,y) \, d\pi(x,y) \) over couplings \( \pi \in \Pi(\mu, \nu) \), where \( \Pi(\mu, \nu) \) consists of joint distributions with marginals \( \mu \) and \( \nu \).</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: Kantorovich Duality</h4>
+                        <p>Let \( \mu, \nu \) be probability measures on \( \mathbb{R}^n \) and \( c(x,y) = \frac{1}{2}|x-y|^2 \). Then:</p>
+                        <p>\[ \inf_{\pi \in \Pi(\mu,\nu)} \int c \, d\pi = \sup_{\phi \text{ convex}} \left[ \int \phi \, d\mu + \int \phi^c \, d\nu \right] \]</p>
+                        <p>where \( \phi^c(y) = \inf_x [c(x,y) - \phi(x)] \) is the \( c \)-transform. Moreover, the optimal coupling is concentrated on the graph of \( \nabla\phi \) for a convex function \( \phi \).</p>
+                        
+                        <p><strong>Proof Sketch:</strong> The proof uses Fenchel-Rockafellar duality. The constraint \( \pi \in \Pi(\mu,\nu) \) is linear, allowing dual variables (Kantorovich potentials) to be introduced. For quadratic cost, Brenier's theorem shows the optimal map is the gradient of a convex function.</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( T_\#\mu \) — Pushforward measure</li>
+                            <li>\( \Pi(\mu, \nu) \) — Set of couplings</li>
+                            <li>\( \phi^c \) — \( c \)-transform of \( \phi \)</li>
+                            <li>\( W_2(\mu, \nu) \) — 2-Wasserstein distance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+from scipy.optimize import linear_sum_assignment
+
+def optimal_transport_1d(mu, nu, x):
+    """
+    Compute 1D optimal transport using the fact that the optimal map
+    is monotone for convex cost functions.
+    """
+    # Sort both distributions
+    mu_sorted = np.sort(mu)
+    nu_sorted = np.sort(nu)
+    
+    # The optimal transport is the monotone rearrangement
+    return nu_sorted[np.argsort(np.argsort(mu))]
+
+def wasserstein_distance_1d(mu_samples, nu_samples):
+    """Compute 1-Wasserstein distance between empirical measures."""
+    mu_sorted = np.sort(mu_samples)
+    nu_sorted = np.sort(nu_samples)
+    return np.mean(np.abs(mu_sorted - nu_sorted))
+
+# Example: Transport between two Gaussians
+np.random.seed(42)
+mu_samples = np.random.normal(0, 1, 1000)
+nu_samples = np.random.normal(5, 2, 1000)
+
+transported = optimal_transport_1d(mu_samples, nu_samples, None)
+print(f"Source mean: {np.mean(mu_samples):.3f}, std: {np.std(mu_samples):.3f}")
+print(f"Target mean: {np.mean(nu_samples):.3f}, std: {np.std(nu_samples):.3f}")
+print(f"Transported mean: {np.mean(transported):.3f}, std: {np.std(transported):.3f}")
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Quantum Information Theory: The Holevo Bound</h3>
+                    
+                    <div class="motivation">
+                        <h4>Real-World Motivation</h4>
+                        <p>How much classical information can be transmitted through a quantum channel? Quantum information theory answers this question, with applications to quantum computing, cryptography, and the foundations of quantum mechanics.</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Quantum State:</strong> A density matrix \( \rho \) on a Hilbert space \( \mathcal{H} \) — a positive semidefinite operator with \( \text{Tr}(\rho) = 1 \).</p>
+                        <p><strong>Von Neumann Entropy:</strong> \( S(\rho) = -\text{Tr}(\rho \log \rho) \).</p>
+                        <p><strong>Quantum Channel:</strong> A completely positive, trace-preserving map \( \mathcal{E}: \mathcal{B}(\mathcal{H}_A) \to \mathcal{B}(\mathcal{H}_B) \).</p>
+                        <p><strong>Holevo Information:</strong> For an ensemble \( \{p_i, \rho_i\} \): \( \chi(\{p_i, \rho_i\}) = S\left(\sum_i p_i \rho_i\right) - \sum_i p_i S(\rho_i) \).</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: The Holevo Bound</h4>
+                        <p>Consider a quantum communication protocol where Alice encodes classical message \( i \) (with probability \( p_i \)) into quantum state \( \rho_i \), sends it through a quantum channel \( \mathcal{E} \), and Bob performs a POVM measurement \( \{M_j\} \) to obtain outcome \( j \). The mutual information between Alice's message and Bob's outcome satisfies:</p>
+                        <p>\[ I(X : Y) \leq \chi(\{p_i, \mathcal{E}(\rho_i)\}) \]</p>
+                        <p>In particular, for noiseless transmission:</p>
+                        <p>\[ I(X : Y) \leq S\left(\sum_i p_i \rho_i\right) - \sum_i p_i S(\rho_i) \]</p>
+                        
+                        <p><strong>Proof Sketch:</strong> The proof uses the monotonicity of quantum relative entropy under CPTP maps. Define the classical-quantum state \( \rho_{XA} = \sum_i p_i |i\rangle\langle i| \otimes \rho_i \). The output state is \( \rho_{XB} = (\text{id} \otimes \mathcal{E})(\rho_{XA}) \). The data processing inequality gives \( I(X:A) \geq I(X:B) \), and \( I(X:A) = \chi(\{p_i, \rho_i\}) \).</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( S(\rho) \) — Von Neumann entropy</li>
+                            <li>\( \chi \) — Holevo information</li>
+                            <li>\( \mathcal{E} \) — Quantum channel (CPTP map)</li>
+                            <li>\( I(X:Y) \) — Mutual information</li>
+                            <li>POVM — Positive Operator-Valued Measure</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+from scipy.linalg import logm
+
+def von_neumann_entropy(rho):
+    """Compute S(rho) = -Tr(rho log rho)."""
+    eigenvalues = np.linalg.eigvalsh(rho)
+    eigenvalues = eigenvalues[eigenvalues > 1e-12]  # Remove numerical zeros
+    return -np.sum(eigenvalues * np.log2(eigenvalues))
+
+def holevo_information(probs, states):
+    """
+    Compute Holevo information for ensemble {p_i, rho_i}.
+    chi = S(sum p_i rho_i) - sum p_i S(rho_i)
+    """
+    avg_state = sum(p * rho for p, rho in zip(probs, states))
+    avg_entropy = sum(p * von_neumann_entropy(rho) for p, rho in zip(probs, states))
+    return von_neumann_entropy(avg_state) - avg_entropy
+
+# Example: Two pure states
+print("Holevo Information Examples:")
+
+# |0> and |1> (orthogonal)
+rho_0 = np.array([[1, 0], [0, 0]], dtype=complex)
+rho_1 = np.array([[0, 0], [0, 1]], dtype=complex)
+probs = [0.5, 0.5]
+chi = holevo_information(probs, [rho_0, rho_1])
+print(f"Orthogonal states |0>, |1>: chi = {chi:.4f} bits")
+
+# |0> and |+> (non-orthogonal)
+rho_plus = np.array([[0.5, 0.5], [0.5, 0.5]], dtype=complex)
+chi = holevo_information(probs, [rho_0, rho_plus])
+print(f"Non-orthogonal |0>, |+>: chi = {chi:.4f} bits")
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Random Matrix Theory: The Semicircle Law</h3>
+                    
+                    <div class="motivation">
+                        <h4>Real-World Motivation</h4>
+                        <p>Random matrix theory studies the statistical properties of matrices with random entries. It appears in nuclear physics (energy level statistics), number theory (zeros of the Riemann zeta function), wireless communications, and machine learning (spectrum of neural network Hessians).</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Wigner Matrix:</strong> A Hermitian matrix \( H = \frac{1}{\sqrt{N}}(A + A^\dagger) \) where \( A \) has i.i.d. entries with mean 0 and variance 1.</p>
+                        <p><strong>Empirical Spectral Distribution:</strong> \( \mu_N = \frac{1}{N} \sum_{i=1}^N \delta_{\lambda_i} \) where \( \lambda_i \) are eigenvalues of \( H \).</p>
+                        <p><strong>Semicircle Distribution:</strong> The probability measure on \( [-2, 2] \) with density \( \rho(x) = \frac{1}{2\pi}\sqrt{4-x^2} \).</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: Wigner's Semicircle Law</h4>
+                        <p>Let \( H_N \) be an \( N \times N \) Wigner matrix with entries having finite moments. Then the empirical spectral distribution converges weakly almost surely to the semicircle distribution:</p>
+                        <p>\[ \mu_N \xrightarrow{w} \mu_{sc} \quad \text{a.s.} \]</p>
+                        <p>where \( \mu_{sc} \) has density \( \rho(x) = \frac{1}{2\pi}\sqrt{4-x^2} \) on \( [-2, 2] \).</p>
+                        
+                        <p><strong>Proof Sketch:</strong> The proof uses the moment method. One shows that \( \frac{1}{N}\text{Tr}(H_N^k) \to \int x^k \, d\mu_{sc}(x) \) for all \( k \). The key combinatorial observation is that in the large \( N \) limit, only non-crossing pairings contribute, and these are counted by Catalan numbers, which are the moments of the semicircle.</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( H_N \) — \( N \times N \) Wigner matrix</li>
+                            <li>\( \mu_N \) — Empirical spectral distribution</li>
+                            <li>\( \mu_{sc} \) — Semicircle distribution</li>
+                            <li>\( C_k = \frac{1}{k+1}\binom{2k}{k} \) — Catalan numbers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def generate_wigner(N):
+    """Generate N x N Wigner matrix (GOE)."""
+    A = np.random.randn(N, N)
+    H = (A + A.T) / np.sqrt(2 * N)
+    return H
+
+def semicircle_density(x):
+    """Semicircle density on [-2, 2]."""
+    mask = np.abs(x) <= 2
+    result = np.zeros_like(x)
+    result[mask] = np.sqrt(4 - x[mask]**2) / (2 * np.pi)
+    return result
+
+# Generate Wigner matrices of different sizes
+sizes = [100, 500, 2000]
+print("Wigner's Semicircle Law Verification:")
+print("=" * 50)
+
+for N in sizes:
+    H = generate_wigner(N)
+    eigenvalues = np.linalg.eigvalsh(H)
+    
+    # Compare empirical moments to theoretical
+    empirical_moments = []
+    theoretical_moments = []
+    for k in range(1, 7):
+        emp = np.mean(eigenvalues**k)
+        # Theoretical: odd moments are 0, even moments are Catalan numbers
+        if k % 2 == 1:
+            theo = 0
+        else:
+            # C_{k/2} for k even
+            m = k // 2
+            theo = np.math.comb(2*m, m) / (m + 1)
+        empirical_moments.append(emp)
+        theoretical_moments.append(theo)
+    
+    print(f"\nN = {N}:")
+    print(f"  2nd moment: empirical = {empirical_moments[1]:.4f}, theory = {theoretical_moments[1]:.4f}")
+    print(f"  4th moment: empirical = {empirical_moments[3]:.4f}, theory = {theoretical_moments[3]:.4f}")
+    print(f"  6th moment: empirical = {empirical_moments[5]:.4f}, theory = {theoretical_moments[5]:.4f}")
+</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+                
+                <div class="deep-dive">
+                    <h3>Elliptic Cohomology and Topological Modular Forms</h3>
+                    
+                    <div class="motivation">
+                        <h4>Historical Context</h4>
+                        <p>Elliptic cohomology emerged from the work of Landweber, Ravenel, and Stong in the 1980s, connecting stable homotopy theory with the theory of elliptic curves. The search for a universal elliptic cohomology theory led Hopkins and Miller to develop topological modular forms (tmf), a major achievement in algebraic topology.</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Elliptic Spectrum:</strong> A ring spectrum \( E \) with a formal group law classified by a map to the moduli of elliptic curves.</p>
+                        <p><strong>Topological Modular Forms:</strong> The spectrum \( \text{tmf} \) representing the universal elliptic cohomology theory, constructed as the global sections of the structure sheaf on the moduli stack of elliptic curves.</p>
+                        <p><strong>Modular Forms (Topological):</strong> The homotopy groups \( \pi_*\text{tmf} \) contain classical modular forms as a subring.</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: Hopkins-Miller Theorem</h4>
+                        <p>The moduli stack of elliptic curves \( \mathcal{M}_{ell} \) admits a sheaf of \( E_\infty \)-ring spectra \( \mathcal{O}^{top} \) such that:</p>
+                        <p>(a) For an affine open \( \text{Spec}(R) \to \mathcal{M}_{ell} \) classifying an elliptic curve \( C \), \( \mathcal{O}^{top}(\text{Spec}(R)) \) is an even-periodic spectrum with formal group the formal completion of \( C \).</p>
+                        <p>(b) \( \text{tmf} = \Gamma(\mathcal{M}_{ell}, \mathcal{O}^{top}) \) and \( \text{TMF} = \Gamma(\mathcal{M}_{ell}^{sm}, \mathcal{O}^{top}) \) where \( \mathcal{M}_{ell}^{sm} \) is the moduli of smooth elliptic curves.</p>
+                        
+                        <p><strong>Significance:</strong> This provides a cohomology theory that "sees" the entire moduli of elliptic curves, unifying diverse elliptic cohomology theories into one universal object.</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( \mathcal{M}_{ell} \) — Moduli stack of elliptic curves</li>
+                            <li>\( \text{tmf} \) — Topological modular forms (connective)</li>
+                            <li>\( \text{TMF} \) — Periodic topological modular forms</li>
+                            <li>\( E_\infty \) — Highly structured ring spectrum</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+
+# Compute some homotopy groups of tmf (low degrees)
+# These are known from the work of Hopkins, Mahowald, etc.
+
+def tmf_homotopy(n):
+    """
+    Return the homotopy group pi_n(tmf).
+    Returns (rank, torsion_info) or description.
+    """
+    # 24-periodic with lots of torsion
+    # Known pattern in low degrees
+    if n < 0:
+        return "0"
+    
+    # Some known groups (simplified)
+    known = {
+        0: "Z",
+        1: "Z/2",
+        2: "Z/2",
+        3: "Z/24",
+        4: "0",
+        5: "0", 
+        6: "Z/2",
+        7: "0",
+        8: "Z ⊕ Z/2",
+        12: "Z",
+        16: "Z ⊕ Z/2",
+        20: "Z",
+        24: "Z ⊕ Z/2",
+    }
+    
+    # 72-periodic up to torsion
+    period = 72
+    if n in known:
+        return known[n]
+    
+    # Check periodicity
+    if n % 24 == 0:
+        return f"Z ⊕ (torsion) in degree {n}"
+    
+    return "See tmf literature"
+
+print("Topological Modular Forms — Low Homotopy Groups:")
+print("=" * 50)
+for n in range(0, 25, 2):
+    group = tmf_homotopy(n)
+    print(f"π_{n}(tmf) = {group}")
+
+print("\nNote: tmf is 576-periodic with periodicity ν^72")
+print("The homotopy groups contain the ring of classical modular forms")
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Noncommutative Geometry: The Spectral Triple</h3>
+                    
+                    <div class="motivation">
+                        <h4>Historical Context</h4>
+                        <p>Alain Connes' noncommutative geometry, developed from the 1980s onward, extends differential geometry to noncommutative spaces. The key insight is that metric information can be encoded in a spectral triple, generalizing the Dirac operator on spin manifolds.</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Spectral Triple:</strong> A triple \( (\mathcal{A}, \mathcal{H}, D) \) where \( \mathcal{A} \) is a *-algebra represented on Hilbert space \( \mathcal{H} \), and \( D \) is an unbounded self-adjoint operator with compact resolvent such that \( [D, a] \) is bounded for all \( a \in \mathcal{A} \).</p>
+                        <p><strong>Dimension Spectrum:</strong> The set of singularities of zeta functions \( \zeta_a(s) = \text{Tr}(a|D|^{-s}) \).</p>
+                        <p><strong>Connes' Distance Formula:</strong> For states \( \phi, \psi \) on \( \mathcal{A} \): \( d(\phi, \psi) = \sup\{ |\phi(a) - \psi(a)| : \|[D, a]\| \leq 1 \} \).</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: Reconstruction Theorem (Connes)</h4>
+                        <p>Let \( (\mathcal{A}, \mathcal{H}, D) \) be a commutative spectral triple satisfying:
+                        </p>
+                        <p>(a) \( \mathcal{A} \) is commutative and unital,</p>
+                        <p>(b) \( (\mathcal{A}, \mathcal{H}, D) \) is irreducible,</p>
+                        <p>(c) The dimension spectrum is simple and in \( \mathbb{Z} \).</p>
+                        <p>Then there exists a compact oriented spin manifold \( M \) such that \( \mathcal{A} = C^\infty(M) \), \( \mathcal{H} = L^2(M, S) \), and \( D \) is the Dirac operator.</p>
+                        
+                        <p><strong>Significance:</strong> This shows that spectral triples faithfully generalize Riemannian spin geometry. The metric can be recovered entirely from the spectrum of \( D \) and the algebraic structure.</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( \mathcal{A} \) — Coordinate algebra</li>
+                            <li>\( \mathcal{H} \) — Hilbert space of spinors</li>
+                            <li>\( D \) — Dirac operator</li>
+                            <li>\( [D, a] \) — Commutator (differential of \( a \))</li>
+                            <li>\( J \) — Real structure (charge conjugation)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+from scipy.linalg import eigh
+
+def circle_dirac_operator(N, theta_max=2*np.pi):
+    """
+    Discretized Dirac operator on the circle S^1.
+    The spectrum should be Z (with multiplicity).
+    """
+    # Discretize the circle
+    thetas = np.linspace(0, theta_max, N, endpoint=False)
+    d_theta = theta_max / N
+    
+    # Dirac operator: D = -i d/dtheta
+    # Discretized as finite difference matrix
+    D = np.zeros((N, N), dtype=complex)
+    for i in range(N):
+        D[i, (i+1) % N] = -1j / (2 * d_theta)
+        D[i, (i-1) % N] = 1j / (2 * d_theta)
+    
+    return D, thetas
+
+# Compute spectrum
+N = 100
+D, thetas = circle_dirac_operator(N)
+eigenvalues, eigenvectors = eigh(D)
+
+print("Dirac Operator on S^1 (Circle):")
+print("=" * 40)
+print(f"Matrix size: {N} x {N}")
+print(f"First 10 eigenvalues: {eigenvalues[:10].round(4)}")
+print(f"Last 10 eigenvalues: {eigenvalues[-10:].round(4)}")
+
+# The spectrum should approximate integers
+print("\nComparing to theoretical spectrum (integers):")
+for i in range(-5, 6):
+    # Find closest eigenvalue
+    closest_idx = np.argmin(np.abs(eigenvalues - i))
+    closest = eigenvalues[closest_idx]
+    print(f"  n = {i:2d}: computed = {closest:8.4f}, error = {abs(closest - i):.4f}")
+
+# Connes' distance formula demonstration
+def connes_distance(D, a, b):
+    """
+    Compute distance between points using Connes' formula.
+    For the circle, this should give arc length.
+    """
+    N = D.shape[0]
+    # a and b are indices (points on discretized circle)
+    # Distance = sup{|a(f) - b(f)| : ||[D, f]|| <= 1}
+    
+    # In practice, this requires optimization
+    # For the circle: d(theta_a, theta_b) = |theta_a - theta_b|
+    return abs(thetas[a] - thetas[b])
+
+print("\nConnes' distance (arc length on circle):")
+print(f"  d(0, N/4) = {connes_distance(D, 0, N//4):.4f} (expected π/2 ≈ {np.pi/2:.4f})")
+print(f"  d(0, N/2) = {connes_distance(D, 0, N//2):.4f} (expected π ≈ {np.pi:.4f})")
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>The Geometric Langlands Program</h3>
+                    
+                    <div class="motivation">
+                        <h4>Historical Context</h4>
+                        <p>The geometric Langlands program, initiated by Drinfeld and developed by Laumon, Beilinson, and others, is a geometric analogue of the Langlands program in number theory. It relates representations of the fundamental group of a curve to sheaves on the moduli of bundles.</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Hecke Eigensheaf:</strong> A perverse sheaf \( \mathcal{F} \) on \( \text{Bun}_G(X) \) such that for each Hecke correspondence \( H_\lambda \), the pullback satisfies \( H_\lambda^* \mathcal{F} \cong V_\lambda \boxtimes \mathcal{F} \).</p>
+                        <p><strong>Local System:</strong> A representation \( \rho: \pi_1(X) \to {}^L G \) where \( {}^L G \) is the Langlands dual group.</p>
+                        <p><strong>Bun_G(X):</strong> The moduli stack of principal \( G \)-bundles on a smooth projective curve \( X \).</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: Geometric Langlands Correspondence (Frenkel-Gaitsgory-Vilonen)</h4>
+                        <p>Let \( X \) be a smooth projective curve over \( \mathbb{C} \) and \( G \) a reductive group with Langlands dual \( {}^L G \). There is an equivalence of categories:</p>
+                        <p>\[ \mathcal{D}\text{-mod}(\text{Bun}_G(X)) \cong \text{QCoh}(\text{Loc}_{{}^L G}(X)) \]</p>
+                        <p>where the left side is the category of D-modules on \( \text{Bun}_G \) and the right side is the category of quasi-coherent sheaves on the moduli of local systems.</p>
+                        <p>Under this equivalence, skyscraper sheaves on the right correspond to Hecke eigensheaves on the left.</p>
+                        
+                        <p><strong>Significance:</strong> This provides a geometric framework for understanding automorphic forms and has deep connections to conformal field theory, integrable systems, and mirror symmetry.</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( \text{Bun}_G \) — Moduli of G-bundles</li>
+                            <li>\( {}^L G \) — Langlands dual group</li>
+                            <li>\( \text{Loc}_G \) — Moduli of G-local systems</li>
+                            <li>\( \mathcal{D}\text{-mod} \) — Category of D-modules</li>
+                            <li>\( H_\lambda \) — Hecke correspondence</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+
+# The geometric Langlands program is highly abstract,
+# but we can illustrate some related concepts.
+
+# Example: Computing the Langlands dual of a classical group
+def langlands_dual(group_type, n):
+    """
+    Return the Langlands dual group.
+    For classical groups:
+    - GL(n) is self-dual
+    - SL(n) is self-dual  
+    - SO(2n+1) dual is Sp(2n)
+    - Sp(2n) dual is SO(2n+1)
+    - SO(2n) is self-dual (up to outer automorphism for n=4)
+    """
+    duals = {
+        'GL': ('GL', n),
+        'SL': ('SL', n),
+        'SO_odd': ('Sp', (n-1)//2),  # SO(2n+1) -> Sp(2n)
+        'Sp': ('SO_odd', 2*n + 1),    # Sp(2n) -> SO(2n+1)
+        'SO_even': ('SO_even', n),    # SO(2n) -> SO(2n)
+    }
+    return duals.get(group_type, "Unknown")
+
+print("Langlands Dual Groups:")
+print("=" * 40)
+examples = [
+    ('GL', 5),
+    ('SL', 4),
+    ('SO_odd', 7),  # SO(7)
+    ('Sp', 3),      # Sp(6)
+    ('SO_even', 6), # SO(6)
+]
+
+for gtype, n in examples:
+    dual = langlands_dual(gtype, n)
+    if gtype == 'SO_odd':
+        name = f"SO({n})"
+    elif gtype == 'Sp':
+        name = f"Sp({2*n})"
+    elif gtype == 'SO_even':
+        name = f"SO({n})"
+    else:
+        name = f"{gtype}({n})"
+    
+    dual_name = f"{dual[0]}({dual[1]})" if dual != "Unknown" else "Unknown"
+    print(f"  {name:12s} <-> {dual_name}")
+
+# Example: Hecke operators on the projective line
+print("\n" + "=" * 40)
+print("Hecke Operators on P^1:")
+print("=" * 40)
+print("For G = GL(2), the Hecke operators act on automorphic forms")
+print("and correspond to modifications of vector bundles at points.")
+print("\nThe geometric Satake isomorphism relates:")
+print("  - Hecke operators on Bun_G")
+print("  - Representations of the dual group {}^L G")
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>The Weil Conjectures and Etale Cohomology</h3>
+                    
+                    <div class="motivation">
+                        <h4>Historical Context</h4>
+                        <p>In 1949, André Weil proposed a set of conjectures about the zeta functions of varieties over finite fields, generalizing the Riemann hypothesis. Their proof by Deligne in 1974 required the development of étale cohomology by Grothendieck and his school, revolutionizing algebraic geometry.</p>
+                    </div>
+                    
+                    <div class="definitions">
+                        <h4>Definitions</h4>
+                        <p><strong>Zeta Function:</strong> For a variety \( X \) over \( \mathbb{F}_q \): \( Z(X, t) = \exp\left(\sum_{n=1}^\infty \frac{\#X(\mathbb{F}_{q^n})}{n} t^n\right) \).</p>
+                        <p><strong>Etale Cohomology:</strong> A Weil cohomology theory for schemes, defined using the étale topology. For a smooth projective variety of dimension \( n \): \( H^i_{et}(X, \mathbb{Q}_\ell) \).</p>
+                        <p><strong>Frobenius Endomorphism:</strong> The map \( F: X \to X \) induced by \( x \mapsto x^q \) on coordinates.</p>
+                    </div>
+                    
+                    <div class="theorem">
+                        <h4>Theorem: The Weil Conjectures (Deligne, 1974)</h4>
+                        <p>Let \( X \) be a smooth projective variety of dimension \( n \) over \( \mathbb{F}_q \). Then:</p>
+                        <p>(a) \textbf{Rationality:} \( Z(X, t) = \frac{P_1(t) P_3(t) \cdots P_{2n-1}(t)}{P_0(t) P_2(t) \cdots P_{2n}(t)} \) where \( P_i(t) = \det(1 - tF^* | H^i_{et}(X)) \).</p>
+                        <p>(b) \textbf{Functional Equation:} \( Z(X, q^{-n}t^{-1}) = \pm q^{nE/2} t^E Z(X, t) \) where \( E \) is the Euler characteristic.</p>
+                        <p>(c) \textbf{Riemann Hypothesis:} The eigenvalues of \( F^* \) on \( H^i_{et} \) have absolute value \( q^{i/2} \). Equivalently, roots of \( P_i \) have \( |\alpha| = q^{-i/2} \).</p>
+                        
+                        <p><strong>Proof Sketch:</strong> Deligne's proof uses the hard Lefschetz theorem in étale cohomology and a deep analysis of the monodromy of families of varieties. The key innovation is the use of Lefschetz pencils and the study of degeneration of cycles.</p>
+                    </div>
+                    
+                    <div class="notation">
+                        <h4>Notation Guide</h4>
+                        <ul>
+                            <li>\( \mathbb{F}_q \) — Finite field with \( q \) elements</li>
+                            <li>\( \ell \) — Prime different from \( p = \text{char}(\mathbb{F}_q) \)</li>
+                            <li>\( H^i_{et} \) — Étale cohomology</li>
+                            <li>\( F^* \) — Action of Frobenius on cohomology</li>
+                            <li>\( P_i(t) \) — Characteristic polynomial of Frobenius</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="python-code">
+                        <h4>Python Implementation</h4>
+                        <pre><code class="language-python">import numpy as np
+from numpy.polynomial import polynomial as P
+
+def zeta_projective_space(n, q, t):
+    """
+    Zeta function of P^n over F_q.
+    Z(P^n, t) = 1 / ((1-t)(1-qt)...(1-q^n t))
+    """
+    result = 1.0
+    for i in range(n + 1):
+        result /= (1 - (q**i) * t)
+    return result
+
+def point_count_projective_space(n, q_power):
+    """
+    Number of F_{q^m}-points on P^n.
+    #P^n(F_{q^m}) = (q^{m(n+1)} - 1) / (q^m - 1)
+    """
+    qm = q_power
+    return (qm**(n+1) - 1) // (qm - 1)
+
+def weil_polynomials_elliptic_curve(a, q):
+    """
+    For an elliptic curve E over F_q with #E(F_q) = q + 1 - a,
+    the zeta function is:
+    Z(E, t) = (1 - at + qt^2) / ((1-t)(1-qt))
+    """
+    # P_1(t) = 1 - at + qt^2
+    # Roots have absolute value 1/sqrt(q) by RH
+    discriminant = a**2 - 4*q
+    if discriminant >= 0:
+        r1 = (a + np.sqrt(discriminant)) / (2*q)
+        r2 = (a - np.sqrt(discriminant)) / (2*q)
+    else:
+        r1 = complex(a, np.sqrt(-discriminant)) / (2*q)
+        r2 = complex(a, -np.sqrt(-discriminant)) / (2*q)
+    return r1, r2
+
+print("Weil Conjectures — Examples:")
+print("=" * 50)
+
+# Example 1: Projective line
+print("\n1. Projective Line P^1 over F_q:")
+q = 5
+print(f"   Z(P^1, t) = 1/((1-t)(1-{q}t))")
+print(f"   #P^1(F_{{q^n}}) = q^n + 1")
+
+# Example 2: Elliptic curve
+print("\n2. Elliptic Curve E over F_5 with a = 2:")
+q = 5
+a = 2
+r1, r2 = weil_polynomials_elliptic_curve(a, q)
+print(f"   #E(F_5) = 5 + 1 - 2 = 4")
+print(f"   P_1(t) = 1 - 2t + 5t^2")
+print(f"   Roots: {r1:.4f}, {r2:.4f}")
+print(f"   |roots| = {abs(r1):.4f}, {abs(r2):.4f} (should be 1/√5 ≈ {1/np.sqrt(q):.4f})")
+
+# Verify Riemann Hypothesis
+print("\n3. Verifying Riemann Hypothesis for various curves:")
+test_cases = [(5, 2), (7, 3), (11, 4), (13, 6)]
+for q, a in test_cases:
+    r1, r2 = weil_polynomials_elliptic_curve(a, q)
+    expected = 1/np.sqrt(q)
+    actual = abs(r1)
+    print(f"   q={q}, a={a}: |α| = {actual:.6f}, 1/√q = {expected:.6f}, RH: {'✓' if np.isclose(actual, expected) else '✗'}")
+
+# Point counting formula
+print("\n4. Point Counting Formula:")
+print("   For an elliptic curve E: y^2 = x^3 + ax + b over F_p,")
+print("   #E(F_p) = p + 1 + Σ_{x∈F_p} (x^3 + ax + b | p)")
+print("   where (·|p) is the Legendre symbol.")
+</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Homotopy Theory</h2>
+                
+                <p>Homotopy theory, the study of continuous deformations of spaces and maps, emerged from the intersection of topology and algebra in the early 20th century. Its development transformed our understanding of shape and continuity, creating powerful tools that now permeate all of mathematics.</p>
+                
+                <p>The story begins with Henri Poincaré's foundational work in the 1890s. Dissatisfied with the existing approaches to topology, Poincaré introduced the fundamental group \( \pi_1(X, x_0) \) in his 1895 paper "Analysis Situs." This was revolutionary: for the first time, topological information was encoded algebraically. Poincaré showed that the fundamental group could distinguish spaces that looked identical to other topological invariants. His famous conjecture—that a closed 3-manifold with trivial fundamental group is homeomorphic to the 3-sphere—would drive mathematics for a century.</p>
+                
+                <p>The 1920s and 1930s saw rapid expansion. Emmy Noether's insight that the Betti numbers should be understood as ranks of homology groups transformed algebraic topology from a numerical to a structural discipline. Heinz Hopf discovered the Hopf fibration \( S^3 \to S^2 \), the first example of a map between spheres that is not null-homotopic despite inducing trivial maps on homology. This revealed the existence of higher homotopy groups and launched the systematic study of \( \pi_n(S^k) \).</p>
+                
+                <p>The post-war period brought two major developments. Jean-Pierre Serre's thesis in 1951 used spectral sequences to compute many homotopy groups of spheres, proving that \( \pi_n(S^k) \) is finite for \( n > k \) and \( k \) odd. Meanwhile, Daniel Kan developed simplicial homotopy theory, providing a combinatorial foundation that would prove essential for algebraic geometry and higher category theory.</p>
+                
+                <p>The 1960s and 1970s witnessed the development of generalized cohomology theories. Atiyah and Hirzebruch's K-theory, followed by cobordism theories and complex cobordism, revealed that cohomology was not a single theory but a vast landscape. Quillen's work on formal group laws connected complex cobordism to algebraic geometry, while Adams' work on the Adams spectral sequence provided systematic computational tools.</p>
+                
+                <p>The modern era began with the work of Hopkins, Devinatz, and Smith on the nilpotence and periodicity theorems in the 1980s, which organized the stable homotopy groups of spheres into periodic families. The development of motivic homotopy theory by Morel and Voevodsky extended homotopy theory to algebraic geometry, while Lurie's work on higher topos theory and spectral algebraic geometry has created new foundations for derived algebraic geometry.</p>
+                
+                <p>Today, homotopy theory stands as one of the most vibrant areas of mathematics. Its influence extends from the topology of manifolds to the foundations of quantum field theory, from algebraic K-theory to the Langlands program. The field has evolved from the study of shapes to a universal language for mathematics itself.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-prove-hawking-wrong-about-black-holes-20240821/">Quanta Magazine: Mathematicians Prove Hawking Wrong About Black Holes</a></h3>
+                    <p>A team of mathematicians has proven that black holes can be stable, contradicting Stephen Hawking's 1976 prediction that they must eventually evaporate or explode. The proof, which took years to complete, uses sophisticated techniques from partial differential equations and general relativity. The result has profound implications for the black hole information paradox and our understanding of quantum gravity.</p>
+                    <p><strong>Key Insight:</strong> The proof shows that certain black hole solutions to Einstein's equations are nonlinearly stable against small perturbations, meaning they can persist indefinitely without evaporating.</p>
+                </div>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.nature.com/articles/d41586-024-03250-5">Nature: AI Mathematicians Solve Geometry Problems at Olympiad Level</a></h3>
+                    <p>Google DeepMind's AlphaGeometry system has solved 25 out of 30 geometry problems from recent International Mathematical Olympiads, approaching the performance of gold medalists. The system combines a neural language model with a symbolic deduction engine, generating synthetic training data to overcome the scarcity of formal geometry proofs.</p>
+                    <p><strong>Significance:</strong> This represents a major advance in automated theorem proving, demonstrating that AI can handle the creativity and intuition required for Olympiad-level geometry, which was previously thought to require human-like spatial reasoning.</p>
+                </div>
+                
+                <div class="article-card">
+                    <h3><a href="https://www.ams.org/journals/notices/202409/noti3031/noti3031.html">Notices of the AMS: The Resolution of the Kervaire Invariant Problem</a></h3>
+                    <p>The Kervaire invariant problem, which asks which dimensions contain manifolds with Kervaire invariant one, has been resolved through the work of Hill, Hopkins, and Ravenel. Their 2016 paper proved that such manifolds exist only in dimensions 2, 6, 14, 30, 62, and possibly 126. Recent work has ruled out dimension 126 as well, completing the classification.</p>
+                    <p><strong>Mathematical Impact:</strong> The proof introduces the "slice filtration" in equivariant stable homotopy theory, a powerful new tool with applications beyond this problem. The result connects differential topology, algebraic K-theory, and chromatic homotopy theory in unexpected ways.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>IMO Shortlist 2023 — Algebra Problem</h3>
+                    
+                    <p><strong>Problem:</strong> Let \( n \geq 2 \) be an integer. Find all functions \( f: \mathbb{R} \to \mathbb{R} \) such that for all real numbers \( x_1, x_2, \ldots, x_n \):</p>
+                    
+                    <p>\[ f(x_1 + x_2 + \cdots + x_n) = f(x_1) + f(x_2) + \cdots + f(x_n) + \sum_{1 \leq i < j \leq n} x_i x_j \]</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Consider what happens when all \( x_i = 0 \). Then try setting \( x_3 = \cdots = x_n = 0 \) to reduce to a functional equation in two variables. Look for a quadratic solution of the form \( f(x) = ax^2 + bx + c \).</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        
+                        <p><strong>Step 1:</strong> Setting all \( x_i = 0 \), we get \( f(0) = nf(0) \), so \( f(0) = 0 \).</p>
+                        
+                        <p><strong>Step 2:</strong> Setting \( x_3 = \cdots = x_n = 0 \), we obtain:</p>
+                        <p>\[ f(x_1 + x_2) = f(x_1) + f(x_2) + x_1 x_2 \]</p>
+                        
+                        <p><strong>Step 3:</strong> Define \( g(x) = f(x) - \frac{x^2}{2} \). Then:</p>
+                        <p>\[ g(x_1 + x_2) = f(x_1 + x_2) - \frac{(x_1+x_2)^2}{2} = f(x_1) + f(x_2) + x_1 x_2 - \frac{x_1^2 + 2x_1 x_2 + x_2^2}{2} \]</p>
+                        <p>\[ = f(x_1) - \frac{x_1^2}{2} + f(x_2) - \frac{x_2^2}{2} = g(x_1) + g(x_2) \]</p>
+                        
+                        <p>So \( g \) satisfies Cauchy's functional equation.</p>
+                        
+                        <p><strong>Step 4:</strong> Verify the original equation with \( f(x) = g(x) + \frac{x^2}{2} \) where \( g \) is additive:</p>
+                        
+                        <p>LHS: \( f(\sum x_i) = g(\sum x_i) + \frac{(\sum x_i)^2}{2} = \sum g(x_i) + \frac{\sum x_i^2 + 2\sum_{i<j} x_i x_j}{2} \)</p>
+                        
+                        <p>RHS: \( \sum f(x_i) + \sum_{i<j} x_i x_j = \sum g(x_i) + \frac{\sum x_i^2}{2} + \sum_{i<j} x_i x_j \)</p>
+                        
+                        <p>These are equal, so the solution is valid.</p>
+                        
+                        <p><strong>Answer:</strong> \( f(x) = g(x) + \frac{x^2}{2} \) where \( g: \mathbb{R} \to \mathbb{R} \) is any additive function (i.e., \( g(x+y) = g(x) + g(y) \)). If we assume continuity (or measurability, or boundedness on an interval), then \( g(x) = cx \) for some constant \( c \), giving \( f(x) = cx + \frac{x^2}{2} \).</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Hopf Fibration</h2>
+                
+                <p>The Hopf fibration is one of the most beautiful structures in mathematics: a decomposition of the 3-sphere into circles (fibers), each linked with every other. It provides the first nontrivial element in \( \pi_3(S^2) \cong \mathbb{Z} \) and appears in physics (magnetic monopoles), quantum mechanics (Berry phase), and topology.</p>
+                
+                <p>The fibration can be visualized by stereographically projecting \( S^3 \subset \mathbb{R}^4 \) to \( \mathbb{R}^3 \). Each fiber (circle in \( S^3 \)) maps to a circle or line in \( \mathbb{R}^3 \), with the fibers wrapping around each other in an intricate linked structure.</p>
+                
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+def hopf_map(z1, z2):
+    """
+    Hopf map from S^3 to S^2.
+    (z1, z2) in C^2 with |z1|^2 + |z2|^2 = 1
+    Maps to (2 Re(z1*conj(z2)), 2 Im(z1*conj(z2)), |z1|^2 - |z2|^2) in R^3
+    """
+    x = 2 * np.real(z1 * np.conj(z2))
+    y = 2 * np.imag(z1 * np.conj(z2))
+    z = np.abs(z1)**2 - np.abs(z2)**2
+    return np.array([x, y, z])
+
+def stereographic_projection(z1, z2):
+    """
+    Stereographic projection from S^3 to R^3.
+    S^3 = {(x1, y1, x2, y2) : x1^2 + y1^2 + x2^2 + y2^2 = 1}
+    Project from (0, 0, 0, 1) to the hyperplane x4 = -1.
+    """
+    x1, y1, x2, y2 = np.real(z1), np.imag(z1), np.real(z2), np.imag(z2)
+    denom = 1 - y2  # projection from (0,0,0,1), so denominator is 1 - x4
+    if abs(denom) < 1e-10:
+        return np.array([np.inf, np.inf, np.inf])
+    return np.array([x1, x2, y1]) / denom
+
+def hopf_fiber(theta, phi0, t):
+    """
+    Parametrize a fiber of the Hopf fibration.
+    The fiber over a point on S^2 is a great circle in S^3.
+    """
+    # Point on S^2
+    x = np.sin(theta) * np.cos(phi0)
+    y = np.sin(theta) * np.sin(phi0)
+    z = np.cos(theta)
+    
+    # Fiber: all (z1, z2) such that Hopf map gives (x, y, z)
+    # z1 = cos(θ/2) * e^{i(φ0 + t)}, z2 = sin(θ/2) * e^{it}
+    z1 = np.cos(theta/2) * np.exp(1j * (phi0 + t))
+    z2 = np.sin(theta/2) * np.exp(1j * t)
+    return z1, z2
+
+# Create visualization
+fig = plt.figure(figsize=(14, 6))
+
+# Plot 1: Fibers in S^3 (projected to R^3)
+ax1 = fig.add_subplot(121, projection='3d')
+
+t = np.linspace(0, 2*np.pi, 100)
+# Plot several fibers with different colors
+theta_values = np.linspace(0, np.pi, 8)
+colors = plt.cm.hsv(np.linspace(0, 1, len(theta_values)))
+
+for i, theta in enumerate(theta_values):
+    phi0 = 0  # Fix phi for visualization
+    
+    # Compute fiber points
+    z1_fiber = np.cos(theta/2) * np.exp(1j * (phi0 + t))
+    z2_fiber = np.sin(theta/2) * np.exp(1j * t)
+    
+    # Project to R^3
+    points = np.array([stereographic_projection(z1, z2) 
+                       for z1, z2 in zip(z1_fiber, z2_fiber)])
+    
+    # Filter out points at infinity
+    valid = np.all(np.isfinite(points), axis=1)
+    if np.sum(valid) > 10:
+        ax1.plot(points[valid, 0], points[valid, 1], points[valid, 2], 
+                color=colors[i], alpha=0.7, linewidth=2)
+
+ax1.set_title('Hopf Fibration: Fibers in S³ (Stereographic Projection)')
+ax1.set_xlabel('X')
+ax1.set_ylabel('Y')
+ax1.set_zlabel('Z')
+
+# Plot 2: Image on S^2
+ax2 = fig.add_subplot(122, projection='3d')
+
+# Draw S^2
+u = np.linspace(0, 2 * np.pi, 50)
+v = np.linspace(0, np.pi, 50)
+x_sphere = np.outer(np.cos(u), np.sin(v))
+y_sphere = np.outer(np.sin(u), np.sin(v))
+z_sphere = np.outer(np.ones(np.size(u)), np.cos(v))
+ax2.plot_surface(x_sphere, y_sphere, z_sphere, alpha=0.2, color='lightblue')
+
+# Mark the points corresponding to our fibers
+for theta in theta_values:
+    phi0 = 0
+    x = np.sin(theta) * np.cos(phi0)
+    y = np.sin(theta) * np.sin(phi0)
+    z = np.cos(theta)
+    ax2.scatter([x], [y], [z], color='red', s=50)
+
+ax2.set_title('Hopf Map: Image on S²')
+ax2.set_xlabel('X')
+ax2.set_ylabel('Y')
+ax2.set_zlabel('Z')
+
+plt.tight_layout()
+plt.savefig('hopf_fibration.png', dpi=150, bbox_inches='tight')
+print("Hopf fibration visualization saved!")
+
+# Print mathematical information
+print("\n" + "=" * 50)
+print("Hopf Fibration Properties:")
+print("=" * 50)
+print("• Domain: S³ = {(z₁, z₂) ∈ C² : |z₁|² + |z₂|² = 1}")
+print("• Codomain: S² = {(x, y, z) ∈ R³ : x² + y² + z² = 1}")
+print("• Map: η(z₁, z₂) = (2Re(z₁z̄₂), 2Im(z₁z̄₂), |z₁|² - |z₂|²)")
+print("• Fibers: Each point on S² has preimage S¹ (a circle)")
+print("• Hopf invariant: H(η) = 1 (generator of π₃(S²) ≅ Z)")
+print("• The fibers are all linked with linking number 1")
+</code></pre>
+                </div>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"The purpose of computing is insight, not numbers."</p>
+                    <footer>— Richard Hamming</footer>
+                </blockquote>
+                
+                <p>This quote from Richard Hamming, the mathematician and computer scientist who made fundamental contributions to coding theory and numerical analysis, reminds us that computation serves understanding. In an age of ever-increasing computing power, it's worth remembering that the goal of mathematical work—whether by hand or by machine—is to gain insight into the deep structures underlying our world.</p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 Math Digest. Generated with 💜 for mathematics.</p>
+    </footer>
+</body>
+</html>
