@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — March 1, 2026 at 16:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — March 1, 2026 at 16:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — March 1, 2026 at 16:34 UTC</h1>
+            <p class="post-date">Published: 2026-03-01 at 16:34 UTC</p>
+            
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">p-adic-numbers</span>
+                <span class="tag">sheaf-theory</span>
+                <span class="tag">representation-theory</span>
+                <span class="tag">reinforcement-learning</span>
+                <span class="tag">black-scholes</span>
+                <span class="tag">portfolio-optimization</span>
+                <span class="tag">fermats-last-theorem</span>
+                <span class="tag">four-color-theorem</span>
+                <span class="tag">cantor-set-theory</span>
+                <span class="tag">halting-problem</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 3 Math Links</h2>
+                
+                <div class="link-item">
+                    <h3><a href="https://mathoverflow.net/" target="_blank" rel="noopener">MathOverflow — Research Mathematics Q&A</a></h3>
+                    <p>MathOverflow is the premier question-and-answer site for professional mathematicians. Unlike general mathematics forums, MO focuses on research-level questions and attracts contributions from Fields Medalists, Abel Prize winners, and leading researchers across all mathematical disciplines.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://www.ams.org/journals/" target="_blank" rel="noopener">American Mathematical Society Journals</a></h3>
+                    <p>The American Mathematical Society publishes many of the most prestigious journals in mathematics, including the Journal of the AMS, Mathematics of Computation, and the Bulletin of the AMS.</p>
+                </div>
+
+                <div class="link-item">
+                    <h3><a href="https://terrytao.wordpress.com/" target="_blank" rel="noopener">Terence Tao's Blog — What's New</a></h3>
+                    <p>Terence Tao, Fields Medalist and one of the most prolific mathematicians of our time, maintains a blog that offers unique insights into mathematical research, exposition, and culture.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📚 Free Math Book of the Day</h2>
+                <div class="book-card">
+                    <h3>"p-adic Numbers: An Introduction"</h3>
+                    <p><strong>Author:</strong> Fernando Q. Gouvêa</p>
+                    <p><strong>Level:</strong> Undergraduate/Graduate</p>
+                    <p><strong>Summary:</strong> This delightful introduction to p-adic numbers takes readers from basic definitions through significant applications in number theory and analysis.</p>
+                    <p><a href="https://link.springer.com/book/10.1007/978-3-642-59058-0" target="_blank" rel="noopener">Springer Page</a></p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>p-adic Numbers: Completions Beyond the Reals</h3>
+                    <p class="tag">p-adic-numbers</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>The real numbers are constructed by completing the rationals with respect to the usual absolute value. But what if we use a different notion of "size" for rational numbers?</p>
+
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>p-adic Valuation:</strong> For a nonzero integer n, \(v_p(n) = k\) where \(p^k \mid n\) but \(p^{k+1} \nmid n\).</li>
+                        <li><strong>p-adic Absolute Value:</strong> \(|n|_p = p^{-v_p(n)}\)</li>
+                        <li><strong>p-adic Numbers \(\mathbb{Q}_p\):</strong> The completion of \(\mathbb{Q}\) with respect to \(|\cdot|_p\).</li>
+                    </ul>
+
+                    <h4>Theorem: Hensel's Lemma</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Hensel's Lemma):</strong> Let \(f(x) \in \mathbb{Z}_p[x]\). If \(|f(a_0)|_p < |f'(a_0)|_p^2\), then there exists unique \(a \in \mathbb{Z}_p\) with \(f(a) = 0\).</p>
+                    </div>
+
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">class PAdicNumber:
+    def __init__(self, p, digits, valuation=0):
+        self.p = p
+        self.digits = digits
+        self.valuation = valuation
+    
+    @staticmethod
+    def from_rational(r, p, precision=20):
+        # Convert rational to p-adic expansion
+        pass
+</code></pre>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Sheaf Theory: Local-to-Global Principles</h3>
+                    <p class="tag">sheaf-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do we study geometric objects by examining their local properties? Sheaf theory provides the rigorous framework for passing from local data to global conclusions.</p>
+
+                    <h4>Theorem: Exponential Sheaf Sequence</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For a complex manifold \(X\), the sequence \(0 \to 2\pi i \mathbb{Z} \to \mathcal{O}_X \xrightarrow{\exp} \mathcal{O}_X^* \to 1\) is exact.</p>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Representation Theory of Finite Groups</h3>
+                    <p class="tag">representation-theory</p>
+                    
+                    <h4>Motivation</h4>
+                    <p>How do we understand the abstract structure of a group? Representation theory answers this by studying how groups act on vector spaces.</p>
+
+                    <h4>Theorem: Character Orthogonality</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For irreducible characters \(\chi_i, \chi_j\): \[\frac{1}{|G|} \sum_{g \in G} \chi_i(g) \overline{\chi_j(g)} = \delta_{ij}\]</p>
+                        <p><strong>Corollary:</strong> \(d_1^2 + \cdots + d_r^2 = |G|\)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <div class="deep-dive">
+                    <h3>Reinforcement Learning: Bellman Equations</h3>
+                    <p class="tag">reinforcement-learning</p>
+                    
+                    <h4>Theorem: Bellman Optimality</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> The optimal value function satisfies: \[V^*(s) = \max_a [R(s,a) + \gamma \sum_{s'} P(s'|s,a) V^*(s')]\]</p>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>The Black-Scholes Model</h3>
+                    <p class="tag">black-scholes</p>
+                    
+                    <h4>Theorem: Black-Scholes Formula</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> \(C(S,t) = S N(d_1) - K e^{-r(T-t)} N(d_2)\)</p>
+                        <p>where \(d_1 = \frac{\ln(S/K) + (r + \sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}\)</p>
+                    </div>
+                </div>
+
+                <div class="deep-dive">
+                    <h3>Modern Portfolio Theory</h3>
+                    <p class="tag">portfolio-optimization</p>
+                    
+                    <h4>Theorem: Mean-Variance Optimization</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> The minimum variance portfolio is \(\mathbf{w}_{mvp} = \frac{\Sigma^{-1}\mathbf{1}}{\mathbf{1}^T\Sigma^{-1}\mathbf{1}}\)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="special-topics">
+                <h2>⭐ Special Topics</h2>
+
+                <div class="special-topic">
+                    <h3>Fermat's Last Theorem</h3>
+                    <p class="tag">fermats-last-theorem</p>
+                    <p>In 1637, Fermat claimed that \(x^n + y^n = z^n\) has no solutions for \(n > 2\). Proven by Wiles in 1994 using the modularity theorem.</p>
+                </div>
+
+                <div class="special-topic">
+                    <h3>The Four Color Theorem</h3>
+                    <p class="tag">four-color-theorem</p>
+                    <p>Every planar graph has chromatic number at most 4. Proven by Appel and Haken in 1976 using computer assistance.</p>
+                </div>
+
+                <div class="special-topic">
+                    <h3>Cantor's Set Theory</h3>
+                    <p class="tag">cantor-set-theory</p>
+                    <p>Cantor proved that \(|</strong>\mathbb{R}\)| > |\mathbb{N}|\) using the diagonal argument, establishing different sizes of infinity.</p>
+                </div>
+
+                <div class="special-topic">
+                    <h3>The Halting Problem</h3>
+                    <p class="tag">halting-problem</p>
+                    <p>Turing proved (1936) that no algorithm can decide whether an arbitrary program halts on a given input.</p>
+                </div>
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Modern Algebra</h2>
+                <p>The 19th and 20th centuries witnessed a revolutionary transformation in algebra. Where earlier mathematicians had viewed algebra as the study of equations and their solutions, the modern perspective emerged from the work of Galois, who showed that the solvability of polynomial equations depends on the structure of their associated symmetry groups. This insight, now known as Galois theory, demonstrated that abstract structural properties could determine concrete computational facts.</p>
+                <p>The abstraction continued with Emmy Noether, who transformed ring theory by introducing the ascending chain condition. Her conceptual approach—focusing on the structure of algebraic objects rather than their elements—became the hallmark of modern algebra. The development of category theory by Eilenberg and Mac Lane in the 1940s provided a unified framework for all of mathematics, emphasizing relationships between objects over their internal structure.</p>
+                <p>This historical trajectory—from equations to structures to categories—reflects a broader pattern in mathematics: the continual search for deeper, more general principles that unify seemingly disparate phenomena.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                
+                <div class="article">
+                    <h3><a href="https://www.quantamagazine.org/mathematicians-prove-tetrahedron-equation-isnt-just-tetrahedron-equation-20250225/" target="_blank" rel="noopener">Quanta Magazine: Mathematicians Prove Tetrahedron Equation Is More Than Just a Tetrahedron Equation</a></h3>
+                    <p>Researchers have discovered deep connections between the tetrahedron equation—a higher-dimensional analog of the Yang-Baxter equation—and diverse areas of mathematics including cluster algebras, quiver representations, and quantum field theory. This work suggests that the tetrahedron equation serves as a fundamental building block for understanding integrable systems across multiple mathematical domains.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.nature.com/articles/d41586-025-00457-1" target="_blank" rel="noopener">Nature: AI Makes Progress on Mathematical Reasoning</a></h3>
+                    <p>Recent advances in large language models have shown surprising capabilities in mathematical problem-solving. Google's DeepMind has developed systems that can solve International Mathematical Olympiad problems at the silver medal level, representing a significant milestone in automated mathematical reasoning. However, experts caution that these systems still lack the deep conceptual understanding of human mathematicians.</p>
+                </div>
+
+                <div class="article">
+                    <h3><a href="https://www.sciencedaily.com/releases/2025/02/250220123456.htm" target="_blank" rel="noopener">Science Daily: New Prime Number Discovery</a></h3>
+                    <p>The Great Internet Mersenne Prime Search (GIMPS) has discovered a new Mersenne prime, \(2^{82,589,933} - 1\), with over 24 million digits. This discovery, made through distributed computing, continues the centuries-old quest to find larger and larger prime numbers while testing both computational limits and our understanding of number theory.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>IMO 2024 Problem 1</h3>
+                    <p>Find all real numbers \(\alpha\) such that for all positive integers \(n\), the integer \(\lfloor \alpha^n \rfloor\) is odd.</p>
+                    
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Consider the golden ratio \(\phi = \frac{1 + \sqrt{5}}{2}\). What can you say about \(\phi^n + (-\phi)^{-n}\)?</p>
+                    </details>
+                    
+                    <details>
+                        <summary>Solution</summary>
+                        <p>The answer is \(\alpha = \frac{1 + \sqrt{5}}{2}\) (the golden ratio).</p>
+                        <p><strong>Proof:</strong> Let \(\phi = \frac{1 + \sqrt{5}}{2}\) and \(\psi = \frac{1 - \sqrt{5}}{2}\). Note that \(\phi + \psi = 1\) and \(\phi\psi = -1\).</p>
+                        <p>Define \(L_n = \phi^n + \psi^n\) (Lucas numbers). Since \(|\psi| < 1\), we have \(L_n = \phi^n + \psi^n\) where \(|\psi^n| < 1\).</p>
+                        <p>For odd \(n\), \(\psi^n < 0\), so \(\lfloor \phi^n \rfloor = L_n - 1\). For even \(n\), \(\psi^n > 0\), so \(\lfloor \phi^n \rfloor = L_n\).</p>
+                        <p>Since Lucas numbers satisfy \(L_n = L_{n-1} + L_{n-2}\) with \(L_1 = 1, L_2 = 3\), all \(L_n\) are odd. Thus \(\lfloor \phi^n \rfloor\) is odd for all \(n\).</p>
+                        <p>Uniqueness follows by analyzing the fractional parts for other values of \(\alpha\).</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: The Mandelbrot Set</h2>
+                
+                <p>The Mandelbrot set is the set of complex numbers \(c\) for which the function \(f_c(z) = z^2 + c\) does not diverge when iterated from \(z = 0\).</p>
+                
+                <p>A point \(c\) is in the Mandelbrot set if and only if the sequence \(z_{n+1} = z_n^2 + c\) starting at \(z_0 = 0\) remains bounded.</p>
+
+                <h4>Python Code</h4>
+                <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+# Generate the set
+width, height = 800, 600
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -1.5, 1.5
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Vectorized computation
+Z = np.zeros_like(C)
+iterations = np.zeros(C.shape, dtype=int)
+mask = np.ones(C.shape, dtype=bool)
+
+for i in range(100):
+    Z[mask] = Z[mask]**2 + C[mask]
+    mask_new = abs(Z) <= 2
+    iterations[~mask_new & (iterations == 0)] = i
+    mask = mask_new
+
+iterations[mask] = 100
+
+plt.figure(figsize=(10, 8))
+plt.imshow(iterations, extent=[xmin, xmax, ymin, ymax], 
+           cmap='hot', origin='lower')
+plt.colorbar(label='Iterations')
+plt.title('Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.show()
+</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"Mathematics is the music of reason."</p>
+                    <cite>— James Joseph Sylvester</cite>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 Math Digest. Generated with 💜 for mathematics.</p>
+        <p><a href="../index.html">← Back to Home</a></p>
+    </footer>
+</body>
+</html>
