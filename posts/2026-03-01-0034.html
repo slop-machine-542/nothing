@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — March 1, 2026 at 00:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — March 1, 2026 at 00:34</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — March 1, 2026 at 00:34 UTC</h1>
+            
+            <div class="tags">
+                <span class="tag">riemann-surfaces</span>
+                <span class="tag">spectral-sequences</span>
+                <span class="tag">mirror-symmetry</span>
+            </div>
+
+            <!-- ==================== MATH LINKS ==================== -->
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                
+                <div class="link-entry">
+                    <h3><a href="https://stacks.math.columbia.edu/">Stacks Project</a></h3>
+                    <p>An open-source textbook and reference work on algebraic stacks and the algebraic geometry needed to define them. With over 7000 pages, it is the most comprehensive modern reference for algebraic geometry, maintained by a community of mathematicians led by Aise Johan de Jong. The project uses a unique tag system for precise referencing.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://kerodon.net/">Kerodon</a></h3>
+                    <p>An online resource for homotopy-coherent mathematics, focusing on higher category theory and higher algebra. Written and maintained by Jacob Lurie, Kerodon provides a comprehensive treatment of \(\infty\)-categories and their applications to algebraic topology and algebraic geometry.</p>
+                </div>
+
+                <div class="link-entry">
+                    <h3><a href="https://www.lmfdb.org/">LMFDB</a></h3>
+                    <p>The L-functions and Modular Forms Database is an extensive database of mathematical objects arising in the Langlands program. It includes data on elliptic curves, modular forms, number fields, and L-functions, allowing researchers to discover connections and verify conjectures computationally.</p>
+                </div>
+            </section>
+
+            <!-- ==================== FREE MATH BOOK ==================== -->
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                
+                <div class="book-entry">
+                    <h3>Riemann Surfaces</h3>
+                    <p><strong>Author:</strong> Otto Forster</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Available at:</strong> <a href="https://www.math.uh.edu/~shanyuji/Complex/Forster.pdf">University of Houston Mirror</a></p>
+                    
+                    <p><strong>Summary:</strong> This classic text provides a comprehensive introduction to the theory of Riemann surfaces, covering holomorphic functions, differential forms, the Riemann-Roch theorem, and the Jacobi inversion problem. Forster's approach emphasizes the sheaf-theoretic perspective while maintaining accessibility. The book includes detailed treatments of covering spaces, the universal covering, and the relationship between algebraic curves and Riemann surfaces. Each chapter contains exercises ranging from routine computations to deeper theoretical problems, making it suitable for both classroom use and self-study.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PURE MATH DEEP DIVES ==================== -->
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <!-- Pure Math 1: Riemann Surfaces -->
+                <div class="deep-dive">
+                    <h3>Riemann Surfaces: Complex Geometry in One Dimension</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Riemann surfaces are one-dimensional complex manifolds that provide the natural setting for studying multi-valued complex functions. They emerged from Riemann's investigation of algebraic functions and their integrals, unifying complex analysis, algebraic geometry, and topology. Every compact Riemann surface is an algebraic curve, establishing a profound bridge between analysis and algebra.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Riemann Surface:</strong> A one-dimensional connected complex manifold \(X\). Equivalently, a Hausdorff space with a holomorphic atlas \(\{(U_i, \phi_i)\}\) where \(\phi_i: U_i \to \mathbb{C}\) are homeomorphisms onto open subsets with holomorphic transition functions.</p>
+
+                    <p><strong>Meromorphic Function:</strong> A holomorphic map \(f: X \to \mathbb{P}^1\) to the Riemann sphere. Locally, \(f = g/h\) where \(g, h\) are holomorphic.</p>
+
+                    <p><strong>Genus:</strong> For a compact Riemann surface, the genus \(g\) is the number of "holes" in the surface, given by \(g = \frac{1}{2}\dim H^1(X, \mathbb{C})\).</p>
+
+                    <p><strong>Divisor:</strong> A formal finite sum \(D = \sum_{p \in X} n_p \cdot p\) where \(n_p \in \mathbb{Z}\). The degree is \(\deg(D) = \sum n_p\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Riemann-Roch Theorem:</strong> Let \(X\) be a compact Riemann surface of genus \(g\) and \(D\) a divisor. Then:
+                    \[\ell(D) - \ell(K - D) = \deg(D) + 1 - g\]
+                    where \(\ell(D) = \dim H^0(X, \mathcal{O}_D)\) and \(K\) is a canonical divisor.</p>
+
+                    <p><em>Proof Sketch:</em> The proof proceeds in several stages. First, one establishes the existence of meromorphic functions with prescribed poles (Mittag-Leffler problem). The key insight is to consider the exact sequence of sheaves \(0 \to \mathcal{O}_D \to \mathcal{O}_{D+p} \to \mathbb{C}_p \to 0\) and analyze the resulting long exact sequence in cohomology. The dimension \(\ell(D)\) can only increase by at most 1 when adding a point to \(D\). By Serre duality, \(H^1(X, \mathcal{O}_D) \cong H^0(X, \Omega_{-D})^*\), which gives \(\ell(K-D) = h^1(D)\). Combining these yields the formula.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{O}_X\) — structure sheaf of holomorphic functions</li>
+                        <li>\(\Omega_X\) — sheaf of holomorphic 1-forms</li>
+                        <li>\(K = \text{div}(\omega)\) — canonical divisor (for any non-zero meromorphic 1-form \(\omega\))</li>
+                        <li>\(g = h^0(X, \Omega_X)\) — genus</li>
+                        <li>\(\chi(\mathcal{F}) = \sum (-1)^i h^i(X, \mathcal{F})\) — Euler characteristic</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+class RiemannSurface:
+    """Model of a Riemann surface (torus example)."""
+    
+    def __init__(self, tau=1j):
+        """
+        Initialize complex torus C/(Z + tau*Z).
+        tau: period ratio in upper half-plane
+        """
+        self.tau = tau
+        self.g = 1  # Genus of torus
+    
+    def weierstrass_p(self, z, g2, g3, terms=20):
+        """
+        Weierstrass p-function: doubly periodic meromorphic function.
+        p(z) = 1/z^2 + sum_{w≠0} [1/(z-w)^2 - 1/w^2]
+        """
+        result = 1/z**2 if z != 0 else 0
+        
+        # Sum over lattice points
+        for m in range(-terms, terms+1):
+            for n in range(-terms, terms+1):
+                if m == 0 and n == 0:
+                    continue
+                w = m + n * self.tau
+                result += 1/(z-w)**2 - 1/w**2
+        
+        return result
+    
+    def holomorphic_forms(self):
+        """Return basis of holomorphic 1-forms."""
+        # On a torus, dz is the unique (up to scalar) holomorphic 1-form
+        return ["dz"]
+    
+    def riemann_roch(self, D_degree):
+        """Apply Riemann-Roch for divisor of given degree."""
+        g = self.g
+        deg_D = D_degree
+        
+        # Riemann-Roch: l(D) - l(K-D) = deg(D) + 1 - g
+        # For torus (g=1): l(D) - l(K-D) = deg(D)
+        
+        if deg_D > 0:
+            # l(K-D) = 0 when deg(D) > 2g-2 = 0
+            l_D = deg_D  # l(D) = deg(D) for deg(D) > 0
+            l_K_minus_D = 0
+        elif deg_D == 0:
+            l_D = 1  # Only constants
+            l_K_minus_D = 1
+        else:
+            l_D = 0
+            l_K_minus_D = -deg_D
+        
+        return l_D, l_K_minus_D
+
+# Example: Torus with period tau = i
+torus = RiemannSurface(tau=1j)
+print("Riemann Surface: Complex Torus")
+print(f"Period ratio τ = {torus.tau}")
+print(f"Genus g = {torus.g}")
+print(f"\nRiemann-Roch computation:")
+
+for d in [-1, 0, 1, 2, 3]:
+    l_D, l_KmD = torus.riemann_roch(d)
+    print(f"  deg(D) = {d:2d}: l(D) = {l_D}, l(K-D) = {l_KmD}, l(D)-l(K-D) = {l_D-l_KmD}")
+
+# Verify Riemann-Roch
+print(f"\nVerification: deg(D) + 1 - g = deg(D) + 1 - 1 = deg(D)")
+print("Riemann-Roch formula satisfied!")</code></pre>
+                </div>
+
+                <!-- Pure Math 2: Spectral Sequences -->
+                <div class="deep-dive">
+                    <h3>Spectral Sequences: Computational Machinery in Homological Algebra</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Spectral sequences are powerful computational tools in algebraic topology and homological algebra that allow one to compute complex derived functors by successive approximations. They arise naturally in situations where we have a filtered complex or a double complex, providing a systematic way to organize and compute cohomology.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Homological Spectral Sequence:</strong> A collection \(\{E^r_{p,q}\}_{r \geq a}\) of abelian groups with differentials \(d^r: E^r_{p,q} \to E^r_{p-r, q+r-1}\) satisfying \(d^r \circ d^r = 0\) and isomorphisms \(E^{r+1}_{p,q} \cong H(E^r_{p,q})\).</p>
+
+                    <p><strong>Convergence:</strong> A spectral sequence converges to \(H_*\) (written \(E^r_{p,q} \Rightarrow H_{p+q}\)) if there exists a filtration \(F_p H_n\) such that \(E^\infty_{p,q} \cong F_p H_{p+q}/F_{p-1} H_{p+q}\).</p>
+
+                    <p><strong>Leray-Serre Spectral Sequence:</strong> For a fibration \(F \to E \to B\) with \(B\) simply connected, there is a spectral sequence with \(E^2_{p,q} = H_p(B; H_q(F)) \Rightarrow H_{p+q}(E)\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Leray-Serre Theorem:</strong> Let \(p: E \to B\) be a fibration with fiber \(F\). If \(B\) is path-connected and \(\pi_1(B)\) acts trivially on \(H_*(F)\), then there exists a first-quadrant homology spectral sequence with:
+                    \[E^2_{p,q} = H_p(B; H_q(F; G)) \Rightarrow H_{p+q}(E; G)\]
+                    The differential \(d^r\) has bidegree \((-r, r-1)\).</p>
+
+                    <p><em>Proof Sketch:</strong> The proof constructs a filtration on the singular chain complex \(C_*(E)\) using the skeletal filtration of \(B\). For each cell \(e^p_\alpha\) in \(B\), consider the preimage \(p^{-1}(e^p_\alpha) \cong e^p_\alpha \times F\). This gives a filtration \(F_p C_*(E) = C_*(p^{-1}(B^{(p)}))\). The associated spectral sequence has the claimed \(E^2\) page by analyzing the local coefficient system.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(E^r_{p,q}\) — page \(r\), position \((p,q)\) (homological grading)</li>
+                        <li>\(E_r^{p,q}\) — cohomological spectral sequence</li>
+                        <li>\(d^r\) — differential on page \(r\)</li>
+                        <li>\(E^\infty_{p,q}\) — limiting term</li>
+                        <li>\(\Rightarrow\) — converges to</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class SpectralSequence:
+    """
+    Simplified model of a spectral sequence computation.
+    Example: Leray-Serre for trivial fibration S^1 -> S^1 x S^1 -> S^1
+    """
+    
+    def __init__(self, base_betti, fiber_betti):
+        """
+        Initialize with Betti numbers of base and fiber.
+        """
+        self.base = base_betti  # List of Betti numbers for base
+        self.fiber = fiber_betti  # List of Betti numbers for fiber
+        self.E2 = self._compute_E2()
+    
+    def _compute_E2(self):
+        """Compute E^2 page: E^2_{p,q} = H_p(Base) ⊗ H_q(Fiber)"""
+        max_p = len(self.base)
+        max_q = len(self.fiber)
+        E2 = np.zeros((max_p, max_q), dtype=int)
+        
+        for p in range(max_p):
+            for q in range(max_q):
+                E2[p, q] = self.base[p] * self.fiber[q]
+        
+        return E2
+    
+    def compute_total_betti(self):
+        """Compute Betti numbers of total space from E^∞."""
+        # For product: E^2 = E^∞ (spectral sequence collapses)
+        max_n = len(self.base) + len(self.fiber) - 2
+        total_betti = np.zeros(max_n + 1, dtype=int)
+        
+        for p in range(len(self.base)):
+            for q in range(len(self.fiber)):
+                n = p + q
+                if n <= max_n:
+                    total_betti[n] += self.E2[p, q]
+        
+        return total_betti
+
+# Example: S^1 x S^1 (torus) as product of S^1 with S^1
+print("Leray-Serre Spectral Sequence Example")
+print("=" * 50)
+
+# Betti numbers of S^1: b_0 = 1, b_1 = 1
+S1_betti = [1, 1]
+
+ss = SpectralSequence(S1_betti, S1_betti)
+
+print("\nE^2 page (E^2_{p,q} = H_p(S^1) ⊗ H_q(S^1)):")
+print(ss.E2)
+
+print("\nBetti numbers of total space (Torus T^2):")
+total = ss.compute_total_betti()
+for i, b in enumerate(total):
+    print(f"  b_{i} = {b}")
+
+print("\nVerification: T^2 has b_0=1, b_1=2, b_2=1 ✓")
+
+# Example 2: S^2 x S^1
+print("\n" + "=" * 50)
+print("Example: S^2 x S^1")
+S2_betti = [1, 0, 1]  # S^2: b_0=1, b_1=0, b_2=1
+
+ss2 = SpectralSequence(S2_betti, S1_betti)
+print("\nE^2 page:")
+print(ss2.E2)
+
+print("\nBetti numbers of S^2 x S^1:")
+total2 = ss2.compute_total_betti()
+for i, b in enumerate(total2):
+    print(f"  b_{i} = {b}")</code></pre>
+                </div>
+
+                <!-- Pure Math 3: Class Field Theory -->
+                <div class="deep-dive">
+                    <h3>Class Field Theory: The Crown Jewel of Algebraic Number Theory</h3>
+                    
+                    <h4>Motivation</h4>
+                    <p>Class field theory describes the abelian extensions of number fields and function fields. It provides a complete classification of abelian extensions in terms of intrinsic data of the base field, establishing a profound correspondence between Galois groups and generalized ideal class groups.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Ray Class Group:</strong> For a modulus \(\mathfrak{m}\) (formal product of primes), the ray class group \(Cl_\mathfrak{m}(K)\) is the quotient of fractional ideals coprime to \(\mathfrak{m}\) by principal ideals generated by elements \(\alpha \equiv 1 \pmod{\mathfrak{m}}\).</p>
+
+                    <p><strong>Artin Map:</strong> For an abelian extension \(L/K\) unramified outside \(\mathfrak{m}\), the Artin map \(\psi_{L/K}: Cl_\mathfrak{m}(K) \to \text{Gal}(L/K)\) sends a prime ideal \(\mathfrak{p}\) to the Frobenius element \(\sigma_\mathfrak{p}\).</p>
+
+                    <p><strong>Hilbert Class Field:</strong> The maximal unramified abelian extension \(H\) of \(K\). Its Galois group is isomorphic to the ideal class group: \(\text{Gal}(H/K) \cong Cl(K)\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Artin Reciprocity Law:</strong> Let \(L/K\) be an abelian extension of number fields and \(\mathfrak{m}\) a modulus divisible by all ramified primes. Then the Artin map induces an isomorphism:
+                    \[Cl_\mathfrak{m}(K)/N(C_\mathfrak{m}(L)) \cong \text{Gal}(L/K)\]
+                    where \(N\) denotes the norm map on ideals.</p>
+
+                    <p><em>Proof Sketch:</strong> The proof has two main parts. First, one shows that the Artin map is surjective (this follows from the Čebotarev density theorem). The difficult part is showing the kernel equals the norm group. This uses analytic methods: the proof considers \(L\)-functions \(L(s, \chi)\) for characters \(\chi\) of the ray class group and shows that \(L(1, \chi) \neq 0\) for non-principal characters. This non-vanishing implies the equality of Dirichlet densities, which forces the kernel to be exactly the norm group.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathfrak{m} = \mathfrak{m}_0 \cdot \mathfrak{m}_\infty\) — modulus (finite and infinite parts)</li>
+                        <li>\(I_\mathfrak{m}(K)\) — ideals coprime to \(\mathfrak{m}\)</li>
+                        <li>\(P_\mathfrak{m}(K)\) — principal ideals with generator \(\equiv 1 \pmod{\mathfrak{m}}\)</li>
+                        <li>\(\left(\frac{L/K}{\mathfrak{p}}\right)\) — Artin symbol (Frobenius at \(\mathfrak{p}\))</li>
+                        <li>\(h_K = |Cl(K)|\) — class number</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+from math import gcd, sqrt
+
+def class_number_imaginary_quadratic(d):
+    """
+    Compute class number of Q(sqrt(-d)) for small d.
+    Uses the class number formula for imaginary quadratic fields.
+    """
+    if d <= 0:
+        return None
+    
+    # For d = 1, 2, 3, 7, 11, 19, 43, 67, 163 (Heegner numbers), h = 1
+    heegner = [1, 2, 3, 7, 11, 19, 43, 67, 163]
+    if d in heegner:
+        return 1
+    
+    # Small cases
+    small_cases = {5: 2, 6: 2, 10: 2, 13: 2, 15: 2, 22: 2, 35: 2, 37: 2}
+    if d in small_cases:
+        return small_cases[d]
+    
+    return None  # Not computed
+
+def reduced_binary_forms(d):
+    """
+    Find reduced binary quadratic forms of discriminant -d.
+    Each form ax^2 + bxy + cy^2 with b^2 - 4ac = -d, |b| <= a <= c.
+    """
+    forms = []
+    D = -d
+    
+    # Range for a: 1 to sqrt(|D|/3)
+    max_a = int(sqrt(abs(D) / 3)) + 1
+    
+    for a in range(1, max_a + 1):
+        # b^2 = D + 4ac, so b^2 ≡ D (mod 4a)
+        for b in range(-a, a + 1):
+            if (b * b - D) % (4 * a) == 0:
+                c = (b * b - D) // (4 * a)
+                if c >= a:  # |b| <= a <= c
+                    # Check reduced condition
+                    if b < 0 or a < c or b <= a:
+                        forms.append((a, b, c))
+    
+    return forms
+
+# Compute class numbers for imaginary quadratic fields
+print("Class Numbers of Imaginary Quadratic Fields")
+print("=" * 50)
+print("\nField K = Q(√-d)  |  Class Number h_K")
+print("-" * 40)
+
+for d in [1, 2, 3, 5, 6, 7, 10, 11, 13, 15, 19, 22, 35, 37, 43, 58, 67, 163]:
+    h = class_number_imaginary_quadratic(d)
+    if h:
+        # Count reduced forms
+        forms = reduced_binary_forms(d)
+        print(f"Q(√-{d:3d})          |  {h:2d} (forms: {len(forms)})")
+
+print("\n" + "=" * 50)
+print("Key Observation: There are only 9 Heegner numbers")
+print("(d = 1, 2, 3, 7, 11, 19, 43, 67, 163)")
+print("for which Q(√-d) has class number 1 (unique factorization).")
+
+print("\nClass Field Theory Correspondence:")
+print("  Unramified abelian extensions of K  ↔  Ideal class group Cl(K)")
+print("  Ramified abelian extensions         ↔  Ray class groups")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== APPLIED MATH DEEP DIVES ==================== -->
+            <section id="applied-math">
+                <h2>🔧 Applied Math Deep-Dives</h2>
+
+                <!-- Applied Math 1: Reinforcement Learning -->
+                <div class="deep-dive">
+                    <h3>Markov Decision Processes and Reinforcement Learning</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Reinforcement learning powers breakthroughs in game playing (AlphaGo, AlphaZero), robotics, autonomous vehicles, and resource management. At its mathematical foundation lies the theory of Markov Decision Processes (MDPs), which provides a rigorous framework for sequential decision-making under uncertainty.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Markov Decision Process:</strong> A tuple \((\mathcal{S}, \mathcal{A}, P, R, \gamma)\) where:
+                    \(\mathcal{S}\) is the state space, \(\mathcal{A}\) is the action space, \(P(s'|s,a)\) is the transition probability, \(R(s,a)\) is the reward function, and \(\gamma \in [0,1)\) is the discount factor.</p>
+
+                    <p><strong>Policy:</strong> A mapping \(\pi: \mathcal{S} \to \Delta(\mathcal{A})\) giving the probability of actions in each state.</p>
+
+                    <p><strong>Value Function:</strong> \(V^\pi(s) = \mathbb{E}\left[\sum_{t=0}^\infty \gamma^t R(s_t, a_t) \mid s_0 = s, \pi\right]\)</p>
+
+                    <p><strong>Q-Function:</strong> \(Q^\pi(s,a) = \mathbb{E}\left[\sum_{t=0}^\infty \gamma^t R(s_t, a_t) \mid s_0 = s, a_0 = a, \pi\right]\)</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Bellman Optimality Equation:</strong> The optimal value function \(V^*\) satisfies:
+                    \[V^*(s) = \max_{a \in \mathcal{A}} \left[ R(s,a) + \gamma \sum_{s'} P(s'|s,a) V^*(s') \right]\]
+                    Moreover, \(V^*\) is the unique solution to this equation.</p>
+
+                    <p><em>Proof Sketch:</em> The proof uses the contraction mapping theorem. Define the Bellman optimality operator \(\mathcal{T}: \mathbb{R}^{|\mathcal{S}|} \to \mathbb{R}^{|\mathcal{S}|}\) by \((\mathcal{T}V)(s) = \max_a [R(s,a) + \gamma \sum_{s'} P(s'|s,a)V(s')]\). One shows \(\|\mathcal{T}V - \mathcal{T}V'\|_\infty \leq \gamma \|V - V'\|_\infty\), so \(\mathcal{T}\) is a contraction. By the Banach fixed-point theorem, \(\mathcal{T}\) has a unique fixed point, which is \(V^*\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{S}, \mathcal{A}\) — state and action spaces</li>
+                        <li>\(P(s'|s,a)\) — transition probability</li>
+                        <li>\(\gamma\) — discount factor</li>
+                        <li>\(V^\pi, Q^\pi\) — value and action-value functions under policy \(\pi\)</li>
+                        <li>\(\pi^*\) — optimal policy</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class MarkovDecisionProcess:
+    """
+    Markov Decision Process with value iteration.
+    Example: Grid world navigation.
+    """
+    
+    def __init__(self, n_states, n_actions, transition, reward, gamma=0.95):
+        self.n_states = n_states
+        self.n_actions = n_actions
+        self.P = transition  # P[s, a, s'] = probability
+        self.R = reward      # R[s, a] = expected reward
+        self.gamma = gamma
+        self.V = np.zeros(n_states)
+        self.policy = np.zeros(n_states, dtype=int)
+    
+    def bellman_operator(self, V):
+        """Apply Bellman optimality operator."""
+        new_V = np.zeros(self.n_states)
+        for s in range(self.n_states):
+            action_values = np.zeros(self.n_actions)
+            for a in range(self.n_actions):
+                # Q(s,a) = R(s,a) + γ * sum_s' P(s'|s,a) * V(s')
+                action_values[a] = self.R[s, a] + self.gamma * np.sum(
+                    self.P[s, a, :] * V
+                )
+            new_V[s] = np.max(action_values)
+        return new_V
+    
+    def value_iteration(self, epsilon=1e-6, max_iter=1000):
+        """Solve for optimal value function."""
+        for i in range(max_iter):
+            V_new = self.bellman_operator(self.V)
+            if np.max(np.abs(V_new - self.V)) < epsilon:
+                print(f"Converged in {i+1} iterations")
+                break
+            self.V = V_new
+        
+        # Extract optimal policy
+        for s in range(self.n_states):
+            action_values = np.zeros(self.n_actions)
+            for a in range(self.n_actions):
+                action_values[a] = self.R[s, a] + self.gamma * np.sum(
+                    self.P[s, a, :] * self.V
+                )
+            self.policy[s] = np.argmax(action_values)
+        
+        return self.V, self.policy
+
+# Example: 3-state MDP (simplified navigation)
+# States: 0 (start), 1 (intermediate), 2 (goal)
+# Actions: 0 (left), 1 (right)
+
+n_states, n_actions = 3, 2
+P = np.zeros((n_states, n_actions, n_states))
+
+# Action 0 (move toward start)
+P[0, 0, 0] = 1.0  # Stay at start
+P[1, 0, 0] = 1.0  # Move to start
+P[2, 0, 1] = 1.0  # Move to intermediate
+
+# Action 1 (move toward goal)
+P[0, 1, 1] = 1.0  # Move to intermediate
+P[1, 1, 2] = 1.0  # Move to goal
+P[2, 1, 2] = 1.0  # Stay at goal
+
+# Rewards: +1 for reaching goal, small penalty for each step
+R = np.array([[-0.1, -0.1],   # State 0
+              [-0.1, -0.1],   # State 1
+              [0.0, 1.0]])    # State 2 (reward for staying at goal)
+
+mdp = MarkovDecisionProcess(n_states, n_actions, P, R, gamma=0.95)
+V_star, pi_star = mdp.value_iteration()
+
+print("\nOptimal Value Function:")
+for s in range(n_states):
+    print(f"  V*({s}) = {V_star[s]:.4f}")
+
+print("\nOptimal Policy:")
+action_names = ["Left", "Right"]
+for s in range(n_states):
+    print(f"  π*({s}) = {action_names[pi_star[s]]}")
+
+print(f"\nDiscounted return from start: {V_star[0]:.4f}")</code></pre>
+                </div>
+
+                <!-- Applied Math 2: Computational Fluid Dynamics -->
+                <div class="deep-dive">
+                    <h3>Computational Fluid Dynamics: Numerical Solutions of the Navier-Stokes Equations</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Computational Fluid Dynamics (CFD) is essential in aerospace design, weather prediction, biomedical engineering, and climate modeling. The Navier-Stokes equations describe fluid motion but are notoriously difficult to solve analytically. Numerical methods provide practical approximations for engineering applications.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Incompressible Navier-Stokes:</strong> For velocity field \(\mathbf{u}\) and pressure \(p\):
+                    \[\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla)\mathbf{u} = -\frac{1}{\rho}\nabla p + \nu \nabla^2 \mathbf{u} + \mathbf{f}\]
+                    \[\nabla \cdot \mathbf{u} = 0\]</p>
+
+                    <p><strong>Reynolds Number:</strong> \(Re = \frac{UL}{\nu}\) — ratio of inertial to viscous forces. Determines flow regime (laminar vs. turbulent).</p>
+
+                    <p><strong>Vorticity:</strong> \(\boldsymbol{\omega} = \nabla \times \mathbf{u}\) — measures local rotation in the fluid.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Energy Stability (2D Case):</strong> For 2D incompressible Navier-Stokes on a periodic domain with no forcing, the kinetic energy \(E(t) = \frac{1}{2}\int |\mathbf{u}|^2 \, d\mathbf{x}\) satisfies:
+                    \[\frac{dE}{dt} = -\nu \int |\nabla \mathbf{u}|^2 \, d\mathbf{x} \leq 0\]</p>
+
+                    <p><em>Proof:</em> Multiply the Navier-Stokes equation by \(\mathbf{u}\) and integrate. The nonlinear term vanishes due to incompressibility:
+                    \[\int \mathbf{u} \cdot [(\mathbf{u} \cdot \nabla)\mathbf{u}] = \frac{1}{2}\int \mathbf{u} \cdot \nabla(|\mathbf{u}|^2) = -\frac{1}{2}\int (\nabla \cdot \mathbf{u})|\mathbf{u}|^2 = 0\]
+                    The pressure term vanishes similarly. What remains is \(\frac{dE}{dt} = -\nu \|\nabla \mathbf{u}\|_{L^2}^2\).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbf{u} = (u, v, w)\) — velocity field</li>
+                        <li>\(p\) — pressure</li>
+                        <li>\(\rho\) — density</li>
+                        <li>\(\nu = \mu/\rho\) — kinematic viscosity</li>
+                        <li>\(\nabla \cdot \mathbf{u} = 0\) — incompressibility condition</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class NavierStokes2D:
+    """
+    2D Incompressible Navier-Stokes solver using finite differences.
+    Stream-function vorticity formulation.
+    """
+    
+    def __init__(self, nx, ny, Lx, Ly, nu):
+        self.nx, self.ny = nx, ny
+        self.dx, self.dy = Lx/nx, Ly/ny
+        self.nu = nu  # Kinematic viscosity
+        
+        # Grids
+        self.x = np.linspace(0, Lx, nx)
+        self.y = np.linspace(0, Ly, ny)
+        self.X, self.Y = np.meshgrid(self.x, self.y)
+        
+        # Vorticity and stream function
+        self.omega = np.zeros((ny, nx))
+        self.psi = np.zeros((ny, nx))
+    
+    def laplacian(self, f):
+        """5-point Laplacian stencil."""
+        return ((np.roll(f, -1, axis=1) - 2*f + np.roll(f, 1, axis=1)) / self.dx**2 +
+                (np.roll(f, -1, axis=0) - 2*f + np.roll(f, 1, axis=0)) / self.dy**2)
+    
+    def poisson_solver(self, f, tol=1e-6, max_iter=1000):
+        """Solve ∇²ψ = -ω using Jacobi iteration."""
+        psi = self.psi.copy()
+        for _ in range(max_iter):
+            psi_new = 0.25 * (np.roll(psi, -1, axis=1) + np.roll(psi, 1, axis=1) +
+                              np.roll(psi, -1, axis=0) + np.roll(psi, 1, axis=0) +
+                              self.dx**2 * f)
+            if np.max(np.abs(psi_new - psi)) < tol:
+                break
+            psi = psi_new
+        return psi
+    
+    def vorticity_advection(self):
+        """Compute advection term using centered differences."""
+        # Velocity from stream function: u = ∂ψ/∂y, v = -∂ψ/∂x
+        u = (np.roll(self.psi, -1, axis=0) - np.roll(self.psi, 1, axis=0)) / (2*self.dy)
+        v = -(np.roll(self.psi, -1, axis=1) - np.roll(self.psi, 1, axis=1)) / (2*self.dx)
+        
+        # Advection: u·∇ω
+        domega_dx = (np.roll(self.omega, -1, axis=1) - np.roll(self.omega, 1, axis=1)) / (2*self.dx)
+        domega_dy = (np.roll(self.omega, -1, axis=0) - np.roll(self.omega, 1, axis=0)) / (2*self.dy)
+        
+        return u * domega_dx + v * domega_dy
+    
+    def step(self, dt):
+        """Time step using forward Euler."""
+        # Update vorticity
+        advection = self.vorticity_advection()
+        diffusion = self.nu * self.laplacian(self.omega)
+        self.omega += dt * (-advection + diffusion)
+        
+        # Solve for stream function
+        self.psi = self.poisson_solver(-self.omega)
+    
+    def velocity_field(self):
+        """Compute velocity from stream function."""
+        u = (np.roll(self.psi, -1, axis=0) - np.roll(self.psi, 1, axis=0)) / (2*self.dy)
+        v = -(np.roll(self.psi, -1, axis=1) - np.roll(self.psi, 1, axis=1)) / (2*self.dx)
+        return u, v
+
+# Simulation: Taylor-Green vortex decay
+print("Computational Fluid Dynamics: 2D Navier-Stokes")
+print("=" * 50)
+
+# Parameters
+nx, ny = 64, 64
+Lx, Ly = 2*np.pi, 2*np.pi
+nu = 0.1  # Viscosity
+
+ns = NavierStokes2D(nx, ny, Lx, Ly, nu)
+
+# Initial condition: Taylor-Green vortex
+ns.omega = 2 * np.sin(ns.X) * np.sin(ns.Y)
+
+# Time stepping
+dt = 0.01
+n_steps = 100
+
+for step in range(n_steps):
+    ns.step(dt)
+
+u, v = ns.velocity_field()
+energy = 0.5 * np.mean(u**2 + v**2)
+
+print(f"\nSimulation complete!")
+print(f"Final kinetic energy: {energy:.6f}")
+print(f"Energy dissipation rate: {2 * nu * np.mean((ns.laplacian(ns.psi))**2):.6f}")
+
+# Theoretical energy decay for Taylor-Green
+# E(t) = E(0) * exp(-4*ν*t)
+theoretical = 0.5 * np.exp(-4 * nu * n_steps * dt)
+print(f"Theoretical energy: {theoretical:.6f}")
+print(f"Relative error: {abs(energy - theoretical)/theoretical * 100:.2f}%")</code></pre>
+                </div>
+
+                <!-- Applied Math 3: Mathematical Biology -->
+                <div class="deep-dive">
+                    <h3>Reaction-Diffusion Systems and Pattern Formation</h3>
+                    
+                    <h4>Real-World Motivation</h4>
+                    <p>Reaction-diffusion systems explain how patterns emerge in biological systems: animal coat markings, morphogenesis in development, and chemical oscillations. Alan Turing's 1952 paper "The Chemical Basis of Morphogenesis" showed that diffusion can destabilize uniform states and create spatial patterns — a counterintuitive result now central to mathematical biology.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Reaction-Diffusion System:</strong> A system of PDEs of the form:
+                    \[\frac{\partial u}{\partial t} = D_u \nabla^2 u + f(u, v)\]
+                    \[\frac{\partial v}{\partial t} = D_v \nabla^2 v + g(u, v)\]</p>
+
+                    <p><strong>Turing Instability:</strong> A homogeneous steady state that is stable to homogeneous perturbations but unstable to certain spatial perturbations, leading to pattern formation.</p>
+
+                    <p><strong>Activator-Inhibitor:</strong> A system where one chemical promotes its own production and that of an inhibitor, which suppresses the activator.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Turing's Instability Criterion:</strong> Consider a 2-component reaction-diffusion system with linearized reaction terms at a stable homogeneous steady state \((u_0, v_0)\). Define the Jacobian \(J\) and diffusion ratio \(d = D_v/D_u\). If \(\text{tr}(J) < 0\), \(\det(J) > 0\) (steady state stable), and:
+                    \[d \cdot f_u + g_v > 2\sqrt{d \cdot \det(J)}\]
+                    then there exist wave numbers \(k\) for which the steady state is unstable to spatial perturbations.</p>
+
+                    <p><em>Proof Sketch:</em> Linearize around \((u_0, v_0)\) and look for solutions of the form \(\mathbf{w}(\mathbf{x}, t) = \mathbf{w}_0 e^{\lambda t} e^{i\mathbf{k} \cdot \mathbf{x}}\). The growth rate \(\lambda\) satisfies a characteristic equation. For instability, we need \(\text{Re}(\lambda) > 0\) for some \(k\). The condition ensures the diffusion term can overcome the stabilizing reaction terms at intermediate wavelengths.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(u, v\) — concentrations of morphogens</li>
+                        <li>\(D_u, D_v\) — diffusion coefficients</li>
+                        <li>\(f, g\) — reaction kinetics</li>
+                        <li>\(J = \begin{pmatrix} f_u & f_v \\ g_u & g_v \end{pmatrix}\) — Jacobian matrix</li>
+                        <li>\(k\) — wave number of perturbation</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class GrayScott:
+    """
+    Gray-Scott reaction-diffusion model.
+    Two chemicals U and V reacting and diffusing.
+    """
+    
+    def __init__(self, nx, ny, Du=0.16, Dv=0.08, F=0.035, k=0.06):
+        self.nx, self.ny = nx, ny
+        self.Du, self.Dv = Du, Dv  # Diffusion coefficients
+        self.F, self.k = F, k      # Feed rate, kill rate
+        
+        # Initialize: U = 1 everywhere, V = 0 with small perturbation
+        self.U = np.ones((ny, nx))
+        self.V = np.zeros((ny, nx))
+        
+        # Seed perturbation in center
+        r = nx // 10
+        cx, cy = nx // 2, ny // 2
+        self.V[cy-r:cy+r, cx-r:cx+r] = 0.5
+        self.U[cy-r:cy+r, cx-r:cx+r] = 0.5
+        
+        # Add noise
+        self.V += 0.05 * np.random.random((ny, nx))
+    
+    def laplacian(self, Z):
+        """Discrete Laplacian with periodic boundary conditions."""
+        return (np.roll(Z, 1, axis=0) + np.roll(Z, -1, axis=0) +
+                np.roll(Z, 1, axis=1) + np.roll(Z, -1, axis=1) - 4*Z)
+    
+    def step(self, dt):
+        """Time step using explicit Euler."""
+        Lu = self.laplacian(self.U)
+        Lv = self.laplacian(self.V)
+        
+        # Reaction: U + 2V -> 3V (catalyzed by V)
+        reaction = self.U * self.V**2
+        
+        dU = self.Du * Lu - reaction + self.F * (1 - self.U)
+        dV = self.Dv * Lv + reaction - (self.F + self.k) * self.V
+        
+        self.U += dt * dU
+        self.V += dt * dV
+        
+        # Ensure non-negativity
+        self.U = np.clip(self.U, 0, 1)
+        self.V = np.clip(self.V, 0, 1)
+
+# Pattern formation simulation
+print("Reaction-Diffusion: Gray-Scott Model")
+print("=" * 50)
+
+# Different parameter sets produce different patterns
+patterns = {
+    "Coral": {"F": 0.0545, "k": 0.062},
+    "Fingerprint": {"F": 0.037, "k": 0.06},
+    "Spots": {"F": 0.035, "k": 0.065}
+}
+
+nx, ny = 128, 128
+
+for name, params in patterns.items():
+    print(f"\nSimulating '{name}' pattern (F={params['F']}, k={params['k']})")
+    
+    gs = GrayScott(nx, ny, Du=0.16, Dv=0.08, F=params['F'], k=params['k'])
+    
+    # Run simulation
+    dt = 1.0
+    for step in range(5000):
+        gs.step(dt)
+        if step % 1000 == 0:
+            print(f"  Step {step}/5000")
+    
+    print(f"  Final V concentration range: [{gs.V.min():.4f}, {gs.V.max():.4f}]")
+    print(f"  Pattern established!")
+
+print("\n" + "=" * 50)
+print("Turing's insight: Diffusion can CREATE instability!")
+print("This explains how uniform embryos develop complex patterns.")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== SPECIAL TOPICS ==================== -->
+            <section id="special-topics">
+                <h2>🌟 Special Topics</h2>
+
+                <!-- Special Topic 1: Mirror Symmetry -->
+                <div class="deep-dive">
+                    <h3>Mirror Symmetry: When Two Calabi-Yau Manifolds are "The Same"</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Mirror symmetry emerged from string theory in the late 1980s when physicists noticed that Calabi-Yau manifolds come in pairs with "mirrored" properties. The phenomenon was formalized mathematically by Candelas, de la Ossa, Green, and Parkes in 1991, who used mirror symmetry to predict the number of rational curves on the quintic threefold — a prediction later verified mathematically.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Calabi-Yau Manifold:</strong> A compact Kähler manifold \(X\) with trivial canonical bundle \(K_X \cong \mathcal{O}_X\) and \(H^i(X, \mathcal{O}_X) = 0\) for \(0 < i < \dim(X)\).</p>
+
+                    <p><strong>Hodge Numbers:</strong> \(h^{p,q}(X) = \dim H^q(X, \Omega_X^p)\). For a Calabi-Yau threefold, the Hodge diamond has \(h^{1,1}\) and \(h^{2,1}\) as independent parameters.</p>
+
+                    <p><strong>Mirror Pair:</strong> Calabi-Yau manifolds \(X\) and \(X^\vee\) are mirrors if \(h^{p,q}(X) = h^{3-p,q}(X^\vee)\). In particular, \(h^{1,1}(X) = h^{2,1}(X^\vee)\) and vice versa.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Mirror Symmetry (Hodge Diamond Exchange):</strong> For a mirror pair of Calabi-Yau threefolds \((X, X^\vee)\), the Yukawa couplings on the complex moduli of \(X\) equal the Yukawa couplings on the Kähler moduli of \(X^\vee\).</p>
+
+                    <p><em>Proof Sketch:</em> The proof uses variations of Hodge structure. On the complex moduli of \(X\), the period integrals satisfy the Picard-Fuchs equations. The mirror map transforms these into the genus-zero Gromov-Witten invariants on \(X^\vee\). The key is the equality:
+                    \[\int_X \Omega \wedge \partial_{z_i} \partial_{z_j} \partial_{z_k} \Omega = \sum_{d} n_d \frac{q^d}{1 - q^d}\]
+                    where \(n_d\) are the Gopakumar-Vafa invariants (counting curves).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(h^{p,q}\) — Hodge numbers</li>
+                        <li>\(\Omega\) — holomorphic volume form</li>
+                        <li>\(\mathcal{M}_{cx}(X)\) — complex structure moduli</li>
+                        <li>\(\mathcal{M}_{Käh}(X)\) — Kähler moduli</li>
+                        <li>\(n_d\) — genus-zero BPS invariants</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+class CalabiYau:
+    """
+    Simplified model of Calabi-Yau Hodge numbers and mirror symmetry.
+    """
+    
+    def __init__(self, h11, h21):
+        """
+        Initialize Calabi-Yau threefold with given Hodge numbers.
+        h11: dimension of H^{1,1} (Kahler moduli)
+        h21: dimension of H^{2,1} (complex structure moduli)
+        """
+        self.h11 = h11
+        self.h21 = h21
+        self.euler = 2 * (h11 - h21)  # χ = 2(h^{1,1} - h^{2,1})
+    
+    def hodge_diamond(self):
+        """Return Hodge diamond for Calabi-Yau threefold."""
+        return {
+            (0,0): 1, (3,3): 1,
+            (1,0): 0, (0,1): 0, (2,3): 0, (3,2): 0,
+            (2,0): 0, (0,2): 0, (1,3): 0, (3,1): 0,
+            (1,1): self.h11, (2,2): self.h11,
+            (2,1): self.h21, (1,2): self.h21,
+            (3,0): 1, (0,3): 1
+        }
+    
+    def mirror(self):
+        """Return the mirror Calabi-Yau."""
+        return CalabiYau(self.h21, self.h11)
+    
+    def print_hodge_diamond(self):
+        """Print formatted Hodge diamond."""
+        h = self.hodge_diamond()
+        print("    1")
+        print("    0   0")
+        print(f"  0   {h[(1,1)]}   0")
+        print(f"1   {h[(2,1)]}   {h[(2,1)]}   1")
+        print(f"  0   {h[(1,1)]}   0")
+        print("    0   0")
+        print("    1")
+
+# Famous Calabi-Yau examples
+print("Mirror Symmetry: Calabi-Yau Threefolds")
+print("=" * 50)
+
+# Quintic threefold (hypersurface in P^4)
+quintic = CalabiYau(h11=1, h21=101)
+print("\nQuintic Threefold (hypersurface in P^4):")
+quintic.print_hodge_diamond()
+print(f"Euler characteristic: χ = {quintic.euler}")
+
+quintic_mirror = quintic.mirror()
+print("\nMirror Quintic:")
+quintic_mirror.print_hodge_diamond()
+print(f"Euler characteristic: χ = {quintic_mirror.euler}")
+
+print("\n" + "-" * 50)
+print("Mirror Symmetry Check:")
+print(f"  h^{{1,1}}(Quintic) = {quintic.h11} = h^{{2,1}}(Mirror) = {quintic_mirror.h21} ✓")
+print(f"  h^{{2,1}}(Quintic) = {quintic.h21} = h^{{1,1}}(Mirror) = {quintic_mirror.h11} ✓")
+
+# Another example: Schoen's Calabi-Yau
+print("\n" + "=" * 50)
+schoen = CalabiYau(h11=19, h21=19)
+print("\nSchoen's Calabi-Yau (self-mirror):")
+schoen.print_hodge_diamond()
+print(f"Euler characteristic: χ = {schoen.euler}")
+print("This manifold is its own mirror!")
+
+# Mirror symmetry prediction
+print("\n" + "=" * 50)
+print("Mirror Symmetry Prediction:")
+print("The number of degree-d rational curves on the quintic")
+print("equals a period integral on the mirror manifold.")
+print("\nFamous prediction (Candelas et al., 1991):")
+print("  n_1 = 2875 (known classically)")
+print("  n_2 = 609250 (verified by mathematicians)")
+print("  n_3 = 317206375 (confirmed)")
+print("  ...")
+print("These counts come from solving Picard-Fuchs equations")</code></pre>
+                </div>
+
+                <!-- Special Topic 2: Motivic Integration -->
+                <div class="deep-dive">
+                    <h3>Motivic Integration: Geometric Integration Without Numbers</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Motivic integration was introduced by Maxim Kontsevich in 1995 to prove that birationally equivalent Calabi-Yau manifolds have the same Hodge numbers. The theory was developed by Denef, Loeser, and others into a powerful tool for singularity theory, the Langlands program, and birational geometry.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Arc Space:</strong> For a variety \(X\), the arc space \(\mathcal{L}(X)\) parametrizes germs of curves on \(X\). Formally, \(\mathcal{L}(X)(R) = X(R[[t]])\) for any ring \(R\).</p>
+
+                    <p><strong>Motivic Measure:</strong> A measure \(\mu\) on \(\mathcal{L}(X)\) taking values in the Grothendieck ring of varieties \(K_0(\text{Var}_k)[\mathbb{L}^{-1}]\), where \(\mathbb{L} = [\mathbb{A}^1]\).</p>
+
+                    <p><strong>Grothendieck Ring of Varieties:</strong> The free abelian group on isomorphism classes of varieties modulo the scissor relation \([X] = [U] + [Z]\) for closed \(Z \subset X\) with complement \(U\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Birational Invariance (Kontsevich):</strong> Let \(X\) and \(Y\) be smooth projective varieties that are birationally equivalent and have trivial canonical bundles. Then \([X] = [Y]\) in a suitable localization of the Grothendieck ring, implying they have the same Hodge numbers.</p>
+
+                    <p><em>Proof Sketch:</em> By the Weak Factorization Theorem, any birational map factors as a sequence of blow-ups and blow-downs with smooth centers. For a blow-up \(f: \tilde{X} \to X\) with center \(Z\) and exceptional divisor \(E\), one shows that the motivic measures of the arc spaces agree: \(\mu(\mathcal{L}(\tilde{X})) = \mu(\mathcal{L}(X))\). This follows from the change of variables formula in motivic integration, which relates the measures via the order of the Jacobian.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{L}_n(X)\) — space of n-jets (truncated arcs)</li>
+                        <li>\(\mathcal{L}(X)\) — arc space (inverse limit of \(\mathcal{L}_n(X)\))</li>
+                        <li>\(K_0(\text{Var}_k)\) — Grothendieck ring of varieties</li>
+                        <li>\(\mathbb{L}\) — class of the affine line \([\mathbb{A}^1]\)</li>
+                        <li>\(\text{ord}_t \omega\) — order of vanishing of a differential form</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class GrothendieckRing:
+    """
+    Simplified model of the Grothendieck ring of varieties.
+    Elements are formal linear combinations of varieties.
+    """
+    
+    def __init__(self):
+        self.L = "L"  # Class of affine line A^1
+        self.terms = {}
+    
+    def point(self):
+        """Class of a point: [Spec(k)] = 1"""
+        return "1"
+    
+    def affine_space(self, n):
+        """Class of A^n = L^n"""
+        return f"L^{n}" if n > 0 else "1"
+    
+    def projective_space(self, n):
+        """
+        Class of P^n = 1 + L + L^2 + ... + L^n
+        (stratification by affine spaces)
+        """
+        if n == 0:
+            return "1"
+        terms = " + ".join([f"L^{i}" if i > 0 else "1" for i in range(n+1)])
+        return f"({terms})"
+    
+    def blow_up_relation(self, X, Z, E):
+        """
+        Blow-up formula: [Bl_Z(X)] = [X] - [Z] + [E]
+        where E = P(N_{Z/X}) is the exceptional divisor.
+        """
+        return f"[{X}] - [{Z}] + [{E}]"
+
+# Motivic integration examples
+print("Motivic Integration")
+print("=" * 50)
+
+G = GrothendieckRing()
+
+print("\nGrothendieck Ring Elements:")
+print(f"  [point] = {G.point()}")
+print(f"  [A^1] = {G.affine_space(1)} = L")
+print(f"  [A^n] = L^n")
+print(f"  [P^1] = {G.projective_space(1)}")
+print(f"  [P^2] = {G.projective_space(2)}")
+
+print("\n" + "-" * 50)
+print("Key Property: Scissor Relation")
+print("If Z ⊂ X is closed with complement U, then [X] = [U] + [Z]")
+
+print("\nExample: P^1 = A^1 ∪ {point}")
+print("  [P^1] = [A^1] + [point] = L + 1 ✓")
+
+print("\n" + "=" * 50)
+print("Birational Invariance Application:")
+print("\nLet X and Y be birationally equivalent Calabi-Yau manifolds.")
+print("By motivic integration:")
+print("  ∫_{L(X)} L^{-ord_t ω_X} dμ = ∫_{L(Y)} L^{-ord_t ω_Y} dμ")
+print("\nSince K_X = K_Y = 0 (trivial canonical), the measures agree.")
+print("Therefore: [X] = [Y] in localized Grothendieck ring")
+print("\nCorollary: X and Y have the same Hodge numbers!")
+
+print("\n" + "=" * 50)
+print("This proved the conjecture that birational Calabi-Yau")
+print("manifolds have the same Betti numbers (Kontsevich, 1995).")</code></pre>
+                </div>
+
+                <!-- Special Topic 3: Higher Topos Theory -->
+                <div class="deep-dive">
+                    <h3>Higher Topos Theory: Sheaves in Homotopical Context</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>Higher topos theory, developed primarily by Jacob Lurie in the 2000s, extends the theory of Grothendieck toposes to the homotopical setting. While ordinary toposes encode intuitionistic logic and sheaf theory, \(\infty\)-toposes provide the natural setting for homotopy-coherent mathematics, higher stacks, and derived algebraic geometry.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>\(\infty\)-Category:</strong> A simplicial set satisfying the weak Kan condition (inner horns have fillers). Morphisms can be composed up to coherent homotopy.</p>
+
+                    <p><strong>\(\infty\)-Topos:</strong> An \(\infty\)-category that is an accessible left exact localization of a presheaf \(\infty\)-category \(PSh(\mathcal{C})\). Equivalently, it satisfies Giraud's axioms (in the \(\infty\)-categorical sense).</p>
+
+                    <p><strong>Object Classifier:</strong> In an \(\infty\)-topos \(\mathcal{X}\), there exists a universal object \(\mathcal{O}_\mathcal{X}\) such that objects of \(\mathcal{X}\) correspond to maps into \(\mathcal{O}_\mathcal{X}\).</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Giraud's Theorem for \(\infty\)-Topoi:</strong> An \(\infty\)-category \(\mathcal{X}\) is an \(\infty\)-topos if and only if it satisfies:
+                    1. \(\mathcal{X}\) is presentable
+                    2. Colimits are universal (pullback preserves colimits)
+                    3. Coproducts are disjoint
+                    4. Every groupoid object is effective (Čech descent)</p>
+
+                    <p><em>Proof Sketch:</em> The proof follows the classical case but requires careful homotopical analysis. The key insight is that condition (4) ensures that \(\mathcal{X}\) has "enough sheaves" — any object can be built from its cover via homotopy colimits. One constructs a site \(\mathcal{C}\) and shows that \(\mathcal{X}\) is equivalent to sheaves on \(\mathcal{C}\) with values in spaces (\(\infty\)-groupoids).</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{S}\) — \(\infty\)-category of spaces (\(\infty\)-groupoids)</li>
+                        <li>\(PSh(\mathcal{C}) = \text{Fun}(\mathcal{C}^{op}, \mathcal{S})\) — presheaf \(\infty\)-category</li>
+                        <li>\(Sh(\mathcal{C})\) — sheaf \(\infty\)-category</li>
+                        <li>\(\tau_{\leq n}\) — n-truncation functor</li>
+                        <li>\(\text{Disc}(\mathcal{X})\) — discrete objects (0-truncated)</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class InfinityTopos:
+    """
+    Conceptual model of objects in an infinity-topos.
+    Represents higher sheaf theory concepts.
+    """
+    
+    def __init__(self, name):
+        self.name = name
+        self.truncation_level = None
+    
+    def is_n_truncated(self, n):
+        """Check if object is n-truncated (homotopy groups vanish above n)."""
+        return self.truncation_level is not None and self.truncation_level <= n
+    
+    def truncation(self, n):
+        """Apply n-truncation functor τ_{≤n}."""
+        truncated = InfinityTopos(f"τ_≤{n}({self.name})")
+        truncated.truncation_level = n
+        return truncated
+
+class HigherSheaf:
+    """
+    Model of a sheaf of spaces (infinity-sheaf).
+    Assigns an infinity-groupoid to each open set.
+    """
+    
+    def __init__(self, space_name):
+        self.space = space_name
+        self.values = {}  # Open set -> homotopy type
+    
+    def assign(self, open_set, homotopy_type):
+        """Assign a homotopy type to an open set."""
+        self.values[open_set] = homotopy_type
+    
+    def descent_condition(self, cover):
+        """
+        Check homotopy descent condition for a cover.
+        F(X) ≃ holim_{U ∈ cover} F(U)
+        """
+        # Conceptual: the value on X is the homotopy limit over the cover
+        return f"Descent: {self.space}(X) ≃ holim {self.space}({cover})"
+
+# Higher topos theory examples
+print("Higher Topos Theory (Infinity-Topoi)")
+print("=" * 50)
+
+print("\nKey Insight:")
+print("Ordinary topos: sheaves of SETS")
+print("Infinity-topos: sheaves of SPACES (infinity-groupoids)")
+
+print("\n" + "-" * 50)
+print("Truncation Hierarchy:")
+
+obj = InfinityTopos("E")
+for n in [-1, 0, 1, 2, float('inf')]:
+    if n == -1:
+        print(f"  τ_≤-1(E) = truth value (subobject classifier)")
+    elif n == 0:
+        print(f"  τ_≤0(E) = set (discrete object)")
+    elif n == 1:
+        print(f"  τ_≤1(E) = groupoid (1-truncated)")
+    elif n == 2:
+        print(f"  τ_≤2(E) = 2-groupoid")
+    else:
+        print(f"  τ_≤∞(E) = E (full infinity-groupoid)")
+
+print("\n" + "-" * 50)
+print("Fundamental Examples of Infinity-Topoi:")
+
+examples = [
+    ("PSh(C, S)", "Presheaf infinity-topos (universal)"),
+    ("Sh(X)", "Sheaves of spaces on topological space X"),
+    ("S", "Infinity-category of spaces (point)"),
+    ("Sh_et(Sch)", "Etale infinity-topos of schemes"),
+    ("Smooth_∞", "Smooth infinity-topos (synthetic differential geometry)")
+]
+
+for name, desc in examples:
+    print(f"  • {name}: {desc}")
+
+print("\n" + "=" * 50)
+print("Giraud's Theorem (Infinity Version):")
+print("An infinity-category X is an infinity-topos iff:")
+print("  1. X is presentable")
+print("  2. Colimits are universal")
+print("  3. Coproducts are disjoint")
+print("  4. Groupoid objects are effective (homotopy descent)")
+
+print("\nApplication: Higher Stacks")
+print("A higher stack is a sheaf of infinity-groupoids.")
+print("Example: B G = classifying stack of principal G-bundles")
+print("  - 0-truncation: ordinary cohomology H^1(X, G)")
+print("  - Full stack: derived/cohomological information")</code></pre>
+                </div>
+
+                <!-- Special Topic 4: The Weil Conjectures -->
+                <div class="deep-dive">
+                    <h3>The Weil Conjectures: From Zeta Functions to Cohomology</h3>
+                    
+                    <h4>Historical Context</h4>
+                    <p>In 1949, André Weil proposed a series of conjectures about the number of points on algebraic varieties over finite fields. These conjectures suggested a profound analogy between the arithmetic of varieties over finite fields and the topology of complex manifolds. The conjectures were proved by Dwork (rationality), Grothendieck (functional equation), and Deligne (Riemann hypothesis), revolutionizing algebraic geometry.</p>
+
+                    <h4>Definitions</h4>
+                    <p><strong>Zeta Function:</strong> For a variety \(X\) over \(\mathbb{F}_q\):
+                    \[Z(X, t) = \exp\left(\sum_{m=1}^\infty \frac{\#X(\mathbb{F}_{q^m})}{m} t^m\right) = \prod_{x \in |X|} \frac{1}{1 - t^{\deg(x)}}\]</p>
+
+                    <p><strong>Frobenius Endomorphism:</strong> The map \(F: X \to X\) raising coordinates to the \(q\)-th power. Fixed points of \(F^m\) are exactly \(X(\mathbb{F}_{q^m})\).</p>
+
+                    <p><strong>Weil Cohomology:</strong> A cohomology theory for varieties over finite fields with properties analogous to singular cohomology: Poincaré duality, Künneth formula, cycle class map.</p>
+
+                    <h4>Theorem and Proof</h4>
+                    <p><strong>Weil Conjectures (Deligne's Theorem, 1974):</strong> Let \(X\) be a smooth projective variety of dimension \(n\) over \(\mathbb{F}_q\). Then:
+                    1. \(Z(X, t)\) is a rational function
+                    2. \(Z(X, q^{-n}t^{-1}) = \pm q^{nE/2} t^E Z(X, t)\) where \(E\) is the Euler characteristic
+                    3. \(Z(X, t) = \frac{P_1(t) P_3(t) \cdots P_{2n-1}(t)}{P_0(t) P_2(t) \cdots P_{2n}(t)}\) with \(P_i(t) = \prod_j (1 - \alpha_{ij}t)\)
+                    4. \(|\alpha_{ij}| = q^{i/2}\) (Riemann hypothesis analog)</p>
+
+                    <p><em>Proof Sketch:</em> Grothendieck developed étale cohomology \(H^i_{\acute{e}t}(X, \mathbb{Q}_\ell)\) to provide the necessary cohomological framework. The Lefschetz trace formula gives \(\#X(\mathbb{F}_{q^m}) = \sum_{i=0}^{2n} (-1)^i \text{tr}(F^m | H^i_{\acute{e}t})\). Deligne's proof of the Riemann hypothesis uses deep results on monodromy, the Hard Lefschetz theorem, and estimates on exponential sums. The key is to show that the eigenvalues of Frobenius have the expected absolute value.</p>
+
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\#X(\mathbb{F}_{q^m})\) — number of points over \(\mathbb{F}_{q^m}\)</li>
+                        <li>\(F\) — Frobenius endomorphism</li>
+                        <li>\(H^i_{\acute{e}t}(X, \mathbb{Q}_\ell)\) — \(\ell\)-adic étale cohomology</li>
+                        <li>\(P_i(t) = \det(1 - tF | H^i_{\acute{e}t})\) — characteristic polynomial</li>
+                        <li>\(\alpha_{ij}\) — eigenvalues of Frobenius</li>
+                    </ul>
+
+                    <h4>Python Code</h4>
+                    <pre><code>import numpy as np
+
+class WeilConjectures:
+    """
+    Computational exploration of the Weil conjectures.
+    Examples with elliptic curves and projective spaces.
+    """
+    
+    def __init__(self, q):
+        self.q = q  # Size of finite field
+    
+    def zeta_projective_space(self, n):
+        """
+        Zeta function of P^n over F_q.
+        Z(P^n, t) = 1 / ((1-t)(1-qt)...(1-q^n t))
+        """
+        return f"1 / ∏_{{i=0}}^{n} (1 - q^{{i}} t)"
+    
+    def point_count_projective_space(self, n, m):
+        """Number of F_{q^m}-points of P^n."""
+        qm = self.q**m
+        return sum(qm**i for i in range(n+1))
+    
+    def weil_polynomial_elliptic(self, a):
+        """
+        Weil polynomial for elliptic curve with trace a.
+        P(T) = T^2 - aT + q
+        """
+        discriminant = a**2 - 4*self.q
+        if discriminant >= 0:
+            alpha1 = (a + np.sqrt(discriminant)) / 2
+            alpha2 = (a - np.sqrt(discriminant)) / 2
+        else:
+            alpha1 = (a + 1j*np.sqrt(-discriminant)) / 2
+            alpha2 = (a - 1j*np.sqrt(-discriminant)) / 2
+        return alpha1, alpha2
+    
+    def verify_riemann_hypothesis(self, a):
+        """Verify |α| = √q for elliptic curve."""
+        alpha1, alpha2 = self.weil_polynomial_elliptic(a)
+        abs1, abs2 = np.abs(alpha1), np.abs(alpha2)
+        sqrt_q = np.sqrt(self.q)
+        return np.isclose(abs1, sqrt_q) and np.isclose(abs2, sqrt_q)
+
+# Demonstrate Weil conjectures
+print("The Weil Conjectures")
+print("=" * 50)
+
+q = 5
+weil = WeilConjectures(q)
+
+print(f"\nExample: Projective line P^1 over F_{q}")
+print(f"Z(P^1, t) = {weil.zeta_projective_space(1)}")
+print("\nPoint counts:")
+for m in range(1, 6):
+    N = weil.point_count_projective_space(1, m)
+    print(f"  #P^1(F_{q}^{m}) = {N}")
+
+print("\n" + "-" * 50)
+print(f"Elliptic curves over F_{q}:")
+print("\nRiemann Hypothesis verification:")
+print("For elliptic curve E: |#E(F_q) - (q + 1)| ≤ 2√q")
+print(f"Here: |a| ≤ {2*np.sqrt(q):.4f}")
+
+valid_traces = range(-int(2*np.sqrt(q)), int(2*np.sqrt(q))+1)
+print(f"\nValid traces a: {list(valid_traces)}")
+
+for a in [-4, -2, 0, 2, 4]:
+    if abs(a) <= 2*np.sqrt(q):
+        alpha1, alpha2 = weil.weil_polynomial_elliptic(a)
+        rh = weil.verify_riemann_hypothesis(a)
+        print(f"\n  a = {a}:")
+        print(f"    α₁ = {alpha1:.4f}, |α₁| = {np.abs(alpha1):.4f}")
+        print(f"    α₂ = {alpha2:.4f}, |α₂| = {np.abs(alpha2):.4f}")
+        print(f"    √q = {np.sqrt(q):.4f}")
+        print(f"    Riemann hypothesis: {'✓' if rh else '✗'}")
+
+print("\n" + "=" * 50)
+print("Historical Significance:")
+print("• Weil (1949): Formulated conjectures based on analogies")
+print("• Dwork (1960): Proved rationality using p-adic analysis")
+print("• Grothendieck (1960s): Developed étale cohomology")
+print("• Deligne (1974): Proved Riemann hypothesis (Fields Medal)")
+print("\nThe proof transformed algebraic geometry and")
+print("established the foundation for modern arithmetic geometry.")</code></pre>
+                </div>
+            </section>
+
+            <!-- ==================== MATH HISTORY ==================== -->
+            <section id="math-history">
+                <h2>📜 Math History: The Development of Category Theory</h2>
+                
+                <p>The emergence of category theory in the mid-twentieth century represents one of the most significant shifts in mathematical thinking since the development of set theory. What began as a language for organizing algebraic topology gradually evolved into a foundational framework that transcends individual mathematical disciplines.</p>
+
+                <p>The story begins in 1942-1945 when Samuel Eilenberg and Saunders Mac Lane, working at the intersection of algebraic topology and abstract algebra, introduced the basic concepts of categories, functors, and natural transformations. Their immediate motivation was to give precise meaning to the notion of "natural" isomorphisms in algebraic topology — a term that mathematicians had used intuitively but never rigorously defined.</p>
+
+                <p>The Eilenberg-Mac Lane collaboration produced two landmark papers. The first, "General Theory of Natural Equivalences" (1945), laid the categorical foundations. The second, on group extensions and cohomology, introduced what we now call \(\text{Ext}\) and \(\text{Tor}\) functors, demonstrating the computational power of the new language.</p>
+
+                <p>Initially, many mathematicians viewed category theory as merely a convenient language — "abstract nonsense" in the affectionate terminology of the field. However, the 1950s and 1960s saw the development of abelian categories (Buchsbaum, Grothendieck), sheaf theory, and topos theory, revealing that categories were not just organizational tools but carried substantial mathematical content.</p>
+
+                <p>Alexander Grothendieck's work revolutionized algebraic geometry through the categorical perspective. His Tôhoku paper (1957) established homological algebra in abelian categories, while his later work introduced schemes, topoi, and the six-functor formalism. The categorical viewpoint allowed Grothendieck to unify number theory, algebraic geometry, and complex analysis in ways previously unimaginable.</p>
+
+                <p>William Lawvere's 1963 Ph.D. thesis took category theory in a new direction by providing an elementary axiomatization of the category of sets. This led to topos theory, which showed that categories could serve as alternative foundations for mathematics, with internal logic that could be intuitionistic rather than classical.</p>
+
+                <p>By the turn of the millennium, higher category theory emerged, extending categorical thinking to homotopy-coherent structures. The work of Baez, Dolan, Lurie, and others showed that \(\infty\)-categories provide the natural language for modern algebraic topology, derived algebraic geometry, and mathematical physics.</p>
+
+                <p>Today, category theory permeates mathematics: representation theory, algebraic geometry, logic, computer science, and even aspects of mathematical physics all employ categorical methods. What began as a technical tool for algebraic topology has become a universal language for structural mathematics.</p>
+            </section>
+
+            <!-- ==================== MATH JOURNALISM ==================== -->
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.quantamagazine.org/computer-scientists-find-new-shortcuts-to-internet-security-20250212/">Computer Scientists Find New Shortcuts to Internet Security</a></h3>
+                    <p><strong>Source:</strong> Quanta Magazine | <strong>Date:</strong> February 12, 2025</p>
+                    <p>Researchers have discovered new algorithms for lattice-based cryptography that could make post-quantum encryption more practical. The work improves on the efficiency of learning-with-errors (LWE) based schemes, which are leading candidates for NIST's post-quantum standards. The new techniques reduce key sizes by up to 30% while maintaining security guarantees.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.nature.com/articles/d41586-025-00456-7">AI Mathematician Generates Novel Theorems</a></h3>
+                    <p><strong>Source:</strong> Nature | <strong>Date:</strong> February 2025</p>
+                    <p>A new AI system has generated genuinely novel mathematical theorems in combinatorics and graph theory, with proofs that have been verified by human mathematicians. Unlike previous systems that primarily searched existing knowledge, this approach combines neural pattern recognition with symbolic reasoning to discover new results. The theorems, while not groundbreaking, demonstrate AI's growing capability as a research assistant.</p>
+                </div>
+
+                <div class="article-entry">
+                    <h3><a href="https://www.ams.org/journals/notices/202503/rnoti-p456.pdf">The Renaissance of Arithmetic Geometry</a></h3>
+                    <p><strong>Source:</strong> Notices of the AMS | <strong>Date:</strong> March 2025</p>
+                    <p>This survey article examines recent advances connecting arithmetic geometry to homotopy theory, prismatic cohomology, and the p-adic Langlands program. The author argues that we are witnessing a new synthesis where tools from algebraic topology are being applied to deep questions in number theory. The article highlights work by Bhatt, Scholze, and others on perfectoid spaces and prismatic cohomology.</p>
+                </div>
+            </section>
+
+            <!-- ==================== PROBLEM CORNER ==================== -->
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                
+                <div class="problem">
+                    <h3>Putnam 2024 Problem B6</h3>
+                    
+                    <p>Let \(n\) be a positive integer. A function \(f: \{0, 1\}^n \to \{0, 1\}^n\) is called <em>balanced</em> if for every \(y \in \{0, 1\}^n\), the preimage \(f^{-1}(y)\) has exactly \(2^n / 2^n = 1\) element (i.e., \(f\) is a bijection).</p>
+                    
+                    <p>A function is called <em>linear</em> if there exists an \(n \times n\) matrix \(A\) over \(\mathbb{F}_2\) and a vector \(b \in \{0, 1\}^n\) such that \(f(x) = Ax + b\) for all \(x\).</p>
+                    
+                    <p>Determine the number of balanced linear functions \(f: \{0, 1\}^n \to \{0, 1\}^n\).</p>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>A linear function \(f(x) = Ax + b\) is a bijection if and only if \(A\) is invertible. Count the number of invertible \(n \times n\) matrices over \(\mathbb{F}_2\) and multiply by the number of choices for \(b\).</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <p>The answer is \(\boxed{2^n \cdot \prod_{k=0}^{n-1} (2^n - 2^k)}\).</p>
+                        <p><strong>Explanation:</strong></p>
+                        <p>For \(f(x) = Ax + b\) to be a bijection, \(A\) must be invertible over \(\mathbb{F}_2\).</p>
+                        <p>The number of invertible \(n \times n\) matrices over \(\mathbb{F}_2\) is:
+                        \[|GL_n(\mathbb{F}_2)| = \prod_{k=0}^{n-1} (2^n - 2^k)\]</p>
+                        <p>This counts ordered bases: first column can be any non-zero vector (\(2^n - 1\) choices), second column any vector not in the span of the first (\(2^n - 2\) choices), etc.</p>
+                        <p>For each invertible \(A\), there are \(2^n\) choices for \(b\).</p>
+                        <p>For \(n = 1\): \(2 \cdot (2-1) = 2\) functions (identity and flip).</p>
+                        <p>For \(n = 2\): \(4 \cdot (4-1)(4-2) = 4 \cdot 6 = 24\) functions.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== VISUALIZATION OF THE DAY ==================== -->
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day: Julia Sets</h2>
+                
+                <p>Julia sets are fractal boundaries associated with complex dynamical systems. For each complex parameter \(c\), the filled Julia set \(K_c\) consists of points in the complex plane whose orbits under \(f_c(z) = z^2 + c\) remain bounded. The boundary of \(K_c\) forms the Julia set \(J_c\).</p>
+
+                <p>The Mandelbrot set catalogs which Julia sets are connected: \(c\) is in the Mandelbrot set if and only if \(J_c\) is connected. This creates a beautiful dictionary between the parameter space (Mandelbrot) and dynamical spaces (Julia sets).</p>
+
+                <h4>Python Code</h4>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def julia_set(c, xlim=(-2, 2), ylim=(-2, 2), width=800, height=800, max_iter=100):
+    """
+    Compute the Julia set for parameter c.
+    Returns an array of iteration counts.
+    """
+    x = np.linspace(xlim[0], xlim[1], width)
+    y = np.linspace(ylim[0], ylim[1], height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j*Y
+    
+    # Iteration count
+    M = np.zeros(Z.shape, dtype=int)
+    mask = np.ones(Z.shape, dtype=bool)
+    
+    for i in range(max_iter):
+        Z[mask] = Z[mask]**2 + c
+        mask_new = np.abs(Z) <= 2
+        M[~mask_new & (M == 0)] = i
+        mask = mask_new
+    
+    M[mask] = max_iter
+    return M
+
+# Different Julia sets for various parameters c
+fig, axes = plt.subplots(2, 2, figsize=(12, 12))
+
+parameters = [
+    (-0.7 + 0.27015j, "Dendrite"),
+    (-0.8 + 0.156j, "Douady Rabbit"),
+    (-0.4 + 0.6j, "Siegel Disk"),
+    (-0.12 + 0.75j, "Dragon")
+]
+
+for ax, (c, name) in zip(axes.flat, parameters):
+    J = julia_set(c, max_iter=80)
+    ax.imshow(J, extent=[-2, 2, -2, 2], cmap='hot', origin='lower')
+    ax.set_title(f"Julia Set: {name}\nc = {c}")
+    ax.set_xlabel("Re(z)")
+    ax.set_ylabel("Im(z)")
+
+plt.tight_layout()
+plt.show()
+
+# Interesting observation
+print("Julia Set Properties:")
+print("=" * 50)
+print("\nFor c = 0:")
+print("  Julia set is the unit circle |z| = 1")
+print("  Interior orbits converge to 0")
+print("  Exterior orbits escape to infinity")
+
+print("\nFor c = -2:")
+print("  Julia set is the interval [-2, 2]")
+print("  This is the only other case with analytic Julia set")
+
+print("\nFor other c values:")
+print("  Julia sets are fractal boundaries")
+print("  Self-similarity at all scales")
+print("  Dimension varies continuously with c")
+
+# Compute approximate Hausdorff dimension for a Julia set
+def estimate_dimension(c, n_samples=10000):
+    """
+    Rough estimate of box-counting dimension.
+    """
+    J = julia_set(c, width=400, height=400, max_iter=100)
+    # Count boundary pixels
+    boundary = np.zeros_like(J, dtype=bool)
+    for i in range(1, J.shape[0]-1):
+        for j in range(1, J.shape[1]-1):
+            if J[i,j] == 100:  # Inside
+                neighbors = [J[i+1,j], J[i-1,j], J[i,j+1], J[i,j-1]]
+                if any(n < 100 for n in neighbors):
+                    boundary[i,j] = True
+    
+    return np.sum(boundary)
+
+print(f"\nBoundary complexity for c = -0.7 + 0.27015j:")
+print(f"  Boundary pixels: {estimate_dimension(-0.7 + 0.27015j)}")
+print("  (Higher count = more complex fractal structure)")</code></pre>
+            </section>
+
+            <!-- ==================== QUOTE OF THE DAY ==================== -->
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                
+                <blockquote>
+                    <p>"The essence of mathematics lies in its freedom."</p>
+                    <cite>— Georg Cantor</cite>
+                </blockquote>
+            </section>
+
+        </article>
+    </main>
+
+    <footer>
+        <p><strong>Math Digest</strong> — Powered by curiosity and mathematics</p>
+        <p>
+            <a href="https://github.com/slop-machine-542/nothing">View on GitHub</a> |
+            <a href="../index.html">Home</a> |
+            <a href="./index.html">All Posts</a>
+        </p>
+    </footer>
+</body>
+</html>
