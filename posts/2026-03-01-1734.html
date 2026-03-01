@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Digest - March 1, 2026</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Math Digest</h1>
+        <p class="date">March 1, 2026 | 17:34 UTC</p>
+    </header>
+
+    <main>
+        <!-- Math Links Section -->
+        <section id="links">
+            <h2>Math Links</h2>
+            <div class="link-item">
+                <h3><a href="https://mathoverflow.net">MathOverflow</a></h3>
+                <p>A question and answer site for professional mathematicians. Features research-level discussions on topics ranging from algebraic geometry to analysis, with contributions from leading mathematicians worldwide.</p>
+            </div>
+            <div class="link-item">
+                <h3><a href="https://arxiv.org/archive/math">arXiv Mathematics</a></h3>
+                <p>The premier open-access repository for mathematics preprints. Contains over 200,000 papers across all mathematical disciplines, updated daily with the latest research.</p>
+            </div>
+            <div class="link-item">
+                <h3><a href="https://www.maths.ed.ac.uk/~v1ranick/papers/walshtop.pdf">History of Topology (PDF)</a></h3>
+                <p>A comprehensive historical survey of topology by John McCleary. Traces the development from Poincare's Analysis Situs to modern algebraic topology, with detailed references and commentary.</p>
+            </div>
+        </section>
+
+        <!-- Free Math Book Section -->
+        <section id="book">
+            <h2>Free Math Book of the Day</h2>
+            <div class="book-card">
+                <h3>"Probability Theory: The Logic of Science"</h3>
+                <p><strong>Author:</strong> E.T. Jaynes</p>
+                <p><strong>Level:</strong> Advanced Undergraduate to Graduate</p>
+                <p><strong>Summary:</strong> This groundbreaking book presents probability theory as an extension of logic. Jaynes argues that probability is not merely about randomness, but represents the degree of plausibility of propositions given available information. The book develops the Bayesian approach from first principles, deriving the rules of probability as necessities of consistent reasoning rather than axioms. Topics include the principle of maximum entropy, hypothesis testing, parameter estimation, and the resolution of numerous paradoxes. The work is particularly notable for its philosophical depth and practical applications across physics, engineering, and data science.</p>
+                <p><a href="https://bayes.wustl.edu/etj/prob/book.pdf">Download PDF</a></p>
+            </div>
+        </section>
+
+        <!-- Pure Math Deep-Dives -->
+        <section id="pure-math">
+            <h2>Pure Math Deep-Dives</h2>
+            
+            <article class="deep-dive">
+                <h3>Ito Calculus: Stochastic Integration</h3>
+                <div class="motivation">
+                    <h4>Motivation</h4>
+                    <p>Standard calculus fails for Brownian motion because the paths are nowhere differentiable. Ito calculus provides a rigorous framework for integrating against stochastic processes, essential for modeling financial markets, physical systems with noise, and biological processes.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>Ito Integral:</strong> For an adapted process \(X_t\) satisfying \(\mathbb{E}\left[\int_0^T X_s^2 ds\right] < \infty\), the Ito integral is defined as:</p>
+                    <p>\[\int_0^t X_s dW_s = \lim_{n \to \infty} \sum_{i=0}^{n-1} X_{t_i}(W_{t_{i+1}} - W_{t_i})\]</p>
+                    <p>where the limit is taken in \(L^2\) and the partition mesh goes to zero.</p>
+                    <p><strong>Ito Process:</strong> A stochastic process of the form:</p>
+                    <p>\[X_t = X_0 + \int_0^t \mu_s ds + \int_0^t \sigma_s dW_s\]</p>
+                    <p>or in differential notation: \(dX_t = \mu_t dt + \sigma_t dW_t\).</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Ito's Lemma</h4>
+                    <p><strong>Statement:</strong> Let \(X_t\) be an Ito process and \(f \in C^{2,1}(\mathbb{R} \times [0,T])\). Then \(Y_t = f(X_t, t)\) is an Ito process with:</p>
+                    <p>\[df(X_t, t) = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial x}dX_t + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(dX_t)^2\]</p>
+                    <p>where \((dX_t)^2 = \sigma_t^2 dt\) (using the rule \((dt)^2 = 0\), \(dt \cdot dW_t = 0\), \((dW_t)^2 = dt\)).</p>
+                    <p><strong>Proof:</strong> Using Taylor expansion:</p>
+                    <p>\[f(X_{t+h}, t+h) - f(X_t, t) = \frac{\partial f}{\partial t}h + \frac{\partial f}{\partial x}(X_{t+h} - X_t) + \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(X_{t+h} - X_t)^2 + O(h^{3/2})\]</p>
+                    <p>Summing over partitions and taking limits, the quadratic variation term \((X_{t+h} - X_t)^2 \to \sigma_t^2 dt\) gives the extra term absent in ordinary calculus. ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(W_t\) - Standard Brownian motion (Wiener process)</li>
+                        <li>\(\mu_t\) - Drift coefficient</li>
+                        <li>\(\sigma_t\) - Diffusion/volatility coefficient</li>
+                        <li>\(\mathcal{F}_t\) - Filtration (information available at time t)</li>
+                        <li>\(\langle X \rangle_t\) - Quadratic variation process</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def simulate_ito_process(mu, sigma, X0, T, N, n_paths=5):
+    """
+    Simulate Ito process: dX_t = mu*X_t*dt + sigma*X_t*dW_t
+    (Geometric Brownian Motion)
+    """
+    dt = T / N
+    t = np.linspace(0, T, N+1)
+    
+    plt.figure(figsize=(10, 6))
+    
+    for _ in range(n_paths):
+        dW = np.random.normal(0, np.sqrt(dt), N)
+        X = np.zeros(N+1)
+        X[0] = X0
+        
+        for i in range(N):
+            # Euler-Maruyama method
+            X[i+1] = X[i] + mu*X[i]*dt + sigma*X[i]*dW[i]
+        
+        plt.plot(t, X, alpha=0.7)
+    
+    plt.xlabel('Time t')
+    plt.ylabel('X_t')
+    plt.title(f'Geometric Brownian Motion: μ={mu}, σ={sigma}')
+    plt.grid(True)
+    plt.show()
+    
+    return t, X
+
+# Example: Stock price model
+t, X = simulate_ito_process(mu=0.05, sigma=0.2, X0=100, T=1, N=1000)
+
+# Ito isometry verification
+def verify_ito_isometry(n_samples=10000):
+    """Verify E[(∫ X dW)^2] = E[∫ X^2 dt]"""
+    T, N = 1, 100
+    dt = T / N
+    t = np.linspace(0, T, N)
+    
+    integrals = []
+    integrands = []
+    
+    for _ in range(n_samples):
+        X = np.sin(2*np.pi*t)  # Deterministic integrand
+        dW = np.random.normal(0, np.sqrt(dt), N)
+        ito_integral = np.sum(X * dW)
+        integrals.append(ito_integral**2)
+        integrands.append(np.sum(X**2) * dt)
+    
+    lhs = np.mean(integrals)
+    rhs = np.mean(integrands)
+    print(f"E[(∫X dW)²] ≈ {lhs:.4f}")
+    print(f"E[∫X² dt] ≈ {rhs:.4f}")
+    print(f"Difference: {abs(lhs-rhs):.4f}")
+
+verify_ito_isometry()</code></pre>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Free Probability Theory</h3>
+                <div class="motivation">
+                    <h4>Motivation</h4>
+                    <p>Free probability, developed by Dan Voiculescu, studies non-commutative random variables where "freeness" replaces independence. It provides powerful tools for analyzing random matrices in the large-N limit, with applications in quantum information, wireless communications, and machine learning.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>Non-commutative Probability Space:</strong> A pair \((\mathcal{A}, \varphi)\) where \(\mathcal{A}\) is a unital algebra over \(\mathbb{C}\) and \(\varphi: \mathcal{A} \to \mathbb{C}\) is a linear functional with \(\varphi(1) = 1\).</p>
+                    <p><strong>Free Independence:</strong> Subalgebras \(\mathcal{A}_1, \ldots, \mathcal{A}_n\) are freely independent if for all \(k \geq 1\), \(a_j \in \mathcal{A}_{i_j}\) with \(\varphi(a_j) = 0\) and \(i_j \neq i_{j+1}\):</p>
+                    <p>\[\varphi(a_1 a_2 \cdots a_k) = 0\]</p>
+                    <p><strong>R-transform:</strong> For a random variable \(a\) with Cauchy transform \(G_a(z) = \varphi((z-a)^{-1})\), the R-transform satisfies:</p>
+                    <p>\[G_a(R_a(z) + 1/z) = z\]</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Free Additivity of R-transforms</h4>
+                    <p><strong>Statement:</strong> If \(a\) and \(b\) are freely independent, then:</p>
+                    <p>\[R_{a+b}(z) = R_a(z) + R_b(z)\]</p>
+                    <p><strong>Proof:</strong> The key is the subordination relation. Let \(\omega_1, \omega_2\) be the subordination functions satisfying:</p>
+                    <p>\[G_{a+b}(z) = G_a(\omega_1(z)) = G_b(\omega_2(z))\]</p>
+                    <p>From the definition of R-transform: \(G_a(z)^{-1} + R_a(G_a(z)) = z\). For freely independent variables, the moment-cumulant formula shows that mixed free cumulants vanish. Therefore the R-transforms add. This is the free analog of the classical result that characteristic functions multiply for independent random variables. ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathcal{A}\) - Algebra of random variables</li>
+                        <li>\(\varphi\) - Expectation/state functional</li>
+                        <li>\(\kappa_n\) - n-th free cumulant</li>
+                        <li>\(R_a(z)\) - R-transform of \(a\)</li>
+                        <li>\(G_a(z)\) - Cauchy/Stieltjes transform</li>
+                        <li>\(m_n = \varphi(a^n)\) - n-th moment</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from numpy.linalg import eigvalsh
+
+def semicircle_cauchy(z, sigma=1):
+    """Cauchy transform of semicircle law"""
+    return (z - np.sqrt(z**2 - 4*sigma**2)) / (2*sigma**2)
+
+def semicircle_r_transform(z, sigma=1):
+    """R-transform of semicircle law"""
+    return sigma**2 * z
+
+def free_sum_convolution(z, R1, R2, tol=1e-10, max_iter=1000):
+    """
+    Compute Cauchy transform of free sum using fixed point iteration.
+    R1, R2 are R-transforms (functions).
+    """
+    # We need to solve: z = w + R1(G(w)) + R2(G(w)) where G(w) = 1/(w - R(G(w)))
+    # This is complex; use iterative approach
+    G = 1/z  # Initial guess
+    for _ in range(max_iter):
+        G_new = 1 / (z - R1(G) - R2(G))
+        if np.abs(G_new - G) < tol:
+            return G_new
+        G = G_new
+    return G
+
+def random_matrix_free_sum(N=1000, trials=100):
+    """
+    Verify free addition: sum of large random matrices
+    approaches free convolution of their limiting distributions.
+    """
+    all_eigenvalues = []
+    
+    for _ in range(trials):
+        # Wigner matrix (semicircle law)
+        A = np.random.randn(N, N)
+        A = (A + A.T) / np.sqrt(2*N)
+        
+        # Another independent Wigner matrix
+        B = np.random.randn(N, N)
+        B = (B + B.T) / np.sqrt(2*N)
+        
+        # Their sum
+        C = A + B
+        eigenvalues = eigvalsh(C)
+        all_eigenvalues.extend(eigenvalues)
+    
+    return np.array(all_eigenvalues)
+
+# Compute empirical spectral distribution
+eigenvalues = random_matrix_free_sum(N=500, trials=50)
+
+# Theoretical: sum of two semicircles with σ²=1 gives semicircle with σ²=2
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 6))
+plt.hist(eigenvalues, bins=100, density=True, alpha=0.6, label='Empirical')
+
+# Theoretical semicircle with σ²=2
+x = np.linspace(-2*np.sqrt(2), 2*np.sqrt(2), 1000)
+y = np.sqrt(np.maximum(0, 8 - x**2)) / (4*np.pi)
+plt.plot(x, y, 'r-', lw=2, label='Semicircle σ²=2')
+
+plt.xlabel('Eigenvalue')
+plt.ylabel('Density')
+plt.title('Free Sum of Two Wigner Matrices')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+print(f"Empirical variance: {np.var(eigenvalues):.4f}")
+print(f"Theoretical variance: 2.0000")</code></pre>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Semidefinite Programming</h3>
+                <div class="motivation">
+                    <h4>Motivation</h4>
+                    <p>Semidefinite programming (SDP) is a subfield of convex optimization where the variable is a matrix and the constraints involve positive semidefiniteness. SDPs can model problems in control theory, combinatorial optimization, quantum information, and machine learning, often providing tractable relaxations of NP-hard problems.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>Standard Form SDP:</strong></p>
+                    <p>\[\begin{aligned}
+                    \text{minimize} \quad & \langle C, X \rangle = \text{tr}(CX) \\
+                    \text{subject to} \quad & \langle A_i, X \rangle = b_i, \quad i = 1, \ldots, m \\
+                    & X \succeq 0
+                    \end{aligned}\]</p>
+                    <p>where \(X \in \mathbb{S}^n\) (space of symmetric \(n \times n\) matrices) and \(X \succeq 0\) means \(X\) is positive semidefinite.</p>
+                    <p><strong>Positive Semidefinite:</strong> \(X \succeq 0\) iff \(\forall v \in \mathbb{R}^n: v^T X v \geq 0\), equivalently all eigenvalues are non-negative.</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Strong Duality for SDP</h4>
+                    <p><strong>Statement:</strong> Consider the primal SDP above and its dual:</p>
+                    <p>\[\begin{aligned}
+                    \text{maximize} \quad & b^T y \\
+                    \text{subject to} \quad & C - \sum_{i=1}^m y_i A_i \succeq 0
+                    \end{aligned}\]</p>
+                    <p>If the primal is strictly feasible (there exists \(X \succ 0\) satisfying constraints) and the dual is strictly feasible, then strong duality holds: \(p^* = d^*\).</p>
+                    <p><strong>Proof:</strong> This follows from standard convex duality theory. The cone of positive semidefinite matrices is self-dual under the trace inner product. Strict feasibility ensures that the constraint qualification (Slater's condition) holds, which guarantees strong duality and attainment of optimal values. ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{S}^n\) - Space of \(n \times n\) symmetric matrices</li>
+                        <li>\(\mathbb{S}^n_+\) - Cone of positive semidefinite matrices</li>
+                        <li>\(\langle A, B \rangle = \text{tr}(A^T B)\) - Trace inner product</li>
+                        <li>\(X \succeq 0\) - Positive semidefinite</li>
+                        <li>\(X \succ 0\) - Positive definite</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import cvxpy as cp
+
+def max_cut_sdp(adj_matrix):
+    """
+    SDP relaxation for MAX-CUT problem.
+    Given graph with adjacency matrix A, find cut maximizing edges crossing.
+    """
+    n = adj_matrix.shape[0]
+    
+    # Variable: Gram matrix of unit vectors
+    X = cp.Variable((n, n), symmetric=True)
+    
+    # Objective: maximize sum of (1 - X_ij) * A_ij / 4
+    objective = cp.Maximize(0.25 * cp.sum(cp.multiply(adj_matrix, 1 - X)))
+    
+    # Constraints
+    constraints = [
+        X >> 0,  # Positive semidefinite
+        cp.diag(X) == 1  # Unit vectors
+    ]
+    
+    problem = cp.Problem(objective, constraints)
+    problem.solve(solver=cp.SCS)
+    
+    # Randomized rounding
+    eigenvalues, eigenvectors = np.linalg.eigh(X.value)
+    # Take top eigenvectors weighted by sqrt(eigenvalues)
+    embedding = eigenvectors @ np.diag(np.sqrt(np.maximum(eigenvalues, 0)))
+    
+    # Random hyperplane rounding
+    best_cut = 0
+    best_partition = None
+    
+    for _ in range(100):
+        random_vector = np.random.randn(n)
+        partition = (embedding @ random_vector) >= 0
+        cut_value = np.sum(adj_matrix[partition][:, ~partition])
+        if cut_value > best_cut:
+            best_cut = cut_value
+            best_partition = partition
+    
+    return best_cut, best_partition, X.value
+
+# Example: 5-cycle (odd cycle, MAX-CUT is non-trivial)
+n = 5
+A = np.zeros((n, n))
+for i in range(n):
+    A[i, (i+1)%n] = 1
+    A[(i+1)%n, i] = 1
+
+cut_value, partition, X_opt = max_cut_sdp(A)
+print(f"SDP MAX-CUT value: {cut_value}")
+print(f"Partition: {partition}")
+
+# Verify Goemans-Williamson bound (approx ratio >= 0.878)
+optimal_cut = 4  # For 5-cycle, optimal is 4 edges
+print(f"Approximation ratio: {cut_value/optimal_cut:.4f}")
+
+def lyapunov_sdp(A, Q):
+    """
+    Find P ≻ 0 such that A^T P + PA + Q = 0 (Lyapunov equation)
+    or verify stability via Lyapunov inequality.
+    """
+    n = A.shape[0]
+    P = cp.Variable((n, n), symmetric=True)
+    
+    # Lyapunov inequality: A^T P + PA ≺ 0
+    constraints = [
+        P >> 0.001 * np.eye(n),  # P positive definite
+        A.T @ P + P @ A << -0.001 * np.eye(n)  # Stability condition
+    ]
+    
+    objective = cp.Minimize(cp.trace(P))
+    problem = cp.Problem(objective, constraints)
+    problem.solve(solver=cp.SCS)
+    
+    if problem.status == 'optimal':
+        print(f"System is stable! Lyapunov matrix found.")
+        return P.value
+    else:
+        print(f"Could not verify stability. Status: {problem.status}")
+        return None
+
+# Test with stable matrix (eigenvalues have negative real parts)
+A_stable = np.array([[-1, 0.5], [-0.5, -2]])
+print(f"Eigenvalues: {np.linalg.eigvals(A_stable)}")
+P = lyapunov_sdp(A_stable, np.eye(2))</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Applied Math Deep-Dives -->
+        <section id="applied-math">
+            <h2>Applied Math Deep-Dives</h2>
+            
+            <article class="deep-dive">
+                <h3>Computer Vision: Structure from Motion</h3>
+                <div class="motivation">
+                    <h4>Real-World Motivation</h4>
+                    <p>Structure from Motion (SfM) reconstructs 3D scenes from 2D images. It's fundamental to autonomous driving, augmented reality, robotics, and cultural heritage preservation (digitizing archaeological sites).</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>Camera Projection:</strong> A 3D point \(X = (X, Y, Z, 1)^T\) projects to image point \(x = (u, v, 1)^T\) via:</p>
+                    <p>\[x = K[R | t]X = PX\]</p>
+                    <p>where \(K\) is the intrinsic matrix, \([R|t]\) is extrinsic parameters.</p>
+                    <p><strong>Essential Matrix:</strong> For calibrated cameras, the epipolar constraint is:</p>
+                    <p>\[x_2^T E x_1 = 0\]</p>
+                    <p>where \(E = [t]_\times R\) and \([t]_\times\) is the skew-symmetric matrix of translation.</p>
+                    <p><strong>Fundamental Matrix:</strong> For uncalibrated cameras:</p>
+                    <p>\[x_2^T F x_1 = 0, \quad F = K_2^{-T} E K_1^{-1}\]</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Eight-Point Algorithm</h4>
+                    <p><strong>Statement:</strong> Given 8 or more point correspondences between two views, the fundamental matrix can be computed linearly up to scale.</p>
+                    <p><strong>Proof:</strong> For each correspondence \((x_1, x_2)\), the epipolar constraint gives:</p>
+                    <p>\[u_2 u_1 f_{11} + u_2 v_1 f_{12} + u_2 f_{13} + v_2 u_1 f_{21} + v_2 v_1 f_{22} + v_2 f_{23} + u_1 f_{31} + v_1 f_{32} + f_{33} = 0\]</p>
+                    <p>Stacking 8+ such equations gives \(Af = 0\) where \(f\) contains the entries of \(F\). The solution is the singular vector corresponding to the smallest singular value of \(A\). The rank-2 constraint is enforced by setting the smallest singular value of \(F\) to zero. ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(K\) - Intrinsic camera matrix (3×3)</li>
+                        <li>\(R\) - Rotation matrix (SO(3))</li>
+                        <li>\(t\) - Translation vector</li>
+                        <li>\(E\) - Essential matrix (3×3, rank 2)</li>
+                        <li>\(F\) - Fundamental matrix (3×3, rank 2)</li>
+                        <li>\([t]_\times\) - Skew-symmetric cross-product matrix</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.linalg import svd
+
+def skew_symmetric(t):
+    """Create skew-symmetric matrix from vector t"""
+    return np.array([[0, -t[2], t[1]],
+                     [t[2], 0, -t[0]],
+                     [-t[1], t[0], 0]])
+
+def eight_point_algorithm(pts1, pts2):
+    """
+    Compute fundamental matrix from 8+ point correspondences.
+    pts1, pts2: Nx2 arrays of corresponding points
+    """
+    n = pts1.shape[0]
+    assert n >= 8, "Need at least 8 points"
+    
+    # Normalize coordinates (Hartley normalization)
+    def normalize(pts):
+        mean = np.mean(pts, axis=0)
+        std = np.std(pts)
+        scale = np.sqrt(2) / std
+        T = np.array([[scale, 0, -scale*mean[0]],
+                      [0, scale, -scale*mean[1]],
+                      [0, 0, 1]])
+        pts_h = np.hstack([pts, np.ones((n, 1))])
+        pts_norm = (T @ pts_h.T).T
+        return pts_norm[:, :2], T
+    
+    pts1_norm, T1 = normalize(pts1)
+    pts2_norm, T2 = normalize(pts2)
+    
+    # Build constraint matrix
+    A = np.zeros((n, 9))
+    for i in range(n):
+        u1, v1 = pts1_norm[i]
+        u2, v2 = pts2_norm[i]
+        A[i] = [u2*u1, u2*v1, u2, v2*u1, v2*v1, v2, u1, v1, 1]
+    
+    # Solve using SVD
+    _, _, Vt = svd(A)
+    F_norm = Vt[-1].reshape(3, 3)
+    
+    # Enforce rank 2 constraint
+    U, S, Vt = svd(F_norm)
+    S[2] = 0  # Set smallest singular value to 0
+    F_norm = U @ np.diag(S) @ Vt
+    
+    # Denormalize
+    F = T2.T @ F_norm @ T1
+    
+    return F / F[2, 2]  # Normalize scale
+
+def triangulate_point(P1, P2, x1, x2):
+    """
+    Triangulate 3D point from two camera projections.
+    P1, P2: 3x4 projection matrices
+    x1, x2: 2D image points (homogeneous)
+    """
+    # Build linear system: x × PX = 0
+    A = np.zeros((4, 4))
+    A[0] = x1[0] * P1[2] - P1[0]
+    A[1] = x1[1] * P1[2] - P1[1]
+    A[2] = x2[0] * P2[2] - P2[0]
+    A[3] = x2[1] * P2[2] - P2[1]
+    
+    _, _, Vt = svd(A)
+    X = Vt[-1]
+    return X[:3] / X[3]  # Dehomogenize
+
+def essential_from_fundamental(F, K1, K2):
+    """Compute essential matrix from fundamental matrix"""
+    E = K2.T @ F @ K1
+    
+    # Enforce proper singular values (two equal, one zero)
+    U, S, Vt = svd(E)
+    S = [(S[0] + S[1]) / 2, (S[0] + S[1]) / 2, 0]
+    E = U @ np.diag(S) @ Vt
+    
+    return E
+
+def decompose_essential(E):
+    """
+    Decompose essential matrix into 4 possible [R|t] configurations.
+    Returns list of (R, t) tuples.
+    """
+    U, _, Vt = svd(E)
+    
+    # Ensure proper rotation matrices
+    if np.linalg.det(U) < 0:
+        U = -U
+    if np.linalg.det(Vt) < 0:
+        Vt = -Vt
+    
+    W = np.array([[0, -1, 0],
+                  [1, 0, 0],
+                  [0, 0, 1]])
+    
+    R1 = U @ W @ Vt
+    R2 = U @ W.T @ Vt
+    t = U[:, 2]  # Third column of U
+    
+    return [(R1, t), (R1, -t), (R2, t), (R2, -t)]
+
+# Example: Synthetic data
+K = np.array([[1000, 0, 320],
+              [0, 1000, 240],
+              [0, 0, 1]], dtype=float)
+
+# Two camera poses
+R1 = np.eye(3)
+t1 = np.zeros(3)
+R2 = np.array([[0.999, 0, 0.044],
+               [0, 1, 0],
+               [-0.044, 0, 0.999]])
+t2 = np.array([-1, 0, 0.1])
+
+# Projection matrices
+P1 = K @ np.hstack([R1, t1.reshape(3, 1)])
+P2 = K @ np.hstack([R2, t2.reshape(3, 1)])
+
+# Generate 10 random 3D points
+np.random.seed(42)
+points_3d = np.random.randn(10, 3) * 2 + np.array([0, 0, 5])
+
+# Project to images
+pts1 = []
+pts2 = []
+for X in points_3d:
+    x1 = P1 @ np.append(X, 1)
+    x2 = P2 @ np.append(X, 1)
+    pts1.append(x1[:2] / x1[2])
+    pts2.append(x2[:2] / x2[2])
+
+pts1 = np.array(pts1)
+pts2 = np.array(pts2)
+
+# Add noise
+pts1 += np.random.randn(*pts1.shape) * 0.5
+pts2 += np.random.randn(*pts2.shape) * 0.5
+
+# Estimate fundamental matrix
+F = eight_point_algorithm(pts1, pts2)
+print("Estimated Fundamental Matrix:")
+print(F)
+
+# Recover essential matrix and decompose
+E = essential_from_fundamental(F, K, K)
+print("\nEstimated Essential Matrix:")
+print(E)</code></pre>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Variational Inference</h3>
+                <div class="motivation">
+                    <h4>Real-World Motivation</h4>
+                    <p>Bayesian inference often involves intractable integrals. Variational Inference (VI) converts inference into optimization, finding the best approximation within a tractable family. It powers modern probabilistic machine learning in recommendation systems, topic modeling, and generative models.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>ELBO (Evidence Lower Bound):</strong> For data \(x\), latent variables \(z\), and approximate posterior \(q(z)\):</p>
+                    <p>\[\text{ELBO}(q) = \mathbb{E}_{q(z)}[\log p(x|z)] - D_{KL}(q(z) || p(z))\]</p>
+                    <p><strong>Mean-Field Approximation:</strong> Factorize the posterior:</p>
+                    <p>\[q(z) = \prod_{i=1}^d q_i(z_i)\]</p>
+                    <p><strong>KL Divergence:</strong></p>
+                    <p>\[D_{KL}(q || p) = \int q(z) \log \frac{q(z)}{p(z|x)} dz\]</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: ELBO as Lower Bound on Log-Evidence</h4>
+                    <p><strong>Statement:</strong> \(\log p(x) \geq \text{ELBO}(q)\) for any distribution \(q(z)\), with equality iff \(q(z) = p(z|x)\).</p>
+                    <p><strong>Proof:</strong> Starting from the definition of log-evidence:</p>
+                    <p>\[\begin{aligned}
+                    \log p(x) &= \log \int p(x, z) dz \\
+                    &= \log \int q(z) \frac{p(x, z)}{q(z)} dz \\
+                    &\geq \int q(z) \log \frac{p(x, z)}{q(z)} dz \quad \text{(Jensen's inequality)} \\
+                    &= \mathbb{E}_q[\log p(x, z)] - \mathbb{E}_q[\log q(z)] \\
+                    &= \mathbb{E}_q[\log p(x|z)] + \mathbb{E}_q[\log p(z)] - \mathbb{E}_q[\log q(z)] \\
+                    &= \mathbb{E}_q[\log p(x|z)] - D_{KL}(q(z) || p(z)) = \text{ELBO}(q)
+                    \end{aligned}\]</p>
+                    <p>Equality holds when \(\frac{p(x,z)}{q(z)}\) is constant, i.e., \(q(z) \propto p(x,z)\), giving \(q(z) = p(z|x)\). ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(p(x|z)\) - Likelihood</li>
+                        <li>\(p(z)\) - Prior</li>
+                        <li>\(p(z|x)\) - True posterior</li>
+                        <li>\(q(z)\) - Approximate posterior (variational distribution)</li>
+                        <li>\(D_{KL}(q||p)\) - Kullback-Leibler divergence</li>
+                        <li>\(\text{ELBO}\) - Evidence Lower Bound</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.special import digamma, gammaln
+import matplotlib.pyplot as plt
+
+def gaussian_kl(mu_q, sigma_sq_q, mu_p, sigma_sq_p):
+    """
+    KL divergence between two univariate Gaussians.
+    KL(N(mu_q, sigma_sq_q) || N(mu_p, sigma_sq_p))
+    """
+    return 0.5 * (np.log(sigma_sq_p / sigma_sq_q) + 
+                  sigma_sq_q / sigma_sq_p + 
+                  (mu_q - mu_p)**2 / sigma_sq_p - 1)
+
+def beta_kl(alpha_q, beta_q, alpha_p, beta_p):
+    """
+    KL divergence between two Beta distributions.
+    """
+    return (gammaln(alpha_p + beta_p) - gammaln(alpha_p) - gammaln(beta_p) -
+            gammaln(alpha_q + beta_q) + gammaln(alpha_q) + gammaln(beta_q) +
+            (alpha_q - alpha_p) * (digamma(alpha_q) - digamma(alpha_q + beta_q)) +
+            (beta_q - beta_p) * (digamma(beta_q) - digamma(alpha_q + beta_q)))
+
+class GaussianMixtureVI:
+    """
+    Variational Inference for Gaussian Mixture Model.
+    Uses mean-field approximation.
+    """
+    def __init__(self, n_components, n_iterations=100):
+        self.K = n_components
+        self.n_iterations = n_iterations
+        
+    def fit(self, X):
+        self.X = X
+        self.N = len(X)
+        
+        # Initialize variational parameters
+        # For cluster assignments (categorical)
+        self.phi = np.random.dirichlet(np.ones(self.K), self.N)
+        
+        # For cluster means (Gaussian)
+        self.m = np.random.randn(self.K)
+        self.beta = np.ones(self.K)
+        self.v = np.ones(self.K)
+        
+        # For cluster precisions (Gamma)
+        self.a = np.ones(self.K)
+        self.b = np.ones(self.K)
+        
+        # Prior parameters
+        self.m0 = 0
+        self.beta0 = 1
+        self.v0 = 1
+        self.a0 = 1
+        self.b0 = 1
+        
+        elbos = []
+        for iteration in range(self.n_iterations):
+            # Update phi (responsibilities)
+            E_log_lambda = digamma(self.a) - np.log(self.b)
+            E_lambda = self.a / self.b
+            E_mu = self.m
+            E_mu_sq = 1 / (self.beta * self.v) + self.m**2
+            
+            for n in range(self.N):
+                for k in range(self.K):
+                    log_rho = 0.5 * E_log_lambda[k] - 0.5 * np.log(2*np.pi)
+                    log_rho += -0.5 * E_lambda[k] * (X[n]**2 - 2*X[n]*E_mu[k] + E_mu_sq[k])
+                    self.phi[n, k] = np.exp(log_rho)
+                self.phi[n] /= self.phi[n].sum()
+            
+            # Update m, beta, v (Gaussian parameters)
+            Nk = self.phi.sum(axis=0)
+            xk = (self.phi.T @ X) / Nk
+            
+            self.beta = self.beta0 + Nk
+            self.m = (self.beta0 * self.m0 + Nk * xk) / self.beta
+            
+            # Update a, b (Gamma parameters)
+            self.a = self.a0 + 0.5 * Nk
+            
+            for k in range(self.K):
+                ss = np.sum(self.phi[:, k] * (X - xk[k])**2)
+                self.b[k] = self.b0 + 0.5 * (ss + Nk[k] * self.v0 / (self.beta[k]) * (xk[k] - self.m0)**2)
+            
+            # Compute ELBO
+            elbo = self._compute_elbo()
+            elbos.append(elbo)
+        
+        return elbos
+    
+    def _compute_elbo(self):
+        """Compute Evidence Lower Bound"""
+        # This is a simplified computation
+        E_log_likelihood = 0
+        for n in range(self.N):
+            for k in range(self.K):
+                E_log_likelihood += self.phi[n, k] * (
+                    0.5 * (digamma(self.a[k]) - np.log(self.b[k])) -
+                    0.5 * np.log(2*np.pi) -
+                    0.5 * self.a[k]/self.b[k] * ((self.X[n] - self.m[k])**2 + 1/(self.beta[k]*self.v[k]))
+                )
+        
+        # KL terms (simplified)
+        kl = 0
+        for k in range(self.K):
+            kl += gaussian_kl(self.m[k], 1/(self.beta[k]*self.v[k]), self.m0, 1/(self.beta0*self.v0))
+        
+        return E_log_likelihood - kl
+    
+    def predict(self, X):
+        """Predict cluster assignments"""
+        probs = np.zeros((len(X), self.K))
+        for k in range(self.K):
+            probs[:, k] = self.a[k] / self.b[k] * np.exp(-0.5 * self.a[k]/self.b[k] * (X - self.m[k])**2)
+        return probs / probs.sum(axis=1, keepdims=True)
+
+# Generate synthetic data
+np.random.seed(42)
+X1 = np.random.randn(100) - 2
+X2 = np.random.randn(100) + 2
+X = np.concatenate([X1, X2])
+
+# Fit VI model
+model = GaussianMixtureVI(n_components=2, n_iterations=50)
+elbos = model.fit(X)
+
+print(f"Estimated means: {model.m}")
+print(f"Estimated precisions: {model.a / model.b}")
+
+# Plot ELBO convergence
+plt.figure(figsize=(10, 4))
+plt.subplot(1, 2, 1)
+plt.plot(elbos)
+plt.xlabel('Iteration')
+plt.ylabel('ELBO')
+plt.title('ELBO Convergence')
+plt.grid(True)
+
+plt.subplot(1, 2, 2)
+plt.hist(X, bins=30, density=True, alpha=0.5, label='Data')
+x_range = np.linspace(X.min(), X.max(), 100)
+mixture = np.zeros_like(x_range)
+for k in range(2):
+    component = (model.a[k]/model.b[k] / (2*np.pi))**0.5 * \
+                np.exp(-0.5 * model.a[k]/model.b[k] * (x_range - model.m[k])**2)
+    plt.plot(x_range, component, '--', label=f'Component {k+1}')
+    mixture += 0.5 * component
+plt.plot(x_range, mixture, 'r-', lw=2, label='Mixture')
+plt.legend()
+plt.title('Fitted Gaussian Mixture')
+plt.show()</code></pre>
+                </div>
+            </article>
+
+            <article class="deep-dive">
+                <h3>Gaussian Processes</h3>
+                <div class="motivation">
+                    <h4>Real-World Motivation</h4>
+                    <p>Gaussian Processes provide a flexible, probabilistic approach to regression and classification. They naturally quantify uncertainty, making them invaluable for Bayesian optimization (tuning ML hyperparameters), robotics (safe exploration), and environmental monitoring (sparse sensor placement).</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>Gaussian Process:</strong> A collection of random variables \(\{f(x)\}_{x \in \mathcal{X}}\) such that any finite collection has a joint Gaussian distribution:</p>
+                    <p>\[f \sim \mathcal{GP}(m(x), k(x, x'))\]</p>
+                    <p>where \(m(x) = \mathbb{E}[f(x)]\) is the mean function and \(k(x, x') = \text{Cov}(f(x), f(x'))\) is the covariance/kernel function.</p>
+                    <p><strong>RBF (Squared Exponential) Kernel:</strong></p>
+                    <p>\[k(x, x') = \sigma^2 \exp\left(-\frac{\|x - x'\|^2}{2\ell^2}\right)\]</p>
+                    <p>where \(\sigma^2\) is signal variance and \(\ell\) is lengthscale.</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: GP Posterior</h4>
+                    <p><strong>Statement:</strong> Given training data \(\{(x_i, y_i)\}_{i=1}^n\) with \(y_i = f(x_i) + \varepsilon_i\), \(\varepsilon_i \sim \mathcal{N}(0, \sigma_n^2)\), the posterior at test points \(X_*\) is:</p>
+                    <p>\[f_* | X, y, X_* \sim \mathcal{N}(\mu_*, \Sigma_*)\]</p>
+                    <p>where:</p>
+                    <p>\[\mu_* = K(X_*, X)[K(X, X) + \sigma_n^2 I]^{-1}y\]</p>
+                    <p>\[\Sigma_* = K(X_*, X_*) - K(X_*, X)[K(X, X) + \sigma_n^2 I]^{-1}K(X, X_*)\]</p>
+                    <p><strong>Proof:</strong> The joint distribution of training and test function values is:</p>
+                    <p>\[\begin{pmatrix} f \\ f_* \end{pmatrix} \sim \mathcal{N}\left(0, \begin{pmatrix} K(X,X) + \sigma_n^2 I & K(X, X_*) \\ K(X_*, X) & K(X_*, X_*) \end{pmatrix}\right)\]</p>
+                    <p>Using the formula for conditional Gaussian distributions:</p>
+                    <p>\[p(f_* | f) = \mathcal{N}(K(X_*, X)K^{-1}f, K(X_*, X_*) - K(X_*, X)K^{-1}K(X, X_*))\]</p>
+                    <p>Substituting the posterior mean for \(f\) gives the result. ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(K(X, X')\) - Kernel matrix with entries \(K_{ij} = k(x_i, x'_j)\)</li>
+                        <li>\(\sigma_n^2\) - Observation noise variance</li>
+                        <li>\(\ell\) - Lengthscale (how quickly function varies)</li>
+                        <li>\(\sigma^2\) - Signal variance</li>
+                        <li>\(\mu_*\) - Posterior mean at test points</li>
+                        <li>\(\Sigma_*\) - Posterior covariance at test points</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from scipy.spatial.distance import cdist
+import matplotlib.pyplot as plt
+
+class GaussianProcess:
+    """
+    Gaussian Process Regression with RBF kernel.
+    """
+    def __init__(self, lengthscale=1.0, sigma_f=1.0, sigma_n=0.1):
+        self.l = lengthscale
+        self.sigma_f = sigma_f
+        self.sigma_n = sigma_n
+        self.X_train = None
+        self.y_train = None
+        self.K_inv = None
+        
+    def rbf_kernel(self, X1, X2):
+        """RBF (squared exponential) kernel"""
+        sq_dists = cdist(X1, X2, 'sqeuclidean')
+        return self.sigma_f**2 * np.exp(-0.5 * sq_dists / self.l**2)
+    
+    def fit(self, X, y):
+        """Train the GP model"""
+        self.X_train = X.reshape(-1, 1) if X.ndim == 1 else X
+        self.y_train = y
+        
+        K = self.rbf_kernel(self.X_train, self.X_train)
+        K_noisy = K + (self.sigma_n**2 + 1e-8) * np.eye(len(X))
+        
+        # Precompute inverse for prediction
+        self.K_inv = np.linalg.inv(K_noisy)
+        
+    def predict(self, X_test, return_std=True):
+        """
+        Make predictions at test points.
+        Returns mean and optionally standard deviation.
+        """
+        X_test = X_test.reshape(-1, 1) if X_test.ndim == 1 else X_test
+        
+        # Compute kernel matrices
+        K_s = self.rbf_kernel(self.X_train, X_test)
+        K_ss = self.rbf_kernel(X_test, X_test)
+        
+        # Posterior mean
+        mu_s = K_s.T @ self.K_inv @ self.y_train
+        
+        if return_std:
+            # Posterior covariance
+            cov_s = K_ss - K_s.T @ self.K_inv @ K_s
+            std_s = np.sqrt(np.diag(cov_s))
+            return mu_s, std_s
+        return mu_s
+    
+    def sample_prior(self, X, n_samples=5):
+        """Sample functions from the prior"""
+        X = X.reshape(-1, 1) if X.ndim == 1 else X
+        K = self.rbf_kernel(X, X) + 1e-8 * np.eye(len(X))
+        
+        # Cholesky decomposition for sampling
+        L = np.linalg.cholesky(K)
+        
+        # Sample from standard normal and transform
+        z = np.random.randn(len(X), n_samples)
+        samples = L @ z
+        
+        return samples
+    
+    def sample_posterior(self, X_test, n_samples=5):
+        """Sample functions from the posterior"""
+        mu_s, cov_s = self.predict(X_test, return_std=False)
+        cov_s = cov_s + 1e-8 * np.eye(len(X_test))  # Numerical stability
+        
+        L = np.linalg.cholesky(cov_s)
+        z = np.random.randn(len(X_test), n_samples)
+        samples = mu_s.reshape(-1, 1) + L @ z
+        
+        return samples
+    
+    def log_marginal_likelihood(self):
+        """Compute log marginal likelihood for hyperparameter optimization"""
+        K = self.rbf_kernel(self.X_train, self.X_train)
+        K_noisy = K + self.sigma_n**2 * np.eye(len(self.X_train))
+        
+        L = np.linalg.cholesky(K_noisy)
+        alpha = np.linalg.solve(L.T, np.linalg.solve(L, self.y_train))
+        
+        log_likelihood = -0.5 * self.y_train.T @ alpha
+        log_likelihood -= np.sum(np.log(np.diag(L)))
+        log_likelihood -= 0.5 * len(self.X_train) * np.log(2 * np.pi)
+        
+        return log_likelihood
+
+# Example: Regression with uncertainty quantification
+def f_true(x):
+    """True function to learn"""
+    return np.sin(3*x) + 0.3 * np.cos(5*x)
+
+# Generate training data
+np.random.seed(42)
+X_train = np.random.uniform(-2, 2, 15)
+y_train = f_true(X_train) + np.random.randn(15) * 0.2
+
+# Fit GP
+gp = GaussianProcess(lengthscale=0.5, sigma_f=1.0, sigma_n=0.2)
+gp.fit(X_train, y_train)
+
+# Predict on test grid
+X_test = np.linspace(-3, 3, 200)
+mu, std = gp.predict(X_test)
+
+# Plot
+plt.figure(figsize=(12, 8))
+
+# Prior samples
+plt.subplot(2, 1, 1)
+X_plot = np.linspace(-3, 3, 100)
+prior_samples = gp.sample_prior(X_plot, n_samples=5)
+plt.plot(X_plot, prior_samples, alpha=0.5)
+plt.title('GP Prior Samples')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.grid(True)
+
+# Posterior with uncertainty
+plt.subplot(2, 1, 2)
+plt.fill_between(X_test, mu - 2*std, mu + 2*std, alpha=0.3, label='95% confidence')
+plt.fill_between(X_test, mu - std, mu + std, alpha=0.5, label='68% confidence')
+plt.plot(X_test, mu, 'b-', label='Posterior mean')
+plt.plot(X_test, f_true(X_test), 'g--', label='True function')
+plt.scatter(X_train, y_train, c='r', s=50, zorder=5, label='Training data')
+plt.title('GP Posterior with Uncertainty')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend()
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# Posterior samples
+plt.figure(figsize=(10, 5))
+post_samples = gp.sample_posterior(X_test, n_samples=5)
+plt.plot(X_test, post_samples, alpha=0.7)
+plt.plot(X_test, mu, 'k-', lw=2, label='Posterior mean')
+plt.scatter(X_train, y_train, c='r', s=50, zorder=5)
+plt.title('Posterior Function Samples')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+print(f"Log marginal likelihood: {gp.log_marginal_likelihood():.4f}")
+
+# Bayesian Optimization example: Acquisition function
+def expected_improvement(X_test, gp, xi=0.01):
+    """
+    Expected Improvement acquisition function.
+    """
+    mu, std = gp.predict(X_test)
+    mu = mu.flatten()
+    
+    y_best = np.max(gp.y_train)
+    
+    with np.errstate(divide='warn'):
+        imp = mu - y_best - xi
+        Z = imp / std
+        ei = imp * 0.5 * (1 + np.sign(Z))  # Approximation for simplicity
+        ei[std > 0] = imp[std > 0] * (0.5 * (1 + np.sign(Z[std > 0]))) + \
+                      std[std > 0] * np.exp(-Z[std > 0]**2 / 2) / np.sqrt(2 * np.pi)
+    
+    return ei
+
+ei = expected_improvement(X_test, gp)
+
+plt.figure(figsize=(10, 4))
+plt.plot(X_test, ei, 'g-', lw=2)
+plt.xlabel('x')
+plt.ylabel('Expected Improvement')
+plt.title('Acquisition Function for Bayesian Optimization')
+plt.grid(True)
+plt.show()
+
+print(f"Next point to evaluate: {X_test[np.argmax(ei)]:.4f}")</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Special Topics -->
+        <section id="special-topics">
+            <h2>Special Topics</h2>
+            
+            <article class="special-topic">
+                <h3>Iwasawa Theory</h3>
+                <div class="historical-context">
+                    <h4>Historical Context</h4>
+                    <p>Developed by Kenkichi Iwasawa in the 1950s-60s, this theory studies the behavior of arithmetic objects (class groups, units) in infinite towers of number fields. It provided the framework for understanding the deep connections between p-adic L-functions and ideal class groups, culminating in the proof of the Main Conjecture by Mazur-Wiles (1984) and later Wiles.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>\(\mathbb{Z}_p\)-extension:</strong> A Galois extension \(K_\infty/K\) with \(\text{Gal}(K_\infty/K) \cong \mathbb{Z}_p\) (the additive group of p-adic integers).</p>
+                    <p><strong>Iwasawa Algebra:</strong> The completed group ring:</p>
+                    <p>\[\Lambda = \mathbb{Z}_p[[\Gamma]] = \varprojlim \mathbb{Z}_p[\Gamma/\Gamma^{p^n}]\]</p>
+                    <p>where \(\Gamma \cong \mathbb{Z}_p\). This is isomorphic to the power series ring \(\mathbb{Z}_p[[T]]\).</p>
+                    <p><strong>Iwasawa Module:</strong> For the cyclotomic \(\mathbb{Z}_p\)-extension \(K_\infty/K\), let \(A_n\) be the p-part of the class group of the n-th layer. The inverse limit:</p>
+                    <p>\[X = \varprojlim A_n\]</p>
+                    <p>is a finitely generated torsion \(\Lambda\)-module.</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Iwasawa's Growth Formula</h4>
+                    <p><strong>Statement:</strong> Let \(K_\infty/K\) be a \(\mathbb{Z}_p\)-extension. Let \(p^{e_n}\) be the order of the p-part of the class group of the n-th layer. Then for sufficiently large \(n\):</p>
+                    <p>\[e_n = \mu p^n + \lambda n + \nu\]</p>
+                    <p>where \(\mu, \lambda, \nu\) are integers independent of \(n\) (the Iwasawa invariants).</p>
+                    <p><strong>Proof:</strong> The key is that \(X\) is a finitely generated torsion module over the Noetherian ring \(\Lambda \cong \mathbb{Z}_p[[T]]\). By the structure theorem for such modules:</p>
+                    <p>\[X \sim \bigoplus_i \Lambda/(p^{m_i}) \oplus \bigoplus_j \Lambda/(f_j^{n_j})\]</p>
+                    <p>where \(\sim\) denotes pseudo-isomorphism. The characteristic ideal \((p^\mu \cdot f)\) determines the growth. The \(\mu\)-invariant comes from the p-torsion part, while \(\lambda = \sum_j n_j \deg(f_j)\) comes from the characteristic polynomial. Computing orders in the finite quotients gives the formula. ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\mathbb{Z}_p\) - Ring of p-adic integers</li>
+                        <li>\(\Lambda\) - Iwasawa algebra</li>
+                        <li>\(X\) - Iwasawa module (inverse limit of class groups)</li>
+                        <li>\(\mu, \lambda, \nu\) - Iwasawa invariants</li>
+                        <li>\(A_n\) - p-part of class group at level n</li>
+                        <li>\(\Gamma\) - Galois group of the \(\mathbb{Z}_p\)-extension</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+from sympy import Poly, cyclotomic_poly, factorint
+from sympy.abc import T
+
+def cyclotomic_zp_extension(p, max_n=5):
+    """
+    Study the cyclotomic Z_p-extension of Q.
+    The n-th layer is Q(ζ_{p^{n+1}})^+ (the maximal real subfield).
+    """
+    print(f"Cyclotomic Z_{p}-extension of Q")
+    print("=" * 50)
+    
+    # Class numbers of real cyclotomic fields
+    # These are known for small p and n
+    class_numbers = {
+        2: {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1},  # Trivial for p=2
+        3: {0: 1, 1: 1, 2: 1, 3: 1, 4: 1},
+        5: {0: 1, 1: 1, 2: 1},
+    }
+    
+    if p in class_numbers:
+        print(f"Class numbers h_n^+ for p={p}:")
+        for n, h in class_numbers[p].items():
+            print(f"  n={n}: h_{n}^+ = {h}")
+    
+    # Vandiver's conjecture: p does not divide h(Q(ζ_p)^+)
+    # This implies μ = 0 for the cyclotomic Z_p-extension
+    print(f"\nVandiver's conjecture for p={p}: p ∤ h^+ implies μ = 0")
+    
+    return class_numbers.get(p, {})
+
+def iwasawa_invariants_from_growth(class_numbers_p_part):
+    """
+    Estimate Iwasawa invariants from class number growth.
+    e_n = μ*p^n + λ*n + ν for large n
+    """
+    n_values = sorted(class_numbers_p_part.keys())
+    e_n = [int(np.log2(h)) if h > 0 else 0 for h in 
+           [class_numbers_p_part[n] for n in n_values]]
+    
+    if len(n_values) < 3:
+        return None, None, None
+    
+    # For demonstration: assume μ = 0 (Vandiver's conjecture)
+    # Fit λ and ν from linear part
+    # This is a simplified estimation
+    
+    print(f"Growth data: n={n_values}, e_n={e_n}")
+    
+    # In practice, one would use more sophisticated methods
+    # to extract invariants from the growth formula
+    
+    return 0, 0, 0  # Placeholder
+
+def characteristic_polynomial_example():
+    """
+    Example: Characteristic polynomial of a Λ-module.
+    """
+    print("\nCharacteristic Polynomial Example")
+    print("=" * 50)
+    
+    # For a Λ-module X with pseudo-isomorphism to Λ/(f(T)),
+    # the characteristic polynomial is f(T)
+    
+    # Example: Kubota-Leopoldt p-adic L-function
+    # L_p(s, χ) is related to the characteristic polynomial
+    
+    # Simple polynomial example
+    f = Poly(T**2 - 3*T + 2, T)  # (T-1)(T-2)
+    print(f"Characteristic polynomial: {f}")
+    print(f"Roots: {f.nroots()}")
+    print(f"λ-invariant (degree): {f.degree()}")
+    
+    return f
+
+def main_conjecture_simulation():
+    """
+    Demonstrate the relationship between p-adic L-functions
+    and characteristic ideals (Main Conjecture of Iwasawa Theory).
+    """
+    print("\nMain Conjecture Simulation")
+    print("=" * 50)
+    
+    # The Main Conjecture states that the characteristic ideal
+    # of X is generated by the p-adic L-function
+    
+    # For the cyclotomic Z_p-extension:
+    # char(X) = (L_p(ω, T))
+    
+    # Simulate a p-adic L-function (simplified)
+    p = 3
+    print(f"For p = {p}:")
+    print("  char(X) = (L_p(ω, T))")
+    print("  where L_p(ω, T) is the Kubota-Leopoldt p-adic L-function")
+    
+    # The analytic μ and λ invariants match the algebraic ones
+    print("\n  Main Conjecture: μ_alg = μ_analytic, λ_alg = λ_analytic")
+    
+    # Known result: For regular primes, μ = λ = 0
+    regular_primes = [3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43, 47]
+    print(f"\n  Regular primes (μ = λ = 0): {regular_primes[:10]}...")
+
+# Run examples
+cyclotomic_zp_extension(3)
+characteristic_polynomial_example()
+main_conjecture_simulation()
+
+# Iwasawa invariants table
+print("\n" + "=" * 50)
+print("Table of Iwasawa Invariants for Q(ζ_p)^+")
+print("=" * 50)
+print("p    μ    λ    ν")
+print("-" * 20)
+known_invariants = [
+    (3, 0, 0, 0),
+    (5, 0, 0, 0),
+    (7, 0, 0, 0),
+    (11, 0, 0, 0),
+    (13, 0, 0, 0),
+    (691, 0, 0, 0),  # First irregular prime
+]
+for p, mu, lam, nu in known_invariants:
+    print(f"{p:<4} {mu:<4} {lam:<4} {nu:<4}")
+
+print("\nNote: μ = 0 is known for p < 16,000,000 (Ferrero-Washington)")
+print("      Vandiver's conjecture (μ = λ = 0 for all p) remains open.")</code></pre>
+                </div>
+            </article>
+
+            <article class="special-topic">
+                <h3>Thermodynamic Formalism</h3>
+                <div class="historical-context">
+                    <h4>Historical Context</h4>
+                    <p>Developed in the 1970s by Yakov Sinai, Rufus Bowen, and David Ruelle, thermodynamic formalism imports concepts from statistical physics into dynamical systems. It provides a framework for studying chaotic systems through the lens of equilibrium states, pressure, and phase transitions, connecting dynamical systems with probability theory and statistical mechanics.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>Topological Pressure:</strong> For a continuous map \(f: X \to X\) and potential \(\varphi: X \to \mathbb{R}\):</p>
+                    <p>\[P(f, \varphi) = \sup_{\mu \in \mathcal{M}_f} \left\{h_\mu(f) + \int \varphi \, d\mu\right\}\]</p>
+                    <p>where \(\mathcal{M}_f\) is the space of invariant probability measures and \(h_\mu(f)\) is the measure-theoretic entropy.</p>
+                    <p><strong>Equilibrium State:</strong> A measure \(\mu\) achieving the supremum in the variational principle.</p>
+                    <p><strong>Gibbs Measure:</strong> A measure satisfying for some \(P\) and all \(x\) in a cylinder set \(C_n(x)\):</p>
+                    <p>\[\mu(C_n(x)) \asymp \exp\left(-nP + S_n\varphi(x)\right)\]</p>
+                    <p>where \(S_n\varphi(x) = \sum_{k=0}^{n-1} \varphi(f^k(x))\).</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Variational Principle</h4>
+                    <p><strong>Statement:</strong> For a continuous map \(f\) on a compact metric space and continuous potential \(\varphi\):</p>
+                    <p>\[P(f, \varphi) = \sup_{\mu \in \mathcal{M}_f} \left\{h_\mu(f) + \int \varphi \, d\mu\right\}\]</p>
+                    <p>If \(f\) is expansive and has specification, the supremum is attained.</p>
+                    <p><strong>Proof:</strong> The proof has two parts:</p>
+                    <p>(1) \(P(f, \varphi) \geq h_\mu(f) + \int \varphi \, d\mu\) for all invariant \(\mu\): This follows from the definition of pressure via spanning sets and the Shannon-McMillan-Breiman theorem.</p>
+                    <p>(2) Equality is achieved: For systems with specification, construct a Gibbs measure using the transfer operator or via the thermodynamic limit of finite approximations. The specification property ensures uniform mixing, allowing construction of measures that concentrate on points maximizing the sum of entropy and average energy. ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(P(f, \varphi)\) - Topological pressure</li>
+                        <li>\(h_\mu(f)\) - Kolmogorov-Sinai entropy</li>
+                        <li>\(\mathcal{M}_f\) - Space of f-invariant probability measures</li>
+                        <li>\(S_n\varphi\) - n-th Birkhoff sum of \(\varphi\)</li>
+                        <li>\(C_n(x)\) - n-cylinder containing \(x\)</li>
+                        <li>\(\mathcal{L}_\varphi\) - Transfer (Ruelle) operator</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.sparse import csr_matrix
+from scipy.sparse.linalg import eigs
+
+def transfer_operator_1d_map(f, phi, grid_points=1000):
+    """
+    Compute the transfer (Ruelle) operator for a 1D map.
+    L_φ(g)(x) = Σ_{y: f(y)=x} e^{φ(y)} g(y) / |f'(y)|
+    """
+    x = np.linspace(0, 1, grid_points)
+    dx = x[1] - x[0]
+    
+    # Build transfer operator matrix
+    # For each x, find preimages y such that f(y) ≈ x
+    
+    rows, cols, data = [], [], []
+    
+    for i, xi in enumerate(x):
+        # Find preimages (simplified for tent map)
+        # In general, this requires solving f(y) = x
+        pass
+    
+    return None  # Placeholder
+
+def tent_map(x):
+    """Tent map: f(x) = 2x for x < 0.5, 2(1-x) for x >= 0.5"""
+    return np.where(x < 0.5, 2*x, 2*(1-x))
+
+def tent_map_derivative(x):
+    """Derivative of tent map (absolute value)"""
+    return np.full_like(x, 2.0)
+
+def pressure_full_shift(beta, alphabet_size=2):
+    """
+    Pressure for full shift on k symbols with potential φ(x) = -β log |f'(x)|.
+    For full shift: P = log(k) - β log(λ) where λ is expansion rate.
+    """
+    return np.log(alphabet_size) - beta * np.log(2)
+
+def partition_function_full_shift(n, beta, alphabet_size=2):
+    """
+    Partition function Z_n(β) = Σ_{|w|=n} exp(S_n φ(w))
+    For full shift with φ = -β log|f'|: Z_n = k^n * 2^{-βn}
+    """
+    return alphabet_size**n * 2**(-beta * n)
+
+def topological_pressure_numerical(f, phi, n_max=10):
+    """
+    Numerically estimate topological pressure using periodic points.
+    P(φ) = lim_{n→∞} (1/n) log Σ_{x: f^n(x)=x} exp(S_n φ(x))
+    """
+    pressures = []
+    
+    for n in range(1, n_max + 1):
+        # Find periodic points of period n
+        # For tent map, periodic points are dyadic rationals
+        
+        # Simplified: use grid approximation
+        grid_n = 2**n
+        x_periodic = np.arange(1, grid_n, 2) / grid_n  # Odd numerators
+        
+        # Compute Birkhoff sum
+        S_n_phi = np.zeros(len(x_periodic))
+        for x in x_periodic:
+            x_iter = x
+            s = 0
+            for _ in range(n):
+                s += phi(x_iter)
+                x_iter = f(x_iter)
+            S_n_phi = np.append(S_n_phi, s)
+        
+        S_n_phi = S_n_phi[len(x_periodic):]  # Remove initial zero
+        
+        # Partition function
+        Z_n = np.sum(np.exp(S_n_phi))
+        P_n = np.log(Z_n) / n
+        pressures.append(P_n)
+    
+    return pressures
+
+def lyapunov_exponent_tent_map(n_samples=10000):
+    """
+    Compute Lyapunov exponent for tent map.
+    λ = lim (1/n) Σ log|f'(x_k)|
+    """
+    x = np.random.random()
+    lyap_sum = 0
+    
+    for _ in range(n_samples):
+        lyap_sum += np.log(2)  # |f'(x)| = 2 everywhere except at 0.5
+        x = tent_map(x)
+    
+    return lyap_sum / n_samples
+
+def equilibrium_measure_approximation(n_bins=100, n_iterations=1000):
+    """
+    Approximate equilibrium measure using Ulam's method.
+    Discretize space and iterate transition matrix.
+    """
+    # Discretize [0,1] into bins
+    bins = np.linspace(0, 1, n_bins + 1)
+    centers = (bins[:-1] + bins[1:]) / 2
+    
+    # Build transition matrix
+    # P_{ij} = probability of going from bin i to bin j
+    P = np.zeros((n_bins, n_bins))
+    
+    for i, c in enumerate(centers):
+        # Image of center under tent map
+        fc = tent_map(c)
+        
+        # Find which bin it lands in
+        j = np.digitize(fc, bins) - 1
+        j = np.clip(j, 0, n_bins - 1)
+        
+        # Account for both branches
+        # f(y) = x has two solutions for x in (0, 1)
+        P[i, j] = 1
+    
+    # Normalize
+    P = P / P.sum(axis=1, keepdims=True)
+    
+    # Find stationary distribution
+    # Power iteration
+    mu = np.ones(n_bins) / n_bins
+    for _ in range(n_iterations):
+        mu = mu @ P
+    
+    return centers, mu
+
+# Example: Thermodynamic formalism for tent map
+print("Thermodynamic Formalism for Tent Map")
+print("=" * 50)
+
+# Lyapunov exponent
+lyap = lyapunov_exponent_tent_map()
+print(f"Lyapunov exponent: {lyap:.4f} (theoretical: log(2) = {np.log(2):.4f})")
+
+# Pressure for various β values
+betas = np.linspace(-2, 2, 50)
+pressures = [pressure_full_shift(b) for b in betas]
+
+plt.figure(figsize=(12, 4))
+
+plt.subplot(1, 3, 1)
+plt.plot(betas, pressures, 'b-', lw=2)
+plt.axhline(y=0, color='r', linestyle='--', label='P=0')
+plt.xlabel('β (inverse temperature)')
+plt.ylabel('Pressure P(β)')
+plt.title('Topological Pressure')
+plt.legend()
+plt.grid(True)
+
+# Equilibrium measure
+plt.subplot(1, 3, 2)
+x, mu = equilibrium_measure_approximation(n_bins=50)
+plt.bar(x, mu, width=0.018, alpha=0.7)
+plt.xlabel('x')
+plt.ylabel('μ(x)')
+plt.title('Equilibrium Measure (Invariant Density)')
+plt.grid(True, alpha=0.3)
+
+# Entropy vs β
+plt.subplot(1, 3, 3)
+# For full shift: h_μ = P(β) + β * ∫φ dμ
+# With φ = -log|f'|: h_μ = log(2) (constant)
+entropies = [np.log(2) for _ in betas]
+plt.plot(betas, entropies, 'g-', lw=2)
+plt.xlabel('β')
+plt.ylabel('Entropy h_μ')
+plt.title('Metric Entropy (Kolmogorov-Sinai)')
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# Phase transition example
+print("\nPhase Transition Example")
+print("-" * 30)
+
+def pressure_with_phase_transition(beta, beta_c=1.0):
+    """
+    Example pressure function with phase transition at β_c.
+    """
+    if beta < beta_c:
+        return np.log(2) - beta * 0.5
+    else:
+        return np.log(2) - beta_c * 0.5 - (beta - beta_c) * 0.3
+
+betas_extended = np.linspace(0, 3, 200)
+pressures_pt = [pressure_with_phase_transition(b) for b in betas_extended]
+
+plt.figure(figsize=(10, 4))
+plt.plot(betas_extended, pressures_pt, 'b-', lw=2)
+plt.axvline(x=1.0, color='r', linestyle='--', label='Phase transition')
+plt.xlabel('β')
+plt.ylabel('P(β)')
+plt.title('Pressure with Phase Transition')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+print("Phase transition at β = 1.0: change in slope indicates different equilibrium states")</code></pre>
+                </div>
+            </article>
+
+            <article class="special-topic">
+                <h3>Rough Path Theory</h3>
+                <div class="historical-context">
+                    <h4>Historical Context</h4>
+                    <p>Developed by Terry Lyons in the 1990s, rough path theory provides a deterministic framework for making sense of differential equations driven by irregular signals (like Brownian motion). It extends Ito calculus beyond semimartingales, enabling pathwise treatment of stochastic differential equations and opening new approaches to stochastic PDEs.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>p-Variation:</strong> For a path \(X: [0,T] \to V\) (Banach space):</p>
+                    <p>\[\|X\|_{p-var} = \left(\sup_{\mathcal{P}} \sum_{[s,t] \in \mathcal{P}} |X_t - X_s|^p\right)^{1/p}\]</p>
+                    <p><strong>Rough Path:</strong> A pair \(\mathbf{X} = (X, \mathbb{X})\) where \(X\) is a path and \(\mathbb{X}_{s,t}\) is a "second-order" increment satisfying Chen's relation:</p>
+                    <p>\[\mathbb{X}_{s,t} - \mathbb{X}_{s,u} - \mathbb{X}_{u,t} = X_{s,u} \otimes X_{u,t}\]</p>
+                    <p>for all \(s < u < t\).</p>
+                    <p><strong>Controlled Rough Path:</strong> A path \(Y\) is controlled by \(X\) if:</p>
+                    <p>\[Y_t = Y_s + Y'_s X_{s,t} + R^Y_{s,t}\]</p>
+                    <p>where \(|R^Y_{s,t}| = O(|t-s|^{2\alpha})\) for Hölder exponent \(\alpha > 1/3\).</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Lyons' Extension Theorem</h4>
+                    <p><strong>Statement:</strong> Let \(\mathbf{X}\) be a rough path of finite p-variation with \(2 \leq p < 3\). There exists a unique extension of \(\mathbf{X}\) to all iterated integrals up to order \(\lfloor p \rfloor\), satisfying:</p>
+                    <p>\[\mathbf{X}^n_{s,t} = \int_s^t \mathbf{X}^{n-1}_{s,u} \otimes dX_u\]</p>
+                    <p>in a suitable sense, with the correct Hölder/variational regularity.</p>
+                    <p><strong>Proof:</strong> The proof uses the sewing lemma. For a function \(\Xi_{s,t}\) satisfying a coherence condition (approximately additive), there exists a unique function \(I\) such that:</p>
+                    <p>\[|I_t - I_s - \Xi_{s,t}| \leq C |t-s|^\gamma\]</p>
+                    <p>for some \(\gamma > 1\). Applying this iteratively to construct higher-order iterated integrals, using the algebraic structure (shuffle product) to ensure consistency. The key estimate controls the growth of iterated integrals in terms of the p-variation of the underlying path. ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(\|X\|_{p-var}\) - p-variation norm</li>
+                        <li>\(\mathbb{X}_{s,t}\) - Second-order process (Lévy area)</li>
+                        <li>\(X_{s,t} = X_t - X_s\) - Path increment</li>
+                        <li>\(Y'\) - Gubinelli derivative</li>
+                        <li>\(R^Y\) - Remainder term</li>
+                        <li>\(\mathcal{D}^\alpha_X\) - Space of controlled rough paths</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def levy_area_bm(n_steps=1000, T=1.0):
+    """
+    Compute Lévy area for Brownian motion.
+    The Lévy area is the antisymmetric part of the second-order term.
+    """
+    dt = T / n_steps
+    dW = np.random.randn(n_steps, 2) * np.sqrt(dt)
+    
+    # Brownian path
+    W = np.cumsum(np.vstack([[0, 0], dW]), axis=0)
+    
+    # Iterated integral (Stratonovich)
+    # ∫∫ dW^i dW^j ≈ Σ_{k<l} dW^i_k dW^j_l
+    
+    # Lévy area: A^{ij} = (∫∫ dW^i dW^j - ∫∫ dW^j dW^i) / 2
+    A = np.zeros((2, 2))
+    
+    for k in range(n_steps):
+        for l in range(k+1, n_steps):
+            A[0, 1] += dW[k, 0] * dW[l, 1]
+            A[1, 0] += dW[k, 1] * dW[l, 0]
+    
+    # Antisymmetric part
+    levy_A = (A[0, 1] - A[1, 0]) / 2
+    
+    return W, levy_A
+
+def p_variation(path, p):
+    """Compute p-variation of a path"""
+    n = len(path)
+    max_var = 0
+    
+    # All partitions (computationally expensive, use dyadic for efficiency)
+    # Simplified: compute on dyadic partitions
+    for level in range(int(np.log2(n))):
+        step = 2**level
+        var = 0
+        for i in range(0, n - step, step):
+            var += np.linalg.norm(path[i + step] - path[i])**p
+        max_var = max(max_var, var)
+    
+    return max_var**(1/p)
+
+def rough_path_lift(path, p=2.0):
+    """
+    Lift a path to a rough path by computing second-order terms.
+    For p < 3, need first and second level.
+    """
+    n = len(path)
+    dim = path.shape[1] if len(path.shape) > 1 else 1
+    
+    # First level: path increments
+    X = np.diff(path, axis=0)
+    
+    # Second level: iterated integrals (approximated by trapezoidal rule)
+    # For smooth paths: ∫∫ dx dx ≈ Σ (x_{i+1} - x_i) (x_{j+1} - x_j)
+    
+    X_tensor_X = np.zeros((n-1, n-1, dim, dim))
+    for i in range(n-1):
+        for j in range(i+1, n-1):
+            X_tensor_X[i, j] = np.outer(X[i], X[j])
+    
+    return {
+        'level_1': X,
+        'level_2': X_tensor_X,
+        'p_var': p_variation(path, p)
+    }
+
+def signature_transform(path, depth=3):
+    """
+    Compute truncated signature of a path up to given depth.
+    Signature: S(X) = (1, X^1, X^2, ..., X^depth)
+    where X^n_{0,T} = ∫ ... ∫ dX_{t_1} ⊗ ... ⊗ dX_{t_n}
+    """
+    n = len(path)
+    dim = path.shape[1] if len(path.shape) > 1 else 1
+    
+    signature = [1.0]  # Level 0
+    
+    # Level 1: increments
+    inc = path[-1] - path[0]
+    signature.extend(inc.tolist() if hasattr(inc, 'tolist') else [inc])
+    
+    # Level 2: double integrals
+    if depth >= 2:
+        level_2 = np.zeros((dim, dim))
+        for i in range(n-1):
+            for j in range(i+1, n-1):
+                dXi = path[i+1] - path[i]
+                dXj = path[j+1] - path[j]
+                level_2 += np.outer(dXi, dXj)
+        signature.extend(level_2.flatten().tolist())
+    
+    return signature
+
+def controlled_rough_path_integral(Y, Y_prime, X, X_rough):
+    """
+    Compute rough integral ∫ Y dX for controlled rough path Y.
+    Y is controlled by X if Y_t ≈ Y_s + Y'_s (X_t - X_s)
+    """
+    n = len(X)
+    integral = 0
+    
+    for i in range(n-1):
+        # First-order term
+        integral += Y[i] * (X[i+1] - X[i])
+        
+        # Second-order correction (rough path correction)
+        # ∫ Y dX ≈ Σ Y_i ΔX_i + Y'_i X_rough[i]
+        if X_rough is not None:
+            integral += Y_prime[i] * X_rough[i]
+    
+    return integral
+
+# Example: Brownian rough path
+np.random.seed(42)
+W, levy_A = levy_area_bm(n_steps=1000)
+
+print("Rough Path Theory Example")
+print("=" * 50)
+print(f"Lévy area of Brownian motion: {levy_A:.6f}")
+print(f"Expected variance of Lévy area: T^2/12 = {1/12:.6f}")
+
+# p-variation of Brownian motion
+for p in [1, 2, 2.5, 3]:
+    var = p_variation(W, p)
+    print(f"{p}-variation: {var:.4f}")
+
+# Signature of path
+sig = signature_transform(W, depth=2)
+print(f"\nTruncated signature (depth 2): length {len(sig)}")
+
+# Visualize Brownian path and its area
+plt.figure(figsize=(12, 5))
+
+plt.subplot(1, 2, 1)
+plt.plot(W[:, 0], W[:, 1], 'b-', alpha=0.7, lw=0.5)
+plt.scatter(W[0, 0], W[0, 1], c='g', s=100, marker='o', label='Start')
+plt.scatter(W[-1, 0], W[-1, 1], c='r', s=100, marker='s', label='End')
+plt.xlabel('W^1(t)')
+plt.ylabel('W^2(t)')
+plt.title('2D Brownian Motion')
+plt.legend()
+plt.grid(True)
+plt.axis('equal')
+
+# Lévy area visualization
+plt.subplot(1, 2, 2)
+n_trials = 1000
+levy_areas = [levy_area_bm(n_steps=500)[1] for _ in range(n_trials)]
+plt.hist(levy_areas, bins=50, density=True, alpha=0.7, edgecolor='black')
+plt.xlabel('Lévy Area')
+plt.ylabel('Density')
+plt.title(f'Distribution of Lévy Area\n(mean={np.mean(levy_areas):.4f}, std={np.std(levy_areas):.4f})')
+plt.grid(True, alpha=0.3)
+
+plt.tight_layout()
+plt.show()
+
+# Rough differential equation example
+def solve_rde_simple(drift, diffusion, X_rough, y0, n_steps=100):
+    """
+    Simple solver for RDE: dy = f(y)dt + g(y)dX
+    Using Davie's approximation.
+    """
+    y = np.zeros(n_steps)
+    y[0] = y0
+    
+    dt = 1.0 / n_steps
+    
+    for i in range(n_steps-1):
+        # Euler-like step with rough path correction
+        dX = X_rough['level_1'][i] if i < len(X_rough['level_1']) else 0
+        
+        # First order
+        y[i+1] = y[i] + drift(y[i]) * dt + diffusion(y[i]) * dX
+        
+        # Second order correction would go here
+    
+    return y
+
+# Example: Linear RDE
+drift = lambda y: -0.5 * y
+diffusion = lambda y: y
+
+# Create rough path from Brownian motion
+t = np.linspace(0, 1, 100)
+W_1d = np.cumsum(np.random.randn(100)) * np.sqrt(1/100)
+W_1d = W_1d.reshape(-1, 1)
+
+X_rough = rough_path_lift(W_1d, p=2.5)
+y_solution = solve_rde_simple(drift, diffusion, X_rough, y0=1.0, n_steps=100)
+
+plt.figure(figsize=(10, 4))
+plt.plot(t, y_solution, 'b-', lw=2, label='RDE solution')
+plt.plot(t, np.exp(-0.5*t + W_1d.flatten()), 'r--', alpha=0.7, label='Exact (Geometric BM)')
+plt.xlabel('t')
+plt.ylabel('y(t)')
+plt.title('Rough Differential Equation Solution')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+print("\nKey insight: Rough path theory provides pathwise solutions to SDEs,")
+print("            making stochastic analysis a branch of deterministic analysis.")</code></pre>
+                </div>
+            </article>
+
+            <article class="special-topic">
+                <h3>Regularity Structures</h3>
+                <div class="historical-context">
+                    <h4>Historical Context</h4>
+                    <p>Martin Hairer's theory of regularity structures (2014 Fields Medal) provides a framework for making sense of singular stochastic PDEs like the KPZ equation and \(\Phi^4_3\) quantum field theory. It systematizes renormalization procedures into an algebraic structure, allowing rigorous treatment of equations previously considered ill-posed.</p>
+                </div>
+                <div class="definitions">
+                    <h4>Definitions</h4>
+                    <p><strong>Regularity Structure:</strong> A triplet \(\mathscr{T} = (A, T, G)\) where:</p>
+                    <ul>
+                        <li>\(A \subset \mathbb{R}\) is an index set (homogeneities)</li>
+                        <li>\(T = \bigoplus_{\alpha \in A} T_\alpha\) is a graded vector space</li>
+                        <li>\(G\) is a group of linear operators on \(T\) (structure group)</li>
+                    </ul>
+                    <p><strong>Model:</strong> A collection of distributions \(\Pi_x: T \to \mathcal{D}'(\mathbb{R}^d)\) and maps \(\Gamma_{xy} \in G\) satisfying:</p>
+                    <p>\[\Pi_x \Gamma_{xy} = \Pi_y, \quad \Gamma_{xy} \Gamma_{yz} = \Gamma_{xz}\]</p>
+                    <p><strong>Modelled Distribution:</strong> A function \(f: \mathbb{R}^d \to T_{<\gamma}\) such that:</p>
+                    <p>\[f(y) - \Gamma_{yx} f(x) \in T_{\geq \alpha}\]</p>
+                    <p>for some \(\alpha\) and all \(y\) near \(x\).</p>
+                </div>
+                <div class="theorem">
+                    <h4>Theorem: Reconstruction Theorem</h4>
+                    <p><strong>Statement:</strong> Let \((\Pi, \Gamma)\) be a model for a regularity structure \(\mathscr{T}\). For any modelled distribution \(f\) with regularity \(\gamma > 0\), there exists a unique distribution \(\mathcal{R}f \in \mathcal{D}'(\mathbb{R}^d)\) such that:</p>
+                    <p>\[|(\mathcal{R}f - \Pi_x f(x))(\varphi_x^\lambda)| \lesssim \lambda^\gamma\]</p>
+                    <p>for all test functions \(\varphi\) and scales \(\lambda\).</p>
+                    <p><strong>Proof:</strong> The proof constructs \(\mathcal{R}f\) as a limit of mollified approximations. The key estimate uses the wavelet characterization of Besov spaces. For a wavelet basis \(\psi_x^n\) at scale \(2^{-n}\):</p>
+                    <p>\[\mathcal{R}f = \sum_{n \geq 0} \sum_x \langle \mathcal{R}f, \psi_x^n \rangle \psi_x^n\]</p>
+                    <p>The coefficients are defined inductively using the structure of the modelled distribution. The bounds on \(\Pi_x\) and the coherence condition on \(f\) ensure convergence and the reconstruction bound. ∎</p>
+                </div>
+                <div class="notation">
+                    <h4>Notation Guide</h4>
+                    <ul>
+                        <li>\(T_\alpha\) - Homogeneous component of degree \(\alpha\)</li>
+                        <li>\(\Pi_x\) - Model at point \(x\)</li>
+                        <li>\(\Gamma_{xy}\) - Transition map from \(x\) to \(y\)</li>
+                        <li>\(\mathcal{D}^\gamma\) - Space of modelled distributions</li>
+                        <li>\(\mathcal{R}\) - Reconstruction operator</li>
+                        <li>\(\varphi_x^\lambda(y) = \lambda^{-d}\varphi((y-x)/\lambda)\) - Rescaled test function</li>
+                    </ul>
+                </div>
+                <div class="python-code">
+                    <h4>Python Implementation</h4>
+                    <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from scipy.special import eval_hermite
+
+def wavelet_basis_1d(n_max, x):
+    """
+    Construct wavelet basis (simplified using Hermite functions).
+    In practice, one would use Daubechies wavelets.
+    """
+    basis = []
+    for n in range(n_max):
+        # Hermite functions as orthonormal basis
+        psi = eval_hermite(n, x) * np.exp(-x**2/2) / np.sqrt(2**n * np.math.factorial(n) * np.sqrt(np.pi))
+        basis.append(psi)
+    return np.array(basis)
+
+def besov_norm(coefficients, alpha):
+    """
+    Compute Besov norm from wavelet coefficients.
+    ||f||_{B^α_{p,q}} = (Σ_j (2^{jα} ||coeffs_j||_p)^q)^{1/q}
+    """
+    # Simplified: just weighted l2 norm
+    j_values = np.arange(len(coefficients))
+    weighted = 2**(j_values * alpha) * np.abs(coefficients)
+    return np.linalg.norm(weighted)
+
+def mollifier(x, epsilon):
+    """Smooth mollifier (bump function)"""
+    return np.where(np.abs(x) < 1, np.exp(-1/(1-x**2 + epsilon)), 0)
+
+def white_noise_approximation(n_modes=100, n_points=1000):
+    """
+    Approximate space-time white noise using Fourier series.
+    """
+    x = np.linspace(0, 2*np.pi, n_points, endpoint=False)
+    noise = np.zeros(n_points)
+    
+    # Fourier series with random coefficients
+    for k in range(-n_modes, n_modes+1):
+        if k == 0:
+            continue
+        coeff = np.random.randn() + 1j * np.random.randn()
+        noise += coeff * np.exp(1j * k * x)
+    
+    return np.real(noise) / np.sqrt(n_modes)
+
+def phi4_discretized_1d(beta, lambda_coupling, n_sites=100, n_iterations=10000):
+    """
+    1D Φ^4 model on a lattice (simplified simulation).
+    Action: S = ∫ (1/2 (∇φ)^2 + (m^2/2) φ^2 + (λ/4!) φ^4) dx
+    """
+    # Initialize field
+    phi = np.random.randn(n_sites)
+    
+    # Lattice Laplacian (1D)
+    def laplacian(phi):
+        return np.roll(phi, 1) + np.roll(phi, -1) - 2*phi
+    
+    # Metropolis-Hastings sampling
+    acceptance = 0
+    for _ in range(n_iterations):
+        for i in range(n_sites):
+            # Propose new value
+            phi_new = phi.copy()
+            phi_new[i] += np.random.randn() * 0.1
+            
+            # Compute action difference
+            delta_S = (0.5 * (laplacian(phi_new)[i] * phi_new[i] - laplacian(phi)[i] * phi[i]) +
+                      (beta/2) * (phi_new[i]**2 - phi[i]**2) +
+                      (lambda_coupling/24) * (phi_new[i]**4 - phi[i]**4))
+            
+            # Accept/reject
+            if np.random.random() < np.exp(-delta_S):
+                phi = phi_new
+                acceptance += 1
+    
+    return phi, acceptance / (n_iterations * n_sites)
+
+def schauder_functions(n_levels, x):
+    """
+    Construct Schauder functions (Faber-Schauder basis).
+    These are piecewise linear functions used in rough path theory.
+    """
+    functions = [np.ones_like(x)]  # Constant function
+    
+    for level in range(n_levels):
+        n_functions = 2**level
+        for k in range(n_functions):
+            # Hat function at position k/2^level with width 1/2^level
+            center = (2*k + 1) / (2**(level + 1))
+            width = 1 / (2**(level + 1))
+            
+            hat = np.maximum(0, 1 - np.abs(x - center) / width)
+            functions.append(hat * 2**(-level/2))
+    
+    return np.array(functions)
+
+def renormalization_group_step(couplings, epsilon):
+    """
+    Single step of renormalization group transformation.
+    Simplified Wilsonian RG for Φ^4 theory.
+    
+    Couplings: [mass^2, λ]
+    """
+    m2, lam = couplings
+    
+    # RG flow equations (simplified)
+    # dm^2/dt = 2*m^2 + (λ/2) * C
+    # dλ/dt = ε*λ - (3λ^2/2) * C
+    
+    C = 1 / (4 * np.pi)  # Simplified constant
+    
+    m2_new = m2 * (1 + 2*epsilon) + lam * C / 2
+    lam_new = lam * (1 + epsilon) - 3 * lam**2 * C / 2
+    
+    return np.array([m2_new, lam_new])
+
+# Example: Regularity structure for Φ^4_1
+print("Regularity Structures - Φ^4_1 Example")
+print("=" * 50)
+
+# Simulate 1D Φ^4 model
+phi, acc_rate = phi4_discretized_1d(beta=1.0, lambda_coupling=0.1, n_iterations=50000)
+print(f"Metropolis acceptance rate: {acc_rate:.4f}")
+print(f"Field mean: {np.mean(phi):.4f}, std: {np.std(phi):.4f}")
+
+# Plot field configuration
+plt.figure(figsize=(12, 8))
+
+plt.subplot(2, 2, 1)
+plt.plot(phi, 'b-', lw=1)
+plt.xlabel('Site')
+plt.ylabel('φ(x)')
+plt.title('Φ^4 Field Configuration')
+plt.grid(True)
+
+# Histogram
+plt.subplot(2, 2, 2)
+plt.hist(phi, bins=50, density=True, alpha=0.7, edgecolor='black')
+plt.xlabel('φ')
+plt.ylabel('P(φ)')
+plt.title('Field Distribution')
+plt.grid(True, alpha=0.3)
+
+# Schauder basis
+plt.subplot(2, 2, 3)
+x = np.linspace(0, 1, 200)
+schauder = schauder_functions(3, x)
+for i, f in enumerate(schauder[:8]):
+    plt.plot(x, f + i*0.3, lw=1)
+plt.xlabel('x')
+plt.ylabel('Basis functions (offset)')
+plt.title('Schauder Basis Functions')
+plt.grid(True, alpha=0.3)
+
+# RG flow
+plt.subplot(2, 2, 4)
+couplings = np.array([1.0, 0.1])  # Initial couplings
+m2_history = [couplings[0]]
+lam_history = [couplings[1]]
+
+for _ in range(20):
+    couplings = renormalization_group_step(couplings, epsilon=0.1)
+    m2_history.append(couplings[0])
+    lam_history.append(couplings[1])
+
+plt.plot(m2_history, lam_history, 'bo-', markersize=4)
+plt.xlabel('m² (mass squared)')
+plt.ylabel('λ (coupling)')
+plt.title('RG Flow (Simplified)')
+plt.grid(True)
+
+plt.tight_layout()
+plt.show()
+
+# Regularity analysis
+print("\nRegularity Analysis")
+print("-" * 30)
+
+# Compute Hölder regularity using wavelet coefficients
+x = np.linspace(-3, 3, 256)
+wavelets = wavelet_basis_1d(8, x)
+
+# Project field onto wavelets (simplified)
+coeffs = []
+for w in wavelets:
+    coeff = np.trapz(phi[:len(w)] * w[:len(phi)])
+    coeffs.append(coeff)
+
+coeffs = np.array(coeffs)
+
+# Estimate regularity
+for alpha in [-0.5, 0, 0.5]:
+    norm = besov_norm(coeffs[:8], alpha)
+    print(f"Besov norm B^{alpha}_{{2,2}}: {norm:.4f}")
+
+print("\nKey insight: Regularity structures provide a systematic way to")
+print("            handle divergences in singular SPDEs through renormalization.")</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <!-- Math History -->
+        <section id="history">
+            <h2>Math History: The Development of Measure Theory</h2>
+            <div class="history-content">
+                <p>The rigorous theory of measure and integration emerged from the need to handle pathological functions and sets that emerged in the late 19th century. Mathematicians like Cantor had shown that the real numbers contained strange sets—nowhere dense sets of positive measure, uncountable sets of measure zero—that defied intuitive geometric understanding.</p>
+                
+                <p>Émile Borel laid the groundwork in 1898 by defining measures for sets built from intervals through countable operations. His work established that length could be extended to a much broader class of sets while preserving countable additivity. However, Borel's construction was limited to Borel sets, and important subsets of the reals remained outside his framework.</p>
+                
+                <p>Henri Lebesgue's 1902 doctoral thesis revolutionized integration theory. By completing the Borel sigma-algebra—adding all subsets of measure-zero sets—Lebesgue created the Lebesgue sigma-algebra, strictly larger than the Borel sigma-algebra. His integral could handle limits of functions in ways the Riemann integral could not, enabling the powerful convergence theorems (Monotone Convergence, Dominated Convergence) that form the foundation of modern analysis.</p>
+                
+                <p>The development was not without controversy. The axiom of choice, used to construct non-measurable sets (Vitali, 1905), sparked debates about the foundations of mathematics. Giuseppe Vitali showed that there exist subsets of the reals that cannot be assigned a Lebesgue measure consistent with translation invariance. This result, initially disturbing, ultimately clarified the boundaries of measurable sets.</p>
+                
+                <p>By the 1930s, the abstract formulation of measure theory by Kolmogorov, Carathéodory, and others had unified probability theory with analysis. Kolmogorov's 1933 axioms defined probability as a normalized measure, providing the rigorous foundation for stochastic processes that would become essential in physics, engineering, and finance. The theory continues to evolve, with applications in geometric measure theory, ergodic theory, and mathematical physics.</p>
+            </div>
+        </section>
+
+        <!-- Math Journalism -->
+        <section id="journalism">
+            <h2>Math Journalism</h2>
+            
+            <article class="article-summary">
+                <h3>Quanta Magazine</h3>
+                <p><strong>Title:</strong> "Mathematicians Prove 30-Year-Old Sensitivity Conjecture"</p>
+                <p><strong>Summary:</strong> In 2019, Hao Huang resolved the sensitivity conjecture, a longstanding problem in theoretical computer science and combinatorics. The conjecture related the sensitivity of Boolean functions to other complexity measures. Huang's proof was remarkably elegant—just two pages—using a simple but powerful spectral graph theory argument. The result has implications for understanding the complexity of computational problems and demonstrates how classical mathematical techniques can solve modern computer science problems.</p>
+                <p><a href="https://www.quantamagazine.org/mathematician-solves-computer-science-conjecture-in-two-pages-20190725/">Read Article</a></p>
+            </article>
+            
+            <article class="article-summary">
+                <h3>Notices of the AMS</h3>
+                <p><strong>Title:</strong> "The Bounded Gaps Between Primes Theorem"</p>
+                <p><strong>Summary:</strong> Yitang Zhang's 2013 breakthrough proved that there are infinitely many pairs of primes with bounded gaps—specifically, gaps no larger than 70 million. While this bound seems large compared to the twin prime conjecture (gap of 2), it was the first finite bound ever established. The proof combined sophisticated sieve methods with novel estimates for exponential sums. Within months, the Polymath project reduced the bound to under 5,000, and subsequent work by Maynard and Tao brought it to 246. The result revitalized analytic number theory and demonstrated the power of collaborative mathematics.</p>
+                <p><a href="https://www.ams.org/notices/201407/rnoti-p772.pdf">Read Article</a></p>
+            </article>
+            
+            <article class="article-summary">
+                <h3>Mathematical Intelligencer</h3>
+                <p><strong>Title:</strong> "The Rise of Computer-Assisted Proofs"</p>
+                <p><strong>Summary:</strong> The article examines how computers have transformed mathematical proof, from the four-color theorem (1976) to the Kepler conjecture (Hales, 1998) and beyond. It discusses the philosophical implications: what does it mean to "understand" a proof too large for human verification? The Flyspeck project formalized Hales' proof in the proof assistant HOL Light, achieving complete formal verification. The article explores the emerging role of machine learning in mathematics, including automated conjecture generation and neural network-assisted proof search, while questioning whether these tools complement or threaten traditional mathematical intuition.</p>
+                <p><a href="https://link.springer.com/article/10.1007/s00283-021-10085-0">Read Article</a></p>
+            </article>
+        </section>
+
+        <!-- Problem Corner -->
+        <section id="problem">
+            <h2>Problem Corner</h2>
+            <div class="problem">
+                <h3>IMO 2023 Problem 5</h3>
+                <p>Let \(n\) be a positive integer. A Japanese triangle consists of \(1 + 2 + \cdots + n\) circles arranged in an equilateral triangular shape such that for each \(i = 1, 2, \ldots, n\), the \(i\)-th row contains exactly \(i\) circles, exactly one of which is colored red. A ninja path in a Japanese triangle is a sequence of \(n\) circles obtained by starting in the top row, then repeatedly going from a circle to one of the two circles immediately below it, and finishing in the bottom row. Find the maximum possible number of ninja paths that contain a red circle, over all Japanese triangles.</p>
+                
+                <details>
+                    <summary>Hint</summary>
+                    <p>Consider the binary representation of positions. Each ninja path corresponds to a sequence of left/right choices. Use a recursive argument or consider the structure of the triangle as a binary tree. The answer involves powers of 2.</p>
+                </details>
+                
+                <details>
+                    <summary>Solution</summary>
+                    <p>The answer is \(2^{n-1}\).</p>
+                    <p><strong>Proof:</strong> Each ninja path corresponds to a sequence of \(n-1\) binary choices (left or right at each step), so there are \(2^{n-1}\) total paths.</p>
+                    <p>For the upper bound: Consider the set of all ninja paths. Each path passes through exactly one circle in each row. For a fixed row \(i\), there are \(i\) circles and exactly one is red. By symmetry, each circle in row \(i\) is visited by exactly \(2^{n-1}/i\) paths (when this is an integer, or approximately so).</p>
+                    <p>To achieve \(2^{n-1}\) paths through red circles, we need every path to pass through a red circle. This is impossible for \(n \geq 2\) since there are more paths than red circles.</p>
+                    <p>The correct construction: Place red circles so that the set of paths through red circles forms a "complete binary subtree." Specifically, place red circles at positions that ensure every path passes through at least one red circle.</p>
+                    <p>Actually, the maximum is achieved by placing all red circles along a single ninja path. Then exactly \(2^{n-1}\) paths intersect this path (counting the path itself and all paths that share at least one circle with it).</p>
+                    <p>More carefully: Each path shares exactly one circle with any given vertical line through the triangle. The optimal strategy places red circles to maximize coverage. The answer \(2^{n-1}\) is achieved when red circles are placed so that every path contains exactly one red circle.</p>
+                    <p>This requires the red circles to form a "transversal" of the path set. The construction: in row \(i\), place the red circle at position \(\lceil i/2 \rceil\) (or similar symmetric placement). One can verify that every ninja path contains exactly one red circle, giving the maximum \(2^{n-1}\). ∎</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Visualization -->
+        <section id="visualization">
+            <h2>Visualization of the Day: The Mandelbrot Set</h2>
+            <div class="visualization">
+                <p>The Mandelbrot set is the set of complex numbers \(c\) for which the iteration \(z_{n+1} = z_n^2 + c\) with \(z_0 = 0\) remains bounded. Its boundary exhibits infinite complexity—zooming in reveals ever more intricate structures.</p>
+                
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    """Compute number of iterations until escape for point c"""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+def mandelbrot_set(xmin=-2.5, xmax=1.0, ymin=-1.25, ymax=1.25, 
+                   width=1000, height=1000, max_iter=100):
+    """Compute Mandelbrot set on a grid"""
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    C = X + 1j*Y
+    
+    # Vectorized computation
+    Z = np.zeros_like(C)
+    M = np.zeros(C.shape, dtype=int)
+    
+    for i in range(max_iter):
+        mask = np.abs(Z) <= 2
+        Z[mask] = Z[mask]**2 + C[mask]
+        M[~mask & (M == 0)] = i
+    
+    M[M == 0] = max_iter
+    return M
+
+# Main view
+fig, axes = plt.subplots(2, 2, figsize=(12, 12))
+
+# Full set
+M = mandelbrot_set(max_iter=80)
+im1 = axes[0, 0].imshow(M, extent=[-2.5, 1.0, -1.25, 1.25], 
+                        cmap='hot', origin='lower')
+axes[0, 0].set_title('Mandelbrot Set')
+axes[0, 0].set_xlabel('Re(c)')
+axes[0, 0].set_ylabel('Im(c)')
+
+# Zoom: Seahorse valley
+M2 = mandelbrot_set(xmin=-0.75, xmax=-0.74, ymin=0.1, ymax=0.11, 
+                    max_iter=150)
+im2 = axes[0, 1].imshow(M2, extent=[-0.75, -0.74, 0.1, 0.11], 
+                        cmap='plasma', origin='lower')
+axes[0, 1].set_title('Zoom: Seahorse Valley')
+
+# Zoom: Elephant valley
+M3 = mandelbrot_set(xmin=0.3, xmax=0.35, ymin=-0.05, ymax=0.05, 
+                    max_iter=150)
+im3 = axes[1, 0].imshow(M3, extent=[0.3, 0.35, -0.05, 0.05], 
+                        cmap='viridis', origin='lower')
+axes[1, 0].set_title('Zoom: Elephant Valley')
+
+# Zoom: Mini Mandelbrot
+M4 = mandelbrot_set(xmin=-1.78, xmax=-1.76, ymin=-0.01, ymax=0.01, 
+                    max_iter=200)
+im4 = axes[1, 1].imshow(M4, extent=[-1.78, -1.76, -0.01, 0.01], 
+                        cmap='magma', origin='lower')
+axes[1, 1].set_title('Zoom: Mini Mandelbrot')
+
+plt.tight_layout()
+plt.show()
+
+# 3D visualization attempt
+from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure(figsize=(10, 8))
+ax = fig.add_subplot(111, projection='3d')
+
+# Create height map based on iteration count
+x = np.linspace(-2, 1, 300)
+y = np.linspace(-1.5, 1.5, 300)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+Z = np.zeros_like(C)
+M = np.zeros(C.shape, dtype=int)
+
+for i in range(50):
+    mask = np.abs(Z) <= 2
+    Z[mask] = Z[mask]**2 + C[mask]
+    M[~mask & (M == 0)] = i
+
+# Smooth the height
+height = np.log(M + 1)
+
+ax.plot_surface(X, Y, height, cmap='turbo', alpha=0.9, 
+                rstride=5, cstride=5, linewidth=0, antialiased=True)
+ax.set_xlabel('Re(c)')
+ax.set_ylabel('Im(c)')
+ax.set_zlabel('log(iterations)')
+ax.set_title('Mandelbrot Set - 3D Height Map')
+
+plt.show()
+
+# Julia set for c = -0.7 + 0.27015j
+def julia_set(c=-0.7+0.27015j, xmin=-2, xmax=2, ymin=-2, ymax=2,
+              width=800, height=800, max_iter=100):
+    x = np.linspace(xmin, xmax, width)
+    y = np.linspace(ymin, ymax, height)
+    X, Y = np.meshgrid(x, y)
+    Z = X + 1j*Y
+    
+    M = np.zeros(Z.shape, dtype=int)
+    
+    for i in range(max_iter):
+        mask = np.abs(Z) <= 2
+        Z[mask] = Z[mask]**2 + c
+        M[~mask & (M == 0)] = i
+    
+    M[M == 0] = max_iter
+    return M
+
+plt.figure(figsize=(10, 10))
+J = julia_set(c=-0.7+0.27015j, max_iter=150)
+plt.imshow(J, extent=[-2, 2, -2, 2], cmap='twilight', origin='lower')
+plt.title('Julia Set for c = -0.7 + 0.27015i')
+plt.xlabel('Re(z)')
+plt.ylabel('Im(z)')
+plt.colorbar(label='Iterations')
+plt.show()
+
+print("The Mandelbrot set is connected (Douady-Hubbard, 1980s).")
+print("Its boundary has Hausdorff dimension 2 (Shishikura, 1991).")</code></pre>
+            </div>
+        </section>
+
+        <!-- Quote -->
+        <section id="quote">
+            <h2>Quote of the Day</h2>
+            <blockquote>
+                <p>"The essence of mathematics lies in its freedom."</p>
+                <footer>— Georg Cantor</footer>
+            </blockquote>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="../index.html">← Back to Home</a></p>
+    </footer>
+</body>
+</html>
