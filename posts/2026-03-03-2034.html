@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — March 3, 2026 at 20:34 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — March 3, 2026 at 20:34 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <header class="post-header">
+                <h1>📐 Math Digest — March 3, 2026 at 20:34 UTC</h1>
+                <p class="post-date">Published: 2026-03-03 at 20:34 UTC</p>
+                <div class="tags">
+                    <span class="tag">math-links</span>
+                    <span class="tag">free-book</span>
+                    <span class="tag">schemes</span>
+                    <span class="tag">sheaf-cohomology</span>
+                    <span class="tag">algebraic-number-theory</span>
+                    <span class="tag">quantum-computing</span>
+                    <span class="tag">climate-modeling</span>
+                    <span class="tag">queuing-theory</span>
+                    <span class="tag">perfect-numbers</span>
+                    <span class="tag">surreal-numbers</span>
+                    <span class="tag">langlands-program</span>
+                    <span class="tag">yang-mills</span>
+                    <span class="tag">math-history</span>
+                    <span class="tag">math-journalism</span>
+                    <span class="tag">problem-corner</span>
+                    <span class="tag">visualization</span>
+                </div>
+            </header>
+
+            <div class="post-content">
+                
+                <!-- Section 1: Math Links -->
+                <section id="math-links">
+                    <h2>🔗 3 Math Links</h2>
+                    <p>Three curated links to expand your mathematical horizons:</p>
+                    
+                    <div class="link-card">
+                        <h3><a href="https://stacks.math.columbia.edu/">The Stacks Project</a></h3>
+                        <p>The Stacks Project is an open-source textbook and reference work on algebraic geometry and the theory of algebraic stacks. Maintained by a global community of mathematicians led by Aise Johan de Jong, it has grown to over 7,000 pages covering everything from commutative algebra foundations to advanced topics in moduli theory.</p>
+                    </div>
+                    
+                    <div class="link-card">
+                        <h3><a href="https://www.numbertheory.org/">Number Theory Web</a></h3>
+                        <p>The Number Theory Web is a comprehensive resource for number theorists, maintained by Keith Matthews. It provides links to online resources, conferences, seminars, lecture notes, and software relevant to number theory.</p>
+                    </div>
+                    
+                    <div class="link-card">
+                        <h3><a href="https://www.3blue1brown.com/">3Blue1Brown</a></h3>
+                        <p>Created by Grant Sanderson, 3Blue1Brown produces animated videos explaining mathematics with a focus on visual intuition. The channel covers topics from linear algebra and calculus to differential equations, neural networks, and the Riemann hypothesis.</p>
+                    </div>
+                </section>
+
+                <!-- Section 2: Free Math Book -->
+                <section id="free-book">
+                    <h2>📚 Free Math Book</h2>
+                    <div class="book-highlight">
+                        <h3>Algebraic Geometry</h3>
+                        <p><strong>Author:</strong> Andreas Gathmann</p>
+                        <p><strong>Level:</strong> Graduate</p>
+                        <p><strong>Available at:</strong> <a href="https://www.mathematik.unn-kl.de/~gathmann/class/alggeom-2002/alggeom-2002.pdf">University of Kaiserslautern (Free PDF)</a></p>
+                        
+                        <p>This comprehensive introduction to modern algebraic geometry takes students from classical varieties to schemes and sheaf cohomology. Gathmann's notes are known for their clarity and careful motivation of abstract concepts.</p>
+                    </div>
+                </section>
+
+                <!-- Section 3: Pure Math Deep-Dives -->
+                <section id="pure-math">
+                    <h2>🔬 Pure Math Deep-Dives</h2>
+                    
+                    <h3>1. Schemes: The Geometry of Rings</h3>
+                    <h4>Motivation</h4>
+                    <p>Classical algebraic geometry studies varieties over algebraically closed fields like \(\\mathbb{C}\). But number theorists want to study solutions over \(\\mathbb{Q}\), \(\\mathbb{Z}\), and finite fields. Alexander Grothendieck's theory of schemes provides a unified framework.</p>
+                    
+                    <h4>Definitions</h4>
+                    <ul>
+                        <li><strong>Affine Scheme:</strong> For a commutative ring \(A\), the affine scheme \(\\text{Spec}(A)\) is the locally ringed space with the set of prime ideals of \(A\).</li>
+                        <li><strong>Scheme:</strong> A locally ringed space locally isomorphic to affine schemes.</li>
+                    </ul>
+                    
+                    <h4>Theorem: The Functor of Points</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Yoneda for Schemes):</strong> A scheme \(X\) is determined up to isomorphism by its functor of points \(h_X: \\text{Sch}^{\\text{op}} \\to \\text{Set}\).</p>
+                    </div>
+                    
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python"># Affine Scheme representation
+class AffineScheme:
+    def __init__(self, ring_gens, relations=None):
+        self.gens = ring_gens
+        self.relations = relations or []
+    
+    def coordinate_ring(self):
+        if not self.relations:
+            return f"k[{', '.join(str(g) for g in self.gens)}]"
+        else:
+            rel_str = ', '.join(str(r) for r in self.relations)
+            return f"k[{', '.join(str(g) for g in self.gens)}]/({rel_str})"
+
+# Example: The affine line
+from sympy import symbols
+x = symbols('x')
+A1 = AffineScheme([x])
+print(f"Affine line: {A1}")
+</code></pre>
+
+                    <h3>2. Sheaf Cohomology: Measuring Global Sections</h3>
+                    <h4>Motivation</h4>
+                    <p>Given a sheaf \(\\mathcal{F}\) on a topological space \(X\), local sections are easy to construct, but gluing them to global sections is obstructed. Sheaf cohomology measures these obstructions.</p>
+                    
+                    <h4>Theorem: Leray's Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Leray):</strong> Let \(\\mathcal{F}\) be a sheaf on \(X\) and \(\\mathcal{U} = \\{U_i\\}\) an open cover with acyclic intersections. Then: \(\\check{H}^p(\\mathcal{U}, \\mathcal{F}) \\cong H^p(X, \\mathcal{F})\)</p>
+                    </div>
+
+                    <h3>3. Algebraic Number Theory: Rings of Integers</h3>
+                    <h4>Motivation</h4>
+                    <p>Algebraic number theory studies finite extensions of \(\\mathbb{Q}\) and their rings of integers, exhibiting rich structure including unique factorization of ideals.</p>
+                    
+                    <h4>Theorem: Dirichlet's Unit Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Dirichlet, 1846):</strong> Let \(K\) be a number field with \(r_1\) real embeddings and \(r_2\) pairs of complex embeddings. Then: \(\\mathcal{O}_K^\\times \\cong \\mu(K) \\times \\mathbb{Z}^{r_1 + r_2 - 1}\)</p>
+                    </div>
+                </section>
+
+                <!-- Section 4: Applied Math Deep-Dives -->
+                <section id="applied-math">
+                    <h2>🌍 Applied Math Deep-Dives</h2>
+                    
+                    <h3>1. Quantum Computing: The Mathematics of Qubits</h3>
+                    <h4>Real-World Motivation</h4>
+                    <p>Quantum computing promises exponential speedups for certain computational problems. Unlike classical computers that use bits (0 or 1), quantum computers use qubits—quantum mechanical systems in superpositions.</p>
+                    
+                    <h4>Theorem: No-Cloning Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem (Wootters-Zurek, Dieks):</strong> There is no quantum operation that can clone an arbitrary unknown quantum state.</p>
+                    </div>
+
+                    <h3>2. Climate Modeling: The Mathematics of Earth's Climate</h3>
+                    <h4>Theorem: Energy Balance Climate Model</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> In the zero-dimensional energy balance model: \(C \\frac{dT}{dt} = Q(1 - \\alpha) - \\epsilon \\sigma T^4\)</p>
+                    </div>
+
+                    <h3>3. Queueing Theory: The Mathematics of Waiting Lines</h3>
+                    <h4>Theorem: M/M/1 Queue Analysis</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> For an M/M/1 queue with \(\\rho = \\lambda/\\mu \\lt 1\): \(P(N = n) = (1-\\rho)\\rho^n\) and \(L = \\frac{\\rho}{1-\\rho}\)</p>
+                    </div>
+                </section>
+
+                <!-- Section 5: Special Topics -->
+                <section id="special-topics">
+                    <h2>🎯 Special Topics</h2>
+                    
+                    <h3>1. Perfect Numbers: Ancient Mysteries</h3>
+                    <h4>Historical Context</h4>
+                    <p>Perfect numbers equal the sum of their proper divisors. Euclid proved that if \(2^p - 1\) is prime, then \(2^{p-1}(2^p - 1)\) is perfect.</p>
+                    
+                    <h4>Theorem: Euclid-Euler Theorem</h4>
+                    <div class="theorem">
+                        <p><strong>Theorem:</strong> An even number is perfect iff it has the form \(n = 2^{p-1}(2^p - 1)\) where \(2^p - 1\) is a Mersenne prime.</p>
+                    </div>
+
+                    <h3>2. Surreal Numbers: A Universe of Numbers</h3>
+                    <h4>Historical Context</h4>
+                    <p>Surreal numbers were discovered by John Horton Conway in the 1970s. They form a proper class including all real numbers, all ordinals, and infinitely many infinite and infinitesimal numbers.</p>
+
+                    <h3>3. The Langlands Program: A Grand Unification</h3>
+                    <h4>Historical Context</h4>
+                    <p>The Langlands program, initiated by Robert Langlands in 1967, is a vast web of conjectures connecting number theory, algebraic geometry, and representation theory.</p>
+
+                    <h3>4. The Yang-Mills Mass Gap Problem</h3>
+                    <h4>Historical Context</h4>
+                    <p>The Yang-Mills mass gap problem is one of the seven Millennium Prize Problems. It asks for proof that quantum Yang-Mills theory has a mass gap.</p>
+                </section>
+
+                <!-- Section 6: Math History -->
+                <section id="math-history">
+                    <h2>📜 Math History: The Birth of Modern Algebra</h2>
+                    
+                    <p>The 16th century witnessed one of the most dramatic episodes in mathematical history: the discovery of algebraic solutions to cubic and quartic equations. This story involves bitter rivalries, public challenges, secret techniques, and the birth of complex numbers.</p>
+                    
+                    <p>The ancient Babylonians, Egyptians, and Greeks had solved linear and quadratic equations, but the cubic resisted solution for millennia. In 1494, Luca Pacioli declared that general solutions to cubic equations were impossible.</p>
+                    
+                    <p>But Pacioli was wrong. Scipione del Ferro, a professor at the University of Bologna, discovered around 1515 how to solve the depressed cubic. He kept his method secret, as was customary.</p>
+                    
+                    <p>In 1535, Fior challenged Niccolò Tartaglia to a mathematical duel. Tartaglia worked feverishly and discovered the solution just days before the deadline. He solved all of Fior's problems while Fior solved none.</p>
+                    
+                    <p>Girolamo Cardano learned of Tartaglia's success and begged for the formula. In 1539, Tartaglia revealed it under oath of secrecy. But Cardano published the solutions in his 1545 masterpiece <em>Ars Magna</em>.</p>
+                </section>
+
+                <!-- Section 7: Math Journalism -->
+                <section id="math-journalism">
+                    <h2>📰 Math Journalism</h2>
+                    
+                    <h3>1. Quanta Magazine</h3>
+                    <div class="article-summary">
+                        <h4><a href="https://www.quantamagazine.org/">Mathematicians Identify the "Best" Versions of Classic Sets</a></h4>
+                        <p><strong>Summary:</strong> Researchers have developed a framework for identifying optimal versions of fundamental mathematical objects, establishing criteria for what makes one version of a set "better" than another.</p>
+                    </div>
+                    
+                    <h3>2. Nature</h3>
+                    <div class="article-summary">
+                        <h4><a href="https://www.nature.com/">AI Makes Breakthrough in Solving Complex Mathematical Problems</a></h4>
+                        <p><strong>Summary:</strong> A team has demonstrated that large language models combined with formal verification systems can solve increasingly complex mathematical problems.</p>
+                    </div>
+                    
+                    <h3>3. AMS Notices</h3>
+                    <div class="article-summary">
+                        <h4><a href="https://www.ams.org/notices">The Future of Mathematical Publishing</a></h4>
+                        <p><strong>Summary:</strong> The AMS examines how open access mandates, preprint servers, and AI tools are transforming mathematical publishing.</p>
+                    </div>
+                </section>
+
+                <!-- Section 8: Problem Corner -->
+                <section id="problem-corner">
+                    <h2>🧩 Problem Corner</h2>
+                    
+                    <h3>IMO Shortlist Problem</h3>
+                    <div class="problem">
+                        <p><strong>Problem:</strong> Let \(n\) be a positive integer. A sequence of integers \(a_0, a_1, \\ldots, a_n\) is called <em>good</em> if it satisfies:</p>
+                        <ol>
+                            <li>\(a_0 = 0\)</li>
+                            <li>For each \(i = 1, 2, \\ldots, n\), we have \(|a_i - a_{i-1}| = 1\)</li>
+                            <li>There do not exist indices \(0 \\leq i \\lt j \\lt k \\leq n\) such that \(a_i = a_k\) and \(a_j = a_i + 1\)</li>
+                        </ol>
+                        <p>Find the maximum possible value of \(a_n\) among all good sequences.</p>
+                    </div>
+                    
+                    <details>
+                        <summary>💡 Hint</summary>
+                        <p>Think about this as a path on the integer line. Condition 3 says you cannot have a "valley" pattern. Try small cases and look for a pattern related to powers of 2.</p>
+                    </details>
+                    
+                    <details>
+                        <summary>✅ Solution</summary>
+                        <div class="solution">
+                            <p><strong>Answer:</strong> The maximum value of \(a_n\) is \(\lfloor \\log_2 n \\rfloor + 1\).</p>
+                            <p>The key insight is that condition 3 forbids patterns where you go up, return to the same level, then up again. This creates a recursive structure.</p>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- Section 9: Visualization of the Day -->
+                <section id="visualization">
+                    <h2>📊 Visualization of the Day: The Mandelbrot Set</h2>
+                    
+                    <p>The Mandelbrot set is one of the most famous fractals in mathematics. It is defined as the set of complex numbers \(c\) for which the iteration \(z_{n+1} = z_n^2 + c\) starting from \(z_0 = 0\) remains bounded.</p>
+                    
+                    <h4>Python Code</h4>
+                    <pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    """Compute Mandelbrot iterations for point c."""
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+# Create grid
+width, height = 800, 600
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -1.5, 1.5
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Compute Mandelbrot set
+mandel = np.vectorize(mandelbrot)(C)
+
+# Plot
+plt.figure(figsize=(10, 8))
+plt.imshow(mandel, extent=[xmin, xmax, ymin, ymax], 
+           cmap='hot', origin='lower')
+plt.colorbar(label='Iterations')
+plt.title('Mandelbrot Set')
+plt.xlabel('Re(c)')
+plt.ylabel('Im(c)')
+plt.show()
+</code></pre>
+                </section>
+
+                <!-- Section 10: Quote of the Day -->
+                <section id="quote">
+                    <h2>💭 Quote of the Day</h2>
+                    
+                    <blockquote>
+                        <p>"Mathematics is the music of reason."</p>
+                        <footer>— James Joseph Sylvester</footer>
+                    </blockquote>
+                </section>
+
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>📐 Math Digest — A curated collection of mathematical insights</p>
+        <p>Generated: 2026-03-03 at 20:34 UTC</p>
+    </footer>
+</body>
+</html>
