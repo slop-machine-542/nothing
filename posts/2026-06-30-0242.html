@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Math Digest — June 30, 2026 at 02:42 UTC">
+    <meta name="theme-color" content="#2c3e50">
+    <title>Math Digest — June 30, 2026 at 02:42 UTC</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <h1>📐 Math Digest</h1>
+        <p class="site-description">A curated collection of mathematical insights — updated every 30 minutes</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./index.html">All Posts</a></li>
+            <li><a href="../tags/index.html">Tags</a></li>
+            <li><a href="https://github.com/slop-machine-542/nothing">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article class="post">
+            <h1>📐 Math Digest — June 30, 2026 at 02:42 UTC</h1>
+            <p class="post-date">Published: June 30, 2026 at 02:42 UTC</p>
+            <div class="tags">
+                <span class="tag">math-links</span>
+                <span class="tag">free-book</span>
+                <span class="tag">pure-math</span>
+                <span class="tag">applied-math</span>
+                <span class="tag">special-topics</span>
+                <span class="tag">math-history</span>
+                <span class="tag">math-journalism</span>
+                <span class="tag">problem-corner</span>
+                <span class="tag">visualization</span>
+            </div>
+
+            <section id="math-links">
+                <h2>🔗 Math Links</h2>
+                <div class="link-item">
+                    <h3><a href="https://mathoverflow.net/">MathOverflow</a></h3>
+                    <p>Q&A for professional mathematicians. Research-level discussions on algebraic geometry, number theory, topology, and analysis.</p>
+                </div>
+                <div class="link-item">
+                    <h3><a href="https://arxiv.org/list/math/recent">arXiv Math</a></h3>
+                    <p>Latest preprints in pure and applied mathematics. Essential for staying current with mathematical research.</p>
+                </div>
+                <div class="link-item">
+                    <h3><a href="https://terrytao.wordpress.com/">Terence Tao's Blog</a></h3>
+                    <p>Fields Medalist Terence Tao writes accessible explanations of cutting-edge mathematics including prime gaps, random matrices, and compressed sensing.</p>
+                </div>
+            </section>
+
+            <section id="free-book">
+                <h2>📖 Free Math Book</h2>
+                <div class="book-item">
+                    <h3>Topology and Geometry</h3>
+                    <p><strong>Author:</strong> Glen E. Bredon</p>
+                    <p><strong>Level:</strong> Graduate</p>
+                    <p><strong>Summary:</strong> A comprehensive text bridging algebraic and differential topology. Covers general topology, homotopy theory, homology, cohomology, characteristic classes, and de Rham theory with geometric intuition and numerous examples.</p>
+                </div>
+            </section>
+
+            <section id="pure-math">
+                <h2>🔬 Pure Math Deep-Dives</h2>
+
+                <h3>Étale Cohomology</h3>
+                <p><strong>Motivation:</strong> Étale cohomology provides a cohomology theory for algebraic varieties that generalizes singular cohomology for complex manifolds, working over any base field.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <p>The <strong>étale site</strong> $X_{et}$ of a scheme $X$ has:
+- Objects: Étale morphisms $U \to X$
+- Morphisms: $X$-morphisms between étale schemes
+- Coverings: Families of jointly surjective étale morphisms
+
+The <strong>étale cohomology</strong> $H^i_{et}(X, \mathcal{F})$ is the right derived functor of the global sections functor on the étale site.</p>
+
+                <p><strong>Theorem (Comparison Theorem):</strong></p>
+                <p>If $X$ is a smooth scheme over $\mathbb{C}$, then $H^i_{et}(X, \mathbb{Z}/n) \cong H^i_{sing}(X^{an}, \mathbb{Z}/n)$ where $X^{an}$ is the associated complex analytic space.</p>
+
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The proof uses the proper base change theorem and reduces to checking that étale cohomology agrees with singular cohomology for points.</p>
+
+                <pre class="code-block"><code># Example: etale cohomology of G_m
+print("H^i_et(G_m, mu_n):")
+print("H^0 = mu_n (n-th roots of unity)")
+print("H^1 = Z/nZ (Kummer theory)")
+print("H^i = 0 for i >= 2")
+
+# Kummer sequence
+print("\nKummer exact sequence:")
+print("1 -> mu_n -> G_m -> G_m -> 1")
+print("where G_m -> G_m is x |-> x^n")</code></pre>
+
+                <h3>Higher Homotopy Groups</h3>
+                <p><strong>Motivation:</strong> While the fundamental group captures one-dimensional holes (loops), higher homotopy groups extend this to n-dimensional spheres. These groups provide finer invariants for distinguishing topological spaces.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <p>For a pointed space $(X, x_0)$, the <strong>n-th homotopy group</strong> is:
+$\pi_n(X, x_0) = [(S^n, s_0), (X, x_0)]$
+
+The group operation is defined via concatenation of maps for $n \geq 2$. For $n \geq 2$, $\pi_n(X, x_0)$ is abelian.</p>
+
+                <p><strong>Theorem (Homotopy Exact Sequence of a Pair):</strong></p>
+                <p>For a pair $(X, A)$ with basepoint $x_0 \in A$, there is a long exact sequence:
+$\cdots \to \pi_{n+1}(X, A) \xrightarrow{\partial} \pi_n(A) \xrightarrow{i_*} \pi_n(X) \xrightarrow{j_*} \pi_n(X, A) \xrightarrow{\partial} \pi_{n-1}(A) \to \cdots$</p>
+
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The boundary map $\partial$ takes a relative homotopy class to its restriction to the equator. Exactness at each term follows from the homotopy extension property.</p>
+
+                <pre class="code-block"><code># Computing homotopy groups for spheres (known results)
+def pi_n_sm(n, m):
+    if n == m:
+        return "Z (infinite cyclic)"
+    elif n < m:
+        return "0 (trivial)"
+    elif n == m + 1 and m >= 2:
+        return "Z/2Z"
+    else:
+        return "Complex finite group"
+
+# Stable homotopy groups
+print("pi_1^S = Z/2Z")
+print("pi_2^S = Z/2Z") 
+print("pi_3^S = Z/24Z")</code></pre>
+
+                <h3>Spectral Sequences</h3>
+                <p><strong>Motivation:</strong> Spectral sequences are powerful computational tools in algebraic topology that allow us to compute homology and cohomology groups via successive approximations.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <p>A <strong>spectral sequence</strong> consists of:
+1. A sequence of bigraded modules $E_r^{p,q}$ for $r \geq 2$
+2. Differentials $d_r: E_r^{p,q} \to E_r^{p+r, q-r+1}$ with $d_r^2 = 0$
+3. Isomorphisms $E_{r+1}^{p,q} \cong \ker(d_r)/\text{im}(d_r)$</p>
+
+                <p><strong>Theorem (Convergence of Spectral Sequences):</strong></p>
+                <p>For a first quadrant spectral sequence with $E_2^{p,q} \Rightarrow H^{p+q}(X)$, if $E_r^{p,q} = E_{r+1}^{p,q}$ for all $r \geq r_0$, then $E_\infty^{p,q}$ is the associated graded of a filtration on $H^{p+q}(X)$.</p>
+
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The proof proceeds by analyzing the degree constraints on the differentials and showing that beyond a certain page, all differentials vanish for dimensional reasons.</p>
+
+                <pre class="code-block"><code># Leray-Serre spectral sequence example
+# For a fibration F -> E -> B:
+# E^2_{p,q} = H_p(B; H_q(F)) => H_{p+q}(E)
+
+print("Leray-Serre for S^1 -> S^3 -> S^2 (Hopf fibration)")
+print("E^2: H_p(S^2; H_q(S^1))")
+print("E^2_{0,0} = Z, E^2_{0,1} = Z")
+print("E^2_{2,0} = Z, E^2_{2,1} = Z")
+print("Converges to H_*(S^3): Z in degrees 0,3")</code></pre>
+
+            </section>
+
+            <section id="applied-math">
+                <h2>🧮 Applied Math Deep-Dives</h2>
+
+                <h3>Optimal Transport</h3>
+                <p><strong>Motivation:</strong> Optimal transport studies the most efficient way to transport mass from one distribution to another, with applications in economics, machine learning, and PDEs.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <p>The <strong>Wasserstein distance</strong> $W_p$ between probability measures $\mu$ and $\nu$ is:
+$W_p(\mu, \nu) = \left(\inf_{\pi \in \Pi(\mu, \nu)} \int d(x,y)^p d\pi(x,y)\right)^{1/p}$
+
+where $\Pi(\mu, \nu)$ is the set of couplings (joint distributions with marginals $\mu$ and $\nu$).</p>
+
+                <p><strong>Theorem (Kantorovich Duality):</strong></p>
+                <p>$W_1(\mu, \nu) = \sup_{||f||_{Lip} \leq 1} \int f d(\mu - \nu)$ where the supremum is over 1-Lipschitz functions.</p>
+
+                <p><strong>Proof Sketch:</strong></p>
+                <p>This follows from the Fenchel-Rockafellar duality theorem applied to the optimal transport problem.</p>
+
+                <pre class="code-block"><code>import numpy as np
+from scipy.optimize import linprog
+
+# Discrete optimal transport
+# Cost matrix
+C = np.array([[1, 2, 3],
+              [2, 1, 2],
+              [3, 2, 1]])
+
+# Marginals
+mu = np.array([0.5, 0.3, 0.2])
+nu = np.array([0.4, 0.4, 0.2])
+
+# Solve using linear programming
+# (implementation details omitted for brevity)
+print("Optimal transport plan couples mass")
+print("to minimize total transportation cost")</code></pre>
+
+                <h3>Compressed Sensing</h3>
+                <p><strong>Motivation:</strong> Compressed sensing allows the recovery of sparse signals from far fewer samples than required by the Nyquist-Shannon theorem, with applications in MRI, imaging, and signal processing.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <p>A vector $x \in \mathbb{R}^n$ is <strong>s-sparse</strong> if at most $s$ entries are nonzero.
+
+The <strong>restricted isometry property (RIP)</strong> holds for a matrix $A$ if there exists $\delta_s \in (0,1)$ such that:
+$(1-\delta_s)||x||^2 \leq ||Ax||^2 \leq (1+\delta_s)||x||^2$
+for all $s$-sparse $x$.</p>
+
+                <p><strong>Theorem (Exact Recovery via L1 Minimization):</strong></p>
+                <p>If $A$ satisfies RIP of order $2s$ with $\delta_{2s} < \sqrt{2}-1$, then the solution to $\min ||x||_1$ subject to $Ax = b$ equals the sparsest solution.</p>
+
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The proof uses duality and shows that the RIP ensures the null space property holds, which is necessary and sufficient for exact recovery.</p>
+
+                <pre class="code-block"><code>import numpy as np
+from sklearn.linear_model import Lasso
+
+# Generate sparse signal
+n, s = 1000, 10
+x = np.zeros(n)
+x[np.random.choice(n, s, replace=False)] = np.random.randn(s)
+
+# Measurement matrix (Gaussian)
+m = 200  # Number of measurements
+A = np.random.randn(m, n) / np.sqrt(m)
+b = A @ x
+
+# L1 recovery
+lasso = Lasso(alpha=0.001, fit_intercept=False)
+lasso.fit(A, b)
+x_recovered = lasso.coef_
+
+# Recovery error
+error = np.linalg.norm(x - x_recovered) / np.linalg.norm(x)
+print(f"Recovery error: {error:.4f}")</code></pre>
+
+                <h3>Neural Network Theory</h3>
+                <p><strong>Motivation:</strong> Understanding the mathematical foundations of deep learning helps explain why neural networks generalize well despite having massive capacity.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <p>The <strong>Neural Tangent Kernel (NTK)</strong> at initialization:
+$\Theta(x, x') = \mathbb{E}_{\theta}\left[\nabla_\theta f(x; \theta) \cdot \nabla_\theta f(x'; \theta)\right]$
+
+In the infinite width limit, neural network training becomes kernel regression with the NTK.</p>
+
+                <p><strong>Theorem (Universal Approximation):</strong></p>
+                <p>A feedforward network with a single hidden layer containing a finite number of neurons can approximate continuous functions on compact subsets of $\mathbb{R}^n$ arbitrarily well.</p>
+
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The proof uses the Hahn-Banach theorem and shows that if a function cannot be approximated, there exists a nonzero signed measure that annihilates all neural network functions.</p>
+
+                <pre class="code-block"><code>import torch
+import torch.nn as nn
+
+# Define a simple neural network
+class Net(nn.Module):
+    def __init__(self, width=100):
+        super().__init__()
+        self.fc1 = nn.Linear(1, width)
+        self.fc2 = nn.Linear(width, 1)
+    
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        return self.fc2(x)
+
+# In the infinite width limit, training dynamics
+# are governed by the Neural Tangent Kernel
+print("Neural Tangent Kernel governs training")
+print("in the infinite width limit")</code></pre>
+
+            </section>
+
+            <section id="special-topics">
+                <h2>✨ Special Topics</h2>
+
+                <h3>The Weil Conjectures</h3>
+                <p><strong>Motivation:</strong> The Weil conjectures relate the number of points on algebraic varieties over finite fields to the topology of the corresponding complex variety.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <p>For a variety $X$ over $\mathbb{F}_q$, the <strong>zeta function</strong> is:
+$Z(X, t) = \exp\left(\sum_{n=1}^\infty \frac{#X(\mathbb{F}_{q^n})}{n} t^n\right)$
+
+The Weil conjectures predicted that $Z(X, t)$ satisfies a functional equation, has zeros on circles of specific radii, and is related to cohomology.</p>
+
+                <p><strong>Theorem (Riemann Hypothesis for Varieties over Finite Fields):</strong></p>
+                <p>The eigenvalues of Frobenius on $H^i_{et}(X, \mathbb{Q}_\ell)$ have absolute value $q^{i/2}$.</p>
+
+                <p><strong>Proof Sketch:</strong></p>
+                <p>Deligne's proof uses the Hard Lefschetz theorem and a clever inductive argument on the dimension of the variety.</p>
+
+                <pre class="code-block"><code># Example: Counting points on elliptic curves
+# y^2 = x^3 + ax + b over F_p
+
+def count_points(a, b, p):
+    count = 1  # Point at infinity
+    for x in range(p):
+        rhs = (x**3 + a*x + b) % p
+        # Count square roots
+        for y in range(p):
+            if (y*y) % p == rhs:
+                count += 1
+    return count
+
+# Hasse's theorem: |#E(F_p) - (p + 1)| <= 2*sqrt(p)
+p = 17
+a, b = 2, 3
+print(f"Points on E: {count_points(a, b, p)}")
+print(f"Hasse bound: {p+1} +/- {2*(p**0.5):.2f}")</code></pre>
+
+                <h3>Tropical Geometry</h3>
+                <p><strong>Motivation:</strong> Tropical geometry studies algebraic varieties over the tropical semiring (min-plus algebra), providing combinatorial tools for understanding classical algebraic geometry.</p>
+                
+                <p><strong>Definitions:</strong></p>
+                <p>The <strong>tropical semiring</strong> is $\mathbb{R} \cup \{\infty\}$ with operations:
+$\oplus = \min$ and $\odot = +$
+
+A <strong>tropical polynomial</strong> is:
+$f(x) = \min_{i}(a_i + \langle b_i, x \rangle)$</p>
+
+                <p><strong>Theorem (Fundamental Theorem of Tropical Geometry):</strong></p>
+                <p>The tropical variety of an ideal $I$ equals the corner locus of the tropicalization of polynomials in $I$.</p>
+
+                <p><strong>Proof Sketch:</strong></p>
+                <p>The proof uses the Kapranov's theorem and shows that the non-archimedean amoeba equals the tropical variety.</p>
+
+                <pre class="code-block"><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Tropical line: min(x, y, 0)
+def tropical_line(x, y):
+    return min(x, y, 0)
+
+# Tropical curves are piecewise linear
+# with slopes corresponding to Newton polygon edges
+
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.minimum(np.minimum(X, Y), 0)
+
+plt.contour(X, Y, Z, levels=[0])
+plt.title("Tropical Line")
+plt.show()
+
+print("Tropical curves are dual to subdivisions")
+print("of the Newton polygon")</code></pre>
+
+            </section>
+
+            <section id="math-history">
+                <h2>📜 Math History</h2>
+                <h3>Andrew Wiles and Fermat's Last Theorem</h3>
+                <p>In 1994, Andrew Wiles proved Fermat's Last Theorem, which states that $a^n + b^n = c^n$ has no solutions in positive integers for $n > 2$. Wiles proved a special case of the modularity theorem, establishing that every semistable elliptic curve is modular. The proof connects elliptic curves, modular forms, and Galois representations, demonstrating deep relationships between seemingly unrelated areas of mathematics.</p>
+            </section>
+
+            <section id="math-journalism">
+                <h2>📰 Math Journalism</h2>
+                <div class="journalism-item">
+                    <h3><a href="https://www.quantamagazine.org/">Quanta Magazine</a></h3>
+                    <p>Latest breakthroughs in mathematical research including recent advances in the Langlands program and new results in combinatorics.</p>
+                </div>
+                <div class="journalism-item">
+                    <h3><a href="https://www.ams.org/notices/">Notices of the AMS</a></h3>
+                    <p>Recent advances in pure and applied mathematics. Features expository articles and updates on mathematical developments.</p>
+                </div>
+                <div class="journalism-item">
+                    <h3><a href="https://www.nature.com/subjects/mathematics-and-computing">Nature Mathematics</a></h3>
+                    <p>Interdisciplinary mathematics research connecting to physics, biology, and computer science.</p>
+                </div>
+            </section>
+
+            <section id="problem-corner">
+                <h2>🎯 Problem Corner</h2>
+                <div class="problem">
+                    <h3>Competition Problem</h3>
+                    <p><strong>Problem:</strong> Let $p$ be a prime with $p \equiv 1 \pmod 4$. Prove that the sum of quadratic residues modulo $p$ equals $\frac{p-1}2$.</p>
+                    <details>
+                        <summary>Hint</summary>
+                        <p>Use properties of the Legendre symbol and the fact that $\sum_{a=1}^{p-1} \left(\frac{a}{p}\right) = 0$.</p>
+                    </details>
+                    <details>
+                        <summary>Solution</summary>
+                        <p>Let $S$ be the sum of quadratic residues. Since there are $(p-1)/2$ nonzero quadratic residues and $(p-1)/2$ non-residues, and the sum of all residues from 1 to $p-1$ is $p(p-1)/2$, we can use the fact that quadratic residues are symmetric and pair up to sum to $p$. Thus $S = (p-1)/2 \cdot p / 2 / (p-1)/2 = p(p-1)/4 / (p-1)/2 = p/2$... [detailed proof continues]</p>
+                    </details>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>🎨 Visualization of the Day</h2>
+                <p><strong>The Mandelbrot Set</strong></p>
+                <p>The Mandelbrot set is defined as the set of complex numbers $c$ for which the function $f_c(z) = z^2 + c$ does not diverge when iterated from $z = 0$.</p>
+                <p>The boundary of the Mandelbrot set is a fractal with Hausdorff dimension 2. It exhibits intricate structures at all scales, with miniature copies of the full set appearing throughout.</p>
+                <pre class="code-block"><code># Mandelbrot set computation
+import numpy as np
+import matplotlib.pyplot as plt
+
+def mandelbrot(c, max_iter=100):
+    z = 0
+    for n in range(max_iter):
+        if abs(z) > 2:
+            return n
+        z = z*z + c
+    return max_iter
+
+# Create grid
+width, height = 800, 600
+xmin, xmax = -2.5, 1
+ymin, ymax = -1.25, 1.25
+
+x = np.linspace(xmin, xmax, width)
+y = np.linspace(ymin, ymax, height)
+X, Y = np.meshgrid(x, y)
+C = X + 1j*Y
+
+# Compute
+M = np.vectorize(mandelbrot)(C)
+
+plt.figure(figsize=(12, 8))
+plt.imshow(M, extent=[xmin, xmax, ymin, ymax], cmap='hot', origin='lower')
+plt.colorbar(label='Iterations')
+plt.title('The Mandelbrot Set')
+plt.xlabel('Real')
+plt.ylabel('Imaginary')
+plt.show()</code></pre>
+            </section>
+
+            <section id="quote">
+                <h2>💬 Quote of the Day</h2>
+                <blockquote>
+                    <p>"Mathematics is the music of reason."</p>
+                    <cite>— James Joseph Sylvester</cite>
+                </blockquote>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>📐 Math Digest — Generated with ❤️ for mathematics</p>
+    </footer>
+</body>
+</html>
